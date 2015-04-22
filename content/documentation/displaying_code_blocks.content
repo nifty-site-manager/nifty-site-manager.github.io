@@ -1,0 +1,93 @@
+<h3>
+	Guide to displaying code blocks
+</h3>
+
+<h4>
+	Syntax Highlighting
+</h4>
+<p>
+	One easy way to have syntax highlighted code blocks on your site is to use <a href=https://code.google.com/p/google-code-prettify/>Google Code Prettify</a>. Repeating information from the <a href="http://google-code-prettify.googlecode.com/svn/trunk/README.html">README</a>, using Google Code Prettify on your site is as simple as adding the following code to the head of each page:
+
+	<div align="center">
+		<pre class="prettyprint lang-html inline rounded">
+			<!-- uses google-code-prettify for syntax highlighting 
+				 see https://code.google.com/p/google-code-prettify for more info -->
+			<script type="text/javascript"
+				    src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js">
+			</script>
+		</pre>
+	</div>
+</p>
+
+<p>
+	See the Google code prettifier <a href=https://google-code-prettify.googlecode.com/svn/trunk/README.html>README</a> for supported languages and other relevant information.
+</p>
+
+<p>
+	Also see the <a href="@pathto(documentation/nsm_tutorial)">nsm tutorial</a> for a better idea of how to nicely display code blocks. More to be added here at some point (probably no time soon). Alternatively, there are some examples below.
+</p>
+
+<h4>
+	Example code blocks
+</h4>
+
+<div align="center">
+	<pre class="prettyprint linenums lang-cpp rounded">
+		<int> n;
+		<vector> v;
+
+		<pre>
+			<int> n;
+			<vector> v;
+
+			for(int i=0; i < n; i++)
+				cout << v[i] << endl;
+		</pre>
+
+		for(int i=0; i < n; i++)
+			cout << v[i] << endl;
+	</pre>
+</div>
+
+<div align="center">
+	<pre class="rounded">
+		<int> n;
+		<vector> v;
+
+		<pre>
+			<int> n;
+			<vector> v;
+
+			for(int i=0; i < n; i++)
+				cout << v[i] << endl;
+		</pre>
+
+		for(int i=0; i < n; i++)
+			cout << v[i] << endl;
+	</pre>
+</div>
+
+<div align="center">
+	<pre class="prettyprint linenums scroll">
+		@input(./content/cpp/Quoted.cpp)
+	</pre>
+</div>
+
+<div align="center">
+	<pre class="prettyprint linenums rounded">
+		@input(./content/cpp/Quoted.cpp)
+	</pre>
+</div>
+
+
+<div align="center">
+	<pre class="prettyprint linenums rounded">
+		//adds insert file
+		if(read_and_process(insertLocation, antiDepsOfReadLocation, contentLocation, pageTitle, dateTimeInfo, indentAmount, codeBlockDepth, htmlCommentDepth, contentInserted, processedPage, pageDeps) > 0)
+			return 1;
+		//indent amount updated inside read_and_process
+		linePos += posOffset;
+	</pre>
+</div>
+
+

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			site title - displaying code blocks
+		</title>
+		
+		<link rel='stylesheet' type='text/css' href='../css/pagestyle.css'>
+		<link rel='stylesheet' type='text/css' href='../css/dropmenu.css'>
+		<link rel='stylesheet' type='text/css' href='../css/pre.css'>
+		<link rel='icon' type='image/png' href='../files/favicon.png'>
+		
+		<!-- uses google-code-prettify for syntax highlighting 
+		     see https://code.google.com/p/google-code-prettify for more info -->
+		<script type="text/javascript"
+		        src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js">
+		</script>
+		
+		<!-- uses MathJax CDC for LaTeX support
+		     see http://docs.mathjax.org/en/latest/start.html for more info -->
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config
+			({
+				extensions: ["tex2jax.js"],
+		    	jax: ["input/TeX", "output/HTML-CSS"],
+				tex2jax: 
+				{
+					inlineMath: [['$','$'], ['\\(','\\)']],
+					displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+					processEscapes: true
+				},
+				"HTML-CSS": { availableFonts: ["MathJax TeX"] }
+			});
+		</script>
+		<script type="text/javascript" 
+			    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js">
+		</script>
+	</head>
+
+	<body>
+		<p>
+			<div align="center">
+				<header>nifty site manager</header>
+			</div>
+		</p>
+
+		
+		<nav>
+			<ul class="drop_menu">
+				<li></li>
+				<li class="dm_li">
+					<a href="../index.html">home</a>
+				</li>
+		
+				<li class ="dm_li">
+					<div class="dm_text">documentation</div>
+					<ul class ="drop_submenu">
+						<li class="dsm_li"><a href="installing_nsm.html">installing nsm</a></li>
+						<li class="dsm_li"><a href="nsm_tutorial.html">nsm tutorial</a></li>
+						<li class="dsm_li"><a href="nsm_commands.html">nsm commands</a></li>
+						<li class="dsm_li"><a href="content_files.html">content files</a></li>
+						<li class="dsm_li"><a href="template_files.html">template files</a></li>
+						<li class="dsm_li"><a href="displaying_mathematics.html">displaying mathematics</a></li>
+						<li class="dsm_li"><a href="displaying_code_blocks.html">displaying code blocks</a></li>
+						<li class="dsm_li"><a href="hosting_your_site.html">hosting your site</a></li>
+					</ul>
+				</li>
+		
+				<li class ="dm_li">
+					<a href="../support.html">support</a>
+				</li>
+			
+				<li class ="dm_li">
+					<a href="https://github.com/nifty-site-manager">Github</a>
+				</li>
+				<li></li>
+			</ul>
+		</nav>
+
+		<h3>
+			Guide to displaying code blocks
+		</h3>
+		
+		<h4>
+			Syntax Highlighting
+		</h4>
+		<p>
+			One easy way to have syntax highlighted code blocks on your site is to use <a href=https://code.google.com/p/google-code-prettify/>Google Code Prettify</a>. Repeating information from the <a href="http://google-code-prettify.googlecode.com/svn/trunk/README.html">README</a>, using Google Code Prettify on your site is as simple as adding the following code to the head of each page:
+		
+			<div align="center">
+				<pre class="prettyprint lang-html inline rounded">
+					&lt;!-- uses google-code-prettify for syntax highlighting 
+						 see https://code.google.com/p/google-code-prettify for more info -->
+					&lt;script type="text/javascript"
+						    src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js">
+					&lt;/script>
+				</pre>
+			</div>
+		</p>
+		
+		<p>
+			See the Google code prettifier <a href=https://google-code-prettify.googlecode.com/svn/trunk/README.html>README</a> for supported languages and other relevant information.
+		</p>
+		
+		<p>
+			Also see the <a href="nsm_tutorial.html">nsm tutorial</a> for a better idea of how to nicely display code blocks. More to be added here at some point (probably no time soon). Alternatively, there are some examples below.
+		</p>
+		
+		<h4>
+			Example code blocks
+		</h4>
+		
+		<div align="center">
+			<pre class="prettyprint linenums lang-cpp rounded">
+				&lt;int> n;
+				&lt;vector> v;
+		
+				&lt;pre>
+					&lt;int> n;
+					&lt;vector> v;
+		
+					for(int i=0; i &lt; n; i++)
+						cout &lt;&lt; v[i] &lt;&lt; endl;
+				&lt;/pre>
+		
+				for(int i=0; i &lt; n; i++)
+					cout &lt;&lt; v[i] &lt;&lt; endl;
+			</pre>
+		</div>
+		
+		<div align="center">
+			<pre class="rounded">
+				&lt;int> n;
+				&lt;vector> v;
+		
+				&lt;pre>
+					&lt;int> n;
+					&lt;vector> v;
+		
+					for(int i=0; i &lt; n; i++)
+						cout &lt;&lt; v[i] &lt;&lt; endl;
+				&lt;/pre>
+		
+				for(int i=0; i &lt; n; i++)
+					cout &lt;&lt; v[i] &lt;&lt; endl;
+			</pre>
+		</div>
+		
+		<div align="center">
+			<pre class="prettyprint linenums scroll">
+				#include "Quoted.h"
+				
+				//reading a string which may be surrounded by quotes with spaces, and strips surrounding quotes
+				//note mutates white space into single spaces
+				bool read_quoted(std::istream &ifs, std::string &s)
+				{
+				    //reads first string
+				    if(!(ifs >> s))
+				        return 0;
+				
+				    std::string s2;
+				    if(s[0] == '"')
+				    {
+				        while(s[s.length()-1] != '"')
+				        {
+				            ifs >> s2;
+				            s += " " + s2;
+				        }
+				
+				        s.replace(0, 1, "");
+				        s.replace(s.length()-1, 1, "");
+				    }
+				    else if(s[0] == '\'')
+				    {
+				        while(s[s.length()-1] != '\'')
+				        {
+				            ifs >> s2;
+				            s+=" " + s2;
+				        }
+				
+				        s.replace(0, 1, "");
+				        s.replace(s.length()-1, 1, "");
+				    }
+				
+				    return 1;
+				};
+				
+				//outputting a string with quotes surrounded if it contains space(s)
+				std::string quote(const std::string &unquoted)
+				{
+				    if(unquoted.find(' ') == std::string::npos)
+				        return unquoted;
+				    else if(unquoted.find('"') == std::string::npos)
+				        return "\"" + unquoted + "\"";
+				    else
+				        return "'" + unquoted + "'";
+				};
+				
+			</pre>
+		</div>
+		
+		<div align="center">
+			<pre class="prettyprint linenums rounded">
+				#include "Quoted.h"
+				
+				//reading a string which may be surrounded by quotes with spaces, and strips surrounding quotes
+				//note mutates white space into single spaces
+				bool read_quoted(std::istream &ifs, std::string &s)
+				{
+				    //reads first string
+				    if(!(ifs >> s))
+				        return 0;
+				
+				    std::string s2;
+				    if(s[0] == '"')
+				    {
+				        while(s[s.length()-1] != '"')
+				        {
+				            ifs >> s2;
+				            s += " " + s2;
+				        }
+				
+				        s.replace(0, 1, "");
+				        s.replace(s.length()-1, 1, "");
+				    }
+				    else if(s[0] == '\'')
+				    {
+				        while(s[s.length()-1] != '\'')
+				        {
+				            ifs >> s2;
+				            s+=" " + s2;
+				        }
+				
+				        s.replace(0, 1, "");
+				        s.replace(s.length()-1, 1, "");
+				    }
+				
+				    return 1;
+				};
+				
+				//outputting a string with quotes surrounded if it contains space(s)
+				std::string quote(const std::string &unquoted)
+				{
+				    if(unquoted.find(' ') == std::string::npos)
+				        return unquoted;
+				    else if(unquoted.find('"') == std::string::npos)
+				        return "\"" + unquoted + "\"";
+				    else
+				        return "'" + unquoted + "'";
+				};
+				
+			</pre>
+		</div>
+		
+		
+		<div align="center">
+			<pre class="prettyprint linenums rounded">
+				//adds insert file
+				if(read_and_process(insertLocation, antiDepsOfReadLocation, contentLocation, pageTitle, dateTimeInfo, indentAmount, codeBlockDepth, htmlCommentDepth, contentInserted, processedPage, pageDeps) > 0)
+					return 1;
+				//indent amount updated inside read_and_process
+				linePos += posOffset;
+			</pre>
+		</div>
+		
+		
+
+		<footer>
+			<hr>
+			Page was last built on Thursday April 23 2015 at 02:59:07 (AEST). <br>
+		
+			<small>&copy;&nbsp;2015 Nicholas Ham</small>
+		</footer>
+
+		<script type='text/javascript' src='../js/process_pre_tags.js'></script>		
+	</body>
+</html>
+
+<!-- information on how to easily make and host a site similar to
+     this may be found at https://n-ham.github.io/nifty-site-manager -->

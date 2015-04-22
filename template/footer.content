@@ -1,0 +1,6 @@
+<footer>
+	<hr>
+	Page was last built on @currentdate at @currenttime (@timezone). <br>
+
+	<small>&copy;&nbsp;2015 Nicholas Ham</small>
+</footer>

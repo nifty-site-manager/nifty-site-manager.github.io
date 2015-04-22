@@ -1,0 +1,10 @@
+documentation/displaying_mathematics
+"displaying mathematics"
+template/page.template
+
+content/documentation/displaying_mathematics.content
+template/footer.content
+template/head.content
+template/header.content
+template/menu.content
+template/page.template

@@ -1,0 +1,10 @@
+documentation/template_files
+"template files"
+template/page.template
+
+content/documentation/template_files.content
+template/footer.content
+template/head.content
+template/header.content
+template/menu.content
+template/page.template

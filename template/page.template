@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		@input(template/head.content)
+	</head>
+
+	<body>
+		@input(template/header.content)
+
+		@input(template/menu.content)
+
+		@inputcontent
+
+		@input(template/footer.content)
+
+		@jsinclude(site/js/process_pre_tags.js)		
+	</body>
+</html>
+
+<!-- information on how to easily make and host a site similar to
+     this may be found at https://n-ham.github.io/nifty-site-manager -->
+

@@ -1,0 +1,93 @@
+<h3>
+	Guide to writing content files
+</h3>
+
+<h4>
+	Escaping characters
+</h4>
+<p>
+	Nsm will escape the following characters: \~, \!, \@, \#, \%, \^, \&, \*, \?, \<, \>. Just put <mono>\character-to-escape</mono>, for example to escape tilde use <mono>\\~</mono>.
+</p>
+
+<p>
+	<u>Note:</u> nsm does not, and will not, escape \$. This is because it conflicts with MathJax escaping \$. If you do not want to use MathJax on your site and want \$ escaped then manually uncomment the relevant code in <mono>PageBuilder.cpp</mono> before compiling and installing nsm.
+</p>
+
+<h4>
+	Inserting date, time and timezone information
+</h4>
+<p>
+	The date and time that a page was built may be inserted using <mono>\@currentdate</mono> and <mono>\@currenttime</mono>. The timezone this date and time information is associated with may also be inserted using <mono>\@timezone</mono>.
+</p>
+
+<h4>
+	Inserting text from other files
+</h4>
+<p>
+	Text may be inserted from another file using <mono>\@input(path-to-file)</mono>, where <mono>path-to-file</mono> is the path from the main site directory to the input file.
+</p>
+
+<p>
+	For example suppose inside your website directory you have <mono>content/footer.content</mono>:
+
+	<div align="center">
+		<pre class="inline rounded">
+			Page was last modified on \@currentdate.
+		</pre>
+	</div>
+</p>
+
+<p>
+	To insert <mono>content.footer.content</mono> into another file write:
+
+	<div align="center">
+		<pre class="inline rounded">
+			\@input(content/footer.content)
+		</pre>
+	</div>
+</p>
+
+<p>
+	<u>Note:</u> nsm will not let you create an input loop, for example you cannot have <mono>\@input(page.template)</mono> inside <mono>page.template</mono>, or any of the files that <mono>page.template</mono> inputs, or any of the files that they input, and so on. 
+</p>
+
+<h4>
+	Paths from pages to other files
+</h4>
+
+<p>
+	It is possible for pages $A$ and $B$ to be located in distinct directories yet input text from the same content file $X$. Consequently if content file $X$ contains a path to another file $Y$, you have the problem that the path from $A$ to $Y$ is not the same as the path from $B$ to $Y$. You can solve this non-constant path problem by using <mono>\@pathto(path-to-file)</mono> where <mono>path-to-file</mono> is the path from the main site directory to file $Y$. When building a page, nsm will replace <mono>\@pathto(path-to-file)</mono> with the path from the page being built to file $Y$.
+</p>
+
+<p>
+	An example of when users may find this useful is when writing menus for page templates, or adding local links for any template files.
+</p>
+
+<h4>
+	Including css files
+</h4>
+<p>
+	You can include a css file using <mono>\@cssinclude(path-to-css-file)</mono>, where <mono>path-to-css-file</mono> is the path from the main site directory to the css file (<u>not</u> the path from the page to the css file). When building a page, nsm will replace <mono>\@cssinclude(path-to-css-file)</mono> with <mono>\<link rel='stylesheet' type='text/css' href='path-from-page-to-css-file'></mono>.
+</p>
+
+<h4>
+	Including js files
+</h4>
+<p>
+	You can include a js file using <mono>\@jsinclude(path-to-js-file)</mono>, where <mono>path-to-js-file</mono> is the path from the main site directory to the js file (<u>not</u> the path from the page to the js file). When building a page, nsm will replace <mono>\@jsinclude(path-to-js-file)</mono> with: 
+
+	<div align="center">
+		<pre class="prettyprint lang-js inline rounded">
+			<script type="text/javascript" 
+				src="path-from-page-to-js-file">
+			</script>
+		</pre>
+	</div>
+</p>
+
+<h4>
+	Including a favicon file
+</h4>
+<p>
+	You can include a favicon file using <mono>\@faviconinclude(path-to-favicon-file)</mono>, where <mono>path-to-favicon-file</mono> is the path from the main site directory to the favicon file (<u>not</u> the path from the page to the favicon file). When building a page, nsm will replace <mono>\@faviconinclude(path-to-favicon-file)</mono> with <mono>\<link rel='icon' type='image/png' href='path-from-page-to-favicon-file'></mono>.
+</p>

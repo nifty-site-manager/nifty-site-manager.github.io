@@ -1,0 +1,32 @@
+
+<nav>
+	<ul class="drop_menu">
+		<li></li>
+		<li class="dm_li">
+			<a href="@pathto(index)">home</a>
+		</li>
+
+		<li class ="dm_li">
+			<div class="dm_text">documentation</div>
+			<ul class ="drop_submenu">
+				<li class="dsm_li"><a href="@pathto(documentation/installing_nsm)">installing nsm</a></li>
+				<li class="dsm_li"><a href="@pathto(documentation/nsm_tutorial)">nsm tutorial</a></li>
+				<li class="dsm_li"><a href="@pathto(documentation/nsm_commands)">nsm commands</a></li>
+				<li class="dsm_li"><a href="@pathto(documentation/content_files)">content files</a></li>
+				<li class="dsm_li"><a href="@pathto(documentation/template_files)">template files</a></li>
+				<li class="dsm_li"><a href="@pathto(documentation/displaying_mathematics)">displaying mathematics</a></li>
+				<li class="dsm_li"><a href="@pathto(documentation/displaying_code_blocks)">displaying code blocks</a></li>
+				<li class="dsm_li"><a href="@pathto(documentation/hosting_your_site)">hosting your site</a></li>
+			</ul>
+		</li>
+
+		<li class ="dm_li">
+			<a href="@pathto(support)">support</a>
+		</li>
+	
+		<li class ="dm_li">
+			<a href="https://github.com/nifty-site-manager">Github</a>
+		</li>
+		<li></li>
+	</ul>
+</nav>

@@ -1,0 +1,85 @@
+/*
+	see http://google-code-prettify.googlecode.com/svn/trunk/README.html 
+	for the prettyprint readme.
+*/
+
+pre ol.linenums > li 
+{
+	/*lists all line numbers*/
+	list-style-type: decimal; 
+
+	/*linenum font color*/
+	color:#484848;
+
+	border-left-style: solid;
+    border-left-width: 1px;
+	border-left-color: #888888;
+
+	padding-left: 5px !important;
+	padding-top: 1px;
+	
+	/*sets background color for every second line*/
+	background: #C8C8C8;
+}
+
+pre.scroll
+{
+	max-height: 400px;
+	overflow-y: scroll;
+}
+
+pre.rounded
+{
+	border-radius: 5px;
+}
+
+pre.inline
+{
+	display: inline-block !important;
+
+	white-space: pre;       /* css-3 */
+	-moz-only-whitespace: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+	white-space: -pre;      /* Opera 4-6 */
+	white-space: -o-pre;    /* Opera 7 */
+	word-wrap: pre;       /* Internet Explorer 5.5+ */
+}
+
+pre
+{
+	display: block;
+	text-align:left !important;
+	background: #C8C8C8;
+
+	/*picks the first available font and resizes*/
+	font-family: DejaVu Sans Mono, Liberation Mono, Consolas, Ubuntu Mono, Courier New;
+	font-size: 85%;
+	tab-size: 4;
+
+	max-width: 90%;
+	/*overflow: auto;*/
+	
+	white-space: pre-wrap;       /* css-3 */
+	white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+	white-space: -pre-wrap;      /* Opera 4-6 */
+	white-space: -o-pre-wrap;    /* Opera 7 */
+	word-wrap: break-word;       /* Internet Explorer 5.5+ */
+	/*overflow: auto;*/  /*adds scroll bar for wide-lined code*/
+	
+	border-style: solid;
+    border-width: 1px;
+	border-color: #888888;
+
+	margin-top: 1px;
+	margin-bottom: 1px;
+
+	padding-left: 5px !important; 
+	padding-right:5px !important;
+	padding-top:0 !important;
+	padding-bottom:0 !important;
+
+	-moz-box-shadow: 3px 3px 5px #484848;
+    -webkit-box-shadow: 3px 3px 5px #484848;
+    box-shadow: 3px 3px 5px #484848;
+}
+
+
