@@ -1,5 +1,5 @@
 <title>
-	site title - @pagetitle
+	nsm - @pagetitle
 </title>
 
 @cssinclude("site/css/pagestyle.css")
