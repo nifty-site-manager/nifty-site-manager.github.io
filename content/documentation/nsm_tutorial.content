@@ -70,7 +70,7 @@
 	</li>
 
 	<li>
-		Open <mono>site/index.html</mono> in a browser, click through to the about page, and view the source for both pages.
+		Open <mono>site/index.html</mono> in a browser, click through to the about page, and view the source for both pages. Compare what you have locally to a <a href="https://nifty-site-manager.github.io/simple-site/">pre-built</a> version of <mono>site/index.html</mono> 
 	</li>
 
 	<li>
