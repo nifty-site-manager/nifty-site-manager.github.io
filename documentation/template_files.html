@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			site title - template files
+		</title>
+		
+		<link rel='stylesheet' type='text/css' href='../css/pagestyle.css'>
+		<link rel='stylesheet' type='text/css' href='../css/dropmenu.css'>
+		<link rel='stylesheet' type='text/css' href='../css/pre.css'>
+		<link rel='icon' type='image/png' href='../files/favicon.png'>
+		
+		<!-- uses google-code-prettify for syntax highlighting 
+		     see https://code.google.com/p/google-code-prettify for more info -->
+		<script type="text/javascript"
+		        src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js">
+		</script>
+		
+		<!-- uses MathJax CDC for LaTeX support
+		     see http://docs.mathjax.org/en/latest/start.html for more info -->
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config
+			({
+				extensions: ["tex2jax.js"],
+		    	jax: ["input/TeX", "output/HTML-CSS"],
+				tex2jax: 
+				{
+					inlineMath: [['$','$'], ['\\(','\\)']],
+					displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+					processEscapes: true
+				},
+				"HTML-CSS": { availableFonts: ["MathJax TeX"] }
+			});
+		</script>
+		<script type="text/javascript" 
+			    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js">
+		</script>
+	</head>
+
+	<body>
+		<p>
+			<div align="center">
+				<header>nifty site manager</header>
+			</div>
+		</p>
+
+		
+		<nav>
+			<ul class="drop_menu">
+				<li></li>
+				<li class="dm_li">
+					<a href="../index.html">home</a>
+				</li>
+		
+				<li class ="dm_li">
+					<div class="dm_text">documentation</div>
+					<ul class ="drop_submenu">
+						<li class="dsm_li"><a href="installing_nsm.html">installing nsm</a></li>
+						<li class="dsm_li"><a href="nsm_tutorial.html">nsm tutorial</a></li>
+						<li class="dsm_li"><a href="nsm_commands.html">nsm commands</a></li>
+						<li class="dsm_li"><a href="content_files.html">content files</a></li>
+						<li class="dsm_li"><a href="template_files.html">template files</a></li>
+						<li class="dsm_li"><a href="displaying_mathematics.html">displaying mathematics</a></li>
+						<li class="dsm_li"><a href="displaying_code_blocks.html">displaying code blocks</a></li>
+						<li class="dsm_li"><a href="hosting_your_site.html">hosting your site</a></li>
+					</ul>
+				</li>
+		
+				<li class ="dm_li">
+					<a href="../support.html">support</a>
+				</li>
+			
+				<li class ="dm_li">
+					<a href="https://github.com/nifty-site-manager">Github</a>
+				</li>
+				<li></li>
+			</ul>
+		</nav>
+
+		<h3>
+			Guide to writing template files
+		</h3>
+		
+		<p>
+			Remember that for each page tracked by nsm there is a specified content and template path. When building a page, nsm will start processing the template file the same as it will process any other file. Consequently everything that applied to writing content files also applies to writing template files. However, unlike content files, template files need to specify both where content and the page title are to be inserted. 
+		</p>
+		
+		<h4>
+			Specifying where content is to be inserted
+		</h4>
+		
+		<p>
+			Nsm treats any instance of <mono>&commat;inputconent</mono> as being equivalent to <mono>&commat;input(path-to-content)</mono>, where <mono>path-to-content</mono> is the content path being tracked by nsm.
+		</p>
+		
+		<p>
+			<b>Note:</b> if <mono>&commat;inputcontent</mono> is in any dependency of a page's content file (content file inclusive), then an input loop will be formed when attempting to build the page and nsm will (at least it should) throw an error. You may however put <mono>&commat;inputcontent</mono> in any other dependencies of the template file. For example were your template to include a file <mono>template/body.template</mono>, it is fine for <mono>&commat;inputcontent</mono> to reside in <mono>body.template</mono> and not the main template file.
+		</p>
+		
+		<h4>
+			Specifying where the page title is to be inserted
+		</h4>
+		
+		<p>
+			When building a page, nsm will replace any instance of <mono>&commat;pagetitle</mono> with the title nsm has tracked for the page. Unlike <mono>&commat;insertcontent</mono>, <mono>&commat;pagetitle</mono> may be placed inside content files (template files inclusive). 
+		</p>
+		
+		<h4>
+			Example template files
+		</h4>
+		
+		<p>
+			A very simple template file, that specifies both where content and the page title are to be inserted, would be:
+		</p>
+		
+		<div align="center">
+			<pre class="inline rounded">
+				&lt;!DOCTYPE html>
+				&lt;html>
+					&lt;head>
+						&lt;title>site title - template files&lt;/title>
+					&lt;/head>
+		
+					&lt;body>
+						&commat;inputcontent	
+					&lt;/body>
+				&lt;/html>
+			</pre>
+		</div>
+		
+		<p>
+			It can be convenient to break what would typically be found inside the template file up into various content files. For example you may have <mono>template/head.content</mono>, <mono>template/menu.content</mono> and <mono>template/footer.content</mono>, A suitable template file, say the default <mono>template/page.template</mono> would then be:
+		</p>
+		
+		<div align="center">
+			<pre class="inline rounded">
+				&lt;!DOCTYPE html>
+				&lt;html>
+					&lt;head>
+						&commat;input(content/head.content)
+					&lt;/head>
+		
+					&lt;body>
+						&commat;input(content/menu.content)
+		
+						&commat;inputcontent	
+		
+						&commat;input(content/footer.content)
+					&lt;/body>
+				&lt;/html>
+			</pre>
+		</div>
+		
+		<p>
+			<b>Note:</b> the <mono>head</mono> tags may be put inside either <mono>template/page.template</mono> or <mono>template/head.content</mono>. However if the <mono>head</mono> tags are left inside <mono>template/page.template</mono> then, rather than specifically having to alter <mono>template/head.content</mono>, the head may be altered from both <mono>template/page.template</mono> and <mono>template/head.content</mono>.
+		</p>
+		
+
+		<footer>
+			<hr>
+			Page was last built on Thursday April 23 2015 at 02:59:07 (AEST). <br>
+		
+			<small>&copy;&nbsp;2015 Nicholas Ham</small>
+		</footer>
+
+		<script type='text/javascript' src='../js/process_pre_tags.js'></script>		
+	</body>
+</html>
+
+<!-- information on how to easily make and host a site similar to
+     this may be found at https://n-ham.github.io/nifty-site-manager -->

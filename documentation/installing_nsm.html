@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			site title - installing nsm
+		</title>
+		
+		<link rel='stylesheet' type='text/css' href='../css/pagestyle.css'>
+		<link rel='stylesheet' type='text/css' href='../css/dropmenu.css'>
+		<link rel='stylesheet' type='text/css' href='../css/pre.css'>
+		<link rel='icon' type='image/png' href='../files/favicon.png'>
+		
+		<!-- uses google-code-prettify for syntax highlighting 
+		     see https://code.google.com/p/google-code-prettify for more info -->
+		<script type="text/javascript"
+		        src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js">
+		</script>
+		
+		<!-- uses MathJax CDC for LaTeX support
+		     see http://docs.mathjax.org/en/latest/start.html for more info -->
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config
+			({
+				extensions: ["tex2jax.js"],
+		    	jax: ["input/TeX", "output/HTML-CSS"],
+				tex2jax: 
+				{
+					inlineMath: [['$','$'], ['\\(','\\)']],
+					displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+					processEscapes: true
+				},
+				"HTML-CSS": { availableFonts: ["MathJax TeX"] }
+			});
+		</script>
+		<script type="text/javascript" 
+			    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js">
+		</script>
+	</head>
+
+	<body>
+		<p>
+			<div align="center">
+				<header>nifty site manager</header>
+			</div>
+		</p>
+
+		
+		<nav>
+			<ul class="drop_menu">
+				<li></li>
+				<li class="dm_li">
+					<a href="../index.html">home</a>
+				</li>
+		
+				<li class ="dm_li">
+					<div class="dm_text">documentation</div>
+					<ul class ="drop_submenu">
+						<li class="dsm_li"><a href="installing_nsm.html">installing nsm</a></li>
+						<li class="dsm_li"><a href="nsm_tutorial.html">nsm tutorial</a></li>
+						<li class="dsm_li"><a href="nsm_commands.html">nsm commands</a></li>
+						<li class="dsm_li"><a href="content_files.html">content files</a></li>
+						<li class="dsm_li"><a href="template_files.html">template files</a></li>
+						<li class="dsm_li"><a href="displaying_mathematics.html">displaying mathematics</a></li>
+						<li class="dsm_li"><a href="displaying_code_blocks.html">displaying code blocks</a></li>
+						<li class="dsm_li"><a href="hosting_your_site.html">hosting your site</a></li>
+					</ul>
+				</li>
+		
+				<li class ="dm_li">
+					<a href="../support.html">support</a>
+				</li>
+			
+				<li class ="dm_li">
+					<a href="https://github.com/nifty-site-manager">Github</a>
+				</li>
+				<li></li>
+			</ul>
+		</nav>
+
+		<h3>
+			Installing a c++ compiler
+		</h3>
+		
+		If you do not already have a c++ compiler then you will need to install one.
+		
+		<ul>
+			<li>
+				<h4>Linux</h4>
+				Use your package manager to install <mono>build-essential</mono>. For example on Ubuntu, run <mono>sudo apt-get install build-essential</mono> from a terminal window. 
+			</li>
+			<li>
+				<h4>Mac OS X</h4>
+				<p>
+					Install <a href="https://itunes.apple.com/au/app/xcode/id497799835?mt=12">Xcode</a>. Should you still encounter any problems compiling nsm there is a good chance <mono>command line tools</mono> was not installed by default. To manually install it yourself: open Xcode, go to <mono>preferences</mono>, click on the <mono>downloads</mono> tab, then you should be able to download and install <mono>command line tools</mono>.
+				</p>
+		
+				<p>
+					<u>Note:</u> whoever first reads this, I haven't actually tried this on an osx machine. From some googling I'm assuming the compiler you'll get is <mono>clang</mono> (not <mono>gcc</mono>), but also that <mono>g++</mono> syntax should still work to use clang for compiling (which is what's used in the <mono>Makefile</mono>). I would like to know if you are successful and/or have any trouble (if you do have trouble and are knowledgeable enough to give me some idea of what's going wrong, that'd be awesome!). 
+				</p>
+		
+				<p>
+					I would also be curious to know how easy it is for osx users to access hidden files from finder? On ubuntu I can just use <mono>ctrl/cmd h</mono> to toggle between showing/hiding hidden files/directories. 
+				</p>
+			</li>
+		</ul>
+		
+		<h3>
+			Installing nsm
+		</h3>
+		
+		Download <a href="https://github.com/nifty-site-manager/nsm/archive/master.zip">nsm-master.zip</a>, then follow these steps to compile and install:
+		
+		<ol>
+			<li>
+				Extract <mono>nsm-master</mono> from <mono>nsm-master.zip</mono>;
+			</li>
+			<li>
+				Open a terminal window and change directory to <mono>nsm-master</mono>;
+			</li>
+			<li>
+				Compile nsm by running <mono>make</mono>;
+			</li>
+			<li>
+				Install nsm by running <mono>make install</mono> (note - you will need to enter your password);
+			</li>
+			<li>
+				Delete both the file <mono>nsm-master.zip</mono> and the directory <mono>nsm-master</mono> containing the uncompiled code. 
+			</li>
+		</ol>
+		
+		<p>
+			For example, if you unzipped <mono>nsm-master</mono> inside your downloads folder, then steps 1-4 are achieved by entering the following into your terminal window:
+		
+			<div align="center">
+				<pre class="inline rounded">
+					cd ~/Downloads/nsm-master
+					make
+					make install
+				</pre>
+			</div>
+		</p>
+		
+		<h3>
+			Uninstalling nsm
+		</h3>
+		<p>
+			Should you ever want to remove nsm from your machine, simply run <mono>sudo rm -f /usr/local/bin/nsm</mono> from any terminal window.
+		</p>
+
+		<footer>
+			<hr>
+			Page was last built on Thursday April 23 2015 at 02:59:07 (AEST). <br>
+		
+			<small>&copy;&nbsp;2015 Nicholas Ham</small>
+		</footer>
+
+		<script type='text/javascript' src='../js/process_pre_tags.js'></script>		
+	</body>
+</html>
+
+<!-- information on how to easily make and host a site similar to
+     this may be found at https://n-ham.github.io/nifty-site-manager -->

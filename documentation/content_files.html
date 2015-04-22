@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			site title - content files
+		</title>
+		
+		<link rel='stylesheet' type='text/css' href='../css/pagestyle.css'>
+		<link rel='stylesheet' type='text/css' href='../css/dropmenu.css'>
+		<link rel='stylesheet' type='text/css' href='../css/pre.css'>
+		<link rel='icon' type='image/png' href='../files/favicon.png'>
+		
+		<!-- uses google-code-prettify for syntax highlighting 
+		     see https://code.google.com/p/google-code-prettify for more info -->
+		<script type="text/javascript"
+		        src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js">
+		</script>
+		
+		<!-- uses MathJax CDC for LaTeX support
+		     see http://docs.mathjax.org/en/latest/start.html for more info -->
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config
+			({
+				extensions: ["tex2jax.js"],
+		    	jax: ["input/TeX", "output/HTML-CSS"],
+				tex2jax: 
+				{
+					inlineMath: [['$','$'], ['\\(','\\)']],
+					displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+					processEscapes: true
+				},
+				"HTML-CSS": { availableFonts: ["MathJax TeX"] }
+			});
+		</script>
+		<script type="text/javascript" 
+			    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js">
+		</script>
+	</head>
+
+	<body>
+		<p>
+			<div align="center">
+				<header>nifty site manager</header>
+			</div>
+		</p>
+
+		
+		<nav>
+			<ul class="drop_menu">
+				<li></li>
+				<li class="dm_li">
+					<a href="../index.html">home</a>
+				</li>
+		
+				<li class ="dm_li">
+					<div class="dm_text">documentation</div>
+					<ul class ="drop_submenu">
+						<li class="dsm_li"><a href="installing_nsm.html">installing nsm</a></li>
+						<li class="dsm_li"><a href="nsm_tutorial.html">nsm tutorial</a></li>
+						<li class="dsm_li"><a href="nsm_commands.html">nsm commands</a></li>
+						<li class="dsm_li"><a href="content_files.html">content files</a></li>
+						<li class="dsm_li"><a href="template_files.html">template files</a></li>
+						<li class="dsm_li"><a href="displaying_mathematics.html">displaying mathematics</a></li>
+						<li class="dsm_li"><a href="displaying_code_blocks.html">displaying code blocks</a></li>
+						<li class="dsm_li"><a href="hosting_your_site.html">hosting your site</a></li>
+					</ul>
+				</li>
+		
+				<li class ="dm_li">
+					<a href="../support.html">support</a>
+				</li>
+			
+				<li class ="dm_li">
+					<a href="https://github.com/nifty-site-manager">Github</a>
+				</li>
+				<li></li>
+			</ul>
+		</nav>
+
+		<h3>
+			Guide to writing content files
+		</h3>
+		
+		<h4>
+			Escaping characters
+		</h4>
+		<p>
+			Nsm will escape the following characters: &tilde;, &excl;, &commat;, &num;, &percnt;, &Hat;, &amp;, &ast;, &quest;, &lt;, &gt;. Just put <mono>\character-to-escape</mono>, for example to escape tilde use <mono>\&tilde;</mono>.
+		</p>
+		
+		<p>
+			<u>Note:</u> nsm does not, and will not, escape \$. This is because it conflicts with MathJax escaping \$. If you do not want to use MathJax on your site and want \$ escaped then manually uncomment the relevant code in <mono>PageBuilder.cpp</mono> before compiling and installing nsm.
+		</p>
+		
+		<h4>
+			Inserting date, time and timezone information
+		</h4>
+		<p>
+			The date and time that a page was built may be inserted using <mono>&commat;currentdate</mono> and <mono>&commat;currenttime</mono>. The timezone this date and time information is associated with may also be inserted using <mono>&commat;timezone</mono>.
+		</p>
+		
+		<h4>
+			Inserting text from other files
+		</h4>
+		<p>
+			Text may be inserted from another file using <mono>&commat;input(path-to-file)</mono>, where <mono>path-to-file</mono> is the path from the main site directory to the input file.
+		</p>
+		
+		<p>
+			For example suppose inside your website directory you have <mono>content/footer.content</mono>:
+		
+			<div align="center">
+				<pre class="inline rounded">
+					Page was last modified on &commat;currentdate.
+				</pre>
+			</div>
+		</p>
+		
+		<p>
+			To insert <mono>content.footer.content</mono> into another file write:
+		
+			<div align="center">
+				<pre class="inline rounded">
+					&commat;input(content/footer.content)
+				</pre>
+			</div>
+		</p>
+		
+		<p>
+			<u>Note:</u> nsm will not let you create an input loop, for example you cannot have <mono>&commat;input(page.template)</mono> inside <mono>page.template</mono>, or any of the files that <mono>page.template</mono> inputs, or any of the files that they input, and so on. 
+		</p>
+		
+		<h4>
+			Paths from pages to other files
+		</h4>
+		
+		<p>
+			It is possible for pages $A$ and $B$ to be located in distinct directories yet input text from the same content file $X$. Consequently if content file $X$ contains a path to another file $Y$, you have the problem that the path from $A$ to $Y$ is not the same as the path from $B$ to $Y$. You can solve this non-constant path problem by using <mono>&commat;pathto(path-to-file)</mono> where <mono>path-to-file</mono> is the path from the main site directory to file $Y$. When building a page, nsm will replace <mono>&commat;pathto(path-to-file)</mono> with the path from the page being built to file $Y$.
+		</p>
+		
+		<p>
+			An example of when users may find this useful is when writing menus for page templates, or adding local links for any template files.
+		</p>
+		
+		<h4>
+			Including css files
+		</h4>
+		<p>
+			You can include a css file using <mono>&commat;cssinclude(path-to-css-file)</mono>, where <mono>path-to-css-file</mono> is the path from the main site directory to the css file (<u>not</u> the path from the page to the css file). When building a page, nsm will replace <mono>&commat;cssinclude(path-to-css-file)</mono> with <mono>&lt;link rel='stylesheet' type='text/css' href='path-from-page-to-css-file'></mono>.
+		</p>
+		
+		<h4>
+			Including js files
+		</h4>
+		<p>
+			You can include a js file using <mono>&commat;jsinclude(path-to-js-file)</mono>, where <mono>path-to-js-file</mono> is the path from the main site directory to the js file (<u>not</u> the path from the page to the js file). When building a page, nsm will replace <mono>&commat;jsinclude(path-to-js-file)</mono> with: 
+		
+			<div align="center">
+				<pre class="prettyprint lang-js inline rounded">
+					&lt;script type="text/javascript" 
+						src="path-from-page-to-js-file">
+					&lt;/script>
+				</pre>
+			</div>
+		</p>
+		
+		<h4>
+			Including a favicon file
+		</h4>
+		<p>
+			You can include a favicon file using <mono>&commat;faviconinclude(path-to-favicon-file)</mono>, where <mono>path-to-favicon-file</mono> is the path from the main site directory to the favicon file (<u>not</u> the path from the page to the favicon file). When building a page, nsm will replace <mono>&commat;faviconinclude(path-to-favicon-file)</mono> with <mono>&lt;link rel='icon' type='image/png' href='path-from-page-to-favicon-file'></mono>.
+		</p>
+
+		<footer>
+			<hr>
+			Page was last built on Thursday April 23 2015 at 02:59:07 (AEST). <br>
+		
+			<small>&copy;&nbsp;2015 Nicholas Ham</small>
+		</footer>
+
+		<script type='text/javascript' src='../js/process_pre_tags.js'></script>		
+	</body>
+</html>
+
+<!-- information on how to easily make and host a site similar to
+     this may be found at https://n-ham.github.io/nifty-site-manager -->

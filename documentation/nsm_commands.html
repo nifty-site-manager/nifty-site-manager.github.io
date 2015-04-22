@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			site title - nsm commands
+		</title>
+		
+		<link rel='stylesheet' type='text/css' href='../css/pagestyle.css'>
+		<link rel='stylesheet' type='text/css' href='../css/dropmenu.css'>
+		<link rel='stylesheet' type='text/css' href='../css/pre.css'>
+		<link rel='icon' type='image/png' href='../files/favicon.png'>
+		
+		<!-- uses google-code-prettify for syntax highlighting 
+		     see https://code.google.com/p/google-code-prettify for more info -->
+		<script type="text/javascript"
+		        src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js">
+		</script>
+		
+		<!-- uses MathJax CDC for LaTeX support
+		     see http://docs.mathjax.org/en/latest/start.html for more info -->
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config
+			({
+				extensions: ["tex2jax.js"],
+		    	jax: ["input/TeX", "output/HTML-CSS"],
+				tex2jax: 
+				{
+					inlineMath: [['$','$'], ['\\(','\\)']],
+					displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+					processEscapes: true
+				},
+				"HTML-CSS": { availableFonts: ["MathJax TeX"] }
+			});
+		</script>
+		<script type="text/javascript" 
+			    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js">
+		</script>
+	</head>
+
+	<body>
+		<p>
+			<div align="center">
+				<header>nifty site manager</header>
+			</div>
+		</p>
+
+		
+		<nav>
+			<ul class="drop_menu">
+				<li></li>
+				<li class="dm_li">
+					<a href="../index.html">home</a>
+				</li>
+		
+				<li class ="dm_li">
+					<div class="dm_text">documentation</div>
+					<ul class ="drop_submenu">
+						<li class="dsm_li"><a href="installing_nsm.html">installing nsm</a></li>
+						<li class="dsm_li"><a href="nsm_tutorial.html">nsm tutorial</a></li>
+						<li class="dsm_li"><a href="nsm_commands.html">nsm commands</a></li>
+						<li class="dsm_li"><a href="content_files.html">content files</a></li>
+						<li class="dsm_li"><a href="template_files.html">template files</a></li>
+						<li class="dsm_li"><a href="displaying_mathematics.html">displaying mathematics</a></li>
+						<li class="dsm_li"><a href="displaying_code_blocks.html">displaying code blocks</a></li>
+						<li class="dsm_li"><a href="hosting_your_site.html">hosting your site</a></li>
+					</ul>
+				</li>
+		
+				<li class ="dm_li">
+					<a href="../support.html">support</a>
+				</li>
+			
+				<li class ="dm_li">
+					<a href="https://github.com/nifty-site-manager">Github</a>
+				</li>
+				<li></li>
+			</ul>
+		</nav>
+
+		<h3>
+			Available nsm commands
+		</h3>
+		
+		<h4>
+			Listing available nsm commands
+		</h4>
+		
+		<p>
+			To list available nsm commands run <mono>nsm help</mono>. The list will look similar to:
+		
+			<div align="center">
+				<pre class="inline rounded">
+					------------------- available commands -------------------
+					nsm config        | lists config settings
+					nsm init          | initialise managing a site
+					nsm info          | input: page-name-1 .. page-name-k
+					nsm info-all      | lists tracked pages
+					nsm info-names    | lists tracked page names
+					nsm track         | input: page-name (page-title) (template-path)
+					nsm untrack       | input: page-name
+					nsm rm            | input: page-name
+					nsm mv            | input: old-name new-name
+					nsm cp            | input: tracked-name new-name
+					nsm new-title     | input: page-name new-title
+					nsm new-template  | input: page-name template-path
+					nsm build         | input: page-name-1 .. page-name-k
+					nsm build-updated | builds updated pages
+					nsm build-all     | builds all tracked pages 
+					nsm status        | lists updated and problem pages
+					nsm commands      | lists all nsm commands
+					----------------------------------------------------------
+				</pre>
+			</div>
+		</p>
+		
+		
+		
+		<h4>
+			Setting up the stage directory for an nsm managed site
+		</h4>
+		
+		<p>
+			To start managing a site: first change to the directory you would like to act as the site stage, that is the directory containing all site related files (content and template files inclusive); then run <mono>nsm init</mono>. A (hidden) directory <mono>.siteinfo</mono> will be created containing an empty file <mono>pages.list</mono> and config file <mono>nsm.config</mono>.
+		</p>
+		
+		<p>
+			<u>Note:</u> once the stage directory for your site is set up, much the same as with git, nsm may be run from any directory within the stage directory (stage directory inclusive).
+		</p>
+		
+		<h4>
+			Listing updated pages
+		</h4>
+		
+		<p>
+			For information on pages that need building and why run <mono>nsm status</mono>.
+		</p>
+		
+		<h4>
+			Tracking new pages
+		</h4>
+		
+		<p>
+			To track a new page run <mono>nsm track page-name page-title template-path</mono>, where <mono>page-title</mono> and <mono>template-path</mono> are optional (default <mono>page-title</mono> is the specified <mono>page-name</mono>, and default <mono>template-path</mono> is <mono>template/page.template</mono>). Surround any titles and/or paths containg spaces with single or double quotes. If you want both spaces and single/double quotes in your title/path then surround it by double/single quotes. 
+		</p>
+		
+		<p>
+			The following should (hopefully) work as valid titles and paths (though if you are going to use spaces/quotes in titles/paths, test it thoroughly before depending on it working):
+		
+			<div align="center">
+				<pre class="inline rounded">
+					home
+					"home"
+					"home page"
+					"nick's page"
+					'"quoted title"'
+				</pre>
+		
+				<pre class="inline rounded">
+					content/index.content
+					./content/index.content
+					content/'index'.content
+					"content/index.content"
+					'content/index page.content'
+				</pre>
+			</div>
+		</p>
+		
+		<p>
+			<u>Note:</u> tabs and multiple spaces will currently be morphed into single spaces. If the available options for titles/paths are not flexible enough then ask and I can alter how titles/paths are read.
+		</p>
+		
+		<h4>
+			Listing tracked pages
+		</h4>
+		
+		<p>
+			To list information on all pages run <mono>nsm info-all</mono>, for just page names run <mono>nsm info-names</mono>, and for information on specific pages run <mono>nsm info page-name-1 .. page-name-k</mono>.
+		</p>
+		
+		<h4>
+			Untracking pages
+		</h4>
+		
+		<p>
+			To untrack a page run <mono>nsm untrack page-name</mono>. All information about the page is removed from <mono>.siteinfo/pages.list</mono> along with the page file and the page info file. It is up to you whether you want to manually remove any associated content and/or template files.
+		</p>
+		
+		<h4>
+			Moving pages
+		</h4>
+		
+		<p>
+			To move a page run <mono>nsm mv old-page-name new-page-name</mono>. All information about the old-page is removed from <mono>.siteinfo/pages.list</mono> along with the old page file and the old page info file, while information about the new page is added to <mono>.siteinfo/pages.list</mono> and the old content file is moved to the new content path.
+		</p>
+		
+		<h4>
+			Copying pages
+		</h4>
+		
+		<p>
+			To copy a page run <mono>nsm cp tracked-page-name new-page-name</mono>. Information about the new page is added to <mono>.siteinfo/pages.list</mono> and the old content file is copied to the new content path.
+		</p>
+		
+		<h4>
+			Removing pages
+		</h4>
+		
+		<p>
+			To remove a page run <mono>nsm rm page-name</mono>. The only difference to <mono>untrack</mono> is that the content file will also be removed from your system.
+		</p>
+		
+		<h4>
+			Building pages
+		</h4>
+		
+		<p>
+			To build updated pages run <mono>nsm build-updated</mono>, to build all pages run <mono>nsm build-all</mono>, and to build specific pages run <mono>nsm build page-name-1 .. page-name-k</mono>.
+		</p>
+		
+		<h4>
+			Changing a page title or template path
+		</h4>
+		
+		<p>
+			To set a new page title run <mono>nsm new-title page-name new-title</mono> and to set a new template path run <mono>nsm new-template new-template-path</mono>.
+		</p>
+
+		<footer>
+			<hr>
+			Page was last built on Thursday April 23 2015 at 02:59:07 (AEST). <br>
+		
+			<small>&copy;&nbsp;2015 Nicholas Ham</small>
+		</footer>
+
+		<script type='text/javascript' src='../js/process_pre_tags.js'></script>		
+	</body>
+</html>
+
+<!-- information on how to easily make and host a site similar to
+     this may be found at https://n-ham.github.io/nifty-site-manager -->

@@ -1,0 +1,81 @@
+html 
+{
+	/* Size of largest container or bigger */
+	/*min-width: 1080px;*/
+	background: #484848;
+
+	overflow-y: scroll;
+}
+
+body 
+{
+	/* Size of largest container or bigger */
+	/*min-width: 100px !important;*/
+	width: 80%;
+	max-width: 800px !important;
+	margin-bottom: 40px !important;
+	margin: 0 auto; 
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 1px;
+	padding-bottom: 5px;
+	background:#E8E8E8;
+
+	word-wrap:break-word;
+
+	/*-moz-box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.9);
+    -webkit-box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.9);
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.9);*/
+
+	font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+
+	-moz-box-shadow: 3px 3px 5px #202020;
+    -webkit-box-shadow: 3px 3px 5px #202020;
+    box-shadow: 3px 3px 5px #202020;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+}
+
+footer
+{
+	text-align: center;
+	margin-top:20px;
+}
+
+header
+{
+	max-width: 80% !important;
+
+	text-align: center;
+	cursor: default;
+	-webkit-user-select: none; /* Chrome/Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
+	background:#C8C8C8;
+	border-style: solid;
+    border-width: 1px;
+	border-color: #888888;
+
+	font-family: DejaVu Sans Mono, Liberation Mono, Consolas, Ubuntu Mono, Courier New;
+	padding:5px;
+	margin-bottom: 15px;
+	margin-top: 15px;
+	font-size: 160%;
+	color:#484848 !important;
+
+	border-radius: 5px;
+	-moz-box-shadow: 3px 3px 5px #484848;
+    -webkit-box-shadow: 3px 3px 5px #484848;
+    box-shadow: 3px 3px 5px #484848;
+
+	display: table;
+	float:center;
+}
+
+mono
+{
+	font-family: DejaVu Sans Mono, Liberation Mono, Consolas, Ubuntu Mono, Courier New;
+	font-size: 85%;
+	color: #484848;
+}
+
