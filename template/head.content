@@ -5,7 +5,7 @@
 @cssinclude("site/css/pagestyle.css")
 @cssinclude("site/css/dropmenu.css")
 @cssinclude("site/css/pre.css")
-@faviconinclude("site/files/favicon.png")
+@faviconinclude("site/files/favicon.ico")
 
 <!-- uses google-code-prettify for syntax highlighting 
      see https://code.google.com/p/google-code-prettify for more info -->
