@@ -92,7 +92,7 @@
 		</h3>
 		
 		<p>
-			Remember that for each page tracked by nsm there is a specified content and template path. When building a page, nsm will start processing the template file the same as it will process any other file. Consequently everything that applied to writing content files also applies to writing template files. However, unlike content files, template files need to specify both where content and the page title are to be inserted. 
+			Remember that for each page tracked by nsm there is a specified template path. When building a page, nsm will start processing the template file the same as it will process any other file. Consequently everything that applied to writing content files also applies to writing template files. However, unlike content files, template files need to specify both where content and the page title are to be inserted. 
 		</p>
 		
 		<h4>
@@ -100,11 +100,11 @@
 		</h4>
 		
 		<p>
-			Nsm treats any instance of <mono>&commat;inputconent</mono> as being equivalent to <mono>&commat;input(path-to-content)</mono>, where <mono>path-to-content</mono> is the content path being tracked by nsm.
+			Nsm treats any instance of <mono>&commat;inputconent</mono> as being equivalent to <mono>&commat;input(path-to-content)</mono>, where <mono>path-to-content</mono> is the content path for a page.
 		</p>
 		
 		<p>
-			<b>Note:</b> if <mono>&commat;inputcontent</mono> is in any dependency of a page's content file (content file inclusive), then an input loop will be formed when attempting to build the page and nsm will (at least it should) throw an error. You may however put <mono>&commat;inputcontent</mono> in any other dependencies of the template file. For example were your template to include a file <mono>template/body.template</mono>, it is fine for <mono>&commat;inputcontent</mono> to reside in <mono>body.template</mono> and not the main template file.
+			<b>Note:</b> if <mono>&commat;inputcontent</mono> is in any dependency of a page's content file (content file inclusive), then an input loop would be formed when attempting to build the page so nsm will (at least it should) throw an error. You may however put <mono>&commat;inputcontent</mono> in any other dependencies of the template file. For example were your template to include a file <mono>template/body.template</mono>, it is fine for <mono>&commat;inputcontent</mono> to reside in <mono>body.template</mono> and not the main template file.
 		</p>
 		
 		<h4>
@@ -168,7 +168,7 @@
 
 		<footer>
 			<hr>
-			Page was last built on Thursday April 23 2015 at 11:55:23 (AEST). <br>
+			Page was last built on Thursday April 23 2015 at 12:23:34 (AEST). <br>
 		
 			<small>&copy;&nbsp;2015 Nicholas Ham</small>
 		</footer>
