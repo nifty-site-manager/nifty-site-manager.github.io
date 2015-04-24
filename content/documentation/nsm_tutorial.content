@@ -98,7 +98,7 @@
 	</li>
 
 	<li>
-		Enter <mono>nsm status</mono>, then <mono>nsm build-updated</mono>, then <mono>nsm status</mono> (notice nsm can be run from any diretory inside the stage directory (stage directory inclusive, obviously as that is where we started!);
+		Enter <mono>nsm status</mono>, then <mono>nsm build-updated</mono>, then <mono>nsm status</mono> (notice nsm can be run from any directory inside the stage directory (stage directory inclusive, obviously as that is where we started!);
 	</li>
 
 	<li>
