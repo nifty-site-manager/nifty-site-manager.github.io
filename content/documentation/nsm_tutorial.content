@@ -20,7 +20,7 @@
 	</li>
 
 	<li>
-		If you ever forget an nsm command, enter <mono>nsm commands</mono> into your terminal window.
+		If you ever forget an nsm command, enter <mono>nsm commands</mono> into your terminal window;
 	</li>
 
 	<li>
@@ -76,7 +76,7 @@
 			</li>
 
 			<li>
-				Another directory <mono>.siteinfo/site/</mono> should have been created containing the info files <mono>index.info</mono> and <mono>about.info</mono>. By default users do not have permission to write to info files, and users should beware of ever doing so. The modification time of info files is how msn knows when pages were last built, furthermore the content inside info files represents page dependencies from the last time pages were built, <u>not necessarily</u> current page dependencies, hence users should not have any reason to modify them;
+				Another directory <mono>.siteinfo/site/</mono> should have been created containing the info files <mono>index.info</mono> and <mono>about.info</mono>. By default users do not have permission to write to info files, and users should beware of ever doing so. The modification time of info files is how nsm knows when pages were last built, furthermore the content inside info files represents page dependencies from the last time pages were built, <u>not necessarily</u> current page dependencies, hence users should not have any reason to modify them;
 			</li>
 		</ul>
 	</li>
