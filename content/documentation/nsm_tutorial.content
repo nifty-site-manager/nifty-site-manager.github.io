@@ -20,6 +20,10 @@
 	</li>
 
 	<li>
+		If you ever forget an nsm command, enter <mono>nsm commands</mono> into your terminal window.
+	</li>
+
+	<li>
 		Enter <mono>nsm status</mono> into your terminal window;
 	</li>
 
