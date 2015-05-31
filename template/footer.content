@@ -2,5 +2,5 @@
 	<hr>
 	Page was last built on @currentdate at @currenttime (@timezone). <br>
 
-	<small>&copy;&nbsp;2015 Nicholas Ham</small>
+	<small>&copy;&nbsp;2015 <a href="https://n-ham.github.io/">Nicholas Ham</a></small>
 </footer>
