@@ -45,6 +45,14 @@
 			ga('create', 'UA-62165905-1', 'auto');
 			ga('send', 'pageview');
 		</script>
+		
+		<!-- hack redirecting to a secure protocol when users 
+		     visit domain using an insecure protocol -->
+		<script>
+			var host = "nifty-site-manager.github.io";
+			if ((host == window.location.host) && (window.location.protocol != "https:"))
+				window.location.protocol = "https";	
+		</script>
 	</head>
 
 	<body>
@@ -183,7 +191,7 @@
 
 		<footer>
 			<hr>
-			Page was last built on Monday June 01 2015 at 00:52:56 (AEST). <br>
+			Page was last built on Thursday June 25 2015 at 06:48:00 (AEST). <br>
 		
 			<small>&copy;&nbsp;2015 <a href="https://n-ham.github.io/">Nicholas Ham</a></small>
 		</footer>
