@@ -2,7 +2,8 @@ html
 {
 	/* Size of largest container or bigger */
 	/*min-width: 1080px;*/
-	background: #484848;
+	background: #1F1F1F;
+	background-image: url("../files/dark_mosaic.png") !important;
 
 	overflow-y: scroll;
 }
@@ -14,12 +15,13 @@ body
 	width: 80%;
 	max-width: 800px !important;
 	margin-bottom: 40px !important;
+	margin-top: 20px !important;
 	margin: 0 auto; 
 	padding-left: 15px;
 	padding-right: 15px;
 	padding-top: 1px;
 	padding-bottom: 5px;
-	background:#E8E8E8;
+	background:#E0E0E0;
 
 	word-wrap:break-word;
 
@@ -34,6 +36,8 @@ body
     box-shadow: 3px 3px 5px #202020;
 	border-bottom-left-radius: 8px;
 	border-bottom-right-radius: 8px;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
 }
 
 footer
