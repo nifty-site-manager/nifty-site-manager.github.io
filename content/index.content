@@ -59,6 +59,6 @@ Anything that when modified requires a page to be built, including:
 </h4>
 
 <p>
-	Nifty site manager is a command line tool, consequently it is expected that <mono>nsm</mono> will be typed quite frequently. The name was chosen because it is a short descriptive acronym that, when typed on a qwerty keyboard (sorry dvorak fans!), efficiently oscillates between hands whilst involving minimal movement of the fingers. Jet Holloway is credited with the suggestion.
+	Nifty site manager is a command line tool, consequently it is expected that <mono>nsm</mono> will be typed quite frequently. The name was chosen because it is a short descriptive acronym that, when typed on a qwerty keyboard (sorry dvorak fans!), efficiently oscillates between hands whilst involving minimal movement of the fingers.
 </p>
 
