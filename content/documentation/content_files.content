@@ -6,11 +6,11 @@
 	Escaping characters
 </h4>
 <p>
-	Nsm will escape the following characters: \~, \!, \@, \#, \%, \^, \&, \*, \?, \<, \>. Just put <mono>\character-to-escape</mono>, for example to escape tilde use <mono>\\~</mono>.
+	Nsm will escape the following characters: \~, \!, \@, \#, \%, \^, \*, \?, \<, \>. Just put <mono>\character-to-escape</mono>, for example to escape tilde use <mono>\\~</mono>.
 </p>
 
 <p>
-	<u>Note:</u> nsm does not, and will not, escape \$. This is because it conflicts with MathJax escaping \$. If you do not want to use MathJax on your site and want \$ escaped then manually uncomment the relevant code in <mono>PageBuilder.cpp</mono> before compiling and installing nsm.
+	<u>Note:</u> nsm does not, and will not, escape \$ (nor does it escape &). This is because it conflicts with MathJax escaping \$. If you do not want to use MathJax on your site and want \$ escaped then manually uncomment the relevant code in <mono>PageBuilder.cpp</mono> before compiling and installing nsm.
 </p>
 
 <h4>
@@ -32,7 +32,7 @@
 
 	<div align="center">
 		<pre class="inline rounded">
-			Page was last modified on \@currentdate.
+			Page was last built on \@currentdate.
 		</pre>
 	</div>
 </p>
