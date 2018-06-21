@@ -28,7 +28,7 @@
 </p>
 
 <p>
-	For example suppose inside your website directory you have <mono>content/footer.content</mono>:
+	For example suppose inside your website directory you have <mono>template/footer.content</mono>:
 
 	<div align="center">
 		<pre class="inline rounded">
@@ -38,11 +38,11 @@
 </p>
 
 <p>
-	To insert <mono>content.footer.content</mono> into another file write:
+	To insert <mono>template/footer.content</mono> into another file write:
 
 	<div align="center">
 		<pre class="inline rounded">
-			\@input(content/footer.content)
+			\@input(template/footer.content)
 		</pre>
 	</div>
 </p>
