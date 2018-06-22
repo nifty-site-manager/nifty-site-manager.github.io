@@ -39,7 +39,7 @@
 		<!DOCTYPE html>
 		<html>
 			<head>
-				<title>site title - @pagetitle</title>
+				<title>site title - \@pagetitle</title>
 			</head>
 
 			<body>
