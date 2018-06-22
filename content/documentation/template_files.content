@@ -58,15 +58,15 @@
 		<!DOCTYPE html>
 		<html>
 			<head>
-				\@input(content/head.content)
+				\@input(template/head.content)
 			</head>
 
 			<body>
-				\@input(content/menu.content)
+				\@input(template/menu.content)
 
 				\@inputcontent	
 
-				\@input(content/footer.content)
+				\@input(template/footer.content)
 			</body>
 		</html>
 	</pre>
