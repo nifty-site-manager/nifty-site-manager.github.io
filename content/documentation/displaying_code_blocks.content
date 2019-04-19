@@ -6,14 +6,13 @@
 	Syntax Highlighting
 </h4>
 <p>
-	One easy way to have syntax highlighted code blocks on your site is to use <a href=https://code.google.com/p/google-code-prettify/>Google Code Prettify</a>. Repeating information from the <a href="http://google-code-prettify.googlecode.com/svn/trunk/README.html">README</a>, using Google Code Prettify on your site is as simple as adding the following code to the head of each page:
+	One easy way to have syntax highlighted code blocks on your site is to use <a href=https://github.com/google/code-prettify>Google Code Prettify</a>. Using Google Code Prettify on your site is as simple as adding the following code to the head of each page:
 
 	<div align="center">
-		<pre class="prettyprint lang-html inline rounded">
+		<pre class="prettyprint lang-html linenums rounded">
 			<!-- uses google-code-prettify for syntax highlighting 
-				 see https://code.google.com/p/google-code-prettify for more info -->
-			<script type="text/javascript"
-				    src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js">
+				 see https://github.com/google/code-prettify for more info -->
+			<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js">
 			</script>
 		</pre>
 	</div>
@@ -49,6 +48,8 @@
 	</pre>
 </div>
 
+<br>
+
 <div align="center">
 	<pre class="rounded">
 		<int> n;
@@ -67,11 +68,15 @@
 	</pre>
 </div>
 
+<br>
+
 <div align="center">
 	<pre class="prettyprint linenums scroll">
 		@input(./content/cpp/Quoted.cpp)
 	</pre>
 </div>
+
+<br>
 
 <div align="center">
 	<pre class="prettyprint linenums rounded">
@@ -79,6 +84,7 @@
 	</pre>
 </div>
 
+<br>
 
 <div align="center">
 	<pre class="prettyprint linenums rounded">

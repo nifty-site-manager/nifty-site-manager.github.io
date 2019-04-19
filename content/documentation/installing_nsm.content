@@ -49,7 +49,7 @@ Download <a href="https://github.com/nifty-site-manager/nsm/archive/master.zip">
 	For example, if you unzipped <mono>nsm-master</mono> inside your downloads folder, then steps 1-4 are achieved by entering the following into your terminal window:
 
 	<div align="center">
-		<pre class="inline rounded">
+		<pre class="prettyprint lang-bsh inline rounded">
 			cd ~/Downloads/nsm-master
 			make
 			make install
