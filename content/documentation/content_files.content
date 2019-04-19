@@ -10,7 +10,11 @@
 </p>
 
 <p>
-	<u>Note:</u> nsm does not, and will not, escape \$ (nor does it escape &). This is because it conflicts with MathJax escaping \$. If you do not want to use MathJax on your site and want \$ escaped then manually uncomment the relevant code in <mono>PageBuilder.cpp</mono> before compiling and installing nsm.
+	<u>Note:</u> nsm does not, and will not, escape \$. This is because it conflicts with MathJax escaping \$. If you do not want to use MathJax on your site and want \$ escaped then manually uncomment the relevant code in <mono>PageBuilder.cpp</mono> before compiling and installing nsm.
+</p>
+
+<p>
+	I have also stopped nsm from escaping & as it causes problems with some valid javascript code for example (not an issue with .js files, but is an issue for javascript code inside content/template files). You can program your own syntax for escaping & in to nsm if needed. Similarly if javascript code or otherwise is not working, one thing to try is searching for \ in all the content/template files and seeing if something is being escaped inside code, if it is uncomment the relevant escape code from <mono>PageBuilder.cpp</mono> then compile and install nsm again. 
 </p>
 
 <h4>
@@ -60,11 +64,58 @@
 </p>
 
 <p>
-	An example of when users may find this useful is when writing menus for page templates, or adding local links for any template files.
+	An example of when users may find this useful is when writing menus for page templates, or adding local links for any template files. An example of a smaller version of the menu for this site using <mono>@pathto</mono> is below:
+
+	<div align="center">
+		<pre class="prettyprint linenums rounded">
+			<nav>
+				<ul class="drop_menu">
+					<li></li>
+					<li class="dm_li">
+						<a href="\@pathto(index)">home</a>
+					</li>
+
+					<li class ="dm_li">
+						<div class="dm_text">documentation</div>
+						<ul class ="drop_submenu">
+							<li class="dsm_li"><a href="\@pathto(documentation/installing_nsm)">installing nsm</a></li>
+							<li class="dsm_li"><a href="\@pathto(documentation/nsm_tutorial)">nsm tutorial</a></li>
+							<li class="dsm_li"><a href="\@pathto(documentation/nsm_commands)">nsm commands</a></li>
+						</ul>
+					</li>
+
+					<li class ="dm_li">
+						<a href="\@pathto(support)">support</a>
+					</li>
+	
+					<li class ="dm_li">
+						<a href="https://github.com/nifty-site-manager">GitHub</a>
+					</li>
+					<li></li>
+				</ul>
+			</nav>
+		</pre>
+	</div>
 </p>
 
 <p>
 	When using <mono>\@pathto(path-to-page)</mono> or <mono>\@pathtopage(path-to-page)</mono>, nsm will throw an error if the page is not being tracked by nsm. You can solve the non-constant path problem for arbitrary files by using <mono>\@pathtofile(path-to-file)</mono> where <mono>path-to-file</mono> is the path from the main site directory to file $Y$ (where page $Y$ above has been replaced with file $Y$). When building a page, nsm will throw an error if the file does not exit.
+</p>
+
+<p>
+	The footer content file for this site (included in the <mono>template/page.template</mono> file) is given below as an example using <mono>\@pathtofile(path-to-file)</mono>:
+
+	<div align="center">
+		<pre class="prettyprint linenums rounded">
+			<footer>
+				<hr>
+				<center><img src="\@pathtofile(site/files/nsm.png)" width="120"></center>
+				Page was last built on \@currentdate at \@currenttime (\@timezone). <br>
+
+				<small>&copy;&nbsp;2015-\@currentYY <a href="https://n-ham.com/">Nicholas Ham</a></small>
+			</footer>
+		</pre>
+	</div>
 </p>
 
 <h4>
@@ -74,7 +125,7 @@
 	You can include a css file using <mono>\@cssinclude(path-to-css-file)</mono>, where <mono>path-to-css-file</mono> is the path from the main site directory to the css file (<u>not</u> the path from the page to the css file). When building a page, nsm will replace <mono>\@cssinclude(path-to-css-file)</mono> with:
 
 	<div align="center">
-		<pre class="prettyprint lang-js inline rounded">
+		<pre class="prettyprint lang-js rounded inline">
 			<link rel='stylesheet' type='text/css' href='path-from-page-to-css-file'>
 		</pre>
 	</div>
@@ -87,7 +138,7 @@
 	You can include a js file using <mono>\@jsinclude(path-to-js-file)</mono>, where <mono>path-to-js-file</mono> is the path from the main site directory to the js file (<u>not</u> the path from the page to the js file). When building a page, nsm will replace <mono>\@jsinclude(path-to-js-file)</mono> with: 
 
 	<div align="center">
-		<pre class="prettyprint lang-js inline rounded">
+		<pre class="prettyprint lang-js rounded inline">
 			<script src="path-from-page-to-js-file"></script>
 		</pre>
 	</div>
@@ -100,8 +151,20 @@
 	You can include a favicon file using <mono>\@faviconinclude(path-to-favicon-file)</mono>, where <mono>path-to-favicon-file</mono> is the path from the main site directory to the favicon file (<u>not</u> the path from the page to the favicon file). When building a page, nsm will replace <mono>\@faviconinclude(path-to-favicon-file)</mono> with:
 
 	<div align="center">
-		<pre class="prettyprint lang-js inline rounded">
+		<pre class="prettyprint lang-js rounded inline">
 			<link rel='icon' type='image/png' href='path-from-page-to-favicon-file'>
+		</pre>
+	</div>
+</p>
+
+<p>
+	An example of using <mono>\@cssinclude(path-to-css-file)</mono>, <mono>\@jsinclude(path-to-js-file)</mono> and <mono>\@faviconinclude(path-to-favicon-file)</mono> is given below (I typically put these in a <mono>head.content</mono> file located in the <mono>template</mono> directory and included in the <mono>template/page.template</mono> file in between the <mono>\<head>\</head></mono> tags):
+
+	<div align="center">
+		<pre class="prettyprint inline rounded">
+			\@cssinclude("site/css/pagestyle.css")
+			\@jsinclude("site/js/motion.css")
+			\@faviconinclude("site/files/favicon.ico")
 		</pre>
 	</div>
 </p>

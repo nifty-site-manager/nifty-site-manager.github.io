@@ -35,7 +35,7 @@
 </p>
 
 <div align="center">
-	<pre class="inline rounded">
+	<pre class="prettyprint linenums inline rounded">
 		<!DOCTYPE html>
 		<html>
 			<head>
@@ -54,7 +54,7 @@
 </p>
 
 <div align="center">
-	<pre class="inline rounded">
+	<pre class="prettyprint linenums inline rounded">
 		<!DOCTYPE html>
 		<html>
 			<head>

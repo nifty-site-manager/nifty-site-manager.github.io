@@ -1,5 +1,5 @@
 /*
-	see http://google-code-prettify.googlecode.com/svn/trunk/README.html 
+	see https://github.com/google/code-prettify/blob/master/README.md
 	for the prettyprint readme.
 */
 
@@ -37,11 +37,11 @@ pre.inline
 {
 	display: inline-block !important;
 
-	white-space: pre;       /* css-3 */
-	-moz-only-whitespace: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
-	white-space: -pre;      /* Opera 4-6 */
-	white-space: -o-pre;    /* Opera 7 */
-	word-wrap: pre;       /* Internet Explorer 5.5+ */
+	white-space: pre-wrap;       /* css-3 */
+	white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+	white-space: -pre-wrap;      /* Opera 4-6 */
+	white-space: -o-pre-wrap;    /* Opera 7 */
+	word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 
 pre
@@ -81,4 +81,5 @@ pre
     -webkit-box-shadow: 3px 3px 5px #484848;
     box-shadow: 3px 3px 5px #484848;
 }
+
 
