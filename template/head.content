@@ -18,7 +18,7 @@
 </script>
 
 <!-- uses google-code-prettify for syntax highlighting 
-     see https://code.google.com/p/google-code-prettify for more info -->
+     see https://github.com/google/code-prettify/ for more info -->
 <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 
 <!-- uses MathJax CDC for LaTeX support
