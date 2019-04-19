@@ -36,12 +36,12 @@
 
 <div align="center">
 	<pre class="prettyprint linenums lang-cpp rounded">
-		<int> n;
-		<vector> v;
+		int n;
+		vector<int> v;
 
 		<pre>
-			<int> n;
-			<vector> v;
+			int n;
+			vector<int> v;
 
 			for(int i=0; i < n; i++)
 				cout << v[i] << endl;
@@ -56,12 +56,12 @@
 
 <div align="center">
 	<pre class="rounded">
-		<int> n;
-		<vector> v;
+		int n;
+		vector<int> v;
 
 		<pre>
-			<int> n;
-			<vector> v;
+			int n;
+			vector<int> v;
 
 			for(int i=0; i < n; i++)
 				cout << v[i] << endl;
