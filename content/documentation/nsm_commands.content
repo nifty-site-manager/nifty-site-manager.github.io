@@ -48,6 +48,10 @@
 </p>
 
 <p>
+	There is also <mono>nsm init-null (site-name)</mono>, <mono>nsm init-dev (site-name)</mono> and <mono>nsm init-simple (site-name)</mono> where <mono>site-name</mono> is an optional parameter for the name of the site. These additional commands track some pages, add some basic template files and build the basic pages for you.
+</p>
+
+<p>
 	<u>Note:</u> once the stage directory for your site is set up, much the same as with git, nsm may be run from any directory within the stage directory (stage directory inclusive).
 </p>
 
@@ -65,10 +69,6 @@
 
 <p>
 	To track a new page run <mono>nsm track page-name page-title template-path</mono>, where <mono>page-title</mono> and <mono>template-path</mono> are optional (default <mono>page-title</mono> is the specified <mono>page-name</mono>, and default <mono>template-path</mono> is <mono>template/page.template</mono>). Surround any titles and/or paths containg spaces with single or double quotes. If you want both spaces and single/double quotes in your title/path then surround it by double/single quotes. 
-</p>
-
-<p>
-	There is also <mono>nsm init-null (site-name)</mono>, <mono>nsm init-dev (site-name)</mono> and <mono>nsm init-simple (site-name)</mono> where <p>site-name</p> is an optional parameter for the name of the site.
 </p>
 
 <p>
