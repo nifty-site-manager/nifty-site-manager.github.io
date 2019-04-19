@@ -19,7 +19,11 @@
 </p>
 
 <p>
-	See the Google code prettifier <a href=https://google-code-prettify.googlecode.com/svn/trunk/README.html>README</a> for supported languages and other relevant information.
+	Note the examples on this site are using the included pre.css file as well as the script above. 
+</p>
+
+<p>
+	See the Google code prettifier <a href=https://github.com/google/code-prettify/blob/master/README.md>README</a> for supported languages and other relevant information.
 </p>
 
 <p>
