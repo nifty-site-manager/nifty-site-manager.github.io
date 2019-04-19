@@ -108,25 +108,28 @@
 		
 			<div align="center">
 				<pre class="inline rounded">
-					------------------- available commands -------------------
-					nsm commands      | lists all nsm commands
-					nsm config        | lists config settings
-					nsm init          | initialise managing a site
-					nsm status        | lists updated and problem pages
-					nsm info          | input: page-name-1 .. page-name-k
-					nsm info-all      | lists tracked pages
-					nsm info-names    | lists tracked page names
-					nsm track         | input: page-name (page-title) (template-path)
-					nsm untrack       | input: page-name
-					nsm rm            | input: page-name
-					nsm mv            | input: old-name new-name
-					nsm cp            | input: tracked-name new-name
-					nsm build         | input: page-name-1 .. page-name-k
-					nsm build-updated | builds updated pages
-					nsm build-all     | builds all tracked pages 
-					nsm new-title     | input: page-name new-title
-					nsm new-template  | input: page-name template-path
-					----------------------------------------------------------
+					 --------- available commands --------------------------------------
+					| nsm commands      | lists all nsm commands                        |
+					| nsm config        | lists config settings                         |
+					| nsm init          | input: initialise managing a site             |
+					| nsm init-null     | input: (site-name)                            |
+					| nsm init-dev      | input: (site-name)                            |
+					| nsm init-simple   | input: (site-name)                            |
+					| nsm status        | lists updated and problem pages               |
+					| nsm info          | input: page-name-1 .. page-name-k             |
+					| nsm info-all      | lists tracked pages                           |
+					| nsm info-names    | lists tracked page names                      |
+					| nsm track         | input: page-name (page-title) (template-path) |
+					| nsm untrack       | input: page-name                              |
+					| nsm rm            | input: page-name                              |
+					| nsm mv            | input: old-name new-name                      |
+					| nsm cp            | input: tracked-name new-name                  |
+					| nsm build         | input: page-name-1 .. page-name-k             |
+					| nsm build-updated | builds updated pages                          |
+					| nsm build-all     | builds all tracked pages                      |
+					| nsm new-title     | input: page-name new-title                    |
+					| nsm new-template  | input: page-name template-path                |
+					 -------------------------------------------------------------------
 				</pre>
 			</div>
 		</p>
@@ -159,6 +162,10 @@
 		
 		<p>
 			To track a new page run <mono>nsm track page-name page-title template-path</mono>, where <mono>page-title</mono> and <mono>template-path</mono> are optional (default <mono>page-title</mono> is the specified <mono>page-name</mono>, and default <mono>template-path</mono> is <mono>template/page.template</mono>). Surround any titles and/or paths containg spaces with single or double quotes. If you want both spaces and single/double quotes in your title/path then surround it by double/single quotes. 
+		</p>
+		
+		<p>
+			There is also <mono>nsm init-null (site-name)</mono>, <mono>nsm init-dev (site-name)</mono> and <mono>nsm init-simple (site-name)</mono> where <p>site-name</p> is an optional parameter for the name of the site.
 		</p>
 		
 		<p>
@@ -245,12 +252,13 @@
 
 		<footer>
 			<hr>
-			Page was last built on Thursday June 21 2018 at 17:41:20 (AEST). <br>
+			<center><img src="../files/nsm.png" width="120"></center>
+			Page was last built on Friday April 19 2019 at 14:23:31 (AEST). <br>
 		
-			<small>&copy;&nbsp;2015-18 <a href="https://n-ham.github.io/">Nicholas Ham</a></small>
+			<small>&copy;&nbsp;2015-18 <a href="https://n-ham.gitlab.io/">Nicholas Ham</a></small>
 		</footer>
 
-		<script type='text/javascript' src='../js/process_pre_tags.js'></script>		
+		<script src='../js/process_pre_tags.js'></script>		
 	</body>
 </html>
 

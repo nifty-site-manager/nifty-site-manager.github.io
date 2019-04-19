@@ -149,22 +149,32 @@
 		</p>
 		
 		<h4>
-			Paths from pages to other files
+			Paths from pages to other pages/files
 		</h4>
 		
 		<p>
-			It is possible for pages $A$ and $B$ to be located in distinct directories yet input text from the same content file $X$. Consequently if content file $X$ contains a path to another file $Y$, you have the problem that the path from $A$ to $Y$ is not the same as the path from $B$ to $Y$. You can solve this non-constant path problem by using <mono>&commat;pathto(path-to-file)</mono> where <mono>path-to-file</mono> is the path from the main site directory to file $Y$. When building a page, nsm will replace <mono>&commat;pathto(path-to-file)</mono> with the path from the page being built to file $Y$.
+			It is possible for pages $A$ and $B$ to be located in distinct directories yet input text from the same content file $X$. Consequently if content file $X$ contains a path to another page $Y$, you have the problem that the path from $A$ to $Y$ is not the same as the path from $B$ to $Y$. You can solve this non-constant path problem by using <mono>&commat;pathto(path-to-page)</mono> or <mono>&commat;pathtopage(path-to-page)</mono> where <mono>path-to-page</mono> is the path from the main site directory to page $Y$. When building a page, nsm will replace <mono>&commat;pathto(path-to-file)</mono> with the path from the page being built to file $Y$.
 		</p>
 		
 		<p>
 			An example of when users may find this useful is when writing menus for page templates, or adding local links for any template files.
 		</p>
 		
+		<p>
+			When using <mono>&commat;pathto(path-to-page)</mono> or <mono>&commat;pathtopage(path-to-page)</mono>, nsm will throw an error if the page is not being tracked by nsm. You can solve the non-constant path problem for arbitrary files by using <mono>&commat;pathtofile(path-to-file)</mono> where <mono>path-to-file</mono> is the path from the main site directory to file $Y$ (where page $Y$ above has been replaced with file $Y$). When building a page, nsm will throw an error if the file does not exit.
+		</p>
+		
 		<h4>
 			Including css files
 		</h4>
 		<p>
-			You can include a css file using <mono>&commat;cssinclude(path-to-css-file)</mono>, where <mono>path-to-css-file</mono> is the path from the main site directory to the css file (<u>not</u> the path from the page to the css file). When building a page, nsm will replace <mono>&commat;cssinclude(path-to-css-file)</mono> with <mono>&lt;link rel='stylesheet' type='text/css' href='path-from-page-to-css-file'></mono>.
+			You can include a css file using <mono>&commat;cssinclude(path-to-css-file)</mono>, where <mono>path-to-css-file</mono> is the path from the main site directory to the css file (<u>not</u> the path from the page to the css file). When building a page, nsm will replace <mono>&commat;cssinclude(path-to-css-file)</mono> with:
+		
+			<div align="center">
+				<pre class="prettyprint lang-js inline rounded">
+					&lt;link rel='stylesheet' type='text/css' href='path-from-page-to-css-file'>
+				</pre>
+			</div>
 		</p>
 		
 		<h4>
@@ -175,9 +185,7 @@
 		
 			<div align="center">
 				<pre class="prettyprint lang-js inline rounded">
-					&lt;script type="text/javascript" 
-						src="path-from-page-to-js-file">
-					&lt;/script>
+					&lt;script src="path-from-page-to-js-file">&lt;/script>
 				</pre>
 			</div>
 		</p>
@@ -186,17 +194,24 @@
 			Including a favicon file
 		</h4>
 		<p>
-			You can include a favicon file using <mono>&commat;faviconinclude(path-to-favicon-file)</mono>, where <mono>path-to-favicon-file</mono> is the path from the main site directory to the favicon file (<u>not</u> the path from the page to the favicon file). When building a page, nsm will replace <mono>&commat;faviconinclude(path-to-favicon-file)</mono> with <mono>&lt;link rel='icon' type='image/png' href='path-from-page-to-favicon-file'></mono>.
+			You can include a favicon file using <mono>&commat;faviconinclude(path-to-favicon-file)</mono>, where <mono>path-to-favicon-file</mono> is the path from the main site directory to the favicon file (<u>not</u> the path from the page to the favicon file). When building a page, nsm will replace <mono>&commat;faviconinclude(path-to-favicon-file)</mono> with:
+		
+			<div align="center">
+				<pre class="prettyprint lang-js inline rounded">
+					&lt;link rel='icon' type='image/png' href='path-from-page-to-favicon-file'>
+				</pre>
+			</div>
 		</p>
 
 		<footer>
 			<hr>
-			Page was last built on Thursday June 21 2018 at 17:41:20 (AEST). <br>
+			<center><img src="../files/nsm.png" width="120"></center>
+			Page was last built on Friday April 19 2019 at 14:23:31 (AEST). <br>
 		
-			<small>&copy;&nbsp;2015-18 <a href="https://n-ham.github.io/">Nicholas Ham</a></small>
+			<small>&copy;&nbsp;2015-18 <a href="https://n-ham.gitlab.io/">Nicholas Ham</a></small>
 		</footer>
 
-		<script type='text/javascript' src='../js/process_pre_tags.js'></script>		
+		<script src='../js/process_pre_tags.js'></script>		
 	</body>
 </html>
 
