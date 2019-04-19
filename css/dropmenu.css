@@ -112,6 +112,10 @@ ul.drop_menu a
 	-webkit-transition:0.2s;
 	/* ...and now for the proper property */
 	transition:0.2s;
+
+	-webkit-user-select: none; /* Chrome/Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
 }
 
 
