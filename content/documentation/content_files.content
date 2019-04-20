@@ -132,6 +132,28 @@
 </p>
 
 <h4>
+	Including img files
+</h4>
+<p>
+	You can include am image file using <mono>\@imginclude(path-to-img-file)</mono> or <mono>\@imginclude(path-to-img-file, img-width)</mono>, where <mono>path-to-img-file</mono> is the path from the main site directory to the img file (<u>not</u> the path from the page to the img file) and <mono>img-width</mono> is the width you want the image to be. When building a page, nsm will replace <mono>\@imginclude(path-to-img-file)</mono> and <mono>\@imginclude(path-to-img-file, img-width)</mono> with the following:
+
+	<div align="center">
+		<pre class="prettyprint lang-js rounded inline">
+			<img src="path-from-page-to-img-file">
+		</pre>
+	</div>
+
+	<br>
+
+	<div align="center">
+		<pre class="prettyprint lang-js rounded inline">
+			<img src="path-from-page-to-img-file" width="img-width">
+		</pre>
+	</div>
+</p>
+
+
+<h4>
 	Including js files
 </h4>
 <p>

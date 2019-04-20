@@ -226,6 +226,28 @@
 		</p>
 		
 		<h4>
+			Including img files
+		</h4>
+		<p>
+			You can include am image file using <mono>&commat;imginclude(path-to-img-file)</mono> or <mono>&commat;imginclude(path-to-img-file, img-width)</mono>, where <mono>path-to-img-file</mono> is the path from the main site directory to the img file (<u>not</u> the path from the page to the img file) and <mono>img-width</mono> is the width you want the image to be. When building a page, nsm will replace <mono>&commat;imginclude(path-to-img-file)</mono> and <mono>&commat;imginclude(path-to-img-file, img-width)</mono> with the following:
+		
+			<div align="center">
+				<pre class="prettyprint lang-js rounded inline">
+					&lt;img src="path-from-page-to-img-file">
+				</pre>
+			</div>
+		
+			<br>
+		
+			<div align="center">
+				<pre class="prettyprint lang-js rounded inline">
+					&lt;img src="path-from-page-to-img-file" width="img-width">
+				</pre>
+			</div>
+		</p>
+		
+		
+		<h4>
 			Including js files
 		</h4>
 		<p>
@@ -266,7 +288,7 @@
 		<footer>
 			<hr>
 			<center><img src="../files/nsm.png" width="120"></center>
-			Page was last built on Saturday April 20 2019 at 06:40:52 (AEST). <br>
+			Page was last built on Sunday April 21 2019 at 04:02:27 (AEST). <br>
 		
 			<small>&copy;&nbsp;2015-19 <a href="https://n-ham.com/">Nicholas Ham</a></small>
 		</footer>
