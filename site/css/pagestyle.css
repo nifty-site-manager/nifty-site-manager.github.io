@@ -46,6 +46,32 @@ footer
 	margin-top:20px;
 }
 
+a
+{
+	text-decoration:none;
+
+	outline: 0;
+	color:#3e737f;
+
+	transition-property: color;
+	-o-transition:0.8s;
+	-ms-transition:0.8s;
+	-moz-transition:0.8s;
+	-webkit-transition:0.8s;
+	transition:0.8s;
+}
+
+a:hover
+{
+	color:#50abb7;
+
+	-o-transition:0.3s;
+	-ms-transition:0.3s;
+	-moz-transition:0.3s;
+	-webkit-transition:0.3s;
+	transition:0.3s;
+}
+
 header
 {
 	max-width: 80% !important;
