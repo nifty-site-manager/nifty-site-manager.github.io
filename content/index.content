@@ -51,7 +51,7 @@ Anything that when modified requires a page to be built, including:
 </p>
 
 <p>
-	While nsm will not pick up the existence of new content files that are merely added via other content files, in order for this to occur a content file which is already recorded as a page dependency must be modified. Consequentlly nsm will inform the user that any relevant pages require building, and upon the user building updated pages any new content files will also be recorded as page dependencies.
+	While nsm will not pick up the existence of new content files that are merely added via other content files, in order for this to occur a content file which is already recorded as a page dependency must be modified. Consequently nsm will inform the user that any relevant pages require building, and upon the user building updated pages any new content files will also be recorded as page dependencies.
 </p>
 
 <h4>
