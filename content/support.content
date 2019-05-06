@@ -9,3 +9,16 @@
 <p>
 	If you have found a typo or would like to suggest a change to the nsm site then do so through the <a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">nsm site repository</a> on GitHub.
 </p>
+
+<p>
+	If you would like to contribute financially, for example so that people might be able to afford the time it takes to develop more features or fix any bugs that arise, there is a PayPal donation link below:
+
+	<center>	
+		<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+			<input type="hidden" name="cmd" value="_s-xclick" />
+			<input type="hidden" name="hosted_button_id" value="5ZBP4LX8YFBNL" />
+			<input type="image" src="https://www.paypalobjects.com/en_AU/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+			<img alt="" border="0" src="https://www.paypal.com/en_AU/i/scr/pixel.gif" width="1" height="1" />
+		</form>
+	</center>
+</p>
