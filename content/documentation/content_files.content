@@ -28,7 +28,7 @@
 	Inserting text from other files
 </h4>
 <p>
-	Text may be inserted from another file using <mono>\@input(path-to-file)</mono>, where <mono>path-to-file</mono> is the path from the main site directory to the input file.
+	Text may be inserted from another file using <mono>\@input(path-to-file)</mono>, where <mono>path-to-file</mono> is the path from the main site directory to the input file. Note there should be no whitespace surrounding the path inside the brackets.
 </p>
 
 <p>
@@ -60,7 +60,7 @@
 </h4>
 
 <p>
-	It is possible for pages $A$ and $B$ to be located in distinct directories yet input text from the same content file $X$. Consequently if content file $X$ contains a path to another page $Y$, you have the problem that the path from $A$ to $Y$ is not the same as the path from $B$ to $Y$. You can solve this non-constant path problem by using <mono>\@pathto(page-name)</mono> or <mono>\@pathtopage(page-name)</mono> where <mono>page-name</mono> is the page name for $Y$. When building a page, nsm will replace <mono>\@pathto(page-name)</mono> with the path from the page being built to page $Y$.
+	It is possible for pages $A$ and $B$ to be located in distinct directories yet input text from the same content file $X$. Consequently if content file $X$ contains a path to another page $Y$, you have the problem that the path from $A$ to $Y$ is not the same as the path from $B$ to $Y$. You can solve this non-constant path problem by using <mono>\@pathto(page-name)</mono> or <mono>\@pathtopage(page-name)</mono> where <mono>page-name</mono> is the page name for $Y$. When building a page, nsm will replace <mono>\@pathto(page-name)</mono> with the path from the page being built to page $Y$. Note there should be no whitespace surrounding the path inside the brackets.
 </p>
 
 <p>
@@ -99,7 +99,7 @@
 </p>
 
 <p>
-	When using <mono>\@pathto(page-name)</mono> or <mono>\@pathtopage(page-name)</mono>, nsm will throw an error if the page is not being tracked by nsm. You can solve the non-constant path problem for arbitrary files by using <mono>\@pathtofile(path-to-file)</mono> where <mono>path-to-file</mono> is the path from the main site directory to file $Y$ (where page $Y$ above has been replaced with file $Y$). When building a page, nsm will throw an error if the file does not exit.
+	When using <mono>\@pathto(page-name)</mono> or <mono>\@pathtopage(page-name)</mono>, nsm will throw an error if the page is not being tracked by nsm. You can solve the non-constant path problem for arbitrary files by using <mono>\@pathtofile(path-to-file)</mono> where <mono>path-to-file</mono> is the path from the main site directory to file $Y$ (where page $Y$ above has been replaced with file $Y$). When building a page, nsm will throw an error if the file does not exist. Note there should be no whitespace surrounding the path inside the brackets.
 </p>
 
 <p>
@@ -122,7 +122,7 @@
 	Including css files
 </h4>
 <p>
-	You can include a css file using <mono>\@cssinclude(path-to-css-file)</mono>, where <mono>path-to-css-file</mono> is the path from the main site directory to the css file (<u>not</u> the path from the page to the css file). When building a page, nsm will replace <mono>\@cssinclude(path-to-css-file)</mono> with:
+	You can include a css file using <mono>\@cssinclude(path-to-css-file)</mono>, where <mono>path-to-css-file</mono> is the path from the main site directory to the css file (<u>not</u> the path from the page to the css file). Note there should be no whitespace surrounding the path inside the brackets. When building a page, nsm will replace <mono>\@cssinclude(path-to-css-file)</mono> with:
 
 	<div align="center">
 		<pre class="prettyprint lang-js rounded inline">
@@ -135,19 +135,21 @@
 	Including img files
 </h4>
 <p>
-	You can include am image file using <mono>\@imginclude(path-to-img-file)</mono> or <mono>\@imginclude(path-to-img-file, img-width)</mono>, where <mono>path-to-img-file</mono> is the path from the main site directory to the img file (<u>not</u> the path from the page to the img file) and <mono>img-width</mono> is the width you want the image to be. When building a page, nsm will replace <mono>\@imginclude(path-to-img-file)</mono> and <mono>\@imginclude(path-to-img-file, img-width)</mono> with the following:
+	You can include am image file using <mono>\@imginclude(path-to-img-file)</mono>, where <mono>path-to-img-file</mono> is the path from the main site directory to the img file (<u>not</u> the path from the page to the img file). Note there should be no whitespace surrounding the path inside the brackets. When building a page, nsm will replace <mono>\@imginclude(path-to-img-file)</mono> with the following:
 
 	<div align="center">
 		<pre class="prettyprint lang-js rounded inline">
 			<img src="path-from-page-to-img-file">
 		</pre>
 	</div>
+</p>
 
-	<br>
+<p>
+	If you would like to set the width of an image, use something like the following in your source code:
 
 	<div align="center">
 		<pre class="prettyprint lang-js rounded inline">
-			<img src="path-from-page-to-img-file" width="img-width">
+			<img src="\@pathtofile(path-to-img-file)" width="120">
 		</pre>
 	</div>
 </p>
@@ -157,7 +159,7 @@
 	Including js files
 </h4>
 <p>
-	You can include a js file using <mono>\@jsinclude(path-to-js-file)</mono>, where <mono>path-to-js-file</mono> is the path from the main site directory to the js file (<u>not</u> the path from the page to the js file). When building a page, nsm will replace <mono>\@jsinclude(path-to-js-file)</mono> with: 
+	You can include a js file using <mono>\@jsinclude(path-to-js-file)</mono>, where <mono>path-to-js-file</mono> is the path from the main site directory to the js file (<u>not</u> the path from the page to the js file). Note there should be no whitespace surrounding the path inside the brackets. When building a page, nsm will replace <mono>\@jsinclude(path-to-js-file)</mono> with: 
 
 	<div align="center">
 		<pre class="prettyprint lang-js rounded inline">
@@ -170,7 +172,7 @@
 	Including a favicon file
 </h4>
 <p>
-	You can include a favicon file using <mono>\@faviconinclude(path-to-favicon-file)</mono>, where <mono>path-to-favicon-file</mono> is the path from the main site directory to the favicon file (<u>not</u> the path from the page to the favicon file). When building a page, nsm will replace <mono>\@faviconinclude(path-to-favicon-file)</mono> with:
+	You can include a favicon file using <mono>\@faviconinclude(path-to-favicon-file)</mono>, where <mono>path-to-favicon-file</mono> is the path from the main site directory to the favicon file (<u>not</u> the path from the page to the favicon file). Note there should be no whitespace surrounding the path inside the brackets. When building a page, nsm will replace <mono>\@faviconinclude(path-to-favicon-file)</mono> with:
 
 	<div align="center">
 		<pre class="prettyprint lang-js rounded inline">

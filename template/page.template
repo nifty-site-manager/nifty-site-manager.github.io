@@ -13,7 +13,7 @@
 
 		@input(template/footer.content)
 
-		@jsinclude(site/js/process_pre_tags.js )		
+		@jsinclude(site/js/process_pre_tags.js)		
 	</body>
 </html>
 
