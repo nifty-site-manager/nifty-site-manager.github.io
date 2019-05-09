@@ -13,6 +13,7 @@
 		<li><a href="./github_hosting.html">Hosting on GitHub</a>; or</li>
 		<li><a href="./gitlab_hosting.html">Hosting on GitLab</a>.</li>
 	</ol>
+	You can also combine any of the above hosting options with <a href="https://netlify.com">netlify</a>, which works well for custom domains and automatically renews <a href="https://letsencrypt.org/">Let's Encrypt</a> certificates for your site. 
 </p>
 
 <p>
