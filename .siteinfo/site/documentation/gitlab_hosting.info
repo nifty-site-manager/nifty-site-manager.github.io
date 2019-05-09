@@ -1,9 +1,9 @@
 01:07:29 Friday May 10 2019
-documentation/hosting_your_site
-"hosting your site"
+documentation/gitlab_hosting
+gitlab_hosting
 template/page.template
 
-content/documentation/hosting_your_site.content
+content/documentation/gitlab_hosting.content
 template/footer.content
 template/head.content
 template/header.content

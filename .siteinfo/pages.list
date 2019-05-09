@@ -1,3 +1,7 @@
+documentation/bitbucket_hosting
+bitbucket_hosting
+template/page.template
+
 documentation/content_files
 "content files"
 template/page.template
@@ -8,6 +12,14 @@ template/page.template
 
 documentation/displaying_mathematics
 "displaying mathematics"
+template/page.template
+
+documentation/github_hosting
+github_hosting
+template/page.template
+
+documentation/gitlab_hosting
+gitlab_hosting
 template/page.template
 
 documentation/hosting_your_site

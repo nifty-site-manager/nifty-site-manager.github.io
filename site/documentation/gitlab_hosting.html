@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			nsm - gitlab_hosting
+		</title>
+		
+		<link rel='stylesheet' type='text/css' href='../css/pagestyle.css'>
+		<link rel='stylesheet' type='text/css' href='../css/dropmenu.css'>
+		<link rel='stylesheet' type='text/css' href='../css/pre.css'>
+		<link rel='icon' type='image/png' href='../files/favicon.ico'>
+		
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-62165905-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		
+		  gtag('config', 'UA-62165905-1');
+		</script>
+		
+		<!-- uses google-code-prettify for syntax highlighting 
+		     see https://github.com/google/code-prettify/ for more info -->
+		<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+		
+		<!-- uses MathJax CDC for LaTeX support
+		     see http://docs.mathjax.org/en/latest/start.html for more info -->
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config
+			({
+				extensions: ["tex2jax.js"],
+		    	jax: ["input/TeX", "output/HTML-CSS"],
+				tex2jax: 
+				{
+					inlineMath: [['$','$'], ['\\(','\\)']],
+					displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+					processEscapes: true
+				},
+				"HTML-CSS": { availableFonts: ["MathJax TeX"] }
+			});
+		</script>
+		<script type="text/javascript" 
+			    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js">
+		</script>
+		
+		<!-- hack redirecting to a secure protocol when users 
+		     visit domain using an insecure protocol -->
+		<script>
+			var host = "nifty-site-manager.github.io";
+			if ((host == window.location.host) && (window.location.protocol != "https:"))
+				window.location.protocol = "https";	
+		</script>
+	</head>
+
+	<body>
+		<p>
+			<div align="center">
+				<header>nifty site manager</header>
+			</div>
+		</p>
+
+		<nav>
+			<ul class="drop_menu">
+				<li></li>
+				<li class="dm_li">
+					<a href="../index.html">home</a>
+				</li>
+		
+				<li class ="dm_li">
+					<div class="dm_text">documentation</div>
+					<ul class ="drop_submenu">
+						<li class="dsm_li"><a href="installing_nsm.html">installing nsm</a></li>
+						<li class="dsm_li"><a href="nsm_tutorial.html">nsm tutorial</a></li>
+						<li class="dsm_li"><a href="nsm_commands.html">nsm commands</a></li>
+						<li class="dsm_li"><a href="content_files.html">content files</a></li>
+						<li class="dsm_li"><a href="template_files.html">template files</a></li>
+						<li class="dsm_li"><a href="displaying_mathematics.html">displaying mathematics</a></li>
+						<li class="dsm_li"><a href="displaying_code_blocks.html">displaying code blocks</a></li>
+						<li class="dsm_li"><a href="hosting_your_site.html">hosting your site</a></li>
+					</ul>
+				</li>
+		
+				<li class ="dm_li">
+					<a href="../support.html">support</a>
+				</li>
+			
+				<li class ="dm_li">
+					<a href="https://github.com/nifty-site-manager">Github</a>
+				</li>
+				<li></li>
+			</ul>
+		</nav>
+
+		<h3>
+			Free hosting on GitLab
+		</h3>
+		
+		<p>
+			Note if you have any dyanmic pages (eg. are using php) then you will need to use an alternative for hosting.
+		</p>
+		
+		<p>
+			Information on GitLab pages may be found <a href="https://about.gitlab.com/product/pages/">here</a>.
+		</p>
+		
+		<h4>
+			On GitLab with url <mono>https://<i>username</i>.gitlab.io</mono>
+		</h4>
+		
+		<ol>
+			<li>
+				If you do not already have a GitLab account, you can join <a href="https://gitlab.com/users/sign_in">here</a>;
+			</li>
+		
+			<li>
+				If you do not already have Git installed on your computer, you can find installation instructions <a href="https://docs.gitlab.com/ee/gitlab-basics/start-using-git.html">here</a>; <br> 
+		
+				<small><u>Note:</u> If you are new to Git and GitLab, do not confuse yourself about authenticating with GitLab from Git. You can follow the rest of these steps and educate yourself later.</small>
+			</li>
+		
+			<li>
+				Create a new repository called <mono><i>username</i>.gitlab.io</mono>, where <mono><i>username</i></mono> is your GitLab username;
+			</li>
+		
+			<li>
+				Open a terminal window and change to the directory you would like to store your repository in locally;
+			</li>
+		
+			<li>
+				Clone a local copy of your new repository by entering <mono>git clone https://gitlab.com/<i>username</i>/<i>username</i>.gitlab.io.git</mono>;
+			</li>
+		
+			<li>
+				Change into the repository directory by entering <mono>cd <i>username</i>.gitlab.io</mono>;
+			</li>
+		
+			<li>
+				Copy your site files (eg. content and template files, .gitlab-ci.yml and site directory) into the repository directory;
+			</li>
+		
+			<li>
+				Make sure a copy of <a href="https://gitlab.com/nifty-site-manager/simple-site/raw/master/.gitlab-ci.yml">this</a> <mono>.gitlab-ci.yml</mono> file is in the repository directory;
+			</li>
+		
+			<li>
+				Enter the following into your terminal window:
+				<div align="center">
+					<pre class="inline rounded">
+						git status
+						git add .
+						git commit -m "added site files"
+						git push origin master
+					</pre>
+				</div> <br>
+			</li>
+		
+			<li>
+				Your site, with url <mono>https://<i>username</i>.gitlab.io</mono>, should now be hosted and accessible from the internet.
+			</li>
+		</ol>
+			
+		<p>
+			To update your site, just repeat the steps following (and including) copying the site files into the repository directory.
+		</p>
+		
+		<h4>
+			On GitLab with url <mono>https://<i>username</i>.gitlab.io/<i>site-name</i></mono>
+		</h4>
+		
+		<ol>
+			<li>
+				If you do not already have a GitLab account, you can join <a href="https://gitlab.com/users/sign_in">here</a>;
+			</li>
+		
+			<li>
+				If you do not already have Git installed on your computer, you can find installation instructions <a href="https://docs.gitlab.com/ee/gitlab-basics/start-using-git.html">here</a>; <br> 
+		
+				<small><u>Note:</u> If you are new to Git and GitLab, do not confuse yourself about authenticating with GitLab from Git. You can follow the rest of these steps and educate yourself later.</small>
+			</li>
+		
+			<li>
+				Create a new repository called <mono><i>site-name</i></mono>, you may choose any name you like;
+			</li>
+		
+			<li>
+				Open a terminal window and change to the directory you would like to store your repository in locally;
+			</li>
+		
+			<li>
+				Clone a local copy of your new repository by entering <mono>git clone https://gitlab.com/<i>username</i>/<i>site-name</i>.git</mono>, where <mono><i>username</i></mono> is your GitLab username;
+			</li>
+		
+			<li>
+				Change into the repository directory by entering <mono>cd <i>site-name</i></mono>;
+			</li>
+		
+			<li>
+				Copy your site files (eg. content and template files, .gitlab-ci.yml and site directory) into the repository directory;
+			</li>
+		
+			<li>
+				Make sure a copy of <a href="https://gitlab.com/nifty-site-manager/simple-site/raw/master/.gitlab-ci.yml">this</a> <mono>.gitlab-ci.yml</mono> file is in the repository directory;
+			</li>
+		
+			<li>
+				Enter the following into your terminal window:
+				<div align="center">
+					<pre class="inline rounded">
+						git status
+						git add .
+						git commit -m "added site files"
+						git push origin master
+					</pre>
+				</div> <br>
+			</li>
+		
+			<li>
+				Your site, with url <mono>https://<i>username</i>.gitlab.io/<i>site-name</i></mono>, should now be hosted and accessible from the internet.
+			</li>
+		</ol>
+		
+		<p>
+			To update your site, just repeat the steps following (and including) copying the site files into the repository directory.
+		</p>
+
+		<footer>
+			<hr>
+			<center><img src="../files/nsm.png" width="120"></center>
+		
+			<p>
+				<b>Mirrors:</b> [<a href="https://nifty-site-manager.com/">Official</a>] [<a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a>] [<a href="https://nifty-site-manager.github.io/">GitHub</a>] [<a href="https://nifty-site-manager.gitlab.io/">GitLab</a>] [<a href="https://web.archive.org/web/https://www.nifty-site-manager.com/">archive.org</a>]
+			</p>
+		
+			Page was last built on Friday May 10 2019 at 01:07:29 (AEST). <br>
+		
+			<noselect><small>&copy;&nbsp;2015-19 <a href="https://n-ham.com/">Nicholas Ham</a></small></noselect>
+		</footer>
+
+		<script src='../js/process_pre_tags.js'></script>		
+	</body>
+</html>
+
+<!-- 
+	information on how to easily make and host a site similar to
+	this may be found at any of the following mirrors:
+		* https://nifty-site-manager.com/ 
+		* https://nifty-site-manager.bitbucket.io/ 
+		* https://nifty-site-manager.github.io/ 
+		* https://nifty-site-manager.gitlab.io/ 
+		* https://web.archive.org/web/https://www.n-ham.com/
+		* https://web.archive.org/web/20190506140157/https://www.n-ham.com/
+-->
