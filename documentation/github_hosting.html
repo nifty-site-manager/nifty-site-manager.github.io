@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			nsm - github_hosting
+		</title>
+		
+		<link rel='stylesheet' type='text/css' href='../css/pagestyle.css'>
+		<link rel='stylesheet' type='text/css' href='../css/dropmenu.css'>
+		<link rel='stylesheet' type='text/css' href='../css/pre.css'>
+		<link rel='icon' type='image/png' href='../files/favicon.ico'>
+		
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-62165905-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		
+		  gtag('config', 'UA-62165905-1');
+		</script>
+		
+		<!-- uses google-code-prettify for syntax highlighting 
+		     see https://github.com/google/code-prettify/ for more info -->
+		<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+		
+		<!-- uses MathJax CDC for LaTeX support
+		     see http://docs.mathjax.org/en/latest/start.html for more info -->
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config
+			({
+				extensions: ["tex2jax.js"],
+		    	jax: ["input/TeX", "output/HTML-CSS"],
+				tex2jax: 
+				{
+					inlineMath: [['$','$'], ['\\(','\\)']],
+					displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+					processEscapes: true
+				},
+				"HTML-CSS": { availableFonts: ["MathJax TeX"] }
+			});
+		</script>
+		<script type="text/javascript" 
+			    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js">
+		</script>
+		
+		<!-- hack redirecting to a secure protocol when users 
+		     visit domain using an insecure protocol -->
+		<script>
+			var host = "nifty-site-manager.github.io";
+			if ((host == window.location.host) && (window.location.protocol != "https:"))
+				window.location.protocol = "https";	
+		</script>
+	</head>
+
+	<body>
+		<p>
+			<div align="center">
+				<header>nifty site manager</header>
+			</div>
+		</p>
+
+		<nav>
+			<ul class="drop_menu">
+				<li></li>
+				<li class="dm_li">
+					<a href="../index.html">home</a>
+				</li>
+		
+				<li class ="dm_li">
+					<div class="dm_text">documentation</div>
+					<ul class ="drop_submenu">
+						<li class="dsm_li"><a href="installing_nsm.html">installing nsm</a></li>
+						<li class="dsm_li"><a href="nsm_tutorial.html">nsm tutorial</a></li>
+						<li class="dsm_li"><a href="nsm_commands.html">nsm commands</a></li>
+						<li class="dsm_li"><a href="content_files.html">content files</a></li>
+						<li class="dsm_li"><a href="template_files.html">template files</a></li>
+						<li class="dsm_li"><a href="displaying_mathematics.html">displaying mathematics</a></li>
+						<li class="dsm_li"><a href="displaying_code_blocks.html">displaying code blocks</a></li>
+						<li class="dsm_li"><a href="hosting_your_site.html">hosting your site</a></li>
+					</ul>
+				</li>
+		
+				<li class ="dm_li">
+					<a href="../support.html">support</a>
+				</li>
+			
+				<li class ="dm_li">
+					<a href="https://github.com/nifty-site-manager">Github</a>
+				</li>
+				<li></li>
+			</ul>
+		</nav>
+
+		<h3>
+			Free hosting on GitHub
+		</h3>
+		
+		
+		<p>
+			Note if you have any dyanmic pages (eg. are using php) then you will need to use an alternative for hosting.
+		</p>
+		
+		<p>
+			Information on GitHub pages may be found <a href="https://pages.github.com/">here</a>, <a href="https://help.github.com/en/categories/github-pages-basics">here</a> and <a href="https://guides.github.com/features/pages/">here</a>.
+		</p>
+		
+		<h4>
+			Simple GitHub setup
+		</h4>
+			
+		<p>
+			This section has simple instructions for hosting your site for free on GitHub. Further below are more advanced instructions for setting up the stage directory and site directory as branches in the same repository.
+		</p>
+		
+		<h4>
+			On GitHub with url <mono>https://<i>username</i>.github.io</mono>
+		</h4>
+		
+		<ol>
+			<li>
+				If you do not already have a GitHub account, you can join <a href="https://github.com/join">here</a>;
+			</li>
+		
+			<li>
+				If you do not already have Git installed on your computer, you can find installation instructions <a href="https://help.github.com/set-up-git-redirect">here</a>; <br> 
+		
+				<small><u>Note:</u> If you are new to Git and GitHub, do not confuse yourself about authenticating with GitHub from Git. You can follow the rest of these steps and educate yourself later.</small>
+			</li>
+		
+			<li>
+				Create a new repository called <mono><i>username</i>.github.io</mono>, where <mono><i>username</i></mono> is your GitHub username;
+			</li>
+		
+			<li>
+				Open a terminal window and change to the directory you would like to store your repository in locally;
+			</li>
+		
+			<li>
+				Clone a local copy of your new repository by entering <mono>git clone https://github.com/<i>username</i>/<i>username</i>.github.io.git</mono>;
+			</li>
+		
+			<li>
+				Change into the repository directory by entering <mono>cd <i>username</i>.github.io</mono>;
+			</li>
+		
+			<li>
+				Copy your site files (anything inside the site directory, not the whole stage directory) into the repository directory;
+			</li>
+		
+			<li>
+				Enter the following into your terminal window:
+				<div align="center">
+					<pre class="inline rounded">
+						git status
+						git add .
+						git commit -m "added site files"
+						git push origin master
+					</pre>
+				</div> <br>
+			</li>
+		
+			<li>
+				Your site, with url <mono>https://<i>username</i>.github.io</mono>, should now be hosted and accessible from the internet.
+			</li>
+		</ol>
+			
+		<p>
+			To update your site, just repeat the steps following (and including) copying the site files into the repository directory.
+		</p>
+		
+		<h4>
+			On GitHub with url <mono>https://<i>username</i>.github.io/<i>site-name</i></mono>
+		</h4>
+		
+		<ol>
+			<li>
+				If you do not already have a GitHub account, you can join <a href="https://github.com/join">here</a>;
+			</li>
+		
+			<li>
+				If you do not already have Git installed on your computer, you can find installation instructions <a href="https://help.github.com/set-up-git-redirect">here</a>; <br> 
+		
+				<small><u>Note:</u> If you are new to Git and GitHub, do not confuse yourself about authenticating with GitHub from Git. You can follow the rest of these steps and educate yourself later.</small>
+			</li>
+		
+			<li>
+				Create a new repository called <mono><i>site-name</i></mono>, you may choose any name you like;
+			</li>
+		
+			<li>
+				Open a terminal window and change to the directory you would like to store your repository in locally;
+			</li>
+		
+			<li>
+				Clone a local copy of your new repository by entering <mono>git clone https://github.com/<i>username</i>/<i>site-name</i>.git</mono>, where <mono><i>username</i></mono> is your GitHub username;
+			</li>
+		
+			<li>
+				Change into the repository directory by entering <mono>cd <i>site-name</i></mono>;
+			</li>
+		
+			<li>
+				Checkout a new branch called <mono>gh-pages</mono> by entering <mono>git checkout -b gh-pages</mono>;
+			</li>
+		
+			<li>
+				Copy your site files (anything inside the site directory, not the whole stage directory) into the repository directory;
+			</li>
+		
+			<li>
+				Enter the following into your terminal window:
+				<div align="center">
+					<pre class="inline rounded">
+						git status
+						git add .
+						git commit -m "added site files"
+						git push origin gh-pages
+					</pre>
+				</div> <br>
+			</li>
+		
+			<li>
+				Your site, with url <mono>https://<i>username</i>.github.io/<i>site-name</i></mono>, should now be hosted and accessible from the internet.
+			</li>
+		</ol>
+		
+		<p>
+			To update your site, just repeat the steps following (and including) copying the site files into the repository directory.
+		</p>
+		
+		
+		<h4>
+			Advanced GitHub setup
+		</h4>
+		
+		<p>
+			This section has advanced instructions for hosting your site for free on GitHub. We will setup two branches, one for the stage directory and another for the site directory. Locally we will also have the branch for the site directory inside the branch for the stage directory. This is a little confusing at first, but is super useful once it makes sense.
+		</p>
+		
+		<p>
+			I would love to know if someone finds an easier way to achieve the same result.
+		</p>
+		
+		<h4>
+			On GitHub with url <mono>https://<i>username</i>.github.io</mono>
+		</h4>
+		
+		<ol>
+			<li>
+				If you do not already have a GitHub account, you can join <a href="https://github.com/join">here</a>;
+			</li>
+		
+			<li>
+				If you do not already have Git installed on your computer, you can find installation instructions <a href="https://help.github.com/set-up-git-redirect">here</a>; <br> 
+		
+				<small><u>Note:</u> If you are new to Git and GitHub, do not confuse yourself about authenticating with GitHub from Git. You can follow the rest of these steps and educate yourself later.</small>
+			</li>
+		
+			<li>
+				Create a new repository called <mono><i>username</i>.github.io</mono>, where <mono><i>username</i></mono> is your GitHub username;
+			</li>
+		
+			<li>
+				Open a terminal window and change to the directory you would like to store your repository in locally;
+			</li>
+		
+			<li>
+				Clone a local copy of your new repository by entering <mono>git clone https://github.com/<i>username</i>/<i>username</i>.github.io.git</mono>;
+			</li>
+		
+			<li>
+				Change into the repository directory by entering <mono>cd <i>username</i>.github.io</mono>;
+			</li>
+		
+			<li>
+				Checkout a new branch called <mono>stage</mono> by entering <mono>git checkout -b stage</mono>;
+			</li>
+		
+			<li>
+				Copy your stage files (anything inside the stage directory, including the site directory) into the repository directory;
+			</li>
+		
+			<li>
+				Enter the following into your terminal window:
+				<div align="center">
+					<pre class="inline rounded">
+						git status
+						git add .
+						git commit -m "setup stage branch"
+						git push origin stage
+					</pre>
+				</div> <br>
+			</li>
+		
+			<li>
+				Change to the parent of your repository directory by entering <mono>cd ..</mono>
+			</li>
+		
+			<li>
+				Rename your repository directory from <mono><i>username</i>.github.io</mono> to <mono><i>username</i>.github.io-stage</mono>
+			</li>
+		
+			<li>
+				Make a second local clone of your repository by again entering <mono>git clone https://github.com/<i>username</i>/<i>username</i>.github.io.git</mono>; 
+			</li>
+		
+			<li>
+				Change into the second local repository directory by again entering <mono>cd <i>username</i>.github.io</mono>;
+			</li>
+		
+			<li>
+				Checkout an orphan branch called <mono>master</mono> by entering <mono>git checkout --orphan master</mono>;
+			</li>
+		
+			<li>
+				Delete everything inside the second local copy of your repository;
+			</li>
+		
+			<li>
+				Enter <mono>git rm -r .</mono>
+			</li>
+		
+			<li>
+				Enter <mono>git status and ensure you get:</mono>
+				<div align="center">
+					<pre class="inline rounded">
+						On branch master
+		
+						Initial commit
+		
+						nothing to commit (create/copy files and use "git add" to track)
+					</pre>
+				</div><br>
+			</li>
+		
+			<li>
+				Copy the site files (anything inside the site directory, not the stage directory) from the first local copy of your repository (ie. files in <mono><i>username</i>.github.io-stage/site/</mono>) to the second local copy of your repository (ie. place them in <mono><i>username</i>.github.io</mono>, <u>not</u> <mono><i>username</i>.github.io/site/</mono>);
+			</li>
+		
+			<li>
+				Enter the following into your terminal window:
+				<div align="center">
+					<pre class="inline rounded">
+						git status
+						git add .
+						git commit -m "setup master branch"
+						git push origin master
+					</pre>
+				</div> <br>
+		
+				<p>
+					<u>Note:</u> Your site, with url <mono>https://<i>username</i>.github.io</mono>, should now be hosted and accessible from the internet.
+				</p>
+			</li>
+		
+			<li>
+				Change to the parent of your (second) repository directory by entering <mono>cd ..</mono>
+			</li>
+		
+			<li>
+				Rename your second repository directory from <mono><i>username</i>.github.io</mono> to <mono>site</mono>
+			</li>
+		
+			<li>
+				Move your second repository directory, now named <mono>site</mono>, into your first repository directory (replacing the copy of <mono>site</mono> already in the first repository directory);
+			</li>
+		</ol>
+			
+		Now from your local repository, you can manage the site/master branch from inside the site directory, and the stage branch from anywhere else inside the repository. Give it a try, I think you will like it!
+		
+		
+		<h4>
+			On GitHub with url <mono>https://<i>username</i>.github.io/<i>site-name</i></mono>
+		</h4>
+		
+		<ol>
+			<li>
+				If you do not already have a GitHub account, you can join <a href="https://github.com/join">here</a>;
+			</li>
+		
+			<li>
+				If you do not already have Git installed on your computer, you can find installation instructions <a href="https://help.github.com/set-up-git-redirect">here</a>; <br> 
+		
+				<small><u>Note:</u> If you are new to Git and GitHub, do not confuse yourself about authenticating with GitHub from Git. You can follow the rest of these steps and educate yourself later.</small>
+			</li>
+		
+			<li>
+				Create a new repository called <mono><i>site-name</i></mono>, you may choose any name you like;
+			</li>
+		
+			<li>
+				Open a terminal window and change to the directory you would like to store your repository in locally;
+			</li>
+		
+			<li>
+				Clone a local copy of your new repository by entering <mono>git clone https://github.com/<i>username</i>/<i>username</i>/<i>site-name</i>.git</mono>, where <mono><i>username</i></mono> is your GitHub username;
+			</li>
+		
+			<li>
+				Change into the repository directory by entering <mono>cd <i>site-name</i></mono>;
+			</li>
+		
+			<li>
+				Checkout a new branch called <mono>stage</mono> by entering <mono>git checkout -b stage</mono>;
+			</li>
+		
+			<li>
+				Copy your stage files (anything inside the stage directory, including the site directory) into the repository directory;
+			</li>
+		
+			<li>
+				Enter the following into your terminal window:
+				<div align="center">
+					<pre class="inline rounded">
+						git status
+						git add .
+						git commit -m "setup stage branch"
+						git push origin stage
+					</pre>
+				</div> <br>
+			</li>
+		
+			<li>
+				Change to the parent of your repository directory by entering <mono>cd ..</mono>
+			</li>
+		
+			<li>
+				Rename your repository directory from <mono><i>site-name</i></mono> to <mono><i>site-name</i>-stage</mono>;
+			</li>
+		
+			<li>
+				Make a second local clone of your repository by again entering <mono>git clone https://github.com/<i>username</i>/<i>username</i>/<i>site-name</i>.git</mono>; 
+			</li>
+		
+			<li>
+				Change into the second local repository directory by again entering <mono>cd <i>site-name</i></mono>;
+			</li>
+		
+			<li>
+				Checkout an orphan branch called <mono>gh-pages</mono> by entering <mono>git checkout --orphan gh-pages</mono>;
+			</li>
+		
+			<li>
+				Delete everything inside the second local copy of your repository;
+			</li>
+		
+			<li>
+				Enter <mono>git rm -r .</mono>
+			</li>
+		
+			<li>
+				Enter <mono>git status and ensure you get:</mono>
+				<div align="center">
+					<pre class="inline rounded">
+						On branch gh-pages
+		
+						Initial commit
+		
+						nothing to commit (create/copy files and use "git add" to track)
+					</pre>
+				</div><br>
+			</li>
+		
+			<li>
+				Copy the site files (anything inside the site directory, not the stage directory) from the first local copy of your repository (ie. files in <mono><i>site-name</i>-stage/site/</mono>) to the second local copy of your repository (ie. place them in <mono><i>site-name</i></mono>, <u>not</u> <mono><i>site-name</i>/site/</mono>);
+			</li>
+		
+			<li>
+				Enter the following into your terminal window:
+				<div align="center">
+					<pre class="inline rounded">
+						git status
+						git add .
+						git commit -m "setup gh-pages branch"
+						git push origin gh-pages
+					</pre>
+				</div> <br>
+		
+				<p>
+					<u>Note:</u> Your site, with url <mono>https://<i>username</i>.github.io/<i>site-name</i></mono>, should now be hosted and accessible from the internet.
+				</p>
+			</li>
+		
+			<li>
+				Change to the parent of your (second) repository directory by entering <mono>cd ..</mono>
+			</li>
+		
+			<li>
+				Rename your second repository directory from <mono><i>site-name</i></mono> to <mono>site</mono>
+			</li>
+		
+			<li>
+				Move your second repository directory, now named <mono>site</mono>, into your first repository directory (replacing the copy of <mono>site</mono> already in the first repository directory);
+			</li>
+		</ol>
+			
+		Now from your local repository, you can manage the site/master branch from inside the site directory, and the stage branch from anywhere else inside the repository. Give it a try, I think you will like it!
+
+		<footer>
+			<hr>
+			<center><img src="../files/nsm.png" width="120"></center>
+		
+			<p>
+				<b>Mirrors:</b> [<a href="https://nifty-site-manager.com/">Official</a>] [<a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a>] [<a href="https://nifty-site-manager.github.io/">GitHub</a>] [<a href="https://nifty-site-manager.gitlab.io/">GitLab</a>] [<a href="https://web.archive.org/web/https://www.nifty-site-manager.com/">archive.org</a>]
+			</p>
+		
+			Page was last built on Friday May 10 2019 at 01:07:29 (AEST). <br>
+		
+			<noselect><small>&copy;&nbsp;2015-19 <a href="https://n-ham.com/">Nicholas Ham</a></small></noselect>
+		</footer>
+
+		<script src='../js/process_pre_tags.js'></script>		
+	</body>
+</html>
+
+<!-- 
+	information on how to easily make and host a site similar to
+	this may be found at any of the following mirrors:
+		* https://nifty-site-manager.com/ 
+		* https://nifty-site-manager.bitbucket.io/ 
+		* https://nifty-site-manager.github.io/ 
+		* https://nifty-site-manager.gitlab.io/ 
+		* https://web.archive.org/web/https://www.n-ham.com/
+		* https://web.archive.org/web/20190506140157/https://www.n-ham.com/
+-->
