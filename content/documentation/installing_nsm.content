@@ -57,6 +57,10 @@ Download <a href="https://github.com/nifty-site-manager/nsm/archive/master.zip">
 	</div>
 </p>
 
+<p>
+	If you are using linux (this may work on osx but has only really been tested on Ubuntu) you can use <mono>make auto-highlighting</mono> on top of <mono>make install</mono> during step 3 to get <mono>gedit</mono> (do you gedit yet?) to automatically use html syntax highlighting for both <mono>*.content</mono> and <mono>*.template</mono> files. Alternatively you can use <mono>make linux-install</mono> to do both at the same time. In either case remember that you will need to run <mono>make</mono> first to compile the executable <mono>nsm</mono>.
+</p>
+
 <h3>
 	Uninstalling nsm
 </h3>
