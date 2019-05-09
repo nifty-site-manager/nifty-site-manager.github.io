@@ -65,5 +65,5 @@ Download <a href="https://github.com/nifty-site-manager/nsm/archive/master.zip">
 	Uninstalling nsm
 </h3>
 <p>
-	Should you ever want to remove nsm from your machine, simply run <mono>sudo rm -f /usr/local/bin/nsm</mono> from any terminal window.
+	Should you ever want to remove nsm from your machine (aka commit blasphemy), simply run <mono>sudo rm -f /usr/local/bin/nsm</mono> from any terminal window.
 </p>
