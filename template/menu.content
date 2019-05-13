@@ -22,10 +22,6 @@
 		<li class ="dm_li">
 			<a href="@pathto(support)">support</a>
 		</li>
-	
-		<li class ="dm_li">
-			<a href="https://github.com/nifty-site-manager">Github</a>
-		</li>
 		<li></li>
 	</ul>
 </nav>
