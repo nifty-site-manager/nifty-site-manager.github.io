@@ -1,9 +1,9 @@
 17:12:10 Monday May 13 2019
-documentation/installing_nsm
-"installing nsm"
+documentation/linux_install
+linux_install
 template/page.template
 
-content/documentation/installing_nsm.content
+content/documentation/linux_install.content
 template/footer.content
 template/head.content
 template/header.content

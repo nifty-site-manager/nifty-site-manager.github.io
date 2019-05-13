@@ -1,9 +1,9 @@
 17:12:10 Monday May 13 2019
-documentation/installing_nsm
-"installing nsm"
+documentation/windows_install
+windows_install
 template/page.template
 
-content/documentation/installing_nsm.content
+content/documentation/windows_install.content
 template/footer.content
 template/head.content
 template/header.content

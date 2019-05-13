@@ -3,7 +3,7 @@
 </h4>
 
 <p>
-	Nifty site manager is a git-like and $\LaTeX$-like site manager for linux/unix and OSX that tracks modifications to page dependencies.
+	Nifty site manager is a cross-platform git-like and $\LaTeX$-like site manager that tracks modifications to page dependencies.
 </p>
 
 <h4 id="about">What information is tracked for a page?</h4>

@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>
-			nsm - installing nsm
+			nsm - linux_install
 		</title>
 		
 		<link rel='stylesheet' type='text/css' href='../css/pagestyle.css'>
@@ -92,22 +92,60 @@
 			</ul>
 		</nav>
 
-		<h3>
-			Installing <mono>nsm</mono>
-		</h3>
-		Intructions for installing <mono>nsm</mono> on:
+		<h2>Installing nifty-site-manager on linux</h2>
+		
+		<h3>Installing a <mono>c++</mono> compiler</h3>
+		
+		<p>
+			If you do not already have a <mono>c++</mono> compiler then you will need to install one.
+		</p>
+		
+		<p>
+			Use your package manager to install <mono>build-essential</mono>. For example on Ubuntu, run <mono>sudo apt-get install build-essential</mono> from a terminal window. 
+		</p>
+		
+		<h3>Installing <mono>nsm</mono></h3>
+		
+		Download <a href="https://gitlab.com/nifty-site-manager/nsm/repository/master/archive.zip">nsm-master-*.zip</a>, then follow these steps to compile and install:
 		
 		<ol>
 			<li>
-				<a href="./linux_install.html">linux</a>
+				Extract <mono>nsm-master-*</mono> from <mono>nsm-master-*.zip</mono>;
 			</li>
 			<li>
-				<a href="./osx_install.html">osx</a>
+				Open a terminal window and change directory to <mono>nsm-master-*</mono>;
 			</li>
 			<li>
-				<a href="./windows_install.html">windows</a>
+				Compile <mono>nsm</mono> by running <mono>make</mono>;
+			</li>
+			<li>
+				Install <mono>nsm</mono> by running <mono>sudo make linux-install</mono> (note - you will need to enter your password);
+			</li>
+			<li>
+				Delete both the file <mono>nsm-master-*.zip</mono> and the directory <mono>nsm-master-*</mono> containing the uncompiled code. 
 			</li>
 		</ol>
+		
+		<p>
+			For example, if you unzipped <mono>nsm-master-*</mono> inside your downloads folder, then steps 1-4 are achieved by entering the following into your terminal window:
+		
+			<div align="center">
+				<pre class="prettyprint inline rounded lang-bsh">
+					cd ~/Downloads/nsm-master-*
+					make
+					sudo make linux-install
+				</pre>
+			</div>
+		</p>
+		
+		<p>
+			You can use <mono>make linux-gedit-highlighting</mono> on top of <mono>make install</mono> during step 3 to get <mono>gedit</mono> (do you gedit yet?) to automatically use html syntax highlighting for both <mono>*.content</mono> and <mono>*.template</mono> files. Alternatively using <mono>make linux-install</mono> as suggested above does both at the same time. In either case remember that you will need to run <mono>make</mono> first to compile the executable <mono>nsm</mono>.
+		</p>
+		
+		<h3>Uninstalling <mono>nsm</mono></h3>
+		<p>
+			Should you ever want to remove <mono>nsm</mono> from your machine (aka commit blasphemy), simply run <mono>sudo rm -f /usr/local/bin/nsm</mono> from any terminal window.
+		</p>
 
 		<footer>
 			<hr>

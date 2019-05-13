@@ -30,6 +30,10 @@ documentation/installing_nsm
 "installing nsm"
 template/page.template
 
+documentation/linux_install
+linux_install
+template/page.template
+
 documentation/nsm_commands
 "nsm commands"
 template/page.template
@@ -38,8 +42,16 @@ documentation/nsm_tutorial
 "nsm tutorial"
 template/page.template
 
+documentation/osx_install
+osx_install
+template/page.template
+
 documentation/template_files
 "template files"
+template/page.template
+
+documentation/windows_install
+windows_install
 template/page.template
 
 index

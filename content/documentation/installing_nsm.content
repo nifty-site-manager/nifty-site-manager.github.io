@@ -1,69 +1,16 @@
 <h3>
-	Installing a c++ compiler
+	Installing <mono>nsm</mono>
 </h3>
-
-If you do not already have a c++ compiler then you will need to install one.
-
-<ul>
-	<li>
-		<h4>Linux</h4>
-		Use your package manager to install <mono>build-essential</mono>. For example on Ubuntu, run <mono>sudo apt-get install build-essential</mono> from a terminal window. 
-	</li>
-	<li>
-		<h4>Mac OS X</h4>
-		<p>
-			Install <a href="https://itunes.apple.com/au/app/xcode/id497799835?mt=12">Xcode</a>. Should you still encounter any problems compiling nsm there is a good chance <mono>command line tools</mono> was not installed by default. To manually install it yourself: open Xcode, go to <mono>preferences</mono>, click on the <mono>downloads</mono> tab, then you should be able to download and install <mono>command line tools</mono>.
-		</p>
-
-		<p>
-			<u>Note:</u> I would also be curious to know how easy it is for osx users to access hidden files from finder? On Ubuntu for example I can just use <mono>ctrl/cmd h</mono> to toggle between showing/hiding hidden files/directories. 
-		</p>
-	</li>
-</ul>
-
-<h3>
-	Installing nsm
-</h3>
-
-Download <a href="https://github.com/nifty-site-manager/nsm/archive/master.zip">nsm-master.zip</a>, then follow these steps to compile and install:
+Intructions for installing <mono>nsm</mono> on:
 
 <ol>
 	<li>
-		Extract <mono>nsm-master</mono> from <mono>nsm-master.zip</mono>;
+		<a href="./linux_install.html">linux</a>
 	</li>
 	<li>
-		Open a terminal window and change directory to <mono>nsm-master</mono>;
+		<a href="./osx_install.html">osx</a>
 	</li>
 	<li>
-		Compile nsm by running <mono>make</mono>;
-	</li>
-	<li>
-		Install nsm by running <mono>make install</mono> (note - you will need to enter your password);
-	</li>
-	<li>
-		Delete both the file <mono>nsm-master.zip</mono> and the directory <mono>nsm-master</mono> containing the uncompiled code. 
+		<a href="./windows_install.html">windows</a>
 	</li>
 </ol>
-
-<p>
-	For example, if you unzipped <mono>nsm-master</mono> inside your downloads folder, then steps 1-4 are achieved by entering the following into your terminal window:
-
-	<div align="center">
-		<pre class="prettyprint lang-bsh inline rounded">
-			cd ~/Downloads/nsm-master
-			make
-			make install
-		</pre>
-	</div>
-</p>
-
-<p>
-	If you are using linux (this may work on osx but has only really been tested on Ubuntu) you can use <mono>make auto-highlighting</mono> on top of <mono>make install</mono> during step 3 to get <mono>gedit</mono> (do you gedit yet?) to automatically use html syntax highlighting for both <mono>*.content</mono> and <mono>*.template</mono> files. Alternatively you can use <mono>make linux-install</mono> to do both at the same time. In either case remember that you will need to run <mono>make</mono> first to compile the executable <mono>nsm</mono>.
-</p>
-
-<h3>
-	Uninstalling nsm
-</h3>
-<p>
-	Should you ever want to remove nsm from your machine (aka commit blasphemy), simply run <mono>sudo rm -f /usr/local/bin/nsm</mono> from any terminal window.
-</p>
