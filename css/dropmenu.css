@@ -79,6 +79,7 @@ li.dm_li:hover ul.drop_submenu
 	display:block;
 	visibility: visible;
 	opacity: 1.0;
+	z-index: 2;
 
 	-o-transition:0.5s;
 	-ms-transition:0.5s;
