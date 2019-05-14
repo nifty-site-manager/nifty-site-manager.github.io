@@ -1,5 +1,3 @@
 <p>
-	<div align="center">
-		<header>nifty site manager</header>
-	</div>
+	<center><header><img id="logo" src="@pathtofile(site/files/logo.png)" width="250"></header></center>
 </p>
