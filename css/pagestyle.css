@@ -4,6 +4,10 @@ html
 	/*min-width: 1080px;*/
 	background: #1F1F1F;
 	background-image: url("../files/dark_mosaic.png") !important;
+	/*
+		background image from toptal subtle patterns
+		https://www.toptal.com/designers/subtlepatterns/dark-mosaic/
+	*/
 
 	overflow-y: scroll;
 }
