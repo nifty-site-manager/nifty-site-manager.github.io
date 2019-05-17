@@ -20,13 +20,13 @@ Get make from <a href="https://gist.github.com/evanwill/0207876c3243bbb6863e65ec
 		Go to <a href="https://sourceforge.net/projects/ezwinports/">here</a>;
 	</li>
 	<li>
-		download make-<mono>version</mono>-without-guile-w32-bin.zip (get the version without guile)
+		download <mono>make-<i>version</i>-without-guile-w32-bin.zip<mono> (get the version without guile)
 	</li>
 	<li>
 		Extract the contents of the zip file;
 	</li>
 	<li>
-		Copy contents to Git/mingw64.
+		Copy contents to <mono>Git/mingw64</mono>.
 	</li>
 </ol>
 
