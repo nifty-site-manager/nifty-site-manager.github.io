@@ -30,17 +30,6 @@ Get make from <a href="https://gist.github.com/evanwill/0207876c3243bbb6863e65ec
 	</li>
 </ol>
 
-<h3>Update your <mono>PATH</mono> variable</h3>
-You may find you need to update your <mono>PATH</mono> variable, simply:
-<ol>
-	<li>
-		Add a bash file <mono>.bashrc</mono> to <mono>~/ containing PATH=$PATH:C:/Program\ Files\ (x86)/CodeBlocks/MinGW/bin/</mono>;
-	</li>
-	<li>
-		Testart git bash terminal.
-	</li>
-</ol>
-
 <h3>Installing <mono>nsm</mono></h3>
 
 Download <a href="https://gitlab.com/nifty-site-manager/nsm/repository/master/archive.zip">nsm-master-*.zip</a>, then follow these steps to compile and install:
@@ -50,13 +39,13 @@ Download <a href="https://gitlab.com/nifty-site-manager/nsm/repository/master/ar
 		Extract <mono>nsm-master-*</mono> from <mono>nsm-master-*.zip</mono>;
 	</li>
 	<li>
-		Open a <mono>git bash</mono> window (right click the desktop for example) and change directory to <mono>nsm-master-*</mono>;
+		Open a <mono>git bash</mono> window (right click the desktop for example) and change directory to <mono>~/Downloads/nsm-master-*</mono>;
 	</li>
 	<li>
 		Compile <mono>nsm</mono> by running <mono>make</mono>;
 	</li>
 	<li>
-		Move the compiled file <mono>nsm</mono> in to a directory contained in your <mono>PATH</mono> variable, for example I move it into <mono>"C:/Program\ Files\ (x86)/CodeBlocks/MinGW/bin"</mono>;
+		Install <mono>nsm</mono> by running <mono>make windows-install</mono>;
 	</li>
 	<li>
 		Delete both the file <mono>nsm-master-*.zip</mono> and the directory <mono>nsm-master-*</mono> containing the uncompiled code. 
@@ -64,10 +53,26 @@ Download <a href="https://gitlab.com/nifty-site-manager/nsm/repository/master/ar
 </ol>
 
 <p>
+	For example, if you unzipped <mono>nsm-master-*</mono> inside your downloads folder, then steps 1-4 are achieved by entering the following into your terminal window:
+
+	<div align="center">
+		<pre class="prettyprint inline rounded lang-bsh">
+			cd ~/Downloads/nsm-master-*
+			make
+			make windows-install
+		</pre>
+	</div>
+</p>
+
+<p>
 	You should now have a functioning version of <mono>nsm</mono> installed on your Windows machine. 
+</p>
+
+<p>
+	It is fairly straight forward to set <mono>Notepad++</mono> as the default program to open/modify your <mono>*.content</mono> and <mono>*.template</mono> files. Further if you go to <mono>Settings -> Style Configurator...</mono> then select language <mono>HTML</mono> you can add <mono>content template</mono> to the <mono>User Ext:</mono> text box which will then have <mono>Notepad++</mono> automatically use html syntax highlighting for all <mono>*.content</mono> and <mono>*.template</mono> files (pretty nifty!).
 </p>
 
 <h3>Uninstalling <mono>nsm</mono></h3>
 <p>
-	Should you ever want to remove <mono>nsm</mono> from your machine (aka commit blasphemy), simply remove the executable that you placed in a directory covered by your <mono>PATH</mono> variable.
+	Should you ever want to remove <mono>nsm</mono> from your machine (aka commit blasphemy), simply run <mono>sudo rm -f ~/bin/nsm</mono> from any terminal window.
 </p>

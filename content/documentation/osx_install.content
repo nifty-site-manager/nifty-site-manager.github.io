@@ -16,13 +16,13 @@
 		Extract <mono>nsm-master-*</mono> from <mono>nsm-master-*.zip</mono>;
 	</li>
 	<li>
-		Open a terminal window and change directory to <mono>nsm-master-*</mono>;
+		Open a terminal window and change directory to <mono>~/Downloads/nsm-master-*</mono>;
 	</li>
 	<li>
 		Compile <mono>nsm</mono> by running <mono>make</mono>;
 	</li>
 	<li>
-		Install <mono>nsm</mono> by running <mono>sudo make install</mono> (note - you will need to enter your password);
+		Install <mono>nsm</mono> by running <mono>sudo make osx-install</mono> (note - you will need to enter your password);
 	</li>
 	<li>
 		Delete both the file <mono>nsm-master-*.zip</mono> and the directory <mono>nsm-master-*</mono> containing the uncompiled code. 
@@ -36,7 +36,7 @@
 		<pre class="prettyprint inline rounded lang-bsh">
 			cd ~/Downloads/nsm-master-*
 			make
-			sudo make install
+			sudo make osx-install
 		</pre>
 	</div>
 </p>
