@@ -25,7 +25,7 @@ Download <a href="https://gitlab.com/nifty-site-manager/nsm/repository/master/ar
 		Compile <mono>nsm</mono> by running <mono>make</mono>;
 	</li>
 	<li>
-		Install <mono>nsm</mono> by running <mono>sudo make linux-install</mono> (note - you will need to enter your password);
+		Install <mono>nsm</mono> by running <mono>sudo make linux-install</mono> (note - you will need to enter your password) (note - you may need to open a new terminal window for nsm installation to be recognised);
 	</li>
 	<li>
 		Delete both the file <mono>nsm-master-*.zip</mono> and the directory <mono>nsm-master-*</mono> containing the uncompiled code. 
