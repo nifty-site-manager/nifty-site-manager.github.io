@@ -193,7 +193,20 @@
 		</p>
 		
 		<p>
-			I would love to know if someone finds an easier way to achieve the same result.
+			Once you already have a repository set up for this and you want to make a new local clone I typically (I may add a command to nsm to automate the following at some point):
+		</p>
+		
+		<ol>
+			<li>clone the repository from BitBucket;</li>
+			<li>switch to the <mono>master</mono> branch if necessary;</li>
+			<li>rename the directory to <mono>site</mono>;</li>
+			<li>clone the repository from BitBucket again (if the size of your repository is large enough that downloading it twice is slow/tiresome/wasteful then just make a local copy the first time you clone it);</li>
+			<li>switch to the <mono>stage</mono> branch if necessary;</li>
+			<li>remove the copy of the <mono>site</mono> directory from the <mono>stage</mono> directory/branch and move the <mono>site</mono> directory/branch in to the <mono>stage</mono> directory/branch.</li>
+		</ol>
+		
+		<p>
+			I would love to know if someone finds an easier way to achieve the same result below.
 		</p>
 		
 		<h4>
@@ -301,7 +314,7 @@
 						git commit -m "setup master branch"
 						git push origin master
 					</pre>
-				</div> <br>
+				</div>
 		
 				<p>
 					<u>Note:</u> Your site, with url <mono>https://<i>username</i>.bitbucket.io</mono>, should now be hosted and accessible from the internet.
@@ -357,9 +370,9 @@
 				<b>Repos:</b> [<a href="https://bitbucket.org/nifty-site-manager/nsm/src/master/">BitBucket</a>] [<a href="https://github.com/nifty-site-manager/nsm">GitHub</a>] [<a href="https://gitlab.com/nifty-site-manager/nsm">GitLab</a>]
 			</p>
 		
-			Page was last built on Wednesday May 15 2019 at 16:51:33 (AEST) using Linux. <br>
+			Page was last built on Friday May 24 2019 at 12:24:43 (AEST) using Linux. <br>
 		
-			<noselect><small>&copy;&nbsp;2015-19 <a href="https://n-ham.com/">Nicholas Ham</a></small></noselect>
+			<noselect><small>&copy;&nbsp;2015-<script>document.write(new Date().getFullYear()%100)</script> <a href="https://n-ham.com/">Nicholas Ham</a></small></noselect>
 		</footer>
 
 		<script src='../js/process_pre_tags.js'></script>		

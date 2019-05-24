@@ -92,15 +92,15 @@
 		</h3>
 		
 		<p>
-			Remember that for each page tracked by nsm there is a specified template path. When building a page, nsm will start processing the template file the same as it will process any other file. Consequently everything that applied to writing content files also applies to writing template files. However, unlike content files, template files need to specify both where content and the page title are to be inserted. 
+			Remember that for each page tracked by nsm there is a specified template path. When building a page, nsm will start processing the template file the same as it will process any other file. Consequently everything that applied to writing content files also applies to writing template files. However, unlike content files, template files need to specify where content and (optionally) the page title are to be inputted. 
 		</p>
 		
 		<h4>
-			Specifying where content is to be inserted
+			Specifying where content is to be inputted
 		</h4>
 		
 		<p>
-			Nsm treats any instance of <mono>&commat;inputconent</mono> as being equivalent to <mono>&commat;input(path-to-content)</mono>, where <mono>path-to-content</mono> is the content path for a page.
+			Nsm treats any instance of <mono>&commat;inputcontent</mono> as being equivalent to <mono>&commat;input(path-to-content)</mono>, where <mono>path-to-content</mono> is the content path for a page.
 		</p>
 		
 		<p>
@@ -108,11 +108,11 @@
 		</p>
 		
 		<h4>
-			Specifying where the page title is to be inserted
+			Specifying where the page title is to be inputted
 		</h4>
 		
 		<p>
-			When building a page, nsm will replace any instance of <mono>&commat;pagetitle</mono> with the title nsm has tracked for the page. Unlike <mono>&commat;insertcontent</mono>, <mono>&commat;pagetitle</mono> may be placed inside content files (template files inclusive). 
+			When building a page, nsm will replace any instance of <mono>&commat;pagetitle</mono> with the title nsm has tracked for the page. Unlike <mono>&commat;inputcontent</mono>, <mono>&commat;pagetitle</mono> may be placed inside content files (template files inclusive). 
 		</p>
 		
 		<h4>
@@ -120,7 +120,7 @@
 		</h4>
 		
 		<p>
-			A very simple template file, that specifies both where content and the page title are to be inserted, would be:
+			A very simple template file, that specifies both where content and the page title are to be inputted, would be:
 		</p>
 		
 		<div align="center">
@@ -139,7 +139,7 @@
 		</div>
 		
 		<p>
-			It can be convenient to break what would typically be found inside the template file up into various content files. For example you may have <mono>template/head.content</mono>, <mono>template/menu.content</mono> and <mono>template/footer.content</mono>, A suitable template file, say the default <mono>template/page.template</mono> would then be:
+			It can be convenient to break what would typically be found inside the template file up into various content files. For example you may have <mono>template/head.content</mono>, <mono>template/menu.content</mono> and <mono>template/footer.content</mono>. A suitable template file, say the default <mono>template/page.template</mono> would then be:
 		</p>
 		
 		<div align="center">
@@ -179,9 +179,9 @@
 				<b>Repos:</b> [<a href="https://bitbucket.org/nifty-site-manager/nsm/src/master/">BitBucket</a>] [<a href="https://github.com/nifty-site-manager/nsm">GitHub</a>] [<a href="https://gitlab.com/nifty-site-manager/nsm">GitLab</a>]
 			</p>
 		
-			Page was last built on Wednesday May 15 2019 at 16:51:33 (AEST) using Linux. <br>
+			Page was last built on Friday May 24 2019 at 12:24:43 (AEST) using Linux. <br>
 		
-			<noselect><small>&copy;&nbsp;2015-19 <a href="https://n-ham.com/">Nicholas Ham</a></small></noselect>
+			<noselect><small>&copy;&nbsp;2015-<script>document.write(new Date().getFullYear()%100)</script> <a href="https://n-ham.com/">Nicholas Ham</a></small></noselect>
 		</footer>
 
 		<script src='../js/process_pre_tags.js'></script>		
