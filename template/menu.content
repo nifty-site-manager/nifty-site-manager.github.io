@@ -20,6 +20,20 @@
 		</li>
 
 		<li class ="dm_li">
+			<a href="@pathto(merchandise)">merchandise</a>
+		</li>
+
+		<li class ="dm_li">
+			<div class="dm_text">resources</div>
+			<ul class ="drop_submenu">
+				<li class="dsm_li"><a href="@pathto(resources/examples)">example sites</a></li>
+				<li class="dsm_li"><a href="@pathto(resources/links)">useful links</a></li>
+				<li class="dsm_li"><a href="@pathto(resources/project_suggestions)">project suggestions</a></li>
+				<li class="dsm_li"><a href="@pathto(resources/templates)">templates</a></li>
+			</ul>
+		</li>
+
+		<li class ="dm_li">
 			<a href="@pathto(support)">support</a>
 		</li>
 		<li></li>

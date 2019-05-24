@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>
-			nsm - linux_install
+			nsm - examples
 		</title>
 		
 		<link rel='stylesheet' type='text/css' href='../css/pagestyle.css'>
@@ -69,14 +69,14 @@
 				<li class ="dm_li">
 					<div class="dm_text">documentation</div>
 					<ul class ="drop_submenu">
-						<li class="dsm_li"><a href="installing_nsm.html">installing nsm</a></li>
-						<li class="dsm_li"><a href="nsm_tutorial.html">nsm tutorial</a></li>
-						<li class="dsm_li"><a href="nsm_commands.html">nsm commands</a></li>
-						<li class="dsm_li"><a href="content_files.html">content files</a></li>
-						<li class="dsm_li"><a href="template_files.html">template files</a></li>
-						<li class="dsm_li"><a href="displaying_mathematics.html">displaying mathematics</a></li>
-						<li class="dsm_li"><a href="displaying_code_blocks.html">displaying code blocks</a></li>
-						<li class="dsm_li"><a href="hosting_your_site.html">hosting your site</a></li>
+						<li class="dsm_li"><a href="../documentation/installing_nsm.html">installing nsm</a></li>
+						<li class="dsm_li"><a href="../documentation/nsm_tutorial.html">nsm tutorial</a></li>
+						<li class="dsm_li"><a href="../documentation/nsm_commands.html">nsm commands</a></li>
+						<li class="dsm_li"><a href="../documentation/content_files.html">content files</a></li>
+						<li class="dsm_li"><a href="../documentation/template_files.html">template files</a></li>
+						<li class="dsm_li"><a href="../documentation/displaying_mathematics.html">displaying mathematics</a></li>
+						<li class="dsm_li"><a href="../documentation/displaying_code_blocks.html">displaying code blocks</a></li>
+						<li class="dsm_li"><a href="../documentation/hosting_your_site.html">hosting your site</a></li>
 					</ul>
 				</li>
 		
@@ -87,10 +87,10 @@
 				<li class ="dm_li">
 					<div class="dm_text">resources</div>
 					<ul class ="drop_submenu">
-						<li class="dsm_li"><a href="../resources/examples.html">example sites</a></li>
-						<li class="dsm_li"><a href="../resources/links.html">useful links</a></li>
-						<li class="dsm_li"><a href="../resources/project_suggestions.html">project suggestions</a></li>
-						<li class="dsm_li"><a href="../resources/templates.html">templates</a></li>
+						<li class="dsm_li"><a href="examples.html">example sites</a></li>
+						<li class="dsm_li"><a href="links.html">useful links</a></li>
+						<li class="dsm_li"><a href="project_suggestions.html">project suggestions</a></li>
+						<li class="dsm_li"><a href="templates.html">templates</a></li>
 					</ul>
 				</li>
 		
@@ -101,59 +101,18 @@
 			</ul>
 		</nav>
 
-		<h2>Installing nifty-site-manager on linux</h2>
-		
-		<h3>Installing a <mono>c++</mono> compiler</h3>
-		
 		<p>
-			If you do not already have a <mono>c++</mono> compiler then you will need to install one.
+			Below is a list of examples of websites made using nifty-site-manager:
+			<ul>
+				<li><a href="https://nifty-site-manager.com">official nsm site</a></li>
+				<li><a href="https://n-ham.com">developer's personal website</a></li>
+				<li><a href="https://wr3ckreational.com">official wr3ckreational site</a></li>
+				<li><a href="https://ai-bots.net">official ai-bots.net website</a></li>
+			</ul>
 		</p>
 		
 		<p>
-			Use your package manager to install <mono>build-essential</mono>. For example on Ubuntu, run <mono>sudo apt-get install build-essential</mono> from a terminal window. 
-		</p>
-		
-		<h3>Installing <mono>nsm</mono></h3>
-		
-		Download <a href="https://gitlab.com/nifty-site-manager/nsm/repository/master/archive.zip">nsm-master-*.zip</a>, then follow these steps to compile and install:
-		
-		<ol>
-			<li>
-				Extract <mono>nsm-master-*</mono> from <mono>nsm-master-*.zip</mono>;
-			</li>
-			<li>
-				Open a terminal window and change directory to <mono>nsm-master-*</mono>;
-			</li>
-			<li>
-				Compile <mono>nsm</mono> by running <mono>make</mono>;
-			</li>
-			<li>
-				Install <mono>nsm</mono> by running <mono>sudo make linux-install</mono> (note - you will need to enter your password) (note - you may need to open a new terminal window for nsm installation to be recognised);
-			</li>
-			<li>
-				Delete both the file <mono>nsm-master-*.zip</mono> and the directory <mono>nsm-master-*</mono> containing the uncompiled code. 
-			</li>
-		</ol>
-		
-		<p>
-			For example, if you unzipped <mono>nsm-master-*</mono> inside your downloads folder, then steps 1-4 are achieved by entering the following into your terminal window:
-		
-			<div align="center">
-				<pre class="prettyprint inline rounded lang-bsh">
-					cd ~/Downloads/nsm-master-*
-					make
-					sudo make linux-install
-				</pre>
-			</div>
-		</p>
-		
-		<p>
-			You can use <mono>make linux-gedit-highlighting</mono> on top of <mono>make install</mono> during step 3 to get <mono>gedit</mono> (do you gedit yet?) to automatically use html syntax highlighting for both <mono>*.content</mono> and <mono>*.template</mono> files. Alternatively using <mono>make linux-install</mono> as suggested above does both at the same time. In either case remember that you will need to run <mono>make</mono> first to compile the executable <mono>nsm</mono>.
-		</p>
-		
-		<h3>Uninstalling <mono>nsm</mono></h3>
-		<p>
-			Should you ever want to remove <mono>nsm</mono> from your machine (aka commit blasphemy), simply run <mono>sudo rm -f /usr/local/bin/nsm</mono> from any terminal window.
+			If you would like to have your own sites made using nsm added to the above list, email <mono>contact@nifty-site-manager.com</mono>.
 		</p>
 
 		<footer>

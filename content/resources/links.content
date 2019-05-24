@@ -1,0 +1,51 @@
+<h4>Hiring Linux Servers (dynamic websites)</h4>
+<ul>
+	<li><a href="https://buyvm.net/">BuyVM</a></li>
+	<li><a href="https://joesdatacenter.com/">Joe's Datacenter</a></li>
+	<li><a href="https://www.linode.com/">Linode</a></li>
+</ul>
+See also:
+<ul>
+	<li><a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)">Lamp Stack</a> (<a href="https://www.linode.com/docs/web-servers/lamp/install-lamp-stack-on-ubuntu-18-04/">Installing a LAMP stack on Ubuntu 18.04</a>)</li>
+	<li><a href="https://www.nginx.com/">NGiNX</a></li>
+</ul>
+
+<h4>Hosting options (static websites)</h4>
+<ul>
+	<li><a href="https://bitbucket.org">BitBucket</a></li>
+	<li><a href="https://github.com">GitHub</a></li>
+	<li><a href="https://gitlab.com">GitLab</a></li>
+	<li><a href="https://netlify.com">Netlify</a></li>
+</ul>
+
+<h4>Custom doman registrars</h4>
+<ul>
+	<li><a href="https://www.bluehost.com">BlueHost</a></li>
+	<li><a href="https://godaddy.com/">GoDaddy</a></li>
+	<li><a href="https://www.hostgator.com">HostGator</a></li>
+	<li><a href="https://www.namecheap.com/">NameCheap (you can buy for up to 10 years using namecheap, and have auto renewal from paypal funds)</a></li>
+</ul>
+
+<h4>Email Options</h4>
+The following options can often be used to set up mail forwarding from custom domains to something like AOL/Gmail/Outlook/ProtonMail/Tutanota/Yahoo/Yandex/Zoho (note you can easily set up to send emails from custom domains using Gmail):
+<ul>
+	<li><a href="https://www.mailgun.com">MailGun</a></li>
+	<li><a href="https://sendgrid.com">SendGrid</a></li>
+	<li><a href="https://sendpulse.com">SendPulse</a></li>
+</ul>
+
+<h4>Useful links</h4>
+<ul>
+	<li><a href="https://www.w3schools.com/">w3schools</a> - for learning web technologies online</li>
+	<li><a href="https://jsfiddle.net/">JSFiddle</a> - useful for small online examples, often used with question/answer sites or examples on websites</li>
+	<li><a href="https://ocw.mit.edu/index.htm">MIT OpenCourseWare (OCW)</a>;</li>
+	<li><a href="https://archive.org/">Internet Archive</a></li>
+	<li><a href="https://pastebin.com/">Paste Bin</a> - a paste tool for text and code</li>
+	<li><a href="https://stackoverflow.com/">Stack Overflow</a> - question based</li>
+	<li><a href="https://reddit.com/r/webdev/">Reddit's WebDev Subreddit</a> - question/discussion based</li>
+	<li><a href="https://reddit.com/r/web_design/">Reddit's Web Design Subreddit</a> - question/discussion based</li>
+	<li><a href="https://logojoy.com">Logo Joy</a> - useful for purchasing logos</li>
+	<li><a href="https://teemill.com">TeeMill</a> - sell merchandising online</li>
+	<li><a href="https://www.teepublic.com/">TeePublic</a> - sell merchandising online</li>
+	<li><a href="https://www.redbubble.com/">RedBubble</a> - sell merchandising online</li>
+</ul>

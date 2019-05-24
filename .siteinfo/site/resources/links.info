@@ -1,9 +1,9 @@
 00:08:59 Saturday May 25 2019
-documentation/installing_nsm
-"installing nsm"
+resources/links
+links
 template/page.template
 
-content/documentation/installing_nsm.content
+content/resources/links.content
 template/footer.content
 template/head.content
 template/header.content
