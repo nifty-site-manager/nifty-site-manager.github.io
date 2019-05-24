@@ -14,7 +14,7 @@
 </p>
 
 <p>
-	I have also stopped nsm from escaping & as it causes problems with some valid javascript code for example (not an issue with .js files, but is an issue for javascript code inside content/template files). You can program your own syntax for escaping & in to nsm if needed. Similarly if javascript code or otherwise is not working, one thing to try is searching for \ in all the content/template files and seeing if something is being escaped inside code, if it is uncomment the relevant escape code from <mono>PageBuilder.cpp</mono> then compile and install nsm again. 
+	I have also stopped nsm from escaping & as it causes problems with some valid javascript code for example (not an issue with .js files, but is an issue for javascript code inside content/template files). You can program your own syntax for escaping & in to nsm if needed. Similarly if javascript code or otherwise is not working, one thing to try is searching for \ in all the content/template files and seeing if something is being escaped inside code, if it is comment the relevant escape code from <mono>PageBuilder.cpp</mono> then compile and install nsm again. 
 </p>
 
 <h4>
