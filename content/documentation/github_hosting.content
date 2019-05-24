@@ -145,7 +145,20 @@
 </p>
 
 <p>
-	I would love to know if someone finds an easier way to achieve the same result.
+	Once you already have a repository set up for this and you want to make a new local clone I typically (I may add a command to nsm to automate the following at some point):
+</p>
+
+<ol>
+	<li>clone the repository from GitHub;</li>
+	<li>switch to the <mono>master/gh-pages</mono> branch if necessary;</li>
+	<li>rename the directory to <mono>site</mono>;</li>
+	<li>clone the repository from GitHub again (if the size of your repository is large enough that downloading it twice is slow/tiresome/wasteful then just make a local copy the first time you clone it);</li>
+	<li>switch to the <mono>stage</mono> branch if necessary;</li>
+	<li>remove the copy of the <mono>site</mono> directory from the <mono>stage</mono> directory/branch and move the <mono>site</mono> directory/branch in to the <mono>stage</mono> directory/branch.</li>
+</ol>
+
+<p>
+	I would love to know if someone finds an easier way to achieve the same result below.
 </p>
 
 <h4>
@@ -253,7 +266,7 @@
 				git commit -m "setup master branch"
 				git push origin master
 			</pre>
-		</div> <br>
+		</div> 
 
 		<p>
 			<u>Note:</u> Your site, with url <mono>https://<i>username</i>.github.io</mono>, should now be hosted and accessible from the internet.
@@ -381,7 +394,7 @@ Now from your local repository, you can manage the site/master branch from insid
 				git commit -m "setup gh-pages branch"
 				git push origin gh-pages
 			</pre>
-		</div> <br>
+		</div>
 
 		<p>
 			<u>Note:</u> Your site, with url <mono>https://<i>username</i>.github.io/<i>site-name</i></mono>, should now be hosted and accessible from the internet.
@@ -401,4 +414,4 @@ Now from your local repository, you can manage the site/master branch from insid
 	</li>
 </ol>
 	
-Now from your local repository, you can manage the site/master branch from inside the site directory, and the stage branch from anywhere else inside the repository. Give it a try, I think you will like it!
+Now from your local repository, you can manage the site/gh-pages branch from inside the site directory, and the stage branch from anywhere else inside the repository. Give it a try, I think you will like it!

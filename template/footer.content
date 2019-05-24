@@ -13,5 +13,5 @@
 
 	Page was last built on @currentdate at @currenttime (@timezone) using @currentOS. <br>
 
-	<noselect><small>&copy;&nbsp;2015-@currentYY <a href="https://n-ham.com/">Nicholas Ham</a></small></noselect>
+	<noselect><small>&copy;&nbsp;2015-@loadYY <a href="https://n-ham.com/">Nicholas Ham</a></small></noselect>
 </footer>

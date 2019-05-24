@@ -28,22 +28,29 @@
 	Inserting OS information
 </h4>
 <p>
-	You can use <mono>\@currentOS</mono> to add whether you are using nsm on Linux, Macintosh or Windows. 
+	You can use <mono>\@buildOS</mono> to add whether a page was built using nsm on Linux, Macintosh or Windows (<mono>\@currentOS</mono> will continue to do the same for backwards compatibility purposes). 
 </p>
 
 <h4>
 	Inserting date, time and timezone information
 </h4>
 <p>
-	The date and time that a page was built may be inserted using <mono>\@currentdate</mono> and <mono>\@currenttime</mono>. The timezone this date and time information is associated with may also be inserted using <mono>\@timezone</mono>.
+	The date and time that a page was built may be inserted using <mono>\@builddate</mono> and <mono>\@buildtime</mono> (<mono>\@currentdate</mono> and <mono>\@currenttime</mono> will continue to do the same for backwards compatibility purposes). The timezone this date and time information is associated with may also be inserted using <mono>\@buildtimezone</mono> (<mono>\@timezone</mono> will continue to do the same for backwards compatibility purposes).
+</p>
 
-	Also available are <mono>\@currentUTCtime</mono>, <mono>\@currentUTCdate</mono>,  <mono>\@currentYYYY</mono>,  <mono>\@currentYY</mono> and <mono>\@currentYYYY</mono>.
+<p>
+	The date and time that a page was loaded may be inserted using <mono>\@loaddate</mono> and <mono>\@loadtime</mono>. The timezone this date and time information is associated with (ie. where the user is browsing the internet from) may also be inserted using <mono>\@loadtimezone</mono>.
+</p>
+
+<p>
+	Also available are <mono>\@buildUTCtime</mono>, <mono>\@buildUTCdate</mono>, <mono>\@buildYY</mono> and <mono>\@buildYYYY</mono> (with <mono>\@currentUTCtime</mono>, <mono>\@currentUTCdate</mono>, <mono>\@currentYY</mono> and <mono>\@currentYYYY</mono> doing the same for backwards compatibility purposes), along with <mono>\@loadUTCtime</mono>, <mono>\@loadUTCdate</mono>, <mono>\@loadYY</mono> and <mono>\@loadYYYY</mono>.
+</p>
 
 <h4>
 	Inserting text from other files
 </h4>
 <p>
-	Text may be inserted from another file using <mono>\@input(path-to-file)</mono>, where <mono>path-to-file</mono> is the path from the main site directory to the input file. Note there should be no whitespace surrounding the path inside the brackets.
+	Text may be inserted from another file using <mono>\@input(path-to-file)</mono>, where <mono>path-to-file</mono> is the path from the main site directory to the input file.
 </p>
 
 <p>
@@ -75,7 +82,7 @@
 </h4>
 
 <p>
-	It is possible for pages $A$ and $B$ to be located in distinct directories yet input text from the same content file $X$. Consequently if content file $X$ contains a path to another page $Y$, you have the problem that the path from $A$ to $Y$ is not the same as the path from $B$ to $Y$. You can solve this non-constant path problem by using <mono>\@pathto(page-name)</mono> or <mono>\@pathtopage(page-name)</mono> where <mono>page-name</mono> is the page name for $Y$. When building a page, nsm will replace <mono>\@pathto(page-name)</mono> with the path from the page being built to page $Y$. Note there should be no whitespace surrounding the path inside the brackets.
+	It is possible for pages $A$ and $B$ to be located in distinct directories yet input text from the same content file $X$. Consequently if content file $X$ contains a path to another page $Y$, you have the problem that the path from $A$ to $Y$ is not the same as the path from $B$ to $Y$. You can solve this non-constant path problem by using <mono>\@pathto(page-name)</mono> or <mono>\@pathtopage(page-name)</mono> where <mono>page-name</mono> is the page name for $Y$. When building a page, nsm will replace <mono>\@pathto(page-name)</mono> with the path from the page being built to page $Y$.
 </p>
 
 <p>
@@ -110,20 +117,30 @@
 </p>
 
 <p>
-	When using <mono>\@pathto(page-name)</mono> or <mono>\@pathtopage(page-name)</mono>, nsm will throw an error if the page is not being tracked by nsm. You can solve the non-constant path problem for arbitrary files by using <mono>\@pathtofile(path-to-file)</mono> where <mono>path-to-file</mono> is the path from the main site directory to file $Y$ (where page $Y$ above has been replaced with file $Y$). When building a page, nsm will throw an error if the file does not exist. Note there should be no whitespace surrounding the path inside the brackets.
+	When using <mono>\@pathto(page-name)</mono> or <mono>\@pathtopage(page-name)</mono>, nsm will throw an error if the page is not being tracked by nsm. You can solve the non-constant path problem for arbitrary files by using <mono>\@pathtofile(path-to-file)</mono> where <mono>path-to-file</mono> is the path from the main site directory to file $Y$ (where page $Y$ above has been replaced with file $Y$). When building a page, nsm will throw an error if the file does not exist. 
 </p>
 
 <p>
-	The footer content file for this site (included in the <mono>template/page.template</mono> file) is given below as an example using <mono>\@pathtofile(path-to-file)</mono>:
+	The footer content file for this site (inputted in the <mono>template/page.template</mono> file) is given below as an example using <mono>\@pathtofile(path-to-file)</mono>:
 
 	<div align="center">
 		<pre class="prettyprint linenums rounded">
 			<footer>
 				<hr>
 				<center><img src="\@pathtofile(site/files/nsm.png)" width="120"></center>
-				Page was last built on \@currentdate at \@currenttime (\@timezone). <br>
+				<!-- Signature purchased from logojoy.com -->
 
-				<small>&copy;&nbsp;2015-\@currentYY <a href="https://n-ham.com/">Nicholas Ham</a></small>
+				<p>
+					<b>Mirrors:</b> [<a href="https://nifty-site-manager.com/">Official</a>] [<a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a>] [<a href="https://nifty-site-manager.github.io/">GitHub</a>] [<a href="https://nifty-site-manager.gitlab.io/">GitLab</a>] [<a href="https://web.archive.org/web/https://www.nifty-site-manager.com/">archive.org</a>]
+				</p>
+
+				<p>
+					<b>Repos:</b> [<a href="https://bitbucket.org/nifty-site-manager/nsm/src/master/">BitBucket</a>] [<a href="https://github.com/nifty-site-manager/nsm">GitHub</a>] [<a href="https://gitlab.com/nifty-site-manager/nsm">GitLab</a>]
+				</p>
+
+				Page was last built on \@currentdate at \@currenttime (\@timezone) using \@currentOS. <br>
+
+				<noselect><small>&copy;&nbsp;2015-\@loadYY <a href="https://n-ham.com/">Nicholas Ham</a></small></noselect>
 			</footer>
 		</pre>
 	</div>
@@ -133,7 +150,7 @@
 	Including css files
 </h4>
 <p>
-	You can include a css file using <mono>\@cssinclude(path-to-css-file)</mono>, where <mono>path-to-css-file</mono> is the path from the main site directory to the css file (<u>not</u> the path from the page to the css file). Note there should be no whitespace surrounding the path inside the brackets. When building a page, nsm will replace <mono>\@cssinclude(path-to-css-file)</mono> with:
+	You can include a css file using <mono>\@cssinclude(path-to-css-file)</mono>, where <mono>path-to-css-file</mono> is the path from the main site directory to the css file (<u>not</u> the path from the page to the css file). When building a page, nsm will replace <mono>\@cssinclude(path-to-css-file)</mono> with:
 
 	<div align="center">
 		<pre class="prettyprint lang-js rounded inline">
@@ -146,7 +163,7 @@
 	Including img files
 </h4>
 <p>
-	You can include am image file using <mono>\@imginclude(path-to-img-file)</mono>, where <mono>path-to-img-file</mono> is the path from the main site directory to the img file (<u>not</u> the path from the page to the img file). Note there should be no whitespace surrounding the path inside the brackets. When building a page, nsm will replace <mono>\@imginclude(path-to-img-file)</mono> with the following:
+	You can include am image file using <mono>\@imginclude(path-to-img-file)</mono>, where <mono>path-to-img-file</mono> is the path from the main site directory to the img file (<u>not</u> the path from the page to the img file). When building a page, nsm will replace <mono>\@imginclude(path-to-img-file)</mono> with the following:
 
 	<div align="center">
 		<pre class="prettyprint lang-js rounded inline">
@@ -170,7 +187,7 @@
 	Including js files
 </h4>
 <p>
-	You can include a js file using <mono>\@jsinclude(path-to-js-file)</mono>, where <mono>path-to-js-file</mono> is the path from the main site directory to the js file (<u>not</u> the path from the page to the js file). Note there should be no whitespace surrounding the path inside the brackets. When building a page, nsm will replace <mono>\@jsinclude(path-to-js-file)</mono> with: 
+	You can include a js file using <mono>\@jsinclude(path-to-js-file)</mono>, where <mono>path-to-js-file</mono> is the path from the main site directory to the js file (<u>not</u> the path from the page to the js file). When building a page, nsm will replace <mono>\@jsinclude(path-to-js-file)</mono> with: 
 
 	<div align="center">
 		<pre class="prettyprint lang-js rounded inline">
@@ -183,7 +200,7 @@
 	Including a favicon file
 </h4>
 <p>
-	You can include a favicon file using <mono>\@faviconinclude(path-to-favicon-file)</mono>, where <mono>path-to-favicon-file</mono> is the path from the main site directory to the favicon file (<u>not</u> the path from the page to the favicon file). Note there should be no whitespace surrounding the path inside the brackets. When building a page, nsm will replace <mono>\@faviconinclude(path-to-favicon-file)</mono> with:
+	You can include a favicon file using <mono>\@faviconinclude(path-to-favicon-file)</mono>, where <mono>path-to-favicon-file</mono> is the path from the main site directory to the favicon file (<u>not</u> the path from the page to the favicon file). When building a page, nsm will replace <mono>\@faviconinclude(path-to-favicon-file)</mono> with:
 
 	<div align="center">
 		<pre class="prettyprint lang-js rounded inline">
