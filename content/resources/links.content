@@ -16,7 +16,7 @@
 </ul>
 
 <h4>Email Options</h4>
-The following options can often be used to set up mail forwarding from custom domains to something like AOL/Gmail/Outlook/ProtonMail/Tutanota/Yahoo/Yandex/Zoho (note you can easily set up to send emails from custom domains using Gmail):
+The following options can often be used to set up mail forwarding from custom domains to something like AOL/Gmail/Outlook/ProtonMail/Tutanota/Yahoo/Yandex/Zoho (note you can easily set up to send emails from custom domains using Gmail, or you can set up your own mail server on a hired server, see options further below):
 <ul>
 	<li><a href="https://www.mailgun.com">MailGun</a></li>
 	<li><a href="https://sendgrid.com">SendGrid</a></li>
@@ -39,6 +39,17 @@ See also:
 <ul>
 	<li><a href="https://www.staticgen.com/">StaticGen</a> - a list of static site generators for JAMstack sites</li>
 	<li><a href="https://gitlab.com/pages">Example sites on GitLab Pages</a> - simple example websites for site generators on GitLab</li>
+</ul>
+
+<h4>Cloud Storage</h4>
+<ul>
+	<li><a href="https://degoo.com/">Degoo</a></li>
+	<li><a href="https://www.dropbox.com/">Dropbox</a></li>
+	<li><a href="https://www.google.com/drive/">Google Drive</a></li>
+	<li><a href="https://pcloud.com/">pCloud</a></li>
+	<li><a href="https://rclone.org/">Rclone</a></li>
+	<li><a href="https://disk.yandex.com/">Yandex Disk</a></li>
+	<li><a href="https://www.zoolz.com/cloud">Zoolz</a></li>
 </ul>
 
 <h4>Useful links</h4>

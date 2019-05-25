@@ -27,9 +27,9 @@
 			<div class="dm_text">resources</div>
 			<ul class ="drop_submenu">
 				<li class="dsm_li"><a href="@pathto(resources/examples)">example sites</a></li>
-				<li class="dsm_li"><a href="@pathto(resources/links)">useful links</a></li>
 				<li class="dsm_li"><a href="@pathto(resources/project_suggestions)">project suggestions</a></li>
 				<li class="dsm_li"><a href="@pathto(resources/templates)">templates</a></li>
+				<li class="dsm_li"><a href="@pathto(resources/links)">useful links</a></li>
 			</ul>
 		</li>
 
