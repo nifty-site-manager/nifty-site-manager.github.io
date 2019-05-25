@@ -17,6 +17,7 @@
 		<li>Figure out all the different ways you can think of to compare nsm to other site managers, including writing programs to compare site managers if that is within your skillset, all feedback here is welcome at <mono>testing@nifty-site-manager.com</mono>;</li>
 		<li>Try tinkering with the source code for nsm, see if you can come up with any features you would like and try implementing them, or see if you can understand different functions throughout the codebase, and maybe even try writing your own versions of functions along with tests to test them;</li>
 		<li>Make tools using nsm, both tools that require nsm to be used and do not;</li>
+		<li>Use nifty site manager to make templates for blogs, forums, etc.;</li>
 		<li>Make your own level structure for people to learn and understand nsm, or be tested on their understanding of nsm, or for a round at a quiz night, etc. etc.;</li>
 		<li>Make video games using nsm;</li>
 		<li>Make a website for people to develop video games for, preferably having them also use nsm to develop their video games;</li>
