@@ -34,6 +34,12 @@ See also:
 	<li><a href="https://www.nginx.com/">NGiNX</a></li>
 </ul>
 
+<h4>Site Managers</h4>
+<ul>
+	<li><a href="https://www.staticgen.com/">StaticGen</a> - a list of static site generators for JAMstack sites</li>
+	<li><a href="https://gitlab.com/pages">Example sites on GitLab Pages</a> - simple example websites for site generators on GitLab</li>
+</ul>
+
 <h4>Useful links</h4>
 <ul>
 	<li><a href="https://www.w3schools.com/">w3schools</a> - for learning web technologies online</li>

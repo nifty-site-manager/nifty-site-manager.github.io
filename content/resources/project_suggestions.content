@@ -13,6 +13,12 @@
 		<li>Learn how to make dynamic websites with form submissions, etc.;</li>
 		<li>Try out different forum software like myBB and phpBB;</li>
 		<li>Figure out all the different ways you can think of to test nsm, including writing programs to test nsm if that is within your skillset, all feedback here is welcome at <mono>testing@nifty-site-manager.com</mono>, especially if you can find a way to 'break' nsm;
-		<li>Try tinkering with the source code for nsm, see if you can come up with any features you would like and try implementing them, or see if you can understand different functions throughout the codebase, and maybe even try writing your own versions of functions along with tests to test them.</li>
+		<li>Learn and play with other site managers so you have a better understanding of site managers in general, and have some idea about the differences between the different site managers, maybe a different site manager will work better for you and/or your needs?;</li>
+		<li>Figure out all the different ways you can think of to compare nsm to other site managers, including writing programs to compare site managers if that is within your skillset, all feedback here is welcome at <mono>testing@nifty-site-manager.com</mono>;</li>
+		<li>Try tinkering with the source code for nsm, see if you can come up with any features you would like and try implementing them, or see if you can understand different functions throughout the codebase, and maybe even try writing your own versions of functions along with tests to test them;</li>
+		<li>Make tools using nsm, both tools that require nsm to be used and do not;</li>
+		<li>Make your own level structure for people to learn and understand nsm, or be tested on their understanding of nsm, or for a round at a quiz night, etc. etc.;</li>
+		<li>Make video games using nsm;</li>
+		<li>Make a website for people to develop video games for, preferably having them also use nsm to develop their video games;</li>
 	</ul>
 </p>
