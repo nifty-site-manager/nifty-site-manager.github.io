@@ -14,7 +14,8 @@
 			+--------- available commands --------------------------------------+
 			| nsm commands      | lists all nsm commands                        |
 			| nsm config        | lists config settings                         |
-			| nsm init          | input: initialise managing a site             |
+			| nsm clone         | input: clone-url                              |
+			| nsm init          | initialise managing a site                    |
 			| nsm init-null     | input: (site-name)                            |
 			| nsm init-dev      | input: (site-name)                            |
 			| nsm init-simple   | input: (site-name)                            |
@@ -30,6 +31,7 @@
 			| nsm build         | input: page-name-1 .. page-name-k             |
 			| nsm build-updated | builds updated pages                          |
 			| nsm build-all     | builds all tracked pages                      |
+			| nsm bcp           | input: commit-message                         |
 			| nsm new-title     | input: page-name new-title                    |
 			| nsm new-template  | input: page-name template-path                |
 			+-------------------------------------------------------------------+
@@ -37,10 +39,16 @@
 	</div>
 </p>
 
+<h4>
+	Forking, renaming and cloning a site repository from BitBucket/GitHub/GitLab
+</h4>
 
+<p>
+	You can fork and rename an existing site repository on BitBucket, GitHub or GitLab, then clone it using <mono>nsm clone <i>clone-url</i></mono>.
+</p>
 
 <h4>
-	Setting up the stage directory for an nsm managed site
+	Initialise managing a site
 </h4>
 
 <p>
@@ -143,6 +151,14 @@
 
 <p>
 	To build updated pages run <mono>nsm build-updated</mono>, to build all pages run <mono>nsm build-all</mono>, and to build specific pages run <mono>nsm build page-name-1 .. page-name-k</mono>.
+</p>
+
+<h4>
+	Building, committing and pushing changes to BitBucket/GitHub/GitLab
+</h4>
+
+<p>
+	If your site is part of a repository for BitBucket, GitHub or GitLab you can have updated pages built along with the changes being committed and pushed using <mono>nsm bcp "commit message"</mono>. Note you can still use <mono>nsm build-updated</mono> to check any changes locally (when changes can be viewed locally). 
 </p>
 
 <h4>

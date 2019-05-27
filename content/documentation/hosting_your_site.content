@@ -7,7 +7,17 @@
 </p>
 
 <p>
-	Options for hosting static websites on code collaboration sites offering repository management:
+	For creating static websites on code collaboration sites offering repository management like BitBucket, GitHub and GitLab you can fork, rename and clone a site project and work from that (use <mono>nsm clone <i>clone-url</i></mono>). For some basic templates see:
+	<ol>
+		<li><a href="https://bitbucket.org/nsm-templates/">BitBucket template</a>;</li>
+		<li><a href="https://github.com/nsm-templates/">GitHub templates</a>; or</li>
+		<li><a href="https://gitlab.com/nsm-templates">GitLab templates</a>.</li>
+	</ol>
+	At some point there will hopefully be more complicated templates made by other people available <a href='resources/templates.html'>here</a>. People may like to make their own template teams/organisations/groups on BitBucket/GitHub/GitLab and/or template websites made using nsm, if you do and would like it added to the aforementioned link then please email <mono>contact@nifty-site-manager.com</mono>.
+</p>
+
+<p>
+	If you would like to be a masochist and set up your own site repositories from scratch for any of BitBucket, GitHub or GitLab then see:
 	<ol>
 		<li><a href="./bitbucket_hosting.html">Hosting on BitBucket</a>;</li>
 		<li><a href="./github_hosting.html">Hosting on GitHub</a>; or</li>
