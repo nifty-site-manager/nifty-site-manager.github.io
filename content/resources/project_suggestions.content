@@ -19,6 +19,10 @@
 		<li>Figure out all the different ways you can think of to make it look like you used nsm when you used a different site manager and vice versa;</li>
 		<li>Try tinkering with the source code for nsm, see if you can come up with any features you would like and try implementing them, or see if you can understand different functions throughout the codebase, and maybe even try writing your own versions of functions along with tests to test them;</li>
 		<li>Make tools using nsm, both tools that require nsm to be used and do not, tools that help beginners and/or advanced users, along with users front-of-house and/or behind the scenes;</li>
+		<li>Make a site for making logos;</li>
+		<li>Make a site like BitBucket/GitHub/GitLab using nsm;</li>
+		<li>Make an online email platform using nsm, preferably one you can set up sending emails from custom domains using smtp servers from somewhere like mailgun/sendpulse/etc.;</li>
+		<li>Make a betting website, and/or a casino website;</li>
 		<li>Use nifty site manager to make templates for blogs, forums, etc.;</li>
 		<li>Make your own level structure for people to learn and understand nsm, or be tested on their understanding of nsm, or for a round at a quiz night, etc. etc.;</li>
 		<li>Make video games using nsm;</li>

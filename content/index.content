@@ -27,18 +27,21 @@ Anything that when modified requires a page to be built, including:
 </p>
 
 <h4>
-	What can nsm do?
+	Some of the things nsm can do are:
 </h4>
 
 <ul>
+	<li>clone existing site repositories from BitBucket/GitHub/GitLab;</li>
+	<li>initialise managing sites;</li>
 	<li>track and untrack page information;</li>
 	<li>list information on tracked pages;</li>
 	<li>move and remove pages</li>
 	<li>modify tracked page titles and template paths;</li>
 	<li>list which pages need building and why;</li>
 	<li>build only pages that need building;</li>
-	<li>build pages specified by the user; and</li>
-	<li>build all tracked pages.</li>
+	<li>build pages specified by the user;</li>
+	<li>build all tracked pages; and</li>
+	<li>build, commit and push changes to BitBucket/GitHub/GitLab.</li>
 </ul>
 
 <h4>

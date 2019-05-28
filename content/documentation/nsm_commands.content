@@ -14,7 +14,7 @@
 			+--------- available commands --------------------------------------+
 			| nsm commands      | lists all nsm commands                        |
 			| nsm config        | lists config settings                         |
-			| nsm clone         | input: clone-url                              |
+			| nsm clone         | input: repository-url                         |
 			| nsm init          | initialise managing a site                    |
 			| nsm init-null     | input: (site-name)                            |
 			| nsm init-dev      | input: (site-name)                            |
@@ -44,7 +44,7 @@
 </h4>
 
 <p>
-	You can fork and rename an existing site repository on BitBucket, GitHub or GitLab, then clone it using <mono>nsm clone <i>clone-url</i></mono>.
+	You can fork and rename an existing site repository on BitBucket, GitHub or GitLab, then clone it using <mono>nsm clone <i>repository-url</i></mono>.
 </p>
 
 <h4>
