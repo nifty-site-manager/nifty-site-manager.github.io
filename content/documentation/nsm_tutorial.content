@@ -208,7 +208,7 @@
 	</li>
 
 	<li>
-		You can build, commit and push changes back to BitBucket, GitHub or GitLab all at the same time using <mono>nsm bcp "commit message"</mono> (note for BitBucket you will need to enter your password twice and for GitHub you will need to enter your username and password twice, this is because of using both a stage and master branch for BitBucket/GitHub, something which is not done for GitLab). 
+		If you forked, renamed and cloned a repository from BitBucket, GitHub or GitLab then you can build, commit and push changes back to BitBucket, GitHub or GitLab all at the same time using <mono>nsm bcp "commit message"</mono> (note for BitBucket you will need to enter your password twice and for GitHub you will need to enter your username and password twice, this is because of using both a stage and master branch for BitBucket/GitHub, something which is not done for GitLab). 
 	</li>
 </ol>
 
