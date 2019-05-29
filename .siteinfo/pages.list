@@ -39,6 +39,10 @@ documentation/nsm_commands
 template/page.template
 
 documentation/nsm_tutorial
+nsm_tutorial
+template/page.template
+
+documentation/old_nsm_tutorial
 "nsm tutorial"
 template/page.template
 
