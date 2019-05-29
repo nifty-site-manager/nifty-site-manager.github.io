@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>
-			nsm - nsm_tutorial
+			nsm - nsm tutorial
 		</title>
 		
 		<link rel='stylesheet' type='text/css' href='../css/pagestyle.css'>
@@ -106,16 +106,16 @@
 		</h3>
 		
 		<p>
-			This is a modified version of the original tutorial that hopefully works (the original tutorial is accessible <a href="./old_nsm_tutorial.html">here</a>), if there is any problems please file an issue on one of the official repositories linked in the footer at the bottom. The easiest way to learn how nsm works is to get your feet wet and hands dirty playing with a simple site:
+			The easiest way to learn how nsm works is to get your hands dirty playing with a simple site:
 		</p>
 		
 		<ol>
 			<li>
-				Download <a href="https://gitlab.com/nsm-templates/simple-site/-/archive/master/simple-site-master.zip">simple-site-master.zip</a> and extract <mono>simple-site-master</mono>. If you have a BitBucket, GitHub and/or GitLab account then you can fork and rename a repository from <a href="https://bitbucket.org/nsm-templates">here</a>, <a href="https://github.com/nsm-templates">here</a> or <a href="https://gitlab.com/nsm-templates">here</a> then clone using <mono>nsm clone repository-url</mono>;
+				Download <a href="https://github.com/nifty-site-manager/simple-site/archive/stage.zip">simple-site-stage.zip</a> and extract <mono>simple-site-stage</mono>;
 			</li>
 		
 			<li>
-				Open a terminal window and change to the <mono>simple-site-master</mono> directory, you will also find it useful to have the <mono>simple-site-master</mono> directory open using your operating system's window manager;
+				Open a terminal window and change to the <mono>simple-site-stage</mono> directory, you will also find it useful to have the <mono>simple-site-stage</mono> directory open using your operating system's window manager;
 			</li>
 		
 			<li>
@@ -131,15 +131,23 @@
 			</li>
 		
 			<li>
+				To start nsm managing the site enter <mono>nsm init</mono>. A (hidden) directory <mono>.siteinfo/</mono> should have been created containing an empty file <mono>pages.list</mono> and a config file <mono>nsm.config</mono>;
+			</li>
+		
+			<li>
 				Enter <mono>nsm info-all</mono>, <mono>nsm info-names</mono> and <mono>nsm status</mono>;
 			</li>
 		
 			<li>
-				The command to have nsm track a page is <mono>nsm track page-name page-title template-path</mono>, where <mono>page-title</mono> and <mono>template-path</mono> are optional (default <mono>page-title</mono> is the specified <mono>page-name</mono>, and default <mono>template-path</mono> is <mono>template/page.template</mono>). Enter <mono>nsm track first_page myPageTitle</mono>;
+				The command to have nsm track a page is <mono>nsm track page-name page-title template-path</mono>, where <mono>page-title</mono> and <mono>template-path</mono> are optional (default <mono>page-title</mono> is the specified <mono>page-name</mono>, and default <mono>template-path</mono> is <mono>template/page.template</mono>). Enter <mono>nsm track index home</mono>;
 			</li>
 		
 			<li>
-				We will come back to building pages later in the tutorial, but enter <mono>nsm build-updated</mono>.
+				We will come back to building pages later in the tutorial, but enter <mono>nsm build-updated</mono>. You should get an error, what happened was in <mono>template/menu.content</mono> it asks for the path to the page with name <mono>about</mono>, but we do not have <mono>about</mono> tracked!;
+			</li>
+		
+			<li>
+				Enter <mono>nsm track about</mono>
 			</li>
 		
 			<li>
@@ -149,10 +157,6 @@
 					<pre class="inline rounded">
 						about
 						about
-						template/page.template
-		
-						first_page
-						myPageTitle
 						template/page.template
 		
 						index
@@ -168,24 +172,20 @@
 			</li>
 		
 			<li>
-				Enter <mono>nsm rm first_page</mono> and repeat the last step;
-			</li>
-		
-			<li>
 				Enter <mono>nsm build-updated</mono>;
 				<ul>
 					<li>
-						The directory <mono>site/</mono> should now contain the pages <mono>index.html</mono>, <mono>about.html</mono> and <mono>first_page.html</mono>. By default users do not have permission to write to page files, this is to prevent users from accidentally modifying a page file when they more than likely intended to modify a content file. Should users want to manually edit a page file they can simply change the file permissions (eg. <mono>chmod +w page-path</mono>); 
+						The directory <mono>site/</mono> should now contain the pages <mono>index.html</mono> and <mono>about.html</mono>. By default users do not have permission to write to page files, this is to prevent users from accidentally modifying a page file when they more than likely intended to modify a content file. Should users want to manually edit a page file they can simply change the file permissions (eg. <mono>chmod +w page-path</mono>); 
 					</li>
 		
 					<li>
-						Another directory <mono>.siteinfo/site/</mono> should have been created containing the info files <mono>index.info</mono>, <mono>about.info</mono> and <mono>first_page.info</mono>. By default users do not have permission to write to info files, and users should beware of ever doing so. The modification time of info files is how nsm knows when pages were last built (actually I am pretty sure nsm gets this information from the first line of the information files), furthermore the content inside info files represents page dependencies from the last time pages were built, <u>not necessarily</u> current page dependencies, hence users should not have any reason to modify them;
+						Another directory <mono>.siteinfo/site/</mono> should have been created containing the info files <mono>index.info</mono> and <mono>about.info</mono>. By default users do not have permission to write to info files, and users should beware of ever doing so. The modification time of info files is how nsm knows when pages were last built, furthermore the content inside info files represents page dependencies from the last time pages were built, <u>not necessarily</u> current page dependencies, hence users should not have any reason to modify them;
 					</li>
 				</ul>
 			</li>
 		
 			<li>
-				Open <mono>site/index.html</mono> in a browser, click through to the about page, and view the source for both pages. Compare what you have locally to a <a href="https://nsm-templates.gitlab.io/simple-site/">pre-built</a> version of <mono>site/index.html</mono> 
+				Open <mono>site/index.html</mono> in a browser, click through to the about page, and view the source for both pages. Compare what you have locally to a <a href="https://nifty-site-manager.github.io/simple-site/">pre-built</a> version of <mono>site/index.html</mono> 
 			</li>
 		
 			<li>
@@ -201,7 +201,7 @@
 			</li>
 		
 			<li>
-				Enter <mono>nsm status</mono>, then <mono>nsm build-updated</mono>, then <mono>nsm status</mono> (notice nsm can be run from any directory inside the stage directory, stage directory inclusive, obviously as that is where we started! If you are using BitBucket or GitHub then the site directory is set up as a master branch);
+				Enter <mono>nsm status</mono>, then <mono>nsm build-updated</mono>, then <mono>nsm status</mono> (notice nsm can be run from any directory inside the stage directory (stage directory inclusive, obviously as that is where we started!);
 			</li>
 		
 			<li>
@@ -258,7 +258,7 @@
 								{
 									if(v.size())
 										os &lt;&lt; v[i];
-									for(auto i=1; i&lt;v.size(); i++)
+									for(auto i=0; i&lt;v.size(); i++)
 										os &lt;&lt; " " &lt;&lt; v[i];
 									return os;
 								}
@@ -299,7 +299,7 @@
 			</li>
 		
 			<li>
-				Enter <mono>nsm cp test about</mono>, check that <mono>.siteinfo/pages.list</mono> has been updated and <mono>content/test.content</mono> was copied to <mono>content/about.content</mono>;
+				Enter <mono>nsm cp test about</mono>, check that <mono>.siteinfo/pages.list</mono> has been updated and <mono>content/about.content</mono> was copied to <mono>content/test.content</mono>;
 			</li>
 		
 			<li>
@@ -308,10 +308,6 @@
 		
 			<li>
 				Enter <mono>nsm untrack index</mono>, check that both <mono>site/index.html</mono> and <mono>.siteinfo/site/index.info</mono> were removed.
-			</li>
-		
-			<li>
-				You can build, commit and push changes back to BitBucket, GitHub or GitLab all at the same time using <mono>nsm bcp "commit message"</mono> (note for BitBucket you will need to enter your password twice and for GitHub you will need to enter your username and password twice, this is because of using both a stage and master branch for BitBucket/GitHub, something which is not done for GitLab). 
 			</li>
 		</ol>
 		
