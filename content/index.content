@@ -3,7 +3,7 @@
 </h4>
 
 <p>
-	Nifty site manager is an open source cross-platform git-like and $\LaTeX$-like site manager that tracks modifications to page dependencies.
+	Nifty site manager is an open source cross-platform git-like and $\LaTeX$-like command-line site manager that tracks modifications to page dependencies. You can clone repositories from code sharing sites like BitBucket, GitHub and GitLab, build (updated) pages locally, then push changes online once you are happy. 
 </p>
 
 <h4 id="about">What information is tracked for a page?</h4>
