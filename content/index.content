@@ -3,13 +3,13 @@
 </h4>
 
 <p>
-	Nifty site manager is an open source cross-platform git-like and $\LaTeX$-like command-line site manager that tracks modifications to page dependencies. You can clone repositories from code sharing sites like BitBucket, GitHub and GitLab, build (updated) pages locally, then push changes online once you are happy. 
+	Nifty site manager is an open source cross-platform git-like and $\LaTeX$-like command-line site manager that tracks modifications to page dependencies. You can clone repositories from code sharing sites like BitBucket, GitHub and GitLab using <mono>nsm clone repo-url</mono>, build (updated) pages locally using <mono>nsm build-updated</mono>, then build, commit and push changes online once you are happy using <mono>nsm bcp "commit message"</mono>. 
 </p>
 
 <h4 id="about">What information is tracked for a page?</h4>
 
 <p>
-	All users really need to remember is that for each page nsm tracks a page name, page title and template path. In more detail, a list of pages is stored in the file <mono>.siteinfo/pages.list</mono> from where nsm is initialised. When building a page, say <mono>index</mono>, a page info file is created that stores information about page dependencies. 
+	While nsm is easiest to learn and understand by using, users may find it useful to remember that for each page nsm tracks a page name, page title and template path. In more detail, a list of pages is stored in the file <mono>.siteinfo/pages.list</mono> from where nsm is initialised. When building a page, say <mono>index</mono>, a page info file is created that stores information about page dependencies. 
 </p>
 
 <h4>
@@ -65,11 +65,11 @@ Anything that when modified requires a page to be built, including:
 </p>
 
 <p>
-	While I encourage people to prove me wrong, I suspect that nsm will be most useful to front-of-house amateurs and behind-the-scenes experts (or perhaps more accurately, useful to people who prefer to program/code websites without graphical tools/ides/etc.). I personally find it much easier than a lot of other site managers to make and host a basic static site, and based on my personal usage of and experience with $\LaTeX$ and git imagine it can be a very useful tool to experts behind the scenes.
+	While I encourage people to prove me wrong, I suspect that nsm will be most useful to front-of-house amateurs (as it is reasonably easy to install, make simple websites and use) and behind-the-scenes experts (or perhaps more accurately, useful to people behind-the-scenes who prefer to program/code websites without graphical tools/ides/etc.). I personally find it much easier than a lot of other site managers to make and host a basic static site, and based on my personal usage of and experience with $\LaTeX$ and git imagine it can be a very useful tool to experts behind the scenes.
 </p>
 
 <p>
-	It could potentially be a bit overwhelming for people who are just getting used to behind-the-scenes but are dipping their toes to see if it's something that works for them and other people, I say that because to understand everything that nsm can do, and everything that is used by nsm can be a bit overwhelming. However wrapping one's head around the basics of what nsm is doing and having a bit of a look through the documentation and source code can be a good way to start understanding some stuff with behind-the-scenes and/or programming (especially development of tools like nsm and how they work). Playing with nsm will also be a good way to get your feet wet and hands dirty playing around with git along with BitBucket/GitHub/GitLab, which are all very popular and useful tools in the programming/web development worlds. 
+	It could potentially be a bit overwhelming for people who are just getting used to behind-the-scenes but are dipping their toes to see if it is something that works for them and other people. I say that because to understand everything that nsm can do, and everything that is used by nsm can be a bit overwhelming. However wrapping one's head around the basics of what nsm is doing and having a bit of a look through the documentation and source code can be a good way to start understanding some stuff with behind-the-scenes and/or programming (especially development of tools like nsm and how they work). Playing with nsm will also be a good way to get your feet wet and hands dirty playing around with git along with BitBucket/GitHub/GitLab, which are all very popular and useful tools in the programming/web development worlds. 
 </p>
 
 <p>
