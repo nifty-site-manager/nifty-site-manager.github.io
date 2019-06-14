@@ -24,6 +24,8 @@
 		<li>Make a site like BitBucket/GitHub/GitLab using nsm;</li>
 		<li>Make an online email platform using nsm, preferably one you can set up sending emails from custom domains using smtp servers from somewhere like mailgun/sendpulse/etc.;</li>
 		<li>Make a betting website, and/or a casino website;</li>
+		<li>Make a social networking site like FaceBook, LinkedIn, Myspace, etc.;</li>
+		<li>Make a post aggregation site like Digg, Reddit, Voat, etc.;</li>
 		<li>Use nifty site manager to make templates for blogs, forums, etc.;</li>
 		<li>Make your own level structure for people to learn and understand nsm, or be tested on their understanding of nsm, or for a round at a quiz night, etc. etc.;</li>
 		<li>Make video games using nsm;</li>
