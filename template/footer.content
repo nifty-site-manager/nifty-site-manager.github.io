@@ -4,7 +4,7 @@
 	<!-- Signature purchased from logojoy.com -->
 
 	<p>
-		<b>Mirrors:</b> [<a href="https://nifty-site-manager.com/">Official</a>] [<a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a>] [<a href="https://nifty-site-manager.github.io/">GitHub</a>] [<a href="https://nifty-site-manager.gitlab.io/">GitLab</a>] [<a href="https://web.archive.org/web/https://www.nifty-site-manager.com/">archive.org</a>]
+		<b>Mirrors:</b> [<a href="https://nifty-site-manager.com/">Official</a>] [<a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a>] [<a href="https://nifty-site-manager.github.io/">GitHub</a>] [<a href="https://nifty-site-manager.gitlab.io/">GitLab</a>] [<a href="https://nifty-site-manager.netlify.com/">Netlify</a>] [<a href="https://web.archive.org/web/https://www.nifty-site-manager.com/">archive.org</a>]
 	</p>
 
 	<p>
@@ -13,5 +13,5 @@
 
 	Page was last built on @currentdate at @currenttime (@timezone) using @currentOS. <br>
 
-	<noselect><small>&copy;&nbsp;2015-@loadYY <a href="https://n-ham.com/">Nicholas Ham</a></small></noselect>
+	<noselect><small>&copy;&nbsp;2015 - @loadYYYY <a href="https://n-ham.com/">Nicholas Ham</a></small></noselect>
 </footer>
