@@ -40,11 +40,11 @@
 </p>
 
 <h4>
-	Forking, renaming and cloning a site repository from BitBucket/GitHub/GitLab
+	Importing/Forking, renaming and cloning a site repository from BitBucket/GitHub/GitLab
 </h4>
 
 <p>
-	You can fork and rename an existing site repository on BitBucket, GitHub or GitLab, then clone it using <mono>nsm clone <i>repository-url</i></mono>.
+	You can import/fork and rename an existing site repository on BitBucket, GitHub or GitLab, then clone it using <mono>nsm clone <i>repository-url</i></mono>.
 </p>
 
 <h4>
