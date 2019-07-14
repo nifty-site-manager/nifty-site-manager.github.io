@@ -44,7 +44,7 @@
 </h4>
 
 <p>
-	You can import/fork and rename an existing site repository on BitBucket, GitHub or GitLab, then clone it using <mono>nsm clone <i>repository-url</i></mono>.
+	You can import/fork and rename an existing site repository on BitBucket, GitHub or GitLab, then clone it using <mono>nsm clone <i>repository-url</i></mono>. Note - It is better to import an existing site repository on BitBucket and GitHub as you cannot remove fork relationships, however while there is no import feature for GitLab you can remove a fork relationship in a repository's settings.
 </p>
 
 <h4>
