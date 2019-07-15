@@ -67,6 +67,10 @@
 	</li>
 
 	<li>
+		In the repository's settings on GitHub, under GitHub Pages set the source branch to <mono>master branch</mono>;
+	</li>
+
+	<li>
 		Your site, with url <mono>https://<i>username</i>.github.io</mono>, should now be hosted and accessible from the internet.
 	</li>
 </ol>
@@ -107,10 +111,6 @@
 	</li>
 
 	<li>
-		Checkout a new branch called <mono>gh-pages</mono> by entering <mono>git checkout -b gh-pages</mono>;
-	</li>
-
-	<li>
 		Copy your site files (anything inside the site directory, not the whole stage directory) into the repository directory;
 	</li>
 
@@ -121,9 +121,13 @@
 				git status
 				git add .
 				git commit -m "added site files"
-				git push origin gh-pages
+				git push origin master
 			</pre>
 		</div> <br>
+	</li>
+
+	<li>
+		In the repository's settings on GitHub, under GitHub Pages set the source branch to <mono>master branch</mono>;
 	</li>
 
 	<li>
@@ -267,10 +271,14 @@
 				git push origin master
 			</pre>
 		</div> 
+	</li>
 
-		<p>
-			<u>Note:</u> Your site, with url <mono>https://<i>username</i>.github.io</mono>, should now be hosted and accessible from the internet.
-		</p>
+	<li>
+		In the repository's settings on GitHub, under GitHub Pages set the source branch to <mono>master branch</mono>;
+	</li>
+
+	<li>
+		<u>Note:</u> Your site, with url <mono>https://<i>username</i>.github.io</mono>, should now be hosted and accessible from the internet.
 	</li>
 
 	<li>
@@ -357,7 +365,7 @@ Now from your local repository, you can manage the site/master branch from insid
 	</li>
 
 	<li>
-		Checkout an orphan branch called <mono>gh-pages</mono> by entering <mono>git checkout --orphan gh-pages</mono>;
+		Checkout an orphan branch called <mono>master</mono> by entering <mono>git checkout --orphan master</mono>;
 	</li>
 
 	<li>
@@ -392,13 +400,17 @@ Now from your local repository, you can manage the site/master branch from insid
 				git status
 				git add .
 				git commit -m "setup gh-pages branch"
-				git push origin gh-pages
+				git push origin master
 			</pre>
 		</div>
+	</li>
 
-		<p>
-			<u>Note:</u> Your site, with url <mono>https://<i>username</i>.github.io/<i>site-name</i></mono>, should now be hosted and accessible from the internet.
-		</p>
+	<li>
+		In the repository's settings on GitHub, under GitHub Pages set the source branch to <mono>master branch</mono>;
+	</li>
+
+	<li>
+		<u>Note:</u> Your site, with url <mono>https://<i>username</i>.github.io/<i>site-name</i></mono>, should now be hosted and accessible from the internet.
 	</li>
 
 	<li>
