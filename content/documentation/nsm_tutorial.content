@@ -8,7 +8,7 @@
 
 <ol>
 	<li>
-		Download <a href="https://gitlab.com/nsm-templates/simple-site/-/archive/master/simple-site-master.zip">simple-site-master.zip</a> and extract <mono>simple-site-master</mono>. If you have a BitBucket, GitHub and/or GitLab account then you can import/fork and rename a repository from <a href="https://bitbucket.org/nsm-templates">here</a>, <a href="https://github.com/nsm-templates">here</a> or <a href="https://gitlab.com/nsm-templates">here</a> then clone using <mono>nsm clone repository-url</mono> (Note - It is better to import an existing site repository on BitBucket and GitHub as you cannot remove fork relationships, however while there is no import feature for GitLab you can remove a fork relationship in a repository's settings);
+		Download <a href="https://gitlab.com/nsm-templates/simple-site/-/archive/master/simple-site-master.zip">simple-site-master.zip</a> and extract <mono>simple-site-master</mono>. If you have a BitBucket, GitHub and/or GitLab account then you can import/fork and rename a repository from <a href="https://bitbucket.org/nsm-templates">here</a>, <a href="https://github.com/nsm-templates">here</a> or <a href="https://gitlab.com/nsm-templates">here</a> then clone using <mono>nsm clone repository-url</mono> (Note - You can rename a repository when importing it, rather than forking and renaming, plus on BitBucket and GitHub you cannot remove fork relationships.);
 	</li>
 
 	<li>

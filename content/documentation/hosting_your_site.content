@@ -13,7 +13,7 @@
 		<li><a href="https://github.com/nsm-templates/">GitHub templates</a>; or</li>
 		<li><a href="https://gitlab.com/nsm-templates">GitLab templates</a>.</li>
 	</ol>
-	Note - It is better to import an existing site repository on BitBucket and GitHub as you cannot remove fork relationships, however while there is no import feature for GitLab you can remove a fork relationship in a repository's settings. Also on GitHub you will need to go in to the site repository's settings, find the GitHub Pages section and set the source branch (typically <mono>master branch</mono>).
+	Note - You can rename a repository when importing it, rather than forking and renaming, plus on BitBucket and GitHub you cannot remove fork relationships. Also on GitHub you will need to go in to the site repository's settings, find the GitHub Pages section and set the source branch (typically <mono>master branch</mono>).
 </p>
 
 <p>
