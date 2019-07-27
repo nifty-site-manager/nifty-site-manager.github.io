@@ -21,6 +21,9 @@
      see https://github.com/google/code-prettify/ for more info -->
 <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 
+<!-- uses Font Awesome for vector icons and social logos -->
+<script src="https://kit.fontawesome.com/b51e6952ec.js"></script>
+
 <!-- uses MathJax CDC for LaTeX support
      see http://docs.mathjax.org/en/latest/start.html for more info -->
 <script type="text/x-mathjax-config">
