@@ -8,7 +8,7 @@
 	</p>
 
 	<p>
-		<noselect><a href="https://bitbucket.org/nifty-site-manager/nsm/src/master/" title="BitBucket"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; <a href="https://github.com/nifty-site-manager/nsm" title="GitHub"><i class="fab fa-github fa-2x"></i></a> &nbsp; <a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab"><i class="fab fa-gitlab fa-2x"></i></a></noselect>
+		<noselect><a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; <a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a> &nbsp; <a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a></noselect>
 	</p>
 
 	Page was last built on @currentdate at @currenttime (@timezone) using @currentOS. <br>
