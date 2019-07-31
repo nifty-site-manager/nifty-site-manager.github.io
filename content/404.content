@@ -1,10 +1,25 @@
 <center>
 	<h2>404 Error - Page Not Found</h2>
+
 	<p>
 		Looks like you've followed a broken link or entered a URL that doesn't exist on this site.
 	</p>
 
 	<p>
-		<a href="@pathto(index)">Home</a>
+		<a href="https://nifty-site-manager.github.io/">Home</a> | <a href="javascript:history.back()">Go Back</a>
 	</p>
+
+	<hr>
+
+	<img src="https://nifty-site-manager.github.io/files/nsm.png" width="120px">
+
+	<p>
+		<b>Mirrors:</b> [<a href="https://nifty-site-manager.com/">Official</a>] [<a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a>] [<a href="https://nifty-site-manager.github.io/">GitHub</a>] [<a href="https://nifty-site-manager.gitlab.io/">GitLab</a>] [<a href="https://nifty-site-manager.netlify.com/">Netlify</a>] [<a href="https://nift.cc/">nift.cc</a>] [<a href="https://web.archive.org/web/https://www.nifty-site-manager.com/">archive.org</a>]
+	</p>
+
+	<p>
+		<noselect><a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; <a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a> &nbsp; <a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a></noselect>
+	</p>
+
+	<noselect><small>&copy;&nbsp;2015 - @loadYYYY <a href="https://n-ham.com/">Nicholas Ham</a></small></noselect>
 </center>

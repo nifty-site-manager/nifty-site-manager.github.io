@@ -1,11 +1,7 @@
-16:10:01 Wednesday July 31 2019
+18:48:57 Wednesday July 31 2019
 404
 404
-template/page.template
+template/404.template
 
 content/404.content
-template/footer.content
-template/head.content
-template/header.content
-template/menu.content
-template/page.template
+template/404.template
