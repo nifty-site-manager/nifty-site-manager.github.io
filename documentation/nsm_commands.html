@@ -117,30 +117,27 @@
 		
 			<div align="center">
 				<pre class="inline rounded">
-					+---------- available commands --------------------------------------+
-					| nsm commands       | lists all nsm commands                        |
-					| nsm config         | lists config settings                         |
-					| nsm clone          | input: repository-url                         |
-					| nsm (g)init        | initialise managing a site                    |
-					| nsm (g)init-null   | input: (site-name)                            |
-					| nsm (g)init-dev    | input: (site-name)                            |
-					| nsm (g)init-simple | input: (site-name)                            |
-					| nsm status         | lists updated and problem pages               |
-					| nsm info           | input: page-name-1 .. page-name-k             |
-					| nsm info-all       | lists tracked pages                           |
-					| nsm info-names     | lists tracked page names                      |
-					| nsm track          | input: page-name (page-title) (template-path) |
-					| nsm untrack        | input: page-name                              |
-					| nsm rm             | input: page-name                              |
-					| nsm mv             | input: old-name new-name                      |
-					| nsm cp             | input: tracked-name new-name                  |
-					| nsm build          | input: page-name-1 .. page-name-k             |
-					| nsm build-updated  | builds updated pages                          |
-					| nsm build-all      | builds all tracked pages                      |
-					| nsm bcp            | input: commit-message                         |
-					| nsm new-title      | input: page-name new-title                    |
-					| nsm new-template   | input: page-name template-path                |
-					+--------------------------------------------------------------------+
+					+---------- available commands ----------------------------------------+
+					| nsm commands       | lists all nsm commands                          |
+					| nsm config         | lists config settings                           |
+					| nsm clone          | input: repository-url                           |
+					| nsm init           | initialise managing a site - input: (site-name) |
+					| nsm status         | lists updated and problem pages                 |
+					| nsm info           | input: page-name-1 .. page-name-k               |
+					| nsm info-all       | lists tracked pages                             |
+					| nsm info-names     | lists tracked page names                        |
+					| nsm track          | input: page-name (page-title) (template-path)   |
+					| nsm untrack        | input: page-name                                |
+					| nsm rm             | input: page-name                                |
+					| nsm mv             | input: old-name new-name                        |
+					| nsm cp             | input: tracked-name new-name                    |
+					| nsm build          | input: page-name-1 .. page-name-k               |
+					| nsm build-updated  | builds updated pages                            |
+					| nsm build-all      | builds all tracked pages                        |
+					| nsm bcp            | input: commit-message                           |
+					| nsm new-title      | input: page-name new-title                      |
+					| nsm new-template   | input: page-name template-path                  |
+					+----------------------------------------------------------------------+
 				</pre>
 			</div>
 		</p>
@@ -158,15 +155,7 @@
 		</h4>
 		
 		<p>
-			To start managing a site: first change to the directory you would like to act as the site stage, that is the directory containing all site related files (content and template files inclusive); then run <mono>nsm init</mono>. A (hidden) directory <mono>.siteinfo</mono> will be created containing an empty file <mono>pages.list</mono> and config file <mono>nsm.config</mono>.
-		</p>
-		
-		<p>
-			There is also <mono>nsm init-null (site-name)</mono>, <mono>nsm init-dev (site-name)</mono> and <mono>nsm init-simple (site-name)</mono> where <mono>site-name</mono> is an optional parameter for the name of the site. These additional commands track some pages, add some basic template files and build the basic pages for you.
-		</p>
-		
-		<p>
-			If you are using a git repository for BitBucket, GitHub or GitLab then there is <mono>nsm ginit (page-name)</mono>, <mono>nsm ginit-null (page-name)</mono>, <mono>nsm ginit-dev (page-name)</mono> and <mono>nsm ginit-simple (page-name)</mono> as well.
+			To start managing a site: first change to the directory you would like to act as the site stage, that is the directory containing all site related files (content and template files inclusive); then run <mono>nsm init (site-name)</mono> where <mono>site-name</mono> is an optional parameter for the name of the site. A hidden directory <mono>.siteinfo</mono> will be created containing a <mono>pages.list</mono> file and config file <mono>nsm.config</mono>.
 		</p>
 		
 		<p>
@@ -292,7 +281,7 @@
 				<noselect><a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; <a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a> &nbsp; <a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a></noselect>
 			</p>
 		
-			Page was last built on Sunday July 28 2019 at 07:50:52 (AEST) using Linux. <br>
+			Page was last built on Thursday August 01 2019 at 08:39:34 (AEST) using Linux. <br>
 		
 			<noselect><small>&copy;&nbsp;2015 - <script>document.write(new Date().getFullYear())</script> <a href="https://n-ham.com/">Nicholas Ham</a></small></noselect>
 		</footer>
