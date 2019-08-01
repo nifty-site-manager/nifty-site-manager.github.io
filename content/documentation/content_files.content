@@ -78,7 +78,7 @@
 </p>
 
 <h4>
-	Paths from pages to other pages/files
+	Path from pages to other pages/files
 </h4>
 
 <p>
@@ -159,6 +159,16 @@
 	</div>
 </p>
 
+<p>
+	Alternatively you can use:
+
+	<div align="center">
+		<pre class="prettyprint lang-js rounded inline">
+			<link rel='stylesheet' type='text/css' href='\@pathtofile(path-to-css-file)'>
+		</pre>
+	</div>
+</p>
+
 <h4>
 	Including img files
 </h4>
@@ -196,6 +206,16 @@
 	</div>
 </p>
 
+<p>
+	Alternatively you can use:
+
+	<div align="center">
+		<pre class="prettyprint lang-js rounded inline">
+			<script src="\@pathtofile(path-to-js-file)"></script>
+		</pre>
+	</div>
+</p>
+
 <h4>
 	Including a favicon file
 </h4>
@@ -205,6 +225,16 @@
 	<div align="center">
 		<pre class="prettyprint lang-js rounded inline">
 			<link rel='icon' type='image/png' href='path-from-page-to-favicon-file'>
+		</pre>
+	</div>
+</p>
+
+<p>
+	Alternatively you can use:
+
+	<div align="center">
+		<pre class="prettyprint lang-js rounded inline">
+			<link rel='icon' type='image/png' href='\@pathtofile(path-to-favicon-file)'>
 		</pre>
 	</div>
 </p>
