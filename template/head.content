@@ -2,10 +2,10 @@
 	nsm - @pagetitle
 </title>
 
-@cssinclude("site/css/pagestyle.css")
-@cssinclude("site/css/dropmenu.css")
-@cssinclude("site/css/pre.css")
-@faviconinclude("site/files/favicon.ico")
+<link rel='stylesheet' type='text/css' href='@pathtofile(site/css/dropmenu.css)'>
+<link rel='stylesheet' type='text/css' href='@pathtofile(site/css/pagestyle.css)'>
+<link rel='stylesheet' type='text/css' href='@pathtofile(site/css/pre.css)'>
+<link rel='icon' type='image/png' href='@pathtofile("site/files/favicon.ico")'>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-62165905-1"></script>
