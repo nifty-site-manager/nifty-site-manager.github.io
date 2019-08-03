@@ -3,12 +3,12 @@
 </h3>
 
 <p>
-	You can install <mono>nsm</mono> on linux using the <a href="https://snapcraft.io/nsm">snap</a> package manager, first install <mono>snapd</mono>, eg. <mono>sudo apt-get install snapd</mono> on Ubuntu, then enter:
+	You can install <mono>nsm</mono> on linux using the snap package manager, for instructions see <a href="https://snapcraft.io/nsm">here</a>. Alternatively first install <mono>snapd</mono>, eg. <mono>sudo apt-get install snapd</mono> on Ubuntu, then enter:
 </p>
 
 <div align="center">
 	<pre class="prettyprint">
-		snap install nsm --edge
+		snap install nsm
 	</pre>
 </div>
 
