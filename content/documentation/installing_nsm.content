@@ -3,17 +3,14 @@
 </h3>
 
 <p>
-	To install on linux using the <a href="https://snapcraft.io/nsm">snap</a> package manager, first install <mono>snapd</mono>, eg. <mono>sudo apt-get install snapd</mono> on Ubuntu, then enter:
+	You can install <mono>nsm</mono> on linux using the <a href="https://snapcraft.io/nsm">snap</a> package manager, first install <mono>snapd</mono>, eg. <mono>sudo apt-get install snapd</mono> on Ubuntu, then enter:
 </p>
 
-	<div align="center">
-		<pre class="prettyprint">
-			snap install --edge --devmode nsm
-		</pre>
-	</div>
-<p>
-	Note that for some reason git does not work properly for <mono>snap install --edge nsm</mono> or <mono>snap install --edge --jailmode nsm</mono>.
-</p>
+<div align="center">
+	<pre class="prettyprint">
+		snap install nsm --edge
+	</pre>
+</div>
 
 <h3>
 	Instructions for installing <mono>nsm</mono> from source on:
