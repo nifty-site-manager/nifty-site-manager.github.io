@@ -1,5 +1,20 @@
 <h3>
-	Instructions for installing <mono>nsm</mono> on:
+	Linux installation using snap
+</h3>
+
+<p>
+	To install on linux using the <a href="https://snapcraft.io/nsm">snap</a> package manager:
+
+	<ol>
+		<li>Install <mono>snapd</mono>, eg. <mono>sudo apt install snapd</mono> on Ubuntu;
+		<li>Enter <mono>snap install --edge --devmode nsm</mono>.</li>
+	</ol>
+
+	Note that for some reason git does not work properly for <mono>snap install --edge nsm</mono> or <mono>snap install --edge --jailmode nsm</mono>.
+</p>
+
+<h3>
+	Instructions for installing <mono>nsm</mono> from source on:
 </h3>
 
 <ol>
