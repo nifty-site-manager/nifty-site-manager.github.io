@@ -35,6 +35,12 @@ See also:
 	<li><a href="https://www.nginx.com/">NGiNX</a></li>
 </ul>
 
+<h4>Web Servers</h4>
+<ul>
+	<li><a href="https://caddyserver.com/">Caddy</a></li>
+	<li><a href="https://www.nginx.com/">NGiNX</a></li>
+</ul>
+
 <h4>Site Managers</h4>
 <ul>
 	<li><a href="https://www.staticgen.com/">StaticGen</a> - a list of static site generators for JAMstack sites</li>
