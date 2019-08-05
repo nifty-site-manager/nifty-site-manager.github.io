@@ -104,8 +104,33 @@
 			</ul>
 		</nav>
 
-		<h2>Installing nifty-site-manager on windows from source</h2>
+		<h2>Syntax highlighting with Notepad++</h2>
+		<p>
+			It is fairly straight forward to set <mono>Notepad++</mono> as the default program to open/modify your <mono>*.content</mono> and <mono>*.template</mono> files. Further if you go to <mono>Settings -> Style Configurator...</mono> then select language <mono>HTML</mono> you can add <mono>content template</mono> to the <mono>User Ext:</mono> text box which will then have <mono>Notepad++</mono> automatically use html syntax highlighting for all <mono>*.content</mono> and <mono>*.template</mono> files (pretty nifty!).
+		</p>
 		
+		<h2>Installing <mono>nsm</mono> on Windows from source using Command Prompt</h2>
+		<p>
+			Download <a href="https://gitlab.com/nifty-site-manager/nsm/repository/master/archive.zip">nsm-master-*.zip</a>, then follow these steps to compile and install:
+			<ol>
+				<li>Install <a href="http://gnuwin32.sourceforge.net/packages/make.htm">GnuWin32</a> (Make for Windows);</li>
+				<li>Right click the start menu and open both a Command Prompt window and a Command Prompt (Admin) window;</li>
+				<li>Enter <mono>path=%path%;C:\Program Files (x86)\GnuWin32\bin;</mono> in to both command prompts to add <mono>make</mono> to your path;</li>
+				<li>In both command prompts change directory to where the nsm source code is;</li>
+				<li>From the regular command prompt enter <mono>make</mono>;</li>
+				<li>Move <mono>nsm.exe</mono> to <mono>C:\Windows\system32</mono>. Alternatively from the admin command prompt enter <mono>make windows-install</mono>;</li>
+				<li>Delete both the file <mono>nsm-master-*.zip</mono> and the directory <mono>nsm-master-*</mono> containing the uncompiled/source code.</li>
+			</ol>
+		
+			Note you may need to open a new command prompt window for <mono>nsm</mono> to start working.
+		</p>
+		
+		<h3>Uninstalling <mono>nsm</mono></h3>
+		<p>
+			Should you ever want to remove <mono>nsm</mono> from your machine (aka commit blasphemy), either run <mono>make windows-uninstall</mono> from the source code directory or run <mono>del C:\Windows\system32\nsm.exe</mono> from any admin command prompt window.
+		</p>
+		
+		<h2>Installing <mono>nsm</mono> on Windows from source using Git Bash</h2>
 		<h3>Installing a <mono>c++</mono> compiler</h3>
 		
 		<p>
@@ -118,7 +143,7 @@
 		
 		<h3>Installing <mono>Git Bash</mono> and <mono>make</mono></h3>
 		
-		Install <a href="https://git-scm.com/downloads">Git</a>, which should come with Git bash as well. 
+		Install <a href="https://git-scm.com/downloads">Git</a>, which should come with Git Bash as well. 
 		
 		Get make from <a href="https://gist.github.com/evanwill/0207876c3243bbb6863e65ec5dc3f058">here</a>, ie:
 		<ol>
@@ -126,7 +151,7 @@
 				Go to <a href="https://sourceforge.net/projects/ezwinports/">here</a>;
 			</li>
 			<li>
-				download <mono>make-<i>version</i>-without-guile-w32-bin.zip<mono> (get the version without guile)
+				download <mono>make-<i>version</i>-without-guile-w32-bin.zip</mono> (get the version without guile);
 			</li>
 			<li>
 				Extract the contents of the zip file;
@@ -145,13 +170,13 @@
 				Extract <mono>nsm-master-*</mono> from <mono>nsm-master-*.zip</mono>;
 			</li>
 			<li>
-				Open a <mono>git bash</mono> window (right click the desktop for example) and change directory to <mono>~/Downloads/nsm-master-*</mono>;
+				Open a <mono>Git Bash</mono> window (right click the desktop for example) and change directory to <mono>~/Downloads/nsm-master-*</mono>;
 			</li>
 			<li>
 				Compile <mono>nsm</mono> by running <mono>make</mono>;
 			</li>
 			<li>
-				Install <mono>nsm</mono> by running <mono>make windows-install</mono> (note - you may need to open a new terminal window for nsm installation to be recognised);
+				Install <mono>nsm</mono> by running <mono>make git-bash-install</mono> (note - you may need to open a new terminal window for nsm installation to be recognised);
 			</li>
 			<li>
 				Delete both the file <mono>nsm-master-*.zip</mono> and the directory <mono>nsm-master-*</mono> containing the uncompiled code. 
@@ -165,7 +190,7 @@
 				<pre class="prettyprint inline rounded lang-bsh">
 					cd ~/Downloads/nsm-master-*
 					make
-					make windows-install
+					make git-bash-install
 				</pre>
 			</div>
 		</p>
@@ -174,13 +199,9 @@
 			You should now have a functioning version of <mono>nsm</mono> installed on your Windows machine. 
 		</p>
 		
-		<p>
-			It is fairly straight forward to set <mono>Notepad++</mono> as the default program to open/modify your <mono>*.content</mono> and <mono>*.template</mono> files. Further if you go to <mono>Settings -> Style Configurator...</mono> then select language <mono>HTML</mono> you can add <mono>content template</mono> to the <mono>User Ext:</mono> text box which will then have <mono>Notepad++</mono> automatically use html syntax highlighting for all <mono>*.content</mono> and <mono>*.template</mono> files (pretty nifty!).
-		</p>
-		
 		<h3>Uninstalling <mono>nsm</mono></h3>
 		<p>
-			Should you ever want to remove <mono>nsm</mono> from your machine (aka commit blasphemy), simply run <mono>sudo rm -f ~/bin/nsm</mono> from any terminal window.
+			Should you ever want to remove <mono>nsm</mono> from your machine (aka commit blasphemy), either run <mono>make git-bash-uninstall</mono> from the source code directory or run <mono>sudo rm -f ~/bin/nsm</mono> from any Git Bash terminal window.
 		</p>
 
 		<footer>
@@ -200,7 +221,7 @@
 				<a href="https://snapcraft.io/nsm"><img alt="Get it from the Snap Store" src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" width="150px"></a>
 			</p>
 		
-			Page was last built on Sunday August 04 2019 at 10:50:47 (AEST) using Linux. <br>
+			Page was last built on Monday August 05 2019 at 11:57:21 (AEST) using Linux. <br>
 		
 			<noselect><small>&copy;&nbsp;2015 - <script>document.write(new Date().getFullYear())</script> <a href="https://n-ham.com/">Nicholas Ham</a></small></noselect>
 		</footer>
