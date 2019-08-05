@@ -1,5 +1,5 @@
 <h3>
-	Linux installation using snap
+	Linux installation using <mono>snap</mono>
 </h3>
 
 <p>
@@ -11,6 +11,29 @@
 		snap install nsm
 	</pre>
 </div>
+
+<h3>
+	Windows installation using <mono>chocolatey</mono>
+</h3>
+
+<p>
+	You can install <mono>nsm</mono> on Windows using <mono>chocolatey</mono>. First <a href="https://chocolatey.org/docs/installation">install</a> <mono>chocolatey</mono>, then follow the instructions <a href="https://chocolatey.org/packages/nsm/1.0">here</a>, or alternatively enter:
+</p>
+
+<div align="center">
+	<pre class="prettyprint">
+		choco install nsm
+	</pre>
+</div>
+
+<h3>
+	Windows installation from executable
+</h3>
+
+<p>
+	Download <a href="https://github.com/nifty-site-manager/nsm-chocolatey/raw/master/nsm.exe">this</a> executable and place it in <mono>C:\Windows\system32</mono>.
+</p>
+
 
 <h3>
 	Instructions for installing <mono>nsm</mono> from source on:
