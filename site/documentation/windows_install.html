@@ -114,12 +114,12 @@
 			<p>
 				Download <a href="https://gitlab.com/nifty-site-manager/nsm/repository/master/archive.zip">nsm-master-*.zip</a>, then follow these steps to compile and install:
 				<ol>
-					<li>Install <a href="http://gnuwin32.sourceforge.net/packages/make.htm">GnuWin32</a> (Make for Windows);</li>
-					<li>Right click the start menu and open both a Command Prompt window and a Command Prompt (Admin) window;</li>
+					<li>Install <a href="http://gnuwin32.sourceforge.net/packages/make.htm">GnuWin32</a> (Make for Windows) [or <mono>choco install gnuwin</mono>] and <a href="https://sourceforge.net/projects/mingw-w64/">mingw</a> [or <mono>choco install mingw</mono>];</li>
+					<li>Open both a Command Prompt window and a Command Prompt (Admin) window (right click command prompt and select <mono>run as administrator</mono>);</li>
 					<li>Enter <mono>path=%path%;C:\Program Files (x86)\GnuWin32\bin;</mono> in to both command prompts to add <mono>make</mono> to your path;</li>
 					<li>In both command prompts change directory to where the nsm source code is;</li>
 					<li>From the regular command prompt enter <mono>make</mono>;</li>
-					<li>Move <mono>nsm.exe</mono> to <mono>C:\Windows\system32</mono>. Alternatively from the admin command prompt enter <mono>make windows-install</mono>;</li>
+					<li>Move <mono>nsm.exe</mono> to somewhere in your user's path, eg. <mono>C:\Windows\system32</mono>. Alternatively from the admin command prompt enter <mono>make windows-install</mono>;</li>
 					<li>Delete both the file <mono>nsm-master-*.zip</mono> and the directory <mono>nsm-master-*</mono> containing the uncompiled/source code.</li>
 				</ol>
 			
@@ -144,9 +144,9 @@
 			
 			<h3>Installing <mono>Git Bash</mono> and <mono>make</mono></h3>
 			
-			Install <a href="https://git-scm.com/downloads">Git</a>, which should come with Git Bash as well. 
+			Install <a href="https://git-scm.com/downloads">Git</a> [or <mono>choco install git</mono>, which should come with Git Bash as well. 
 			
-			Get make from <a href="https://gist.github.com/evanwill/0207876c3243bbb6863e65ec5dc3f058">here</a>, ie:
+			Get make from <a href="https://gist.github.com/evanwill/0207876c3243bbb6863e65ec5dc3f058">here</a> [or <mono>choco install make</mono>, ie:
 			<ol>
 				<li>
 					Go to <a href="https://sourceforge.net/projects/ezwinports/">here</a>;
@@ -225,7 +225,7 @@
 					<a href="https://snapcraft.io/nsm"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" height="40px" alt="Get it from the Snap Store" title="Linux"></a></noselect>
 				</p>
 			
-				Page was last built on Saturday August 10 2019 at 13:53:30 (AEST) using Linux. <br>
+				Page was last built on Sunday August 11 2019 at 05:13:49 (AEST) using Linux. <br>
 			
 				<noselect><small>&copy;&nbsp;2015 - <script>document.write(new Date().getFullYear())</script> <a href="https://n-ham.com/">Nicholas Ham</a></small></noselect>
 			</footer>

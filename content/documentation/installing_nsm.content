@@ -12,6 +12,10 @@
 	</pre>
 </div>
 
+<p>
+	To uninstall <mono>nsm</mono> enter <mono>snap remove nsm</mono>.
+</p>
+
 <h3>
 	Windows installation using <mono>chocolatey</mono>
 </h3>
@@ -26,12 +30,16 @@
 	</pre>
 </div>
 
+<p>
+	To uninstall <mono>nsm</mono> enter <mono>choco uninstall nsm</mono>.
+</p>
+
 <h3>
 	Windows installation from executable
 </h3>
 
 <p>
-	Download <a href="https://github.com/nifty-site-manager/nsm-chocolatey/raw/master/nsm.exe">this</a> executable and place it in <mono>C:\Windows\system32</mono>.
+	Download <a href="https://github.com/nifty-site-manager/nsm-chocolatey/raw/master/nsm.exe">this</a> executable and place it anywhere in your user's path, eg. in <mono>C:\Windows\system32</mono>.
 </p>
 
 
