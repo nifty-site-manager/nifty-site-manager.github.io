@@ -57,287 +57,289 @@
 	</head>
 
 	<body>
-		<p>
-			<center><header><img id="logo" src="../files/logo.png"></header></center>
-			<!-- Logo purchased from logojoy.com -->
-		</p>
+		<div class="content">
+			<p>
+				<center><header><img id="logo" src="../files/logo.png"></header></center>
+				<!-- Logo purchased from logojoy.com -->
+			</p>
 
-		<nav>
-			<ul class="drop_menu">
-				<li></li>
-				<li class="dm_li">
-					<a href="../index.html">home</a>
-				</li>
-		
-				<li class ="dm_li">
-					<div class="dm_text">documentation</div>
-					<ul class ="drop_submenu">
-						<li class="dsm_li"><a href="installing_nsm.html">installing nsm</a></li>
-						<li class="dsm_li"><a href="nsm_tutorial.html">nsm tutorial</a></li>
-						<li class="dsm_li"><a href="nsm_commands.html">nsm commands</a></li>
-						<li class="dsm_li"><a href="content_files.html">content files</a></li>
-						<li class="dsm_li"><a href="template_files.html">template files</a></li>
-						<li class="dsm_li"><a href="displaying_mathematics.html">displaying mathematics</a></li>
-						<li class="dsm_li"><a href="displaying_code_blocks.html">displaying code blocks</a></li>
-						<li class="dsm_li"><a href="hosting_your_site.html">hosting your site</a></li>
-					</ul>
-				</li>
-		
-				<li class ="dm_li">
-					<a href="../merchandise.html">merchandise</a>
-				</li>
-		
-				<li class ="dm_li">
-					<div class="dm_text">resources</div>
-					<ul class ="drop_submenu">
-						<li class="dsm_li"><a href="../resources/examples.html">example sites</a></li>
-						<li class="dsm_li"><a href="../resources/project_suggestions.html">project suggestions</a></li>
-						<li class="dsm_li"><a href="../resources/templates.html">templates</a></li>
-						<li class="dsm_li"><a href="../resources/links.html">useful links</a></li>
-					</ul>
-				</li>
-		
-				<li class ="dm_li">
-					<a href="../support.html">support</a>
-				</li>
-				<li></li>
-			</ul>
-		</nav>
+			<nav>
+				<ul class="drop_menu">
+					<li></li>
+					<li class="dm_li">
+						<a href="../index.html">home</a>
+					</li>
+			
+					<li class ="dm_li">
+						<div class="dm_text">documentation</div>
+						<ul class ="drop_submenu">
+							<li class="dsm_li"><a href="installing_nsm.html">installing nsm</a></li>
+							<li class="dsm_li"><a href="nsm_tutorial.html">nsm tutorial</a></li>
+							<li class="dsm_li"><a href="nsm_commands.html">nsm commands</a></li>
+							<li class="dsm_li"><a href="content_files.html">content files</a></li>
+							<li class="dsm_li"><a href="template_files.html">template files</a></li>
+							<li class="dsm_li"><a href="displaying_mathematics.html">displaying mathematics</a></li>
+							<li class="dsm_li"><a href="displaying_code_blocks.html">displaying code blocks</a></li>
+							<li class="dsm_li"><a href="hosting_your_site.html">hosting your site</a></li>
+						</ul>
+					</li>
+			
+					<li class ="dm_li">
+						<a href="../merchandise.html">merchandise</a>
+					</li>
+			
+					<li class ="dm_li">
+						<div class="dm_text">resources</div>
+						<ul class ="drop_submenu">
+							<li class="dsm_li"><a href="../resources/examples.html">example sites</a></li>
+							<li class="dsm_li"><a href="../resources/project_suggestions.html">project suggestions</a></li>
+							<li class="dsm_li"><a href="../resources/templates.html">templates</a></li>
+							<li class="dsm_li"><a href="../resources/links.html">useful links</a></li>
+						</ul>
+					</li>
+			
+					<li class ="dm_li">
+						<a href="../support.html">support</a>
+					</li>
+					<li></li>
+				</ul>
+			</nav>
 
-		<h3>
-			Guide to displaying code blocks
-		</h3>
-		
-		<h4>
-			Syntax Highlighting
-		</h4>
-		<p>
-			One easy way to have syntax highlighted code blocks on your site is to use <a href=https://github.com/google/code-prettify>Google Code Prettify</a>. Using Google Code Prettify on your site is as simple as adding the following code to the head of each page:
-		
+			<h3>
+				Guide to displaying code blocks
+			</h3>
+			
+			<h4>
+				Syntax Highlighting
+			</h4>
+			<p>
+				One easy way to have syntax highlighted code blocks on your site is to use <a href=https://github.com/google/code-prettify>Google Code Prettify</a>. Using Google Code Prettify on your site is as simple as adding the following code to the head of each page:
+			
+				<div align="center">
+					<pre class="prettyprint lang-html linenums rounded">
+						&lt;!-- uses google-code-prettify for syntax highlighting 
+							 see https://github.com/google/code-prettify for more info -->
+						&lt;script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js">
+						&lt;/script>
+					</pre>
+				</div>
+			</p>
+			
+			<p>
+				Note the examples on this site are using the included <a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io/blob/master/css/pagestyle.css">pre.css</a> file as well as the script above. 
+			</p>
+			
+			<p>
+				See the Google code prettifier <a href=https://github.com/google/code-prettify/blob/master/README.md>README</a> for supported languages and other relevant information.
+			</p>
+			
+			<p>
+				Also see the <a href="nsm_tutorial.html">nsm tutorial</a> for a better idea of how to nicely display code blocks. More to be added here at some point (probably no time soon). Alternatively, there are some examples below.
+			</p>
+			
+			<h4>
+				Example code blocks
+			</h4>
+			
 			<div align="center">
-				<pre class="prettyprint lang-html linenums rounded">
-					&lt;!-- uses google-code-prettify for syntax highlighting 
-						 see https://github.com/google/code-prettify for more info -->
-					&lt;script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js">
-					&lt;/script>
+				<pre class="prettyprint linenums lang-cpp rounded">
+					int n;
+					vector&lt;int> v;
+			
+					&lt;pre>
+						int n;
+						vector&lt;int> v;
+			
+						for(int i=0; i &lt; n; i++)
+							cout &lt;&lt; v[i] &lt;&lt; endl;
+					&lt;/pre>
+			
+					for(int i=0; i &lt; n; i++)
+						cout &lt;&lt; v[i] &lt;&lt; endl;
 				</pre>
 			</div>
-		</p>
-		
-		<p>
-			Note the examples on this site are using the included <a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io/blob/master/css/pagestyle.css">pre.css</a> file as well as the script above. 
-		</p>
-		
-		<p>
-			See the Google code prettifier <a href=https://github.com/google/code-prettify/blob/master/README.md>README</a> for supported languages and other relevant information.
-		</p>
-		
-		<p>
-			Also see the <a href="nsm_tutorial.html">nsm tutorial</a> for a better idea of how to nicely display code blocks. More to be added here at some point (probably no time soon). Alternatively, there are some examples below.
-		</p>
-		
-		<h4>
-			Example code blocks
-		</h4>
-		
-		<div align="center">
-			<pre class="prettyprint linenums lang-cpp rounded">
-				int n;
-				vector&lt;int> v;
-		
-				&lt;pre>
+			
+			<br>
+			
+			<div align="center">
+				<pre class="rounded">
 					int n;
 					vector&lt;int> v;
-		
+			
+					&lt;pre>
+						int n;
+						vector&lt;int> v;
+			
+						for(int i=0; i &lt; n; i++)
+							cout &lt;&lt; v[i] &lt;&lt; endl;
+					&lt;/pre>
+			
 					for(int i=0; i &lt; n; i++)
 						cout &lt;&lt; v[i] &lt;&lt; endl;
-				&lt;/pre>
-		
-				for(int i=0; i &lt; n; i++)
-					cout &lt;&lt; v[i] &lt;&lt; endl;
-			</pre>
-		</div>
-		
-		<br>
-		
-		<div align="center">
-			<pre class="rounded">
-				int n;
-				vector&lt;int> v;
-		
-				&lt;pre>
-					int n;
-					vector&lt;int> v;
-		
-					for(int i=0; i &lt; n; i++)
-						cout &lt;&lt; v[i] &lt;&lt; endl;
-				&lt;/pre>
-		
-				for(int i=0; i &lt; n; i++)
-					cout &lt;&lt; v[i] &lt;&lt; endl;
-			</pre>
-		</div>
-		
-		<br>
-		
-		<div align="center">
-			<pre class="prettyprint linenums scroll">
-				#include "Quoted.h"
-				
-				//reading a string which may be surrounded by quotes with spaces, and strips surrounding quotes
-				//note mutates white space into single spaces
-				bool read_quoted(std::istream &ifs, std::string &s)
-				{
-				    //reads first string
-				    if(!(ifs >> s))
-				        return 0;
-				
-				    std::string s2;
-				    if(s[0] == '"')
-				    {
-				        while(s[s.length()-1] != '"')
-				        {
-				            ifs >> s2;
-				            s += " " + s2;
-				        }
-				
-				        s.replace(0, 1, "");
-				        s.replace(s.length()-1, 1, "");
-				    }
-				    else if(s[0] == '\'')
-				    {
-				        while(s[s.length()-1] != '\'')
-				        {
-				            ifs >> s2;
-				            s+=" " + s2;
-				        }
-				
-				        s.replace(0, 1, "");
-				        s.replace(s.length()-1, 1, "");
-				    }
-				
-				    return 1;
-				};
-				
-				//outputting a string with quotes surrounded if it contains space(s)
-				std::string quote(const std::string &unquoted)
-				{
-				    if(unquoted.find(' ') == std::string::npos)
-				        return unquoted;
-				    else if(unquoted.find('"') == std::string::npos)
-				        return "\"" + unquoted + "\"";
-				    else
-				        return "'" + unquoted + "'";
-				};
-				
-			</pre>
-		</div>
-		
-		<br>
-		
-		<div align="center">
-			<pre class="prettyprint linenums rounded">
-				#include "Quoted.h"
-				
-				//reading a string which may be surrounded by quotes with spaces, and strips surrounding quotes
-				//note mutates white space into single spaces
-				bool read_quoted(std::istream &ifs, std::string &s)
-				{
-				    //reads first string
-				    if(!(ifs >> s))
-				        return 0;
-				
-				    std::string s2;
-				    if(s[0] == '"')
-				    {
-				        while(s[s.length()-1] != '"')
-				        {
-				            ifs >> s2;
-				            s += " " + s2;
-				        }
-				
-				        s.replace(0, 1, "");
-				        s.replace(s.length()-1, 1, "");
-				    }
-				    else if(s[0] == '\'')
-				    {
-				        while(s[s.length()-1] != '\'')
-				        {
-				            ifs >> s2;
-				            s+=" " + s2;
-				        }
-				
-				        s.replace(0, 1, "");
-				        s.replace(s.length()-1, 1, "");
-				    }
-				
-				    return 1;
-				};
-				
-				//outputting a string with quotes surrounded if it contains space(s)
-				std::string quote(const std::string &unquoted)
-				{
-				    if(unquoted.find(' ') == std::string::npos)
-				        return unquoted;
-				    else if(unquoted.find('"') == std::string::npos)
-				        return "\"" + unquoted + "\"";
-				    else
-				        return "'" + unquoted + "'";
-				};
-				
-			</pre>
-		</div>
-		
-		<br>
-		
-		<div align="center">
-			<pre class="prettyprint linenums rounded">
-				//adds insert file
-				if(read_and_process(insertLocation, antiDepsOfReadLocation, contentLocation, pageTitle, dateTimeInfo, indentAmount, codeBlockDepth, htmlCommentDepth, contentInserted, processedPage, pageDeps) > 0)
-					return 1;
-				//indent amount updated inside read_and_process
-				linePos += posOffset;
-			</pre>
-		</div>
-		
-		
+				</pre>
+			</div>
+			
+			<br>
+			
+			<div align="center">
+				<pre class="prettyprint linenums scroll">
+					#include "Quoted.h"
+					
+					//reading a string which may be surrounded by quotes with spaces, and strips surrounding quotes
+					//note mutates white space into single spaces
+					bool read_quoted(std::istream &ifs, std::string &s)
+					{
+					    //reads first string
+					    if(!(ifs >> s))
+					        return 0;
+					
+					    std::string s2;
+					    if(s[0] == '"')
+					    {
+					        while(s[s.length()-1] != '"')
+					        {
+					            ifs >> s2;
+					            s += " " + s2;
+					        }
+					
+					        s.replace(0, 1, "");
+					        s.replace(s.length()-1, 1, "");
+					    }
+					    else if(s[0] == '\'')
+					    {
+					        while(s[s.length()-1] != '\'')
+					        {
+					            ifs >> s2;
+					            s+=" " + s2;
+					        }
+					
+					        s.replace(0, 1, "");
+					        s.replace(s.length()-1, 1, "");
+					    }
+					
+					    return 1;
+					};
+					
+					//outputting a string with quotes surrounded if it contains space(s)
+					std::string quote(const std::string &unquoted)
+					{
+					    if(unquoted.find(' ') == std::string::npos)
+					        return unquoted;
+					    else if(unquoted.find('"') == std::string::npos)
+					        return "\"" + unquoted + "\"";
+					    else
+					        return "'" + unquoted + "'";
+					};
+					
+				</pre>
+			</div>
+			
+			<br>
+			
+			<div align="center">
+				<pre class="prettyprint linenums rounded">
+					#include "Quoted.h"
+					
+					//reading a string which may be surrounded by quotes with spaces, and strips surrounding quotes
+					//note mutates white space into single spaces
+					bool read_quoted(std::istream &ifs, std::string &s)
+					{
+					    //reads first string
+					    if(!(ifs >> s))
+					        return 0;
+					
+					    std::string s2;
+					    if(s[0] == '"')
+					    {
+					        while(s[s.length()-1] != '"')
+					        {
+					            ifs >> s2;
+					            s += " " + s2;
+					        }
+					
+					        s.replace(0, 1, "");
+					        s.replace(s.length()-1, 1, "");
+					    }
+					    else if(s[0] == '\'')
+					    {
+					        while(s[s.length()-1] != '\'')
+					        {
+					            ifs >> s2;
+					            s+=" " + s2;
+					        }
+					
+					        s.replace(0, 1, "");
+					        s.replace(s.length()-1, 1, "");
+					    }
+					
+					    return 1;
+					};
+					
+					//outputting a string with quotes surrounded if it contains space(s)
+					std::string quote(const std::string &unquoted)
+					{
+					    if(unquoted.find(' ') == std::string::npos)
+					        return unquoted;
+					    else if(unquoted.find('"') == std::string::npos)
+					        return "\"" + unquoted + "\"";
+					    else
+					        return "'" + unquoted + "'";
+					};
+					
+				</pre>
+			</div>
+			
+			<br>
+			
+			<div align="center">
+				<pre class="prettyprint linenums rounded">
+					//adds insert file
+					if(read_and_process(insertLocation, antiDepsOfReadLocation, contentLocation, pageTitle, dateTimeInfo, indentAmount, codeBlockDepth, htmlCommentDepth, contentInserted, processedPage, pageDeps) > 0)
+						return 1;
+					//indent amount updated inside read_and_process
+					linePos += posOffset;
+				</pre>
+			</div>
+			
+			
 
-		<footer>
-			<hr>
-			<center><img src="../files/nsm.png" width="120"></center>
-			<!-- Signature purchased from logojoy.com -->
-		
-			<p style="margin-top:2px">
-				<b>Mirrors:</b> [<a href="https://nift.cc/">Official</a>] [<a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a>] [<a href="https://nifty-site-manager.github.io/">GitHub</a>] [<a href="https://nifty-site-manager.gitlab.io/">GitLab</a>] [<a href="https://nifty-site-manager.netlify.com/">Netlify</a>]
-			</p>
-		
-			<p>
-				<noselect><a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; <a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a> &nbsp; <a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a></noselect>
-			</p>
-		
-			<p>
-				<!--<noselect><a href="https://formulae.brew.sh/formula/nsm"><img src="../files/homebrew.png" height="40px" alt="Get it from the Homebrew store" title="OSX/Linux"></a> &nbsp;-->
-				<a href="https://chocolatey.org/packages/nsm/1.0"><img src="../files/chocolatey.svg" height="40px" alt="Get it from the Chocolatey store" title="Windows"></a> &nbsp;
-				<!--<a href="https://flathub.org/apps/details/com.n-ham.nsm"><img src="../files/flathub.png" height="40px" alt="Get it from the FlatHub store" title="Linux"></a> &nbsp;-->
-				<a href="https://snapcraft.io/nsm"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" height="40px" alt="Get it from the Snap Store" title="Linux"></a></noselect>
-			</p>
-		
-			Page was last built on Monday August 05 2019 at 20:56:19 (AEST) using Linux. <br>
-		
-			<noselect><small>&copy;&nbsp;2015 - <script>document.write(new Date().getFullYear())</script> <a href="https://n-ham.com/">Nicholas Ham</a></small></noselect>
-		</footer>
+			<footer>
+				<hr>
+				<center><img src="../files/nsm.png" width="120"></center>
+				<!-- Signature purchased from logojoy.com -->
+			
+				<p style="margin-top:2px">
+					<b>Mirrors:</b> [<a href="https://nift.cc/">Official</a>] [<a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a>] [<a href="https://nifty-site-manager.github.io/">GitHub</a>] [<a href="https://nifty-site-manager.gitlab.io/">GitLab</a>] [<a href="https://nifty-site-manager.netlify.com/">Netlify</a>]
+				</p>
+			
+				<p>
+					<noselect><a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; <a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a> &nbsp; <a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a></noselect>
+				</p>
+			
+				<p>
+					<!--<noselect><a href="https://formulae.brew.sh/formula/nsm"><img src="../files/homebrew.png" height="40px" alt="Get it from the Homebrew store" title="OSX/Linux"></a> &nbsp;-->
+					<a href="https://chocolatey.org/packages/nsm/1.0"><img src="../files/chocolatey.svg" height="40px" alt="Get it from the Chocolatey store" title="Windows"></a> &nbsp;
+					<!--<a href="https://flathub.org/apps/details/com.n-ham.nsm"><img src="../files/flathub.png" height="40px" alt="Get it from the FlatHub store" title="Linux"></a> &nbsp;-->
+					<a href="https://snapcraft.io/nsm"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" height="40px" alt="Get it from the Snap Store" title="Linux"></a></noselect>
+				</p>
+			
+				Page was last built on Saturday August 10 2019 at 13:53:30 (AEST) using Linux. <br>
+			
+				<noselect><small>&copy;&nbsp;2015 - <script>document.write(new Date().getFullYear())</script> <a href="https://n-ham.com/">Nicholas Ham</a></small></noselect>
+			</footer>
+		</div>
 
-		<script src='../js/process_pre_tags.js'></script>		
+		<script src='../js/process_pre_tags.js'></script>	
 	</body>
 </html>
 
 <!-- 
 	information on how to easily make and host a site similar to
 	this may be found at any of the following mirrors:
+		* https://nift.cc/
 		* https://nifty-site-manager.com/ 
 		* https://nifty-site-manager.bitbucket.io/ 
 		* https://nifty-site-manager.github.io/ 
 		* https://nifty-site-manager.gitlab.io/ 
-		* https://web.archive.org/web/https://nifty-site-manager.com/
-		* https://web.archive.org/web/20190520234459/https://www.nifty-site-manager.com/
+		* https://nifty-site-manager.netlify.com/
 -->

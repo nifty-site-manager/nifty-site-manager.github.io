@@ -57,308 +57,310 @@
 	</head>
 
 	<body>
-		<p>
-			<center><header><img id="logo" src="../files/logo.png"></header></center>
-			<!-- Logo purchased from logojoy.com -->
-		</p>
+		<div class="content">
+			<p>
+				<center><header><img id="logo" src="../files/logo.png"></header></center>
+				<!-- Logo purchased from logojoy.com -->
+			</p>
 
-		<nav>
-			<ul class="drop_menu">
-				<li></li>
-				<li class="dm_li">
-					<a href="../index.html">home</a>
-				</li>
-		
-				<li class ="dm_li">
-					<div class="dm_text">documentation</div>
-					<ul class ="drop_submenu">
-						<li class="dsm_li"><a href="installing_nsm.html">installing nsm</a></li>
-						<li class="dsm_li"><a href="nsm_tutorial.html">nsm tutorial</a></li>
-						<li class="dsm_li"><a href="nsm_commands.html">nsm commands</a></li>
-						<li class="dsm_li"><a href="content_files.html">content files</a></li>
-						<li class="dsm_li"><a href="template_files.html">template files</a></li>
-						<li class="dsm_li"><a href="displaying_mathematics.html">displaying mathematics</a></li>
-						<li class="dsm_li"><a href="displaying_code_blocks.html">displaying code blocks</a></li>
-						<li class="dsm_li"><a href="hosting_your_site.html">hosting your site</a></li>
-					</ul>
-				</li>
-		
-				<li class ="dm_li">
-					<a href="../merchandise.html">merchandise</a>
-				</li>
-		
-				<li class ="dm_li">
-					<div class="dm_text">resources</div>
-					<ul class ="drop_submenu">
-						<li class="dsm_li"><a href="../resources/examples.html">example sites</a></li>
-						<li class="dsm_li"><a href="../resources/project_suggestions.html">project suggestions</a></li>
-						<li class="dsm_li"><a href="../resources/templates.html">templates</a></li>
-						<li class="dsm_li"><a href="../resources/links.html">useful links</a></li>
-					</ul>
-				</li>
-		
-				<li class ="dm_li">
-					<a href="../support.html">support</a>
-				</li>
-				<li></li>
-			</ul>
-		</nav>
-
-		<h3>
-			nsm tutorial
-		</h3>
-		
-		<p>
-			This is a modified version of the original tutorial that hopefully works (the original tutorial is accessible <a href="./old_nsm_tutorial.html">here</a>), if there is any problems please file an issue on one of the official repositories linked in the footer at the bottom. The easiest way to learn how nsm works is to get your feet wet and hands dirty playing with a simple site:
-		</p>
-		
-		<ol>
-			<li>
-				Download <a href="https://gitlab.com/nsm-templates/simple-site/-/archive/master/simple-site-master.zip">simple-site-master.zip</a> and extract <mono>simple-site-master</mono>. If you have a BitBucket, GitHub and/or GitLab account then you can import/fork and rename a repository from <a href="https://bitbucket.org/nsm-templates">here</a>, <a href="https://github.com/nsm-templates">here</a> or <a href="https://gitlab.com/nsm-templates">here</a> then clone using <mono>nsm clone repository-url</mono> (Note - You can rename a repository when importing it, rather than forking and renaming, plus on BitBucket and GitHub you cannot remove fork relationships);
-			</li>
-		
-			<li>
-				If you imported/forked a repository on GitHub then in the repository's settings on GitHub for GitHub Pages set the source to <mono>master branch</mono>;
-			</li>
-		
-			<li>
-				Open a terminal window and change to the <mono>simple-site-master</mono> directory, you will also find it useful to have the <mono>simple-site-master</mono> directory open using your operating system's window manager;
-			</li>
-		
-			<li>
-				Open <mono>template/page.template</mono>, <mono>template/footer.content</mono>, <mono>template/menu.content</mono>, <mono>content/index.content</mono> and <mono>content/about.content</mono> in any text editor you like, take a look at what each file contains;
-			</li>
-		
-			<li>
-				If you ever forget an nsm command, enter <mono>nsm commands</mono> into your terminal window;
-			</li>
-		
-			<li>
-				Enter <mono>nsm status</mono> into your terminal window;
-			</li>
-		
-			<li>
-				Enter <mono>nsm info-all</mono>, <mono>nsm info-names</mono> and <mono>nsm status</mono>;
-			</li>
-		
-			<li>
-				The command to have nsm track a page is <mono>nsm track page-name page-title template-path</mono>, where <mono>page-title</mono> and <mono>template-path</mono> are optional (default <mono>page-title</mono> is the specified <mono>page-name</mono>, and default <mono>template-path</mono> is <mono>template/page.template</mono>). Enter <mono>nsm track first_page myPageTitle</mono>;
-			</li>
-		
-			<li>
-				We will come back to building pages later in the tutorial, but enter <mono>nsm build-updated</mono>.
-			</li>
-		
-			<li>
-				The page list file <mono>.siteinfo/pages.list</mono> should now contain the following information for pages <mono>about</mono> and <mono>index</mono>;
-		
-				<div align="center">
-					<pre class="inline rounded">
-						about
-						about
-						template/page.template
-		
-						first_page
-						myPageTitle
-						template/page.template
-		
-						index
-						home
-						template/page.template
-		
-					</pre>
-				</div> <br>
-			</li>
-		
-			<li>
-				Enter <mono>nsm info-all</mono>, <mono>nsm info-names</mono>, <mono>nsm info about</mono>, <mono>nsm info about index</mono> and <mono>nsm status</mono>;
-			</li>
-		
-			<li>
-				Enter <mono>nsm rm first_page</mono> and repeat the last step;
-			</li>
-		
-			<li>
-				Enter <mono>nsm build-updated</mono>;
-				<ul>
-					<li>
-						The directory <mono>site/</mono> should now contain the pages <mono>index.html</mono>, <mono>about.html</mono> and <mono>first_page.html</mono>. By default users do not have permission to write to page files, this is to prevent users from accidentally modifying a page file when they more than likely intended to modify a content file. Should users want to manually edit a page file they can simply change the file permissions (eg. <mono>chmod +w page-path</mono>); 
+			<nav>
+				<ul class="drop_menu">
+					<li></li>
+					<li class="dm_li">
+						<a href="../index.html">home</a>
 					</li>
-		
-					<li>
-						Another directory <mono>.siteinfo/site/</mono> should have been created containing the info files <mono>index.info</mono>, <mono>about.info</mono> and <mono>first_page.info</mono>. By default users do not have permission to write to info files, and users should beware of ever doing so. The modification time of info files is how nsm knows when pages were last built (actually I am pretty sure nsm gets this information from the first line of the information files), furthermore the content inside info files represents page dependencies from the last time pages were built, <u>not necessarily</u> current page dependencies, hence users should not have any reason to modify them;
+			
+					<li class ="dm_li">
+						<div class="dm_text">documentation</div>
+						<ul class ="drop_submenu">
+							<li class="dsm_li"><a href="installing_nsm.html">installing nsm</a></li>
+							<li class="dsm_li"><a href="nsm_tutorial.html">nsm tutorial</a></li>
+							<li class="dsm_li"><a href="nsm_commands.html">nsm commands</a></li>
+							<li class="dsm_li"><a href="content_files.html">content files</a></li>
+							<li class="dsm_li"><a href="template_files.html">template files</a></li>
+							<li class="dsm_li"><a href="displaying_mathematics.html">displaying mathematics</a></li>
+							<li class="dsm_li"><a href="displaying_code_blocks.html">displaying code blocks</a></li>
+							<li class="dsm_li"><a href="hosting_your_site.html">hosting your site</a></li>
+						</ul>
 					</li>
+			
+					<li class ="dm_li">
+						<a href="../merchandise.html">merchandise</a>
+					</li>
+			
+					<li class ="dm_li">
+						<div class="dm_text">resources</div>
+						<ul class ="drop_submenu">
+							<li class="dsm_li"><a href="../resources/examples.html">example sites</a></li>
+							<li class="dsm_li"><a href="../resources/project_suggestions.html">project suggestions</a></li>
+							<li class="dsm_li"><a href="../resources/templates.html">templates</a></li>
+							<li class="dsm_li"><a href="../resources/links.html">useful links</a></li>
+						</ul>
+					</li>
+			
+					<li class ="dm_li">
+						<a href="../support.html">support</a>
+					</li>
+					<li></li>
 				</ul>
-			</li>
-		
-			<li>
-				Open <mono>site/index.html</mono> in a browser, click through to the about page, and view the source for both pages. Compare what you have locally to a <a href="https://nsm-templates.gitlab.io/simple-site/">pre-built</a> version of <mono>site/index.html</mono> 
-			</li>
-		
-			<li>
-				Enter <mono>nsm status</mono>;
-			</li>
-		
-			<li>
-				Modify <mono>content/index.content</mono>;
-			</li>
-		
-			<li>
-				Enter <mono>cd content/</mono>;
-			</li>
-		
-			<li>
-				Enter <mono>nsm status</mono>, then <mono>nsm build-updated</mono>, then <mono>nsm status</mono> (notice nsm can be run from any directory inside the stage directory, stage directory inclusive, obviously as that is where we started! If you are using BitBucket or GitHub then the site directory is set up as a master branch);
-			</li>
-		
-			<li>
-				Enter <mono>cd ../</mono> to change back to the stage directory;
-			</li>
-		
-			<li>
-				Modify <mono>template/footer.content</mono>;
-			</li>
-		
-			<li>
-				Enter <mono>nsm status</mono>, then <mono>nsm build-updated</mono>;
-			</li>
-		
-			<li>
-				Add <mono>&commat;input(content/badfile.content)</mono> to <mono>content/index.content</mono>;
-			</li>
-		
-			<li>
-				Enter <mono>nsm status</mono>, then <mono>nsm build-updated</mono>, then <mono>nsm status</mono>;
-			</li>
-		
-			<li>
-				Replace <mono>&commat;input(content/badfile.content)</mono> with <mono>&commat;input(content/index.content)</mono> in <mono>content/index.content</mono>;
-			</li>
-		
-			<li>
-				Enter <mono>nsm status</mono>, then <mono>nsm build-updated</mono>, then <mono>nsm status</mono>;
-			</li>
-		
-			<li>
-				Remove <mono>&commat;input(content/index.content)</mono> from <mono>content/index.content</mono>;
-			</li>
-		
-			<li>
-				Enter <mono>nsm status</mono>, then <mono>nsm build-updated</mono>;
-			</li>
-		
-			<li>
-				Add <mono>\$x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}\$</mono> to <mono>content/about.content</mono>;
-			</li>
-		
-			<li>
-				Enter <mono>nsm build-updated</mono> and reload <mono>site/about.html</mono>;
-			</li>
-		
-			<li>
-				Add the following to <mono>content/about.content</mono>;
-				<div align="center">
-					<pre class="inline prettyprint lang-cpp rounded">
-						&lt;div align="center">
-							&lt;pre>
-								ostream& operator&lt;&lt;(ostream &os, const std::vector&lt;std::string> &v)
-								{
-									if(v.size())
-										os &lt;&lt; v[i];
-									for(auto i=1; i&lt;v.size(); i++)
-										os &lt;&lt; " " &lt;&lt; v[i];
-									return os;
-								}
-							&lt;/pre>
-						&lt;/div>
-					</pre>
-				</div> <br>
-			</li>
-		
-			<li>
-				Enter <mono>nsm build-updated</mono> and reload <mono>site/about.html</mono>. View the source for <mono>site/about.html</mono> and look at the text inside the pre tags. Notice how every < character has been escaped to \&lt;, nsm automatically does this so you can simply paste your code straight into content files, otherwise you would need to manually replace < characters (if you want, add write permissions to <mono>site/about.html</mono> and see what happens when you revert back to using < inside the pre tags);
-			</li>
-		
-			<li>
-				Remove <mono>&commat;jsinclude(site/js/process_pre_tags.js)</mono> from <mono>templates/page.template</mono>;
-			</li>
-		
-			<li>
-					Enter <mono>nsm build-updated</mono> and reload <mono>site/about.html</mono>. Notice how the code block now has unwanted indenting? All whitespace is preserved between pre tags, which is where <mono>process_pre_tags.js</mono> comes in. For each pre block the script finds how many leading tabs the second line has (ie. the line after the pre block is opened), then strips that number of leading tabs from each line in the block. Alternatively users could just have horribly indented source code, personally I prefer this; <br> <br>
-		
-					<u>Note:</u> indenting of pre blocks must be tabs (indenting inside pre blocks can still be any combination of tabs/spaces). One can alter the js to also look for spaces,or just spaces, however it will still be stripping the indenting of the second line from the remaining lines, if you wanted to allow for inconsistent combinations of tabs/spaces for indenting inside code blocks you would also need to fix tab width using css, which would still be <i>broken</i> for users who use a different tab width and use inconsistent indenting. Do <u>not</u> just do a global replacement of tabs or four spaces either, yes it will fix indenting of pre blocks, but it may mess up indenting inside pre blocks when pages are displayed in a browser, and <u>will</u> infuriate users trying to work out why;
-			</li>
-		
-			<li>
-				Add <mono>&commat;jsinclude(site/js/process_pre_tags.js)</mono> back to the end of the body in <mono>templates/page.template</mono>
-			</li>
-		
-			<li>
-				Now try changing the open pre tag in <mono>content/about.content</mono> from <mono>&lt;pre></mono> to <mono>&lt;pre class="inline rounded prettyprint lang-cpp"></mono>.
-			</li>
-		
-			<li>
-				Enter <mono>nsm build-updated</mono> and reload <mono>site/about.html</mono>. See <mono>site/css/pre.css</mono> for how the simple site styles pre blocks.
-			</li>
-		
-			<li>
-				Enter <mono>nsm mv about test</mono>, check that: <mono>.siteinfo/pages.list</mono> has been updated; both <mono>site/index.html</mono> and <mono>.siteinfo/site/index.info</mono> were removed; and <mono>content/about.content</mono> was moved to <mono>content/test.content</mono>;
-			</li>
-		
-			<li>
-				Enter <mono>nsm cp test about</mono>, check that <mono>.siteinfo/pages.list</mono> has been updated and <mono>content/test.content</mono> was copied to <mono>content/about.content</mono>;
-			</li>
-		
-			<li>
-				Enter <mono>nsm rm test</mono>, check that <mono>content/test.content</mono>, <mono>site/test.html</mono> and <mono>.siteinfo/site/test.info</mono> were all removed. 
-			</li>
-		
-			<li>
-				Enter <mono>nsm untrack index</mono>, check that both <mono>site/index.html</mono> and <mono>.siteinfo/site/index.info</mono> were removed.
-			</li>
-		
-			<li>
-				If you forked, renamed and cloned a repository from BitBucket, GitHub or GitLab then you can build, commit and push changes back to BitBucket, GitHub or GitLab all at the same time using <mono>nsm bcp "commit message"</mono> (note for BitBucket you will need to enter your password twice and for GitHub you will need to enter your username and password twice, this is because of using both a stage and master branch for BitBucket/GitHub, something which is not done for GitLab). 
-			</li>
-		</ol>
-		
+			</nav>
 
-		<footer>
-			<hr>
-			<center><img src="../files/nsm.png" width="120"></center>
-			<!-- Signature purchased from logojoy.com -->
-		
-			<p style="margin-top:2px">
-				<b>Mirrors:</b> [<a href="https://nift.cc/">Official</a>] [<a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a>] [<a href="https://nifty-site-manager.github.io/">GitHub</a>] [<a href="https://nifty-site-manager.gitlab.io/">GitLab</a>] [<a href="https://nifty-site-manager.netlify.com/">Netlify</a>]
-			</p>
-		
+			<h3>
+				nsm tutorial
+			</h3>
+			
 			<p>
-				<noselect><a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; <a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a> &nbsp; <a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a></noselect>
+				This is a modified version of the original tutorial that hopefully works (the original tutorial is accessible <a href="./old_nsm_tutorial.html">here</a>), if there is any problems please file an issue on one of the official repositories linked in the footer at the bottom. The easiest way to learn how nsm works is to get your feet wet and hands dirty playing with a simple site:
 			</p>
-		
-			<p>
-				<!--<noselect><a href="https://formulae.brew.sh/formula/nsm"><img src="../files/homebrew.png" height="40px" alt="Get it from the Homebrew store" title="OSX/Linux"></a> &nbsp;-->
-				<a href="https://chocolatey.org/packages/nsm/1.0"><img src="../files/chocolatey.svg" height="40px" alt="Get it from the Chocolatey store" title="Windows"></a> &nbsp;
-				<!--<a href="https://flathub.org/apps/details/com.n-ham.nsm"><img src="../files/flathub.png" height="40px" alt="Get it from the FlatHub store" title="Linux"></a> &nbsp;-->
-				<a href="https://snapcraft.io/nsm"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" height="40px" alt="Get it from the Snap Store" title="Linux"></a></noselect>
-			</p>
-		
-			Page was last built on Monday August 05 2019 at 20:56:19 (AEST) using Linux. <br>
-		
-			<noselect><small>&copy;&nbsp;2015 - <script>document.write(new Date().getFullYear())</script> <a href="https://n-ham.com/">Nicholas Ham</a></small></noselect>
-		</footer>
+			
+			<ol>
+				<li>
+					Download <a href="https://gitlab.com/nsm-templates/simple-site/-/archive/master/simple-site-master.zip">simple-site-master.zip</a> and extract <mono>simple-site-master</mono>. If you have a BitBucket, GitHub and/or GitLab account then you can import/fork and rename a repository from <a href="https://bitbucket.org/nsm-templates">here</a>, <a href="https://github.com/nsm-templates">here</a> or <a href="https://gitlab.com/nsm-templates">here</a> then clone using <mono>nsm clone repository-url</mono> (Note - You can rename a repository when importing it, rather than forking and renaming, plus on BitBucket and GitHub you cannot remove fork relationships);
+				</li>
+			
+				<li>
+					If you imported/forked a repository on GitHub then in the repository's settings on GitHub for GitHub Pages set the source to <mono>master branch</mono>;
+				</li>
+			
+				<li>
+					Open a terminal window and change to the <mono>simple-site-master</mono> directory, you will also find it useful to have the <mono>simple-site-master</mono> directory open using your operating system's window manager;
+				</li>
+			
+				<li>
+					Open <mono>template/page.template</mono>, <mono>template/footer.content</mono>, <mono>template/menu.content</mono>, <mono>content/index.content</mono> and <mono>content/about.content</mono> in any text editor you like, take a look at what each file contains;
+				</li>
+			
+				<li>
+					If you ever forget an nsm command, enter <mono>nsm commands</mono> into your terminal window;
+				</li>
+			
+				<li>
+					Enter <mono>nsm status</mono> into your terminal window;
+				</li>
+			
+				<li>
+					Enter <mono>nsm info-all</mono>, <mono>nsm info-names</mono> and <mono>nsm status</mono>;
+				</li>
+			
+				<li>
+					The command to have nsm track a page is <mono>nsm track page-name page-title template-path</mono>, where <mono>page-title</mono> and <mono>template-path</mono> are optional (default <mono>page-title</mono> is the specified <mono>page-name</mono>, and default <mono>template-path</mono> is <mono>template/page.template</mono>). Enter <mono>nsm track first_page myPageTitle</mono>;
+				</li>
+			
+				<li>
+					We will come back to building pages later in the tutorial, but enter <mono>nsm build-updated</mono>.
+				</li>
+			
+				<li>
+					The page list file <mono>.siteinfo/pages.list</mono> should now contain the following information for pages <mono>about</mono> and <mono>index</mono>;
+			
+					<div align="center">
+						<pre class="inline rounded">
+							about
+							about
+							template/page.template
+			
+							first_page
+							myPageTitle
+							template/page.template
+			
+							index
+							home
+							template/page.template
+			
+						</pre>
+					</div> <br>
+				</li>
+			
+				<li>
+					Enter <mono>nsm info-all</mono>, <mono>nsm info-names</mono>, <mono>nsm info about</mono>, <mono>nsm info about index</mono> and <mono>nsm status</mono>;
+				</li>
+			
+				<li>
+					Enter <mono>nsm rm first_page</mono> and repeat the last step;
+				</li>
+			
+				<li>
+					Enter <mono>nsm build-updated</mono>;
+					<ul>
+						<li>
+							The directory <mono>site/</mono> should now contain the pages <mono>index.html</mono>, <mono>about.html</mono> and <mono>first_page.html</mono>. By default users do not have permission to write to page files, this is to prevent users from accidentally modifying a page file when they more than likely intended to modify a content file. Should users want to manually edit a page file they can simply change the file permissions (eg. <mono>chmod +w page-path</mono>); 
+						</li>
+			
+						<li>
+							Another directory <mono>.siteinfo/site/</mono> should have been created containing the info files <mono>index.info</mono>, <mono>about.info</mono> and <mono>first_page.info</mono>. By default users do not have permission to write to info files, and users should beware of ever doing so. The modification time of info files is how nsm knows when pages were last built (actually I am pretty sure nsm gets this information from the first line of the information files), furthermore the content inside info files represents page dependencies from the last time pages were built, <u>not necessarily</u> current page dependencies, hence users should not have any reason to modify them;
+						</li>
+					</ul>
+				</li>
+			
+				<li>
+					Open <mono>site/index.html</mono> in a browser, click through to the about page, and view the source for both pages. Compare what you have locally to a <a href="https://nsm-templates.gitlab.io/simple-site/">pre-built</a> version of <mono>site/index.html</mono> 
+				</li>
+			
+				<li>
+					Enter <mono>nsm status</mono>;
+				</li>
+			
+				<li>
+					Modify <mono>content/index.content</mono>;
+				</li>
+			
+				<li>
+					Enter <mono>cd content/</mono>;
+				</li>
+			
+				<li>
+					Enter <mono>nsm status</mono>, then <mono>nsm build-updated</mono>, then <mono>nsm status</mono> (notice nsm can be run from any directory inside the stage directory, stage directory inclusive, obviously as that is where we started! If you are using BitBucket or GitHub then the site directory is set up as a master branch);
+				</li>
+			
+				<li>
+					Enter <mono>cd ../</mono> to change back to the stage directory;
+				</li>
+			
+				<li>
+					Modify <mono>template/footer.content</mono>;
+				</li>
+			
+				<li>
+					Enter <mono>nsm status</mono>, then <mono>nsm build-updated</mono>;
+				</li>
+			
+				<li>
+					Add <mono>&commat;input(content/badfile.content)</mono> to <mono>content/index.content</mono>;
+				</li>
+			
+				<li>
+					Enter <mono>nsm status</mono>, then <mono>nsm build-updated</mono>, then <mono>nsm status</mono>;
+				</li>
+			
+				<li>
+					Replace <mono>&commat;input(content/badfile.content)</mono> with <mono>&commat;input(content/index.content)</mono> in <mono>content/index.content</mono>;
+				</li>
+			
+				<li>
+					Enter <mono>nsm status</mono>, then <mono>nsm build-updated</mono>, then <mono>nsm status</mono>;
+				</li>
+			
+				<li>
+					Remove <mono>&commat;input(content/index.content)</mono> from <mono>content/index.content</mono>;
+				</li>
+			
+				<li>
+					Enter <mono>nsm status</mono>, then <mono>nsm build-updated</mono>;
+				</li>
+			
+				<li>
+					Add <mono>\$x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}\$</mono> to <mono>content/about.content</mono>;
+				</li>
+			
+				<li>
+					Enter <mono>nsm build-updated</mono> and reload <mono>site/about.html</mono>;
+				</li>
+			
+				<li>
+					Add the following to <mono>content/about.content</mono>;
+					<div align="center">
+						<pre class="inline prettyprint lang-cpp rounded">
+							&lt;div align="center">
+								&lt;pre>
+									ostream& operator&lt;&lt;(ostream &os, const std::vector&lt;std::string> &v)
+									{
+										if(v.size())
+											os &lt;&lt; v[i];
+										for(auto i=1; i&lt;v.size(); i++)
+											os &lt;&lt; " " &lt;&lt; v[i];
+										return os;
+									}
+								&lt;/pre>
+							&lt;/div>
+						</pre>
+					</div> <br>
+				</li>
+			
+				<li>
+					Enter <mono>nsm build-updated</mono> and reload <mono>site/about.html</mono>. View the source for <mono>site/about.html</mono> and look at the text inside the pre tags. Notice how every < character has been escaped to \&lt;, nsm automatically does this so you can simply paste your code straight into content files, otherwise you would need to manually replace < characters (if you want, add write permissions to <mono>site/about.html</mono> and see what happens when you revert back to using < inside the pre tags);
+				</li>
+			
+				<li>
+					Remove <mono>&commat;jsinclude(site/js/process_pre_tags.js)</mono> from <mono>templates/page.template</mono>;
+				</li>
+			
+				<li>
+						Enter <mono>nsm build-updated</mono> and reload <mono>site/about.html</mono>. Notice how the code block now has unwanted indenting? All whitespace is preserved between pre tags, which is where <mono>process_pre_tags.js</mono> comes in. For each pre block the script finds how many leading tabs the second line has (ie. the line after the pre block is opened), then strips that number of leading tabs from each line in the block. Alternatively users could just have horribly indented source code, personally I prefer this; <br> <br>
+			
+						<u>Note:</u> indenting of pre blocks must be tabs (indenting inside pre blocks can still be any combination of tabs/spaces). One can alter the js to also look for spaces,or just spaces, however it will still be stripping the indenting of the second line from the remaining lines, if you wanted to allow for inconsistent combinations of tabs/spaces for indenting inside code blocks you would also need to fix tab width using css, which would still be <i>broken</i> for users who use a different tab width and use inconsistent indenting. Do <u>not</u> just do a global replacement of tabs or four spaces either, yes it will fix indenting of pre blocks, but it may mess up indenting inside pre blocks when pages are displayed in a browser, and <u>will</u> infuriate users trying to work out why;
+				</li>
+			
+				<li>
+					Add <mono>&commat;jsinclude(site/js/process_pre_tags.js)</mono> back to the end of the body in <mono>templates/page.template</mono>
+				</li>
+			
+				<li>
+					Now try changing the open pre tag in <mono>content/about.content</mono> from <mono>&lt;pre></mono> to <mono>&lt;pre class="inline rounded prettyprint lang-cpp"></mono>.
+				</li>
+			
+				<li>
+					Enter <mono>nsm build-updated</mono> and reload <mono>site/about.html</mono>. See <mono>site/css/pre.css</mono> for how the simple site styles pre blocks.
+				</li>
+			
+				<li>
+					Enter <mono>nsm mv about test</mono>, check that: <mono>.siteinfo/pages.list</mono> has been updated; both <mono>site/index.html</mono> and <mono>.siteinfo/site/index.info</mono> were removed; and <mono>content/about.content</mono> was moved to <mono>content/test.content</mono>;
+				</li>
+			
+				<li>
+					Enter <mono>nsm cp test about</mono>, check that <mono>.siteinfo/pages.list</mono> has been updated and <mono>content/test.content</mono> was copied to <mono>content/about.content</mono>;
+				</li>
+			
+				<li>
+					Enter <mono>nsm rm test</mono>, check that <mono>content/test.content</mono>, <mono>site/test.html</mono> and <mono>.siteinfo/site/test.info</mono> were all removed. 
+				</li>
+			
+				<li>
+					Enter <mono>nsm untrack index</mono>, check that both <mono>site/index.html</mono> and <mono>.siteinfo/site/index.info</mono> were removed.
+				</li>
+			
+				<li>
+					If you forked, renamed and cloned a repository from BitBucket, GitHub or GitLab then you can build, commit and push changes back to BitBucket, GitHub or GitLab all at the same time using <mono>nsm bcp "commit message"</mono> (note for BitBucket you will need to enter your password twice and for GitHub you will need to enter your username and password twice, this is because of using both a stage and master branch for BitBucket/GitHub, something which is not done for GitLab). 
+				</li>
+			</ol>
+			
 
-		<script src='../js/process_pre_tags.js'></script>		
+			<footer>
+				<hr>
+				<center><img src="../files/nsm.png" width="120"></center>
+				<!-- Signature purchased from logojoy.com -->
+			
+				<p style="margin-top:2px">
+					<b>Mirrors:</b> [<a href="https://nift.cc/">Official</a>] [<a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a>] [<a href="https://nifty-site-manager.github.io/">GitHub</a>] [<a href="https://nifty-site-manager.gitlab.io/">GitLab</a>] [<a href="https://nifty-site-manager.netlify.com/">Netlify</a>]
+				</p>
+			
+				<p>
+					<noselect><a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; <a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a> &nbsp; <a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a></noselect>
+				</p>
+			
+				<p>
+					<!--<noselect><a href="https://formulae.brew.sh/formula/nsm"><img src="../files/homebrew.png" height="40px" alt="Get it from the Homebrew store" title="OSX/Linux"></a> &nbsp;-->
+					<a href="https://chocolatey.org/packages/nsm/1.0"><img src="../files/chocolatey.svg" height="40px" alt="Get it from the Chocolatey store" title="Windows"></a> &nbsp;
+					<!--<a href="https://flathub.org/apps/details/com.n-ham.nsm"><img src="../files/flathub.png" height="40px" alt="Get it from the FlatHub store" title="Linux"></a> &nbsp;-->
+					<a href="https://snapcraft.io/nsm"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" height="40px" alt="Get it from the Snap Store" title="Linux"></a></noselect>
+				</p>
+			
+				Page was last built on Saturday August 10 2019 at 13:53:30 (AEST) using Linux. <br>
+			
+				<noselect><small>&copy;&nbsp;2015 - <script>document.write(new Date().getFullYear())</script> <a href="https://n-ham.com/">Nicholas Ham</a></small></noselect>
+			</footer>
+		</div>
+
+		<script src='../js/process_pre_tags.js'></script>	
 	</body>
 </html>
 
 <!-- 
 	information on how to easily make and host a site similar to
 	this may be found at any of the following mirrors:
+		* https://nift.cc/
 		* https://nifty-site-manager.com/ 
 		* https://nifty-site-manager.bitbucket.io/ 
 		* https://nifty-site-manager.github.io/ 
 		* https://nifty-site-manager.gitlab.io/ 
-		* https://web.archive.org/web/https://nifty-site-manager.com/
-		* https://web.archive.org/web/20190520234459/https://www.nifty-site-manager.com/
+		* https://nifty-site-manager.netlify.com/
 -->

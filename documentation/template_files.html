@@ -57,168 +57,170 @@
 	</head>
 
 	<body>
-		<p>
-			<center><header><img id="logo" src="../files/logo.png"></header></center>
-			<!-- Logo purchased from logojoy.com -->
-		</p>
-
-		<nav>
-			<ul class="drop_menu">
-				<li></li>
-				<li class="dm_li">
-					<a href="../index.html">home</a>
-				</li>
-		
-				<li class ="dm_li">
-					<div class="dm_text">documentation</div>
-					<ul class ="drop_submenu">
-						<li class="dsm_li"><a href="installing_nsm.html">installing nsm</a></li>
-						<li class="dsm_li"><a href="nsm_tutorial.html">nsm tutorial</a></li>
-						<li class="dsm_li"><a href="nsm_commands.html">nsm commands</a></li>
-						<li class="dsm_li"><a href="content_files.html">content files</a></li>
-						<li class="dsm_li"><a href="template_files.html">template files</a></li>
-						<li class="dsm_li"><a href="displaying_mathematics.html">displaying mathematics</a></li>
-						<li class="dsm_li"><a href="displaying_code_blocks.html">displaying code blocks</a></li>
-						<li class="dsm_li"><a href="hosting_your_site.html">hosting your site</a></li>
-					</ul>
-				</li>
-		
-				<li class ="dm_li">
-					<a href="../merchandise.html">merchandise</a>
-				</li>
-		
-				<li class ="dm_li">
-					<div class="dm_text">resources</div>
-					<ul class ="drop_submenu">
-						<li class="dsm_li"><a href="../resources/examples.html">example sites</a></li>
-						<li class="dsm_li"><a href="../resources/project_suggestions.html">project suggestions</a></li>
-						<li class="dsm_li"><a href="../resources/templates.html">templates</a></li>
-						<li class="dsm_li"><a href="../resources/links.html">useful links</a></li>
-					</ul>
-				</li>
-		
-				<li class ="dm_li">
-					<a href="../support.html">support</a>
-				</li>
-				<li></li>
-			</ul>
-		</nav>
-
-		<h3>
-			Guide to writing template files
-		</h3>
-		
-		<p>
-			Remember that for each page tracked by nsm there is a specified template path. When building a page, nsm will start processing the template file the same as it will process any other file. Consequently everything that applied to writing content files also applies to writing template files. However, unlike content files, template files need to specify where content and (optionally) the page title are to be inputted. 
-		</p>
-		
-		<h4>
-			Specifying where content is to be inputted
-		</h4>
-		
-		<p>
-			Nsm treats any instance of <mono>&commat;inputcontent</mono> as being equivalent to <mono>&commat;input(path-to-content)</mono>, where <mono>path-to-content</mono> is the content path for a page.
-		</p>
-		
-		<p>
-			<b>Note:</b> if <mono>&commat;inputcontent</mono> is in any dependency of a page's content file (content file inclusive), then an input loop would be formed when attempting to build the page so nsm will (at least it should) throw an error. You may however put <mono>&commat;inputcontent</mono> in any other dependencies of the template file. For example were your template to include a file <mono>template/body.template</mono>, it is fine for <mono>&commat;inputcontent</mono> to reside in <mono>body.template</mono> and not the main template file.
-		</p>
-		
-		<h4>
-			Specifying where the page title is to be inputted
-		</h4>
-		
-		<p>
-			When building a page, nsm will replace any instance of <mono>&commat;pagetitle</mono> with the title nsm has tracked for the page. Unlike <mono>&commat;inputcontent</mono>, <mono>&commat;pagetitle</mono> may be placed inside content files (template files inclusive). 
-		</p>
-		
-		<h4>
-			Example template files
-		</h4>
-		
-		<p>
-			A very simple template file, that specifies both where content and the page title are to be inputted, would be:
-		</p>
-		
-		<div align="center">
-			<pre class="prettyprint linenums inline rounded">
-				&lt;!DOCTYPE html>
-				&lt;html>
-					&lt;head>
-						&lt;title>site title - &commat;pagetitle&lt;/title>
-					&lt;/head>
-		
-					&lt;body>
-						&commat;inputcontent	
-					&lt;/body>
-				&lt;/html>
-			</pre>
-		</div>
-		
-		<p>
-			It can be convenient to break what would typically be found inside the template file up into various content files. For example you may have <mono>template/head.content</mono>, <mono>template/menu.content</mono> and <mono>template/footer.content</mono>. A suitable template file, say the default <mono>template/page.template</mono> would then be:
-		</p>
-		
-		<div align="center">
-			<pre class="prettyprint linenums inline rounded">
-				&lt;!DOCTYPE html>
-				&lt;html>
-					&lt;head>
-						&commat;input(template/head.content)
-					&lt;/head>
-		
-					&lt;body>
-						&commat;input(template/menu.content)
-		
-						&commat;inputcontent	
-		
-						&commat;input(template/footer.content)
-					&lt;/body>
-				&lt;/html>
-			</pre>
-		</div>
-		
-		<p>
-			<b>Note:</b> the <mono>head</mono> tags may be put inside either <mono>template/page.template</mono> or <mono>template/head.content</mono>. However if the <mono>head</mono> tags are left inside <mono>template/page.template</mono> then, rather than specifically having to alter <mono>template/head.content</mono>, the head may be altered from both <mono>template/page.template</mono> and <mono>template/head.content</mono>.
-		</p>
-		
-
-		<footer>
-			<hr>
-			<center><img src="../files/nsm.png" width="120"></center>
-			<!-- Signature purchased from logojoy.com -->
-		
-			<p style="margin-top:2px">
-				<b>Mirrors:</b> [<a href="https://nift.cc/">Official</a>] [<a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a>] [<a href="https://nifty-site-manager.github.io/">GitHub</a>] [<a href="https://nifty-site-manager.gitlab.io/">GitLab</a>] [<a href="https://nifty-site-manager.netlify.com/">Netlify</a>]
-			</p>
-		
+		<div class="content">
 			<p>
-				<noselect><a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; <a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a> &nbsp; <a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a></noselect>
+				<center><header><img id="logo" src="../files/logo.png"></header></center>
+				<!-- Logo purchased from logojoy.com -->
 			</p>
-		
-			<p>
-				<!--<noselect><a href="https://formulae.brew.sh/formula/nsm"><img src="../files/homebrew.png" height="40px" alt="Get it from the Homebrew store" title="OSX/Linux"></a> &nbsp;-->
-				<a href="https://chocolatey.org/packages/nsm/1.0"><img src="../files/chocolatey.svg" height="40px" alt="Get it from the Chocolatey store" title="Windows"></a> &nbsp;
-				<!--<a href="https://flathub.org/apps/details/com.n-ham.nsm"><img src="../files/flathub.png" height="40px" alt="Get it from the FlatHub store" title="Linux"></a> &nbsp;-->
-				<a href="https://snapcraft.io/nsm"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" height="40px" alt="Get it from the Snap Store" title="Linux"></a></noselect>
-			</p>
-		
-			Page was last built on Monday August 05 2019 at 20:56:19 (AEST) using Linux. <br>
-		
-			<noselect><small>&copy;&nbsp;2015 - <script>document.write(new Date().getFullYear())</script> <a href="https://n-ham.com/">Nicholas Ham</a></small></noselect>
-		</footer>
 
-		<script src='../js/process_pre_tags.js'></script>		
+			<nav>
+				<ul class="drop_menu">
+					<li></li>
+					<li class="dm_li">
+						<a href="../index.html">home</a>
+					</li>
+			
+					<li class ="dm_li">
+						<div class="dm_text">documentation</div>
+						<ul class ="drop_submenu">
+							<li class="dsm_li"><a href="installing_nsm.html">installing nsm</a></li>
+							<li class="dsm_li"><a href="nsm_tutorial.html">nsm tutorial</a></li>
+							<li class="dsm_li"><a href="nsm_commands.html">nsm commands</a></li>
+							<li class="dsm_li"><a href="content_files.html">content files</a></li>
+							<li class="dsm_li"><a href="template_files.html">template files</a></li>
+							<li class="dsm_li"><a href="displaying_mathematics.html">displaying mathematics</a></li>
+							<li class="dsm_li"><a href="displaying_code_blocks.html">displaying code blocks</a></li>
+							<li class="dsm_li"><a href="hosting_your_site.html">hosting your site</a></li>
+						</ul>
+					</li>
+			
+					<li class ="dm_li">
+						<a href="../merchandise.html">merchandise</a>
+					</li>
+			
+					<li class ="dm_li">
+						<div class="dm_text">resources</div>
+						<ul class ="drop_submenu">
+							<li class="dsm_li"><a href="../resources/examples.html">example sites</a></li>
+							<li class="dsm_li"><a href="../resources/project_suggestions.html">project suggestions</a></li>
+							<li class="dsm_li"><a href="../resources/templates.html">templates</a></li>
+							<li class="dsm_li"><a href="../resources/links.html">useful links</a></li>
+						</ul>
+					</li>
+			
+					<li class ="dm_li">
+						<a href="../support.html">support</a>
+					</li>
+					<li></li>
+				</ul>
+			</nav>
+
+			<h3>
+				Guide to writing template files
+			</h3>
+			
+			<p>
+				Remember that for each page tracked by nsm there is a specified template path. When building a page, nsm will start processing the template file the same as it will process any other file. Consequently everything that applied to writing content files also applies to writing template files. However, unlike content files, template files need to specify where content and (optionally) the page title are to be inputted. 
+			</p>
+			
+			<h4>
+				Specifying where content is to be inputted
+			</h4>
+			
+			<p>
+				Nsm treats any instance of <mono>&commat;inputcontent</mono> as being equivalent to <mono>&commat;input(path-to-content)</mono>, where <mono>path-to-content</mono> is the content path for a page.
+			</p>
+			
+			<p>
+				<b>Note:</b> if <mono>&commat;inputcontent</mono> is in any dependency of a page's content file (content file inclusive), then an input loop would be formed when attempting to build the page so nsm will (at least it should) throw an error. You may however put <mono>&commat;inputcontent</mono> in any other dependencies of the template file. For example were your template to include a file <mono>template/body.template</mono>, it is fine for <mono>&commat;inputcontent</mono> to reside in <mono>body.template</mono> and not the main template file.
+			</p>
+			
+			<h4>
+				Specifying where the page title is to be inputted
+			</h4>
+			
+			<p>
+				When building a page, nsm will replace any instance of <mono>&commat;pagetitle</mono> with the title nsm has tracked for the page. Unlike <mono>&commat;inputcontent</mono>, <mono>&commat;pagetitle</mono> may be placed inside content files (template files inclusive). 
+			</p>
+			
+			<h4>
+				Example template files
+			</h4>
+			
+			<p>
+				A very simple template file, that specifies both where content and the page title are to be inputted, would be:
+			</p>
+			
+			<div align="center">
+				<pre class="prettyprint linenums inline rounded">
+					&lt;!DOCTYPE html>
+					&lt;html>
+						&lt;head>
+							&lt;title>site title - &commat;pagetitle&lt;/title>
+						&lt;/head>
+			
+						&lt;body>
+							&commat;inputcontent	
+						&lt;/body>
+					&lt;/html>
+				</pre>
+			</div>
+			
+			<p>
+				It can be convenient to break what would typically be found inside the template file up into various content files. For example you may have <mono>template/head.content</mono>, <mono>template/menu.content</mono> and <mono>template/footer.content</mono>. A suitable template file, say the default <mono>template/page.template</mono> would then be:
+			</p>
+			
+			<div align="center">
+				<pre class="prettyprint linenums inline rounded">
+					&lt;!DOCTYPE html>
+					&lt;html>
+						&lt;head>
+							&commat;input(template/head.content)
+						&lt;/head>
+			
+						&lt;body>
+							&commat;input(template/menu.content)
+			
+							&commat;inputcontent	
+			
+							&commat;input(template/footer.content)
+						&lt;/body>
+					&lt;/html>
+				</pre>
+			</div>
+			
+			<p>
+				<b>Note:</b> the <mono>head</mono> tags may be put inside either <mono>template/page.template</mono> or <mono>template/head.content</mono>. However if the <mono>head</mono> tags are left inside <mono>template/page.template</mono> then, rather than specifically having to alter <mono>template/head.content</mono>, the head may be altered from both <mono>template/page.template</mono> and <mono>template/head.content</mono>.
+			</p>
+			
+
+			<footer>
+				<hr>
+				<center><img src="../files/nsm.png" width="120"></center>
+				<!-- Signature purchased from logojoy.com -->
+			
+				<p style="margin-top:2px">
+					<b>Mirrors:</b> [<a href="https://nift.cc/">Official</a>] [<a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a>] [<a href="https://nifty-site-manager.github.io/">GitHub</a>] [<a href="https://nifty-site-manager.gitlab.io/">GitLab</a>] [<a href="https://nifty-site-manager.netlify.com/">Netlify</a>]
+				</p>
+			
+				<p>
+					<noselect><a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; <a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a> &nbsp; <a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a></noselect>
+				</p>
+			
+				<p>
+					<!--<noselect><a href="https://formulae.brew.sh/formula/nsm"><img src="../files/homebrew.png" height="40px" alt="Get it from the Homebrew store" title="OSX/Linux"></a> &nbsp;-->
+					<a href="https://chocolatey.org/packages/nsm/1.0"><img src="../files/chocolatey.svg" height="40px" alt="Get it from the Chocolatey store" title="Windows"></a> &nbsp;
+					<!--<a href="https://flathub.org/apps/details/com.n-ham.nsm"><img src="../files/flathub.png" height="40px" alt="Get it from the FlatHub store" title="Linux"></a> &nbsp;-->
+					<a href="https://snapcraft.io/nsm"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" height="40px" alt="Get it from the Snap Store" title="Linux"></a></noselect>
+				</p>
+			
+				Page was last built on Saturday August 10 2019 at 13:53:30 (AEST) using Linux. <br>
+			
+				<noselect><small>&copy;&nbsp;2015 - <script>document.write(new Date().getFullYear())</script> <a href="https://n-ham.com/">Nicholas Ham</a></small></noselect>
+			</footer>
+		</div>
+
+		<script src='../js/process_pre_tags.js'></script>	
 	</body>
 </html>
 
 <!-- 
 	information on how to easily make and host a site similar to
 	this may be found at any of the following mirrors:
+		* https://nift.cc/
 		* https://nifty-site-manager.com/ 
 		* https://nifty-site-manager.bitbucket.io/ 
 		* https://nifty-site-manager.github.io/ 
 		* https://nifty-site-manager.gitlab.io/ 
-		* https://web.archive.org/web/https://nifty-site-manager.com/
-		* https://web.archive.org/web/20190520234459/https://www.nifty-site-manager.com/
+		* https://nifty-site-manager.netlify.com/
 -->

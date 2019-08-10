@@ -12,7 +12,7 @@ html
 	overflow-y: scroll;
 }
 
-body 
+div.content 
 {
 	/* Size of largest container or bigger */
 	/*min-width: 100px !important;*/

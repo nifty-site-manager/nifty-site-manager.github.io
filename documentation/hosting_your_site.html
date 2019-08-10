@@ -57,135 +57,137 @@
 	</head>
 
 	<body>
-		<p>
-			<center><header><img id="logo" src="../files/logo.png"></header></center>
-			<!-- Logo purchased from logojoy.com -->
-		</p>
-
-		<nav>
-			<ul class="drop_menu">
-				<li></li>
-				<li class="dm_li">
-					<a href="../index.html">home</a>
-				</li>
-		
-				<li class ="dm_li">
-					<div class="dm_text">documentation</div>
-					<ul class ="drop_submenu">
-						<li class="dsm_li"><a href="installing_nsm.html">installing nsm</a></li>
-						<li class="dsm_li"><a href="nsm_tutorial.html">nsm tutorial</a></li>
-						<li class="dsm_li"><a href="nsm_commands.html">nsm commands</a></li>
-						<li class="dsm_li"><a href="content_files.html">content files</a></li>
-						<li class="dsm_li"><a href="template_files.html">template files</a></li>
-						<li class="dsm_li"><a href="displaying_mathematics.html">displaying mathematics</a></li>
-						<li class="dsm_li"><a href="displaying_code_blocks.html">displaying code blocks</a></li>
-						<li class="dsm_li"><a href="hosting_your_site.html">hosting your site</a></li>
-					</ul>
-				</li>
-		
-				<li class ="dm_li">
-					<a href="../merchandise.html">merchandise</a>
-				</li>
-		
-				<li class ="dm_li">
-					<div class="dm_text">resources</div>
-					<ul class ="drop_submenu">
-						<li class="dsm_li"><a href="../resources/examples.html">example sites</a></li>
-						<li class="dsm_li"><a href="../resources/project_suggestions.html">project suggestions</a></li>
-						<li class="dsm_li"><a href="../resources/templates.html">templates</a></li>
-						<li class="dsm_li"><a href="../resources/links.html">useful links</a></li>
-					</ul>
-				</li>
-		
-				<li class ="dm_li">
-					<a href="../support.html">support</a>
-				</li>
-				<li></li>
-			</ul>
-		</nav>
-
-		<h3>
-			Hosting your site
-		</h3>
-		
-		<p>
-			To host your site just copy everything from the site directory (not the stage directory) to the server on which you would like to host it.
-		</p>
-		
-		<p>
-			For creating static websites on code collaboration sites offering repository management like BitBucket, GitHub and GitLab you can import/fork, rename and clone a site repository and work from that (use <mono>nsm clone <i>repository-url</i></mono>). For some basic templates see:
-			<ol>
-				<li><a href="https://bitbucket.org/nsm-templates/">BitBucket template</a>;</li>
-				<li><a href="https://github.com/nsm-templates/">GitHub templates</a>; or</li>
-				<li><a href="https://gitlab.com/nsm-templates">GitLab templates</a>.</li>
-			</ol>
-			Note - You can rename a repository when importing it, rather than forking and renaming, plus on BitBucket and GitHub you cannot remove fork relationships. Also on GitHub you will need to go in to the site repository's settings, find the GitHub Pages section and set the source branch (typically <mono>master branch</mono>).
-		</p>
-		
-		<p>
-			At some point there will hopefully be more complicated templates made by other people available <a href='../resources/templates.html'>here</a>. People may like to make their own template teams/organisations/groups on BitBucket/GitHub/GitLab and/or template websites made using nsm, if you do and would like it added to the aforementioned link then please email <mono>contact@nifty-site-manager.com</mono>.
-		</p>
-		
-		<p>
-			If you would like to be a masochist and set up your own site repositories from scratch for any of BitBucket, GitHub or GitLab then see:
-			<ol>
-				<li><a href="./bitbucket_hosting.html">Hosting on BitBucket</a>;</li>
-				<li><a href="./github_hosting.html">Hosting on GitHub</a>; or</li>
-				<li><a href="./gitlab_hosting.html">Hosting on GitLab</a>.</li>
-			</ol>
-			You can also combine any of the above hosting options with <a href="https://netlify.com">netlify</a>, which works well for custom domains (including subdomains) and automatically renews <a href="https://letsencrypt.org/">Let's Encrypt</a> certificates for your site. I personally find hosting on GitLab the easiest, because you only need one branch (standard <mono>master</mono>) then have it deploy the site when you push using a <mono>.gitlab-ci.yml</mono> file.
-		</p>
-		
-		<p>
-			Options for hosting dynamic websites (or static sites if you would like) include hiring a server with someone like:
-			<ol>
-				<li><a href="https://buyvm.net/">BuyVM</a>;</li>
-				<li><a href="https://joesdatacenter.com/">Joe's Datacenter</a>; or</li>
-				<li><a href="https://www.linode.com/">Linode</a>.</li>
-			</ol>
-			or any site that offers linux VPS hiring, then using something like the following to set up a web server on the server you have hired:
-			<ol>
-				<li><a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)">LAMP stack</a>; or</li>
-				<li><a href="https://www.nginx.com/">NGINX</a> (check out NGINX Unit for free options).</li>
-			</ol>
-		</p>
-
-		<footer>
-			<hr>
-			<center><img src="../files/nsm.png" width="120"></center>
-			<!-- Signature purchased from logojoy.com -->
-		
-			<p style="margin-top:2px">
-				<b>Mirrors:</b> [<a href="https://nift.cc/">Official</a>] [<a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a>] [<a href="https://nifty-site-manager.github.io/">GitHub</a>] [<a href="https://nifty-site-manager.gitlab.io/">GitLab</a>] [<a href="https://nifty-site-manager.netlify.com/">Netlify</a>]
-			</p>
-		
+		<div class="content">
 			<p>
-				<noselect><a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; <a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a> &nbsp; <a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a></noselect>
+				<center><header><img id="logo" src="../files/logo.png"></header></center>
+				<!-- Logo purchased from logojoy.com -->
 			</p>
-		
-			<p>
-				<!--<noselect><a href="https://formulae.brew.sh/formula/nsm"><img src="../files/homebrew.png" height="40px" alt="Get it from the Homebrew store" title="OSX/Linux"></a> &nbsp;-->
-				<a href="https://chocolatey.org/packages/nsm/1.0"><img src="../files/chocolatey.svg" height="40px" alt="Get it from the Chocolatey store" title="Windows"></a> &nbsp;
-				<!--<a href="https://flathub.org/apps/details/com.n-ham.nsm"><img src="../files/flathub.png" height="40px" alt="Get it from the FlatHub store" title="Linux"></a> &nbsp;-->
-				<a href="https://snapcraft.io/nsm"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" height="40px" alt="Get it from the Snap Store" title="Linux"></a></noselect>
-			</p>
-		
-			Page was last built on Monday August 05 2019 at 20:56:19 (AEST) using Linux. <br>
-		
-			<noselect><small>&copy;&nbsp;2015 - <script>document.write(new Date().getFullYear())</script> <a href="https://n-ham.com/">Nicholas Ham</a></small></noselect>
-		</footer>
 
-		<script src='../js/process_pre_tags.js'></script>		
+			<nav>
+				<ul class="drop_menu">
+					<li></li>
+					<li class="dm_li">
+						<a href="../index.html">home</a>
+					</li>
+			
+					<li class ="dm_li">
+						<div class="dm_text">documentation</div>
+						<ul class ="drop_submenu">
+							<li class="dsm_li"><a href="installing_nsm.html">installing nsm</a></li>
+							<li class="dsm_li"><a href="nsm_tutorial.html">nsm tutorial</a></li>
+							<li class="dsm_li"><a href="nsm_commands.html">nsm commands</a></li>
+							<li class="dsm_li"><a href="content_files.html">content files</a></li>
+							<li class="dsm_li"><a href="template_files.html">template files</a></li>
+							<li class="dsm_li"><a href="displaying_mathematics.html">displaying mathematics</a></li>
+							<li class="dsm_li"><a href="displaying_code_blocks.html">displaying code blocks</a></li>
+							<li class="dsm_li"><a href="hosting_your_site.html">hosting your site</a></li>
+						</ul>
+					</li>
+			
+					<li class ="dm_li">
+						<a href="../merchandise.html">merchandise</a>
+					</li>
+			
+					<li class ="dm_li">
+						<div class="dm_text">resources</div>
+						<ul class ="drop_submenu">
+							<li class="dsm_li"><a href="../resources/examples.html">example sites</a></li>
+							<li class="dsm_li"><a href="../resources/project_suggestions.html">project suggestions</a></li>
+							<li class="dsm_li"><a href="../resources/templates.html">templates</a></li>
+							<li class="dsm_li"><a href="../resources/links.html">useful links</a></li>
+						</ul>
+					</li>
+			
+					<li class ="dm_li">
+						<a href="../support.html">support</a>
+					</li>
+					<li></li>
+				</ul>
+			</nav>
+
+			<h3>
+				Hosting your site
+			</h3>
+			
+			<p>
+				To host your site just copy everything from the site directory (not the stage directory) to the server on which you would like to host it.
+			</p>
+			
+			<p>
+				For creating static websites on code collaboration sites offering repository management like BitBucket, GitHub and GitLab you can import/fork, rename and clone a site repository and work from that (use <mono>nsm clone <i>repository-url</i></mono>). For some basic templates see:
+				<ol>
+					<li><a href="https://bitbucket.org/nsm-templates/">BitBucket template</a>;</li>
+					<li><a href="https://github.com/nsm-templates/">GitHub templates</a>; or</li>
+					<li><a href="https://gitlab.com/nsm-templates">GitLab templates</a>.</li>
+				</ol>
+				Note - You can rename a repository when importing it, rather than forking and renaming, plus on BitBucket and GitHub you cannot remove fork relationships. Also on GitHub you will need to go in to the site repository's settings, find the GitHub Pages section and set the source branch (typically <mono>master branch</mono>).
+			</p>
+			
+			<p>
+				At some point there will hopefully be more complicated templates made by other people available <a href='../resources/templates.html'>here</a>. People may like to make their own template teams/organisations/groups on BitBucket/GitHub/GitLab and/or template websites made using nsm, if you do and would like it added to the aforementioned link then please email <mono>contact@nifty-site-manager.com</mono>.
+			</p>
+			
+			<p>
+				If you would like to be a masochist and set up your own site repositories from scratch for any of BitBucket, GitHub or GitLab then see:
+				<ol>
+					<li><a href="./bitbucket_hosting.html">Hosting on BitBucket</a>;</li>
+					<li><a href="./github_hosting.html">Hosting on GitHub</a>; or</li>
+					<li><a href="./gitlab_hosting.html">Hosting on GitLab</a>.</li>
+				</ol>
+				You can also combine any of the above hosting options with <a href="https://netlify.com">netlify</a>, which works well for custom domains (including subdomains) and automatically renews <a href="https://letsencrypt.org/">Let's Encrypt</a> certificates for your site. I personally find hosting on GitLab the easiest, because you only need one branch (standard <mono>master</mono>) then have it deploy the site when you push using a <mono>.gitlab-ci.yml</mono> file.
+			</p>
+			
+			<p>
+				Options for hosting dynamic websites (or static sites if you would like) include hiring a server with someone like:
+				<ol>
+					<li><a href="https://buyvm.net/">BuyVM</a>;</li>
+					<li><a href="https://joesdatacenter.com/">Joe's Datacenter</a>; or</li>
+					<li><a href="https://www.linode.com/">Linode</a>.</li>
+				</ol>
+				or any site that offers linux VPS hiring, then using something like the following to set up a web server on the server you have hired:
+				<ol>
+					<li><a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)">LAMP stack</a>; or</li>
+					<li><a href="https://www.nginx.com/">NGINX</a> (check out NGINX Unit for free options).</li>
+				</ol>
+			</p>
+
+			<footer>
+				<hr>
+				<center><img src="../files/nsm.png" width="120"></center>
+				<!-- Signature purchased from logojoy.com -->
+			
+				<p style="margin-top:2px">
+					<b>Mirrors:</b> [<a href="https://nift.cc/">Official</a>] [<a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a>] [<a href="https://nifty-site-manager.github.io/">GitHub</a>] [<a href="https://nifty-site-manager.gitlab.io/">GitLab</a>] [<a href="https://nifty-site-manager.netlify.com/">Netlify</a>]
+				</p>
+			
+				<p>
+					<noselect><a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; <a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a> &nbsp; <a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a></noselect>
+				</p>
+			
+				<p>
+					<!--<noselect><a href="https://formulae.brew.sh/formula/nsm"><img src="../files/homebrew.png" height="40px" alt="Get it from the Homebrew store" title="OSX/Linux"></a> &nbsp;-->
+					<a href="https://chocolatey.org/packages/nsm/1.0"><img src="../files/chocolatey.svg" height="40px" alt="Get it from the Chocolatey store" title="Windows"></a> &nbsp;
+					<!--<a href="https://flathub.org/apps/details/com.n-ham.nsm"><img src="../files/flathub.png" height="40px" alt="Get it from the FlatHub store" title="Linux"></a> &nbsp;-->
+					<a href="https://snapcraft.io/nsm"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" height="40px" alt="Get it from the Snap Store" title="Linux"></a></noselect>
+				</p>
+			
+				Page was last built on Saturday August 10 2019 at 13:53:30 (AEST) using Linux. <br>
+			
+				<noselect><small>&copy;&nbsp;2015 - <script>document.write(new Date().getFullYear())</script> <a href="https://n-ham.com/">Nicholas Ham</a></small></noselect>
+			</footer>
+		</div>
+
+		<script src='../js/process_pre_tags.js'></script>	
 	</body>
 </html>
 
 <!-- 
 	information on how to easily make and host a site similar to
 	this may be found at any of the following mirrors:
+		* https://nift.cc/
 		* https://nifty-site-manager.com/ 
 		* https://nifty-site-manager.bitbucket.io/ 
 		* https://nifty-site-manager.github.io/ 
 		* https://nifty-site-manager.gitlab.io/ 
-		* https://web.archive.org/web/https://nifty-site-manager.com/
-		* https://web.archive.org/web/20190520234459/https://www.nifty-site-manager.com/
+		* https://nifty-site-manager.netlify.com/
 -->
