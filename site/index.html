@@ -57,156 +57,158 @@
 	</head>
 
 	<body>
-		<p>
-			<center><header><img id="logo" src="files/logo.png"></header></center>
-			<!-- Logo purchased from logojoy.com -->
-		</p>
+		<div class="content">
+			<p>
+				<center><header><img id="logo" src="files/logo.png"></header></center>
+				<!-- Logo purchased from logojoy.com -->
+			</p>
 
-		<nav>
-			<ul class="drop_menu">
-				<li></li>
-				<li class="dm_li">
-					<a href="index.html">home</a>
-				</li>
-		
-				<li class ="dm_li">
-					<div class="dm_text">documentation</div>
-					<ul class ="drop_submenu">
-						<li class="dsm_li"><a href="documentation/installing_nsm.html">installing nsm</a></li>
-						<li class="dsm_li"><a href="documentation/nsm_tutorial.html">nsm tutorial</a></li>
-						<li class="dsm_li"><a href="documentation/nsm_commands.html">nsm commands</a></li>
-						<li class="dsm_li"><a href="documentation/content_files.html">content files</a></li>
-						<li class="dsm_li"><a href="documentation/template_files.html">template files</a></li>
-						<li class="dsm_li"><a href="documentation/displaying_mathematics.html">displaying mathematics</a></li>
-						<li class="dsm_li"><a href="documentation/displaying_code_blocks.html">displaying code blocks</a></li>
-						<li class="dsm_li"><a href="documentation/hosting_your_site.html">hosting your site</a></li>
-					</ul>
-				</li>
-		
-				<li class ="dm_li">
-					<a href="merchandise.html">merchandise</a>
-				</li>
-		
-				<li class ="dm_li">
-					<div class="dm_text">resources</div>
-					<ul class ="drop_submenu">
-						<li class="dsm_li"><a href="resources/examples.html">example sites</a></li>
-						<li class="dsm_li"><a href="resources/project_suggestions.html">project suggestions</a></li>
-						<li class="dsm_li"><a href="resources/templates.html">templates</a></li>
-						<li class="dsm_li"><a href="resources/links.html">useful links</a></li>
-					</ul>
-				</li>
-		
-				<li class ="dm_li">
-					<a href="support.html">support</a>
-				</li>
-				<li></li>
+			<nav>
+				<ul class="drop_menu">
+					<li></li>
+					<li class="dm_li">
+						<a href="index.html">home</a>
+					</li>
+			
+					<li class ="dm_li">
+						<div class="dm_text">documentation</div>
+						<ul class ="drop_submenu">
+							<li class="dsm_li"><a href="documentation/installing_nsm.html">installing nsm</a></li>
+							<li class="dsm_li"><a href="documentation/nsm_tutorial.html">nsm tutorial</a></li>
+							<li class="dsm_li"><a href="documentation/nsm_commands.html">nsm commands</a></li>
+							<li class="dsm_li"><a href="documentation/content_files.html">content files</a></li>
+							<li class="dsm_li"><a href="documentation/template_files.html">template files</a></li>
+							<li class="dsm_li"><a href="documentation/displaying_mathematics.html">displaying mathematics</a></li>
+							<li class="dsm_li"><a href="documentation/displaying_code_blocks.html">displaying code blocks</a></li>
+							<li class="dsm_li"><a href="documentation/hosting_your_site.html">hosting your site</a></li>
+						</ul>
+					</li>
+			
+					<li class ="dm_li">
+						<a href="merchandise.html">merchandise</a>
+					</li>
+			
+					<li class ="dm_li">
+						<div class="dm_text">resources</div>
+						<ul class ="drop_submenu">
+							<li class="dsm_li"><a href="resources/examples.html">example sites</a></li>
+							<li class="dsm_li"><a href="resources/project_suggestions.html">project suggestions</a></li>
+							<li class="dsm_li"><a href="resources/templates.html">templates</a></li>
+							<li class="dsm_li"><a href="resources/links.html">useful links</a></li>
+						</ul>
+					</li>
+			
+					<li class ="dm_li">
+						<a href="support.html">support</a>
+					</li>
+					<li></li>
+				</ul>
+			</nav>
+
+			<h4>
+				About nsm
+			</h4>
+			
+			<p>
+				Nifty site manager is an open source cross-platform git-like and $\LaTeX$-like command-line site manager. You can clone repositories from code sharing sites like BitBucket, GitHub and GitLab using <mono>nsm clone repo-url</mono>, build (updated) pages locally using <mono>nsm build-updated</mono>, then build, commit and push changes online once you are happy using <mono>nsm bcp "commit message"</mono>. 
+			</p>
+			
+			<h4>
+				Some of the things nsm can do are:
+			</h4>
+			
+			<ul>
+				<li>clone existing site repositories from BitBucket/GitHub/GitLab;</li>
+				<li>initialise managing sites;</li>
+				<li>track and untrack page information;</li>
+				<li>list information on tracked pages;</li>
+				<li>move and remove pages</li>
+				<li>modify tracked page titles and template paths;</li>
+				<li>list which pages need building and why;</li>
+				<li>build only pages that need building;</li>
+				<li>build pages specified by the user;</li>
+				<li>build all tracked pages; and</li>
+				<li>build, commit and push changes to BitBucket/GitHub/GitLab.</li>
 			</ul>
-		</nav>
-
-		<h4>
-			About nsm
-		</h4>
-		
-		<p>
-			Nifty site manager is an open source cross-platform git-like and $\LaTeX$-like command-line site manager. You can clone repositories from code sharing sites like BitBucket, GitHub and GitLab using <mono>nsm clone repo-url</mono>, build (updated) pages locally using <mono>nsm build-updated</mono>, then build, commit and push changes online once you are happy using <mono>nsm bcp "commit message"</mono>. 
-		</p>
-		
-		<h4>
-			Some of the things nsm can do are:
-		</h4>
-		
-		<ul>
-			<li>clone existing site repositories from BitBucket/GitHub/GitLab;</li>
-			<li>initialise managing sites;</li>
-			<li>track and untrack page information;</li>
-			<li>list information on tracked pages;</li>
-			<li>move and remove pages</li>
-			<li>modify tracked page titles and template paths;</li>
-			<li>list which pages need building and why;</li>
-			<li>build only pages that need building;</li>
-			<li>build pages specified by the user;</li>
-			<li>build all tracked pages; and</li>
-			<li>build, commit and push changes to BitBucket/GitHub/GitLab.</li>
-		</ul>
-		
-		<h4>
-			Site repository templates
-		</h4>
-		
-		<p>
-			For site repository templates that you can import (or fork and rename) then clone to start making your websites, see:
-			<ol>
-				<li><a href="https://bitbucket.org/nsm-templates">BitBucket</a></li>
-				<li><a href="https://github.com/nsm-templates">GitHub</a></li>
-				<li><a href="https://gitlab.com/nsm-templates">GitLab</a></li>
-			</ol>
-		</p>
-		
-		<h4>
-			Who will like nsm?
-		</h4>
-		
-		<p>
-			The following is not intended to be condescending towards people who are or are not suggested as likely users of nsm. Different tools work for different people, having a wide selection of tools available is much more inclusive! 
-		</p>
-		
-		<p>
-			While I encourage people to prove me wrong, I suspect that nsm will be most useful to front-of-house amateurs (as it is reasonably easy to install, make simple websites and use) and behind-the-scenes experts (or perhaps more accurately, useful to people behind-the-scenes who prefer to program/code websites without graphical tools/ides/etc.). I personally find it much easier than a lot of other site managers to make and host a basic static site, and based on my personal usage of and experience with $\LaTeX$ and git imagine it can be a very useful tool to experts behind the scenes.
-		</p>
-		
-		<p>
-			It could potentially be a bit overwhelming for people who are just getting used to behind-the-scenes but are dipping their toes to see if it is something that works for them and other people. I say that because to understand everything that nsm can do, and everything that is used by nsm can be a bit overwhelming. However wrapping one's head around the basics of what nsm is doing and having a bit of a look through the documentation and source code can be a good way to start understanding some stuff with behind-the-scenes and/or programming (especially development of tools like nsm and how they work). Playing with nsm will also be a good way to get your feet wet and hands dirty playing around with git along with BitBucket/GitHub/GitLab, which are all very popular and useful tools in the programming/web development worlds. 
-		</p>
-		
-		<p>
-			Another example of people who may not find nsm is for them are people whose work improves using graphical tools and/or intricate ides, though some familiarity with git and BitBucket/GitHub/GitLab at the command line level is not a bad thing, getting your feet wet and hands dirty playing around with nsm is not a terrible way to do this. There is more to cloning with nsm than with git, however what is different there is not that common in my experience (ie. it is not very common for people to have git repositories inside git repositories like nsm does with BitBucket and GitHub). However people would benefit from learning "what's going on under the hood" with <mono>nsm bcp "commit message"</mono>, which is building pages using nsm, adding/removing modified/deleted files from the git repository using <mono>git add -A .</mono>, commiting the changes to the git repository and pushing the changes to BitBucket/GitHub/GitLab.
-		</p>
-		
-		<h4>
-			Why the name nsm?
-		</h4>
-		
-		<p>
-			Nifty site manager is a command-line tool, consequently it is expected that <mono>nsm</mono> will be typed quite frequently. The name was chosen because it is a short descriptive acronym that, when typed on a qwerty keyboard (sorry dvorak fans!), efficiently oscillates between hands whilst involving minimal movement of the fingers.
-		</p>
-
-		<footer>
-			<hr>
-			<center><img src="files/nsm.png" width="120"></center>
-			<!-- Signature purchased from logojoy.com -->
-		
-			<p style="margin-top:2px">
-				<b>Mirrors:</b> [<a href="https://nift.cc/">Official</a>] [<a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a>] [<a href="https://nifty-site-manager.github.io/">GitHub</a>] [<a href="https://nifty-site-manager.gitlab.io/">GitLab</a>] [<a href="https://nifty-site-manager.netlify.com/">Netlify</a>]
-			</p>
-		
+			
+			<h4>
+				Site repository templates
+			</h4>
+			
 			<p>
-				<noselect><a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; <a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a> &nbsp; <a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a></noselect>
+				For site repository templates that you can import (or fork and rename) then clone to start making your websites, see:
+				<ol>
+					<li><a href="https://bitbucket.org/nsm-templates">BitBucket</a></li>
+					<li><a href="https://github.com/nsm-templates">GitHub</a></li>
+					<li><a href="https://gitlab.com/nsm-templates">GitLab</a></li>
+				</ol>
 			</p>
-		
+			
+			<h4>
+				Who will like nsm?
+			</h4>
+			
 			<p>
-				<!--<noselect><a href="https://formulae.brew.sh/formula/nsm"><img src="files/homebrew.png" height="40px" alt="Get it from the Homebrew store" title="OSX/Linux"></a> &nbsp;-->
-				<a href="https://chocolatey.org/packages/nsm/1.0"><img src="files/chocolatey.svg" height="40px" alt="Get it from the Chocolatey store" title="Windows"></a> &nbsp;
-				<!--<a href="https://flathub.org/apps/details/com.n-ham.nsm"><img src="files/flathub.png" height="40px" alt="Get it from the FlatHub store" title="Linux"></a> &nbsp;-->
-				<a href="https://snapcraft.io/nsm"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" height="40px" alt="Get it from the Snap Store" title="Linux"></a></noselect>
+				The following is not intended to be condescending towards people who are or are not suggested as likely users of nsm. Different tools work for different people, having a wide selection of tools available is much more inclusive! 
 			</p>
-		
-			Page was last built on Monday August 05 2019 at 20:56:19 (AEST) using Linux. <br>
-		
-			<noselect><small>&copy;&nbsp;2015 - <script>document.write(new Date().getFullYear())</script> <a href="https://n-ham.com/">Nicholas Ham</a></small></noselect>
-		</footer>
+			
+			<p>
+				While I encourage people to prove me wrong, I suspect that nsm will be most useful to front-of-house amateurs (as it is reasonably easy to install, make simple websites and use) and behind-the-scenes experts (or perhaps more accurately, useful to people behind-the-scenes who prefer to program/code websites without graphical tools/ides/etc.). I personally find it much easier than a lot of other site managers to make and host a basic static site, and based on my personal usage of and experience with $\LaTeX$ and git imagine it can be a very useful tool to experts behind the scenes.
+			</p>
+			
+			<p>
+				It could potentially be a bit overwhelming for people who are just getting used to behind-the-scenes but are dipping their toes to see if it is something that works for them and other people. I say that because to understand everything that nsm can do, and everything that is used by nsm can be a bit overwhelming. However wrapping one's head around the basics of what nsm is doing and having a bit of a look through the documentation and source code can be a good way to start understanding some stuff with behind-the-scenes and/or programming (especially development of tools like nsm and how they work). Playing with nsm will also be a good way to get your feet wet and hands dirty playing around with git along with BitBucket/GitHub/GitLab, which are all very popular and useful tools in the programming/web development worlds. 
+			</p>
+			
+			<p>
+				Another example of people who may not find nsm is for them are people whose work improves using graphical tools and/or intricate ides, though some familiarity with git and BitBucket/GitHub/GitLab at the command line level is not a bad thing, getting your feet wet and hands dirty playing around with nsm is not a terrible way to do this. There is more to cloning with nsm than with git, however what is different there is not that common in my experience (ie. it is not very common for people to have git repositories inside git repositories like nsm does with BitBucket and GitHub). However people would benefit from learning "what's going on under the hood" with <mono>nsm bcp "commit message"</mono>, which is building pages using nsm, adding/removing modified/deleted files from the git repository using <mono>git add -A .</mono>, commiting the changes to the git repository and pushing the changes to BitBucket/GitHub/GitLab.
+			</p>
+			
+			<h4>
+				Why the name nsm?
+			</h4>
+			
+			<p>
+				Nifty site manager is a command-line tool, consequently it is expected that <mono>nsm</mono> will be typed quite frequently. The name was chosen because it is a short descriptive acronym that, when typed on a qwerty keyboard (sorry dvorak fans!), efficiently oscillates between hands whilst involving minimal movement of the fingers.
+			</p>
 
-		<script src='js/process_pre_tags.js'></script>		
+			<footer>
+				<hr>
+				<center><img src="files/nsm.png" width="120"></center>
+				<!-- Signature purchased from logojoy.com -->
+			
+				<p style="margin-top:2px">
+					<b>Mirrors:</b> [<a href="https://nift.cc/">Official</a>] [<a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a>] [<a href="https://nifty-site-manager.github.io/">GitHub</a>] [<a href="https://nifty-site-manager.gitlab.io/">GitLab</a>] [<a href="https://nifty-site-manager.netlify.com/">Netlify</a>]
+				</p>
+			
+				<p>
+					<noselect><a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; <a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a> &nbsp; <a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a></noselect>
+				</p>
+			
+				<p>
+					<!--<noselect><a href="https://formulae.brew.sh/formula/nsm"><img src="files/homebrew.png" height="40px" alt="Get it from the Homebrew store" title="OSX/Linux"></a> &nbsp;-->
+					<a href="https://chocolatey.org/packages/nsm/1.0"><img src="files/chocolatey.svg" height="40px" alt="Get it from the Chocolatey store" title="Windows"></a> &nbsp;
+					<!--<a href="https://flathub.org/apps/details/com.n-ham.nsm"><img src="files/flathub.png" height="40px" alt="Get it from the FlatHub store" title="Linux"></a> &nbsp;-->
+					<a href="https://snapcraft.io/nsm"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" height="40px" alt="Get it from the Snap Store" title="Linux"></a></noselect>
+				</p>
+			
+				Page was last built on Saturday August 10 2019 at 13:53:30 (AEST) using Linux. <br>
+			
+				<noselect><small>&copy;&nbsp;2015 - <script>document.write(new Date().getFullYear())</script> <a href="https://n-ham.com/">Nicholas Ham</a></small></noselect>
+			</footer>
+		</div>
+
+		<script src='js/process_pre_tags.js'></script>	
 	</body>
 </html>
 
 <!-- 
 	information on how to easily make and host a site similar to
 	this may be found at any of the following mirrors:
+		* https://nift.cc/
 		* https://nifty-site-manager.com/ 
 		* https://nifty-site-manager.bitbucket.io/ 
 		* https://nifty-site-manager.github.io/ 
 		* https://nifty-site-manager.gitlab.io/ 
-		* https://web.archive.org/web/https://nifty-site-manager.com/
-		* https://web.archive.org/web/20190520234459/https://www.nifty-site-manager.com/
+		* https://nifty-site-manager.netlify.com/
 -->
