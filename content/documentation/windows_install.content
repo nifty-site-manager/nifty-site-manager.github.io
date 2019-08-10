@@ -39,7 +39,7 @@
 
 Install <a href="https://git-scm.com/downloads">Git</a> [or <mono>choco install git</mono>, which should come with Git Bash as well, and install <a href="https://sourceforge.net/projects/mingw-w64/">mingw</a> [or <mono>choco install mingw</mono>]. 
 
-Get make from <a href="https://gist.github.com/evanwill/0207876c3243bbb6863e65ec5dc3f058">here</a> [or <mono>choco install make</mono>, ie:
+Get make from <a href="https://gist.github.com/evanwill/0207876c3243bbb6863e65ec5dc3f058">here</a> [or <mono>choco install make</mono>], ie:
 <ol>
 	<li>
 		Go to <a href="https://sourceforge.net/projects/ezwinports/">here</a>;
