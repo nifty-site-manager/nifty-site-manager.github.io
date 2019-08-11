@@ -1,13 +1,63 @@
 <p>
-	For template site repositories that you can import (or fork and rename) then clone to start making your websites, see:
-	<ol>
-		<li><a href="https://bitbucket.org/nsm-templates">BitBucket</a></li>
-		<li><a href="https://github.com/nsm-templates">GitHub</a></li>
-		<li><a href="https://gitlab.com/nsm-templates">GitLab</a></li>
-	</ol>
+	For template site repositories that you can import (or fork and rename) then clone to start making your websites, see the table below:
+</p>
+
+<table id="templates_table">
+	<thead>
+	    <tr>
+	        <th>name</th>
+	        <th>demo</th>
+			<th>repository</th>
+	    </tr>
+	</thead>
+	<tr>
+		<td>dev-site</td>
+		<td><a href="https://nsm-templates.github.io/dev-site/">GitHub</a> - <a href="https://nsm-templates.gitlab.io/dev-site/">GitLab</a></td>
+		<td><a href="https://bitbucket.org/nsm-templates/dev-site">BitBucket</a> - <a href="https://github.com/nsm-templates/dev-site">GitHub</a> - <a href="https://gitlab.com/nsm-templates/dev-site">GitLab</a></td>
+	</tr>
+	<tr>
+		<td>empty-site</td>
+		<td>no demo</td>
+		<td><a href="https://bitbucket.org/nsm-templates/empty-site">BitBucket</a> - <a href="https://github.com/nsm-templates/empty-site">GitHub</a> - <a href="https://gitlab.com/nsm-templates/empty-site">GitLab</a></td>
+	</tr>
+	<tr>
+		<td>menus</td>
+		<td><a href="https://nsm-templates.github.io/menus/">GitHub</a> - <a href="https://nsm-templates.gitlab.io/menus/">GitLab</a></td>
+		<td><a href="https://bitbucket.org/nsm-templates/menus">BitBucket</a> - <a href="https://github.com/nsm-templates/menus">GitHub</a> - <a href="https://gitlab.com/nsm-templates/menus">GitLab</a></td>
+	</tr>
+	<tr>
+		<td>null-site</td>
+		<td><a href="https://nsm-templates.github.io/null-site/">GitHub</a> - <a href="https://nsm-templates.gitlab.io/null-site/">GitLab</a></td>
+		<td><a href="https://bitbucket.org/nsm-templates/null-site">BitBucket</a> - <a href="https://github.com/nsm-templates/null-site">GitHub</a> - <a href="https://gitlab.com/nsm-templates/null-site">GitLab</a></td>
+	</tr>
+	<tr>
+		<td>parchment-site</td>
+		<td><a href="https://nsm-templates.github.io/parchment-site/">GitHub</a> - <a href="https://nsm-templates.gitlab.io/parchment-site/">GitLab</a></td>
+		<td><a href="https://bitbucket.org/nsm-templates/parchment-site">BitBucket</a> - <a href="https://github.com/nsm-templates/parchment-site">GitHub</a> - <a href="https://gitlab.com/nsm-templates/parchment-site">GitLab</a></td>
+	</tr>
+	<tr>
+		<td>personal/project site</td>
+		<td><a href="https://nsm-templates.github.io/">GitHub</a> - <a href="https://nsm-templates.gitlab.io/">GitLab</a></td>
+		<td><a href="https://bitbucket.org/nsm-templates/nsm-templates.bitbucket.io">BitBucket</a> - <a href="https://github.com/nsm-templates/nsm-templates.github.io">GitHub</a> - <a href="https://gitlab.com/nsm-templates/nsm-templates.gitlab.io">GitLab</a></td>
+	</tr>
+	<tr>
+		<td>simple-site</td>
+		<td><a href="https://nsm-templates.github.io/simple-site/">GitHub</a> - <a href="https://nsm-templates.gitlab.io/simple-site/">GitLab</a></td>
+		<td><a href="https://bitbucket.org/nsm-templates/simple-site">BitBucket</a> - <a href="https://github.com/nsm-templates/simple-site">GitHub</a> - <a href="https://gitlab.com/nsm-templates/simple-site">GitLab</a></td>
+	</tr>
+	<tfoot>
+	    <tr>
+	        <th>name</th>
+	        <th>demo</th>
+			<th>repository</th>
+	    </tr>
+	</tfoot>
+</table>
+
+<p>
+	To have a template added to the above table, email <mono>templates@nift.cc</mono> with a link to a repository on BitBicket/GitHub/GitLab. If the repository indeed contains a site made with nsm then we will fork/import the repository to nsm-templates on BitBucket, GitHub and GitLab and add it to the above table.
 </p>
 
 <p>
-	Some people/groups might like to become <mono>template makers</mono>, or <mono>templaters</mono> for short, and help build communities for all the different site managers out there, and help make the site managers accessible to people from all different walks of life for all sorts of different purposes. Please email <mono>contact@nifty-site-manager.com</mono> if this is something you or a group of people would like to work on. 
+	To make changes to a template that has already been added to the above table, make a pull request from the repository you had us clone originally. 
 </p>
-

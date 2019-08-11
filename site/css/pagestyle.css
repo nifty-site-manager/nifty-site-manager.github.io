@@ -216,6 +216,48 @@ br
 	-ms-user-select: none; /* IE10+ */
 }
 
+table, th, td
+{
+	/*max-width:800px;*/
+	border: 1px solid #3a3535;
+	border-collapse: collapse;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+table
+{
+	/*border: 1px solid black !important;*/
+	/*width:80%;*/
+	margin-left:20px;
+	margin-right:20px;
+	margin:0 auto;
+	max-width:800px;
+	text-align: center;
+	
+	margin-bottom: 10px;
+	margin-top: 10px;
+	/*font-family: DejaVu Sans Mono, Liberation Mono, Consolas, Ubuntu Mono, Courier New;*/
+	/*font-size: 100%;*/
+	color:#A8A8A8 !important;
+}
+
+th
+{
+	cursor: default;
+	font-weight:normal;
+	background-color: #3a3535;
+	padding-top: 4px;
+	padding-bottom:5px;
+}
+
+td
+{
+	padding-top:3px;
+	padding-bottom:3px;
+	background-color:#434444;
+}
+
 noselect
 {
 	-webkit-user-select: none; /* Chrome/Safari */
