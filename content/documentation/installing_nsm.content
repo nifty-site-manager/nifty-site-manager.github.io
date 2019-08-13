@@ -21,12 +21,12 @@
 </h3>
 
 <p>
-	You can install <mono>nsm</mono> on Windows using <mono>chocolatey</mono>. First <a href="https://chocolatey.org/docs/installation">install</a> <mono>chocolatey</mono>, then follow the instructions <a href="https://chocolatey.org/packages/nsm/1.0">here</a>, or alternatively enter:
+	You can install <mono>nsm</mono> on Windows using <mono>chocolatey</mono>. First <a href="https://chocolatey.org/docs/installation">install</a> <mono>chocolatey</mono>, then follow the instructions <a href="https://chocolatey.org/packages/nsm">here</a>, or alternatively enter:
 </p>
 
 <div align="center">
 	<pre class="prettyprint">
-		choco install nsm
+		choco install nsm --version 1.0
 	</pre>
 </div>
 
