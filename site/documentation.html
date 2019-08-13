@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>
-			nsm - home
+			nsm - documentation
 		</title>
 		
 		<link rel='stylesheet' type='text/css' href='css/dropmenu.css'>
@@ -105,71 +105,39 @@
 				</ul>
 			</nav>
 
-			<h4>
-				About nsm
-			</h4>
+			<h2>Documentation</h2>
 			
-			<p>
-				Nifty site manager is an open source cross-platform git-like and $\LaTeX$-like command-line site manager. You can clone repositories from code sharing sites like BitBucket, GitHub and GitLab using <mono>nsm clone repo-url</mono>, build (updated) pages locally using <mono>nsm build-updated</mono>, then build, commit and push changes online once you are happy using <mono>nsm bcp "commit message"</mono>. 
-			</p>
-			
-			<h4>
-				Some of the things nsm can do are:
-			</h4>
-			
-			<ul>
-				<li>clone existing site repositories from BitBucket/GitHub/GitLab;</li>
-				<li>initialise managing sites;</li>
-				<li>track and untrack page information;</li>
-				<li>list information on tracked pages;</li>
-				<li>move and remove pages</li>
-				<li>modify tracked page titles and template paths;</li>
-				<li>list which pages need building and why;</li>
-				<li>build only pages that need building;</li>
-				<li>build pages specified by the user;</li>
-				<li>build all tracked pages; and</li>
-				<li>build, commit and push changes to BitBucket/GitHub/GitLab.</li>
-			</ul>
-			
-			<h4>
-				Site repository templates and examples
-			</h4>
-			
-			<p>
-				For site repository templates that you can import (or fork and rename) then clone to start making your websites, see <a href="resources/templates.html">here</a>.
-			</p>
-			
-			<p>
-				For example websites made using nsm, see <a href="resources/examples.html">here</a>.
-			</p>
-			
-			<h4>
-				Who will like nsm?
-			</h4>
-			
-			<p>
-				The following is not intended to be condescending towards people who are or are not suggested as likely users of nsm. Different tools work for different people, having a wide selection of tools available is much more inclusive! 
-			</p>
-			
-			<p>
-				While I encourage people to prove me wrong, I suspect that nsm will be most useful to front-of-house amateurs (as it is reasonably easy to install, make simple websites and use) and behind-the-scenes experts (or perhaps more accurately, useful to people behind-the-scenes who prefer to program/code websites without graphical tools/ides/etc.). I personally find it much easier than a lot of other site managers to make and host a basic static site, and based on my personal usage of and experience with $\LaTeX$ and git imagine it can be a very useful tool to experts behind the scenes.
-			</p>
-			
-			<p>
-				It could potentially be a bit overwhelming for people who are just getting used to behind-the-scenes but are dipping their toes to see if it is something that works for them and other people. I say that because to understand everything that nsm can do, and everything that is used by nsm can be a bit overwhelming. However wrapping one's head around the basics of what nsm is doing and having a bit of a look through the documentation and source code can be a good way to start understanding some stuff with behind-the-scenes and/or programming (especially development of tools like nsm and how they work). Playing with nsm will also be a good way to get your feet wet and hands dirty playing around with git along with BitBucket/GitHub/GitLab, which are all very popular and useful tools in the programming/web development worlds. 
-			</p>
-			
-			<p>
-				Another example of people who may not find nsm is for them are people whose work improves using graphical tools and/or intricate ides, though some familiarity with git and BitBucket/GitHub/GitLab at the command line level is not a bad thing, getting your feet wet and hands dirty playing around with nsm is not a terrible way to do this. There is more to cloning with nsm than with git, however what is different there is not that common in my experience (ie. it is not very common for people to have git repositories inside git repositories like nsm does with BitBucket and GitHub). However people would benefit from learning "what's going on under the hood" with <mono>nsm bcp "commit message"</mono>, which is building pages using nsm, adding/removing modified/deleted files from the git repository using <mono>git add -A .</mono>, commiting the changes to the git repository and pushing the changes to BitBucket/GitHub/GitLab.
-			</p>
-			
-			<h4>
-				Why the name nsm?
-			</h4>
-			
-			<p>
-				Nifty site manager is a command-line tool, consequently it is expected that <mono>nsm</mono> will be typed quite frequently. The name was chosen because it is a short descriptive acronym that, when typed on a qwerty keyboard (sorry dvorak fans!), efficiently oscillates between hands whilst involving minimal movement of the fingers.
-			</p>
+			<table id="templates_table">
+				<thead>
+				    <tr>
+				        <th>Contents</th>
+				    </tr>
+				</thead>
+				<tr>
+					<td><a href="documentation/installing_nsm.html">installing nsm</a></td>
+				</tr>
+				<tr>
+					<td><a href="documentation/nsm_tutorial.html">nsm tutorial</a></td>
+				</tr>
+				<tr>
+					<td><a href="documentation/nsm_commands.html">nsm commands</a></td>
+				</tr>
+				<tr>
+					<td><a href="documentation/content_files.html">content files</a></td>
+				</tr>
+				<tr>
+					<td><a href="documentation/template_files.html">template files</a></td>
+				</tr>
+				<tr>
+					<td><a href="documentation/displaying_mathematics.html">displaying mathematics</a></td>
+				</tr>
+				<tr>
+					<td><a href="documentation/displaying_code_blocks.html">displaying code blocks</a></td>
+				</tr>
+				<tr>
+					<td><a href="documentation/hosting_your_site.html">hosting your site</a></td>
+				</tr>
+			</table>
 
 			<footer>
 				<hr>

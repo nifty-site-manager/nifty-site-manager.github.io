@@ -1,0 +1,33 @@
+<h2>Documentation</h2>
+
+<table id="templates_table">
+	<thead>
+	    <tr>
+	        <th>Contents</th>
+	    </tr>
+	</thead>
+	<tr>
+		<td><a href="@pathto(documentation/installing_nsm)">installing nsm</a></td>
+	</tr>
+	<tr>
+		<td><a href="@pathto(documentation/nsm_tutorial)">nsm tutorial</a></td>
+	</tr>
+	<tr>
+		<td><a href="@pathto(documentation/nsm_commands)">nsm commands</a></td>
+	</tr>
+	<tr>
+		<td><a href="@pathto(documentation/content_files)">content files</a></td>
+	</tr>
+	<tr>
+		<td><a href="@pathto(documentation/template_files)">template files</a></td>
+	</tr>
+	<tr>
+		<td><a href="@pathto(documentation/displaying_mathematics)">displaying mathematics</a></td>
+	</tr>
+	<tr>
+		<td><a href="@pathto(documentation/displaying_code_blocks)">displaying code blocks</a></td>
+	</tr>
+	<tr>
+		<td><a href="@pathto(documentation/hosting_your_site)">hosting your site</a></td>
+	</tr>
+</table>

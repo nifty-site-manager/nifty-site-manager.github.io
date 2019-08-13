@@ -6,7 +6,7 @@
 		</li>
 
 		<li class ="dm_li">
-			<div class="dm_text">documentation</div>
+			<a href="@pathto(documentation)">documentation</a>
 			<ul class ="drop_submenu">
 				<li class="dsm_li"><a href="@pathto(documentation/installing_nsm)">installing nsm</a></li>
 				<li class="dsm_li"><a href="@pathto(documentation/nsm_tutorial)">nsm tutorial</a></li>
@@ -24,9 +24,9 @@
 		</li>
 
 		<li class ="dm_li">
-			<div class="dm_text">resources</div>
+			<a href="@pathto(resources)">resources</a>
 			<ul class ="drop_submenu">
-				<li class="dsm_li"><a href="@pathto(resources/examples)">example sites</a></li>
+				<li class="dsm_li"><a href="@pathto(resources/examples)">examples</a></li>
 				<li class="dsm_li"><a href="@pathto(resources/project_suggestions)">project suggestions</a></li>
 				<li class="dsm_li"><a href="@pathto(resources/templates)">templates</a></li>
 				<li class="dsm_li"><a href="@pathto(resources/links)">useful links</a></li>

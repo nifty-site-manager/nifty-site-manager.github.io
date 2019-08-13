@@ -2,6 +2,10 @@
 404
 template/404.template
 
+documentation
+documentation
+template/page.template
+
 documentation/bitbucket_hosting
 bitbucket_hosting
 template/page.template
@@ -68,6 +72,10 @@ template/page.template
 
 merchandise
 merchandise
+template/page.template
+
+resources
+resources
 template/page.template
 
 resources/examples
