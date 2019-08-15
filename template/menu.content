@@ -24,6 +24,15 @@
 		</li>
 
 		<li class ="dm_li">
+			<a href="@pathto(social_media)">social media</a>
+			<ul class ="drop_submenu">
+				<li class="dsm_li"><a href="https://discord.gg/St8QXTG">Discord</a></li>
+				<li class="dsm_li"><a href="https://old.reddit.com/r/nift">Reddit</a></li>
+				<li class="dsm_li"><a href="https://twitter.com/nifty_site_man">Twitter</a></li>
+			</ul>
+		</li>
+
+		<li class ="dm_li">
 			<a href="@pathto(resources)">resources</a>
 			<ul class ="drop_submenu">
 				<li class="dsm_li"><a href="@pathto(resources/examples)">examples</a></li>
