@@ -15,7 +15,7 @@
 	<li>initialise managing sites;</li>
 	<li>track and untrack page information;</li>
 	<li>list information on tracked pages;</li>
-	<li>move and remove pages</li>
+	<li>copy, move and remove pages</li>
 	<li>modify tracked page titles and template paths;</li>
 	<li>list which pages need building and why;</li>
 	<li>build only pages that need building;</li>
