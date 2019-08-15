@@ -228,7 +228,7 @@ table, th, td
 table
 {
 	/*border: 1px solid black !important;*/
-	width:80%;
+	max-width:80%;
 	margin-left:20px;
 	margin-right:20px;
 	/*margin:0 auto;*/
