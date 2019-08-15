@@ -94,6 +94,10 @@ resources/templates
 templates
 template/page.template
 
+social_media
+social_media
+template/page.template
+
 support
 support
 template/page.template

@@ -1,0 +1,18 @@
+<h4>Social Media</h4>
+
+<table id="social_media_table">
+	<thead>
+	    <tr>
+	        <th>Contents</th>
+	    </tr>
+	</thead>
+	<tr>
+		<td><a href="https://discord.gg/St8QXTG">Discord</a></td>
+	</tr>
+	<tr>
+		<td><a href="https://old.reddit.com/r/nift">Reddit</a></td>
+	</tr>
+	<tr>
+		<td><a href="https://twitter.com/nifty_site_man">Twitter</a></td>
+	</tr>
+</table>
