@@ -1,9 +1,15 @@
-<h4>Hosting options (static websites)</h4>
+<h4>Free Hosting options</h4>
+<h5>static websites</h5>
 <ul>
 	<li><a href="https://bitbucket.org">BitBucket</a></li>
 	<li><a href="https://github.com">GitHub</a></li>
 	<li><a href="https://gitlab.com">GitLab</a></li>
 	<li><a href="https://netlify.com">Netlify</a></li>
+</ul>
+
+<h5>dynamic websites and apps</h5>
+<ul>
+	<li><a href="https://www.heroku.com/">Heroku</a></li>
 </ul>
 
 <h4>Custom domain registrars</h4>

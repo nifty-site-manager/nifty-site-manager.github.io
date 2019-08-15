@@ -1,4 +1,4 @@
-<h2>Resources</h2>
+<h4>Resources</h4>
 
 <table id="templates_table">
 	<thead>
@@ -16,6 +16,6 @@
 		<td><a href="@pathto(resources/templates)">templates</a></td>
 	</tr>
 	<tr>
-		<td><a href="@pathto(resources/links)">useful links</a></td>
+		<td><a href="@pathto(resources/links)">links</a></td>
 	</tr>
 </table>
