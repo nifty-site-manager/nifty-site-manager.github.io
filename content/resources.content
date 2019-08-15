@@ -10,12 +10,12 @@
 		<td><a href="@pathto(resources/examples)">examples</a></td>
 	</tr>
 	<tr>
+		<td><a href="@pathto(resources/links)">links</a></td>
+	</tr>
+	<tr>
 		<td><a href="@pathto(resources/project_suggestions)">project suggestions</a></td>
 	</tr>
 	<tr>
 		<td><a href="@pathto(resources/templates)">templates</a></td>
-	</tr>
-	<tr>
-		<td><a href="@pathto(resources/links)">links</a></td>
 	</tr>
 </table>
