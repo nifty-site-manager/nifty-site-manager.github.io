@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>
-			nsm - nsm tutorial
+			nsm - nsm_tutorial
 		</title>
 		
 		<link rel='stylesheet' type='text/css' href='../css/dropmenu.css'>
@@ -75,14 +75,13 @@
 					<li class ="dm_li">
 						<div class="dm_text">documentation</div>
 						<ul class ="drop_submenu">
-							<li class="dsm_li"><a href="installing_nsm.html">installing nsm</a></li>
-							<li class="dsm_li"><a href="nsm_tutorial.html">nsm tutorial</a></li>
-							<li class="dsm_li"><a href="nsm_commands.html">nsm commands</a></li>
-							<li class="dsm_li"><a href="content_files.html">content files</a></li>
-							<li class="dsm_li"><a href="template_files.html">template files</a></li>
-							<li class="dsm_li"><a href="displaying_mathematics.html">displaying mathematics</a></li>
-							<li class="dsm_li"><a href="displaying_code_blocks.html">displaying code blocks</a></li>
-							<li class="dsm_li"><a href="hosting_your_site.html">hosting your site</a></li>
+							<li class="dsm_li"><a href="../documentation/installing_nsm.html">installing nsm</a></li>
+							<li class="dsm_li"><a href="../documentation/nsm_commands.html">nsm commands</a></li>
+							<li class="dsm_li"><a href="../documentation/content_files.html">content files</a></li>
+							<li class="dsm_li"><a href="../documentation/template_files.html">template files</a></li>
+							<li class="dsm_li"><a href="../documentation/displaying_mathematics.html">displaying mathematics</a></li>
+							<li class="dsm_li"><a href="../documentation/displaying_code_blocks.html">displaying code blocks</a></li>
+							<li class="dsm_li"><a href="../documentation/hosting_your_site.html">hosting your site</a></li>
 						</ul>
 					</li>
 			
@@ -93,10 +92,12 @@
 					<li class ="dm_li">
 						<div class="dm_text">resources</div>
 						<ul class ="drop_submenu">
-							<li class="dsm_li"><a href="../resources/examples.html">examples</a></li>
-							<li class="dsm_li"><a href="../resources/links.html">links</a></li>
-							<li class="dsm_li"><a href="../resources/project_suggestions.html">project suggestions</a></li>
-							<li class="dsm_li"><a href="../resources/templates.html">templates</a></li>
+							<li class="dsm_li"><a href="examples.html">examples</a></li>
+							<li class="dsm_li"><a href="get_started.html">get started</a></li>
+							<li class="dsm_li"><a href="links.html">links</a></li>
+							<li class="dsm_li"><a href="nsm_tutorial.html">nsm tutorial</a></li>
+							<li class="dsm_li"><a href="project_suggestions.html">project suggestions</a></li>
+							<li class="dsm_li"><a href="templates.html">templates</a></li>
 						</ul>
 					</li>
 			
@@ -121,16 +122,24 @@
 			</h3>
 			
 			<p>
-				The easiest way to learn how nsm works is to get your hands dirty playing with a simple site:
+				The following tutorial will help you learn how nsm works, if you are just taking a look at nsm you may prefer the <a href="get_started.html">getting started guide</a>.
+			</p>
+			
+			<p>
+				The easiest way to learn how nsm works is to get your feet wet and hands dirty playing with a simple site. If there is any problems with the following tutorial please file an issue on one of the official repositories linked in the footer at the bottom. 
 			</p>
 			
 			<ol>
 				<li>
-					Download <a href="https://github.com/nifty-site-manager/simple-site/archive/stage.zip">simple-site-stage.zip</a> and extract <mono>simple-site-stage</mono>;
+					Download <a href="https://gitlab.com/nsm-templates/simple-site/-/archive/master/simple-site-master.zip">simple-site-master.zip</a> and extract <mono>simple-site-master</mono>. If you have a BitBucket, GitHub and/or GitLab account then you can import/fork and rename a repository from <a href="https://bitbucket.org/nsm-templates">here</a>, <a href="https://github.com/nsm-templates">here</a> or <a href="https://gitlab.com/nsm-templates">here</a> then clone using <mono>nsm clone repository-url</mono> (Note - You can rename a repository when importing it, rather than forking and renaming, plus on BitBucket and GitHub you cannot remove fork relationships);
 				</li>
 			
 				<li>
-					Open a terminal window and change to the <mono>simple-site-stage</mono> directory, you will also find it useful to have the <mono>simple-site-stage</mono> directory open using your operating system's window manager;
+					If you imported/forked a repository on GitHub then in the repository's settings on GitHub for GitHub Pages set the source to <mono>master branch</mono>;
+				</li>
+			
+				<li>
+					Open a terminal window and change to the <mono>simple-site-master</mono> directory, you will also find it useful to have the <mono>simple-site-master</mono> directory open using your operating system's window manager;
 				</li>
 			
 				<li>
@@ -146,23 +155,15 @@
 				</li>
 			
 				<li>
-					To start nsm managing the site enter <mono>nsm init</mono>. A (hidden) directory <mono>.siteinfo/</mono> should have been created containing an empty file <mono>pages.list</mono> and a config file <mono>nsm.config</mono>;
-				</li>
-			
-				<li>
 					Enter <mono>nsm info-all</mono>, <mono>nsm info-names</mono> and <mono>nsm status</mono>;
 				</li>
 			
 				<li>
-					The command to have nsm track a page is <mono>nsm track page-name page-title template-path</mono>, where <mono>page-title</mono> and <mono>template-path</mono> are optional (default <mono>page-title</mono> is the specified <mono>page-name</mono>, and default <mono>template-path</mono> is <mono>template/page.template</mono>). Enter <mono>nsm track index home</mono>;
+					The command to have nsm track a page is <mono>nsm track page-name page-title template-path</mono>, where <mono>page-title</mono> and <mono>template-path</mono> are optional (default <mono>page-title</mono> is the specified <mono>page-name</mono>, and default <mono>template-path</mono> is <mono>template/page.template</mono>). Enter <mono>nsm track first_page myPageTitle</mono>;
 				</li>
 			
 				<li>
-					We will come back to building pages later in the tutorial, but enter <mono>nsm build-updated</mono>. You should get an error, what happened was in <mono>template/menu.content</mono> it asks for the path to the page with name <mono>about</mono>, but we do not have <mono>about</mono> tracked!;
-				</li>
-			
-				<li>
-					Enter <mono>nsm track about</mono>
+					We will come back to building pages later in the tutorial, but enter <mono>nsm build-updated</mono>.
 				</li>
 			
 				<li>
@@ -172,6 +173,10 @@
 						<pre class="inline rounded">
 							about
 							about
+							template/page.template
+			
+							first_page
+							myPageTitle
 							template/page.template
 			
 							index
@@ -187,20 +192,24 @@
 				</li>
 			
 				<li>
+					Enter <mono>nsm rm first_page</mono> and repeat the last step;
+				</li>
+			
+				<li>
 					Enter <mono>nsm build-updated</mono>;
 					<ul>
 						<li>
-							The directory <mono>site/</mono> should now contain the pages <mono>index.html</mono> and <mono>about.html</mono>. By default users do not have permission to write to page files, this is to prevent users from accidentally modifying a page file when they more than likely intended to modify a content file. Should users want to manually edit a page file they can simply change the file permissions (eg. <mono>chmod +w page-path</mono>); 
+							The directory <mono>site/</mono> should now contain the pages <mono>index.html</mono>, <mono>about.html</mono> and <mono>first_page.html</mono>. By default users do not have permission to write to page files, this is to prevent users from accidentally modifying a page file when they more than likely intended to modify a content file. Should users want to manually edit a page file they can simply change the file permissions (eg. <mono>chmod +w page-path</mono>); 
 						</li>
 			
 						<li>
-							Another directory <mono>.siteinfo/site/</mono> should have been created containing the info files <mono>index.info</mono> and <mono>about.info</mono>. By default users do not have permission to write to info files, and users should beware of ever doing so. The modification time of info files is how nsm knows when pages were last built, furthermore the content inside info files represents page dependencies from the last time pages were built, <u>not necessarily</u> current page dependencies, hence users should not have any reason to modify them;
+							Another directory <mono>.siteinfo/site/</mono> should have been created containing the info files <mono>index.info</mono>, <mono>about.info</mono> and <mono>first_page.info</mono>. By default users do not have permission to write to info files, and users should beware of ever doing so. The modification time of info files is how nsm knows when pages were last built (actually I am pretty sure nsm gets this information from the first line of the information files), furthermore the content inside info files represents page dependencies from the last time pages were built, <u>not necessarily</u> current page dependencies, hence users should not have any reason to modify them;
 						</li>
 					</ul>
 				</li>
 			
 				<li>
-					Open <mono>site/index.html</mono> in a browser, click through to the about page, and view the source for both pages. Compare what you have locally to a <a href="https://nifty-site-manager.github.io/simple-site/">pre-built</a> version of <mono>site/index.html</mono> 
+					Open <mono>site/index.html</mono> in a browser, click through to the about page, and view the source for both pages. Compare what you have locally to a <a href="https://nsm-templates.gitlab.io/simple-site/">pre-built</a> version of <mono>site/index.html</mono> 
 				</li>
 			
 				<li>
@@ -216,7 +225,7 @@
 				</li>
 			
 				<li>
-					Enter <mono>nsm status</mono>, then <mono>nsm build-updated</mono>, then <mono>nsm status</mono> (notice nsm can be run from any directory inside the stage directory (stage directory inclusive, obviously as that is where we started!);
+					Enter <mono>nsm status</mono>, then <mono>nsm build-updated</mono>, then <mono>nsm status</mono> (notice nsm can be run from any directory inside the stage directory, stage directory inclusive, obviously as that is where we started! If you are using BitBucket or GitHub then the site directory is set up as a master branch);
 				</li>
 			
 				<li>
@@ -273,7 +282,7 @@
 									{
 										if(v.size())
 											os &lt;&lt; v[i];
-										for(auto i=0; i&lt;v.size(); i++)
+										for(auto i=1; i&lt;v.size(); i++)
 											os &lt;&lt; " " &lt;&lt; v[i];
 										return os;
 									}
@@ -314,7 +323,7 @@
 				</li>
 			
 				<li>
-					Enter <mono>nsm cp test about</mono>, check that <mono>.siteinfo/pages.list</mono> has been updated and <mono>content/about.content</mono> was copied to <mono>content/test.content</mono>;
+					Enter <mono>nsm cp test about</mono>, check that <mono>.siteinfo/pages.list</mono> has been updated and <mono>content/test.content</mono> was copied to <mono>content/about.content</mono>;
 				</li>
 			
 				<li>
@@ -323,6 +332,10 @@
 			
 				<li>
 					Enter <mono>nsm untrack index</mono>, check that both <mono>site/index.html</mono> and <mono>.siteinfo/site/index.info</mono> were removed.
+				</li>
+			
+				<li>
+					If you forked, renamed and cloned a repository from BitBucket, GitHub or GitLab then you can build, commit and push changes back to BitBucket, GitHub or GitLab all at the same time using <mono>nsm bcp "commit message"</mono> (note for BitBucket you will need to enter your password twice and for GitHub you will need to enter your username and password twice, this is because of using both a stage and master branch for BitBucket/GitHub, something which is not done for GitLab). 
 				</li>
 			</ol>
 			
@@ -347,7 +360,7 @@
 					<a href="https://snapcraft.io/nsm"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" height="40px" alt="Get it from the Snap Store" title="Linux"></a></noselect>
 				</p>
 			
-				Page was last built on Friday August 16 2019 at 11:46:20 (AEST) using Linux. <br>
+				Page was last built on Friday August 16 2019 at 15:51:38 (AEST) using Linux. <br>
 			
 				<noselect><small>&copy;&nbsp;2015 - <script>document.write(new Date().getFullYear())</script> <a href="https://n-ham.com/">Nicholas Ham</a></small></noselect>
 			</footer>

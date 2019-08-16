@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>
-			nsm - displaying mathematics
+			nsm - get started
 		</title>
 		
 		<link rel='stylesheet' type='text/css' href='../css/dropmenu.css'>
@@ -75,13 +75,13 @@
 					<li class ="dm_li">
 						<div class="dm_text">documentation</div>
 						<ul class ="drop_submenu">
-							<li class="dsm_li"><a href="installing_nsm.html">installing nsm</a></li>
-							<li class="dsm_li"><a href="nsm_commands.html">nsm commands</a></li>
-							<li class="dsm_li"><a href="content_files.html">content files</a></li>
-							<li class="dsm_li"><a href="template_files.html">template files</a></li>
-							<li class="dsm_li"><a href="displaying_mathematics.html">displaying mathematics</a></li>
-							<li class="dsm_li"><a href="displaying_code_blocks.html">displaying code blocks</a></li>
-							<li class="dsm_li"><a href="hosting_your_site.html">hosting your site</a></li>
+							<li class="dsm_li"><a href="../documentation/installing_nsm.html">installing nsm</a></li>
+							<li class="dsm_li"><a href="../documentation/nsm_commands.html">nsm commands</a></li>
+							<li class="dsm_li"><a href="../documentation/content_files.html">content files</a></li>
+							<li class="dsm_li"><a href="../documentation/template_files.html">template files</a></li>
+							<li class="dsm_li"><a href="../documentation/displaying_mathematics.html">displaying mathematics</a></li>
+							<li class="dsm_li"><a href="../documentation/displaying_code_blocks.html">displaying code blocks</a></li>
+							<li class="dsm_li"><a href="../documentation/hosting_your_site.html">hosting your site</a></li>
 						</ul>
 					</li>
 			
@@ -92,12 +92,12 @@
 					<li class ="dm_li">
 						<div class="dm_text">resources</div>
 						<ul class ="drop_submenu">
-							<li class="dsm_li"><a href="../resources/examples.html">examples</a></li>
-							<li class="dsm_li"><a href="../resources/get_started.html">get started</a></li>
-							<li class="dsm_li"><a href="../resources/links.html">links</a></li>
-							<li class="dsm_li"><a href="../resources/nsm_tutorial.html">nsm tutorial</a></li>
-							<li class="dsm_li"><a href="../resources/project_suggestions.html">project suggestions</a></li>
-							<li class="dsm_li"><a href="../resources/templates.html">templates</a></li>
+							<li class="dsm_li"><a href="examples.html">examples</a></li>
+							<li class="dsm_li"><a href="get_started.html">get started</a></li>
+							<li class="dsm_li"><a href="links.html">links</a></li>
+							<li class="dsm_li"><a href="nsm_tutorial.html">nsm tutorial</a></li>
+							<li class="dsm_li"><a href="project_suggestions.html">project suggestions</a></li>
+							<li class="dsm_li"><a href="templates.html">templates</a></li>
 						</ul>
 					</li>
 			
@@ -117,53 +117,51 @@
 				</ul>
 			</nav>
 
-			<h3>
-				Guide to displaying mathematics
-			</h3>
+			<h3>Getting Started Guide</h3>
 			
 			<p>
-				The easiest way to display mathematics on your site is to use <a href=https://www.mathjax.org/>MathJax</a>. Repeating the information on <a href="http://docs.mathjax.org/en/latest/start.html">this</a> page, using MathJax on your site is as simple as adding the following code to the head of each page:
+				If you are new to <mono>nsm</mono> the following guide will help you get started. To understand how nsm works even better check out the <a href="nsm_tutorial.html">nsm tutorial</a>.
+			</p>
 			
+			<ol>
+				<li>If you haven't already installed nsm, you can find install instructions <a href="../documentation/installing_nsm.html">here</a>;
+				<li>Open up a terminal or command prompt/power shell window and enter <mono>nsm commands</mono> to get a list of available commands (check out the <a href="../documentation/nsm_commands.html"><mono>nsm</mono> commands</a> page from the documentation for information about <mono>nsm</mono> commands);</li>
+				<li>On Bitbucket, GitHub or GitLab import (or fork and rename) an existing site repository template from <a href="templates.html">here</a>;</li>
+				<li>If you used GitHub for the last step, go in to the imported/forked repository's settings, scroll down to GitHub Pages and set the <mono>source</mono> to <mono>master branch</mono>;</li>
+				<li>To view the website remotely, open up a browser of your choice and go to
 				<div align="center">
-					<pre class="prettyprint lang-html inline rounded">
-						&lt;!-- uses MathJax CDC for LaTeX support
-							 see http://docs.mathjax.org/en/latest/start.html for more info -->
-						&lt;script type="text/x-mathjax-config">
-							MathJax.Hub.Config
-							({
-								extensions: ["tex2jax.js"],
-								jax: ["input/TeX", "output/HTML-CSS"],
-								tex2jax: 
-								{
-									inlineMath: [['$','$'], ['\\(','\\)']],
-									displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-									processEscapes: true
-								},
-								"HTML-CSS": { availableFonts: ["MathJax TeX"] }
-							});
-						&lt;/script>
-						&lt;script type="text/javascript" 
-								src="https://cdn.mathjax.org/mathjax/latest/MathJax.js">
-						&lt;/script>
+					<pre class="rounded">
+						https://[user/team/organisation/group-name].[bitbucket/github/gitlab].io/repo-name
 					</pre>
 				</div>
-			</p>
-			
-			<p>
-				You should then be able to paste LaTeX equations straight into content files. both \$..\$ and &sol;(..&sol;) work for inline equations, and both \$\$..\$\$ and &sol;[..&sol;] work for displayed equations. Eg. When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are:
-			
-				\[x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}\]
-			</p>
-			
-			<p>
-				If you want to insert a dollar sign on a page, as opposed to opening/closing an inline equation, use \\\$ and MathJax will escape the character.
-			</p>
-			
-			
-			<p>
-				<u>Note:</u> if you are opening a page locally and are not connected to the internet then MathJax will not load, you will simply see the unprocessed LaTeX equations. 
-			</p>
-			
+				    Note if you name the repository:
+				<div align="center">
+					<pre class="rounded">
+						[user/team/organisation/group-name].[bitbucket/github/gitlab].io
+					</pre>
+				</div>
+				    then the url will be just
+				<div align="center">
+					<pre class="rounded">
+						https://[user/team/organisation/group-name].[bitbucket/github/gitlab].io
+					</pre>
+				</div></li>
+				<li>Clone the site repository locally using <mono>nsm clone <i>clone-url</i></mono>, eg.:
+				<div align="center">
+					<pre class="rounded">
+						nsm clone https://gitlab.com/nsm-templates/parchment-site.git;
+					</pre>
+				</div></li>
+				<li>To view the website locally, open up one of the pages in the <mono>site</mono> directory with a browser of your choice;</li>
+				<li>Try modifying some of the files in the <mono>content</mono> directory and run <mono>nsm build-updated</mono>, then refresh your browser to view the changes (check out the <a href="../documentation/content_files.html">content files</a> page from the documentation for information about writing content files);</li>
+				<li>Try modifying some of the files in the template directory and run <mono>nsm build-updated</mono>, then refresh your browser to view the changes (check out the <a href="../documentation/template_files.html">template files</a> page from the documentation for information about writing template files);</li>
+				<li>You can push your changes back to Bitbucket/GitHub/GitLab using <mono>nsm bcp "commit message"</mono>.</li>
+				<li>Check out the <a href="../documentation/hosting_your_site.html">hosting your site</a> page from the documentation for information about hosting your site. Especially useful is netlify for custom domains with auto renewing Let's encrypt certificates or Heroku for free hosting of dynamic websites;</li>
+				<li>Check out the <a href="../documentation/displaying_mathematics.html">displaying mathematics</a> page from the documentation for information about $\LaTeX$ support for your webpages using MathJax;</li>
+				<li>Check out the <a href="../documentation/displaying_code_blocks.html">displaying code blocks</a> page from the documentation for information about syntax highlighting support for your webpages using <a href="https://github.com/google/code-prettify">Google Code Prettify</a>;</li>
+				<li>Check <a href="examples.html">here</a> for examples of websites made using <mono>nsm</mono>;</li>
+				<li>Check <a href="links.html">here</a> for all sorts of useful links.</li>
+			</ol>
 
 			<footer>
 				<hr>
