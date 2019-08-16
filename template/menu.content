@@ -6,7 +6,7 @@
 		</li>
 
 		<li class ="dm_li">
-			<a href="@pathto(documentation)">documentation</a>
+			<div class="dm_text">documentation</div>
 			<ul class ="drop_submenu">
 				<li class="dsm_li"><a href="@pathto(documentation/installing_nsm)">installing nsm</a></li>
 				<li class="dsm_li"><a href="@pathto(documentation/nsm_tutorial)">nsm tutorial</a></li>
@@ -24,7 +24,7 @@
 		</li>
 
 		<li class ="dm_li">
-			<a href="@pathto(resources)">resources</a>
+			<div class="dm_text">resources</div>
 			<ul class ="drop_submenu">
 				<li class="dsm_li"><a href="@pathto(resources/examples)">examples</a></li>
 				<li class="dsm_li"><a href="@pathto(resources/links)">links</a></li>
@@ -34,7 +34,7 @@
 		</li>
 
 		<li class ="dm_li">
-			<a href="@pathto(social_media)">social media</a>
+			<div class="dm_text">social media</div>
 			<ul class ="drop_submenu">
 				<li class="dsm_li"><a href="https://discord.gg/St8QXTG">Discord</a></li>
 				<li class="dsm_li"><a href="https://old.reddit.com/r/nift">Reddit</a></li>
