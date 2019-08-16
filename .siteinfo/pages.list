@@ -42,14 +42,6 @@ documentation/nsm_commands
 "nsm commands"
 template/page.template
 
-documentation/nsm_tutorial
-nsm_tutorial
-template/page.template
-
-documentation/old_nsm_tutorial
-"nsm tutorial"
-template/page.template
-
 documentation/osx_install
 osx_install
 template/page.template
@@ -74,8 +66,16 @@ resources/examples
 examples
 template/page.template
 
+resources/get_started
+"get started"
+template/page.template
+
 resources/links
 links
+template/page.template
+
+resources/nsm_tutorial
+nsm_tutorial
 template/page.template
 
 resources/project_suggestions

@@ -16,16 +16,18 @@
 
 <p>
 	If you would like to be a masochist and set up your own site repositories from scratch for any of BitBucket, GitHub or GitLab then see:
+
 	<ol>
 		<li><a href="./bitbucket_hosting.html">Hosting on BitBucket</a>;</li>
 		<li><a href="./github_hosting.html">Hosting on GitHub</a>; or</li>
 		<li><a href="./gitlab_hosting.html">Hosting on GitLab</a>.</li>
 	</ol>
-	You can also combine any of the above hosting options with <a href="https://netlify.com">netlify</a>, which works well for custom domains (including subdomains) and automatically renews <a href="https://letsencrypt.org/">Let's Encrypt</a> certificates for your site. I personally find hosting on GitLab the easiest, because you only need one branch (standard <mono>master</mono>) then have it deploy the site when you push using a <mono>.gitlab-ci.yml</mono> file.
+
+	You can also combine any of the above hosting options with <a href="https://netlify.com">Netlify</a>, which works well for custom domains (including subdomains) and automatically renews <a href="https://letsencrypt.org/">Let's Encrypt</a> certificates for your site. I personally find hosting on GitLab the easiest, because you only need one branch (standard <mono>master</mono>) then have it deploy the site when you push using a <mono>.gitlab-ci.yml</mono> file.
 </p>
 
 <p>
-	Options for hosting dynamic websites (or static sites if you would like) include hiring a server with someone like:
+	To host dynamic websites for free check out <a href="https://www.heroku.com/">Heroku</a>. Other options for hosting dynamic websites (or static sites if you would like) include hiring a server with someone like:
 	<ol>
 		<li><a href="https://buyvm.net/">BuyVM</a>;</li>
 		<li><a href="https://joesdatacenter.com/">Joe's Datacenter</a>; or</li>

@@ -9,7 +9,6 @@
 			<div class="dm_text">documentation</div>
 			<ul class ="drop_submenu">
 				<li class="dsm_li"><a href="@pathto(documentation/installing_nsm)">installing nsm</a></li>
-				<li class="dsm_li"><a href="@pathto(documentation/nsm_tutorial)">nsm tutorial</a></li>
 				<li class="dsm_li"><a href="@pathto(documentation/nsm_commands)">nsm commands</a></li>
 				<li class="dsm_li"><a href="@pathto(documentation/content_files)">content files</a></li>
 				<li class="dsm_li"><a href="@pathto(documentation/template_files)">template files</a></li>
@@ -27,7 +26,9 @@
 			<div class="dm_text">resources</div>
 			<ul class ="drop_submenu">
 				<li class="dsm_li"><a href="@pathto(resources/examples)">examples</a></li>
+				<li class="dsm_li"><a href="@pathto(resources/get_started)">get started</a></li>
 				<li class="dsm_li"><a href="@pathto(resources/links)">links</a></li>
+				<li class="dsm_li"><a href="@pathto(resources/nsm_tutorial)">nsm tutorial</a></li>
 				<li class="dsm_li"><a href="@pathto(resources/project_suggestions)">project suggestions</a></li>
 				<li class="dsm_li"><a href="@pathto(resources/templates)">templates</a></li>
 			</ul>

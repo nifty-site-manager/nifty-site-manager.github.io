@@ -33,7 +33,7 @@
 </p>
 
 <p>
-	For example websites made using nsm, see <a href="@pathto(resources/examples)">here</a>.
+	For example websites made using nsm, see <a href="@pathto(resources/examples)">here</a>. For help getting started with nsm see the <a href="@pathto(resources/get_started)">getting started guide</a>.
 </p>
 
 <h4>

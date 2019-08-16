@@ -1,0 +1,45 @@
+<h3>Getting Started Guide</h3>
+
+<p>
+	If you are new to <mono>nsm</mono> the following guide will help you get started. To understand how nsm works even better check out the <a href="@pathto(resources/nsm_tutorial)">nsm tutorial</a>.
+</p>
+
+<ol>
+	<li>If you haven't already installed nsm, you can find install instructions <a href="@pathto(documentation/installing_nsm)">here</a>;
+	<li>Open up a terminal or command prompt/power shell window and enter <mono>nsm commands</mono> to get a list of available commands (check out the <a href="@pathto(documentation/nsm_commands)"><mono>nsm</mono> commands</a> page from the documentation for information about <mono>nsm</mono> commands);</li>
+	<li>On Bitbucket, GitHub or GitLab import (or fork and rename) an existing site repository template from <a href="@pathto(resources/templates)">here</a>;</li>
+	<li>If you used GitHub for the last step, go in to the imported/forked repository's settings, scroll down to GitHub Pages and set the <mono>source</mono> to <mono>master branch</mono>;</li>
+	<li>To view the website remotely, open up a browser of your choice and go to
+	<div align="center">
+		<pre class="rounded">
+			https://[user/team/organisation/group-name].[bitbucket/github/gitlab].io/repo-name
+		</pre>
+	</div>
+	    Note if you name the repository:
+	<div align="center">
+		<pre class="rounded">
+			[user/team/organisation/group-name].[bitbucket/github/gitlab].io
+		</pre>
+	</div>
+	    then the url will be just
+	<div align="center">
+		<pre class="rounded">
+			https://[user/team/organisation/group-name].[bitbucket/github/gitlab].io
+		</pre>
+	</div></li>
+	<li>Clone the site repository locally using <mono>nsm clone <i>clone-url</i></mono>, eg.:
+	<div align="center">
+		<pre class="rounded">
+			nsm clone https://gitlab.com/nsm-templates/parchment-site.git;
+		</pre>
+	</div></li>
+	<li>To view the website locally, open up one of the pages in the <mono>site</mono> directory with a browser of your choice;</li>
+	<li>Try modifying some of the files in the <mono>content</mono> directory and run <mono>nsm build-updated</mono>, then refresh your browser to view the changes (check out the <a href="@pathto(documentation/content_files)">content files</a> page from the documentation for information about writing content files);</li>
+	<li>Try modifying some of the files in the template directory and run <mono>nsm build-updated</mono>, then refresh your browser to view the changes (check out the <a href="@pathto(documentation/template_files)">template files</a> page from the documentation for information about writing template files);</li>
+	<li>You can push your changes back to Bitbucket/GitHub/GitLab using <mono>nsm bcp "commit message"</mono>.</li>
+	<li>Check out the <a href="@pathto(documentation/hosting_your_site)">hosting your site</a> page from the documentation for information about hosting your site. Especially useful is netlify for custom domains with auto renewing Let's encrypt certificates or Heroku for free hosting of dynamic websites;</li>
+	<li>Check out the <a href="@pathto(documentation/displaying_mathematics)">displaying mathematics</a> page from the documentation for information about $\LaTeX$ support for your webpages using MathJax;</li>
+	<li>Check out the <a href="@pathto(documentation/displaying_code_blocks)">displaying code blocks</a> page from the documentation for information about syntax highlighting support for your webpages using <a href="https://github.com/google/code-prettify">Google Code Prettify</a>;</li>
+	<li>Check <a href="@pathto(resources/examples)">here</a> for examples of websites made using <mono>nsm</mono>;</li>
+	<li>Check <a href="@pathto(resources/links)">here</a> for all sorts of useful links.</li>
+</ol>
