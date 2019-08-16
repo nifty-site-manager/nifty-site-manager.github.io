@@ -73,12 +73,22 @@ See also:
 	<li><a href="https://gogs.io/">Gogs</a></li>
 </ul>
 
-<h4>Forms</h4>
+<h4>Adding Forms</h4>
 <ul>
 	<li><a href="https://www.netlify.com/docs/form-handling/">Netlify form handling</a></li>
 	<li><a href="https://www.emailjs.com/">EmailJS</a> - Send email directly from Javascript</li>
 	<li><a href="https://formspree.io/">FormSpree</a></li>
 	<li><a href="https://formcarry.com/">FormCarry</a></li>
+</ul>
+
+<h4>Adding Comments</h4>
+<ul>
+	<li><a href="https://disqus.com/">Disqus</a></li>
+	<li><a href="https://commento.io/">Commento</a></li>
+	<li><a href="https://staticman.net/">Staticman</a></li>
+	<li><a href="https://gitalk.github.io/">Gitalk</a></li>
+	<li><a href="https://www.talkyard.io/">TalkYard</a></li>
+	<li><a href="https://www.npmjs.com/package/react-facebook">Facebook comments</a></li>
 </ul>
 
 <h4>Useful links</h4>
