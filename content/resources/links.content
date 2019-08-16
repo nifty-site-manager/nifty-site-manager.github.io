@@ -5,7 +5,14 @@
 	<li><a href="https://github.com">GitHub</a></li>
 	<li><a href="https://gitlab.com">GitLab</a></li>
 	<li><a href="https://netlify.com">Netlify</a></li>
+	<li><a href="https://aws.amazon.com/amplify/console/">Amazon Amplify Console</a></li>
+	<li><a href="https://surge.sh/">surge.sh</a></li>
+	<li><a href="https://zeit.co/now">ZEIT Now</a></li>
 </ul>
+
+<p>
+	Also check out <a href="https://www.aerobatic.com/">Aerobatic</a>.
+</p>
 
 <h5>dynamic websites and apps</h5>
 <ul>
