@@ -149,6 +149,16 @@ a.gl:hover
 	transition:0.3s;
 }
 
+ol li
+{
+	margin-bottom: 3px;
+}
+
+ul li
+{
+	margin-bottom: 3px;
+}
+
 footer
 {
 	text-align: center;
