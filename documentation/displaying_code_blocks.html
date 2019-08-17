@@ -138,7 +138,28 @@
 				</p>
 				
 				<p>
-					Note the examples on this site are using the included <a href="https://gitlab.com/nifty-site-manager/nifty-site-manager.gitlab.io/blob/master/site/css/pre.css">pre.css</a> file as well as the script above. 
+					Note the examples on this site are using the included <a href="https://gitlab.com/nifty-site-manager/nifty-site-manager.gitlab.io/blob/master/site/css/pre.css">pre.css</a> file and <a href="https://gitlab.com/nifty-site-manager/nifty-site-manager.gitlab.io/blob/master/site/js/process_pre_tags.js">process_pre_tags.js</a> script along with the script above. 
+				</p>
+				
+				<p>
+					To use <mono>process_pre_tags.js</mono> add it to the end of your <mono>&lt;body&gt;</mono>. For example a <mono>page.template</mono> file might be:
+				
+					<div align="center">
+						<pre class="prettyprint lang-html linenums rounded">
+							&lt;!DOCTYPE html>
+							&lt;html>
+								&lt;head>
+									&lt;title>site title - &commat;pagetitle&lt;/title>
+								&lt;/head>
+											
+								&lt;body>
+									&commat;inputcontent
+				
+									&lt;script src='&commat;pathtofile(site/js/process_pre_tags.js)'>&lt;/script>
+								&lt;/body>
+							&lt;/html>
+						</pre>
+					</div>
 				</p>
 				
 				<p>
