@@ -65,78 +65,127 @@
 				<img class="logo" src="../files/NIFT.png" width="200px">
 		
 				<p style="margin-bottom:0px">
-					<noselect><a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a> &nbsp; <a href="https://old.reddit.com/r/nift" title="Reddit" class="reddit"><i class="fab fa-reddit-square fa-2x"></i></a> &nbsp; <a href="https://twitter.com/nifty_site_man" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a></noselect>
+					<noselect><a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a> &nbsp; <a href="https://old.reddit.com/r/nift" title="Reddit" class="reddit"><i class="fab fa-reddit-square fa-2x"></i></a> &nbsp; <a href="https://twitter.com/nifty_site_man" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a> &nbsp; <a href="https://nifty-site-manager.teemill.com/" title="TeeMill" class="teemill"><i class="fas fa-tshirt fa-2x"></i></a> &nbsp; <a href="https://www.redbubble.com/people/niftysiteman/works/39141154-nifty-site-manager?asc=u" title="RedBubble" class="discord"><i class="fas fa-shopping-bag fa-2x"></i></a></noselect>
 				</p>
 		
 				<a href="../index.html" class="header_item">Home</a>
-				<a href="../documentation.html" class="header_item">Documentation</a>
-				<a href="../merchandise.html" class="header_item">Merchandise</a>
-				<a href="../resources.html" class="header_item">Resources</a>
+				<a href="installing_nsm.html" class="header_item">Documentation</a>
+				<a href="../resources/examples.html" class="header_item">Resources</a>
 				<a href="../support.html" class="header_item">Support</a>
 			</noselect>
 		</div>
 
 		<div class="content">
-			<h3>
-				Linux installation using <mono>snap</mono>
-			</h3>
-			
-			<p>
-				You can install <mono>nsm</mono> on linux using the snap package manager, for instructions see <a href="https://snapcraft.io/nsm">here</a>. Alternatively first install <mono>snapd</mono>, eg. <mono>sudo apt-get install snapd</mono> on Ubuntu, then enter:
-			</p>
-			
-			<div align="center">
-				<pre class="prettyprint">
-					snap install nsm
-				</pre>
+			<div style="float:left">
+				<table id="documentation_contents_table" style="margin-top:25px">
+					<thead>
+						<tr>
+							<th>Contents</th>
+						</tr>
+					</thead>
+					<tr>
+						<td><a href="installing_nsm.html">installing nsm</a></td>
+					</tr>
+					<tr>
+						<td><a href="nsm_commands.html">nsm commands</a></td>
+					</tr>
+					<tr>
+						<td><a href="content_files.html">content files</a></td>
+					</tr>
+					<tr>
+						<td><a href="template_files.html">template files</a></td>
+					</tr>
+					<tr>
+						<td><a href="displaying_mathematics.html">displaying mathematics</a></td>
+					</tr>
+					<tr>
+						<td><a href="displaying_code_blocks.html">displaying code blocks</a></td>
+					</tr>
+					<tr>
+						<td><a href="hosting_your_site.html">hosting your site</a></td>
+					</tr>
+				</table>
 			</div>
-			
-			<p>
-				To uninstall <mono>nsm</mono> enter <mono>snap remove nsm</mono>.
-			</p>
-			
-			<h3>
-				Windows installation using <mono>chocolatey</mono>
-			</h3>
-			
-			<p>
-				You can install <mono>nsm</mono> on Windows using <mono>chocolatey</mono>. First <a href="https://chocolatey.org/docs/installation">install</a> <mono>chocolatey</mono>, then follow the instructions <a href="https://chocolatey.org/packages/nsm">here</a>, or alternatively enter:
-			</p>
-			
-			<div align="center">
-				<pre class="prettyprint">
-					choco install nsm --version 1.0
-				</pre>
+			<div>
+				<h3>
+					Installing Nift
+				</h3>
+				
+				<p>
+					There are a number of different ways you can install <mono>Nift</mono> on all of Linux, OSX and Windows. This page outlines how to install <mono>Nift</mono>:
+					<ul style="text-indent:30px">
+						<li>On Linux using <mono>Snapcraft</mono></li>
+						<li>On Windows using <mono>Chocolatey</li>
+						<li>On Windows from executable</li>
+						<li>On Linux from source</li>
+						<li>On OSX from source</li>
+						<li>On Windows from source</li>
+					</ul>
+				</p>
+				
+				<br>
+				
+				<h3>
+					Linux installation using <mono>snap</mono>
+				</h3>
+				
+				<p>
+					You can install <mono>nsm</mono> on linux using the snap package manager, for instructions see <a href="https://snapcraft.io/nsm">here</a>. Alternatively first install <mono>snapd</mono>, eg. <mono>sudo apt-get install snapd</mono> on Ubuntu, then enter:
+				</p>
+				
+				<div align="center">
+					<pre>
+						snap install nsm									
+					</pre>
+				</div>
+				
+				<p>
+					To uninstall <mono>nsm</mono> enter <mono>snap remove nsm</mono>.
+				</p>
+				
+				<h3>
+					Windows installation using <mono>Chocolatey</mono>
+				</h3>
+				
+				<p>
+					You can install <mono>nsm</mono> on Windows using <mono>chocolatey</mono>. First <a href="https://chocolatey.org/docs/installation">install</a> <mono>chocolatey</mono>, then follow the instructions <a href="https://chocolatey.org/packages/nsm">here</a>, or alternatively enter:
+				</p>
+				
+				<div align="center">
+					<pre>
+						choco install nsm --version 1.0
+					</pre>
+				</div>
+				
+				<p>
+					To uninstall <mono>nsm</mono> enter <mono>choco uninstall nsm</mono>.
+				</p>
+				
+				<h3>
+					Windows installation from executable
+				</h3>
+				
+				<p>
+					Download <a href="https://github.com/nifty-site-manager/nsm-chocolatey/raw/master/nsm.exe">this</a> executable and place it anywhere in your user's path, eg. in <mono>C:\Windows\system32</mono>.
+				</p>
+				
+				
+				<h3>
+					Instructions for installing <mono>nsm</mono> from source on:
+				</h3>
+				
+				<ol>
+					<li>
+						<a href="./linux_install.html">linux</a>
+					</li>
+					<li>
+						<a href="./osx_install.html">osx</a>
+					</li>
+					<li>
+						<a href="./windows_install.html">windows</a>
+					</li>
+				</ol>
 			</div>
-			
-			<p>
-				To uninstall <mono>nsm</mono> enter <mono>choco uninstall nsm</mono>.
-			</p>
-			
-			<h3>
-				Windows installation from executable
-			</h3>
-			
-			<p>
-				Download <a href="https://github.com/nifty-site-manager/nsm-chocolatey/raw/master/nsm.exe">this</a> executable and place it anywhere in your user's path, eg. in <mono>C:\Windows\system32</mono>.
-			</p>
-			
-			
-			<h3>
-				Instructions for installing <mono>nsm</mono> from source on:
-			</h3>
-			
-			<ol>
-				<li>
-					<a href="./linux_install.html">linux</a>
-				</li>
-				<li>
-					<a href="./osx_install.html">osx</a>
-				</li>
-				<li>
-					<a href="./windows_install.html">windows</a>
-				</li>
-			</ol>
 		</div>
 
 		<div class="footer">

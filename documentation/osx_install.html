@@ -65,67 +65,98 @@
 				<img class="logo" src="../files/NIFT.png" width="200px">
 		
 				<p style="margin-bottom:0px">
-					<noselect><a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a> &nbsp; <a href="https://old.reddit.com/r/nift" title="Reddit" class="reddit"><i class="fab fa-reddit-square fa-2x"></i></a> &nbsp; <a href="https://twitter.com/nifty_site_man" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a></noselect>
+					<noselect><a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a> &nbsp; <a href="https://old.reddit.com/r/nift" title="Reddit" class="reddit"><i class="fab fa-reddit-square fa-2x"></i></a> &nbsp; <a href="https://twitter.com/nifty_site_man" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a> &nbsp; <a href="https://nifty-site-manager.teemill.com/" title="TeeMill" class="teemill"><i class="fas fa-tshirt fa-2x"></i></a> &nbsp; <a href="https://www.redbubble.com/people/niftysiteman/works/39141154-nifty-site-manager?asc=u" title="RedBubble" class="discord"><i class="fas fa-shopping-bag fa-2x"></i></a></noselect>
 				</p>
 		
 				<a href="../index.html" class="header_item">Home</a>
-				<a href="../documentation.html" class="header_item">Documentation</a>
-				<a href="../merchandise.html" class="header_item">Merchandise</a>
-				<a href="../resources.html" class="header_item">Resources</a>
+				<a href="installing_nsm.html" class="header_item">Documentation</a>
+				<a href="../resources/examples.html" class="header_item">Resources</a>
 				<a href="../support.html" class="header_item">Support</a>
 			</noselect>
 		</div>
 
 		<div class="content">
-			<h2>Installing nifty-site-manager on osx from source</h2>
-			<h3>Installing a <mono>c++</mono> compiler</h3>
-			
-			<p>
-				Install <a href="https://itunes.apple.com/au/app/xcode/id497799835?mt=12">Xcode</a>. Should you still encounter any problems compiling <mono>nsm</mono> there is a good chance <mono>command line tools</mono> was not installed by default. To manually install it yourself: open Xcode, go to <mono>preferences</mono>, click on the <mono>downloads</mono> tab, then you should be able to download and install <mono>command line tools</mono>.
-			</p>
-			
-			<h3>Installing <mono>nsm</mono></h3>
-			
-			<p>
-				Download <a href="https://gitlab.com/nifty-site-manager/nsm/repository/master/archive.zip">nsm-master-*.zip</a>, then follow these steps to compile and install:
-			</p>
-			
-			<ol>
-				<li>
-					Extract <mono>nsm-master-*</mono> from <mono>nsm-master-*.zip</mono>;
-				</li>
-				<li>
-					Open a terminal window and change directory to <mono>~/Downloads/nsm-master-*</mono>;
-				</li>
-				<li>
-					Compile <mono>nsm</mono> by running <mono>make</mono>;
-				</li>
-				<li>
-					Install <mono>nsm</mono> by running <mono>sudo make osx-install</mono> (note - you will need to enter your password) (note - you may need to open a new terminal window for nsm installation to be recognised);
-				</li>
-				<li>
-					Delete both the file <mono>nsm-master-*.zip</mono> and the directory <mono>nsm-master-*</mono> containing the uncompiled code. 
-				</li>
-			</ol>
-			
-			<p>
-				For example, if you unzipped <mono>nsm-master-*</mono> inside your downloads folder, then steps 1-4 are achieved by entering the following into your terminal window:
-			
-				<div align="center">
-					<pre class="prettyprint inline rounded lang-bsh">
-						cd ~/Downloads/nsm-master-*
-						make
-						sudo make osx-install
-					</pre>
-				</div>
-			</p>
-			
-			
-			<h3>Uninstalling <mono>nsm</mono></h3>
-			<p>
-				Should you ever want to remove <mono>nsm</mono> from your machine (aka commit blasphemy), simply run <mono>sudo rm -f ~/.nsm</mono> from any terminal window.
-			</p>
-			
+			<div style="float:left">
+				<table id="documentation_contents_table" style="margin-top:25px">
+					<thead>
+						<tr>
+							<th>Contents</th>
+						</tr>
+					</thead>
+					<tr>
+						<td><a href="installing_nsm.html">installing nsm</a></td>
+					</tr>
+					<tr>
+						<td><a href="nsm_commands.html">nsm commands</a></td>
+					</tr>
+					<tr>
+						<td><a href="content_files.html">content files</a></td>
+					</tr>
+					<tr>
+						<td><a href="template_files.html">template files</a></td>
+					</tr>
+					<tr>
+						<td><a href="displaying_mathematics.html">displaying mathematics</a></td>
+					</tr>
+					<tr>
+						<td><a href="displaying_code_blocks.html">displaying code blocks</a></td>
+					</tr>
+					<tr>
+						<td><a href="hosting_your_site.html">hosting your site</a></td>
+					</tr>
+				</table>
+			</div>
+			<div>
+				<h2>Installing <mono>Nift</mono> on osx from source</h2>
+				<h3>Installing a <mono>c++</mono> compiler</h3>
+				
+				<p>
+					Install <a href="https://itunes.apple.com/au/app/xcode/id497799835?mt=12">Xcode</a>. Should you still encounter any problems compiling <mono>nsm</mono> there is a good chance <mono>command line tools</mono> was not installed by default. To manually install it yourself: open Xcode, go to <mono>preferences</mono>, click on the <mono>downloads</mono> tab, then you should be able to download and install <mono>command line tools</mono>.
+				</p>
+				
+				<h3>Installing <mono>Nift</mono></h3>
+				
+				<p>
+					Download <a href="https://gitlab.com/nifty-site-manager/nsm/repository/master/archive.zip">nsm-master-*.zip</a>, then follow these steps to compile and install:
+				</p>
+				
+				<ol>
+					<li>
+						Extract <mono>nsm-master-*</mono> from <mono>nsm-master-*.zip</mono>;
+					</li>
+					<li>
+						Open a terminal window and change directory to <mono>~/Downloads/nsm-master-*</mono>;
+					</li>
+					<li>
+						Compile <mono>nsm</mono> by running <mono>make</mono>;
+					</li>
+					<li>
+						Install <mono>nsm</mono> by running <mono>sudo make osx-install</mono> (note - you will need to enter your password) (note - you may need to open a new terminal window for nsm installation to be recognised);
+					</li>
+					<li>
+						Delete both the file <mono>nsm-master-*.zip</mono> and the directory <mono>nsm-master-*</mono> containing the uncompiled code. 
+					</li>
+				</ol>
+				
+				<p>
+					For example, if you unzipped <mono>nsm-master-*</mono> inside your downloads folder, then steps 1-4 are achieved by entering the following into your terminal window:
+				
+					<div align="center">
+						<pre class="prettyprint inline rounded lang-bsh">
+							cd ~/Downloads/nsm-master-*
+							make
+							sudo make osx-install
+						</pre>
+					</div>
+				</p>
+				
+				
+				<h3>Uninstalling <mono>Nift</mono></h3>
+				<p>
+					Should you ever want to remove <mono>nsm</mono> from your machine, simply run <mono>sudo make osx-uninstall</mono>.
+				</p>
+				
+			</div>
 		</div>
 
 		<div class="footer">

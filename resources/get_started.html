@@ -65,63 +65,95 @@
 				<img class="logo" src="../files/NIFT.png" width="200px">
 		
 				<p style="margin-bottom:0px">
-					<noselect><a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a> &nbsp; <a href="https://old.reddit.com/r/nift" title="Reddit" class="reddit"><i class="fab fa-reddit-square fa-2x"></i></a> &nbsp; <a href="https://twitter.com/nifty_site_man" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a></noselect>
+					<noselect><a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a> &nbsp; <a href="https://old.reddit.com/r/nift" title="Reddit" class="reddit"><i class="fab fa-reddit-square fa-2x"></i></a> &nbsp; <a href="https://twitter.com/nifty_site_man" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a> &nbsp; <a href="https://nifty-site-manager.teemill.com/" title="TeeMill" class="teemill"><i class="fas fa-tshirt fa-2x"></i></a> &nbsp; <a href="https://www.redbubble.com/people/niftysiteman/works/39141154-nifty-site-manager?asc=u" title="RedBubble" class="discord"><i class="fas fa-shopping-bag fa-2x"></i></a></noselect>
 				</p>
 		
 				<a href="../index.html" class="header_item">Home</a>
-				<a href="../documentation.html" class="header_item">Documentation</a>
-				<a href="../merchandise.html" class="header_item">Merchandise</a>
-				<a href="../resources.html" class="header_item">Resources</a>
+				<a href="../documentation/installing_nsm.html" class="header_item">Documentation</a>
+				<a href="examples.html" class="header_item">Resources</a>
 				<a href="../support.html" class="header_item">Support</a>
 			</noselect>
 		</div>
 
 		<div class="content">
-			<h3>Getting Started Guide</h3>
-			
-			<p>
-				If you are new to <mono>nsm</mono> the following guide will help you get started. To understand how nsm works even better check out the <a href="nsm_tutorial.html">nsm tutorial</a>.
-			</p>
-			
-			<ol>
-				<li>If you haven't already installed nsm, you can find install instructions <a href="../documentation/installing_nsm.html">here</a>;
-				<li>Open up a terminal or command prompt/power shell window and enter <mono>nsm commands</mono> to get a list of available commands (check out the <a href="../documentation/nsm_commands.html"><mono>nsm</mono> commands</a> page from the documentation for information about <mono>nsm</mono> commands);</li>
-				<li>On Bitbucket, GitHub or GitLab import (or fork and rename) an existing site repository template from <a href="templates.html">here</a>;</li>
-				<li>If you used GitHub for the last step, go in to the imported/forked repository's settings, scroll down to GitHub Pages and set the <mono>source</mono> to <mono>master branch</mono>;</li>
-				<li>To view the website remotely, open up a browser of your choice and go to:
-				<div align="center">
-					<pre class="rounded">
-						https://[user/team/organisation/group-name].[bitbucket/github/gitlab].io/repo-name
-					</pre>
-				</div>
-				    Note if you name the repository:
-				<div align="center">
-					<pre class="rounded">
-						[user/team/organisation/group-name].[bitbucket/github/gitlab].io
-					</pre>
-				</div>
-				    then the url will be just:
-				<div align="center">
-					<pre class="rounded">
-						https://[user/team/organisation/group-name].[bitbucket/github/gitlab].io
-					</pre>
-				</div></li>
-				<li>Clone the site repository locally using <mono>nsm clone <i>clone-url</i></mono>, eg.:
-				<div align="center">
-					<pre class="rounded">
-						nsm clone https://gitlab.com/nsm-templates/parchment-site.git;
-					</pre>
-				</div></li>
-				<li>To view the website locally, open up one of the pages in the <mono>site</mono> directory with a browser of your choice;</li>
-				<li>Try modifying some of the files in the <mono>content</mono> directory and run <mono>nsm build-updated</mono>, then refresh your browser to view the changes (check out the <a href="../documentation/content_files.html">content files</a> page from the documentation for information about writing content files);</li>
-				<li>Try modifying some of the files in the template directory and run <mono>nsm build-updated</mono>, then refresh your browser to view the changes (check out the <a href="../documentation/template_files.html">template files</a> page from the documentation for information about writing template files);</li>
-				<li>You can push your changes back to Bitbucket/GitHub/GitLab using <mono>nsm bcp "commit message"</mono>.</li>
-				<li>Check out the <a href="../documentation/hosting_your_site.html">hosting your site</a> page from the documentation for information about hosting your site. Especially useful is <a href="https://www.netlify.com/">Netlify</a> for custom domains with auto renewing Let's encrypt certificates or <a href="https://www.heroku.com/">Heroku</a> for free hosting of dynamic websites;</li>
-				<li>Check out the <a href="../documentation/displaying_mathematics.html">displaying mathematics</a> page from the documentation for information about $\LaTeX$ support for your webpages using MathJax;</li>
-				<li>Check out the <a href="../documentation/displaying_code_blocks.html">displaying code blocks</a> page from the documentation for information about syntax highlighting support for your webpages using <a href="https://github.com/google/code-prettify">Google Code Prettify</a>;</li>
-				<li>Check <a href="examples.html">here</a> for examples of websites made using <mono>nsm</mono>;</li>
-				<li>Check <a href="links.html">here</a> for all sorts of useful links.</li>
-			</ol>
+			<div style="float:left">
+				<table id="resources_contents_table" style="margin-top:25px">
+					<thead>
+					    <tr>
+					        <th>Contents</th>
+					    </tr>
+					</thead>
+					<tr>
+						<td><a href="examples.html">examples</a></td>
+					</tr>
+					<tr>
+						<td><a href="get_started.html">get started</a></td>
+					</tr>
+					<tr>
+						<td><a href="links.html">links</a></td>
+					</tr>
+					<tr>
+						<td><a href="nsm_tutorial.html">nsm tutorial</a></td>
+					</tr>
+					<tr>
+						<td><a href="project_suggestions.html">project suggestions</a></td>
+					</tr>
+					<tr>
+						<td><a href="templates.html">templates</a></td>
+					</tr>
+				</table>
+			</div>
+			<div>
+				<h3>Getting Started Guide</h3>
+				
+				<p>
+					If you are new to <mono>Nift</mono> the following guide will help you get started. To understand how <mono>Nift/nsm</mono> works even better check out the <a href="nsm_tutorial.html">nsm tutorial</a> which will give you a more thorough understanding of how different parts of <mono>Nift</mono> work.
+				</p>
+				
+				<p>
+					The easiest way to learn how nsm works is to get your feet wet and hands dirty. If there are any problems with the following guide please file an issue on one of the official repositories linked in the footer at the bottom of the page.
+				</p>
+				
+				<ol>
+					<li>If you haven't already installed nsm, you can find install instructions <a href="../documentation/installing_nsm.html">here</a>;
+					<li>Open up a terminal or command prompt/power shell window and enter <mono>nsm commands</mono> to get a list of available commands (check out the <a href="../documentation/nsm_commands.html"><mono>nsm</mono> commands</a> page from the documentation for information about <mono>nsm</mono> commands);</li>
+					<li>On Bitbucket, GitHub or GitLab import (or fork and rename) an existing site repository template from <a href="templates.html">here</a>;</li>
+					<li>If you used GitHub for the last step, go in to the imported/forked repository's settings, scroll down to GitHub Pages and set the <mono>source</mono> to <mono>master branch</mono>;</li>
+					<li>To view the website remotely, open up a browser of your choice and go to:
+					<div align="center">
+						<pre class="rounded">
+							https://[user/team/organisation/group-name].[bitbucket/github/gitlab].io/repo-name
+						</pre>
+					</div>
+					    Note if you name the repository:
+					<div align="center">
+						<pre class="rounded">
+							[user/team/organisation/group-name].[bitbucket/github/gitlab].io
+						</pre>
+					</div>
+					    then the url will be just:
+					<div align="center">
+						<pre class="rounded">
+							https://[user/team/organisation/group-name].[bitbucket/github/gitlab].io
+						</pre>
+					</div></li>
+					<li>Clone the site repository locally using <mono>nsm clone <i>clone-url</i></mono>, eg.:
+					<div align="center">
+						<pre class="rounded">
+							nsm clone https://gitlab.com/nsm-templates/parchment-site.git;
+						</pre>
+					</div></li>
+					<li>To view the website locally, open up one of the pages in the <mono>site</mono> directory with a browser of your choice;</li>
+					<li>Try modifying some of the files in the <mono>content</mono> directory and run <mono>nsm build-updated</mono>, then refresh your browser to view the changes (check out the <a href="../documentation/content_files.html">content files</a> page from the documentation for information about writing content files);</li>
+					<li>Try modifying some of the files in the template directory and run <mono>nsm build-updated</mono>, then refresh your browser to view the changes (check out the <a href="../documentation/template_files.html">template files</a> page from the documentation for information about writing template files);</li>
+					<li>You can push your changes back to Bitbucket/GitHub/GitLab using <mono>nsm bcp "commit message"</mono>.</li>
+					<li>Check out the <a href="../documentation/hosting_your_site.html">hosting your site</a> page from the documentation for information about hosting your site. Especially useful is <a href="https://www.netlify.com/">Netlify</a> for custom domains with auto renewing Let's encrypt certificates or <a href="https://www.heroku.com/">Heroku</a> for free hosting of dynamic websites;</li>
+					<li>Check out the <a href="../documentation/displaying_mathematics.html">displaying mathematics</a> page from the documentation for information about $\LaTeX$ support for your webpages using MathJax;</li>
+					<li>Check out the <a href="../documentation/displaying_code_blocks.html">displaying code blocks</a> page from the documentation for information about syntax highlighting support for your webpages using <a href="https://github.com/google/code-prettify">Google Code Prettify</a>;</li>
+					<li>Check <a href="examples.html">here</a> for examples of websites made using <mono>nsm</mono>;</li>
+					<li>Check <a href="links.html">here</a> for all sorts of useful links.</li>
+				</ol>
+			</div>
 		</div>
 
 		<div class="footer">
