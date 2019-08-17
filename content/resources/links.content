@@ -1,6 +1,6 @@
-<h4>Free Hosting options</h4>
-<h5>static websites</h5>
-<ul>
+<h3>Free Hosting options</h3>
+<h4>static websites</h4>
+<ul style="text-indent:30px">
 	<li><a href="https://bitbucket.org">BitBucket</a></li>
 	<li><a href="https://github.com">GitHub</a></li>
 	<li><a href="https://gitlab.com">GitLab</a></li>
@@ -14,12 +14,12 @@
 	Also check out <a href="https://www.aerobatic.com/">Aerobatic</a>.
 </p>
 
-<h5>dynamic websites and apps</h5>
+<h4>dynamic websites and apps</h4>
 <ul>
 	<li><a href="https://www.heroku.com/">Heroku</a></li>
 </ul>
 
-<h4>Custom domain registrars</h4>
+<h3>Custom domain registrars</h3>
 <!-- you can buy for up to 10 years using namecheap, and have auto renewal from paypal funds-->
 <ul>
 	<li><a href="https://www.bluehost.com">BlueHost</a></li>
@@ -28,7 +28,7 @@
 	<li><a href="https://www.namecheap.com/">NameCheap</a></li>
 </ul>
 
-<h4>Email Options</h4>
+<h3>Email Options</h3>
 The following options can often be used to set up mail forwarding from custom domains to something like AOL/Gmail/Outlook/ProtonMail/Tutanota/Yahoo/Yandex/Zoho (note you can easily set up to send emails from custom domains using Gmail, or you can set up your own mail server on a hired server, see options further below):
 <ul>
 	<li><a href="https://www.mailgun.com">MailGun</a></li>
@@ -36,7 +36,7 @@ The following options can often be used to set up mail forwarding from custom do
 	<li><a href="https://sendpulse.com">SendPulse</a></li>
 </ul>
 
-<h4>Hiring Linux Servers (dynamic websites)</h4>
+<h3>Hiring Linux Servers (dynamic websites)</h3>
 <ul>
 	<li><a href="https://buyvm.net/">BuyVM</a></li>
 	<li><a href="https://joesdatacenter.com/">Joe's Datacenter</a></li>
@@ -48,19 +48,19 @@ See also:
 	<li><a href="https://www.nginx.com/">NGiNX</a></li>
 </ul>
 
-<h4>Web Servers</h4>
+<h3>Web Servers</h3>
 <ul>
 	<li><a href="https://caddyserver.com/">Caddy</a></li>
 	<li><a href="https://www.nginx.com/">NGiNX</a></li>
 </ul>
 
-<h4>Site Managers</h4>
+<h3>Site Managers</h3>
 <ul>
 	<li><a href="https://www.staticgen.com/">StaticGen</a> - a list of static site generators for JAMstack sites</li>
 	<li><a href="https://gitlab.com/pages">Example sites on GitLab Pages</a> - simple example websites for site generators on GitLab</li>
 </ul>
 
-<h4>Cloud Storage</h4>
+<h3>Cloud Storage</h3>
 <ul>
 	<li><a href="https://degoo.com/">Degoo</a></li>
 	<li><a href="https://www.dropbox.com/">Dropbox</a></li>
@@ -71,7 +71,7 @@ See also:
 	<li><a href="https://www.zoolz.com/cloud">Zoolz</a></li>
 </ul>
 
-<h4>Code sharing</h4>
+<h3>Code sharing</h3>
 <ul>
 	<li><a href="https://bitbucket.org">BitBucket</a></li>
 	<li><a href="https://github.com">GitHub</a></li>
@@ -80,7 +80,7 @@ See also:
 	<li><a href="https://gogs.io/">Gogs</a></li>
 </ul>
 
-<h4>Continuous Integration (CI) Services</h4>
+<h3>Continuous Integration (CI) Services</h3>
 <ul>
 	<li><a href="https://travis-ci.org/">Travis CI</a></li>
 	<li><a href="https://circleci.com/">CircleCI</a></li>
@@ -88,13 +88,13 @@ See also:
 	<li><a href="https://github.com/ligurio/awesome-ci">List of CI services</a></li>
 </ul>
 
-<h4>Syntax Highlighting</h4>
+<h3>Syntax Highlighting</h3>
 <ul>
 	<li><a href="https://github.com/google/code-prettify">Google Code Prettify</a></li>
 	<li><a href="https://prismjs.com/">PrismJS</a></li>
 </ul>
 
-<h4>Adding Forms</h4>
+<h3>Adding Forms</h3>
 <ul>
 	<li><a href="https://www.netlify.com/docs/form-handling/">Netlify form handling</a></li>
 	<li><a href="https://www.emailjs.com/">EmailJS</a> - Send email directly from Javascript</li>
@@ -102,7 +102,7 @@ See also:
 	<li><a href="https://formcarry.com/">FormCarry</a></li>
 </ul>
 
-<h4>Adding Comments</h4>
+<h3>Adding Comments</h3>
 <ul>
 	<li><a href="https://disqus.com/">Disqus</a></li>
 	<li><a href="https://commento.io/">Commento</a></li>
@@ -112,7 +112,7 @@ See also:
 	<li><a href="https://www.npmjs.com/package/react-facebook">Facebook comments</a></li>
 </ul>
 
-<h4>Javascript Frameworks</h4>
+<h3>Javascript Frameworks</h3>
 <ul>
 	<li><a href="https://nodejs.org/en/">NodeJS</a></li>
 	<li><a href="https://reactjs.org/">ReactJS</a></li>
@@ -127,7 +127,7 @@ See also:
 	<li><a href="https://gruntjs.com/">GruntJS</a></li>
 </ul>
 
-<h4>Website Templates</h4>
+<h3>Website Templates</h3>
 <ul>
 	<li><a href="https://html5up.net">HTML5 UP</a></li>
 	<li><a href="https://pixelarity.com/">Pixelarity</a></li>
@@ -136,7 +136,7 @@ See also:
 	<li><a href="https://www.free-css.com/free-css-templates">Free CSS Templates</a></li>
 </ul>
 
-<h4>Useful links</h4>
+<h3>Useful links</h3>
 <ul>
 	<li><a href="https://internetingishard.com/html-and-css/">HTML & CSS is hard</a> - a friendly web development tutorial for complete beginners</li>
 	<li><a href="https://www.w3schools.com/">w3schools</a> - for learning web technologies online</li>

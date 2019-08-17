@@ -1,4 +1,22 @@
 <h3>
+	Installing Nift
+</h3>
+
+<p>
+	There are a number of different ways you can install <mono>Nift</mono> on all of Linux, OSX and Windows. This page outlines how to install <mono>Nift</mono>:
+	<ul style="text-indent:30px">
+		<li>On Linux using <mono>Snapcraft</mono></li>
+		<li>On Windows using <mono>Chocolatey</li>
+		<li>On Windows from executable</li>
+		<li>On Linux from source</li>
+		<li>On OSX from source</li>
+		<li>On Windows from source</li>
+	</ul>
+</p>
+
+<br>
+
+<h3>
 	Linux installation using <mono>snap</mono>
 </h3>
 
@@ -7,8 +25,8 @@
 </p>
 
 <div align="center">
-	<pre class="prettyprint">
-		snap install nsm
+	<pre>
+		snap install nsm									
 	</pre>
 </div>
 
@@ -17,7 +35,7 @@
 </p>
 
 <h3>
-	Windows installation using <mono>chocolatey</mono>
+	Windows installation using <mono>Chocolatey</mono>
 </h3>
 
 <p>
@@ -25,7 +43,7 @@
 </p>
 
 <div align="center">
-	<pre class="prettyprint">
+	<pre>
 		choco install nsm --version 1.0
 	</pre>
 </div>

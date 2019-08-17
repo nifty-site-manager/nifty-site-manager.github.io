@@ -1,13 +1,16 @@
+<h3>Example websites made with <mono>Nift</mono></h3>
 <p>
-	Below is a list of examples of websites made using nifty-site-manager:
-	<ul>
+	Below is some examples of websites made using <mono>Nift</mono>:
+	<ul style="text-indent:30px">
 		<li><a href="https://nifty-site-manager.com">official nsm site</a></li>
 		<li><a href="https://n-ham.com">developer's personal website</a></li>
+		<li><a href="https://ai-bots.net">official AI-BOTS website</a></li>
+		<li><a href="https://ai-bots.net">official AI-BOTS Tron contest website</a></li>
 		<li><a href="https://wr3ckreational.com">official wr3ckreational site</a></li>
-		<li><a href="https://ai-bots.net">official ai-bots.net website</a></li>
+		<li><a href="https://html5up-nsm-templates.github.io/massively/">HTML5 UP template Massively</a></li>
 	</ul>
 </p>
 
 <p>
-	If you would like to have your own sites made using nsm added to the above list, email <mono>examples@nift.cc</mono>.
+	If you would like to have your own websites made using <mono>Nift</mono> added to the above list, email <mono>examples@nift.cc</mono>.
 </p>

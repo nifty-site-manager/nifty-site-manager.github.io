@@ -6,7 +6,17 @@
 	Syntax Highlighting
 </h4>
 <p>
-	One easy way to have syntax highlighted code blocks on your site is to use <a href=https://github.com/google/code-prettify>Google Code Prettify</a>. Using Google Code Prettify on your site is as simple as adding the following code to the head of each page:
+	Options for including code blocks with syntax highlighting on your website include:
+	<ul style="text-indent:30px">
+		<li><a href="https://github.com/google/code-prettify">Google Code Prettify</a></li>
+		<li><a href="https://prismjs.com/">PrismJS</a></li>
+		<li><a href="https://highlightjs.org/">HighlightJS</a></li>
+		<li><a href="https://craig.is/making/rainbows">RainbowJS</a></li>
+	</ul>
+</p>
+
+<p>
+	The <mono>Nift</mono> documentation covers syntax highlighting code blocks on your site using <a href=https://github.com/google/code-prettify>Google Code Prettify</a>. Using Google Code Prettify on your site is as simple as adding the following code to the head of each page:
 
 	<div align="center">
 		<pre class="prettyprint lang-html linenums rounded">

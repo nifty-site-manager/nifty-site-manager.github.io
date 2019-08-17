@@ -1,5 +1,4 @@
-<h4>Resources</h4>
-<table id="resources_contents_table">
+<table id="resources_contents_table" style="margin-top:25px">
 	<thead>
 	    <tr>
 	        <th>Contents</th>
@@ -9,7 +8,7 @@
 		<td><a href="@pathto(resources/examples)">examples</a></td>
 	</tr>
 	<tr>
-		<td><a href="@pathto(resources/get_started)">getting started guide</a></td>
+		<td><a href="@pathto(resources/get_started)">get started</a></td>
 	</tr>
 	<tr>
 		<td><a href="@pathto(resources/links)">links</a></td>

@@ -2,6 +2,14 @@
 	Available nsm commands
 </h3>
 
+<p>
+	<mono>Nift</mono> has a number of commands you can use that will help you manage and generate your websites. This page outlines how to list all the available commands and outlines what most of them do.
+</p>
+
+<p>
+	To use a command, enter <mono>nsm <i>command</i> <i>parameter-1</i> ... <i>parameter-n</i></mono> in to a terminal, command prompt or power shell window. 
+</p>
+
 <h4>
 	Listing available nsm commands
 </h4>

@@ -65,74 +65,105 @@
 				<img class="logo" src="../files/NIFT.png" width="200px">
 		
 				<p style="margin-bottom:0px">
-					<noselect><a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a> &nbsp; <a href="https://old.reddit.com/r/nift" title="Reddit" class="reddit"><i class="fab fa-reddit-square fa-2x"></i></a> &nbsp; <a href="https://twitter.com/nifty_site_man" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a></noselect>
+					<noselect><a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a> &nbsp; <a href="https://old.reddit.com/r/nift" title="Reddit" class="reddit"><i class="fab fa-reddit-square fa-2x"></i></a> &nbsp; <a href="https://twitter.com/nifty_site_man" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a> &nbsp; <a href="https://nifty-site-manager.teemill.com/" title="TeeMill" class="teemill"><i class="fas fa-tshirt fa-2x"></i></a> &nbsp; <a href="https://www.redbubble.com/people/niftysiteman/works/39141154-nifty-site-manager?asc=u" title="RedBubble" class="discord"><i class="fas fa-shopping-bag fa-2x"></i></a></noselect>
 				</p>
 		
 				<a href="../index.html" class="header_item">Home</a>
-				<a href="../documentation.html" class="header_item">Documentation</a>
-				<a href="../merchandise.html" class="header_item">Merchandise</a>
-				<a href="../resources.html" class="header_item">Resources</a>
+				<a href="installing_nsm.html" class="header_item">Documentation</a>
+				<a href="../resources/examples.html" class="header_item">Resources</a>
 				<a href="../support.html" class="header_item">Support</a>
 			</noselect>
 		</div>
 
 		<div class="content">
-			<h3>
-				Hosting your site
-			</h3>
-			
-			<p>
-				To host your site just copy everything from the site directory (not the stage directory) to the server on which you would like to host it.
-			</p>
-			
-			<p>
-				For creating static websites on code collaboration sites offering repository management like BitBucket, GitHub and GitLab you can import/fork, rename and clone a site repository and work from that (use <mono>nsm clone <i>repository-url</i></mono>). For some basic templates see <a href="../resources/templates.html">here</a>.
-			</p>
-			
-			<p>
-				Note - You can rename a repository when importing it, rather than forking and renaming, plus on BitBucket and GitHub you cannot remove fork relationships. Also on GitHub you will need to go in to the site repository's settings, find the GitHub Pages section and set the source branch (typically <mono>master branch</mono>).
-			</p>
-			
-			<p>
-				If you would like to be a masochist and set up your own site repositories from scratch for any of BitBucket, GitHub or GitLab then see:
-			
-				<ol>
-					<li><a href="./bitbucket_hosting.html">Hosting on BitBucket</a>;</li>
-					<li><a href="./github_hosting.html">Hosting on GitHub</a>; or</li>
-					<li><a href="./gitlab_hosting.html">Hosting on GitLab</a>.</li>
-				</ol>
-			</p>
-			
-			<p>
-				You can also combine any of the above hosting options with <a href="https://netlify.com">Netlify</a>, which works well for custom domains (including subdomains) and automatically renews <a href="https://letsencrypt.org/">Let's Encrypt</a> certificates for your site. I personally find hosting on GitLab the easiest, because you only need one branch (standard <mono>master</mono>) then have it deploy the site when you push using a <mono>.gitlab-ci.yml</mono> file.
-			</p>
-			
-			<p>
-				Other good free hosting options for static sites include:
-				<ul>
-					<li><a href="https://aws.amazon.com/amplify/console/">Amazon Amplify Console</a></li>
-					<li><a href="https://surge.sh/">surge.sh</a></li>
-					<li><a href="https://zeit.co/now">ZEIT Now</a></li>
-				</ul>
-			</p>
-			
-			<p>
-				Also check out <a href="https://www.aerobatic.com/">Aerobatic</a>.
-			</p>
-			
-			<p>
-				To host dynamic websites for free check out <a href="https://www.heroku.com/">Heroku</a>. Other options for hosting dynamic websites (or static sites if you would like) include hiring a server with someone like:
-				<ol>
-					<li><a href="https://buyvm.net/">BuyVM</a>;</li>
-					<li><a href="https://joesdatacenter.com/">Joe's Datacenter</a>; or</li>
-					<li><a href="https://www.linode.com/">Linode</a>.</li>
-				</ol>
-				or any site that offers linux VPS hiring, then using something like the following to set up a web server on the server you have hired:
-				<ol>
-					<li><a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)">LAMP stack</a>; or</li>
-					<li><a href="https://www.nginx.com/">NGINX</a> (check out NGINX Unit for free options).</li>
-				</ol>
-			</p>
+			<div style="float:left">
+				<table id="documentation_contents_table" style="margin-top:25px">
+					<thead>
+						<tr>
+							<th>Contents</th>
+						</tr>
+					</thead>
+					<tr>
+						<td><a href="installing_nsm.html">installing nsm</a></td>
+					</tr>
+					<tr>
+						<td><a href="nsm_commands.html">nsm commands</a></td>
+					</tr>
+					<tr>
+						<td><a href="content_files.html">content files</a></td>
+					</tr>
+					<tr>
+						<td><a href="template_files.html">template files</a></td>
+					</tr>
+					<tr>
+						<td><a href="displaying_mathematics.html">displaying mathematics</a></td>
+					</tr>
+					<tr>
+						<td><a href="displaying_code_blocks.html">displaying code blocks</a></td>
+					</tr>
+					<tr>
+						<td><a href="hosting_your_site.html">hosting your site</a></td>
+					</tr>
+				</table>
+			</div>
+			<div>
+				<h3>
+					Hosting your site
+				</h3>
+				
+				<p>
+					To host your site just copy everything from the site directory (not the stage directory) to the server on which you would like to host it.
+				</p>
+				
+				<p>
+					For creating static websites on code collaboration sites offering repository management like BitBucket, GitHub and GitLab you can import/fork, rename and clone a site repository and work from that (use <mono>nsm clone <i>repository-url</i></mono>). For some basic templates see <a href="../resources/templates.html">here</a>.
+				</p>
+				
+				<p>
+					Note - You can rename a repository when importing it, rather than forking and renaming, plus on BitBucket and GitHub you cannot remove fork relationships. Also on GitHub you will need to go in to the site repository's settings, find the GitHub Pages section and set the source branch (typically <mono>master branch</mono>).
+				</p>
+				
+				<p>
+					If you would like to be a masochist and set up your own site repositories from scratch for any of BitBucket, GitHub or GitLab then see:
+				
+					<ol>
+						<li><a href="./bitbucket_hosting.html">Hosting on BitBucket</a>;</li>
+						<li><a href="./github_hosting.html">Hosting on GitHub</a>; or</li>
+						<li><a href="./gitlab_hosting.html">Hosting on GitLab</a>.</li>
+					</ol>
+				</p>
+				
+				<p>
+					You can also combine any of the above hosting options with <a href="https://netlify.com">Netlify</a>, which works well for custom domains (including subdomains) and automatically renews <a href="https://letsencrypt.org/">Let's Encrypt</a> certificates for your site. I personally find hosting on GitLab the easiest, because you only need one branch (standard <mono>master</mono>) then have it deploy the site when you push using a <mono>.gitlab-ci.yml</mono> file.
+				</p>
+				
+				<p>
+					Other good free hosting options for static sites include:
+					<ul>
+						<li><a href="https://aws.amazon.com/amplify/console/">Amazon Amplify Console</a></li>
+						<li><a href="https://surge.sh/">surge.sh</a></li>
+						<li><a href="https://zeit.co/now">ZEIT Now</a></li>
+					</ul>
+				</p>
+				
+				<p>
+					Also check out <a href="https://www.aerobatic.com/">Aerobatic</a>.
+				</p>
+				
+				<p>
+					To host dynamic websites for free check out <a href="https://www.heroku.com/">Heroku</a>. Other options for hosting dynamic websites (or static sites if you would like) include hiring a server with someone like:
+					<ol>
+						<li><a href="https://buyvm.net/">BuyVM</a>;</li>
+						<li><a href="https://joesdatacenter.com/">Joe's Datacenter</a>; or</li>
+						<li><a href="https://www.linode.com/">Linode</a>.</li>
+					</ol>
+					or any site that offers linux VPS hiring, then using something like the following to set up a web server on the server you have hired:
+					<ol>
+						<li><a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)">LAMP stack</a>; or</li>
+						<li><a href="https://www.nginx.com/">NGINX</a> (check out NGINX Unit for free options).</li>
+					</ol>
+				</p>
+			</div>
 		</div>
 
 		<div class="footer">

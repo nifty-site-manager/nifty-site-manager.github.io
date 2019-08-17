@@ -1,10 +1,11 @@
-12:18:49 Saturday August 17 2019
+23:31:00 Saturday August 17 2019
 resources/get_started
 "get started"
-template/page.template
+template/resources.template
 
 content/resources/get_started.content
 template/footer.content
 template/head.content
+template/menu-resources.content
 template/menu.content
-template/page.template
+template/resources.template

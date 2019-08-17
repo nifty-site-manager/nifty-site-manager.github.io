@@ -10,6 +10,12 @@
 	Information on GitLab pages may be found <a href="https://about.gitlab.com/product/pages/">here</a>.
 </p>
 
+<p>
+	One good thing about hosting on GitLab is thanks to using a <mono>.gitlab-ci.yaml</mono> file you do not need to have both a master and a stage branch. Hence when you use <mono>Nift</mono> to push changes remotely to your repository you do not need to, when needed, enter your password twice.
+</p>
+
+<br>
+
 <h4>
 	On GitLab with url <mono>https://<i>username</i>.gitlab.io</mono>
 </h4>

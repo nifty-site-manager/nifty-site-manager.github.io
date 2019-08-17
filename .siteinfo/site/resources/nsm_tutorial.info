@@ -1,10 +1,11 @@
-12:18:49 Saturday August 17 2019
+23:39:23 Saturday August 17 2019
 resources/nsm_tutorial
 nsm_tutorial
-template/page.template
+template/resources.template
 
 content/resources/nsm_tutorial.content
 template/footer.content
 template/head.content
+template/menu-resources.content
 template/menu.content
-template/page.template
+template/resources.template

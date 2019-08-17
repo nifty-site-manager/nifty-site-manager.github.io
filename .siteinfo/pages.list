@@ -2,97 +2,85 @@
 404
 template/404.template
 
-documentation
-documentation
-template/page.template
-
 documentation/bitbucket_hosting
 bitbucket_hosting
-template/page.template
+template/documentation.template
 
 documentation/content_files
 "content files"
-template/page.template
+template/documentation.template
 
 documentation/displaying_code_blocks
 "displaying code blocks"
-template/page.template
+template/documentation.template
 
 documentation/displaying_mathematics
 "displaying mathematics"
-template/page.template
+template/documentation.template
 
 documentation/github_hosting
 github_hosting
-template/page.template
+template/documentation.template
 
 documentation/gitlab_hosting
 gitlab_hosting
-template/page.template
+template/documentation.template
 
 documentation/hosting_your_site
 "hosting your site"
-template/page.template
+template/documentation.template
 
 documentation/installing_nsm
 "installing nsm"
-template/page.template
+template/documentation.template
 
 documentation/linux_install
 linux_install
-template/page.template
+template/documentation.template
 
 documentation/nsm_commands
 "nsm commands"
-template/page.template
+template/documentation.template
 
 documentation/osx_install
 osx_install
-template/page.template
+template/documentation.template
 
 documentation/template_files
 "template files"
-template/page.template
+template/documentation.template
 
 documentation/windows_install
 windows_install
-template/page.template
+template/documentation.template
 
 index
 home
 template/page.template
 
-merchandise
-merchandise
-template/page.template
-
-resources
-resources
-template/page.template
-
 resources/examples
 examples
-template/page.template
+template/resources.template
 
 resources/get_started
 "get started"
-template/page.template
+template/resources.template
 
 resources/links
 links
-template/page.template
+template/resources.template
 
 resources/nsm_tutorial
 nsm_tutorial
-template/page.template
+template/resources.template
 
 resources/project_suggestions
 project_suggestions
-template/page.template
+template/resources.template
 
 resources/templates
 templates
-template/page.template
+template/resources.template
 
 support
 support

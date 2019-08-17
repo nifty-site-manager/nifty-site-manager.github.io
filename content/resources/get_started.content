@@ -1,7 +1,11 @@
 <h3>Getting Started Guide</h3>
 
 <p>
-	If you are new to <mono>nsm</mono> the following guide will help you get started. To understand how nsm works even better check out the <a href="@pathto(resources/nsm_tutorial)">nsm tutorial</a>.
+	If you are new to <mono>Nift</mono> the following guide will help you get started. To understand how <mono>Nift/nsm</mono> works even better check out the <a href="@pathto(resources/nsm_tutorial)">nsm tutorial</a> which will give you a more thorough understanding of how different parts of <mono>Nift</mono> work.
+</p>
+
+<p>
+	The easiest way to learn how nsm works is to get your feet wet and hands dirty. If there are any problems with the following guide please file an issue on one of the official repositories linked in the footer at the bottom of the page.
 </p>
 
 <ol>

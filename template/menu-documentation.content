@@ -1,9 +1,8 @@
-<h4>Documentation</h4>
-<table id="documentation_contents_table">
+<table id="documentation_contents_table" style="margin-top:25px">
 	<thead>
-	    <tr>
-	        <th>Contents</th>
-	    </tr>
+		<tr>
+			<th>Contents</th>
+		</tr>
 	</thead>
 	<tr>
 		<td><a href="@pathto(documentation/installing_nsm)">installing nsm</a></td>

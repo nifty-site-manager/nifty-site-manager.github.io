@@ -65,96 +65,127 @@
 				<img class="logo" src="../files/NIFT.png" width="200px">
 		
 				<p style="margin-bottom:0px">
-					<noselect><a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a> &nbsp; <a href="https://old.reddit.com/r/nift" title="Reddit" class="reddit"><i class="fab fa-reddit-square fa-2x"></i></a> &nbsp; <a href="https://twitter.com/nifty_site_man" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a></noselect>
+					<noselect><a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a> &nbsp; <a href="https://old.reddit.com/r/nift" title="Reddit" class="reddit"><i class="fab fa-reddit-square fa-2x"></i></a> &nbsp; <a href="https://twitter.com/nifty_site_man" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a> &nbsp; <a href="https://nifty-site-manager.teemill.com/" title="TeeMill" class="teemill"><i class="fas fa-tshirt fa-2x"></i></a> &nbsp; <a href="https://www.redbubble.com/people/niftysiteman/works/39141154-nifty-site-manager?asc=u" title="RedBubble" class="discord"><i class="fas fa-shopping-bag fa-2x"></i></a></noselect>
 				</p>
 		
 				<a href="../index.html" class="header_item">Home</a>
-				<a href="../documentation.html" class="header_item">Documentation</a>
-				<a href="../merchandise.html" class="header_item">Merchandise</a>
-				<a href="../resources.html" class="header_item">Resources</a>
+				<a href="installing_nsm.html" class="header_item">Documentation</a>
+				<a href="../resources/examples.html" class="header_item">Resources</a>
 				<a href="../support.html" class="header_item">Support</a>
 			</noselect>
 		</div>
 
 		<div class="content">
-			<h3>
-				Guide to writing template files
-			</h3>
-			
-			<p>
-				Remember that for each page tracked by nsm there is a specified template path. When building a page, nsm will start processing the template file the same as it will process any other file. Consequently everything that applied to writing content files also applies to writing template files. However, unlike content files, template files need to specify where content and (optionally) the page title are to be inputted. 
-			</p>
-			
-			<h4>
-				Specifying where content is to be inputted
-			</h4>
-			
-			<p>
-				Nsm treats any instance of <mono>&commat;inputcontent</mono> as being equivalent to <mono>&commat;input(path-to-content)</mono>, where <mono>path-to-content</mono> is the content path for a page.
-			</p>
-			
-			<p>
-				<b>Note:</b> if <mono>&commat;inputcontent</mono> is in any dependency of a page's content file (content file inclusive), then an input loop would be formed when attempting to build the page so nsm will (at least it should) throw an error. You may however put <mono>&commat;inputcontent</mono> in any other dependencies of the template file. For example were your template to include a file <mono>template/body.template</mono>, it is fine for <mono>&commat;inputcontent</mono> to reside in <mono>body.template</mono> and not the main template file.
-			</p>
-			
-			<h4>
-				Specifying where the page title is to be inputted
-			</h4>
-			
-			<p>
-				When building a page, nsm will replace any instance of <mono>&commat;pagetitle</mono> with the title nsm has tracked for the page. Unlike <mono>&commat;inputcontent</mono>, <mono>&commat;pagetitle</mono> may be placed inside content files (template files inclusive). 
-			</p>
-			
-			<h4>
-				Example template files
-			</h4>
-			
-			<p>
-				A very simple template file, that specifies both where content and the page title are to be inputted, would be:
-			</p>
-			
-			<div align="center">
-				<pre class="prettyprint linenums inline rounded">
-					&lt;!DOCTYPE html>
-					&lt;html>
-						&lt;head>
-							&lt;title>site title - &commat;pagetitle&lt;/title>
-						&lt;/head>
-			
-						&lt;body>
-							&commat;inputcontent	
-						&lt;/body>
-					&lt;/html>
-				</pre>
+			<div style="float:left">
+				<table id="documentation_contents_table" style="margin-top:25px">
+					<thead>
+						<tr>
+							<th>Contents</th>
+						</tr>
+					</thead>
+					<tr>
+						<td><a href="installing_nsm.html">installing nsm</a></td>
+					</tr>
+					<tr>
+						<td><a href="nsm_commands.html">nsm commands</a></td>
+					</tr>
+					<tr>
+						<td><a href="content_files.html">content files</a></td>
+					</tr>
+					<tr>
+						<td><a href="template_files.html">template files</a></td>
+					</tr>
+					<tr>
+						<td><a href="displaying_mathematics.html">displaying mathematics</a></td>
+					</tr>
+					<tr>
+						<td><a href="displaying_code_blocks.html">displaying code blocks</a></td>
+					</tr>
+					<tr>
+						<td><a href="hosting_your_site.html">hosting your site</a></td>
+					</tr>
+				</table>
 			</div>
-			
-			<p>
-				It can be convenient to break what would typically be found inside the template file up into various content files. For example you may have <mono>template/head.content</mono>, <mono>template/menu.content</mono> and <mono>template/footer.content</mono>. A suitable template file, say the default <mono>template/page.template</mono> would then be:
-			</p>
-			
-			<div align="center">
-				<pre class="prettyprint linenums inline rounded">
-					&lt;!DOCTYPE html>
-					&lt;html>
-						&lt;head>
-							&commat;input(template/head.content)
-						&lt;/head>
-			
-						&lt;body>
-							&commat;input(template/menu.content)
-			
-							&commat;inputcontent	
-			
-							&commat;input(template/footer.content)
-						&lt;/body>
-					&lt;/html>
-				</pre>
+			<div>
+				<h3>
+					Guide to writing template files
+				</h3>
+				
+				<p>
+					Remember that for each page tracked by nsm there is a specified template path. When building a page, nsm will start processing the template file the same as it will process any other file. Consequently everything that applied to writing content files also applies to writing template files. However, unlike content files, template files need to specify where content and (optionally) the page title are to be inputted. 
+				</p>
+				
+				<h4>
+					Specifying where content is to be inputted
+				</h4>
+				
+				<p>
+					Nsm treats any instance of <mono>&commat;inputcontent</mono> as being equivalent to <mono>&commat;input(path-to-content)</mono>, where <mono>path-to-content</mono> is the content path for a page.
+				</p>
+				
+				<p>
+					<b>Note:</b> if <mono>&commat;inputcontent</mono> is in any dependency of a page's content file (content file inclusive), then an input loop would be formed when attempting to build the page so nsm will (at least it should) throw an error. You may however put <mono>&commat;inputcontent</mono> in any other dependencies of the template file. For example were your template to include a file <mono>template/body.template</mono>, it is fine for <mono>&commat;inputcontent</mono> to reside in <mono>body.template</mono> and not the main template file.
+				</p>
+				
+				<h4>
+					Specifying where the page title is to be inputted
+				</h4>
+				
+				<p>
+					When building a page, nsm will replace any instance of <mono>&commat;pagetitle</mono> with the title nsm has tracked for the page. Unlike <mono>&commat;inputcontent</mono>, <mono>&commat;pagetitle</mono> may be placed inside content files (template files inclusive). 
+				</p>
+				
+				<h4>
+					Example template files
+				</h4>
+				
+				<p>
+					A very simple template file, that specifies both where content and the page title are to be inputted, would be:
+				</p>
+				
+				<div align="center">
+					<pre class="prettyprint linenums inline rounded">
+						&lt;!DOCTYPE html>
+						&lt;html>
+							&lt;head>
+								&lt;title>site title - &commat;pagetitle&lt;/title>
+							&lt;/head>
+				
+							&lt;body>
+								&commat;inputcontent	
+							&lt;/body>
+						&lt;/html>
+					</pre>
+				</div>
+				
+				<p>
+					It can be convenient to break what would typically be found inside the template file up into various content files. For example you may have <mono>template/head.content</mono>, <mono>template/menu.content</mono> and <mono>template/footer.content</mono>. A suitable template file, say the default <mono>template/page.template</mono> would then be:
+				</p>
+				
+				<div align="center">
+					<pre class="prettyprint linenums inline rounded">
+						&lt;!DOCTYPE html>
+						&lt;html>
+							&lt;head>
+								&commat;input(template/head.content)
+							&lt;/head>
+				
+							&lt;body>
+								&commat;input(template/menu.content)
+				
+								&commat;inputcontent	
+				
+								&commat;input(template/footer.content)
+							&lt;/body>
+						&lt;/html>
+					</pre>
+				</div>
+				
+				<p>
+					<b>Note:</b> the <mono>head</mono> tags may be put inside either <mono>template/page.template</mono> or <mono>template/head.content</mono>. However if the <mono>head</mono> tags are left inside <mono>template/page.template</mono> then, rather than specifically having to alter <mono>template/head.content</mono>, the head may be altered from both <mono>template/page.template</mono> and <mono>template/head.content</mono>.
+				</p>
+				
 			</div>
-			
-			<p>
-				<b>Note:</b> the <mono>head</mono> tags may be put inside either <mono>template/page.template</mono> or <mono>template/head.content</mono>. However if the <mono>head</mono> tags are left inside <mono>template/page.template</mono> then, rather than specifically having to alter <mono>template/head.content</mono>, the head may be altered from both <mono>template/page.template</mono> and <mono>template/head.content</mono>.
-			</p>
-			
 		</div>
 
 		<div class="footer">

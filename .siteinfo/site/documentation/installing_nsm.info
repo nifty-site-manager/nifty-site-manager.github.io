@@ -1,10 +1,11 @@
-12:18:49 Saturday August 17 2019
+23:24:37 Saturday August 17 2019
 documentation/installing_nsm
 "installing nsm"
-template/page.template
+template/documentation.template
 
 content/documentation/installing_nsm.content
+template/documentation.template
 template/footer.content
 template/head.content
+template/menu-documentation.content
 template/menu.content
-template/page.template

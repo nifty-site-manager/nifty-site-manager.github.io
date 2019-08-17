@@ -1,9 +1,9 @@
 <h3>
-	nsm tutorial
+	<mono>Nift/nsm</mono> tutorial
 </h3>
 
 <p>
-	The following tutorial will help you learn how nsm works, if you are just taking a look at nsm you may prefer the <a href="@pathto(resources/get_started)">getting started guide</a>.
+	The following tutorial will help you learn how <mono>Nift</mono> works, if you are just taking a look at nsm you may prefer the <a href="@pathto(resources/get_started)">getting started guide</a> which will get you up and running much quicker, then come back when you want to have a better understanding of how <mono>Nift</mono> works.
 </p>
 
 <p>

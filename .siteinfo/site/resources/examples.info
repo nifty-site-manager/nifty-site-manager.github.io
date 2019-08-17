@@ -1,10 +1,11 @@
-12:18:49 Saturday August 17 2019
+23:27:59 Saturday August 17 2019
 resources/examples
 examples
-template/page.template
+template/resources.template
 
 content/resources/examples.content
 template/footer.content
 template/head.content
+template/menu-resources.content
 template/menu.content
-template/page.template
+template/resources.template

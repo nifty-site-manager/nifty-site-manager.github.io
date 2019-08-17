@@ -1,9 +1,18 @@
 <h3>
 	Guide to displaying mathematics
 </h3>
+<p>
+	Options for including mathematics on your website include:
+	<ul style="text-indent:30px">
+		<li><a href="https://www.mathjax.org/">MathJax</a></li>
+		<li><a href="https://katex.org/">KaTeX</a></li>
+		<li><a href="http://mathscribe.com/author/jqmath.html">jqmath</a></li>
+		<li><a href="http://asciimath.org/">AsciiMath</a></li>
+	</ul>
+</p>
 
 <p>
-	The easiest way to display mathematics on your site is to use <a href=https://www.mathjax.org/>MathJax</a>. Repeating the information on <a href="http://docs.mathjax.org/en/latest/start.html">this</a> page, using MathJax on your site is as simple as adding the following code to the head of each page:
+	The <mono>Nift</mono> documentation covers how to display $\LaTeX$ on your websites using <a href=https://www.mathjax.org/>MathJax</a>. Repeating the information on <a href="http://docs.mathjax.org/en/latest/start.html">this</a> page, using MathJax on your site is as simple as adding the following code to the head of each page:
 
 	<div align="center">
 		<pre class="prettyprint lang-html inline rounded">
@@ -31,7 +40,7 @@
 </p>
 
 <p>
-	You should then be able to paste LaTeX equations straight into content files. both \$..\$ and &sol;(..&sol;) work for inline equations, and both \$\$..\$\$ and &sol;[..&sol;] work for displayed equations. Eg. When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are:
+	You should then be able to paste $\LaTeX$ equations straight into content files. both \$..\$ and &sol;(..&sol;) work for inline equations, and both \$\$..\$\$ and &sol;[..&sol;] work for displayed equations. Eg. When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are:
 
 	\[x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}\]
 </p>

@@ -1,5 +1,15 @@
+<h3>Project suggestions</h3>
+
 <p>
-	Below are some suggestions if you are short on ideas of things to try while learning how to use nsm:
+	There are a number of different projects you can undertake which will help you get a better idea of how <mono>Nift</mono> works. For example you could make:
+	<ul style="text-indent:30px">
+		<li>an example website to be listed on the <a href="@pathto(resources/examples)">examples</a> page; or</li>
+		<li>a site repository template to be listed on the <a href="@pathto(resources/templates)">templates</a> page.</li>
+	</ul>
+</p>
+
+<p>
+	Below are additional suggestions if you are short on ideas of things to try while learning how to use <mono>Nift</mono>:
 	<ul>
 		<li>Set up a personal site (if you are running short on content, starting with what you do have and figuring out what you would like to add can be a great way to figure out what to focus on and put your efforts towards in to the future);</li>
 		<li>Set up a fan site, it could be based on something you are a fan of, a team you are a fan of, a sport/hobby/lifestyle you are a fan of etc.;</li>
