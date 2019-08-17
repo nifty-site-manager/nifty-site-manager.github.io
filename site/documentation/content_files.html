@@ -115,15 +115,15 @@
 					Escaping characters
 				</h4>
 				<p>
-					Nsm will escape the following characters: &tilde;, &excl;, &commat;, &num;, &percnt;, &Hat;, &ast;, &quest;, &lt;, &gt;. Just put <mono>\character-to-escape</mono>, for example to escape tilde use <mono>\&tilde;</mono>.
+					<mono>Nift</mono> will escape the following characters: &tilde;, &excl;, &commat;, &num;, &percnt;, &Hat;, &ast;, &quest;, &lt;, &gt;. Just put <mono>\character-to-escape</mono>, for example to escape tilde use <mono>\&tilde;</mono>.
 				</p>
 				
 				<p>
-					<u>Note:</u> nsm does not, and will not, escape \$. This is because it conflicts with MathJax escaping \$. If you do not want to use MathJax on your site and want \$ escaped then manually uncomment the relevant code in <mono>PageBuilder.cpp</mono> before compiling and installing nsm.
+					<u>Note:</u> <mono>Nift</mono> does not, and will not, escape \$. This is because it conflicts with MathJax escaping \$. If you do not want to use MathJax on your site and want \$ escaped then manually uncomment the relevant code in <mono>PageBuilder.cpp</mono> before compiling and installing <mono>Nift</mono>.
 				</p>
 				
 				<p>
-					I have also stopped nsm from escaping & as it causes problems with some valid javascript code for example (not an issue with .js files, but is an issue for javascript code inside content/template files). You can program your own syntax for escaping & in to nsm if needed. Similarly if javascript code or otherwise is not working, one thing to try is searching for \ in all the content/template files and seeing if something is being escaped inside code, if it is comment the relevant escape code from <mono>PageBuilder.cpp</mono> then compile and install nsm again. 
+					<mono>Nift</mono> does not escape & as it causes problems with some valid javascript code for example (not an issue with .js files, but is an issue for javascript code inside content/template files). You can program your own syntax for escaping & in to <mono>Nift</mono> if needed. Similarly if javascript code or otherwise is not working, one thing to try is searching for \ in all the content/template files and seeing if something is being escaped inside code, if it is comment the relevant escape code from <mono>PageBuilder.cpp</mono> then compile and install <mono>Nift</mono> again. 
 				</p>
 				
 				<h4>
@@ -137,7 +137,7 @@
 					Inputting OS information
 				</h4>
 				<p>
-					You can use <mono>&commat;buildOS</mono> to add whether a page was built using nsm on Linux, Macintosh or Windows (<mono>&commat;currentOS</mono> will continue to do the same for backwards compatibility purposes). 
+					You can use <mono>&commat;buildOS</mono> to add whether a page was built using <mono>Nift</mono> on Linux, Macintosh or Windows (<mono>&commat;currentOS</mono> will continue to do the same for backwards compatibility purposes). 
 				</p>
 				
 				<h4>
@@ -183,7 +183,7 @@
 				</p>
 				
 				<p>
-					<u>Note:</u> nsm will not let you create an input loop, for example you cannot have <mono>&commat;input(page.template)</mono> inside <mono>page.template</mono>, or any of the files that <mono>page.template</mono> inputs, or any of the files that they input, and so on. 
+					<u>Note:</u> <mono>Nift</mono> will not let you create an input loop, for example you cannot have <mono>&commat;input(page.template)</mono> inside <mono>page.template</mono>, or any of the files that <mono>page.template</mono> inputs, or any of the files that they input, and so on. 
 				</p>
 				
 				<h4>
@@ -191,7 +191,7 @@
 				</h4>
 				
 				<p>
-					It is possible for pages $A$ and $B$ to be located in distinct directories yet input text from the same content file $X$. Consequently if content file $X$ contains a path to another page $Y$, you have the problem that the path from $A$ to $Y$ is not the same as the path from $B$ to $Y$. You can solve this non-constant path problem by using <mono>&commat;pathto(page-name)</mono> or <mono>&commat;pathtopage(page-name)</mono> where <mono>page-name</mono> is the page name for $Y$. When building a page, nsm will replace <mono>&commat;pathto(page-name)</mono> with the path from the page being built to page $Y$.
+					It is possible for pages $A$ and $B$ to be located in distinct directories yet input text from the same content file $X$. Consequently if content file $X$ contains a path to another page $Y$, you have the problem that the path from $A$ to $Y$ is not the same as the path from $B$ to $Y$. You can solve this non-constant path problem by using <mono>&commat;pathto(page-name)</mono> or <mono>&commat;pathtopage(page-name)</mono> where <mono>page-name</mono> is the page name for $Y$. When building a page, <mono>Nift</mono> will replace <mono>&commat;pathto(page-name)</mono> with the path from the page being built to page $Y$.
 				</p>
 				
 				<p>
@@ -226,7 +226,7 @@
 				</p>
 				
 				<p>
-					When using <mono>&commat;pathto(page-name)</mono> or <mono>&commat;pathtopage(page-name)</mono>, nsm will throw an error if the page is not being tracked by nsm. You can solve the non-constant path problem for arbitrary files by using <mono>&commat;pathtofile(path-to-file)</mono> where <mono>path-to-file</mono> is the path from the main site directory to file $Y$ (where page $Y$ above has been replaced with file $Y$). When building a page, nsm will throw an error if the file does not exist. 
+					When using <mono>&commat;pathto(page-name)</mono> or <mono>&commat;pathtopage(page-name)</mono>, <mono>Nift</mono> will throw an error if the page is not being tracked by <mono>Nift</mono>. You can solve the non-constant path problem for arbitrary files by using <mono>&commat;pathtofile(path-to-file)</mono> where <mono>path-to-file</mono> is the path from the main site directory to file $Y$ (where page $Y$ above has been replaced with file $Y$). When building a page, <mono>Nift</mono> will throw an error if the file does not exist. 
 				</p>
 				
 				<p>
@@ -237,7 +237,6 @@
 							&lt;footer>
 								&lt;hr>
 								&lt;center>&lt;img src="&commat;pathtofile(site/files/nsm.png)" width="120">&lt;/center>
-								&lt;!-- Signature purchased from logojoy.com -->
 				
 								&lt;p>
 									&lt;b>Mirrors:&lt;/b> [&lt;a href="https://nifty-site-manager.com/">Official&lt;/a>] [&lt;a href="https://nifty-site-manager.bitbucket.io/">BitBucket&lt;/a>] [&lt;a href="https://nifty-site-manager.github.io/">GitHub&lt;/a>] [&lt;a href="https://nifty-site-manager.gitlab.io/">GitLab&lt;/a>] [&lt;a href="https://web.archive.org/web/https://www.nifty-site-manager.com/">archive.org&lt;/a>]
@@ -259,7 +258,7 @@
 					Including css files
 				</h4>
 				<p>
-					You can include a css file using <mono>&commat;cssinclude(path-to-css-file)</mono>, where <mono>path-to-css-file</mono> is the path from the main site directory to the css file (<u>not</u> the path from the page to the css file). When building a page, nsm will replace <mono>&commat;cssinclude(path-to-css-file)</mono> with:
+					You can include a css file using <mono>&commat;cssinclude(path-to-css-file)</mono>, where <mono>path-to-css-file</mono> is the path from the main site directory to the css file (<u>not</u> the path from the page to the css file). When building a page, <mono>Nift</mono> will replace <mono>&commat;cssinclude(path-to-css-file)</mono> with:
 				
 					<div align="center">
 						<pre class="prettyprint lang-js rounded inline">
@@ -282,7 +281,7 @@
 					Including img files
 				</h4>
 				<p>
-					You can include am image file using <mono>&commat;imginclude(path-to-img-file)</mono>, where <mono>path-to-img-file</mono> is the path from the main site directory to the img file (<u>not</u> the path from the page to the img file). When building a page, nsm will replace <mono>&commat;imginclude(path-to-img-file)</mono> with the following:
+					You can include am image file using <mono>&commat;imginclude(path-to-img-file)</mono>, where <mono>path-to-img-file</mono> is the path from the main site directory to the img file (<u>not</u> the path from the page to the img file). When building a page, <mono>Nift</mono> will replace <mono>&commat;imginclude(path-to-img-file)</mono> with the following:
 				
 					<div align="center">
 						<pre class="prettyprint lang-js rounded inline">
@@ -306,7 +305,7 @@
 					Including js files
 				</h4>
 				<p>
-					You can include a js file using <mono>&commat;jsinclude(path-to-js-file)</mono>, where <mono>path-to-js-file</mono> is the path from the main site directory to the js file (<u>not</u> the path from the page to the js file). When building a page, nsm will replace <mono>&commat;jsinclude(path-to-js-file)</mono> with: 
+					You can include a js file using <mono>&commat;jsinclude(path-to-js-file)</mono>, where <mono>path-to-js-file</mono> is the path from the main site directory to the js file (<u>not</u> the path from the page to the js file). When building a page, <mono>Nift</mono> will replace <mono>&commat;jsinclude(path-to-js-file)</mono> with: 
 				
 					<div align="center">
 						<pre class="prettyprint lang-js rounded inline">
@@ -329,7 +328,7 @@
 					Including a favicon file
 				</h4>
 				<p>
-					You can include a favicon file using <mono>&commat;faviconinclude(path-to-favicon-file)</mono>, where <mono>path-to-favicon-file</mono> is the path from the main site directory to the favicon file (<u>not</u> the path from the page to the favicon file). When building a page, nsm will replace <mono>&commat;faviconinclude(path-to-favicon-file)</mono> with:
+					You can include a favicon file using <mono>&commat;faviconinclude(path-to-favicon-file)</mono>, where <mono>path-to-favicon-file</mono> is the path from the main site directory to the favicon file (<u>not</u> the path from the page to the favicon file). When building a page, <mono>Nift</mono> will replace <mono>&commat;faviconinclude(path-to-favicon-file)</mono> with:
 				
 					<div align="center">
 						<pre class="prettyprint lang-js rounded inline">

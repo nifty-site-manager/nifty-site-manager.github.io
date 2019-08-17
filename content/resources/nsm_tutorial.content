@@ -1,13 +1,13 @@
 <h3>
-	<mono>Nift/nsm</mono> tutorial
+	<mono>Nift</mono> tutorial
 </h3>
 
 <p>
-	The following tutorial will help you learn how <mono>Nift</mono> works, if you are just taking a look at nsm you may prefer the <a href="@pathto(resources/get_started)">getting started guide</a> which will get you up and running much quicker, then come back when you want to have a better understanding of how <mono>Nift</mono> works.
+	The following tutorial will help you learn how <mono>Nift</mono> works, if you are just taking a look at <mono>Nift</mono> you may prefer the <a href="@pathto(resources/get_started)">getting started guide</a> which will get you up and running much quicker, then come back when you want to have a better understanding of how <mono>Nift</mono> works.
 </p>
 
 <p>
-	The easiest way to learn how nsm works is to get your feet wet and hands dirty playing with a simple site. If there is any problems with the following tutorial please file an issue on one of the official repositories linked in the footer at the bottom. 
+	The easiest way to learn how <mono>Nift</mono> works is to get your feet wet and hands dirty playing with a simple site. If there is any problems with the following tutorial please file an issue on one of the official repositories linked in the footer at the bottom. 
 </p>
 
 <ol>
@@ -16,7 +16,7 @@
 	</li>
 
 	<li>
-		If you imported/forked a repository on GitHub then in the repository's settings on GitHub for GitHub Pages set the source to <mono>master branch</mono>;
+		If you imported/forked a repository on GitHub then in the repository's settings on GitHub for GitHub Pages set the source to <mono>master branch</mono> (there may be some delay before your website goes live);
 	</li>
 
 	<li>
@@ -28,7 +28,7 @@
 	</li>
 
 	<li>
-		If you ever forget an nsm command, enter <mono>nsm commands</mono> into your terminal window;
+		If you ever forget a <mono>Nift</mono> command, enter <mono>nsm commands</mono> into your terminal window;
 	</li>
 
 	<li>
@@ -40,7 +40,7 @@
 	</li>
 
 	<li>
-		The command to have nsm track a page is <mono>nsm track page-name page-title template-path</mono>, where <mono>page-title</mono> and <mono>template-path</mono> are optional (default <mono>page-title</mono> is the specified <mono>page-name</mono>, and default <mono>template-path</mono> is <mono>template/page.template</mono>). Enter <mono>nsm track first_page myPageTitle</mono>;
+		The command to have <mono>Nift</mono> track a page is <mono>nsm track page-name page-title template-path</mono>, where <mono>page-title</mono> and <mono>template-path</mono> are optional (default <mono>page-title</mono> is the specified <mono>page-name</mono>, and default <mono>template-path</mono> is <mono>template/page.template</mono>). Enter <mono>nsm track first_page myPageTitle</mono>;
 	</li>
 
 	<li>
@@ -84,7 +84,7 @@
 			</li>
 
 			<li>
-				Another directory <mono>.siteinfo/site/</mono> should have been created containing the info files <mono>index.info</mono>, <mono>about.info</mono> and <mono>first_page.info</mono>. By default users do not have permission to write to info files, and users should beware of ever doing so. The modification time of info files is how nsm knows when pages were last built (actually I am pretty sure nsm gets this information from the first line of the information files), furthermore the content inside info files represents page dependencies from the last time pages were built, <u>not necessarily</u> current page dependencies, hence users should not have any reason to modify them;
+				Another directory <mono>.siteinfo/site/</mono> should have been created containing the info files <mono>index.info</mono>, <mono>about.info</mono> and <mono>first_page.info</mono>. By default users do not have permission to write to info files, and users should beware of ever doing so. The modification time of info files is how <mono>Nift</mono> knows when pages were last built (actually I am pretty sure <mono>Nift</mono> gets this information from the first line of the information files), furthermore the content inside info files represents page dependencies from the last time pages were built, <u>not necessarily</u> current page dependencies, hence users should not have any reason to modify them;
 			</li>
 		</ul>
 	</li>
@@ -106,7 +106,7 @@
 	</li>
 
 	<li>
-		Enter <mono>nsm status</mono>, then <mono>nsm build-updated</mono>, then <mono>nsm status</mono> (notice nsm can be run from any directory inside the stage directory, stage directory inclusive, obviously as that is where we started! If you are using BitBucket or GitHub then the site directory is set up as a master branch);
+		Enter <mono>nsm status</mono>, then <mono>nsm build-updated</mono>, then <mono>nsm status</mono> (notice <mono>Nift</mono> can be run from any directory inside the stage directory, stage directory inclusive, obviously as that is where we started! If you are using BitBucket or GitHub then the site directory is set up as a master branch);
 	</li>
 
 	<li>
@@ -174,7 +174,7 @@
 	</li>
 
 	<li>
-		Enter <mono>nsm build-updated</mono> and reload <mono>site/about.html</mono>. View the source for <mono>site/about.html</mono> and look at the text inside the pre tags. Notice how every < character has been escaped to \&lt;, nsm automatically does this so you can simply paste your code straight into content files, otherwise you would need to manually replace < characters (if you want, add write permissions to <mono>site/about.html</mono> and see what happens when you revert back to using < inside the pre tags);
+		Enter <mono>nsm build-updated</mono> and reload <mono>site/about.html</mono>. View the source for <mono>site/about.html</mono> and look at the text inside the pre tags. Notice how every < character has been escaped to \&lt;, <mono>Nift</mono> automatically does this so you can simply paste your code straight into content files, otherwise you would need to manually replace < characters (if you want, add write permissions to <mono>site/about.html</mono> and see what happens when you revert back to using < inside the pre tags);
 	</li>
 
 	<li>
@@ -216,7 +216,7 @@
 	</li>
 
 	<li>
-		If you forked, renamed and cloned a repository from BitBucket, GitHub or GitLab then you can build, commit and push changes back to BitBucket, GitHub or GitLab all at the same time using <mono>nsm bcp "commit message"</mono> (note for BitBucket you will need to enter your password twice and for GitHub you will need to enter your username and password twice, this is because of using both a stage and master branch for BitBucket/GitHub, something which is not done for GitLab). 
+		If you forked, renamed and cloned a repository from BitBucket, GitHub or GitLab then you can build, commit and push changes back to BitBucket, GitHub or GitLab all at the same time using <mono>nsm bcp "commit message"</mono> (note for BitBucket you will need to enter your password twice and for GitHub you will need to enter your username and password twice, this is because of using both a stage and master branch for BitBucket/GitHub, something which is not done for GitLab). There may be some delay before your changes go live.
 	</li>
 </ol>
 

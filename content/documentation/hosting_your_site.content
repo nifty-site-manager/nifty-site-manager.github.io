@@ -7,11 +7,11 @@
 </p>
 
 <p>
-	For creating static websites on code collaboration sites offering repository management like BitBucket, GitHub and GitLab you can import/fork, rename and clone a site repository and work from that (use <mono>nsm clone <i>repository-url</i></mono>). For some basic templates see <a href="@pathto(resources/templates)">here</a>.
+	For creating static websites on code collaboration sites offering repository management like BitBucket, GitHub and GitLab you can import/fork, rename and clone a site repository and work from that (use <mono>nsm clone <i>repository-url</i></mono>). For some basic templates see <a href="@pathto(resources/templates)">here</a>. To build, commit and push local changes remotely use <mono>nsm bcp "commit message"</mono>.
 </p>
 
 <p>
-	Note - You can rename a repository when importing it, rather than forking and renaming, plus on BitBucket and GitHub you cannot remove fork relationships. Also on GitHub you will need to go in to the site repository's settings, find the GitHub Pages section and set the source branch (typically <mono>master branch</mono>).
+	Note - You can rename a repository when importing it, rather than forking and renaming, plus on BitBucket and GitHub you cannot remove fork relationships. Also on GitHub you will need to go in to the site repository's settings, find the GitHub Pages section and set the <mono>source</mono> to <mono>master branch</mono> (there may be some delay before your website goes live).
 </p>
 
 <p>
