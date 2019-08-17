@@ -8,7 +8,7 @@
 
 		<a href="@pathto(index)" class="header_item">Home</a>
 		<a href="@pathto(documentation)" class="header_item">Documentation</a>
-		<a href="@pathto(merchandise)" class="header_item">Merchanise</a>
+		<a href="@pathto(merchandise)" class="header_item">Merchandise</a>
 		<a href="@pathto(resources)" class="header_item">Resources</a>
 		<a href="@pathto(support)" class="header_item">Support</a>
 	</noselect>
