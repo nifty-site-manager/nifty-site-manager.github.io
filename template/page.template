@@ -5,15 +5,13 @@
 	</head>
 
 	<body>
+		@input(template/menu.content)
+
 		<div class="content">
-			@input(template/header.content)
-
-			@input(template/menu.content)
-
 			@inputcontent
-
-			@input(template/footer.content)
 		</div>
+
+		@input(template/footer.content)
 
 		<script src='@pathtofile(site/js/process_pre_tags.js)'></script>	
 	</body>

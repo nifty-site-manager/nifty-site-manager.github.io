@@ -1,4 +1,4 @@
-02:40:25 Saturday August 17 2019
+12:02:21 Saturday August 17 2019
 documentation/displaying_mathematics
 "displaying mathematics"
 template/page.template
@@ -6,6 +6,5 @@ template/page.template
 content/documentation/displaying_mathematics.content
 template/footer.content
 template/head.content
-template/header.content
 template/menu.content
 template/page.template

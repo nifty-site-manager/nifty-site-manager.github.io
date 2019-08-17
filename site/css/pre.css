@@ -1,5 +1,5 @@
 /*
-	see https://github.com/google/code-prettify/blob/master/README.md
+	see https://github.com/google/code-prettify/blob/master/README.md 
 	for the prettyprint readme.
 */
 
@@ -19,7 +19,7 @@ pre ol.linenums > li
 	padding-top: 1px;
 	
 	/*sets background color for every second line*/
-	background: #C8C8C8;
+	background: #ada795;
 }
 
 pre.scroll
@@ -48,7 +48,7 @@ pre
 {
 	display: block;
 	text-align:left !important;
-	background: #C8C8C8;
+	background: #ada795;
 
 	/*picks the first available font and resizes*/
 	font-family: DejaVu Sans Mono, Liberation Mono, Consolas, Ubuntu Mono, Courier New;

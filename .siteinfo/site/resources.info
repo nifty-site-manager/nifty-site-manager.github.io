@@ -1,9 +1,9 @@
 12:02:21 Saturday August 17 2019
-documentation/windows_install
-windows_install
+resources
+resources
 template/page.template
 
-content/documentation/windows_install.content
+content/resources.content
 template/footer.content
 template/head.content
 template/menu.content

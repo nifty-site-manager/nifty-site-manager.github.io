@@ -1,4 +1,4 @@
-02:40:25 Saturday August 17 2019
+12:02:21 Saturday August 17 2019
 documentation/displaying_code_blocks
 "displaying code blocks"
 template/page.template
@@ -7,6 +7,5 @@ template/page.template
 content/documentation/displaying_code_blocks.content
 template/footer.content
 template/head.content
-template/header.content
 template/menu.content
 template/page.template

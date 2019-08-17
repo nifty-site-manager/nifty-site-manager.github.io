@@ -1,51 +1,15 @@
-<nav>
-	<ul class="drop_menu">
-		<li></li>
-		<li class="dm_li">
-			<a href="@pathto(index)">home</a>
-		</li>
+<div class="header" id="header">
+	<noselect>
+		<img class="logo" src="@pathtofile(site/files/NIFT.png)" width="200px">
 
-		<li class ="dm_li">
-			<div class="dm_text">documentation</div>
-			<ul class ="drop_submenu">
-				<li class="dsm_li"><a href="@pathto(documentation/installing_nsm)">installing nsm</a></li>
-				<li class="dsm_li"><a href="@pathto(documentation/nsm_commands)">nsm commands</a></li>
-				<li class="dsm_li"><a href="@pathto(documentation/content_files)">content files</a></li>
-				<li class="dsm_li"><a href="@pathto(documentation/template_files)">template files</a></li>
-				<li class="dsm_li"><a href="@pathto(documentation/displaying_mathematics)">displaying mathematics</a></li>
-				<li class="dsm_li"><a href="@pathto(documentation/displaying_code_blocks)">displaying code blocks</a></li>
-				<li class="dsm_li"><a href="@pathto(documentation/hosting_your_site)">hosting your site</a></li>
-			</ul>
-		</li>
+		<p style="margin-bottom:0px">
+			<noselect><a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a> &nbsp; <a href="https://old.reddit.com/r/nift" title="Reddit" class="reddit"><i class="fab fa-reddit-square fa-2x"></i></a> &nbsp; <a href="https://twitter.com/nifty_site_man" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a></noselect>
+		</p>
 
-		<li class ="dm_li">
-			<a href="@pathto(merchandise)">merchandise</a>
-		</li>
-
-		<li class ="dm_li">
-			<div class="dm_text">resources</div>
-			<ul class ="drop_submenu">
-				<li class="dsm_li"><a href="@pathto(resources/examples)">examples</a></li>
-				<li class="dsm_li"><a href="@pathto(resources/get_started)">get started</a></li>
-				<li class="dsm_li"><a href="@pathto(resources/links)">links</a></li>
-				<li class="dsm_li"><a href="@pathto(resources/nsm_tutorial)">nsm tutorial</a></li>
-				<li class="dsm_li"><a href="@pathto(resources/project_suggestions)">project suggestions</a></li>
-				<li class="dsm_li"><a href="@pathto(resources/templates)">templates</a></li>
-			</ul>
-		</li>
-
-		<li class ="dm_li">
-			<div class="dm_text">social media</div>
-			<ul class ="drop_submenu">
-				<li class="dsm_li"><a href="https://discord.gg/St8QXTG">Discord</a></li>
-				<li class="dsm_li"><a href="https://old.reddit.com/r/nift">Reddit</a></li>
-				<li class="dsm_li"><a href="https://twitter.com/nifty_site_man">Twitter</a></li>
-			</ul>
-		</li>
-
-		<li class ="dm_li">
-			<a href="@pathto(support)">support</a>
-		</li>
-		<li></li>
-	</ul>
-</nav>
+		<a href="@pathto(index)" class="header_item">Home</a>
+		<a href="@pathto(documentation)" class="header_item">Documentation</a>
+		<a href="@pathto(merchandise)" class="header_item">Merchanise</a>
+		<a href="@pathto(resources)" class="header_item">Resources</a>
+		<a href="@pathto(support)" class="header_item">Support</a>
+	</noselect>
+</div>

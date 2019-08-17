@@ -2,7 +2,8 @@
 	nsm - @pagetitle
 </title>
 
-<link rel='stylesheet' type='text/css' href='@pathtofile(site/css/dropmenu.css)'>
+<link rel='stylesheet' type='text/css' href='@pathtofile(site/css/footer.css)'>
+<link rel='stylesheet' type='text/css' href='@pathtofile(site/css/menu.css)'>
 <link rel='stylesheet' type='text/css' href='@pathtofile(site/css/pagestyle.css)'>
 <link rel='stylesheet' type='text/css' href='@pathtofile(site/css/pre.css)'>
 <link rel='icon' type='image/png' href='@pathtofile("site/files/favicon.ico")'>
@@ -10,13 +11,13 @@
 <meta name='viewport' content='width=device-width, initial-scale=0.75, maximum-scale=1.0'>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-62165905-1"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-62165905-2"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-62165905-1');
+  gtag('config', 'UA-62165905-2');
 </script>
 
 <!-- uses google-code-prettify for syntax highlighting 
@@ -49,7 +50,7 @@
 <!-- hack redirecting to a secure protocol when users 
      visit domain using an insecure protocol -->
 <script>
-	var host = "nifty-site-manager.github.io";
+	var host = "nifty-site-manager.gitlab.io";
 	if ((host == window.location.host) && (window.location.protocol != "https:"))
 		window.location.protocol = "https";	
 </script>

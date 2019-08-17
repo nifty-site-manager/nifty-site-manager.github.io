@@ -1,0 +1,26 @@
+<h4>Resources</h4>
+<table id="resources_contents_table">
+	<thead>
+	    <tr>
+	        <th>Contents</th>
+	    </tr>
+	</thead>
+	<tr>
+		<td><a href="@pathto(resources/examples)">examples</a></td>
+	</tr>
+	<tr>
+		<td><a href="@pathto(resources/get_started)">getting started guide</a></td>
+	</tr>
+	<tr>
+		<td><a href="@pathto(resources/links)">links</a></td>
+	</tr>
+	<tr>
+		<td><a href="@pathto(resources/nsm_tutorial)">nsm tutorial</a></td>
+	</tr>
+	<tr>
+		<td><a href="@pathto(resources/project_suggestions)">project suggestions</a></td>
+	</tr>
+	<tr>
+		<td><a href="@pathto(resources/templates)">templates</a></td>
+	</tr>
+</table>

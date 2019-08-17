@@ -5,7 +5,8 @@
 			nsm - template files
 		</title>
 		
-		<link rel='stylesheet' type='text/css' href='../css/dropmenu.css'>
+		<link rel='stylesheet' type='text/css' href='../css/footer.css'>
+		<link rel='stylesheet' type='text/css' href='../css/menu.css'>
 		<link rel='stylesheet' type='text/css' href='../css/pagestyle.css'>
 		<link rel='stylesheet' type='text/css' href='../css/pre.css'>
 		<link rel='icon' type='image/png' href='../files/favicon.ico'>
@@ -13,13 +14,13 @@
 		<meta name='viewport' content='width=device-width, initial-scale=0.75, maximum-scale=1.0'>
 		
 		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-62165905-1"></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-62165905-2"></script>
 		<script>
 		  window.dataLayer = window.dataLayer || [];
 		  function gtag(){dataLayer.push(arguments);}
 		  gtag('js', new Date());
 		
-		  gtag('config', 'UA-62165905-1');
+		  gtag('config', 'UA-62165905-2');
 		</script>
 		
 		<!-- uses google-code-prettify for syntax highlighting 
@@ -52,71 +53,30 @@
 		<!-- hack redirecting to a secure protocol when users 
 		     visit domain using an insecure protocol -->
 		<script>
-			var host = "nifty-site-manager.github.io";
+			var host = "nifty-site-manager.gitlab.io";
 			if ((host == window.location.host) && (window.location.protocol != "https:"))
 				window.location.protocol = "https";	
 		</script>
 	</head>
 
 	<body>
+		<div class="header" id="header">
+			<noselect>
+				<img class="logo" src="../files/NIFT.png" width="200px">
+		
+				<p style="margin-bottom:0px">
+					<noselect><a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a> &nbsp; <a href="https://old.reddit.com/r/nift" title="Reddit" class="reddit"><i class="fab fa-reddit-square fa-2x"></i></a> &nbsp; <a href="https://twitter.com/nifty_site_man" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a></noselect>
+				</p>
+		
+				<a href="../index.html" class="header_item">Home</a>
+				<a href="../documentation.html" class="header_item">Documentation</a>
+				<a href="../merchandise.html" class="header_item">Merchanise</a>
+				<a href="../resources.html" class="header_item">Resources</a>
+				<a href="../support.html" class="header_item">Support</a>
+			</noselect>
+		</div>
+
 		<div class="content">
-			<p>
-				<center><header><img id="logo" src="../files/logo.png"></header></center>
-				<!-- Logo purchased from logojoy.com -->
-			</p>
-
-			<nav>
-				<ul class="drop_menu">
-					<li></li>
-					<li class="dm_li">
-						<a href="../index.html">home</a>
-					</li>
-			
-					<li class ="dm_li">
-						<div class="dm_text">documentation</div>
-						<ul class ="drop_submenu">
-							<li class="dsm_li"><a href="installing_nsm.html">installing nsm</a></li>
-							<li class="dsm_li"><a href="nsm_commands.html">nsm commands</a></li>
-							<li class="dsm_li"><a href="content_files.html">content files</a></li>
-							<li class="dsm_li"><a href="template_files.html">template files</a></li>
-							<li class="dsm_li"><a href="displaying_mathematics.html">displaying mathematics</a></li>
-							<li class="dsm_li"><a href="displaying_code_blocks.html">displaying code blocks</a></li>
-							<li class="dsm_li"><a href="hosting_your_site.html">hosting your site</a></li>
-						</ul>
-					</li>
-			
-					<li class ="dm_li">
-						<a href="../merchandise.html">merchandise</a>
-					</li>
-			
-					<li class ="dm_li">
-						<div class="dm_text">resources</div>
-						<ul class ="drop_submenu">
-							<li class="dsm_li"><a href="../resources/examples.html">examples</a></li>
-							<li class="dsm_li"><a href="../resources/get_started.html">get started</a></li>
-							<li class="dsm_li"><a href="../resources/links.html">links</a></li>
-							<li class="dsm_li"><a href="../resources/nsm_tutorial.html">nsm tutorial</a></li>
-							<li class="dsm_li"><a href="../resources/project_suggestions.html">project suggestions</a></li>
-							<li class="dsm_li"><a href="../resources/templates.html">templates</a></li>
-						</ul>
-					</li>
-			
-					<li class ="dm_li">
-						<div class="dm_text">social media</div>
-						<ul class ="drop_submenu">
-							<li class="dsm_li"><a href="https://discord.gg/St8QXTG">Discord</a></li>
-							<li class="dsm_li"><a href="https://old.reddit.com/r/nift">Reddit</a></li>
-							<li class="dsm_li"><a href="https://twitter.com/nifty_site_man">Twitter</a></li>
-						</ul>
-					</li>
-			
-					<li class ="dm_li">
-						<a href="../support.html">support</a>
-					</li>
-					<li></li>
-				</ul>
-			</nav>
-
 			<h3>
 				Guide to writing template files
 			</h3>
@@ -195,31 +155,27 @@
 				<b>Note:</b> the <mono>head</mono> tags may be put inside either <mono>template/page.template</mono> or <mono>template/head.content</mono>. However if the <mono>head</mono> tags are left inside <mono>template/page.template</mono> then, rather than specifically having to alter <mono>template/head.content</mono>, the head may be altered from both <mono>template/page.template</mono> and <mono>template/head.content</mono>.
 			</p>
 			
+		</div>
 
-			<footer>
-				<hr>
-				<center><img src="../files/nsm.png" width="120"></center>
-				<!-- Signature purchased from logojoy.com -->
-			
-				<p style="margin-top:2px">
-					<b>Mirrors:</b> [<a href="https://nift.cc/">Official</a>] [<a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a>] [<a href="https://nifty-site-manager.github.io/">GitHub</a>] [<a href="https://nifty-site-manager.gitlab.io/">GitLab</a>] [<a href="https://nifty-site-manager.netlify.com/">Netlify</a>]
-				</p>
-			
-				<p>
-					<noselect><a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; <a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a> &nbsp; <a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a></noselect>
-				</p>
-			
-				<p>
-					<noselect><!--<a href="https://formulae.brew.sh/formula/nsm"><img src="../files/homebrew.png" height="40px" alt="Get it from the Homebrew store" title="OSX/Linux"></a> &nbsp;-->
-					<a href="https://chocolatey.org/packages/nsm"><img src="../files/chocolatey.svg" height="40px" alt="Get it from the Chocolatey store" title="Windows"></a> &nbsp;
-					<!--<a href="https://flathub.org/apps/details/com.n-ham.nsm"><img src="../files/flathub.png" height="40px" alt="Get it from the FlatHub store" title="Linux"></a> &nbsp;-->
-					<a href="https://snapcraft.io/nsm"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" height="40px" alt="Get it from the Snap Store" title="Linux"></a></noselect>
-				</p>
-			
-				Page was last built on Saturday August 17 2019 at 02:40:25 (AEST) using Linux. <br>
-			
-				<noselect><div style="margin-top:5px;margin-bottom:5px"><small>&copy;&nbsp;2015 - <script>document.write(new Date().getFullYear())</script> <a href="https://n-ham.com/">Nicholas Ham</a></small></div></noselect>
-			</footer>
+		<div class="footer">
+			<div class="footer_text"><center><img src="../files/nsm.png" width="120"></center></div>
+		
+			<p style="margin-top:2px">
+				<b>Mirrors:</b> [<a href="https://nift.cc/">Official</a>] [<a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a>] [<a href="https://nifty-site-manager.github.io/">GitHub</a>] [<a href="https://nifty-site-manager.gitlab.io/">GitLab</a>] [<a href="https://nifty-site-manager.netlify.com/">Netlify</a>]
+			</p>
+		
+		<p>
+				<noselect><a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; <a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a> &nbsp; <a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a></noselect>
+			</p>
+		
+			<p>
+				<noselect><!--<a href="https://formulae.brew.sh/formula/nsm"><img src="../files/homebrew.png" height="40px" alt="Get it from the Homebrew store" title="OSX/Linux"></a> &nbsp;-->
+				<a href="https://chocolatey.org/packages/nsm"><img src="../files/chocolatey.svg" height="40px" alt="Get it from the Chocolatey store" title="Windows"></a> &nbsp;
+				<!--<a href="https://flathub.org/apps/details/com.n-ham.nsm"><img src="../files/flathub.png" height="40px" alt="Get it from the FlatHub store" title="Linux"></a> &nbsp;-->
+				<a href="https://snapcraft.io/nsm"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" height="40px" alt="Get it from the Snap Store" title="Linux"></a></noselect>
+			</p>
+		
+			<noselect><div style="margin-top:-5px;margin-bottom:15px"><small>&copy;&nbsp;2015 - <script>document.write(new Date().getFullYear())</script> <a href="https://n-ham.com/">Nicholas Ham</a></small></div></noselect>
 		</div>
 
 		<script src='../js/process_pre_tags.js'></script>	
