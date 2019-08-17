@@ -3,11 +3,6 @@ html
 	/* Size of largest container or bigger */
 	/*min-width: 1080px;*/
 	background: #1F1F1F;
-	background-image: url("../files/dark_mosaic.png") !important;
-	/*
-		background image from toptal subtle patterns
-		https://www.toptal.com/designers/subtlepatterns/dark-mosaic/
-	*/
 
 	overflow-y: scroll;
 	line-height: 1.4;
@@ -19,14 +14,16 @@ div.content
 	/*min-width: 100px !important;*/
 	width: 80%;
 	max-width: 800px !important;
-	margin-bottom: 40px !important;
+	margin-bottom: 20px !important;
 	margin-top: 20px !important;
 	margin: 0 auto; 
 	padding-left: 15px;
 	padding-right: 15px;
 	padding-top: 1px;
 	padding-bottom: 5px;
-	background:#E0E0E0;
+
+	background-color:#6d6565;
+	color:#33312d;
 
 	word-wrap:break-word;
 
@@ -50,7 +47,7 @@ a
 	text-decoration:none;
 
 	outline: 0;
-	color:#3e737f;
+	color:#4f8ca8;
 
 	transition-property: color;
 	-o-transition:0.8s;
@@ -63,6 +60,32 @@ a
 a:hover
 {
 	color:#50abb7;
+
+	-o-transition:0.3s;
+	-ms-transition:0.3s;
+	-moz-transition:0.3s;
+	-webkit-transition:0.3s;
+	transition:0.3s;
+}
+
+a.discord
+{
+	text-decoration:none;
+
+	outline: 0;
+	color:grey;
+
+	transition-property: color;
+	-o-transition:0.8s;
+	-ms-transition:0.8s;
+	-moz-transition:0.8s;
+	-webkit-transition:0.8s;
+	transition:0.8s;
+}
+
+a.discord:hover
+{
+	color:#57534e;
 
 	-o-transition:0.3s;
 	-ms-transition:0.3s;
@@ -114,7 +137,7 @@ a.gh
 
 a.gh:hover
 {
-	color:#313336;
+	color:#1F1F1F;
 
 	-o-transition:0.3s;
 	-ms-transition:0.3s;
@@ -128,7 +151,7 @@ a.gl
 	text-decoration:none;
 
 	outline: 0;
-	color:#f2b02c;
+	color:#e88523;
 
 	transition-property: color;
 	-o-transition:0.8s;
@@ -140,6 +163,32 @@ a.gl
 
 a.gl:hover
 {
+	color:#b87a1d;
+
+	-o-transition:0.3s;
+	-ms-transition:0.3s;
+	-moz-transition:0.3s;
+	-webkit-transition:0.3s;
+	transition:0.3s;
+}
+
+a.reddit
+{
+	text-decoration:none;
+
+	outline: 0;
+	color:#FF4500;
+
+	transition-property: color;
+	-o-transition:0.8s;
+	-ms-transition:0.8s;
+	-moz-transition:0.8s;
+	-webkit-transition:0.8s;
+	transition:0.8s;
+}
+
+a.reddit:hover
+{
 	color:#e88523;
 
 	-o-transition:0.3s;
@@ -150,11 +199,6 @@ a.gl:hover
 }
 
 ol li
-{
-	margin-bottom: 3px;
-}
-
-ul li
 {
 	margin-bottom: 3px;
 }
@@ -202,22 +246,11 @@ img
 	-ms-user-select: none; /* IE10+ */
 }
 
-#logo
-{
-	margin-top:0px;
-	margin-bottom: -10px;
-	margin-left: -90px;
-	margin-right: -90px;
-	/*width: 80%;*/
-	max-width: 100%;
-	width: 550px;
-}
-
 mono
 {
 	font-family: DejaVu Sans Mono, Liberation Mono, Consolas, Ubuntu Mono, Courier New;
 	font-size: 85%;
-	color: #484848;
+	color: #a19d8d;
 }
 
 br
