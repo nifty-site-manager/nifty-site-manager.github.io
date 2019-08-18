@@ -126,21 +126,22 @@
 				<br>
 				
 				<h3>
-					Linux installation using <mono>snap</mono>
+					Linux installation using <mono>Snap</mono>
 				</h3>
 				
 				<p>
-					You can install <mono>Nift</mono> on linux using the snap package manager, for instructions see <a href="https://snapcraft.io/nsm">here</a>. Alternatively first install <mono>snapd</mono>, eg. <mono>sudo apt-get install snapd</mono> on Ubuntu, then enter:
+					You can install <mono>Nift</mono> on linux using the <mono>Snap</mono> package manager, for instructions see <a href="https://snapcraft.io/nsm">here</a>. Alternatively first install <mono>snapd</mono>, eg. <mono>sudo apt-get install snapd</mono> on Ubuntu, then enter:
 				</p>
 				
 				<div align="center">
 					<pre>
-						snap install nsm									
+						snap install nsm
+						sudo snap alias nsm nift
 					</pre>
 				</div>
 				
 				<p>
-					To uninstall <mono>Nift</mono> enter <mono>snap remove nsm</mono>.
+					To uninstall <mono>Nift</mono> enter <mono>sudo snap unalias nift</mono> and <mono>snap remove nsm</mono>.
 				</p>
 				
 				<h3>
@@ -148,7 +149,7 @@
 				</h3>
 				
 				<p>
-					You can install <mono>Nift</mono> on Windows using <mono>chocolatey</mono>. First <a href="https://chocolatey.org/docs/installation">install</a> <mono>chocolatey</mono>, then follow the instructions <a href="https://chocolatey.org/packages/nsm">here</a>, or alternatively enter:
+					You can install <mono>Nift</mono> on Windows using <mono>Chocolatey</mono>. First <a href="https://chocolatey.org/docs/installation">install</a> <mono>Chocolatey</mono>, then follow the instructions <a href="https://chocolatey.org/packages/nsm">here</a>, or alternatively enter:
 				</p>
 				
 				<div align="center">
