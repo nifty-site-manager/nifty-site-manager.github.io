@@ -106,7 +106,7 @@
 <br>
 
 <div align="center">
-	<pre class="prettyprint linenums scroll">
+	<pre class="prettyprint linenums scroll wrap">
 		@input(./content/cpp/Quoted.cpp)
 	</pre>
 </div>
