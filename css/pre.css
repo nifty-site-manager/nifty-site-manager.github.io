@@ -11,11 +11,11 @@ pre ol.linenums > li
 	/*linenum font color*/
 	color:#484848;
 
-	border-left-style: solid;
+	border-left-style: dashed;
     border-left-width: 1px;
 	border-left-color: #888888;
 
-	padding-left: 5px !important;
+	padding-left: 8px !important;
 	padding-top: 1px;
 	
 	/*sets background color for every second line*/
@@ -68,7 +68,7 @@ pre
 	margin-top: 1px;
 	margin-bottom: 5px;
 
-	padding-left: 5px !important; 
+	padding-left: 8px !important; 
 	padding-right:5px !important;
 	padding-top:0 !important;
 	padding-bottom:0 !important;
