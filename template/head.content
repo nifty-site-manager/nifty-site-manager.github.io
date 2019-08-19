@@ -1,5 +1,5 @@
 <title>
-	nsm - @pagetitle
+	Nift - @pagetitle
 </title>
 
 <link rel='stylesheet' type='text/css' href='@pathtofile(site/css/footer.css)'>
