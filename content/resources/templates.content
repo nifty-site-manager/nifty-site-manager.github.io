@@ -14,6 +14,11 @@
 			</tr>
 		</thead>
 		<tr>
+			<td>basic-site</td>
+			<td><a href="https://nsm-templates.github.io/basic-site/">GitHub</a> - <a href="https://nsm-templates.gitlab.io/basic-site/">GitLab</a></td>
+			<td><a href="https://bitbucket.org/nsm-templates/basic-site">BitBucket</a> - <a href="https://github.com/nsm-templates/basic-site">GitHub</a> - <a href="https://gitlab.com/nsm-templates/basic-site">GitLab</a></td>
+		</tr>
+		<tr>
 			<td>dev-site</td>
 			<td><a href="https://nsm-templates.github.io/dev-site/">GitHub</a> - <a href="https://nsm-templates.gitlab.io/dev-site/">GitLab</a></td>
 			<td><a href="https://bitbucket.org/nsm-templates/dev-site">BitBucket</a> - <a href="https://github.com/nsm-templates/dev-site">GitHub</a> - <a href="https://gitlab.com/nsm-templates/dev-site">GitLab</a></td>
