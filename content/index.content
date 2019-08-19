@@ -3,7 +3,7 @@
 </h4>
 
 <p>
-	<mono>Nift</mono> is an open source cross-platform git-like and $\LaTeX$-like command-line site manager. You can clone repositories from code sharing sites like BitBucket, GitHub and GitLab using <mono>nsm clone repo-url</mono>, build (updated) pages locally using <mono>nsm build-updated</mono>, then build, commit and push changes online once you are happy using <mono>nsm bcp "commit message"</mono>. 
+	<mono>Nift</mono> is an open source cross-platform git-like and $\LaTeX$-like command-line site generator and manager. You can clone repositories from code sharing sites like BitBucket, GitHub and GitLab using <mono>nsm clone repo-url</mono>, build (updated) pages locally using <mono>nsm build-updated</mono>, then build, commit and push changes online once you are happy using <mono>nsm bcp "commit message"</mono>. 
 </p>
 
 <h4>
