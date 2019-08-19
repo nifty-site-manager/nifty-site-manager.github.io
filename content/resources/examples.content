@@ -1,4 +1,8 @@
 <h3>Example websites made with <mono>Nift</mono></h3>
+<div style="float:right">
+	<img src="@pathtofile(site/files/presentation.svg)" width=200 style="margin-top:100px; margin-right:50px">
+</div>
+
 <p>
 	Below are some examples of websites made using <mono>Nift</mono>:
 	<ul style="text-indent:30px">

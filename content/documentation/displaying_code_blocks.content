@@ -2,6 +2,10 @@
 	Guide to displaying code blocks
 </h3>
 
+<div style="float:right">
+	<img src="@pathtofile(site/files/code_review.svg)" width=250>
+</div>
+
 <h4>
 	Syntax Highlighting
 </h4>

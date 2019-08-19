@@ -6,6 +6,10 @@
 	If you have found a bug or would like to request a feature with <mono>Nift</mono> then do so through one of the official <mono>Nift</mono> repositories on <a href="https://bitbucket.org/nifty-site-manager/nsm/src/master/">BitBucket</a>, <a href="https://github.com/nifty-site-manager/nsm">GitHub</a> or <a href="https://gitlab.com/nifty-site-manager/nsm">GitLab</a>.
 </p>
 
+<div style="float:left">
+	<img src="@pathtofile(site/files/active_support.svg)" width=300>
+</div>
+
 <p>
 	If you have found a typo or would like to suggest a change to the <mono>Nift</mono> site then do so through one of the <mono>Nift</mono> site repositories on <a href="https://bitbucket.org/nifty-site-manager/nifty-site-manager.bitbucket.io/src/master/">BitBucket</a>, <a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">GitHub</a> or <a href="https://gitlab.com/nifty-site-manager/nifty-site-manager.gitlab.io">GitLab</a>.
 </p>

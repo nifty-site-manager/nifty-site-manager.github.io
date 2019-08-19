@@ -1,6 +1,11 @@
 <h3>
 	Guide to displaying mathematics
 </h3>
+
+<div style="float:right">
+	<img src="@pathtofile(site/files/mathematics.svg)" width=150>
+</div>
+
 <p>
 	Options for including mathematics on your website include:
 	<ul style="text-indent:30px">
