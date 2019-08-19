@@ -1,4 +1,4 @@
-18:51:32 Monday August 19 2019
+19:06:22 Monday August 19 2019
 documentation/osx_install
 osx_install
 template/documentation.template
@@ -7,5 +7,6 @@ content/documentation/osx_install.content
 template/documentation.template
 template/footer.content
 template/head.content
+template/header.content
 template/menu-documentation.content
 template/menu.content

@@ -5,7 +5,7 @@
 	</head>
 
 	<body>
-		@input(template/menu.content)
+		@input(template/header.content)
 
 		<div class="content">
 			<div style="float:left">

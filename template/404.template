@@ -24,7 +24,7 @@
 	</head>
 
 	<body>
-		@input(template/menu-404.content)
+		@input(template/header-404.content)
 
 		@inputcontent
 
