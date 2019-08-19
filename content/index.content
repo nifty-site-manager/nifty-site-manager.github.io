@@ -53,8 +53,6 @@
 	Who will like <mono>Nift</mono>?
 </h4>
 
-<center><img class="logo" src="@pathtofile(site/files/logo-old.png)" width="400px" style="margin-top:-10px"></center>
-
 <p>
 	While I encourage people to prove me wrong, I suspect that <mono>Nift</mono> will be most useful to front-of-house amateurs (as it is reasonably easy to install, make simple websites and use) and behind-the-scenes experts (or perhaps more accurately, useful to people behind-the-scenes who prefer to program/code websites without graphical tools/ides/etc.). I personally find it much easier than a lot of other site managers to make and host a basic static site, and based on my personal usage of and experience with $\LaTeX$ and git imagine it can be a very useful tool to experts behind the scenes.
 </p>
