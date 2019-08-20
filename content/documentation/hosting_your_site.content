@@ -2,13 +2,24 @@
 	Hosting your site
 </h3>
 
+<div style="float:right; max-width:30%">
+	<a href="https://pages.github.com/"><img src="@pathtofile(site/files/Octocat.png)" width=300></a>
+</div>
+
 <p>
 	To host your site just copy everything from the site directory (not the stage directory) to the server on which you would like to host it.
 </p>
 
 <p>
-	For creating static websites on code collaboration sites offering repository management like BitBucket, GitHub and GitLab you can import/fork, rename and clone a site repository and work from that (use <mono>nsm clone <i>repository-url</i></mono>). For some basic templates see <a href="@pathto(resources/templates)">here</a>. To build, commit and push local changes remotely use <mono>nsm bcp "commit message"</mono>.
+	For creating static websites on code collaboration sites offering repository management like BitBucket, GitHub and GitLab you can import/fork, rename and clone a site repository and work from that (use <mono>nsm clone <i>repository-url</i></mono>). For some basic templates see <a href="@pathto(resources/templates)">here</a>.
 </p>
+
+<center>
+	<a href="https://pages.bitbucket.io/"><img src="@pathtofile(site/files/bitbucket.svg)" width=250 style="vertical-align:middle"></a>
+	<a href="https://pages.github.com/"><img src="@pathtofile(site/files/github-mark.png)" width=50 style="vertical-align:middle; margin-left:20px"></a>
+	<a href="https://pages.github.com/"><img src="@pathtofile(site/files/github.png)" width=150 style="vertical-align:middle; margin-left: 0px"></a>
+	<a href="https://about.gitlab.com/product/pages/"><img src="@pathtofile(site/files/gitlab.svg)" width=250 style="vertical-align:middle"></a>
+</center>
 
 <p>
 	Note - You can rename a repository when importing it, rather than forking and renaming, plus on BitBucket and GitHub you cannot remove fork relationships. Also on GitHub you will need to go in to the site repository's settings, find the GitHub Pages section and set the <mono>source</mono> to <mono>master branch</mono> (there may be some delay before your website goes live).
@@ -24,12 +35,22 @@
 	</ol>
 </p>
 
+<div style="float:left; max-width:40%">
+	<a href="https://www.netlify.com/"><img src="@pathtofile(site/files/netlify.svg)" width=300 style="margin-left:20px"></a>
+</div>
+
 <p>
 	You can also combine any of the above hosting options with <a href="https://netlify.com">Netlify</a>, which works well for custom domains (including subdomains) and automatically renews <a href="https://letsencrypt.org/">Let's Encrypt</a> certificates for your site. I personally find hosting on GitLab the easiest, because you only need one branch (standard <mono>master</mono>) then have it deploy the site when you push using a <mono>.gitlab-ci.yml</mono> file.
 </p>
 
+<div style="float:left; margin-left: 20px; max-width:50%">
+	<a href="https://aws.amazon.com/amplify/console/"><img src="@pathtofile(site/files/aws.svg)" width=125 style="vertical-align:middle"></a>
+	<a href="https://surge.sh/"><img src="@pathtofile(site/files/surge.svg)" width=125 style="vertical-align:middle; margin-left:20px; margin-right:20px"></a>
+</div>
+
 <p>
 	Other good free hosting options for static sites include:
+
 	<ul>
 		<li><a href="https://aws.amazon.com/amplify/console/">Amazon Amplify Console</a></li>
 		<li><a href="https://surge.sh/">surge.sh</a></li>
@@ -41,14 +62,29 @@
 	Also check out <a href="https://www.aerobatic.com/">Aerobatic</a>.
 </p>
 
+<div style="float:right; margin-right: 20px; max-width:50%">
+	<a href="https://joesdatacenter.com/"><img src="@pathtofile(site/files/joe'sdatacenter.png)" width=150 style="vertical-align:middle"></a>
+	<a href="https://www.linode.com/"><img src="@pathtofile(site/files/linode.svg)" width=150 style="vertical-align:middle; margin-left:20px; margin-right:20px"></a>
+</div>
+
 <p>
 	To host dynamic websites for free check out <a href="https://www.heroku.com/">Heroku</a>. Other options for hosting dynamic websites (or static sites if you would like) include hiring a server with someone like:
+
+	<div style="float:right; margin-top:20px; max-width:60%">
+		<a href="https://buyvm.net/"><img src="@pathtofile(site/files/buyvm.png)" width=800 style="vertical-align:middle"></a>
+	</div>
+
 	<ol>
 		<li><a href="https://buyvm.net/">BuyVM</a>;</li>
 		<li><a href="https://joesdatacenter.com/">Joe's Datacenter</a>; or</li>
 		<li><a href="https://www.linode.com/">Linode</a>.</li>
 	</ol>
 	or any site that offers linux VPS hiring, then using something like the following to set up a web server on the server you have hired:
+
+	<div style="float:right; margin-top: 20px; max-width:60%">
+		<a href="https://www.nginx.com/"><img src="@pathtofile(site/files/nginx.svg)" width=300 style="vertical-align:middle"></a>
+	</div>
+
 	<ol>
 		<li><a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)">LAMP stack</a>; or</li>
 		<li><a href="https://www.nginx.com/">NGINX</a> (check out NGINX Unit for free options).</li>
