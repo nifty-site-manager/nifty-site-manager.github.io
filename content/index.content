@@ -3,7 +3,7 @@
 </h4>
 
 <p>
-	<mono>Nift</mono> is an open source cross-platform <mono>Git</mono>-like and $\LaTeX$-like command-line site generator and manager. You can clone repositories from code sharing sites like <a href="https://bitbucket.org">BitBucket</a>, <a href="https://github.com">GitHub</a> and <a href="https://gitlab.com">GitLab</a> using <mono>nsm clone repo-url</mono>, build (updated) pages locally using <mono>nsm build-updated</mono>, then build, commit and push changes online once you are happy using <mono>nsm bcp "commit message"</mono>. 
+	<mono>Nift</mono> is an open source cross-platform <mono>Git</mono>-like and $\LaTeX$-like command-line site generator and manager. You can clone repositories from code sharing sites like <a href="https://aws.amazon.com/codecommit/">Amazon AWS CodeCommit</a>, <a href="https://bitbucket.org">BitBucket</a>, <a href="https://github.com">GitHub</a> and <a href="https://gitlab.com">GitLab</a> using <mono>nsm clone repo-url</mono>, build (updated) pages locally using <mono>nsm build-updated</mono>, then build, commit and push changes online once you are happy using <mono>nsm bcp "commit message"</mono>. 
 </p>
 
 <h4>
@@ -11,12 +11,12 @@
 </h4>
 
 <ul>
-	<li><mono>Nift</mono> is lightning fast, one of the most efficient if not the most efficient site generators/managers;</li>
-	<li><mono>Nift</mono> can manage and generate not just static websites but dynamic websites as well;</li>
-	<li><mono>Nift</mono> integrates seamlessly with <mono>Git</mono> to clone from and push to BitBucket, GitHub, GitLab and Netlify etc.;
+	<li><mono>Nift</mono> is lightning fast, possibly the world's fastest site generator (<a href="https://hugo-vs-nift.gitlab.io/">evidence</a>);</li>
+	<li><mono>Nift</mono> can manage and generate not just static websites but also dynamic websites;</li>
+	<li><mono>Nift</mono> integrates seamlessly with <mono>Git</mono> to clone from and push to AWS Amplify Console, AWS CodeCommit, BitBucket, GitHub, GitLab and Netlify, surge.sh, ZEIT Now etc.;
 	<li>you can use any language you want, eg. html, css, javascript, php, etc.;</li>
-	<li>the templating system for <mono>Nift</mono> is intuitive and easy to remember;</li>
-	<li><mono>Nift</mono> will throw errors and tell you exactly which file and line number where there is a problem.</li>
+	<li>the templating system for <mono>Nift</mono> is intuitive while being easy to understand and remember;</li>
+	<li><mono>Nift</mono> will throw errors and tell you the exact file and line number where there is a problem.</li>
 </ul>
 
 <div style="float:left; margin-left:30px; max-width:40%">
@@ -28,7 +28,7 @@
 </h4>
 
 <ul>
-	<li>clone existing site repositories from BitBucket/GitHub/GitLab;</li>
+	<li>clone existing site repositories from AWS CodeCommit, BitBucket, GitHub, GitLab, etc.;</li>
 	<li>initialise managing sites;</li>
 	<li>track and untrack page information;</li>
 	<li>list information on tracked pages;</li>
@@ -38,7 +38,7 @@
 	<li>build only pages that need building;</li>
 	<li>build pages specified by the user;</li>
 	<li>build all tracked pages; and</li>
-	<li>build, commit and push changes to BitBucket/GitHub/GitLab.</li>
+	<li>build, commit and push changes to AWS Amplify Console, AWS CodeCommit, BitBucket, GitHub, GitLab, Netlify, surge.sh, ZEIT NOW, etc..</li>
 </ul>
 
 <h4>
