@@ -47,7 +47,7 @@ a
 	text-decoration:none;
 
 	outline: 0;
-	color:#4f8ca8;
+	color:#50abb7;
 
 	transition-property: color;
 	-o-transition:0.8s;
@@ -59,7 +59,7 @@ a
 
 a:hover
 {
-	color:#50abb7;
+	color:#4f8ca8;
 
 	-o-transition:0.3s;
 	-ms-transition:0.3s;
