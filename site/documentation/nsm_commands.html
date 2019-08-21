@@ -141,12 +141,13 @@
 							| nsm info-names     | lists tracked page names                        |
 							| nsm track          | input: page-name (page-title) (template-path)   |
 							| nsm untrack        | input: page-name                                |
-							| nsm rm or nsm del  | input: page-name                                |
-							| nsm mv or nsm move | input: old-name new-name                        |
-							| nsm cp or nsm copy | input: tracked-name new-name                    |
+							| nsm rm or del      | input: page-name                                |
+							| nsm mv or move     | input: old-name new-name                        |
+							| nsm cp or copy     | input: tracked-name new-name                    |
 							| nsm build          | input: page-name-1 .. page-name-k               |
 							| nsm build-updated  | builds updated pages                            |
 							| nsm build-all      | builds all tracked pages                        |
+							| nsm serve          | serves website locally                          |
 							| nsm bcp            | input: commit-message                           |
 							| nsm new-title      | input: page-name new-title                      |
 							| nsm new-template   | input: page-name template-path                  |
@@ -271,6 +272,14 @@
 				
 				<p>
 					If your site is part of a repository for BitBucket, GitHub or GitLab you can have updated pages built along with the changes being committed and pushed using <mono>nsm bcp "commit message"</mono>. Note you can still use <mono>nsm build-updated</mono> to check any changes locally (when changes can be viewed locally). 
+				</p>
+				
+				<h4>
+					Serving Your Website Locally
+				</h4>
+				
+				<p>
+					To serve your website locally run <mono>nsm serve</mono>, enter <mono>exit</mono> to stop serving your website. On linux can also run <mono>nsm serve -s &</mono> to serve in the background then to stop serving run <mono>killall nsm</mono>.
 				</p>
 				
 				<h4>
