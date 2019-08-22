@@ -1,12 +1,10 @@
-09:28:51 Tuesday August 20 2019
+15:37:04 Thursday August 22 2019
 resources/templates
 templates
-template/resources.template
+template/page.template
 
 content/resources/templates.content
 template/footer.content
 template/head.content
-template/header.content
-template/menu-resources.content
 template/menu.content
-template/resources.template
+template/page.template

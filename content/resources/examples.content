@@ -1,26 +1,40 @@
-<h3>Example websites made with <mono>Nift</mono></h3>
-<p>
-	Below are some examples of websites made using <mono>Nift</mono>:
-	<ul style="text-indent:30px">
-		<li><a href="https://nifty-site-manager.com">Official Nift website</a></li>
-		<li><a href="https://n-ham.com">Developer's personal website</a></li>
-		<li><a href="https://ai-bots.net">Official AI-BOTS website</a></li>
-		<li><a href="https://tron.ai-bots.net">Official AI-BOTS Tron contest website</a></li>
-		<li><a href="https://wr3ckreational.com">Official wr3ckreational website</a></li>
-		<li><a href="https://nsm-examples.gitlab.io/deadmageddon">DeadMageddon</a></li>
-	</ul>
-	<div style="float:right; max-width:40%">
-		<img src="@pathtofile(site/files/presentation.svg)" width=200 style="margin-right:20px">
-	</div>
-	<ul>
-		<li><a href="https://html5up-nsm-templates.github.io/dopetrope/">HTML5 UP template Dopetrope</a></li>
-		<li><a href="https://html5up-nsm-templates.github.io/editorial/">HTML5 UP template Editorial</a></li>
-		<li><a href="https://html5up-nsm-templates.github.io/escape-velocity/">HTML5 UP template Escape Velocity</a></li>
-		<li><a href="https://html5up-nsm-templates.github.io/massively/">HTML5 UP template Massively</a></li>
-		<li><a href="https://html5up-nsm-templates.github.io/stellar/">HTML5 UP template Stellar</a></li>
-	</ul>
-</p>
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">Examples</div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<header class="style1">
+				<h2>Websites managed and generated with Nift</h2>
+			</header>
 
-<p>
-	If you would like to have your own websites made using <mono>Nift</mono> added to the above list, email <mono>examples@nift.cc</mono>.
-</p>
+			<!-- Image -->
+			<center>
+				<img src="@pathtofile(site/images/presentation.svg)" width=300 style="margin-bottom:20px">
+			</center>
+
+			<div class="content">
+				<p>
+					Below are some examples of websites made using <mono>Nift</mono>:
+					<center>
+						<a href="https://nifty-site-manager.com">Official Nift website</a><br>
+						<a href="https://n-ham.com">Developer's personal website</a><br>
+						<a href="https://ai-bots.net">Official AI-BOTS website</a><br>
+						<a href="https://tron.ai-bots.net">Official AI-BOTS Tron contest website</a><br>
+						<a href="https://wr3ckreational.com">Official wr3ckreational website</a><br>
+						<a href="https://nsm-examples.gitlab.io/deadmageddon">DeadMageddon</a><br>
+						<a href="https://html5up-nsm-templates.github.io/dopetrope/">HTML5 UP template Dopetrope</a><br>
+						<a href="https://html5up-nsm-templates.github.io/editorial/">HTML5 UP template Editorial</a><br>
+						<a href="https://html5up-nsm-templates.github.io/escape-velocity/">HTML5 UP template Escape Velocity</a><br>
+						<a href="https://html5up-nsm-templates.github.io/massively/">HTML5 UP template Massively</a><br>
+						<a href="https://html5up-nsm-templates.github.io/stellar/">HTML5 UP template Stellar</a>
+					</center>
+				</p>
+
+				<p>
+					If you would like to have your own websites made using <mono>Nift</mono> added to the above list, email <mono>examples@nift.cc</mono>.
+				</p>
+			</div>
+		</section>
+	</div>
+</section>

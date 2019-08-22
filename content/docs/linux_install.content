@@ -1,0 +1,90 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">Linux Install</div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<header class="style1">
+				<h2>How to install Nift on Linux</h2>
+			</header>
+
+			<div class="content">
+				<h2>
+					Linux installation using <mono>Snap</mono>
+				</h2>
+
+				<p>
+					You can install <mono>Nift</mono> on linux using the <mono>Snap</mono> package manager, for instructions see <a href="https://snapcraft.io/nsm">here</a>. Alternatively first install <mono>snapd</mono>, eg. <mono>sudo apt-get install snapd</mono> on Ubuntu, then enter:
+				</p>
+
+				<div align="center" style="margin-top:-20px; margin-bottom: 20px">
+					<pre>
+						snap install nsm
+						sudo snap alias nsm nift
+					</pre>
+				</div>
+
+				<p>
+					To uninstall <mono>Nift</mono> enter <mono>sudo snap unalias nift</mono> and <mono>snap remove nsm</mono>.
+				</p>
+
+				<h2>Installing <mono>Nift</mono> on linux from source</h2>
+
+				<h3>Installing a <mono>c++</mono> compiler</h3>
+
+				<p>
+					If you do not already have a <mono>c++</mono> compiler then you will need to install one.
+				</p>
+
+				<p>
+					Use your package manager to install <mono>build-essential</mono>. For example on Ubuntu, run <mono>sudo apt-get install build-essential</mono> from a terminal window. 
+				</p>
+
+				<br>
+
+				<h3>Installing <mono>Nift</mono></h3>
+
+				Download <a href="https://gitlab.com/nifty-site-manager/nsm/repository/master/archive.zip">nsm-master-*.zip</a>, then follow these steps to compile and install:
+
+				<ol>
+					<li>
+						Extract <mono>nsm-master-*</mono> from <mono>nsm-master-*.zip</mono>;
+					</li>
+					<li>
+						Open a terminal window and change directory to <mono>nsm-master-*</mono>;
+					</li>
+					<li>
+						Compile <mono>nsm</mono> by running <mono>make</mono>;
+					</li>
+					<li>
+						Install <mono>nsm</mono> by running <mono>sudo make linux-install</mono> (note - you will need to enter your password) (note - you may need to open a new terminal window for nsm installation to be recognised);
+					</li>
+					<li>
+						Delete both the file <mono>nsm-master-*.zip</mono> and the directory <mono>nsm-master-*</mono> containing the uncompiled code. 
+					</li>
+				</ol>
+
+				<p>
+					For example, if you unzipped <mono>nsm-master-*</mono> inside your downloads folder, then steps 1-4 are achieved by entering the following into your terminal window:
+
+					<div align="center">
+						<pre class="prettyprint inline rounded lang-bsh">
+							cd ~/Downloads/nsm-master-*
+							make
+							sudo make linux-install
+						</pre>
+					</div>
+				</p>
+
+				<p>
+					You can use <mono>make linux-gedit-highlighting</mono> on top of <mono>make install</mono> during step 3 to get <mono>gedit</mono> (do you gedit yet?) to automatically use html syntax highlighting for both <mono>*.content</mono> and <mono>*.template</mono> files.
+				</p>
+
+				<h3>Uninstalling <mono>Nift</mono></h3>
+				<p>
+					Should you ever want to remove <mono>nsm</mono> from your machine, simply run <mono>sudo make linux-uninstall</mono>.
+				</p>
+			</div>
+		</section>
+	</div>
+</section>

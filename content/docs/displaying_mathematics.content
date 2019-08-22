@@ -1,0 +1,71 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">Mathematics</div>
+	<div class="container" style="margin-top:0px">
+		<!-- Features -->
+		<section id="features">
+			<header class="style1">
+				<h2>How to display mathematics on your websites</h2>
+			</header>
+
+<div class="content">
+	<center>
+		<img src="@pathtofile(site/images/mathematics.svg)" width=250 style="margin-top:-50px; margin-bottom:30px">
+	</center>
+
+	<p>
+		Options for including mathematics on your website include:
+		<ul style="text-indent:30px">
+			<li><a href="https://www.mathjax.org/">MathJax</a></li>
+			<li><a href="https://katex.org/">KaTeX</a></li>
+			<li><a href="http://mathscribe.com/author/jqmath.html">jqmath</a></li>
+			<li><a href="http://asciimath.org/">AsciiMath</a></li>
+		</ul>
+	</p>
+
+	<p>
+		The <mono>Nift</mono> documentation covers how to display $\LaTeX$ on your websites using <a href=https://www.mathjax.org/>MathJax</a>. Repeating the information on <a href="http://docs.mathjax.org/en/latest/start.html">this</a> page, using MathJax on your site is as simple as adding the following code to the head of each page:
+
+		<div align="center">
+			<pre class="prettyprint lang-html inline rounded">
+				<!-- uses MathJax CDC for LaTeX support
+					 see http://docs.mathjax.org/en/latest/start.html for more info -->
+				<script type="text/x-mathjax-config">
+					MathJax.Hub.Config
+					({
+						extensions: ["tex2jax.js"],
+						jax: ["input/TeX", "output/HTML-CSS"],
+						tex2jax: 
+						{
+							inlineMath: [['$','$'], ['\\(','\\)']],
+							displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+							processEscapes: true
+						},
+						"HTML-CSS": { availableFonts: ["MathJax TeX"] }
+					});
+				</script>
+				<script type="text/javascript" 
+						src="https://cdn.mathjax.org/mathjax/latest/MathJax.js">
+				</script>
+			</pre>
+		</div>
+	</p>
+
+	<p>
+		You should then be able to paste $\LaTeX$ equations straight into content files. both \$..\$ and &sol;(..&sol;) work for inline equations, and both \$\$..\$\$ and &sol;[..&sol;] work for displayed equations. Eg. When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are:
+
+		\[x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}\]
+	</p>
+
+	<p>
+		If you want to insert a dollar sign on a page, as opposed to opening/closing an inline equation, use \\\$ and MathJax will escape the character.
+	</p>
+
+
+	<p>
+		<u>Note:</u> if you are opening a page locally and are not connected to the internet then MathJax will not load, you will simply see the unprocessed LaTeX equations. 
+	</p>
+</div>
+		</section>
+	</div>
+</section>

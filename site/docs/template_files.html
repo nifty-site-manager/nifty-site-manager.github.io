@@ -1,0 +1,310 @@
+<!DOCTYPE HTML>
+
+<!--
+	Official Nift Website
+
+	Nift is a cross-platform open source website generator developed from the ground up in C++.
+-->
+
+<html>
+    <head>
+        <title>Nift</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="../assets/css/main.css">
+        <link rel="stylesheet" href="../assets/css/pagestyle.css">
+        <link rel="stylesheet" href="../assets/css/pre.css">
+        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-62165905-2"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'UA-62165905-2');
+        </script>
+        
+        <!-- uses google-code-prettify for syntax highlighting 
+             see https://github.com/google/code-prettify/ for more info -->
+        <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+        
+        <!-- uses Font Awesome for vector icons and social logos -->
+        <script src="https://kit.fontawesome.com/b51e6952ec.js"></script>
+        
+        <!-- uses MathJax CDC for LaTeX support
+             see http://docs.mathjax.org/en/latest/start.html for more info -->
+        <script type="text/x-mathjax-config">
+        	MathJax.Hub.Config
+        	({
+        		extensions: ["tex2jax.js"],
+            	jax: ["input/TeX", "output/HTML-CSS"],
+        		tex2jax: 
+        		{
+        			inlineMath: [['$','$'], ['\\(','\\)']],
+        			displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        			processEscapes: true
+        		},
+        		"HTML-CSS": { availableFonts: ["MathJax TeX"] }
+        	});
+        </script>
+        <script type="text/javascript" 
+        	    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js">
+        </script>
+        
+        <!-- hack redirecting to a secure protocol when users 
+             visit domain using an insecure protocol -->
+        <script>
+        	var host = "nifty-site-manager.gitlab.io";
+        	if ((host == window.location.host) && (window.location.protocol != "https:"))
+        		window.location.protocol = "https";	
+        </script>
+    </head>
+    <body class="is-preload">
+		<div id="page-wrapper">
+			<!-- Header -->
+			<section id="header" class="wrapper">
+			
+				<!-- Logo -->
+				<div id="logo">
+					<noselect>
+					<a href="../index.html"><img src="../images/NIFT.png" width=250></a><br>
+					<!--<a href="../index.html"><img src="../images/nifty-site-manager.png" width=250></a>-->
+			
+					<p style="margin-bottom:0px">
+						<a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; 
+						<a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a> &nbsp; 
+						<a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a> &nbsp; 
+						<a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a> &nbsp; 
+						<a href="https://old.reddit.com/r/nift" title="Reddit" class="reddit"><i class="fab fa-reddit-square fa-2x"></i></a> &nbsp; 
+						<a href="https://twitter.com/nifty_site_man" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a> &nbsp; 
+						<a href="https://nifty-site-manager.teemill.com/" title="TeeMill" class="teemill"><i class="fas fa-tshirt fa-2x"></i></a> &nbsp; 
+						<a href="https://www.redbubble.com/people/niftysiteman/works/39141154-nifty-site-manager?asc=u" title="RedBubble" class="discord"><i class="fas fa-shopping-bag fa-2x"></i></a>
+					</p>
+			
+					<p>A cross-platform open source website generator</p>
+			
+					<p>
+						<a href="https://chocolatey.org/packages/nsm"><img src="../images/chocolatey.svg" height="40px" alt="Get it from the Chocolatey store" title="Windows"></a> &nbsp;
+						<!--<a href="https://flathub.org/apps/details/com.n-ham.nsm"><img src="../images/flathub.png" height="40px" alt="Get it from the FlatHub store" title="Linux"></a> &nbsp;-->
+						<a href="https://snapcraft.io/nsm"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" height="40px" alt="Get it from the Snap Store" title="Linux"></a>
+					</p>
+					</noselect>
+				</div>
+			
+				<!-- Nav -->
+				<noselect>
+					<nav id="nav">
+						<ul>
+							<li><a href="../index.html">Home</a></li>
+							<li>
+								<a href="">Documentation</a>
+								<ul>
+									<li>
+										<a href="installing_nift.html">Installing Nift</a>
+										<ul>
+											<li><a href="linux_install.html">Linux</a></li>
+											<li><a href="osx_install.html">OSX</a></li>
+											<li><a href="windows_install.html">Windows</a></li>
+										</ul>
+									</li>
+									<li><a href="nift_commands.html">Nift Commands</a></li>
+									<li><a href="content_files.html">Content Files</a></li>
+									<li><a href="template_files.html">Template Files</a></li>
+									<li><a href="displaying_mathematics.html">Displaying Mathematics</a></li>
+									<li><a href="displaying_code_blocks.html">Displaying Code Blocks</a></li>
+									<li>
+										<a href="hosting_your_site.html">Hosting Your Site</a>
+										<ul>
+											<li><a href="bitbucket_hosting.html">BitBucket</a></li>
+											<li><a href="github_hosting.html">GitHub</a></li>
+											<li><a href="gitlab_hosting.html">GitLab</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="">Resources</a>
+								<ul>
+									<li><a href="../resources/examples.html">Examples</a></li>
+									<li><a href="../resources/get_started.html">Get Started</a></li>
+									<li><a href="../resources/links.html">Links</a></li>
+									<li><a href="../resources/nift_tutorial.html">Nift Tutorial</a></li>
+									<li><a href="../resources/project_suggestions.html">Project Suggestions</a></li>
+									<li><a href="../resources/templates.html">Templates</a></li>
+								</ul>
+							</li>
+							<li><a href="../support.html">Support</a></li>
+						</ul>
+					</nav>
+				</noselect>
+			</section>
+
+		    <!-- Main -->
+		    <section id="main" class="wrapper style2">
+		    	<div class="title">Template Files</div>
+		    	<div class="container">
+		    		<!-- Features -->
+		    		<section id="features">
+		    			<header class="style1">
+		    				<h2>Guide to writing template files</h2>
+		    			</header>
+		    
+		    			<div class="content">
+		    				<p>
+		    					Remember that for each page tracked by <mono>Nift</mono> there is a specified template path. When building a page, <mono>Nift</mono> will start processing the template file the same as it will process any other file. Consequently everything that applied to writing content files also applies to writing template files. However, unlike content files, template files need to specify where content and (optionally) the page title are to be inputted. 
+		    				</p>
+		    
+		    				<h4>
+		    					Specifying where content is to be inputted
+		    				</h4>
+		    
+		    				<p>
+		    					<mono>Nift</mono> treats any instance of <mono>&commat;inputcontent</mono> as being equivalent to <mono>&commat;input(path-to-content)</mono>, where <mono>path-to-content</mono> is the content path for a page.
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> if <mono>&commat;inputcontent</mono> is in any dependency of a page's content file (content file inclusive), then an input loop would be formed when attempting to build the page so <mono>Nift</mono> will (at least it should) throw an error. You may however put <mono>&commat;inputcontent</mono> in any other dependencies of the template file. For example were your template to include a file <mono>template/body.template</mono>, it is fine for <mono>&commat;inputcontent</mono> to reside in <mono>body.template</mono> and not the main template file.
+		    				</p>
+		    
+		    				<h4>
+		    					Specifying where the page title is to be inputted
+		    				</h4>
+		    
+		    				<p>
+		    					When building a page, <mono>Nift</mono> will replace any instance of <mono>&commat;pagetitle</mono> with the title <mono>Nift</mono> has tracked for the page. Unlike <mono>&commat;inputcontent</mono>, <mono>&commat;pagetitle</mono> may be placed inside content files (template files inclusive). 
+		    				</p>
+		    
+		    				<h4>
+		    					Example template files
+		    				</h4>
+		    
+		    				<p>
+		    					A very simple template file, that specifies both where content and the page title are to be inputted, would be:
+		    				</p>
+		    
+		    				<div align="center" style="margin-top:-15px; margin-bottom: 20px">
+		    					<pre class="prettyprint linenums inline rounded">
+		    						&lt;!DOCTYPE html>
+		    						&lt;html>
+		    							&lt;head>
+		    								&lt;title>site title - &commat;pagetitle&lt;/title>
+		    							&lt;/head>
+		    
+		    							&lt;body>
+		    								&commat;inputcontent	
+		    							&lt;/body>
+		    						&lt;/html>
+		    					</pre>
+		    				</div>
+		    
+		    				<p>
+		    					It can be convenient to break what would typically be found inside the template file up into various content files. For example you may have <mono>template/head.content</mono>, <mono>template/menu.content</mono> and <mono>template/footer.content</mono>. A suitable template file, say the default <mono>template/page.template</mono> would then be:
+		    				</p>
+		    
+		    				<div align="center" style="margin-top:-15px; margin-bottom: 20px">
+		    					<pre class="prettyprint linenums inline rounded">
+		    						&lt;!DOCTYPE html>
+		    						&lt;html>
+		    							&lt;head>
+		    								&commat;input(template/head.content)
+		    							&lt;/head>
+		    
+		    							&lt;body>
+		    								&commat;input(template/menu.content)
+		    
+		    								&commat;inputcontent	
+		    
+		    								&commat;input(template/footer.content)
+		    							&lt;/body>
+		    						&lt;/html>
+		    					</pre>
+		    				</div>
+		    
+		    				<p>
+		    					<b>Note:</b> the <mono>head</mono> tags may be put inside either <mono>template/page.template</mono> or <mono>template/head.content</mono>. However if the <mono>head</mono> tags are left inside <mono>template/page.template</mono> then, rather than specifically having to alter <mono>template/head.content</mono>, the head may be altered from both <mono>template/page.template</mono> and <mono>template/head.content</mono>.
+		    				</p>
+		    			</div>
+		    		</section>
+		    	</div>
+		    </section>
+
+			<!-- Highlights -->
+			<!--
+			<section id="highlights" class="wrapper style3">
+				<div class="title">The Endorsements</div>
+				<div class="container">
+					<div class="row aln-center">
+						<div class="col-4 col-12-medium">
+							<section class="highlight">
+								<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+								<h3><a href="#">Aliquam diam consequat</a></h3>
+								<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+								<ul class="actions">
+									<li><a href="#" class="button style1">Learn More</a></li>
+								</ul>
+							</section>
+						</div>
+						<div class="col-4 col-12-medium">
+							<section class="highlight">
+								<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+								<h3><a href="#">Nisl adipiscing sed lorem</a></h3>
+								<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+								<ul class="actions">
+									<li><a href="#" class="button style1">Learn More</a></li>
+								</ul>
+							</section>
+						</div>
+						<div class="col-4 col-12-medium">
+							<section class="highlight">
+								<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+								<h3><a href="#">Mattis tempus lorem</a></h3>
+								<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+								<ul class="actions">
+									<li><a href="#" class="button style1">Learn More</a></li>
+								</ul>
+							</section>
+						</div>
+					</div>
+				</div>
+			</section>
+			-->
+			
+			<!-- Footer -->
+			<section id="footer" class="wrapper">
+				<div class="title"><img src="../images/nsm-medium.png" width="120" style="margin-top:20px"></div>
+				<div class="container">
+					<div id="copyright">
+						<ul style="margin-top:80px">
+							<li><b>Mirrors:</b></li>
+							<li><a href="https://nift.cc/">Official</a></li>
+							<li><a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a></li>
+							<li><a href="https://nifty-site-manager.github.io/">GitHub</a></li>
+							<li><a href="https://nifty-site-manager.gitlab.io/">GitLab</a></li>
+							<li><a href="https://nifty-site-manager.netlify.com/">Netlify</a></li>
+						</ul> <br>
+			
+						<ul>
+							<li>&copy;&nbsp;2015 - <script>document.write(new Date().getFullYear())</script> <a href="https://nift.cc">Nift</a>.</li><li>Site Design: <a href="http://html5up.net">HTML5 UP</a></li><li>Developer: <a href="https://n-ham.com">Nicholas Ham</a></li>
+						</ul>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<!-- Scripts -->
+		<script src="../assets/js/jquery.min.js"></script>
+		<script src="../assets/js/jquery.dropotron.min.js"></script>
+		<script src="../assets/js/browser.min.js"></script>
+		<script src="../assets/js/breakpoints.min.js"></script>
+		<script src="../assets/js/util.js"></script>
+		<script src="../assets/js/main.js"></script>
+		<script src="../assets/js/process_pre_tags.js"></script>
+    </body>
+</html>
+
+<!--
+	Site Design: Escape Velocity by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->

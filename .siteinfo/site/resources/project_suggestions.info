@@ -1,12 +1,10 @@
-05:23:31 Tuesday August 20 2019
+15:39:32 Thursday August 22 2019
 resources/project_suggestions
 project_suggestions
-template/resources.template
+template/page.template
 
 content/resources/project_suggestions.content
 template/footer.content
 template/head.content
-template/header.content
-template/menu-resources.content
 template/menu.content
-template/resources.template
+template/page.template

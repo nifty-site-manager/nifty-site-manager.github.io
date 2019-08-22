@@ -1,86 +1,82 @@
-404
-404
-template/404.template
-
-documentation/bitbucket_hosting
+docs/bitbucket_hosting
 bitbucket_hosting
-template/documentation.template
+template/page.template
 
-documentation/content_files
-"content files"
-template/documentation.template
+docs/content_files
+content_files
+template/page.template
 
-documentation/displaying_code_blocks
-"displaying code blocks"
-template/documentation.template
+docs/displaying_code_blocks
+displaying_code_blocks
+template/page.template
 
-documentation/displaying_mathematics
-"displaying mathematics"
-template/documentation.template
+docs/displaying_mathematics
+displaying_mathematics
+template/page.template
 
-documentation/github_hosting
+docs/github_hosting
 github_hosting
-template/documentation.template
+template/page.template
 
-documentation/gitlab_hosting
+docs/gitlab_hosting
 gitlab_hosting
-template/documentation.template
+template/page.template
 
-documentation/hosting_your_site
-"hosting your site"
-template/documentation.template
+docs/hosting_your_site
+hosting_your_site
+template/page.template
 
-documentation/installing_nsm
-"installing nsm"
-template/documentation.template
+docs/installing_nift
+installing_nift
+template/page.template
 
-documentation/linux_install
+docs/linux_install
 linux_install
-template/documentation.template
+template/page.template
 
-documentation/nsm_commands
-"nsm commands"
-template/documentation.template
+docs/nift_commands
+nift_commands
+template/page.template
 
-documentation/osx_install
+docs/osx_install
 osx_install
-template/documentation.template
+template/page.template
 
-documentation/template_files
-"template files"
-template/documentation.template
+docs/template_files
+template_files
+template/page.template
 
-documentation/windows_install
+docs/windows_install
 windows_install
-template/documentation.template
+template/page.template
 
 index
-home
+index
 template/page.template
 
 resources/examples
 examples
-template/resources.template
+template/page.template
 
 resources/get_started
-"get started"
-template/resources.template
+get_started
+template/page.template
 
 resources/links
 links
-template/resources.template
+template/page.template
 
-resources/nsm_tutorial
-nsm_tutorial
-template/resources.template
+resources/nift_tutorial
+nift_tutorial
+template/page.template
 
 resources/project_suggestions
 project_suggestions
-template/resources.template
+template/page.template
 
 resources/templates
 templates
-template/resources.template
+template/page.template
 
 support
 support

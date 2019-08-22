@@ -1,0 +1,19 @@
+noselect
+{
+	-webkit-user-select: none; /* Chrome/Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
+}
+
+div.content
+{
+	font-size:14pt;
+	color: #2b2c2e;
+}
+
+mono
+{
+	font-family: DejaVu Sans Mono, Liberation Mono, Consolas, Ubuntu Mono, Courier New;
+	font-size: 85%;
+	color: #415891;
+}

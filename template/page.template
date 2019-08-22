@@ -1,30 +1,38 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+
+<!--
+	Official Nift Website
+
+	Nift is a cross-platform open source website generator developed from the ground up in C++.
+-->
+
 <html>
-	<head>
-		@input(template/head.content)
-	</head>
+    <head>
+        @input(template/head.content)
+    </head>
+    <body class="is-preload">
+		<div id="page-wrapper">
+			@input(template/menu.content)
 
-	<body>
-		@input(template/header.content)
+		    @inputcontent
 
-		<div class="content">
-			@inputcontent
+			@input(template/footer.content)
 		</div>
 
-		@input(template/footer.content)
-
-		<script src='@pathtofile(site/js/process_pre_tags.js)'></script>	
-	</body>
+		<!-- Scripts -->
+		<script src="@pathtofile(site/assets/js/jquery.min.js)"></script>
+		<script src="@pathtofile(site/assets/js/jquery.dropotron.min.js)"></script>
+		<script src="@pathtofile(site/assets/js/browser.min.js)"></script>
+		<script src="@pathtofile(site/assets/js/breakpoints.min.js)"></script>
+		<script src="@pathtofile(site/assets/js/util.js)"></script>
+		<script src="@pathtofile(site/assets/js/main.js)"></script>
+		<script src="@pathtofile(site/assets/js/process_pre_tags.js)"></script>
+    </body>
 </html>
 
-<!-- 
-	information on how to easily make and host a site similar to
-	this may be found at any of the following mirrors:
-		* https://nift.cc/
-		* https://nifty-site-manager.com/ 
-		* https://nifty-site-manager.bitbucket.io/ 
-		* https://nifty-site-manager.github.io/ 
-		* https://nifty-site-manager.gitlab.io/ 
-		* https://nifty-site-manager.netlify.com/
+<!--
+	Site Design: Escape Velocity by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 

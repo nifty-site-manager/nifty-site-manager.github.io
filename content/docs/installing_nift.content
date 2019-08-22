@@ -1,0 +1,94 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">Installing Nift</div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<header class="style1">
+				<h2>How to install Nift on Linux, OSX and Windows</h2>
+			</header>
+
+			<!-- Image -->
+			<center>
+				<img src="@pathtofile(site/images/hacker_mind.svg)" width=300 style="margin-bottom:40px">
+			</center>
+
+			<div class="content">
+				<p>
+					There are a number of different ways you can install <mono>Nift</mono> on all of Linux, OSX and Windows. This page outlines how to install <mono>Nift</mono>:
+					<ul style="text-indent:30px">
+						<li>On Linux using <mono>Snapcraft</mono></li>
+						<li>On Windows using <mono>Chocolatey</li>
+						<li>On Windows from executable</li>
+						<li>On Linux from source</li>
+						<li>On OSX from source</li>
+						<li>On Windows from source</li>
+					</ul>
+				</p>
+
+				<br>
+
+				<h3>
+					Linux installation using <mono>Snap</mono>
+				</h3>
+
+				<p>
+					You can install <mono>Nift</mono> on linux using the <mono>Snap</mono> package manager, for instructions see <a href="https://snapcraft.io/nsm">here</a>. Alternatively first install <mono>snapd</mono>, eg. <mono>sudo apt-get install snapd</mono> on Ubuntu, then enter:
+				</p>
+
+				<div align="center" style="margin-top:-20px; margin-bottom: 20px">
+					<pre>
+						snap install nsm
+						sudo snap alias nsm nift
+					</pre>
+				</div>
+
+				<p>
+					To uninstall <mono>Nift</mono> enter <mono>sudo snap unalias nift</mono> and <mono>snap remove nsm</mono>.
+				</p>
+
+				<h3>
+					Windows installation using <mono>Chocolatey</mono>
+				</h3>
+
+				<p>
+					You can install <mono>Nift</mono> on Windows using <mono>Chocolatey</mono>. First <a href="https://chocolatey.org/docs/installation">install</a> <mono>Chocolatey</mono>, then follow the instructions <a href="https://chocolatey.org/packages/nsm">here</a>, or alternatively enter:
+				</p>
+
+				<div align="center" style="margin-top:-20px; margin-bottom: 20px">
+					<pre>
+						choco install nsm --version 1.5
+					</pre>
+				</div>
+
+				<p>
+					To uninstall <mono>Nift</mono> enter <mono>choco uninstall nsm</mono>.
+				</p>
+
+				<h3>
+					Windows installation from executable
+				</h3>
+
+				<p>
+					Download <a href="https://github.com/nifty-site-manager/nsm-chocolatey/raw/master/nsm.exe">this</a> executable and <a href="https://github.com/nifty-site-manager/nsm-chocolatey/raw/master/nift.exe">this</a> executable then place them anywhere in your user's path, eg. in <mono>C:\Windows\system32</mono>.
+				</p>
+
+				<h3>
+					Instructions for installing <mono>Nift</mono> from source on:
+				</h3>
+
+				<ol>
+					<li>
+						<a href="./linux_install.html">linux</a>
+					</li>
+					<li>
+						<a href="./osx_install.html">osx</a>
+					</li>
+					<li>
+						<a href="./windows_install.html">windows</a>
+					</li>
+				</ol>
+			</div>
+		</section>
+	</div>
+</section>

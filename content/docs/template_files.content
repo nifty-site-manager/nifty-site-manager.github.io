@@ -1,0 +1,88 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">Template Files</div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<header class="style1">
+				<h2>Guide to writing template files</h2>
+			</header>
+
+			<div class="content">
+				<p>
+					Remember that for each page tracked by <mono>Nift</mono> there is a specified template path. When building a page, <mono>Nift</mono> will start processing the template file the same as it will process any other file. Consequently everything that applied to writing content files also applies to writing template files. However, unlike content files, template files need to specify where content and (optionally) the page title are to be inputted. 
+				</p>
+
+				<h4>
+					Specifying where content is to be inputted
+				</h4>
+
+				<p>
+					<mono>Nift</mono> treats any instance of <mono>\@inputcontent</mono> as being equivalent to <mono>\@input(path-to-content)</mono>, where <mono>path-to-content</mono> is the content path for a page.
+				</p>
+
+				<p>
+					<b>Note:</b> if <mono>\@inputcontent</mono> is in any dependency of a page's content file (content file inclusive), then an input loop would be formed when attempting to build the page so <mono>Nift</mono> will (at least it should) throw an error. You may however put <mono>\@inputcontent</mono> in any other dependencies of the template file. For example were your template to include a file <mono>template/body.template</mono>, it is fine for <mono>\@inputcontent</mono> to reside in <mono>body.template</mono> and not the main template file.
+				</p>
+
+				<h4>
+					Specifying where the page title is to be inputted
+				</h4>
+
+				<p>
+					When building a page, <mono>Nift</mono> will replace any instance of <mono>\@pagetitle</mono> with the title <mono>Nift</mono> has tracked for the page. Unlike <mono>\@inputcontent</mono>, <mono>\@pagetitle</mono> may be placed inside content files (template files inclusive). 
+				</p>
+
+				<h4>
+					Example template files
+				</h4>
+
+				<p>
+					A very simple template file, that specifies both where content and the page title are to be inputted, would be:
+				</p>
+
+				<div align="center" style="margin-top:-15px; margin-bottom: 20px">
+					<pre class="prettyprint linenums inline rounded">
+						<!DOCTYPE html>
+						<html>
+							<head>
+								<title>site title - \@pagetitle</title>
+							</head>
+
+							<body>
+								\@inputcontent	
+							</body>
+						</html>
+					</pre>
+				</div>
+
+				<p>
+					It can be convenient to break what would typically be found inside the template file up into various content files. For example you may have <mono>template/head.content</mono>, <mono>template/menu.content</mono> and <mono>template/footer.content</mono>. A suitable template file, say the default <mono>template/page.template</mono> would then be:
+				</p>
+
+				<div align="center" style="margin-top:-15px; margin-bottom: 20px">
+					<pre class="prettyprint linenums inline rounded">
+						<!DOCTYPE html>
+						<html>
+							<head>
+								\@input(template/head.content)
+							</head>
+
+							<body>
+								\@input(template/menu.content)
+
+								\@inputcontent	
+
+								\@input(template/footer.content)
+							</body>
+						</html>
+					</pre>
+				</div>
+
+				<p>
+					<b>Note:</b> the <mono>head</mono> tags may be put inside either <mono>template/page.template</mono> or <mono>template/head.content</mono>. However if the <mono>head</mono> tags are left inside <mono>template/page.template</mono> then, rather than specifically having to alter <mono>template/head.content</mono>, the head may be altered from both <mono>template/page.template</mono> and <mono>template/head.content</mono>.
+				</p>
+			</div>
+		</section>
+	</div>
+</section>

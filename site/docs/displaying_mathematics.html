@@ -1,0 +1,293 @@
+<!DOCTYPE HTML>
+
+<!--
+	Official Nift Website
+
+	Nift is a cross-platform open source website generator developed from the ground up in C++.
+-->
+
+<html>
+    <head>
+        <title>Nift</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="../assets/css/main.css">
+        <link rel="stylesheet" href="../assets/css/pagestyle.css">
+        <link rel="stylesheet" href="../assets/css/pre.css">
+        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-62165905-2"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'UA-62165905-2');
+        </script>
+        
+        <!-- uses google-code-prettify for syntax highlighting 
+             see https://github.com/google/code-prettify/ for more info -->
+        <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+        
+        <!-- uses Font Awesome for vector icons and social logos -->
+        <script src="https://kit.fontawesome.com/b51e6952ec.js"></script>
+        
+        <!-- uses MathJax CDC for LaTeX support
+             see http://docs.mathjax.org/en/latest/start.html for more info -->
+        <script type="text/x-mathjax-config">
+        	MathJax.Hub.Config
+        	({
+        		extensions: ["tex2jax.js"],
+            	jax: ["input/TeX", "output/HTML-CSS"],
+        		tex2jax: 
+        		{
+        			inlineMath: [['$','$'], ['\\(','\\)']],
+        			displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        			processEscapes: true
+        		},
+        		"HTML-CSS": { availableFonts: ["MathJax TeX"] }
+        	});
+        </script>
+        <script type="text/javascript" 
+        	    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js">
+        </script>
+        
+        <!-- hack redirecting to a secure protocol when users 
+             visit domain using an insecure protocol -->
+        <script>
+        	var host = "nifty-site-manager.gitlab.io";
+        	if ((host == window.location.host) && (window.location.protocol != "https:"))
+        		window.location.protocol = "https";	
+        </script>
+    </head>
+    <body class="is-preload">
+		<div id="page-wrapper">
+			<!-- Header -->
+			<section id="header" class="wrapper">
+			
+				<!-- Logo -->
+				<div id="logo">
+					<noselect>
+					<a href="../index.html"><img src="../images/NIFT.png" width=250></a><br>
+					<!--<a href="../index.html"><img src="../images/nifty-site-manager.png" width=250></a>-->
+			
+					<p style="margin-bottom:0px">
+						<a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; 
+						<a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a> &nbsp; 
+						<a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a> &nbsp; 
+						<a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a> &nbsp; 
+						<a href="https://old.reddit.com/r/nift" title="Reddit" class="reddit"><i class="fab fa-reddit-square fa-2x"></i></a> &nbsp; 
+						<a href="https://twitter.com/nifty_site_man" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a> &nbsp; 
+						<a href="https://nifty-site-manager.teemill.com/" title="TeeMill" class="teemill"><i class="fas fa-tshirt fa-2x"></i></a> &nbsp; 
+						<a href="https://www.redbubble.com/people/niftysiteman/works/39141154-nifty-site-manager?asc=u" title="RedBubble" class="discord"><i class="fas fa-shopping-bag fa-2x"></i></a>
+					</p>
+			
+					<p>A cross-platform open source website generator</p>
+			
+					<p>
+						<a href="https://chocolatey.org/packages/nsm"><img src="../images/chocolatey.svg" height="40px" alt="Get it from the Chocolatey store" title="Windows"></a> &nbsp;
+						<!--<a href="https://flathub.org/apps/details/com.n-ham.nsm"><img src="../images/flathub.png" height="40px" alt="Get it from the FlatHub store" title="Linux"></a> &nbsp;-->
+						<a href="https://snapcraft.io/nsm"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" height="40px" alt="Get it from the Snap Store" title="Linux"></a>
+					</p>
+					</noselect>
+				</div>
+			
+				<!-- Nav -->
+				<noselect>
+					<nav id="nav">
+						<ul>
+							<li><a href="../index.html">Home</a></li>
+							<li>
+								<a href="">Documentation</a>
+								<ul>
+									<li>
+										<a href="installing_nift.html">Installing Nift</a>
+										<ul>
+											<li><a href="linux_install.html">Linux</a></li>
+											<li><a href="osx_install.html">OSX</a></li>
+											<li><a href="windows_install.html">Windows</a></li>
+										</ul>
+									</li>
+									<li><a href="nift_commands.html">Nift Commands</a></li>
+									<li><a href="content_files.html">Content Files</a></li>
+									<li><a href="template_files.html">Template Files</a></li>
+									<li><a href="displaying_mathematics.html">Displaying Mathematics</a></li>
+									<li><a href="displaying_code_blocks.html">Displaying Code Blocks</a></li>
+									<li>
+										<a href="hosting_your_site.html">Hosting Your Site</a>
+										<ul>
+											<li><a href="bitbucket_hosting.html">BitBucket</a></li>
+											<li><a href="github_hosting.html">GitHub</a></li>
+											<li><a href="gitlab_hosting.html">GitLab</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="">Resources</a>
+								<ul>
+									<li><a href="../resources/examples.html">Examples</a></li>
+									<li><a href="../resources/get_started.html">Get Started</a></li>
+									<li><a href="../resources/links.html">Links</a></li>
+									<li><a href="../resources/nift_tutorial.html">Nift Tutorial</a></li>
+									<li><a href="../resources/project_suggestions.html">Project Suggestions</a></li>
+									<li><a href="../resources/templates.html">Templates</a></li>
+								</ul>
+							</li>
+							<li><a href="../support.html">Support</a></li>
+						</ul>
+					</nav>
+				</noselect>
+			</section>
+
+		    <!-- Main -->
+		    <section id="main" class="wrapper style2">
+		    	<div class="title">Mathematics</div>
+		    	<div class="container" style="margin-top:0px">
+		    		<!-- Features -->
+		    		<section id="features">
+		    			<header class="style1">
+		    				<h2>How to display mathematics on your websites</h2>
+		    			</header>
+		    
+		    <div class="content">
+		    	<center>
+		    		<img src="../images/mathematics.svg" width=250 style="margin-top:-50px; margin-bottom:30px">
+		    	</center>
+		    
+		    	<p>
+		    		Options for including mathematics on your website include:
+		    		<ul style="text-indent:30px">
+		    			<li><a href="https://www.mathjax.org/">MathJax</a></li>
+		    			<li><a href="https://katex.org/">KaTeX</a></li>
+		    			<li><a href="http://mathscribe.com/author/jqmath.html">jqmath</a></li>
+		    			<li><a href="http://asciimath.org/">AsciiMath</a></li>
+		    		</ul>
+		    	</p>
+		    
+		    	<p>
+		    		The <mono>Nift</mono> documentation covers how to display $\LaTeX$ on your websites using <a href=https://www.mathjax.org/>MathJax</a>. Repeating the information on <a href="http://docs.mathjax.org/en/latest/start.html">this</a> page, using MathJax on your site is as simple as adding the following code to the head of each page:
+		    
+		    		<div align="center">
+		    			<pre class="prettyprint lang-html inline rounded">
+		    				&lt;!-- uses MathJax CDC for LaTeX support
+		    					 see http://docs.mathjax.org/en/latest/start.html for more info -->
+		    				&lt;script type="text/x-mathjax-config">
+		    					MathJax.Hub.Config
+		    					({
+		    						extensions: ["tex2jax.js"],
+		    						jax: ["input/TeX", "output/HTML-CSS"],
+		    						tex2jax: 
+		    						{
+		    							inlineMath: [['$','$'], ['\\(','\\)']],
+		    							displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+		    							processEscapes: true
+		    						},
+		    						"HTML-CSS": { availableFonts: ["MathJax TeX"] }
+		    					});
+		    				&lt;/script>
+		    				&lt;script type="text/javascript" 
+		    						src="https://cdn.mathjax.org/mathjax/latest/MathJax.js">
+		    				&lt;/script>
+		    			</pre>
+		    		</div>
+		    	</p>
+		    
+		    	<p>
+		    		You should then be able to paste $\LaTeX$ equations straight into content files. both \$..\$ and &sol;(..&sol;) work for inline equations, and both \$\$..\$\$ and &sol;[..&sol;] work for displayed equations. Eg. When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are:
+		    
+		    		\[x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}\]
+		    	</p>
+		    
+		    	<p>
+		    		If you want to insert a dollar sign on a page, as opposed to opening/closing an inline equation, use \\\$ and MathJax will escape the character.
+		    	</p>
+		    
+		    
+		    	<p>
+		    		<u>Note:</u> if you are opening a page locally and are not connected to the internet then MathJax will not load, you will simply see the unprocessed LaTeX equations. 
+		    	</p>
+		    </div>
+		    		</section>
+		    	</div>
+		    </section>
+
+			<!-- Highlights -->
+			<!--
+			<section id="highlights" class="wrapper style3">
+				<div class="title">The Endorsements</div>
+				<div class="container">
+					<div class="row aln-center">
+						<div class="col-4 col-12-medium">
+							<section class="highlight">
+								<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+								<h3><a href="#">Aliquam diam consequat</a></h3>
+								<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+								<ul class="actions">
+									<li><a href="#" class="button style1">Learn More</a></li>
+								</ul>
+							</section>
+						</div>
+						<div class="col-4 col-12-medium">
+							<section class="highlight">
+								<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+								<h3><a href="#">Nisl adipiscing sed lorem</a></h3>
+								<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+								<ul class="actions">
+									<li><a href="#" class="button style1">Learn More</a></li>
+								</ul>
+							</section>
+						</div>
+						<div class="col-4 col-12-medium">
+							<section class="highlight">
+								<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+								<h3><a href="#">Mattis tempus lorem</a></h3>
+								<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+								<ul class="actions">
+									<li><a href="#" class="button style1">Learn More</a></li>
+								</ul>
+							</section>
+						</div>
+					</div>
+				</div>
+			</section>
+			-->
+			
+			<!-- Footer -->
+			<section id="footer" class="wrapper">
+				<div class="title"><img src="../images/nsm-medium.png" width="120" style="margin-top:20px"></div>
+				<div class="container">
+					<div id="copyright">
+						<ul style="margin-top:80px">
+							<li><b>Mirrors:</b></li>
+							<li><a href="https://nift.cc/">Official</a></li>
+							<li><a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a></li>
+							<li><a href="https://nifty-site-manager.github.io/">GitHub</a></li>
+							<li><a href="https://nifty-site-manager.gitlab.io/">GitLab</a></li>
+							<li><a href="https://nifty-site-manager.netlify.com/">Netlify</a></li>
+						</ul> <br>
+			
+						<ul>
+							<li>&copy;&nbsp;2015 - <script>document.write(new Date().getFullYear())</script> <a href="https://nift.cc">Nift</a>.</li><li>Site Design: <a href="http://html5up.net">HTML5 UP</a></li><li>Developer: <a href="https://n-ham.com">Nicholas Ham</a></li>
+						</ul>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<!-- Scripts -->
+		<script src="../assets/js/jquery.min.js"></script>
+		<script src="../assets/js/jquery.dropotron.min.js"></script>
+		<script src="../assets/js/browser.min.js"></script>
+		<script src="../assets/js/breakpoints.min.js"></script>
+		<script src="../assets/js/util.js"></script>
+		<script src="../assets/js/main.js"></script>
+		<script src="../assets/js/process_pre_tags.js"></script>
+    </body>
+</html>
+
+<!--
+	Site Design: Escape Velocity by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->

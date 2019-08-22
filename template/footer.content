@@ -1,22 +1,61 @@
-<div class="footer">
-	<div class="footer_text"><center><img src="@pathtofile(site/files/nsm.png)" width="120"></center></div>
+<!-- Highlights -->
+<!--
+<section id="highlights" class="wrapper style3">
+	<div class="title">The Endorsements</div>
+	<div class="container">
+		<div class="row aln-center">
+			<div class="col-4 col-12-medium">
+				<section class="highlight">
+					<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+					<h3><a href="#">Aliquam diam consequat</a></h3>
+					<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+					<ul class="actions">
+						<li><a href="#" class="button style1">Learn More</a></li>
+					</ul>
+				</section>
+			</div>
+			<div class="col-4 col-12-medium">
+				<section class="highlight">
+					<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+					<h3><a href="#">Nisl adipiscing sed lorem</a></h3>
+					<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+					<ul class="actions">
+						<li><a href="#" class="button style1">Learn More</a></li>
+					</ul>
+				</section>
+			</div>
+			<div class="col-4 col-12-medium">
+				<section class="highlight">
+					<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+					<h3><a href="#">Mattis tempus lorem</a></h3>
+					<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+					<ul class="actions">
+						<li><a href="#" class="button style1">Learn More</a></li>
+					</ul>
+				</section>
+			</div>
+		</div>
+	</div>
+</section>
+-->
 
-	<noselect>
-		<p style="margin-top:2px">
-			<b>Mirrors:</b> [<a href="https://nift.cc/">Official</a>] [<a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a>] [<a href="https://nifty-site-manager.github.io/">GitHub</a>] [<a href="https://nifty-site-manager.gitlab.io/">GitLab</a>] [<a href="https://nifty-site-manager.netlify.com/">Netlify</a>]
-		</p>
+<!-- Footer -->
+<section id="footer" class="wrapper">
+	<div class="title"><img src="@pathtofile(site/images/nsm-medium.png)" width="120" style="margin-top:20px"></div>
+	<div class="container">
+		<div id="copyright">
+			<ul style="margin-top:80px">
+				<li><b>Mirrors:</b></li>
+				<li><a href="https://nift.cc/">Official</a></li>
+				<li><a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a></li>
+				<li><a href="https://nifty-site-manager.github.io/">GitHub</a></li>
+				<li><a href="https://nifty-site-manager.gitlab.io/">GitLab</a></li>
+				<li><a href="https://nifty-site-manager.netlify.com/">Netlify</a></li>
+			</ul> <br>
 
-		<p>
-			<a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; <a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a> &nbsp; <a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a>
-		</p>
-
-		<p>
-			<!--<a href="https://formulae.brew.sh/formula/nsm"><img src="@pathtofile(site/files/homebrew.png)" height="40px" alt="Get it from the Homebrew store" title="OSX/Linux"></a> &nbsp;-->
-			<a href="https://chocolatey.org/packages/nsm"><img src="@pathtofile(site/files/chocolatey.svg)" height="40px" alt="Get it from the Chocolatey store" title="Windows"></a> &nbsp;
-			<!--<a href="https://flathub.org/apps/details/com.n-ham.nsm"><img src="@pathtofile(site/files/flathub.png)" height="40px" alt="Get it from the FlatHub store" title="Linux"></a> &nbsp;-->
-			<a href="https://snapcraft.io/nsm"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" height="40px" alt="Get it from the Snap Store" title="Linux"></a>
-		</p>
-
-		<div style="margin-top:-5px;margin-bottom:15px"><small>&copy;&nbsp;2015 - @loadYYYY <a href="https://n-ham.com/">Nicholas Ham</a></small></div>
-	</noselect>
-</div>
+			<ul>
+				<li>&copy;&nbsp;2015 - @loadYYYY <a href="https://nift.cc">Nift</a>.</li><li>Site Design: <a href="http://html5up.net">HTML5 UP</a></li><li>Developer: <a href="https://n-ham.com">Nicholas Ham</a></li>
+			</ul>
+		</div>
+	</div>
+</section>

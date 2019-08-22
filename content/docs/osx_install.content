@@ -1,0 +1,63 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">OSX Install</div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<header class="style1">
+				<h2>How to install Nift on OSX</h2>
+			</header>
+
+			<div class="content">
+				<h2>Installing <mono>Nift</mono> on osx from source</h2>
+				<h3>Installing a <mono>c++</mono> compiler</h3>
+
+				<p>
+					Install <a href="https://itunes.apple.com/au/app/xcode/id497799835?mt=12">Xcode</a>. Should you still encounter any problems compiling <mono>nsm</mono> there is a good chance <mono>command line tools</mono> was not installed by default. To manually install it yourself: open Xcode, go to <mono>preferences</mono>, click on the <mono>downloads</mono> tab, then you should be able to download and install <mono>command line tools</mono>.
+				</p>
+
+				<h3>Installing <mono>Nift</mono></h3>
+
+				<p>
+					Download <a href="https://gitlab.com/nifty-site-manager/nsm/repository/master/archive.zip">nsm-master-*.zip</a>, then follow these steps to compile and install:
+				</p>
+
+				<ol>
+					<li>
+						Extract <mono>nsm-master-*</mono> from <mono>nsm-master-*.zip</mono>;
+					</li>
+					<li>
+						Open a terminal window and change directory to <mono>~/Downloads/nsm-master-*</mono>;
+					</li>
+					<li>
+						Compile <mono>nsm</mono> by running <mono>make</mono>;
+					</li>
+					<li>
+						Install <mono>nsm</mono> by running <mono>sudo make osx-install</mono> (note - you will need to enter your password) (note - you may need to open a new terminal window for nsm installation to be recognised);
+					</li>
+					<li>
+						Delete both the file <mono>nsm-master-*.zip</mono> and the directory <mono>nsm-master-*</mono> containing the uncompiled code. 
+					</li>
+				</ol>
+
+				<p>
+					For example, if you unzipped <mono>nsm-master-*</mono> inside your downloads folder, then steps 1-4 are achieved by entering the following into your terminal window:
+
+					<div align="center">
+						<pre class="prettyprint inline rounded lang-bsh">
+							cd ~/Downloads/nsm-master-*
+							make
+							sudo make osx-install
+						</pre>
+					</div>
+				</p>
+
+
+				<h3>Uninstalling <mono>Nift</mono></h3>
+				<p>
+					Should you ever want to remove <mono>nsm</mono> from your machine, simply run <mono>sudo make osx-uninstall</mono>.
+				</p>
+			</div>
+		</section>
+	</div>
+</section>
