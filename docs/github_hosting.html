@@ -1,0 +1,676 @@
+<!DOCTYPE HTML>
+
+<!--
+	Official Nift Website
+
+	Nift is a cross-platform open source website generator developed from the ground up in C++.
+-->
+
+<html>
+    <head>
+        <title>Nift</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="../assets/css/main.css">
+        <link rel="stylesheet" href="../assets/css/pagestyle.css">
+        <link rel="stylesheet" href="../assets/css/pre.css">
+        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-62165905-2"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'UA-62165905-2');
+        </script>
+        
+        <!-- uses google-code-prettify for syntax highlighting 
+             see https://github.com/google/code-prettify/ for more info -->
+        <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+        
+        <!-- uses Font Awesome for vector icons and social logos -->
+        <script src="https://kit.fontawesome.com/b51e6952ec.js"></script>
+        
+        <!-- uses MathJax CDC for LaTeX support
+             see http://docs.mathjax.org/en/latest/start.html for more info -->
+        <script type="text/x-mathjax-config">
+        	MathJax.Hub.Config
+        	({
+        		extensions: ["tex2jax.js"],
+            	jax: ["input/TeX", "output/HTML-CSS"],
+        		tex2jax: 
+        		{
+        			inlineMath: [['$','$'], ['\\(','\\)']],
+        			displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        			processEscapes: true
+        		},
+        		"HTML-CSS": { availableFonts: ["MathJax TeX"] }
+        	});
+        </script>
+        <script type="text/javascript" 
+        	    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js">
+        </script>
+        
+        <!-- hack redirecting to a secure protocol when users 
+             visit domain using an insecure protocol -->
+        <script>
+        	var host = "nifty-site-manager.gitlab.io";
+        	if ((host == window.location.host) && (window.location.protocol != "https:"))
+        		window.location.protocol = "https";	
+        </script>
+    </head>
+    <body class="is-preload">
+		<div id="page-wrapper">
+			<!-- Header -->
+			<section id="header" class="wrapper">
+			
+				<!-- Logo -->
+				<div id="logo">
+					<noselect>
+					<a href="../index.html"><img src="../images/NIFT.png" width=250></a><br>
+					<!--<a href="../index.html"><img src="../images/nifty-site-manager.png" width=250></a>-->
+			
+					<p style="margin-bottom:0px">
+						<a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; 
+						<a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a> &nbsp; 
+						<a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a> &nbsp; 
+						<a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a> &nbsp; 
+						<a href="https://old.reddit.com/r/nift" title="Reddit" class="reddit"><i class="fab fa-reddit-square fa-2x"></i></a> &nbsp; 
+						<a href="https://twitter.com/nifty_site_man" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a> &nbsp; 
+						<a href="https://nifty-site-manager.teemill.com/" title="TeeMill" class="teemill"><i class="fas fa-tshirt fa-2x"></i></a> &nbsp; 
+						<a href="https://www.redbubble.com/people/niftysiteman/works/39141154-nifty-site-manager?asc=u" title="RedBubble" class="discord"><i class="fas fa-shopping-bag fa-2x"></i></a>
+					</p>
+			
+					<p>A cross-platform open source website generator</p>
+			
+					<p>
+						<a href="https://chocolatey.org/packages/nsm"><img src="../images/chocolatey.svg" height="40px" alt="Get it from the Chocolatey store" title="Windows"></a> &nbsp;
+						<!--<a href="https://flathub.org/apps/details/com.n-ham.nsm"><img src="../images/flathub.png" height="40px" alt="Get it from the FlatHub store" title="Linux"></a> &nbsp;-->
+						<a href="https://snapcraft.io/nsm"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" height="40px" alt="Get it from the Snap Store" title="Linux"></a>
+					</p>
+					</noselect>
+				</div>
+			
+				<!-- Nav -->
+				<noselect>
+					<nav id="nav">
+						<ul>
+							<li><a href="../index.html">Home</a></li>
+							<li>
+								<a href="">Documentation</a>
+								<ul>
+									<li>
+										<a href="installing_nift.html">Installing Nift</a>
+										<ul>
+											<li><a href="linux_install.html">Linux</a></li>
+											<li><a href="osx_install.html">OSX</a></li>
+											<li><a href="windows_install.html">Windows</a></li>
+										</ul>
+									</li>
+									<li><a href="nift_commands.html">Nift Commands</a></li>
+									<li><a href="content_files.html">Content Files</a></li>
+									<li><a href="template_files.html">Template Files</a></li>
+									<li><a href="displaying_mathematics.html">Displaying Mathematics</a></li>
+									<li><a href="displaying_code_blocks.html">Displaying Code Blocks</a></li>
+									<li>
+										<a href="hosting_your_site.html">Hosting Your Site</a>
+										<ul>
+											<li><a href="bitbucket_hosting.html">BitBucket</a></li>
+											<li><a href="github_hosting.html">GitHub</a></li>
+											<li><a href="gitlab_hosting.html">GitLab</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="">Resources</a>
+								<ul>
+									<li><a href="../resources/examples.html">Examples</a></li>
+									<li><a href="../resources/get_started.html">Get Started</a></li>
+									<li><a href="../resources/links.html">Links</a></li>
+									<li><a href="../resources/nift_tutorial.html">Nift Tutorial</a></li>
+									<li><a href="../resources/project_suggestions.html">Project Suggestions</a></li>
+									<li><a href="../resources/templates.html">Templates</a></li>
+								</ul>
+							</li>
+							<li><a href="../support.html">Support</a></li>
+						</ul>
+					</nav>
+				</noselect>
+			</section>
+
+		    <!-- Main -->
+		    <section id="main" class="wrapper style2">
+		    	<div class="title">GitHub Hosting</div>
+		    	<div class="container">
+		    		<!-- Features -->
+		    		<section id="features">
+		    			<header class="style1">
+		    				<h2>How to host a website on GitHub</h2>
+		    			</header>
+		    
+		    			<div class="content">
+		    				<h3>
+		    					Free hosting on GitHub
+		    				</h3>
+		    
+		    
+		    				<p>
+		    					Note if you have any dyanmic pages (eg. are using php) then you will need to use an alternative for hosting.
+		    				</p>
+		    
+		    				<p>
+		    					Information on GitHub pages may be found <a href="https://pages.github.com/">here</a>, <a href="https://help.github.com/en/categories/github-pages-basics">here</a> and <a href="https://guides.github.com/features/pages/">here</a>.
+		    				</p>
+		    
+		    				<h4>
+		    					Importing/Forking an existing website repository
+		    				</h4>
+		    
+		    				<p>
+		    					By far the easiest way to host a website on GitHub is to import or fork an existing site repository from GitHub or any other code sharing platform. See <a href="../resources/templates.html">here</a> for a variety of templates you can use to make websites.
+		    				</p>
+		    
+		    				<h4>
+		    					Simple GitHub setup
+		    				</h4>
+		    					
+		    				<p>
+		    					This section has simple instructions for hosting your site for free on GitHub. Further below are more advanced instructions for setting up the stage directory and site directory as branches in the same repository.
+		    				</p>
+		    
+		    				<h4>
+		    					On GitHub with url <mono>https://<i>username</i>.github.io</mono>
+		    				</h4>
+		    
+		    				<ol>
+		    					<li>
+		    						If you do not already have a GitHub account, you can join <a href="https://github.com/join">here</a>;
+		    					</li>
+		    
+		    					<li>
+		    						If you do not already have Git installed on your computer, you can find installation instructions <a href="https://help.github.com/set-up-git-redirect">here</a>; <br> 
+		    
+		    						<small><u>Note:</u> If you are new to Git and GitHub, do not confuse yourself about authenticating with GitHub from Git. You can follow the rest of these steps and educate yourself later.</small>
+		    					</li>
+		    
+		    					<li>
+		    						Create a new repository called <mono><i>username</i>.github.io</mono>, where <mono><i>username</i></mono> is your GitHub username;
+		    					</li>
+		    
+		    					<li>
+		    						Open a terminal window and change to the directory you would like to store your repository in locally;
+		    					</li>
+		    
+		    					<li>
+		    						Clone a local copy of your new repository by entering <mono>git clone https://github.com/<i>username</i>/<i>username</i>.github.io.git</mono>;
+		    					</li>
+		    
+		    					<li>
+		    						Change into the repository directory by entering <mono>cd <i>username</i>.github.io</mono>;
+		    					</li>
+		    
+		    					<li>
+		    						Copy your site files (anything inside the site directory, not the whole stage directory) into the repository directory;
+		    					</li>
+		    
+		    					<li>
+		    						Enter the following into your terminal window:
+		    						<div align="center" style="margin-top:20px">
+		    							<pre class="inline rounded">
+		    								git status
+		    								git add .
+		    								git commit -m "added site files"
+		    								git push origin master
+		    							</pre>
+		    						</div> <br>
+		    					</li>
+		    
+		    					<li>
+		    						In the repository's settings on GitHub, under GitHub Pages set the source branch to <mono>master branch</mono>;
+		    					</li>
+		    
+		    					<li>
+		    						Your site, with url <mono>https://<i>username</i>.github.io</mono>, should now be hosted and accessible from the internet.
+		    					</li>
+		    				</ol>
+		    					
+		    				<p>
+		    					To update your site, just repeat the steps following (and including) copying the site files into the repository directory.
+		    				</p>
+		    
+		    				<h4>
+		    					On GitHub with url <mono>https://<i>username</i>.github.io/<i>site-name</i></mono>
+		    				</h4>
+		    
+		    				<ol>
+		    					<li>
+		    						If you do not already have a GitHub account, you can join <a href="https://github.com/join">here</a>;
+		    					</li>
+		    
+		    					<li>
+		    						If you do not already have Git installed on your computer, you can find installation instructions <a href="https://help.github.com/set-up-git-redirect">here</a>; <br> 
+		    
+		    						<small><u>Note:</u> If you are new to Git and GitHub, do not confuse yourself about authenticating with GitHub from Git. You can follow the rest of these steps and educate yourself later.</small>
+		    					</li>
+		    
+		    					<li>
+		    						Create a new repository called <mono><i>site-name</i></mono>, you may choose any name you like;
+		    					</li>
+		    
+		    					<li>
+		    						Open a terminal window and change to the directory you would like to store your repository in locally;
+		    					</li>
+		    
+		    					<li>
+		    						Clone a local copy of your new repository by entering <mono>git clone https://github.com/<i>username</i>/<i>site-name</i>.git</mono>, where <mono><i>username</i></mono> is your GitHub username;
+		    					</li>
+		    
+		    					<li>
+		    						Change into the repository directory by entering <mono>cd <i>site-name</i></mono>;
+		    					</li>
+		    
+		    					<li>
+		    						Copy your site files (anything inside the site directory, not the whole stage directory) into the repository directory;
+		    					</li>
+		    
+		    					<li>
+		    						Enter the following into your terminal window:
+		    						<div align="center" style="margin-top:20px">
+		    							<pre class="inline rounded">
+		    								git status
+		    								git add .
+		    								git commit -m "added site files"
+		    								git push origin master
+		    							</pre>
+		    						</div> <br>
+		    					</li>
+		    
+		    					<li>
+		    						In the repository's settings on GitHub, under GitHub Pages set the source branch to <mono>master branch</mono>;
+		    					</li>
+		    
+		    					<li>
+		    						Your site, with url <mono>https://<i>username</i>.github.io/<i>site-name</i></mono>, should now be hosted and accessible from the internet.
+		    					</li>
+		    				</ol>
+		    
+		    				<p>
+		    					To update your site, just repeat the steps following (and including) copying the site files into the repository directory.
+		    				</p>
+		    
+		    
+		    				<h4>
+		    					Advanced GitHub setup
+		    				</h4>
+		    
+		    				<p>
+		    					This section has advanced instructions for hosting your site for free on GitHub. We will setup two branches, one for the stage directory and another for the site directory. Locally we will also have the branch for the site directory inside the branch for the stage directory. This is a little confusing at first, but is super useful once it makes sense.
+		    				</p>
+		    
+		    				<p>
+		    					Once you already have a repository set up for this and you want to make a new local clone I typically (I may add a command to nsm to automate the following at some point):
+		    				</p>
+		    
+		    				<ol>
+		    					<li>clone the repository from GitHub;</li>
+		    					<li>switch to the <mono>master/gh-pages</mono> branch if necessary;</li>
+		    					<li>rename the directory to <mono>site</mono>;</li>
+		    					<li>clone the repository from GitHub again (if the size of your repository is large enough that downloading it twice is slow/tiresome/wasteful then just make a local copy the first time you clone it);</li>
+		    					<li>switch to the <mono>stage</mono> branch if necessary;</li>
+		    					<li>remove the copy of the <mono>site</mono> directory from the <mono>stage</mono> directory/branch and move the <mono>site</mono> directory/branch in to the <mono>stage</mono> directory/branch.</li>
+		    				</ol>
+		    
+		    				<p>
+		    					I would love to know if someone finds an easier way to achieve the same result below.
+		    				</p>
+		    
+		    				<h4>
+		    					On GitHub with url <mono>https://<i>username</i>.github.io</mono>
+		    				</h4>
+		    
+		    				<ol>
+		    					<li>
+		    						If you do not already have a GitHub account, you can join <a href="https://github.com/join">here</a>;
+		    					</li>
+		    
+		    					<li>
+		    						If you do not already have Git installed on your computer, you can find installation instructions <a href="https://help.github.com/set-up-git-redirect">here</a>; <br> 
+		    
+		    						<small><u>Note:</u> If you are new to Git and GitHub, do not confuse yourself about authenticating with GitHub from Git. You can follow the rest of these steps and educate yourself later.</small>
+		    					</li>
+		    
+		    					<li>
+		    						Create a new repository called <mono><i>username</i>.github.io</mono>, where <mono><i>username</i></mono> is your GitHub username;
+		    					</li>
+		    
+		    					<li>
+		    						Open a terminal window and change to the directory you would like to store your repository in locally;
+		    					</li>
+		    
+		    					<li>
+		    						Clone a local copy of your new repository by entering <mono>git clone https://github.com/<i>username</i>/<i>username</i>.github.io.git</mono>;
+		    					</li>
+		    
+		    					<li>
+		    						Change into the repository directory by entering <mono>cd <i>username</i>.github.io</mono>;
+		    					</li>
+		    
+		    					<li>
+		    						Checkout a new branch called <mono>stage</mono> by entering <mono>git checkout -b stage</mono>;
+		    					</li>
+		    
+		    					<li>
+		    						Copy your stage files (anything inside the stage directory, including the site directory) into the repository directory;
+		    					</li>
+		    
+		    					<li>
+		    						Enter the following into your terminal window:
+		    						<div align="center" style="margin-top:20px">
+		    							<pre class="inline rounded">
+		    								git status
+		    								git add .
+		    								git commit -m "setup stage branch"
+		    								git push origin stage
+		    							</pre>
+		    						</div> <br>
+		    					</li>
+		    
+		    					<li>
+		    						Change to the parent of your repository directory by entering <mono>cd ..</mono>
+		    					</li>
+		    
+		    					<li>
+		    						Rename your repository directory from <mono><i>username</i>.github.io</mono> to <mono><i>username</i>.github.io-stage</mono>
+		    					</li>
+		    
+		    					<li>
+		    						Make a second local clone of your repository by again entering <mono>git clone https://github.com/<i>username</i>/<i>username</i>.github.io.git</mono>; 
+		    					</li>
+		    
+		    					<li>
+		    						Change into the second local repository directory by again entering <mono>cd <i>username</i>.github.io</mono>;
+		    					</li>
+		    
+		    					<li>
+		    						Checkout an orphan branch called <mono>master</mono> by entering <mono>git checkout --orphan master</mono>;
+		    					</li>
+		    
+		    					<li>
+		    						Delete everything inside the second local copy of your repository;
+		    					</li>
+		    
+		    					<li>
+		    						Enter <mono>git rm -r .</mono>
+		    					</li>
+		    
+		    					<li>
+		    						Enter <mono>git status and ensure you get:</mono>
+		    						<div align="center" style="margin-top:20px">
+		    							<pre class="inline rounded">
+		    								On branch master
+		    
+		    								Initial commit
+		    
+		    								nothing to commit (create/copy files and use "git add" to track)
+		    							</pre>
+		    						</div><br>
+		    					</li>
+		    
+		    					<li>
+		    						Copy the site files (anything inside the site directory, not the stage directory) from the first local copy of your repository (ie. files in <mono><i>username</i>.github.io-stage/site/</mono>) to the second local copy of your repository (ie. place them in <mono><i>username</i>.github.io</mono>, <u>not</u> <mono><i>username</i>.github.io/site/</mono>);
+		    					</li>
+		    
+		    					<li>
+		    						Enter the following into your terminal window:
+		    						<div align="center" style="margin-top:20px; margin-bottom: 20px">
+		    							<pre class="inline rounded">
+		    								git status
+		    								git add .
+		    								git commit -m "setup master branch"
+		    								git push origin master
+		    							</pre>
+		    						</div> 
+		    					</li>
+		    
+		    					<li>
+		    						In the repository's settings on GitHub, under GitHub Pages set the source branch to <mono>master branch</mono>;
+		    					</li>
+		    
+		    					<li>
+		    						<u>Note:</u> Your site, with url <mono>https://<i>username</i>.github.io</mono>, should now be hosted and accessible from the internet.
+		    					</li>
+		    
+		    					<li>
+		    						Change to the parent of your (second) repository directory by entering <mono>cd ..</mono>
+		    					</li>
+		    
+		    					<li>
+		    						Rename your second repository directory from <mono><i>username</i>.github.io</mono> to <mono>site</mono>
+		    					</li>
+		    
+		    					<li>
+		    						Move your second repository directory, now named <mono>site</mono>, into your first repository directory (replacing the copy of <mono>site</mono> already in the first repository directory);
+		    					</li>
+		    				</ol>
+		    					
+		    				Now from your local repository, you can manage the site/master branch from inside the site directory, and the stage branch from anywhere else inside the repository. Give it a try, I think you will like it!
+		    
+		    
+		    				<h4>
+		    					On GitHub with url <mono>https://<i>username</i>.github.io/<i>site-name</i></mono>
+		    				</h4>
+		    
+		    				<ol>
+		    					<li>
+		    						If you do not already have a GitHub account, you can join <a href="https://github.com/join">here</a>;
+		    					</li>
+		    
+		    					<li>
+		    						If you do not already have Git installed on your computer, you can find installation instructions <a href="https://help.github.com/set-up-git-redirect">here</a>; <br> 
+		    
+		    						<small><u>Note:</u> If you are new to Git and GitHub, do not confuse yourself about authenticating with GitHub from Git. You can follow the rest of these steps and educate yourself later.</small>
+		    					</li>
+		    
+		    					<li>
+		    						Create a new repository called <mono><i>site-name</i></mono>, you may choose any name you like;
+		    					</li>
+		    
+		    					<li>
+		    						Open a terminal window and change to the directory you would like to store your repository in locally;
+		    					</li>
+		    
+		    					<li>
+		    						Clone a local copy of your new repository by entering <mono>git clone https://github.com/<i>username</i>/<i>username</i>/<i>site-name</i>.git</mono>, where <mono><i>username</i></mono> is your GitHub username;
+		    					</li>
+		    
+		    					<li>
+		    						Change into the repository directory by entering <mono>cd <i>site-name</i></mono>;
+		    					</li>
+		    
+		    					<li>
+		    						Checkout a new branch called <mono>stage</mono> by entering <mono>git checkout -b stage</mono>;
+		    					</li>
+		    
+		    					<li>
+		    						Copy your stage files (anything inside the stage directory, including the site directory) into the repository directory;
+		    					</li>
+		    
+		    					<li>
+		    						Enter the following into your terminal window:
+		    						<div align="center" style="margin-top:20px">
+		    							<pre class="inline rounded">
+		    								git status
+		    								git add .
+		    								git commit -m "setup stage branch"
+		    								git push origin stage
+		    							</pre>
+		    						</div> <br>
+		    					</li>
+		    
+		    					<li>
+		    						Change to the parent of your repository directory by entering <mono>cd ..</mono>
+		    					</li>
+		    
+		    					<li>
+		    						Rename your repository directory from <mono><i>site-name</i></mono> to <mono><i>site-name</i>-stage</mono>;
+		    					</li>
+		    
+		    					<li>
+		    						Make a second local clone of your repository by again entering <mono>git clone https://github.com/<i>username</i>/<i>username</i>/<i>site-name</i>.git</mono>; 
+		    					</li>
+		    
+		    					<li>
+		    						Change into the second local repository directory by again entering <mono>cd <i>site-name</i></mono>;
+		    					</li>
+		    
+		    					<li>
+		    						Checkout an orphan branch called <mono>master</mono> by entering <mono>git checkout --orphan master</mono>;
+		    					</li>
+		    
+		    					<li>
+		    						Delete everything inside the second local copy of your repository;
+		    					</li>
+		    
+		    					<li>
+		    						Enter <mono>git rm -r .</mono>
+		    					</li>
+		    
+		    					<li>
+		    						Enter <mono>git status and ensure you get:</mono>
+		    						<div align="center" style="margin-top:20px">
+		    							<pre class="inline rounded">
+		    								On branch gh-pages
+		    
+		    								Initial commit
+		    
+		    								nothing to commit (create/copy files and use "git add" to track)
+		    							</pre>
+		    						</div><br>
+		    					</li>
+		    
+		    					<li>
+		    						Copy the site files (anything inside the site directory, not the stage directory) from the first local copy of your repository (ie. files in <mono><i>site-name</i>-stage/site/</mono>) to the second local copy of your repository (ie. place them in <mono><i>site-name</i></mono>, <u>not</u> <mono><i>site-name</i>/site/</mono>);
+		    					</li>
+		    
+		    					<li>
+		    						Enter the following into your terminal window:
+		    						<div align="center" style="margin-top:20px; margin-bottom: 20px">
+		    							<pre class="inline rounded">
+		    								git status
+		    								git add .
+		    								git commit -m "setup gh-pages branch"
+		    								git push origin master
+		    							</pre>
+		    						</div>
+		    					</li>
+		    
+		    					<li>
+		    						In the repository's settings on GitHub, under GitHub Pages set the source branch to <mono>master branch</mono>;
+		    					</li>
+		    
+		    					<li>
+		    						<u>Note:</u> Your site, with url <mono>https://<i>username</i>.github.io/<i>site-name</i></mono>, should now be hosted and accessible from the internet.
+		    					</li>
+		    
+		    					<li>
+		    						Change to the parent of your (second) repository directory by entering <mono>cd ..</mono>
+		    					</li>
+		    
+		    					<li>
+		    						Rename your second repository directory from <mono><i>site-name</i></mono> to <mono>site</mono>
+		    					</li>
+		    
+		    					<li>
+		    						Move your second repository directory, now named <mono>site</mono>, into your first repository directory (replacing the copy of <mono>site</mono> already in the first repository directory);
+		    					</li>
+		    				</ol>
+		    
+		    				<p>	
+		    					Now from your local repository, you can manage the site/gh-pages branch from inside the site directory, and the stage branch from anywhere else inside the repository. Give it a try, I think you will like it!
+		    				</p>
+		    			</div>
+		    		</section>
+		    	</div>
+		    </section>
+
+			<!-- Highlights -->
+			<!--
+			<section id="highlights" class="wrapper style3">
+				<div class="title">The Endorsements</div>
+				<div class="container">
+					<div class="row aln-center">
+						<div class="col-4 col-12-medium">
+							<section class="highlight">
+								<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+								<h3><a href="#">Aliquam diam consequat</a></h3>
+								<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+								<ul class="actions">
+									<li><a href="#" class="button style1">Learn More</a></li>
+								</ul>
+							</section>
+						</div>
+						<div class="col-4 col-12-medium">
+							<section class="highlight">
+								<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+								<h3><a href="#">Nisl adipiscing sed lorem</a></h3>
+								<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+								<ul class="actions">
+									<li><a href="#" class="button style1">Learn More</a></li>
+								</ul>
+							</section>
+						</div>
+						<div class="col-4 col-12-medium">
+							<section class="highlight">
+								<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+								<h3><a href="#">Mattis tempus lorem</a></h3>
+								<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+								<ul class="actions">
+									<li><a href="#" class="button style1">Learn More</a></li>
+								</ul>
+							</section>
+						</div>
+					</div>
+				</div>
+			</section>
+			-->
+			
+			<!-- Footer -->
+			<section id="footer" class="wrapper">
+				<div class="title"><img src="../images/nsm-medium.png" width="120" style="margin-top:20px"></div>
+				<div class="container">
+					<div id="copyright">
+						<ul style="margin-top:80px">
+							<li><b>Mirrors:</b></li>
+							<li><a href="https://nift.cc/">Official</a></li>
+							<li><a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a></li>
+							<li><a href="https://nifty-site-manager.github.io/">GitHub</a></li>
+							<li><a href="https://nifty-site-manager.gitlab.io/">GitLab</a></li>
+							<li><a href="https://nifty-site-manager.netlify.com/">Netlify</a></li>
+						</ul> <br>
+			
+						<ul>
+							<li>&copy;&nbsp;2015 - <script>document.write(new Date().getFullYear())</script> <a href="https://nift.cc">Nift</a>.</li><li>Site Design: <a href="http://html5up.net">HTML5 UP</a></li><li>Developer: <a href="https://n-ham.com">Nicholas Ham</a></li>
+						</ul>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<!-- Scripts -->
+		<script src="../assets/js/jquery.min.js"></script>
+		<script src="../assets/js/jquery.dropotron.min.js"></script>
+		<script src="../assets/js/browser.min.js"></script>
+		<script src="../assets/js/breakpoints.min.js"></script>
+		<script src="../assets/js/util.js"></script>
+		<script src="../assets/js/main.js"></script>
+		<script src="../assets/js/process_pre_tags.js"></script>
+    </body>
+</html>
+
+<!--
+	Site Design: Escape Velocity by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->

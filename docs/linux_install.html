@@ -101,24 +101,24 @@
 								<a href="">Documentation</a>
 								<ul>
 									<li>
-										<a href="../docs/installing_nift.html">Installing Nift</a>
+										<a href="installing_nift.html">Installing Nift</a>
 										<ul>
-											<li><a href="../docs/linux_install.html">Linux</a></li>
-											<li><a href="../docs/osx_install.html">OSX</a></li>
-											<li><a href="../docs/windows_install.html">Windows</a></li>
+											<li><a href="linux_install.html">Linux</a></li>
+											<li><a href="osx_install.html">OSX</a></li>
+											<li><a href="windows_install.html">Windows</a></li>
 										</ul>
 									</li>
-									<li><a href="../docs/nift_commands.html">Nift Commands</a></li>
-									<li><a href="../docs/content_files.html">Content Files</a></li>
-									<li><a href="../docs/template_files.html">Template Files</a></li>
-									<li><a href="../docs/displaying_mathematics.html">Displaying Mathematics</a></li>
-									<li><a href="../docs/displaying_code_blocks.html">Displaying Code Blocks</a></li>
+									<li><a href="nift_commands.html">Nift Commands</a></li>
+									<li><a href="content_files.html">Content Files</a></li>
+									<li><a href="template_files.html">Template Files</a></li>
+									<li><a href="displaying_mathematics.html">Displaying Mathematics</a></li>
+									<li><a href="displaying_code_blocks.html">Displaying Code Blocks</a></li>
 									<li>
-										<a href="../docs/hosting_your_site.html">Hosting Your Site</a>
+										<a href="hosting_your_site.html">Hosting Your Site</a>
 										<ul>
-											<li><a href="../docs/bitbucket_hosting.html">BitBucket</a></li>
-											<li><a href="../docs/github_hosting.html">GitHub</a></li>
-											<li><a href="../docs/gitlab_hosting.html">GitLab</a></li>
+											<li><a href="bitbucket_hosting.html">BitBucket</a></li>
+											<li><a href="github_hosting.html">GitHub</a></li>
+											<li><a href="gitlab_hosting.html">GitLab</a></li>
 										</ul>
 									</li>
 								</ul>
@@ -126,12 +126,12 @@
 							<li>
 								<a href="">Resources</a>
 								<ul>
-									<li><a href="examples.html">Examples</a></li>
-									<li><a href="get_started.html">Get Started</a></li>
-									<li><a href="links.html">Links</a></li>
-									<li><a href="nift_tutorial.html">Nift Tutorial</a></li>
-									<li><a href="project_suggestions.html">Project Suggestions</a></li>
-									<li><a href="templates.html">Templates</a></li>
+									<li><a href="../resources/examples.html">Examples</a></li>
+									<li><a href="../resources/get_started.html">Get Started</a></li>
+									<li><a href="../resources/links.html">Links</a></li>
+									<li><a href="../resources/nift_tutorial.html">Nift Tutorial</a></li>
+									<li><a href="../resources/project_suggestions.html">Project Suggestions</a></li>
+									<li><a href="../resources/templates.html">Templates</a></li>
 								</ul>
 							</li>
 							<li><a href="../support.html">Support</a></li>
@@ -142,67 +142,89 @@
 
 		    <!-- Main -->
 		    <section id="main" class="wrapper style2">
-		    	<div class="title">Project Suggestions</div>
+		    	<div class="title">Linux Install</div>
 		    	<div class="container">
 		    		<!-- Features -->
 		    		<section id="features">
 		    			<header class="style1">
-		    				<h2>Suggestions for projects involving Nift</h2>
+		    				<h2>How to install Nift on Linux</h2>
 		    			</header>
 		    
-		    			<!-- Image -->
-		    			<center>
-		    				<img src="../images/to_the_moon.svg" width=300 style="margin-bottom:40px">
-		    			</center>
-		    
 		    			<div class="content">
+		    				<h2>
+		    					Linux installation using <mono>Snap</mono>
+		    				</h2>
+		    
 		    				<p>
-		    					There are a number of different projects you can undertake which will help you get a better idea of how <mono>Nift</mono> works. For example you could make:
-		    					<ul style="text-indent:30px">
-		    						<li>an example website to be listed on the <a href="examples.html">examples</a> page; or</li>
-		    						<li>a site repository template to be listed on the <a href="templates.html">templates</a> page.</li>
-		    					</ul>
+		    					You can install <mono>Nift</mono> on linux using the <mono>Snap</mono> package manager, for instructions see <a href="https://snapcraft.io/nsm">here</a>. Alternatively first install <mono>snapd</mono>, eg. <mono>sudo apt-get install snapd</mono> on Ubuntu, then enter:
+		    				</p>
+		    
+		    				<div align="center" style="margin-top:-20px; margin-bottom: 20px">
+		    					<pre>
+		    						snap install nsm
+		    						sudo snap alias nsm nift
+		    					</pre>
+		    				</div>
+		    
+		    				<p>
+		    					To uninstall <mono>Nift</mono> enter <mono>sudo snap unalias nift</mono> and <mono>snap remove nsm</mono>.
+		    				</p>
+		    
+		    				<h2>Installing <mono>Nift</mono> on linux from source</h2>
+		    
+		    				<h3>Installing a <mono>c++</mono> compiler</h3>
+		    
+		    				<p>
+		    					If you do not already have a <mono>c++</mono> compiler then you will need to install one.
 		    				</p>
 		    
 		    				<p>
-		    					Below are additional suggestions if you are short on ideas of things to try while learning how to use <mono>Nift</mono>:
-		    					<ul>
-		    						<li>Set up a personal site (if you are running short on content, starting with what you do have and figuring out what you would like to add can be a great way to figure out what to focus on and put your efforts towards in to the future);</li>
-		    						<li>Set up a fan site, it could be based on something you are a fan of, a team you are a fan of, a sport/hobby/lifestyle you are a fan of etc.;</li>
-		    						<li>Set up an education based website on something you are knowledgeable/interested on/in or would like to become knowledgeable on;
-		    						<li>Set up a team/hobby/interest site;</li>
-		    						<li>Set up templates for the kinds of sites made above and figure out how to share them in a good way, see the resources/templates page for more information and get in contact;</li>
-		    						<li>Learn how to set up a site using netlify with a custom domain;</li>
-		    						<li>Learn how to set up custom email addresses for custom domains (see useful links);</li>
-		    						<li>Google for different kinds of javascript libraries and get experience playing around with them;</li>
-		    						<li>Learn how to add paypal donation links to webpages;</li>
-		    						<li>Hire a cheap server, install a LAMP stack and see if you can get a basic dynamic webpage up and running;</li>
-		    						<li>Learn how to make dynamic websites with form submissions, etc.;</li>
-		    						<li>See if you can find an ide you like where you can add <mono>nsm build-updated</mono> as one of the build commands and set it to open the home page when you tell the ide to view the 'project';</li>
-		    						<li>Try out different forum software like myBB and phpBB;</li>
-		    						<li>Figure out all the different ways you can think of to test <mono>Nift</mono>, including writing programs to test <mono>Nift</mono> if that is within your skillset, all feedback here is welcome at <mono>testing@nifty-site-manager.com</mono>, especially if you can find a way to 'break' <mono>Nift</mono>;
-		    						<li>Learn and play with other site managers so you have a better understanding of site managers in general, and have some idea about the differences between the different site managers, maybe a different site manager will work better for you and/or your needs?;</li>
-		    						<li>Figure out all the different ways you can think of to compare <mono>Nift</mono> to other site managers, including writing programs to compare site managers if that is within your skillset, all feedback here is welcome at <mono>testing@nifty-site-manager.com</mono>;</li>
-		    						<li>Figure out all the different ways you can think of to make it look like you used <mono>Nift</mono> when you used a different site manager and vice versa;</li>
-		    						<li>Try tinkering with the source code for <mono>Nift</mono>, see if you can come up with any features you would like and try implementing them, or see if you can understand different functions throughout the codebase, and maybe even try writing your own versions of functions along with tests to test them;</li>
-		    						<li>Make tools using <mono>Nift</mono>, both tools that require <mono>Nift</mono> to be used and do not, tools that help beginners and/or advanced users, along with users front-of-house and/or behind the scenes;</li>
-		    						<li>Make a site for making logos;</li>
-		    						<li>Make a site like BitBucket/GitHub/GitLab using <mono>Nift</mono>;</li>
-		    						<li>Make an online email platform using <mono>Nift</mono>, preferably one you can set up sending emails from custom domains using smtp servers from somewhere like mailgun/sendpulse/etc.;</li>
-		    						<li>Make a betting website, and/or a casino website;</li>
-		    						<li>Make a social networking site like FaceBook, LinkedIn, Myspace, etc.;</li>
-		    						<li>Make a post aggregation site like Digg, Reddit, Voat, etc.;</li>
-		    						<li>Use nifty site manager to make templates for blogs, forums, etc.;</li>
-		    						<li>Make your own level structure for people to learn and understand <mono>Nift</mono>, or be tested on their understanding of <mono>Nift</mono>, or for a round at a quiz night, etc. etc.;</li>
-		    						<li>Make video games using <mono>Nift</mono>;</li>
-		    						<li>Make a website for people to develop video games for, preferably having them also use <mono>Nift</mono> to develop their video games;</li>
-		    						<li>Make cartoons using <mono>Nift</mono>;</li>
-		    						<li>Make a website for people to develop cartoons for, preferably having them also use <mono>Nift</mono> to develop their cartoons;</li>
-		    						<li>Make comics using <mono>Nift</mono>;</li>
-		    						<li>Make a website for people to develop comics for, preferably having them also use <mono>Nift</mono> to develop their comics;</li>
-		    						<li>Make animations using <mono>Nift</mono>;</li>
-		    						<li>Make a website for people to develop animations for, preferably having them also use <mono>Nift</mono> to develop their animations.</li>
-		    					</ul>
+		    					Use your package manager to install <mono>build-essential</mono>. For example on Ubuntu, run <mono>sudo apt-get install build-essential</mono> from a terminal window. 
+		    				</p>
+		    
+		    				<br>
+		    
+		    				<h3>Installing <mono>Nift</mono></h3>
+		    
+		    				Download <a href="https://gitlab.com/nifty-site-manager/nsm/repository/master/archive.zip">nsm-master-*.zip</a>, then follow these steps to compile and install:
+		    
+		    				<ol>
+		    					<li>
+		    						Extract <mono>nsm-master-*</mono> from <mono>nsm-master-*.zip</mono>;
+		    					</li>
+		    					<li>
+		    						Open a terminal window and change directory to <mono>nsm-master-*</mono>;
+		    					</li>
+		    					<li>
+		    						Compile <mono>nsm</mono> by running <mono>make</mono>;
+		    					</li>
+		    					<li>
+		    						Install <mono>nsm</mono> by running <mono>sudo make linux-install</mono> (note - you will need to enter your password) (note - you may need to open a new terminal window for nsm installation to be recognised);
+		    					</li>
+		    					<li>
+		    						Delete both the file <mono>nsm-master-*.zip</mono> and the directory <mono>nsm-master-*</mono> containing the uncompiled code. 
+		    					</li>
+		    				</ol>
+		    
+		    				<p>
+		    					For example, if you unzipped <mono>nsm-master-*</mono> inside your downloads folder, then steps 1-4 are achieved by entering the following into your terminal window:
+		    
+		    					<div align="center">
+		    						<pre class="prettyprint inline rounded lang-bsh">
+		    							cd ~/Downloads/nsm-master-*
+		    							make
+		    							sudo make linux-install
+		    						</pre>
+		    					</div>
+		    				</p>
+		    
+		    				<p>
+		    					You can use <mono>make linux-gedit-highlighting</mono> on top of <mono>make install</mono> during step 3 to get <mono>gedit</mono> (do you gedit yet?) to automatically use html syntax highlighting for both <mono>*.content</mono> and <mono>*.template</mono> files.
+		    				</p>
+		    
+		    				<h3>Uninstalling <mono>Nift</mono></h3>
+		    				<p>
+		    					Should you ever want to remove <mono>nsm</mono> from your machine, simply run <mono>sudo make linux-uninstall</mono>.
 		    				</p>
 		    			</div>
 		    		</section>

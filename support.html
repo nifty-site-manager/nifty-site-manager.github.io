@@ -1,151 +1,266 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+
+<!--
+	Official Nift Website
+
+	Nift is a cross-platform open source website generator developed from the ground up in C++.
+-->
+
 <html>
-	<head>
-		<title>
-			Nift - support
-		</title>
-		
-		<link rel='stylesheet' type='text/css' href='css/footer.css'>
-		<link rel='stylesheet' type='text/css' href='css/menu.css'>
-		<link rel='stylesheet' type='text/css' href='css/pagestyle.css'>
-		<link rel='stylesheet' type='text/css' href='css/pre.css'>
-		<link rel='icon' type='image/png' href='files/favicon.ico'>
-		
-		<meta name='viewport' content='width=device-width, initial-scale=0.75, maximum-scale=1.0'>
-		
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-62165905-2"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-		
-		  gtag('config', 'UA-62165905-2');
-		</script>
-		
-		<!-- uses google-code-prettify for syntax highlighting 
-		     see https://github.com/google/code-prettify/ for more info -->
-		<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
-		
-		<!-- uses Font Awesome for vector icons and social logos -->
-		<script src="https://kit.fontawesome.com/b51e6952ec.js"></script>
-		
-		<!-- uses MathJax CDC for LaTeX support
-		     see http://docs.mathjax.org/en/latest/start.html for more info -->
-		<script type="text/x-mathjax-config">
-			MathJax.Hub.Config
-			({
-				extensions: ["tex2jax.js"],
-		    	jax: ["input/TeX", "output/HTML-CSS"],
-				tex2jax: 
-				{
-					inlineMath: [['$','$'], ['\\(','\\)']],
-					displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-					processEscapes: true
-				},
-				"HTML-CSS": { availableFonts: ["MathJax TeX"] }
-			});
-		</script>
-		<script type="text/javascript" 
-			    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js">
-		</script>
-		
-		<!-- hack redirecting to a secure protocol when users 
-		     visit domain using an insecure protocol -->
-		<script>
-			var host = "nifty-site-manager.gitlab.io";
-			if ((host == window.location.host) && (window.location.protocol != "https:"))
-				window.location.protocol = "https";	
-		</script>
-	</head>
+    <head>
+        <title>Nift</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="assets/css/pagestyle.css">
+        <link rel="stylesheet" href="assets/css/pre.css">
+        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-62165905-2"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'UA-62165905-2');
+        </script>
+        
+        <!-- uses google-code-prettify for syntax highlighting 
+             see https://github.com/google/code-prettify/ for more info -->
+        <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+        
+        <!-- uses Font Awesome for vector icons and social logos -->
+        <script src="https://kit.fontawesome.com/b51e6952ec.js"></script>
+        
+        <!-- uses MathJax CDC for LaTeX support
+             see http://docs.mathjax.org/en/latest/start.html for more info -->
+        <script type="text/x-mathjax-config">
+        	MathJax.Hub.Config
+        	({
+        		extensions: ["tex2jax.js"],
+            	jax: ["input/TeX", "output/HTML-CSS"],
+        		tex2jax: 
+        		{
+        			inlineMath: [['$','$'], ['\\(','\\)']],
+        			displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        			processEscapes: true
+        		},
+        		"HTML-CSS": { availableFonts: ["MathJax TeX"] }
+        	});
+        </script>
+        <script type="text/javascript" 
+        	    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js">
+        </script>
+        
+        <!-- hack redirecting to a secure protocol when users 
+             visit domain using an insecure protocol -->
+        <script>
+        	var host = "nifty-site-manager.gitlab.io";
+        	if ((host == window.location.host) && (window.location.protocol != "https:"))
+        		window.location.protocol = "https";	
+        </script>
+    </head>
+    <body class="is-preload">
+		<div id="page-wrapper">
+			<!-- Header -->
+			<section id="header" class="wrapper">
+			
+				<!-- Logo -->
+				<div id="logo">
+					<noselect>
+					<a href="index.html"><img src="images/NIFT.png" width=250></a><br>
+					<!--<a href="index.html"><img src="images/nifty-site-manager.png" width=250></a>-->
+			
+					<p style="margin-bottom:0px">
+						<a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; 
+						<a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a> &nbsp; 
+						<a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a> &nbsp; 
+						<a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a> &nbsp; 
+						<a href="https://old.reddit.com/r/nift" title="Reddit" class="reddit"><i class="fab fa-reddit-square fa-2x"></i></a> &nbsp; 
+						<a href="https://twitter.com/nifty_site_man" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a> &nbsp; 
+						<a href="https://nifty-site-manager.teemill.com/" title="TeeMill" class="teemill"><i class="fas fa-tshirt fa-2x"></i></a> &nbsp; 
+						<a href="https://www.redbubble.com/people/niftysiteman/works/39141154-nifty-site-manager?asc=u" title="RedBubble" class="discord"><i class="fas fa-shopping-bag fa-2x"></i></a>
+					</p>
+			
+					<p>A cross-platform open source website generator</p>
+			
+					<p>
+						<a href="https://chocolatey.org/packages/nsm"><img src="images/chocolatey.svg" height="40px" alt="Get it from the Chocolatey store" title="Windows"></a> &nbsp;
+						<!--<a href="https://flathub.org/apps/details/com.n-ham.nsm"><img src="images/flathub.png" height="40px" alt="Get it from the FlatHub store" title="Linux"></a> &nbsp;-->
+						<a href="https://snapcraft.io/nsm"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" height="40px" alt="Get it from the Snap Store" title="Linux"></a>
+					</p>
+					</noselect>
+				</div>
+			
+				<!-- Nav -->
+				<noselect>
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li>
+								<a href="">Documentation</a>
+								<ul>
+									<li>
+										<a href="docs/installing_nift.html">Installing Nift</a>
+										<ul>
+											<li><a href="docs/linux_install.html">Linux</a></li>
+											<li><a href="docs/osx_install.html">OSX</a></li>
+											<li><a href="docs/windows_install.html">Windows</a></li>
+										</ul>
+									</li>
+									<li><a href="docs/nift_commands.html">Nift Commands</a></li>
+									<li><a href="docs/content_files.html">Content Files</a></li>
+									<li><a href="docs/template_files.html">Template Files</a></li>
+									<li><a href="docs/displaying_mathematics.html">Displaying Mathematics</a></li>
+									<li><a href="docs/displaying_code_blocks.html">Displaying Code Blocks</a></li>
+									<li>
+										<a href="docs/hosting_your_site.html">Hosting Your Site</a>
+										<ul>
+											<li><a href="docs/bitbucket_hosting.html">BitBucket</a></li>
+											<li><a href="docs/github_hosting.html">GitHub</a></li>
+											<li><a href="docs/gitlab_hosting.html">GitLab</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="">Resources</a>
+								<ul>
+									<li><a href="resources/examples.html">Examples</a></li>
+									<li><a href="resources/get_started.html">Get Started</a></li>
+									<li><a href="resources/links.html">Links</a></li>
+									<li><a href="resources/nift_tutorial.html">Nift Tutorial</a></li>
+									<li><a href="resources/project_suggestions.html">Project Suggestions</a></li>
+									<li><a href="resources/templates.html">Templates</a></li>
+								</ul>
+							</li>
+							<li><a href="support.html">Support</a></li>
+						</ul>
+					</nav>
+				</noselect>
+			</section>
 
-	<body>
-		<div class="header" id="header">
-			<noselect>
-				<img class="logo" src="files/NIFT.png" width="200px"><br>
-		
-				<img class="logo" src="files/nifty-site-manager.png" width="200px" style="margin-top:0px; margin-bottom:-5px">
-		
-				<p style="margin-bottom:0px">
-					<noselect><a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a> &nbsp; <a href="https://old.reddit.com/r/nift" title="Reddit" class="reddit"><i class="fab fa-reddit-square fa-2x"></i></a> &nbsp; <a href="https://twitter.com/nifty_site_man" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a> &nbsp; <a href="https://nifty-site-manager.teemill.com/" title="TeeMill" class="teemill"><i class="fas fa-tshirt fa-2x"></i></a> &nbsp; <a href="https://www.redbubble.com/people/niftysiteman/works/39141154-nifty-site-manager?asc=u" title="RedBubble" class="discord"><i class="fas fa-shopping-bag fa-2x"></i></a></noselect>
-				</p>
-		
-				<a href="index.html" class="header_item">Home</a>
-				<a href="documentation/installing_nsm.html" class="header_item">Documentation</a>
-				<a href="resources/examples.html" class="header_item">Resources</a>
-				<a href="support.html" class="header_item">Support</a>
-			</noselect>
+		    <!-- Main -->
+		    <section id="main" class="wrapper style2">
+		    	<div class="title">Support</div>
+		    	<div class="container">
+		    		<!-- Features -->
+		    		<section id="features">
+		    			<header class="style1">
+		    				<h2>Get support and support Nift</h2>
+		    			</header>
+		    
+		    			<!-- Image -->
+		    			<center>
+		    				<img src="images/active_support.svg" width=300 style="margin-bottom:40px">
+		    			</center>
+		    
+		    			<div class="content">
+		    				<p>
+		    					If you have found a bug or would like to request a feature with <mono>Nift</mono> then do so through one of the official <mono>Nift</mono> repositories on <a href="https://bitbucket.org/nifty-site-manager/nsm/src/master/">BitBucket</a>, <a href="https://github.com/nifty-site-manager/nsm">GitHub</a> or <a href="https://gitlab.com/nifty-site-manager/nsm">GitLab</a>.
+		    				</p>
+		    
+		    				<p>
+		    					If you have found a typo or would like to suggest a change to the <mono>Nift</mono> site then do so through one of the <mono>Nift</mono> site repositories on <a href="https://bitbucket.org/nifty-site-manager/nifty-site-manager.bitbucket.io/src/master/">BitBucket</a>, <a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">GitHub</a> or <a href="https://gitlab.com/nifty-site-manager/nifty-site-manager.gitlab.io">GitLab</a>.
+		    				</p>
+		    
+		    				<p>
+		    					If you would like to contribute financially, for example so that people might be able to afford the time it takes to develop more features or fix any bugs that arise, there is a PayPal donation link below:
+		    
+		    					<center>	
+		    						<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+		    							<input type="hidden" name="cmd" value="_s-xclick" />
+		    							<input type="hidden" name="hosted_button_id" value="W9Q3X66Y9U286" />
+		    							<input type="image" src="https://www.paypalobjects.com/en_AU/i/btn/btn_donate_SM.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+		    							<img alt="" border="0" src="https://www.paypal.com/en_AU/i/scr/pixel.gif" width="1" height="1" />
+		    						</form>
+		    					</center>
+		    				</p>
+		    
+		    				<p>
+		    					If you would like to discuss your experience with <mono>Nift</mono> or ask questions to more than just the developer, you can do so using the official <a href="https://discord.gg/St8QXTG">Discord</a> or official <a href="https://old.reddit.com/r/nift">Subreddit</a>. We also have the Twitter tag <mono><b><a href="https://twitter.com/nifty_site_man">@nifty_site_man</a></b></mono>.
+		    				</p>
+		    			</div>
+		    		</section>
+		    	</div>
+		    </section>
+
+			<!-- Highlights -->
+			<!--
+			<section id="highlights" class="wrapper style3">
+				<div class="title">The Endorsements</div>
+				<div class="container">
+					<div class="row aln-center">
+						<div class="col-4 col-12-medium">
+							<section class="highlight">
+								<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+								<h3><a href="#">Aliquam diam consequat</a></h3>
+								<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+								<ul class="actions">
+									<li><a href="#" class="button style1">Learn More</a></li>
+								</ul>
+							</section>
+						</div>
+						<div class="col-4 col-12-medium">
+							<section class="highlight">
+								<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+								<h3><a href="#">Nisl adipiscing sed lorem</a></h3>
+								<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+								<ul class="actions">
+									<li><a href="#" class="button style1">Learn More</a></li>
+								</ul>
+							</section>
+						</div>
+						<div class="col-4 col-12-medium">
+							<section class="highlight">
+								<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+								<h3><a href="#">Mattis tempus lorem</a></h3>
+								<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+								<ul class="actions">
+									<li><a href="#" class="button style1">Learn More</a></li>
+								</ul>
+							</section>
+						</div>
+					</div>
+				</div>
+			</section>
+			-->
+			
+			<!-- Footer -->
+			<section id="footer" class="wrapper">
+				<div class="title"><img src="images/nsm-medium.png" width="120" style="margin-top:20px"></div>
+				<div class="container">
+					<div id="copyright">
+						<ul style="margin-top:80px">
+							<li><b>Mirrors:</b></li>
+							<li><a href="https://nift.cc/">Official</a></li>
+							<li><a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a></li>
+							<li><a href="https://nifty-site-manager.github.io/">GitHub</a></li>
+							<li><a href="https://nifty-site-manager.gitlab.io/">GitLab</a></li>
+							<li><a href="https://nifty-site-manager.netlify.com/">Netlify</a></li>
+						</ul> <br>
+			
+						<ul>
+							<li>&copy;&nbsp;2015 - <script>document.write(new Date().getFullYear())</script> <a href="https://nift.cc">Nift</a>.</li><li>Site Design: <a href="http://html5up.net">HTML5 UP</a></li><li>Developer: <a href="https://n-ham.com">Nicholas Ham</a></li>
+						</ul>
+					</div>
+				</div>
+			</section>
 		</div>
 
-		<div class="content">
-			<h3>
-				Support
-			</h3>
-			
-			<p>
-				If you have found a bug or would like to request a feature with <mono>Nift</mono> then do so through one of the official <mono>Nift</mono> repositories on <a href="https://bitbucket.org/nifty-site-manager/nsm/src/master/">BitBucket</a>, <a href="https://github.com/nifty-site-manager/nsm">GitHub</a> or <a href="https://gitlab.com/nifty-site-manager/nsm">GitLab</a>.
-			</p>
-			
-			<div style="float:left; max-width:40%; margin-left:20px">
-				<img src="files/active_support.svg" width=300>
-			</div>
-			
-			<p>
-				If you have found a typo or would like to suggest a change to the <mono>Nift</mono> site then do so through one of the <mono>Nift</mono> site repositories on <a href="https://bitbucket.org/nifty-site-manager/nifty-site-manager.bitbucket.io/src/master/">BitBucket</a>, <a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">GitHub</a> or <a href="https://gitlab.com/nifty-site-manager/nifty-site-manager.gitlab.io">GitLab</a>.
-			</p>
-			
-			<p>
-				If you would like to contribute financially, for example so that people might be able to afford the time it takes to develop more features or fix any bugs that arise, there is a PayPal donation link below:
-			
-				<center>	
-					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-						<input type="hidden" name="cmd" value="_s-xclick" />
-						<input type="hidden" name="hosted_button_id" value="W9Q3X66Y9U286" />
-						<input type="image" src="https://www.paypalobjects.com/en_AU/i/btn/btn_donate_SM.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-						<img alt="" border="0" src="https://www.paypal.com/en_AU/i/scr/pixel.gif" width="1" height="1" />
-					</form>
-				</center>
-			</p>
-			
-			<p>
-				If you would like to discuss your experience with <mono>Nift</mono> or ask questions to more than just the developer, you can do so using the official <a href="https://discord.gg/St8QXTG">Discord</a> or official <a href="https://old.reddit.com/r/nift">Subreddit</a>. We also have the Twitter tag <mono><b><a href="https://twitter.com/nifty_site_man">@nifty_site_man</a></b></mono>.
-			</p>
-		</div>
-
-		<div class="footer">
-			<div class="footer_text"><center><img src="files/nsm.png" width="120"></center></div>
-		
-			<noselect>
-				<p style="margin-top:2px">
-					<b>Mirrors:</b> [<a href="https://nift.cc/">Official</a>] [<a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a>] [<a href="https://nifty-site-manager.github.io/">GitHub</a>] [<a href="https://nifty-site-manager.gitlab.io/">GitLab</a>] [<a href="https://nifty-site-manager.netlify.com/">Netlify</a>]
-				</p>
-		
-				<p>
-					<a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; <a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a> &nbsp; <a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a>
-				</p>
-		
-				<p>
-					<!--<a href="https://formulae.brew.sh/formula/nsm"><img src="files/homebrew.png" height="40px" alt="Get it from the Homebrew store" title="OSX/Linux"></a> &nbsp;-->
-					<a href="https://chocolatey.org/packages/nsm"><img src="files/chocolatey.svg" height="40px" alt="Get it from the Chocolatey store" title="Windows"></a> &nbsp;
-					<!--<a href="https://flathub.org/apps/details/com.n-ham.nsm"><img src="files/flathub.png" height="40px" alt="Get it from the FlatHub store" title="Linux"></a> &nbsp;-->
-					<a href="https://snapcraft.io/nsm"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" height="40px" alt="Get it from the Snap Store" title="Linux"></a>
-				</p>
-		
-				<div style="margin-top:-5px;margin-bottom:15px"><small>&copy;&nbsp;2015 - <script>document.write(new Date().getFullYear())</script> <a href="https://n-ham.com/">Nicholas Ham</a></small></div>
-			</noselect>
-		</div>
-
-		<script src='js/process_pre_tags.js'></script>	
-	</body>
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/process_pre_tags.js"></script>
+    </body>
 </html>
 
-<!-- 
-	information on how to easily make and host a site similar to
-	this may be found at any of the following mirrors:
-		* https://nift.cc/
-		* https://nifty-site-manager.com/ 
-		* https://nifty-site-manager.bitbucket.io/ 
-		* https://nifty-site-manager.github.io/ 
-		* https://nifty-site-manager.gitlab.io/ 
-		* https://nifty-site-manager.netlify.com/
+<!--
+	Site Design: Escape Velocity by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->

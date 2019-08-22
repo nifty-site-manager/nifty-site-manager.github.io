@@ -1,334 +1,422 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+
+<!--
+	Official Nift Website
+
+	Nift is a cross-platform open source website generator developed from the ground up in C++.
+-->
+
 <html>
-	<head>
-		<title>
-			Nift - links
-		</title>
-		
-		<link rel='stylesheet' type='text/css' href='../css/footer.css'>
-		<link rel='stylesheet' type='text/css' href='../css/menu.css'>
-		<link rel='stylesheet' type='text/css' href='../css/pagestyle.css'>
-		<link rel='stylesheet' type='text/css' href='../css/pre.css'>
-		<link rel='icon' type='image/png' href='../files/favicon.ico'>
-		
-		<meta name='viewport' content='width=device-width, initial-scale=0.75, maximum-scale=1.0'>
-		
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-62165905-2"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-		
-		  gtag('config', 'UA-62165905-2');
-		</script>
-		
-		<!-- uses google-code-prettify for syntax highlighting 
-		     see https://github.com/google/code-prettify/ for more info -->
-		<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
-		
-		<!-- uses Font Awesome for vector icons and social logos -->
-		<script src="https://kit.fontawesome.com/b51e6952ec.js"></script>
-		
-		<!-- uses MathJax CDC for LaTeX support
-		     see http://docs.mathjax.org/en/latest/start.html for more info -->
-		<script type="text/x-mathjax-config">
-			MathJax.Hub.Config
-			({
-				extensions: ["tex2jax.js"],
-		    	jax: ["input/TeX", "output/HTML-CSS"],
-				tex2jax: 
-				{
-					inlineMath: [['$','$'], ['\\(','\\)']],
-					displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-					processEscapes: true
-				},
-				"HTML-CSS": { availableFonts: ["MathJax TeX"] }
-			});
-		</script>
-		<script type="text/javascript" 
-			    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js">
-		</script>
-		
-		<!-- hack redirecting to a secure protocol when users 
-		     visit domain using an insecure protocol -->
-		<script>
-			var host = "nifty-site-manager.gitlab.io";
-			if ((host == window.location.host) && (window.location.protocol != "https:"))
-				window.location.protocol = "https";	
-		</script>
-	</head>
+    <head>
+        <title>Nift</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="../assets/css/main.css">
+        <link rel="stylesheet" href="../assets/css/pagestyle.css">
+        <link rel="stylesheet" href="../assets/css/pre.css">
+        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-62165905-2"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'UA-62165905-2');
+        </script>
+        
+        <!-- uses google-code-prettify for syntax highlighting 
+             see https://github.com/google/code-prettify/ for more info -->
+        <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+        
+        <!-- uses Font Awesome for vector icons and social logos -->
+        <script src="https://kit.fontawesome.com/b51e6952ec.js"></script>
+        
+        <!-- uses MathJax CDC for LaTeX support
+             see http://docs.mathjax.org/en/latest/start.html for more info -->
+        <script type="text/x-mathjax-config">
+        	MathJax.Hub.Config
+        	({
+        		extensions: ["tex2jax.js"],
+            	jax: ["input/TeX", "output/HTML-CSS"],
+        		tex2jax: 
+        		{
+        			inlineMath: [['$','$'], ['\\(','\\)']],
+        			displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        			processEscapes: true
+        		},
+        		"HTML-CSS": { availableFonts: ["MathJax TeX"] }
+        	});
+        </script>
+        <script type="text/javascript" 
+        	    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js">
+        </script>
+        
+        <!-- hack redirecting to a secure protocol when users 
+             visit domain using an insecure protocol -->
+        <script>
+        	var host = "nifty-site-manager.gitlab.io";
+        	if ((host == window.location.host) && (window.location.protocol != "https:"))
+        		window.location.protocol = "https";	
+        </script>
+    </head>
+    <body class="is-preload">
+		<div id="page-wrapper">
+			<!-- Header -->
+			<section id="header" class="wrapper">
+			
+				<!-- Logo -->
+				<div id="logo">
+					<noselect>
+					<a href="../index.html"><img src="../images/NIFT.png" width=250></a><br>
+					<!--<a href="../index.html"><img src="../images/nifty-site-manager.png" width=250></a>-->
+			
+					<p style="margin-bottom:0px">
+						<a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; 
+						<a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a> &nbsp; 
+						<a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a> &nbsp; 
+						<a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a> &nbsp; 
+						<a href="https://old.reddit.com/r/nift" title="Reddit" class="reddit"><i class="fab fa-reddit-square fa-2x"></i></a> &nbsp; 
+						<a href="https://twitter.com/nifty_site_man" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a> &nbsp; 
+						<a href="https://nifty-site-manager.teemill.com/" title="TeeMill" class="teemill"><i class="fas fa-tshirt fa-2x"></i></a> &nbsp; 
+						<a href="https://www.redbubble.com/people/niftysiteman/works/39141154-nifty-site-manager?asc=u" title="RedBubble" class="discord"><i class="fas fa-shopping-bag fa-2x"></i></a>
+					</p>
+			
+					<p>A cross-platform open source website generator</p>
+			
+					<p>
+						<a href="https://chocolatey.org/packages/nsm"><img src="../images/chocolatey.svg" height="40px" alt="Get it from the Chocolatey store" title="Windows"></a> &nbsp;
+						<!--<a href="https://flathub.org/apps/details/com.n-ham.nsm"><img src="../images/flathub.png" height="40px" alt="Get it from the FlatHub store" title="Linux"></a> &nbsp;-->
+						<a href="https://snapcraft.io/nsm"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" height="40px" alt="Get it from the Snap Store" title="Linux"></a>
+					</p>
+					</noselect>
+				</div>
+			
+				<!-- Nav -->
+				<noselect>
+					<nav id="nav">
+						<ul>
+							<li><a href="../index.html">Home</a></li>
+							<li>
+								<a href="">Documentation</a>
+								<ul>
+									<li>
+										<a href="../docs/installing_nift.html">Installing Nift</a>
+										<ul>
+											<li><a href="../docs/linux_install.html">Linux</a></li>
+											<li><a href="../docs/osx_install.html">OSX</a></li>
+											<li><a href="../docs/windows_install.html">Windows</a></li>
+										</ul>
+									</li>
+									<li><a href="../docs/nift_commands.html">Nift Commands</a></li>
+									<li><a href="../docs/content_files.html">Content Files</a></li>
+									<li><a href="../docs/template_files.html">Template Files</a></li>
+									<li><a href="../docs/displaying_mathematics.html">Displaying Mathematics</a></li>
+									<li><a href="../docs/displaying_code_blocks.html">Displaying Code Blocks</a></li>
+									<li>
+										<a href="../docs/hosting_your_site.html">Hosting Your Site</a>
+										<ul>
+											<li><a href="../docs/bitbucket_hosting.html">BitBucket</a></li>
+											<li><a href="../docs/github_hosting.html">GitHub</a></li>
+											<li><a href="../docs/gitlab_hosting.html">GitLab</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="">Resources</a>
+								<ul>
+									<li><a href="examples.html">Examples</a></li>
+									<li><a href="get_started.html">Get Started</a></li>
+									<li><a href="links.html">Links</a></li>
+									<li><a href="nift_tutorial.html">Nift Tutorial</a></li>
+									<li><a href="project_suggestions.html">Project Suggestions</a></li>
+									<li><a href="templates.html">Templates</a></li>
+								</ul>
+							</li>
+							<li><a href="../support.html">Support</a></li>
+						</ul>
+					</nav>
+				</noselect>
+			</section>
 
-	<body>
-		<div class="header" id="header">
-			<noselect>
-				<img class="logo" src="../files/NIFT.png" width="200px"><br>
-		
-				<img class="logo" src="../files/nifty-site-manager.png" width="200px" style="margin-top:0px; margin-bottom:-5px">
-		
-				<p style="margin-bottom:0px">
-					<noselect><a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a> &nbsp; <a href="https://old.reddit.com/r/nift" title="Reddit" class="reddit"><i class="fab fa-reddit-square fa-2x"></i></a> &nbsp; <a href="https://twitter.com/nifty_site_man" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a> &nbsp; <a href="https://nifty-site-manager.teemill.com/" title="TeeMill" class="teemill"><i class="fas fa-tshirt fa-2x"></i></a> &nbsp; <a href="https://www.redbubble.com/people/niftysiteman/works/39141154-nifty-site-manager?asc=u" title="RedBubble" class="discord"><i class="fas fa-shopping-bag fa-2x"></i></a></noselect>
-				</p>
-		
-				<a href="../index.html" class="header_item">Home</a>
-				<a href="../documentation/installing_nsm.html" class="header_item">Documentation</a>
-				<a href="examples.html" class="header_item">Resources</a>
-				<a href="../support.html" class="header_item">Support</a>
-			</noselect>
+		    <!-- Main -->
+		    <section id="main" class="wrapper style2">
+		    	<div class="title">Links</div>
+		    	<div class="container">
+		    		<!-- Features -->
+		    		<section id="features">
+		    			<header class="style1">
+		    				<h2>Links to useful resources when making websites</h2>
+		    			</header>
+		    
+		    			<div class="content">
+		    				<p>
+		    					This page contains links to all sorts of useful resources when making websites with <mono>Nift</mono>, for example hosting options, custom domain registrars, email options, server hiring options, web servers, lists of site managers, cloud storage, code sharing websites, CI services, syntax highlighting options for your websites, adding form and comment sections to websites, Javascript and PHP frameworks, website templates and lots of other useful links.
+		    				</p>
+		    
+		    				<br>
+		    
+		    				<h3>Free Hosting options</h3>
+		    				<h4>static websites</h4>
+		    				<ul>
+		    					<li><a href="https://bitbucket.org">BitBucket</a></li>
+		    					<li><a href="https://github.com">GitHub</a></li>
+		    					<li><a href="https://gitlab.com">GitLab</a></li>
+		    					<li><a href="https://netlify.com">Netlify</a></li>
+		    					<li><a href="https://aws.amazon.com/amplify/console/">Amazon Amplify Console</a></li>
+		    					<li><a href="https://surge.sh/">surge.sh</a></li>
+		    					<li><a href="https://zeit.co/now">ZEIT Now</a></li>
+		    				</ul>
+		    
+		    				<p>
+		    					Also check out <a href="https://www.aerobatic.com/">Aerobatic</a>.
+		    				</p>
+		    
+		    				<h4>dynamic websites and apps</h4>
+		    				<ul>
+		    					<li><a href="https://www.heroku.com/">Heroku</a></li>
+		    				</ul>
+		    
+		    				<h3>Custom domain registrars</h3>
+		    				<!-- you can buy for up to 10 years using namecheap, and have auto renewal from paypal funds-->
+		    				<ul>
+		    					<li><a href="https://www.bluehost.com">BlueHost</a></li>
+		    					<li><a href="https://godaddy.com/">GoDaddy</a></li>
+		    					<li><a href="https://www.hostgator.com">HostGator</a></li>
+		    					<li><a href="https://www.namecheap.com/">NameCheap</a></li>
+		    				</ul>
+		    
+		    				<h3>Email Options</h3>
+		    				The following options can often be used to set up mail forwarding from custom domains to something like AOL, Gmail, Outlook, ProtonMail, Tutanota, Yahoo, Yandex, Zoho etc. (note you can easily set up to send emails from custom domains using Gmail, or you can set up your own mail server on a hired server, see options further below):
+		    				<ul>
+		    					<li><a href="https://www.mailgun.com">MailGun</a></li>
+		    					<li><a href="https://sendgrid.com">SendGrid</a></li>
+		    					<li><a href="https://sendpulse.com">SendPulse</a></li>
+		    				</ul>
+		    
+		    				<h3>Hiring Linux Servers (dynamic websites)</h3>
+		    				<ul>
+		    					<li><a href="https://buyvm.net/">BuyVM</a></li>
+		    					<li><a href="https://joesdatacenter.com/">Joe's Datacenter</a></li>
+		    					<li><a href="https://www.linode.com/">Linode</a></li>
+		    				</ul>
+		    				See also:
+		    				<ul>
+		    					<li><a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)">Lamp Stack</a> (<a href="https://www.linode.com/docs/web-servers/lamp/install-lamp-stack-on-ubuntu-18-04/">Installing a LAMP stack on Ubuntu 18.04</a>)</li>
+		    					<li><a href="https://www.nginx.com/">NGiNX</a></li>
+		    				</ul>
+		    
+		    				<h3>Web Servers</h3>
+		    				<ul>
+		    					<li><a href="https://caddyserver.com/">Caddy</a></li>
+		    					<li><a href="https://www.nginx.com/">NGiNX</a></li>
+		    				</ul>
+		    
+		    				<h3>Site Managers</h3>
+		    				<ul>
+		    					<li><a href="https://www.staticgen.com/">StaticGen</a> - a list of static site generators for JAMstack sites</li>
+		    					<li><a href="https://gitlab.com/pages">Example sites on GitLab Pages</a> - simple example websites for site generators on GitLab</li>
+		    				</ul>
+		    
+		    				<h3>Cloud Storage</h3>
+		    				<ul>
+		    					<li><a href="https://degoo.com/">Degoo</a></li>
+		    					<li><a href="https://www.dropbox.com/">Dropbox</a></li>
+		    					<li><a href="https://www.google.com/drive/">Google Drive</a></li>
+		    					<li><a href="https://pcloud.com/">pCloud</a></li>
+		    					<li><a href="https://rclone.org/">Rclone</a></li>
+		    					<li><a href="https://disk.yandex.com/">Yandex Disk</a></li>
+		    					<li><a href="https://www.zoolz.com/cloud">Zoolz</a></li>
+		    				</ul>
+		    
+		    				<h3>Code sharing</h3>
+		    				<ul>
+		    					<li><a href="https://bitbucket.org">BitBucket</a></li>
+		    					<li><a href="https://github.com">GitHub</a></li>
+		    					<li><a href="https://gitlab.com">GitLab</a></li>
+		    					<li><a href="https://gitea.io/en-us/">Gitea</a></li>
+		    					<li><a href="https://gogs.io/">Gogs</a></li>
+		    				</ul>
+		    
+		    				<h3>Continuous Integration (CI) Services</h3>
+		    				<ul>
+		    					<li><a href="https://travis-ci.org/">Travis CI</a></li>
+		    					<li><a href="https://circleci.com/">CircleCI</a></li>
+		    					<li><a href="https://codeship.com/">CodeShip</a></li>
+		    					<li><a href="https://github.com/ligurio/awesome-ci">List of CI services</a></li>
+		    				</ul>
+		    
+		    				<h3>Syntax Highlighting</h3>
+		    				<ul>
+		    					<li><a href="https://github.com/google/code-prettify">Google Code Prettify</a></li>
+		    					<li><a href="https://prismjs.com/">PrismJS</a></li>
+		    				</ul>
+		    
+		    				<h3>Adding Forms</h3>
+		    				<ul>
+		    					<li><a href="https://www.netlify.com/docs/form-handling/">Netlify form handling</a></li>
+		    					<li><a href="https://www.emailjs.com/">EmailJS</a> - Send email directly from Javascript</li>
+		    					<li><a href="https://formspree.io/">FormSpree</a></li>
+		    					<li><a href="https://formcarry.com/">FormCarry</a></li>
+		    				</ul>
+		    
+		    				<h3>Adding Comments</h3>
+		    				<ul>
+		    					<li><a href="https://disqus.com/">Disqus</a></li>
+		    					<li><a href="https://commento.io/">Commento</a></li>
+		    					<li><a href="https://staticman.net/">Staticman</a></li>
+		    					<li><a href="https://gitalk.github.io/">Gitalk</a></li>
+		    					<li><a href="https://www.talkyard.io/">TalkYard</a></li>
+		    					<li><a href="https://www.npmjs.com/package/react-facebook">Facebook comments</a></li>
+		    				</ul>
+		    
+		    				<h3>Javascript Frameworks</h3>
+		    				<ul>
+		    					<li><a href="https://nodejs.org/en/">NodeJS</a></li>
+		    					<li><a href="https://reactjs.org/">ReactJS</a></li>
+		    					<li><a href="https://angularjs.org/">Angular.js</a></li>
+		    					<li><a href="https://vuejs.org/">Vue.js</a></li>
+		    					<li><a href="https://www.meteor.com/">Meteor.js</a></li>
+		    					<li><a href="https://www.emberjs.com/">Ember.js</a></li>
+		    					<li><a href="http://backbonejs.org/">Backbone.js</a></li>
+		    					<li><a href="https://aurelia.io/">Aurelia.js</a></li>
+		    					<li><a href="https://www.polymer-project.org/">Polymer</a></li>
+		    					<li><a href="https://mithril.js.org/">Mithril.js</a></li>
+		    					<li><a href="https://gruntjs.com/">GruntJS</a></li>
+		    				</ul>
+		    
+		    				<h3>PHP Frameworks</h3>
+		    				<ul>
+		    					<li><a href="https://laravel.com/">Laravel</a></li>
+		    					<li><a href="https://www.codeigniter.com/">CodeIgniter</a></li>
+		    					<li><a href="https://symfony.com/">Symfony</a></li>
+		    					<li><a href="https://cakephp.org/">CakePHP</a></li>
+		    					<li><a href="https://www.yiiframework.com/">Yii</a></li>
+		    					<li><a href="https://framework.zend.com/">Zend</a></li>
+		    					<li><a href="https://phalconphp.com/en">Phalcon</a></li>
+		    					<li><a href="https://phalconphp.com/en/">FuelPHP</a></li>
+		    					<li><a href="https://phpixie.com/">PHPixie</a></li>
+		    					<li><a href="https://www.slimframework.com/">Slim</a></li>
+		    				</ul>
+		    
+		    				<h3>Website Templates</h3>
+		    				<ul>
+		    					<li><a href="https://html5up.net">HTML5 UP</a></li>
+		    					<li><a href="https://pixelarity.com/">Pixelarity</a></li>
+		    					<li><a href="https://www.w3schools.com/w3css/w3css_templates.asp">W3.CSS Templates
+		    				</a></li>
+		    					<li><a href="https://www.free-css.com/free-css-templates">Free CSS Templates</a></li>
+		    				</ul>
+		    
+		    				<h3>Useful links</h3>
+		    				<ul>
+		    					<li><a href="https://internetingishard.com/html-and-css/">HTML & CSS is hard</a> - a friendly web development tutorial for complete beginners</li>
+		    					<li><a href="https://internetingishard.com/html-and-css/responsive-design/">Responsive Design</a> - for learning about responsive design</li>
+		    					<li><a href="https://www.w3schools.com/">w3schools</a> - for learning web technologies online</li>
+		    					<li><a href="https://fonts.google.com/">Google Fonts</a> - making the web more beautiful, fast, and open through great typography.</li>
+		    					<li><a href="https://fontawesome.com/">Font Awesome</a> - vector icons and social logos for your site</li>
+		    					<li><a href="https://icomoon.io">IcoMoon</a> - pixel perfect icon solutions</li>
+		    					<li><a href="https://www.s-ings.com/typicons/">Typicons</a> - free-to-use vector icons embedded in a webfont for easy use in any UI</li>
+		    					<li><a href="https://iconscout.com/">IconScout</a> - high quality icons</li>
+		    					<li><a href="https://undraw.co/">unDraw</a> - open source illustrations for every project you can imagine</li>
+		    					<li><a href="https://designtarget.org/">DesignTarget</a> - resources to make your design workflow easier</li>
+		    					<li><a href="https://github.com/greghub/website-launch-checklist">Website Launch Checklist</a> - things to double check before launching a website.</li>
+		    					<li><a href="https://jsfiddle.net/">JSFiddle</a> - useful for small online examples, often used with question/answer sites or examples on websites</li>
+		    					<li><a href="https://ocw.mit.edu/index.htm">MIT OpenCourseWare (OCW)</a> - MIT OpenCourseWare is a web-based publication of virtually all MIT course content. OCW is open and available to the world and is a permanent MIT activity</li>
+		    					<li><a href="https://www.freeclasstools.com/">Free Class Tools</a> - generate free worksheets for the primary school level</li>
+		    					<li><a href="https://archive.org/">Internet Archive</a> - the Internet Archive is a San Francisco–based nonprofit digital library with the stated mission of "universal access to all knowledge"</li>
+		    					<li><a href="https://pastebin.com/">Paste Bin</a> - a paste tool for text and code</li>
+		    					<li><a href="https://stackoverflow.com/">Stack Overflow</a> - question based</li>
+		    					<li><a href="https://reddit.com/r/webdev/">Reddit's WebDev Subreddit</a> - question/discussion based</li>
+		    					<li><a href="https://reddit.com/r/web_design/">Reddit's Web Design Subreddit</a> - question/discussion based</li>
+		    					<li><a href="https://logojoy.com">Logo Joy</a> - useful for purchasing logos</li>
+		    					<li><a href="https://www.toptal.com/designers/subtlepatterns/">Toptal Subtle Patterns</a> - 'free textures for your next web project' (<a href="https://www.toptal.com/designers/subtlepatterns/tag/dark/">dark patterns</a>)</li>
+		    					<li><a href="https://teemill.com">TeeMill</a> - sell merchandising online</li>
+		    					<li><a href="https://www.teepublic.com/">TeePublic</a> - sell merchandising online</li>
+		    					<li><a href="https://www.redbubble.com/">RedBubble</a> - sell merchandising online</li>
+		    				</ul>
+		    			</div>
+		    		</section>
+		    	</div>
+		    </section>
+
+			<!-- Highlights -->
+			<!--
+			<section id="highlights" class="wrapper style3">
+				<div class="title">The Endorsements</div>
+				<div class="container">
+					<div class="row aln-center">
+						<div class="col-4 col-12-medium">
+							<section class="highlight">
+								<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+								<h3><a href="#">Aliquam diam consequat</a></h3>
+								<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+								<ul class="actions">
+									<li><a href="#" class="button style1">Learn More</a></li>
+								</ul>
+							</section>
+						</div>
+						<div class="col-4 col-12-medium">
+							<section class="highlight">
+								<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+								<h3><a href="#">Nisl adipiscing sed lorem</a></h3>
+								<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+								<ul class="actions">
+									<li><a href="#" class="button style1">Learn More</a></li>
+								</ul>
+							</section>
+						</div>
+						<div class="col-4 col-12-medium">
+							<section class="highlight">
+								<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+								<h3><a href="#">Mattis tempus lorem</a></h3>
+								<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+								<ul class="actions">
+									<li><a href="#" class="button style1">Learn More</a></li>
+								</ul>
+							</section>
+						</div>
+					</div>
+				</div>
+			</section>
+			-->
+			
+			<!-- Footer -->
+			<section id="footer" class="wrapper">
+				<div class="title"><img src="../images/nsm-medium.png" width="120" style="margin-top:20px"></div>
+				<div class="container">
+					<div id="copyright">
+						<ul style="margin-top:80px">
+							<li><b>Mirrors:</b></li>
+							<li><a href="https://nift.cc/">Official</a></li>
+							<li><a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a></li>
+							<li><a href="https://nifty-site-manager.github.io/">GitHub</a></li>
+							<li><a href="https://nifty-site-manager.gitlab.io/">GitLab</a></li>
+							<li><a href="https://nifty-site-manager.netlify.com/">Netlify</a></li>
+						</ul> <br>
+			
+						<ul>
+							<li>&copy;&nbsp;2015 - <script>document.write(new Date().getFullYear())</script> <a href="https://nift.cc">Nift</a>.</li><li>Site Design: <a href="http://html5up.net">HTML5 UP</a></li><li>Developer: <a href="https://n-ham.com">Nicholas Ham</a></li>
+						</ul>
+					</div>
+				</div>
+			</section>
 		</div>
 
-		<div class="content">
-			<div style="float:left">
-				<table id="resources_contents_table" style="margin-top:25px">
-					<thead>
-					    <tr>
-					        <th>Contents</th>
-					    </tr>
-					</thead>
-					<tr>
-						<td><a href="examples.html">examples</a></td>
-					</tr>
-					<tr>
-						<td><a href="get_started.html">get started</a></td>
-					</tr>
-					<tr>
-						<td><a href="links.html">links</a></td>
-					</tr>
-					<tr>
-						<td><a href="nsm_tutorial.html">nsm tutorial</a></td>
-					</tr>
-					<tr>
-						<td><a href="project_suggestions.html">project suggestions</a></td>
-					</tr>
-					<tr>
-						<td><a href="templates.html">templates</a></td>
-					</tr>
-				</table>
-			</div>
-			<div>
-				<h3>Links</h3>
-				<p>
-					This page contains links to all sorts of useful resources when making websites with <mono>Nift</mono>, for example hosting options, custom domain registrars, email options, server hiring options, web servers, lists of site managers, cloud storage, code sharing websites, CI services, syntax highlighting options for your websites, adding form and comment sections to websites, Javascript and PHP frameworks, website templates and lots of other useful links.
-				</p>
-				
-				<br>
-				
-				<h3>Free Hosting options</h3>
-				<h4>static websites</h4>
-				<ul>
-					<li><a href="https://bitbucket.org">BitBucket</a></li>
-					<li><a href="https://github.com">GitHub</a></li>
-					<li><a href="https://gitlab.com">GitLab</a></li>
-					<li><a href="https://netlify.com">Netlify</a></li>
-					<li><a href="https://aws.amazon.com/amplify/console/">Amazon Amplify Console</a></li>
-					<li><a href="https://surge.sh/">surge.sh</a></li>
-					<li><a href="https://zeit.co/now">ZEIT Now</a></li>
-				</ul>
-				
-				<p>
-					Also check out <a href="https://www.aerobatic.com/">Aerobatic</a>.
-				</p>
-				
-				<h4>dynamic websites and apps</h4>
-				<ul>
-					<li><a href="https://www.heroku.com/">Heroku</a></li>
-				</ul>
-				
-				<h3>Custom domain registrars</h3>
-				<!-- you can buy for up to 10 years using namecheap, and have auto renewal from paypal funds-->
-				<ul>
-					<li><a href="https://www.bluehost.com">BlueHost</a></li>
-					<li><a href="https://godaddy.com/">GoDaddy</a></li>
-					<li><a href="https://www.hostgator.com">HostGator</a></li>
-					<li><a href="https://www.namecheap.com/">NameCheap</a></li>
-				</ul>
-				
-				<h3>Email Options</h3>
-				The following options can often be used to set up mail forwarding from custom domains to something like AOL/Gmail/Outlook/ProtonMail/Tutanota/Yahoo/Yandex/Zoho (note you can easily set up to send emails from custom domains using Gmail, or you can set up your own mail server on a hired server, see options further below):
-				<ul>
-					<li><a href="https://www.mailgun.com">MailGun</a></li>
-					<li><a href="https://sendgrid.com">SendGrid</a></li>
-					<li><a href="https://sendpulse.com">SendPulse</a></li>
-				</ul>
-				
-				<h3>Hiring Linux Servers (dynamic websites)</h3>
-				<ul>
-					<li><a href="https://buyvm.net/">BuyVM</a></li>
-					<li><a href="https://joesdatacenter.com/">Joe's Datacenter</a></li>
-					<li><a href="https://www.linode.com/">Linode</a></li>
-				</ul>
-				See also:
-				<ul>
-					<li><a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)">Lamp Stack</a> (<a href="https://www.linode.com/docs/web-servers/lamp/install-lamp-stack-on-ubuntu-18-04/">Installing a LAMP stack on Ubuntu 18.04</a>)</li>
-					<li><a href="https://www.nginx.com/">NGiNX</a></li>
-				</ul>
-				
-				<h3>Web Servers</h3>
-				<ul>
-					<li><a href="https://caddyserver.com/">Caddy</a></li>
-					<li><a href="https://www.nginx.com/">NGiNX</a></li>
-				</ul>
-				
-				<h3>Site Managers</h3>
-				<ul>
-					<li><a href="https://www.staticgen.com/">StaticGen</a> - a list of static site generators for JAMstack sites</li>
-					<li><a href="https://gitlab.com/pages">Example sites on GitLab Pages</a> - simple example websites for site generators on GitLab</li>
-				</ul>
-				
-				<h3>Cloud Storage</h3>
-				<ul>
-					<li><a href="https://degoo.com/">Degoo</a></li>
-					<li><a href="https://www.dropbox.com/">Dropbox</a></li>
-					<li><a href="https://www.google.com/drive/">Google Drive</a></li>
-					<li><a href="https://pcloud.com/">pCloud</a></li>
-					<li><a href="https://rclone.org/">Rclone</a></li>
-					<li><a href="https://disk.yandex.com/">Yandex Disk</a></li>
-					<li><a href="https://www.zoolz.com/cloud">Zoolz</a></li>
-				</ul>
-				
-				<h3>Code sharing</h3>
-				<ul>
-					<li><a href="https://bitbucket.org">BitBucket</a></li>
-					<li><a href="https://github.com">GitHub</a></li>
-					<li><a href="https://gitlab.com">GitLab</a></li>
-					<li><a href="https://gitea.io/en-us/">Gitea</a></li>
-					<li><a href="https://gogs.io/">Gogs</a></li>
-				</ul>
-				
-				<h3>Continuous Integration (CI) Services</h3>
-				<ul>
-					<li><a href="https://travis-ci.org/">Travis CI</a></li>
-					<li><a href="https://circleci.com/">CircleCI</a></li>
-					<li><a href="https://codeship.com/">CodeShip</a></li>
-					<li><a href="https://github.com/ligurio/awesome-ci">List of CI services</a></li>
-				</ul>
-				
-				<h3>Syntax Highlighting</h3>
-				<ul>
-					<li><a href="https://github.com/google/code-prettify">Google Code Prettify</a></li>
-					<li><a href="https://prismjs.com/">PrismJS</a></li>
-				</ul>
-				
-				<h3>Adding Forms</h3>
-				<ul>
-					<li><a href="https://www.netlify.com/docs/form-handling/">Netlify form handling</a></li>
-					<li><a href="https://www.emailjs.com/">EmailJS</a> - Send email directly from Javascript</li>
-					<li><a href="https://formspree.io/">FormSpree</a></li>
-					<li><a href="https://formcarry.com/">FormCarry</a></li>
-				</ul>
-				
-				<h3>Adding Comments</h3>
-				<ul>
-					<li><a href="https://disqus.com/">Disqus</a></li>
-					<li><a href="https://commento.io/">Commento</a></li>
-					<li><a href="https://staticman.net/">Staticman</a></li>
-					<li><a href="https://gitalk.github.io/">Gitalk</a></li>
-					<li><a href="https://www.talkyard.io/">TalkYard</a></li>
-					<li><a href="https://www.npmjs.com/package/react-facebook">Facebook comments</a></li>
-				</ul>
-				
-				<h3>Javascript Frameworks</h3>
-				<ul>
-					<li><a href="https://nodejs.org/en/">NodeJS</a></li>
-					<li><a href="https://reactjs.org/">ReactJS</a></li>
-					<li><a href="https://angularjs.org/">Angular.js</a></li>
-					<li><a href="https://vuejs.org/">Vue.js</a></li>
-					<li><a href="https://www.meteor.com/">Meteor.js</a></li>
-					<li><a href="https://www.emberjs.com/">Ember.js</a></li>
-					<li><a href="http://backbonejs.org/">Backbone.js</a></li>
-					<li><a href="https://aurelia.io/">Aurelia.js</a></li>
-					<li><a href="https://www.polymer-project.org/">Polymer</a></li>
-					<li><a href="https://mithril.js.org/">Mithril.js</a></li>
-					<li><a href="https://gruntjs.com/">GruntJS</a></li>
-				</ul>
-				
-				<h3>PHP Frameworks</h3>
-				<ul>
-					<li><a href="https://laravel.com/">Laravel</a></li>
-					<li><a href="https://www.codeigniter.com/">CodeIgniter</a></li>
-					<li><a href="https://symfony.com/">Symfony</a></li>
-					<li><a href="https://cakephp.org/">CakePHP</a></li>
-					<li><a href="https://www.yiiframework.com/">Yii</a></li>
-					<li><a href="https://framework.zend.com/">Zend</a></li>
-					<li><a href="https://phalconphp.com/en">Phalcon</a></li>
-					<li><a href="https://phalconphp.com/en/">FuelPHP</a></li>
-					<li><a href="https://phpixie.com/">PHPixie</a></li>
-					<li><a href="https://www.slimframework.com/">Slim</a></li>
-				</ul>
-				
-				<h3>Website Templates</h3>
-				<ul>
-					<li><a href="https://html5up.net">HTML5 UP</a></li>
-					<li><a href="https://pixelarity.com/">Pixelarity</a></li>
-					<li><a href="https://www.w3schools.com/w3css/w3css_templates.asp">W3.CSS Templates
-				</a></li>
-					<li><a href="https://www.free-css.com/free-css-templates">Free CSS Templates</a></li>
-				</ul>
-				
-				<h3>Useful links</h3>
-				<ul>
-					<li><a href="https://internetingishard.com/html-and-css/">HTML & CSS is hard</a> - a friendly web development tutorial for complete beginners</li>
-					<li><a href="https://internetingishard.com/html-and-css/responsive-design/">Responsive Design</a> - for learning about responsive design</li>
-					<li><a href="https://www.w3schools.com/">w3schools</a> - for learning web technologies online</li>
-					<li><a href="https://fonts.google.com/">Google Fonts</a> - making the web more beautiful, fast, and open through great typography.</li>
-					<li><a href="https://fontawesome.com/">Font Awesome</a> - vector icons and social logos for your site</li>
-					<li><a href="https://icomoon.io">IcoMoon</a> - pixel perfect icon solutions</li>
-					<li><a href="https://www.s-ings.com/typicons/">Typicons</a> - free-to-use vector icons embedded in a webfont for easy use in any UI</li>
-					<li><a href="https://iconscout.com/">IconScout</a> - high quality icons</li>
-					<li><a href="https://undraw.co/">unDraw</a> - open source illustrations for every project you can imagine</li>
-					<li><a href="https://designtarget.org/">DesignTarget</a> - resources to make your design workflow easier</li>
-					<li><a href="https://github.com/greghub/website-launch-checklist">Website Launch Checklist</a> - things to double check before launching a website.</li>
-					<li><a href="https://jsfiddle.net/">JSFiddle</a> - useful for small online examples, often used with question/answer sites or examples on websites</li>
-					<li><a href="https://ocw.mit.edu/index.htm">MIT OpenCourseWare (OCW)</a> - MIT OpenCourseWare is a web-based publication of virtually all MIT course content. OCW is open and available to the world and is a permanent MIT activity</li>
-					<li><a href="https://www.freeclasstools.com/">Free Class Tools</a> - generate free worksheets for the primary school level</li>
-					<li><a href="https://archive.org/">Internet Archive</a> - the Internet Archive is a San Francisco–based nonprofit digital library with the stated mission of "universal access to all knowledge"</li>
-					<li><a href="https://pastebin.com/">Paste Bin</a> - a paste tool for text and code</li>
-					<li><a href="https://stackoverflow.com/">Stack Overflow</a> - question based</li>
-					<li><a href="https://reddit.com/r/webdev/">Reddit's WebDev Subreddit</a> - question/discussion based</li>
-					<li><a href="https://reddit.com/r/web_design/">Reddit's Web Design Subreddit</a> - question/discussion based</li>
-					<li><a href="https://logojoy.com">Logo Joy</a> - useful for purchasing logos</li>
-					<li><a href="https://www.toptal.com/designers/subtlepatterns/">Toptal Subtle Patterns</a> - 'free textures for your next web project' (<a href="https://www.toptal.com/designers/subtlepatterns/tag/dark/">dark patterns</a>)</li>
-					<li><a href="https://teemill.com">TeeMill</a> - sell merchandising online</li>
-					<li><a href="https://www.teepublic.com/">TeePublic</a> - sell merchandising online</li>
-					<li><a href="https://www.redbubble.com/">RedBubble</a> - sell merchandising online</li>
-				</ul>
-			</div>
-		</div>
-
-		<div class="footer">
-			<div class="footer_text"><center><img src="../files/nsm.png" width="120"></center></div>
-		
-			<noselect>
-				<p style="margin-top:2px">
-					<b>Mirrors:</b> [<a href="https://nift.cc/">Official</a>] [<a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a>] [<a href="https://nifty-site-manager.github.io/">GitHub</a>] [<a href="https://nifty-site-manager.gitlab.io/">GitLab</a>] [<a href="https://nifty-site-manager.netlify.com/">Netlify</a>]
-				</p>
-		
-				<p>
-					<a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; <a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a> &nbsp; <a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a>
-				</p>
-		
-				<p>
-					<!--<a href="https://formulae.brew.sh/formula/nsm"><img src="../files/homebrew.png" height="40px" alt="Get it from the Homebrew store" title="OSX/Linux"></a> &nbsp;-->
-					<a href="https://chocolatey.org/packages/nsm"><img src="../files/chocolatey.svg" height="40px" alt="Get it from the Chocolatey store" title="Windows"></a> &nbsp;
-					<!--<a href="https://flathub.org/apps/details/com.n-ham.nsm"><img src="../files/flathub.png" height="40px" alt="Get it from the FlatHub store" title="Linux"></a> &nbsp;-->
-					<a href="https://snapcraft.io/nsm"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" height="40px" alt="Get it from the Snap Store" title="Linux"></a>
-				</p>
-		
-				<div style="margin-top:-5px;margin-bottom:15px"><small>&copy;&nbsp;2015 - <script>document.write(new Date().getFullYear())</script> <a href="https://n-ham.com/">Nicholas Ham</a></small></div>
-			</noselect>
-		</div>
-
-		<script src='../js/process_pre_tags.js'></script>	
-	</body>
+		<!-- Scripts -->
+		<script src="../assets/js/jquery.min.js"></script>
+		<script src="../assets/js/jquery.dropotron.min.js"></script>
+		<script src="../assets/js/browser.min.js"></script>
+		<script src="../assets/js/breakpoints.min.js"></script>
+		<script src="../assets/js/util.js"></script>
+		<script src="../assets/js/main.js"></script>
+		<script src="../assets/js/process_pre_tags.js"></script>
+    </body>
 </html>
 
-<!-- 
-	information on how to easily make and host a site similar to
-	this may be found at any of the following mirrors:
-		* https://nift.cc/
-		* https://nifty-site-manager.com/ 
-		* https://nifty-site-manager.bitbucket.io/ 
-		* https://nifty-site-manager.github.io/ 
-		* https://nifty-site-manager.gitlab.io/ 
-		* https://nifty-site-manager.netlify.com/
+<!--
+	Site Design: Escape Velocity by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
