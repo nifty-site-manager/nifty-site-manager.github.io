@@ -15,7 +15,7 @@
 
 			<div class="content">
 				<p>
-					If you are new to <mono>Nift</mono> the following guide will help you get started. To understand how <mono>Nift/nsm</mono> works even better check out the <a href="@pathto(resources/nift_tutorial)">nsm tutorial</a> which will give you a more thorough understanding of how different parts of <mono>Nift</mono> work.
+					If you are new to <mono>Nift</mono> the following guide will help you get started. To understand how <mono>Nift/nsm</mono> works even better check out the <a href="@pathto(resources/nift_tutorial)">Nift tutorial</a> which will give you a more thorough understanding of how different parts of <mono>Nift</mono> work.
 				</p>
 
 				<p>
@@ -24,7 +24,7 @@
 
 				<ol>
 					<li>If you haven't already installed <mono>Nift</mono>, you can find install instructions <a href="@pathto(docs/installing_nift)">here</a>;
-					<li>Open up a terminal or command prompt/power shell window and enter <mono>nsm commands</mono> to get a list of available commands (check out the <a href="@pathto(docs/nift_commands)"><mono>Nift</mono> commands</a> page from the documentation for information about <mono>Nift</mono> commands);</li>
+					<li>Open up a terminal or command prompt/power shell window and enter <mono>nsm commands</mono> to get a list of available commands (check out the <a href="@pathto(docs/nift_commands)">Nift commands</a> page from the documentation for information about <mono>Nift</mono> commands);</li>
 					<li>On Bitbucket, GitHub or GitLab import (or fork and rename) an existing site repository template from <a href="@pathto(resources/templates)">here</a>;</li>
 					<li>If you used GitHub for the last step, go in to the imported/forked repository's settings, scroll down to GitHub Pages and set the <mono>source</mono> to <mono>master branch</mono> (there may be some delay before your website goes live);</li>
 					<li>To view the website remotely, open up a browser of your choice and go to:

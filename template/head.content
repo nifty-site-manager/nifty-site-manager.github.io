@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="@pathtofile(site/assets/css/main.css)">
 <link rel="stylesheet" href="@pathtofile(site/assets/css/pagestyle.css)">
 <link rel="stylesheet" href="@pathtofile(site/assets/css/pre.css)">
+<link rel='icon' type='image/png' href='@pathtofile("site/images/favicon.ico")'>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-62165905-2"></script>
