@@ -62,12 +62,20 @@ resources/get_started
 get_started
 template/page.template
 
+resources/js_frameworks
+js_frameworks
+template/page.template
+
 resources/links
 links
 template/page.template
 
 resources/nift_tutorial
 nift_tutorial
+template/page.template
+
+resources/php_frameworks
+php_frameworks
 template/page.template
 
 resources/project_suggestions

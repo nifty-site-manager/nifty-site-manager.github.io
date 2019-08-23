@@ -72,7 +72,7 @@
 			<center>
 				<br><br><br>
 				<a href="@pathto(resources/get_started)" class="button style1 large">Get Started</a> &nbsp;
-				<a href="@pathto(docs/installing_nift)" class="button style1 large" style="margin-bottom: 10px">Documentation</a></li><br>
+				<a href="@pathto(docs/installing_nift)" class="button style1 large" style="margin-bottom: 10px">Documentation</a></li> &nbsp;
 				<a href="@pathto(resources/templates)" class="button style1 large">Templates</a>
 			</center>
 			</div>
