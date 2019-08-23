@@ -23,7 +23,7 @@ a.discord
 	text-decoration:none;
 
 	outline: 0;
-	color:grey;
+	color:#dbd5d5;
 
 	transition-property: color;
 	-o-transition:0.8s;
@@ -35,7 +35,7 @@ a.discord
 
 a.discord:hover
 {
-	color:#57534e;
+	color:#969292;
 
 	-o-transition:0.3s;
 	-ms-transition:0.3s;
