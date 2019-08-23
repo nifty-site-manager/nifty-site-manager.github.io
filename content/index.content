@@ -71,10 +71,10 @@
 			<div>
 			<center>
 				<br><br><br>
-				<a href="@pathto(resources/get_started)" class="button style1 large">Get Started</a> &nbsp;
-				<a href="@pathto(docs/installing_nift)" class="button style1 large">Documentation</a></li> &nbsp;
-				<a href="@pathto(resources/templates)" class="button style1 large">Templates</a> &nbsp;
-				<a href="@pathto(docs/hosting_your_site)" class="button style1 large">Hosting Options</a></li> 
+				<a href="@pathto(resources/get_started)" class="button style1 large"style="margin-bottom: 10px">Get Started</a> &nbsp;
+				<a href="@pathto(docs/installing_nift)" class="button style1 large" style="margin-bottom: 10px">Documentation</a></li> <br>
+				<a href="@pathto(resources/templates)" class="button style1 large"style="margin-bottom: 10px">Templates</a> &nbsp;
+				<a href="@pathto(docs/hosting_your_site)" class="button style1 large"style="margin-bottom: 10px">Hosting Options</a></li> 
 			</center>
 			</div>
 		</section>
