@@ -57,7 +57,7 @@
 
 				<div align="center" style="margin-top:-20px; margin-bottom: 20px">
 					<pre>
-						choco install nsm --version 1.6
+						choco install nsm --version 1.7
 					</pre>
 				</div>
 
