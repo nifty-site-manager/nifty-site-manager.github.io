@@ -1,0 +1,351 @@
+<!DOCTYPE HTML>
+
+<!--
+	Official Nift Website
+
+	Nift is a cross-platform open source website generator developed from the ground up in C++.
+-->
+
+<html>
+    <head>
+        <title>Nift</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="../assets/css/main.css">
+        <link rel="stylesheet" href="../assets/css/pagestyle.css">
+        <link rel="stylesheet" href="../assets/css/pre.css">
+        <link rel='icon' type='image/png' href='../images/favicon.ico'>
+        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-62165905-2"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'UA-62165905-2');
+        </script>
+        
+        <!-- uses google-code-prettify for syntax highlighting 
+             see https://github.com/google/code-prettify/ for more info -->
+        <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+        
+        <!-- uses Font Awesome for vector icons and social logos -->
+        <script src="https://kit.fontawesome.com/b51e6952ec.js"></script>
+        
+        <!-- uses MathJax CDC for LaTeX support
+             see http://docs.mathjax.org/en/latest/start.html for more info -->
+        <script type="text/x-mathjax-config">
+        	MathJax.Hub.Config
+        	({
+        		extensions: ["tex2jax.js"],
+            	jax: ["input/TeX", "output/HTML-CSS"],
+        		tex2jax: 
+        		{
+        			inlineMath: [['$','$'], ['\\(','\\)']],
+        			displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        			processEscapes: true
+        		},
+        		"HTML-CSS": { availableFonts: ["MathJax TeX"] }
+        	});
+        </script>
+        <script type="text/javascript" 
+        	    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js">
+        </script>
+        
+        <!-- hack redirecting to a secure protocol when users 
+             visit domain using an insecure protocol -->
+        <script>
+        	var host = "nifty-site-manager.gitlab.io";
+        	if ((host == window.location.host) && (window.location.protocol != "https:"))
+        		window.location.protocol = "https";	
+        </script>
+    </head>
+    <body class="is-preload">
+		<div id="page-wrapper">
+			<!-- Header -->
+			<section id="header" class="wrapper">
+			
+				<!-- Logo -->
+				<div id="logo">
+					<noselect>
+					<a href="../index.html"><img src="../images/NIFT.png" width=250></a><br>
+					<!--<a href="../index.html"><img src="../images/nifty-site-manager.png" width=250></a>-->
+			
+					<p style="margin-bottom:0px">
+						<a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; 
+						<a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a> &nbsp; 
+						<a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a> &nbsp; 
+						<a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a> &nbsp; 
+						<a href="https://old.reddit.com/r/nift" title="Reddit" class="reddit"><i class="fab fa-reddit-square fa-2x"></i></a> &nbsp; 
+						<a href="https://twitter.com/nifty_site_man" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a> &nbsp; 
+						<a href="https://nifty-site-manager.teemill.com/" title="TeeMill" class="teemill"><i class="fas fa-tshirt fa-2x"></i></a>
+					</p>
+			
+					<p>A cross-platform open source website generator</p>
+			
+					<p>
+						<a href="https://chocolatey.org/packages/nsm"><img src="../images/chocolatey.svg" height="40px" alt="Get it from the Chocolatey store" title="Windows"></a> &nbsp;
+						<!--<a href="https://flathub.org/apps/details/com.n-ham.nsm"><img src="../images/flathub.png" height="40px" alt="Get it from the FlatHub store" title="Linux"></a> &nbsp;-->
+						<a href="https://snapcraft.io/nsm"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" height="40px" alt="Get it from the Snap Store" title="Linux"></a>
+					</p>
+					</noselect>
+				</div>
+			
+				<!-- Nav -->
+				<noselect>
+					<nav id="nav">
+						<ul>
+							<li><a href="../index.html">Home</a></li>
+							<li>
+								<a href="">Documentation</a>
+								<ul>
+									<li>
+										<a href="../docs/installing_nift.html">Installing Nift</a>
+										<ul>
+											<li><a href="../docs/linux_install.html">Linux</a></li>
+											<li><a href="../docs/osx_install.html">OSX</a></li>
+											<li><a href="../docs/windows_install.html">Windows</a></li>
+										</ul>
+									</li>
+									<li><a href="../docs/nift_commands.html">Nift Commands</a></li>
+									<li><a href="../docs/content_files.html">Content Files</a></li>
+									<li><a href="../docs/template_files.html">Template Files</a></li>
+									<li><a href="../docs/displaying_mathematics.html">Displaying Mathematics</a></li>
+									<li><a href="../docs/displaying_code_blocks.html">Displaying Code Blocks</a></li>
+									<li>
+										<a href="../docs/hosting_your_site.html">Hosting Your Site</a>
+										<ul>
+											<li><a href="../docs/bitbucket_hosting.html">BitBucket</a></li>
+											<li><a href="../docs/github_hosting.html">GitHub</a></li>
+											<li><a href="../docs/gitlab_hosting.html">GitLab</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="">Resources</a>
+								<ul>
+									<li><a href="examples.html">Examples</a></li>
+									<li><a href="get_started.html">Get Started</a></li>
+									<li><a href="js_frameworks.html">JS Frameworks</a></li>
+									<li><a href="links.html">Links</a></li>
+									<li><a href="nift_tutorial.html">Nift Tutorial</a></li>
+									<li><a href="php_frameworks.html">PHP Frameworks</a></li>
+									<li><a href="project_suggestions.html">Project Suggestions</a></li>
+									<li><a href="templates.html">Templates</a></li>
+								</ul>
+							</li>
+							<li><a href="../support.html">Support</a></li>
+						</ul>
+					</nav>
+				</noselect>
+			</section>
+
+		    <!-- Highlights -->
+		    <section id="highlights" class="wrapper style2">
+		    	<div class="title">JS Frameworks</div>
+		    	<div class="container">
+		    		<header class="style1">
+		    			<h2>Javascript Frameworks</h2>
+		    		</header>
+		    
+		    		<div class="content">
+		    			<div class="row aln-center">
+		    				<div class="col-4 col-12-medium">
+		    					<section class="highlight">
+		    						<a href="https://gruntjs.com/"><img src="../images/grunt.svg" alt="" height="150px" style="max-width:40%"/></a>
+		    						<h3><a href="https://gruntjs.com/">Grunt</a></h3>
+		    						<p>The Javascript task runner.</p>
+		    						<ul class="actions">
+		    							<li><a href="https://gruntjs.com/getting-started" class="button style1">Learn More</a></li>
+		    						</ul>
+		    					</section>
+		    				</div>
+		    				<div class="col-4 col-12-medium">
+		    					<section class="highlight">
+		    						<a href="https://vuejs.org/"><img src="../images/vue.svg" alt="" height="150px" style="max-width:40%"/></a>
+		    						<h3><a href="https://vuejs.org/">Vue.js</a></h3>
+		    						<p>The Progressive JavaScript Framework..</p>
+		    						<ul class="actions">
+		    							<li><a href="https://vuejs.org/v2/guide/" class="button style1">Learn More</a></li>
+		    						</ul>
+		    					</section>
+		    				</div>
+		    				<div class="col-4 col-12-medium">
+		    					<section class="highlight">
+		    						<a href="https://nodejs.org/en/"><img src="../images/nodejs.svg" alt="" height="150px" style="max-width:40%"/></a>
+		    						<h3><a href="https://nodejs.org/en/">NodeJS</a></h3>
+		    						<p>JavaScript runtime built on Chrome's V8 JavaScript engine.</p>
+		    						<ul class="actions">
+		    							<li><a href="https://nodejs.org/en/about/" class="button style1">Learn More</a></li>
+		    						</ul>
+		    					</section>
+		    				</div>
+		    				<div class="col-4 col-12-medium">
+		    					<section class="highlight">
+		    						<a href="https://reactjs.org/"><img src="../images/react.svg" alt="" height="150px" style="max-width:40%"/></a>
+		    						<h3><a href="https://reactjs.org/">React</a></h3>
+		    						<p>A JavaScript library for building user interfaces.</p>
+		    						<ul class="actions">
+		    							<li><a href="https://reactjs.org/docs/getting-started.html" class="button style1">Learn More</a></li>
+		    						</ul>
+		    					</section>
+		    				</div>
+		    				<div class="col-4 col-12-medium">
+		    					<section class="highlight">
+		    						<a href="https://www.meteor.com/"><img src="../images/meteor.svg" alt="" height="150px" style="max-width:40%"/></a>
+		    						<h3><a href="https://www.meteor.com/">Meteor</a></h3>
+		    						<p>Meteor is a complete platform for building web and mobile apps in pure JavaScript.</p>
+		    						<ul class="actions">
+		    							<li><a href="https://www.meteor.com/install" class="button style1">Learn More</a></li>
+		    						</ul>
+		    					</section>
+		    				</div>
+		    				<div class="col-4 col-12-medium">
+		    					<section class="highlight">
+		    						<a href="https://emberjs.com/"><img src="../images/ember.svg" alt="" height="150px" style="max-width:40%"/></a>
+		    						<h3><a href="https://emberjs.com/">Ember</a></h3>
+		    						<p>A framework for ambitious web developers.</p>
+		    						<ul class="actions">
+		    							<li><a href="https://guides.emberjs.com/v1.10.0/concepts/what-is-ember-js/" class="button style1">Learn More</a></li>
+		    						</ul>
+		    					</section>
+		    				</div>
+		    				<div class="col-4 col-12-medium">
+		    					<section class="highlight">
+		    						<a href="https://angularjs.org/"><img src="../images/angular.svg" alt="" height="150px" style="max-width:40%"/></a>
+		    						<h3><a href="https://angularjs.org/">AngularJS</a></h3>
+		    						<p>What HTML would have been, had it been designed for building web-apps. Declarative templates with data-binding, MVW, MVVM, MVC, etc..</p>
+		    						<ul class="actions">
+		    							<li><a href="https://docs.angularjs.org/tutorial" class="button style1">Learn More</a></li>
+		    						</ul>
+		    					</section>
+		    				</div>
+		    				<div class="col-4 col-12-medium">
+		    					<section class="highlight">
+		    						<a href="https://backbonejs.org/"><img src="../images/backbone.svg" alt="" height="150px" style="max-width:40%"/></a>
+		    						<h3><a href="https://backbonejs.org/">Backbone.js</a></h3>
+		    						<p>Backbone.js gives structure to web applications by providing models with key-value binding and custom events, collections with a rich API of enumerable functions, views with declarative event handling, and connects it all to your existing API over a RESTful JSON interface.</p>
+		    						<ul class="actions">
+		    							<li><a href="https://backbonejs.org/#Getting-started" class="button style1">Learn More</a></li>
+		    						</ul>
+		    					</section>
+		    				</div>
+		    				<div class="col-4 col-12-medium">
+		    					<section class="highlight">
+		    						<a href="https://aurelia.io/"><img src="../images/aurelia.svg" alt="" height="150px" style="max-width:40%"/></a>
+		    						<h3><a href="https://aurelia.io/">Aurelia.js</a></h3>
+		    						<p>Aurelia is a JavaScript client framework for web, mobile and desktop that leverages simple conventions to empower your creativity.</p>
+		    						<ul class="actions">
+		    							<li><a href="https://aurelia.io/docs/overview/what-is-aurelia#what-is-aurelia" class="button style1">Learn More</a></li>
+		    						</ul>
+		    					</section>
+		    				</div>
+		    				<div class="col-4 col-12-medium">
+		    					<section class="highlight">
+		    						<a href="https://www.polymer-project.org/"><img src="../images/polymer.svg" alt="" height="150px" style="max-width:40%"/></a>
+		    						<h3><a href="https://www.polymer-project.org/">Polymer</a></h3>
+		    						<p>An efficient, expressive, extensible HTML templating library for JavaScript.</p>
+		    						<ul class="actions">
+		    							<li><a href="https://lit-element.polymer-project.org/" class="button style1">Learn More</a></li>
+		    						</ul>
+		    					</section>
+		    				</div>
+		    				<div class="col-4 col-12-medium">
+		    					<section class="highlight">
+		    						<a href="https://mithril.js.org/"><img src="../images/mithril.svg" alt="" height="150px" style="max-width:40%"/></a>
+		    						<h3><a href="https://mithril.js.org/">Mithril.js</a></h3>
+		    						<p>Modern client-side JavaScript framework for building Single Page Applications.</p>
+		    						<ul class="actions">
+		    							<li><a href="https://mithril.js.org/index.html#getting-started" class="button style1">Learn More</a></li>
+		    						</ul>
+		    					</section>
+		    				</div>
+		    			</div>
+		    		</div>
+		    	</div>
+		    </section>
+		    
+		    
+
+			<!-- Highlights -->
+			<!--
+			<section id="highlights" class="wrapper style3">
+				<div class="title">The Endorsements</div>
+				<div class="container">
+					<div class="row aln-center">
+						<div class="col-4 col-12-medium">
+							<section class="highlight">
+								<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+								<h3><a href="#">Aliquam diam consequat</a></h3>
+								<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+								<ul class="actions">
+									<li><a href="#" class="button style1">Learn More</a></li>
+								</ul>
+							</section>
+						</div>
+						<div class="col-4 col-12-medium">
+							<section class="highlight">
+								<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+								<h3><a href="#">Nisl adipiscing sed lorem</a></h3>
+								<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+								<ul class="actions">
+									<li><a href="#" class="button style1">Learn More</a></li>
+								</ul>
+							</section>
+						</div>
+						<div class="col-4 col-12-medium">
+							<section class="highlight">
+								<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+								<h3><a href="#">Mattis tempus lorem</a></h3>
+								<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+								<ul class="actions">
+									<li><a href="#" class="button style1">Learn More</a></li>
+								</ul>
+							</section>
+						</div>
+					</div>
+				</div>
+			</section>
+			-->
+			
+			<!-- Footer -->
+			<section id="footer" class="wrapper">
+				<div class="title"><img src="../images/nsm-medium.png" width="120" style="margin-top:20px"></div>
+				<div class="container">
+					<div id="copyright">
+						<ul style="margin-top:80px">
+							<li><b>Mirrors:</b></li>
+							<li><a href="https://nift.cc/">Official</a></li>
+							<li><a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a></li>
+							<li><a href="https://nifty-site-manager.github.io/">GitHub</a></li>
+							<li><a href="https://nifty-site-manager.gitlab.io/">GitLab</a></li>
+							<li><a href="https://nifty-site-manager.netlify.com/">Netlify</a></li>
+						</ul> <br>
+			
+						<ul>
+							<li>&copy;&nbsp;2015 - <script>document.write(new Date().getFullYear())</script> <a href="https://nift.cc">Nift</a>.</li><li>Site Design: <a href="http://html5up.net">HTML5 UP</a></li><li>Developer: <a href="https://n-ham.com">Nicholas Ham</a></li>
+						</ul>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<!-- Scripts -->
+		<script src="../assets/js/jquery.min.js"></script>
+		<script src="../assets/js/jquery.dropotron.min.js"></script>
+		<script src="../assets/js/browser.min.js"></script>
+		<script src="../assets/js/breakpoints.min.js"></script>
+		<script src="../assets/js/util.js"></script>
+		<script src="../assets/js/main.js"></script>
+		<script src="../assets/js/process_pre_tags.js"></script>
+    </body>
+</html>
+
+<!--
+	Site Design: Escape Velocity by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+
