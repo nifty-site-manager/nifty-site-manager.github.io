@@ -48,7 +48,7 @@
 					<section class="highlight">
 						<a href="https://phalconphp.com/en"><img src="@pathtofile(site/images/phalcon.svg)" alt="" height="150px" style="max-width:40%"/></a>
 						<h3><a href="https://phalconphp.com/en">Phalcon</a></h3>
-						<p>A full-stack PHP framework delivered as a C-extension</p>
+						<p>A full-stack PHP framework delivered as a C-extension.</p>
 						<ul class="actions">
 							<li><a href="https://phalcon.link/docs/en" class="button style1">Learn More</a></li>
 						</ul>
