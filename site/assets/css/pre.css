@@ -52,6 +52,16 @@ pre.wrap
 	word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 
+pre.Loki
+{
+	background-color: #3c3d40 !important;
+	color: #78be20;
+
+	-moz-box-shadow: 3px 3px 5px #dbdad7;
+    -webkit-box-shadow: 3px 3px 5px #dbdad7;
+    box-shadow: 3px 3px 5px #dbdad7;
+}
+
 pre
 {
 	display: block;

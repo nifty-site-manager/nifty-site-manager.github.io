@@ -48,6 +48,7 @@
 						<li><a href="@pathto(docs/template_files)">Template Files</a></li>
 						<li><a href="@pathto(docs/displaying_mathematics)">Displaying Mathematics</a></li>
 						<li><a href="@pathto(docs/displaying_code_blocks)">Displaying Code Blocks</a></li>
+						<li><a href="@pathto(docs/lokinet_snapps)">Lokinet SNApps</a></li>
 						<li>
 							<a href="@pathto(docs/hosting_your_site)">Hosting Your Site</a>
 							<ul>
@@ -69,6 +70,7 @@
 						<li><a href="@pathto(resources/php_frameworks)">PHP Frameworks</a></li>
 						<li><a href="@pathto(resources/project_suggestions)">Project Suggestions</a></li>
 						<li><a href="@pathto(resources/templates)">Templates</a></li>
+						<li><a href="@pathto(resources/SNApp_templates)">SNApp Templates</a></li>
 					</ul>
 				</li>
 				<li><a href="@pathto(support)">Support</a></li>

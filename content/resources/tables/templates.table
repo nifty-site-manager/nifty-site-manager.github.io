@@ -1,0 +1,49 @@
+<thead>
+	<tr>
+		<th>name</th>
+		<th>demo</th>
+		<th>repository</th>
+	</tr>
+</thead>
+<tr>
+	<td>basic-site</td>
+	<td><a href="https://nsm-templates.github.io/basic-site/">GitHub</a> - <a href="https://nsm-templates.gitlab.io/basic-site/">GitLab</a></td>
+	<td><a href="https://bitbucket.org/nsm-templates/basic-site">BitBucket</a> - <a href="https://github.com/nsm-templates/basic-site">GitHub</a> - <a href="https://gitlab.com/nsm-templates/basic-site">GitLab</a></td>
+</tr>
+<tr>
+	<td>dev-site</td>
+	<td><a href="https://nsm-templates.github.io/dev-site/">GitHub</a> - <a href="https://nsm-templates.gitlab.io/dev-site/">GitLab</a></td>
+	<td><a href="https://bitbucket.org/nsm-templates/dev-site">BitBucket</a> - <a href="https://github.com/nsm-templates/dev-site">GitHub</a> - <a href="https://gitlab.com/nsm-templates/dev-site">GitLab</a></td>
+</tr>
+<tr>
+	<td><a href="https://undraw.co/evie">evie-undraw</a></td>
+	<td><a href="https://nsm-templates.github.io/evie-undraw/">GitHub</a> - <a href="https://nsm-templates.gitlab.io/evie-undraw/">GitLab</a></td>
+	<td><a href="https://bitbucket.org/nsm-templates/evie-undraw">BitBucket</a> - <a href="https://github.com/nsm-templates/evie-undraw">GitHub</a> - <a href="https://gitlab.com/nsm-templates/evie-undraw">GitLab</a></td>
+</tr>
+<tr>
+	<td>menus</td>
+	<td><a href="https://nsm-templates.github.io/menus/">GitHub</a> - <a href="https://nsm-templates.gitlab.io/menus/">GitLab</a></td>
+	<td><a href="https://bitbucket.org/nsm-templates/menus">BitBucket</a> - <a href="https://github.com/nsm-templates/menus">GitHub</a> - <a href="https://gitlab.com/nsm-templates/menus">GitLab</a></td>
+</tr>
+<tr>
+	<td>null-site</td>
+	<td><a href="https://nsm-templates.github.io/null-site/">GitHub</a> - <a href="https://nsm-templates.gitlab.io/null-site/">GitLab</a></td>
+	<td><a href="https://bitbucket.org/nsm-templates/null-site">BitBucket</a> - <a href="https://github.com/nsm-templates/null-site">GitHub</a> - <a href="https://gitlab.com/nsm-templates/null-site">GitLab</a></td>
+</tr>
+<tr>
+	<td>parchment-site</td>
+	<td><a href="https://nsm-templates.github.io/parchment-site/">GitHub</a> - <a href="https://nsm-templates.gitlab.io/parchment-site/">GitLab</a></td>
+	<td><a href="https://bitbucket.org/nsm-templates/parchment-site">BitBucket</a> - <a href="https://github.com/nsm-templates/parchment-site">GitHub</a> - <a href="https://gitlab.com/nsm-templates/parchment-site">GitLab</a></td>
+</tr>
+<tr>
+	<td>simple-site</td>
+	<td><a href="https://nsm-templates.github.io/simple-site/">GitHub</a> - <a href="https://nsm-templates.gitlab.io/simple-site/">GitLab</a></td>
+	<td><a href="https://bitbucket.org/nsm-templates/simple-site">BitBucket</a> - <a href="https://github.com/nsm-templates/simple-site">GitHub</a> - <a href="https://gitlab.com/nsm-templates/simple-site">GitLab</a></td>
+</tr>
+<tfoot>
+	<tr>
+		<th>name</th>
+		<th>demo</th>
+		<th>repository</th>
+	</tr>
+</tfoot>

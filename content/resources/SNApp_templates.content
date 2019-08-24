@@ -1,0 +1,47 @@
+<!-- Main -->
+<section id="main" class="wrapper style4">
+	<div class="title">SNApp Templates</div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<header class="Loki">
+				<h2>Template SNApp Repositories</h2>
+			</header>
+
+			<br><br>
+
+			<!-- Image -->
+			<center>
+				<img src="@pathtofile(site/images/Loki.png)" width=300 style="margin-bottom:50px">
+			</center>
+
+			<p>
+				For template SNApp repositories that you can import (or fork and rename) then clone to start making SNApps, see the table below:
+			</p>
+
+			<center>
+				<table id="SNApp_templates_table" class="Loki">
+					@input(content/resources/tables/templates.table)
+				</table>
+			</center>
+
+			<p>
+				To have a template added to the above table, email <mono class="Loki">templates@nift.cc</mono> with a link to a repository on BitBicket/GitHub/GitLab. If the repository indeed contains a SNApp made with <mono class="Loki">Nift</mono> then we will fork/import the repository to SNApp-templates on BitBucket, GitHub and GitLab and add it to the above table.
+			</p>
+
+			<p>
+				To make changes to a template that has already been added to the above table, make a pull request from the repository you had us clone originally. 
+			</p>
+
+			<p>
+				The following table contains modified <a href="https://html5up.net/">HTML5 UP</a> template SNApp repositories that you can import (or fork and rename) then clone to start making SNApps.
+			</p>
+
+			<center>
+				<table id="html5up_SNApp_templates_table" class="Loki">
+					@input(content/resources/tables/html5up_templates.table)
+				</table>
+			</center>
+		</section>
+	</div>
+</section>

@@ -34,6 +34,10 @@ docs/linux_install
 linux_install
 template/page.template
 
+docs/lokinet_snapps
+lokinet_snapps
+template/page.template
+
 docs/nift_commands
 nift_commands
 template/page.template
@@ -52,6 +56,10 @@ template/page.template
 
 index
 index
+template/page.template
+
+resources/SNApp_templates
+SNApp_templates
 template/page.template
 
 resources/examples
