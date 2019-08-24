@@ -2,7 +2,7 @@
 <section id="intro" class="wrapper style1">
 	<div class="title">The Introduction</div>
 	<div class="container">
-		<p class="style1">So in case you were wondering what this is all about ...</p>
+		<p class="style1">So in case you were wondering what this is all about...</p>
 		<p class="style2">
 			Nift is a cross-platform open source framework for managing and generating websites.
 		</p>
