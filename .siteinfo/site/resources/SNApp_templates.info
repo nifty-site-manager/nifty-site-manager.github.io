@@ -1,11 +1,11 @@
 22:46:14 Saturday August 24 2019
-resources/templates
-templates
+resources/SNApp_templates
+SNApp_templates
 template/page.template
 
+content/resources/SNApp_templates.content
 content/resources/tables/html5up_templates.table
 content/resources/tables/templates.table
-content/resources/templates.content
 template/footer.content
 template/head.content
 template/menu.content
