@@ -32,7 +32,12 @@
 				<br>
 
 				<h4>
-					On GitLab with url <mono>https://<i>username</i>.gitlab.io</mono>
+					On GitLab with url:
+					<div align="center" style="margin-top:20px">
+						<pre class="inline">
+							https://username.gitlab.io
+						</pre>
+					</div>
 				</h4>
 
 				<ol>
@@ -55,7 +60,13 @@
 					</li>
 
 					<li>
-						Clone a local copy of your new repository by entering <mono>git clone https://gitlab.com/<i>username</i>/<i>username</i>.gitlab.io.git</mono>;
+						Clone a local copy of your new repository by entering:
+						<div align="center" style="margin-top:20px">
+							<pre class="inline">
+								git clone https://gitlab.com/username/username.gitlab.io.git
+							</pre>
+						</div>
+						where <mono><i>username</i></mono> is your GitLab username;
 					</li>
 
 					<li>
@@ -72,7 +83,7 @@
 
 					<li>
 						Enter the following into your terminal window:
-						<div align="center">
+						<div align="center" style="margin-top:20px">
 							<pre class="inline rounded">
 								git status
 								git add .
@@ -83,7 +94,13 @@
 					</li>
 
 					<li>
-						Your site, with url <mono>https://<i>username</i>.gitlab.io</mono>, should now be hosted and accessible from the internet.
+						Your site, with url: 
+						<div align="center" style="margin-top:20px">
+							<pre class="inline">
+								https://username.gitlab.io
+							</pre>
+						</div>
+						should now be hosted and accessible from the internet.
 					</li>
 				</ol>
 					
@@ -92,7 +109,12 @@
 				</p>
 
 				<h4>
-					On GitLab with url <mono>https://<i>username</i>.gitlab.io/<i>site-name</i></mono>
+					On GitLab with url:
+					<div align="center" style="margin-top:20px">
+						<pre class="inline">
+							https://username.gitlab.io/site-name
+						</pre>
+					</div>
 				</h4>
 
 				<ol>
@@ -115,7 +137,13 @@
 					</li>
 
 					<li>
-						Clone a local copy of your new repository by entering <mono>git clone https://gitlab.com/<i>username</i>/<i>site-name</i>.git</mono>, where <mono><i>username</i></mono> is your GitLab username;
+						Clone a local copy of your new repository by entering: 
+						<div align="center" style="margin-top:20px">
+							<pre class="inline">
+								git clone https://gitlab.com/<i>username</i>/<i>site-name</i>.git
+							</pre>
+						</div>
+						where <mono><i>username</i></mono> is your GitLab username;
 					</li>
 
 					<li>
@@ -132,7 +160,7 @@
 
 					<li>
 						Enter the following into your terminal window:
-						<div align="center">
+						<div align="center" style="margin-top:20px">
 							<pre class="inline rounded">
 								git status
 								git add .
@@ -143,7 +171,13 @@
 					</li>
 
 					<li>
-						Your site, with url <mono>https://<i>username</i>.gitlab.io/<i>site-name</i></mono>, should now be hosted and accessible from the internet.
+						Your site, with url: 
+						<div align="center" style="margin-top:20px">
+							<pre class="inline">
+								https://username.gitlab.io/site-name
+							</pre>
+						</div>
+						should now be hosted and accessible from the internet.
 					</li>
 				</ol>
 
