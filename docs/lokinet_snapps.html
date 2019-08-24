@@ -1,0 +1,433 @@
+<!DOCTYPE HTML>
+
+<!--
+	Official Nift Website
+
+	Nift is a cross-platform open source website generator developed from the ground up in C++.
+-->
+
+<html>
+    <head>
+        <title>Nift</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="../assets/css/main.css">
+        <link rel="stylesheet" href="../assets/css/pagestyle.css">
+        <link rel="stylesheet" href="../assets/css/pre.css">
+        <link rel='icon' type='image/png' href='../images/favicon.ico'>
+        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-62165905-2"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'UA-62165905-2');
+        </script>
+        
+        <!-- uses google-code-prettify for syntax highlighting 
+             see https://github.com/google/code-prettify/ for more info -->
+        <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+        
+        <!-- uses Font Awesome for vector icons and social logos -->
+        <script src="https://kit.fontawesome.com/b51e6952ec.js"></script>
+        
+        <!-- uses MathJax CDC for LaTeX support
+             see http://docs.mathjax.org/en/latest/start.html for more info -->
+        <script type="text/x-mathjax-config">
+        	MathJax.Hub.Config
+        	({
+        		extensions: ["tex2jax.js"],
+            	jax: ["input/TeX", "output/HTML-CSS"],
+        		tex2jax: 
+        		{
+        			inlineMath: [['$','$'], ['\\(','\\)']],
+        			displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        			processEscapes: true
+        		},
+        		"HTML-CSS": { availableFonts: ["MathJax TeX"] }
+        	});
+        </script>
+        <script type="text/javascript" 
+        	    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js">
+        </script>
+        
+        <!-- hack redirecting to a secure protocol when users 
+             visit domain using an insecure protocol -->
+        <script>
+        	var host = "nifty-site-manager.gitlab.io";
+        	if ((host == window.location.host) && (window.location.protocol != "https:"))
+        		window.location.protocol = "https";	
+        </script>
+    </head>
+    <body class="is-preload">
+		<div id="page-wrapper">
+			<!-- Header -->
+			<section id="header" class="wrapper">
+			
+				<!-- Logo -->
+				<div id="logo">
+					<noselect>
+					<a href="../index.html"><img src="../images/rabbit.png" width=275></a><br>
+					<!--<a href="../index.html"><img src="../images/nifty-site-manager.png" width=250></a>-->
+			
+					<p style="margin-bottom:0px">
+						<a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; 
+						<a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a> &nbsp; 
+						<a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a> &nbsp; 
+						<a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a> &nbsp; 
+						<a href="https://old.reddit.com/r/nift" title="Reddit" class="reddit"><i class="fab fa-reddit-square fa-2x"></i></a> &nbsp; 
+						<a href="https://twitter.com/nifty_site_man" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a> &nbsp; 
+						<a href="https://nift.teemill.com/" title="TeeMill" class="teemill"><i class="fas fa-tshirt fa-2x"></i></a>
+					</p>
+			
+					<p>A cross-platform open source website generator</p>
+			
+					<p>
+						<a href="https://chocolatey.org/packages/nsm"><img src="../images/chocolatey.svg" height="40px" alt="Get it from the Chocolatey store" title="Windows"></a> &nbsp;
+						<!--<a href="https://flathub.org/apps/details/com.n-ham.nsm"><img src="../images/flathub.png" height="40px" alt="Get it from the FlatHub store" title="Linux"></a> &nbsp;-->
+						<a href="https://snapcraft.io/nift"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" height="40px" alt="Get it from the Snap Store" title="Linux" /> </a>
+					</p>
+					</noselect>
+				</div>
+			
+				<!-- Nav -->
+				<noselect>
+					<nav id="nav">
+						<ul>
+							<li><a href="../index.html">Home</a></li>
+							<li>
+								<a href="">Documentation</a>
+								<ul>
+									<li>
+										<a href="installing_nift.html">Installing Nift</a>
+										<ul>
+											<li><a href="linux_install.html">Linux</a></li>
+											<li><a href="osx_install.html">OSX</a></li>
+											<li><a href="windows_install.html">Windows</a></li>
+										</ul>
+									</li>
+									<li><a href="nift_commands.html">Nift Commands</a></li>
+									<li><a href="content_files.html">Content Files</a></li>
+									<li><a href="template_files.html">Template Files</a></li>
+									<li><a href="displaying_mathematics.html">Displaying Mathematics</a></li>
+									<li><a href="displaying_code_blocks.html">Displaying Code Blocks</a></li>
+									<li><a href="lokinet_snapps.html">Lokinet SNApps</a></li>
+									<li>
+										<a href="hosting_your_site.html">Hosting Your Site</a>
+										<ul>
+											<li><a href="bitbucket_hosting.html">BitBucket</a></li>
+											<li><a href="github_hosting.html">GitHub</a></li>
+											<li><a href="gitlab_hosting.html">GitLab</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="">Resources</a>
+								<ul>
+									<li><a href="../resources/examples.html">Examples</a></li>
+									<li><a href="../resources/get_started.html">Get Started</a></li>
+									<li><a href="../resources/js_frameworks.html">JS Frameworks</a></li>
+									<li><a href="../resources/links.html">Links</a></li>
+									<li><a href="../resources/nift_tutorial.html">Nift Tutorial</a></li>
+									<li><a href="../resources/php_frameworks.html">PHP Frameworks</a></li>
+									<li><a href="../resources/project_suggestions.html">Project Suggestions</a></li>
+									<li><a href="../resources/templates.html">Templates</a></li>
+									<li><a href="../resources/SNApp_templates.html">SNApp Templates</a></li>
+								</ul>
+							</li>
+							<li><a href="../support.html">Support</a></li>
+						</ul>
+					</nav>
+				</noselect>
+			</section>
+
+		    <!-- Main -->
+		    <section id="main" class="wrapper style4">
+		    	<div class="title">Lokinet SNApps</div>
+		    	<div class="container">
+		    		<!-- Features -->
+		    		<section id="features">
+		    			<header class="Loki">
+		    				<h2>How to create and host a SNApp on the <mono class="Loki">Lokinet</mono></h2>
+		    			</header>
+		    
+		    			<br><br>
+		    
+		    			<!-- Image -->
+		    			<center>
+		    				<img src="../images/Loki.png" width=300 style="margin-bottom:50px">
+		    			</center>
+		    
+		    			<p>
+		    				Nift is the perfect tool to create, manage and generate your SNApps for <a href="https://loki.network">Loki's</a> <mono class="Loki">Lokinet</mono>, whether it's your first time creating a SNApp or you are making complicated dynamic SNApps with thousands of pages, Nift has you covered. Nift can build basic 10,000 page SNApps in under two seconds (<a href="https://hugo-vs-nift.gitlab.io/">evidence</a>), worry about developing your SNApps rather than frequently waiting for them to build. 
+		    			</p>
+		    
+		    			<p>
+		    				This guide will help you publish a SNApp on the <mono class="Loki">Lokinet</mono>. See <a href="https://docs.loki.network/Lokinet/LokinetOverview/">here</a> for documentation on how to install and access the <mono class="Loki">Lokinet</mono>. This page should be fairly identical to the <a href="https://docs.loki.network/Lokinet/Guides/HostingSNApps/">Hosting a SNApp</a> documentation page from the Loki docs. See <a href="../resources/SNApp_templates.html">here</a> for template SNApp repositories that you can import/fork/clone to start making SNApss.
+		    			</p>
+		    
+		    			<h2>1. Preparing your <mono class="Loki">Lokinet</mono> address</h2>
+		    			<p>
+		    				Depending on your desired outcome you may want to only run a one time SNApp or a SNApp that continues to persistently use the same <mono class="Loki">.loki</mono> pubkey.
+		    			</p>
+		    
+		    			<p>
+		    				To create a temporary SNApp continue to <a href="#temp_snapps">1.1 Temporary SNApp</a>, else if you want to run a persistent SNApp coninue to <a href="#pers_snapps">1.2 Persistent SNApp</a>.
+		    			</p>
+		    
+		    			<h3 id="temp_snapps">1.1 Temporary SNApp</h3>
+		    			<p>
+		    				When you run <mono class="Loki">./lokinet</mono> your terminal will show a bunch of outputs.
+		    			</p>
+		    
+		    			<p>
+		    				You are looking for the line with <mono class="Loki">lokitun0</mono> in it. The line should look like the following:
+		    			</p>
+		    
+		    			<div align="center" style="margin-top:-20px; margin-bottom:15px">
+		    				<pre class="Loki">
+		    					[NFO] unnamed (868) Mon Dec 17 15:30:09 2018 AEDT llarp/handlers/tun.cpp:419    default:gtwemaxbfogy5absnjizmoafdngadknpagnoteoir7743ys4xbyo.loki set lokitun0 to have address 172.16.10.1:0
+		    				</pre>
+		    			</div>
+		    
+		    			<p>
+		    				This loki address shown within this output will be the url to your SNApp and the local address to bind SNApps on. You can share the <mono class="Loki">.loki</mono> address to individuals who you want to access your SNApp.
+		    			</p>
+		    
+		    			<p>
+		    				You can proceed to <a href="#creating_snapp">2. Creating your SNApp</a>.
+		    			</p>
+		    
+		    			<h3 id="pers_snapps">1.2 Persistent SNApp</h3>
+		    			<p>
+		    				Open up your <mono class="Loki">lokinet.ini</mono> file and add a path to where your SNApp key files will be stored.
+		    			</p>
+		    
+		    			<div align="center" style="margin-top:-20px; margin-bottom:15px">
+		    				<pre class="Loki">
+		    					sudo nano ~/.lokinet/lokinet.ini
+		    				</pre>
+		    			</div>
+		    
+		    			<p>
+		    				Scroll down to your <mono class="Loki">[network]</mono> section and add the following line:
+		    			</p>
+		    
+		    			<div align="center" style="margin-top:-20px; margin-bottom:15px">
+		    				<pre class="Loki">
+		    					keyfile=/home/&lt;user>/.lokinet/snappkey.private
+		    				</pre>
+		    			</div>
+		    
+		    			<p>
+		    				Replacing <mono class="Loki">&lt;user></mono> with your computer username, alternatively you can set the filepath to wherever you want your SNApp private key to be stored.
+		    			</p>
+		    
+		    			<p>
+		    				Now when you run <mono class="Loki">lokinet</mono> within a terminal it will generate your <mono class="Loki">snappkey.private</mono> file in the directory you have set.
+		    			</p>
+		    
+		    			<p>
+		    				It will also output your SNApp pubkey which you can share to other individuals who you want accessing your SNApp. Look for the line for your SNApp pubkey:
+		    			</p>
+		    
+		    			<div align="center" style="margin-top:-20px; margin-bottom:15px">
+		    				<pre class="Loki">
+		    					[NFO] (762) Fri Jan 18 10:05:24 2019 AEDT llarp/handlers/tun.cpp:417    default:sxf7fx9eb4i3u5gyxpkka6wufzfsxyxsuep54c4kqk8axsfo17go.loki set lokitun0 to have address 172.16.10.1:0
+		    				</pre>
+		    			</div>
+		    
+		    			<p>
+		    				In this circumstance your pubkey would be:
+		    				<div align="center" style="margin-top:-20px; margin-bottom:15px">
+		    					<pre class="Loki">
+		    						sxf7fx9eb4i3u5gyxpkka6wufzfsxyxsuep54c4kqk8axsfo17go.loki
+		    					</pre>
+		    				</div>
+		    			</p>
+		    
+		    			<p>
+		    				This address will be your SNApp address until you change the path to your SNApps private key.
+		    			</p>
+		    
+		    			<h2 id="creating_snapp">2. Creating your SNApp</h2>
+		    			<p>
+		    				If you have not already, follow <a href="installing_nift.html">these</a> instructions to install <mono class="Loki">Nift</mono>. Create a new directory within your home folder, for example on Linux by running the following command in a terminal:
+		    			<p>
+		    
+		    			<div align="center" style="margin-top:-20px; margin-bottom:15px">
+		    				<pre class="Loki">
+		    					mkdir ~/snapp/
+		    				</pre>
+		    			</div>
+		    
+		    			<p>
+		    				In a terminal, command prompt or power shell window, change directory to the newly created snap directory, for example of linux enter:
+		    			</p> 
+		    
+		    			<div align="center" style="margin-top:-20px; margin-bottom:15px">
+		    				<pre class="Loki">
+		    					cd ~/snapp/
+		    				</pre>
+		    			</div>
+		    
+		    			<p>
+		    				Initialise managing a SNApp with <mono class="Loki">Nift</mono> by entering:
+		    			</p>
+		    
+		    			<div align="center" style="margin-top:-20px; margin-bottom:15px">
+		    				<pre class="Loki">
+		    					nsm init
+		    				</pre>
+		    			</div>
+		    
+		    			<p>
+		    				Open <mono class="Loki">~/snapp/content/index.content</mono> and save the file with the following:
+		    			</p>
+		    
+		    			<div align="center" style="margin-top:-20px; margin-bottom:15px">
+		    				<pre class="Loki">
+		    					Hello Lokinet
+		    				</pre>
+		    			</div>
+		    
+		    			<p>
+		    				Back in your terminal, command prompt or power shell window enter:
+		    			</p>
+		    
+		    			<div align="center" style="margin-top:-20px; margin-bottom:15px">
+		    				<pre class="Loki">
+		    					nsm build-updated
+		    				</pre>
+		    			</div>
+		    
+		    			<p>
+		    				You have now created your first SNApp locally, to view your SNApp open up <mono class="Loki">site/index.html</mono>.
+		    			</p>
+		    
+		    			<h2 id="serving_snapp">3. Serving your SNApp</h2>
+		    			<p>
+		    				Now we will serve our SNApp to the <mono class="Loki">lokinet</mono>, on linux you can do this by running the following command within our snapp folder <mono class="Loki">~/snapp/site/</mono>.
+		    			</p>
+		    
+		    			<div align="center" style="margin-top:-20px; margin-bottom:15px">
+		    				<pre class="Loki">
+		    					cd ~/snapp/site
+		    					sudo python3 -m http.server --bind &lt;ip> &lt;port>
+		    				</pre>
+		    			</div>
+		    
+		    			<p>
+		    				For this example our pubkey is set to <mono class="Loki">lokitun0</mono> which has address <mono class="Loki">172.16.10.1</mono>. The <mono class="Loki">&lt;port></mono> number can be whatever we define it. Therefor the command we would run for this example would be:
+		    			</p>
+		    
+		    			<div align="center" style="margin-top:-20px; margin-bottom:15px">
+		    				<pre class="Loki">
+		    					sudo python3 -m http.server --bind 172.16.10.1 80
+		    				</pre>
+		    			</div>
+		    
+		    			<p>
+		    				Now if you go to the <mono class="Loki">.loki</mono> address you saved before your message “hello lokinet” will be displayed.
+		    			</p>
+		    
+		    			<p>
+		    				Jump onto the <a href="https://docs.loki.network/Lokinet/Guides/LokinetIRC/">Lokinet irc</a> and see if others can access your SNApp.
+		    			</p>
+		    
+		    			<h2>Finish</h2>
+		    			<p>
+		    				Well done, you have finished the guide and your SNApp is served on the Lokinet. For more on Lokinet, see the <a href="https://docs.loki.network/Lokinet/Guides/PublicTestingGuide/">Lokinet public testing guide</a>. See the <a href="../resources/get_started.html">Getting Started With Nift Guide</a> for how to edit, manage and generate your SNApps. See <a href="../resources/SNApp_templates.html">here</a> for template SNApp repositories that you can import/fork/clone to start making SNApps.
+		    			</p>
+		    		</section>
+		    	</div>
+		    </section>
+
+			<!-- Highlights -->
+			<!--
+			<section id="highlights" class="wrapper style3">
+				<div class="title">The Endorsements</div>
+				<div class="container">
+					<div class="row aln-center">
+						<div class="col-4 col-12-medium">
+							<section class="highlight">
+								<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+								<h3><a href="#">Aliquam diam consequat</a></h3>
+								<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+								<ul class="actions">
+									<li><a href="#" class="button style1">Learn More</a></li>
+								</ul>
+							</section>
+						</div>
+						<div class="col-4 col-12-medium">
+							<section class="highlight">
+								<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+								<h3><a href="#">Nisl adipiscing sed lorem</a></h3>
+								<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+								<ul class="actions">
+									<li><a href="#" class="button style1">Learn More</a></li>
+								</ul>
+							</section>
+						</div>
+						<div class="col-4 col-12-medium">
+							<section class="highlight">
+								<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+								<h3><a href="#">Mattis tempus lorem</a></h3>
+								<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+								<ul class="actions">
+									<li><a href="#" class="button style1">Learn More</a></li>
+								</ul>
+							</section>
+						</div>
+					</div>
+				</div>
+			</section>
+			-->
+			
+			<!-- Footer -->
+			<section id="footer" class="wrapper">
+				<div class="title">
+					<img src="../images/nsm-medium.png" width="120" style="margin-top:20px; margin-bottom:20px">
+				</div>
+			
+				<center><img src="../images/badger.png" width="275" style="margin-top:100px"></center>
+			
+				<div class="container">
+					<div id="copyright">
+						<ul style="margin-top:35px">
+							<li><b>Mirrors:</b></li>
+							<li><a href="https://nift.cc/">Official</a></li>
+							<li><a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a></li>
+							<li><a href="https://nifty-site-manager.github.io/">GitHub</a></li>
+							<li><a href="https://nifty-site-manager.gitlab.io/">GitLab</a></li>
+							<li><a href="https://nifty-site-manager.netlify.com/">Netlify</a></li>
+						</ul> <br>
+			
+						<ul>
+							<li>&copy;&nbsp;2015 - <script>document.write(new Date().getFullYear())</script> <a href="https://nift.cc">Nift</a>.</li><li>Site Design: <a href="http://html5up.net">HTML5 UP</a></li><li>Developer: <a href="https://n-ham.com">Nicholas Ham</a></li>
+						</ul>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<!-- Scripts -->
+		<script src="../assets/js/jquery.min.js"></script>
+		<script src="../assets/js/jquery.dropotron.min.js"></script>
+		<script src="../assets/js/browser.min.js"></script>
+		<script src="../assets/js/breakpoints.min.js"></script>
+		<script src="../assets/js/util.js"></script>
+		<script src="../assets/js/main.js"></script>
+		<script src="../assets/js/process_pre_tags.js"></script>
+    </body>
+</html>
+
+<!--
+	Site Design: Escape Velocity by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+
