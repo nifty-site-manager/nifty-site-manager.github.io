@@ -179,3 +179,14 @@ a.reddit:hover
 	transition:0.3s;
 }
 
+
+table.Loki th
+{
+	color: #78be20;
+	background-color: #2d323b; /*#434d45;*/
+}
+
+table.Loki td
+{
+	background-color: #2b2c2e; /*#3c3d40;*/
+}

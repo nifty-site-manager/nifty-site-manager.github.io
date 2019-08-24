@@ -2032,6 +2032,60 @@ input, select, textarea {
 				color: #484d55;
 			}
 
+	header.Loki h2
+	{
+		text-align: center;
+		color: white !important;
+		font-size:30px;
+		margin-bottom: 20px;
+	}
+
+	mono.Loki
+	{
+		color: #78be20;
+		font-family: DejaVu Sans Mono, Liberation Mono, Consolas, Ubuntu Mono, Courier New;
+		background-color: #3c3d40;
+		font-size: 71%;
+	}
+
+	.wrapper.style4 h2
+	{
+		color: #dcdee0 !important;
+		font-size:20pt;
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+
+	.wrapper.style4 h3
+	{
+		color: #dcdee0 !important;
+		font-size:16pt;
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+
+	.wrapper.style4 a
+	{
+		color: #78be20;
+		text-decoration: none;
+	}
+
+	.wrapper.style4 a:hover
+	{
+		color: #3cd668;
+	}
+
+		.wrapper.style4 {
+			background: #1a1a1a;
+			color: #dcdee0;
+			font-size: 14pt;
+		}
+
+			.wrapper.style4 .title {
+				background: #1a1a1a;
+				color: #dcdee0;
+			}
+
 		.wrapper.style3 {
 			background: #f3f3f3 url("images/overlay.png");
 		}
