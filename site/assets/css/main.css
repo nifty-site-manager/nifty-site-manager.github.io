@@ -2121,7 +2121,7 @@ input, select, textarea {
 		-ms-justify-content: center;
 		justify-content: center;
 		position: relative;
-		height: 30em;
+		height: 33em;
 		background: url("../../images/banner.jpg") center center;
 		background-size: cover;
 		padding: 0;
@@ -2865,7 +2865,7 @@ input, select, textarea {
 				display: block;
 				width: 100%;
 				font-size: 1em;
-				max-width: 30em;
+				max-width: 33em;
 				margin: 0 auto;
 			}
 
