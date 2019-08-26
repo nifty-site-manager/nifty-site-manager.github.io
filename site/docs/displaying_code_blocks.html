@@ -154,237 +154,234 @@
 		    				<h2>How to display code blocks on your websites</h2>
 		    			</header>
 		    
-		    <div class="content" style="margin-top:-50px;">
-		    	<center>
-		    		<img src="../images/code_review.svg" width=250 style="margin-bottom:20px">
-		    	</center>
+		    			<div class="content" style="margin-top:-50px;">
+		    				<center>
+		    					<img src="../images/code_review.svg" width=250 style="margin-bottom:20px">
+		    				</center>
 		    
-		    	<h3>
-		    		Syntax Highlighting
-		    	</h3>
-		    	<p>
-		    		Options for including code blocks with syntax highlighting on your website include:
-		    		<ul style="text-indent:30px">
-		    			<li><a href="https://github.com/google/code-prettify">Google Code Prettify</a></li>
-		    			<li><a href="https://prismjs.com/">PrismJS</a></li>
-		    			<li><a href="https://highlightjs.org/">HighlightJS</a></li>
-		    			<li><a href="https://craig.is/making/rainbows">RainbowJS</a></li>
-		    		</ul>
-		    	</p>
+		    				<h3>
+		    					Syntax Highlighting
+		    				</h3>
+		    				<p>
+		    					Options for including code blocks with syntax highlighting on your website include:
+		    					<ul style="text-indent:30px">
+		    						<li><a href="https://github.com/google/code-prettify">Google Code Prettify</a></li>
+		    						<li><a href="https://prismjs.com/">PrismJS</a></li>
+		    						<li><a href="https://highlightjs.org/">HighlightJS</a></li>
+		    						<li><a href="https://craig.is/making/rainbows">RainbowJS</a></li>
+		    					</ul>
+		    				</p>
 		    
-		    	<p>
-		    		The <mono>Nift</mono> documentation covers syntax highlighting code blocks on your site using <a href=https://github.com/google/code-prettify>Google Code Prettify</a>. Using Google Code Prettify on your site is as simple as adding the following code to the head of each page:
+		    				<p>
+		    					The <mono>Nift</mono> documentation covers syntax highlighting code blocks on your site using <a href=https://github.com/google/code-prettify>Google Code Prettify</a>. Using Google Code Prettify on your site is as simple as adding the following code to the head of each page:
 		    
-		    		<div align="center">
-		    			<pre class="prettyprint lang-html linenums rounded">
-		    				&lt;!-- uses google-code-prettify for syntax highlighting 
-		    					 see https://github.com/google/code-prettify for more info -->
-		    				&lt;script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js">
-		    				&lt;/script>
-		    			</pre>
-		    		</div>
-		    	</p>
+		    					<div align="center">
+		    						<pre class="prettyprint lang-html linenums">
+		    							&lt;!-- uses google-code-prettify for syntax highlighting 
+		    								 see https://github.com/google/code-prettify for more info -->
+		    							&lt;script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js">
+		    							&lt;/script>
+		    						</pre>
+		    					</div>
+		    				</p>
 		    
-		    	<p>
-		    		Note the examples on this site are using the included <a href="https://gitlab.com/nifty-site-manager/nifty-site-manager.gitlab.io/blob/master/site/css/pre.css">pre.css</a> file and <a href="https://gitlab.com/nifty-site-manager/nifty-site-manager.gitlab.io/blob/master/site/js/process_pre_tags.js">process_pre_tags.js</a> script along with the script above. 
-		    	</p>
+		    				<p>
+		    					Note the examples on this site are using the included <a href="https://gitlab.com/nifty-site-manager/nifty-site-manager.gitlab.io/blob/master/site/css/pre.css">pre.css</a> file and <a href="https://gitlab.com/nifty-site-manager/nifty-site-manager.gitlab.io/blob/master/site/js/process_pre_tags.js">process_pre_tags.js</a> script along with the script above. 
+		    				</p>
 		    
-		    	<p>
-		    		To use <mono>process_pre_tags.js</mono> add it to the end of your <mono>&lt;body&gt;</mono>. For example a <mono>page.template</mono> file might be:
+		    				<p>
+		    					To use <mono>process_pre_tags.js</mono> add it to the end of your <mono>&lt;body&gt;</mono>. For example a <mono>page.template</mono> file might be:
 		    
-		    		<div align="center">
-		    			<pre class="prettyprint lang-html linenums rounded">
-		    				&lt;!DOCTYPE html>
-		    				&lt;html>
-		    					&lt;head>
-		    						&lt;title>site title - &commat;pagetitle&lt;/title>
-		    					&lt;/head>
-		    								
-		    					&lt;body>
-		    						&commat;inputcontent
+		    					<div align="center">
+		    						<pre class="prettyprint lang-html linenums">
+		    							&lt;!DOCTYPE html>
+		    							&lt;html>
+		    								&lt;head>
+		    									&lt;title>site title - &commat;pagetitle&lt;/title>
+		    								&lt;/head>
+		    											
+		    								&lt;body>
+		    									&commat;inputcontent
 		    
-		    						&lt;script src='&commat;pathtofile(site/js/process_pre_tags.js)'>&lt;/script>
-		    					&lt;/body>
-		    				&lt;/html>
-		    			</pre>
-		    		</div>
-		    	</p>
+		    									&lt;script src='&commat;pathtofile(site/js/process_pre_tags.js)'>&lt;/script>
+		    								&lt;/body>
+		    							&lt;/html>
+		    						</pre>
+		    					</div>
+		    				</p>
 		    
-		    	<p>
-		    		See the Google code prettifier <a href=https://github.com/google/code-prettify/blob/master/README.md>README</a> for supported languages and other relevant information.
-		    	</p>
+		    				<p>
+		    					See the Google code prettifier <a href=https://github.com/google/code-prettify/blob/master/README.md>README</a> for supported languages and other relevant information.
+		    				</p>
 		    
-		    	<p>
-		    		Also see the <a href="../resources/nift_tutorial.html">Nift tutorial</a> for a better idea of how to nicely display code blocks. 
-		    	</p>
+		    				<p>
+		    					Also see the <a href="../resources/nift_tutorial.html">Nift tutorial</a> for a better idea of how to nicely display code blocks. 
+		    				</p>
 		    
-		    	<center>
-		    		<h4>Example code blocks</h4>
-		    	</center>
+		    				<center>
+		    					<h4>Example code blocks</h4>
+		    				</center>
 		    
-		    	<br><br>
+		    				<br><br>
 		    
-		    	<div align="center">
-		    		<pre class="prettyprint linenums lang-cpp rounded">
-		    			int n;
-		    			vector&lt;int> v;
+		    				<div align="center">
+		    					<pre class="prettyprint linenums lang-cpp">
+		    						int n;
+		    						vector&lt;int> v;
 		    
-		    			&lt;pre>
-		    				int n;
-		    				vector&lt;int> v;
+		    						&lt;pre>
+		    							int n;
+		    							vector&lt;int> v;
 		    
-		    				for(int i=0; i &lt; n; i++)
-		    					cout &lt;&lt; v[i] &lt;&lt; endl;
-		    			&lt;/pre>
+		    							for(int i=0; i &lt; n; i++)
+		    								cout &lt;&lt; v[i] &lt;&lt; endl;
+		    						&lt;/pre>
 		    
-		    			for(int i=0; i &lt; n; i++)
-		    				cout &lt;&lt; v[i] &lt;&lt; endl;
-		    		</pre>
-		    	</div>
+		    						for(int i=0; i &lt; n; i++)
+		    							cout &lt;&lt; v[i] &lt;&lt; endl;
+		    					</pre>
+		    				</div>
 		    
-		    	<br>
+		    				<br>
 		    
-		    	<div align="center">
-		    		<pre class="rounded">
-		    			int n;
-		    			vector&lt;int> v;
+		    				<div align="center">
+		    					<pre class="prettyprint lang-cpp">
+		    						int n;
+		    						vector&lt;int> v;
 		    
-		    			&lt;pre>
-		    				int n;
-		    				vector&lt;int> v;
+		    						int n;
+		    						vector&lt;int> v;
 		    
-		    				for(int i=0; i &lt; n; i++)
-		    					cout &lt;&lt; v[i] &lt;&lt; endl;
-		    			&lt;/pre>
+		    						for(int i=0; i &lt; n; i++)
+		    							cout &lt;&lt; v[i] &lt;&lt; endl;
 		    
-		    			for(int i=0; i &lt; n; i++)
-		    				cout &lt;&lt; v[i] &lt;&lt; endl;
-		    		</pre>
-		    	</div>
+		    						for(int i=0; i &lt; n; i++)
+		    							cout &lt;&lt; v[i] &lt;&lt; endl;
+		    					</pre>
+		    				</div>
 		    
-		    	<br>
+		    				<br>
 		    
-		    	<div align="center">
-		    		<pre class="prettyprint linenums scroll wrap">
-		    			#include "Quoted.h"
-		    			
-		    			//reading a string which may be surrounded by quotes with spaces, and strips surrounding quotes
-		    			//note mutates white space into single spaces
-		    			bool read_quoted(std::istream &ifs, std::string &s)
-		    			{
-		    			    //reads first string
-		    			    if(!(ifs >> s))
-		    			        return 0;
-		    			
-		    			    std::string s2;
-		    			    if(s[0] == '"')
-		    			    {
-		    			        while(s[s.length()-1] != '"')
-		    			        {
-		    			            ifs >> s2;
-		    			            s += " " + s2;
-		    			        }
-		    			
-		    			        s.replace(0, 1, "");
-		    			        s.replace(s.length()-1, 1, "");
-		    			    }
-		    			    else if(s[0] == '\'')
-		    			    {
-		    			        while(s[s.length()-1] != '\'')
-		    			        {
-		    			            ifs >> s2;
-		    			            s+=" " + s2;
-		    			        }
-		    			
-		    			        s.replace(0, 1, "");
-		    			        s.replace(s.length()-1, 1, "");
-		    			    }
-		    			
-		    			    return 1;
-		    			};
-		    			
-		    			//outputting a string with quotes surrounded if it contains space(s)
-		    			std::string quote(const std::string &unquoted)
-		    			{
-		    			    if(unquoted.find(' ') == std::string::npos)
-		    			        return unquoted;
-		    			    else if(unquoted.find('"') == std::string::npos)
-		    			        return "\"" + unquoted + "\"";
-		    			    else
-		    			        return "'" + unquoted + "'";
-		    			};
-		    			
-		    		</pre>
-		    	</div>
+		    				<div align="center">
+		    					<pre class="prettyprint linenums scroll wrap">
+		    						#include "Quoted.h"
+		    						
+		    						//reading a string which may be surrounded by quotes with spaces, and strips surrounding quotes
+		    						//note mutates white space into single spaces
+		    						bool read_quoted(std::istream &ifs, std::string &s)
+		    						{
+		    						    //reads first string
+		    						    if(!(ifs >> s))
+		    						        return 0;
+		    						
+		    						    std::string s2;
+		    						    if(s[0] == '"')
+		    						    {
+		    						        while(s[s.length()-1] != '"')
+		    						        {
+		    						            ifs >> s2;
+		    						            s += " " + s2;
+		    						        }
+		    						
+		    						        s.replace(0, 1, "");
+		    						        s.replace(s.length()-1, 1, "");
+		    						    }
+		    						    else if(s[0] == '\'')
+		    						    {
+		    						        while(s[s.length()-1] != '\'')
+		    						        {
+		    						            ifs >> s2;
+		    						            s+=" " + s2;
+		    						        }
+		    						
+		    						        s.replace(0, 1, "");
+		    						        s.replace(s.length()-1, 1, "");
+		    						    }
+		    						
+		    						    return 1;
+		    						};
+		    						
+		    						//outputting a string with quotes surrounded if it contains space(s)
+		    						std::string quote(const std::string &unquoted)
+		    						{
+		    						    if(unquoted.find(' ') == std::string::npos)
+		    						        return unquoted;
+		    						    else if(unquoted.find('"') == std::string::npos)
+		    						        return "\"" + unquoted + "\"";
+		    						    else
+		    						        return "'" + unquoted + "'";
+		    						};
+		    						
+		    					</pre>
+		    				</div>
 		    
-		    	<br>
+		    				<br>
 		    
-		    	<div align="center">
-		    		<pre class="prettyprint linenums rounded">
-		    			#include "Quoted.h"
-		    			
-		    			//reading a string which may be surrounded by quotes with spaces, and strips surrounding quotes
-		    			//note mutates white space into single spaces
-		    			bool read_quoted(std::istream &ifs, std::string &s)
-		    			{
-		    			    //reads first string
-		    			    if(!(ifs >> s))
-		    			        return 0;
-		    			
-		    			    std::string s2;
-		    			    if(s[0] == '"')
-		    			    {
-		    			        while(s[s.length()-1] != '"')
-		    			        {
-		    			            ifs >> s2;
-		    			            s += " " + s2;
-		    			        }
-		    			
-		    			        s.replace(0, 1, "");
-		    			        s.replace(s.length()-1, 1, "");
-		    			    }
-		    			    else if(s[0] == '\'')
-		    			    {
-		    			        while(s[s.length()-1] != '\'')
-		    			        {
-		    			            ifs >> s2;
-		    			            s+=" " + s2;
-		    			        }
-		    			
-		    			        s.replace(0, 1, "");
-		    			        s.replace(s.length()-1, 1, "");
-		    			    }
-		    			
-		    			    return 1;
-		    			};
-		    			
-		    			//outputting a string with quotes surrounded if it contains space(s)
-		    			std::string quote(const std::string &unquoted)
-		    			{
-		    			    if(unquoted.find(' ') == std::string::npos)
-		    			        return unquoted;
-		    			    else if(unquoted.find('"') == std::string::npos)
-		    			        return "\"" + unquoted + "\"";
-		    			    else
-		    			        return "'" + unquoted + "'";
-		    			};
-		    			
-		    		</pre>
-		    	</div>
+		    				<div align="center">
+		    					<pre class="prettyprint linenums">
+		    						#include "Quoted.h"
+		    						
+		    						//reading a string which may be surrounded by quotes with spaces, and strips surrounding quotes
+		    						//note mutates white space into single spaces
+		    						bool read_quoted(std::istream &ifs, std::string &s)
+		    						{
+		    						    //reads first string
+		    						    if(!(ifs >> s))
+		    						        return 0;
+		    						
+		    						    std::string s2;
+		    						    if(s[0] == '"')
+		    						    {
+		    						        while(s[s.length()-1] != '"')
+		    						        {
+		    						            ifs >> s2;
+		    						            s += " " + s2;
+		    						        }
+		    						
+		    						        s.replace(0, 1, "");
+		    						        s.replace(s.length()-1, 1, "");
+		    						    }
+		    						    else if(s[0] == '\'')
+		    						    {
+		    						        while(s[s.length()-1] != '\'')
+		    						        {
+		    						            ifs >> s2;
+		    						            s+=" " + s2;
+		    						        }
+		    						
+		    						        s.replace(0, 1, "");
+		    						        s.replace(s.length()-1, 1, "");
+		    						    }
+		    						
+		    						    return 1;
+		    						};
+		    						
+		    						//outputting a string with quotes surrounded if it contains space(s)
+		    						std::string quote(const std::string &unquoted)
+		    						{
+		    						    if(unquoted.find(' ') == std::string::npos)
+		    						        return unquoted;
+		    						    else if(unquoted.find('"') == std::string::npos)
+		    						        return "\"" + unquoted + "\"";
+		    						    else
+		    						        return "'" + unquoted + "'";
+		    						};
+		    						
+		    					</pre>
+		    				</div>
 		    
-		    	<br>
+		    				<br>
 		    
-		    	<div align="center">
-		    		<pre class="prettyprint linenums rounded">
-		    			//adds insert file
-		    			if(read_and_process(insertLocation, antiDepsOfReadLocation, contentLocation, pageTitle, dateTimeInfo, indentAmount, codeBlockDepth, htmlCommentDepth, contentInserted, processedPage, pageDeps) > 0)
-		    				return 1;
-		    			//indent amount updated inside read_and_process
-		    			linePos += posOffset;
-		    		</pre>
-		    	</div>
-		    </div>
-		    
+		    				<div align="center">
+		    					<pre class="prettyprint linenums">
+		    						//adds insert file
+		    						if(read_and_process(insertLocation, antiDepsOfReadLocation, contentLocation, pageTitle, dateTimeInfo, indentAmount, codeBlockDepth, htmlCommentDepth, contentInserted, processedPage, pageDeps) > 0)
+		    							return 1;
+		    						//indent amount updated inside read_and_process
+		    						linePos += posOffset;
+		    					</pre>
+		    				</div>
+		    			</div>
 		    		</section>
 		    	</div>
 		    </section>
