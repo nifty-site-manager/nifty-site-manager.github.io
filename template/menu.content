@@ -4,7 +4,7 @@
 	<!-- Logo -->
 	<div id="logo">
 		<noselect>
-		<a href="@pathto(index)"><img src="@pathtofile(site/images/rabbit.png)" width=325 style="max-width:90%"></a><br>
+		<a href="@pathto(index)"><img src="@pathtofile(site/images/rabbit.svg)" width=325 style="max-width:90%"></a><br>
 		<!--<a href="@pathto(index)"><img src="@pathtofile(site/images/nifty-site-manager.png)" width=250></a>-->
 
 		<p style="margin-bottom:0px">

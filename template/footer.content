@@ -4,7 +4,7 @@
 		<img src="@pathtofile(site/images/nsm-medium.png)" width="120" style="margin-top:20px; margin-bottom:20px">
 	</div>
 
-	<center><img src="@pathtofile(site/images/badger.png)" width="325" style="max-width:90%; margin-top:100px"></center>
+	<center><img src="@pathtofile(site/images/badger.svg)" width="325" style="max-width:90%; margin-top:100px"></center>
 
 	<div class="container">
 		<div id="copyright">

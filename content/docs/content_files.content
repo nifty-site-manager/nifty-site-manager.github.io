@@ -8,6 +8,11 @@
 				<h2>Guide to writing content files</h2>
 			</header>
 
+			<!-- Image -->
+			<center>
+				<img src="@pathtofile(site/images/rabbit-icon.svg)" width=300 style="margin-bottom:40px">
+			</center>
+
 			<div class="content">
 				<h4>
 					Escaping characters
