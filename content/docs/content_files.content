@@ -69,7 +69,7 @@
 					For example suppose inside your website directory you have <mono>template/footer.content</mono>:
 
 					<div align="center">
-						<pre class="inline rounded">
+						<pre class="inline">
 							Page was last built on \@currentdate.
 						</pre>
 					</div>
@@ -79,7 +79,7 @@
 					To input <mono>template/footer.content</mono> into another file write:
 
 					<div align="center">
-						<pre class="inline rounded">
+						<pre class="inline">
 							\@input(template/footer.content)
 						</pre>
 					</div>
@@ -101,7 +101,7 @@
 					An example of when users may find this useful is when writing menus for page templates, or adding local links for any template files. An example of a smaller version of the menu for this site using <mono>\@pathto(page-name)</mono> is below:
 
 					<div align="center">
-						<pre class="prettyprint linenums rounded">
+						<pre class="prettyprint linenums">
 							<nav>
 								<ul class="drop_menu">
 									<li></li>
@@ -136,7 +136,7 @@
 					The footer content file for this site (inputted in the <mono>template/page.template</mono> file) is given below as an example using <mono>\@pathtofile(path-to-file)</mono>:
 
 					<div align="center">
-						<pre class="prettyprint linenums rounded">
+						<pre class="prettyprint linenums">
 							<footer>
 								<hr>
 								<center><img src="\@pathtofile(site/files/nsm.png)" width="120"></center>
@@ -164,7 +164,7 @@
 					You can include a css file using <mono>\@cssinclude(path-to-css-file)</mono>, where <mono>path-to-css-file</mono> is the path from the main site directory to the css file (<u>not</u> the path from the page to the css file). When building a page, <mono>Nift</mono> will replace <mono>\@cssinclude(path-to-css-file)</mono> with:
 
 					<div align="center">
-						<pre class="prettyprint lang-js rounded inline">
+						<pre class="prettyprint lang-js inline">
 							<link rel='stylesheet' type='text/css' href='path-from-page-to-css-file'>
 						</pre>
 					</div>
@@ -174,7 +174,7 @@
 					Alternatively you can use:
 
 					<div align="center">
-						<pre class="prettyprint lang-js rounded inline">
+						<pre class="prettyprint lang-js inline">
 							<link rel='stylesheet' type='text/css' href='\@pathtofile(path-to-css-file)'>
 						</pre>
 					</div>
@@ -187,7 +187,7 @@
 					You can include am image file using <mono>\@imginclude(path-to-img-file)</mono>, where <mono>path-to-img-file</mono> is the path from the main site directory to the img file (<u>not</u> the path from the page to the img file). When building a page, <mono>Nift</mono> will replace <mono>\@imginclude(path-to-img-file)</mono> with the following:
 
 					<div align="center">
-						<pre class="prettyprint lang-js rounded inline">
+						<pre class="prettyprint lang-js inline">
 							<img src="path-from-page-to-img-file">
 						</pre>
 					</div>
@@ -197,7 +197,7 @@
 					If you would like to set the width of an image, use something like the following in your source code:
 
 					<div align="center">
-						<pre class="prettyprint lang-js rounded inline">
+						<pre class="prettyprint lang-js inline">
 							<img src="\@pathtofile(path-to-img-file)" width="120">
 						</pre>
 					</div>
@@ -211,7 +211,7 @@
 					You can include a js file using <mono>\@jsinclude(path-to-js-file)</mono>, where <mono>path-to-js-file</mono> is the path from the main site directory to the js file (<u>not</u> the path from the page to the js file). When building a page, <mono>Nift</mono> will replace <mono>\@jsinclude(path-to-js-file)</mono> with: 
 
 					<div align="center">
-						<pre class="prettyprint lang-js rounded inline">
+						<pre class="prettyprint lang-js inline">
 							<script src="path-from-page-to-js-file"></script>
 						</pre>
 					</div>
@@ -221,7 +221,7 @@
 					Alternatively you can use:
 
 					<div align="center">
-						<pre class="prettyprint lang-js rounded inline">
+						<pre class="prettyprint lang-js inline">
 							<script src="\@pathtofile(path-to-js-file)"></script>
 						</pre>
 					</div>
@@ -234,7 +234,7 @@
 					You can include a favicon file using <mono>\@faviconinclude(path-to-favicon-file)</mono>, where <mono>path-to-favicon-file</mono> is the path from the main site directory to the favicon file (<u>not</u> the path from the page to the favicon file). When building a page, <mono>Nift</mono> will replace <mono>\@faviconinclude(path-to-favicon-file)</mono> with:
 
 					<div align="center">
-						<pre class="prettyprint lang-js rounded inline">
+						<pre class="prettyprint lang-js inline">
 							<link rel='icon' type='image/png' href='path-from-page-to-favicon-file'>
 						</pre>
 					</div>
@@ -244,7 +244,7 @@
 					Alternatively you can use:
 
 					<div align="center">
-						<pre class="prettyprint lang-js rounded inline">
+						<pre class="prettyprint lang-js inline">
 							<link rel='icon' type='image/png' href='\@pathtofile(path-to-favicon-file)'>
 						</pre>
 					</div>
@@ -254,7 +254,7 @@
 					An example of using <mono>\@cssinclude(path-to-css-file)</mono>, <mono>\@jsinclude(path-to-js-file)</mono> and <mono>\@faviconinclude(path-to-favicon-file)</mono> is given below (I typically put these in a <mono>head.content</mono> file located in the <mono>template</mono> directory and included in the <mono>template/page.template</mono> file in between the <mono>\<head>\</head></mono> tags):
 
 					<div align="center">
-						<pre class="prettyprint inline rounded">
+						<pre class="prettyprint inline">
 							\@cssinclude("site/css/pagestyle.css")
 							\@jsinclude("site/js/motion.css")
 							\@faviconinclude("site/files/favicon.ico")
