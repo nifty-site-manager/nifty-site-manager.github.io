@@ -32,7 +32,7 @@
 					<section class="highlight">
 						<a href="https://vuejs.org/"><img src="@pathtofile(site/images/vue.svg)" alt="" height="150px" style="max-width:40%"/></a>
 						<h3><a href="https://vuejs.org/">Vue.js</a></h3>
-						<p>The Progressive JavaScript Framework..</p>
+						<p>The Progressive JavaScript Framework.</p>
 						<ul class="actions">
 							<li><a href="https://vuejs.org/v2/guide/" class="button style1">Learn More</a></li>
 						</ul>
