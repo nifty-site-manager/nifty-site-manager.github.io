@@ -66,6 +66,7 @@
 						<li><a href="@pathto(resources/get_started)">Get Started</a></li>
 						<li><a href="@pathto(resources/js_frameworks)">JS Frameworks</a></li>
 						<li><a href="@pathto(resources/links)">Links</a></li>
+						<li><a href="@pathto(resources/logos)">Logos</a></li>
 						<li><a href="@pathto(resources/nift_tutorial)">Nift Tutorial</a></li>
 						<li><a href="@pathto(resources/php_frameworks)">PHP Frameworks</a></li>
 						<li><a href="@pathto(resources/project_suggestions)">Project Suggestions</a></li>

@@ -1,0 +1,40 @@
+<!-- Main -->
+<section id="main" class="wrapper style5">
+	<div class="title">Nift Logos</div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+				<p>
+					This page contains high quality versions of the Nift logos.
+				</p>
+
+				<center>
+					<img src="@pathtofile(site/images/rabbit.svg)" width="450px" style="max-width:80%; margin-bottom: 20px">
+				</center>
+
+				<center>
+					<img src="@pathtofile(site/images/badger.svg)" width="450px" style="max-width:80%; margin-bottom: 20px">
+				</center>
+
+				<center>
+					<img src="@pathtofile(site/images/rabbit-black.svg)" width="450px" style="max-width:80%; margin-bottom: 20px">
+				</center>
+
+				<center>
+					<img src="@pathtofile(site/images/badger-black.svg)" width="450px" style="max-width:80%; margin-bottom: 20px">
+				</center>
+
+				<center>
+					<img src="@pathtofile(site/images/rabbit-icon.svg)" width="400px" style="max-width:80%; margin-bottom: 20px">
+				</center>
+
+				<center>
+					<img src="@pathtofile(site/images/badger-icon.svg)" width="400px" style="max-width:80%; margin-bottom: 20px">
+				</center>
+
+				<center>
+					<img src="@pathtofile(site/images/devil.png)" width="400px" style="max-width:80%">
+				</center>
+		</section>
+	</div>
+</section>

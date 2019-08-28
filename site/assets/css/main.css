@@ -2086,6 +2086,44 @@ input, select, textarea {
 				color: #dcdee0;
 			}
 
+	.wrapper.style5 h2
+	{
+		color: #dcdee0 !important;
+		font-size:20pt;
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+
+	.wrapper.style5 h3
+	{
+		color: #dcdee0 !important;
+		font-size:16pt;
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+
+	.wrapper.style5 a
+	{
+		color: #78be20;
+		text-decoration: none;
+	}
+
+	.wrapper.style5 a:hover
+	{
+		color: #3cd668;
+	}
+
+		.wrapper.style5 {
+			background: #4e698a;
+			color: #dcdee0;
+			font-size: 14pt;
+		}
+
+			.wrapper.style5 .title {
+				background: #4e698a;
+				color: #dcdee0;
+			}
+
 		.wrapper.style3 {
 			background: #f3f3f3 url("images/overlay.png");
 		}

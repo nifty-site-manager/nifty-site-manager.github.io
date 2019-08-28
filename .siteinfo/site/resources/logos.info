@@ -1,9 +1,9 @@
 10:48:26 Wednesday August 28 2019
-resources/get_started
-get_started
+resources/logos
+logos
 template/page.template
 
-content/resources/get_started.content
+content/resources/logos.content
 template/footer.content
 template/head.content
 template/menu.content

@@ -78,6 +78,10 @@ resources/links
 links
 template/page.template
 
+resources/logos
+logos
+template/page.template
+
 resources/nift_tutorial
 nift_tutorial
 template/page.template
