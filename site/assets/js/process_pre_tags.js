@@ -5,7 +5,6 @@
 var pre_elements = document.getElementsByTagName('pre');
 for (var i = 0; i < pre_elements.length; i++)
 {
-	pre_elements = document.getElementsByTagName('pre');
 	var content = pre_elements[i].innerHTML;
 
 	var tabs_to_remove = '';
