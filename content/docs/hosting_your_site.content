@@ -14,7 +14,7 @@
 	</h3>
 
 	<center>
-		<a href="https://pages.github.com/"><img src="@pathtofile(site/images/Octocat.png)" width=250 style="max-width: 45%; margin-bottom: 0px"></a>
+		<a href="https://pages.github.com/"><img src="@pathtofile(site/images/Octocat.png)" width=250 style="max-width: 45%; margin-bottom: 20px"></a>
 	</center>
 
 	<p>
@@ -22,7 +22,7 @@
 	</p>
 
 	<center>
-		<div style="max-width:90%; margin-top: -30px">
+		<div style="max-width:90%; margin-top: -20px">
 		<a href="https://pages.bitbucket.io/"><img src="@pathtofile(site/images/bitbucket.svg)" width=300 style="max-width:45%; vertical-align:middle"></a> 
 		<a href="https://pages.github.com/"><img src="@pathtofile(site/images/github.png)" width=260 style="max-width:45%; vertical-align:middle; margin-left: 20px; margin-right:0px"></a> <br>
 		<a href="https://about.gitlab.com/product/pages/"><img src="@pathtofile(site/images/gitlab.svg)" width=320 style="max-width:45%; vertical-align:middle;"></a>
@@ -42,7 +42,7 @@
 	</p>
 
 	<p>
-		You can also combine any of the above hosting options with <a href="https://netlify.com">Netlify</a>, which works well for custom domains (including subdomains) and automatically renews <a href="https://letsencrypt.org/">Let's Encrypt</a> certificates for your site. Netlify also has built in <a href="https://www.netlify.com/docs/form-handling/">form handling</a> and a full suite of <a href="https://www.netlify.com/docs/identity/">authentication functionality</a>, backed by the <a href="https://www.gotrueapi.org/">GoTrue API</a>.
+		You can also combine any of the above hosting options with <a href="https://netlify.com">Netlify</a>, which works well for custom domains (including subdomains) and automatically renews <a href="https://letsencrypt.org/">Let's Encrypt</a> certificates for your site. Netlify also has built in <a href="https://www.netlify.com/docs/form-handling/">form handling</a> and a full suite of <a href="https://www.netlify.com/docs/identity/">authentication functionality</a> backed by the <a href="https://www.gotrueapi.org/">GoTrue API</a>.
 	</p>
 
 	<center>
