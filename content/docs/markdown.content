@@ -23,7 +23,7 @@
 				</p>
 
 				<p>
-					The <mono>Nift</mono> documentation covers using markdown on your websites using <a href="http://showdownjs.com/">Showdown</a>. To use <mono>Showdown</mono> on your websites you will need <mono>showdown.js</mono> or <mono>showdown.min.js</mono> (you can get v1.9.0 from <a href="https://gitlab.com/nsm-templates/markdown-site/blob/master/site/js/showdown.min.js">here</a>) along with <a href="https://gitlab.com/nsm-templates/markdown-site/blob/master/site/js/process_md_blocks.js">process_md_blocks.js</a> script. 
+					The <mono>Nift</mono> documentation covers using markdown on your websites using <a href="http://showdownjs.com/">Showdown</a>, for a basic example see the <a href="@pathto(resources/templates)">template</a> <mono>markdown-site</mono>. To use <mono>Showdown</mono> on your websites you will need <mono>showdown.js</mono> or <mono>showdown.min.js</mono> (you can get v1.9.0 from <a href="https://gitlab.com/nsm-templates/markdown-site/blob/master/site/js/showdown.min.js">here</a>) along with <a href="https://gitlab.com/nsm-templates/markdown-site/blob/master/site/js/process_md_blocks.js">process_md_blocks.js</a> script. 
 				</p>
 
 				<p>
