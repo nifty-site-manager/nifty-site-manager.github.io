@@ -148,106 +148,181 @@
 
 		    <!-- Main -->
 		    <section id="main" class="wrapper style2">
-		    	<div class="title">Hosting Your Websites</div>
+		    	<div class="title">Markdown</div>
 		    	<div class="container">
 		    		<!-- Features -->
 		    		<section id="features">
 		    			<header class="style1">
-		    				<h2>Hosting options for your websites</h2>
+		    				<h2>How to use markdown on your websites</h2>
 		    			</header>
 		    
-		    <div class="content">
-		    	<h3>
-		    		Hosting your site
-		    	</h3>
+		    			<div class="content" style="margin-top:-50px;">
+		    				<center>
+		    					<img src="../images/markdown.svg" width=250 style="margin-bottom:20px">
+		    				</center>
 		    
-		    	<center>
-		    		<a href="https://pages.github.com/"><img src="../images/Octocat.png" width=250 style="max-width: 45%; margin-bottom: 20px"></a>
-		    	</center>
+		    				<p>
+		    					Options for using markdown on your websites include:
+		    					<ul style="text-indent:30px">
+		    						<li><a href="http://showdownjs.com/">Showdown</a></li>
+		    						<li><a href="https://marked.js.org">Marked.js</a></li>
+		    						<li><a href="https://github.com/markdown-it/markdown-it">markdown-it</a></li>
+		    					</ul>
+		    				</p>
 		    
-		    	<p>
-		    		To host your site just copy everything from the site directory (not the stage directory) to the server on which you would like to host it.
-		    	</p>
+		    				<p>
+		    					The <mono>Nift</mono> documentation covers using markdown on your websites using <a href="http://showdownjs.com/">Showdown</a>. To use <mono>Showdown</mono> on your websites you will need <mono>showdown.js</mono> or <mono>showdown.min.js</mono> (you can get v1.9.0 from <a href="https://gitlab.com/nsm-templates/markdown-site/blob/master/site/js/showdown.min.js">here</a>) along with <a href="https://gitlab.com/nsm-templates/markdown-site/blob/master/site/js/process_md_blocks.js">process_md_blocks.js</a> script. 
+		    				</p>
 		    
-		    	<center>
-		    		<div style="max-width:90%; margin-top: -20px">
-		    		<a href="https://pages.bitbucket.io/"><img src="../images/bitbucket.svg" width=300 style="max-width:45%; vertical-align:middle"></a> 
-		    		<a href="https://pages.github.com/"><img src="../images/github.png" width=260 style="max-width:45%; vertical-align:middle; margin-left: 20px; margin-right:0px"></a> <br>
-		    		<a href="https://about.gitlab.com/product/pages/"><img src="../images/gitlab.svg" width=320 style="max-width:45%; vertical-align:middle;"></a>
-		    		</div>
-		    	</center>
+		    				<p>
+		    					To use the <mono>Showdown</mono> add includes for the above scripts along with <mono>Showdown</mono> scripts to the end of your <mono>&lt;body&gt;</mono>. For example a <mono>page.template</mono> file might be:
 		    
-		    	<p>
-		    		For creating static websites on code collaboration sites offering repository management like <a href="https://aws.amazon.com/codecommit/">Amazon CodeCommit</a>, <a href="https://pages.bitbucket.io/">BitBucket</a>, <a href="https://pages.github.com/">GitHub</a> and <a href="https://about.gitlab.com/product/pages/">GitLab</a> you can import/fork, rename and clone a site repository template and work from that (use <mono>nsm clone <i>repository-url</i></mono>). I personally find hosting on GitLab the easiest, because you only need one branch (standard <mono>master</mono>) then have it deploy the site when you push using a <mono>.gitlab-ci.yaml</mono> file.
-		    	</p>
+		    					<div align="center">
+		    						<pre class="prettyprint lang-html linenums">
+		    							&lt;!DOCTYPE html>
+		    							&lt;html>
+		    								&lt;head>
+		    									&lt;title>site title - &commat;pagetitle&lt;/title>
+		    								&lt;/head>
+		    											
+		    								&lt;body>
+		    									&commat;inputcontent
 		    
-		    	<p>
-		    		There is a variety of site repository templates <a href="../resources/templates.html">here</a>, including <a href="https://undraw.co/evie">Evie</a> from <a href="https://undraw.co/">unDraw</a> and a whole range of <a href="https://html5up.net/">HTML5 UP</a> templates.
-		    	</p>
+		    									&lt;script src='&commat;pathtofile(site/js/process_md_blocks.js)'>&lt;/script>
+		    									&lt;script src="&commat;pathtofile(site/js/showdown.min.js)">&lt;/script>
+		    									&lt;script>
+		    										var converter = new showdown.Converter();
+		    										converter.setOption('tables', 'on');
+		    										converter.setOption('strikethrough', 'on');
+		    										elements = document.getElementsByClassName('markdown');
+		    										for(var i=0; i&lt;elements.length; i++)
+		    										{
+		    											elements[i].innerHTML = converter.makeHtml(elements[i].innerHTML);
+		    										}
+		    									&lt;/script>
+		    								&lt;/body>
+		    							&lt;/html>
+		    						</pre>
+		    					</div>
+		    				</p>
 		    
-		    	<p>
-		    		Note - You can rename a repository when importing it, rather than forking and renaming, plus on BitBucket and GitHub you cannot remove fork relationships. Also on GitHub you will need to go in to the site repository's settings, find the GitHub Pages section and set the <mono>source</mono> to <mono>master branch</mono> (there may be some delay before your website goes live).
-		    	</p>
+		    				<p>
+		    					It's also handy to add the following bit of css to one of your css files to hide visibility of textareas when pages are loading:
 		    
-		    	<p>
-		    		You can also combine any of the above hosting options with <a href="https://netlify.com">Netlify</a>, which works well for custom domains (including subdomains) and automatically renews <a href="https://letsencrypt.org/">Let's Encrypt</a> certificates for your site. Netlify also has built in <a href="https://www.netlify.com/docs/form-handling/">form handling</a> and a full suite of <a href="https://www.netlify.com/docs/identity/">authentication functionality</a> backed by the <a href="https://www.gotrueapi.org/">GoTrue API</a>.
-		    	</p>
+		    					<div align="center">
+		    						<pre class="prettyprint lang-css linenums">
+		    							textarea.markdown
+		    							{
+		    								visibility: hidden;
+		    							}
 		    
-		    	<center>
-		    		<a href="https://www.netlify.com/"><img src="../images/netlify.svg" width=300 style="max-width: 50%; margin-left:-40px; margin-bottom: 20px"></a>
-		    	</center>
+		    							pre.markdown
+		    							{
+		    								visibility: hidden;
+		    							}
+		    						</pre>
+		    					</div>
+		    				</p>
 		    
-		    	<p>
-		    		Other good free hosting options for static sites include:
+		    				<p>
+		    					You can then do a block of markdown either as:
 		    
-		    		<ul>
-		    			<li><a href="https://aws.amazon.com/amplify/console/">Amazon Amplify Console</a></li>
-		    			<li><a href="https://firebase.google.com/">Google FireBase</a></li>
-		    			<li><a href="https://surge.sh/">surge.sh</a></li>
-		    			<li><a href="https://zeit.co/now">ZEIT Now</a></li>
-		    		</ul>
-		    	</p>
+		    					<div align="center">
+		    						<pre class="prettyprint lang-html linenums">
+		    							&lt;textarea class="markdown">
+		    								markdown code here
+		    							&lt;/textarea>
+		    						</pre>
+		    					</div>
+		    				</p>
 		    
-		    	<center>
-		    		<a href="https://aws.amazon.com/amplify/console/"><img src="../images/aws.svg" width=175 style="max-width: 30%; vertical-align:middle; margin-top: -50px"></a>
-		    		<a href="https://firebase.google.com/"><img src="../images/firebase.svg" width=120 style="max-width: 30%; vertical-align:middle; margin-top: -70px; margin-left: 20px"></a><br>
-		    		<a href="https://surge.sh/"><img src="../images/surge.svg" width=175 style="max-width: 30%; vertical-align:middle; margin-left:20px; margin-bottom: 20px; margin-top: 30px"></a>
-		    		<a href="https://zeit.co"><img src="../images/zeit.png" width=175 style="max-width: 30%; vertical-align:middle; margin-left:20px; margin-bottom: 20px; margin-top: 10px"></a>
-		    	</center>
+		    				<p>
+		    					or:
 		    
-		    	<p>
-		    		Also check out <a href="https://www.aerobatic.com/">Aerobatic</a>.
-		    	</p>
+		    					<div align="center">
+		    						<pre class="prettyprint lang-html linenums">
+		    							&lt;pre class="markdown">
+		    								markdown code here
+		    							&lt;/pre>
+		    						</pre>
+		    					</div>
+		    				</p>
 		    
-		    	<p>
-		    		If you would like to be a masochist and set up your own site repositories from scratch for any of BitBucket, GitHub or GitLab then see:
+		    				<h4>Examples of using markdown</h4>
 		    
-		    		<ol>
-		    			<li><a href="./bitbucket_hosting.html">Hosting on BitBucket</a>;</li>
-		    			<li><a href="./github_hosting.html">Hosting on GitHub</a>; or</li>
-		    			<li><a href="./gitlab_hosting.html">Hosting on GitLab</a>.</li>
-		    		</ol>
-		    	</p>
+		    				<textarea class="markdown">
+		    					See [here](https://github.com/showdownjs/showdown/wiki/Showdown's-Markdown-syntax) for documentation on Showdown's markdown syntax. Unfortunately emoji's do not seem to work, eg. :-1:.
+		    				</textarea>
 		    
-		    	<p>
-		    		To host dynamic websites for free check out <a href="https://www.heroku.com/">Heroku</a>. Other options for hosting dynamic websites (or static sites if you would like) include hiring a server with someone like:
+		    				<textarea class="markdown">
+		    					1. You can make text *italic* by surrounding it with \&ast;, eg. \&ast;text\&ast;. 
+		    					2. You can make text **bold** by surrounding it with \&ast;\&ast;, eg. \&ast;\&ast;text\&ast;\&ast;. 
+		    					2. You can make text ~~strikethrough~~ by surrounding it with &tilde;&tilde;, eg. &tilde;&tilde;text&tilde;&tilde;. 
+		    				</textarea>
 		    
-		    	<ol>
-		    		<li><a href="https://buyvm.net/">BuyVM</a>;</li>
-		    		<li><a href="https://joesdatacenter.com/">Joe's Datacenter</a>; or</li>
-		    		<li><a href="https://www.linode.com/">Linode</a>.</li>
-		    	</ol>
-		    	or any site that offers linux VPS hiring, then using something like the following to set up a web server on the server you have hired:
+		    				<textarea class="markdown">
+		    					You can do unordered lists using &ast;, \- or \+, Eg.:
+		    					* list item 1
+		    					- list item 2
+		    					+ list item 3
 		    
-		    	<ol>
-		    		<li><a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)">LAMP stack</a>; or</li>
-		    		<li><a href="https://www.nginx.com/">NGINX</a> (check out NGINX Unit for free options).</li>
-		    	</ol>
+		    					You can do ordered lists using 1., 2., 3., etc., Eg.:
+		    					1. list item 1
+		    					2. list item 2
+		    					3. list item 3
+		    				</textarea>
 		    
-		    	<center>
-		    		<a href="https://www.nginx.com/"><img src="../images/nginx.svg" width=250 style="max-width: 40%; vertical-align:middle"></a>
-		    	</center>
-		    </div>
+		    				<textarea class="markdown">
+		    					You can do links using **\[text\]\(url\)**. You can do images using **\[alt text\]\(img url\)**.
+		    				</textarea>
+		    
+		    				<textarea class="markdown">
+		    					Tables aren't part of the core Markdown spec, but they are part of GFM and Showdown supports them by turning on the option **tables**.
+		    
+		    					Colons can be used to align columns.
+		    
+		    					In the new version, the outer pipes (|) are optional, matching GFM spec.
+		    
+		    					You also don't need to make the raw Markdown line up prettily.
+		    
+		    					You can also use other markdown syntax inside them.
+		    
+		    					The following table:
+		    
+		    					| Tables        | Are           | Cool  |
+		    					| ------------- |:-------------:| -----:|
+		    					| **col 3 is**  | right-aligned | $1600 |
+		    					| col 2 is      | *centered*    |   $12 |
+		    					| zebra stripes | ~~are neat~~  |    $1 |
+		    
+		    					is generated using
+		    				</textarea>
+		    
+		    				<center>
+		    					<pre class="prettyprint lang-markdown inline">
+		    						| Tables        | Are           | Cool  |
+		    						| ------------- |:-------------:| -----:|
+		    						| **col 3 is**  | right-aligned | $1600 |
+		    						| col 2 is      | *centered*    |   $12 |
+		    						| zebra stripes | ~~are neat~~  |    $1 |
+		    					</pre>
+		    				</center> <br><br>
+		    
+		    				<textarea class="markdown">
+		    					You can do inline code by surrounding the code with \`, eg `print("hello, world!")`.
+		    				</textarea>
+		    
+		    				<textarea class="markdown">
+		    					To do a code block just indent by 4 spaces preceded by an empty line, for example:
+		    
+		    						my_string = "hello, world!"
+		    						print(my_string)
+		    				</textarea>
+		    
+		    				<p>
+		    					Note: Due to <mono>Nift</mono> converting <mono>&lt;</mono> to <mono>&amp;lt;</mono> which does not display when doing inline code or code blocks with <mono>Nift</mono>, it is much better for code blocks containing <mono>&lt;</mono> to just use <mono>&lt;mono&gt;</mono> tags for inline and Google Code Prettify as outlined <a href="displaying_code_blocks.html">here</a>.
+		    				</p>
+		    			</div>
 		    		</section>
 		    	</div>
 		    </section>

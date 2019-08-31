@@ -38,6 +38,10 @@ docs/lokinet_snapps
 lokinet_snapps
 template/page.template
 
+docs/markdown
+markdown
+template/page.template
+
 docs/nift_commands
 nift_commands
 template/page.template

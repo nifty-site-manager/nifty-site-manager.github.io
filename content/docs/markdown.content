@@ -1,0 +1,180 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">Markdown</div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<header class="style1">
+				<h2>How to use markdown on your websites</h2>
+			</header>
+
+			<div class="content" style="margin-top:-50px;">
+				<center>
+					<img src="@pathtofile(site/images/markdown.svg)" width=250 style="margin-bottom:20px">
+				</center>
+
+				<p>
+					Options for using markdown on your websites include:
+					<ul style="text-indent:30px">
+						<li><a href="http://showdownjs.com/">Showdown</a></li>
+						<li><a href="https://marked.js.org">Marked.js</a></li>
+						<li><a href="https://github.com/markdown-it/markdown-it">markdown-it</a></li>
+					</ul>
+				</p>
+
+				<p>
+					The <mono>Nift</mono> documentation covers using markdown on your websites using <a href="http://showdownjs.com/">Showdown</a>. To use <mono>Showdown</mono> on your websites you will need <mono>showdown.js</mono> or <mono>showdown.min.js</mono> (you can get v1.9.0 from <a href="https://gitlab.com/nsm-templates/markdown-site/blob/master/site/js/showdown.min.js">here</a>) along with <a href="https://gitlab.com/nsm-templates/markdown-site/blob/master/site/js/process_md_blocks.js">process_md_blocks.js</a> script. 
+				</p>
+
+				<p>
+					To use the <mono>Showdown</mono> add includes for the above scripts along with <mono>Showdown</mono> scripts to the end of your <mono>\<body\></mono>. For example a <mono>page.template</mono> file might be:
+
+					<div align="center">
+						<pre class="prettyprint lang-html linenums">
+							<!DOCTYPE html>
+							<html>
+								<head>
+									<title>site title - \@pagetitle</title>
+								</head>
+											
+								<body>
+									\@inputcontent
+
+									<script src='\@pathtofile(site/js/process_md_blocks.js)'></script>
+									<script src="\@pathtofile(site/js/showdown.min.js)"></script>
+									<script>
+										var converter = new showdown.Converter();
+										converter.setOption('tables', 'on');
+										converter.setOption('strikethrough', 'on');
+										elements = document.getElementsByClassName('markdown');
+										for(var i=0; i<elements.length; i++)
+										{
+											elements[i].innerHTML = converter.makeHtml(elements[i].innerHTML);
+										}
+									</script>
+								</body>
+							</html>
+						</pre>
+					</div>
+				</p>
+
+				<p>
+					It's also handy to add the following bit of css to one of your css files to hide visibility of textareas when pages are loading:
+
+					<div align="center">
+						<pre class="prettyprint lang-css linenums">
+							textarea.markdown
+							{
+								visibility: hidden;
+							}
+
+							pre.markdown
+							{
+								visibility: hidden;
+							}
+						</pre>
+					</div>
+				</p>
+
+				<p>
+					You can then do a block of markdown either as:
+
+					<div align="center">
+						<pre class="prettyprint lang-html linenums">
+							<textarea class="markdown">
+								markdown code here
+							</textarea>
+						</pre>
+					</div>
+				</p>
+
+				<p>
+					or:
+
+					<div align="center">
+						<pre class="prettyprint lang-html linenums">
+							<pre class="markdown">
+								markdown code here
+							</pre>
+						</pre>
+					</div>
+				</p>
+
+				<h4>Examples of using markdown</h4>
+
+				<textarea class="markdown">
+					See [here](https://github.com/showdownjs/showdown/wiki/Showdown's-Markdown-syntax) for documentation on Showdown's markdown syntax. Unfortunately emoji's do not seem to work, eg. :-1:.
+				</textarea>
+
+				<textarea class="markdown">
+					1. You can make text *italic* by surrounding it with \\*, eg. \\*text\\*. 
+					2. You can make text **bold** by surrounding it with \\*\\*, eg. \\*\\*text\\*\\*. 
+					2. You can make text ~~strikethrough~~ by surrounding it with \~\~, eg. \~\~text\~\~. 
+				</textarea>
+
+				<textarea class="markdown">
+					You can do unordered lists using \*, \- or \+, Eg.:
+					* list item 1
+					- list item 2
+					+ list item 3
+
+					You can do ordered lists using 1., 2., 3., etc., Eg.:
+					1. list item 1
+					2. list item 2
+					3. list item 3
+				</textarea>
+
+				<textarea class="markdown">
+					You can do links using **\[text\]\(url\)**. You can do images using **\[alt text\]\(img url\)**.
+				</textarea>
+
+				<textarea class="markdown">
+					Tables aren't part of the core Markdown spec, but they are part of GFM and Showdown supports them by turning on the option **tables**.
+
+					Colons can be used to align columns.
+
+					In the new version, the outer pipes (|) are optional, matching GFM spec.
+
+					You also don't need to make the raw Markdown line up prettily.
+
+					You can also use other markdown syntax inside them.
+
+					The following table:
+
+					| Tables        | Are           | Cool  |
+					| ------------- |:-------------:| -----:|
+					| **col 3 is**  | right-aligned | $1600 |
+					| col 2 is      | *centered*    |   $12 |
+					| zebra stripes | ~~are neat~~  |    $1 |
+
+					is generated using
+				</textarea>
+
+				<center>
+					<pre class="prettyprint lang-markdown inline">
+						| Tables        | Are           | Cool  |
+						| ------------- |:-------------:| -----:|
+						| **col 3 is**  | right-aligned | $1600 |
+						| col 2 is      | *centered*    |   $12 |
+						| zebra stripes | ~~are neat~~  |    $1 |
+					</pre>
+				</center> <br><br>
+
+				<textarea class="markdown">
+					You can do inline code by surrounding the code with \`, eg `print("hello, world!")`.
+				</textarea>
+
+				<textarea class="markdown">
+					To do a code block just indent by 4 spaces preceded by an empty line, for example:
+
+						my_string = "hello, world!"
+						print(my_string)
+				</textarea>
+
+				<p>
+					Note: Due to <mono>Nift</mono> converting <mono>\<</mono> to <mono>&amp;lt;</mono> which does not display when doing inline code or code blocks with <mono>Nift</mono>, it is much better for code blocks containing <mono>\<</mono> to just use <mono>\<mono\></mono> tags for inline and Google Code Prettify as outlined <a href="@pathto(docs/displaying_code_blocks)">here</a>.
+				</p>
+			</div>
+		</section>
+	</div>
+</section>
