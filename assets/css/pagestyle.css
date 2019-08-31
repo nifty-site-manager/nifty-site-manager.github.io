@@ -16,6 +16,11 @@ div.content
 	color: #2b2c2e;
 }
 
+textarea.markdown
+{
+	visibility: hidden;
+}
+
 mono
 {
 	font-family: DejaVu Sans Mono, Liberation Mono, Consolas, Ubuntu Mono, Courier New;
