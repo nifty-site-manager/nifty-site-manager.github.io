@@ -1,0 +1,42 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">Blog Templates</div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<header class="style1">
+				<h2>Blog repository templates for making blogs</h2>
+			</header>
+
+			<div class="content">
+				<p>
+					For template blog repositories that you can import (or fork and rename) then clone to start making blogs, see the table below:
+				</p>
+
+				<center>
+					<table id="blogs_table" class="alt">
+						@input(content/resources/tables/blogs.table)
+					</table>
+				</center>
+
+				<p>
+					To have a template added to the above table, email <mono>templates@nift.cc</mono> with a link to a repository on BitBicket/GitHub/GitLab. If the repository indeed contains a blog template made with <mono>Nift</mono> then we will fork/import the repository to nsm-blogs on BitBucket, GitHub and GitLab and add it to the above table.
+				</p>
+
+				<p>
+					To make changes to a template that has already been added to the above table, make a pull request from the repository you had us clone originally. 
+				</p>
+
+				<p>
+					The following table contains modified <a href="https://html5up.net/">HTML5 UP</a> template blog repositories that you can import (or fork and rename) then clone to start making blogs. If there is an <a href="https://html5up.net/">HTML5 UP</a> template you would like that is not in the table below email <mono>templates@nift.cc</mono> and we will do our best to add it for you.
+				</p>
+
+				<center>
+					<table id="html5up_blogs_table" class="alt">
+						@input(content/resources/tables/html5up_blogs.table)
+					</table>
+				</center>
+			</div>
+		</section>
+	</div>
+</section>

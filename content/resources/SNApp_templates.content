@@ -42,6 +42,38 @@
 					@input(content/resources/tables/html5up_templates.table)
 				</table>
 			</center>
+
+			<header class="style1">
+				<h2>Blog SNApp repository templates for making blog SNApps</h2>
+			</header>
+
+			<p>
+				For template blog SNApp repositories that you can import (or fork and rename) then clone to start making blogs, see the table below:
+			</p>
+
+			<center>
+				<table id="blog_SNApps_table" class="Loki">
+					@input(content/resources/tables/blogs.table)
+				</table>
+			</center>
+
+			<p>
+				To have a template added to the above table, email <mono class="Loki">templates@nift.cc</mono> with a link to a repository on BitBicket/GitHub/GitLab. If the repository indeed contains a blog SNApp template made with <mono class="Loki">Nift</mono> then we will fork/import the repository to nsm-blogs on BitBucket, GitHub and GitLab and add it to the above table.
+			</p>
+
+			<p>
+				To make changes to a template that has already been added to the above table, make a pull request from the repository you had us clone originally. 
+			</p>
+
+			<p>
+				The following table contains modified <a href="https://html5up.net/">HTML5 UP</a> template blog SNApp repositories that you can import (or fork and rename) then clone to start making blog SNApps. If there is an <a href="https://html5up.net/">HTML5 UP</a> template you would like that is not in the table below email <mono class="Loki">templates@nift.cc</mono> and we will do our best to add it for you.
+			</p>
+
+			<center>
+				<table id="html5up_blog_SNApps_table" class="Loki">
+					@input(content/resources/tables/html5up_blogs.table)
+				</table>
+			</center>
 		</section>
 	</div>
 </section>

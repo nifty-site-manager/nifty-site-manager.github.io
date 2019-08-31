@@ -1,13 +1,11 @@
 01:38:47 Sunday September 01 2019
-resources/SNApp_templates
-SNApp_templates
+resources/blog_templates
+blog_templates
 template/page.template
 
-content/resources/SNApp_templates.content
+content/resources/blog_templates.content
 content/resources/tables/blogs.table
 content/resources/tables/html5up_blogs.table
-content/resources/tables/html5up_templates.table
-content/resources/tables/templates.table
 template/footer.content
 template/head.content
 template/menu.content

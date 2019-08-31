@@ -1,0 +1,19 @@
+<thead>
+	<tr>
+		<th>name</th>
+		<th>demo</th>
+		<th>repository</th>
+	</tr>
+</thead>
+<tr>
+	<td><a href="https://html5up.net/miniport-blog">miniport-blog</a></td>
+	<td><a href="https://html5up-nsm-blogs.github.io/miniport-blog/">GitHub</a> - <a href="https://html5up-nsm-blogs.gitlab.io/miniport-blog/">GitLab</a></td>
+	<td><a href="https://bitbucket.org/html5up-nsm-blogs/miniport-blog">BitBucket</a> - <a href="https://github.com/html5up-nsm-blogs/miniport-blog">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-blogs/miniport-blog">GitLab</a></td>
+</tr>
+<tfoot>
+	<tr>
+		<th>name</th>
+		<th>demo</th>
+		<th>repository</th>
+	</tr>
+</tfoot>

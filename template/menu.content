@@ -73,6 +73,7 @@
 						<li><a href="@pathto(resources/project_suggestions)">Project Suggestions</a></li>
 						<li><a href="@pathto(resources/templates)">Templates</a></li>
 						<li><a href="@pathto(resources/SNApp_templates)">SNApp Templates</a></li>
+						<li><a href="@pathto(resources/blog_templates)">Blog Templates</a></li>
 					</ul>
 				</li>
 				<li><a href="@pathto(support)">Support</a></li>
