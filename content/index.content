@@ -31,8 +31,8 @@
 				<div class="row">
 					<div class="col-6 col-12-medium">
 						<section>
-							<h3 class="icon solid fa-check">Efficiency</h3>
-							<p>Nift is lightning fast, possibly the world's fastest website generator (<a href="https://hugo-vs-nift.gitlab.io/">evidence</a>). Focus on development rather than waiting for your website to build.</p>
+							<h3 class="icon solid fa-check">Lightning Fast</h3>
+							<p>Nift is possibly the world's fastest website generator (<a href="https://hugo-vs-nift.gitlab.io/">evidence</a>). Focus on development rather than waiting for your website to build.</p>
 						</section>
 					</div>
 					<div class="col-6 col-12-medium">
@@ -50,7 +50,7 @@
 					<div class="col-6 col-12-medium">
 						<section>
 							<h3 class="icon solid fa-check">Language Agnostic</h3>
-							<p>You can use any language you want, eg. html, css, javascript, php, etc..</p>
+							<p>You can use any language you want, eg. html, css, javascript, markdown, php, etc..</p>
 						</section>
 					</div>
 					<div class="col-6 col-12-medium">
