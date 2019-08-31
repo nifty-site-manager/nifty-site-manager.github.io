@@ -176,7 +176,7 @@
 				</textarea>
 
 				<p>
-					Note: Due to <mono>Nift</mono> converting <mono>\<</mono> to <mono>&amp;lt;</mono> which does not display when doing inline code or code blocks with <mono>Nift</mono>, it is much better for code blocks containing <mono>\<</mono> to just use <mono>\<mono\></mono> tags for inline and Google Code Prettify as outlined <a href="@pathto(docs/displaying_code_blocks)">here</a>.
+					Note: Due to <mono>Nift</mono> converting <mono>\<</mono> to <mono>&amp;lt;</mono> inside pre blocks, which does not display when doing inline code or code blocks with <mono>Markdown</mono> and <mono>Nift</mono>, it is much better for code blocks containing <mono>\<</mono> to just use <mono>\<mono\></mono> tags for inline and Google Code Prettify as outlined <a href="@pathto(docs/displaying_code_blocks)">here</a>.
 				</p>
 			</div>
 		</section>
