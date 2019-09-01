@@ -51,11 +51,11 @@
 		</div>
 	</p>
 
-	<p>
-		You should then be able to paste $\LaTeX$ equations straight into content files. both \$..\$ and &sol;(..&sol;) work for inline equations, and both \$\$..\$\$ and &sol;[..&sol;] work for displayed equations. Eg. When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are:
+	<textarea class="markdown">
+		You should then be able to paste $\LaTeX$ equations straight into content files. Both `$..$` and `\(..\)` work for inline equations, and both `$$..$$` and `\[..\]` work for displayed equations (note inside markdown/showdown blocks use `\\(..\\)` and `\\[..\\]`, or the `$` syntax). Eg. When \\(a \ne 0\\), there are two solutions to \\(ax^2 + bx + c = 0\\) and they are:
 
-		\[x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}\]
-	</p>
+		\\[x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}\\]
+	</textarea>
 
 	<p>
 		If you want to insert a dollar sign on a page, as opposed to opening/closing an inline equation, use \\\$ and MathJax will escape the character.
