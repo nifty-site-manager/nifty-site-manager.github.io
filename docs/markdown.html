@@ -197,9 +197,7 @@
 		    										converter.setOption('strikethrough', 'on');
 		    										elements = document.getElementsByClassName('markdown');
 		    										for(var i=0; i&lt;elements.length; i++)
-		    										{
-		    											elements[i].innerHTML = converter.makeHtml(elements[i].innerHTML);
-		    										}
+		    											elements[i].innerHTML = converter.makeHtml(elements[i].innerHTML.replace(/&lt;/g, "xwxw").replace(/&gt;/g, "pqpq")).replace(/xwxw/g, "&lt;").replace(/pqpq/g, "&gt;");
 		    									&lt;/script>
 		    								&lt;/body>
 		    							&lt;/html>
@@ -320,13 +318,16 @@
 		    				<textarea class="markdown">
 		    					To do a code block just indent by 4 spaces preceded by an empty line, for example:
 		    
-		    						my_string = "hello, world!"
-		    						print(my_string)
-		    				</textarea>
+		    						#include <cstdio>
+		    						#include <iostream>
 		    
-		    				<p>
-		    					Note: Due to <mono>Nift</mono> converting <mono>&lt;</mono> to <mono>&amp;lt;</mono> inside pre blocks, which does not display when doing inline code or code blocks with <mono>Markdown</mono> and <mono>Nift</mono>, it is much better for code blocks containing <mono>&lt;</mono> to just use <mono>&lt;mono&gt;</mono> tags for inline and Google Code Prettify as outlined <a href="displaying_code_blocks.html">here</a>.
-		    				</p>
+		    						int main()
+		    						{
+		    							std::cout << "hello, world!" << std::endl;
+		    
+		    							return 0;
+		    						}
+		    				</textarea>
 		    			</div>
 		    		</section>
 		    	</div>
@@ -376,9 +377,7 @@
 			converter.setOption('strikethrough', 'on');
 			elements = document.getElementsByClassName('markdown');
 			for(var i=0; i<elements.length; i++)
-			{
-				elements[i].innerHTML = converter.makeHtml(elements[i].innerHTML);
-			}
+				elements[i].innerHTML = converter.makeHtml(elements[i].innerHTML.replace(/&lt;/g, "xwxw").replace(/&gt;/g, "pqpq")).replace(/xwxw/g, "&lt;").replace(/pqpq/g, "&gt;");
 		</script>
     </body>
 </html>
