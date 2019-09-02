@@ -12,7 +12,7 @@
 
 			<!-- Image -->
 			<center>
-				<img src="@pathtofile(site/images/loki-rabbit1.png)" width=300 style="max-width: 90%; margin-bottom:50px">
+				<img src="@pathtofile(site/images/loki-rabbit1.svg)" width=300 style="max-width: 90%; margin-bottom:50px">
 			</center>
 
 			<p>
