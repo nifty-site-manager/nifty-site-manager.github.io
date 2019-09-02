@@ -12,7 +12,7 @@
 
 			<!-- Image -->
 			<center>
-				<img src="@pathtofile(site/images/Loki.png)" width=300 style="margin-bottom:50px">
+				<img src="@pathtofile(site/images/loki-rabbit2.png)" width=300 style="max-width: 90%; margin-bottom:50px">
 			</center>
 
 			<p>
@@ -73,6 +73,10 @@
 				<table id="html5up_blog_SNApps_table" class="Loki">
 					@input(content/resources/tables/html5up_blogs.table)
 				</table>
+			</center>
+
+			<center>
+				<img src="@pathtofile(site/images/Loki.png)" width=300 style="max-width: 90%; margin-bottom:-30px">
 			</center>
 		</section>
 	</div>
