@@ -1,6 +1,7 @@
 html
 {
 	overflow-y: scroll;
+	max-width: 100%;
 }
 
 noselect
