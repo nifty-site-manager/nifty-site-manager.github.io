@@ -157,98 +157,94 @@
 		    				<h2>Hosting options for your websites</h2>
 		    			</header>
 		    
-		    <div class="content">
-		    	<h3>
-		    		Hosting your site
-		    	</h3>
+		    			<center>
+		    				<a href="https://pages.github.com/"><img src="../images/Octocat.svg" width=250 style="max-width: 45%; margin-bottom: 20px"></a>
+		    			</center>
 		    
-		    	<center>
-		    		<a href="https://pages.github.com/"><img src="../images/Octocat.png" width=250 style="max-width: 45%; margin-bottom: 20px"></a>
-		    	</center>
+		    			<div class="content">
+		    				<p>
+		    					To host your site just copy everything from the site directory (not the stage directory) to the server on which you would like to host it.
+		    				</p>
 		    
-		    	<p>
-		    		To host your site just copy everything from the site directory (not the stage directory) to the server on which you would like to host it.
-		    	</p>
+		    				<center>
+		    					<div style="max-width:90%; margin-top: -20px">
+		    					<a href="https://pages.bitbucket.io/"><img src="../images/bitbucket.svg" width=300 style="max-width:45%; vertical-align:middle"></a> 
+		    					<a href="https://pages.github.com/"><img src="../images/github.png" width=260 style="max-width:45%; vertical-align:middle; margin-left: 20px; margin-right:0px"></a> <br>
+		    					<a href="https://about.gitlab.com/product/pages/"><img src="../images/gitlab.svg" width=320 style="max-width:45%; vertical-align:middle;"></a>
+		    					</div>
+		    				</center>
 		    
-		    	<center>
-		    		<div style="max-width:90%; margin-top: -20px">
-		    		<a href="https://pages.bitbucket.io/"><img src="../images/bitbucket.svg" width=300 style="max-width:45%; vertical-align:middle"></a> 
-		    		<a href="https://pages.github.com/"><img src="../images/github.png" width=260 style="max-width:45%; vertical-align:middle; margin-left: 20px; margin-right:0px"></a> <br>
-		    		<a href="https://about.gitlab.com/product/pages/"><img src="../images/gitlab.svg" width=320 style="max-width:45%; vertical-align:middle;"></a>
-		    		</div>
-		    	</center>
+		    				<p>
+		    					For creating static websites on code collaboration sites offering repository management like <a href="https://aws.amazon.com/codecommit/">Amazon CodeCommit</a>, <a href="https://pages.bitbucket.io/">BitBucket</a>, <a href="https://pages.github.com/">GitHub</a> and <a href="https://about.gitlab.com/product/pages/">GitLab</a> you can import/fork, rename and clone a site repository template and work from that (use <mono>nsm clone <i>repository-url</i></mono>). I personally find hosting on GitLab the easiest, because you only need one branch (standard <mono>master</mono>) then have it deploy the site when you push using a <mono>.gitlab-ci.yaml</mono> file.
+		    				</p>
 		    
-		    	<p>
-		    		For creating static websites on code collaboration sites offering repository management like <a href="https://aws.amazon.com/codecommit/">Amazon CodeCommit</a>, <a href="https://pages.bitbucket.io/">BitBucket</a>, <a href="https://pages.github.com/">GitHub</a> and <a href="https://about.gitlab.com/product/pages/">GitLab</a> you can import/fork, rename and clone a site repository template and work from that (use <mono>nsm clone <i>repository-url</i></mono>). I personally find hosting on GitLab the easiest, because you only need one branch (standard <mono>master</mono>) then have it deploy the site when you push using a <mono>.gitlab-ci.yaml</mono> file.
-		    	</p>
+		    				<p>
+		    					There is a variety of site repository templates <a href="../resources/templates.html">here</a>, including <a href="https://undraw.co/evie">Evie</a> from <a href="https://undraw.co/">unDraw</a> and a whole range of <a href="https://html5up.net/">HTML5 UP</a> templates.
+		    				</p>
 		    
-		    	<p>
-		    		There is a variety of site repository templates <a href="../resources/templates.html">here</a>, including <a href="https://undraw.co/evie">Evie</a> from <a href="https://undraw.co/">unDraw</a> and a whole range of <a href="https://html5up.net/">HTML5 UP</a> templates.
-		    	</p>
+		    				<p>
+		    					Note - You can rename a repository when importing it, rather than forking and renaming, plus on BitBucket and GitHub you cannot remove fork relationships. Also on GitHub you will need to go in to the site repository's settings, find the GitHub Pages section and set the <mono>source</mono> to <mono>master branch</mono> (there may be some delay before your website goes live).
+		    				</p>
 		    
-		    	<p>
-		    		Note - You can rename a repository when importing it, rather than forking and renaming, plus on BitBucket and GitHub you cannot remove fork relationships. Also on GitHub you will need to go in to the site repository's settings, find the GitHub Pages section and set the <mono>source</mono> to <mono>master branch</mono> (there may be some delay before your website goes live).
-		    	</p>
+		    				<p>
+		    					You can also combine any of the above hosting options with <a href="https://netlify.com">Netlify</a>, which works well for custom domains (including subdomains) and automatically renews <a href="https://letsencrypt.org/">Let's Encrypt</a> certificates for your site. Netlify also has built in <a href="https://www.netlify.com/docs/form-handling/">form handling</a> and a full suite of <a href="https://www.netlify.com/docs/identity/">authentication functionality</a> backed by the <a href="https://www.gotrueapi.org/">GoTrue API</a>.
+		    				</p>
 		    
-		    	<p>
-		    		You can also combine any of the above hosting options with <a href="https://netlify.com">Netlify</a>, which works well for custom domains (including subdomains) and automatically renews <a href="https://letsencrypt.org/">Let's Encrypt</a> certificates for your site. Netlify also has built in <a href="https://www.netlify.com/docs/form-handling/">form handling</a> and a full suite of <a href="https://www.netlify.com/docs/identity/">authentication functionality</a> backed by the <a href="https://www.gotrueapi.org/">GoTrue API</a>.
-		    	</p>
+		    				<center>
+		    					<a href="https://www.netlify.com/"><img src="../images/netlify.svg" width=300 style="max-width: 50%; margin-left:-40px; margin-bottom: 20px"></a>
+		    				</center>
 		    
-		    	<center>
-		    		<a href="https://www.netlify.com/"><img src="../images/netlify.svg" width=300 style="max-width: 50%; margin-left:-40px; margin-bottom: 20px"></a>
-		    	</center>
+		    				<p>
+		    					Other good free hosting options for static sites include:
 		    
-		    	<p>
-		    		Other good free hosting options for static sites include:
+		    					<ul>
+		    						<li><a href="https://aws.amazon.com/amplify/console/">Amazon Amplify Console</a></li>
+		    						<li><a href="https://firebase.google.com/">Google FireBase</a></li>
+		    						<li><a href="https://surge.sh/">surge.sh</a></li>
+		    						<li><a href="https://zeit.co/now">ZEIT Now</a></li>
+		    					</ul>
+		    				</p>
 		    
-		    		<ul>
-		    			<li><a href="https://aws.amazon.com/amplify/console/">Amazon Amplify Console</a></li>
-		    			<li><a href="https://firebase.google.com/">Google FireBase</a></li>
-		    			<li><a href="https://surge.sh/">surge.sh</a></li>
-		    			<li><a href="https://zeit.co/now">ZEIT Now</a></li>
-		    		</ul>
-		    	</p>
+		    				<center>
+		    					<a href="https://aws.amazon.com/amplify/console/"><img src="../images/aws.svg" width=175 style="max-width: 30%; vertical-align:middle; margin-top: -50px"></a>
+		    					<a href="https://firebase.google.com/"><img src="../images/firebase.svg" width=120 style="max-width: 30%; vertical-align:middle; margin-top: -70px; margin-left: 20px"></a><br>
+		    					<a href="https://surge.sh/"><img src="../images/surge.svg" width=175 style="max-width: 30%; vertical-align:middle; margin-left:20px; margin-bottom: 20px; margin-top: 30px"></a>
+		    					<a href="https://zeit.co"><img src="../images/zeit.png" width=175 style="max-width: 30%; vertical-align:middle; margin-left:20px; margin-bottom: 20px; margin-top: 10px"></a>
+		    				</center>
 		    
-		    	<center>
-		    		<a href="https://aws.amazon.com/amplify/console/"><img src="../images/aws.svg" width=175 style="max-width: 30%; vertical-align:middle; margin-top: -50px"></a>
-		    		<a href="https://firebase.google.com/"><img src="../images/firebase.svg" width=120 style="max-width: 30%; vertical-align:middle; margin-top: -70px; margin-left: 20px"></a><br>
-		    		<a href="https://surge.sh/"><img src="../images/surge.svg" width=175 style="max-width: 30%; vertical-align:middle; margin-left:20px; margin-bottom: 20px; margin-top: 30px"></a>
-		    		<a href="https://zeit.co"><img src="../images/zeit.png" width=175 style="max-width: 30%; vertical-align:middle; margin-left:20px; margin-bottom: 20px; margin-top: 10px"></a>
-		    	</center>
+		    				<p>
+		    					Also check out <a href="https://www.aerobatic.com/">Aerobatic</a>.
+		    				</p>
 		    
-		    	<p>
-		    		Also check out <a href="https://www.aerobatic.com/">Aerobatic</a>.
-		    	</p>
+		    				<p>
+		    					If you would like to be a masochist and set up your own site repositories from scratch for any of BitBucket, GitHub or GitLab then see:
 		    
-		    	<p>
-		    		If you would like to be a masochist and set up your own site repositories from scratch for any of BitBucket, GitHub or GitLab then see:
+		    					<ol>
+		    						<li><a href="./bitbucket_hosting.html">Hosting on BitBucket</a>;</li>
+		    						<li><a href="./github_hosting.html">Hosting on GitHub</a>; or</li>
+		    						<li><a href="./gitlab_hosting.html">Hosting on GitLab</a>.</li>
+		    					</ol>
+		    				</p>
 		    
-		    		<ol>
-		    			<li><a href="./bitbucket_hosting.html">Hosting on BitBucket</a>;</li>
-		    			<li><a href="./github_hosting.html">Hosting on GitHub</a>; or</li>
-		    			<li><a href="./gitlab_hosting.html">Hosting on GitLab</a>.</li>
-		    		</ol>
-		    	</p>
+		    				<p>
+		    					To host dynamic websites for free check out <a href="https://www.heroku.com/">Heroku</a>. Other options for hosting dynamic websites (or static sites if you would like) include hiring a server with someone like:
 		    
-		    	<p>
-		    		To host dynamic websites for free check out <a href="https://www.heroku.com/">Heroku</a>. Other options for hosting dynamic websites (or static sites if you would like) include hiring a server with someone like:
+		    				<ol>
+		    					<li><a href="https://buyvm.net/">BuyVM</a>;</li>
+		    					<li><a href="https://joesdatacenter.com/">Joe's Datacenter</a>; or</li>
+		    					<li><a href="https://www.linode.com/">Linode</a>.</li>
+		    				</ol>
+		    				or any site that offers linux VPS hiring, then using something like the following to set up a web server on the server you have hired:
 		    
-		    	<ol>
-		    		<li><a href="https://buyvm.net/">BuyVM</a>;</li>
-		    		<li><a href="https://joesdatacenter.com/">Joe's Datacenter</a>; or</li>
-		    		<li><a href="https://www.linode.com/">Linode</a>.</li>
-		    	</ol>
-		    	or any site that offers linux VPS hiring, then using something like the following to set up a web server on the server you have hired:
+		    				<ol>
+		    					<li><a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)">LAMP stack</a>; or</li>
+		    					<li><a href="https://www.nginx.com/">NGINX</a> (check out NGINX Unit for free options).</li>
+		    				</ol>
 		    
-		    	<ol>
-		    		<li><a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)">LAMP stack</a>; or</li>
-		    		<li><a href="https://www.nginx.com/">NGINX</a> (check out NGINX Unit for free options).</li>
-		    	</ol>
-		    
-		    	<center>
-		    		<a href="https://www.nginx.com/"><img src="../images/nginx.svg" width=250 style="max-width: 40%; vertical-align:middle"></a>
-		    	</center>
-		    </div>
+		    				<center>
+		    					<a href="https://www.nginx.com/"><img src="../images/nginx.svg" width=250 style="max-width: 40%; vertical-align:middle"></a>
+		    				</center>
+		    			</div>
 		    		</section>
 		    	</div>
 		    </section>

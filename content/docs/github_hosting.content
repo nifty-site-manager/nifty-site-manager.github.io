@@ -8,6 +8,10 @@
 				<h2>How to host a website on GitHub</h2>
 			</header>
 
+			<center>
+				<a href="https://pages.github.com/"><img src="@pathtofile(site/images/Octorabbit.svg)" width=300 style="max-width: 45%; margin-bottom: 20px"></a>
+			</center>
+
 			<div class="content">
 				<h3>
 					Free hosting on GitHub
