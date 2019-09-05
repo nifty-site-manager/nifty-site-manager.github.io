@@ -329,7 +329,21 @@
 		    				</h4>
 		    
 		    				<p>
-		    					To serve your website locally run <mono>nsm serve</mono>, enter <mono>exit</mono> to stop serving your website. On linux can also run <mono>nsm serve -s &</mono> to serve in the background then to stop serving run <mono>killall nsm</mono>.
+		    					To serve your website locally run <mono>nsm serve</mono>, enter <mono>exit</mono> to stop serving your website. On linux can also run <mono>nsm serve -s &</mono> to serve in the background then to stop serving run <mono>killall nsm</mono>. Then you can open the webpages in the <mono>site</mono> directory and Nift will automatically build the website in the background, picking up any changes, just reload your browser window. 
+		    				</p>
+		    
+		    				<p>
+		    					If you would like your website to be served at an IP address, eg. if you are using Nift on a server, try using Python. Run either of the following in the project root directory for a url similar to <mono>0.0.0.0:8000/site</mono> and from the site directory for a url similar to <mono>0.0.0.0:8000</mono>:
+		    
+		    					<div align="center">
+		    						<pre class="inline">
+		    							python3 -m http.server 8000
+		    						</pre>
+		    
+		    						<pre class="inline">
+		    							python -m SimpleHTTPServer
+		    						</pre>
+		    					</div>
 		    				</p>
 		    
 		    				<h4>
