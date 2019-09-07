@@ -43,18 +43,18 @@
 				</div>
 
 				<p>
-					Then add the following aliases to <mono>~/.bashrc</mono> (or the configuration profile file for your shell):
+					Then add the following to <mono>~/.bashrc</mono> (or the equivalent to the configuration profile file for your shell, not that you can't just use aliases with <mono>bash</mono> as <mono>$pwd</mono> is stuck being the directory when you opened the terminal, not the present working directory when you run <mono>nsm</mono> or <mono>nift</mono>):
 				</p>
 
 				<div align="center" style="margin-top:-20px; margin-bottom: 20px">
 					<pre>
-						alias nsm="flatpak --filesystem=host --share=network --cwd=$PWD run cc.nift.nsm"
-						alias nift="flatpak --filesystem=host --share=network --cwd=$PWD run cc.nift.nsm"
+						nsm() { flatpak --filesystem=host --share=network "--cwd=$PWD" run cc.nift.nsm "$@";} 
+						nift() { flatpak --filesystem=host --share=network "--cwd=$PWD" run cc.nift.nsm "$@";} 
 					</pre>
 				</div>
 
 				<p>
-					To uninstall <mono>Nift</mono> remove the alises from <mono>~/.bashrc</mono> and enter:
+					To uninstall <mono>Nift</mono> remove what you added from <mono>~/.bashrc</mono> and enter <mono>flatpak uninstall nift</mono>, if that doesn't work try:
 				</p>
 
 				<div align="center" style="margin-top:-20px; margin-bottom: 20px">
