@@ -86,7 +86,7 @@
 			
 					<p>
 						<a href="https://chocolatey.org/packages/nsm"><img src="../images/chocolatey.svg" height="40px" alt="Get it from the Chocolatey store" title="Windows"></a> &nbsp;
-						<!--<a href="https://flathub.org/apps/details/com.n-ham.nsm"><img src="../images/flathub.png" height="40px" alt="Get it from the FlatHub store" title="Linux"></a> &nbsp;-->
+						<a href="linux_install.html"><img src="../images/flathub-dark.svg" height="40px" alt="Get it from the FlatHub store" title="Linux"></a> &nbsp;
 						<a href="https://snapcraft.io/nift"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" height="40px" alt="Get it from the Snap Store" title="Linux" /> </a>
 					</p>
 					</noselect>
@@ -161,6 +161,7 @@
 		    				<h2>
 		    					Linux installation using <mono>Snap</mono>
 		    				</h2>
+		    				<center><img src="../images/snapcraft.png" width=350px style="max-width:90%; margin-top: 20px; margin-bottom: 20px"></center>
 		    
 		    				<p>
 		    					You can install <mono>Nift</mono> on linux using the <mono>Snap</mono> package manager, for instructions see <a href="https://snapcraft.io/nsm">here</a>. Alternatively first install <mono>snapd</mono>, eg. <mono>sudo apt-get install snapd</mono> on Ubuntu, then enter:
@@ -176,6 +177,40 @@
 		    				<p>
 		    					To uninstall <mono>Nift</mono> enter <mono>sudo snap unalias nsm</mono> and <mono>snap remove nift</mono>.
 		    				</p>
+		    
+		    				<h2>Linux installation using <mono>FlatPak</mono></h2>
+		    				<center><img src="../images/flathub.png" width=450px style="max-width:90%"></center>
+		    
+		    				<p>
+		    					You can install <mono>Nift</mono> on linux using the <mono>FlatPak</mono> package manager. First <a href="https://flatpak.org/setup/">install</a> <mono>FlatPak</mono> (note you may need a newer version than is available in your distribution's official software repositores, so use the official Flatpak PPA) and download <a href="https://flathub.org/repo/appstream/cc.nift.nsm.flatpakref">cc.nift.nsm.flatpakref</a> to <mono>~/Downloads</mono>. Then open up a terminal and enter:
+		    				</p>
+		    
+		    				<div align="center" style="margin-top:-20px; margin-bottom: 20px">
+		    					<pre>
+		    						flatpak install cc.nift.nsm.flatpakref
+		    					</pre>
+		    				</div>
+		    
+		    				<p>
+		    					Then add the following aliases to <mono>~/.bashrc</mono> (or the configuration profile file for your shell):
+		    				</p>
+		    
+		    				<div align="center" style="margin-top:-20px; margin-bottom: 20px">
+		    					<pre>
+		    						alias nsm="flatpak --filesystem=host --share=network --cwd=$PWD run cc.nift.nsm"
+		    						alias nift="flatpak --filesystem=host --share=network --cwd=$PWD run cc.nift.nsm"
+		    					</pre>
+		    				</div>
+		    
+		    				<p>
+		    					To uninstall <mono>Nift</mono> remove the alises from <mono>~/.bashrc</mono> and enter:
+		    				</p>
+		    
+		    				<div align="center" style="margin-top:-20px; margin-bottom: 20px">
+		    					<pre>
+		    						flatpak uninstall cc.nift.nsm/x86_64/stable
+		    					</pre>
+		    				</div>
 		    
 		    				<h2>Installing <mono>Nift</mono> on linux from source</h2>
 		    
