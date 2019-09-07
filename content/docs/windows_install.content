@@ -15,6 +15,7 @@
 				</p>
 
 				<h2>Windows installation using <mono>Chocolatey</mono></h2>
+				<center><img src="@pathtofile(site/images/chocolatey.svg)" width=350px style="max-width:70%; margin-top: 20px; margin-bottom: 20px"></center>
 
 				<p>
 					You can install <mono>Nift</mono> on Windows using <mono>Chocolatey</mono>. First <a href="https://chocolatey.org/docs/installation">install</a> <mono>Chocolatey</mono>, then follow the instructions <a href="https://chocolatey.org/packages/nsm">here</a>, or alternatively enter:
