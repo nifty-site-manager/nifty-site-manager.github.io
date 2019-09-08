@@ -200,11 +200,25 @@
 		    					To uninstall <mono>Nift</mono> enter <mono>sudo snap unalias nsm</mono> and <mono>snap remove nift</mono>.
 		    				</p>
 		    
-		    				<h2 id="linux-flatpak">Linux installation using <mono>FlatPak</mono></h2>
+		    				<h2 id="linux-flatpak">Linux installation using <mono>Flatpak</mono></h2>
 		    				<center><img src="../images/flathub.png" width=450px style="max-width:90%"></center>
 		    
 		    				<p>
-		    					You can install <mono>Nift</mono> on linux using the <mono>FlatPak</mono> package manager. First <a href="https://flatpak.org/setup/">install</a> <mono>FlatPak</mono> (note you may need a newer version than is available in your distribution's official software repositores, so use the official Flatpak PPA) and download <a href="https://flathub.org/repo/appstream/cc.nift.nsm.flatpakref">cc.nift.nsm.flatpakref</a> to <mono>~/Downloads</mono>. Then open up a terminal and enter:
+		    					Thanks to <a href="https://github.com/refi64">refi64</a> for making the installation through Flatpak much easier and cleaner. 
+		    				</p>
+		    
+		    				<p>
+		    					You can install <mono>Nift</mono> on linux using the <mono>Flatpak</mono> package manager. First <a href="https://flatpak.org/setup/">install</a> <mono>Flatpak</mono> then enter in to a terminal:
+		    				</p>
+		    
+		    				<div align="center" style="margin-top:-20px; margin-bottom: 20px">
+		    					<pre>
+		    						flatpak install --user https://flathub.org/repo/appstream/cc.nift.nsm.flatpakref
+		    					</pre>
+		    				</div>
+		    
+		    				<p>
+		    					Alternatively, download <a href="https://flathub.org/repo/appstream/cc.nift.nsm.flatpakref">cc.nift.nsm.flatpakref</a> to <mono>~/Downloads</mono> then open up a terminal and enter:
 		    				</p>
 		    
 		    				<div align="center" style="margin-top:-20px; margin-bottom: 20px">
@@ -214,18 +228,22 @@
 		    				</div>
 		    
 		    				<p>
-		    					Then add the following to <mono>~/.bashrc</mono> (or the equivalent to the configuration profile file for your shell, note that you can't just use aliases with <mono>bash</mono> as <mono>$PWD</mono> is stuck being the directory when you opened the terminal, not the present working directory when you run <mono>nsm</mono> or <mono>nift</mono>):
+		    					Note you can just open <mono>cc.nift.nsm.flatpakref</mono> in GNOME Software or KDE Discover if you have either of those.
+		    				</p>
+		    
+		    				<p>
+		    					Then add the following aliases to <mono>~/.bashrc</mono> (or the equivalent to the configuration profile file for your shell):
 		    				</p>
 		    
 		    				<div align="center" style="margin-top:-20px; margin-bottom: 20px">
 		    					<pre>
-		    						nsm() { flatpak --filesystem=host --share=network "--cwd=$PWD" run cc.nift.nsm "$@";} 
-		    						nift() { flatpak --filesystem=host --share=network "--cwd=$PWD" run cc.nift.nsm "$@";} 
+		    						alias nsm="flatpak run cc.nift.nsm"
+		    						alias nift="flatpak run cc.nift.nsm" 
 		    					</pre>
 		    				</div>
 		    
 		    				<p>
-		    					To uninstall <mono>Nift</mono> remove what you added from <mono>~/.bashrc</mono> and enter <mono>flatpak uninstall nift</mono>, if that doesn't work try:
+		    					To uninstall <mono>Nift</mono> remove the aliases from <mono>~/.bashrc</mono> and enter <mono>flatpak uninstall nift</mono>, if that doesn't work try <mono>flatpak uninstall cc.nift.nsm</mono> and if that fails try:
 		    				</p>
 		    
 		    				<div align="center" style="margin-top:-20px; margin-bottom: 20px">
