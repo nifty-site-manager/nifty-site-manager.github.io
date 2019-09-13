@@ -8,35 +8,49 @@
 				<h2>Website repository templates for making websites</h2>
 			</header>
 
-<div class="content">
-	<p>
-		For template site repositories that you can import (or fork and rename) then clone to start making websites, see the table below:
-	</p>
+			<div class="content">
+				<p>
+					For template site repositories that you can import (or fork and rename) then clone to start making websites, see the table below:
+				</p>
 
-	<center>
-		<table id="templates_table" class="alt">
-			@input(content/resources/tables/templates.table)
-		</table>
-	</center>
+				<center>
+					<table id="templates_table" class="alt">
+						@input(content/resources/tables/templates.table)
+					</table>
+				</center>
 
-	<p>
-		To have a template added to the above table, email <mono>templates@nift.cc</mono> with a link to a repository on BitBicket/GitHub/GitLab. If the repository indeed contains a site made with <mono>Nift</mono> then we will fork/import the repository to nsm-templates on BitBucket, GitHub and GitLab and add it to the above table.
-	</p>
+				<p>
+					To have a template added to the above table, email <mono>templates@nift.cc</mono> with a link to a repository on BitBicket/GitHub/GitLab. If the repository indeed contains a site made with <mono>Nift</mono> then we will fork/import the repository to nsm-templates on BitBucket, GitHub and GitLab and add it to the above table.
+				</p>
 
-	<p>
-		To make changes to a template that has already been added to the above table, make a pull request from the repository you had us clone originally. 
-	</p>
+				<p>
+					To make changes to a template that has already been added to the above table, make a pull request from the repository you had us clone originally. 
+				</p>
 
-	<p>
-		The following table contains modified <a href="https://html5up.net/">HTML5 UP</a> template site repositories that you can import (or fork and rename) then clone to start making websites. If there is an <a href="https://html5up.net/">HTML5 UP</a> template you would like that is not in the table below email <mono>templates@nift.cc</mono> and we will add it for you.
-	</p>
+				<h3 id="html5up">HTML5 UP Templates</h3>
 
-	<center>
-		<table id="html5up_templates_table" class="alt">
-			@input(content/resources/tables/html5up_templates.table)
-		</table>
-	</center>
-</div>
+				<p>
+					The following table contains modified <a href="https://html5up.net/">HTML5 UP</a> template site repositories that you can import (or fork and rename) then clone to start making websites. If there is an <a href="https://html5up.net/">HTML5 UP</a> template you would like that is not in the table below email <mono>templates@nift.cc</mono> and we will add it for you.
+				</p>
+
+				<center>
+					<table id="html5up_templates_table" class="alt">
+						@input(content/resources/tables/html5up_templates.table)
+					</table>
+				</center>
+
+				<h3 id="w3css">W3.CSS Templates</h3>
+
+				<p>
+					The following table contains modified <a href="https://www.w3schools.com/w3css/w3css_templates.asp">W3.CSS</a> template site repositories that you can import (or fork and rename) then clone to start making websites. If there is a <a href="https://www.w3schools.com/w3css/w3css_templates.asp">W3.CSS</a> template you would like that is not in the table below email <mono>templates@nift.cc</mono> and we will add it for you.
+				</p>
+
+				<center>
+					<table id="w3css_templates_table" class="alt">
+						@input(content/resources/tables/w3css_templates.table)
+					</table>
+				</center>
+			</div>
 		</section>
 	</div>
 </section>

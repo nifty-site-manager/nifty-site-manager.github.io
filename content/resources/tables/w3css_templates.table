@@ -1,0 +1,19 @@
+<thead>
+	<tr>
+		<th>name</th>
+		<th>demo</th>
+		<th>repository</th>
+	</tr>
+</thead>
+<tr>
+	<td><a href="https://www.w3schools.com/w3css/tryw3css_templates_band.htm">band</a></td>
+	<td><a href="https://w3css-nsm-templates.github.io/band/">GitHub</a> - <a href="https://w3css-nsm-templates.gitlab.io/band/">GitLab</a></td>
+	<td><a href="https://bitbucket.org/w3css-nsm-templates/band">BitBucket</a> - <a href="https://github.com/w3css-nsm-templates/band">GitHub</a> - <a href="https://gitlab.com/w3css-nsm-templates/band">GitLab</a></td>
+</tr>
+<tfoot>
+	<tr>
+		<th>name</th>
+		<th>demo</th>
+		<th>repository</th>
+	</tr>
+</tfoot>

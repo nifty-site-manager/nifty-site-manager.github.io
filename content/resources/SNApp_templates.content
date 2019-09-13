@@ -33,6 +33,8 @@
 				To make changes to a template that has already been added to the above table, make a pull request from the repository you had us clone originally. 
 			</p>
 
+			<h3 id="html5up">HTML5 UP Template Websites</h3>
+
 			<p>
 				The following table contains modified <a href="https://html5up.net/">HTML5 UP</a> template SNApp repositories that you can import (or fork and rename) then clone to start making SNApps. If there is an <a href="https://html5up.net/">HTML5 UP</a> template you would like that is not in the table below email <mono class="Loki">templates@nift.cc</mono> and we will add it for you.
 			</p>
@@ -40,6 +42,18 @@
 			<center>
 				<table id="html5up_SNApp_templates_table" class="Loki">
 					@input(content/resources/tables/html5up_templates.table)
+				</table>
+			</center>
+
+			<h3 id="w3css">W3.CSS Template Websites</h3>
+
+			<p>
+				The following table contains modified <a href="https://www.w3schools.com/w3css/w3css_templates.asp">W3.CSS</a> template SNApp repositories that you can import (or fork and rename) then clone to start making SNApps. If there is a <a href="https://www.w3schools.com/w3css/w3css_templates.asp">W3.CSS</a> template you would like that is not in the table below email <mono>templates@nift.cc</mono> and we will add it for you.
+			</p>
+
+			<center>
+				<table id="w3css_SNApp_templates_table" class="Loki">
+					@input(content/resources/tables/w3css_templates.table)
 				</table>
 			</center>
 
