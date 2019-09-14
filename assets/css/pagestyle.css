@@ -13,6 +13,7 @@ noselect
 
 div.content
 {
+  overflow-x: hidden !important;
 	font-size:14pt;
 	color: #2b2c2e;
 }
