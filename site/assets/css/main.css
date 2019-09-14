@@ -2048,21 +2048,25 @@ input, select, textarea {
 		font-size: 71%;
 	}
 
-	.wrapper.style4 h2
-	{
-		color: #dcdee0 !important;
-		font-size:20pt;
-		margin-top: 30px;
-		margin-bottom: 30px;
-	}
+    .wrapper.style4 h2, h3, h4, h5
+    {
+      color: white;
+    }
 
-	.wrapper.style4 h3
-	{
-		color: #dcdee0 !important;
-		font-size:16pt;
-		margin-top: 30px;
-		margin-bottom: 30px;
-	}
+		.wrapper.style4 {
+			background: #1a1a1a;  
+      color: white;
+			font-size: 13pt;
+		}
+
+			.wrapper.style4 .title {
+				background: #1a1a1a;
+			}
+
+  .wrapper.style4 
+  {
+    /*overflow-x: hidden !important;*/
+  }
 
 	.wrapper.style4 a
 	{
@@ -2074,17 +2078,6 @@ input, select, textarea {
 	{
 		color: #3cd668;
 	}
-
-		.wrapper.style4 {
-			background: #1a1a1a;
-			color: #dcdee0;
-			font-size: 14pt;
-		}
-
-			.wrapper.style4 .title {
-				background: #1a1a1a;
-				color: #dcdee0;
-			}
 
 	.wrapper.style5 h2
 	{
