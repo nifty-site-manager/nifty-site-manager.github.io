@@ -2209,6 +2209,7 @@ input, select, textarea {
 /* Nav */
 
 	#nav {
+    overflow-y: auto !important;
 		position: absolute;
 		display: block;
 		top: 2.5em;
