@@ -8,6 +8,27 @@
 				<h2>Website repository templates for making websites</h2>
 			</header>
 
+			<p>
+				For website templates check out the following links:
+				<ul>
+					<li><a href="https://html5up.net">HTML5 UP</a></li>
+					<li><a href="https://pixelarity.com/">Pixelarity</a></li>
+					<li><a href="https://www.creative-tim.com/templates/">Creative Tim</a></li>
+					<li><a href="https://www.w3schools.com/w3css/w3css_templates.asp">W3.CSS Templates
+				</a></li>
+					<li><a href="https://www.free-css.com/free-css-templates">Free CSS Templates</a></li>
+					<li><a href="https://www.templatemonster.com/free-website-templates/">Template Monster</a></li>
+					<li><a href="https://www.os-templates.com/free-website-templates">OS Templates</a></li>
+					<li><a href="https://www.site123.com/website-templates">Site123</a></li>
+					<li><a href="https://colorlib.com/wp/templates/">ColorLib</a></li>
+					<li><a href="https://freewebsitetemplates.com/">Free Website Templates</a></li>
+				</ul>
+			</p>
+
+			<p>
+				If you would like any template from the above links turned in to a <mono>Nift</mono> template email <mono>templates@nift.cc</mono> with a link to the template and we will make it for you. It is also a useful skill to be able to take a template and create a <mono>Nift</mono> template from it, take a look at how the same has been done for templates in the tables below for how. 
+			</p>
+
 			<div class="content">
 				<p>
 					For template site repositories that you can import (or fork and rename) then clone to start making websites, see the table below:
