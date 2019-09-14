@@ -1,6 +1,6 @@
 html
 {
-	overflow-y: scroll;
+	overflow-y: auto;
 	max-width: 100%;
 }
 
@@ -13,7 +13,6 @@ noselect
 
 div.content
 {
-  overflow-x: hidden !important;
 	font-size:14pt;
 	color: #2b2c2e;
 }
@@ -241,12 +240,14 @@ a.reddit:hover
 
 table.Loki th
 {
+  overflow-x: auto !important;
 	color: #78be20;
 	background-color: #2d323b; /*#434d45;*/
 }
 
 table.Loki td
 {
+  overflow-x: auto !important;
 	background-color: #2b2c2e; /*#3c3d40;*/
 }
 

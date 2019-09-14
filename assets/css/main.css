@@ -1482,11 +1482,11 @@ input, select, textarea {
 /* Table */
 
 	table {
-		width: 100%;
+    overflow-x: auto !important;
 	}
 
 		table.default {
-			width: 100%;
+      overflow-x: auto !important;
 		}
 
 			table.default tbody tr:nth-child(2n+2) {
@@ -2209,7 +2209,6 @@ input, select, textarea {
 /* Nav */
 
 	#nav {
-    overflow-y: auto !important;
 		position: absolute;
 		display: block;
 		top: 2.5em;
@@ -3100,7 +3099,7 @@ table {
 
 	table {
 		margin: 0 0 2rem 0;
-		width: 100%;
+    overflow-x: auto !important;
 	}
 
 		table tbody tr {
