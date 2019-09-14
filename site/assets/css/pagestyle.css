@@ -17,6 +17,11 @@ div.content
 	color: #2b2c2e;
 }
 
+div.xscroll
+{
+  overflow-x: auto !important;
+}
+
 textarea.markdown
 {
 	visibility: hidden;

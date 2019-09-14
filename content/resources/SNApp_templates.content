@@ -20,9 +20,11 @@
 			</p>
 
 			<center>
-				<table id="SNApp_templates_table" class="Loki">
-					@input(content/resources/tables/templates.table)
-				</table>
+        <div class="xscroll">
+				  <table id="SNApp_templates_table" class="Loki">
+					  @input(content/resources/tables/templates.table)
+				  </table>
+        </div>
 			</center>
 
 			<p>
@@ -40,9 +42,11 @@
 			</p>
 
 			<center>
-				<table id="html5up_SNApp_templates_table" class="Loki">
-					@input(content/resources/tables/html5up_templates.table)
-				</table>
+        <div class="xscroll">
+				  <table id="html5up_SNApp_templates_table" class="Loki">
+					  @input(content/resources/tables/html5up_templates.table)
+				  </table>
+        </div>
 			</center>
 
 			<h3 id="w3css">W3.CSS Template Websites</h3>
@@ -52,9 +56,11 @@
 			</p>
 
 			<center>
-				<table id="w3css_SNApp_templates_table" class="Loki">
-					@input(content/resources/tables/w3css_templates.table)
-				</table>
+        <div class="xscroll">
+				  <table id="w3css_SNApp_templates_table" class="Loki">
+					  @input(content/resources/tables/w3css_templates.table)
+				  </table>
+        </div>
 			</center>
 
 			<header class="style1">
@@ -66,9 +72,11 @@
 			</p>
 
 			<center>
-				<table id="blog_SNApps_table" class="Loki">
-					@input(content/resources/tables/blogs.table)
-				</table>
+        <div class="xscroll">
+				  <table id="blog_SNApps_table" class="Loki">
+					  @input(content/resources/tables/blogs.table)
+				  </table>
+        </div>
 			</center>
 
 			<p>
@@ -84,9 +92,11 @@
 			</p>
 
 			<center>
-				<table id="html5up_blog_SNApps_table" class="Loki">
-					@input(content/resources/tables/html5up_blogs.table)
-				</table>
+        <div class="xscroll">
+				  <table id="html5up_blog_SNApps_table" class="Loki">
+					  @input(content/resources/tables/html5up_blogs.table)
+				  </table>
+        </div>
 			</center>
 
 			<center>

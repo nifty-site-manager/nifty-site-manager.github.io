@@ -14,9 +14,11 @@
 				</p>
 
 				<center>
-					<table id="templates_table" class="alt">
-						@input(content/resources/tables/templates.table)
-					</table>
+          <div class="xscroll">
+					  <table id="templates_table" class="alt">
+						  @input(content/resources/tables/templates.table)
+					  </table>
+          </div>
 				</center>
 
 				<p>
@@ -34,9 +36,11 @@
 				</p>
 
 				<center>
-					<table id="html5up_templates_table" class="alt">
-						@input(content/resources/tables/html5up_templates.table)
-					</table>
+          <div class="xscroll">
+					  <table id="html5up_templates_table" class="alt">
+						  @input(content/resources/tables/html5up_templates.table)
+					  </table>
+          </div>
 				</center>
 
 				<h3 id="w3css">W3.CSS Templates</h3>
@@ -46,9 +50,11 @@
 				</p>
 
 				<center>
-					<table id="w3css_templates_table" class="alt">
-						@input(content/resources/tables/w3css_templates.table)
-					</table>
+          <div class="xscroll">
+					  <table id="w3css_templates_table" class="alt">
+						  @input(content/resources/tables/w3css_templates.table)
+					  </table>
+          </div>
 				</center>
 			</div>
 		</section>

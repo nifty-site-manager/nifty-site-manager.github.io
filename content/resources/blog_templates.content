@@ -14,9 +14,11 @@
 				</p>
 
 				<center>
-					<table id="blogs_table" class="alt">
-						@input(content/resources/tables/blogs.table)
-					</table>
+          <div class="xscroll">
+					  <table id="blogs_table" class="alt">
+						  @input(content/resources/tables/blogs.table)
+					  </table>
+          </div>
 				</center>
 
 				<p>
@@ -32,9 +34,11 @@
 				</p>
 
 				<center>
-					<table id="html5up_blogs_table" class="alt">
-						@input(content/resources/tables/html5up_blogs.table)
-					</table>
+          <div class="xscroll">
+					  <table id="html5up_blogs_table" class="alt">
+						  @input(content/resources/tables/html5up_blogs.table)
+					  </table>
+          </div>
 				</center>
 			</div>
 		</section>
