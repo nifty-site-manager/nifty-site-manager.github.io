@@ -50,6 +50,10 @@ docs/osx_install
 osx_install
 template/page.template
 
+docs/scripts
+scripts
+template/page.template
+
 docs/template_files
 template_files
 template/page.template

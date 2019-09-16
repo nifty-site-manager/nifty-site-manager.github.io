@@ -200,7 +200,7 @@
 				</p>
 
 				<p>
-					If you want live reloading check out <a href="https://github.com/tapio/live-server">Live Server</a> which you can get from <mono>npm</mono>, or <a href="http://livereload.com/">Live Reload</a>.
+					If you want live reloading check out <a href="https://github.com/tapio/live-server">Live Server</a> which you can get from <mono>npm</mono>, or <a href="http://livereload.com/">Live Reload</a>. In either case you can add them to <a href="@pathto(docs/scripts)">pre/post serve scripts</a> for your website so that it is all integrated in to the Nift serve command and requires no manual effort on your part.
 				</p>
 
 				<h4>

@@ -157,6 +157,46 @@
 					</div>
 				</p>
 
+				<h4>Running scripts and system calls</h4>
+				<p>
+					Scripts and system calls may be run using <mono>\@system(system-call)</mono>, where <mono>system-call</mono> is the system call or script you want to run. 
+				</p>
+
+				<p>
+					For example if you want to run a script <mono>script.bat</mono>, you can do so with:
+
+					<div align="center">
+						<pre class="inline">
+							\@system(script.bat)
+						</pre>
+					</div>
+				</p>
+
+				<h4>Inputting script and system call output</h4>
+				<p>
+					Output from scripts and system calls may be inputted at any point when building webpages using <mono>\@systemoutput(system-call)</mono>, where <mono>system-call</mono> is the system call or script you want to run. This can be incredibly useful for things like conditional statements/loops, inputting text from a url using cURL, or integrating with databases and scripting languages etc., which is just the tip of the ice berg!
+				</p>
+
+				<p>
+					For example suppose you want to input the text from <a href="https://pastebin.com/atjKuxY6">this</a> paste on <a href="https://pastebin.com">Paste Bin</a>, you can do so with:
+
+					<div align="center">
+						<pre class="inline">
+							\@systemoutput("curl -sS https://pastebin.com/raw/atjKuxY6")
+						</pre>
+					</div>
+				</p>
+
+				<p>
+					Or if you want to input the output from running a script <mono>script.sh</mono>, you can do so with:
+
+					<div align="center">
+						<pre class="inline">
+							\@systemoutput(script.sh)
+						</pre>
+					</div>
+				</p>
+
 				<h4>
 					Including css files
 				</h4>

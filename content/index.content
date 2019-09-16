@@ -56,7 +56,7 @@
 					<div class="col-6 col-12-medium">
 						<section>
 							<h3 class="icon solid fa-check">Command-Line Integration</h3>
-							<p>Nift brings you the full power of the command line, with syntax in the template language to run scripts and input/inject the output of a script at any point while building webpages, which is useful for things like if/for/when loops, inputting text from a url using cURL, and integrating with databases and scripting languages etc., which is just the tip of the ice berg!</p>
+							<p>Nift brings you the full power of the command line, with syntax in the template language to run scripts and input/inject the output of a script at any point while building webpages, which is useful for things like conditional statements/loops, inputting text from a url using cURL, and integrating with databases and scripting languages etc., which is just the tip of the ice berg!</p>
 						</section>
 					</div>
 					<div class="col-6 col-12-medium">

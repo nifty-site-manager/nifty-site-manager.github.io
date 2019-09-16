@@ -1,9 +1,9 @@
 22:28:29 Monday September 16 2019
-docs/linux_install
-linux_install
+docs/scripts
+scripts
 template/page.template
 
-content/docs/linux_install.content
+content/docs/scripts.content
 template/footer.content
 template/head.content
 template/menu.content
