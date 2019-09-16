@@ -316,6 +316,10 @@
 		    				</p>
 		    
 		    				<p>
+		    					<b>Note:</b> You do not seem to be able to do everything you would want if installing through Flatpak or Snap, I am trying to work out how to fix this otherwise may stop supporting Flatpak and/or Snap.
+		    				</p>
+		    
+		    				<p>
 		    					For example if you want to run a script <mono>script.bat</mono>, you can do so with:
 		    
 		    					<div align="center">
@@ -328,6 +332,10 @@
 		    				<h4>Inputting script and system call output</h4>
 		    				<p>
 		    					Output from scripts and system calls may be inputted at any point when building webpages using <mono>&commat;systemoutput(system-call)</mono>, where <mono>system-call</mono> is the system call or script you want to run. This can be incredibly useful for things like conditional statements/loops, inputting text from a url using cURL, or integrating with databases and scripting languages etc., which is just the tip of the ice berg!
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> You do not seem to be able to do everything you would want if installing through Flatpak or Snap, I am trying to work out how to fix this otherwise may stop supporting Flatpak and/or Snap.
 		    				</p>
 		    
 		    				<p>
@@ -345,7 +353,7 @@
 		    
 		    					<div align="center">
 		    						<pre class="inline">
-		    							&commat;systemoutput(script.sh)
+		    							&commat;systemoutput(./script.sh)
 		    						</pre>
 		    					</div>
 		    				</p>
