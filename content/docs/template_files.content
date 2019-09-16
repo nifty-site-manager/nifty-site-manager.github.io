@@ -15,7 +15,7 @@
 
 			<div class="content">
 				<p>
-					Remember that for each page tracked by <mono>Nift</mono> there is a specified template path. When building a page, <mono>Nift</mono> will start processing the template file the same as it will process any other file. Consequently everything that applied to writing content files also applies to writing template files. However, unlike content files, template files need to specify where content and (optionally) the page title are to be inputted. 
+					Remember that for each page tracked by <mono>Nift</mono> there is a specified template path. When building a page, <mono>Nift</mono> will start processing the template file the same as it will process any other file. Consequently everything that applied to writing <a href="@pathto(docs/content_files)">content files</a> also applies to writing template files. However, unlike content files, template files need to specify where content and (optionally) the page title are to be inputted. 
 				</p>
 
 				<h4>
