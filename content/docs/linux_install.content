@@ -10,7 +10,7 @@
 
 			<div class="content">
 				<p>
-					<b>Note:</b> Currently if you install through Flatpak or Snap you will not be able to use the powerful scripting features that Nift has to their full extent, it is recommended that you instead install from source. I am trying to work out how to rectify this. 
+					<b>Note:</b> Currently if you install through Snap you will not be able to use the powerful scripting features that Nift has to their full extent, it is recommended in the meantime that you instead install from Flatpak or source. I am trying to work out how to rectify this, I am hoping getting approved for classic confinement will fix the problem. 
 				</p>
 
 				<h2>
