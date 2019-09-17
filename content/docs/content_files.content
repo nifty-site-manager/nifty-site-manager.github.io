@@ -196,13 +196,15 @@
 				</p>
 
 				<p>
-					Or if you want to input the output from running a script <mono>script.sh</mono>, you can do so with:
+					Or if you want to input the output from running a script <mono>"linux script.sh"</mono>, you can do so with:
 
 					<div align="center">
 						<pre class="inline">
-							\@systemoutput(./script.sh)
+							\@systemoutput("'./linux script.sh'")
 						</pre>
 					</div>
+
+					<b>Note:</b> for paths containing spaces you will need to surround the script path with single then double quotes as above (or double then single quotes).
 				</p>
 
 				<h4>
