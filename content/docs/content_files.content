@@ -159,7 +159,7 @@
 
 				<h4>Running scripts</h4>
 				<p>
-					Scripts may be run using <mono>\@script(script-path)</mono>, where <mono>script-path</mono> is the path from the proect root directory to the script, which is basically the same as the system call for the script.
+					Scripts may be run using <mono>\@script(script-path)</mono>, where <mono>script-path</mono> is the path from the project root directory to the script, which is basically the same as the system call for the script.
 				</p>
 
 				<p>
@@ -171,14 +171,14 @@
 
 					<div align="center">
 						<pre class="inline">
-							\@system(script.bat)
+							\@script(script.bat)
 						</pre>
 					</div>
 				</p>
 
 				<h4>Inputting script output</h4>
 				<p>
-					Output from scripts may be inputted at any point when building webpages using <mono>\@scriptoutput(script-path)</mono>, where where <mono>script-path</mono> is the path from the proect root directory to the script, which is basically the same as the system call for the script. This can be incredibly useful for things like conditional statements/loops, or integrating with databases and scripting languages etc., which is just the tip of the ice berg!
+					Output from scripts may be inputted at any point when building webpages using <mono>\@scriptoutput(script-path)</mono>, where where <mono>script-path</mono> is the path from the project root directory to the script, which is basically the same as the system call for the script. This can be incredibly useful for things like conditional statements/loops, or integrating with databases and scripting languages etc., which is just the tip of the ice berg!
 				</p>
 
 				<p>
@@ -190,7 +190,7 @@
 
 					<div align="center">
 						<pre class="inline">
-							\@systemoutput("./linux script.sh")
+							\@scriptoutput("./linux script.sh")
 						</pre>
 					</div>
 				</p>
