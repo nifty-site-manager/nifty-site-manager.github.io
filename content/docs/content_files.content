@@ -157,9 +157,9 @@
 					</div>
 				</p>
 
-				<h4>Running scripts and system calls</h4>
+				<h4>Running scripts</h4>
 				<p>
-					Scripts and system calls may be run using <mono>\@system(system-call)</mono>, where <mono>system-call</mono> is the system call or script you want to run. 
+					Scripts may be run using <mono>\@script(script-path)</mono>, where <mono>script-path</mono> is the path from the proect root directory to the script, which is basically the same as the system call for the script.
 				</p>
 
 				<p>
@@ -176,9 +176,37 @@
 					</div>
 				</p>
 
-				<h4>Inputting script and system call output</h4>
+				<h4>Inputting script output</h4>
 				<p>
-					Output from scripts and system calls may be inputted at any point when building webpages using <mono>\@systemoutput(system-call)</mono>, where <mono>system-call</mono> is the system call or script you want to run. This can be incredibly useful for things like conditional statements/loops, inputting text from a url using cURL, or integrating with databases and scripting languages etc., which is just the tip of the ice berg!
+					Output from scripts may be inputted at any point when building webpages using <mono>\@scriptoutput(script-path)</mono>, where where <mono>script-path</mono> is the path from the proect root directory to the script, which is basically the same as the system call for the script. This can be incredibly useful for things like conditional statements/loops, or integrating with databases and scripting languages etc., which is just the tip of the ice berg!
+				</p>
+
+				<p>
+					<b>Note:</b> You do not seem to be able to do everything you would want if installing through Snap, I am trying to work out how to fix this otherwise may stop supporting Snap (hopefully <mono>Nift</mono> can be approved for classic confinement and that will fix the problem).
+				</p>
+
+				<p>
+					For example suppose you want to input the output from running a script <mono>"linux script.sh"</mono>, you can do so with:
+
+					<div align="center">
+						<pre class="inline">
+							\@systemoutput("./linux script.sh")
+						</pre>
+					</div>
+				</p>
+
+				<h4>Running system calls</h4>
+				<p>
+					System calls may be run using <mono>\@system(system-call)</mono>, where <mono>system-call</mono> is the system call or you want to run. 
+				</p>
+
+				<p>
+					<b>Note:</b> You do not seem to be able to do everything you would want if installing through Snap, I am trying to work out how to fix this otherwise may stop supporting Snap (hopefully <mono>Nift</mono> can be approved for classic confinement and that will fix the problem).
+				</p>
+
+				<h4>Inputting system call output</h4>
+				<p>
+					Output from system calls may be inputted at any point when building webpages using <mono>\@systemoutput(system-call)</mono>, where <mono>system-call</mono> is the system call or script you want to run. This can be incredibly useful for things like conditional statements/loops, inputting text from a url using cURL, or integrating with databases and scripting languages etc., which is just the tip of the ice berg!
 				</p>
 
 				<p>
@@ -193,18 +221,6 @@
 							\@systemoutput("curl -sS https://pastebin.com/raw/atjKuxY6")
 						</pre>
 					</div>
-				</p>
-
-				<p>
-					Or if you want to input the output from running a script <mono>"linux script.sh"</mono>, you can do so with:
-
-					<div align="center">
-						<pre class="inline">
-							\@systemoutput("'./linux script.sh'")
-						</pre>
-					</div>
-
-					<b>Note:</b> for paths containing spaces you will need to surround the script path with single then double quotes as above (or double then single quotes).
 				</p>
 
 				<h4>
