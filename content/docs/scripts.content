@@ -8,6 +8,11 @@
 				<h2>Pre/Post Build/Serve Scripts</h2>
 			</header>
 
+			<!-- Image -->
+			<center>
+				<img src="@pathtofile(site/images/scripts.png)" width=300 style="margin-bottom:40px">
+			</center>
+
 			<div class="content">
 				<p>
 					Nift has support for you to optinally add in pre/post build/serve scripts to your websites, you can add in however many scripts you want. Just a few of the things this can be useful for include integrating with <a href="https://sass-lang.com/">SASS</a>, <a href="https://gruntjs.com/">Grunt</a>, <a href="https://www.npmjs.com/package/live-server">Live Server</a>, <a href="http://livereload.com/">Live Reload</a>, etc.. You can call other scripts and programs from inside your scripts, using any scripting language you want, eg. batch, bash shell, fish, Javascript, Perl, PHP, Python, Ruby, Zsh shell and many more.

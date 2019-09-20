@@ -1,116 +1,124 @@
-docs/bitbucket_hosting
-bitbucket_hosting
-template/page.template
+"'privacy_policy'"
+"'privacy_policy'"
+'template/page.template'
 
-docs/content_files
-content_files
-template/page.template
+'docs/bitbucket_hosting'
+'bitbucket_hosting'
+'template/page.template'
 
-docs/displaying_code_blocks
-displaying_code_blocks
-template/page.template
+'docs/content_files'
+'content_files'
+'template/page.template'
 
-docs/displaying_mathematics
-displaying_mathematics
-template/page.template
+'docs/displaying_code_blocks'
+'displaying_code_blocks'
+'template/page.template'
 
-docs/github_hosting
-github_hosting
-template/page.template
+'docs/displaying_mathematics'
+'displaying_mathematics'
+'template/page.template'
 
-docs/gitlab_hosting
-gitlab_hosting
-template/page.template
+'docs/github_hosting'
+'github_hosting'
+'template/page.template'
 
-docs/hosting_your_site
-hosting_your_site
-template/page.template
+'docs/gitlab_hosting'
+'gitlab_hosting'
+'template/page.template'
 
-docs/installing_nift
-installing_nift
-template/page.template
+'docs/hosting_your_site'
+'hosting_your_site'
+'template/page.template'
 
-docs/linux_install
-linux_install
-template/page.template
+'docs/installing_nift'
+'installing_nift'
+'template/page.template'
 
-docs/lokinet_snapps
-lokinet_snapps
-template/page.template
+'docs/linux_install'
+'linux_install'
+'template/page.template'
 
-docs/markdown
+'docs/lokinet_snapps'
+'lokinet_snapps'
+'template/page.template'
+
+'docs/markdown'
 markdown
-template/page.template
+'template/page.template'
 
-docs/nift_commands
-nift_commands
-template/page.template
+'docs/nift_commands'
+'nift_commands'
+'template/page.template'
 
-docs/osx_install
-osx_install
-template/page.template
+'docs/osx_install'
+'osx_install'
+'template/page.template'
 
-docs/scripts
+'docs/scripts'
 scripts
-template/page.template
+'template/page.template'
 
-docs/template_files
-template_files
-template/page.template
+'docs/template_files'
+'template_files'
+'template/page.template'
 
-docs/windows_install
-windows_install
-template/page.template
+'docs/windows_install'
+'windows_install'
+'template/page.template'
 
-index
-index
-template/page.template
+'resources/SNApp_templates'
+'SNApp_templates'
+'template/page.template'
 
-resources/SNApp_templates
-SNApp_templates
-template/page.template
+'resources/blog_templates'
+'blog_templates'
+'template/page.template'
 
-resources/blog_templates
-blog_templates
-template/page.template
-
-resources/examples
+'resources/examples'
 examples
-template/page.template
+'template/page.template'
 
-resources/get_started
-get_started
-template/page.template
+'resources/get_started'
+'get_started'
+'template/page.template'
 
-resources/js_frameworks
-js_frameworks
-template/page.template
+'resources/js_frameworks'
+'js_frameworks'
+'template/page.template'
 
-resources/links
+'resources/links'
 links
-template/page.template
+'template/page.template'
 
-resources/logos
+'resources/logos'
 logos
-template/page.template
+'template/page.template'
 
-resources/nift_tutorial
-nift_tutorial
-template/page.template
+'resources/nift_tutorial'
+'nift_tutorial'
+'template/page.template'
 
-resources/php_frameworks
-php_frameworks
-template/page.template
+'resources/php_frameworks'
+'php_frameworks'
+'template/page.template'
 
-resources/project_suggestions
-project_suggestions
-template/page.template
+'resources/project_suggestions'
+'project_suggestions'
+'template/page.template'
 
-resources/templates
+'resources/templates'
 templates
-template/page.template
+'template/page.template'
+
+index
+index
+'template/page.template'
 
 support
 support
-template/page.template
+'template/page.template'
+
+tos
+tos
+'template/page.template'
 

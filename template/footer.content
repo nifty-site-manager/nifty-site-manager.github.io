@@ -18,7 +18,13 @@
 			<center><img src="@pathtofile(site/images/badger.svg)" width="325" style="max-width:90%; margin-bottom:20px"></center>
 
 			<ul>
-				<li>&copy;&nbsp;2015 - @loadYYYY <a href="https://nift.cc">Nift</a>.</li><li>Developer: <a href="https://n-ham.com">Nicholas Ham</a></li>
+				<li>&copy;&nbsp;2015 - @loadYYYY <a href="https://nift.cc">Nift</a>.</li>
+				<li>Developer: <a href="https://n-ham.com">Nicholas Ham</a></li>
+			</ul> <br>
+
+			<ul>
+				<li><a href="@pathto(tos)">Terms of Service</a></li>
+				<li><a href="@pathto(privacy_policy)">Privacy Policy</a></li>
 			</ul>
 		</div>
 	</div>
