@@ -15,7 +15,7 @@
 
 			<div class="content">
 				<p>
-					Nift has support for you to optinally add in pre/post build/serve scripts to your websites, you can add in however many scripts you want. Just a few of the things this can be useful for include integrating with <a href="https://sass-lang.com/">SASS</a>, <a href="https://gruntjs.com/">Grunt</a>, <a href="https://www.npmjs.com/package/live-server">Live Server</a>, <a href="http://livereload.com/">Live Reload</a>, etc.. You can call other scripts and programs from inside your scripts, using any scripting language you want, eg. batch, bash shell, fish, Javascript, Perl, PHP, Python, Ruby, Zsh shell and many more.
+					Nift has support for you to optinally add in pre/post build/serve scripts to your websites, you can add in batch and shell scripts, if you want to use other (scripting) languages call them from a batch script on Windows and a shell script on Unix/Linux/OSX. Just a few of the things this can be useful for include integrating with <a href="https://sass-lang.com/">SASS</a>, <a href="https://gruntjs.com/">Grunt</a>, Python webserver, <a href="https://www.npmjs.com/package/live-server">Live Server</a>, <a href="http://livereload.com/">Live Reload</a>, etc.. You can call other scripts and programs from inside your scripts, using any scripting language you want, eg. batch, bash shell, fish, Javascript, Perl, PHP, Python, Ruby, Zsh shell and many more.
 				</p>
 
 				<p>
