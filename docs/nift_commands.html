@@ -184,28 +184,30 @@
 		    
 		    					<div align="center">
 		    						<pre class="inline rounded">
-		    							+---------- available commands ----------------------------------------+
-		    							| nsm commands       | lists all nsm commands                          |
-		    							| nsm config         | lists config settings                           |
-		    							| nsm clone          | input: repository-url                           |
-		    							| nsm init           | initialise managing a site - input: (site-name) |
-		    							| nsm status         | lists updated and problem pages                 |
-		    							| nsm info           | input: page-name-1 .. page-name-k               |
-		    							| nsm info-all       | lists tracked pages                             |
-		    							| nsm info-names     | lists tracked page names                        |
-		    							| nsm track          | input: page-name (page-title) (template-path)   |
-		    							| nsm untrack        | input: page-name                                |
-		    							| nsm rm or del      | input: page-name                                |
-		    							| nsm mv or move     | input: old-name new-name                        |
-		    							| nsm cp or copy     | input: tracked-name new-name                    |
-		    							| nsm build          | input: page-name-1 .. page-name-k               |
-		    							| nsm build-updated  | builds updated pages                            |
-		    							| nsm build-all      | builds all tracked pages                        |
-		    							| nsm serve          | serves website locally                          |
-		    							| nsm bcp            | input: commit-message                           |
-		    							| nsm new-title      | input: page-name new-title                      |
-		    							| nsm new-template   | input: page-name template-path                  |
-		    							+----------------------------------------------------------------------+
+		    							+------ available commands ----------------------------------------+
+		    							| commands       | lists all nsm commands                          |
+		    							| config         | list config settings or set git email/username  |
+		    							| clone          | input: clone-url                                |
+		    							| diff           | input: file-path                                |
+		    							| pull           | pull remote changes locally                     |
+		    							| init           | initialise managing a site - input: (site-name) |
+		    							| status         | lists updated and problem pages                 |
+		    							| info           | input: page-name-1 .. page-name-k               |
+		    							| info-all       | lists tracked pages                             |
+		    							| info-names     | lists tracked page names                        |
+		    							| track          | input: page-name (page-title) (template-path)   |
+		    							| untrack        | input: page-name                                |
+		    							| rm or del      | input: page-name                                |
+		    							| mv or move     | input: old-name new-name                        |
+		    							| cp or copy     | input: tracked-name new-name                    |
+		    							| build          | input: page-name-1 .. page-name-k               |
+		    							| build-updated  | builds updated pages                            |
+		    							| build-all      | builds all tracked pages                        |
+		    							| serve          | serves website locally                          |
+		    							| bcp            | input: commit-message                           |
+		    							| new-title      | input: page-name new-title                      |
+		    							| new-template   | input: page-name template-path                  |
+		    							+------------------------------------------------------------------+
 		    						</pre>
 		    					</div>
 		    				</p>
@@ -216,6 +218,22 @@
 		    
 		    				<p>
 		    					You can import/fork and rename an existing site repository on BitBucket, GitHub or GitLab, then clone it using <mono>nsm clone <i>repository-url</i></mono>. Note - You can rename a repository when importing it, rather than forking and renaming, plus on BitBucket and GitHub you cannot remove fork relationships. Also on GitHub you will need to go in to the site repository's settings, find the GitHub Pages section and set the source branch (typically <mono>master branch</mono>).
+		    				</p>
+		    
+		    				<h4>
+		    					Diff of file since last commit
+		    				</h4>
+		    
+		    				<p>
+		    					If your project directory is a Git repository you can get the diff of a file using <mono>nsm diff file-path</mono> where <mono>file-path</mono> is the path from the project root directory to the file you want the diff of.
+		    				</p>
+		    
+		    				<h4>
+		    					Pulling remote changes locally
+		    				</h4>
+		    
+		    				<p>
+		    					If your project directory is a Git repository you can pull remote changes locally using <mono>nsm pull</mono>
 		    				</p>
 		    
 		    				<h4>
