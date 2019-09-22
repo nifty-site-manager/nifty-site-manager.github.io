@@ -50,13 +50,13 @@
 					<div class="col-6 col-12-medium">
 						<section>
 							<h3 class="icon solid fa-check">Script Support</h3>
-							<p>Nift has support for pre/post build/serve scripts to integrate with SASS, Grunt, Live Server/Reload, etc.. Use any scripting language you want eg. batch, bash shell, fish, Javascript, Perl, PHP, Python, Ruby, Zsh and many more.</p>
+							<p>Nift has support for pre/post build/serve scripts to integrate with cURL, databases, SASS, Grunt, GraphQL, Python Web Server, Live Server/Reload, etc..</p>
 						</section>
 					</div>
 					<div class="col-6 col-12-medium">
 						<section>
 							<h3 class="icon solid fa-check">Command-Line Integration</h3>
-							<p>Nift brings you the full power of the command line, with syntax in the template language to run scripts and input/inject the output of a script at any point while building webpages, which is useful for things like conditional statements/loops, inputting text from a url using cURL, and integrating with databases and scripting languages etc., which is just the tip of the ice berg!</p>
+							<p>Nift brings you the full power of the command line, with syntax in the template language to run scripts and input/inject the output of a script at any point while building webpages.</p>
 						</section>
 					</div>
 					<div class="col-6 col-12-medium">
