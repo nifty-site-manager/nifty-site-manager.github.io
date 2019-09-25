@@ -60,6 +60,7 @@
 								<li><a href="@pathto(docs/bitbucket_hosting)">BitBucket</a></li>
 								<li><a href="@pathto(docs/github_hosting)">GitHub</a></li>
 								<li><a href="@pathto(docs/gitlab_hosting)">GitLab</a></li>
+								<li><a href="@pathto(docs/netlify_hosting)">Netlify</a></li>
 							</ul>
 						</li>
 					</ul>

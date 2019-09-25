@@ -1,7 +1,3 @@
-"'privacy_policy'"
-"'privacy_policy'"
-'template/page.template'
-
 'docs/bitbucket_hosting'
 'bitbucket_hosting'
 'template/page.template'
@@ -46,6 +42,10 @@
 markdown
 'template/page.template'
 
+'docs/netlify_hosting'
+"netlify_hosting'"
+'template/page.template'
+
 'docs/nift_commands'
 'nift_commands'
 'template/page.template'
@@ -64,6 +64,10 @@ scripts
 
 'docs/windows_install'
 'windows_install'
+'template/page.template'
+
+'privacy_policy'
+'privacy_policy'
 'template/page.template'
 
 'resources/SNApp_templates'

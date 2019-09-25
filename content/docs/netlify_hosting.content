@@ -1,0 +1,51 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">Netlify Hosting</div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<header class="style1">
+				<h2>How to host a website on Netlify</h2>
+			</header>
+
+			<center>
+				<a href="https://www.netlify.com/docs/"><img src="@pathtofile(site/images/netlify.svg)" width=300 style="max-width: 45%; margin-bottom: 20px"></a>
+			</center>
+
+			<div class="content">
+				<p>
+					Note if you have any dyanmic pages (eg. are using php) then you will need to use an alternative for hosting.
+				</p>
+
+				<p>
+					Information on Netlify may be found <a href="https://www.netlify.com/docs/">here</a>.
+				</p>
+
+				<p>
+					To host a website on Netlify you will first need to upload your website to a respository on BitBucket, GitHub or GitLab. 
+				</p>
+
+				<p>
+					By far the easiest way to host a website on BitBucket, GitHub or GitLab is to import or fork an existing site repository from BitBucket, GitHub, GitLab or any other code sharing platform. See <a href="@pathto(resources/templates)">here</a> for a variety of templates you can use to make websites.
+				</p>
+
+				<p>
+					Once you have a website on BitBucket, GitHub or GitLab you can host it on Netlify by following these steps:
+					<ol>
+						<li>Singup for Netlify using either BitBucket, GitHub, GitLab or email;</li>
+						<li>Login to Netlify using either BitBucket, GitHub, GitLab or email;</li>
+						<li>Click on <mono>New site from Git</mono>;</li>
+						<li>Choose which Git provider you want to use (BitBucket, GitHub or Gitlab);</li>
+						<li>Select the repository containing your website;</li>
+						<li>Select the branch containing the website (typically master), leave the build command blank and enter the directory containing the website (typically left blank for BitBucket and GitHub, and <mono>site</mono> for GitLab);</li>
+						<li>Click deploy site.</li>
+					</ol>
+				</p>
+
+				<p>
+					If you go in to <mono>domain settings</mono> you can add a custom domain, Netlify will sort out auto renewing Let's encrypt certificates for you which is really handy! 
+				</p>
+			</div>
+		</section>
+	</div>
+</section>
