@@ -75,7 +75,6 @@
 						<li><a href="@pathto(resources/logos)">Logos</a></li>
 						<li><a href="@pathto(resources/nift_tutorial)">Nift Tutorial</a></li>
 						<li><a href="@pathto(resources/php_frameworks)">PHP Frameworks</a></li>
-						<li><a href="@pathto(resources/project_suggestions)">Project Suggestions</a></li>
 						<li><a href="@pathto(resources/templates)">Templates</a></li>
 						<li><a href="@pathto(resources/SNApp_templates)">SNApp Templates</a></li>
 						<li><a href="@pathto(resources/blog_templates)">Blog Templates</a></li>

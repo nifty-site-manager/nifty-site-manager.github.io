@@ -106,10 +106,6 @@ logos
 'php_frameworks'
 'template/page.template'
 
-'resources/project_suggestions'
-'project_suggestions'
-'template/page.template'
-
 'resources/templates'
 templates
 'template/page.template'

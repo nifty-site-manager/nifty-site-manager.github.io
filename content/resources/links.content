@@ -8,6 +8,11 @@
 				<h2>Links to useful resources when making websites</h2>
 			</header>
 
+			<!-- Image -->
+			<center>
+				<img src="@pathtofile(site/images/to_the_moon.svg)" width=300 style="margin-bottom:40px">
+			</center>
+
 			<div class="content">
 				<p>
 					This page contains links to all sorts of useful resources when making websites with <mono>Nift</mono>, for example hosting options, custom domain registrars, email options, server hiring options, web servers, lists of site managers, cloud storage, code sharing websites, CI services, syntax highlighting options for your websites, adding form and comment sections to websites, Javascript and PHP frameworks, website templates and lots of other useful links.
