@@ -60,6 +60,16 @@
 				</div>
 				<div class="col-4 col-12-medium">
 					<section class="highlight">
+						<a href="https://preactjs.com/"><img src="@pathtofile(site/images/preact.svg)" alt="" height="150px" style="max-width:40%"/></a>
+						<h3><a href="https://preactjs.com/">Preact</a></h3>
+						<p>Fast 3kB alternative to React with the same modern API.</p>
+						<ul class="actions">
+							<li><a href="https://preactjs.com/guide/v10/getting-started" class="button style1">Learn More</a></li>
+						</ul>
+					</section>
+				</div>
+				<div class="col-4 col-12-medium">
+					<section class="highlight">
 						<a href="https://mozilla.github.io/nunjucks/"><img src="@pathtofile(site/images/nunjucks.svg)" alt="" height="150px" style="max-width:40%"/></a>
 						<h3><a href="https://mozilla.github.io/nunjucks/">Nunjucks</a></h3>
 						<p>A rich and powerful templating language for JavaScript.</p>
