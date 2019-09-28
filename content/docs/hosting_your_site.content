@@ -42,13 +42,14 @@
 				</p>
 
 				<center>
-					<a href="https://www.netlify.com/"><img src="@pathtofile(site/images/netlify.svg)" width=300 style="max-width: 50%; margin-left:-40px; margin-bottom: 20px"></a>
+					<a href="https://www.netlify.com/"><img src="@pathtofile(site/images/netlify.svg)" width=300 style="max-width: 60%; margin-left:-40px; margin-bottom: 20px"></a>
 				</center>
 
 				<p>
 					Other good free hosting options for static sites include:
 
 					<ul>
+						<li><a href="https://developers.cloudflare.com/workers/sites/">CloudFlare</a></li>
 						<li><a href="https://aws.amazon.com/amplify/console/">Amazon Amplify Console</a></li>
 						<li><a href="https://firebase.google.com/">Google FireBase</a></li>
 						<li><a href="https://surge.sh/">surge.sh</a></li>
@@ -57,8 +58,12 @@
 				</p>
 
 				<center>
-					<a href="https://aws.amazon.com/amplify/console/"><img src="@pathtofile(site/images/aws.svg)" width=175 style="max-width: 30%; vertical-align:middle; margin-top: -50px"></a>
-					<a href="https://firebase.google.com/"><img src="@pathtofile(site/images/firebase.svg)" width=120 style="max-width: 30%; vertical-align:middle; margin-top: -70px; margin-left: 20px"></a><br>
+					<a href="https://developers.cloudflare.com/workers/sites/"><img src="@pathtofile(site/images/cloudflare.svg)" width=300 style="max-width: 60%; margin-top: -10px; margin-bottom: 40px"></a>
+				</center>
+
+				<center>
+					<a href="https://aws.amazon.com/amplify/console/"><img src="@pathtofile(site/images/aws.svg)" width=175 style="max-width: 30%; vertical-align:middle; margin-top: 0px"></a>
+					<a href="https://firebase.google.com/"><img src="@pathtofile(site/images/firebase.svg)" width=120 style="max-width: 30%; vertical-align:middle; margin-top: 0px; margin-left: 20px"></a><br>
 					<a href="https://surge.sh/"><img src="@pathtofile(site/images/surge.svg)" width=175 style="max-width: 30%; vertical-align:middle; margin-left:20px; margin-bottom: 20px; margin-top: 30px"></a>
 					<a href="https://zeit.co"><img src="@pathtofile(site/images/zeit.png)" width=175 style="max-width: 30%; vertical-align:middle; margin-left:20px; margin-bottom: 20px; margin-top: 10px"></a>
 				</center>
