@@ -1,9 +1,9 @@
 00:33:58 Wednesday October 02 2019
-'resources/links'
-links
+hacktoberfest
+hacktoberfest
 'template/page.template'
 
-'content/resources/links.content'
+'content/hacktoberfest.content'
 'template/footer.content'
 'template/head.content'
 'template/menu.content'
