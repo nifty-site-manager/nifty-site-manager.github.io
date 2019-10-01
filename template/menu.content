@@ -65,12 +65,12 @@
 						</li>
 					</ul>
 				</li>
+				<li><a href="@pathto(hacktoberfest)">Hacktoberfest</a></li>
 				<li>
 					<a href="">Resources</a>
 					<ul>
 						<li><a href="@pathto(resources/examples)">Examples</a></li>
 						<li><a href="@pathto(resources/get_started)">Get Started</a></li>
-						<li><a href="@pathto(resources/hacktoberfest)">Hacktoberfest</a></li>
 						<li><a href="@pathto(resources/js_frameworks)">JS Frameworks</a></li>
 						<li><a href="@pathto(resources/links)">Links</a></li>
 						<li><a href="@pathto(resources/logos)">Logos</a></li>
