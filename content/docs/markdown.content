@@ -14,7 +14,7 @@
 				</center>
 
 				<p>
-					An excellent way to pre-render (aka convert) markdown to html at build-time on your websites is to use <a href="https://pandoc.org/">pandoc</a>. If you have pandoc installed on your machine it is as simple as using <mono>\@systemoutput("pandoc file-path")</mono> where <mono>file-path</mono> is the path to the markdown file you want converted. 
+					An excellent way to pre-render (aka convert) markdown to html at build-time on your websites is to use <a href="https://pandoc.org/">pandoc</a>. If you have pandoc installed on your machine it is as simple as using, without any indenting, <mono>\@systemoutput("pandoc file-path")</mono> where <mono>file-path</mono> is the path to the markdown file you want converted. 
 				</p>
 
 				<p>
