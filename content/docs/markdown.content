@@ -14,7 +14,15 @@
 				</center>
 
 				<p>
-					Options for using markdown on your websites include:
+					An excellent way to pre-render (aka convert) markdown to html at build-time on your websites is to use <a href="https://pandoc.org/">pandoc</a>. If you have pandoc installed on your machine it is as simple as using <mono>\@systemoutput("pandoc file-path")</mono> where <mono>file-path</mono> is the path to the markdown file you want converted. 
+				</p>
+
+				<p>
+					<b>Note:</b> changes to the markdown file will not be recognised by build-updated unless you manually add it as a user-defined page dependency. See the <a href="@pathto(docs/nift_commands)">Nift commands</a> page for how to manually add user-defined page dependencies.
+				</p>
+
+				<p>
+					Options for converting markdown to html at load-time on your websites include:
 					<ul style="text-indent:30px">
 						<li><a href="http://showdownjs.com/">Showdown</a></li>
 						<li><a href="https://marked.js.org">Marked.js</a></li>

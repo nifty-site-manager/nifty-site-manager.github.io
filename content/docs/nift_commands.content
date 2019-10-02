@@ -268,7 +268,7 @@ python -m SimpleHTTPServer
 				</h4>
 
 				<p>
-					You can add page dependencies manually by adding a <mono>.deps</mono> file residing in the same directory as the content file for the page. For example if you have <mono>index.content</mono> as the page template file add an <mono>index.deps</mono> file containing the extra dependencies you want to track. 
+					You can add page dependencies manually by adding a <mono>.deps</mono> file residing in the same directory as the content file for the page. For example if you have <mono>index.content</mono> as the page content file add an <mono>index.deps</mono> file containing the extra dependencies you want to track. 
 				</p>
 			</div>
 		</section>
