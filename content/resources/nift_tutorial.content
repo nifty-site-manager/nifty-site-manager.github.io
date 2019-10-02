@@ -166,18 +166,18 @@ template/page.template
 					</li>
 
 					<li>
-						Add the following to <mono>content/about.content</mono>;
+						Add the following to <mono>content/about.content</mono> without any indenting;
 						<div align="center"  style="margin-top:30px">
 <pre class="inline prettyprint lang-cpp rounded">
 <pre>
-	ostream& operator<<(ostream &os, const std::vector<std::string> &v)
-	{
-		if(v.size())
-			os << v[i];
-		for(auto i=1; i<v.size(); i++)
-			os << " " << v[i];
-		return os;
-	}
+ostream& operator<<(ostream &os, const std::vector<std::string> &v)
+{
+	if(v.size())
+		os << v[i];
+	for(auto i=1; i<v.size(); i++)
+		os << " " << v[i];
+	return os;
+}
 </pre>
 </pre>
 						</div> <br>
@@ -185,20 +185,6 @@ template/page.template
 
 					<li>
 						Enter <mono>nsm build-updated</mono> and reload <mono>site/about.html</mono>. View the source for <mono>site/about.html</mono> and look at the text inside the pre tags. Notice how every < character has been escaped to \&lt;, <mono>Nift</mono> automatically does this so you can simply paste your code straight into content files, otherwise you would need to manually replace < characters (if you want, add write permissions to <mono>site/about.html</mono> and see what happens when you revert back to using < inside the pre tags);
-					</li>
-
-					<li>
-						Remove <mono>\@jsinclude(site/js/process_pre_tags.js)</mono> from <mono>templates/page.template</mono>;
-					</li>
-
-					<li>
-							Enter <mono>nsm build-updated</mono> and reload <mono>site/about.html</mono>. Notice how the code block now has unwanted indenting? All whitespace is preserved between pre tags, which is where <mono>process_pre_tags.js</mono> comes in. For each pre block the script finds how many leading tabs the second line has (ie. the line after the pre block is opened), then strips that number of leading tabs from each line in the block. Alternatively users could just have horribly indented source code, personally I prefer this; <br> <br>
-
-							<u>Note:</u> indenting of pre blocks must be tabs (indenting inside pre blocks can still be any combination of tabs/spaces). One can alter the js to also look for spaces,or just spaces, however it will still be stripping the indenting of the second line from the remaining lines, if you wanted to allow for inconsistent combinations of tabs/spaces for indenting inside code blocks you would also need to fix tab width using css, which would still be <i>broken</i> for users who use a different tab width and use inconsistent indenting. Do <u>not</u> just do a global replacement of tabs or four spaces either, yes it will fix indenting of pre blocks, but it may mess up indenting inside pre blocks when pages are displayed in a browser, and <u>will</u> infuriate users trying to work out why;
-					</li>
-
-					<li>
-						Add <mono>\@jsinclude(site/js/process_pre_tags.js)</mono> back to the end of the body in <mono>templates/page.template</mono>
 					</li>
 
 					<li>
