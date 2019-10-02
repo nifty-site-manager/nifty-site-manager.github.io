@@ -217,20 +217,20 @@
 		    						The page list file <mono>.siteinfo/pages.list</mono> should now contain the following information for pages <mono>about</mono> and <mono>index</mono>;
 		    
 		    						<div align="center" style="margin-top:30px">
-		    							<pre class="inline rounded">
-		    								about
-		    								about
-		    								template/page.template
-		    
-		    								first_page
-		    								myPageTitle
-		    								template/page.template
-		    
-		    								index
-		    								home
-		    								template/page.template
-		    
-		    							</pre>
+		    <pre class="inline rounded">
+about
+about
+template/page.template
+
+first_page
+myPageTitle
+template/page.template
+
+index
+home
+template/page.template
+
+</pre>
 		    						</div> <br>
 		    					</li>
 		    
@@ -322,18 +322,18 @@
 		    					<li>
 		    						Add the following to <mono>content/about.content</mono>;
 		    						<div align="center"  style="margin-top:30px">
-		    							<pre class="inline prettyprint lang-cpp rounded">
-		    								&lt;pre>
-		    									ostream& operator&lt;&lt;(ostream &os, const std::vector&lt;std::string> &v)
-		    									{
-		    										if(v.size())
-		    											os &lt;&lt; v[i];
-		    										for(auto i=1; i&lt;v.size(); i++)
-		    											os &lt;&lt; " " &lt;&lt; v[i];
-		    										return os;
-		    									}
-		    								&lt;/pre>
-		    							</pre>
+		    <pre class="inline prettyprint lang-cpp rounded">
+&lt;pre>
+	ostream& operator&lt;&lt;(ostream &os, const std::vector&lt;std::string> &v)
+	{
+		if(v.size())
+			os &lt;&lt; v[i];
+		for(auto i=1; i&lt;v.size(); i++)
+			os &lt;&lt; " " &lt;&lt; v[i];
+		return os;
+	}
+&lt;/pre>
+</pre>
 		    						</div> <br>
 		    					</li>
 		    
@@ -428,7 +428,6 @@
 		<script src="../assets/js/breakpoints.min.js"></script>
 		<script src="../assets/js/util.js"></script>
 		<script src="../assets/js/main.js"></script>
-		<script src="../assets/js/process_pre_tags.js"></script>
 		<script src='../assets/js/process_md_blocks.js'></script>
 		<script src="../assets/js/showdown.min.js"></script>
 		<script>

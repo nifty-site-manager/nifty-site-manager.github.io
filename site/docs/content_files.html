@@ -223,9 +223,9 @@
 		    					For example suppose inside your website directory you have <mono>template/footer.content</mono>:
 		    
 		    					<div align="center">
-		    						<pre class="inline">
-		    							Page was last built on &commat;currentdate.
-		    						</pre>
+		    <pre class="inline">
+Page was last built on &commat;currentdate.
+</pre>
 		    					</div>
 		    				</p>
 		    
@@ -233,9 +233,9 @@
 		    					To input <mono>template/footer.content</mono> into another file write:
 		    
 		    					<div align="center">
-		    						<pre class="inline">
-		    							&commat;input(template/footer.content)
-		    						</pre>
+		    <pre class="inline">
+&commat;input(template/footer.content)
+</pre>
 		    					</div>
 		    				</p>
 		    
@@ -255,30 +255,30 @@
 		    					An example of when users may find this useful is when writing menus for page templates, or adding local links for any template files. An example of a smaller version of the menu for this site using <mono>&commat;pathto(page-name)</mono> is below:
 		    
 		    					<div align="center">
-		    						<pre class="prettyprint linenums">
-		    							&lt;nav>
-		    								&lt;ul class="drop_menu">
-		    									&lt;li>&lt;/li>
-		    									&lt;li class="dm_li">
-		    										&lt;a href="&commat;pathto(index)">home&lt;/a>
-		    									&lt;/li>
-		    
-		    									&lt;li class ="dm_li">
-		    										&lt;div class="dm_text">documentation&lt;/div>
-		    										&lt;ul class ="drop_submenu">
-		    											&lt;li class="dsm_li">&lt;a href="&commat;pathto(documentation/installing_nsm)">installing nsm&lt;/a>&lt;/li>
-		    											&lt;li class="dsm_li">&lt;a href="&commat;pathto(documentation/nsm_tutorial)">nsm tutorial&lt;/a>&lt;/li>
-		    											&lt;li class="dsm_li">&lt;a href="&commat;pathto(documentation/nsm_commands)">nsm commands&lt;/a>&lt;/li>
-		    										&lt;/ul>
-		    									&lt;/li>
-		    
-		    									&lt;li class ="dm_li">
-		    										&lt;a href="&commat;pathto(support)">support&lt;/a>
-		    									&lt;/li>
-		    									&lt;li>&lt;/li>
-		    								&lt;/ul>
-		    							&lt;/nav>
-		    						</pre>
+		    <pre class="prettyprint linenums">
+&lt;nav>
+	&lt;ul class="drop_menu">
+		&lt;li>&lt;/li>
+		&lt;li class="dm_li">
+			&lt;a href="&commat;pathto(index)">home&lt;/a>
+		&lt;/li>
+
+		&lt;li class ="dm_li">
+			&lt;div class="dm_text">documentation&lt;/div>
+			&lt;ul class ="drop_submenu">
+				&lt;li class="dsm_li">&lt;a href="&commat;pathto(documentation/installing_nsm)">installing nsm&lt;/a>&lt;/li>
+				&lt;li class="dsm_li">&lt;a href="&commat;pathto(documentation/nsm_tutorial)">nsm tutorial&lt;/a>&lt;/li>
+				&lt;li class="dsm_li">&lt;a href="&commat;pathto(documentation/nsm_commands)">nsm commands&lt;/a>&lt;/li>
+			&lt;/ul>
+		&lt;/li>
+
+		&lt;li class ="dm_li">
+			&lt;a href="&commat;pathto(support)">support&lt;/a>
+		&lt;/li>
+		&lt;li>&lt;/li>
+	&lt;/ul>
+&lt;/nav>
+</pre>
 		    					</div>
 		    				</p>
 		    
@@ -290,24 +290,24 @@
 		    					The footer content file for this site (inputted in the <mono>template/page.template</mono> file) is given below as an example using <mono>&commat;pathtofile(path-to-file)</mono>:
 		    
 		    					<div align="center">
-		    						<pre class="prettyprint linenums">
-		    							&lt;footer>
-		    								&lt;hr>
-		    								&lt;center>&lt;img src="&commat;pathtofile(site/files/nsm.png)" width="120">&lt;/center>
-		    
-		    								&lt;p>
-		    									&lt;b>Mirrors:&lt;/b> [&lt;a href="https://nifty-site-manager.com/">Official&lt;/a>] [&lt;a href="https://nifty-site-manager.bitbucket.io/">BitBucket&lt;/a>] [&lt;a href="https://nifty-site-manager.github.io/">GitHub&lt;/a>] [&lt;a href="https://nifty-site-manager.gitlab.io/">GitLab&lt;/a>] [&lt;a href="https://web.archive.org/web/https://www.nifty-site-manager.com/">archive.org&lt;/a>]
-		    								&lt;/p>
-		    
-		    								&lt;p>
-		    									&lt;b>Repos:&lt;/b> [&lt;a href="https://bitbucket.org/nifty-site-manager/nsm/src/master/">BitBucket&lt;/a>] [&lt;a href="https://github.com/nifty-site-manager/nsm">GitHub&lt;/a>] [&lt;a href="https://gitlab.com/nifty-site-manager/nsm">GitLab&lt;/a>]
-		    								&lt;/p>
-		    
-		    								Page was last built on &commat;currentdate at &commat;currenttime (&commat;timezone) using &commat;currentOS. &lt;br>
-		    
-		    								&lt;noselect>&lt;small>&copy;&nbsp;2015-&commat;loadYY &lt;a href="https://n-ham.com/">Nicholas Ham&lt;/a>&lt;/small>&lt;/noselect>
-		    							&lt;/footer>
-		    						</pre>
+		    <pre class="prettyprint linenums">
+&lt;footer>
+	&lt;hr>
+	&lt;center>&lt;img src="&commat;pathtofile(site/files/nsm.png)" width="120">&lt;/center>
+
+	&lt;p>
+		&lt;b>Mirrors:&lt;/b> [&lt;a href="https://nifty-site-manager.com/">Official&lt;/a>] [&lt;a href="https://nifty-site-manager.bitbucket.io/">BitBucket&lt;/a>] [&lt;a href="https://nifty-site-manager.github.io/">GitHub&lt;/a>] [&lt;a href="https://nifty-site-manager.gitlab.io/">GitLab&lt;/a>] [&lt;a href="https://web.archive.org/web/https://www.nifty-site-manager.com/">archive.org&lt;/a>]
+	&lt;/p>
+
+	&lt;p>
+		&lt;b>Repos:&lt;/b> [&lt;a href="https://bitbucket.org/nifty-site-manager/nsm/src/master/">BitBucket&lt;/a>] [&lt;a href="https://github.com/nifty-site-manager/nsm">GitHub&lt;/a>] [&lt;a href="https://gitlab.com/nifty-site-manager/nsm">GitLab&lt;/a>]
+	&lt;/p>
+
+	Page was last built on &commat;currentdate at &commat;currenttime (&commat;timezone) using &commat;currentOS. &lt;br>
+
+	&lt;noselect>&lt;small>&copy;&nbsp;2015-&commat;loadYY &lt;a href="https://n-ham.com/">Nicholas Ham&lt;/a>&lt;/small>&lt;/noselect>
+&lt;/footer>
+</pre>
 		    					</div>
 		    				</p>
 		    
@@ -324,9 +324,9 @@
 		    					For example if you want to run a script <mono>script.bat</mono>, you can do so with:
 		    
 		    					<div align="center">
-		    						<pre class="inline">
-		    							&commat;script(script.bat)
-		    						</pre>
+		    <pre class="inline">
+&commat;script(script.bat)
+</pre>
 		    					</div>
 		    				</p>
 		    
@@ -343,9 +343,9 @@
 		    					For example suppose you want to input the output from running a script <mono>"linux script.sh"</mono>, you can do so with:
 		    
 		    					<div align="center">
-		    						<pre class="inline">
-		    							&commat;scriptoutput("./linux script.sh")
-		    						</pre>
+		    <pre class="inline">
+&commat;scriptoutput("./linux script.sh")
+</pre>
 		    					</div>
 		    				</p>
 		    
@@ -371,9 +371,9 @@
 		    					For example suppose you want to input the text from <a href="https://pastebin.com/atjKuxY6">this</a> paste on <a href="https://pastebin.com">Paste Bin</a>, you can do so with:
 		    
 		    					<div align="center">
-		    						<pre class="inline">
-		    							&commat;systemoutput("curl -sS https://pastebin.com/raw/atjKuxY6")
-		    						</pre>
+		    <pre class="inline">
+&commat;systemoutput("curl -sS https://pastebin.com/raw/atjKuxY6")
+</pre>
 		    					</div>
 		    				</p>
 		    
@@ -384,9 +384,9 @@
 		    					You can include a css file using <mono>&commat;cssinclude(path-to-css-file)</mono>, where <mono>path-to-css-file</mono> is the path from the main site directory to the css file (<u>not</u> the path from the page to the css file). When building a page, <mono>Nift</mono> will replace <mono>&commat;cssinclude(path-to-css-file)</mono> with:
 		    
 		    					<div align="center">
-		    						<pre class="prettyprint lang-js inline">
-		    							&lt;link rel='stylesheet' type='text/css' href='path-from-page-to-css-file'>
-		    						</pre>
+		    <pre class="prettyprint lang-js inline">
+&lt;link rel='stylesheet' type='text/css' href='path-from-page-to-css-file'>
+</pre>
 		    					</div>
 		    				</p>
 		    
@@ -394,9 +394,9 @@
 		    					Alternatively you can use:
 		    
 		    					<div align="center">
-		    						<pre class="prettyprint lang-js inline">
-		    							&lt;link rel='stylesheet' type='text/css' href='&commat;pathtofile(path-to-css-file)'>
-		    						</pre>
+		    <pre class="prettyprint lang-js inline">
+&lt;link rel='stylesheet' type='text/css' href='&commat;pathtofile(path-to-css-file)'>
+</pre>
 		    					</div>
 		    				</p>
 		    
@@ -407,9 +407,9 @@
 		    					You can include am image file using <mono>&commat;imginclude(path-to-img-file)</mono>, where <mono>path-to-img-file</mono> is the path from the main site directory to the img file (<u>not</u> the path from the page to the img file). When building a page, <mono>Nift</mono> will replace <mono>&commat;imginclude(path-to-img-file)</mono> with the following:
 		    
 		    					<div align="center">
-		    						<pre class="prettyprint lang-js inline">
-		    							&lt;img src="path-from-page-to-img-file">
-		    						</pre>
+		    <pre class="prettyprint lang-js inline">
+&lt;img src="path-from-page-to-img-file">
+</pre>
 		    					</div>
 		    				</p>
 		    
@@ -417,9 +417,9 @@
 		    					If you would like to set the width of an image, use something like the following in your source code:
 		    
 		    					<div align="center">
-		    						<pre class="prettyprint lang-js inline">
-		    							&lt;img src="&commat;pathtofile(path-to-img-file)" width="120">
-		    						</pre>
+		    <pre class="prettyprint lang-js inline">
+&lt;img src="&commat;pathtofile(path-to-img-file)" width="120">
+</pre>
 		    					</div>
 		    				</p>
 		    
@@ -431,9 +431,9 @@
 		    					You can include a js file using <mono>&commat;jsinclude(path-to-js-file)</mono>, where <mono>path-to-js-file</mono> is the path from the main site directory to the js file (<u>not</u> the path from the page to the js file). When building a page, <mono>Nift</mono> will replace <mono>&commat;jsinclude(path-to-js-file)</mono> with: 
 		    
 		    					<div align="center">
-		    						<pre class="prettyprint lang-js inline">
-		    							&lt;script src="path-from-page-to-js-file">&lt;/script>
-		    						</pre>
+		    <pre class="prettyprint lang-js inline">
+&lt;script src="path-from-page-to-js-file">&lt;/script>
+</pre>
 		    					</div>
 		    				</p>
 		    
@@ -441,9 +441,9 @@
 		    					Alternatively you can use:
 		    
 		    					<div align="center">
-		    						<pre class="prettyprint lang-js inline">
-		    							&lt;script src="&commat;pathtofile(path-to-js-file)">&lt;/script>
-		    						</pre>
+		    <pre class="prettyprint lang-js inline">
+&lt;script src="&commat;pathtofile(path-to-js-file)">&lt;/script>
+</pre>
 		    					</div>
 		    				</p>
 		    
@@ -454,9 +454,9 @@
 		    					You can include a favicon file using <mono>&commat;faviconinclude(path-to-favicon-file)</mono>, where <mono>path-to-favicon-file</mono> is the path from the main site directory to the favicon file (<u>not</u> the path from the page to the favicon file). When building a page, <mono>Nift</mono> will replace <mono>&commat;faviconinclude(path-to-favicon-file)</mono> with:
 		    
 		    					<div align="center">
-		    						<pre class="prettyprint lang-js inline">
-		    							&lt;link rel='icon' type='image/png' href='path-from-page-to-favicon-file'>
-		    						</pre>
+		    <pre class="prettyprint lang-js inline">
+&lt;link rel='icon' type='image/png' href='path-from-page-to-favicon-file'>
+</pre>
 		    					</div>
 		    				</p>
 		    
@@ -464,9 +464,9 @@
 		    					Alternatively you can use:
 		    
 		    					<div align="center">
-		    						<pre class="prettyprint lang-js inline">
-		    							&lt;link rel='icon' type='image/png' href='&commat;pathtofile(path-to-favicon-file)'>
-		    						</pre>
+		    <pre class="prettyprint lang-js inline">
+&lt;link rel='icon' type='image/png' href='&commat;pathtofile(path-to-favicon-file)'>
+</pre>
 		    					</div>
 		    				</p>
 		    
@@ -474,11 +474,11 @@
 		    					An example of using <mono>&commat;cssinclude(path-to-css-file)</mono>, <mono>&commat;jsinclude(path-to-js-file)</mono> and <mono>&commat;faviconinclude(path-to-favicon-file)</mono> is given below (I typically put these in a <mono>head.content</mono> file located in the <mono>template</mono> directory and included in the <mono>template/page.template</mono> file in between the <mono>&lt;head>&lt;/head></mono> tags):
 		    
 		    					<div align="center">
-		    						<pre class="prettyprint inline">
-		    							&commat;cssinclude("site/css/pagestyle.css")
-		    							&commat;jsinclude("site/js/motion.css")
-		    							&commat;faviconinclude("site/files/favicon.ico")
-		    						</pre>
+		    <pre class="prettyprint inline">
+&commat;cssinclude("site/css/pagestyle.css")
+&commat;jsinclude("site/js/motion.css")
+&commat;faviconinclude("site/files/favicon.ico")
+</pre>
 		    					</div>
 		    				</p>
 		    			</div>
@@ -526,7 +526,6 @@
 		<script src="../assets/js/breakpoints.min.js"></script>
 		<script src="../assets/js/util.js"></script>
 		<script src="../assets/js/main.js"></script>
-		<script src="../assets/js/process_pre_tags.js"></script>
 		<script src='../assets/js/process_md_blocks.js'></script>
 		<script src="../assets/js/showdown.min.js"></script>
 		<script>

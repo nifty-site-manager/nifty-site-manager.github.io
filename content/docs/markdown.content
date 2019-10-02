@@ -30,30 +30,30 @@
 					To use the <mono>Showdown</mono> add includes for the above scripts along with <mono>Showdown</mono> scripts to the end of your <mono>\<body\></mono>. For example a <mono>page.template</mono> file might be:
 
 					<div align="center">
-						<pre class="prettyprint lang-html linenums">
-							<!DOCTYPE html>
-							<html>
-								<head>
-									<title>site title - \@pagetitle</title>
-								</head>
-											
-								<body>
-									\@inputcontent
+<pre class="prettyprint lang-html linenums">
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>site title - \@pagetitle</title>
+	</head>
+				
+	<body>
+		\@inputcontent
 
-									<script src='\@pathtofile(site/js/process_md_blocks.js)'></script>
-									<script src="\@pathtofile(site/js/showdown.min.js)"></script>
-									<script>
-										var converter = new showdown.Converter();
-										converter.setOption('tables', 'on');
-										converter.setOption('strikethrough', 'on');
-										converter.setOption('emoji', 'on');
-										elements = document.getElementsByClassName('markdown');
-										for(var i=0; i<elements.length; i++)
-											elements[i].innerHTML = converter.makeHtml(elements[i].innerHTML.replace(/&amp;lt;/g, "xwxw").replace(/&amp;gt;/g, "pqpq")).replace(/xwxw/g, "&amp;lt;").replace(/pqpq/g, "&amp;gt;");
-									</script>
-								</body>
-							</html>
-						</pre>
+		<script src='\@pathtofile(site/js/process_md_blocks.js)'></script>
+		<script src="\@pathtofile(site/js/showdown.min.js)"></script>
+		<script>
+			var converter = new showdown.Converter();
+			converter.setOption('tables', 'on');
+			converter.setOption('strikethrough', 'on');
+			converter.setOption('emoji', 'on');
+			elements = document.getElementsByClassName('markdown');
+			for(var i=0; i<elements.length; i++)
+				elements[i].innerHTML = converter.makeHtml(elements[i].innerHTML.replace(/&amp;lt;/g, "xwxw").replace(/&amp;gt;/g, "pqpq")).replace(/xwxw/g, "&amp;lt;").replace(/pqpq/g, "&amp;gt;");
+		</script>
+	</body>
+</html>
+</pre>
 					</div>
 				</p>
 
@@ -61,41 +61,29 @@
 					It's also handy to add the following bit of css to one of your css files to hide visibility of textareas when pages are loading:
 
 					<div align="center">
-						<pre class="prettyprint lang-css linenums">
-							textarea.markdown
-							{
-								visibility: hidden;
-							}
+<pre class="prettyprint lang-css linenums">
+textarea.markdown
+{
+	visibility: hidden;
+}
 
-							pre.markdown
-							{
-								visibility: hidden;
-							}
-						</pre>
+pre.markdown
+{
+	visibility: hidden;
+}
+</pre>
 					</div>
 				</p>
 
 				<p>
-					You can then do a block of markdown either as:
+					You can then do a block of markdown as follows:
 
 					<div align="center">
-						<pre class="prettyprint lang-html linenums">
-							<textarea class="markdown">
-								markdown code here
-							</textarea>
-						</pre>
-					</div>
-				</p>
-
-				<p>
-					or:
-
-					<div align="center">
-						<pre class="prettyprint lang-html linenums">
-							<pre class="markdown">
-								markdown code here
-							</pre>
-						</pre>
+<pre class="prettyprint lang-html linenums">
+<textarea class="markdown">
+	markdown code here
+</textarea>
+</pre>
 					</div>
 				</p>
 
@@ -154,13 +142,13 @@
 				</textarea>
 
 				<center>
-					<pre class="prettyprint lang-markdown inline">
-						| Tables        | Are           | Cool  |
-						| ------------- |:-------------:| -----:|
-						| **col 3 is**  | right-aligned | $1600 |
-						| col 2 is      | *centered*    |   $12 |
-						| zebra stripes | ~~are neat~~  |    $1 |
-					</pre>
+<pre class="prettyprint lang-markdown inline">
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| **col 3 is**  | right-aligned | $1600 |
+| col 2 is      | *centered*    |   $12 |
+| zebra stripes | ~~are neat~~  |    $1 |
+</pre>
 				</center> <br><br>
 
 				<textarea class="markdown">

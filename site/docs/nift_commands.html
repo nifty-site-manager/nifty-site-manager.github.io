@@ -184,32 +184,32 @@
 		    					To list available <mono>Nift</mono> commands run <mono>nsm commands</mono>. The list will look similar to:
 		    
 		    					<div align="center">
-		    						<pre class="inline rounded">
-		    							+------ available commands ----------------------------------------+
-		    							| commands       | lists all nsm commands                          |
-		    							| config         | list config settings or set git email/username  |
-		    							| clone          | input: clone-url                                |
-		    							| diff           | input: file-path                                |
-		    							| pull           | pull remote changes locally                     |
-		    							| init           | initialise managing a site - input: (site-name) |
-		    							| status         | lists updated and problem pages                 |
-		    							| info           | input: page-name-1 .. page-name-k               |
-		    							| info-all       | lists tracked pages                             |
-		    							| info-names     | lists tracked page names                        |
-		    							| track          | input: page-name (page-title) (template-path)   |
-		    							| untrack        | input: page-name                                |
-		    							| rm or del      | input: page-name                                |
-		    							| mv or move     | input: old-name new-name                        |
-		    							| cp or copy     | input: tracked-name new-name                    |
-		    							| build          | input: page-name-1 .. page-name-k               |
-		    							| build-updated  | builds updated pages                            |
-		    							| build-all      | builds all tracked pages                        |
-		    							| serve          | serves website locally                          |
-		    							| bcp            | input: commit-message                           |
-		    							| new-title      | input: page-name new-title                      |
-		    							| new-template   | input: page-name template-path                  |
-		    							+------------------------------------------------------------------+
-		    						</pre>
+		    <pre class="inline rounded">
++------ available commands ----------------------------------------+
+| commands       | lists all nsm commands                          |
+| config         | list config settings or set git email/username  |
+| clone          | input: clone-url                                |
+| diff           | input: file-path                                |
+| pull           | pull remote changes locally                     |
+| init           | initialise managing a site - input: (site-name) |
+| status         | lists updated and problem pages                 |
+| info           | input: page-name-1 .. page-name-k               |
+| info-all       | lists tracked pages                             |
+| info-names     | lists tracked page names                        |
+| track          | input: page-name (page-title) (template-path)   |
+| untrack        | input: page-name                                |
+| rm or del      | input: page-name                                |
+| mv or move     | input: old-name new-name                        |
+| cp or copy     | input: tracked-name new-name                    |
+| build          | input: page-name-1 .. page-name-k               |
+| build-updated  | builds updated pages                            |
+| build-all      | builds all tracked pages                        |
+| serve          | serves website locally                          |
+| bcp            | input: commit-message                           |
+| new-title      | input: page-name new-title                      |
+| new-template   | input: page-name template-path                  |
++------------------------------------------------------------------+
+</pre>
 		    					</div>
 		    				</p>
 		    
@@ -269,21 +269,21 @@
 		    					The following should (hopefully) work as valid titles and paths (though if you are going to use spaces/quotes in titles/paths, test it thoroughly before depending on it working):
 		    
 		    					<div align="center">
-		    						<pre class="inline rounded">
-		    							home
-		    							"home"
-		    							"home page"
-		    							"nick's page"
-		    							'"quoted title"'
-		    						</pre>
+		    <pre class="inline rounded">
+home
+"home"
+"home page"
+"nick's page"
+'"quoted title"'
+</pre>
 		    
-		    						<pre class="inline rounded">
-		    							content/index.content
-		    							./content/index.content
-		    							content/'index'.content
-		    							"content/index.content"
-		    							'content/index page.content'
-		    						</pre>
+		    <pre class="inline rounded">
+content/index.content
+./content/index.content
+content/'index'.content
+"content/index.content"
+'content/index page.content'
+</pre>
 		    					</div>
 		    				</p>
 		    
@@ -359,15 +359,15 @@
 		    					If you would like your website to be served at an IP address, eg. if you are using Nift on a server, try using Python. Run either of the following in the project root directory for a url similar to <mono>0.0.0.0:8000/site</mono> and from the site directory for a url similar to <mono>0.0.0.0:8000</mono>:
 		    
 		    					<div align="center">
-		    						<pre class="inline">
-		    							python3 -m http.server 8000
-		    						</pre>
+		    <pre class="inline">
+python3 -m http.server 8000
+</pre>
 		    					</div>
 		    
 		    					<div align="center">
-		    						<pre class="inline">
-		    							python -m SimpleHTTPServer
-		    						</pre>
+		    <pre class="inline">
+python -m SimpleHTTPServer
+</pre>
 		    					</div>
 		    				</p>
 		    
@@ -461,7 +461,6 @@
 		<script src="../assets/js/breakpoints.min.js"></script>
 		<script src="../assets/js/util.js"></script>
 		<script src="../assets/js/main.js"></script>
-		<script src="../assets/js/process_pre_tags.js"></script>
 		<script src='../assets/js/process_md_blocks.js'></script>
 		<script src="../assets/js/showdown.min.js"></script>
 		<script>

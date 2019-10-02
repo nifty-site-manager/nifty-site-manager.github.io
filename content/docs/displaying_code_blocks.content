@@ -30,12 +30,12 @@
 					The <mono>Nift</mono> documentation covers syntax highlighting code blocks on your site using <a href=https://github.com/google/code-prettify>Google Code Prettify</a>. Using Google Code Prettify on your site is as simple as adding the following code to the head of each page:
 
 					<div align="center">
-						<pre class="prettyprint lang-html linenums">
-							<!-- uses google-code-prettify for syntax highlighting 
-								 see https://github.com/google/code-prettify for more info -->
-							<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js">
-							</script>
-						</pre>
+<pre class="prettyprint lang-html linenums">
+<!-- uses google-code-prettify for syntax highlighting 
+	 see https://github.com/google/code-prettify for more info -->
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js">
+</script>
+</pre>
 					</div>
 				</p>
 
@@ -55,20 +55,20 @@
 					To use <mono>process_pre_tags.js</mono> add it to the end of your <mono>\<body\></mono>. For example a <mono>page.template</mono> file might be:
 
 					<div align="center">
-						<pre class="prettyprint lang-html linenums">
-							<!DOCTYPE html>
-							<html>
-								<head>
-									<title>site title - \@pagetitle</title>
-								</head>
-											
-								<body>
-									\@inputcontent
+<pre class="prettyprint lang-html linenums">
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>site title - \@pagetitle</title>
+	</head>
+				
+	<body>
+		\@inputcontent
 
-									<script src='\@pathtofile(site/js/process_pre_tags.js)'></script>
-								</body>
-							</html>
-						</pre>
+		<script src='\@pathtofile(site/js/process_pre_tags.js)'></script>
+	</body>
+</html>
+</pre>
 					</div>
 				</p>
 
@@ -87,67 +87,67 @@
 				<br><br>
 
 				<div align="center">
-					<pre class="prettyprint linenums lang-cpp">
-						int n;
-						vector<int> v;
+<pre class="prettyprint linenums lang-cpp">
+int n;
+vector<int> v;
 
-						<pre>
-							int n;
-							vector<int> v;
+<pre>
+	int n;
+	vector<int> v;
 
-							for(int i=0; i < n; i++)
-								cout << v[i] << endl;
-						</pre>
+	for(int i=0; i < n; i++)
+		cout << v[i] << endl;
+</pre>
 
-						for(int i=0; i < n; i++)
-							cout << v[i] << endl;
-					</pre>
+for(int i=0; i < n; i++)
+	cout << v[i] << endl;
+</pre>
 				</div>
 
 				<br>
 
 				<div align="center">
-					<pre class="prettyprint lang-cpp">
-						int n;
-						vector<int> v;
+<pre class="prettyprint lang-cpp">
+int n;
+vector<int> v;
 
-						int n;
-						vector<int> v;
+int n;
+vector<int> v;
 
-						for(int i=0; i < n; i++)
-							cout << v[i] << endl;
+for(int i=0; i < n; i++)
+	cout << v[i] << endl;
 
-						for(int i=0; i < n; i++)
-							cout << v[i] << endl;
-					</pre>
+for(int i=0; i < n; i++)
+	cout << v[i] << endl;
+</pre>
 				</div>
 
 				<br>
 
 				<div align="center">
-					<pre class="prettyprint linenums scroll wrap">
-						@input(./content/cpp/Quoted.cpp)
-					</pre>
+<pre class="prettyprint linenums scroll wrap">
+@input(./content/cpp/Quoted.cpp)
+</pre>
 				</div>
 
 				<br>
 
 				<div align="center">
-					<pre class="prettyprint linenums">
-						@input(./content/cpp/Quoted.cpp)
-					</pre>
+<pre class="prettyprint linenums">
+@input(./content/cpp/Quoted.cpp)
+</pre>
 				</div>
 
 				<br>
 
 				<div align="center">
-					<pre class="prettyprint linenums">
-						//adds insert file
-						if(read_and_process(insertLocation, antiDepsOfReadLocation, contentLocation, pageTitle, dateTimeInfo, indentAmount, codeBlockDepth, htmlCommentDepth, contentInserted, processedPage, pageDeps) > 0)
-							return 1;
-						//indent amount updated inside read_and_process
-						linePos += posOffset;
-					</pre>
+<pre class="prettyprint linenums">
+//adds insert file
+if(read_and_process(insertLocation, antiDepsOfReadLocation, contentLocation, pageTitle, dateTimeInfo, indentAmount, codeBlockDepth, htmlCommentDepth, contentInserted, processedPage, pageDeps) > 0)
+	return 1;
+//indent amount updated inside read_and_process
+linePos += posOffset;
+</pre>
 				</div>
 			</div>
 		</section>

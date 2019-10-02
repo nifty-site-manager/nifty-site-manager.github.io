@@ -42,9 +42,9 @@
 			</p>
 
 			<div align="center" style="margin-top:-20px; margin-bottom:15px">
-				<pre class="Loki">
-					[NFO] unnamed (868) Mon Dec 17 15:30:09 2018 AEDT llarp/handlers/tun.cpp:419    default:gtwemaxbfogy5absnjizmoafdngadknpagnoteoir7743ys4xbyo.loki set lokitun0 to have address 172.16.10.1:0
-				</pre>
+<pre class="Loki">
+[NFO] unnamed (868) Mon Dec 17 15:30:09 2018 AEDT llarp/handlers/tun.cpp:419    default:gtwemaxbfogy5absnjizmoafdngadknpagnoteoir7743ys4xbyo.loki set lokitun0 to have address 172.16.10.1:0
+</pre>
 			</div>
 
 			<p>
@@ -61,9 +61,9 @@
 			</p>
 
 			<div align="center" style="margin-top:-20px; margin-bottom:15px">
-				<pre class="Loki">
-					sudo nano ~/.lokinet/lokinet.ini
-				</pre>
+<pre class="Loki">
+sudo nano ~/.lokinet/lokinet.ini
+</pre>
 			</div>
 
 			<p>
@@ -71,9 +71,9 @@
 			</p>
 
 			<div align="center" style="margin-top:-20px; margin-bottom:15px">
-				<pre class="Loki">
-					keyfile=/home/<user>/.lokinet/snappkey.private
-				</pre>
+<pre class="Loki">
+keyfile=/home/<user>/.lokinet/snappkey.private
+</pre>
 			</div>
 
 			<p>
@@ -89,17 +89,17 @@
 			</p>
 
 			<div align="center" style="margin-top:-20px; margin-bottom:15px">
-				<pre class="Loki">
-					[NFO] (762) Fri Jan 18 10:05:24 2019 AEDT llarp/handlers/tun.cpp:417    default:sxf7fx9eb4i3u5gyxpkka6wufzfsxyxsuep54c4kqk8axsfo17go.loki set lokitun0 to have address 172.16.10.1:0
-				</pre>
+<pre class="Loki">
+[NFO] (762) Fri Jan 18 10:05:24 2019 AEDT llarp/handlers/tun.cpp:417    default:sxf7fx9eb4i3u5gyxpkka6wufzfsxyxsuep54c4kqk8axsfo17go.loki set lokitun0 to have address 172.16.10.1:0
+</pre>
 			</div>
 
 			<p>
 				In this circumstance your pubkey would be:
 				<div align="center" style="margin-top:-20px; margin-bottom:15px">
-					<pre class="Loki">
-						sxf7fx9eb4i3u5gyxpkka6wufzfsxyxsuep54c4kqk8axsfo17go.loki
-					</pre>
+<pre class="Loki">
+sxf7fx9eb4i3u5gyxpkka6wufzfsxyxsuep54c4kqk8axsfo17go.loki
+</pre>
 				</div>
 			</p>
 
@@ -113,9 +113,9 @@
 			<p>
 
 			<div align="center" style="margin-top:-20px; margin-bottom:15px">
-				<pre class="Loki">
-					mkdir ~/snapp/
-				</pre>
+<pre class="Loki">
+mkdir ~/snapp/
+</pre>
 			</div>
 
 			<p>
@@ -123,9 +123,9 @@
 			</p> 
 
 			<div align="center" style="margin-top:-20px; margin-bottom:15px">
-				<pre class="Loki">
-					cd ~/snapp/
-				</pre>
+<pre class="Loki">
+cd ~/snapp/
+</pre>
 			</div>
 
 			<p>
@@ -133,9 +133,9 @@
 			</p>
 
 			<div align="center" style="margin-top:-20px; margin-bottom:15px">
-				<pre class="Loki">
-					nsm init
-				</pre>
+<pre class="Loki">
+nsm init
+</pre>
 			</div>
 
 			<p>
@@ -143,9 +143,9 @@
 			</p>
 
 			<div align="center" style="margin-top:-20px; margin-bottom:15px">
-				<pre class="Loki">
-					Hello Lokinet
-				</pre>
+<pre class="Loki">
+Hello Lokinet
+</pre>
 			</div>
 
 			<p>
@@ -153,9 +153,9 @@
 			</p>
 
 			<div align="center" style="margin-top:-20px; margin-bottom:15px">
-				<pre class="Loki">
-					nsm build-updated
-				</pre>
+<pre class="Loki">
+nsm build-updated
+</pre>
 			</div>
 
 			<p>
@@ -168,10 +168,10 @@
 			</p>
 
 			<div align="center" style="margin-top:-20px; margin-bottom:15px">
-				<pre class="Loki">
-					cd ~/snapp/site
-					sudo python3 -m http.server --bind <ip> <port>
-				</pre>
+<pre class="Loki">
+cd ~/snapp/site
+sudo python3 -m http.server --bind <ip> <port>
+</pre>
 			</div>
 
 			<p>
@@ -179,9 +179,9 @@
 			</p>
 
 			<div align="center" style="margin-top:-20px; margin-bottom:15px">
-				<pre class="Loki">
-					sudo python3 -m http.server --bind 172.16.10.1 80
-				</pre>
+<pre class="Loki">
+sudo python3 -m http.server --bind 172.16.10.1 80
+</pre>
 			</div>
 
 			<p>

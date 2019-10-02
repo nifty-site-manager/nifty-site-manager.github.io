@@ -63,20 +63,20 @@
 						The page list file <mono>.siteinfo/pages.list</mono> should now contain the following information for pages <mono>about</mono> and <mono>index</mono>;
 
 						<div align="center" style="margin-top:30px">
-							<pre class="inline rounded">
-								about
-								about
-								template/page.template
+<pre class="inline rounded">
+about
+about
+template/page.template
 
-								first_page
-								myPageTitle
-								template/page.template
+first_page
+myPageTitle
+template/page.template
 
-								index
-								home
-								template/page.template
+index
+home
+template/page.template
 
-							</pre>
+</pre>
 						</div> <br>
 					</li>
 
@@ -168,18 +168,18 @@
 					<li>
 						Add the following to <mono>content/about.content</mono>;
 						<div align="center"  style="margin-top:30px">
-							<pre class="inline prettyprint lang-cpp rounded">
-								<pre>
-									ostream& operator<<(ostream &os, const std::vector<std::string> &v)
-									{
-										if(v.size())
-											os << v[i];
-										for(auto i=1; i<v.size(); i++)
-											os << " " << v[i];
-										return os;
-									}
-								</pre>
-							</pre>
+<pre class="inline prettyprint lang-cpp rounded">
+<pre>
+	ostream& operator<<(ostream &os, const std::vector<std::string> &v)
+	{
+		if(v.size())
+			os << v[i];
+		for(auto i=1; i<v.size(); i++)
+			os << " " << v[i];
+		return os;
+	}
+</pre>
+</pre>
 						</div> <br>
 					</li>
 

@@ -69,9 +69,9 @@
 					For example suppose inside your website directory you have <mono>template/footer.content</mono>:
 
 					<div align="center">
-						<pre class="inline">
-							Page was last built on \@currentdate.
-						</pre>
+<pre class="inline">
+Page was last built on \@currentdate.
+</pre>
 					</div>
 				</p>
 
@@ -79,9 +79,9 @@
 					To input <mono>template/footer.content</mono> into another file write:
 
 					<div align="center">
-						<pre class="inline">
-							\@input(template/footer.content)
-						</pre>
+<pre class="inline">
+\@input(template/footer.content)
+</pre>
 					</div>
 				</p>
 
@@ -101,30 +101,30 @@
 					An example of when users may find this useful is when writing menus for page templates, or adding local links for any template files. An example of a smaller version of the menu for this site using <mono>\@pathto(page-name)</mono> is below:
 
 					<div align="center">
-						<pre class="prettyprint linenums">
-							<nav>
-								<ul class="drop_menu">
-									<li></li>
-									<li class="dm_li">
-										<a href="\@pathto(index)">home</a>
-									</li>
+<pre class="prettyprint linenums">
+<nav>
+	<ul class="drop_menu">
+		<li></li>
+		<li class="dm_li">
+			<a href="\@pathto(index)">home</a>
+		</li>
 
-									<li class ="dm_li">
-										<div class="dm_text">documentation</div>
-										<ul class ="drop_submenu">
-											<li class="dsm_li"><a href="\@pathto(documentation/installing_nsm)">installing nsm</a></li>
-											<li class="dsm_li"><a href="\@pathto(documentation/nsm_tutorial)">nsm tutorial</a></li>
-											<li class="dsm_li"><a href="\@pathto(documentation/nsm_commands)">nsm commands</a></li>
-										</ul>
-									</li>
+		<li class ="dm_li">
+			<div class="dm_text">documentation</div>
+			<ul class ="drop_submenu">
+				<li class="dsm_li"><a href="\@pathto(documentation/installing_nsm)">installing nsm</a></li>
+				<li class="dsm_li"><a href="\@pathto(documentation/nsm_tutorial)">nsm tutorial</a></li>
+				<li class="dsm_li"><a href="\@pathto(documentation/nsm_commands)">nsm commands</a></li>
+			</ul>
+		</li>
 
-									<li class ="dm_li">
-										<a href="\@pathto(support)">support</a>
-									</li>
-									<li></li>
-								</ul>
-							</nav>
-						</pre>
+		<li class ="dm_li">
+			<a href="\@pathto(support)">support</a>
+		</li>
+		<li></li>
+	</ul>
+</nav>
+</pre>
 					</div>
 				</p>
 
@@ -136,24 +136,24 @@
 					The footer content file for this site (inputted in the <mono>template/page.template</mono> file) is given below as an example using <mono>\@pathtofile(path-to-file)</mono>:
 
 					<div align="center">
-						<pre class="prettyprint linenums">
-							<footer>
-								<hr>
-								<center><img src="\@pathtofile(site/files/nsm.png)" width="120"></center>
+<pre class="prettyprint linenums">
+<footer>
+	<hr>
+	<center><img src="\@pathtofile(site/files/nsm.png)" width="120"></center>
 
-								<p>
-									<b>Mirrors:</b> [<a href="https://nifty-site-manager.com/">Official</a>] [<a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a>] [<a href="https://nifty-site-manager.github.io/">GitHub</a>] [<a href="https://nifty-site-manager.gitlab.io/">GitLab</a>] [<a href="https://web.archive.org/web/https://www.nifty-site-manager.com/">archive.org</a>]
-								</p>
+	<p>
+		<b>Mirrors:</b> [<a href="https://nifty-site-manager.com/">Official</a>] [<a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a>] [<a href="https://nifty-site-manager.github.io/">GitHub</a>] [<a href="https://nifty-site-manager.gitlab.io/">GitLab</a>] [<a href="https://web.archive.org/web/https://www.nifty-site-manager.com/">archive.org</a>]
+	</p>
 
-								<p>
-									<b>Repos:</b> [<a href="https://bitbucket.org/nifty-site-manager/nsm/src/master/">BitBucket</a>] [<a href="https://github.com/nifty-site-manager/nsm">GitHub</a>] [<a href="https://gitlab.com/nifty-site-manager/nsm">GitLab</a>]
-								</p>
+	<p>
+		<b>Repos:</b> [<a href="https://bitbucket.org/nifty-site-manager/nsm/src/master/">BitBucket</a>] [<a href="https://github.com/nifty-site-manager/nsm">GitHub</a>] [<a href="https://gitlab.com/nifty-site-manager/nsm">GitLab</a>]
+	</p>
 
-								Page was last built on \@currentdate at \@currenttime (\@timezone) using \@currentOS. <br>
+	Page was last built on \@currentdate at \@currenttime (\@timezone) using \@currentOS. <br>
 
-								<noselect><small>&copy;&nbsp;2015-\@loadYY <a href="https://n-ham.com/">Nicholas Ham</a></small></noselect>
-							</footer>
-						</pre>
+	<noselect><small>&copy;&nbsp;2015-\@loadYY <a href="https://n-ham.com/">Nicholas Ham</a></small></noselect>
+</footer>
+</pre>
 					</div>
 				</p>
 
@@ -170,9 +170,9 @@
 					For example if you want to run a script <mono>script.bat</mono>, you can do so with:
 
 					<div align="center">
-						<pre class="inline">
-							\@script(script.bat)
-						</pre>
+<pre class="inline">
+\@script(script.bat)
+</pre>
 					</div>
 				</p>
 
@@ -189,9 +189,9 @@
 					For example suppose you want to input the output from running a script <mono>"linux script.sh"</mono>, you can do so with:
 
 					<div align="center">
-						<pre class="inline">
-							\@scriptoutput("./linux script.sh")
-						</pre>
+<pre class="inline">
+\@scriptoutput("./linux script.sh")
+</pre>
 					</div>
 				</p>
 
@@ -217,9 +217,9 @@
 					For example suppose you want to input the text from <a href="https://pastebin.com/atjKuxY6">this</a> paste on <a href="https://pastebin.com">Paste Bin</a>, you can do so with:
 
 					<div align="center">
-						<pre class="inline">
-							\@systemoutput("curl -sS https://pastebin.com/raw/atjKuxY6")
-						</pre>
+<pre class="inline">
+\@systemoutput("curl -sS https://pastebin.com/raw/atjKuxY6")
+</pre>
 					</div>
 				</p>
 
@@ -230,9 +230,9 @@
 					You can include a css file using <mono>\@cssinclude(path-to-css-file)</mono>, where <mono>path-to-css-file</mono> is the path from the main site directory to the css file (<u>not</u> the path from the page to the css file). When building a page, <mono>Nift</mono> will replace <mono>\@cssinclude(path-to-css-file)</mono> with:
 
 					<div align="center">
-						<pre class="prettyprint lang-js inline">
-							<link rel='stylesheet' type='text/css' href='path-from-page-to-css-file'>
-						</pre>
+<pre class="prettyprint lang-js inline">
+<link rel='stylesheet' type='text/css' href='path-from-page-to-css-file'>
+</pre>
 					</div>
 				</p>
 
@@ -240,9 +240,9 @@
 					Alternatively you can use:
 
 					<div align="center">
-						<pre class="prettyprint lang-js inline">
-							<link rel='stylesheet' type='text/css' href='\@pathtofile(path-to-css-file)'>
-						</pre>
+<pre class="prettyprint lang-js inline">
+<link rel='stylesheet' type='text/css' href='\@pathtofile(path-to-css-file)'>
+</pre>
 					</div>
 				</p>
 
@@ -253,9 +253,9 @@
 					You can include am image file using <mono>\@imginclude(path-to-img-file)</mono>, where <mono>path-to-img-file</mono> is the path from the main site directory to the img file (<u>not</u> the path from the page to the img file). When building a page, <mono>Nift</mono> will replace <mono>\@imginclude(path-to-img-file)</mono> with the following:
 
 					<div align="center">
-						<pre class="prettyprint lang-js inline">
-							<img src="path-from-page-to-img-file">
-						</pre>
+<pre class="prettyprint lang-js inline">
+<img src="path-from-page-to-img-file">
+</pre>
 					</div>
 				</p>
 
@@ -263,9 +263,9 @@
 					If you would like to set the width of an image, use something like the following in your source code:
 
 					<div align="center">
-						<pre class="prettyprint lang-js inline">
-							<img src="\@pathtofile(path-to-img-file)" width="120">
-						</pre>
+<pre class="prettyprint lang-js inline">
+<img src="\@pathtofile(path-to-img-file)" width="120">
+</pre>
 					</div>
 				</p>
 
@@ -277,9 +277,9 @@
 					You can include a js file using <mono>\@jsinclude(path-to-js-file)</mono>, where <mono>path-to-js-file</mono> is the path from the main site directory to the js file (<u>not</u> the path from the page to the js file). When building a page, <mono>Nift</mono> will replace <mono>\@jsinclude(path-to-js-file)</mono> with: 
 
 					<div align="center">
-						<pre class="prettyprint lang-js inline">
-							<script src="path-from-page-to-js-file"></script>
-						</pre>
+<pre class="prettyprint lang-js inline">
+<script src="path-from-page-to-js-file"></script>
+</pre>
 					</div>
 				</p>
 
@@ -287,9 +287,9 @@
 					Alternatively you can use:
 
 					<div align="center">
-						<pre class="prettyprint lang-js inline">
-							<script src="\@pathtofile(path-to-js-file)"></script>
-						</pre>
+<pre class="prettyprint lang-js inline">
+<script src="\@pathtofile(path-to-js-file)"></script>
+</pre>
 					</div>
 				</p>
 
@@ -300,9 +300,9 @@
 					You can include a favicon file using <mono>\@faviconinclude(path-to-favicon-file)</mono>, where <mono>path-to-favicon-file</mono> is the path from the main site directory to the favicon file (<u>not</u> the path from the page to the favicon file). When building a page, <mono>Nift</mono> will replace <mono>\@faviconinclude(path-to-favicon-file)</mono> with:
 
 					<div align="center">
-						<pre class="prettyprint lang-js inline">
-							<link rel='icon' type='image/png' href='path-from-page-to-favicon-file'>
-						</pre>
+<pre class="prettyprint lang-js inline">
+<link rel='icon' type='image/png' href='path-from-page-to-favicon-file'>
+</pre>
 					</div>
 				</p>
 
@@ -310,9 +310,9 @@
 					Alternatively you can use:
 
 					<div align="center">
-						<pre class="prettyprint lang-js inline">
-							<link rel='icon' type='image/png' href='\@pathtofile(path-to-favicon-file)'>
-						</pre>
+<pre class="prettyprint lang-js inline">
+<link rel='icon' type='image/png' href='\@pathtofile(path-to-favicon-file)'>
+</pre>
 					</div>
 				</p>
 
@@ -320,11 +320,11 @@
 					An example of using <mono>\@cssinclude(path-to-css-file)</mono>, <mono>\@jsinclude(path-to-js-file)</mono> and <mono>\@faviconinclude(path-to-favicon-file)</mono> is given below (I typically put these in a <mono>head.content</mono> file located in the <mono>template</mono> directory and included in the <mono>template/page.template</mono> file in between the <mono>\<head>\</head></mono> tags):
 
 					<div align="center">
-						<pre class="prettyprint inline">
-							\@cssinclude("site/css/pagestyle.css")
-							\@jsinclude("site/js/motion.css")
-							\@faviconinclude("site/files/favicon.ico")
-						</pre>
+<pre class="prettyprint inline">
+\@cssinclude("site/css/pagestyle.css")
+\@jsinclude("site/js/motion.css")
+\@faviconinclude("site/files/favicon.ico")
+</pre>
 					</div>
 				</p>
 			</div>

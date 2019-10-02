@@ -26,7 +26,6 @@
 		<script src="@pathtofile(site/assets/js/breakpoints.min.js)"></script>
 		<script src="@pathtofile(site/assets/js/util.js)"></script>
 		<script src="@pathtofile(site/assets/js/main.js)"></script>
-		<script src="@pathtofile(site/assets/js/process_pre_tags.js)"></script>
 		<script src='@pathtofile(site/assets/js/process_md_blocks.js)'></script>
 		<script src="@pathtofile(site/assets/js/showdown.min.js)"></script>
 		<script>

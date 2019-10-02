@@ -181,27 +181,27 @@
 		    		The <mono>Nift</mono> documentation covers how to display $\LaTeX$ on your websites using <a href=https://www.mathjax.org/>MathJax</a>. Repeating the information on <a href="http://docs.mathjax.org/en/latest/start.html">this</a> page, using MathJax on your site is as simple as adding the following code to the head of each page:
 		    
 		    		<div align="center">
-		    			<pre class="prettyprint lang-html inline">
-		    				&lt;!-- uses MathJax CDC for LaTeX support
-		    					 see http://docs.mathjax.org/en/latest/start.html for more info -->
-		    				&lt;script type="text/x-mathjax-config">
-		    					MathJax.Hub.Config
-		    					({
-		    						extensions: ["tex2jax.js"],
-		    						jax: ["input/TeX", "output/HTML-CSS"],
-		    						tex2jax: 
-		    						{
-		    							inlineMath: [['$','$'], ['\\(','\\)']],
-		    							displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-		    							processEscapes: true
-		    						},
-		    						"HTML-CSS": { availableFonts: ["MathJax TeX"] }
-		    					});
-		    				&lt;/script>
-		    				&lt;script type="text/javascript" 
-		    						src="https://cdn.mathjax.org/mathjax/latest/MathJax.js">
-		    				&lt;/script>
-		    			</pre>
+		    <pre class="prettyprint lang-html inline">
+&lt;!-- uses MathJax CDC for LaTeX support
+	 see http://docs.mathjax.org/en/latest/start.html for more info -->
+&lt;script type="text/x-mathjax-config">
+	MathJax.Hub.Config
+	({
+		extensions: ["tex2jax.js"],
+		jax: ["input/TeX", "output/HTML-CSS"],
+		tex2jax: 
+		{
+			inlineMath: [['$','$'], ['\\(','\\)']],
+			displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+			processEscapes: true
+		},
+		"HTML-CSS": { availableFonts: ["MathJax TeX"] }
+	});
+&lt;/script>
+&lt;script type="text/javascript" 
+		src="https://cdn.mathjax.org/mathjax/latest/MathJax.js">
+&lt;/script>
+</pre>
 		    		</div>
 		    	</p>
 		    
@@ -264,7 +264,6 @@
 		<script src="../assets/js/breakpoints.min.js"></script>
 		<script src="../assets/js/util.js"></script>
 		<script src="../assets/js/main.js"></script>
-		<script src="../assets/js/process_pre_tags.js"></script>
 		<script src='../assets/js/process_md_blocks.js'></script>
 		<script src="../assets/js/showdown.min.js"></script>
 		<script>

@@ -47,18 +47,18 @@
 				</p>
 
 				<div align="center" style="margin-top:-15px; margin-bottom: 20px">
-					<pre class="prettyprint linenums inline">
-						<!DOCTYPE html>
-						<html>
-							<head>
-								<title>site title - \@pagetitle</title>
-							</head>
+<pre class="prettyprint linenums inline">
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>site title - \@pagetitle</title>
+	</head>
 
-							<body>
-								\@inputcontent	
-							</body>
-						</html>
-					</pre>
+	<body>
+		\@inputcontent	
+	</body>
+</html>
+</pre>
 				</div>
 
 				<p>
@@ -66,22 +66,22 @@
 				</p>
 
 				<div align="center" style="margin-top:-15px; margin-bottom: 20px">
-					<pre class="prettyprint linenums inline">
-						<!DOCTYPE html>
-						<html>
-							<head>
-								\@input(template/head.content)
-							</head>
+<pre class="prettyprint linenums inline">
+<!DOCTYPE html>
+<html>
+	<head>
+		\@input(template/head.content)
+	</head>
 
-							<body>
-								\@input(template/menu.content)
+	<body>
+		\@input(template/menu.content)
 
-								\@inputcontent	
+		\@inputcontent	
 
-								\@input(template/footer.content)
-							</body>
-						</html>
-					</pre>
+		\@input(template/footer.content)
+	</body>
+</html>
+</pre>
 				</div>
 
 				<p>

@@ -184,12 +184,12 @@
 		    					The <mono>Nift</mono> documentation covers syntax highlighting code blocks on your site using <a href=https://github.com/google/code-prettify>Google Code Prettify</a>. Using Google Code Prettify on your site is as simple as adding the following code to the head of each page:
 		    
 		    					<div align="center">
-		    						<pre class="prettyprint lang-html linenums">
-		    							&lt;!-- uses google-code-prettify for syntax highlighting 
-		    								 see https://github.com/google/code-prettify for more info -->
-		    							&lt;script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js">
-		    							&lt;/script>
-		    						</pre>
+		    <pre class="prettyprint lang-html linenums">
+&lt;!-- uses google-code-prettify for syntax highlighting 
+	 see https://github.com/google/code-prettify for more info -->
+&lt;script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js">
+&lt;/script>
+</pre>
 		    					</div>
 		    				</p>
 		    
@@ -209,20 +209,20 @@
 		    					To use <mono>process_pre_tags.js</mono> add it to the end of your <mono>&lt;body&gt;</mono>. For example a <mono>page.template</mono> file might be:
 		    
 		    					<div align="center">
-		    						<pre class="prettyprint lang-html linenums">
-		    							&lt;!DOCTYPE html>
-		    							&lt;html>
-		    								&lt;head>
-		    									&lt;title>site title - &commat;pagetitle&lt;/title>
-		    								&lt;/head>
-		    											
-		    								&lt;body>
-		    									&commat;inputcontent
-		    
-		    									&lt;script src='&commat;pathtofile(site/js/process_pre_tags.js)'>&lt;/script>
-		    								&lt;/body>
-		    							&lt;/html>
-		    						</pre>
+		    <pre class="prettyprint lang-html linenums">
+&lt;!DOCTYPE html>
+&lt;html>
+	&lt;head>
+		&lt;title>site title - &commat;pagetitle&lt;/title>
+	&lt;/head>
+				
+	&lt;body>
+		&commat;inputcontent
+
+		&lt;script src='&commat;pathtofile(site/js/process_pre_tags.js)'>&lt;/script>
+	&lt;/body>
+&lt;/html>
+</pre>
 		    					</div>
 		    				</p>
 		    
@@ -241,161 +241,161 @@
 		    				<br><br>
 		    
 		    				<div align="center">
-		    					<pre class="prettyprint linenums lang-cpp">
-		    						int n;
-		    						vector&lt;int> v;
-		    
-		    						&lt;pre>
-		    							int n;
-		    							vector&lt;int> v;
-		    
-		    							for(int i=0; i &lt; n; i++)
-		    								cout &lt;&lt; v[i] &lt;&lt; endl;
-		    						&lt;/pre>
-		    
-		    						for(int i=0; i &lt; n; i++)
-		    							cout &lt;&lt; v[i] &lt;&lt; endl;
-		    					</pre>
+		    <pre class="prettyprint linenums lang-cpp">
+int n;
+vector&lt;int> v;
+
+&lt;pre>
+	int n;
+	vector&lt;int> v;
+
+	for(int i=0; i &lt; n; i++)
+		cout &lt;&lt; v[i] &lt;&lt; endl;
+&lt;/pre>
+
+for(int i=0; i &lt; n; i++)
+	cout &lt;&lt; v[i] &lt;&lt; endl;
+</pre>
 		    				</div>
 		    
 		    				<br>
 		    
 		    				<div align="center">
-		    					<pre class="prettyprint lang-cpp">
-		    						int n;
-		    						vector&lt;int> v;
-		    
-		    						int n;
-		    						vector&lt;int> v;
-		    
-		    						for(int i=0; i &lt; n; i++)
-		    							cout &lt;&lt; v[i] &lt;&lt; endl;
-		    
-		    						for(int i=0; i &lt; n; i++)
-		    							cout &lt;&lt; v[i] &lt;&lt; endl;
-		    					</pre>
+		    <pre class="prettyprint lang-cpp">
+int n;
+vector&lt;int> v;
+
+int n;
+vector&lt;int> v;
+
+for(int i=0; i &lt; n; i++)
+	cout &lt;&lt; v[i] &lt;&lt; endl;
+
+for(int i=0; i &lt; n; i++)
+	cout &lt;&lt; v[i] &lt;&lt; endl;
+</pre>
 		    				</div>
 		    
 		    				<br>
 		    
 		    				<div align="center">
-		    					<pre class="prettyprint linenums scroll wrap">
-		    						#include "Quoted.h"
-		    						
-		    						//reading a string which may be surrounded by quotes with spaces, and strips surrounding quotes
-		    						//note mutates white space into single spaces
-		    						bool read_quoted(std::istream &ifs, std::string &s)
-		    						{
-		    						    //reads first string
-		    						    if(!(ifs >> s))
-		    						        return 0;
-		    						
-		    						    std::string s2;
-		    						    if(s[0] == '"')
-		    						    {
-		    						        while(s[s.length()-1] != '"')
-		    						        {
-		    						            ifs >> s2;
-		    						            s += " " + s2;
-		    						        }
-		    						
-		    						        s.replace(0, 1, "");
-		    						        s.replace(s.length()-1, 1, "");
-		    						    }
-		    						    else if(s[0] == '\'')
-		    						    {
-		    						        while(s[s.length()-1] != '\'')
-		    						        {
-		    						            ifs >> s2;
-		    						            s+=" " + s2;
-		    						        }
-		    						
-		    						        s.replace(0, 1, "");
-		    						        s.replace(s.length()-1, 1, "");
-		    						    }
-		    						
-		    						    return 1;
-		    						};
-		    						
-		    						//outputting a string with quotes surrounded if it contains space(s)
-		    						std::string quote(const std::string &unquoted)
-		    						{
-		    						    if(unquoted.find(' ') == std::string::npos)
-		    						        return unquoted;
-		    						    else if(unquoted.find('"') == std::string::npos)
-		    						        return "\"" + unquoted + "\"";
-		    						    else
-		    						        return "'" + unquoted + "'";
-		    						};
-		    						
-		    					</pre>
+		    <pre class="prettyprint linenums scroll wrap">
+#include "Quoted.h"
+
+//reading a string which may be surrounded by quotes with spaces, and strips surrounding quotes
+//note mutates white space into single spaces
+bool read_quoted(std::istream &ifs, std::string &s)
+{
+    //reads first string
+    if(!(ifs >> s))
+        return 0;
+
+    std::string s2;
+    if(s[0] == '"')
+    {
+        while(s[s.length()-1] != '"')
+        {
+            ifs >> s2;
+            s += " " + s2;
+        }
+
+        s.replace(0, 1, "");
+        s.replace(s.length()-1, 1, "");
+    }
+    else if(s[0] == '\'')
+    {
+        while(s[s.length()-1] != '\'')
+        {
+            ifs >> s2;
+            s+=" " + s2;
+        }
+
+        s.replace(0, 1, "");
+        s.replace(s.length()-1, 1, "");
+    }
+
+    return 1;
+};
+
+//outputting a string with quotes surrounded if it contains space(s)
+std::string quote(const std::string &unquoted)
+{
+    if(unquoted.find(' ') == std::string::npos)
+        return unquoted;
+    else if(unquoted.find('"') == std::string::npos)
+        return "\"" + unquoted + "\"";
+    else
+        return "'" + unquoted + "'";
+};
+
+</pre>
 		    				</div>
 		    
 		    				<br>
 		    
 		    				<div align="center">
-		    					<pre class="prettyprint linenums">
-		    						#include "Quoted.h"
-		    						
-		    						//reading a string which may be surrounded by quotes with spaces, and strips surrounding quotes
-		    						//note mutates white space into single spaces
-		    						bool read_quoted(std::istream &ifs, std::string &s)
-		    						{
-		    						    //reads first string
-		    						    if(!(ifs >> s))
-		    						        return 0;
-		    						
-		    						    std::string s2;
-		    						    if(s[0] == '"')
-		    						    {
-		    						        while(s[s.length()-1] != '"')
-		    						        {
-		    						            ifs >> s2;
-		    						            s += " " + s2;
-		    						        }
-		    						
-		    						        s.replace(0, 1, "");
-		    						        s.replace(s.length()-1, 1, "");
-		    						    }
-		    						    else if(s[0] == '\'')
-		    						    {
-		    						        while(s[s.length()-1] != '\'')
-		    						        {
-		    						            ifs >> s2;
-		    						            s+=" " + s2;
-		    						        }
-		    						
-		    						        s.replace(0, 1, "");
-		    						        s.replace(s.length()-1, 1, "");
-		    						    }
-		    						
-		    						    return 1;
-		    						};
-		    						
-		    						//outputting a string with quotes surrounded if it contains space(s)
-		    						std::string quote(const std::string &unquoted)
-		    						{
-		    						    if(unquoted.find(' ') == std::string::npos)
-		    						        return unquoted;
-		    						    else if(unquoted.find('"') == std::string::npos)
-		    						        return "\"" + unquoted + "\"";
-		    						    else
-		    						        return "'" + unquoted + "'";
-		    						};
-		    						
-		    					</pre>
+		    <pre class="prettyprint linenums">
+#include "Quoted.h"
+
+//reading a string which may be surrounded by quotes with spaces, and strips surrounding quotes
+//note mutates white space into single spaces
+bool read_quoted(std::istream &ifs, std::string &s)
+{
+    //reads first string
+    if(!(ifs >> s))
+        return 0;
+
+    std::string s2;
+    if(s[0] == '"')
+    {
+        while(s[s.length()-1] != '"')
+        {
+            ifs >> s2;
+            s += " " + s2;
+        }
+
+        s.replace(0, 1, "");
+        s.replace(s.length()-1, 1, "");
+    }
+    else if(s[0] == '\'')
+    {
+        while(s[s.length()-1] != '\'')
+        {
+            ifs >> s2;
+            s+=" " + s2;
+        }
+
+        s.replace(0, 1, "");
+        s.replace(s.length()-1, 1, "");
+    }
+
+    return 1;
+};
+
+//outputting a string with quotes surrounded if it contains space(s)
+std::string quote(const std::string &unquoted)
+{
+    if(unquoted.find(' ') == std::string::npos)
+        return unquoted;
+    else if(unquoted.find('"') == std::string::npos)
+        return "\"" + unquoted + "\"";
+    else
+        return "'" + unquoted + "'";
+};
+
+</pre>
 		    				</div>
 		    
 		    				<br>
 		    
 		    				<div align="center">
-		    					<pre class="prettyprint linenums">
-		    						//adds insert file
-		    						if(read_and_process(insertLocation, antiDepsOfReadLocation, contentLocation, pageTitle, dateTimeInfo, indentAmount, codeBlockDepth, htmlCommentDepth, contentInserted, processedPage, pageDeps) > 0)
-		    							return 1;
-		    						//indent amount updated inside read_and_process
-		    						linePos += posOffset;
-		    					</pre>
+		    <pre class="prettyprint linenums">
+//adds insert file
+if(read_and_process(insertLocation, antiDepsOfReadLocation, contentLocation, pageTitle, dateTimeInfo, indentAmount, codeBlockDepth, htmlCommentDepth, contentInserted, processedPage, pageDeps) > 0)
+	return 1;
+//indent amount updated inside read_and_process
+linePos += posOffset;
+</pre>
 		    				</div>
 		    			</div>
 		    		</section>
@@ -442,7 +442,6 @@
 		<script src="../assets/js/breakpoints.min.js"></script>
 		<script src="../assets/js/util.js"></script>
 		<script src="../assets/js/main.js"></script>
-		<script src="../assets/js/process_pre_tags.js"></script>
 		<script src='../assets/js/process_md_blocks.js'></script>
 		<script src="../assets/js/showdown.min.js"></script>
 		<script>
