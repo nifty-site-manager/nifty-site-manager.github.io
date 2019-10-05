@@ -32,7 +32,7 @@
 					<div align="center">
 <pre class="inline rounded">
 +------ available commands ----------------------------------------+
-| commands       | lists all nsm commands                          |
+| commands       | lists all Nift commands                         |
 | config         | list config settings or set git email/username  |
 | clone          | input: clone-url                                |
 | diff           | input: file-path                                |
@@ -54,6 +54,7 @@
 | bcp            | input: commit-message                           |
 | new-title      | input: page-name new-title                      |
 | new-template   | input: page-name template-path                  |
+| new-ext        | input: page-name page-extension                 |
 +------------------------------------------------------------------+
 </pre>
 					</div>
@@ -269,6 +270,10 @@ python -m SimpleHTTPServer
 
 				<p>
 					You can add page dependencies manually by adding a <mono>.deps</mono> file residing in the same directory as the content file for the page. For example if you have <mono>index.content</mono> as the page content file add an <mono>index.deps</mono> file containing the extra dependencies you want to track. 
+				</p>
+
+				<p>
+					Page dependencies may also be added using the <mono>\@dep(dep-path)</mono> syntax in Nift's template language, which you can read more about on the <a href="@pathto(docs/content_files)">content files</mono> page of the documentation. 
 				</p>
 			</div>
 		</section>
