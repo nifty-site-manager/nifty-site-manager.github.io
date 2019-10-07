@@ -159,7 +159,7 @@ Page was last built on \@currentdate.
 
 				<h4>Adding page dependencies</h4>
 				<p>
-					Page dependencies may be run using <mono>\@dep(dep-path)</mono>, where <mono>dep-path</mono> is the path from the project root directory to the dependency file.
+					Page dependencies may be added using <mono>\@dep(dep-path)</mono>, where <mono>dep-path</mono> is the path from the project root directory to the dependency file.
 				</p>
 
 				<p>
