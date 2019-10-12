@@ -4,7 +4,7 @@ html
 	max-width: 100%;
 }
 
-video
+video, iframe
 {
 	max-width: 80%;
 }
