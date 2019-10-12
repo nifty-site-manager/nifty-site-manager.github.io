@@ -4,6 +4,11 @@ html
 	max-width: 100%;
 }
 
+video
+{
+	max-width: 80%;
+}
+
 noselect
 {
 	-webkit-user-select: none; /* Chrome/Safari */
