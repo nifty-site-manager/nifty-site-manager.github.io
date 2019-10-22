@@ -9,7 +9,7 @@
 			</header>
 
 			<div class="content">
-				<h2>Installing <mono>Nift</mono> on osx from source</h2>
+				<h2>Installing <mono>Nift</mono> on OSX from source</h2>
 				<h3>Installing a <mono>c++</mono> compiler</h3>
 
 				<p>
@@ -33,7 +33,7 @@
 						Compile <mono>nsm</mono> by running <mono>make</mono>;
 					</li>
 					<li>
-						Install <mono>nsm</mono> by running <mono>sudo make osx-install</mono> (note - you will need to enter your password) (note - you may need to open a new terminal window for nsm installation to be recognised);
+						Install <mono>nsm</mono> by running <mono>sudo make install</mono> (note - you will need to enter your password) (note - you may need to open a new terminal window for the <mono>Nift</mono> installation to be recognised);
 					</li>
 					<li>
 						Delete both the file <mono>nsm-master-*.zip</mono> and the directory <mono>nsm-master-*</mono> containing the uncompiled code. 
@@ -47,7 +47,7 @@
 						<pre class="prettyprint inline rounded lang-bsh">
 							cd ~/Downloads/nsm-master-*
 							make
-							sudo make osx-install
+							sudo make install
 						</pre>
 					</div>
 				</p>
@@ -55,7 +55,7 @@
 
 				<h3>Uninstalling <mono>Nift</mono></h3>
 				<p>
-					Should you ever want to remove <mono>nsm</mono> from your machine, simply run <mono>sudo make osx-uninstall</mono>.
+					Should you ever want to remove <mono>nsm</mono> from your machine, simply run <mono>sudo make uninstall</mono>.
 				</p>
 			</div>
 		</section>
