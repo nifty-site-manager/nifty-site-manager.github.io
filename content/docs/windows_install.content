@@ -23,7 +23,7 @@
 
 				<div align="center" style="margin-top:-20px; margin-bottom: 20px">
 <pre>
-	choco install nsm
+choco install nsm
 </pre>
 				</div>
 
@@ -116,9 +116,9 @@
 
 					<div align="center">
 <pre class="prettyprint inline rounded lang-bsh">
-	cd ~/Downloads/nsm-master-*
-	make
-	make git-bash-install
+cd ~/Downloads/nsm-master-*
+make
+make git-bash-install
 </pre>
 					</div>
 				</p>

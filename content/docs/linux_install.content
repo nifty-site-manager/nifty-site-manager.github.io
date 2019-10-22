@@ -24,8 +24,8 @@
 
 				<div align="center" style="margin-top:-20px; margin-bottom: 20px">
 <pre>
-	snap install nift
-	sudo snap alias nift nsm
+snap install nift
+sudo snap alias nift nsm
 </pre>
 				</div>
 
@@ -46,7 +46,7 @@
 
 				<div align="center" style="margin-top:-20px; margin-bottom: 20px">
 <pre>
-	flatpak install --user https://flathub.org/repo/appstream/cc.nift.nsm.flatpakref
+flatpak install --user https://flathub.org/repo/appstream/cc.nift.nsm.flatpakref
 </pre>
 				</div>
 
@@ -56,7 +56,7 @@
 
 				<div align="center" style="margin-top:-20px; margin-bottom: 20px">
 <pre>
-	flatpak install cc.nift.nsm.flatpakref
+flatpak install cc.nift.nsm.flatpakref
 </pre>
 				</div>
 
@@ -70,8 +70,8 @@
 
 				<div align="center" style="margin-top:-20px; margin-bottom: 20px">
 <pre>
-	alias nsm="flatpak run cc.nift.nsm"
-	alias nift="flatpak run cc.nift.nsm" 
+alias nsm="flatpak run cc.nift.nsm"
+alias nift="flatpak run cc.nift.nsm" 
 </pre>
 				</div>
 
@@ -81,7 +81,7 @@
 
 				<div align="center" style="margin-top:-20px; margin-bottom: 20px">
 <pre>
-	flatpak uninstall cc.nift.nsm/x86_64/stable
+flatpak uninstall cc.nift.nsm/x86_64/stable
 </pre>
 				</div>
 
@@ -126,9 +126,9 @@
 
 					<div align="center">
 <pre class="prettyprint inline rounded lang-bsh">
-	cd ~/Downloads/nsm-master-*
-	make
-	sudo make install
+cd ~/Downloads/nsm-master-*
+make
+sudo make install
 </pre>
 					</div>
 				</p>
