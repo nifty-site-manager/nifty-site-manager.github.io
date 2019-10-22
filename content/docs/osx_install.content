@@ -44,11 +44,11 @@
 					For example, if you unzipped <mono>nsm-master-*</mono> inside your downloads folder, then steps 1-4 are achieved by entering the following into your terminal window:
 
 					<div align="center">
-						<pre class="prettyprint inline rounded lang-bsh">
-							cd ~/Downloads/nsm-master-*
-							make
-							sudo make install
-						</pre>
+<pre class="prettyprint inline rounded lang-bsh">
+	cd ~/Downloads/nsm-master-*
+	make
+	sudo make install
+</pre>
 					</div>
 				</p>
 

@@ -45,9 +45,9 @@
 				<h4>
 					On GitHub with url:
 					<div align="center" style="margin-top:20px">
-						<pre class="inline">
-							https://username.github.io
-						</pre>
+<pre class="inline">
+	https://username.github.io
+</pre>
 					</div>
 				</h4>
 
@@ -73,9 +73,9 @@
 					<li>
 						Clone a local copy of your new repository by entering:
 						<div align="center" style="margin-top:20px">
-							<pre class="inline">
-								git clone https://github.com/username/username.github.io.git
-							</pre>
+<pre class="inline">
+	git clone https://github.com/username/username.github.io.git
+</pre>
 						</div>
 					</li>
 
@@ -90,12 +90,12 @@
 					<li>
 						Enter the following into your terminal window:
 						<div align="center" style="margin-top:20px">
-							<pre class="inline rounded">
-								git status
-								git add .
-								git commit -m "added site files"
-								git push origin master
-							</pre>
+<pre class="inline rounded">
+	git status
+	git add .
+	git commit -m "added site files"
+	git push origin master
+</pre>
 						</div> <br>
 					</li>
 
@@ -106,9 +106,9 @@
 					<li>
 						Your site, with url:
 						<div align="center" style="margin-top:20px">
-							<pre class="inline">
-								https://username.github.io
-							</pre>
+<pre class="inline">
+	https://username.github.io
+</pre>
 						</div>
 						should now be hosted and accessible from the internet.
 					</li>
@@ -121,9 +121,9 @@
 				<h4>
 					On GitHub with url:
 					<div align="center" style="margin-top:20px">
-						<pre class="inline">
-							https://username.github.io/site-name
-						</pre>
+<pre class="inline">
+	https://username.github.io/site-name
+</pre>
 					</div>
 				</h4>
 
@@ -149,9 +149,9 @@
 					<li>
 						Clone a local copy of your new repository by entering: 
 						<div align="center" style="margin-top:20px">
-							<pre class="inline">
-								git clone https://github.com/username/site-name.git
-							</pre>
+<pre class="inline">
+	git clone https://github.com/username/site-name.git
+</pre>
 						</div>
 						where <mono><i>username</i></mono> is your GitHub username;
 					</li>
@@ -167,12 +167,12 @@
 					<li>
 						Enter the following into your terminal window:
 						<div align="center" style="margin-top:20px">
-							<pre class="inline">
-								git status
-								git add .
-								git commit -m "added site files"
-								git push origin master
-							</pre>
+<pre class="inline">
+	git status
+	git add .
+	git commit -m "added site files"
+	git push origin master
+</pre>
 						</div> <br>
 					</li>
 
@@ -183,9 +183,9 @@
 					<li>
 						Your site, with url:
 						<div align="center" style="margin-top:20px">
-							<pre class="inline">
-								https://username.github.io/site-name
-							</pre>
+<pre class="inline">
+	https://username.github.io/site-name
+</pre>
 						</div>
 						should now be hosted and accessible from the internet.
 					</li>
@@ -224,9 +224,9 @@
 				<h4>
 					On GitHub with url:
 					<div align="center" style="margin-top:20px">
-						<pre class="inline">
-							https://username.github.io
-						</pre>
+<pre class="inline">
+	https://username.github.io
+</pre>
 					</div>
 				</h4>
 
@@ -252,9 +252,9 @@
 					<li>
 						Clone a local copy of your new repository by entering:
 						<div align="center" style="margin-top:20px">
-							<pre class="inline">
-								git clone https://github.com/username/username.github.io.git
-							</pre>
+<pre class="inline">
+	git clone https://github.com/username/username.github.io.git
+</pre>
 						</div>
 					</li>
 
@@ -273,12 +273,12 @@
 					<li>
 						Enter the following into your terminal window:
 						<div align="center" style="margin-top:20px">
-							<pre class="inline rounded">
-								git status
-								git add .
-								git commit -m "setup stage branch"
-								git push origin stage
-							</pre>
+<pre class="inline rounded">
+	git status
+	git add .
+	git commit -m "setup stage branch"
+	git push origin stage
+</pre>
 						</div> <br>
 					</li>
 
@@ -293,9 +293,9 @@
 					<li>
 						Make a second local clone of your repository by again entering:
 						<div align="center" style="margin-top:20px">
-							<pre class="inline">
-								git clone https://github.com/username/username.github.io.git
-							</pre>
+<pre class="inline">
+	git clone https://github.com/username/username.github.io.git
+</pre>
 						</div>
 					</li>
 
@@ -318,13 +318,13 @@
 					<li>
 						Enter <mono>git status and ensure you get:</mono>
 						<div align="center" style="margin-top:20px">
-							<pre class="inline rounded">
-								On branch master
+<pre class="inline rounded">
+	On branch master
 
-								Initial commit
+	Initial commit
 
-								nothing to commit (create/copy files and use "git add" to track)
-							</pre>
+	nothing to commit (create/copy files and use "git add" to track)
+</pre>
 						</div><br>
 					</li>
 
@@ -335,12 +335,12 @@
 					<li>
 						Enter the following into your terminal window:
 						<div align="center" style="margin-top:20px; margin-bottom: 20px">
-							<pre class="inline rounded">
-								git status
-								git add .
-								git commit -m "setup master branch"
-								git push origin master
-							</pre>
+<pre class="inline rounded">
+	git status
+	git add .
+	git commit -m "setup master branch"
+	git push origin master
+</pre>
 						</div> 
 					</li>
 
@@ -351,9 +351,9 @@
 					<li>
 						Your site, with url:
 						<div align="center" style="margin-top:20px">
-							<pre class="inline">
-								https://username.github.io
-							</pre>
+<pre class="inline">
+	https://username.github.io
+</pre>
 						</div>
 						should now be hosted and accessible from the internet.
 					</li>
@@ -377,9 +377,9 @@
 				<h4>
 					On GitHub with url:
 					<div align="center" style="margin-top:20px">
-						<pre class="inline">
-							https://username.github.io/site-name
-						</pre>
+<pre class="inline">
+	https://username.github.io/site-name
+</pre>
 					</div>
 				</h4>
 
@@ -405,9 +405,9 @@
 					<li>
 						Clone a local copy of your new repository by entering:
 						<div align="center" style="margin-top:20px">
-							<pre class="inline">
-								git clone https://github.com/username/site-name.git
-							</pre>
+<pre class="inline">
+	git clone https://github.com/username/site-name.git
+</pre>
 						</div>
 						where <mono><i>username</i></mono> is your GitHub username;
 					</li>
@@ -427,12 +427,12 @@
 					<li>
 						Enter the following into your terminal window:
 						<div align="center" style="margin-top:20px">
-							<pre class="inline rounded">
-								git status
-								git add .
-								git commit -m "setup stage branch"
-								git push origin stage
-							</pre>
+<pre class="inline rounded">
+	git status
+	git add .
+	git commit -m "setup stage branch"
+	git push origin stage
+</pre>
 						</div> <br>
 					</li>
 
@@ -447,9 +447,9 @@
 					<li>
 						Make a second local clone of your repository by again entering:
 						<div align="center" style="margin-top:20px">
-							<pre class="inline">
-								git clone https://github.com/username/username/site-name.git
-							</pre>
+<pre class="inline">
+	git clone https://github.com/username/username/site-name.git
+</pre>
 						</div>
 					</li>
 
@@ -472,13 +472,13 @@
 					<li>
 						Enter <mono>git status and ensure you get:</mono>
 						<div align="center" style="margin-top:20px">
-							<pre class="inline rounded">
-								On branch gh-pages
+<pre class="inline rounded">
+	On branch gh-pages
 
-								Initial commit
+	Initial commit
 
-								nothing to commit (create/copy files and use "git add" to track)
-							</pre>
+	nothing to commit (create/copy files and use "git add" to track)
+</pre>
 						</div><br>
 					</li>
 
@@ -489,12 +489,12 @@
 					<li>
 						Enter the following into your terminal window:
 						<div align="center" style="margin-top:20px; margin-bottom: 20px">
-							<pre class="inline rounded">
-								git status
-								git add .
-								git commit -m "setup gh-pages branch"
-								git push origin master
-							</pre>
+<pre class="inline rounded">
+	git status
+	git add .
+	git commit -m "setup gh-pages branch"
+	git push origin master
+</pre>
 						</div>
 					</li>
 
@@ -505,9 +505,9 @@
 					<li>
 						Your site, with url:
 						<div align="center" style="margin-top:20px">
-							<pre class="inline">
-								https://username.github.io/site-name
-							</pre>
+<pre class="inline">
+	https://username.github.io/site-name
+</pre>
 						</div>
 						should now be hosted and accessible from the internet.
 					</li>
