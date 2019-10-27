@@ -31,6 +31,14 @@
 				</p>
 
 				<h4>
+					Optionally injecting head content
+				</h4>
+
+				<p>
+					You can optionally add <mono>\@inputhead</mono> which will input <mono>page-name.head</mono> if the file exists. So if you want to optionally add code for a page at that point add a file <mono>page-name.head</mono> in the same directory as the page content file.
+				</p>
+
+				<h4>
 					Specifying where the page title is to be inputted
 				</h4>
 

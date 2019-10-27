@@ -54,7 +54,7 @@
 | bcp            | input: commit-message                           |
 | new-title      | input: page-name new-title                      |
 | new-template   | input: page-name template-path                  |
-| new-ext        | input: page-name page-extension                 |
+| new-page-ext   | input: (page-name) page-extension               |
 +------------------------------------------------------------------+
 </pre>
 					</div>
@@ -235,7 +235,7 @@ python -m SimpleHTTPServer
 				</h4>
 
 				<p>
-					To set a new page extension run <mono>nsm new-ext page-name page-extension</mono>.
+					To set a new page extension run <mono>nsm new-page-ext (page-name) page-extension</mono>.
 				</p>
 
 				<h4>
