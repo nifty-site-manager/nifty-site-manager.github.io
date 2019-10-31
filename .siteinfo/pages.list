@@ -110,10 +110,6 @@ logos
 templates
 'template/page.template'
 
-hacktoberfest
-hacktoberfest
-'template/page.template'
-
 index
 index
 'template/page.template'
