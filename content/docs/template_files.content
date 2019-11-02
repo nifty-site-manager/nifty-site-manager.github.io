@@ -31,7 +31,7 @@
 				</p>
 
 				<p>
-					Alternatively to <mono>\@inputcontent</mono> you can use <mono>\@systemcontent(sys-call)</mono> which is equivalent to <mono>\systemoutput(sys-call path-to-content)</mono>, where <mono>path-to-content</mono> is the content path for a page. For example if your content files are markdown and you use <mono>\@systemoutput("pandoc")</mono> then the content files will be injected after being converted to html using pandoc. 
+					Alternatively to <mono>\@inputcontent</mono> you can use <mono>\@systemcontent(sys-call)</mono> which is equivalent to <mono>\@systemoutput(sys-call path-to-content)</mono>, where <mono>path-to-content</mono> is the content path for a page. For example if your content files are markdown and you use <mono>\@systemoutput("pandoc")</mono> then the content files will be injected after being converted to html using pandoc. 
 				</p>
 
 				<h4>
