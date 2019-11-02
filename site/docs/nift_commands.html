@@ -206,7 +206,10 @@
 | serve          | serves website locally                          |
 | bcp            | input: commit-message                           |
 | new-title      | input: page-name new-title                      |
-| new-template   | input: page-name template-path                  |
+| new-template   | input: (page-name) template-path                |
+| new-site-dir   | input: dir-path                                 |
+| new-cont-dir   | input: dir-path                                 |
+| new-cont-ext   | input: (page-name) content-extension            |
 | new-page-ext   | input: (page-name) page-extension               |
 +------------------------------------------------------------------+
 </pre>
@@ -380,7 +383,31 @@ python -m SimpleHTTPServer
 		    				</h4>
 		    
 		    				<p>
-		    					To set a new page title run <mono>nsm new-title page-name new-title</mono> and to set a new template path run <mono>nsm new-template new-template-path</mono>.
+		    					To set a new page title run <mono>nsm new-title page-name new-title</mono> and to set a new template path run <mono>nsm (page-name) new-template-path</mono>.
+		    				</p>
+		    
+		    				<h4>
+		    					Changing site directory
+		    				</h4>
+		    
+		    				<p>
+		    					To set a new site directory run <mono>nsm new-site-dir directory-path</mono>.
+		    				</p>
+		    
+		    				<h4>
+		    					Changing content directory
+		    				</h4>
+		    
+		    				<p>
+		    					To set a new content directory run <mono>nsm new-cont-dir directory-path</mono>.
+		    				</p>
+		    
+		    				<h4>
+		    					Changing content extension
+		    				</h4>
+		    
+		    				<p>
+		    					To set a new content extension run <mono>nsm new-cont-ext (page-name) content-extension</mono>.
 		    				</p>
 		    
 		    				<h4>

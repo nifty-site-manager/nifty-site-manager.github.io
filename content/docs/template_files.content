@@ -30,6 +30,10 @@
 					<b>Note:</b> if <mono>\@inputcontent</mono> is in any dependency of a page's content file (content file inclusive), then an input loop would be formed when attempting to build the page so <mono>Nift</mono> will (at least it should) throw an error. You may however put <mono>\@inputcontent</mono> in any other dependencies of the template file. For example were your template to include a file <mono>template/body.template</mono>, it is fine for <mono>\@inputcontent</mono> to reside in <mono>body.template</mono> and not the main template file.
 				</p>
 
+				<p>
+					Alternatively to <mono>\@inputcontent</mono> you can use <mono>\@systemcontent(sys-call)</mono> which is equivalent to <mono>\systemoutput(sys-call path-to-content)</mono>, where <mono>path-to-content</mono> is the content path for a page. For example if your content files are markdown and you use <mono>\@systemoutput("pandoc")</mono> then the content files will be injected after being converted to html using pandoc. 
+				</p>
+
 				<h4>
 					Optionally injecting head content
 				</h4>
