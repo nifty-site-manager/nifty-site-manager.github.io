@@ -257,12 +257,27 @@ $ cd /usr/ports/www/nift $ make install clean
 		    </div>
 		    
 		    				<p>
-		    				For a binary install using pkgng:
+		    					For a binary install using pkgng:
 		    				</p>
 		    
 		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
 		    <pre>
 $ pkg install www/nift
+</pre>
+		    </div>
+		    
+		    				<p>
+		    					Alternative install using pkgng:
+		    				</p>
+		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
+		    <pre>
+$ su -
+# portsnap fetch
+# portsnap update
+# cd /usr/ports/www/nift
+# make
+# make install
+# exit
 </pre>
 		    </div>
 		    
