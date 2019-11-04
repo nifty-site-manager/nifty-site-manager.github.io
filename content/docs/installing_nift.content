@@ -119,7 +119,7 @@ flatpak uninstall cc.nift.nsm/x86_64/stable
 					For a source install from FreeBSD ports:
 				</p>
 
-<pre>				
+<pre>
 $ cd /usr/ports/www/nift $ make install clean
 </pre>
 
