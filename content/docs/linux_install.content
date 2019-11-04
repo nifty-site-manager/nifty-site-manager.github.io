@@ -93,6 +93,22 @@ flatpak uninstall cc.nift.nsm/x86_64/stable
 					There is a FreeBSD port of Nift available <a href="https://svnweb.freebsd.org/ports/head/www/nift/">here</a>.
 				</p>
 
+				<p>
+					For a source install from FreeBSD ports:
+				</p>
+
+<pre>				
+$ cd /usr/ports/www/nift $ make install clean
+</pre>
+
+				<p>
+				For a binary install using pkgng:
+				</p>
+
+<pre>
+$ pkg install www/nift
+</pre>
+
 				<h2>
 					Gentoo installation
 				</h2>
@@ -101,6 +117,33 @@ flatpak uninstall cc.nift.nsm/x86_64/stable
 					There is a Gentoo overlay of Nift available <a href="https://gpo.zugaina.org/www-apps/nift">here</a>.
 				</p>
 
+				<p>
+					Add the overlay containing Nift Ebuilds:
+				</p>
+
+<pre>
+$ layman -f -o https://raw.githubusercontent.com/NuLL3rr0r/gentoo-overlay/master/repositories.xml -a NuLL3rr0r
+</pre>
+
+				<p>
+					On Gentoo stable, for the latest stable release:
+				</p>
+
+<pre>
+$ emerge -atuv www-apps/nift
+</pre>
+
+				<p>
+					And, for the development version (note that some shells require quotation of this syntax):
+				</p>
+
+<pre>
+$ emerge -atuv '=www-apps/nift-9999'
+</pre>
+
+				<p>
+					On Gentoo unstable <mono>=www-apps/nift-9999</mono> is default, so if you need the stable version, it should be specified as, e.g. <mono>=www-apps/nift-1.7</mono>.
+				</p>
 
 				<h2>Installing <mono>Nift</mono> on linux from source</h2>
 
