@@ -22,12 +22,12 @@
 					You can install <mono>Nift</mono> on linux using the <mono>Snap</mono> package manager, for instructions see <a href="https://snapcraft.io/nsm">here</a>. Alternatively first install <mono>snapd</mono>, eg. <mono>sudo apt-get install snapd</mono> on Ubuntu, then enter:
 				</p>
 
-				<div align="center" style="margin-top:-20px; margin-bottom: 20px">
+<div align="center" style="margin-top:-20px; margin-bottom: 20px">
 <pre>
 snap install nift
 sudo snap alias nift nsm
 </pre>
-				</div>
+</div>
 
 				<p>
 					To uninstall <mono>Nift</mono> enter <mono>sudo snap unalias nsm</mono> and <mono>snap remove nift</mono>.
@@ -44,21 +44,21 @@ sudo snap alias nift nsm
 					You can install <mono>Nift</mono> on linux using the <mono>Flatpak</mono> package manager. First <a href="https://flatpak.org/setup/">install</a> <mono>Flatpak</mono> then enter in to a terminal:
 				</p>
 
-				<div align="center" style="margin-top:-20px; margin-bottom: 20px">
+<div align="center" style="margin-top:-20px; margin-bottom: 20px">
 <pre>
 flatpak install --user https://flathub.org/repo/appstream/cc.nift.nsm.flatpakref
 </pre>
-				</div>
+</div>
 
 				<p>
 					Alternatively, download <a href="https://flathub.org/repo/appstream/cc.nift.nsm.flatpakref">cc.nift.nsm.flatpakref</a> to <mono>~/Downloads</mono> then open up a terminal and enter:
 				</p>
 
-				<div align="center" style="margin-top:-20px; margin-bottom: 20px">
+<div align="center" style="margin-top:-20px; margin-bottom: 20px">
 <pre>
 flatpak install cc.nift.nsm.flatpakref
 </pre>
-				</div>
+</div>
 
 				<p>
 					Note you can just open <mono>cc.nift.nsm.flatpakref</mono> in GNOME Software or KDE Discover if you have either of those.
@@ -68,22 +68,22 @@ flatpak install cc.nift.nsm.flatpakref
 					Then add the following aliases to <mono>~/.bashrc</mono> (or the equivalent to the configuration profile file for your shell):
 				</p>
 
-				<div align="center" style="margin-top:-20px; margin-bottom: 20px">
+<div align="center" style="margin-top:-20px; margin-bottom: 20px">
 <pre>
 alias nsm="flatpak run cc.nift.nsm"
 alias nift="flatpak run cc.nift.nsm" 
 </pre>
-				</div>
+</div>
 
 				<p>
 					To uninstall <mono>Nift</mono> remove the aliases from <mono>~/.bashrc</mono> and enter <mono>flatpak uninstall nift</mono>, if that doesn't work try <mono>flatpak uninstall cc.nift.nsm</mono> and if that fails try:
 				</p>
 
-				<div align="center" style="margin-top:-20px; margin-bottom: 20px">
+<div align="center" style="margin-top:-20px; margin-bottom: 20px">
 <pre>
 flatpak uninstall cc.nift.nsm/x86_64/stable
 </pre>
-				</div>
+</div>
 
 				<h2>
 					FreeBSD installation
@@ -97,17 +97,21 @@ flatpak uninstall cc.nift.nsm/x86_64/stable
 					For a source install from FreeBSD ports:
 				</p>
 
+<div align="center" style="margin-top:-20px; margin-bottom: 20px">
 <pre>
 $ cd /usr/ports/www/nift $ make install clean
 </pre>
+</div>
 
 				<p>
 				For a binary install using pkgng:
 				</p>
 
+<div align="center" style="margin-top:-20px; margin-bottom: 20px">
 <pre>
 $ pkg install www/nift
 </pre>
+</div>
 
 				<h2>
 					Gentoo installation
@@ -121,25 +125,31 @@ $ pkg install www/nift
 					Add the overlay containing Nift Ebuilds:
 				</p>
 
+<div align="center" style="margin-top:-20px; margin-bottom: 20px">
 <pre>
 $ layman -f -o https://raw.githubusercontent.com/NuLL3rr0r/gentoo-overlay/master/repositories.xml -a NuLL3rr0r
 </pre>
+</div>
 
 				<p>
 					On Gentoo stable, for the latest stable release:
 				</p>
 
+<div align="center" style="margin-top:-20px; margin-bottom: 20px">
 <pre>
 $ emerge -atuv www-apps/nift
 </pre>
+</div>
 
 				<p>
 					And, for the development version (note that some shells require quotation of this syntax):
 				</p>
 
+<div align="center" style="margin-top:-20px; margin-bottom: 20px">
 <pre>
 $ emerge -atuv '=www-apps/nift-9999'
 </pre>
+</div>
 
 				<p>
 					On Gentoo unstable <mono>=www-apps/nift-9999</mono> is default, so if you need the stable version, it should be specified as, e.g. <mono>=www-apps/nift-1.7</mono>.
@@ -184,13 +194,13 @@ $ emerge -atuv '=www-apps/nift-9999'
 				<p>
 					For example, if you unzipped <mono>nsm-master-*</mono> inside your downloads folder, then steps 1-4 are achieved by entering the following into your terminal window:
 
-					<div align="center">
+<div align="center">
 <pre class="prettyprint inline rounded lang-bsh">
 cd ~/Downloads/nsm-master-*
 make
 sudo make install
 </pre>
-					</div>
+</div>
 				</p>
 
 				<p>
