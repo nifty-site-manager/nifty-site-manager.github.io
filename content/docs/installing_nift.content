@@ -150,6 +150,27 @@ $ su -
 </pre>
 </div>
 
+				<p>
+					To uninstall <mono>Nift</mono> using ports enter:
+				</p>
+
+<div align="center" style="margin-top:-20px; margin-bottom: 20px">
+<pre>
+$ cd /usr/ports/www/nift
+$ make deinstall
+</pre>
+</div>
+
+				<p>
+					and using <mono>pkgng</mono> enter:
+				</p>
+
+<div align="center" style="margin-top:-20px; margin-bottom: 20px">
+<pre>
+$ pkg delete www/nift
+</pre>
+</div>
+
 				<h2 id="gentoo">
 					Gentoo installation
 				</h2>
@@ -191,6 +212,16 @@ $ emerge -atuv '=www-apps/nift-9999'
 				<p>
 					On Gentoo unstable <mono>=www-apps/nift-9999</mono> is default, so if you need the stable version, it should be specified as, e.g. <mono>=www-apps/nift-1.7</mono>.
 				</p>
+
+				<p>
+					To uninstall <mono>Nift</mono> enter:
+				</p>
+
+<div align="center" style="margin-top:-20px; margin-bottom: 20px">
+<pre>
+$ emerge -C www-apps/nift
+</pre>
+</div>
 
 				<h3 id="windows-chocolatey">
 					Windows installation using <mono>Chocolatey</mono>
