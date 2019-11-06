@@ -173,7 +173,7 @@ template/page.template
 ostream& operator<<(ostream &os, const std::vector<std::string> &v)
 {
 	if(v.size())
-		os << v[i];
+		os << v[0];
 	for(auto i=1; i<v.size(); i++)
 		os << " " << v[i];
 	return os;

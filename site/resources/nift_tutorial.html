@@ -326,7 +326,7 @@ template/page.template
 ostream& operator&lt;&lt;(ostream &os, const std::vector&lt;std::string> &v)
 {
 	if(v.size())
-		os &lt;&lt; v[i];
+		os &lt;&lt; v[0];
 	for(auto i=1; i&lt;v.size(); i++)
 		os &lt;&lt; " " &lt;&lt; v[i];
 	return os;
