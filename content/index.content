@@ -50,6 +50,12 @@
 					</div>
 					<div class="col-6 col-12-medium">
 						<section>
+							<h3 class="icon solid fa-check">Scalable</h3>
+							<p>Nift can scale all the way up to handle building websites with millions of pages.</p>
+						</section>
+					</div>
+					<div class="col-6 col-12-medium">
+						<section>
 							<h3 class="icon solid fa-check">Compact</h3>
 							<p>The source code for Nift is under 150kb in size and can be compiled in to an executable under 300kb in size.</p>
 						</section>
