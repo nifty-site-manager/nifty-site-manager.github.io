@@ -65,6 +65,7 @@
 						</li>
 					</ul>
 				</li>
+				<li><a href="@pathto(你好)">你好</a></li>
 				<li>
 					<a href="">Resources</a>
 					<ul>
