@@ -1,9 +1,9 @@
 21:01:40 Saturday November 09 2019
-'resources/php_frameworks'
-'php_frameworks'
+'docs/JSON'
+JSON
 'template/page.template'
 
-'content/resources/php_frameworks.content'
+'content/docs/JSON.content'
 'template/footer.content'
 'template/head.content'
 'template/menu.content'

@@ -1,0 +1,112 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">JSON data</div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<header class="style1">
+				<h2>How to work with JSON data</h2>
+			</header>
+
+			<div class="content" style="margin-top:-50px;">
+				<center>
+					<img src="@pathtofile(site/images/JSON.svg)" width=250 style="margin-bottom:20px">
+				</center>
+
+				<p>
+					There are a number of command line tools available to help you work with JSON data.
+					<ol>
+						<li>
+							<a href="https://stedolan.github.io/jq/">jq</a> (<a href="https://github.com/stedolan/jq">GitHub</a>)
+							<ul>
+								<li><mono>jq</mono> is a lightweight and flexible command-line JSON processor.</li>
+								<li><mono>jq</mono> is like <mono>sed</mono> for JSON data - you can use it to slice and filter and map and transform structured data with the same ease that <mono>sed</mono>, <mono>awk</mono>, <mono>grep</mono> and friends let you play with text.</li>
+								<li><mono>jq</mono> is written in portable C, and it has zero runtime dependencies. You can download a single binary, <mono>scp</mono> it to a far away machine of the same type, and expect it to work.</li>
+								<li><mono>jq</mono> can mangle the data format that you have into the one that you want with very little effort, and the program to do so is often shorter and simpler than you’d expect.</li>
+								<li>You can download <mono>jq</mono> from <a href="https://stedolan.github.io/jq/download/">here</a> (<a href="https://stedolan.github.io/jq/tutorial/">tutorial</a>, <a href="https://stedolan.github.io/jq/manual/">manual</a>).</li>
+					
+							</ul>
+
+<div style="margin-top:-30px; margin-bottom:20px">
+For example you can use:
+<pre class="prettyprint">
+\@systemoutput("curl 'https://api.github.com/repos/stedolan/jq/commits?per_page=5' | jq '.[0]'")
+</pre>
+</div>
+						</li>
+
+						<li>
+							<a href="https://sanity-io.github.io/GROQ/">GROQ</a> (<a href="https://github.com/sanity-io/groq">GitHub</a>)
+							<ul>
+								<li>
+									Graph-Relational Object Queries (<mono>GROQ</mono>) is a query language (like <mono>SQL</mono>, but different) which is designed to work directly on JSON documents.
+								</li>
+
+								<li>
+									Its primary design goals are expressive filtering, joining of several documents into a single response, and shaping the response to fit the client application.
+								</li>
+
+								<li>
+									The idea behind <mono>GROQ</mono> is to be able to describe exactly what information your application needs, potentially joining together information from several sets of documents, then stitching together a very specific response with only the exact fields you need.
+								</li>
+
+								<li>
+									It basically lets you write queries you can quickly filter and then reformat JSON documents to get them into the most convenient shape.
+								</li>
+
+								<li>
+									<mono>GROQ</mono> was developed by <a href="https://sanity.io">Sanity.io</a> (where it’s used as the primary query language). It’s open source and it gives us built-in ways to use it in JavaScript and the command line on any JSON source.
+								</li>
+
+								<li>
+									You can install using <mono>npm</mono> with <mono>npm install -g groq-cli</mono>
+								</li>
+							</ul>
+
+<div style="margin-top:-30px; margin-bottom:20px">
+For example you can use:
+<pre class="prettyprint">
+\@system("curl -o todos.json https://jsonplaceholder.typicode.com/todos")
+\@systemoutput("cat todos.json | groq '*[completed == true]{title, userId}' --pretty")
+\@system("rm todos.json")
+</pre>
+
+or alternatively,
+<pre class="prettyprint">
+\@systemoutput("curl -sS https://jsonplaceholder.typicode.com/todos | groq '*[completed == true]{title, userId}' --pretty")
+</pre>
+</div>
+						</li>
+					</ol> 
+				</p>
+
+				<p>
+					Other tools you might find useful include:
+					<ul>
+						<li><a href="http://kmkeen.com/jshon/">Jshon</a> - Jshon parses, reads and creates JSON. It is designed to be as usable as possible from within the shell and replaces fragile adhoc parsers made from grep/sed/awk as well as heavyweight one-line parsers made from perl/python. Requires <a href="http://www.digip.org/jansson/">Jansson</a>;</li>
+						<li><a href="https://rapidjson.org/">RapidJSON</a> - A fast JSON parser/generator for C++ with both SAX/DOM style API;</li>
+						<li><a href="https://nlohmann.github.io/json/">JSON for modern C++</a>;</li>
+						<li><a href="https://github.com/archan937/jsonv.sh">jsonv.sh</a> - A Bash command line tool for converting JSON to CSV;</li>
+						<li><a href="https://github.com/dominictarr/JSON.sh">JSON.sh</a> - a json parser written in shell, compatible with ash, bash, dash and zsh;</li>
+						<li><a href="https://github.com/step-/JSON.awk">JSON.awk</a> - A practical JSON parser written in awk;</li>
+						<li><a href="https://docs.python.org/3/library/json.html">Python JSON Module</a> - Python JSON encoder and decoder</a></li>
+						<li><a href="https://pypi.org/project/ijson/#description">ijson</a> - Iterative JSON parser with a standard Python iterator interface;</li>
+						<li><a href="https://github.com/ldn-softdev/jtc">jtc</a> - cli tool to extract, manipulate and transform source JSON;</li>
+						<li><a href="https://github.com/ddopson/underscore-cli">underscore-cli</a> - Command-line utility-belt for hacking JSON and Javascript;</li>
+						<li><a href="https://github.com/antonmedv/eat">Eat</a> - Command-line tool for converting anything to JSON.</li>
+						<li><a href="https://github.com/tomnomnom/gron">gron</a> - transforms JSON into discrete assignments to make it easier to <mono>grep</mono> for what you want and see the absolute 'path' to it. It eases the exploration of APIs that return large blobs of JSON but have terrible documentation;</li>
+						<li><a href="https://github.com/jpmens/jo">jo</a> - a small utility to create JSON objects or arrays from the shell;</li>
+						<li><a href="https://github.com/trentm/json">json</a> - a fast CLI tool for working with JSON. It is a single-file node.js script with no external deps (other than <a href="https://github.com/nodejs/node-v0.x-archive">node.js</a> itself);</li>
+						<li><a href="https://github.com/dflemstr/rq">Record Query</a> - A tool for doing record analysis and transformation;</li>
+						<li><a href="https://github.com/benbernard/RecordStream">Record Stream</a> - commandline tools for slicing and dicing JSON records;</li>
+						<li><a href="https://github.com/chrisdone/jl">JSON lambda (jl)</a> - Functional sed for JSON (a tiny functional language for querying and manipulating JSON);</li>
+						<li><a href="https://github.com/jmespath/jp">jp</a> - command is a command line interface to <a href="http://jmespath.org/">JMESPath</a>, an expression language for manipulating JSON;</li>
+						<li><a href="https://github.com/zpoley/json-command">json-command</a> - JSON command line processing toolkit;</li>
+						<li><a href="http://jgrep.org/">JSON-grep</a> (<a href="https://github.com/ploubser/JSON-Grep">GitHub</a>) - command line tool and API for parsing JSON documents based on logical expressions;</li>
+						<li><a href="https://github.com/jtopjian/jsed">jsed</a> - command line JSON editor.</li>
+					</ul>
+				</p>
+			</div>
+		</section>
+	</div>
+</section>

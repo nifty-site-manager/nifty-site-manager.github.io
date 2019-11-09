@@ -50,6 +50,7 @@
 						<li><a href="@pathto(docs/content_files)">Content Files</a></li>
 						<li><a href="@pathto(docs/template_files)">Template Files</a></li>
 						<li><a href="@pathto(docs/scripts)">Scripts</a></li>
+						<li><a href="@pathto(docs/JSON)">JSON Data</a></li>
 						<li><a href="@pathto(docs/markdown)">Markdown</a></li>
 						<li><a href="@pathto(docs/displaying_mathematics)">Displaying Mathematics</a></li>
 						<li><a href="@pathto(docs/displaying_code_blocks)">Displaying Code Blocks</a></li>
