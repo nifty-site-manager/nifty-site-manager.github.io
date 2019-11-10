@@ -66,6 +66,10 @@ scripts
 'template_files'
 'template/page.template'
 
+'docs/translators'
+translators
+'template/page.template'
+
 'docs/windows_install'
 'windows_install'
 'template/page.template'

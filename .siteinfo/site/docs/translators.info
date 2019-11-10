@@ -1,9 +1,9 @@
 20:21:12 Sunday November 10 2019
-'privacy_policy'
-'privacy_policy'
+'docs/translators'
+translators
 'template/page.template'
 
-'content/privacy_policy.content'
+'content/docs/translators.content'
 'template/footer.content'
 'template/head.content'
 'template/menu.content'

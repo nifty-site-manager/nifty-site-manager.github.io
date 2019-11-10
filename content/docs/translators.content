@@ -1,0 +1,206 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">Translators</div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<header class="style1">
+				<h2>How to translate text when building websites</h2>
+			</header>
+
+			<div class="content" style="margin-top:-50px;">
+				<center>
+					<img src="@pathtofile(site/images/translate.jpg)" width=300 style="margin-bottom:20px; border-radius: 50%;">
+				</center>
+
+				<p>
+					Not only can you use any language/alphabet you want with content/template files and page names for urls, there are two command-line based translators worth checking out if you want to translate text when building websites:
+					<ul>
+						<li><a href="https://www.soimort.org/translate-shell/">Translate Shell</a> (formerly Google Translate CLI) - a command-line translator powered by <a href="https://translate.google.com/">Google Translate</a> (default), <a href="https://www.bing.com/translator">Bing Translator</a>, <a href="https://translate.yandex.com/">Yandex.Translate</a>, and <a href="https://www.apertium.org/">Apertium</a>. It gives you easy access to all of these translation engines in your terminal;</li>
+						<li><a href="https://github.com/vsetka/deepl-translator-cli">DeepL Translator CLI</a> - a command-line tool delivering text translation capabilities to your console and is powered by DeepL.</li>
+					</ul>
+				</p>
+
+				<center>
+					<img src="@pathtofile(site/images/translate.png)" width=400 style="margin-bottom:20px; border-radius: 50%;">
+				</center>
+
+				<h2>Translate Shell</h2>
+
+				<p>
+					You can find installation instructions for Translate Shell <a href="https://www.soimort.org/translate-shell/#installation">here</a>, the recommended way being direct download, though there is information about package managers <a href="https://github.com/soimort/translate-shell/wiki/Distros">here</a>.
+				</p>
+
+				<p>
+					<b>Note:</b> Translate Shell needs the internet to run, if you are building your website and Translate Shell is called without internet access your build might stall. It is also unlikely to scale well to websites with 10k+ pages, possibly even 1k+. 
+				</p>
+
+				<p>
+					Along with below, there are examples to help get you started <a href="https://www.soimort.org/translate-shell/#getting-started-by-examples">here</a> and documentation on usage <a href="https://www.soimort.org/translate-shell/#usage">here</a>.
+				</p>
+
+				<p>
+					The simplest way to use Translate Shell with Nift is:
+<div style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint">
+\@systemoutput("trans -brief 'text'")
+</pre>
+</div>
+
+					where <mono>text</mono> is the text you want translated. 
+				</p>
+
+				<p>
+					If you want to translate text in a file use 
+<div style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint">
+\@systemoutput("trans -brief file://file-path")\@dep("file-path")
+</pre>
+</div>
+
+					where <mono>file-path</mono> is the path from the project root directory to the file you want to translate. It is worth adding the file as a page dependency after the <mono>@systemoutput</mono> call so that Nift will track changes to the file for purposes of knowing when the page needs rebuilding.
+				</p>
+
+				<p>
+					To specify which language to translate to add <mono>:language-code</mono> after <mono>-brief</mono> and to specify which language to translate from add <mono>language-code:</mono> after <mono>-brief</mono>, the language codes that are available can be found <a href="https://www.soimort.org/translate-shell/#code-list">here</a>. For example:
+<div style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint">
+\@systemoutput("trans -brief eo: 'vorto'")
+\@systemoutput("trans -brief :zh-CN 'hello'")
+\@systemoutput("trans -brief en: :zh-CN 'hello'")
+</pre>
+</div>
+				</p>
+
+				<p>
+					To list the available translation engines enter <mono>trans -S</mono>. To use a non-default translation engine use the <mono>-e <i>engine</i></mono> option, for example:
+<div style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint">
+\@systemoutput("trans -e yandex -brief :en '你好'")
+</pre>
+</div>
+				</p>
+
+				<center>
+					<img src="@pathtofile(site/images/translate.webp)" width=400 style="margin-bottom:20px; border-radius: 30%;">
+				</center>
+
+				<h2>DeepL Translator CLI</h2>
+
+				<p>
+					You can use <mono>yarn</mono> to install DeepL Translator CLI with the command:
+<div style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint">
+$ yarn global add deepl-translator-cli
+</pre>
+</div>
+				</p>
+
+				<p>
+					Along with below, there are examples to help you get started <a href="https://github.com/vsetka/deepl-translator-cli">here</a>.
+				</p>
+
+				<p>
+					The simplest way to use DeepL Translator CLI with Nift is:
+<div style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint">
+\@systemoutput("deepl translate -t 'country-code' 'text'")
+</pre>
+</div>
+
+					where:
+					<ul>
+						<li><mono>language-code</mono> is the code for the language you want to translate in to (the available codes are in the table below); and</li>
+						<li><mono>text</mono> is the text you want translated.</li>
+					</ul>
+				</p>
+
+				<p>
+					If you want to specify the language to translate from use the <mono>-s 'language-code'</mono> option, for example:
+<div style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint">
+\@systemoutput("deepl translate -s 'EN' -t 'DE' 'How do you do?'")
+</pre>
+</div>
+				</p>
+
+				<p>
+					You can pipe text from standard input, for example:
+<div style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint">
+\@systemoutput("echo 'text' | deepl translate -t 'language-code'")
+</pre>
+</div>
+				</p>
+
+				<p>
+					If you want to translate a file, you can do so as follows:
+<div style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint">
+\@systemoutput("cat file-path | deepl translate -t 'language-code'")
+</pre>
+</div>
+				</p>
+
+				<p>
+				</p>
+
+				<p>
+				</p>
+
+				<p>
+					The available languages and codes are:
+
+					<center>
+						<table id="deepl_language_codes_table" class="alt">
+							<thead>
+								<tr>
+									<th>language</th>
+									<th>code</th>
+								</tr>
+							</thead>
+							<tr>
+								<td>English</td>
+								<td>EN</td>
+							</tr>
+							<tr>
+								<td>German</td>
+								<td>DE</td>
+							</tr>
+							<tr>
+								<td>French</td>
+								<td>FR</td>
+							</tr>
+							<tr>
+								<td>Spanish</td>
+								<td>ES</td>
+							</tr>
+							<tr>
+								<td>Italian</td>
+								<td>IT</td>
+							</tr>
+							<tr>
+								<td>Dutch</td>
+								<td>NL</td>
+							</tr>
+							<tr>
+								<td>Polish</td>
+								<td>PL</td>
+							</tr>
+							<tfoot>
+								<tr>
+									<th>language</th>
+									<th>code</th>
+								</tr>
+							</tfoot>
+						</table>
+					</center>
+				</p>
+
+				<center>
+					<img src="@pathtofile(site/images/trans.png)" width=400 style="margin-bottom:20px; border-radius: 10%;">
+				</center>
+			</div>
+		</section>
+	</div>
+</section>
