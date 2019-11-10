@@ -63,19 +63,19 @@
 					<div class="col-6 col-12-medium">
 						<section>
 							<h3 class="icon solid fa-check">Static and Dynamic Websites</h3>
-							<p>Nift can manage and generate not just static but also dynamic websites, with a whole range of <a href="@pathto(docs/hosting_your_site)">hosting options</a>.</p>
+							<p>Nift can manage and generate not just static but also <a href="https://jamstack.org">JAMstack</a> and dynamic websites, with a whole range of <a href="@pathto(docs/hosting_your_site)">hosting options</a>.</p>
 						</section>
 					</div>
 					<div class="col-6 col-12-medium">
 						<section>
 							<h3 class="icon solid fa-check">Script Support</h3>
-							<p>Nift has support for pre/post build/serve scripts to integrate with cURL, databases, SASS, Grunt, GraphQL, Python Web Server, Live Server/Reload, etc..</p>
+							<p>Nift has support for pre/post build/serve scripts, useful for things like integrating with webpack, SASS, Grunt, GraphQL, Python Web Server, Live Server/Reload, etc..</p>
 						</section>
 					</div>
 					<div class="col-6 col-12-medium">
 						<section>
 							<h3 class="icon solid fa-check">Command-Line Integration</h3>
-							<p>Nift brings you the full power of the command line, with syntax in the template language to run scripts and input/inject the output of a script at any point while building webpages.</p>
+							<p>Nift brings you the full power of the command line, with syntax in the template language to run or inject the output of scripts or system calls any point while building webpages.</p>
 						</section>
 					</div>
 					<div class="col-6 col-12-medium">
@@ -93,7 +93,13 @@
 					<div class="col-6 col-12-medium">
 						<section>
 							<h3 class="icon solid fa-check">Language Agnostic</h3>
-							<p>You can use any language you want, eg. markdown, $\LaTeX$, html, xml, css, javascript, php, MySQL, etc..</p>
+							<p>You can use any language you want, eg. markdown, $\LaTeX$, html, haml, xml, JSON, css, sass, javascript, jQuery, php, MySQL etc..</p>
+						</section>
+					</div>
+					<div class="col-6 col-12-medium">
+						<section>
+							<h3 class="icon solid fa-check">Multilingual Support</h3>
+							<p>You can use any language/alphabet you want in content/template files and page names for urls, and can integrate with CLI translators to translate text.</p>
 						</section>
 					</div>
 					<div class="col-6 col-12-medium">
