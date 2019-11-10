@@ -296,6 +296,8 @@ $ yarn global add deepl-translator-cli
 &commat;systemoutput("cat file-path | deepl translate -t 'language-code'")&commat;dep("file-path")
 </pre>
 		    </div>
+		    
+		    					where <mono>file-path</mono> is the path from the project root directory to the file you want to translate. It is worth adding the file as a page dependency after the <mono>@systemoutput</mono> call so that Nift will track changes to the file for purposes of knowing when the page needs rebuilding.
 		    				</p>
 		    
 		    				<p>

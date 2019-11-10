@@ -225,7 +225,7 @@
 		    					For example suppose inside your website directory you have <mono>template/footer.content</mono>:
 		    
 		    					<div align="center">
-		    <pre class="inline">
+		    <pre class="prettyprint inline lang-bash">
 Page was last built on &commat;currentdate.
 </pre>
 		    					</div>
@@ -235,8 +235,8 @@ Page was last built on &commat;currentdate.
 		    					To input <mono>template/footer.content</mono> into another file write:
 		    
 		    					<div align="center">
-		    <pre class="inline">
-&commat;input(template/footer.content)
+		    <pre class="prettyprint inline">
+&commat;input("template/footer.content")
 </pre>
 		    					</div>
 		    				</p>
@@ -262,20 +262,20 @@ Page was last built on &commat;currentdate.
 	&lt;ul class="drop_menu">
 		&lt;li>&lt;/li>
 		&lt;li class="dm_li">
-			&lt;a href="&commat;pathto(index)">home&lt;/a>
+			&lt;a href="&commat;pathto(index)">Home&lt;/a>
 		&lt;/li>
 
 		&lt;li class ="dm_li">
-			&lt;div class="dm_text">documentation&lt;/div>
+			&lt;div class="dm_text">Documentation&lt;/div>
 			&lt;ul class ="drop_submenu">
-				&lt;li class="dsm_li">&lt;a href="&commat;pathto(documentation/installing_nsm)">installing nsm&lt;/a>&lt;/li>
-				&lt;li class="dsm_li">&lt;a href="&commat;pathto(documentation/nsm_tutorial)">nsm tutorial&lt;/a>&lt;/li>
-				&lt;li class="dsm_li">&lt;a href="&commat;pathto(documentation/nsm_commands)">nsm commands&lt;/a>&lt;/li>
+				&lt;li class="dsm_li">&lt;a href="&commat;pathto(documentation/installing_nift)">Installing Nift&lt;/a>&lt;/li>
+				&lt;li class="dsm_li">&lt;a href="&commat;pathto(documentation/nsm_tutorial)">Nift tutorial&lt;/a>&lt;/li>
+				&lt;li class="dsm_li">&lt;a href="&commat;pathto(documentation/nsm_commands)">Nift commands&lt;/a>&lt;/li>
 			&lt;/ul>
 		&lt;/li>
 
 		&lt;li class ="dm_li">
-			&lt;a href="&commat;pathto(support)">support&lt;/a>
+			&lt;a href="&commat;pathto(support)">Support&lt;/a>
 		&lt;/li>
 		&lt;li>&lt;/li>
 	&lt;/ul>
@@ -336,7 +336,7 @@ Page was last built on &commat;currentdate.
 		    					For example if you want to run a script <mono>script.bat</mono>, you can do so with:
 		    
 		    					<div align="center">
-		    <pre class="inline">
+		    <pre class="prettyprint inline lang-bash">
 &commat;script(script.bat)
 </pre>
 		    					</div>
@@ -355,7 +355,7 @@ Page was last built on &commat;currentdate.
 		    					For example suppose you want to input the output from running a script <mono>"linux script.sh"</mono>, you can do so with:
 		    
 		    					<div align="center">
-		    <pre class="inline">
+		    <pre class="prettyprint inline">
 &commat;scriptoutput("./linux script.sh")
 </pre>
 		    					</div>
@@ -391,7 +391,7 @@ Page was last built on &commat;currentdate.
 		    					For example suppose you want to input the text from <a href="https://pastebin.com/atjKuxY6">this</a> paste on <a href="https://pastebin.com">Paste Bin</a>, you can do so with:
 		    
 		    					<div align="center">
-		    <pre class="inline">
+		    <pre class="prettyprint inline">
 &commat;systemoutput("curl -sS https://pastebin.com/raw/atjKuxY6")
 </pre>
 		    					</div>

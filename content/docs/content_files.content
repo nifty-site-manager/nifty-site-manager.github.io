@@ -69,7 +69,7 @@
 					For example suppose inside your website directory you have <mono>template/footer.content</mono>:
 
 					<div align="center">
-<pre class="inline">
+<pre class="prettyprint inline lang-bash">
 Page was last built on \@currentdate.
 </pre>
 					</div>
@@ -79,8 +79,8 @@ Page was last built on \@currentdate.
 					To input <mono>template/footer.content</mono> into another file write:
 
 					<div align="center">
-<pre class="inline">
-\@input(template/footer.content)
+<pre class="prettyprint inline">
+\@input("template/footer.content")
 </pre>
 					</div>
 				</p>
@@ -106,20 +106,20 @@ Page was last built on \@currentdate.
 	<ul class="drop_menu">
 		<li></li>
 		<li class="dm_li">
-			<a href="\@pathto(index)">home</a>
+			<a href="\@pathto(index)">Home</a>
 		</li>
 
 		<li class ="dm_li">
-			<div class="dm_text">documentation</div>
+			<div class="dm_text">Documentation</div>
 			<ul class ="drop_submenu">
-				<li class="dsm_li"><a href="\@pathto(documentation/installing_nsm)">installing nsm</a></li>
-				<li class="dsm_li"><a href="\@pathto(documentation/nsm_tutorial)">nsm tutorial</a></li>
-				<li class="dsm_li"><a href="\@pathto(documentation/nsm_commands)">nsm commands</a></li>
+				<li class="dsm_li"><a href="\@pathto(documentation/installing_nift)">Installing Nift</a></li>
+				<li class="dsm_li"><a href="\@pathto(documentation/nsm_tutorial)">Nift tutorial</a></li>
+				<li class="dsm_li"><a href="\@pathto(documentation/nsm_commands)">Nift commands</a></li>
 			</ul>
 		</li>
 
 		<li class ="dm_li">
-			<a href="\@pathto(support)">support</a>
+			<a href="\@pathto(support)">Support</a>
 		</li>
 		<li></li>
 	</ul>
@@ -180,7 +180,7 @@ Page was last built on \@currentdate.
 					For example if you want to run a script <mono>script.bat</mono>, you can do so with:
 
 					<div align="center">
-<pre class="inline">
+<pre class="prettyprint inline lang-bash">
 \@script(script.bat)
 </pre>
 					</div>
@@ -199,7 +199,7 @@ Page was last built on \@currentdate.
 					For example suppose you want to input the output from running a script <mono>"linux script.sh"</mono>, you can do so with:
 
 					<div align="center">
-<pre class="inline">
+<pre class="prettyprint inline">
 \@scriptoutput("./linux script.sh")
 </pre>
 					</div>
@@ -235,7 +235,7 @@ Page was last built on \@currentdate.
 					For example suppose you want to input the text from <a href="https://pastebin.com/atjKuxY6">this</a> paste on <a href="https://pastebin.com">Paste Bin</a>, you can do so with:
 
 					<div align="center">
-<pre class="inline">
+<pre class="prettyprint inline">
 \@systemoutput("curl -sS https://pastebin.com/raw/atjKuxY6")
 </pre>
 					</div>
