@@ -345,7 +345,7 @@ $ layman -f -o https://raw.githubusercontent.com/NuLL3rr0r/gentoo-overlay/master
 		    </div>
 		    
 		    				<p>
-		    					On Gentoo stable, for the latest stable release:
+								For installing the latest stable release of Nift:
 		    				</p>
 		    
 		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
@@ -365,9 +365,17 @@ $ emerge -atuv '=www-apps/nift-9999'
 		    </div>
 		    
 		    				<p>
-		    					On Gentoo unstable <mono>=www-apps/nift-9999</mono> is default, so if you need the stable version, it should be specified as, e.g. <mono>=www-apps/nift-1.7</mono>.
+								In order to set the development version as the default installed version of Nift, and avoid getting it downgraded by Portage on subsequent @world upgrades:
 		    				</p>
-		    
+
+		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
+		    <pre>
+$ mkdir -p /etc/portage/package.accept_keywords/
+$ echo '=www-apps/nift-9999 **' &gt; /etc/portage/package.accept_keywords/www-apps_nift
+$ emerge -atuv '=www-apps/nift-9999'
+</pre>
+		    </div>
+
 		    				<p>
 		    					To uninstall <mono>Nift</mono> enter:
 		    				</p>
