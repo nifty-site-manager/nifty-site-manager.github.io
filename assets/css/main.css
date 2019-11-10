@@ -2153,7 +2153,7 @@ input, select, textarea {
 		justify-content: center;
 		position: relative;
 		height: 33em;
-		background: url("../../images/banner.jpg") center center;
+		background: url("../../images/banner.png") center center;
 		background-size: cover;
 		padding: 0;
 	}
