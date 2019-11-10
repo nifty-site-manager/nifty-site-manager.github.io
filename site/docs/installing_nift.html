@@ -200,7 +200,7 @@
 		    				</p>
 		    
 		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-		    <pre>
+		    <pre class="prettyprint">
 snap install nift
 sudo snap alias nift nsm
 </pre>
@@ -222,7 +222,7 @@ sudo snap alias nift nsm
 		    				</p>
 		    
 		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-		    <pre>
+		    <pre class="prettyprint lang-bash">
 flatpak install --user https://flathub.org/repo/appstream/cc.nift.nsm.flatpakref
 </pre>
 		    </div>
@@ -232,7 +232,7 @@ flatpak install --user https://flathub.org/repo/appstream/cc.nift.nsm.flatpakref
 		    				</p>
 		    
 		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-		    <pre>
+		    <pre class="prettyprint lang-bash">
 flatpak install cc.nift.nsm.flatpakref
 </pre>
 		    </div>
@@ -246,7 +246,7 @@ flatpak install cc.nift.nsm.flatpakref
 		    				</p>
 		    
 		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-		    <pre>
+		    <pre class="prettyprint">
 alias nsm="flatpak run cc.nift.nsm"
 alias nift="flatpak run cc.nift.nsm" 
 </pre>
@@ -257,7 +257,7 @@ alias nift="flatpak run cc.nift.nsm"
 		    				</p>
 		    
 		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-		    <pre>
+		    <pre class="prettyprint lang-bash">
 flatpak uninstall cc.nift.nsm/x86_64/stable
 </pre>
 		    </div>
@@ -275,8 +275,9 @@ flatpak uninstall cc.nift.nsm/x86_64/stable
 		    				</p>
 		    
 		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-		    <pre>
-$ cd /usr/ports/www/nift $ make install clean
+		    <pre class="prettyprint lang-bash">
+$ cd /usr/ports/www/nift 
+$ make install clean
 </pre>
 		    </div>
 		    
@@ -285,7 +286,7 @@ $ cd /usr/ports/www/nift $ make install clean
 		    				</p>
 		    
 		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-		    <pre>
+		    <pre class="prettyprint">
 $ pkg install www/nift
 </pre>
 		    </div>
@@ -294,7 +295,7 @@ $ pkg install www/nift
 		    					Alternative install using pkgng:
 		    				</p>
 		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-		    <pre>
+		    <pre class="prettyprint lang-bash">
 $ su -
 # portsnap fetch
 # portsnap update
@@ -310,7 +311,7 @@ $ su -
 		    				</p>
 		    
 		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-		    <pre>
+		    <pre class="prettyprint">
 $ cd /usr/ports/www/nift
 $ make deinstall
 </pre>
@@ -321,7 +322,7 @@ $ make deinstall
 		    				</p>
 		    
 		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-		    <pre>
+		    <pre class="prettyprint">
 $ pkg delete www/nift
 </pre>
 		    </div>
@@ -339,17 +340,17 @@ $ pkg delete www/nift
 		    				</p>
 		    
 		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-		    <pre>
+		    <pre class="prettyprint lang-bash">
 $ layman -f -o https://raw.githubusercontent.com/NuLL3rr0r/gentoo-overlay/master/repositories.xml -a NuLL3rr0r
 </pre>
 		    </div>
 		    
 		    				<p>
-		    					On Gentoo stable, for the latest stable release:
+		    					For installing the latest stable release of Nift:
 		    				</p>
 		    
 		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-		    <pre>
+		    <pre class="prettyprint">
 $ emerge -atuv www-apps/nift
 </pre>
 		    </div>
@@ -359,21 +360,29 @@ $ emerge -atuv www-apps/nift
 		    				</p>
 		    
 		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-		    <pre>
+		    <pre class="prettyprint">
 $ emerge -atuv '=www-apps/nift-9999'
 </pre>
 		    </div>
 		    
 		    				<p>
-		    					On Gentoo unstable <mono>=www-apps/nift-9999</mono> is default, so if you need the stable version, it should be specified as, e.g. <mono>=www-apps/nift-1.7</mono>.
+		    					In order to set the development version as the default installed version of Nift, and avoid getting it downgraded by Portage on subsequent @world upgrades:
 		    				</p>
+		    
+		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
+		    <pre class="prettyprint">
+$ mkdir -p /etc/portage/package.accept_keywords/
+$ echo '=www-apps/nift-9999 **' &gt; /etc/portage/package.accept_keywords/www-apps_nift
+$ emerge -atuv '=www-apps/nift-9999'
+</pre>
+		    </div>
 		    
 		    				<p>
 		    					To uninstall <mono>Nift</mono> enter:
 		    				</p>
 		    
 		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-		    <pre>
+		    <pre class="prettyprint">
 $ emerge -C www-apps/nift
 </pre>
 		    </div>
@@ -388,7 +397,7 @@ $ emerge -C www-apps/nift
 		    				</p>
 		    
 		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-		    <pre>
+		    <pre class="prettyprint">
 choco install nsm
 </pre>
 		    </div>
