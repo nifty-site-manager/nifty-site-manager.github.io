@@ -75,7 +75,7 @@
 					<div class="col-6 col-12-medium">
 						<section>
 							<h3 class="icon solid fa-check">Command-Line Integration</h3>
-							<p>Nift brings you the full power of the command line, with syntax in the template language to run or inject the output of scripts or system calls any point while building webpages.</p>
+							<p>Nift brings you the full power of the command line, with syntax in the template language to run or inject the output of scripts or system calls at any point while building webpages.</p>
 						</section>
 					</div>
 					<div class="col-6 col-12-medium">
