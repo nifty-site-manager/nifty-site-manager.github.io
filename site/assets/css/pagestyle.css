@@ -160,7 +160,7 @@ a.bb
 
 a.bb:hover
 {
-	color:#305da6;
+	color:#535678;
 
 	-o-transition:0.3s;
 	-ms-transition:0.3s;
@@ -174,7 +174,7 @@ a.gh
 	text-decoration:none;
 
 	outline: 0;
-	color:grey;
+	color:#1F1F1F;
 
 	transition-property: color;
 	-o-transition:0.8s;
@@ -186,7 +186,7 @@ a.gh
 
 a.gh:hover
 {
-	color:#1F1F1F;
+	color:grey;
 
 	-o-transition:0.3s;
 	-ms-transition:0.3s;
