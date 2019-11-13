@@ -263,18 +263,20 @@ table.Loki td
 
 /* width */
 ::-webkit-scrollbar {
-	width: 7px;
-	height: 7px;
+	width: 10px;
+	height: 10px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
  	background: #4a4233; 
+	border-radius:5px;
 }
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
  	background: #888; 
+	border-radius:5px;
 }
 
 /* Handle on hover */
