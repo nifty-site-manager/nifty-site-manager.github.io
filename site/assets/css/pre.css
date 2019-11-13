@@ -3,6 +3,40 @@
 	for the prettyprint readme.
 */
 
+/* desert scheme ported from vim to google prettify */
+pre .nocode { background-color: none; color: #000 }
+pre .str { color: #ffa0a0 } /* string  - pink */
+pre .kwd { color: #f0e68c; font-weight: bold }
+pre .com { color: #87ceeb } /* comment - skyblue */
+pre .typ { color: #98fb98 } /* type    - lightgreen */
+pre .lit { color: #CB917E } /* literal - darkred */
+pre .pun { color: #fff }    /* punctuation */
+pre .pln { color: #fff }    /* plaintext */
+pre .tag { color: #f0e68c; font-weight: bold } /* html/xml tag    - lightyellow */
+pre .atn { color: #bdb76b; font-weight: bold } /* attribute name  - khaki */
+pre .atv { color: #ffa0a0 } /* attribute value - pink */
+pre .dec { color: #98fb98 } /* decimal         - lightgreen */
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums { margin-top: 0; margin-bottom: 0; color: #AEAEAE } /* IE indents via margin-left */
+li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8 { list-style-type: none }
+/* Alternate shading for lines */
+li.L1,li.L3,li.L5,li.L7,li.L9 { }
+
+@media print {
+  pre.prettyprint { background-color: none }
+  pre .str, code .str { color: #060 }
+  pre .kwd, code .kwd { color: #006; font-weight: bold }
+  pre .com, code .com { color: #600; font-style: italic }
+  pre .typ, code .typ { color: #404; font-weight: bold }
+  pre .lit, code .lit { color: #044 }
+  pre .pun, code .pun { color: #440 }
+  pre .pln, code .pln { color: #000 }
+  pre .tag, code .tag { color: #006; font-weight: bold }
+  pre .atn, code .atn { color: #404 }
+  pre .atv, code .atv { color: #060 }
+}
+
 pre ol.linenums
 {
 	margin-left: 20px;
@@ -14,7 +48,7 @@ pre ol.linenums > li
 	list-style-type: decimal; 
 
 	/*linenum font color*/
-	color:#484848;
+	color:white;
 
 	border-left-style: dashed;
     border-left-width: 1px;
@@ -22,9 +56,11 @@ pre ol.linenums > li
 
 	padding-left: 8px !important;
 	padding-top: 1px;
+
+	line-height: 1.5;
 	
 	/*sets background color for every second line*/
-	background: #ada795;
+	background: transparent;
 }
 
 pre.scroll
@@ -52,43 +88,34 @@ pre.wrap
 	word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 
-pre.Loki
-{
-	background-color: #3c3d40 !important;
-	color: #78be20;
-
-	-moz-box-shadow: 3px 3px 5px #dbdad7;
-    -webkit-box-shadow: 3px 3px 5px #dbdad7;
-    box-shadow: 3px 3px 5px #dbdad7;
-}
-
 pre
 {
+	-webkit-overflow-scrolling: touch;
+	background-color: #363331;
+	border: solid 1px #e5e5e5;
+	font-family: monospace;
+	font-size: 0.8em;
+	line-height: 1.5em;
+	margin: 0 0 2em 0;
+	padding: 1em 1.5em;
+
 	display: block;
 	text-align:left !important;
-	background: #ada795;
+	color: white !important;
 
 	/*picks the first available font and resizes*/
 	font-family: DejaVu Sans Mono, Liberation Mono, Consolas, Ubuntu Mono, Courier New;
-	font-size: 85%;
 	tab-size: 4;
 
 	max-width: 90%;
 	overflow: auto;
 	
-	border-style: solid;
-    border-width: 1px;
-	border-color: #888888;
-
-	margin-top: 1px;
-	margin-bottom: 5px;
+	margin: 0 auto;
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
 
 	padding-left: 8px !important; 
 	padding-right:5px !important;
 	padding-top:0 !important;
 	padding-bottom:0 !important;
-
-	-moz-box-shadow: 3px 3px 5px #484848;
-    -webkit-box-shadow: 3px 3px 5px #484848;
-    box-shadow: 3px 3px 5px #484848;
 }
