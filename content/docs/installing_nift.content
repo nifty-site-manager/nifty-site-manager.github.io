@@ -46,13 +46,12 @@
 
 <div align="center" style="margin-top:-20px; margin-bottom: 20px">
 <pre class="prettyprint">
-snap install nift
-sudo snap alias nift nsm
+snap install nift --classic
 </pre>
 </div>
 
 				<p>
-					To uninstall <mono>Nift</mono> enter <mono>sudo snap unalias nsm</mono> and <mono>snap remove nift</mono>.
+					To uninstall <mono>Nift</mono> enter <mono>snap remove nift</mono>.
 				</p>
 
 				<h2 id="linux-flatpak">Linux installation using <mono>Flatpak</mono></h2>
