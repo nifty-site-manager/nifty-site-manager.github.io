@@ -16,30 +16,8 @@
         <link rel="stylesheet" href="../assets/css/pre.css">
         <link rel='icon' type='image/png' href='../images/favicon.png'>
         
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-62165905-2"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-        
-          gtag('config', 'UA-62165905-2');
-        </script>
-        
-        <!-- uses google-code-prettify for syntax highlighting 
-             see https://github.com/google/code-prettify/ for more info -->
-        <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
-        
         <!-- uses Font Awesome for vector icons and social logos -->
         <script src="https://kit.fontawesome.com/b51e6952ec.js"></script>
-        
-        <!-- hack redirecting to a secure protocol when users 
-             visit domain using an insecure protocol -->
-        <script>
-        	var host = "nifty-site-manager.gitlab.io";
-        	if ((host == window.location.host) && (window.location.protocol != "https:"))
-        		window.location.protocol = "https";	
-        </script>
     </head>
     <body class="is-preload">
 		<div id="page-wrapper">
@@ -445,13 +423,27 @@
 		<script src="../assets/js/showdown.min.js"></script>
 		<script>
 			var converter = new showdown.Converter();
-			converter.setOption('tables', 'on');
 			converter.setOption('emoji', 'on');
+			converter.setOption('tables', 'on');
 			converter.setOption('strikethrough', 'on');
 			elements = document.getElementsByClassName('markdown');
 			for(var i=0; i<elements.length; i++)
 				elements[i].innerHTML = converter.makeHtml(elements[i].innerHTML.replace(/&lt;/g, "xwxw").replace(/&gt;/g, "pqpq")).replace(/xwxw/g, "&lt;").replace(/pqpq/g, "&gt;");
 		</script>
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-62165905-2"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-62165905-2');
+		</script>
+
+		<!-- uses google-code-prettify for syntax highlighting 
+			 see https://github.com/google/code-prettify/ for more info -->
+		<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 
 		<!-- uses MathJax CDC for LaTeX support
 			 see http://docs.mathjax.org/en/latest/start.html for more info -->
