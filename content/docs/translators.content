@@ -82,7 +82,7 @@
 				</p>
 
 				<center>
-					<img src="@pathtofile(site/images/translate.webp)" width=400 style="margin-bottom:20px; border-radius: 30%; max-width:80%">
+					<img src="@pathtofile(site/images/translate-world.png)" width=400 style="margin-bottom:20px; border-radius: 30%; max-width:80%">
 				</center>
 
 				<h2>DeepL Translator CLI</h2>
