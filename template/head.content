@@ -6,27 +6,5 @@
 <link rel="stylesheet" href="@pathtofile(site/assets/css/pre.css)">
 <link rel='icon' type='image/png' href='@pathtofile("site/images/favicon.png")'>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-62165905-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-62165905-2');
-</script>
-
-<!-- uses google-code-prettify for syntax highlighting 
-     see https://github.com/google/code-prettify/ for more info -->
-<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
-
 <!-- uses Font Awesome for vector icons and social logos -->
 <script src="https://kit.fontawesome.com/b51e6952ec.js"></script>
-
-<!-- hack redirecting to a secure protocol when users 
-     visit domain using an insecure protocol -->
-<script>
-	var host = "nifty-site-manager.gitlab.io";
-	if ((host == window.location.host) && (window.location.protocol != "https:"))
-		window.location.protocol = "https";	
-</script>
