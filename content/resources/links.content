@@ -220,6 +220,12 @@
 					<li><a href="https://imgur.com">Imgur</a></li>
 				</ul> 
 
+				<h3>Lazy Loading Images</h3>
+				<ul>
+					<li><a href="https://github.com/ApoorvSaxena/lozad.js">Lozad.js</a></li>
+					<li><a href="https://github.com/malchata/yall.js">Yet Another Lazy Loader</a></li>
+				</ul> 
+
 				<h3>Animation Videos (At Cost)</h3>
 				<ul>
 					<li><a href="http://yescaptain.net/">Yes Captain</a></li>
