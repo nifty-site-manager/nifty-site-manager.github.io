@@ -9,39 +9,55 @@
 				</p>
 
 				<center>
-					<img src="@pathtofile(site/images/rabbit.svg)" width="450px" style="max-width:80%; margin-bottom: 20px">
+					<img src="@pathtofile(site/images/rabbit.svg)" alt="Nift bunny mascot with white text" width="450px" style="max-width:80%; margin-bottom: 20px">
 				</center>
 
 				<center>
-					<img src="@pathtofile(site/images/badger.svg)" width="450px" style="max-width:80%; margin-bottom: 20px">
+					<img src="@pathtofile(site/images/badger.svg)" alt="Nift badger mascot with black text" width="450px" style="max-width:80%; margin-bottom: 20px">
 				</center>
 
 				<center>
-					<img src="@pathtofile(site/images/rabbit-black.svg)" width="450px" style="max-width:80%; margin-bottom: 20px">
+					<img src="@pathtofile(site/images/loki-rabbit1-white.svg)" alt="Nift bunny mascot with Loki boomerangs and white text" width="450px" style="max-width:80%; margin-bottom: 20px">
 				</center>
 
 				<center>
-					<img src="@pathtofile(site/images/badger-black.svg)" width="450px" style="max-width:80%; margin-bottom: 20px">
+					<img src="@pathtofile(site/images/loki-rabbit2-white.svg)" alt="Nift bunny mascot with Loki coin and white text" width="450px" style="max-width:80%; margin-bottom: 20px">
 				</center>
 
 				<center>
-					<img src="@pathtofile(site/images/rabbit-icon.svg)" width="400px" style="max-width:80%; margin-bottom: 20px">
+					<img src="@pathtofile(site/images/rabbit-black.svg)" alt="Nift bunny mascot with black text" width="450px" style="max-width:80%; margin-bottom: 20px">
 				</center>
 
 				<center>
-					<img src="@pathtofile(site/images/badger-icon.svg)" width="400px" style="max-width:80%; margin-bottom: 20px">
+					<img src="@pathtofile(site/images/badger-black.svg)" alt="Nift badger mascot with black text" width="450px" style="max-width:80%; margin-bottom: 20px">
 				</center>
 
 				<center>
-					<img src="@pathtofile(site/images/loki-rabbit1.svg)" width="400px" style="max-width:80%; margin-bottom: 20px">
+					<img src="@pathtofile(site/images/loki-rabbit1-black.svg)" alt="Nift bunny mascot with Loki boomerangs and black text" width="450px" style="max-width:80%; margin-bottom: 20px">
 				</center>
 
 				<center>
-					<img src="@pathtofile(site/images/loki-rabbit2.svg)" width="400px" style="max-width:80%; margin-bottom: 20px">
+					<img src="@pathtofile(site/images/loki-rabbit2-black.svg)" alt="Nift bunny mascot with Loki coin and black text" width="450px" style="max-width:80%; margin-bottom: 20px">
 				</center>
 
 				<center>
-					<img src="@pathtofile(site/images/devil.png)" width="400px" style="max-width:80%">
+					<img src="@pathtofile(site/images/rabbit-icon.svg)" alt="Nift bunny mascot without text" width="400px" style="max-width:80%; margin-bottom: 20px">
+				</center>
+
+				<center>
+					<img src="@pathtofile(site/images/badger-icon.svg)" alt="Nift badger mascot without text" width="400px" style="max-width:80%; margin-bottom: 20px">
+				</center>
+
+				<center>
+					<img src="@pathtofile(site/images/loki-rabbit1.svg)" alt="Nift bunny mascot with Loki boomerangs and no text" width="400px" style="max-width:80%; margin-bottom: 20px">
+				</center>
+
+				<center>
+					<img src="@pathtofile(site/images/loki-rabbit2.svg)" alt="Nift bunny mascot with Loki coin and no text" width="400px" style="max-width:80%; margin-bottom: 20px">
+				</center>
+
+				<center>
+					<img src="@pathtofile(site/images/devil.png)" alt="Nift Tassie devil mascot" width="400px" style="max-width:80%">
 				</center>
 		</section>
 	</div>

@@ -10,7 +10,7 @@
 
 			<!-- Image -->
 			<center>
-				<img src="@pathtofile(site/images/active_support.svg)" width=300 style="margin-bottom:40px">
+				<img src="@pathtofile(site/images/active_support.svg)" alt="unDraw active support illustration" width=300 style="margin-bottom:40px">
 			</center>
 
 			<div class="content">

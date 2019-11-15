@@ -10,7 +10,7 @@
 
 			<!-- Image -->
 			<center>
-				<img src="@pathtofile(site/images/devil.png)" width=300 style="margin-bottom:40px">
+				<img src="@pathtofile(site/images/devil.png)" alt="Nift Tassie devil mascot" width=300 style="margin-bottom:40px">
 			</center>
 
 			<div class="content">

@@ -10,7 +10,7 @@
 
 			<div class="content" style="margin-top:-50px;">
 				<center>
-					<img src="@pathtofile(site/images/translate.jpg)" width=300 style="margin-bottom:20px; border-radius: 50%; max-width:70%">
+					<img src="@pathtofile(site/images/translate.jpg)" alt="Google translate on Globe image" width=300 style="margin-bottom:20px; border-radius: 50%; max-width:70%">
 				</center>
 
 				<p>
@@ -22,7 +22,7 @@
 				</p>
 
 				<center>
-					<img src="@pathtofile(site/images/translate.png)" width=400 style="margin-bottom:20px; border-radius: 50%; max-width:80%">
+					<img src="@pathtofile(site/images/translate.png)" alt="Google translate hello to hola image" width=400 style="margin-bottom:20px; border-radius: 50%; max-width:80%">
 				</center>
 
 				<h2>Translate Shell</h2>
@@ -82,7 +82,7 @@
 				</p>
 
 				<center>
-					<img src="@pathtofile(site/images/translate-world.png)" width=400 style="margin-bottom:20px; border-radius: 30%; max-width:80%">
+					<img src="@pathtofile(site/images/translate-world.png)" alt="translated text on world map" width=400 style="margin-bottom:20px; border-radius: 30%; max-width:80%">
 				</center>
 
 				<h2>DeepL Translator CLI</h2>
@@ -200,7 +200,7 @@ $ yarn global add deepl-translator-cli
 				</p>
 
 				<center>
-					<img src="@pathtofile(site/images/trans.png)" width=400 style="margin-bottom:20px; border-radius: 10%; max-width:80%">
+					<img src="@pathtofile(site/images/trans.png)" alt="translated text on mobile, tablet and PC" width=400 style="margin-bottom:20px; border-radius: 10%; max-width:80%">
 				</center>
 			</div>
 		</section>

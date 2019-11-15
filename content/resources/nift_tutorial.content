@@ -10,7 +10,7 @@
 
 			<!-- Image -->
 			<center>
-				<img src="@pathtofile(site/images/teaching.svg)" width=300 style="margin-bottom:40px">
+				<img src="@pathtofile(site/images/teaching.svg)" alt="unDraw teaching illustration" width=300 style="margin-bottom:40px">
 			</center>
 
 			<div class="content">
