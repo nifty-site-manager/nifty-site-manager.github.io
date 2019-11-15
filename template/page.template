@@ -38,6 +38,14 @@
 				elements[i].innerHTML = converter.makeHtml(elements[i].innerHTML.replace(/&lt;/g, "xwxw").replace(/&gt;/g, "pqpq")).replace(/xwxw/g, "&lt;").replace(/pqpq/g, "&gt;");
 		</script>
 
+		<!-- Inserts current year -->
+		<script>
+			var x = document.getElementsByName("cyear");
+
+			for(var i=0; i<x.length; i++)
+				x[i].innerHTML = new Date().getFullYear();
+		</script>
+
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-62165905-2"></script>
 		<script>
