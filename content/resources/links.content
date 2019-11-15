@@ -222,6 +222,7 @@
 
 				<h3>Lazy Loading Images</h3>
 				<ul>
+					<li><a href="https://github.com/aFarkas/lazysizes">lazysizes</a></li>
 					<li><a href="https://github.com/ApoorvSaxena/lozad.js">Lozad.js</a></li>
 					<li><a href="https://github.com/malchata/yall.js">Yet Another Lazy Loader</a></li>
 				</ul> 
