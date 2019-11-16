@@ -32,11 +32,23 @@
 	<div class="container">
 		<!-- Image -->
 		<center>
-			<img class="image featured" src="images/nifty-site-manager-parch.png" alt="nifty site manager banner" />
+			<img class="image featured" src="@pathtofile(site/images/nifty-site-manager-parch.png)" alt="nifty site manager banner" />
 		</center>
 
 		<!-- Features -->
 		<section id="features">
+			<header class="style1" style="margin-bottom: -40px">
+				<h2>Recommended by</h2>
+			</header>
+			<center>
+				<a href="https://www.npmjs.com/"><img src="@pathtofile(site/images/npm.svg)" alt="npm logo" width="250px" style="max-width:70%"></a>
+			</center><br>
+
+			<!--
+				https://medium.com/npm-inc/npm-weekly-219-the-new-security-insights-api-wombat-day-and-more-cf3bfb9659c6
+				https://web.archive.org/web/20191116121954/https://medium.com/npm-inc/npm-weekly-219-the-new-security-insights-api-wombat-day-and-more-cf3bfb9659c6
+			-->
+
 			<header class="style1">
 				<h2>Why use Nift over other website generators?</h2>
 			</header>
