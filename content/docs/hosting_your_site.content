@@ -17,6 +17,16 @@
 					To host your site just copy everything from the site directory (not the stage directory) to the server on which you would like to host it.
 				</p>
 
+				<p>
+					There are specific instructions at the following links for:
+					<ul style="text-indent:30px">
+						<li><a href="@pathtopage(docs/bitbucket_hosting)">BitBucket</a></li>
+						<li><a href="@pathtopage(docs/github_hosting)">GitHub</a></li>
+						<li><a href="@pathtopage(docs/gitlab_hosting)">GitLab</a></li>
+						<li><a href="@pathtopage(docs/netlify_hosting)">Netlify</a></li>
+					</ul>
+				</p>
+
 				<center>
 					<div style="max-width:90%; margin-top: -20px">
 					<a href="https://pages.bitbucket.io/"><img src="@pathtofile(site/images/bitbucket.svg)" alt="BitBucket logo" width=300 style="max-width:45%; vertical-align:middle"></a> 

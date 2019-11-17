@@ -30,7 +30,12 @@
 				</p>
 
 				<p>
-					<b>Note:</b> Currently if you install through Snap you will not be able to use the powerful scripting features that Nift has to their full extent, it is recommended in the meantime that you instead install from Flatpak or source. I am trying to work out how to rectify this, I am hoping getting approved for classic confinement will fix the problem. 
+					There are also specific instructions at the following links for:
+					<ul style="text-indent:30px">
+						<li><a href="@pathtopage(docs/linux_install)">Linux</a></li>
+						<li><a href="@pathtopage(docs/osx_install)">OSX</a></li>
+						<li><a href="@pathtopage(docs/windows_install)">Windows</a></li>
+					</ul>
 				</p>
 
 				<br>

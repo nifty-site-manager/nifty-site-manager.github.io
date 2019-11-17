@@ -41,11 +41,11 @@
 					<ul>
 						<li>
 							<a href="@pathto(docs/installing_nift)">Installing Nift</a>
-							<ul>
+							<!--<ul>
 								<li><a href="@pathto(docs/linux_install)">Linux</a></li>
 								<li><a href="@pathto(docs/osx_install)">OSX</a></li>
 								<li><a href="@pathto(docs/windows_install)">Windows</a></li>
-							</ul>
+							</ul>-->
 						</li>
 						<li><a href="@pathto(docs/nift_commands)">Nift Commands</a></li>
 						<li><a href="@pathto(docs/content_files)">Content Files</a></li>
@@ -56,15 +56,16 @@
 						<li><a href="@pathto(docs/translators)">Translators</a></li>
 						<li><a href="@pathto(docs/displaying_mathematics)">Displaying Mathematics</a></li>
 						<li><a href="@pathto(docs/displaying_code_blocks)">Displaying Code Blocks</a></li>
+						<li><a href="@pathto(docs/presentations)">Presentations</a></li>
 						<li><a href="@pathto(docs/lokinet_snapps)">Lokinet SNApps</a></li>
 						<li>
 							<a href="@pathto(docs/hosting_your_site)">Hosting Your Site</a>
-							<ul>
+							<!--<ul>
 								<li><a href="@pathto(docs/bitbucket_hosting)">BitBucket</a></li>
 								<li><a href="@pathto(docs/github_hosting)">GitHub</a></li>
 								<li><a href="@pathto(docs/gitlab_hosting)">GitLab</a></li>
 								<li><a href="@pathto(docs/netlify_hosting)">Netlify</a></li>
-							</ul>
+							</ul>-->
 						</li>
 					</ul>
 				</li>

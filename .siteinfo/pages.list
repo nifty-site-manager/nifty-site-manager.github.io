@@ -58,6 +58,10 @@ markdown
 'osx_install'
 'template/page.template'
 
+'docs/presentations'
+presentations
+'template/page.template'
+
 'docs/scripts'
 scripts
 'template/page.template'

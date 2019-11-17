@@ -116,63 +116,59 @@
 
 		    <!-- Main -->
 		    <section id="main" class="wrapper style2">
-		    	<div class="title">OSX Install</div>
+		    	<div class="title">Presentations</div>
 		    	<div class="container">
 		    		<!-- Features -->
 		    		<section id="features">
 		    			<header class="style1">
-		    				<h2>How to install Nift on OSX</h2>
+		    				<h2>Making presentations with Nift</h2>
 		    			</header>
 		    
 		    			<div class="content">
-		    				<h2>Installing <mono>Nift</mono> on OSX from source</h2>
-		    				<h3>Installing a <mono>c++</mono> compiler</h3>
+		    				<h3>You can use the following frameworks with Nift to make presentations for talks:</h3>
+		    				<ul style="text-indent:30px">
+		    					<li><a href="https://revealjs.com/">reveal.js</a> (<a href="https://github.com/hakimel/reveal.js">GitHub</a>)</li>
+		    					<li><a href="https://impress.js.org/">impress.js</a> (<a href="https://github.com/impress/impress.js/">GitHub</a>)</li>
+		    					<li><a href="http://imakewebthings.com/deck.js/">deck.js</a> (<a href="https://github.com/imakewebthings/deck.js">GitHub</a>)</li>
+		    					<li><a href="https://shwr.me/">Shower</a> (<a href="https://github.com/shower/shower">GitHub</a>)</li>
+		    					<li><a href="https://inspirejs.org/">inspire.js</a> (<a href="https://github.com/LeaVerou/inspire.js">GitHub</a>)</li>
+		    					<li><a href="https://github.com/Seldaek/slippy">Slippy</a></li>
+		    				</ul>
 		    
 		    				<p>
-		    					Install <a href="https://itunes.apple.com/au/app/xcode/id497799835?mt=12">Xcode</a>. Should you still encounter any problems compiling <mono>nsm</mono> there is a good chance <mono>command line tools</mono> was not installed by default. To manually install it yourself: open Xcode, go to <mono>preferences</mono>, click on the <mono>downloads</mono> tab, then you should be able to download and install <mono>command line tools</mono>.
+		    					For template presentation repositories that you can import (or fork and rename) then clone to start making presentations, see the table below:
 		    				</p>
 		    
-		    				<h3>Installing <mono>Nift</mono></h3>
-		    
-		    				<p>
-		    					Download <a href="https://gitlab.com/nifty-site-manager/nsm/repository/master/archive.zip">nsm-master-*.zip</a>, then follow these steps to compile and install:
-		    				</p>
-		    
-		    				<ol>
-		    					<li>
-		    						Extract <mono>nsm-master-*</mono> from <mono>nsm-master-*.zip</mono>;
-		    					</li>
-		    					<li>
-		    						Open a terminal window and change directory to <mono>~/Downloads/nsm-master-*</mono>;
-		    					</li>
-		    					<li>
-		    						Compile <mono>nsm</mono> by running <mono>make</mono>;
-		    					</li>
-		    					<li>
-		    						Install <mono>nsm</mono> by running <mono>sudo make install</mono> (note - you will need to enter your password) (note - you may need to open a new terminal window for the <mono>Nift</mono> installation to be recognised);
-		    					</li>
-		    					<li>
-		    						Delete both the file <mono>nsm-master-*.zip</mono> and the directory <mono>nsm-master-*</mono> containing the uncompiled code. 
-		    					</li>
-		    				</ol>
-		    
-		    				<p>
-		    					For example, if you unzipped <mono>nsm-master-*</mono> inside your downloads folder, then steps 1-4 are achieved by entering the following into your terminal window:
-		    
-		    					<div align="center">
-		    <pre class="prettyprint inline rounded lang-bsh">
-cd ~/Downloads/nsm-master-*
-make
-sudo make install
-</pre>
+		    				<center>
+		    					<div class="xscroll">
+		    						<table id="blogs_table" class="alt">
+		    						  <thead>
+		    						  	<tr>
+		    						  		<th>name</th>
+		    						  		<th>demo</th>
+		    						  		<th>repository</th>
+		    						  	</tr>
+		    						  </thead>
+		    						  <tr>
+		    						  	<td>impress-template</td>
+		    						  	<td><a href="https://nsm-presentations.github.io/impress-template/">GitHub</a> - <a href="https://nsm-presentations.gitlab.io/impress-template/">GitLab</a></td>
+		    						  	<td><a href="https://bitbucket.org/nsm-presentations/impress-template">BitBucket</a> - <a href="https://github.com/nsm-presentations/impress-template">GitHub</a> - <a href="https://gitlab.com/nsm-presentations/impress-template">GitLab</a></td>
+		    						  </tr>
+		    						  <tr>
+		    						  	<td>reveal-template</td>
+		    						  	<td><a href="https://nsm-presentations.github.io/reveal-template/">GitHub</a> - <a href="https://nsm-presentations.gitlab.io/reveal-template/">GitLab</a></td>
+		    						  	<td><a href="https://bitbucket.org/nsm-presentations/reveal-template">BitBucket</a> - <a href="https://github.com/nsm-presentations/reveal-template">GitHub</a> - <a href="https://gitlab.com/nsm-presentations/reveal-template">GitLab</a></td>
+		    						  </tr>
+		    						  <tfoot>
+		    						  	<tr>
+		    						  		<th>name</th>
+		    						  		<th>demo</th>
+		    						  		<th>repository</th>
+		    						  	</tr>
+		    						  </tfoot>
+		    						</table>
 		    					</div>
-		    				</p>
-		    
-		    
-		    				<h3>Uninstalling <mono>Nift</mono></h3>
-		    				<p>
-		    					Should you ever want to remove <mono>nsm</mono> from your machine, simply run <mono>sudo make uninstall</mono>.
-		    				</p>
+		    				</center>
 		    			</div>
 		    		</section>
 		    	</div>
