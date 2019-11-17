@@ -2225,6 +2225,8 @@ input, select, textarea {
 
 				#nav > ul > li > ul {
 					display: none;
+					max-height: 250px;
+					overflow-y: scroll;
 				}
 
 				#nav > ul > li > a, #nav > ul > li > span {
