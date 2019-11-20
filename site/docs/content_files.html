@@ -175,6 +175,37 @@
 		    				</p>
 		    
 		    				<h4>
+		    					String variables
+		    				</h4>
+		    				<p>
+		    					You can define string variables using <mono>&commat;stringdef(<i>varName</i> = <i>varValue</i>)</mono>, where <mono><i>varName</i></mono> is the variable name and <mono><i>varValue</i></mono> is the variable value. For example you might have:
+		    
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline lang-bash">
+&commat;stringdef(str = "hello, world!")
+</pre>
+		    </div>
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> variable names cannot contain the characters <mono>'='</mono>, <mono>')'</mono> or <mono>' '</mono>.
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> you can use <mono>\'</mono> for <mono>'</mono> and <mono>\"</mono> for <mono>"</mono> in variable values. 
+		    				</p>
+		    
+		    				<p>
+		    					You can reference string variables using <mono>&commat;string(<i>varName</i>)</mono>, where <mono><i>varName</i></mono> is the variable name. For example to reference the string defined above use:
+		    
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline lang-bash">
+&commat;string(str)
+</pre>
+		    </div>
+		    				</p>
+		    
+		    				<h4>
 		    					Inputting text from other files
 		    				</h4>
 		    				<p>
@@ -184,21 +215,21 @@
 		    				<p>
 		    					For example suppose inside your website directory you have <mono>template/footer.content</mono>:
 		    
-		    					<div align="center">
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline lang-bash">
 Page was last built on &commat;currentdate.
 </pre>
-		    					</div>
+		    </div>
 		    				</p>
 		    
 		    				<p>
 		    					To input <mono>template/footer.content</mono> into another file write:
 		    
-		    					<div align="center">
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline">
 &commat;input("template/footer.content")
 </pre>
-		    					</div>
+		    </div>
 		    				</p>
 		    
 		    				<p>
@@ -216,7 +247,7 @@ Page was last built on &commat;currentdate.
 		    				<p>
 		    					An example of when users may find this useful is when writing menus for page templates, or adding local links for any template files. An example of a smaller version of the menu for this site using <mono>&commat;pathto(page-name)</mono> is below:
 		    
-		    					<div align="center">
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint linenums">
 &lt;nav>
 	&lt;ul class="drop_menu">
@@ -229,8 +260,8 @@ Page was last built on &commat;currentdate.
 			&lt;div class="dm_text">Documentation&lt;/div>
 			&lt;ul class ="drop_submenu">
 				&lt;li class="dsm_li">&lt;a href="&commat;pathto(documentation/installing_nift)">Installing Nift&lt;/a>&lt;/li>
-				&lt;li class="dsm_li">&lt;a href="&commat;pathto(documentation/nsm_tutorial)">Nift tutorial&lt;/a>&lt;/li>
-				&lt;li class="dsm_li">&lt;a href="&commat;pathto(documentation/nsm_commands)">Nift commands&lt;/a>&lt;/li>
+				&lt;li class="dsm_li">&lt;a href="&commat;pathto(documentation/nift_tutorial)">Nift tutorial&lt;/a>&lt;/li>
+				&lt;li class="dsm_li">&lt;a href="&commat;pathto(documentation/nift_commands)">Nift commands&lt;/a>&lt;/li>
 			&lt;/ul>
 		&lt;/li>
 
@@ -241,7 +272,7 @@ Page was last built on &commat;currentdate.
 	&lt;/ul>
 &lt;/nav>
 </pre>
-		    					</div>
+		    </div>
 		    				</p>
 		    
 		    				<p>
@@ -251,14 +282,14 @@ Page was last built on &commat;currentdate.
 		    				<p>
 		    					The footer content file for this site (inputted in the <mono>template/page.template</mono> file) is given below as an example using <mono>&commat;pathtofile(path-to-file)</mono>:
 		    
-		    					<div align="center">
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint linenums">
 &lt;footer>
 	&lt;hr>
 	&lt;center>&lt;img src="&commat;pathtofile(site/files/nsm.png)" width="120">&lt;/center>
 
 	&lt;p>
-		&lt;b>Mirrors:&lt;/b> [&lt;a href="https://nifty-site-manager.com/">Official&lt;/a>] [&lt;a href="https://nifty-site-manager.bitbucket.io/">BitBucket&lt;/a>] [&lt;a href="https://nifty-site-manager.github.io/">GitHub&lt;/a>] [&lt;a href="https://nifty-site-manager.gitlab.io/">GitLab&lt;/a>] [&lt;a href="https://web.archive.org/web/https://www.nifty-site-manager.com/">archive.org&lt;/a>]
+		&lt;b>Mirrors:&lt;/b> [&lt;a href="https://nift.cc/">Official&lt;/a>] [&lt;a href="https://nifty-site-manager.bitbucket.io/">BitBucket&lt;/a>] [&lt;a href="https://nifty-site-manager.github.io/">GitHub&lt;/a>] [&lt;a href="https://nifty-site-manager.gitlab.io/">GitLab&lt;/a>]
 	&lt;/p>
 
 	&lt;p>
@@ -270,7 +301,7 @@ Page was last built on &commat;currentdate.
 	&lt;noselect>&lt;small>&copy;&nbsp;2015-&commat;loadYY &lt;a href="https://n-ham.com/">Nicholas Ham&lt;/a>&lt;/small>&lt;/noselect>
 &lt;/footer>
 </pre>
-		    					</div>
+		    </div>
 		    				</p>
 		    
 		    				<h4>Adding page dependencies</h4>
@@ -289,13 +320,19 @@ Page was last built on &commat;currentdate.
 		    				</p>
 		    
 		    				<p>
-		    					For example if you want to run a script <mono>script.bat</mono>, you can do so with:
+		    					For example if you want to run a scripts <mono>'script.py'</mono>, you can do so with:
 		    
-		    					<div align="center">
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline lang-bash">
-&commat;script(script.bat)
+&commat;script('./script.py')
 </pre>
-		    					</div>
+		    </div>
+		    
+		    					<b>Note:</b> You should use single outer quotes and double inner quotes if running a program or script with spaces in the name.
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> You should prepend <mono>./</mono> before scripts and programs so that your websites will build cross-platform (provided you use cross-platform scripting/programming languages, tools etc.).
 		    				</p>
 		    
 		    				<h4>Inputting script output</h4>
@@ -304,18 +341,40 @@ Page was last built on &commat;currentdate.
 		    				</p>
 		    
 		    				<p>
-		    					For example suppose you want to input the output from running a script <mono>"linux script.sh"</mono>, you can do so with:
+		    					For example suppose you want to input the output from running a script <mono>"linux script.py"</mono>, you can do so with:
 		    
-		    					<div align="center">
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline">
-&commat;scriptoutput("./linux script.sh")
+&commat;scriptoutput('./"linux script.py"')
 </pre>
-		    					</div>
+		    </div>
+		    
+		    					<b>Note:</b> You should use single outer quotes and double inner quotes if running a program or script with spaces in the name.
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> You should prepend <mono>./</mono> before scripts and programs so that your websites will build cross-platform (provided you use cross-platform scripting/programming languages, tools etc.).
 		    				</p>
 		    
 		    				<h4>Running system calls</h4>
 		    				<p>
 		    					System calls may be run using <mono>&commat;system(system-call)</mono>, where <mono>system-call</mono> is the system call or you want to run. 
+		    				</p>
+		    
+		    				<p>
+		    					For example suppose you want to run <mono>"test prog.exe"</mono>, you can do so with:
+		    
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline">
+&commat;system('./"test prog.exe"')
+</pre>
+		    </div>
+		    
+		    					<b>Note:</b> You should prepend <mono>./</mono> before scripts and programs so that your websites will build cross-platform (provided you use cross-platform scripting/programming languages, tools etc.).
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> You should use single outer quotes and double inner quotes if running a program or script with spaces in the name.
 		    				</p>
 		    
 		    				<p>
@@ -328,17 +387,25 @@ Page was last built on &commat;currentdate.
 		    				</p>
 		    
 		    				<p>
+		    					<b>Note:</b> You should use single outer quotes and double inner quotes if running a program or script with spaces in the name.
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> You should prepend <mono>./</mono> before scripts and programs so that your websites will build cross-platform (provided you use cross-platform scripting/programming languages, tools etc.).
+		    				</p>
+		    
+		    				<p>
 		    					<b>Note:</b> you can use <mono>\'</mono> for <mono>'</mono> and <mono>\"</mono> for <mono>"</mono> in system-calls. 
 		    				</p>
 		    
 		    				<p>
 		    					For example suppose you want to input the text from <a href="https://pastebin.com/atjKuxY6">this</a> paste on <a href="https://pastebin.com">Paste Bin</a>, you can do so with:
 		    
-		    					<div align="center">
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline">
 &commat;systemoutput("curl -sS https://pastebin.com/raw/atjKuxY6")
 </pre>
-		    					</div>
+		    </div>
 		    				</p>
 		    
 		    				<h4>
@@ -347,21 +414,21 @@ Page was last built on &commat;currentdate.
 		    				<p>
 		    					You can include a css file using <mono>&commat;cssinclude(path-to-css-file)</mono>, where <mono>path-to-css-file</mono> is the path from the main site directory to the css file (<u>not</u> the path from the page to the css file). When building a page, <mono>Nift</mono> will replace <mono>&commat;cssinclude(path-to-css-file)</mono> with:
 		    
-		    					<div align="center">
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint lang-js inline">
 &lt;link rel='stylesheet' type='text/css' href='path-from-page-to-css-file'>
 </pre>
-		    					</div>
+		    </div>
 		    				</p>
 		    
 		    				<p>
 		    					Alternatively you can use:
 		    
-		    					<div align="center">
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint lang-js inline">
 &lt;link rel='stylesheet' type='text/css' href='&commat;pathtofile(path-to-css-file)'>
 </pre>
-		    					</div>
+		    </div>
 		    				</p>
 		    
 		    				<h4>
@@ -370,21 +437,21 @@ Page was last built on &commat;currentdate.
 		    				<p>
 		    					You can include am image file using <mono>&commat;imginclude(path-to-img-file)</mono>, where <mono>path-to-img-file</mono> is the path from the main site directory to the img file (<u>not</u> the path from the page to the img file). When building a page, <mono>Nift</mono> will replace <mono>&commat;imginclude(path-to-img-file)</mono> with the following:
 		    
-		    					<div align="center">
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint lang-js inline">
 &lt;img src="path-from-page-to-img-file">
 </pre>
-		    					</div>
+		    </div>
 		    				</p>
 		    
 		    				<p>
 		    					If you would like to set the width of an image, use something like the following in your source code:
 		    
-		    					<div align="center">
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint lang-js inline">
 &lt;img src="&commat;pathtofile(path-to-img-file)" width="120">
 </pre>
-		    					</div>
+		    </div>
 		    				</p>
 		    
 		    
@@ -394,21 +461,21 @@ Page was last built on &commat;currentdate.
 		    				<p>
 		    					You can include a js file using <mono>&commat;jsinclude(path-to-js-file)</mono>, where <mono>path-to-js-file</mono> is the path from the main site directory to the js file (<u>not</u> the path from the page to the js file). When building a page, <mono>Nift</mono> will replace <mono>&commat;jsinclude(path-to-js-file)</mono> with: 
 		    
-		    					<div align="center">
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint lang-js inline">
 &lt;script src="path-from-page-to-js-file">&lt;/script>
 </pre>
-		    					</div>
+		    </div>
 		    				</p>
 		    
 		    				<p>
 		    					Alternatively you can use:
 		    
-		    					<div align="center">
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint lang-js inline">
 &lt;script src="&commat;pathtofile(path-to-js-file)">&lt;/script>
 </pre>
-		    					</div>
+		    </div>
 		    				</p>
 		    
 		    				<h4>
@@ -417,33 +484,33 @@ Page was last built on &commat;currentdate.
 		    				<p>
 		    					You can include a favicon file using <mono>&commat;faviconinclude(path-to-favicon-file)</mono>, where <mono>path-to-favicon-file</mono> is the path from the main site directory to the favicon file (<u>not</u> the path from the page to the favicon file). When building a page, <mono>Nift</mono> will replace <mono>&commat;faviconinclude(path-to-favicon-file)</mono> with:
 		    
-		    					<div align="center">
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint lang-js inline">
 &lt;link rel='icon' type='image/png' href='path-from-page-to-favicon-file'>
 </pre>
-		    					</div>
+		    </div>
 		    				</p>
 		    
 		    				<p>
 		    					Alternatively you can use:
 		    
-		    					<div align="center">
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint lang-js inline">
 &lt;link rel='icon' type='image/png' href='&commat;pathtofile(path-to-favicon-file)'>
 </pre>
-		    					</div>
+		    </div>
 		    				</p>
 		    
 		    				<p>
 		    					An example of using <mono>&commat;cssinclude(path-to-css-file)</mono>, <mono>&commat;jsinclude(path-to-js-file)</mono> and <mono>&commat;faviconinclude(path-to-favicon-file)</mono> is given below (I typically put these in a <mono>head.content</mono> file located in the <mono>template</mono> directory and included in the <mono>template/page.template</mono> file in between the <mono>&lt;head>&lt;/head></mono> tags):
 		    
-		    					<div align="center">
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline">
 &commat;cssinclude("site/css/pagestyle.css")
 &commat;jsinclude("site/js/motion.css")
 &commat;faviconinclude("site/files/favicon.ico")
 </pre>
-		    					</div>
+		    </div>
 		    				</p>
 		    			</div>
 		    		</section>

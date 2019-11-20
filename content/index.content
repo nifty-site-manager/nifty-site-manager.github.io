@@ -122,6 +122,12 @@
 					</div>
 					<div class="col-6 col-12-medium">
 						<section>
+							<h3 class="icon solid fa-check">Incremental Builds</h3>
+							<p>Nift tracks file dependencies to each page and can build only the web pages that have modified content, and can also build all pages or a list of specified pages.</p>
+						</section>
+					</div>
+					<div class="col-6 col-12-medium">
+						<section>
 							<h3 class="icon solid fa-check">Single Executable</h3>
 							<p>Nift compiles in to one executable file.</p>
 						</section>
