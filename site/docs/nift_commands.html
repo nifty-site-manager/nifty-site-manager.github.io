@@ -318,11 +318,15 @@ content/'index'.content
 		    				</h4>
 		    
 		    				<p>
-		    					To serve your website locally run <mono>nsm serve</mono>, enter <mono>exit</mono> to stop serving your website. On linux can also run <mono>nsm serve -s &</mono> to serve in the background then to stop serving run <mono>killall nsm</mono>. Then you can open the webpages in the <mono>site</mono> directory and Nift will automatically build the website in the background, picking up any changes, just reload your browser window. 
+		    					To serve your website locally run <mono>nsm serve</mono>, enter <mono>exit</mono> to stop serving your website. <mono>Nift</mono> will repeatedly run <mono>build-updated</mono> then sleep for 500ms (0.5s), if you want <mono>Nift</mono> to sleep for a different amount of time you can use <mono>nsm serve sleep-ms</mono>. If your updates are not appearing upon refresh there's a chance the builds are failing, try checking the <mono>.serve-build-log.txt</mono> file in the project root directory.
 		    				</p>
 		    
 		    				<p>
-		    					If you would like your website to be served at an IP address, eg. if you are using Nift on a server, try using Python. Run either of the following in the project root directory for a url similar to <mono>0.0.0.0:8000/site</mono> and from the site directory for a url similar to <mono>0.0.0.0:8000</mono>:
+		    					On linux you can also run <mono>nsm serve -s &</mono> to serve in the background then to stop serving run <mono>killall nsm</mono>. Then you can open the webpages in the <mono>site</mono> directory and Nift will automatically build the website in the background, picking up any changes, just reload your browser window. 
+		    				</p>
+		    
+		    				<p>
+		    					If you would like your website to be served at an IP address, eg. if you are using Nift on a server or a virtual machine, try using Python. Run either of the following in the project root directory for a url similar to <mono>0.0.0.0:8000/site</mono> and from the site directory for a url similar to <mono>0.0.0.0:8000</mono>.
 		    
 		    					<div align="center">
 		    <pre class="inline">

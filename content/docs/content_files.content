@@ -15,6 +15,27 @@
 
 			<div class="content">
 				<h4>
+					Introduction
+				</h4>
+
+				<p>
+					Nift has its own powerful template language which you can use in amongst any other scripting/programming/template language you want, making it even more powerful. This page outlines most of the template language with a few additional parts explained on the <a href="@pathto(docs/template_files)">template files</a> page. 
+				</p>
+
+				<p>
+					We begin by outlining which characters are escaped when building web pages with Nift, then cover all of the functions available in the template language.
+				</p>
+
+				<p>
+					<b>Note:</b> Some of the functions take input parameters, if you would like to use the template language with the input parameters for a function call then put <mono>*</mono> without any whitespace between the function name and parentheses containing the input parameters. For example:
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline">
+\@input*("\@contentpath")
+</pre>.
+</div>
+				</p>
+
+				<h4>
 					Escaping characters
 				</h4>
 				<p>
@@ -30,10 +51,93 @@
 				</p>
 
 				<h4>
-					Inputting <mono>pagetitle</mono> information
+					Inputting page information
 				</h4>
 				<p>
-					The title of a page may be inputted using <mono>\@pagetitle</mono>. For example in the file <mono>template/head.content</mono> you may want something along the lines of <mono>sitename - \@pagetitle</mono>.
+					The following information about the page being built can be injected:
+
+					<center>
+						<table id="page_info_syntax_table" class="alt">
+							<thead>
+								<tr>
+									<th>type</th>
+									<th>syntax</th>
+								</tr>
+							</thead>
+							<tr>
+								<td>page name</td>
+								<td><mono>\@pagename</mono></td>
+							</tr>
+							<tr>
+								<td>page title</td>
+								<td><mono>\@pagetitle</mono></td>
+							</tr>
+							<tr>
+								<td>page path</td>
+								<td><mono>\@pagepath</mono></td>
+							</tr>
+							<tr>
+								<td>content path</td>
+								<td><mono>\@contentpath</mono></td>
+							</tr>
+							<tr>
+								<td>template path</td>
+								<td><mono>\@templatepath</mono></td>
+							</tr>
+							<tfoot>
+								<tr>
+									<th>type</th>
+									<th>syntax</th>
+								</tr>
+							</tfoot>
+						</table>
+					</center>
+
+					For example in a file <mono>template/head.content</mono> you may want something along the lines of <mono>\<title>sitename - \@pagetitle\</title></mono>.
+				</p>
+
+				<h4>
+					Inputting site information
+				</h4>
+				<p>
+					The following information about the website <mono>Nift</mono> is tracking can be injected:
+
+					<center>
+						<table id="site_info_syntax_table" class="alt">
+							<thead>
+								<tr>
+									<th>type</th>
+									<th>syntax</th>
+								</tr>
+							</thead>
+							<tr>
+								<td>content directory</td>
+								<td><mono>\@contentdir</mono></td>
+							</tr>
+							<tr>
+								<td>(built) site directory</td>
+								<td><mono>\@sitedir</mono></td>
+							</tr>
+							<tr>
+								<td>content extension</td>
+								<td><mono>\@contentext</mono></td>
+							</tr>
+							<tr>
+								<td>page extension</td>
+								<td><mono>\@pageext</mono></td>
+							</tr>
+							<tr>
+								<td>default template</td>
+								<td><mono>\@defaulttemplate</mono></td>
+							</tr>
+							<tfoot>
+								<tr>
+									<th>type</th>
+									<th>syntax</th>
+								</tr>
+							</tfoot>
+						</table>
+					</center>
 				</p>
 
 				<h4>
@@ -93,7 +197,7 @@
 					Inputting text from other files
 				</h4>
 				<p>
-					Text may be inputted from another file using <mono>\@input(path-to-file)</mono>, where <mono>path-to-file</mono> is the path from the main site directory to the input file.
+					Text may be inputted from another file using <mono>\@input(path-to-file)</mono>, where <mono>path-to-file</mono> is the path from the main project directory to the input file.
 				</p>
 
 				<p>
@@ -160,7 +264,7 @@ Page was last built on \@currentdate.
 				</p>
 
 				<p>
-					When using <mono>\@pathto(page-name)</mono> or <mono>\@pathtopage(page-name)</mono>, <mono>Nift</mono> will throw an error if the page is not being tracked by <mono>Nift</mono>. You can solve the non-constant path problem for arbitrary files by using <mono>\@pathtofile(path-to-file)</mono> where <mono>path-to-file</mono> is the path from the main site directory to file $Y$ (where page $Y$ above has been replaced with file $Y$). When building a page, <mono>Nift</mono> will throw an error if the file does not exist. 
+					When using <mono>\@pathto(page-name)</mono> or <mono>\@pathtopage(page-name)</mono>, <mono>Nift</mono> will throw an error if the page is not being tracked by <mono>Nift</mono>. You can solve the non-constant path problem for arbitrary files by using <mono>\@pathtofile(path-to-file)</mono> where <mono>path-to-file</mono> is the path from the main project directory to file $Y$ (where page $Y$ above has been replaced with file $Y$). When building a page, <mono>Nift</mono> will throw an error if the file does not exist. 
 				</p>
 
 				<p>
@@ -190,7 +294,7 @@ Page was last built on \@currentdate.
 
 				<h4>Adding page dependencies</h4>
 				<p>
-					Page dependencies may be added using <mono>\@dep(dep-path)</mono>, where <mono>dep-path</mono> is the path from the project root directory to the dependency file.
+					Page dependencies may be added using <mono>\@dep(dep-path)</mono>, where <mono>dep-path</mono> is the path from the main project directory to the dependency file.
 				</p>
 
 				<p>
@@ -200,7 +304,7 @@ Page was last built on \@currentdate.
 
 				<h4>Running scripts</h4>
 				<p>
-					Scripts may be run using <mono>\@script(script-path)</mono>, where <mono>script-path</mono> is the path from the project root directory to the script, which is basically the same as the system call for the script.
+					Scripts may be run using <mono>\@script(script-path)</mono>, where <mono>script-path</mono> is the path from the main project directory to the script, which is basically the same as the system call for the script.
 				</p>
 
 				<p>
@@ -221,7 +325,7 @@ Page was last built on \@currentdate.
 
 				<h4>Inputting script output</h4>
 				<p>
-					Output from scripts may be inputted at any point when building webpages using <mono>\@scriptoutput(script-path)</mono>, where where <mono>script-path</mono> is the path from the project root directory to the script, which is basically the same as the system call for the script. This can be incredibly useful for things like conditional statements/loops, or integrating with databases, GraphQL and scripting languages etc., which is just the tip of the ice berg!
+					Output from scripts may be inputted at any point when building webpages using <mono>\@scriptoutput(script-path)</mono>, where where <mono>script-path</mono> is the path from the main project directory to the script, which is basically the same as the system call for the script. This can be incredibly useful for things like conditional statements/loops, or integrating with databases, GraphQL and scripting languages etc., which is just the tip of the ice berg!
 				</p>
 
 				<p>
@@ -296,7 +400,18 @@ Page was last built on \@currentdate.
 					Including css files
 				</h4>
 				<p>
-					You can include a css file using <mono>\@cssinclude(path-to-css-file)</mono>, where <mono>path-to-css-file</mono> is the path from the main site directory to the css file (<u>not</u> the path from the page to the css file). When building a page, <mono>Nift</mono> will replace <mono>\@cssinclude(path-to-css-file)</mono> with:
+					The best way to add CSS files is:
+
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint lang-js inline">
+<link rel='stylesheet' type='text/css' href='\@pathtofile(path-to-css-file)'>
+</pre>
+</div>
+					Note that by using <mono>\@pathtofile</mono> you will get a build error if the file does not exist (anymore). 
+				</p>
+
+				<p>
+					Alternatively you can include a css file using <mono>\@cssinclude(path-to-css-file)</mono>, where <mono>path-to-css-file</mono> is the path from the main project directory to the css file (<u>not</u> the path from the page to the css file). When building a page, <mono>Nift</mono> will replace <mono>\@cssinclude(path-to-css-file)</mono> with:
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint lang-js inline">
@@ -305,21 +420,22 @@ Page was last built on \@currentdate.
 </div>
 				</p>
 
-				<p>
-					Alternatively you can use:
-
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint lang-js inline">
-<link rel='stylesheet' type='text/css' href='\@pathtofile(path-to-css-file)'>
-</pre>
-</div>
-				</p>
-
 				<h4>
 					Including img files
 				</h4>
 				<p>
-					You can include am image file using <mono>\@imginclude(path-to-img-file)</mono>, where <mono>path-to-img-file</mono> is the path from the main site directory to the img file (<u>not</u> the path from the page to the img file). When building a page, <mono>Nift</mono> will replace <mono>\@imginclude(path-to-img-file)</mono> with the following:
+					The best way to add an image to your page is:
+
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint lang-js inline">
+<img src="\@pathtofile(path-to-img-file)" width="120">
+</pre>
+</div>
+					Note that by using <mono>\@pathtofile</mono> you will get a build error if the file does not exist (anymore). 
+				</p>
+
+				<p>
+					Alternatively, you can include an image file using <mono>\@imginclude(path-to-img-file)</mono>, where <mono>path-to-img-file</mono> is the path from the main project directory to the img file (<u>not</u> the path from the page to the img file). When building a page, <mono>Nift</mono> will replace <mono>\@imginclude(path-to-img-file)</mono> with the following:
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint lang-js inline">
@@ -328,22 +444,22 @@ Page was last built on \@currentdate.
 </div>
 				</p>
 
+				<h4>
+					Including javascript files
+				</h4>
 				<p>
-					If you would like to set the width of an image, use something like the following in your source code:
+					The best way to add a javscript file is:
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint lang-js inline">
-<img src="\@pathtofile(path-to-img-file)" width="120">
+<script src="\@pathtofile(path-to-js-file)"></script>
 </pre>
 </div>
+					Note that by using <mono>\@pathtofile</mono> you will get a build error if the file does not exist (anymore). 
 				</p>
 
-
-				<h4>
-					Including js files
-				</h4>
 				<p>
-					You can include a js file using <mono>\@jsinclude(path-to-js-file)</mono>, where <mono>path-to-js-file</mono> is the path from the main site directory to the js file (<u>not</u> the path from the page to the js file). When building a page, <mono>Nift</mono> will replace <mono>\@jsinclude(path-to-js-file)</mono> with: 
+					Alternatively, you can include a javascript file using <mono>\@jsinclude(path-to-js-file)</mono>, where <mono>path-to-js-file</mono> is the path from the main project directory to the js file (<u>not</u> the path from the page to the js file). When building a page, <mono>Nift</mono> will replace <mono>\@jsinclude(path-to-js-file)</mono> with: 
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint lang-js inline">
@@ -352,35 +468,26 @@ Page was last built on \@currentdate.
 </div>
 				</p>
 
-				<p>
-					Alternatively you can use:
-
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint lang-js inline">
-<script src="\@pathtofile(path-to-js-file)"></script>
-</pre>
-</div>
-				</p>
-
 				<h4>
 					Including a favicon file
 				</h4>
 				<p>
-					You can include a favicon file using <mono>\@faviconinclude(path-to-favicon-file)</mono>, where <mono>path-to-favicon-file</mono> is the path from the main site directory to the favicon file (<u>not</u> the path from the page to the favicon file). When building a page, <mono>Nift</mono> will replace <mono>\@faviconinclude(path-to-favicon-file)</mono> with:
-
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint lang-js inline">
-<link rel='icon' type='image/png' href='path-from-page-to-favicon-file'>
-</pre>
-</div>
-				</p>
-
-				<p>
-					Alternatively you can use:
+					The best way to add a favicon file is:
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint lang-js inline">
 <link rel='icon' type='image/png' href='\@pathtofile(path-to-favicon-file)'>
+</pre>
+</div>
+					Note that by using <mono>\@pathtofile</mono> you will get a build error if the file does not exist (anymore). 
+				</p>
+
+				<p>
+					Alternatively, you can include a favicon file using <mono>\@faviconinclude(path-to-favicon-file)</mono>, where <mono>path-to-favicon-file</mono> is the path from the main project directory to the favicon file (<u>not</u> the path from the page to the favicon file). When building a page, <mono>Nift</mono> will replace <mono>\@faviconinclude(path-to-favicon-file)</mono> with:
+
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint lang-js inline">
+<link rel='icon' type='image/png' href='path-from-page-to-favicon-file'>
 </pre>
 </div>
 				</p>
