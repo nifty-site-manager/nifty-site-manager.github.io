@@ -15,7 +15,7 @@
 
 			<div class="content">
 				<p>
-					Nift has support for you to optionally add in pre/post build/serve scripts to your websites. Just a few of the things this can be useful for includes integrating with <a href="https://webpack.js.org/">webpack</a>, <a href="https://babeljs.io/">Babel</a>, <a href="https://sass-lang.com/">SASS</a>, <a href="https://gruntjs.com/">Grunt</a>, Python webserver, <a href="https://www.npmjs.com/package/live-server">Live Server</a>, <a href="http://livereload.com/">Live Reload</a>, etc.. You can use any scripting or programming language you want, eg. batch, bash shell, C/C++, C#, fish, go, Haskell, Java, Javascript, Objective-C, Perl, PHP, Python, Ruby, Swift, Zsh shell and many more.
+					Nift has support for you to optionally add in pre/post build/serve scripts to your websites. Just a few of the things this can be useful for includes integrating with <a href="https://webpack.js.org/">webpack</a>, <a href="https://babeljs.io/">Babel</a>, <a href="https://www.npmjs.com/">npm</a>, <a href="https://sass-lang.com/">SASS</a>, <a href="https://gruntjs.com/">Grunt</a>, <a href="https://github.com/puppeteer/puppeteer">Puppeteer</a>, Python webserver, <a href="https://www.npmjs.com/package/live-server">Live Server</a>, <a href="http://livereload.com/">Live Reload</a>, etc.. You can use any scripting or programming language you want, eg. batch, bash shell, C/C++, C#, fish, go, Haskell, Java, Javascript, Objective-C, Perl, PHP, Python, Ruby, Swift, Zsh shell and many more.
 				</p>
 
 				<p>
