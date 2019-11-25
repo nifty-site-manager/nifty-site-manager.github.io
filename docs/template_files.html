@@ -131,7 +131,7 @@
 		    
 		    			<div class="content">
 		    				<p>
-		    					Remember that for each page tracked by <mono>Nift</mono> there is a specified template path. When building a page, <mono>Nift</mono> will start processing the template file the same as it will process any other file. Consequently everything that applied to writing <a href="content_files.html">content files</a> also applies to writing template files. However, unlike content files, template files need to specify where content and (optionally) the page title are to be inputted. 
+		    					Remember that for each page tracked by <mono>Nift</mono> there is a specified template path. When building a page, <mono>Nift</mono> will start processing the template file the same as it will process any other file. Consequently everything that applied to writing <a href="content_files.html">content files</a> also applies to writing template files. However, unlike content files, template files (or one of their dependencies) need to use the page content file as a page dependency. 
 		    				</p>
 		    
 		    				<h4>
@@ -147,15 +147,19 @@
 		    				</p>
 		    
 		    				<p>
-		    					Alternatively to <mono>&commat;inputcontent</mono> you can use <mono>&commat;systemcontent(sys-call)</mono> which is equivalent to <mono>&commat;systemoutput(sys-call path-to-content)</mono>, where <mono>path-to-content</mono> is the content path for a page. For example if your content files are markdown and you use <mono>&commat;systemoutput("pandoc")</mono> then the content files will be injected after being converted to html using pandoc. 
+		    					Alternatively to <mono>&commat;inputcontent</mono> you can:
+		    					<ul>
+		    						<li>use <mono>&commat;systemcontent(sys-call)</mono> which is equivalent to <mono>&commat;systemoutput*(sys-call &commat;contentpath)</mono>, where <mono>&commat;contentpath</mono> injects the content path for a page. For example if your content files are markdown and you use <mono>&commat;systemoutput("pandoc")</mono> then the content files will be injected after being converted to html using pandoc;</li>
+		    						<li>use <mono>&commat;scriptoutput*(&commat;contentpath)</mono>; or</li>
+		    						<li>use <mono>&commat;dep*(&commat;contentpath)</mono>.</li>
 		    				</p>
 		    
 		    				<h4>
-		    					Optionally injecting head content
+		    					Optionally injecting head content 
 		    				</h4>
 		    
 		    				<p>
-		    					You can optionally add <mono>&commat;inputhead</mono> which will input <mono>page-name.head</mono> if the file exists. So if you want to optionally add code for a page at that point add a file <mono>page-name.head</mono> in the same directory as the page content file.
+		    					You can optionally add <mono>&commat;inputhead</mono> which will input <mono>page-name.head</mono> if the file exists. So if you want to optionally add code for a page at that point add a file <mono>page-name.head</mono> in the same directory as the page content file. This is very similar to doing <mono>&commat;input*(&commat;contentdir/&commat;pagename.head)</mono> except the existence of the file is optional.
 		    				</p>
 		    
 		    				<h4>
