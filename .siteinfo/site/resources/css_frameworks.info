@@ -1,9 +1,9 @@
 23:28:38 Tuesday November 26 2019
-'resources/links'
-links
+'resources/css_frameworks'
+'css_frameworks'
 'template/page.template'
 
-'content/resources/links.content'
+'content/resources/css_frameworks.content'
 'template/footer.content'
 'template/head.content'
 'template/menu.content'

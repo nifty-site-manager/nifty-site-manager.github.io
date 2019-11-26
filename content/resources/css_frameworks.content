@@ -1,0 +1,89 @@
+<!-- Highlights -->
+<section id="highlights" class="wrapper style3">
+	<div class="title">CSS Frameworks</div>
+	<div class="container">
+		<div class="content">
+			<div class="row aln-center">
+				<div class="col-4 col-12-medium">
+					<section class="highlight">
+						<a href="https://getbootstrap.com/"><img src="@pathtofile(site/images/bootstrap.png)" alt="Bootstrap logo" height="150px" style="max-width:40%"/></a>
+						<h3><a href="https://getbootstrap.com/">Bootstrap</a></h3>
+						<p>An open source toolkit for developing with HTML, CSS, and JS. Quickly prototype your ideas or build your entire app with our Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful plugins built on jQuery.</p>
+						<ul class="actions">
+							<li><a href="https://getbootstrap.com/docs/4.3/getting-started/introduction/" class="button style1">Learn More</a></li>
+						</ul>
+					</section>
+				</div>
+				<div class="col-4 col-12-medium">
+					<section class="highlight">
+						<a href="https://foundation.zurb.com/"><img src="@pathtofile(site/images/foundation.svg)" alt="Foundation mascot" height="150px" style="max-width:40%"/></a>
+						<h3><a href="https://foundation.zurb.com/">Foundation</a></h3>
+						<p>A Framework for any device, medium, and accessibility. Foundation is a family of responsive front-end frameworks that make it easy to design beautiful responsive websites, apps and emails that look amazing on any device. Foundation is semantic, readable, flexible, and completely customizable.</p>
+						<ul class="actions">
+							<li><a href="https://getbootstrap.com/docs/4.3/getting-started/introduction/" class="button style1">Learn More</a></li>
+						</ul>
+					</section>
+				</div>
+				<div class="col-4 col-12-medium">
+					<section class="highlight">
+						<a href="https://tailwindcss.com/"><img src="@pathtofile(site/images/tailwind.svg)" alt="Tailwind logo" height="150px" style="max-width:40%"/></a>
+						<h3><a href="https://tailwindcss.com/">Tailwind</a></h3>
+						<p>A highly customizable, low-level CSS framework that gives you all of the building blocks you need to build bespoke designs without any annoying opinionated styles you have to fight to override.</p>
+						<ul class="actions">
+							<li><a href="https://tailwindcss.com/docs/installation/" class="button style1">Learn More</a></li>
+						</ul>
+					</section>
+				</div>
+				<div class="col-4 col-12-medium">
+					<section class="highlight">
+						<a href="https://bulma.io/"><img src="@pathtofile(site/images/bulma.svg)" alt="Bulma logo" height="150px" style="max-width:40%"/></a>
+						<h3><a href="https://bulma.io/">Bulma</a></h3>
+						<p>A free, open source CSS framework based on Flexbox and used by more than 200,000 developers.</p>
+						<ul class="actions">
+							<li><a href="https://bulma.io/documentation/overview/" class="button style1">Learn More</a></li>
+						</ul>
+					</section>
+				</div>
+				<div class="col-4 col-12-medium">
+					<section class="highlight">
+						<a href="https://semantic-ui.com/"><img src="@pathtofile(site/images/semantic-ui.svg)" alt="Semantic UI logo" height="150px" style="max-width:40%"/></a>
+						<h3><a href="https://semantic-ui.com/">Semantic UI</a></h3>
+						<p>Semantic UI is a modern front-end development framework, powered by LESS and jQuery. It has a sleek, subtle, and flat design look that provides a lightweight user experience.</p>
+						<ul class="actions">
+							<li><a href="https://semantic-ui.com/introduction/getting-started.html" class="button style1">Learn More</a></li>
+						</ul>
+					</section>
+				</div>
+				<div class="col-4 col-12-medium">
+					<section class="highlight">
+						<a href="https://getuikit.com/"><img src="@pathtofile(site/images/uikit.svg)" alt="UIkit logo" height="150px" style="max-width:40%"/></a>
+						<h3><a href="https://getuikit.com/">UIkit</a></h3>
+						<p>A lightweight and modular front-end framework for developing fast and powerful web interfaces.</p>
+						<ul class="actions">
+							<li><a href="https://getuikit.com/docs/introduction" class="button style1">Learn More</a></li>
+						</ul>
+					</section>
+				</div>
+				<div class="col-4 col-12-medium">
+					<section class="highlight">
+						<a href="https://www.oddbird.net/susy/"><img src="@pathtofile(site/images/susy.svg)" alt="Susy logo" height="150px" style="max-width:40%"/></a>
+						<h3><a href="https://www.oddbird.net/susy/">Susy</a></h3>
+						<p>In the hands of the expert developer, Susy is like a flamethrower that blows everything else away. Lesser mortals, of course, will manage to burn their hands.</p>
+						<ul class="actions">
+							<li><a href="https://www.oddbird.net/susy/#getting-started" class="button style1">Learn More</a></li>
+						</ul>
+					</section>
+				</div>
+			</div>
+
+			<center><br><br>
+				<p>
+					See <a href="https://github.com/troxler/awesome-css-frameworks">here</a> for a bigger list of CSS frameworks.
+				</p>
+			</center>
+		</div>
+	</div>
+</section>
+
+
+

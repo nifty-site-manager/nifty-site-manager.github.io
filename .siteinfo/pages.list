@@ -90,6 +90,10 @@ translators
 'blog_templates'
 'template/page.template'
 
+'resources/css_frameworks'
+'css_frameworks'
+'template/page.template'
+
 'resources/examples'
 examples
 'template/page.template'
