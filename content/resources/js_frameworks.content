@@ -111,7 +111,7 @@
 				<div class="col-4 col-12-medium">
 					<section class="highlight">
 						<a href="https://requirejs.org/"><img src="@pathtofile(site/images/require-js.svg)" alt="Meteor logo" height="150px" style="max-width:40%"/></a>
-						<h3><a href="https://requirejs.org/">Meteor</a></h3>
+						<h3><a href="https://requirejs.org/">RequireJS</a></h3>
 						<p>RequireJS is a JavaScript file and module loader. It is optimized for in-browser use, but it can be used in other JavaScript environments, like Rhino and Node.</p>
 						<ul class="actions">
 							<li><a href="https://requirejs.org/docs/start.html" class="button style1">Learn More</a></li>
