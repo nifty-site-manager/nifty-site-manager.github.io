@@ -90,16 +90,6 @@
 				</div>
 				<div class="col-4 col-12-medium">
 					<section class="highlight">
-						<a href="https://www.meteor.com/"><img src="@pathtofile(site/images/meteor.svg)" alt="Meteor logo" height="150px" style="max-width:40%"/></a>
-						<h3><a href="https://www.meteor.com/">Meteor</a></h3>
-						<p>Meteor is a complete platform for building web and mobile apps in pure JavaScript.</p>
-						<ul class="actions">
-							<li><a href="https://www.meteor.com/install" class="button style1">Learn More</a></li>
-						</ul>
-					</section>
-				</div>
-				<div class="col-4 col-12-medium">
-					<section class="highlight">
 						<a href="https://emberjs.com/"><img src="@pathtofile(site/images/ember.svg)" alt="Ember logo" height="150px" style="max-width:40%"/></a>
 						<h3><a href="https://emberjs.com/">Ember</a></h3>
 						<p>A framework for ambitious web developers.</p>
@@ -115,6 +105,16 @@
 						<p>What HTML would have been, had it been designed for building web-apps. Declarative templates with data-binding, MVW, MVVM, MVC, etc..</p>
 						<ul class="actions">
 							<li><a href="https://docs.angularjs.org/tutorial" class="button style1">Learn More</a></li>
+						</ul>
+					</section>
+				</div>
+				<div class="col-4 col-12-medium">
+					<section class="highlight">
+						<a href="https://requirejs.org/"><img src="@pathtofile(site/images/require-js.svg)" alt="Meteor logo" height="150px" style="max-width:40%"/></a>
+						<h3><a href="https://requirejs.org/">Meteor</a></h3>
+						<p>RequireJS is a JavaScript file and module loader. It is optimized for in-browser use, but it can be used in other JavaScript environments, like Rhino and Node.</p>
+						<ul class="actions">
+							<li><a href="https://requirejs.org/docs/start.html" class="button style1">Learn More</a></li>
 						</ul>
 					</section>
 				</div>
@@ -155,6 +155,16 @@
 						<p>Modern client-side JavaScript framework for building Single Page Applications.</p>
 						<ul class="actions">
 							<li><a href="https://mithril.js.org/index.html#getting-started" class="button style1">Learn More</a></li>
+						</ul>
+					</section>
+				</div>
+				<div class="col-4 col-12-medium">
+					<section class="highlight">
+						<a href="https://www.meteor.com/"><img src="@pathtofile(site/images/meteor.svg)" alt="Meteor logo" height="150px" style="max-width:40%"/></a>
+						<h3><a href="https://www.meteor.com/">Meteor</a></h3>
+						<p>Meteor is a complete platform for building web and mobile apps in pure JavaScript.</p>
+						<ul class="actions">
+							<li><a href="https://www.meteor.com/install" class="button style1">Learn More</a></li>
 						</ul>
 					</section>
 				</div>
