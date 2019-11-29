@@ -23,7 +23,31 @@
 				</p>
 
 				<p>
-					We begin by outlining which characters are escaped when building web pages with Nift, then cover all of the functions available in the template language.
+					The following functions available in Nift's template language are documented on this page:
+					<ul style="text-indent:30px">
+						<li><a href="#escaping-chars">Escaping characters</a></li>
+						<li><a href="#input-page-info">Inputting page information</a></li>
+						<li><a href="#input-site-info">Inputting site information</a></li>
+						<li><a href="#input-os-info">Inputting operating system information</a></li>
+						<li><a href="#input-date-time-tz-info">Inputting date, time & timezone information</a></li>
+						<li><a href="#string-vars">String variables</a></li>
+						<li><a href="#input-from-file">Inputting text from other files</a></li>
+						<li><a href="#input-raw-from-file">Inputting raw text from other files</a></li>
+						<li><a href="#paths-between-files">Paths from pages to other paths/files</a></li>
+						<li><a href="#page-deps">Adding page dependencies</a></li>
+						<li><a href="#scripts">Running scripts</a></li>
+						<li><a href="#script-output">Inputting script output</a></li>
+						<li><a href="#script-output-raw">Inputting script output raw</a></li>
+						<li><a href="#system">Running system calls</a></li>
+						<li><a href="#system-output">Inputting system call output</a></li>
+						<li><a href="#system-output-raw">Inputting system call output raw</a></li>
+						<li><a href="#user-input">User input from command-line</a></li>
+						<li><a href="#user-file-input">User input from file</a></li>
+						<li><a href="#css-files">Including css files</a></li>
+						<li><a href="#img-files">Including image files</a></li>
+						<li><a href="#js-files">Including javascript files</a></li>
+						<li><a href="#favicon-file">Including a favicon file</a></li>
+					</ul>
 				</p>
 
 				<p>
@@ -35,7 +59,7 @@
 </div>
 				</p>
 
-				<h4>
+				<h4 id="escaping-chars">
 					Escaping characters
 				</h4>
 				<p>
@@ -50,7 +74,7 @@
 					<mono>Nift</mono> does not escape & as it causes problems with some valid javascript code for example (not an issue with .js files, but is an issue for javascript code inside content/template files). You can program your own syntax for escaping & in to <mono>Nift</mono> if needed. Similarly if javascript code or otherwise is not working, one thing to try is searching for \ in all the content/template files and seeing if something is being escaped inside code, if it is comment the relevant escape code from <mono>PageBuilder.cpp</mono> then compile and install <mono>Nift</mono> again. 
 				</p>
 
-				<h4>
+				<h4 id="input-page-info">
 					Inputting page information
 				</h4>
 				<p>
@@ -96,7 +120,7 @@
 					For example in a file <mono>template/head.content</mono> you may want something along the lines of <mono>\<title>sitename - \@pagetitle\</title></mono>.
 				</p>
 
-				<h4>
+				<h4 id="input-site-info">
 					Inputting site information
 				</h4>
 				<p>
@@ -140,14 +164,14 @@
 					</center>
 				</p>
 
-				<h4>
-					Inputting OS information
+				<h4 id="input-os-info">
+					Inputting operating system information
 				</h4>
 				<p>
 					You can use <mono>\@buildOS</mono> to add whether a page was built using <mono>Nift</mono> on Linux, Macintosh or Windows (<mono>\@currentOS</mono> will continue to do the same for backwards compatibility purposes). 
 				</p>
 
-				<h4>
+				<h4 id="input-date-time-tz-info">
 					Inputting date, time and timezone information
 				</h4>
 				<p>
@@ -162,7 +186,7 @@
 					Also available are <mono>\@buildUTCtime</mono>, <mono>\@buildUTCdate</mono>, <mono>\@buildYY</mono> and <mono>\@buildYYYY</mono> (with <mono>\@currentUTCtime</mono>, <mono>\@currentUTCdate</mono>, <mono>\@currentYY</mono> and <mono>\@currentYYYY</mono> doing the same for backwards compatibility purposes), along with <mono>\@loadUTCtime</mono>, <mono>\@loadUTCdate</mono>, <mono>\@loadYY</mono> and <mono>\@loadYYYY</mono>.
 				</p>
 
-				<h4>
+				<h4 id="string-vars">
 					String variables
 				</h4>
 				<p>
@@ -193,7 +217,7 @@
 </div>
 				</p>
 
-				<h4>
+				<h4 id="input-from-file">
 					Inputting text from other files
 				</h4>
 				<p>
@@ -224,7 +248,28 @@ Page was last built on \@currentdate.
 					<u>Note:</u> <mono>Nift</mono> will not let you create an input loop, for example you cannot have <mono>\@input(page.template)</mono> inside <mono>page.template</mono>, or any of the files that <mono>page.template</mono> inputs, or any of the files that they input, and so on. 
 				</p>
 
-				<h4>
+				<h4 id="input-raw-from-file">
+					Inputting raw text from other files
+				</h4>
+				<p>
+					Raw text (so not parsed with Nift's template language) may be inputted from another file using <mono>\@inputraw(path-to-file)</mono>, where <mono>path-to-file</mono> is the path from the main project directory to the input file.
+				</p>
+
+				<p>
+					For example suppose inside your website directory you have <mono>template/footer.content</mono>.
+				</p>
+
+				<p>
+					To raw input <mono>template/footer.content</mono> into another file write:
+
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline">
+\@inputraw("template/footer.content")
+</pre>
+</div>
+				</p>
+
+				<h4 id="paths-between-files">
 					Path from pages to other pages/files
 				</h4>
 
@@ -292,7 +337,7 @@ Page was last built on \@currentdate.
 </div>
 				</p>
 
-				<h4>Adding page dependencies</h4>
+				<h4 id="page-deps">Adding page dependencies</h4>
 				<p>
 					Page dependencies may be added using <mono>\@dep(dep-path)</mono>, where <mono>dep-path</mono> is the path from the main project directory to the dependency file.
 				</p>
@@ -302,7 +347,7 @@ Page was last built on \@currentdate.
 				</p>
 
 
-				<h4>Running scripts</h4>
+				<h4 id="scripts">Running scripts</h4>
 				<p>
 					Scripts may be run using <mono>\@script(script-path)</mono>, where <mono>script-path</mono> is the path from the main project directory to the script, which is basically the same as the system call for the script.
 				</p>
@@ -323,7 +368,11 @@ Page was last built on \@currentdate.
 					<b>Note:</b> You should prepend <mono>./</mono> before scripts and programs so that your websites will build cross-platform (provided you use cross-platform scripting/programming languages, tools etc.).
 				</p>
 
-				<h4>Inputting script output</h4>
+				<p>
+					<b>Note:</b> <mono>\@script</mono> calls do not scale very well to thousands of calls, it is much better to combine as much as possible in to as few <mono>\@script</mono> calls as possible, though you shouldn't have any issues calling as many scripts as you want from the scripts called using <mono>\@script</mono> calls. For example if possible it's much faster to have one script to download text from multiple urls using cURL, or make all the api calls, all the database queries, and work on JSON data needed and distribute the needed output in to different files to be inputted when needed.
+				</p>
+
+				<h4 id="script-output">Inputting script output</h4>
 				<p>
 					Output from scripts may be inputted at any point when building webpages using <mono>\@scriptoutput(script-path)</mono>, where where <mono>script-path</mono> is the path from the main project directory to the script, which is basically the same as the system call for the script. This can be incredibly useful for things like conditional statements/loops, or integrating with databases, GraphQL and scripting languages etc., which is just the tip of the ice berg!
 				</p>
@@ -344,7 +393,35 @@ Page was last built on \@currentdate.
 					<b>Note:</b> You should prepend <mono>./</mono> before scripts and programs so that your websites will build cross-platform (provided you use cross-platform scripting/programming languages, tools etc.).
 				</p>
 
-				<h4>Running system calls</h4>
+				<p>
+					<b>Note:</b> <mono>\@scriptoutput</mono> calls do not scale very well to thousands of calls, it is much better to combine as much as possible in to as few <mono>\@scriptoutput</mono> calls as possible, though you shouldn't have any issues calling as many scripts as you want from the scripts called using <mono>\@scriptoutput</mono> calls. For example if possible it's much faster to have one script to run all the scripts needed saving output to file, then when you want to inject the output of that script instead input the file you saved the output to earlier in the build process.
+				</p>
+
+				<h4 id="script-output-raw">Inputting script output raw</h4>
+				<p>
+					Raw output from scripts (so not parsed with Nift's template language) may be inputted at any point when building webpages using <mono>\@scriptraw(script-path)</mono>, where where <mono>script-path</mono> is the path from the main project directory to the script, which is basically the same as the systemraw call for the script.
+
+				<p>
+					For example suppose you want to input the raw output from running a script <mono>"linux script.py"</mono>, you can do so with:
+
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline">
+\@scriptraw('./"linux script.py"')
+</pre>
+</div>
+
+					<b>Note:</b> You should use single outer quotes and double inner quotes if running a program or script with spaces in the name.
+				</p>
+
+				<p>
+					<b>Note:</b> You should prepend <mono>./</mono> before scripts and programs so that your websites will build cross-platform (provided you use cross-platform scripting/programming languages, tools etc.).
+				</p>
+
+				<p>
+					<b>Note:</b> <mono>\@scriptoutputraw</mono> calls do not scale very well to thousands of calls, it is much better to combine as much as possible in to as few <mono>\@scriptoutputraw</mono> calls as possible, though you shouldn't have any issues calling as many scripts as you want from the scripts called using <mono>\@scriptoutputraw</mono> calls. For example if possible it's much faster to have one script to run all the scripts needed saving output to file, then when you want to inject the output of that script instead raw input the file you saved the output to earlier in the build process.
+				</p>
+
+				<h4 id="system">Running system calls</h4>
 				<p>
 					System calls may be run using <mono>\@system(system-call)</mono>, where <mono>system-call</mono> is the system call or you want to run. 
 				</p>
@@ -369,7 +446,11 @@ Page was last built on \@currentdate.
 					<b>Note:</b> you can use <mono>\'</mono> for <mono>'</mono> and <mono>\"</mono> for <mono>"</mono> in system-calls. 
 				</p>
 
-				<h4>Inputting system call output</h4>
+				<p>
+					<b>Note:</b> <mono>\@system</mono> calls do not scale very well to thousands of calls, it is much better to combine as much as possible in to one or a few scripts, though you shouldn't have any issues calling as many scripts as you want from the scripts called using <mono>\@script</mono>, <mono>\@scriptoutput</mono> and <mono>\@scriptraw</mono> calls.
+				</p>
+
+				<h4 id="system-output">Inputting system call output</h4>
 				<p>
 					Output from system calls may be inputted at any point when building webpages using <mono>\@systemoutput(system-call)</mono>, where <mono>system-call</mono> is the system call or script you want to run. This can be incredibly useful for things like conditional statements/loops, inputting text from a url using cURL, or integrating with databases, GraphQL and scripting languages etc., which is just the tip of the ice berg!
 				</p>
@@ -387,6 +468,10 @@ Page was last built on \@currentdate.
 				</p>
 
 				<p>
+					<b>Note:</b> <mono>\@systemoutput</mono> calls do not scale very well to thousands of calls, it is much better to combine as much as possible in one or a few scripts, though you shouldn't have any issues calling as many scripts as you want from the scripts called using <mono>\@script</mono>, <mono>\@scriptoutput</mono> and <mono>\@scriptraw</mono> calls. For example you can have one script that runs all the system calls needed and saves the output to different files, then instead of inputting the output of a system call when needed, input the output that is saved to file.
+				</p>
+
+				<p>
 					For example suppose you want to input the text from <a href="https://pastebin.com/atjKuxY6">this</a> paste on <a href="https://pastebin.com">Paste Bin</a>, you can do so with:
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
@@ -396,7 +481,100 @@ Page was last built on \@currentdate.
 </div>
 				</p>
 
-				<h4>
+				<h4 id="system-output-raw">Inputting system call output raw</h4>
+				<p>
+					Raw output from system calls may be inputted at any point when building webpages using <mono>\@systemraw(system-call)</mono>, where <mono>system-call</mono> is the system call or script you want to run.
+				</p>
+
+				<p>
+					<b>Note:</b> You should use single outer quotes and double inner quotes if running a program or script with spaces in the name.
+				</p>
+
+				<p>
+					<b>Note:</b> You should prepend <mono>./</mono> before scripts and programs so that your websites will build cross-platform (provided you use cross-platform scripting/programming languages, tools etc.).
+				</p>
+
+				<p>
+					<b>Note:</b> you can use <mono>\'</mono> for <mono>'</mono> and <mono>\"</mono> for <mono>"</mono> in system-calls. 
+				</p>
+
+				<p>
+					<b>Note:</b> <mono>\@systeraw</mono> calls do not scale very well to thousands of calls, it is much better to combine as much as possible in one or a few scripts, though you shouldn't have any issues calling as many scripts as you want from the scripts called using <mono>\@script</mono>, <mono>\@scriptoutput</mono> and <mono>\@scriptraw</mono> calls. For example you can have one script that runs all the system calls needed and saves the output to different files, then instead of inputting the output of a system call when needed, input the output that is saved to file.
+				</p>
+
+				<p>
+					For example suppose you want to input the text from <a href="https://pastebin.com/atjKuxY6">this</a> paste on <a href="https://pastebin.com">Paste Bin</a>, you can do so with:
+
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline">
+\@systemraw("curl -sS https://pastebin.com/raw/atjKuxY6")
+</pre>
+</div>
+				</p>
+
+				<h4 id="user-input">
+					User input from command-line
+				</h4>
+				<p>
+					To inject standard input from the user using the command-line in to the page being built you can use <mono>\@userin(message)</mono> where <mono>message</mono> is the message to be displayed on the command-line to the user.
+				</p>
+
+				<p>
+					For example:
+
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint lang-js inline">
+\@userin("please enter your name:")
+</pre>
+</div>
+				</p>
+
+				<p>
+					You can even input the message from file if you would like using <mono>\@userin*(\@input(message-file-path))</mono>, for example:
+
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint lang-js inline">
+\@userin*(\@input*("\@contentdir/input-message.txt"))
+</pre>
+</div>
+				</p>
+
+				<h4 id="user-file-input">
+					User input from file
+				</h4>
+				<p>
+					To inject input from the user from a file in to the page being built you can use <mono>\@userfilein(message)</mono> where <mono>message</mono> is the message/template to be displayed in the file opened up for the user to modify then save/close. 
+				</p>
+
+				<p>
+					<b>Note:</b> you can choose which text editor is used with the <mono>unixTextEditor</mono> and <mono>winTextEditor</mono> settings in the <mono>.siteinfo/nsm.config</mono> configuration file in your website directory.
+				</p>
+
+				<p>
+					For example:
+
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint lang-js inline">
+\@userfilein("please replace this text with your content")
+</pre>
+</div>
+				</p>
+
+				<p>
+					You can even input the message from file if you would like using <mono>\@userfilein*(\@input(message-file-path))</mono>, for example:
+
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint lang-js inline">
+\@userfilein*(\@input*("\@contentdir/input-message.txt"))
+</pre>
+</div>
+				</p>
+
+				<p>
+					<b>Note:</b> If you want to input the message/template from file without it being parsed by Nift's template language yet use <mono>\@inputraw(path-to-file)</mono> rather than <mono>\@input(path-to-file)</mono>.
+				</p>
+
+				<h4 id="css-files">
 					Including css files
 				</h4>
 				<p>
@@ -420,7 +598,7 @@ Page was last built on \@currentdate.
 </div>
 				</p>
 
-				<h4>
+				<h4 id="img-files">
 					Including img files
 				</h4>
 				<p>
@@ -444,7 +622,7 @@ Page was last built on \@currentdate.
 </div>
 				</p>
 
-				<h4>
+				<h4 id="js-files">
 					Including javascript files
 				</h4>
 				<p>
@@ -468,7 +646,7 @@ Page was last built on \@currentdate.
 </div>
 				</p>
 
-				<h4>
+				<h4 id="favicon-file">
 					Including a favicon file
 				</h4>
 				<p>

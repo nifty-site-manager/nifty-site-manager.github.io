@@ -32,10 +32,12 @@
 
 				<p>
 					Alternatively to <mono>\@inputcontent</mono> you can:
-					<ul>
-						<li>use <mono>\@systemcontent(sys-call)</mono> which is equivalent to <mono>\@systemoutput*(sys-call \@contentpath)</mono>, where <mono>\@contentpath</mono> injects the content path for a page. For example if your content files are markdown and you use <mono>\@systemoutput("pandoc")</mono> then the content files will be injected after being converted to html using pandoc;</li>
-						<li>use <mono>\@scriptoutput*(\@contentpath)</mono>; or</li>
-						<li>use <mono>\@dep*(\@contentpath)</mono>.</li>
+					<ul style="text-indent:30px">
+						<li>use <mono>\@inputraw</mono> which will input the content file without parsing it with Nift's template language</li>
+						<li>use <mono>\@systemcontent(sys-call)</mono> which is equivalent to <mono>\@systemcontent*(sys-call \@contentpath)</mono>, where <mono>\@contentpath</mono> injects the content path for a page. For example if your content files are markdown and you use <mono>\@systemoutput("pandoc")</mono> then the content files will be injected after being converted to html using pandoc</li>
+						<li>use <mono>\@scriptoutput*(\@contentpath)</mono></li>
+						<li>use <mono>\@dep*(\@contentpath)</mono></li>
+					</ul>
 				</p>
 
 				<h4>

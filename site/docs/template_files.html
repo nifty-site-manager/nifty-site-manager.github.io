@@ -149,10 +149,12 @@
 		    
 		    				<p>
 		    					Alternatively to <mono>&commat;inputcontent</mono> you can:
-		    					<ul>
-		    						<li>use <mono>&commat;systemcontent(sys-call)</mono> which is equivalent to <mono>&commat;systemoutput*(sys-call &commat;contentpath)</mono>, where <mono>&commat;contentpath</mono> injects the content path for a page. For example if your content files are markdown and you use <mono>&commat;systemoutput("pandoc")</mono> then the content files will be injected after being converted to html using pandoc;</li>
-		    						<li>use <mono>&commat;scriptoutput*(&commat;contentpath)</mono>; or</li>
-		    						<li>use <mono>&commat;dep*(&commat;contentpath)</mono>.</li>
+		    					<ul style="text-indent:30px">
+		    						<li>use <mono>&commat;inputraw</mono> which will input the content file without parsing it with Nift's template language</li>
+		    						<li>use <mono>&commat;systemcontent(sys-call)</mono> which is equivalent to <mono>&commat;systemcontent*(sys-call &commat;contentpath)</mono>, where <mono>&commat;contentpath</mono> injects the content path for a page. For example if your content files are markdown and you use <mono>&commat;systemoutput("pandoc")</mono> then the content files will be injected after being converted to html using pandoc</li>
+		    						<li>use <mono>&commat;scriptoutput*(&commat;contentpath)</mono></li>
+		    						<li>use <mono>&commat;dep*(&commat;contentpath)</mono></li>
+		    					</ul>
 		    				</p>
 		    
 		    				<h4>
