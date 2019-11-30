@@ -175,6 +175,8 @@
 | new-cont-dir   | input: dir-path                                 |
 | new-cont-ext   | input: (page-name) content-extension            |
 | new-page-ext   | input: (page-name) page-extension               |
+| new-script-ext | input: (page-name) script-extension             |
+| no-build-thrds | input: (no-threads) [-n == n*cores]             |
 +------------------------------------------------------------------+
 </pre>
 		    					</div>
@@ -384,6 +386,30 @@ python -m SimpleHTTPServer
 		    
 		    				<p>
 		    					To set a new page extension run <mono>nsm new-page-ext (page-name) page-extension</mono>.
+		    				</p>
+		    
+		    				<h4>
+		    					Changing script extension
+		    				</h4>
+		    
+		    				<p>
+		    					To set a new script extension run <mono>nsm new-script-ext (page-name) script-extension</mono>.
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> You may set the extension to the empty string <mono>""</mono> for pre/post build/serve programs on unix (just set it to <mono>.exe</mono> on Windows).
+		    				</p>
+		    
+		    				<h4>
+		    					Checking and setting number of build threads
+		    				</h4>
+		    
+		    				<p>
+		    					You can check the number of build threads with <mono>nsm no-build-thrds</mono> and set the number of build threads with <mono>nsm no-build-thrds no-threads</mono>. 
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> <mono>-n</mono> build threads represents using <mono>n</mono> times the number of cores on the machine threads when building websites.
 		    				</p>
 		    
 		    				<h4>

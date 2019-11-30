@@ -218,8 +218,20 @@
 		    								<td><mono>&commat;pagepath</mono></td>
 		    							</tr>
 		    							<tr>
+		    								<td>page page extension</td>
+		    								<td><mono>&commat;pagepageext</mono></td>
+		    							</tr>
+		    							<tr>
 		    								<td>content path</td>
 		    								<td><mono>&commat;contentpath</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>page content extension</td>
+		    								<td><mono>&commat;pagecontentext</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>page script extension</td>
+		    								<td><mono>&commat;pagescriptext</mono></td>
 		    							</tr>
 		    							<tr>
 		    								<td>template path</td>
@@ -266,6 +278,10 @@
 		    							<tr>
 		    								<td>page extension</td>
 		    								<td><mono>&commat;pageext</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>script extension</td>
+		    								<td><mono>&commat;scriptext</mono></td>
 		    							</tr>
 		    							<tr>
 		    								<td>default template</td>
@@ -466,32 +482,40 @@ Page was last built on &commat;currentdate.
 		    
 		    				<h4 id="scripts">Running scripts</h4>
 		    				<p>
-		    					Scripts may be run using <mono>&commat;script(script-path)</mono>, where <mono>script-path</mono> is the path from the main project directory to the script, which is basically the same as the system call for the script.
+		    					Scripts may be run using <mono>&commat;script(script-path)</mono>, where <mono>script-path</mono> is the path from the main project directory to the script, which is basically the same as the system call for the script. If you need to pass parameters to your scripts you can use <mono>&commat;script(script-path, script-parameters)</mono> where <mono>script-parameters</mono> is a quoted string of parameters (use single outer quotes and double inner quotes for parameters with spaces).
 		    				</p>
 		    
 		    				<p>
-		    					For example if you want to run a scripts <mono>'script.py'</mono>, you can do so with:
+		    					For example if you want to run a script <mono>'script.py'</mono>, you can do so with:
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline lang-bash">
 &commat;script('./script.py')
 </pre>
 		    </div>
-		    
-		    					<b>Note:</b> You should use single outer quotes and double inner quotes if running a program or script with spaces in the name.
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> You should prepend <mono>./</mono> before scripts and programs so that your websites will build cross-platform (provided you use cross-platform scripting/programming languages, tools etc.).
+		    					Also if for example you want to run a script <mono>'script.py'</mono> while passing in the parameters <mono>"light blue"</mono> and <mono>red</mono>, you can do so with:
+		    
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline lang-bash">
+&commat;script('./script.py', '"light blue" red')
+</pre>
+		    </div>
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> <mono>&commat;script</mono> calls do not scale very well to thousands of calls, it is much better to combine as much as possible in to as few <mono>&commat;script</mono> calls as possible, though you shouldn't have any issues calling as many scripts as you want from the scripts called using <mono>&commat;script</mono> calls. For example if possible it's much faster to have one script to download text from multiple urls using cURL, or make all the api calls, all the database queries, and work on JSON data needed and distribute the needed output in to different files to be inputted when needed.
+		    					<b>Note:</b> Scripts and system calls are run from the project root directory so all paths in your scripts/programs should start from there. Also do not change directory in your scripts/programs as it will mess up the other threads that are also building pages. If you really must change directories in your scripts/programs then you will have to set the number of build threads to 1 and change back to the project root directory before each script/program ends. Also you will not see the output of your scripts/programs until after they have finished running, so user input is not recommended as you can not display a message.
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> <mono>&commat;script</mono> calls do not scale very well to thousands of calls, it is much better to combine as much as possible in to as few <mono>&commat;script</mono> calls as possible (the site-wide pre-build scripts is the best place), though you shouldn't have any issues calling as many scripts as you want from the scripts called using <mono>&commat;script</mono> calls. For example if possible it's much faster to have one script to download text from multiple urls using cURL, or make all the api calls, all the database queries, and work on JSON data needed and distribute the needed output in to different files to be inputted when needed.
 		    				</p>
 		    
 		    				<h4 id="script-output">Inputting script output</h4>
 		    				<p>
-		    					Output from scripts may be inputted at any point when building webpages using <mono>&commat;scriptoutput(script-path)</mono>, where where <mono>script-path</mono> is the path from the main project directory to the script, which is basically the same as the system call for the script. This can be incredibly useful for things like conditional statements/loops, or integrating with databases, GraphQL and scripting languages etc., which is just the tip of the ice berg!
+		    					Output from scripts may be inputted at any point when building webpages using <mono>&commat;scriptoutput(script-path)</mono>, where where <mono>script-path</mono> is the path from the main project directory to the script, which is basically the same as the system call for the script. If you need to pass parameters to your scripts you can use <mono>&commat;scriptoutput(script-path, script-parameters)</mono> where <mono>script-parameters</mono> is a quoted string of parameters (use single outer quotes and double inner quotes for parameters with spaces). This can be incredibly useful for things like conditional statements/loops, or integrating with databases, GraphQL and scripting languages etc., which is just the tip of the ice berg!
 		    				</p>
 		    
 		    				<p>
@@ -499,43 +523,37 @@ Page was last built on &commat;currentdate.
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline">
-&commat;scriptoutput('./"linux script.py"')
+&commat;scriptoutput('./linux script.py')
 </pre>
 		    </div>
 		    
-		    					<b>Note:</b> You should use single outer quotes and double inner quotes if running a program or script with spaces in the name.
+		    				<p>
+		    					<b>Note:</b> Scripts and system calls are run from the project root directory so all paths in your scripts/programs should start from there. Also do not change directory in your scripts/programs as it will mess up the other threads that are also building pages. If you really must change directories in your scripts/programs then you will have to set the number of build threads to 1 and change back to the project root directory before each script/program ends. Also you will not see the output of your scripts/programs until after they have finished running, so user input is not recommended as you can not display a message.
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> You should prepend <mono>./</mono> before scripts and programs so that your websites will build cross-platform (provided you use cross-platform scripting/programming languages, tools etc.).
-		    				</p>
-		    
-		    				<p>
-		    					<b>Note:</b> <mono>&commat;scriptoutput</mono> calls do not scale very well to thousands of calls, it is much better to combine as much as possible in to as few <mono>&commat;scriptoutput</mono> calls as possible, though you shouldn't have any issues calling as many scripts as you want from the scripts called using <mono>&commat;scriptoutput</mono> calls. For example if possible it's much faster to have one script to run all the scripts needed saving output to file, then when you want to inject the output of that script instead input the file you saved the output to earlier in the build process.
+		    					<b>Note:</b> <mono>&commat;scriptoutput</mono> calls do not scale very well to thousands of calls, it is much better to combine as much as possible in to as few <mono>&commat;scriptoutput</mono> calls as possible (the site-wide pre-build scripts is the best place), though you shouldn't have any issues calling as many scripts as you want from the scripts called using <mono>&commat;scriptoutput</mono> calls. For example if possible it's much faster to have one script to run all the scripts needed saving output to file, then when you want to inject the output of that script instead input the file you saved the output to earlier in the build process.
 		    				</p>
 		    
 		    				<h4 id="script-output-raw">Inputting script output raw</h4>
 		    				<p>
-		    					Raw output from scripts (so not parsed with Nift's template language) may be inputted at any point when building webpages using <mono>&commat;scriptraw(script-path)</mono>, where where <mono>script-path</mono> is the path from the main project directory to the script, which is basically the same as the systemraw call for the script.
+		    					Raw output from scripts (so not parsed with Nift's template language) may be inputted at any point when building webpages using <mono>&commat;scriptraw(script-path)</mono>, where where <mono>script-path</mono> is the path from the main project directory to the script, which is basically the same as the systemraw call for the script. If you need to pass parameters to your scripts you can use <mono>&commat;scriptraw(script-path, script-parameters)</mono> where <mono>script-parameters</mono> is a quoted string of parameters (use single outer quotes and double inner quotes for parameters with spaces).
 		    
 		    				<p>
 		    					For example suppose you want to input the raw output from running a script <mono>"linux script.py"</mono>, you can do so with:
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline">
-&commat;scriptraw('./"linux script.py"')
+&commat;scriptraw('./linux script.py')
 </pre>
 		    </div>
 		    
-		    					<b>Note:</b> You should use single outer quotes and double inner quotes if running a program or script with spaces in the name.
+		    				<p>
+		    					<b>Note:</b> Scripts and system calls are run from the project root directory so all paths in your scripts/programs should start from there. Also do not change directory in your scripts/programs as it will mess up the other threads that are also building pages. If you really must change directories in your scripts/programs then you will have to set the number of build threads to 1 and change back to the project root directory before each script/program ends. Also you will not see the output of your scripts/programs until after they have finished running, so user input is not recommended as you can not display a message.
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> You should prepend <mono>./</mono> before scripts and programs so that your websites will build cross-platform (provided you use cross-platform scripting/programming languages, tools etc.).
-		    				</p>
-		    
-		    				<p>
-		    					<b>Note:</b> <mono>&commat;scriptraw</mono> calls do not scale very well to thousands of calls, it is much better to combine as much as possible in to as few <mono>&commat;scriptraw</mono> calls as possible, though you shouldn't have any issues calling as many scripts as you want from the scripts called using <mono>&commat;scriptraw</mono> calls. For example if possible it's much faster to have one script to run all the scripts needed saving output to file, then when you want to inject the output of that script instead raw input the file you saved the output to earlier in the build process.
+		    					<b>Note:</b> <mono>&commat;scriptraw</mono> calls do not scale very well to thousands of calls, it is much better to combine as much as possible in to as few <mono>&commat;scriptraw</mono> calls as possible (the site-wide pre-build scripts is the best place), though you shouldn't have any issues calling as many scripts as you want from the scripts called using <mono>&commat;scriptraw</mono> calls. For example if possible it's much faster to have one script to run all the scripts needed saving output to file, then when you want to inject the output of that script instead raw input the file you saved the output to earlier in the build process.
 		    				</p>
 		    
 		    				<h4 id="system">Running system calls</h4>
@@ -548,23 +566,20 @@ Page was last built on &commat;currentdate.
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline">
-&commat;system('./"test prog.exe"')
+&commat;system('"test prog.exe"')
 </pre>
 		    </div>
-		    
-		    					<b>Note:</b> You should prepend <mono>./</mono> before scripts and programs so that your websites will build cross-platform (provided you use cross-platform scripting/programming languages, tools etc.).
-		    				</p>
-		    
-		    				<p>
-		    					<b>Note:</b> You should use single outer quotes and double inner quotes if running a program or script with spaces in the name.
-		    				</p>
 		    
 		    				<p>
 		    					<b>Note:</b> you can use <mono>\'</mono> for <mono>'</mono> and <mono>\"</mono> for <mono>"</mono> in system-calls. 
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> <mono>&commat;system</mono> calls do not scale very well to thousands of calls, it is much better to combine as much as possible in to one or a few scripts, though you shouldn't have any issues calling as many scripts as you want from the scripts called using <mono>&commat;script</mono>, <mono>&commat;scriptoutput</mono> and <mono>&commat;scriptraw</mono> calls.
+		    					<b>Note:</b> Scripts and system calls are run from the project root directory so all paths in your scripts/programs should start from there. Also do not change directory in your scripts/programs as it will mess up the other threads that are also building pages. If you really must change directories in your scripts/programs then you will have to set the number of build threads to 1 and change back to the project root directory before each script/program ends. Also you will not see the output of your scripts/programs until after they have finished running, so user input is not recommended as you can not display a message.
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> <mono>&commat;system</mono> calls do not scale very well to thousands of calls, it is much better to combine as much as possible in to one or a few scripts (the site-wide pre-build scripts is the best place), though you shouldn't have any issues calling as many scripts as you want from the scripts called using <mono>&commat;script</mono>, <mono>&commat;scriptoutput</mono> and <mono>&commat;scriptraw</mono> calls.
 		    				</p>
 		    
 		    				<h4 id="system-output">Inputting system call output</h4>
@@ -573,19 +588,15 @@ Page was last built on &commat;currentdate.
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> You should use single outer quotes and double inner quotes if running a program or script with spaces in the name.
-		    				</p>
-		    
-		    				<p>
-		    					<b>Note:</b> You should prepend <mono>./</mono> before scripts and programs so that your websites will build cross-platform (provided you use cross-platform scripting/programming languages, tools etc.).
-		    				</p>
-		    
-		    				<p>
 		    					<b>Note:</b> you can use <mono>\'</mono> for <mono>'</mono> and <mono>\"</mono> for <mono>"</mono> in system-calls. 
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> <mono>&commat;systemoutput</mono> calls do not scale very well to thousands of calls, it is much better to combine as much as possible in one or a few scripts, though you shouldn't have any issues calling as many scripts as you want from the scripts called using <mono>&commat;script</mono>, <mono>&commat;scriptoutput</mono> and <mono>&commat;scriptraw</mono> calls. For example you can have one script that runs all the system calls needed and saves the output to different files, then instead of inputting the output of a system call when needed, input the output that is saved to file.
+		    					<b>Note:</b> Scripts and system calls are run from the project root directory so all paths in your scripts/programs should start from there. Also do not change directory in your scripts/programs as it will mess up the other threads that are also building pages. If you really must change directories in your scripts/programs then you will have to set the number of build threads to 1 and change back to the project root directory before each script/program ends. Also you will not see the output of your scripts/programs until after they have finished running, so user input is not recommended as you can not display a message.
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> <mono>&commat;systemoutput</mono> calls do not scale very well to thousands of calls, it is much better to combine as much as possible in one or a few scripts (the site-wide pre-build scripts is the best place), though you shouldn't have any issues calling as many scripts as you want from the scripts called using <mono>&commat;script</mono>, <mono>&commat;scriptoutput</mono> and <mono>&commat;scriptraw</mono> calls. For example you can have one script that runs all the system calls needed and saves the output to different files, then instead of inputting the output of a system call when needed, input the output that is saved to file.
 		    				</p>
 		    
 		    				<p>
@@ -604,19 +615,15 @@ Page was last built on &commat;currentdate.
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> You should use single outer quotes and double inner quotes if running a program or script with spaces in the name.
-		    				</p>
-		    
-		    				<p>
-		    					<b>Note:</b> You should prepend <mono>./</mono> before scripts and programs so that your websites will build cross-platform (provided you use cross-platform scripting/programming languages, tools etc.).
-		    				</p>
-		    
-		    				<p>
 		    					<b>Note:</b> you can use <mono>\'</mono> for <mono>'</mono> and <mono>\"</mono> for <mono>"</mono> in system-calls. 
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> <mono>&commat;systeraw</mono> calls do not scale very well to thousands of calls, it is much better to combine as much as possible in one or a few scripts, though you shouldn't have any issues calling as many scripts as you want from the scripts called using <mono>&commat;script</mono>, <mono>&commat;scriptoutput</mono> and <mono>&commat;scriptraw</mono> calls. For example you can have one script that runs all the system calls needed and saves the output to different files, then instead of inputting the output of a system call when needed, input the output that is saved to file.
+		    					<b>Note:</b> Scripts and system calls are run from the project root directory so all paths in your scripts/programs should start from there. Also do not change directory in your scripts/programs as it will mess up the other threads that are also building pages. If you really must change directories in your scripts/programs then you will have to set the number of build threads to 1 and change back to the project root directory before each script/program ends. Also you will not see the output of your scripts/programs until after they have finished running, so user input is not recommended as you can not display a message.
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> <mono>&commat;systeraw</mono> calls do not scale very well to thousands of calls, it is much better to combine as much as possible in one or a few scripts (the site-wide pre-build scripts is the best place), though you shouldn't have any issues calling as many scripts as you want from the scripts called using <mono>&commat;script</mono>, <mono>&commat;scriptoutput</mono> and <mono>&commat;scriptraw</mono> calls. For example you can have one script that runs all the system calls needed and saves the output to different files, then instead of inputting the output of a system call when needed, input the output that is saved to file.
 		    				</p>
 		    
 		    				<p>
