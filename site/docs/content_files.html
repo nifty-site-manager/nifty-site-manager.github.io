@@ -150,7 +150,7 @@
 		    						<li><a href="#string-vars">String variables</a></li>
 		    						<li><a href="#input-from-file">Inputting text from other files</a></li>
 		    						<li><a href="#input-raw-from-file">Inputting raw text from other files</a></li>
-		    						<li><a href="#paths-between-files">Paths from pages to other paths/files</a></li>
+		    						<li><a href="#paths-between-files">Paths from pages to other pages/files</a></li>
 		    						<li><a href="#page-deps">Adding page dependencies</a></li>
 		    						<li><a href="#scripts">Running scripts</a></li>
 		    						<li><a href="#script-output">Inputting script output</a></li>
@@ -535,7 +535,7 @@ Page was last built on &commat;currentdate.
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> <mono>&commat;scriptoutputraw</mono> calls do not scale very well to thousands of calls, it is much better to combine as much as possible in to as few <mono>&commat;scriptoutputraw</mono> calls as possible, though you shouldn't have any issues calling as many scripts as you want from the scripts called using <mono>&commat;scriptoutputraw</mono> calls. For example if possible it's much faster to have one script to run all the scripts needed saving output to file, then when you want to inject the output of that script instead raw input the file you saved the output to earlier in the build process.
+		    					<b>Note:</b> <mono>&commat;scriptraw</mono> calls do not scale very well to thousands of calls, it is much better to combine as much as possible in to as few <mono>&commat;scriptraw</mono> calls as possible, though you shouldn't have any issues calling as many scripts as you want from the scripts called using <mono>&commat;scriptraw</mono> calls. For example if possible it's much faster to have one script to run all the scripts needed saving output to file, then when you want to inject the output of that script instead raw input the file you saved the output to earlier in the build process.
 		    				</p>
 		    
 		    				<h4 id="system">Running system calls</h4>
