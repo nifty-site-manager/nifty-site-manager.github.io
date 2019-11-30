@@ -562,11 +562,11 @@ Page was last built on &commat;currentdate.
 		    				</p>
 		    
 		    				<p>
-		    					For example suppose you want to run <mono>"test prog.exe"</mono>, you can do so with:
+		    					For example suppose you want to convert the markdown file <mono>file.md</mono> to html using pandoc and save it in <mono>out.html</mono>, you can do so with:
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline">
-&commat;system('"test prog.exe"')
+&commat;system('pandoc -o out.html file.md')
 </pre>
 		    </div>
 		    
