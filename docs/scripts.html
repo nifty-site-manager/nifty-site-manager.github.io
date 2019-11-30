@@ -117,12 +117,12 @@
 
 		    <!-- Main -->
 		    <section id="main" class="wrapper style2">
-		    	<div class="title">Scripts</div>
+		    	<div class="title">Scripts/Programs</div>
 		    	<div class="container">
 		    		<!-- Features -->
 		    		<section id="features">
 		    			<header class="style1">
-		    				<h2>Pre/Post Build/Serve Scripts</h2>
+		    				<h2>Pre/Post Build/Serve Scripts/Programs</h2>
 		    			</header>
 		    
 		    			<!-- Image -->
@@ -132,65 +132,53 @@
 		    
 		    			<div class="content">
 		    				<p>
-		    					Nift has support for you to optionally add in pre/post build/serve scripts to your websites. Just a few of the things this can be useful for includes integrating with <a href="https://webpack.js.org/">webpack</a>, <a href="https://babeljs.io/">Babel</a>, <a href="https://www.npmjs.com/">npm</a>, <a href="https://bower.io/">Bower</a>, <a href="https://yeoman.io/">Yeoman</a>, <a href="http://browserify.org/">Browserify</a>, <a href="https://parceljs.org/">Parcel</a>, <a href="https://brunch.io/">Brunch</a>, <a href="https://sass-lang.com/">SASS</a>, <a href="https://gruntjs.com/">Grunt</a>, <a href="https://github.com/puppeteer/puppeteer">Puppeteer</a>, Python webserver, <a href="https://www.npmjs.com/package/live-server">Live Server</a>, <a href="http://livereload.com/">Live Reload</a>, etc.. You can use any scripting or programming language you want, eg. batch, bash shell, C/C++, C#, fish, go, Haskell, Java, Javascript, Objective-C, Perl, PHP, Python, Ruby, Swift, Zsh shell and many more.
+		    					Nift has support for you to optionally add in pre/post build/serve scripts/programs to your websites. Just a few of the things this can be useful for includes integrating with <a href="https://webpack.js.org/">webpack</a>, <a href="https://babeljs.io/">Babel</a>, <a href="https://www.npmjs.com/">npm</a>, <a href="https://bower.io/">Bower</a>, <a href="https://yeoman.io/">Yeoman</a>, <a href="http://browserify.org/">Browserify</a>, <a href="https://parceljs.org/">Parcel</a>, <a href="https://brunch.io/">Brunch</a>, <a href="https://sass-lang.com/">SASS</a>, <a href="https://gruntjs.com/">Grunt</a>, <a href="https://github.com/puppeteer/puppeteer">Puppeteer</a>, Python webserver, <a href="https://www.npmjs.com/package/live-server">Live Server</a>, <a href="http://livereload.com/">Live Reload</a>, etc.. You can use any scripting or programming language you want, eg. batch, bash shell, C/C++, C#, fish, go, Haskell, Java, Javascript, Objective-C, Perl, PHP, Python, Ruby, Swift, Zsh shell and many more.
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> Make sure your scripts have executable permissions, otherwise Nift will be unable to run them and should throw a build error.
+		    					<b>Note:</b> Make sure your scripts and programs have executable permissions, otherwise Nift will be unable to run them and should throw a build error.
+		    				</p>
+		    
+		    				<p>
+		    					The script extension for website-wide scripts/programs is specified with <mono>scriptExt</mono> in the <mono>.siteinfo/nsm.config</mono> configuration file, which you can check using the <a href="nift_commands.html">Nift command</a> <mono>config</mono>. To check page-specific script extensions use the <a href="nift_commands.html">Nift command</a> <mono>info page-name</mono>. Site wide and page-specific script extensions may be set using the <a href="nift_commands.html">Nift command</a> <mono>new-script-ext (page-name) script-extension</mono>.
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> Scripts/programs are run from the project root directory, so all paths in scripts/programs should be starting from that location. Also do not change directory in your scripts/programs as it will mess up the other threads that are also running scripts/programs and/or building pages. If you really must change directories in your scripts/programs then you will have to set the number of build threads to 1 and change back to the project root directory before each script/program ends. Furthermore the output of scripts/programs is not displayed to you when building until after they have finished running, so there is no way to display messages to the user if using user input methods and so are discouraged from being used (plus you would have interference output from other threads), a compromise for much much faster build times (user input is not how you want to be building websites anyway).
 		    				</p>
 		    
 		    				<p>
 		    					Website-wide scripts should reside in the project root directory in a file to be named as follows:
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="inline">
-pre-build.scripts
-post-build.scripts
-pre-build-all.scripts
-post-build-all.scripts
-pre-build-updated.scripts
-post-build-updated.scripts
-pre-serve.scripts
-post-serve.scripts
+pre-build.scriptExt
+post-build.scriptExt
+pre-build-all.scriptExt
+post-build-all.scriptExt
+pre-build-updated.scriptExt
+post-build-updated.scriptExt
+pre-serve.scriptExt
+post-serve.scriptExt
 </pre>
 		    </div>
 		    
-		    					It should be reasonably self-explanatory what each will do, though note the pre-build and post-build scripts are run before or after each of the Nift commands <mono>build</mono>, <mono>build-all</mono>, <mono>build-updated</mono>. Each line should have a single script, though you can leave lines blank and any line starting with # will be treated as a comment.
+		    					It should be reasonably self-explanatory what each will do, though note the pre-build and post-build scripts/programs are run before or after each of the Nift commands <mono>build</mono>, <mono>build-all</mono>, <mono>build-updated</mono>. 
 		    				</p>
 		    
 		    				<p>
-		    					An example <mono>pre-build.scripts</mono> file is below:
+		    					Page specific scripts/programs should reside in the same directory as the content file for the page in a file to be named as follows:
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline">
-#scripts to run before building pages
-./"test script.py"
-
-./"test.py"
-./test.py
-
-python "test this.py"
-python 'test this.py'
-
-curl -sS "https://pastebin.com/raw/1kYKafED"
+pagename-pre-build.scriptExt
+pagename-post-build.scriptExt
 </pre>
 		    </div>
 		    
-		    					<b>Note:</b> You should prepend <mono>./</mono> before scripts and programs so that your websites will build cross-platform (provided you use cross-platform scripting/programming languages, tools etc.).
+		    					<b>Note:</b> Running lots of page-specific pre/post build scripts does not scale well to thousands of scripts/programs. If you are working on projects that large you are much better off calling the page-specific scripts from the site-wide pre/post build/serve scripts (you may find it beneficial to work out which pages need building for incremental builds, ask through Reddit/Twitter/Discord/GitHub/GitLab/BitBucket if you need this).
 		    				</p>
 		    
 		    				<p>
-		    					Page specific scripts should reside in the same directory as the content file for the page in a file to be named as follows:
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-pagename.pre-build.scripts
-pagename.post-build.scripts
-</pre>
-		    </div>
-		    
-		    					<b>Note:</b> Scripts are run from the project root directory.
-		    				</p>
-		    
-		    				<p>
-		    					Each line should have a single script, though you can leave lines blank and any line starting with # will be treated as a comment.
+		    					<b>Note:</b> Scripts/programs are run from the project root directory, so all paths in scripts/programs should be starting from that location. Also do not change directory in your scripts/programs as it will mess up the other threads that are also running scripts/programs and/or building pages. If you really must change directories in your scripts/programs then you will have to set the number of build threads to 1 and change back to the project root directory before each script/program ends. Furthermore the output of scripts/programs is not displayed to you when building until after they have finished running, so there is no way to display messages to the user if using user input methods and so are discouraged from being used (plus you would have interference output from other threads), a compromise for much much faster build times (user input is not how you want to be building websites anyway).
 		    				</p>
 		    
 		    			</div>
