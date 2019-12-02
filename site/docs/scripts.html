@@ -144,6 +144,10 @@
 		    				</p>
 		    
 		    				<p>
+		    					<b>Note:</b> If scripts are so large that copying the file will take time or you want to run a program located in the project directory somewhere, you should instead use a system call and have the script/program located in the project root directory without spaces in the name. Alternatively you can write scripts/programs that you run yourself (not using Nift) which they themselves add the Nift build process in to them, leaving you with just one program that you need to run when building. You will still get to take advantage of Nift's unbeaten build times and powerful template language doing this.
+		    				</p>
+		    
+		    				<p>
 		    					<b>Note:</b> Scripts/programs are run from the project root directory, so all paths in scripts/programs should be starting from that location. Also do not change directory in your scripts/programs as it will mess up the other threads that are also running scripts/programs and/or building pages. If you really must change directories in your scripts/programs then you will have to set the number of build threads to 1 and change back to the project root directory before each script/program ends. Furthermore the output of scripts/programs is not displayed to you when building until after they have finished running, so there is no way to display messages to the user if using user input methods and so are discouraged from being used (plus you would have interference output from other threads), a compromise for much much faster build times (user input is not how you want to be building websites anyway).
 		    				</p>
 		    
