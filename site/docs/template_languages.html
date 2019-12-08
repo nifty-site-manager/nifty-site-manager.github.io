@@ -1,0 +1,414 @@
+<!DOCTYPE HTML>
+
+<!--
+	Official Nift Website
+
+	Nift is a cross-platform open source website generator developed from the ground up in C++.
+-->
+
+<html lang="en">
+    <head>
+        <title>Nift</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Nift is the world's fastest framework for managing and generating websites. It's cross-platform, open source, lightning fast, developed from the ground up in C++, and released for free under the MIT license - use it for any of your personal or commercial projects">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../assets/css/main.css">
+        <link rel="stylesheet" href="../assets/css/pagestyle.css">
+        <link rel="stylesheet" href="../assets/css/pre.css">
+        <link rel='icon' type='image/png' href='../images/favicon.png'>
+        
+        <!-- uses Font Awesome for vector icons and social logos -->
+        <script src="https://kit.fontawesome.com/b51e6952ec.js"></script>
+    </head>
+    <body class="is-preload">
+		<div id="page-wrapper">
+			<!-- Header -->
+			<section id="header" class="wrapper">
+			
+				<!-- Logo -->
+				<div id="logo">
+					<noselect>
+					<img src="../images/rabbit.svg" alt="Nift bunny mascot" width=325 style="max-width:90%">
+			
+					<p style="margin-bottom:0px">
+						<a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; 
+						<a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a> &nbsp; 
+						<a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a> &nbsp; 
+						<a href="https://nift.teemill.com/" title="TeeMill" class="teemill"><i class="fas fa-tshirt fa-2x"></i></a> <!--&nbsp;
+						<a href="https://teespring.com/stores/nift-3" title="TeeSpring" class="teespring"><i class="fas fa-tshirt fa-2x"></i></a>-->
+					</p>
+					<p style="margin-top:10px">
+						<!--<a href="https://gitter.im/nifty_site_manager/community" title="Gitter" class="gitter"><i class="fab fa-gitter fa-2x"></i></a> &nbsp;-->
+						<a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a> &nbsp; 
+						<a href="https://old.reddit.com/r/nift" title="Reddit" class="reddit"><i class="fab fa-reddit-square fa-2x"></i></a> &nbsp; 
+						<a href="https://twitter.com/nifty_site_man" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a>
+					</p>
+			
+					<p style="color:#372C2A">A cross-platform open source website generator</p>
+			
+					<p>
+						<a href="https://chocolatey.org/packages/nsm"><img src="../images/chocolatey.svg" height="40px" alt="Get it from the Chocolatey store" title="Windows"></a> &nbsp;
+						<a href="linux_install.html"><img src="../images/flathub-dark.svg" height="40px" alt="Get it from the FlatHub store" title="Linux"></a> &nbsp;
+						<!--<a href=""><img src="../images/brew.png" height="40px" alt="Get it from the Homebrew store" title="OSX" style="border-radius: 5px; border-style: solid; border-width:0.75px; border-color: #817679"></a> &nbsp;-->
+						<a href="https://snapcraft.io/nift"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" height="40px" alt="Get it from the Snap Store" title="Linux" /> </a>
+					</p>
+					</noselect>
+				</div>
+			
+				<!-- Nav -->
+				<noselect>
+					<nav id="nav">
+						<ul>
+							<li><a href="../index.html">Home</a></li>
+							<li>
+								<a href="">Documentation</a>
+								<ul>
+									<li>
+										<a href="installing_nift.html">Installing Nift</a>
+										<!--<ul>
+											<li><a href="linux_install.html">Linux</a></li>
+											<li><a href="osx_install.html">OSX</a></li>
+											<li><a href="windows_install.html">Windows</a></li>
+										</ul>-->
+									</li>
+									<li><a href="nift_commands.html">Nift Commands</a></li>
+									<li><a href="content_files.html">Content Files</a></li>
+									<li><a href="template_files.html">Template Files</a></li>
+									<li><a href="scripts.html">Scripts</a></li>
+									<li><a href="template_languages.html">Template Languages</a></li>
+									<li><a href="JSON.html">JSON Data</a></li>
+									<li><a href="markdown.html">Markdown</a></li>
+									<li><a href="translators.html">Translators</a></li>
+									<li><a href="displaying_mathematics.html">Displaying Mathematics</a></li>
+									<li><a href="displaying_code_blocks.html">Displaying Code Blocks</a></li>
+									<li><a href="presentations.html">Presentations</a></li>
+									<li><a href="lokinet_snapps.html">Lokinet SNApps</a></li>
+									<li>
+										<a href="hosting_your_site.html">Hosting Your Site</a>
+										<!--<ul>
+											<li><a href="bitbucket_hosting.html">BitBucket</a></li>
+											<li><a href="github_hosting.html">GitHub</a></li>
+											<li><a href="gitlab_hosting.html">GitLab</a></li>
+											<li><a href="netlify_hosting.html">Netlify</a></li>
+										</ul>-->
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="">Resources</a>
+								<ul>
+									<li><a href="../resources/css_frameworks.html">CSS Frameworks</a></li>
+									<li><a href="../resources/examples.html">Examples</a></li>
+									<li><a href="../resources/get_started.html">Get Started</a></li>
+									<li><a href="../resources/js_frameworks.html">JS Frameworks</a></li>
+									<li><a href="../resources/links.html">Links</a></li>
+									<li><a href="../resources/logos.html">Logos</a></li>
+									<li><a href="../resources/nift_tutorial.html">Nift Tutorial</a></li>
+									<li><a href="../resources/php_frameworks.html">PHP Frameworks</a></li>
+									<li><a href="../resources/templates.html">Templates</a></li>
+									<li><a href="../resources/SNApp_templates.html">SNApp Templates</a></li>
+									<li><a href="../resources/blog_templates.html">Blog Templates</a></li>
+								</ul>
+							</li>
+							<li><a href="../support.html">Support</a></li>
+						</ul>
+					</nav>
+				</noselect>
+			</section>
+
+		    <!-- Main -->
+		    <section id="highlights" class="wrapper style2">
+		    	<div class="title">Template Languages</div>
+		    	<div class="container">
+		    		<header class="style1">
+		    			<h2>How to use template languages</h2>
+		    		</header>
+		    
+		    		<div class="content" style="margin-top:-25px;">
+		    			<p>
+		    				You can use any template language that can be converted to html, php, etc. from the command line or at load time in the browser. For template languages that you can convert to html at load time from the browser, just include the required javascript scripts etc. as normal in your website and you should have no issues using the template language in your content and template files used to build pages with.
+		    			</p>
+		    
+		    			<center>
+		    				<img src="../images/template.png" alt="Template graphic" width=200 style="margin-bottom:20px; max-width:70%">
+		    			</center>
+		    
+		    			<h3>Converting template languages post-build</h3>
+		    			<p>
+		    				The best way to use a template language you can convert to html from the command line with Nift is to:
+		    				<ol>
+		    					<li>set the page extension to the normal extension used for the template language either site-wide or for the individual pages you want to use the template language for;</li>
+		    					<li>use the template language in the content and template files used to build the pages;</li>
+		    					<li>add post-build scripts to convert the built pages from the template language to html (you could even remove the built pages after converting if you want, or just move them to a different directory for the final website, the former is easier with regards to using the <mono>&commat;pathtofile(abs-path-to-file)</mono> function from Nift's template language etc.).</li>
+		    				</ol>
+		    			</p>
+		    
+		    			<p>
+		    				<b>Note:</b> each (post-build) script requires a system call from C++ to run, which are much slower than most other things in C++ (like reading from and writing to a file). Though lots of different page-specific post-build scripts have the benefit of multithreading, whereas an individual site-wide post-build script does not unless you code/program/script it in there yourself. 
+		    			</p>
+		    
+		    			<p>
+		    				The benefits of converting the template language post-build include:
+		    				<ul>
+		    					<li>You can have definitions and other code in one file (eg. the template files) which are still 'in scope' with code in other files (eg. content files);</li>
+		    					<li>You can use Nift's template language in amongst the other template language(s) you're using anywhere you want, as that will be parsed before you parse the built page with another template engine;</li>
+		    					<li>You can reduce the number of C++ system calls made, which can reduce build times.</li>
+		    				</ul>
+		    			</p>
+		    
+		    			<h3>Converting template languages pre-build</h3>
+		    			<p>
+		    				Alternatively to converting entire built pages post-build, you can convert individual files with pre-build scripts. For example if you have Haml installed on your machine you can convert a haml file <mono>input.haml</mono> to an html file <mono>output.html</mono> using the system call <mono>haml input.haml output.haml</mono>.
+		    			</p>
+		    
+		    			<h3>Converting template languages mid-build</h3>
+		    			<p>
+		    				Similar to converting individual files with pre-build scripts, you can convert individual files mid-build using the <mono>&commat;systemoutput(sys-call)</mono> function in Nift's template language. For example if you have Haml installed on your machine you can convert a haml file <mono>input.haml</mono> to html using the system call <mono>haml input.haml</mono>. Hence, to input the haml file <mono>input.haml</mono> converted to html in a content or template file for a Nift website simply use:
+		    
+		    <div style="margin-top:-30px; margin-bottom:20px">
+		    <center>
+		    <pre class="prettyprint inline">
+&commat;systemoutput("haml input.haml")
+</pre>
+		    </center>
+		    </div>
+		    			</p>
+		    
+		    			<header class="style1">
+		    				<h2>Template Languages</h2>
+		    			</header>
+		    
+		    			<div class="row aln-center">
+		    				<div class="col-4 col-12-medium">
+		    					<section class="highlight">
+		    						<a href="http://haml.info/"><img src="../images/haml.svg" alt="Haml logo" height="150px" style="max-width:40%"/></a>
+		    						<h3><a href="http://haml.info/">Haml</a></h3>
+		    						<p>A templating system that is designed to avoid writing inline code in a web document and make the HTML cleaner. Haml gives the flexibility to have some dynamic content in HTML.</p>
+		    						<ul class="actions">
+		    							<li><a href="http://haml.info/docs.html" class="button style1">Learn More</a></li>
+		    						</ul>
+		    					</section>
+		    				</div>
+		    				<div class="col-4 col-12-medium">
+		    					<section class="highlight">
+		    						<a href="https://pugjs.org/api/getting-started.html"><img src="../images/pug.svg" alt="Pug mascot" height="150px" style="max-width:40%"/></a>
+		    						<h3><a href="https://pugjs.org/api/getting-started.html">Pug</a></h3>
+		    						<p>A high-performance template engine heavily influenced by Haml and implemented with JavaScript for Node.js and browsers.</p>
+		    						<ul class="actions">
+		    							<li><a href="https://github.com/pugjs/pug" class="button style1">Learn More</a></li>
+		    						</ul>
+		    					</section>
+		    				</div>
+		    				<div class="col-4 col-12-medium">
+		    					<section class="highlight">
+		    						<a href="https://mozilla.github.io/nunjucks/"><img src="../images/nunjucks.svg" alt="Nunjucks logo" height="150px" style="max-width:40%"/></a>
+		    						<h3><a href="https://mozilla.github.io/nunjucks/">Nunjucks</a></h3>
+		    						<p>A rich and powerful templating language for JavaScript.</p>
+		    						<ul class="actions">
+		    							<li><a href="https://mozilla.github.io/nunjucks/getting-started.html" class="button style1">Learn More</a></li>
+		    						</ul>
+		    					</section>
+		    				</div>
+		    				<div class="col-4 col-12-medium">
+		    					<section class="highlight">
+		    						<a href="https://palletsprojects.com/p/jinja/"><img src="../images/jinja2.svg" alt="Jinja2 logo" height="150px" style="max-width:40%"/></a>
+		    						<h3><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></h3>
+		    						<p>A web template engine for the Python programming language and is licensed under a BSD License created by Armin Ronacher. It is similar to the Django template engine but provides Python-like expressions while ensuring that the templates are evaluated in a sandbox.</p>
+		    						<ul class="actions">
+		    							<li><a href="https://jinja.palletsprojects.com/en/2.10.x/" class="button style1">Learn More</a></li>
+		    						</ul>
+		    					</section>
+		    				</div>
+		    				<div class="col-4 col-12-medium">
+		    					<section class="highlight">
+		    						<a href="https://mustache.github.io/"><img src="../images/mustache.png" alt="Mustache logo" height="150px" style="max-width:40%"/></a>
+		    						<h3><a href="https://mustache.github.io/">Mustache</a></h3>
+		    						<p>Described as a "logic-less" system because it lacks any explicit control flow statements, like if and else conditionals or for loops; however, both looping and conditional evaluation can be achieved using section tags processing lists and lambdas.</p>
+		    						<ul class="actions">
+		    							<li><a href="https://mustache.github.io/mustache.5.html" class="button style1">Learn More</a></li>
+		    						</ul>
+		    					</section>
+		    				</div>
+		    				<div class="col-4 col-12-medium">
+		    					<section class="highlight">
+		    						<a href="https://handlebarsjs.com/"><img src="../images/handlebars.svg" alt="Handlebards logo" height="150px" style="max-width:40%"/></a>
+		    						<h3><a href="https://handlebarsjs.com/">Handlebars</a></h3>
+		    						<p>Minimal templating on steroids. Handlebars provides the power necessary to let you build semantic templates effectively with no frustration. Handlebars compiles templates into JavaScript functions. This makes the template execution faster than most other template engines.</p>
+		    						<ul class="actions">
+		    							<li><a href="https://handlebarsjs.com/guide/#what-is-handlebars" class="button style1">Learn More</a></li>
+		    						</ul>
+		    					</section>
+		    				</div>
+		    				<div class="col-4 col-12-medium">
+		    					<section class="highlight">
+		    						<a href="http://jade-lang.com/"><img src="../images/jade.svg" alt="Jade logo/mascot" height="150px" style="max-width:40%"/></a>
+		    						<h3><a href="http://jade-lang.com/">Jade</a></h3>
+		    						<p>A templating engine primarily used for server-side templating in NodeJS.</p>
+		    						<ul class="actions">
+		    							<li><a href="http://jade-lang.com/command-line" class="button style1">Learn More</a></li>
+		    						</ul>
+		    					</section>
+		    				</div>
+		    				<div class="col-4 col-12-medium">
+		    					<section class="highlight">
+		    						<a href="https://docs.djangoproject.com/en/2.2/ref/templates/language/"><img src="../images/django.svg" alt="Grunt mascot" height="150px" style="max-width:40%"/></a>
+		    						<h3><a href="https://docs.djangoproject.com/en/2.2/ref/templates/language/">Django</a></h3>
+		    						<p>Designed to strike a balance between power and ease. It’s designed to feel comfortable to those used to working with HTML. If you have any exposure to other text-based template languages, such as Smarty or Jinja2, you should feel right at home with Django’s templates.</p>
+		    						<ul class="actions">
+		    							<li><a href="https://docs.djangoproject.com/en/2.2/ref/templates/language/" class="button style1">Learn More</a></li>
+		    						</ul>
+		    					</section>
+		    				</div>
+		    				<div class="col-4 col-12-medium">
+		    					<section class="highlight">
+		    						<a href="https://olado.github.io/doT/"><img src="../images/dot.png" alt="doT.js logo" height="150px" style="max-width:40%"/></a>
+		    						<h3><a href="https://olado.github.io/doT/">doT.js</a></h3>
+		    						<p>A race car of templating engines - doT lacks bells and whistles that other templating engines have, but it allows to achive more than any other, if you use it right, doT.js is fast, small and has no dependencies.</p>
+		    						<ul class="actions">
+		    							<li><a href="https://github.com/olado/doT" class="button style1">Learn More</a></li>
+		    						</ul>
+		    					</section>
+		    				</div>
+		    				<div class="col-4 col-12-medium">
+		    					<section class="highlight">
+		    						<a href="https://ejs.co/"><img src="../images/ejs.png" alt="EJS logo" height="150px" style="max-width:40%"/></a>
+		    						<h3><a href="https://ejs.co/">EJS</a></h3>
+		    						<p>A simple templating language that lets you generate HTML markup with plain JavaScript. No religiousness about how to organize things. No reinvention of iteration and control-flow. It's just plain JavaScript.</p>
+		    						<ul class="actions">
+		    							<li><a href="https://ejs.co/#install" class="button style1">Learn More</a></li>
+		    						</ul>
+		    					</section>
+		    				</div>
+		    				<div class="col-4 col-12-medium">
+		    					<section class="highlight">
+		    						<a href="https://markojs.com/"><img src="../images/marko.png" alt="Marko logo" height="150px" style="max-width:40%"/></a>
+		    						<h3><a href="https://markojs.com/">Marko</a></h3>
+		    						<p>HTML re-imagined as a language for building dynamic and reactive user interfaces. Just about any valid HTML is valid Marko, but Marko extends the HTML language to allow building modern applications in a declarative way. Among these extensions are conditionals, lists, state, and components. Marko supports both single-file components and components broken into separate files.</p>
+		    						<ul class="actions">
+		    							<li><a href="https://github.com/marko-js/marko" class="button style1">Learn More</a></li>
+		    						</ul>
+		    					</section>
+		    				</div>
+		    				<div class="col-4 col-12-medium">
+		    					<section class="highlight">
+		    						<a href="https://squirrelly.js.org/"><img src="../images/squirrelly.svg" alt="Squirrelly mascot" height="150px" style="max-width:40%"/></a>
+		    						<h3><a href="https://squirrelly.js.org/">Squirrelly</a></h3>
+		    						<p>A modern, configurable, and blazing fast template engine implemented in JavaScript. It works out of the box with ExpressJS and the full version weighs only ~2.2KB gzipped.</p>
+		    						<ul class="actions">
+		    							<li><a href="https://github.com/squirrellyjs/squirrelly" class="button style1">Learn More</a></li>
+		    						</ul>
+		    					</section>
+		    				</div>
+		    			</div>
+		    
+		    			<center><br><br>
+		    				<p>
+		    					See <a href="https://en.wikipedia.org/wiki/Comparison_of_web_template_engines">here</a> for a bigger list of web template engines with a comparison of features available.
+		    				</p>
+		    			</center>
+		    		</div>
+		    	</div>
+		    </section>
+
+			<!-- Footer -->
+			<section id="footer" class="wrapper">
+				<div class="title">
+					<img src="../images/nsm.png" alt="nsm signature on parchment" width="120" style="margin-top:40px; margin-bottom:20px">
+				</div>
+			
+				<div class="container">
+					<div id="copyright">
+						<ul style="margin-top:115px">
+							<li><b>Mirrors:</b></li>
+							<li><a href="https://nift.cc/">Official</a></li>
+							<li><a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a></li>
+							<li><a href="https://nifty-site-manager.github.io/">GitHub</a></li>
+							<li><a href="https://nifty-site-manager.gitlab.io/">GitLab</a></li>
+							<li><a href="https://nifty-site-manager.netlify.com/">Netlify</a></li>
+						</ul> <br>
+			
+						<center><img src="../images/badger.svg" alt="Nift badger mascot" width="325" style="max-width:90%; margin-bottom:20px"></center>
+			
+						<ul>
+							<li>&copy;&nbsp;2015 - <span name="cyear"></span> <a href="https://nift.cc">Nift</a>.</li>
+							<li>Creator: <a href="https://n-ham.com">Nicholas Ham</a></li>
+						</ul> <br>
+			
+						<ul>
+							<li><a href="../tos.html">Terms of Service</a></li>
+							<li><a href="../privacy_policy.html">Privacy Policy</a></li>
+						</ul>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<!-- Scripts -->
+		<script src="../assets/js/jquery.min.js"></script>
+		<script src="../assets/js/jquery.dropotron.min.js"></script>
+		<script src="../assets/js/browser.min.js"></script>
+		<script src="../assets/js/breakpoints.min.js"></script>
+		<script src="../assets/js/util.js"></script>
+		<script src="../assets/js/main.js"></script>
+		<script src='../assets/js/process_md_blocks.js'></script>
+		<script src="../assets/js/showdown.min.js"></script>
+		<script>
+			var converter = new showdown.Converter();
+			converter.setOption('emoji', 'on');
+			converter.setOption('tables', 'on');
+			converter.setOption('strikethrough', 'on');
+			elements = document.getElementsByClassName('markdown');
+			for(var i=0; i<elements.length; i++)
+				elements[i].innerHTML = converter.makeHtml(elements[i].innerHTML.replace(/&lt;/g, "xwxw").replace(/&gt;/g, "pqpq")).replace(/xwxw/g, "&lt;").replace(/pqpq/g, "&gt;");
+		</script>
+
+		<!-- Inserts current year -->
+		<script>
+			var x = document.getElementsByName("cyear");
+
+			for(var i=0; i<x.length; i++)
+				x[i].innerHTML = new Date().getFullYear();
+		</script>
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-62165905-2"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-62165905-2');
+		</script>
+
+		<!-- uses google-code-prettify for syntax highlighting 
+			 see https://github.com/google/code-prettify/ for more info -->
+		<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+		<!-- uses MathJax CDC for LaTeX support
+			 see http://docs.mathjax.org/en/latest/start.html for more info -->
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config
+			({
+				extensions: ["tex2jax.js"],
+				jax: ["input/TeX", "output/HTML-CSS"],
+				tex2jax: 
+				{
+					inlineMath: [['$','$'], ['\\(','\\)']],
+					displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+					processEscapes: true
+				},
+				"HTML-CSS": { availableFonts: ["MathJax TeX"] }
+			});
+		</script>
+		<script type="text/javascript" 
+				src="https://cdn.mathjax.org/mathjax/latest/MathJax.js">
+		</script>
+    </body>
+</html>
+
+<!--
+	Site Design: Escape Velocity by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+

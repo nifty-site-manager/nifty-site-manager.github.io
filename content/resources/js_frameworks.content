@@ -80,16 +80,6 @@
 				</div>
 				<div class="col-4 col-12-medium">
 					<section class="highlight">
-						<a href="https://mozilla.github.io/nunjucks/"><img src="@pathtofile(site/images/nunjucks.svg)" alt="Nunjucks logo" height="150px" style="max-width:40%"/></a>
-						<h3><a href="https://mozilla.github.io/nunjucks/">Nunjucks</a></h3>
-						<p>A rich and powerful templating language for JavaScript.</p>
-						<ul class="actions">
-							<li><a href="https://mozilla.github.io/nunjucks/getting-started.html" class="button style1">Learn More</a></li>
-						</ul>
-					</section>
-				</div>
-				<div class="col-4 col-12-medium">
-					<section class="highlight">
 						<a href="https://emberjs.com/"><img src="@pathtofile(site/images/ember.svg)" alt="Ember logo" height="150px" style="max-width:40%"/></a>
 						<h3><a href="https://emberjs.com/">Ember</a></h3>
 						<p>A framework for ambitious web developers.</p>

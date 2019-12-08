@@ -70,6 +70,10 @@ scripts
 'template_files'
 'template/page.template'
 
+'docs/template_languages'
+'template_languages'
+'template/page.template'
+
 'docs/translators'
 translators
 'template/page.template'
