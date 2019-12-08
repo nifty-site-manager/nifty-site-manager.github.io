@@ -163,7 +163,7 @@ This is a line @\nthat is broken in to@\n three lines.
 				</p>
 
 				<p>
-					<u>Special parsed single-line comments</u> are almost the same as parsed single-line comments except that in the source code for the built page/file the following line is placed on the same line after the text before <mono>\@!\n</mono>. You cannot put two instances of <mono>\@!\n</mono> on the same line, Nift will throw and error.
+					<u>Special parsed single-line comments</u> are almost the same as parsed single-line comments except that in the source code for the built page/file the following line is placed on the same line after the text before <mono>\@!\n</mono>. You cannot put two instances of <mono>\@!\n</mono> on the same line, Nift will throw a build error.
 				</p>
 
 				<p>

@@ -181,6 +181,46 @@
 						</ul>
 					</section>
 				</div>
+				<div class="col-4 col-12-medium">
+					<section class="highlight">
+						<a href="https://twig.symfony.com/"><img src="@pathtofile(site/images/twig.png)" alt="Twig logo" height="150px" style="max-width:40%"/></a>
+						<h3><a href="https://twig.symfony.com/">Twig</a></h3>
+						<p>A template engine for the PHP programming language. Its syntax originates from Jinja and Django templates. It's an open source product licensed under a BSD License</p>
+						<ul class="actions">
+							<li><a href="https://twig.symfony.com/doc/3.x/" class="button style1">Learn More</a></li>
+						</ul>
+					</section>
+				</div>
+				<div class="col-4 col-12-medium">
+					<section class="highlight">
+						<a href="https://docs.phalcon.io/3.4/en/volt"><img src="@pathtofile(site/images/volt.png)" alt="Volt code sample" height="150px" style="max-width:40%"/></a>
+						<h3><a href="https://docs.phalcon.io/3.4/en/volt">Volt</a></h3>
+						<p>An ultra-fast and designer friendly templating language written in C for PHP. It provides you a set of helpers to write views in an easy way. Inspired by Jinja, therefore many developers will be in familiar territory using the same syntax they have been using with similar template engines.</p>
+						<ul class="actions">
+							<li><a href="https://docs.phalcon.io/3.4/en/volt" class="button style1">Learn More</a></li>
+						</ul>
+					</section>
+				</div>
+				<div class="col-4 col-12-medium">
+					<section class="highlight">
+						<a href="https://www.smarty.net/"><img src="@pathtofile(site/images/smarty.png)" alt="Smarty logo" height="150px" style="max-width:40%"/></a>
+						<h3><a href="https://www.smarty.net/">Smarty</a></h3>
+						<p>A web template system written in PHP. Smarty is primarily promoted as a tool for separation of concerns. Smarty is intended to simplify compartmentalization, allowing the front-end of a web page to change separately from its back-end.</p>
+						<ul class="actions">
+							<li><a href="https://www.smarty.net/crash_course" class="button style1">Learn More</a></li>
+						</ul>
+					</section>
+				</div>
+				<div class="col-4 col-12-medium">
+					<section class="highlight">
+						<a href="http://dwoo.org/"><img src="@pathtofile(site/images/dwoo.png)" alt="Dwoo logo" height="150px" style="max-width:40%"/></a>
+						<h3><a href="http://dwoo.org/">Dwoo</a></h3>
+						<p>A PHP5 template engine which is (almost) fully compatible with Smarty templates and plugins, but is written from scratch for PHP5, and adds many features</p>
+						<ul class="actions">
+							<li><a href="https://github.com/dwoo-project/dwoo" class="button style1">Learn More</a></li>
+						</ul>
+					</section>
+				</div>
 			</div>
 
 			<center><br><br>
