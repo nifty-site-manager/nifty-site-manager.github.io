@@ -175,7 +175,7 @@
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline">
 &commat;input*("&commat;contentpath")
-</pre>.
+</pre>
 		    </div>
 		    				</p>
 		    
@@ -585,7 +585,7 @@ Page was last built on &commat;currentdate.
 		    
 		    				<h4 id="scripts">Running scripts</h4>
 		    				<p>
-		    					Scripts may be run using <mono>&commat;script(script-path)</mono>, where <mono>script-path</mono> is the path from the main project directory to the script, which is basically the same as the system call for the script. If you need to pass parameters to your scripts you can use <mono>&commat;script(script-path, script-parameters)</mono> where <mono>script-parameters</mono> is a quoted string of parameters (use single outer quotes and double inner quotes for parameters with spaces).
+		    					Scripts may be run using <mono>&commat;script(script-path)</mono>, where <mono>script-path</mono> is the path from the project root directory to the script, which is basically the same as the system call for the script. If you need to pass parameters to your scripts you can use <mono>&commat;script(script-path, script-parameters)</mono> where <mono>script-parameters</mono> is a quoted string of parameters (use single outer quotes and double inner quotes for parameters with spaces).
 		    				</p>
 		    
 		    				<p>
@@ -609,7 +609,20 @@ Page was last built on &commat;currentdate.
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> If scripts are so large that copying the file will take time or you want to run a program located in the project directory somewhere, you should instead use a system call and have the script/program located in the project root directory without spaces in the name. Alternatively you can write scripts/programs that you run yourself (not using Nift) which they themselves add the Nift build process in to them, leaving you with just one program that you need to run when building. You will still get to take advantage of Nift's unbeaten build times and powerful template language doing this.
+		    					<b>Note:</b> Scripts/programs run with <mono>&commat;script</mono> calls are moved to the project root directory to run and have a backup copy made. If scripts/programs are so large that copying the file will take time, or you are making lots of calls which is slower at scale, you can use the <mono>'^'</mono> option to not have the script backed up, eg.: 
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline lang-bash">
+&commat;script^('./script.py')
+</pre>
+		    </div>
+		    				</p>
+		    
+		    				<p>
+		    					If you need to use Nift's template language with the input parameters for the <mono>&commat;script</mono> call as well then you can do either <mono>&commat;script*^(script-path)</mono> or <mono>&commat;script^*(script-path)</mono>.
+		    				</p>
+		    
+		    				<p>
+		    					Alternatively you can write scripts/programs that you run yourself (not using Nift) which they themselves add the Nift build process in to them, leaving you with just one program that you need to run when building. You will still get to take advantage of Nift's unbeaten build times and powerful template language doing this.
 		    				</p>
 		    
 		    				<p>
@@ -621,7 +634,7 @@ Page was last built on &commat;currentdate.
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> <mono>&commat;script</mono> calls do not scale very well to thousands of calls, it is much better to combine as much as possible in to as few <mono>&commat;script</mono> calls as possible (the site-wide pre-build scripts is the best place), though you shouldn't have any issues calling as many scripts as you want from the scripts called using <mono>&commat;script</mono> calls. For example if possible it's much faster to have one script to download text from multiple urls using cURL, or make all the api calls, all the database queries, and work on JSON data needed and distribute the needed output in to different files to be inputted when needed.
+		    					<b>Note:</b> <mono>&commat;script</mono> calls do not scale very well to hundreds of thousands of calls, it is much better to combine as much as possible in to as few <mono>&commat;script</mono> calls as possible for extremely large projects (moving stuff to the pre/post build scripts is the best place, you can output stuff to file and process the files when building). For example if possible it's much faster to have a few pre-build scripts to download text from multiple urls using cURL, and/or make all the api calls, all the database queries, and work on JSON data needed and distribute the needed output in to different files to be inputted when needed. Note that page-specific build scripts have the benefit of multithreading, whereas site-wide build scripts wont have any multithreading unless you code it in there yourself.
 		    				</p>
 		    
 		    				<h4 id="script-output">Inputting script output</h4>
@@ -639,7 +652,20 @@ Page was last built on &commat;currentdate.
 		    </div>
 		    
 		    				<p>
-		    					<b>Note:</b> If scripts are so large that copying the file will take time or you want to run a program located in the project directory somewhere, you should instead use a system call and have the script/program located in the project root directory without spaces in the name. Alternatively you can write scripts/programs that you run yourself (not using Nift) which they themselves add the Nift build process in to them, leaving you with just one program that you need to run when building. You will still get to take advantage of Nift's unbeaten build times and powerful template language doing this.
+		    					<b>Note:</b> Scripts/programs run with <mono>&commat;scriptoutput</mono> calls are moved to the project root directory to run and have a backup copy made. If scripts/programs are so large that copying the file will take time, or you are making lots of calls which is slower at scale, you can use the <mono>'^'</mono> option to not have the script backed up, eg.: 
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline lang-bash">
+&commat;scriptoutput^('./script.py')
+</pre>
+		    </div>
+		    				</p>
+		    
+		    				<p>
+		    					If you need to use Nift's template language with the input parameters for the <mono>&commat;scriptoutput</mono> call as well then you can do either <mono>&commat;scriptoutput*^(script-path)</mono> or <mono>&commat;scriptoutput^*(script-path)</mono>.
+		    				</p>
+		    
+		    				<p>
+		    					Alternatively you can write scripts/programs that you run yourself (not using Nift) which they themselves add the Nift build process in to them, leaving you with just one program that you need to run when building. You will still get to take advantage of Nift's unbeaten build times and powerful template language doing this.
 		    				</p>
 		    
 		    				<p>
@@ -651,7 +677,7 @@ Page was last built on &commat;currentdate.
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> <mono>&commat;scriptoutput</mono> calls do not scale very well to thousands of calls, it is much better to combine as much as possible in to as few <mono>&commat;scriptoutput</mono> calls as possible (the site-wide pre-build scripts is the best place), though you shouldn't have any issues calling as many scripts as you want from the scripts called using <mono>&commat;scriptoutput</mono> calls. For example if possible it's much faster to have one script to run all the scripts needed saving output to file, then when you want to inject the output of that script instead input the file you saved the output to earlier in the build process.
+		    					<b>Note:</b> <mono>&commat;scriptoutput</mono> calls do not scale very well to hundreds of thousands of calls, it is much better to combine as much as possible in to as few <mono>&commat;script</mono> calls as possible for extremely large projects (moving stuff to the pre/post build scripts is the best place, you can output stuff to file and process the files when building). For example if possible it's much faster to have a few pre-build scripts to download text from multiple urls using cURL, and/or make all the api calls, all the database queries, and work on JSON data needed and distribute the needed output in to different files to be inputted when needed. Note that page-specific build scripts have the benefit of multithreading, whereas site-wide build scripts wont have any multithreading unless you code it in there yourself.
 		    				</p>
 		    
 		    				<h4 id="script-output-raw">Inputting script output raw</h4>
@@ -668,7 +694,20 @@ Page was last built on &commat;currentdate.
 		    </div>
 		    
 		    				<p>
-		    					<b>Note:</b> If scripts are so large that copying the file will take time or you want to run a program located in the project directory somewhere, you should instead use a system call and have the script/program located in the project root directory without spaces in the name. Alternatively you can write scripts/programs that you run yourself (not using Nift) which they themselves add the Nift build process in to them, leaving you with just one program that you need to run when building. You will still get to take advantage of Nift's unbeaten build times and powerful template language doing this.
+		    					<b>Note:</b> Scripts/programs run with <mono>&commat;scriptraw</mono> calls are moved to the project root directory to run and have a backup copy made. If scripts/programs are so large that copying the file will take time, or you are making lots of calls which is slower at scale, you can use the <mono>'^'</mono> option to not have the script backed up, eg.: 
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline lang-bash">
+&commat;scriptraw^('./script.py')
+</pre>
+		    </div>
+		    				</p>
+		    
+		    				<p>
+		    					If you need to use Nift's template language with the input parameters for the <mono>&commat;scriptraw</mono> call as well then you can do either <mono>&commat;scriptraw*^(script-path)</mono> or <mono>&commat;scriptraw^*(script-path)</mono>.
+		    				</p>
+		    
+		    				<p>
+		    					Alternatively you can write scripts/programs that you run yourself (not using Nift) which they themselves add the Nift build process in to them, leaving you with just one program that you need to run when building. You will still get to take advantage of Nift's unbeaten build times and powerful template language doing this.
 		    				</p>
 		    
 		    				<p>
@@ -680,7 +719,7 @@ Page was last built on &commat;currentdate.
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> <mono>&commat;scriptraw</mono> calls do not scale very well to thousands of calls, it is much better to combine as much as possible in to as few <mono>&commat;scriptraw</mono> calls as possible (the site-wide pre-build scripts is the best place), though you shouldn't have any issues calling as many scripts as you want from the scripts called using <mono>&commat;scriptraw</mono> calls. For example if possible it's much faster to have one script to run all the scripts needed saving output to file, then when you want to inject the output of that script instead raw input the file you saved the output to earlier in the build process.
+		    					<b>Note:</b> <mono>&commat;scriptraw</mono> calls do not scale very well to hundreds of thousands of calls, it is much better to combine as much as possible in to as few <mono>&commat;script</mono> calls as possible for extremely large projects (moving stuff to the pre/post build scripts is the best place, you can output stuff to file and process the files when building). For example if possible it's much faster to have a few pre-build scripts to download text from multiple urls using cURL, and/or make all the api calls, all the database queries, and work on JSON data needed and distribute the needed output in to different files to be inputted when needed. Note that page-specific build scripts have the benefit of multithreading, whereas site-wide build scripts wont have any multithreading unless you code it in there yourself.
 		    				</p>
 		    
 		    				<h4 id="system">Running system calls</h4>
@@ -702,15 +741,11 @@ Page was last built on &commat;currentdate.
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> If scripts are so large that copying the file will take time or you want to run a program located in the project directory somewhere, you should instead use a system call and have the script/program located in the project root directory without spaces in the name. Alternatively you can write scripts/programs that you run yourself (not using Nift) which they themselves add the Nift build process in to them, leaving you with just one program that you need to run when building. You will still get to take advantage of Nift's unbeaten build times and powerful template language doing this.
-		    				</p>
-		    
-		    				<p>
 		    					<b>Note:</b> Scripts and system calls are run from the project root directory so all paths in your scripts should start from there. Also do not change directory in your scripts as it will mess up the other threads that are also building pages. If you really must change directories in your scripts then you will have to set the number of build threads to 1 and change back to the project root directory before each script ends. Also you will not see the output of your scripts until after they have finished running, so user input is not recommended as you can not display a message.
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> <mono>&commat;system</mono> calls do not scale very well to thousands of calls, it is much better to combine as much as possible in to one or a few scripts (the site-wide pre-build scripts is the best place), though you shouldn't have any issues calling as many scripts as you want from the scripts called using <mono>&commat;script</mono>, <mono>&commat;scriptoutput</mono> and <mono>&commat;scriptraw</mono> calls.
+		    					<b>Note:</b> <mono>&commat;system</mono> calls do not scale very well to hundreds of thousands of calls, it is much better to combine as much as possible in to as few <mono>&commat;script</mono> calls as possible for extremely large projects (moving stuff to the pre/post build scripts is the best place, you can output stuff to file and process the files when building). For example if possible it's much faster to have a few pre-build scripts to download text from multiple urls using cURL, and/or make all the api calls, all the database queries, and work on JSON data needed and distribute the needed output in to different files to be inputted when needed. Note that page-specific build scripts have the benefit of multithreading, whereas site-wide build scripts wont have any multithreading unless you code it in there yourself.
 		    				</p>
 		    
 		    				<h4 id="system-output">Inputting system call output</h4>
@@ -723,15 +758,11 @@ Page was last built on &commat;currentdate.
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> If scripts are so large that copying the file will take time or you want to run a program located in the project directory somewhere, you should instead use a system call and have the script/program located in the project root directory without spaces in the name. Alternatively you can write scripts/programs that you run yourself (not using Nift) which they themselves add the Nift build process in to them, leaving you with just one program that you need to run when building. You will still get to take advantage of Nift's unbeaten build times and powerful template language doing this.
-		    				</p>
-		    
-		    				<p>
 		    					<b>Note:</b> Scripts and system calls are run from the project root directory so all paths in your scripts should start from there. Also do not change directory in your scripts as it will mess up the other threads that are also building pages. If you really must change directories in your scripts then you will have to set the number of build threads to 1 and change back to the project root directory before each script ends. Also you will not see the output of your scripts until after they have finished running, so user input is not recommended as you can not display a message.
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> <mono>&commat;systemoutput</mono> calls do not scale very well to thousands of calls, it is much better to combine as much as possible in one or a few scripts (the site-wide pre-build scripts is the best place), though you shouldn't have any issues calling as many scripts as you want from the scripts called using <mono>&commat;script</mono>, <mono>&commat;scriptoutput</mono> and <mono>&commat;scriptraw</mono> calls. For example you can have one script that runs all the system calls needed and saves the output to different files, then instead of inputting the output of a system call when needed, input the output that is saved to file.
+		    					<b>Note:</b> <mono>&commat;systemoutput</mono> calls do not scale very well to hundreds of thousands of calls, it is much better to combine as much as possible in to as few <mono>&commat;script</mono> calls as possible for extremely large projects (moving stuff to the pre/post build scripts is the best place, you can output stuff to file and process the files when building). For example if possible it's much faster to have a few pre-build scripts to download text from multiple urls using cURL, and/or make all the api calls, all the database queries, and work on JSON data needed and distribute the needed output in to different files to be inputted when needed. Note that page-specific build scripts have the benefit of multithreading, whereas site-wide build scripts wont have any multithreading unless you code it in there yourself.
 		    				</p>
 		    
 		    				<p>
@@ -754,15 +785,11 @@ Page was last built on &commat;currentdate.
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> If scripts are so large that copying the file will take time or you want to run a program located in the project directory somewhere, you should instead use a system call and have the script/program located in the project root directory without spaces in the name. Alternatively you can write scripts/programs that you run yourself (not using Nift) which they themselves add the Nift build process in to them, leaving you with just one program that you need to run when building. You will still get to take advantage of Nift's unbeaten build times and powerful template language doing this.
-		    				</p>
-		    
-		    				<p>
 		    					<b>Note:</b> Scripts and system calls are run from the project root directory so all paths in your scripts should start from there. Also do not change directory in your scripts as it will mess up the other threads that are also building pages. If you really must change directories in your scripts then you will have to set the number of build threads to 1 and change back to the project root directory before each script ends. Also you will not see the output of your scripts until after they have finished running, so user input is not recommended as you can not display a message.
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> <mono>&commat;systeraw</mono> calls do not scale very well to thousands of calls, it is much better to combine as much as possible in one or a few scripts (the site-wide pre-build scripts is the best place), though you shouldn't have any issues calling as many scripts as you want from the scripts called using <mono>&commat;script</mono>, <mono>&commat;scriptoutput</mono> and <mono>&commat;scriptraw</mono> calls. For example you can have one script that runs all the system calls needed and saves the output to different files, then instead of inputting the output of a system call when needed, input the output that is saved to file.
+		    					<b>Note:</b> <mono>&commat;systemraw</mono> calls do not scale very well to hundreds of thousands of calls, it is much better to combine as much as possible in to as few <mono>&commat;script</mono> calls as possible for extremely large projects (moving stuff to the pre/post build scripts is the best place, you can output stuff to file and process the files when building). For example if possible it's much faster to have a few pre-build scripts to download text from multiple urls using cURL, and/or make all the api calls, all the database queries, and work on JSON data needed and distribute the needed output in to different files to be inputted when needed. Note that page-specific build scripts have the benefit of multithreading, whereas site-wide build scripts wont have any multithreading unless you code it in there yourself.
 		    				</p>
 		    
 		    				<p>

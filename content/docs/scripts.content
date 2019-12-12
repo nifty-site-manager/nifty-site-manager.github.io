@@ -19,7 +19,7 @@
 				</p>
 
 				<p>
-					<b>Note:</b> Make sure your scripts and programs have executable permissions, otherwise Nift will be unable to run them and should throw a build error.
+					<b>Note:</b> Make sure your scripts/programs have executable permissions, otherwise Nift will be unable to run them and should throw a build error.
 				</p>
 
 				<p>
@@ -27,7 +27,11 @@
 				</p>
 
 				<p>
-					<b>Note:</b> If scripts are so large that copying the file will take time or you want to run a program located in the project directory somewhere, you should instead use a system call and have the script/program located in the project root directory without spaces in the name. Alternatively you can write scripts/programs that you run yourself (not using Nift) which they themselves add the Nift build process in to them, leaving you with just one program that you need to run when building. You will still get to take advantage of Nift's unbeaten build times and powerful template language doing this.
+					<b>Note:</b> Build/serve scripts/programs are moved to the project root directory to run and by default have a backup copy made. If scripts/programs are so large that copying the file will take time, your site configuration file <mono>.siteinfo/nsm.config</mono> can optionally include <mono>backupScripts bool</mono> to indicate whether build/serve scripts/programs should be backed up when run.
+				</p>
+
+				<p>
+					Alternatively you can write scripts/programs that you run yourself (not using Nift) which they themselves add the Nift build process in to them, leaving you with just one program that you need to run when building. You will still get to take advantage of Nift's unbeaten build times and powerful template language doing this.
 				</p>
 
 				<p>
@@ -35,15 +39,11 @@
 				</p>
 
 				<p>
-					Website-wide scripts should reside in the project root directory in a file to be named as follows:
+					Website-wide scripts/programs should reside in the project root directory in a file to be named as follows:
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
 <pre class="inline">
 pre-build.scriptExt
 post-build.scriptExt
-pre-build-all.scriptExt
-post-build-all.scriptExt
-pre-build-updated.scriptExt
-post-build-updated.scriptExt
 pre-serve.scriptExt
 post-serve.scriptExt
 </pre>
@@ -61,7 +61,7 @@ pagename-post-build.scriptExt
 </pre>
 </div>
 
-					<b>Note:</b> Running lots of page-specific pre/post build scripts does not scale well to thousands of scripts/programs. If you are working on projects that large you are much better off calling the page-specific scripts from the site-wide pre/post build/serve scripts (you may find it beneficial to work out which pages need building for incremental builds, ask through Reddit/Twitter/Discord/GitHub/GitLab/BitBucket if you need this).
+					<b>Note:</b> Running lots of page-specific pre/post build scripts/programs does not scale well to hundreds of thousands of scripts/programs. If you are working on projects that large you might have more luck calling one site-wide build script/program with multithreading.
 				</p>
 
 				<p>
