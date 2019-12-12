@@ -103,6 +103,16 @@
 				</div>
 				<div class="col-4 col-12-medium">
 					<section class="highlight">
+						<a href="https://pantor.github.io/inja/"><img src="@pathtofile(site/images/inja.jpg)" alt="Jinja2 logo" height="150px" style="max-width:40%"/></a>
+						<h3><a href="https://pantor.github.io/inja/">Inja</a></h3>
+						<p>A template engine for modern C++, loosely inspired by jinja for python. It has an easy and yet powerful template syntax with all variables, loops, conditions, includes, callbacks, comments you need, nested and combined as you like.</p>
+						<ul class="actions">
+							<li><a href="https://github.com/pantor/inja" class="button style1">Learn More</a></li>
+						</ul>
+					</section>
+				</div>
+				<div class="col-4 col-12-medium">
+					<section class="highlight">
 						<a href="https://mustache.github.io/"><img src="@pathtofile(site/images/mustache.png)" alt="Mustache logo" height="150px" style="max-width:40%"/></a>
 						<h3><a href="https://mustache.github.io/">Mustache</a></h3>
 						<p>Described as a "logic-less" system because it lacks any explicit control flow statements, like if and else conditionals or for loops; however, both looping and conditional evaluation can be achieved using section tags processing lists and lambdas.</p>
