@@ -16,6 +16,13 @@ noselect
 	-ms-user-select: none; /* IE10+ */
 }
 
+.to_top
+{
+	position:fixed !important;
+	bottom:15px !important;
+	right:15px !important;
+}
+
 div.content
 {
 	font-size:14pt;

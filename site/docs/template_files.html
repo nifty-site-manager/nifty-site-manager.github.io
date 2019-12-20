@@ -133,28 +133,28 @@
 		    
 		    			<div class="content">
 		    				<p>
-		    					Remember that for each page tracked by <mono>Nift</mono> there is a specified template path. When building a page, <mono>Nift</mono> will start processing the template file the same as it will process any other file. Consequently everything that applied to writing <a href="content_files.html">content files</a> also applies to writing template files. However, unlike content files, template files (or one of their dependencies) need to use the page content file as a page dependency. 
+		    					Remember that for each file tracked by <mono>Nift</mono> there is a specified template path. When building an output file, <mono>Nift</mono> will start parsing the template file the same as it will parse any other file, using Nift's template language while producing the output. Consequently everything that applied to writing <a href="content_files.html">content files</a> also applies to writing template files. However, unlike content files, template files (or one of their dependencies) need to use the page content file as a page dependency.
 		    				</p>
 		    
 		    				<h4>
-		    					Specifying where content is to be inputted
+		    					Specifying where to input/inject/insert content
 		    				</h4>
 		    
 		    				<p>
-		    					<mono>Nift</mono> treats any instance of <mono>&commat;inputcontent</mono> as being equivalent to <mono>&commat;input(path-to-content)</mono>, where <mono>path-to-content</mono> is the content path for a page.
+		    					<mono>Nift</mono> treats any instance of <mono>@inputcontent</mono> as being equivalent to <mono>@input(@[contentpath])</mono>, where <mono>@[contentpath]</mono> is the content path for the tracked page.
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> if <mono>&commat;inputcontent</mono> is in any dependency of a page's content file (content file inclusive), then an input loop would be formed when attempting to build the page so <mono>Nift</mono> will (at least it should) throw an error. You may however put <mono>&commat;inputcontent</mono> in any other dependencies of the template file. For example were your template to include a file <mono>template/body.template</mono>, it is fine for <mono>&commat;inputcontent</mono> to reside in <mono>body.template</mono> and not the main template file.
+		    					<b>Note:</b> if <mono>@inputcontent</mono> is in any dependency of the content file (content file inclusive), then an input loop would be formed when attempting to build the page so <mono>Nift</mono> will (at least it should) throw an error. You may however put <mono>@inputcontent</mono> in any other dependencies of the template file. For example were your template to include a file <mono>template/body.content</mono> or <mono>template/body.template</mono>, it is fine for <mono>@inputcontent</mono> to reside in <mono>body.content</mono>/<mono>body.template</mono> and not the main template file.
 		    				</p>
 		    
 		    				<p>
-		    					Alternatively to <mono>&commat;inputcontent</mono> you can:
+		    					Alternatively to <mono>@inputcontent</mono> you can:
 		    					<ul style="text-indent:30px">
-		    						<li>use <mono>&commat;inputraw</mono> which will input the content file without parsing it with Nift's template language</li>
-		    						<li>use <mono>&commat;systemcontent(sys-call)</mono> which is equivalent to <mono>&commat;systemcontent*(sys-call &commat;contentpath)</mono>, where <mono>&commat;contentpath</mono> injects the content path for a page. For example if your content files are markdown and you use <mono>&commat;systemoutput("pandoc")</mono> then the content files will be injected after being converted to html using pandoc</li>
-		    						<li>use <mono>&commat;scriptoutput*(&commat;contentpath)</mono></li>
-		    						<li>use <mono>&commat;dep*(&commat;contentpath)</mono></li>
+		    						<li>use <mono>@inputraw</mono> which will input the content file without parsing it with Nift's template language</li>
+		    						<li>use <mono>@systemcontent(sys-call)</mono> which is equivalent to <mono>@systemcontent*(sys-call @[contentpath])</mono>, where <mono>@[contentpath]</mono> injects the content path for a page. For example if your content files are markdown and you use <mono>@systemoutput("pandoc")</mono> then the content files will be injected after being converted to html using pandoc</li>
+		    						<li>use <mono>@scriptoutput*(@[contentpath])</mono></li>
+		    						<li>use <mono>@dep*(@[contentpath])</mono></li>
 		    					</ul>
 		    				</p>
 		    
@@ -163,15 +163,15 @@
 		    				</h4>
 		    
 		    				<p>
-		    					You can optionally add <mono>&commat;inputhead</mono> which will input <mono>page-name.head</mono> if the file exists. So if you want to optionally add code for a page at that point add a file <mono>page-name.head</mono> in the same directory as the page content file. This is very similar to doing <mono>&commat;input*(&commat;contentdir/&commat;pagename.head)</mono> except the existence of the file is optional.
+		    					You can optionally add <mono>@inputhead</mono> which will input <mono>content/name.head</mono> if the file exists. So if you want to optionally add code for a page at that point add a file <mono>page-name.head</mono> in the same directory as the page content file. This is very similar to doing <mono>@input*(@contentdir/@pagename.head)</mono> except the existence of the file is optional.
 		    				</p>
 		    
 		    				<h4>
-		    					Specifying where the page title is to be inputted
+		    					Inputting/injecting/inserting titles
 		    				</h4>
 		    
 		    				<p>
-		    					When building a page, <mono>Nift</mono> will replace any instance of <mono>&commat;pagetitle</mono> with the title <mono>Nift</mono> has tracked for the page. Unlike <mono>&commat;inputcontent</mono>, <mono>&commat;pagetitle</mono> may be placed inside content files (template files inclusive). 
+		    					When building a page, <mono>Nift</mono> will replace any instance of <mono>@[title]</mono> with the title <mono>Nift</mono> has tracked for the file. Unlike <mono>@inputcontent</mono>, <mono>@[title]</mono> may be placed inside content files (template files inclusive). 
 		    				</p>
 		    
 		    				<h4>
@@ -179,7 +179,7 @@
 		    				</h4>
 		    
 		    				<p>
-		    					A very simple template file, that specifies both where content and the page title are to be inputted, would be:
+		    					A very simple html template file, that specifies both where content and the title are to be inputted, would be:
 		    				</p>
 		    
 		    				<div align="center" style="margin-top:-15px; margin-bottom: 20px">
@@ -187,18 +187,18 @@
 &lt;!DOCTYPE html>
 &lt;html>
 	&lt;head>
-		&lt;title>site title - &commat;pagetitle&lt;/title>
+		&lt;title>site title - @[title]&lt;/title>
 	&lt;/head>
 
 	&lt;body>
-		&commat;inputcontent	
+		@inputcontent	
 	&lt;/body>
 &lt;/html>
 </pre>
 		    				</div>
 		    
 		    				<p>
-		    					It can be convenient to break what would typically be found inside the template file up into various content files. For example you may have <mono>template/head.content</mono>, <mono>template/menu.content</mono> and <mono>template/footer.content</mono>. A suitable template file, say the default <mono>template/page.template</mono> would then be:
+		    					It can be convenient to break what would typically be found inside the template file up into various content files (or you can think of them as also being template files, which extension you use is up to you). For example you may have <mono>template/head.content</mono>, <mono>template/menu.content</mono> and <mono>template/footer.content</mono>. A suitable html template file, say the default <mono>template/page.template</mono> would then be:
 		    				</p>
 		    
 		    				<div align="center" style="margin-top:-15px; margin-bottom: 20px">
@@ -206,15 +206,15 @@
 &lt;!DOCTYPE html>
 &lt;html>
 	&lt;head>
-		&commat;input(template/head.content)
+		@input(template/head.content)
 	&lt;/head>
 
 	&lt;body>
-		&commat;input(template/menu.content)
+		@input(template/menu.content)
 
-		&commat;inputcontent	
+		@inputcontent	
 
-		&commat;input(template/footer.content)
+		@input(template/footer.content)
 	&lt;/body>
 &lt;/html>
 </pre>

@@ -139,7 +139,7 @@
 		    				<ol>
 		    					<li>set the page extension to the normal extension used for the template language either site-wide or for the individual pages you want to use the template language for;</li>
 		    					<li>use the template language in the content and template files used to build the pages;</li>
-		    					<li>add post-build scripts to convert the built pages from the template language to html (you could even remove the built pages after converting if you want, or just move them to a different directory for the final website, the former is easier with regards to using the <mono>&commat;pathtofile(abs-path-to-file)</mono> function from Nift's template language etc.).</li>
+		    					<li>add post-build scripts to convert the built pages from the template language to html (you could even remove the built pages after converting if you want, or just move them to a different directory for the final website, the former is easier with regards to using the <mono>@pathtofile(abs-path-to-file)</mono> function from Nift's template language etc.).</li>
 		    				</ol>
 		    			</p>
 		    
@@ -163,12 +163,12 @@
 		    
 		    			<h3>Converting template languages mid-build</h3>
 		    			<p>
-		    				Similar to converting individual files with pre-build scripts, you can convert individual files mid-build using the <mono>&commat;systemoutput(sys-call)</mono> function in Nift's template language. For example if you have Haml installed on your machine you can convert a haml file <mono>input.haml</mono> to html using the system call <mono>haml input.haml</mono>. Hence, to input the haml file <mono>input.haml</mono> converted to html in a content or template file for a Nift website simply use:
+		    				Similar to converting individual files with pre-build scripts, you can convert individual files mid-build using the <mono>@systemoutput(sys-call)</mono> function in Nift's template language. For example if you have Haml installed on your machine you can convert a haml file <mono>input.haml</mono> to html using the system call <mono>haml input.haml</mono>. Hence, to input the haml file <mono>input.haml</mono> converted to html in a content or template file for a Nift website simply use:
 		    
 		    <div style="margin-top:-30px; margin-bottom:20px">
 		    <center>
 		    <pre class="prettyprint inline">
-&commat;systemoutput("haml input.haml")
+@systemoutput("haml input.haml")
 </pre>
 		    </center>
 		    </div>

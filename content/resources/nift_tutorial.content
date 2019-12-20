@@ -188,7 +188,7 @@ ostream& operator<<(ostream &os, const std::vector<std::string> &v)
 					</li>
 
 					<li>
-						Now try changing the open pre tag in <mono>content/about.content</mono> from <mono>\<pre></mono> to <mono>\<pre class="inline rounded prettyprint lang-cpp"></mono>.
+						Now try changing the open pre tag in <mono>content/about.content</mono> from <mono>@\<pre></mono> to <mono>@\<pre class="inline rounded prettyprint lang-cpp"></mono>.
 					</li>
 
 					<li>
