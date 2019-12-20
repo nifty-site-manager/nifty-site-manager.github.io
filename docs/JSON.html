@@ -148,7 +148,7 @@
 		    <div style="margin-top:-30px; margin-bottom:20px">
 		    For example you can use:
 		    <pre class="prettyprint">
-&commat;systemoutput("curl 'https://api.github.com/repos/stedolan/jq/commits?per_page=5' | jq '.[0]'")
+@systemoutput("curl 'https://api.github.com/repos/stedolan/jq/commits?per_page=5' | jq '.[0]'")
 </pre>
 		    </div>
 		    						</li>
@@ -184,14 +184,14 @@
 		    <div style="margin-top:-30px; margin-bottom:20px">
 		    For example you can use:
 		    <pre class="prettyprint">
-&commat;system("curl -o todos.json https://jsonplaceholder.typicode.com/todos")
-&commat;systemoutput("cat todos.json | groq '*[completed == true]{title, userId}' --pretty")
-&commat;system("rm todos.json")
+@system("curl -o todos.json https://jsonplaceholder.typicode.com/todos")
+@systemoutput("cat todos.json | groq '*[completed == true]{title, userId}' --pretty")
+@system("rm todos.json")
 </pre>
 		    
 		    or alternatively,
 		    <pre class="prettyprint">
-&commat;systemoutput("curl -sS https://jsonplaceholder.typicode.com/todos | groq '*[completed == true]{title, userId}' --pretty")
+@systemoutput("curl -sS https://jsonplaceholder.typicode.com/todos | groq '*[completed == true]{title, userId}' --pretty")
 </pre>
 		    </div>
 		    						</li>
