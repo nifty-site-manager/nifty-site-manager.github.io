@@ -18,7 +18,7 @@
 					Introduction
 				</h4>
 
-				<a href="#contents" class="to_top">[back to contents]</a>
+				<a href="#contents" class="to_top">[contents]</a>
 
 				<p>
 					Nift has its own powerful template language which you can use in amongst any other scripting/programming/template language you want, making it even more powerful. This page outlines most of the template language with a few additional parts explained on the <a href="@pathto(docs/template_files)">template files</a> page. 
