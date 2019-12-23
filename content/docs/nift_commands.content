@@ -14,8 +14,6 @@
 			</center>
 
 			<div class="content">
-				<a href="#contents" class="to_top">[contents]</a>
-
 				<p>
 					<mono>Nift</mono> has a number of commands you can use that will help you manage and generate your projects and websites. This page outlines how to list all the available commands and outlines what most of them do.
 				</p>
@@ -23,6 +21,8 @@
 				<p>
 					To use a command, enter <mono>nsm <i>command</i> <i>parameter-1</i> ... <i>parameter-n</i></mono> in to a terminal, command prompt or power shell window. 
 				</p>
+
+				<a href="#contents" class="to_top">[contents]</a>
 
 				<p id="contents">
 					The following have commands available with Nift that are documented on this page:
