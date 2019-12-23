@@ -18,9 +18,40 @@
 					This page contains links to all sorts of useful resources when making websites with <mono>Nift</mono>, for example hosting options, custom domain registrars, email options, server hiring options, web servers, lists of site managers, cloud storage, code sharing websites, CI services, syntax highlighting options for your websites, adding form and comment sections to websites, Javascript and PHP frameworks, website templates and lots of other useful links.
 				</p>
 
-				<br>
+				<a href="#contents" class="to_top">[contents]</a>
 
-				<h3>Free Hosting options</h3>
+				<p id="contents">
+					Contents:
+					<ul style="text-indent:30px">
+						<li><a href="#hosting">Free hosting options</a></li>
+						<li><a href="#email">Email options</a></li>
+						<li><a href="#vm-servers">Hiring linux servers</a></li>
+						<li><a href="#web-servers">Web servers</a></li>
+						<li><a href="#cms">Content Management Systems (CMS)</a></li>
+						<li><a href="#editors">Local editors</a></li>
+						<li><a href="#online-editors">Online editors</a></li>
+						<li><a href="#website-generators">Web generators</a></li>
+						<li><a href="#cloud-storage">Cloud storage</a></li>
+						<li><a href="#code-sharing">Code sharing (hosting Git repositories)</a></li>
+						<li><a href="#ci">Continuous Integration (CI) services</a></li>
+						<li><a href="#highlighting">Syntax highlighting</a></li>
+						<li><a href="#markdown">Markdown</a></li>
+						<li><a href="#auth">Authentication</a></li>
+						<li><a href="#databases">Databases</a></li>
+						<li><a href="#ecommerce">Payment/ecommerce platforms</a></li>
+						<li><a href="#selling-products">Selling digital products</a></li>
+						<li><a href="#forms">Adding forms</a></li>
+						<li><a href="#comments">Adding comments</a></li>
+						<li><a href="#photos&videos">Free photos and videos</a></li>
+						<li><a href="#templates">Website templates</a></li>
+						<li><a href="#image-video-hosting">Image/video hosting/platforms</a></li>
+						<li><a href="#lazy-load">Lazy loading images</a></li>
+						<li><a href="#animation-videos">Animation videos (at cost)</a></li>
+						<li><a href="#useful-links">Useful links</a></li>
+					</ul>
+				</p>
+
+				<h3 id="hosting">Free Hosting options</h3>
 				<h4>static websites</h4>
 				<ul>
 					<li><a href="https://bitbucket.org">BitBucket</a></li>
@@ -62,7 +93,7 @@
 					<li><a href="https://www.namecheap.com/">NameCheap</a> (recommended)</li>
 				</ul>
 
-				<h3>Email Options</h3>
+				<h3 id="email">Email options</h3>
 				The following options can often be used to set up mail forwarding from custom domains to something like AOL, Gmail, Outlook, ProtonMail, Tutanota, Yahoo, Yandex, Zoho etc. (note you can easily set up to send emails from custom domains using Gmail, or you can set up your own mail server on a hired server, see options further below):
 				<ul>
 					<li><a href="https://www.mailgun.com">MailGun</a></li>
@@ -70,7 +101,7 @@
 					<li><a href="https://sendpulse.com">SendPulse</a></li>
 				</ul>
 
-				<h3>Hiring Linux Servers (dynamic websites)</h3>
+				<h3 id="vm-servers">Hiring linux servers (dynamic websites)</h3>
 				<ul>
 					<li><a href="https://buyvm.net/">BuyVM</a></li>
 					<li><a href="https://joesdatacenter.com/">Joe's Datacenter</a></li>
@@ -82,13 +113,13 @@
 					<li><a href="https://www.nginx.com/">NGiNX</a></li>
 				</ul>
 
-				<h3>Web Servers</h3>
+				<h3 id="web-servers">Web servers</h3>
 				<ul>
 					<li><a href="https://caddyserver.com/">Caddy</a></li>
 					<li><a href="https://www.nginx.com/">NGiNX</a></li>
 				</ul>
 
-				<h3>Content Management Systems (CMS)</h3>
+				<h3 id="cms">Content Management Systems (CMS)</h3>
 				<ul>
 					<li><a href="https://headlesscms.org/">Headless CMS</a> - A list of CMSs for JAMstack websites</li> 
 					<li><a href="https://www.contentful.com/">Contentful</a></li>
@@ -101,7 +132,7 @@
 					<li><a href="https://strapi.io/">Strapi</a></li>
 				</ul>
 
-				<h3>Local Editors</h3>
+				<h3 id="editors">Local Editors</h3>
 				<ul>
 					<li><a href="https://atom.io/">Atom</a> (<a href="https://github.com/atom/atom">GitHub</a>)</li>
 					<li><a href="https://www.gnu.org/software/emacs/">GNU Emacs</a> (<a href="https://github.com/emacs-mirror/emacs">GitHub</a>)</li>
@@ -113,7 +144,7 @@
 					<li><a href="https://code.visualstudio.com/">Visual Studo Code (VS Code)</a> (<a href="https://github.com/Microsoft/vscode/">GitHub</a>)</li>
 				</ul>
 
-				<h3>Online Editors</h3>
+				<h3 id="online-editors">Online Editors</h3>
 				<ul>
 					<li><a href="https://codepen.io/">CodePen</a></li>
 					<li><a href="https://codesandbox.io/">CodeSandbox</a></li>
@@ -123,13 +154,13 @@
 					<li><a href="https://stackblitz.com/">StackBlitz</a> (<a href="https://github.com/stackblitz/core/">GitHub</a>)</li>
 				</ul>
 
-				<h3>Site Managers</h3>
+				<h3 id="website-generators">Website generators</h3>
 				<ul>
 					<li><a href="https://www.staticgen.com/">StaticGen</a> - a list of static site generators for JAMstack sites</li>
 					<li><a href="https://gitlab.com/pages">Example sites on GitLab Pages</a> - simple example websites for site generators on GitLab</li>
 				</ul>
 
-				<h3>Cloud Storage</h3>
+				<h3 id="cloud-storage">Cloud storage</h3>
 				<ul>
 					<li><a href="https://degoo.com/">Degoo</a></li>
 					<li><a href="https://www.dropbox.com/">Dropbox</a></li>
@@ -140,7 +171,7 @@
 					<li><a href="https://www.zoolz.com/cloud">Zoolz</a></li>
 				</ul>
 
-				<h3>Code sharing</h3>
+				<h3 id="code-sharing">Code sharing (hosting Git repositories)</h3>
 				<ul>
 					<li><a href="https://bitbucket.org">BitBucket</a></li>
 					<li><a href="https://github.com">GitHub</a></li>
@@ -149,7 +180,7 @@
 					<li><a href="https://gogs.io/">Gogs</a></li>
 				</ul>
 
-				<h3>Continuous Integration (CI) Services</h3>
+				<h3 id="ci">Continuous Integration (CI) services</h3>
 				<ul>
 					<li><a href="https://travis-ci.org/">Travis CI</a></li>
 					<li><a href="https://circleci.com/">CircleCI</a></li>
@@ -157,34 +188,34 @@
 					<li><a href="https://github.com/ligurio/awesome-ci">List of CI services</a></li>
 				</ul>
 
-				<h3>Syntax Highlighting</h3>
+				<h3 id="highlighting">Syntax highlighting</h3>
 				<ul>
 					<li><a href="https://github.com/google/code-prettify">Google Code Prettify</a></li>
 					<li><a href="https://prismjs.com/">PrismJS</a></li>
 					<li><a href="https://highlightjs.org/">highlight.js</a></li>
 				</ul>
 
-				<h3>Markdown</h3>
+				<h3 id="markdown">Markdown</h3>
 				<ul>
 					<li><a href="http://showdownjs.com/">Showdown</a></li>
 					<li><a href="https://marked.js.org">Marked.js</a></li>
 					<li><a href="https://github.com/markdown-it/markdown-it">markdown-it</a></li>
 				</ul>
 
-				<h3>Authentication</h3>
+				<h3 id="auth">Authentication</h3>
 				<ul>
 					<li><a href="https://auth0.com/">Auth0</a></li>
 					<li><a href="https://www.netlify.com/docs/identity/">Netlify Identity</a></li>
 				</ul>
 
-				<h3>Databases</h3>
+				<h3 id="databases">Databases</h3>
 				<ul>
 					<li><a href="https://airtable.com/">Airtable</a></li>
 					<li><a href="https://fauna.com/">Fauna</a></li>
 					<li><a href="https://www.mongodb.com/">MongoDB</a></li>
 				</ul>
 
-				<h3>Payment/Ecommerce Platforms</h3>
+				<h3 id="ecommerce">Payment/ecommerce platforms</h3>
 				<ul>
 					<li><a href="https://snipcart.com/">Snipcart</a></li>
 					<li><a href="https://stripe.com">Stripe</a></li>
@@ -195,12 +226,12 @@
 					<li><a href="https://pinpayments.com">Pin Payments</a></li>
 				</ul>
 
-				<h3>Selling Digital Products</h3>
+				<h3 id="selling-products">Selling digital products</h3>
 				<ul>
 					<li><a href="https://www.sendowl.com/">SendOwl</a></li>
 				</ul>
 
-				<h3>Adding Forms</h3>
+				<h3 id="forms">Adding forms</h3>
 				<ul>
 					<li><a href="https://mailthis.to/">MailThis.to</a></li>
 					<li><a href="https://www.netlify.com/docs/form-handling/">Netlify form handling</a></li>
@@ -210,7 +241,7 @@
 					<li><a href="https://formcarry.com/">FormCarry</a></li>
 				</ul>
 
-				<h3>Adding Comments</h3>
+				<h3 id="comments">Adding Comments</h3>
 				<ul>
 					<li><a href="https://disqus.com/">Disqus</a></li>
 					<li><a href="https://commento.io/">Commento</a></li>
@@ -220,14 +251,14 @@
 					<li><a href="https://www.npmjs.com/package/react-facebook">Facebook comments</a></li>
 				</ul>
 
-				<h3>Free Photos & Videos</h3>
+				<h3 id="photos&videos">Free photos and videos</h3>
 				<ul>
 					<li><a href="https://www.pexels.com/">Pexels</a></li>
 					<li><a href="https://unsplash.com/">Unsplash</a></li>
 					<li><a href="http://lorempixel.com/">LoremPixel</a></li>
 				</ul>
 
-				<h3>Website Templates</h3>
+				<h3 id="templates">Website templates</h3>
 				<ul>
 					<li><a href="https://html5up.net">HTML5 UP</a></li>
 					<li><a href="https://pixelarity.com/">Pixelarity</a></li>
@@ -242,27 +273,27 @@
 					<li><a href="https://freewebsitetemplates.com/">Free Website Templates</a></li>
 				</ul>
 
-				<h3>Image/Video Hosting/Platforms</h3>
+				<h3 id="image-video-hosting">Image/video hosting/platforms</h3>
 				<ul>
 					<li><a href="https://cloudinary.com/">Cloudinary</a></li>
 					<li><a href="https://imgur.com">Imgur</a></li>
 				</ul> 
 
-				<h3>Lazy Loading Images</h3>
+				<h3 id="lazy-load">Lazy loading images</h3>
 				<ul>
 					<li><a href="https://github.com/aFarkas/lazysizes">lazysizes</a></li>
 					<li><a href="https://github.com/ApoorvSaxena/lozad.js">Lozad.js</a></li>
 					<li><a href="https://github.com/malchata/yall.js">Yet Another Lazy Loader</a></li>
 				</ul> 
 
-				<h3>Animation Videos (At Cost)</h3>
+				<h3 id="animation-videos">Animation videos (at cost)</h3>
 				<ul>
 					<li><a href="http://yescaptain.net/">Yes Captain</a></li>
 					<li><a href="https://www.ordinaryfolk.co/">Ordinary Folk</a></li>
 					<li><a href="http://hashonecreatives.com/">Hash One Creatives</a></li>
 				</ul> 
 
-				<h3>Useful links</h3>
+				<h3 id="useful-links">Useful links</h3>
 				<ul>
 					<li><a href="https://www.w3schools.com/">w3schools</a> - for learning web technologies online</li>
 					<li><a href="https://fonts.google.com/">Google Fonts</a> - making the web more beautiful, fast, and open through great typography</li>
