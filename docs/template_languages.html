@@ -163,12 +163,12 @@
 		    
 		    			<h3>Converting template languages mid-build</h3>
 		    			<p>
-		    				Similar to converting individual files with pre-build scripts, you can convert individual files mid-build using the <mono>@systemoutput(sys-call)</mono> function in Nift's template language. For example if you have Haml installed on your machine you can convert a haml file <mono>input.haml</mono> to html using the system call <mono>haml input.haml</mono>. Hence, to input the haml file <mono>input.haml</mono> converted to html in a content or template file for a Nift website simply use:
+		    				Similar to converting individual files with pre-build scripts, you can convert individual files mid-build using the <mono>@system{inject}(sys-call)</mono> function in Nift's template language. For example if you have Haml installed on your machine you can convert a haml file <mono>input.haml</mono> to html using the system call <mono>haml input.haml</mono>. Hence, to input the haml file <mono>input.haml</mono> converted to html in a content or template file for a Nift website simply use:
 		    
 		    <div style="margin-top:-30px; margin-bottom:20px">
 		    <center>
 		    <pre class="prettyprint inline">
-@systemoutput("haml input.haml")
+@system{inject}("haml input.haml")
 </pre>
 		    </center>
 		    </div>

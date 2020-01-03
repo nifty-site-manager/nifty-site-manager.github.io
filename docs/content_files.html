@@ -178,16 +178,34 @@
 		    					About functions
 		    				</h4>
 		    				<p>
-		    					Some of the functions take input parameters, if you would like to use the template language with the input parameters for a function call then put <mono>*</mono> without any whitespace between the function name and parentheses containing the input parameters. For example:
+		    					Some of the functions take input parameters and input options. A function <mono>funcName</mono> is called with <mono>@funcName{options}(parameters)</mono> or <mono>@funcName{option 1}...{option n}(parameters)</mono> where <mono>options</mono> and <mono>parameters</mono> are separated by commas. By default you can use Nift's template language with the function name, options and parameters for a function call. For example:
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline">
-@input*("@[contentpath]")
+@input("@[contentpath]")
 </pre>
 		    </div>
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> For parameters (including variable names and values), you can use:
+		    					<b>Note:</b> you can also quote the function name which you will need to do if printing variables or calling functions in the function name. A contrived example is below:
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline">
+@:=(string, str = "input")
+@"@[str]"("@[contentpath]")
+</pre>
+		    </div>
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> for websites that have hundreds of thousands of function calls (or millions) you might find it faster to tell Nift to <u>not</u> parse the function name, options and parameters, for this use the option <mono>!p</mono>. For example:
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline">
+@input("@{!p}[contentpath]")
+</pre>
+		    </div>
+		    				</p>
+		    				<p>
+		    					<b>Note:</b> For options and parameters (including variable names and values), you can use:
 		    					<ul>
 		    						<li><mono>\n</mono> for the newline character</li>
 		    						<li><mono>\t</mono> for tabs (though normal tabs also work)</li>
@@ -198,7 +216,7 @@
 		    				</p>
 		    
 		    				<p>
-		    					Parameters (including variable names and values) can be unquoted, single quoted or double quoted, whichever is more convenient, integrates with the other programming/scripting/template languages you are using and/or has nice syntax highlighting with the extensions and editor(s) you are using. Also for functions that can take multiple parameters, parameters containing commas <mono>','</mono> should be quoted, there can also be other times that things need to be quoted, for example if you want to have equals <mono>'='</mono> in a variable name during its definition then it will need to be quoted (though will not need to be quoted when referenced). 
+		    					Options and parameters (including variable names and values) can be unquoted, single quoted or double quoted, whichever is more convenient, integrates with the other programming/scripting/template languages you are using and/or has nice syntax highlighting with the extensions and editor(s) you are using. Also for functions that can take multiple parameters, parameters containing commas <mono>','</mono> should be quoted, there can also be other times that things need to be quoted, for example if you want to have equals <mono>'='</mono> in a variable name during its definition then it will need to be quoted (though will not need to be quoted when referenced). 
 		    				</p>
 		    
 		    				<h4 id="escape-chars">
@@ -312,14 +330,8 @@ that is broken in to
 		    								<td><mono>@/* <i>comment-text</i> @*/</mono></td>
 		    							</tr>
 		    							<tr>
-		    								<td>special parsed multi-line comment</td>
-		    								<td>
-		    									<mono>
-		    										@---<br>
-		    										<i>comment-text</i><br>
-		    										@---
-		    									</mono>
-		    								</td>
+		    								<td>parsed multi-line comment</td>
+		    								<td><mono>@--- <i>comment-text</i> @---</mono></td>
 		    							</tr>
 		    							<tfoot>
 		    								<tr>
@@ -344,11 +356,7 @@ that is broken in to
 		    				</p>
 		    
 		    				<p>
-		    					With raw and parsed multi-line comments, even if you comment out entire lines the built output file will still have one empty line where the comment was. This is where <u>special parsed multi-line comments</u> come in to play, if you use them then the source code for the built outputfile will not have any blank line where the comment was in the content or template file. 
-		    				</p>
-		    
-		    				<p>
-		    					<b>Note:</b> While you can open and close raw and parsed multi-line comments anywhere on a line, including opening and closing on the same line, special parsed multi-line comments are for commenting out sections of entire lines. The open and close tags should each be on individual lines without even any leading/trailing whitespace. 
+		    					With raw and parsed multi-line comments, Nift will skip to the first whitespace (ie. to the first character that is not a space, tab or newline) after the comment and inject it to the output file where the comment started.
 		    				</p>
 		    
 		    				<h4 id="input-file-info">
@@ -461,22 +469,22 @@ that is broken in to
 		    					Inputting operating system information
 		    				</h4>
 		    				<p>
-		    					You can use <mono>@buildOS</mono> to add whether an output file was built using <mono>Nift</mono> on Linux, Macintosh or Windows (<mono>@currentOS</mono> will continue to do the same for backwards compatibility purposes). 
+		    					You can use <mono>@[buildOS]</mono> to add whether an output file was built using <mono>Nift</mono> on Linux, Macintosh or Windows (<mono>@[currentOS]</mono> will continue to do the same for backwards compatibility purposes). 
 		    				</p>
 		    
 		    				<h4 id="input-date-time-tz-info">
 		    					Inputting date, time and timezone information
 		    				</h4>
 		    				<p>
-		    					The date and time that an output file was built may be inputted using <mono>@builddate</mono> and <mono>@buildtime</mono> (<mono>@currentdate</mono> and <mono>@currenttime</mono> will continue to do the same for backwards compatibility purposes). The timezone this date and time information is associated with may also be inputted using <mono>@buildtimezone</mono> (<mono>@timezone</mono> will continue to do the same for backwards compatibility purposes).
+		    					The date and time that an output file was built may be inputted using <mono>@[builddate]</mono> and <mono>@[buildtime]</mono> (<mono>@[currentdate]</mono> and <mono>@[currenttime]</mono> will continue to do the same for backwards compatibility purposes). The timezone this date and time information is associated with may also be inputted using <mono>@[buildtimezone]</mono> (<mono>@[timezone]</mono> will continue to do the same for backwards compatibility purposes).
 		    				</p>
 		    
 		    				<p>
-		    					The date and time that an output file was loaded in a web browser may be inputted using <mono>@loaddate</mono> and <mono>@loadtime</mono>. The timezone this date and time information is associated with (ie. where the user is browsing the internet from) may also be inputted using <mono>@loadtimezone</mono>.
+		    					The date and time that an output file was loaded in a web browser may be inputted using <mono>@[loaddate]</mono> and <mono>@[loadtime]</mono>. The timezone this date and time information is associated with (ie. where the user is browsing the internet from) may also be inputted using <mono>@[loadtimezone]</mono>.
 		    				</p>
 		    
 		    				<p>
-		    					Also available are <mono>@buildUTCtime</mono>, <mono>@buildUTCdate</mono>, <mono>@buildYY</mono> and <mono>@buildYYYY</mono> (with <mono>@currentUTCtime</mono>, <mono>@currentUTCdate</mono>, <mono>@currentYY</mono> and <mono>@currentYYYY</mono> doing the same for backwards compatibility purposes), along with <mono>@loadUTCtime</mono>, <mono>@loadUTCdate</mono>, <mono>@loadYY</mono> and <mono>@loadYYYY</mono>.
+		    					Also available are <mono>@[buildUTCtime]</mono>, <mono>@[buildUTCdate]</mono>, <mono>@[buildYY]</mono> and <mono>@[buildYYYY]</mono> (with <mono>@[currentUTCtime]</mono>, <mono>@[currentUTCdate]</mono>, <mono>@[currentYY]</mono> and <mono>@[currentYYYY]</mono> doing the same for backwards compatibility purposes), along with <mono>@[loadUTCtime]</mono>, <mono>@[loadUTCdate]</mono>, <mono>@[loadYY]</mono> and <mono>@[loadYYYY]</mono>.
 		    				</p>
 		    
 		    				<h4 id="string-vars">
@@ -497,7 +505,7 @@ that is broken in to
 		    				</p>
 		    
 		    				<p>
-		    					You can reference string variables using <mono>@[<i>varName</i>]</mono> or <mono>@{<i>varName</i>}</mono>, where <mono><i>varName</i></mono> is the variable name. Use whichever is more convenient, integrates with the other programming/scripting/template languages you are using and/or has nice syntax highlighting with the extensions and editor(s) you are using. For example with markdown files, using <mono>[]</mono> non-nested often gives nice highlighting. With nesting use a combination of <mono>[]</mono> and <mono>{}</mono> with whichever resulting highlighting you prefer. Also you may want to avoid using <mono>{}</mono> for example if your output files are using the handlebars or mustache template languages. 
+		    					You can reference string variables using <mono>@[<i>varName</i>]</mono> or <mono>@&lt;<i>varName</i>></mono>, where <mono><i>varName</i></mono> is the variable name. Use whichever is more convenient, integrates with the other programming/scripting/template languages you are using and/or has nice syntax highlighting with the extensions and editor(s) you are using. For example with html files, using <mono>&lt;></mono> non-nested often gives nice highlighting, and with markdown files, using <mono>[]</mono> non-nested often gives nice highlighting. With nesting use a combination of <mono>[]</mono> and <mono>&lt;></mono> with whichever resulting highlighting you prefer.
 		    				</p>
 		    
 		    				<p>
@@ -522,7 +530,7 @@ that is broken in to
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline lang-bash">
-Page was last built on @currentdate.
+Page was last built on @[currentdate].
 </pre>
 		    </div>
 		    				</p>
@@ -541,11 +549,20 @@ Page was last built on @currentdate.
 		    					<u>Note:</u> <mono>Nift</mono> will not let you create an input loop, for example you cannot have <mono>@input(page.template)</mono> inside <mono>page.template</mono>, or any of the files that <mono>page.template</mono> inputs, or any of the files that they input, and so on. 
 		    				</p>
 		    
+		    				<p>
+		    					<b>Note:</b> If you would like to input the file only if the file exists, ie. not throw an error if the file does not exist, then use the <mono>if-exists</mono> option, eg:
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline">
+@input{if-exists}(file-path)
+</pre>
+		    </div>
+		    				</p>
+		    
 		    				<h4 id="input-raw-from-file">
 		    					Inputting raw text from other files
 		    				</h4>
 		    				<p>
-		    					Raw text (so not parsed with Nift's template language) may be inputted from another file using <mono>@inputraw(path-to-file)</mono>, where <mono>path-to-file</mono> is the path from the main project directory to the input file.
+		    					Raw text (so not parsed with Nift's template language) may be inputted from another file using <mono>@input{raw}(path-to-file)</mono>, where <mono>path-to-file</mono> is the path from the main project directory to the input file.
 		    				</p>
 		    
 		    				<p>
@@ -554,10 +571,18 @@ Page was last built on @currentdate.
 		    
 		    				<p>
 		    					To raw input <mono>template/footer.content</mono> into another file write:
-		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline">
-@inputraw("template/footer.content")
+@input{raw}("template/footer.content")
+</pre>
+		    </div>
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> If you would like to input the file only if the file exists, ie. not throw an error if the file does not exist, then use the <mono>if-exists</mono> option, eg:
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline">
+@input{raw, if-exists}(file-path)
 </pre>
 		    </div>
 		    				</p>
@@ -567,7 +592,7 @@ Page was last built on @currentdate.
 		    				</h4>
 		    
 		    				<p>
-		    					It is possible for tracked files $A$ and $B$ to be located in distinct directories yet input text from the same content file $X$. Consequently if content file $X$ contains a path to another file $Y$, you have the problem that the path from $A$ to $Y$ is not the same as the path from $B$ to $Y$. You can solve this non-constant path problem by using <mono>@pathto(name)</mono> or <mono>@pathtopage(name)</mono> where <mono>name</mono> is the tracked name for $Y$. When building an output file, <mono>Nift</mono> will replace <mono>@pathto(name)</mono> with the relative path from the output file being built to the output file for $Y$.
+		    					It is possible for tracked files $A$ and $B$ to be located in distinct directories yet input text from the same content file $X$. Consequently if content file $X$ contains a path to another file $Y$, you have the problem that the path from $A$ to $Y$ is not the same as the path from $B$ to $Y$. You can solve this non-constant path problem by using <mono>@pathto(tracked-name)</mono>, <mono>@pathto{name}(tracked-name)</mono> or <mono>@pathtopage(tracked-name)</mono> where <mono>tracked-name</mono> is the tracked name for $Y$. When building an output file, <mono>Nift</mono> will replace <mono>@pathto(name)</mono> with the relative path from the output file being built to the output file for $Y$.
 		    				</p>
 		    
 		    				<p>
@@ -602,7 +627,11 @@ Page was last built on @currentdate.
 		    				</p>
 		    
 		    				<p>
-		    					When using <mono>@pathto(name)</mono> or <mono>@pathtopage(name)</mono>, <mono>Nift</mono> will throw an error if <mono>name</mono> is not being tracked by <mono>Nift</mono>. You can solve the non-constant path problem for arbitrary files by using <mono>@pathtofile(path-to-file)</mono> where <mono>path-to-file</mono> is the absolute path from the project root directory to file $Y$ (where tracked file $Y$ above has been replaced with file $Y$). When building an output file, <mono>Nift</mono> will throw an error if the file does not exist and otherwise inject the relative path from the built output file to file $Y$. 
+		    					When using <mono>@pathto(tracked-name)</mono>, <mono>@pathto{name}(tracked-name)</mono> or <mono>@pathtopage(tracked-name)</mono>, <mono>Nift</mono> will throw an error if <mono>tracked-name</mono> is not being tracked by <mono>Nift</mono>.
+		    				</p>
+		    
+		    				<p>
+		    					You can solve the non-constant path problem for arbitrary files by using <mono>@pathto(path-to-file)</mono>, <mono>@pathto{file}(path-to-file)</mono> or <mono>@pathtofile(path-to-file)</mono> where <mono>path-to-file</mono> is the absolute path from the project root directory to file $Y$ (where tracked file $Y$ above has been replaced with file $Y$). When building an output file, <mono>Nift</mono> will throw an error if the file does not exist and otherwise inject the relative path from the built output file to file $Y$. 
 		    				</p>
 		    
 		    				<p>
@@ -622,9 +651,9 @@ Page was last built on @currentdate.
 		&lt;b>Repos:&lt;/b> [&lt;a href="https://bitbucket.org/nifty-site-manager/nsm/src/master/">BitBucket&lt;/a>] [&lt;a href="https://github.com/nifty-site-manager/nsm">GitHub&lt;/a>] [&lt;a href="https://gitlab.com/nifty-site-manager/nsm">GitLab&lt;/a>]
 	&lt;/p>
 
-	Page was last built on @currentdate at @currenttime (@timezone) using @currentOS. &lt;br>
+	Page was last built on @[currentdate] at @[currenttime] (@[timezone]) using @[currentOS]. &lt;br>
 
-	&lt;noselect>&lt;small>&copy;&nbsp;2015-@loadYY &lt;a href="https://n-ham.com/">Nicholas Ham&lt;/a>&lt;/small>&lt;/noselect>
+	&lt;noselect>&lt;small>&copy;&nbsp;2015-@[loadYY] &lt;a href="https://n-ham.com/">Nicholas Ham&lt;/a>&lt;/small>&lt;/noselect>
 &lt;/footer>
 </pre>
 		    </div>
@@ -642,7 +671,12 @@ Page was last built on @currentdate.
 		    
 		    				<h4 id="scripts">Running scripts</h4>
 		    				<p>
-		    					Scripts may be run using <mono>@script(script-path)</mono>, where <mono>script-path</mono> is the path from the project root directory to the script, which is basically the same as the system call for the script. If you need to pass parameters to your scripts you can use <mono>@script(script-path, script-parameters)</mono> where <mono>script-parameters</mono> is a quoted string of parameters (use single outer quotes and double inner quotes for parameters with spaces).
+		    					Scripts may be run using <mono>@script(script-path)</mono>, where <mono>script-path</mono> is the path from the project root directory to the script, which is basically the same as the system call for the script. If you need to pass parameters to your scripts you can use:
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline lang-bash">
+@script(script-path, parameter 1, ..., parameter n)
+</pre>
+		    </div>
 		    				</p>
 		    
 		    				<p>
@@ -657,29 +691,20 @@ Page was last built on @currentdate.
 		    
 		    				<p>
 		    					Also if for example you want to run a script <mono>'script.py'</mono> while passing in the parameters <mono>"light blue"</mono> and <mono>red</mono>, you can do so with:
-		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline lang-bash">
-@script('./script.py', '"light blue" red')
+@script("./script.py", "light blue", "red")
 </pre>
 		    </div>
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> you can use <mono>\'</mono> for <mono>'</mono> and <mono>\"</mono> for <mono>"</mono> in script paths and parameter strings. 
-		    				</p>
-		    
-		    				<p>
-		    					<b>Note:</b> Scripts/programs run with <mono>@script</mono> calls are moved to the project root directory to run and have a backup copy made. If scripts/programs are so large that copying the file will take time, or you are making lots of calls which is slower at scale, you can use the <mono>'^'</mono> option to not have the script backed up, eg.: 
+		    					<b>Note:</b> Scripts/programs run with <mono>@script</mono> calls are moved to the project root directory to run and have a backup copy made. If scripts/programs are so large that copying the file will take time, or you are making lots of calls which is slower at scale, you can use the <mono>!bs</mono> option to not have the script backed up, eg.: 
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline lang-bash">
-@script^('./script.py')
+@script{!p, !bs}('./script.py')
 </pre>
 		    </div>
-		    				</p>
-		    
-		    				<p>
-		    					If you need to use Nift's template language with the input parameters for the <mono>@script</mono> call as well then you can do either <mono>@script*^(script-path)</mono> or <mono>@script^*(script-path)</mono>.
 		    				</p>
 		    
 		    				<p>
@@ -695,12 +720,21 @@ Page was last built on @currentdate.
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> <mono>@script</mono> calls do not scale very well to hundreds of thousands of calls, it is much better to combine as much as possible in to as few <mono>@script</mono> calls as possible for extremely large projects (moving stuff to the pre/post build scripts is the best place, you can output stuff to file and process the files when building). For example if possible it's much faster to have a few pre-build scripts to download text from multiple urls using cURL, and/or make all the api calls, all the database queries, and work on JSON data needed and distribute the needed output in to different files to be inputted when needed. Note that file-specific build scripts have the benefit of multithreading, whereas project-wide build scripts wont have any multithreading unless you code it in there yourself.
+		    					<b>Note:</b> <mono>@script(script-path)</mono> calls do not scale very well to hundreds of thousands of calls, it is much better to combine as much as possible in to as few script/system calls as possible for extremely large projects (moving stuff to the pre/post build scripts is the best place, you can output stuff to file and process the files when building). For example if possible it's much faster to have a few pre-build scripts to download text from multiple urls using cURL, and/or make all the api calls, all the database queries, and work on JSON data needed and distribute the needed output in to different files to be inputted when needed. Note that file-specific build scripts have the benefit of multithreading, whereas project-wide build scripts wont have any multithreading unless you code it in there yourself.
 		    				</p>
 		    
 		    				<h4 id="script-output">Inputting script output</h4>
 		    				<p>
-		    					Output from scripts may be inputted at any point when building output files using <mono>@scriptoutput(script-path)</mono>, where where <mono>script-path</mono> is the path from the main project directory to the script, which is basically the same as the system call for the script. If you need to pass parameters to your scripts you can use <mono>@scriptoutput(script-path, script-parameters)</mono> where <mono>script-parameters</mono> is a quoted string of parameters (use single outer quotes and double inner quotes for parameters with spaces). This can be incredibly useful for things like conditional statements/loops, or integrating with databases, GraphQL and scripting languages etc., which is just the tip of the ice berg!
+		    					Output from scripts may be inputted at any point when building output files using <mono>@script{inject}(script-path)</mono>, where <mono>script-path</mono> is the path from the main project directory to the script, which is basically the same as the system call for the script. If you need to pass parameters to your scripts you can use:
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline">
+@script{inject}(script-path, parameter 1, ..., parameter n)
+</pre>
+		    </div>
+		    				</p> 
+		    
+		    				<p>
+		    					This can be incredibly useful for things like conditional statements/loops, or integrating with databases, GraphQL and scripting languages etc., which is just the tip of the ice berg!
 		    				</p>
 		    
 		    				<p>
@@ -708,25 +742,17 @@ Page was last built on @currentdate.
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline">
-@scriptoutput('./linux script.py')
+@script{inject}('./linux script.py')
 </pre>
 		    </div>
 		    
 		    				<p>
-		    					<b>Note:</b> you can use <mono>\'</mono> for <mono>'</mono> and <mono>\"</mono> for <mono>"</mono> in script paths and parameter strings. 
-		    				</p>
-		    
-		    				<p>
-		    					<b>Note:</b> Scripts/programs run with <mono>@scriptoutput</mono> calls are moved to the project root directory to run and have a backup copy made. If scripts/programs are so large that copying the file will take time, or you are making lots of calls which is slower at scale, you can use the <mono>'^'</mono> option to not have the script backed up, eg.: 
+		    					<b>Note:</b> Scripts/programs run with <mono>@script{inject}(script-path)</mono> calls are moved to the project root directory to run and have a backup copy made. If scripts/programs are so large that copying the file will take time, or you are making lots of calls which is slower at scale, you can use the <mono>!bs</mono> option to not have the script backed up, eg.: 
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline lang-bash">
-@scriptoutput^('./script.py')
+@script{inject}{!p, !bs}('./script.py')
 </pre>
 		    </div>
-		    				</p>
-		    
-		    				<p>
-		    					If you need to use Nift's template language with the input parameters for the <mono>@scriptoutput</mono> call as well then you can do either <mono>@scriptoutput*^(script-path)</mono> or <mono>@scriptoutput^*(script-path)</mono>.
 		    				</p>
 		    
 		    				<p>
@@ -742,37 +768,35 @@ Page was last built on @currentdate.
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> <mono>@scriptoutput</mono> calls do not scale very well to hundreds of thousands of calls, it is much better to combine as much as possible in to as few <mono>@script</mono> calls as possible for extremely large projects (moving stuff to the pre/post build scripts is the best place, you can output stuff to file and process the files when building). For example if possible it's much faster to have a few pre-build scripts to download text from multiple urls using cURL, and/or make all the api calls, all the database queries, and work on JSON data needed and distribute the needed output in to different files to be inputted when needed. Note that file-specific build scripts have the benefit of multithreading, whereas project-wide build scripts wont have any multithreading unless you code it in there yourself.
+		    					<b>Note:</b> <mono>@script{inject}(script-path)</mono> calls do not scale very well to hundreds of thousands of calls, it is much better to combine as much as possible in to as few script/system calls as possible for extremely large projects (moving stuff to the pre/post build scripts is the best place, you can output stuff to file and process the files when building). For example if possible it's much faster to have a few pre-build scripts to download text from multiple urls using cURL, and/or make all the api calls, all the database queries, and work on JSON data needed and distribute the needed output in to different files to be inputted when needed. Note that file-specific build scripts have the benefit of multithreading, whereas project-wide build scripts wont have any multithreading unless you code it in there yourself.
 		    				</p>
 		    
 		    				<h4 id="script-output-raw">Inputting script output raw</h4>
 		    				<p>
-		    					Raw output from scripts (so not parsed with Nift's template language) may be inputted at any point when building output files using <mono>@scriptraw(script-path)</mono>, where where <mono>script-path</mono> is the path from the main project directory to the script, which is basically the same as the systemraw call for the script. If you need to pass parameters to your scripts you can use <mono>@scriptraw(script-path, script-parameters)</mono> where <mono>script-parameters</mono> is a quoted string of parameters (use single outer quotes and double inner quotes for parameters with spaces).
+		    					Raw output from scripts (so not parsed with Nift's template language) may be inputted at any point when building output files using <mono>@script{raw}(script-path)</mono>, where where <mono>script-path</mono> is the path from the main project directory to the script, which is basically the same as the systemraw call for the script. If you need to pass parameters to your scripts you can use:
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline">
+@script{raw}(script-path, parameter 1, ..., parameter n)
+</pre>
+		    </div>
+		    				</p>
 		    
 		    				<p>
 		    					For example suppose you want to input the raw output from running a script <mono>"linux script.py"</mono>, you can do so with:
-		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline">
-@scriptraw('./linux script.py')
+@script{raw}('./linux script.py')
 </pre>
 		    </div>
-		    
-		    				<p>
-		    					<b>Note:</b> you can use <mono>\'</mono> for <mono>'</mono> and <mono>\"</mono> for <mono>"</mono> in script paths and parameter strings. 
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> Scripts/programs run with <mono>@scriptraw</mono> calls are moved to the project root directory to run and have a backup copy made. If scripts/programs are so large that copying the file will take time, or you are making lots of calls which is slower at scale, you can use the <mono>'^'</mono> option to not have the script backed up, eg.: 
+		    					<b>Note:</b> Scripts/programs run with <mono>@script{raw}(script-path)</mono> calls are moved to the project root directory to run and have a backup copy made. If scripts/programs are so large that copying the file will take time, or you are making lots of calls which is slower at scale, you can use the <mono>!bs</mono> option to not have the script backed up, eg.: 
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline lang-bash">
-@scriptraw^('./script.py')
+@script{raw}{!p, !bs}('./script.py')
 </pre>
 		    </div>
-		    				</p>
-		    
-		    				<p>
-		    					If you need to use Nift's template language with the input parameters for the <mono>@scriptraw</mono> call as well then you can do either <mono>@scriptraw*^(script-path)</mono> or <mono>@scriptraw^*(script-path)</mono>.
 		    				</p>
 		    
 		    				<p>
@@ -788,7 +812,7 @@ Page was last built on @currentdate.
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> <mono>@scriptraw</mono> calls do not scale very well to hundreds of thousands of calls, it is much better to combine as much as possible in to as few <mono>@script</mono> calls as possible for extremely large projects (moving stuff to the pre/post build scripts is the best place, you can output stuff to file and process the files when building). For example if possible it's much faster to have a few pre-build scripts to download text from multiple urls using cURL, and/or make all the api calls, all the database queries, and work on JSON data needed and distribute the needed output in to different files to be inputted when needed. Note that file-specific build scripts have the benefit of multithreading, whereas project-wide build scripts wont have any multithreading unless you code it in there yourself.
+		    					<b>Note:</b> <mono>@script{raw}(script-path)</mono> calls do not scale very well to hundreds of thousands of calls, it is much better to combine as much as possible in to as few script/system calls as possible for extremely large projects (moving stuff to the pre/post build scripts is the best place, you can output stuff to file and process the files when building). For example if possible it's much faster to have a few pre-build scripts to download text from multiple urls using cURL, and/or make all the api calls, all the database queries, and work on JSON data needed and distribute the needed output in to different files to be inputted when needed. Note that file-specific build scripts have the benefit of multithreading, whereas project-wide build scripts wont have any multithreading unless you code it in there yourself.
 		    				</p>
 		    
 		    				<h4 id="system">Running system calls</h4>
@@ -798,15 +822,11 @@ Page was last built on @currentdate.
 		    
 		    				<p>
 		    					For example suppose you want to convert the markdown file <mono>file.md</mono> to html using pandoc and save it in <mono>out.html</mono>, you can do so with:
-		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline">
 @system('pandoc -o out.html file.md')
 </pre>
 		    </div>
-		    
-		    				<p>
-		    					<b>Note:</b> you can use <mono>\'</mono> for <mono>'</mono> and <mono>\"</mono> for <mono>"</mono> in system-calls. 
 		    				</p>
 		    
 		    				<p>
@@ -819,11 +839,7 @@ Page was last built on @currentdate.
 		    
 		    				<h4 id="system-output">Inputting system call output</h4>
 		    				<p>
-		    					Output from system calls may be inputted at any point when building output files using <mono>@systemoutput(system-call)</mono>, where <mono>system-call</mono> is the system call or script you want to run. This can be incredibly useful for things like conditional statements/loops, inputting text from a url using cURL, or integrating with databases, GraphQL and scripting languages etc., which is just the tip of the ice berg!
-		    				</p>
-		    
-		    				<p>
-		    					<b>Note:</b> you can use <mono>\'</mono> for <mono>'</mono> and <mono>\"</mono> for <mono>"</mono> in system-calls. 
+		    					Output from system calls may be inputted at any point when building output files using <mono>@system{inject}(system-call)</mono>, where <mono>system-call</mono> is the system call or script you want to run. This can be incredibly useful for things like conditional statements/loops, inputting text from a url using cURL, or integrating with databases, GraphQL and scripting languages etc., which is just the tip of the ice berg!
 		    				</p>
 		    
 		    				<p>
@@ -831,7 +847,7 @@ Page was last built on @currentdate.
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> <mono>@systemoutput</mono> calls do not scale very well to hundreds of thousands of calls, it is much better to combine as much as possible in to as few <mono>@script</mono> calls as possible for extremely large projects (moving stuff to the pre/post build scripts is the best place, you can output stuff to file and process the files when building). For example if possible it's much faster to have a few pre-build scripts to download text from multiple urls using cURL, and/or make all the api calls, all the database queries, and work on JSON data needed and distribute the needed output in to different files to be inputted when needed. Note that file-specific build scripts have the benefit of multithreading, whereas project-wide build scripts wont have any multithreading unless you code it in there yourself.
+		    					<b>Note:</b> <mono>@system{inject}(system-call)</mono> calls do not scale very well to hundreds of thousands of calls, it is much better to combine as much as possible in to as few script/system calls as possible for extremely large projects (moving stuff to the pre/post build scripts is the best place, you can output stuff to file and process the files when building). For example if possible it's much faster to have a few pre-build scripts to download text from multiple urls using cURL, and/or make all the api calls, all the database queries, and work on JSON data needed and distribute the needed output in to different files to be inputted when needed. Note that file-specific build scripts have the benefit of multithreading, whereas project-wide build scripts wont have any multithreading unless you code it in there yourself.
 		    				</p>
 		    
 		    				<p>
@@ -839,18 +855,14 @@ Page was last built on @currentdate.
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline">
-@systemoutput("curl -sS https://pastebin.com/raw/atjKuxY6")
+@system{inject}("curl -sS https://pastebin.com/raw/atjKuxY6")
 </pre>
 		    </div>
 		    				</p>
 		    
 		    				<h4 id="system-output-raw">Inputting system call output raw</h4>
 		    				<p>
-		    					Raw output from system calls may be inputted at any point when building output files using <mono>@systemraw(system-call)</mono>, where <mono>system-call</mono> is the system call or script you want to run.
-		    				</p>
-		    
-		    				<p>
-		    					<b>Note:</b> you can use <mono>\'</mono> for <mono>'</mono> and <mono>\"</mono> for <mono>"</mono> in system-calls. 
+		    					Raw output from system calls may be inputted at any point when building output files using <mono>@system{raw}(system-call)</mono>, where <mono>system-call</mono> is the system call or script you want to run.
 		    				</p>
 		    
 		    				<p>
@@ -858,7 +870,7 @@ Page was last built on @currentdate.
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> <mono>@systemraw</mono> calls do not scale very well to hundreds of thousands of calls, it is much better to combine as much as possible in to as few <mono>@script</mono> calls as possible for extremely large projects (moving stuff to the pre/post build scripts is the best place, you can output stuff to file and process the files when building). For example if possible it's much faster to have a few pre-build scripts to download text from multiple urls using cURL, and/or make all the api calls, all the database queries, and work on JSON data needed and distribute the needed output in to different files to be inputted when needed. Note that file-specific build scripts have the benefit of multithreading, whereas project-wide build scripts wont have any multithreading unless you code it in there yourself.
+		    					<b>Note:</b> <mono>@system{raw}(system-call)</mono> calls do not scale very well to hundreds of thousands of calls, it is much better to combine as much as possible in to as few system/script calls as possible for extremely large projects (moving stuff to the pre/post build scripts is the best place, you can output stuff to file and process the files when building). For example if possible it's much faster to have a few pre-build scripts to download text from multiple urls using cURL, and/or make all the api calls, all the database queries, and work on JSON data needed and distribute the needed output in to different files to be inputted when needed. Note that file-specific build scripts have the benefit of multithreading, whereas project-wide build scripts wont have any multithreading unless you code it in there yourself.
 		    				</p>
 		    
 		    				<p>
@@ -866,7 +878,7 @@ Page was last built on @currentdate.
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline">
-@systemraw("curl -sS https://pastebin.com/raw/atjKuxY6")
+@system{raw}("curl -sS https://pastebin.com/raw/atjKuxY6")
 </pre>
 		    </div>
 		    				</p>
@@ -875,7 +887,7 @@ Page was last built on @currentdate.
 		    					User input from command-line
 		    				</h4>
 		    				<p>
-		    					To inject standard input from the user using the command-line in to the output file being built you can use <mono>@userin(message)</mono> where <mono>message</mono> is the message to be displayed on the command-line to the user.
+		    					To inject standard input from the user using the command-line in to the output file being built you can use <mono>@in(message)</mono> where <mono>message</mono> is the message to be displayed on the command-line to the user (you can provide no message if you want and output to the user in other ways).
 		    				</p>
 		    
 		    				<p>
@@ -883,17 +895,17 @@ Page was last built on @currentdate.
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint lang-js inline">
-@userin("please enter your name:")
+@in("please enter your name:")
 </pre>
 		    </div>
 		    				</p>
 		    
 		    				<p>
-		    					You can even input the message from file if you would like using <mono>@userin*(@input(message-file-path))</mono>, for example:
+		    					You can even input the message from file if you would like using <mono>@in(@input(message-file-path))</mono>, for example:
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint lang-js inline">
-@userin*(@input*("@[contentdir]/input-message.txt"))
+@in(@input("@[contentdir]/input-message.txt"))
 </pre>
 		    </div>
 		    				</p>
@@ -902,7 +914,7 @@ Page was last built on @currentdate.
 		    					User input from file
 		    				</h4>
 		    				<p>
-		    					To inject input from the user from a file in to the output file being built you can use <mono>@userfilein(message)</mono> where <mono>message</mono> is the message/template to be displayed in the file opened up for the user to modify then save/close.
+		    					To inject input from the user from a file in to the output file being built you can use <mono>@in{from-file}(message)</mono> where <mono>message</mono> is the message/template to be displayed in the file opened up for the user to modify then save/close.
 		    				</p>
 		    
 		    				<p>
@@ -914,23 +926,23 @@ Page was last built on @currentdate.
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint lang-js inline">
-@userfilein("please replace this text with your content")
+@in{from-file}("please replace this text with your content")
 </pre>
 		    </div>
 		    				</p>
 		    
 		    				<p>
-		    					You can even input the message from file if you would like using <mono>@userfilein*(@input(message-file-path))</mono>, for example:
+		    					You can even input the message/template from file if you would like using <mono>@in{from-file}(@input(message-file-path))</mono>, for example:
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint lang-js inline">
-@userfilein*(@input*("@[contentdir]/input-message.txt"))
+@in{from-file}(@input("@[contentdir]/input-message.txt"))
 </pre>
 		    </div>
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> If you want to input the message/template from file without it being parsed by Nift's template language yet use <mono>@inputraw(path-to-file)</mono> rather than <mono>@input(path-to-file)</mono>.
+		    					<b>Note:</b> If you want to input the message/template from file without it being parsed by Nift's template language yet use <mono>@input{raw}(path-to-file)</mono> rather than <mono>@input(path-to-file)</mono>.
 		    				</p>
 		    
 		    				<h4 id="entities">
