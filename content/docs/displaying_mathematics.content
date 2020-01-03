@@ -10,7 +10,7 @@
 
 <div class="content">
 	<center>
-		<img src="@pathtofile(site/images/mathematics.svg)" alt="unDraw mathematics illustration" width=250 style="margin-top:-50px; margin-bottom:30px">
+		<img src="@pathtofile{!p}(site/images/mathematics.svg)" alt="unDraw mathematics illustration" width=250 style="margin-top:-50px; margin-bottom:30px">
 	</center>
 
 	<p>

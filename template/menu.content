@@ -4,7 +4,7 @@
 	<!-- Logo -->
 	<div id="logo">
 		<noselect>
-		<img src="@pathtofile(site/images/rabbit.svg)" alt="Nift bunny mascot" width=325 style="max-width:90%">
+		<img src="@pathtofile{!p}(site/images/rabbit.svg)" alt="Nift bunny mascot" width=325 style="max-width:90%">
 
 		<p style="margin-bottom:0px">
 			<a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; 
@@ -23,9 +23,9 @@
 		<p style="color:#372C2A">A cross-platform open source website generator</p>
 
 		<p>
-			<a href="https://chocolatey.org/packages/nsm"><img src="@pathtofile(site/images/chocolatey.svg)" height="40px" alt="Get it from the Chocolatey store" title="Windows"></a> &nbsp;
-			<a href="@pathto(docs/linux_install)"><img src="@pathtofile(site/images/flathub-dark.svg)" height="40px" alt="Get it from the FlatHub store" title="Linux"></a> &nbsp;
-			<!--<a href=""><img src="@pathtofile(site/images/brew.png)" height="40px" alt="Get it from the Homebrew store" title="OSX" style="border-radius: 5px; border-style: solid; border-width:0.75px; border-color: #817679"></a> &nbsp;-->
+			<a href="https://chocolatey.org/packages/nsm"><img src="@pathtofile{!p}(site/images/chocolatey.svg)" height="40px" alt="Get it from the Chocolatey store" title="Windows"></a> &nbsp;
+			<a href="@pathto{!p}(docs/linux_install)"><img src="@pathtofile{!p}(site/images/flathub-dark.svg)" height="40px" alt="Get it from the FlatHub store" title="Linux"></a> &nbsp;
+			<!--<a href=""><img src="@pathtofile{!p}(site/images/brew.png)" height="40px" alt="Get it from the Homebrew store" title="OSX" style="border-radius: 5px; border-style: solid; border-width:0.75px; border-color: #817679"></a> &nbsp;-->
 			<a href="https://snapcraft.io/nift"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" height="40px" alt="Get it from the Snap Store" title="Linux" /> </a>
 		</p>
 		</noselect>
@@ -35,37 +35,37 @@
 	<noselect>
 		<nav id="nav">
 			<ul>
-				<li><a href="@pathto(index)">Home</a></li>
+				<li><a href="@pathto{!p}(index)">Home</a></li>
 				<li>
 					<a href="">Documentation</a>
 					<ul>
 						<li>
-							<a href="@pathto(docs/installing_nift)">Installing Nift</a>
+							<a href="@pathto{!p}(docs/installing_nift)">Installing Nift</a>
 							<!--<ul>
-								<li><a href="@pathto(docs/linux_install)">Linux</a></li>
-								<li><a href="@pathto(docs/osx_install)">OSX</a></li>
-								<li><a href="@pathto(docs/windows_install)">Windows</a></li>
+								<li><a href="@pathto{!p}(docs/linux_install)">Linux</a></li>
+								<li><a href="@pathto{!p}(docs/osx_install)">OSX</a></li>
+								<li><a href="@pathto{!p}(docs/windows_install)">Windows</a></li>
 							</ul>-->
 						</li>
-						<li><a href="@pathto(docs/nift_commands)">Nift Commands</a></li>
-						<li><a href="@pathto(docs/content_files)">Content Files</a></li>
-						<li><a href="@pathto(docs/template_files)">Template Files</a></li>
-						<li><a href="@pathto(docs/scripts)">Scripts</a></li>
-						<li><a href="@pathto(docs/template_languages)">Template Languages</a></li>
-						<li><a href="@pathto(docs/JSON)">JSON Data</a></li>
-						<li><a href="@pathto(docs/markdown)">Markdown</a></li>
-						<li><a href="@pathto(docs/translators)">Translators</a></li>
-						<li><a href="@pathto(docs/displaying_mathematics)">Displaying Mathematics</a></li>
-						<li><a href="@pathto(docs/displaying_code_blocks)">Displaying Code Blocks</a></li>
-						<li><a href="@pathto(docs/presentations)">Presentations</a></li>
-						<li><a href="@pathto(docs/lokinet_snapps)">Lokinet SNApps</a></li>
+						<li><a href="@pathto{!p}(docs/nift_commands)">Nift Commands</a></li>
+						<li><a href="@pathto{!p}(docs/content_files)">Content Files</a></li>
+						<li><a href="@pathto{!p}(docs/template_files)">Template Files</a></li>
+						<li><a href="@pathto{!p}(docs/scripts)">Scripts</a></li>
+						<li><a href="@pathto{!p}(docs/template_languages)">Template Languages</a></li>
+						<li><a href="@pathto{!p}(docs/JSON)">JSON Data</a></li>
+						<li><a href="@pathto{!p}(docs/markdown)">Markdown</a></li>
+						<li><a href="@pathto{!p}(docs/translators)">Translators</a></li>
+						<li><a href="@pathto{!p}(docs/displaying_mathematics)">Displaying Mathematics</a></li>
+						<li><a href="@pathto{!p}(docs/displaying_code_blocks)">Displaying Code Blocks</a></li>
+						<li><a href="@pathto{!p}(docs/presentations)">Presentations</a></li>
+						<li><a href="@pathto{!p}(docs/lokinet_snapps)">Lokinet SNApps</a></li>
 						<li>
-							<a href="@pathto(docs/hosting_your_site)">Hosting Your Site</a>
+							<a href="@pathto{!p}(docs/hosting_your_site)">Hosting Your Site</a>
 							<!--<ul>
-								<li><a href="@pathto(docs/bitbucket_hosting)">BitBucket</a></li>
-								<li><a href="@pathto(docs/github_hosting)">GitHub</a></li>
-								<li><a href="@pathto(docs/gitlab_hosting)">GitLab</a></li>
-								<li><a href="@pathto(docs/netlify_hosting)">Netlify</a></li>
+								<li><a href="@pathto{!p}(docs/bitbucket_hosting)">BitBucket</a></li>
+								<li><a href="@pathto{!p}(docs/github_hosting)">GitHub</a></li>
+								<li><a href="@pathto{!p}(docs/gitlab_hosting)">GitLab</a></li>
+								<li><a href="@pathto{!p}(docs/netlify_hosting)">Netlify</a></li>
 							</ul>-->
 						</li>
 					</ul>
@@ -73,20 +73,20 @@
 				<li>
 					<a href="">Resources</a>
 					<ul>
-						<li><a href="@pathto(resources/css_frameworks)">CSS Frameworks</a></li>
-						<li><a href="@pathto(resources/examples)">Examples</a></li>
-						<li><a href="@pathto(resources/get_started)">Get Started</a></li>
-						<li><a href="@pathto(resources/js_frameworks)">JS Frameworks</a></li>
-						<li><a href="@pathto(resources/links)">Links</a></li>
-						<li><a href="@pathto(resources/logos)">Logos</a></li>
-						<li><a href="@pathto(resources/nift_tutorial)">Nift Tutorial</a></li>
-						<li><a href="@pathto(resources/php_frameworks)">PHP Frameworks</a></li>
-						<li><a href="@pathto(resources/templates)">Templates</a></li>
-						<li><a href="@pathto(resources/SNApp_templates)">SNApp Templates</a></li>
-						<li><a href="@pathto(resources/blog_templates)">Blog Templates</a></li>
+						<li><a href="@pathto{!p}(resources/css_frameworks)">CSS Frameworks</a></li>
+						<li><a href="@pathto{!p}(resources/examples)">Examples</a></li>
+						<li><a href="@pathto{!p}(resources/get_started)">Get Started</a></li>
+						<li><a href="@pathto{!p}(resources/js_frameworks)">JS Frameworks</a></li>
+						<li><a href="@pathto{!p}(resources/links)">Links</a></li>
+						<li><a href="@pathto{!p}(resources/logos)">Logos</a></li>
+						<li><a href="@pathto{!p}(resources/nift_tutorial)">Nift Tutorial</a></li>
+						<li><a href="@pathto{!p}(resources/php_frameworks)">PHP Frameworks</a></li>
+						<li><a href="@pathto{!p}(resources/templates)">Templates</a></li>
+						<li><a href="@pathto{!p}(resources/SNApp_templates)">SNApp Templates</a></li>
+						<li><a href="@pathto{!p}(resources/blog_templates)">Blog Templates</a></li>
 					</ul>
 				</li>
-				<li><a href="@pathto(support)">Support</a></li>
+				<li><a href="@pathto{!p}(support)">Support</a></li>
 			</ul>
 		</nav>
 	</noselect>

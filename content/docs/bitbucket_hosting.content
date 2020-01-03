@@ -22,7 +22,7 @@
 				</h4>
 
 				<p>
-					By far the easiest way to host a website on BitBucket is to import or fork an existing site repository from BitBucket or any other code sharing platform. See <a href="@pathto(resources/templates)">here</a> for a variety of templates you can use to make websites.
+					By far the easiest way to host a website on BitBucket is to import or fork an existing site repository from BitBucket or any other code sharing platform. See <a href="@pathto{!p}(resources/templates)">here</a> for a variety of templates you can use to make websites.
 				</p>
 
 				<h4>

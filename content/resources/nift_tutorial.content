@@ -10,12 +10,12 @@
 
 			<!-- Image -->
 			<center>
-				<img src="@pathtofile(site/images/teaching.svg)" alt="unDraw teaching illustration" width=300 style="margin-bottom:40px">
+				<img src="@pathtofile{!p}(site/images/teaching.svg)" alt="unDraw teaching illustration" width=300 style="margin-bottom:40px">
 			</center>
 
 			<div class="content">
 				<p>
-					The following tutorial will help you learn how <mono>Nift</mono> works, if you are just taking a look at <mono>Nift</mono> you may prefer the <a href="@pathto(resources/get_started)">getting started guide</a> which will get you up and running much quicker, then come back when you want to have a better understanding of how <mono>Nift</mono> works.
+					The following tutorial will help you learn how <mono>Nift</mono> works, if you are just taking a look at <mono>Nift</mono> you may prefer the <a href="@pathto{!p}(resources/get_started)">getting started guide</a> which will get you up and running much quicker, then come back when you want to have a better understanding of how <mono>Nift</mono> works.
 				</p>
 
 				<p>

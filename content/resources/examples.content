@@ -10,7 +10,7 @@
 
 			<!-- Image -->
 			<center>
-				<img src="@pathtofile(site/images/presentation.svg)" alt="unDraw presentation illustration" width=300 style="margin-bottom:20px">
+				<img src="@pathtofile{!p}(site/images/presentation.svg)" alt="unDraw presentation illustration" width=300 style="margin-bottom:20px">
 			</center>
 
 			<div class="content">
@@ -34,7 +34,7 @@
 				</p>
 
 				<p>
-					If you would like to have your own websites made using <mono>Nift</mono> added to the above list, email <mono>examples@nift.cc</mono>.
+					If you would like to have your own websites made using <mono>Nift</mono> added to the above list, email <mono>examples\@nift.cc</mono>.
 				</p>
 			</div>
 		</section>

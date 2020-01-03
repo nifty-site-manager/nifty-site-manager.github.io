@@ -148,7 +148,7 @@
 		    <div style="margin-top:-30px; margin-bottom:20px">
 		    For example you can use:
 		    <pre class="prettyprint">
-@systemoutput("curl 'https://api.github.com/repos/stedolan/jq/commits?per_page=5' | jq '.[0]'")
+@system{inject}("curl 'https://api.github.com/repos/stedolan/jq/commits?per_page=5' | jq '.[0]'")
 </pre>
 		    </div>
 		    						</li>
@@ -185,13 +185,13 @@
 		    For example you can use:
 		    <pre class="prettyprint">
 @system("curl -o todos.json https://jsonplaceholder.typicode.com/todos")
-@systemoutput("cat todos.json | groq '*[completed == true]{title, userId}' --pretty")
+@system{inject}("cat todos.json | groq '*[completed == true]{title, userId}' --pretty")
 @system("rm todos.json")
 </pre>
 		    
 		    or alternatively,
 		    <pre class="prettyprint">
-@systemoutput("curl -sS https://jsonplaceholder.typicode.com/todos | groq '*[completed == true]{title, userId}' --pretty")
+@system{inject}("curl -sS https://jsonplaceholder.typicode.com/todos | groq '*[completed == true]{title, userId}' --pretty")
 </pre>
 		    </div>
 		    						</li>

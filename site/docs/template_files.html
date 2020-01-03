@@ -141,20 +141,21 @@
 		    				</h4>
 		    
 		    				<p>
-		    					<mono>Nift</mono> treats any instance of <mono>@inputcontent</mono> as being equivalent to <mono>@input(@[contentpath])</mono>, where <mono>@[contentpath]</mono> is the content path for the tracked page.
+		    					<mono>Nift</mono> treats any instance of <mono>@content()</mono> as being equivalent to <mono>@input(@[contentpath])</mono>, where <mono>@[contentpath]</mono> is the content path for the tracked page.
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> if <mono>@inputcontent</mono> is in any dependency of the content file (content file inclusive), then an input loop would be formed when attempting to build the page so <mono>Nift</mono> will (at least it should) throw an error. You may however put <mono>@inputcontent</mono> in any other dependencies of the template file. For example were your template to include a file <mono>template/body.content</mono> or <mono>template/body.template</mono>, it is fine for <mono>@inputcontent</mono> to reside in <mono>body.content</mono>/<mono>body.template</mono> and not the main template file.
+		    					<b>Note:</b> if <mono>@content()</mono> is in any dependency of the content file (content file inclusive), then an input loop would be formed when attempting to build the page so <mono>Nift</mono> will throw an error. You may however put <mono>@content()</mono> in any other dependencies of the template file. For example were your template to include a file <mono>template/body.content</mono> or <mono>template/body.template</mono>, it is fine for <mono>@content()</mono> to reside in <mono>body.content</mono>/<mono>body.template</mono> and not the main template file.
 		    				</p>
 		    
 		    				<p>
-		    					Alternatively to <mono>@inputcontent</mono> you can:
+		    					Alternatively to <mono>@content()</mono> you can:
 		    					<ul style="text-indent:30px">
-		    						<li>use <mono>@inputraw</mono> which will input the content file without parsing it with Nift's template language</li>
-		    						<li>use <mono>@systemcontent(sys-call)</mono> which is equivalent to <mono>@systemcontent*(sys-call @[contentpath])</mono>, where <mono>@[contentpath]</mono> injects the content path for a page. For example if your content files are markdown and you use <mono>@systemoutput("pandoc")</mono> then the content files will be injected after being converted to html using pandoc</li>
-		    						<li>use <mono>@scriptoutput*(@[contentpath])</mono></li>
-		    						<li>use <mono>@dep*(@[contentpath])</mono></li>
+		    						<li>use <mono>@content{raw}()</mono> which will input the content file without parsing it with Nift's template language</li>
+		    						<li>use <mono>@system{inject, content}(sys-call)</mono> which is equivalent to <mono>@system{inject}(sys-call @[contentpath])</mono>, where <mono>@[contentpath]</mono> injects the content path, except that Nift recognises that the content file has been included. For example if your content files are markdown and you use <mono>@system{inject, content}("pandoc")</mono> then the content files will be injected after being converted to html using pandoc</li>
+		    						<li>use <mono>@script{inject}(@[contentpath])</mono> (if the content file is a script/program)</li>
+		    						<li>use <mono>@script{inject, content}(script-path, param 2, ..., param n)</mono> which is equivalent to <mono>@script{inject}(script-path, @[contentpath], param 2, ..., param 2)</mono>, where <mono>@[contentpath]</mono> injects the content path as parameter 1, except that Nift recognises that the content file has been included</li>
+		    						<li>use <mono>@dep(@[contentpath])</mono></li>
 		    					</ul>
 		    				</p>
 		    
@@ -163,7 +164,23 @@
 		    				</h4>
 		    
 		    				<p>
-		    					You can optionally add <mono>@inputhead</mono> which will input <mono>content/name.head</mono> if the file exists. So if you want to optionally add code for a page at that point add a file <mono>page-name.head</mono> in the same directory as the page content file. This is very similar to doing <mono>@input*(@contentdir/@pagename.head)</mono> except the existence of the file is optional.
+		    					To inject a custom head file for each name using a given template you can use for example:
+		    <div align="center" style="margin-top:-15px; margin-bottom: 20px">
+		    <pre class="prettyprint inline lang-bash">
+@input(@[contentdir]/@[name].head)
+</pre>
+		    </div>
+		    					which will input <mono>content/name.head</mono>. 
+		    				</p>
+		    
+		    				<p>
+		    					If you would like to inject a custom head file for only some names using a given template you can use for example:
+		    <div align="center" style="margin-top:-15px; margin-bottom: 20px">
+		    <pre class="prettyprint inline lang-bash">
+@input{if-exists}(@[contentdir]/@[name].head)
+</pre>
+		    </div>
+		    				So if you want to optionally add code for a page at that point add a file <mono>name.head</mono> in the same directory as the content file.
 		    				</p>
 		    
 		    				<h4>
@@ -171,7 +188,7 @@
 		    				</h4>
 		    
 		    				<p>
-		    					When building a page, <mono>Nift</mono> will replace any instance of <mono>@[title]</mono> with the title <mono>Nift</mono> has tracked for the file. Unlike <mono>@inputcontent</mono>, <mono>@[title]</mono> may be placed inside content files (template files inclusive). 
+		    					When building a page, <mono>Nift</mono> will replace any instance of <mono>@[title]</mono> with the title <mono>Nift</mono> has tracked for the file. Unlike <mono>@content()</mono>, <mono>@[title]</mono> may be placed inside content files (template files inclusive). 
 		    				</p>
 		    
 		    				<h4>
@@ -182,7 +199,7 @@
 		    					A very simple html template file, that specifies both where content and the title are to be inputted, would be:
 		    				</p>
 		    
-		    				<div align="center" style="margin-top:-15px; margin-bottom: 20px">
+		    <div align="center" style="margin-top:-15px; margin-bottom: 20px">
 		    <pre class="prettyprint linenums inline">
 &lt;!DOCTYPE html>
 &lt;html>
@@ -191,17 +208,17 @@
 	&lt;/head>
 
 	&lt;body>
-		@inputcontent	
+		@content()	
 	&lt;/body>
 &lt;/html>
 </pre>
-		    				</div>
+		    </div>
 		    
 		    				<p>
 		    					It can be convenient to break what would typically be found inside the template file up into various content files (or you can think of them as also being template files, which extension you use is up to you). For example you may have <mono>template/head.content</mono>, <mono>template/menu.content</mono> and <mono>template/footer.content</mono>. A suitable html template file, say the default <mono>template/page.template</mono> would then be:
 		    				</p>
 		    
-		    				<div align="center" style="margin-top:-15px; margin-bottom: 20px">
+		    <div align="center" style="margin-top:-15px; margin-bottom: 20px">
 		    <pre class="prettyprint linenums inline">
 &lt;!DOCTYPE html>
 &lt;html>
@@ -212,13 +229,13 @@
 	&lt;body>
 		@input(template/menu.content)
 
-		@inputcontent	
+		@content()	
 
 		@input(template/footer.content)
 	&lt;/body>
 &lt;/html>
 </pre>
-		    				</div>
+		    </div>
 		    
 		    				<p>
 		    					<b>Note:</b> the <mono>head</mono> tags may be put inside either <mono>template/page.template</mono> or <mono>template/head.content</mono>. However if the <mono>head</mono> tags are left inside <mono>template/page.template</mono> then, rather than specifically having to alter <mono>template/head.content</mono>, the head may be altered from both <mono>template/page.template</mono> and <mono>template/head.content</mono>.

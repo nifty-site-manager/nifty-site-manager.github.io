@@ -10,7 +10,7 @@
 
 			<div class="content" style="margin-top:-50px;">
 				<center>
-					<img src="@pathtofile(site/images/translate.jpg)" alt="Google translate on Globe image" width=300 style="margin-bottom:20px; border-radius: 50%; max-width:70%">
+					<img src="@pathtofile{!p}(site/images/translate.jpg)" alt="Google translate on Globe image" width=300 style="margin-bottom:20px; border-radius: 50%; max-width:70%">
 				</center>
 
 				<p>
@@ -22,7 +22,7 @@
 				</p>
 
 				<center>
-					<img src="@pathtofile(site/images/translate.png)" alt="Google translate hello to hola image" width=400 style="margin-bottom:20px; border-radius: 50%; max-width:80%">
+					<img src="@pathtofile{!p}(site/images/translate.png)" alt="Google translate hello to hola image" width=400 style="margin-bottom:20px; border-radius: 50%; max-width:80%">
 				</center>
 
 				<h2>Translate Shell</h2>
@@ -43,7 +43,7 @@
 					The simplest way to use Translate Shell with Nift is:
 <div style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint">
-\@systemoutput("trans -brief 'text'")
+\@system{inject}("trans -brief 'text'")
 </pre>
 </div>
 
@@ -54,20 +54,20 @@
 					If you want to translate text in a file use 
 <div style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint">
-\@systemoutput("trans -brief file://file-path")\@dep("file-path")
+\@system{inject}("trans -brief file://file-path")\@dep("file-path")
 </pre>
 </div>
 
-					where <mono>file-path</mono> is the path from the project root directory to the file you want to translate. It is worth adding the file as a page dependency after the <mono>@systemoutput</mono> call so that Nift will track changes to the file for purposes of knowing when the page needs rebuilding.
+					where <mono>file-path</mono> is the path from the project root directory to the file you want to translate. It is worth adding the file as a dependency after the <mono>\@system{inject}</mono> call so that Nift will track changes to the file for purposes of knowing when the page needs rebuilding.
 				</p>
 
 				<p>
 					To specify which language to translate to add <mono>:language-code</mono> after <mono>-brief</mono> and to specify which language to translate from add <mono>language-code:</mono> after <mono>-brief</mono>, the language codes that are available can be found <a href="https://www.soimort.org/translate-shell/#code-list">here</a>. For example:
 <div style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint">
-\@systemoutput("trans -brief eo: 'vorto'")
-\@systemoutput("trans -brief :zh-CN 'hello'")
-\@systemoutput("trans -brief en: :zh-CN 'hello'")
+\@system{inject}("trans -brief eo: 'vorto'")
+\@system{inject}("trans -brief :zh-CN 'hello'")
+\@system{inject}("trans -brief en: :zh-CN 'hello'")
 </pre>
 </div>
 				</p>
@@ -76,13 +76,13 @@
 					To list the available translation engines enter <mono>trans -S</mono>. To use a non-default translation engine use the <mono>-e <i>engine</i></mono> option, for example:
 <div style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint">
-\@systemoutput("trans -e yandex -brief :en '你好'")
+\@system{inject}("trans -e yandex -brief :en '你好'")
 </pre>
 </div>
 				</p>
 
 				<center>
-					<img src="@pathtofile(site/images/translate-world.png)" alt="translated text on world map" width=400 style="margin-bottom:20px; border-radius: 30%; max-width:80%">
+					<img src="@pathtofile{!p}(site/images/translate-world.png)" alt="translated text on world map" width=400 style="margin-bottom:20px; border-radius: 30%; max-width:80%">
 				</center>
 
 				<h2>DeepL Translator CLI</h2>
@@ -104,7 +104,7 @@ $ yarn global add deepl-translator-cli
 					The simplest way to use DeepL Translator CLI with Nift is:
 <div style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint">
-\@systemoutput("deepl translate -t 'country-code' 'text'")
+\@system{inject}("deepl translate -t 'country-code' 'text'")
 </pre>
 </div>
 
@@ -119,7 +119,7 @@ $ yarn global add deepl-translator-cli
 					If you want to specify the language to translate from use the <mono>-s 'language-code'</mono> option, for example:
 <div style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint">
-\@systemoutput("deepl translate -s 'EN' -t 'DE' 'How do you do?'")
+\@system{inject}("deepl translate -s 'EN' -t 'DE' 'How do you do?'")
 </pre>
 </div>
 				</p>
@@ -128,7 +128,7 @@ $ yarn global add deepl-translator-cli
 					You can pipe text from standard input, for example:
 <div style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint">
-\@systemoutput("echo 'text' | deepl translate -t 'language-code'")
+\@system{inject}("echo 'text' | deepl translate -t 'language-code'")
 </pre>
 </div>
 				</p>
@@ -137,11 +137,11 @@ $ yarn global add deepl-translator-cli
 					If you want to translate a file, you can do so as follows:
 <div style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint">
-\@systemoutput("cat file-path | deepl translate -t 'language-code'")\@dep("file-path")
+\@system{inject}("cat file-path | deepl translate -t 'language-code'")\@dep("file-path")
 </pre>
 </div>
 
-					where <mono>file-path</mono> is the path from the project root directory to the file you want to translate. It is worth adding the file as a page dependency after the <mono>@systemoutput</mono> call so that Nift will track changes to the file for purposes of knowing when the page needs rebuilding.
+					where <mono>file-path</mono> is the path from the project root directory to the file you want to translate. It is worth adding the file as a page dependency after the <mono>\@system{inject}</mono> call so that Nift will track changes to the file for purposes of knowing when the page needs rebuilding.
 				</p>
 
 				<p>
@@ -200,7 +200,7 @@ $ yarn global add deepl-translator-cli
 				</p>
 
 				<center>
-					<img src="@pathtofile(site/images/trans.png)" alt="translated text on mobile, tablet and PC" width=400 style="margin-bottom:20px; border-radius: 10%; max-width:80%">
+					<img src="@pathtofile{!p}(site/images/trans.png)" alt="translated text on mobile, tablet and PC" width=400 style="margin-bottom:20px; border-radius: 10%; max-width:80%">
 				</center>
 			</div>
 		</section>

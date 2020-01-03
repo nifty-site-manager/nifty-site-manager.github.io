@@ -12,7 +12,7 @@
 
 			<!-- Image -->
 			<center>
-				<img src="@pathtofile(site/images/loki-rabbit1.svg)" alt="Nift bunny mascot with Loki boomerangs" width=300 style="max-width: 90%; margin-bottom:50px">
+				<img src="@pathtofile{!p}(site/images/loki-rabbit1.svg)" alt="Nift bunny mascot with Loki boomerangs" width=300 style="max-width: 90%; margin-bottom:50px">
 			</center>
 
 			<p>
@@ -22,13 +22,13 @@
 			<center>
         <div class="xscroll">
 				  <table id="SNApp_templates_table" class="Loki">
-					  @input(content/resources/tables/templates.table)
+					  @input{!p}(content/resources/tables/templates.table)
 				  </table>
         </div>
 			</center>
 
 			<p>
-				To have a template added to the above table, email <mono class="Loki">templates@nift.cc</mono> with a link to a repository on BitBicket/GitHub/GitLab. If the repository indeed contains a SNApp made with <mono class="Loki">Nift</mono> then we will fork/import the repository to SNApp-templates on BitBucket, GitHub and GitLab and add it to the above table.
+				To have a template added to the above table, email <mono class="Loki">templates\@nift.cc</mono> with a link to a repository on BitBicket/GitHub/GitLab. If the repository indeed contains a SNApp made with <mono class="Loki">Nift</mono> then we will fork/import the repository to SNApp-templates on BitBucket, GitHub and GitLab and add it to the above table.
 			</p>
 
 			<p>
@@ -38,13 +38,13 @@
 			<h3 id="html5up">HTML5 UP Template Websites</h3>
 
 			<p>
-				The following table contains modified <a href="https://html5up.net/">HTML5 UP</a> template SNApp repositories that you can import (or fork and rename) then clone to start making SNApps. If there is an <a href="https://html5up.net/">HTML5 UP</a> template you would like that is not in the table below email <mono class="Loki">templates@nift.cc</mono> and we will add it for you.
+				The following table contains modified <a href="https://html5up.net/">HTML5 UP</a> template SNApp repositories that you can import (or fork and rename) then clone to start making SNApps. If there is an <a href="https://html5up.net/">HTML5 UP</a> template you would like that is not in the table below email <mono class="Loki">templates\@nift.cc</mono> and we will add it for you.
 			</p>
 
 			<center>
         <div class="xscroll">
 				  <table id="html5up_SNApp_templates_table" class="Loki">
-					  @input(content/resources/tables/html5up_templates.table)
+					  @input{!p}(content/resources/tables/html5up_templates.table)
 				  </table>
         </div>
 			</center>
@@ -52,13 +52,13 @@
 			<h3 id="w3css">W3.CSS Template Websites</h3>
 
 			<p>
-				The following table contains modified <a href="https://www.w3schools.com/w3css/w3css_templates.asp">W3.CSS</a> template SNApp repositories that you can import (or fork and rename) then clone to start making SNApps. If there is a <a href="https://www.w3schools.com/w3css/w3css_templates.asp">W3.CSS</a> template you would like that is not in the table below email <mono class="Loki">templates@nift.cc</mono> and we will add it for you.
+				The following table contains modified <a href="https://www.w3schools.com/w3css/w3css_templates.asp">W3.CSS</a> template SNApp repositories that you can import (or fork and rename) then clone to start making SNApps. If there is a <a href="https://www.w3schools.com/w3css/w3css_templates.asp">W3.CSS</a> template you would like that is not in the table below email <mono class="Loki">templates\@nift.cc</mono> and we will add it for you.
 			</p>
 
 			<center>
         <div class="xscroll">
 				  <table id="w3css_SNApp_templates_table" class="Loki">
-					  @input(content/resources/tables/w3css_templates.table)
+					  @input{!p}(content/resources/tables/w3css_templates.table)
 				  </table>
         </div>
 			</center>
@@ -74,13 +74,13 @@
 			<center>
         <div class="xscroll">
 				  <table id="blog_SNApps_table" class="Loki">
-					  @input(content/resources/tables/blogs.table)
+					  @input{!p}(content/resources/tables/blogs.table)
 				  </table>
         </div>
 			</center>
 
 			<p>
-				To have a template added to the above table, email <mono class="Loki">templates@nift.cc</mono> with a link to a repository on BitBicket/GitHub/GitLab. If the repository indeed contains a blog SNApp template made with <mono class="Loki">Nift</mono> then we will fork/import the repository to nsm-blogs on BitBucket, GitHub and GitLab and add it to the above table.
+				To have a template added to the above table, email <mono class="Loki">templates\@nift.cc</mono> with a link to a repository on BitBicket/GitHub/GitLab. If the repository indeed contains a blog SNApp template made with <mono class="Loki">Nift</mono> then we will fork/import the repository to nsm-blogs on BitBucket, GitHub and GitLab and add it to the above table.
 			</p>
 
 			<p>
@@ -88,19 +88,19 @@
 			</p>
 
 			<p>
-				The following table contains modified <a href="https://html5up.net/">HTML5 UP</a> template blog SNApp repositories that you can import (or fork and rename) then clone to start making blog SNApps. If there is an <a href="https://html5up.net/">HTML5 UP</a> template you would like that is not in the table below email <mono class="Loki">templates@nift.cc</mono> and we will do our best to add it for you.
+				The following table contains modified <a href="https://html5up.net/">HTML5 UP</a> template blog SNApp repositories that you can import (or fork and rename) then clone to start making blog SNApps. If there is an <a href="https://html5up.net/">HTML5 UP</a> template you would like that is not in the table below email <mono class="Loki">templates\@nift.cc</mono> and we will do our best to add it for you.
 			</p>
 
 			<center>
         <div class="xscroll">
 				  <table id="html5up_blog_SNApps_table" class="Loki">
-					  @input(content/resources/tables/html5up_blogs.table)
+					  @input{!p}(content/resources/tables/html5up_blogs.table)
 				  </table>
         </div>
 			</center>
 
 			<center>
-				<img src="@pathtofile(site/images/Loki.png)" alt="Loki logo" width=300 style="max-width: 90%; margin-bottom:-30px">
+				<img src="@pathtofile{!p}(site/images/Loki.png)" alt="Loki logo" width=300 style="max-width: 90%; margin-bottom:-30px">
 			</center>
 		</section>
 	</div>

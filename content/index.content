@@ -32,7 +32,7 @@
 	<div class="container">
 		<!-- Image -->
 		<center>
-			<img class="image featured" src="@pathtofile(site/images/nifty-site-manager-parch.png)" alt="nifty site manager banner" />
+			<img class="image featured" src="@pathtofile{!p}(site/images/nifty-site-manager-parch.png)" alt="nifty site manager banner" />
 		</center>
 
 		<!-- Features -->
@@ -41,7 +41,7 @@
 				<h2>Recommended by</h2>
 			</header>
 			<center>
-				<a href="https://www.npmjs.com/"><img src="@pathtofile(site/images/npm.svg)" alt="npm logo" width="250px" style="max-width:70%"></a>
+				<a href="https://www.npmjs.com/"><img src="@pathtofile{!p}(site/images/npm.svg)" alt="npm logo" width="250px" style="max-width:70%"></a>
 			</center><br>
 
 			<!--
@@ -75,7 +75,7 @@
 					<div class="col-6 col-12-medium">
 						<section>
 							<h3 class="icon solid fa-check">Static and Dynamic Websites</h3>
-							<p>Nift can manage and generate not just static but also <a href="https://jamstack.org">JAMstack</a> and dynamic websites, with a whole range of <a href="@pathto(docs/hosting_your_site)">hosting options</a>.</p>
+							<p>Nift can manage and generate not just static but also <a href="https://jamstack.org">JAMstack</a> and dynamic websites, with a whole range of <a href="@pathto{!p}(docs/hosting_your_site)">hosting options</a>.</p>
 						</section>
 					</div>
 					<div class="col-6 col-12-medium">
@@ -99,7 +99,7 @@
 					<div class="col-6 col-12-medium">
 						<section>
 							<h3 class="icon solid fa-check">Framework Integration</h3>
-							<p>Nift integrates flawlessly with various <a href="@pathto(resources/js_frameworks)">Javascript frameworks</a> eg. Grunt, Gulp, Vue, Node, React, etc. and <a href="@pathto(resources/php_frameworks)">PHP frameworks</a> eg. Laravel, CakePHP, Phalcon, etc..</p>
+							<p>Nift integrates flawlessly with various <a href="@pathto{!p}(resources/js_frameworks)">Javascript frameworks</a> eg. Grunt, Gulp, Vue, Node, React, etc. and <a href="@pathto{!p}(resources/php_frameworks)">PHP frameworks</a> eg. Laravel, CakePHP, Phalcon, etc..</p>
 						</section>
 					</div>
 					<div class="col-6 col-12-medium">
@@ -135,7 +135,7 @@
 					<div class="col-6 col-12-medium">
 						<section>
 							<h3 class="icon solid fa-check">Intuitive Templating System</h3>
-							<p>Nift's <a href="@pathto(docs/template_files)">templating system</a> is intuitive while being easy to understand and remember.</p>
+							<p>Nift's <a href="@pathto{!p}(docs/template_files)">templating system</a> is intuitive while being easy to understand and remember.</p>
 						</section>
 					</div>
 					<div class="col-6 col-12-medium">
@@ -147,7 +147,7 @@
 					<div class="col-6 col-12-medium">
 						<section>
 							<h3 class="icon solid fa-check">Template Selection</h3>
-							<p>Nift has a variety of stylishly designed templates available for making <a href="@pathto(resources/templates)">websites</a>, <a href="@pathto(resources/blog_templates)">blogs</a> and <a href="@pathto(resources/SNApp_templates)">SNApps</a>, including templates modified from <a href="@pathto(resources/templates)#html5up">HTML5 UP</a>, <a href="@pathto(resources/templates)">unDraw</a> and <a href="@pathto(resources/templates)#w3css">W3.CSS</a>.</p>
+							<p>Nift has a variety of stylishly designed templates available for making <a href="@pathto{!p}(resources/templates)">websites</a>, <a href="@pathto{!p}(resources/blog_templates)">blogs</a> and <a href="@pathto{!p}(resources/SNApp_templates)">SNApps</a>, including templates modified from <a href="@pathto{!p}(resources/templates)#html5up">HTML5 UP</a>, <a href="@pathto{!p}(resources/templates)">unDraw</a> and <a href="@pathto{!p}(resources/templates)#w3css">W3.CSS</a>.</p>
 						</section>
 					</div>
 				</div>
@@ -156,10 +156,10 @@
 			<div>
 			<center>
 				<br><br><br>
-				<a href="@pathto(resources/get_started)" class="button style1 large"style="margin-bottom: 10px">Get Started</a> &nbsp;
-				<a href="@pathto(docs/installing_nift)" class="button style1 large" style="margin-bottom: 10px">Documentation</a></li> &nbsp;
-				<a href="@pathto(resources/templates)" class="button style1 large"style="margin-bottom: 10px">Templates</a> &nbsp;
-				<a href="@pathto(docs/hosting_your_site)" class="button style1 large"style="margin-bottom: 10px">Hosting Options</a></li> 
+				<a href="@pathto{!p}(resources/get_started)" class="button style1 large"style="margin-bottom: 10px">Get Started</a> &nbsp;
+				<a href="@pathto{!p}(docs/installing_nift)" class="button style1 large" style="margin-bottom: 10px">Documentation</a></li> &nbsp;
+				<a href="@pathto{!p}(resources/templates)" class="button style1 large"style="margin-bottom: 10px">Templates</a> &nbsp;
+				<a href="@pathto{!p}(docs/hosting_your_site)" class="button style1 large"style="margin-bottom: 10px">Hosting Options</a></li> 
 			</center>
 			</div>
 		</section>

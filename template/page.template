@@ -8,26 +8,26 @@
 
 <html lang="en">
     <head>
-        @input(template/head.content)
+        @input{!p}(template/head.content)
     </head>
     <body class="is-preload">
 		<div id="page-wrapper">
-			@input(template/menu.content)
+			@input{!p}(template/menu.content)
 
-		    @inputcontent
+		    @content{!p}()
 
-			@input(template/footer.content)
+			@input{!p}(template/footer.content)
 		</div>
 
 		<!-- Scripts -->
-		<script src="@pathtofile(site/assets/js/jquery.min.js)"></script>
-		<script src="@pathtofile(site/assets/js/jquery.dropotron.min.js)"></script>
-		<script src="@pathtofile(site/assets/js/browser.min.js)"></script>
-		<script src="@pathtofile(site/assets/js/breakpoints.min.js)"></script>
-		<script src="@pathtofile(site/assets/js/util.js)"></script>
-		<script src="@pathtofile(site/assets/js/main.js)"></script>
-		<script src='@pathtofile(site/assets/js/process_md_blocks.js)'></script>
-		<script src="@pathtofile(site/assets/js/showdown.min.js)"></script>
+		<script src="@pathtofile{!p}(site/assets/js/jquery.min.js)"></script>
+		<script src="@pathtofile{!p}(site/assets/js/jquery.dropotron.min.js)"></script>
+		<script src="@pathtofile{!p}(site/assets/js/browser.min.js)"></script>
+		<script src="@pathtofile{!p}(site/assets/js/breakpoints.min.js)"></script>
+		<script src="@pathtofile{!p}(site/assets/js/util.js)"></script>
+		<script src="@pathtofile{!p}(site/assets/js/main.js)"></script>
+		<script src='@pathtofile{!p}(site/assets/js/process_md_blocks.js)'></script>
+		<script src="@pathtofile{!p}(site/assets/js/showdown.min.js)"></script>
 		<script>
 			var converter = new showdown.Converter();
 			converter.setOption('emoji', 'on');
@@ -58,7 +58,7 @@
 
 		<!-- uses google-code-prettify for syntax highlighting 
 			 see https://github.com/google/code-prettify/ for more info -->
-		<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/google/code-prettify\@master/loader/run_prettify.js"></script>
 
 		<!-- uses MathJax CDC for LaTeX support
 			 see http://docs.mathjax.org/en/latest/start.html for more info -->
@@ -84,7 +84,7 @@
 
 <!--
 	Site Design: Escape Velocity by HTML5 UP
-	html5up.net | @ajlkn
+	html5up.net | \@ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 

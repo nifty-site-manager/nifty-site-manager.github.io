@@ -10,7 +10,7 @@
 
 			<!-- Image -->
 			<center>
-				<img src="@pathtofile(site/images/active_support.svg)" alt="unDraw active support illustration" width=300 style="margin-bottom:40px">
+				<img src="@pathtofile{!p}(site/images/active_support.svg)" alt="unDraw active support illustration" width=300 style="margin-bottom:40px">
 			</center>
 
 			<div class="content">
@@ -36,7 +36,7 @@
 				</p>
 
 				<p>
-					If you would like to discuss your experience with <mono>Nift</mono> or ask questions to more than just the developer, you can do so using the official <a href="https://discord.gg/St8QXTG">Discord</a> or official <a href="https://old.reddit.com/r/nift">Subreddit</a>. We also have the Twitter tag <mono><b><a href="https://twitter.com/nifty_site_man">@nifty_site_man</a></b></mono>.
+					If you would like to discuss your experience with <mono>Nift</mono> or ask questions to more than just the developer, you can do so using the official <a href="https://discord.gg/St8QXTG">Discord</a> or official <a href="https://old.reddit.com/r/nift">Subreddit</a>. We also have the Twitter tag <mono><b><a href="https://twitter.com/nifty_site_man">\@nifty_site_man</a></b></mono>.
 				</p>
 			</div>
 		</section>

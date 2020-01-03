@@ -12,7 +12,7 @@
 
 			<!-- Image -->
 			<center>
-				<img src="@pathtofile(site/images/loki-rabbit2.svg)" alt="Nift bunny mascot with Loki coin" width=300 style="max-width: 90%; margin-bottom:50px">
+				<img src="@pathtofile{!p}(site/images/loki-rabbit2.svg)" alt="Nift bunny mascot with Loki coin" width=300 style="max-width: 90%; margin-bottom:50px">
 			</center>
 
 			<p>
@@ -20,7 +20,7 @@
 			</p>
 
 			<p>
-				This guide will help you publish a SNApp on the <mono class="Loki">Lokinet</mono>. See <a href="https://docs.loki.network/Lokinet/LokinetOverview/">here</a> for documentation on how to install and access the <mono class="Loki">Lokinet</mono>. This page should be fairly identical to the <a href="https://docs.loki.network/Lokinet/Guides/HostingSNApps/">Hosting a SNApp</a> documentation page from the Loki docs. See <a href="@pathto(resources/SNApp_templates)">here</a> for template SNApp repositories that you can import/fork/clone to start making SNApss.
+				This guide will help you publish a SNApp on the <mono class="Loki">Lokinet</mono>. See <a href="https://docs.loki.network/Lokinet/LokinetOverview/">here</a> for documentation on how to install and access the <mono class="Loki">Lokinet</mono>. This page should be fairly identical to the <a href="https://docs.loki.network/Lokinet/Guides/HostingSNApps/">Hosting a SNApp</a> documentation page from the Loki docs. See <a href="@pathto{!p}(resources/SNApp_templates)">here</a> for template SNApp repositories that you can import/fork/clone to start making SNApss.
 			</p>
 
 			<h2>1. Preparing your <mono class="Loki">Lokinet</mono> address</h2>
@@ -109,7 +109,7 @@ sxf7fx9eb4i3u5gyxpkka6wufzfsxyxsuep54c4kqk8axsfo17go.loki
 
 			<h2 id="creating_snapp">2. Creating your SNApp</h2>
 			<p>
-				If you have not already, follow <a href="@pathto(docs/installing_nift)">these</a> instructions to install <mono class="Loki">Nift</mono>. Create a new directory within your home folder, for example on Linux by running the following command in a terminal:
+				If you have not already, follow <a href="@pathto{!p}(docs/installing_nift)">these</a> instructions to install <mono class="Loki">Nift</mono>. Create a new directory within your home folder, for example on Linux by running the following command in a terminal:
 			<p>
 
 			<div align="center" style="margin-top:-20px; margin-bottom:15px">
@@ -194,11 +194,11 @@ sudo python3 -m http.server --bind 172.16.10.1 80
 
 			<h2>Finish</h2>
 			<p>
-				Well done, you have finished the guide and your SNApp is served on the Lokinet. For more on Lokinet, see the <a href="https://docs.loki.network/Lokinet/Guides/PublicTestingGuide/">Lokinet public testing guide</a>. See the <a href="@pathto(resources/get_started)">Getting Started With Nift Guide</a> for how to edit, manage and generate your SNApps. See <a href="@pathto(resources/SNApp_templates)">here</a> for template SNApp repositories that you can import/fork/clone to start making SNApps.
+				Well done, you have finished the guide and your SNApp is served on the Lokinet. For more on Lokinet, see the <a href="https://docs.loki.network/Lokinet/Guides/PublicTestingGuide/">Lokinet public testing guide</a>. See the <a href="@pathto{!p}(resources/get_started)">Getting Started With Nift Guide</a> for how to edit, manage and generate your SNApps. See <a href="@pathto{!p}(resources/SNApp_templates)">here</a> for template SNApp repositories that you can import/fork/clone to start making SNApps.
 			</p>
 
 			<center>
-				<img src="@pathtofile(site/images/Loki.png)" alt="Loki logo" width=300 style="max-width: 90%; margin-bottom:-30px">
+				<img src="@pathtofile{!p}(site/images/Loki.png)" alt="Loki logo" width=300 style="max-width: 90%; margin-bottom:-30px">
 			</center>
 		</section>
 	</div>

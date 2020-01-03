@@ -26,7 +26,7 @@
 				<center>
 					<div class="xscroll">
 						<table id="blogs_table" class="alt">
-						  @input(content/docs/tables/presentations.table)
+						  @input{!p}(content/docs/tables/presentations.table)
 						</table>
 					</div>
 				</center>

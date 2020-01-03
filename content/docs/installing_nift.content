@@ -10,7 +10,7 @@
 
 			<!-- Image -->
 			<center>
-				<img src="@pathtofile(site/images/hacker_mind.svg)" alt="unDraw hacker mind illustration" width=300 style="margin-bottom:40px">
+				<img src="@pathtofile{!p}(site/images/hacker_mind.svg)" alt="unDraw hacker mind illustration" width=300 style="margin-bottom:40px">
 			</center>
 
 			<div class="content">
@@ -32,9 +32,9 @@
 				<p>
 					There are also specific instructions at the following links for:
 					<ul style="text-indent:30px">
-						<li><a href="@pathtopage(docs/linux_install)">Linux</a></li>
-						<li><a href="@pathtopage(docs/osx_install)">OSX</a></li>
-						<li><a href="@pathtopage(docs/windows_install)">Windows</a></li>
+						<li><a href="@pathtopage{!p}(docs/linux_install)">Linux</a></li>
+						<li><a href="@pathtopage{!p}(docs/osx_install)">OSX</a></li>
+						<li><a href="@pathtopage{!p}(docs/windows_install)">Windows</a></li>
 					</ul>
 				</p>
 
@@ -43,7 +43,7 @@
 				<h3 id="linux-snap">
 					Linux installation using <mono>Snap</mono>
 				</h3>
-				<center><img src="@pathtofile(site/images/snapcraft.png)" alt="Snapcraft logo" width=350px style="max-width:90%; margin-top: 20px; margin-bottom: 20px"></center>
+				<center><img src="@pathtofile{!p}(site/images/snapcraft.png)" alt="Snapcraft logo" width=350px style="max-width:90%; margin-top: 20px; margin-bottom: 20px"></center>
 
 				<p>
 					You can install <mono>Nift</mono> on linux using the <mono>Snap</mono> package manager, for instructions see <a href="https://snapcraft.io/nsm">here</a>. Alternatively first install <mono>snapd</mono>, eg. <mono>sudo apt-get install snapd</mono> on Ubuntu, then enter:
@@ -60,7 +60,7 @@ snap install nift --classic
 				</p>
 
 				<h2 id="linux-flatpak">Linux installation using <mono>Flatpak</mono></h2>
-				<center><img src="@pathtofile(site/images/flathub.png)" alt="Flathub logo" width=450px style="max-width:90%"></center>
+				<center><img src="@pathtofile{!p}(site/images/flathub.png)" alt="Flathub logo" width=450px style="max-width:90%"></center>
 
 				<p>
 					Thanks to <a href="https://github.com/refi64">refi64</a> for making the installation through Flatpak much easier and cleaner. 
@@ -215,7 +215,7 @@ $ emerge -atuv '=www-apps/nift-9999'
 </div>
 
 				<p>
-					In order to set the development version as the default installed version of Nift, and avoid getting it downgraded by Portage on subsequent @world upgrades:
+					In order to set the development version as the default installed version of Nift, and avoid getting it downgraded by Portage on subsequent \@world upgrades:
 				</p>
 
 <div align="center" style="margin-top:-20px; margin-bottom: 20px">
@@ -239,7 +239,7 @@ $ emerge -C www-apps/nift
 				<h3 id="windows-chocolatey">
 					Windows installation using <mono>Chocolatey</mono>
 				</h3>
-				<center><img src="@pathtofile(site/images/chocolatey.svg)" alt="Chocolatey logo" width=350px style="max-width:70%; margin-top: 20px; margin-bottom: 20px"></center>
+				<center><img src="@pathtofile{!p}(site/images/chocolatey.svg)" alt="Chocolatey logo" width=350px style="max-width:70%; margin-top: 20px; margin-bottom: 20px"></center>
 
 				<p>
 					You can install <mono>Nift</mono> on Windows using <mono>Chocolatey</mono>. First <a href="https://chocolatey.org/docs/installation">install</a> <mono>Chocolatey</mono>, then follow the instructions <a href="https://chocolatey.org/packages/nsm">here</a>, or alternatively enter:

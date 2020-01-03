@@ -10,7 +10,7 @@
 
 			<!-- Image -->
 			<center>
-				<img src="@pathtofile(site/images/devil.png)" alt="Nift Tassie devil mascot" width=300 style="margin-bottom:40px">
+				<img src="@pathtofile{!p}(site/images/devil.png)" alt="Nift Tassie devil mascot" width=300 style="margin-bottom:40px">
 			</center>
 
 			<div class="content">
@@ -479,7 +479,7 @@ python -m SimpleHTTPServer
 				</p>
 
 				<p>
-					If you want live reloading for a website check out <a href="https://github.com/tapio/live-server">Live Server</a> which you can get from <mono>npm</mono>, or <a href="http://livereload.com/">Live Reload</a>. In either case you can add them to <a href="@pathto(docs/scripts)">pre/post serve scripts</a> for your website so that it is all integrated in to the Nift serve command and requires no manual effort on your part.
+					If you want live reloading for a website check out <a href="https://github.com/tapio/live-server">Live Server</a> which you can get from <mono>npm</mono>, or <a href="http://livereload.com/">Live Reload</a>. In either case you can add them to <a href="@pathto{!p}(docs/scripts)">pre/post serve scripts</a> for your website so that it is all integrated in to the Nift serve command and requires no manual effort on your part.
 				</p>
 
 				<h4 id="new-title">
@@ -605,7 +605,7 @@ python -m SimpleHTTPServer
 				</p>
 
 				<p>
-					File dependencies may also be added using the <mono>\@dep(dep-path)</mono> syntax in Nift's template language, which you can read more about on the <a href="@pathto(docs/content_files)">content files</a> page of the documentation. 
+					File dependencies may also be added using the <mono>\@dep(dep-path)</mono> syntax in Nift's template language, which you can read more about on the <a href="@pathto{!p}(docs/content_files)">content files</a> page of the documentation. 
 				</p>
 			</div>
 		</section>
