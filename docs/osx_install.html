@@ -47,10 +47,10 @@
 					<p style="color:#372C2A">A cross-platform open source website generator</p>
 			
 					<p>
-						<a href="https://chocolatey.org/packages/nsm"><img src="../images/chocolatey.svg" height="40px" alt="Get it from the Chocolatey store" title="Windows"></a> &nbsp;
-						<a href="linux_install.html"><img src="../images/flathub-dark.svg" height="40px" alt="Get it from the FlatHub store" title="Linux"></a> &nbsp;
-						<!--<a href=""><img src="../images/brew.png" height="40px" alt="Get it from the Homebrew store" title="OSX" style="border-radius: 5px; border-style: solid; border-width:0.75px; border-color: #817679"></a> &nbsp;-->
-						<a href="https://snapcraft.io/nift"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" height="40px" alt="Get it from the Snap Store" title="Linux" /> </a>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://chocolatey.org/packages/nsm"><img src="../images/chocolatey.svg" height="40px" alt="Get it from the Chocolatey store" title="Windows"></a> &nbsp;
+						<a href="installing_nift.html#linux-flatpak"><img src="../images/flathub-dark.svg" height="40px" alt="Get it from the FlatHub store" title="Linux"></a> &nbsp;
+						<a href="installing_nift.html#osx-brew"><img src="../images/brew.png" height="40px" alt="Get it from the Homebrew store" title="OSX" style="border-radius: 5px; border-style: solid; border-width:0.75px; border-color: #817679"></a> <br>
+						<a href="https://snapcraft.io/nift"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" height="40px" alt="Get it from the Snap Store" title="Linux"></a>
 					</p>
 					</noselect>
 				</div>
@@ -128,6 +128,33 @@
 		    			</header>
 		    
 		    			<div class="content">
+		    				<h2>
+		    					OSX installation using <mono>Homebrew</mono>
+		    				</h2>
+		    				<center><img src="../images/brew.png" alt="Homebrew logo" width=350px style="max-width:90%; margin-top: 20px; margin-bottom: 20px"></center>
+		    
+		    				<p>
+		    					You can install <mono>Nift</mono> on OSX using the <mono>Homebrew</mono> package manager, see <a href="https://formulae.brew.sh/formula/nift">here</a>. Install instructions are <a href="https://brew.sh/">here</a>. Alternatively first install <mono>brew</mono>, eg:, 
+		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
+		    <pre class="prettyprint lang-bash">
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+</pre>
+		    </div>
+		    				</p>
+		    
+		    				<p>
+		    					then enter:
+		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
+		    <pre class="prettyprint">
+brew install nift
+</pre>
+		    </div>
+		    				</p>
+		    
+		    				<p>
+		    					To uninstall <mono>Nift</mono> enter <mono>brew uninstall nift</mono>.
+		    				</p>
+		    
 		    				<h2>Installing <mono>Nift</mono> on OSX from source</h2>
 		    				<h3>Installing a <mono>c++</mono> compiler</h3>
 		    
