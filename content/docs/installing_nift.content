@@ -21,6 +21,7 @@
 						<li><a href="#linux-flatpak">On Linux using FlatPak</a></li>
 						<li><a href="#freebsd">On FreeBSD</a></li>
 						<li><a href="#gentoo">On Gentoo</a></li>
+						<li><a href="#osx-brew">On OSX using Homebrew</a></li>
 						<li><a href="#windows-chocolatey">On Windows using Chocolatey</a></li>
 						<li><a href="#windows-executable">On Windows from executable</a></li>
 						<li><a href="#install-source">On Linux from source</a></li>
@@ -235,6 +236,33 @@ $ emerge -atuv '=www-apps/nift-9999'
 $ emerge -C www-apps/nift
 </pre>
 </div>
+
+				<h3 id="osx-brew">
+					OSX installation using <mono>Homebrew</mono>
+				</h3>
+				<center><img src="@pathtofile{!p}(site/images/brew.png)" alt="Homebrew logo" width=350px style="max-width:90%; margin-top: 20px; margin-bottom: 20px"></center>
+
+				<p>
+					You can install <mono>Nift</mono> on OSX using the <mono>Homebrew</mono> package manager, see <a href="https://formulae.brew.sh/formula/nift">here</a>. Install instructions are <a href="https://brew.sh/">here</a>. Alternatively first install <mono>brew</mono>, eg:, 
+<div align="center" style="margin-top:-20px; margin-bottom: 20px">
+<pre class="prettyprint lang-bash">
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+</pre>
+</div>
+				</p>
+
+				<p>
+					then enter:
+<div align="center" style="margin-top:-20px; margin-bottom: 20px">
+<pre class="prettyprint">
+brew install nift
+</pre>
+</div>
+				</p>
+
+				<p>
+					To uninstall <mono>Nift</mono> enter <mono>brew uninstall nift</mono>.
+				</p>
 
 				<h3 id="windows-chocolatey">
 					Windows installation using <mono>Chocolatey</mono>
