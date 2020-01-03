@@ -130,6 +130,10 @@ logos
 templates
 'template/page.template'
 
+'v2,0'
+'v2,0'
+'template/page.template'
+
 index
 index
 'template/page.template'

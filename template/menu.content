@@ -36,6 +36,7 @@
 		<nav id="nav">
 			<ul>
 				<li><a href="@pathto{!p}(index)">Home</a></li>
+				<li><a href="@pathto{!p}('v2,0')">v2.0</a></li>
 				<li>
 					<a href="">Documentation</a>
 					<ul>

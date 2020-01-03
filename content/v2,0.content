@@ -1,0 +1,52 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">Version 2.0</div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<div class="content">
+				<p>
+					In preparation for some upcoming features and to improve the syntax for Nift's template language in the long-term I have made a number of changes to Nift's template language, consequently I have updated the version numbering from <mono>1.*</mono> to <mono>2.*</mono>. There will be minimal/no changes to the syntax for Nift's template language (which is going to get much more powerful and be more like a programming language in the next month or two) moving forward, I sincerely apologise for any inconvenience. You can see the release notes for Nift on GitHub <a href="https://github.com/nifty-site-manager/nsm/releases">here</a>.
+				</p>
+
+				<p>
+					The main changes that people should be aware of are:
+					<ul>
+						<li><mono>\@inputcontent</mono> has changed to <mono>\@content()</mono></li>
+						<li><mono>\@rawcontent</mono> has been replaced with <mono>\@content{raw}()</mono>
+						<li><mono>\@pagetitle</mono> has changed to <mono>\@[title]</mono> or <mono>\@@\<title></mono></li>
+						<li>Special parsed multi-line comments (ie. <mono>\@--- comment \@---</mono>) now work the same as parsed multi-line comments (ie. <mono>\@/* comment \@*/</mono>) and have been renamed as such. The behaviour for all multi-line comments (including raw, ie. <mono>@\<\@-- comment --\@></mono>) has changed/improved to printing the first non-whitespace text (ie. first character that isn't a space, tab or newline) following the closing comment tag where the open comment tag started</li>
+						<li>function calls have changed to the syntax <mono>@function-name{options}(parameters)</mono></li>
+						<li>printing/referencing variables now has the syntax <mono>\@[varname]</mono> or <mono>\@@\<varname></mono>, rather than <mono>\@[varname]</mono> or <mono>\@{varname}</mono></li>
+						<li>you can now separate options and parameters across multiple lines, also even function names if you quote them (single or double), you can even separate definitions across multiple lines though each of variable names, types and values must be on one line</li>
+						<li>by default function names, options and parameters are now all parsed with Nift's template language, to prevent this (especially for extremely large projects) then use the <mono>!p</mono> option (this replaces what was done in versions 1.* where <mono>*</mono> was placed after the function name before the parameters to parse parameters with Nift's template language)</li>
+						<li>similarly to the last point, you no longer use <mono>^</mono> to not backup scripts but rather the <mono>!bs</mono> option, ie. <mono>\@script{!bs}(script-path)</mono></li>
+						<li><mono>\@input(file-path)</mono> now has the <mono>if-exists</mono> option to only input text if the file exists, if the file does not exist the first non-whitespace text following the <mono>\@input{if-exists}(file-path)</mono> call is placed in the output file where the start of the function call is, this has made it possible to simply remove functions like <mono>\@inputhead</mono></li>
+						<li><mono>\@inputraw(file-path)</mono> has been replaced with the <mono>raw</mono> option with <mono>\@input(file-path)</mono>, ie. <mono>\@input{raw}(file-path)</mono></li>
+						<li><mono>\@userin(msg)</mono> has changed to <mono>\@in(msg)</mono> and <mono>\@userfilein(msg)</mono> has changed to <mono>\@in{from-file}(msg)</mono></li>
+						<li><mono>@pathto</mono> can now take either a tracked name for a path to the output file or an absolute path from the project root directory to an existing file, you can even use the <mono>name/file</mono> options to be explicit about which you intend (which is marginally faster in the file case)</li>
+						<li><mono>\@script(path)</mono> and <mono>\@system(system-call)</mono> now have the options <mono>inject/raw/content</mono> which have replaced functions like <mono>\@systemoutput(system-call)</mono>, <mono>\@scriptraw(path)</mono> and <mono>\@systemcontent(system-call)</mono></li>
+						<li><mono>\@script(path)</mono> should now have parameters added as <mono>\@script(path, param 1, ..., param n)</mono>, see the docs for more information</li>
+						<li><mono>\@script(path)</mono> now also has the <mono>if-exists</mono> option which is very similar to how the same option works for <mono>\@input(path)</mono> as explained above</li>
+					</ul>
+				</p>
+
+				<p>
+					In the coming 1-2 months the following powerful features will be added to Nift's template language to make it more of a <i>template programming language</i>:
+					<ul>
+						<li>lots more variable types with lots of hard-coded functions to work with them, including pointers, constants, maybe privates, arrays, vectors, queues, stacks, lists, other data structures, mutexes, threads, etc.)</li>
+						<li><mono>if/else if/else</mono> statements</li>
+						<li><mono>for/foreach/while</mono> loops</li>
+						<li>user-defined variable types</li>
+						<li>user-defined functions</li>
+						<li>lots of hard-coded functions which you would expect from any template/programming language</li>
+					</ul>
+				</p>
+
+				<p>
+					While you can already get many of these things with other template languages that can be used with Nift, the functionality with Nift should be really fast, have nice syntax, and be more powerful than a lot of other options (especially the user-defined variable types and user-defined functions). 
+				</p>
+			</div>
+		</section>
+	</div>
+</section>
