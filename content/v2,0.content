@@ -5,6 +5,14 @@
 		<!-- Features -->
 		<section id="features">
 			<div class="content">
+				<h3>News</h3>
+				<ul>
+					<li>Nift is now available through Homebrew for OSX, there are installation instructions <a href="@pathto(docs/installing_nift)#osx-brew">here</a></li>
+					<li>If you have Nift installed through Snapcraft please check that you don't have it installed as <mono>nsm</mono> or installed as <mono>nift</mono> <u>without</u> classic confinement. Run <mono>snap list</mono> to see which snaps you have installed, if <mono>nsm</mono> is installed then run <mono>snap remove nift; snap install nift --classic</mono> and if you have <mono>nift</mono> installed but it does <u>not</u> say classic underneath it then run <mono>snap remove nift; snap install nift --classic</mono></li>
+					<li>If you have Nift installed through Chocolatey please check that you have it installed as <mono>nift</mono> and not as <mono>nsm</mono>. Run <mono>choco list --local-only</mono> to see which programs are installed, if <mono>nsm</mono> is installed then run <mono>choco uninstall nsm; choco install nift</mono></li>
+				</ul>
+
+				<h3>Changes with v2.0</h3>
 				<p>
 					In preparation for some upcoming features and to improve the syntax for Nift's template language in the long-term I have made a number of changes to Nift's template language, consequently I have updated the version numbering from <mono>1.*</mono> to <mono>2.*</mono>. There will be minimal/no changes to the syntax for Nift's template language (which is going to get much more powerful and be more like a programming language in the next month or two) moving forward, I sincerely apologise for any inconvenience. You can see the release notes for Nift on GitHub <a href="https://github.com/nifty-site-manager/nsm/releases">here</a>.
 				</p>
