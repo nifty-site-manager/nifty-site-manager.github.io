@@ -49,7 +49,7 @@
 				<center><img src="@pathtofile{!p}(site/images/snapcraft.png)" alt="Snapcraft logo" width=350px style="max-width:90%; margin-top: 20px; margin-bottom: 20px"></center>
 
 				<p>
-					You can install <mono>Nift</mono> on linux using the <mono>Snap</mono> package manager, for instructions see <a href="https://snapcraft.io/nsm">here</a>. Alternatively first install <mono>snapd</mono>, eg. <mono>sudo apt-get install snapd</mono> on Ubuntu, then enter:
+					You can install <mono>Nift</mono> on linux using the <mono>Snap</mono> package manager, for instructions see <a href="https://snapcraft.io/nift">here</a>. Alternatively first install <mono>snapd</mono>, eg. <mono>sudo apt-get install snapd</mono> on Ubuntu, then enter:
 				</p>
 
 <div align="center" style="margin-top:-20px; margin-bottom: 20px">
@@ -272,17 +272,17 @@ brew install nift
 				<center><img src="@pathtofile{!p}(site/images/chocolatey.svg)" alt="Chocolatey logo" width=350px style="max-width:70%; margin-top: 20px; margin-bottom: 20px"></center>
 
 				<p>
-					You can install <mono>Nift</mono> on Windows using <mono>Chocolatey</mono>. First <a href="https://chocolatey.org/docs/installation">install</a> <mono>Chocolatey</mono>, then follow the instructions <a href="https://chocolatey.org/packages/nsm">here</a>, or alternatively enter:
+					You can install <mono>Nift</mono> on Windows using <mono>Chocolatey</mono>. First <a href="https://chocolatey.org/docs/installation">install</a> <mono>Chocolatey</mono>, then follow the instructions <a href="https://chocolatey.org/packages/nift">here</a>, or alternatively enter:
 				</p>
 
 <div align="center" style="margin-top:-20px; margin-bottom: 20px">
 <pre class="prettyprint">
-choco install nsm
+choco install nift
 </pre>
 </div>
 
 				<p>
-					To uninstall <mono>Nift</mono> enter <mono>choco uninstall nsm</mono>.
+					To uninstall <mono>Nift</mono> enter <mono>choco uninstall nift</mono>.
 				</p>
 
 				<h3 id="windows-executable">
@@ -290,7 +290,7 @@ choco install nsm
 				</h3>
 
 				<p>
-					Download <a href="https://github.com/nifty-site-manager/nsm-chocolatey/raw/master/nsm.exe">this</a> executable and <a href="https://github.com/nifty-site-manager/nsm-chocolatey/raw/master/nift.exe">this</a> executable then place them anywhere in your user's path, eg. in <mono>C:\Windows\system32</mono>.
+					Download <a href="https://github.com/nifty-site-manager/nsm-chocolatey-nift/raw/master/nsm.exe">this</a> executable and <a href="https://github.com/nifty-site-manager/nsm-chocolatey-nift/raw/master/nift.exe">this</a> executable then place them anywhere in your user's path, eg. in <mono>C:\Windows\system32</mono>.
 				</p>
 
 				<h3 id="install-source">

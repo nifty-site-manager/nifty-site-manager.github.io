@@ -19,7 +19,7 @@
 				<center><img src="@pathtofile{!p}(site/images/snapcraft.png)" alt="Snapcraft logo" width=350px style="max-width:90%; margin-top: 20px; margin-bottom: 20px"></center>
 
 				<p>
-					You can install <mono>Nift</mono> on linux using the <mono>Snap</mono> package manager, for instructions see <a href="https://snapcraft.io/nsm">here</a>. Alternatively first install <mono>snapd</mono>, eg. <mono>sudo apt-get install snapd</mono> on Ubuntu, then enter:
+					You can install <mono>Nift</mono> on linux using the <mono>Snap</mono> package manager, for instructions see <a href="https://snapcraft.io/nift">here</a>. Alternatively first install <mono>snapd</mono>, eg. <mono>sudo apt-get install snapd</mono> on Ubuntu, then enter:
 				</p>
 
 <div align="center" style="margin-top:-20px; margin-bottom: 20px">
