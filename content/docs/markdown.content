@@ -10,11 +10,11 @@
 
 			<div class="content" style="margin-top:-50px;">
 				<center>
-					<img src="@pathtofile{!p}(site/images/markdown.svg)" alt="Markdown logo" width=250 style="margin-bottom:20px">
+					<img src="@pathtofile(site/images/markdown.svg)" alt="Markdown logo" width=250 style="margin-bottom:20px">
 				</center>
 
 				<p>
-					An excellent way to pre-render (aka convert) markdown to html at build-time on your websites is to use <a href="https://pandoc.org/">pandoc</a>. If you have pandoc installed on your machine it is as simple as using, without any indenting, <mono>\@system{inject}("pandoc file-path")</mono> where <mono>file-path</mono> is the path to the markdown file you want converted. 
+					An excellent way to pre-render (aka convert) markdown to html at build-time on your websites is to use <a href="https://pandoc.org/">pandoc</a>. If you have pandoc installed on your machine it is as simple as using, without any indenting, <mono>\@system("pandoc file-path")</mono> where <mono>file-path</mono> is the path to the markdown file you want converted. 
 				</p>
 
 				<p>
@@ -22,7 +22,7 @@
 				</p>
 
 				<p>
-					<b>Note:</b> changes to the markdown file will not be recognised by build-updated unless you manually add it as a user-defined page dependency. See the <a href="@pathto{!p}(docs/nift_commands)">Nift commands</a> page for how to manually add user-defined page dependencies.
+					<b>Note:</b> changes to the markdown file will not be recognised by build-updated unless you manually add it as a user-defined page dependency. See the <a href="@pathto(docs/nift_commands)">Nift commands</a> page for how to manually add user-defined page dependencies.
 				</p>
 
 				<p>
@@ -35,7 +35,7 @@
 				</p>
 
 				<p>
-					The <mono>Nift</mono> documentation covers using markdown on your websites using <a href="http://showdownjs.com/">Showdown</a>, for a basic example see the <a href="@pathto{!p}(resources/templates)">template</a> <mono>markdown-site</mono>. To use <mono>Showdown</mono> on your websites you will need <mono>showdown.js</mono> or <mono>showdown.min.js</mono> (you can get v1.9.0 from <a href="https://gitlab.com/nsm-templates/markdown-site/blob/master/site/js/showdown.min.js">here</a>) along with <a href="https://gitlab.com/nsm-templates/markdown-site/blob/master/site/js/process_md_blocks.js">process_md_blocks.js</a> script. 
+					The <mono>Nift</mono> documentation covers using markdown on your websites using <a href="http://showdownjs.com/">Showdown</a>, for a basic example see the <a href="@pathto(resources/templates)">template</a> <mono>markdown-site</mono>. To use <mono>Showdown</mono> on your websites you will need <mono>showdown.js</mono> or <mono>showdown.min.js</mono> (you can get v1.9.0 from <a href="https://gitlab.com/nsm-templates/markdown-site/blob/master/site/js/showdown.min.js">here</a>) along with <a href="https://gitlab.com/nsm-templates/markdown-site/blob/master/site/js/process_md_blocks.js">process_md_blocks.js</a> script. 
 				</p>
 
 				<p>
@@ -52,8 +52,8 @@
 	<body>
 		\@content()
 
-		<script src='\@pathtofile{!p}(site/js/process_md_blocks.js)'></script>
-		<script src="\@pathtofile{!p}(site/js/showdown.min.js)"></script>
+		<script src='\@pathtofile(site/js/process_md_blocks.js)'></script>
+		<script src="\@pathtofile(site/js/showdown.min.js)"></script>
 		<script>
 			var converter = new showdown.Converter();
 			converter.setOption('tables', 'on');

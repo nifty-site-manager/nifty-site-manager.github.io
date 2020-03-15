@@ -1,5 +1,5 @@
 'docs/JSON'
-JSON
+'JSON'
 'template/page.template'
 
 'docs/bitbucket_hosting'
@@ -43,7 +43,7 @@ JSON
 'template/page.template'
 
 'docs/markdown'
-markdown
+'markdown'
 'template/page.template'
 
 'docs/netlify_hosting'
@@ -59,11 +59,11 @@ markdown
 'template/page.template'
 
 'docs/presentations'
-presentations
+'presentations'
 'template/page.template'
 
 'docs/scripts'
-scripts
+'scripts'
 'template/page.template'
 
 'docs/template_files'
@@ -75,11 +75,15 @@ scripts
 'template/page.template'
 
 'docs/translators'
-translators
+'translators'
 'template/page.template'
 
 'docs/windows_install'
 'windows_install'
+'template/page.template'
+
+'index'
+'index'
 'template/page.template'
 
 'privacy_policy'
@@ -99,7 +103,7 @@ translators
 'template/page.template'
 
 'resources/examples'
-examples
+'examples'
 'template/page.template'
 
 'resources/get_started'
@@ -111,11 +115,11 @@ examples
 'template/page.template'
 
 'resources/links'
-links
+'links'
 'template/page.template'
 
 'resources/logos'
-logos
+'logos'
 'template/page.template'
 
 'resources/nift_tutorial'
@@ -127,22 +131,14 @@ logos
 'template/page.template'
 
 'resources/templates'
-templates
+'templates'
 'template/page.template'
 
-'v2,0'
-'v2,0'
+'support'
+'support'
 'template/page.template'
 
-index
-index
-'template/page.template'
-
-support
-support
-'template/page.template'
-
-tos
-tos
+'tos'
+'tos'
 'template/page.template'
 

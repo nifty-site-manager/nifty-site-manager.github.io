@@ -33,8 +33,8 @@
 					<p style="margin-bottom:0px">
 						<a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; 
 						<a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a> &nbsp; 
-						<a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a> &nbsp; 
-						<a href="https://nift.teemill.com/" title="TeeMill" class="teemill"><i class="fas fa-tshirt fa-2x"></i></a> <!--&nbsp;
+						<a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a> <!--&nbsp; 
+						<a href="https://nift.teemill.com/" title="TeeMill" class="teemill"><i class="fas fa-tshirt fa-2x"></i></a> &nbsp;
 						<a href="https://teespring.com/stores/nift-3" title="TeeSpring" class="teespring"><i class="fas fa-tshirt fa-2x"></i></a>-->
 					</p>
 					<p style="margin-top:10px">
@@ -60,18 +60,10 @@
 					<nav id="nav">
 						<ul>
 							<li><a href="../index.html">Home</a></li>
-							<li><a href="../v2,0.html">v2.0</a></li>
 							<li>
 								<a href="">Documentation</a>
 								<ul>
-									<li>
-										<a href="installing_nift.html">Installing Nift</a>
-										<!--<ul>
-											<li><a href="linux_install.html">Linux</a></li>
-											<li><a href="osx_install.html">OSX</a></li>
-											<li><a href="windows_install.html">Windows</a></li>
-										</ul>-->
-									</li>
+									<li><a href="installing_nift.html">Installing Nift</a></li>
 									<li><a href="nift_commands.html">Nift Commands</a></li>
 									<li><a href="content_files.html">Content Files</a></li>
 									<li><a href="template_files.html">Template Files</a></li>
@@ -84,15 +76,7 @@
 									<li><a href="displaying_code_blocks.html">Displaying Code Blocks</a></li>
 									<li><a href="presentations.html">Presentations</a></li>
 									<li><a href="lokinet_snapps.html">Lokinet SNApps</a></li>
-									<li>
-										<a href="hosting_your_site.html">Hosting Your Site</a>
-										<!--<ul>
-											<li><a href="bitbucket_hosting.html">BitBucket</a></li>
-											<li><a href="github_hosting.html">GitHub</a></li>
-											<li><a href="gitlab_hosting.html">GitLab</a></li>
-											<li><a href="netlify_hosting.html">Netlify</a></li>
-										</ul>-->
-									</li>
+									<li><a href="hosting_your_site.html">Hosting Your Site</a></li>
 								</ul>
 							</li>
 							<li>
@@ -150,14 +134,21 @@
 		    						<li><a href="#escape-chars">Escape characters</a></li>
 		    						<li><a href="#newlines">Newlines</a></li>
 		    						<li><a href="#comments">Comments</a></li>
+		    						<li><a href="#errors-warnings">Throwing errors and warnings</a></li>
+		    						<li><a href="#logical-operators">Logical operators (!, &&, ||)</a></li>
+		    						<li><a href="#relational-operators">Relational operators (==, !=, <, <=, >, >=)</a></li>
+		    						<li><a href="#[in/de]crement-operators">Increment and decrement operators (++, +++, --, ---)</a></li>
 		    						<li><a href="#input-file-info">Inputting file information</a></li>
 		    						<li><a href="#input-project-info">Inputting project information</a></li>
 		    						<li><a href="#input-os-info">Inputting operating system information</a></li>
 		    						<li><a href="#input-date-time-tz-info">Inputting date, time & timezone information</a></li>
 		    						<li><a href="#string-vars">String variables</a></li>
+		    						<li><a href="#scope">Current scope and scope of variables/functions</a></li>
 		    						<li><a href="#input-from-file">Inputting text from other files</a></li>
 		    						<li><a href="#input-raw-from-file">Inputting raw text from other files</a></li>
+		    						<li><a href="#include-from-file">Including text from other files</a></li>
 		    						<li><a href="#paths-between-files">Paths from output files to other (tracked) files</a></li>
+		    						<li><a href="#links">Links</a></li>
 		    						<li><a href="#file-deps">Adding file dependencies</a></li>
 		    						<li><a href="#scripts">Running scripts</a></li>
 		    						<li><a href="#script-output">Inputting script output</a></li>
@@ -165,8 +156,12 @@
 		    						<li><a href="#system">Running system calls</a></li>
 		    						<li><a href="#system-output">Inputting system call output</a></li>
 		    						<li><a href="#system-output-raw">Inputting system call output raw</a></li>
+		    						<li><a href="#output-to-console">Outputting to console</a></li>
+		    						<li><a href="#(un)locking-console">Locking and unlocking the console</a></li>
+		    						<li><a href="#precision">Precision of doubles</a></li>
 		    						<li><a href="#user-input">User input from command-line</a></li>
 		    						<li><a href="#user-file-input">User input from file</a></li>
+		    						<li><a href="#parse">Parsing text multiple times</a></li>
 		    						<li><a href="#entities">Character entities</a></li>
 		    						<li><a href="#css-files">Including css files</a></li>
 		    						<li><a href="#img-files">Including image files</a></li>
@@ -179,26 +174,36 @@
 		    					About functions
 		    				</h4>
 		    				<p>
-		    					Some of the functions take input parameters and input options. A function <mono>funcName</mono> is called with <mono>@funcName{options}(parameters)</mono> or <mono>@funcName{option 1}...{option n}(parameters)</mono> where <mono>options</mono> and <mono>parameters</mono> are separated by commas. By default you can use Nift's template language with the function name, options and parameters for a function call. For example:
+		    					Some of the functions take input parameters and input options. A function <mono>funcName</mono> is called with <mono>@funcName{options}(parameters)</mono> or <mono class="prettyprint">@funcName{option 1}...{option n}(parameters)</mono> where <mono>options</mono> and <mono>parameters</mono> are separated by commas. You can use Nift's template language with the function name, options and parameters for a function call. For example:
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline">
-@input("@[contentpath]")
+@input("$[contentpath]")
 </pre>
 		    </div>
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> you can also quote the function name which you will need to do if printing variables or calling functions in the function name. A contrived example is below:
+		    					You can even expand multiple options or parameters when parsing the options or parameters string with Nift's template language. A contrived example that is equivalent to calling <mono>@funcName(param 1, param2)</mono> is below:
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline">
+@:=(string, str = "param 1, param 2")
+@funcName($[str])
+</pre>
+		    </div>
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> you need to quote the function name if printing variables or calling functions in the function name. A contrived example is below:
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline">
 @:=(string, str = "input")
-@"@[str]"("@[contentpath]")
+@"$[str]"("$[contentpath]")
 </pre>
 		    </div>
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> for websites that have hundreds of thousands of function calls (or millions) you might find it faster to tell Nift to <u>not</u> parse the function name, options and parameters, for this use the option <mono>!p</mono>. For example:
+		    					Nift is pretty good at working out when it does or does not need to parse things like the function name, options and/or parameters. If you insist on manually telling Nift to <u>not</u> parse the function name, options and parameters use the <mono>!p</mono> option. For example:
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline">
 @input("@{!p}[contentpath]")
@@ -217,7 +222,7 @@
 		    				</p>
 		    
 		    				<p>
-		    					Options and parameters (including variable names and values) can be unquoted, single quoted or double quoted, whichever is more convenient, integrates with the other programming/scripting/template languages you are using and/or has nice syntax highlighting with the extensions and editor(s) you are using. Also for functions that can take multiple parameters, parameters containing commas <mono>','</mono> should be quoted, there can also be other times that things need to be quoted, for example if you want to have equals <mono>'='</mono> in a variable name during its definition then it will need to be quoted (though will not need to be quoted when referenced). 
+		    					Function names, options and parameters (including variable names and values) can be unquoted, single quoted or double quoted, whichever is more convenient, integrates with the other programming/scripting/template languages you are using and/or has nice syntax highlighting with the extensions and editor(s) you are using. Also for functions that can take multiple parameters, parameters containing commas <mono>','</mono> should be quoted, there can also be other times that things need to be quoted, for example if you want to have equals <mono>'='</mono> in a variable name during its definition then it will need to be quoted (though will not need to be quoted when referenced). 
 		    				</p>
 		    
 		    				<h4 id="escape-chars">
@@ -315,8 +320,16 @@ that is broken in to
 		    								<td><mono>@# <i>comment-text</i></mono></td>
 		    							</tr>
 		    							<tr>
-		    								<td>parsed single-line comment</td>
+		    								<td>raw single-line comment</td>
+		    								<td><mono>@-- <i>comment-text</i></mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>raw single-line comment</td>
 		    								<td><mono>@// <i>comment-text</i></mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>parsed single-line comment</td>
+		    								<td><mono>@--// <i>comment-text</i></mono></td>
 		    							</tr>
 		    							<tr>
 		    								<td>special parsed single-line comment</td>
@@ -324,11 +337,15 @@ that is broken in to
 		    							</tr>
 		    							<tr>
 		    								<td>raw multi-line comment</td>
-		    								<td><mono><@-- <i>comment-text</i> --@></mono></td>
+		    								<td><mono><&num;-- <i>comment-text</i> --&num;></mono></td>
 		    							</tr>
 		    							<tr>
-		    								<td>parsed multi-line comment</td>
-		    								<td><mono>@/* <i>comment-text</i> @*/</mono></td>
+		    								<td>raw multi-line comment</td>
+		    								<td><mono>@--[[ <i>comment-text</i> ]]--</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>raw multi-line comment</td>
+		    								<td><mono>@/* <i>comment-text</i> */</mono></td>
 		    							</tr>
 		    							<tr>
 		    								<td>parsed multi-line comment</td>
@@ -345,7 +362,7 @@ that is broken in to
 		    				</p>
 		    
 		    				<p>
-		    					The syntax for Nift comments should be reasonably easy to remember as it is very close to the comment syntax people will be used to from languages like html, php, javascript, css, bash, python, C/C++, etc.. It also has the added benefit of being easy to turn comments from those languages in to Nift comments, and being easy to turn back again.
+		    					The syntax for Nift comments should be reasonably easy to remember as it is very close to the comment syntax people will be used to from languages like html, php, javascript, css, lua, bash, python, C/C++, etc.. It also has the added benefit of being easy to turn comments from those languages in to Nift comments, and being easy to turn back again.
 		    				</p>
 		    
 		    				<p>
@@ -357,7 +374,267 @@ that is broken in to
 		    				</p>
 		    
 		    				<p>
-		    					With raw and parsed multi-line comments, Nift will skip to the first whitespace (ie. to the first character that is not a space, tab or newline) after the comment and inject it to the output file where the comment started.
+		    					With raw and parsed multi-line comments, Nift will skip to the first non-whitespace (ie. to the first character that is not a space, tab or newline) after the comment and inject it to the output file where the comment started. If you want to prevent Nift from doing this put a <mono>'!'</mono> after the comment close tag, eg.:
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline">
+@/*
+	multi-line comment without skipping trailing whitespace
+*/!
+</pre>
+		    </div>
+		    				</p>
+		    
+		    				<h4 id="errors-warnings">
+		    					Throwing errors and warnings
+		    				</h4>
+		    				<p>
+		    					To throw an error when building a page you can use <mono>@error(msg)</mono>, and to throw a warning you can use <mono>@warning(msg)</mono>, eg:
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline">
+@if(some condition)
+	@error("something bad happened, build failed!")
+@else
+{
+	@if(another condition)
+		@warning("something that should be checked happened")
+
+	@/*
+		code to run when there is no error
+	@*/
+}
+</pre>
+		    </div>
+		    				</p>
+		    
+		    				<p>
+		    					When an error or warning is thrown, the user will be notified on the console, eg.:
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline">
+error: 'content/index.content': line 17: something bad happened, build failed!
+error: 'template/page.template': line 8: @input('content/index.content') failed
+
+---- following failed to build ----
+ index
+-----------------------------------
+</pre>
+		    </div>
+		    				</p>
+		    
+		    				<h4 id="logical-operators">
+		    					Logical operators (!, &&, ||)
+		    				</h4>
+		    				<p>
+		    					The following logical operators are available:
+		    					<center>
+		    						<table id="file_info_syntax_table" class="alt">
+		    							<thead>
+		    								<tr>
+		    									<th>name</th>
+		    									<th>syntax</th>
+		    								</tr>
+		    							</thead>
+		    							<tr>
+		    								<td>not</td>
+		    								<td><mono>@!(param)</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>and</td>
+		    								<td><mono>@&&(param 1, ..., param n)</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>or</td>
+		    								<td><mono>@||(param 1, ..., param n)</mono></td>
+		    							</tr>
+		    							<tfoot>
+		    								<tr>
+		    									<th>name</th>
+		    									<th>syntax</th>
+		    								</tr>
+		    							</tfoot>
+		    						</table>
+		    					</center>
+		    				</p>
+		    
+		    				<p>
+		    					For example you might have:
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline">
+@:=(int, a=3, b=-2)
+
+@console("@&&(@>(a, 0), @>(b, 0))")
+@# expected output: 0
+
+@console("@||(@>(a, 0), @>(b, 0))")
+@# expected output: 1
+
+@console("@!(@||(@>(a, 0), @>(b, 0)))")
+@# expected output: 0
+</pre>
+		    </div>
+		    				</p>
+		    
+		    				<p>
+		    					The behaviour of the above operators is as follows:
+		    					<ul>
+		    						<li><mono>not</mono> will output 1 if the parameter is in {"", "0", "0.0"} and 0 otherwise </li>
+		    						<li><mono>and</mono> will output 1 if all of the parameters are not in {"", "0", "0.0"} and 0 otherwise, or equivalently output 0 if any of the parameters are in {"", "0", "0.0"} and 1 otherwise</li>
+		    						<li><mono>or</mono> will output 1 if any of the parameters are not in {"", "0", "0.0"} and 0 otherwise, or equivalently output 0 if all of the parameters are in {"", "0", "0.0"}</li>
+		    					</ul>
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> Hopefully at some point the behaviour of the above operators will be improved to handle other valid equivalent versions of 0, especially involving doubles. 
+		    				</p>
+		    
+		    				<h4 id="relational-operators">
+		    					Relational operators (==, !=, <, <=, >, >=)
+		    				</h4>
+		    				<p>
+		    					The following relational operators are available:
+		    					<center>
+		    						<table id="file_info_syntax_table" class="alt">
+		    							<thead>
+		    								<tr>
+		    									<th>name</th>
+		    									<th>syntax</th>
+		    								</tr>
+		    							</thead>
+		    							<tr>
+		    								<td>equals to</td>
+		    								<td><mono>@==(param 1, ..., param n)</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>not equals to</td>
+		    								<td><mono>@!=(param 1, ..., param n)</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>less than</td>
+		    								<td><mono>@<(param 1, ..., param n)</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>less than or equals to</td>
+		    								<td><mono>@<=(param 1, ..., param n)</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>greater than</td>
+		    								<td><mono>@>(param 1, ..., param n)</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>greater than or equals to</td>
+		    								<td><mono>@>=(param 1, ..., param n)</mono></td>
+		    							</tr>
+		    							<tfoot>
+		    								<tr>
+		    									<th>name</th>
+		    									<th>syntax</th>
+		    								</tr>
+		    							</tfoot>
+		    						</table>
+		    					</center>
+		    				</p>
+		    
+		    				<p>
+		    					For example you might have:
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline">
+@:=(int, i=0)
+@while(@!=(i, 100))
+{
+	@++(i)
+
+	@/*
+		while block
+	@*/
+}
+</pre>
+		    </div>
+		    				</p>
+		    
+		    				<p>
+		    					If you want to compare doubles then you should use the <mono>'double'</mono> option for all of the above operators, eg.:
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline">
+@:=(double, d = 2.5)
+@if(@&lt;{double}(d, 3))
+	@console("hooray!")
+</pre>
+		    </div>
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> When comparing doubles, anything that is not a double is treated as equal to 0.
+		    				</p>
+		    
+		    				<p>
+		    					As is similar to other languages:
+		    					<ul>
+		    						<li><mono>equals to</mono> will output 1 if all of the parameters are equal and 0 otherwise (which is done by checking whether <mono>param 1 == param 2</mono>, <mono>param 2 == param 3</mono>, ... and <mono>param n-1 == param n</mono>)</li>
+		    						<li><mono>not equals</mono> will output 1 if all the parameters are not equal and 0 otherwise</li>
+		    						<li><mono>less than</mono> will output 1 if <mono>param 1 &lt; param 2</mono>, <mono>param 2 &lt; param 3</mono>, ... and <mono>param n-1 &lt; param n</mono></li>
+		    						<li><mono>less than or equals to</mono> will output 1 if <mono>param 1 &le; param 2</mono>, <mono>param 2 &le; param 3</mono>, ... and <mono>param n-1 &le; param n</mono></li>
+		    						<li><mono>greater than</mono> will output 1 if <mono>param 1 &gt; param 2</mono>, <mono>param 2 &gt; param 3</mono>, ... and <mono>param n-1 &gt; param n</mono></li>
+		    						<li><mono>greater than or equals to</mono> will output 1 if <mono>param 1 &ge; param 2</mono>, <mono>param 2 &ge; param 3</mono>, ... and <mono>param n-1 &ge; param n</mono></li>
+		    					</ul>
+		    				</p>
+		    
+		    				<h4 id="[in/de]crement-operators">
+		    					Increment and decement operators (++, +++, --, ---)
+		    				</h4>
+		    				<p>
+		    					The following increment and decrement operators are available:
+		    					<center>
+		    						<table id="file_info_syntax_table" class="alt">
+		    							<thead>
+		    								<tr>
+		    									<th>name</th>
+		    									<th>syntax</th>
+		    								</tr>
+		    							</thead>
+		    							<tr>
+		    								<td>pre-increment</td>
+		    								<td><mono>@++(variable-name)</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>post-increment</td>
+		    								<td><mono>@+++(variable-name)</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>pre-decrement</td>
+		    								<td><mono>@--(variable-name)</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>post-decrement</td>
+		    								<td><mono>@---(variable-name)</mono></td>
+		    							</tr>
+		    							<tfoot>
+		    								<tr>
+		    									<th>name</th>
+		    									<th>syntax</th>
+		    								</tr>
+		    							</tfoot>
+		    						</table>
+		    					</center>
+		    				</p>
+		    
+		    				<p>
+		    					For example you might have:
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline">
+@:=(int, i=0)
+@while(@!=(i, 100))
+{
+	@++(i)
+
+	@/*
+		while block
+	@*/
+}
+</pre>
+		    </div>
+		    				</p>
+		    
+		    				<p>
+		    					As is similar to other languages, the <mono>pre-</mono> operators first output the (old) value of the variable before incrementing or decrementing the variable, and the <mono>post-</mono> operators first increment or decrement the variable before outputting the new value of the variable. 
 		    				</p>
 		    
 		    				<h4 id="input-file-info">
@@ -376,35 +653,35 @@ that is broken in to
 		    							</thead>
 		    							<tr>
 		    								<td>name</td>
-		    								<td><mono>@[name]</mono></td>
+		    								<td><mono>$[name]</mono></td>
 		    							</tr>
 		    							<tr>
 		    								<td>title</td>
-		    								<td><mono>@[title]</mono></td>
+		    								<td><mono>$[title]</mono></td>
 		    							</tr>
 		    							<tr>
 		    								<td>output file path</td>
-		    								<td><mono>@[outputpath]</mono></td>
+		    								<td><mono>$[output-path]</mono></td>
 		    							</tr>
 		    							<tr>
 		    								<td>output extension</td>
-		    								<td><mono>@[outputext]</mono></td>
+		    								<td><mono>$[output-ext]</mono></td>
 		    							</tr>
 		    							<tr>
 		    								<td>content file path</td>
-		    								<td><mono>@[contentpath]</mono></td>
+		    								<td><mono>$[content-path]</mono></td>
 		    							</tr>
 		    							<tr>
 		    								<td>content extension</td>
-		    								<td><mono>@[contentext]</mono></td>
+		    								<td><mono>$[content-ext]</mono></td>
 		    							</tr>
 		    							<tr>
 		    								<td>script extension</td>
-		    								<td><mono>@[scriptext]</mono></td>
+		    								<td><mono>$[script-ext]</mono></td>
 		    							</tr>
 		    							<tr>
 		    								<td>template path</td>
-		    								<td><mono>@[templatepath]</mono></td>
+		    								<td><mono>$[template-path]</mono></td>
 		    							</tr>
 		    							<tfoot>
 		    								<tr>
@@ -415,7 +692,7 @@ that is broken in to
 		    						</table>
 		    					</center>
 		    
-		    					For example in a file <mono>template/head.content</mono> you may want something along the lines of <mono>&lt;title>sitename - @[title]&lt;/title></mono>.
+		    					For example in a file <mono>template/head.content</mono> you may want something along the lines of <mono>&lt;title>sitename - $[title]&lt;/title></mono>.
 		    				</p>
 		    
 		    				<h4 id="input-project-info">
@@ -434,27 +711,27 @@ that is broken in to
 		    							</thead>
 		    							<tr>
 		    								<td>content directory</td>
-		    								<td><mono>@[contentdir]</mono></td>
+		    								<td><mono>$[content-dir]</mono></td>
 		    							</tr>
 		    							<tr>
 		    								<td>output directory</td>
-		    								<td><mono>@[outputdir]</mono></td>
+		    								<td><mono>$[output-dir]</mono></td>
 		    							</tr>
 		    							<tr>
 		    								<td>default content extension</td>
-		    								<td><mono>@[defaultcontentext]</mono></td>
+		    								<td><mono>$[default-content-ext]</mono></td>
 		    							</tr>
 		    							<tr>
 		    								<td>default output extension</td>
-		    								<td><mono>@[defaultoutputext]</mono></td>
+		    								<td><mono>$[default-output-ext]</mono></td>
 		    							</tr>
 		    							<tr>
 		    								<td>default script extension</td>
-		    								<td><mono>@[defaultscriptext]</mono></td>
+		    								<td><mono>$[default-script-ext]</mono></td>
 		    							</tr>
 		    							<tr>
 		    								<td>default template</td>
-		    								<td><mono>@[defaulttemplate]</mono></td>
+		    								<td><mono>$[default-template]</mono></td>
 		    							</tr>
 		    							<tfoot>
 		    								<tr>
@@ -470,22 +747,22 @@ that is broken in to
 		    					Inputting operating system information
 		    				</h4>
 		    				<p>
-		    					You can use <mono>@[buildOS]</mono> to add whether an output file was built using <mono>Nift</mono> on Linux, Macintosh or Windows (<mono>@[currentOS]</mono> will continue to do the same for backwards compatibility purposes). 
+		    					You can use <mono>$[build-OS]</mono> to add whether an output file was built using <mono>Nift</mono> on Linux, Macintosh or Windows (<mono>$[current-OS]</mono> will continue to do the same for backwards compatibility purposes). 
 		    				</p>
 		    
 		    				<h4 id="input-date-time-tz-info">
 		    					Inputting date, time and timezone information
 		    				</h4>
 		    				<p>
-		    					The date and time that an output file was built may be inputted using <mono>@[builddate]</mono> and <mono>@[buildtime]</mono> (<mono>@[currentdate]</mono> and <mono>@[currenttime]</mono> will continue to do the same for backwards compatibility purposes). The timezone this date and time information is associated with may also be inputted using <mono>@[buildtimezone]</mono> (<mono>@[timezone]</mono> will continue to do the same for backwards compatibility purposes).
+		    					The date and time that an output file was built may be inputted using <mono>$[build-date]</mono> and <mono>$[build-time]</mono> (<mono>$[current-date]</mono> and <mono>$[current-time]</mono> will continue to do the same for backwards compatibility purposes). The timezone this date and time information is associated with may also be inputted using <mono>$[build-timezone]</mono> (<mono>$[timezone]</mono> will continue to do the same for backwards compatibility purposes).
 		    				</p>
 		    
 		    				<p>
-		    					The date and time that an output file was loaded in a web browser may be inputted using <mono>@[loaddate]</mono> and <mono>@[loadtime]</mono>. The timezone this date and time information is associated with (ie. where the user is browsing the internet from) may also be inputted using <mono>@[loadtimezone]</mono>.
+		    					The date and time that an output file was loaded in a web browser may be inputted using <mono>$[load-date]</mono> and <mono>$[load-time]</mono>. The timezone this date and time information is associated with (ie. where the user is browsing the internet from) may also be inputted using <mono>$[load-timezone]</mono>.
 		    				</p>
 		    
 		    				<p>
-		    					Also available are <mono>@[buildUTCtime]</mono>, <mono>@[buildUTCdate]</mono>, <mono>@[buildYY]</mono> and <mono>@[buildYYYY]</mono> (with <mono>@[currentUTCtime]</mono>, <mono>@[currentUTCdate]</mono>, <mono>@[currentYY]</mono> and <mono>@[currentYYYY]</mono> doing the same for backwards compatibility purposes), along with <mono>@[loadUTCtime]</mono>, <mono>@[loadUTCdate]</mono>, <mono>@[loadYY]</mono> and <mono>@[loadYYYY]</mono>.
+		    					Also available are <mono>$[build-UTC-time]</mono>, <mono>$[build-UTC-date]</mono>, <mono>$[build-YY]</mono> and <mono>$[build-YYYY]</mono> (with <mono>$[current-UTC-time]</mono>, <mono>$[current-UTC-date]</mono>, <mono>$[current-YY]</mono> and <mono>$[current-YYYY]</mono> doing the same for backwards compatibility purposes), along with <mono>$[load-UTC-time]</mono>, <mono>$[load-UTC-date]</mono>, <mono>$[load-YY]</mono> and <mono>$[load-YYYY]</mono>.
 		    				</p>
 		    
 		    				<h4 id="string-vars">
@@ -506,7 +783,7 @@ that is broken in to
 		    				</p>
 		    
 		    				<p>
-		    					You can reference string variables using <mono>@[<i>varName</i>]</mono> or <mono>@&lt;<i>varName</i>></mono>, where <mono><i>varName</i></mono> is the variable name. Use whichever is more convenient, integrates with the other programming/scripting/template languages you are using and/or has nice syntax highlighting with the extensions and editor(s) you are using. For example with html files, using <mono>&lt;></mono> non-nested often gives nice highlighting, and with markdown files, using <mono>[]</mono> non-nested often gives nice highlighting. With nesting use a combination of <mono>[]</mono> and <mono>&lt;></mono> with whichever resulting highlighting you prefer.
+		    					You can reference string variables using <mono>$[<i>varName</i>]</mono>, where <mono><i>varName</i></mono> is the variable name.
 		    				</p>
 		    
 		    				<p>
@@ -514,7 +791,37 @@ that is broken in to
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline lang-bash">
-@[str]
+$[str]
+</pre>
+		    </div>
+		    				</p>
+		    
+		    				<h4 id="scope">
+		    					Current scope and scope of variables/functions
+		    				</h4>
+		    				<p>
+		    					You can get the current scope with <mono>@scope()</mono> and the scope of a defined variable or function using <mono>@scope(name)</mono>, eg:
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline">
+@:={private}(int, obj.pair.first, obj.pair.second)
+@funcdef{private}(obj.pair.set){}
+@funcdef(another.example.func)
+{
+	@console("current scope: '@scope()'")
+}
+
+@console("root scope: '@scope()'")
+@console("scope of obj.pair.first: '@scope(obj.pair.first)'")
+@console("scope of obj.pair.set: '@scope(obj.pair.set)'")
+@another.example.func()
+
+@/*
+	expected output:
+		root scope: ''
+		scope of obj.pair.first: 'obj.pair.'
+		scope of obj.pair.set: 'obj.pair.'
+		current scope: 'another.example.'
+@*/
 </pre>
 		    </div>
 		    				</p>
@@ -531,7 +838,7 @@ that is broken in to
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline lang-bash">
-Page was last built on @[currentdate].
+Page was last built on $[currentdate].
 </pre>
 		    </div>
 		    				</p>
@@ -586,6 +893,27 @@ Page was last built on @[currentdate].
 @input{raw, if-exists}(file-path)
 </pre>
 		    </div>
+		    				</p>
+		    
+		    				<h4 id="include-from-file">
+		    					Including text from other files
+		    				</h4>
+		    				<p>
+		    					Text may be included and processed from another file using <mono>@include(path-to-file)</mono>, where <mono>path-to-file</mono> is the path from the main project directory to the include file.
+		    				</p>
+		    
+		    				<p>
+		    					For example suppose inside a project directory you have <mono>lib/vector.n</mono> with definitions etc. for a vector type. You can have the function definitions etc. processed and included with:
+		    
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline lang-bash">
+@include(lib/vector.n)
+</pre>
+		    </div>
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> If you attempt to include the same file more than once Nift will not throw an error, it just wont process the file more than once. For example if you have two different type files <mono>lib/type_1.nsm</mono> and <mono>lib/type_2.nsm</mono> that both need to include another identical file, they can do so without preventing you from incluing both <mono>lib/type_1.n</mono> and <mono>lib/type_2.n</mono>. 
 		    				</p>
 		    
 		    				<h4 id="paths-between-files">
@@ -652,10 +980,45 @@ Page was last built on @[currentdate].
 		&lt;b>Repos:&lt;/b> [&lt;a href="https://bitbucket.org/nifty-site-manager/nsm/src/master/">BitBucket&lt;/a>] [&lt;a href="https://github.com/nifty-site-manager/nsm">GitHub&lt;/a>] [&lt;a href="https://gitlab.com/nifty-site-manager/nsm">GitLab&lt;/a>]
 	&lt;/p>
 
-	Page was last built on @[currentdate] at @[currenttime] (@[timezone]) using @[currentOS]. &lt;br>
+	Page was last built on $[build-date] at $[build-time] ($[build-timezone]) using $[build-OS]. &lt;br>
 
-	&lt;noselect>&lt;small>&copy;&nbsp;2015-@[loadYY] &lt;a href="https://n-ham.com/">Nicholas Ham&lt;/a>&lt;/small>&lt;/noselect>
+	&lt;noselect>&lt;small>&copy;&nbsp;2015-$[load-YY] &lt;a href="https://n-ham.com/">Nicholas Ham&lt;/a>&lt;/small>&lt;/noselect>
 &lt;/footer>
+</pre>
+		    </div>
+		    				</p>
+		    
+		    				<h4 id="links">Links</h4>
+		    				<p>
+		    					Links may be added with <mono>@link{lang}(url)</mono> which will, depending on whether <mono>lang</mono> is <mono>html</mono> (default) or <mono>md>, be replaced in the output file with:
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline lang-html">
+&lt;a href="url">url&lt;/a>    @# (.html)
+</pre>
+		    </div>
+		    				</p>
+		    
+		    				<p>
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline lang-markdown">
+[url](url)               @# (.md)  
+</pre>
+		    </div>
+		    				</p>
+		    
+		    				<p>
+		    					You can also use <mono>@link{lang}(url, text)</mono> which will, depending on whether <mono>lang</mono> is <mono>html</mono> (default) or <mono>md>, be replaced in the output file with:
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline lang-html">
+&lt;a href="url">txt&lt;/a>    @# (.html)
+</pre>
+		    </div>
+		    				</p>
+		    
+		    				<p>
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline lang-md">
+[txt](url)               @# (.md)  
 </pre>
 		    </div>
 		    				</p>
@@ -672,10 +1035,10 @@ Page was last built on @[currentdate].
 		    
 		    				<h4 id="scripts">Running scripts</h4>
 		    				<p>
-		    					Scripts may be run using <mono>@script(script-path)</mono>, where <mono>script-path</mono> is the path from the project root directory to the script, which is basically the same as the system call for the script. If you need to pass parameters to your scripts you can use:
+		    					Scripts may be run, with output to the console, using <mono>@script{console}(script-path)</mono>, where <mono>script-path</mono> is the path from the project root directory to the script, which is basically the same as the system call for the script. If you need to pass parameters to your scripts you can use:
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline lang-bash">
-@script(script-path, parameter 1, ..., parameter n)
+@script{console}(script-path, parameter 1, ..., parameter n)
 </pre>
 		    </div>
 		    				</p>
@@ -685,7 +1048,7 @@ Page was last built on @[currentdate].
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline lang-bash">
-@script('./script.py')
+@script{console}('./script.py')
 </pre>
 		    </div>
 		    				</p>
@@ -694,7 +1057,7 @@ Page was last built on @[currentdate].
 		    					Also if for example you want to run a script <mono>'script.py'</mono> while passing in the parameters <mono>"light blue"</mono> and <mono>red</mono>, you can do so with:
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline lang-bash">
-@script("./script.py", "light blue", "red")
+@script{console}("./script.py", "light blue", "red")
 </pre>
 		    </div>
 		    				</p>
@@ -703,7 +1066,7 @@ Page was last built on @[currentdate].
 		    					<b>Note:</b> Scripts/programs run with <mono>@script</mono> calls are moved to the project root directory to run and have a backup copy made. If scripts/programs are so large that copying the file will take time, or you are making lots of calls which is slower at scale, you can use the <mono>!bs</mono> option to not have the script backed up, eg.: 
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline lang-bash">
-@script{!p, !bs}('./script.py')
+@script{console, !bs}('./script.py')
 </pre>
 		    </div>
 		    				</p>
@@ -726,10 +1089,10 @@ Page was last built on @[currentdate].
 		    
 		    				<h4 id="script-output">Inputting script output</h4>
 		    				<p>
-		    					Output from scripts may be inputted at any point when building output files using <mono>@script{inject}(script-path)</mono>, where <mono>script-path</mono> is the path from the main project directory to the script, which is basically the same as the system call for the script. If you need to pass parameters to your scripts you can use:
+		    					Output from scripts may be inputted at any point when building output files using <mono>@script(script-path)</mono>, where <mono>script-path</mono> is the path from the main project directory to the script, which is basically the same as the system call for the script. If you need to pass parameters to your scripts you can use:
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline">
-@script{inject}(script-path, parameter 1, ..., parameter n)
+@script(script-path, parameter 1, ..., parameter n)
 </pre>
 		    </div>
 		    				</p> 
@@ -743,15 +1106,15 @@ Page was last built on @[currentdate].
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline">
-@script{inject}('./linux script.py')
+@script('./linux script.py')
 </pre>
 		    </div>
 		    
 		    				<p>
-		    					<b>Note:</b> Scripts/programs run with <mono>@script{inject}(script-path)</mono> calls are moved to the project root directory to run and have a backup copy made. If scripts/programs are so large that copying the file will take time, or you are making lots of calls which is slower at scale, you can use the <mono>!bs</mono> option to not have the script backed up, eg.: 
+		    					<b>Note:</b> Scripts/programs run with <mono>@script(script-path)</mono> calls are moved to the project root directory to run and have a backup copy made. If scripts/programs are so large that copying the file will take time, or you are making lots of calls which is slower at scale, you can use the <mono>!bs</mono> option to not have the script backed up, eg.: 
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline lang-bash">
-@script{inject}{!p, !bs}('./script.py')
+@script{!bs}('./script.py')
 </pre>
 		    </div>
 		    				</p>
@@ -769,7 +1132,7 @@ Page was last built on @[currentdate].
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> <mono>@script{inject}(script-path)</mono> calls do not scale very well to hundreds of thousands of calls, it is much better to combine as much as possible in to as few script/system calls as possible for extremely large projects (moving stuff to the pre/post build scripts is the best place, you can output stuff to file and process the files when building). For example if possible it's much faster to have a few pre-build scripts to download text from multiple urls using cURL, and/or make all the api calls, all the database queries, and work on JSON data needed and distribute the needed output in to different files to be inputted when needed. Note that file-specific build scripts have the benefit of multithreading, whereas project-wide build scripts wont have any multithreading unless you code it in there yourself.
+		    					<b>Note:</b> <mono>@script(script-path)</mono> calls do not scale very well to hundreds of thousands of calls, it is much better to combine as much as possible in to as few script/system calls as possible for extremely large projects (moving stuff to the pre/post build scripts is the best place, you can output stuff to file and process the files when building). For example if possible it's much faster to have a few pre-build scripts to download text from multiple urls using cURL, and/or make all the api calls, all the database queries, and work on JSON data needed and distribute the needed output in to different files to be inputted when needed. Note that file-specific build scripts have the benefit of multithreading, whereas project-wide build scripts wont have any multithreading unless you code it in there yourself.
 		    				</p>
 		    
 		    				<h4 id="script-output-raw">Inputting script output raw</h4>
@@ -795,7 +1158,7 @@ Page was last built on @[currentdate].
 		    					<b>Note:</b> Scripts/programs run with <mono>@script{raw}(script-path)</mono> calls are moved to the project root directory to run and have a backup copy made. If scripts/programs are so large that copying the file will take time, or you are making lots of calls which is slower at scale, you can use the <mono>!bs</mono> option to not have the script backed up, eg.: 
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline lang-bash">
-@script{raw}{!p, !bs}('./script.py')
+@script{raw, !bs}('./script.py')
 </pre>
 		    </div>
 		    				</p>
@@ -818,14 +1181,14 @@ Page was last built on @[currentdate].
 		    
 		    				<h4 id="system">Running system calls</h4>
 		    				<p>
-		    					System calls may be run using <mono>@system(system-call)</mono>, where <mono>system-call</mono> is the system call or you want to run. 
+		    					System calls may be run, with output to the console, using <mono>@system{console}(system-call)</mono>, where <mono>system-call</mono> is the system call or you want to run. 
 		    				</p>
 		    
 		    				<p>
 		    					For example suppose you want to convert the markdown file <mono>file.md</mono> to html using pandoc and save it in <mono>out.html</mono>, you can do so with:
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline">
-@system('pandoc -o out.html file.md')
+@system{console}('pandoc -o out.html file.md')
 </pre>
 		    </div>
 		    				</p>
@@ -840,7 +1203,7 @@ Page was last built on @[currentdate].
 		    
 		    				<h4 id="system-output">Inputting system call output</h4>
 		    				<p>
-		    					Output from system calls may be inputted at any point when building output files using <mono>@system{inject}(system-call)</mono>, where <mono>system-call</mono> is the system call or script you want to run. This can be incredibly useful for things like conditional statements/loops, inputting text from a url using cURL, or integrating with databases, GraphQL and scripting languages etc., which is just the tip of the ice berg!
+		    					Output from system calls may be inputted at any point when building output files using <mono>@system(system-call)</mono>, where <mono>system-call</mono> is the system call or script you want to run. This can be incredibly useful for things like conditional statements/loops, inputting text from a url using cURL, or integrating with databases, GraphQL and scripting languages etc., which is just the tip of the ice berg!
 		    				</p>
 		    
 		    				<p>
@@ -848,7 +1211,7 @@ Page was last built on @[currentdate].
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> <mono>@system{inject}(system-call)</mono> calls do not scale very well to hundreds of thousands of calls, it is much better to combine as much as possible in to as few script/system calls as possible for extremely large projects (moving stuff to the pre/post build scripts is the best place, you can output stuff to file and process the files when building). For example if possible it's much faster to have a few pre-build scripts to download text from multiple urls using cURL, and/or make all the api calls, all the database queries, and work on JSON data needed and distribute the needed output in to different files to be inputted when needed. Note that file-specific build scripts have the benefit of multithreading, whereas project-wide build scripts wont have any multithreading unless you code it in there yourself.
+		    					<b>Note:</b> <mono>@system(system-call)</mono> calls do not scale very well to hundreds of thousands of calls, it is much better to combine as much as possible in to as few script/system calls as possible for extremely large projects (moving stuff to the pre/post build scripts is the best place, you can output stuff to file and process the files when building). For example if possible it's much faster to have a few pre-build scripts to download text from multiple urls using cURL, and/or make all the api calls, all the database queries, and work on JSON data needed and distribute the needed output in to different files to be inputted when needed. Note that file-specific build scripts have the benefit of multithreading, whereas project-wide build scripts wont have any multithreading unless you code it in there yourself.
 		    				</p>
 		    
 		    				<p>
@@ -856,7 +1219,7 @@ Page was last built on @[currentdate].
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline">
-@system{inject}("curl -sS https://pastebin.com/raw/atjKuxY6")
+@system("curl -sS https://pastebin.com/raw/atjKuxY6")
 </pre>
 		    </div>
 		    				</p>
@@ -876,12 +1239,116 @@ Page was last built on @[currentdate].
 		    
 		    				<p>
 		    					For example suppose you want to input the text from <a href="https://pastebin.com/atjKuxY6">this</a> paste on <a href="https://pastebin.com">Paste Bin</a>, you can do so with:
-		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline">
 @system{raw}("curl -sS https://pastebin.com/raw/atjKuxY6")
 </pre>
 		    </div>
+		    				</p>
+		    
+		    				<h4 id="output-to-console">
+		    					Outputting text to console
+		    				</h4>
+		    				<p>
+		    					You can output text to the console with <mono>@console(txt)</mono>. For example:
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline">
+@console("finished building $[output-path]")
+</pre>
+		    </div>
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> If you want multiple <mono>@console</mono> calls to output to the console without being interrupted by output from threads building other pages then use <mono>@console.lock()</mono> and <mono>@console.unlock()</mono> as specified in the following section <a href="#(un)locking-console">Locking and unlocking the console</a>.
+		    				</p>
+		    
+		    				<h4 id="(un)locking-console">
+		    					Locking and unlocking the console
+		    				</h4>
+		    				<p>
+		    					If you want multiple/subsequent function calls to output to the console without being interrupted by output from threads building other pages then you can use <mono>@console.lock()</mono> and <mono>@console.unlock()</mono>, eg.:
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline">
+@console.lock()
+@/*
+	output to the console from subsequent function 
+	calls made here will appear uninterrupted
+@*/
+@console.unlock()
+</pre>
+		    </div>
+		    				</p>
+		    
+		    				<p>
+		    					You can check whether the console is locked using <mono>@console.locked()</mono>, which will output <mono>1</mono> if the console is locked and <mono>0</mono> if the console is not locked. 
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> If a thread building another page attempts to output to the console while it is locked the thread will stall until the console becomes available again, which can slow down build times. 
+		    				</p>
+		    
+		    				<p>
+		    					If the console is locked without being unlocked then it will be automatically unlocked and an error will be thrown with your page failing to build. Further an error will be thrown if you try to unlock the console when it is not already locked. 
+		    				</p>
+		    
+		    				<h4 id="precision">
+		    					Precision of doubles
+		    				</h4>
+		    				<p>
+		    					You can manually specify the precision to be used with doubles using <mono>@precision(value)</mono>, where <mono>value</mono> can be anything from the following table: 
+		    
+		    					<center>
+		    						<table id="project_info_syntax_table" class="alt">
+		    							<thead>
+		    								<tr>
+		    									<th>value</th>
+		    									<th>about</th>
+		    								</tr>
+		    							</thead>
+		    							<tr>
+		    								<td>[nonNegInteger]</td>
+		    								<td>maximum number of decimal places</td>
+		    							</tr>
+		    							<tr>
+		    								<td>fixed</td>
+		    								<td>floating-point values are written using fixed-point notation: the value is represented with exactly as many digits in the decimal part as specified by the precision field (precision) and with no exponent part (see <a href="http://www.cplusplus.com/reference/ios/fixed/">here</a>)</td>
+		    							</tr>
+		    							<tr>
+		    								<td>!fixed</td>
+		    								<td>turns off fixed-point notation</td>
+		    							</tr>
+		    							<tr>
+		    								<td>scientific</td>
+		    								<td>floating-point values are written using scientific notation: the value is represented always with only one digit before the decimal point, followed by the decimal point and as many decimal digits as the precision field (precision). Finally, this notation always includes an exponential part consisting on the letter e followed by an optional sign and three exponential digits (see <a href="http://www.cplusplus.com/reference/ios/scientific/">here</a>)</td>
+		    							</tr>
+		    							<tr>
+		    								<td>!scientific</td>
+		    								<td>turns off scientific notation</td>
+		    							</tr>
+		    							<tr>
+		    								<td>hexfloat</td>
+		    								<td>same as setting both <mono>'fixed'</mono> and <mono>'scientific'</mono>: this enables hexadecimal floating-point formatting</td>
+		    							</tr>
+		    							<tr>
+		    								<td>!hexfloat</td>
+		    								<td>same as unsetting both <mono>'fixed'</mono> and <mono>'scientific'</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>defaultfloat</td>
+		    								<td>same as unsetting both <mono>'fixed'</mono> and <mono>'scientific'</mono></td>
+		    							</tr>
+		    							<tfoot>
+		    								<tr>
+		    									<th>value</th>
+		    									<th>about</th>
+		    								</tr>
+		    							</tfoot>
+		    						</table>
+		    					</center>
+		    				</p>
+		    
+		    				<p>
+		    					You can find more information about <mono>'fixed'</mono>, <mono>'scientific'</mono>, <mono>'hexfloat'</mono> and <mono>'defaultfloat'</mono> <a href="https://en.cppreference.com/w/cpp/io/manip/fixed">here</a>.
 		    				</p>
 		    
 		    				<h4 id="user-input">
@@ -906,7 +1373,7 @@ Page was last built on @[currentdate].
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint lang-js inline">
-@in(@input("@[contentdir]/input-message.txt"))
+@in(@input("$[contentdir]/input-message.txt"))
 </pre>
 		    </div>
 		    				</p>
@@ -926,7 +1393,7 @@ Page was last built on @[currentdate].
 		    					For example:
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint lang-js inline">
+		    <pre class="prettyprint inline">
 @in{from-file}("please replace this text with your content")
 </pre>
 		    </div>
@@ -936,14 +1403,38 @@ Page was last built on @[currentdate].
 		    					You can even input the message/template from file if you would like using <mono>@in{from-file}(@input(message-file-path))</mono>, for example:
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint lang-js inline">
-@in{from-file}(@input("@[contentdir]/input-message.txt"))
+		    <pre class="prettyprint inline">
+@in{from-file}(@input("$[contentdir]/input-message.txt"))
 </pre>
 		    </div>
 		    				</p>
 		    
 		    				<p>
 		    					<b>Note:</b> If you want to input the message/template from file without it being parsed by Nift's template language yet use <mono>@input{raw}(path-to-file)</mono> rather than <mono>@input(path-to-file)</mono>.
+		    				</p>
+		    
+		    				<h4 id="parse">
+		    					Parsing text multiple times
+		    				</h4>
+		    				<p>
+		    					By default text is parsed just once, if you would like some text to be parsed twice you can use <mono>@parse(txt)</mono>. If you would like text to be parsed more times you can use <mono>@parse(noParses, txt)</mono>. A contrived example using <mono>@parse</mono> is below:
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint lang-js inline">
+@:=(string, s1="hello", s2="$[s1]", s3="$[s2]")
+@console("@parse(3, $[s3])")
+</pre>
+		    </div>
+		    				</p>
+		    
+		    				<p>
+		    					Note that the above is slightly different to the following:
+		    
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline">
+@:=(string, s1="hello", s2="s1", s3="s2")
+@console("$[$[$[s3]]]")
+</pre>
+		    </div>
 		    				</p>
 		    
 		    				<h4 id="entities">
@@ -979,7 +1470,7 @@ Page was last built on @[currentdate].
 		    								<td>&excl;</td>
 		    							</tr>
 		    							<tr>
-		    								<td>@ent('@')</td> 
+		    								<td>@ent('\@') or @ent(@)</td> 
 		    								<td>&amp;commat;</td>
 		    								<td>&commat;</td>
 		    							</tr>
@@ -1084,7 +1575,7 @@ Page was last built on @[currentdate].
 		    								<td>&vert;</td>
 		    							</tr>
 		    							<tr>
-		    								<td>@ent('\\')</td> 
+		    								<td>@ent('\\') or @ent(\)</td> 
 		    								<td>&amp;bsol;</td>
 		    								<td>&bsol;</td>
 		    							</tr>

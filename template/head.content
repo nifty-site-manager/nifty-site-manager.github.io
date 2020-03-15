@@ -2,10 +2,10 @@
 <meta charset="utf-8">
 <meta name="description" content="Nift is the world's fastest framework for managing and generating websites. It's cross-platform, open source, lightning fast, developed from the ground up in C++, and released for free under the MIT license - use it for any of your personal or commercial projects">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="@pathtofile{!p}(site/assets/css/main.css)">
-<link rel="stylesheet" href="@pathtofile{!p}(site/assets/css/pagestyle.css)">
-<link rel="stylesheet" href="@pathtofile{!p}(site/assets/css/pre.css)">
-<link rel='icon' type='image/png' href='@pathtofile{!p}("site/images/favicon.png")'>
+<link rel="stylesheet" href="@pathtofile(site/assets/css/main.css)">
+<link rel="stylesheet" href="@pathtofile(site/assets/css/pagestyle.css)">
+<link rel="stylesheet" href="@pathtofile(site/assets/css/pre.css)">
+<link rel='icon' type='image/png' href='@pathtofile("site/images/favicon.png")'>
 
 <!-- uses Font Awesome for vector icons and social logos -->
 <script src="https://kit.fontawesome.com/b51e6952ec.js"></script>

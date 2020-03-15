@@ -10,7 +10,7 @@
 
 			<!-- Image -->
 			<center>
-				<img src="@pathtofile{!p}(site/images/to_the_moon.svg)" alt="unDraw to the moon illustration" width=300 style="margin-bottom:40px">
+				<img src="@pathtofile(site/images/to_the_moon.svg)" alt="unDraw to the moon illustration" width=300 style="margin-bottom:40px">
 			</center>
 
 			<div class="content">

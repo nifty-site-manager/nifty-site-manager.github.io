@@ -10,7 +10,7 @@
 
 			<div class="content" style="margin-top:-50px;">
 				<center>
-					<img src="@pathtofile{!p}(site/images/code_review.svg)" alt="unDraw code review illustration" width=250 style="margin-bottom:20px">
+					<img src="@pathtofile(site/images/code_review.svg)" alt="unDraw code review illustration" width=250 style="margin-bottom:20px">
 				</center>
 
 				<h3>
@@ -56,7 +56,7 @@
 				</p>
 
 				<p>
-					Also see the <a href="@pathto{!p}(resources/nift_tutorial)">Nift tutorial</a> for a better idea of how to nicely display code blocks. 
+					Also see the <a href="@pathto(resources/nift_tutorial)">Nift tutorial</a> for a better idea of how to nicely display code blocks. 
 				</p>
 
 				<center>
@@ -105,7 +105,7 @@ for(int i=0; i < n; i++)
 
 				<div align="center">
 <pre class="prettyprint linenums scroll wrap">
-@input{!p}(./content/cpp/Quoted.cpp)
+@input(./content/cpp/Quoted.cpp)
 </pre>
 				</div>
 
@@ -113,7 +113,7 @@ for(int i=0; i < n; i++)
 
 				<div align="center">
 <pre class="prettyprint linenums">
-@input{!p}(./content/cpp/Quoted.cpp)
+@input(./content/cpp/Quoted.cpp)
 </pre>
 				</div>
 

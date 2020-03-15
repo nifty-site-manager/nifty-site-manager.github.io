@@ -44,7 +44,7 @@
 				<center>
           <div class="xscroll">
 					  <table id="templates_table" class="alt">
-						  @input{!p}(content/resources/tables/templates.table)
+						  @input(content/resources/tables/templates.table)
 					  </table>
           </div>
 				</center>
@@ -66,7 +66,7 @@
 				<center>
           <div class="xscroll">
 					  <table id="html5up_templates_table" class="alt">
-						  @input{!p}(content/resources/tables/html5up_templates.table)
+						  @input(content/resources/tables/html5up_templates.table)
 					  </table>
           </div>
 				</center>
@@ -80,7 +80,7 @@
 				<center>
           <div class="xscroll">
 					  <table id="w3css_templates_table" class="alt">
-						  @input{!p}(content/resources/tables/w3css_templates.table)
+						  @input(content/resources/tables/w3css_templates.table)
 					  </table>
           </div>
 				</center>

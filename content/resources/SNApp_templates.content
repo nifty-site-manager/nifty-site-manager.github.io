@@ -12,7 +12,7 @@
 
 			<!-- Image -->
 			<center>
-				<img src="@pathtofile{!p}(site/images/loki-rabbit1.svg)" alt="Nift bunny mascot with Loki boomerangs" width=300 style="max-width: 90%; margin-bottom:50px">
+				<img src="@pathtofile(site/images/loki-rabbit1.svg)" alt="Nift bunny mascot with Loki boomerangs" width=300 style="max-width: 90%; margin-bottom:50px">
 			</center>
 
 			<p>
@@ -22,7 +22,7 @@
 			<center>
         <div class="xscroll">
 				  <table id="SNApp_templates_table" class="Loki">
-					  @input{!p}(content/resources/tables/templates.table)
+					  @input(content/resources/tables/templates.table)
 				  </table>
         </div>
 			</center>
@@ -44,7 +44,7 @@
 			<center>
         <div class="xscroll">
 				  <table id="html5up_SNApp_templates_table" class="Loki">
-					  @input{!p}(content/resources/tables/html5up_templates.table)
+					  @input(content/resources/tables/html5up_templates.table)
 				  </table>
         </div>
 			</center>
@@ -58,7 +58,7 @@
 			<center>
         <div class="xscroll">
 				  <table id="w3css_SNApp_templates_table" class="Loki">
-					  @input{!p}(content/resources/tables/w3css_templates.table)
+					  @input(content/resources/tables/w3css_templates.table)
 				  </table>
         </div>
 			</center>
@@ -74,7 +74,7 @@
 			<center>
         <div class="xscroll">
 				  <table id="blog_SNApps_table" class="Loki">
-					  @input{!p}(content/resources/tables/blogs.table)
+					  @input(content/resources/tables/blogs.table)
 				  </table>
         </div>
 			</center>
@@ -94,13 +94,13 @@
 			<center>
         <div class="xscroll">
 				  <table id="html5up_blog_SNApps_table" class="Loki">
-					  @input{!p}(content/resources/tables/html5up_blogs.table)
+					  @input(content/resources/tables/html5up_blogs.table)
 				  </table>
         </div>
 			</center>
 
 			<center>
-				<img src="@pathtofile{!p}(site/images/Loki.png)" alt="Loki logo" width=300 style="max-width: 90%; margin-bottom:-30px">
+				<img src="@pathtofile(site/images/Loki.png)" alt="Loki logo" width=300 style="max-width: 90%; margin-bottom:-30px">
 			</center>
 		</section>
 	</div>

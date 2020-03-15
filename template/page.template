@@ -8,26 +8,26 @@
 
 <html lang="en">
     <head>
-        @input{!p}(template/head.content)
+        @input(template/head.content)
     </head>
     <body class="is-preload">
 		<div id="page-wrapper">
-			@input{!p}(template/menu.content)
+			@input(template/menu.content)
 
-		    @content{!p}()
+		    @content()
 
-			@input{!p}(template/footer.content)
+			@input(template/footer.content)
 		</div>
 
 		<!-- Scripts -->
-		<script src="@pathtofile{!p}(site/assets/js/jquery.min.js)"></script>
-		<script src="@pathtofile{!p}(site/assets/js/jquery.dropotron.min.js)"></script>
-		<script src="@pathtofile{!p}(site/assets/js/browser.min.js)"></script>
-		<script src="@pathtofile{!p}(site/assets/js/breakpoints.min.js)"></script>
-		<script src="@pathtofile{!p}(site/assets/js/util.js)"></script>
-		<script src="@pathtofile{!p}(site/assets/js/main.js)"></script>
-		<script src='@pathtofile{!p}(site/assets/js/process_md_blocks.js)'></script>
-		<script src="@pathtofile{!p}(site/assets/js/showdown.min.js)"></script>
+		<script src="@pathtofile(site/assets/js/jquery.min.js)"></script>
+		<script src="@pathtofile(site/assets/js/jquery.dropotron.min.js)"></script>
+		<script src="@pathtofile(site/assets/js/browser.min.js)"></script>
+		<script src="@pathtofile(site/assets/js/breakpoints.min.js)"></script>
+		<script src="@pathtofile(site/assets/js/util.js)"></script>
+		<script src="@pathtofile(site/assets/js/main.js)"></script>
+		<script src='@pathtofile(site/assets/js/process_md_blocks.js)'></script>
+		<script src="@pathtofile(site/assets/js/showdown.min.js)"></script>
 		<script>
 			var converter = new showdown.Converter();
 			converter.setOption('emoji', 'on');

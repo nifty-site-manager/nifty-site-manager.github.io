@@ -33,8 +33,8 @@
 					<p style="margin-bottom:0px">
 						<a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; 
 						<a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a> &nbsp; 
-						<a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a> &nbsp; 
-						<a href="https://nift.teemill.com/" title="TeeMill" class="teemill"><i class="fas fa-tshirt fa-2x"></i></a> <!--&nbsp;
+						<a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a> <!--&nbsp; 
+						<a href="https://nift.teemill.com/" title="TeeMill" class="teemill"><i class="fas fa-tshirt fa-2x"></i></a> &nbsp;
 						<a href="https://teespring.com/stores/nift-3" title="TeeSpring" class="teespring"><i class="fas fa-tshirt fa-2x"></i></a>-->
 					</p>
 					<p style="margin-top:10px">
@@ -60,18 +60,10 @@
 					<nav id="nav">
 						<ul>
 							<li><a href="../index.html">Home</a></li>
-							<li><a href="../v2,0.html">v2.0</a></li>
 							<li>
 								<a href="">Documentation</a>
 								<ul>
-									<li>
-										<a href="installing_nift.html">Installing Nift</a>
-										<!--<ul>
-											<li><a href="linux_install.html">Linux</a></li>
-											<li><a href="osx_install.html">OSX</a></li>
-											<li><a href="windows_install.html">Windows</a></li>
-										</ul>-->
-									</li>
+									<li><a href="installing_nift.html">Installing Nift</a></li>
 									<li><a href="nift_commands.html">Nift Commands</a></li>
 									<li><a href="content_files.html">Content Files</a></li>
 									<li><a href="template_files.html">Template Files</a></li>
@@ -84,15 +76,7 @@
 									<li><a href="displaying_code_blocks.html">Displaying Code Blocks</a></li>
 									<li><a href="presentations.html">Presentations</a></li>
 									<li><a href="lokinet_snapps.html">Lokinet SNApps</a></li>
-									<li>
-										<a href="hosting_your_site.html">Hosting Your Site</a>
-										<!--<ul>
-											<li><a href="bitbucket_hosting.html">BitBucket</a></li>
-											<li><a href="github_hosting.html">GitHub</a></li>
-											<li><a href="gitlab_hosting.html">GitLab</a></li>
-											<li><a href="netlify_hosting.html">Netlify</a></li>
-										</ul>-->
-									</li>
+									<li><a href="hosting_your_site.html">Hosting Your Site</a></li>
 								</ul>
 							</li>
 							<li>
@@ -162,7 +146,7 @@
 		    					The simplest way to use Translate Shell with Nift is:
 		    <div style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint">
-@system{inject}("trans -brief 'text'")
+@system("trans -brief 'text'")
 </pre>
 		    </div>
 		    
@@ -173,20 +157,20 @@
 		    					If you want to translate text in a file use 
 		    <div style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint">
-@system{inject}("trans -brief file://file-path")@dep("file-path")
+@system("trans -brief file://file-path")@dep("file-path")
 </pre>
 		    </div>
 		    
-		    					where <mono>file-path</mono> is the path from the project root directory to the file you want to translate. It is worth adding the file as a dependency after the <mono>@system{inject}</mono> call so that Nift will track changes to the file for purposes of knowing when the page needs rebuilding.
+		    					where <mono>file-path</mono> is the path from the project root directory to the file you want to translate. It is worth adding the file as a dependency after the <mono>@system</mono> call so that Nift will track changes to the file for purposes of knowing when the page needs rebuilding.
 		    				</p>
 		    
 		    				<p>
 		    					To specify which language to translate to add <mono>:language-code</mono> after <mono>-brief</mono> and to specify which language to translate from add <mono>language-code:</mono> after <mono>-brief</mono>, the language codes that are available can be found <a href="https://www.soimort.org/translate-shell/#code-list">here</a>. For example:
 		    <div style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint">
-@system{inject}("trans -brief eo: 'vorto'")
-@system{inject}("trans -brief :zh-CN 'hello'")
-@system{inject}("trans -brief en: :zh-CN 'hello'")
+@system("trans -brief eo: 'vorto'")
+@system("trans -brief :zh-CN 'hello'")
+@system("trans -brief en: :zh-CN 'hello'")
 </pre>
 		    </div>
 		    				</p>
@@ -195,7 +179,7 @@
 		    					To list the available translation engines enter <mono>trans -S</mono>. To use a non-default translation engine use the <mono>-e <i>engine</i></mono> option, for example:
 		    <div style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint">
-@system{inject}("trans -e yandex -brief :en '你好'")
+@system("trans -e yandex -brief :en '你好'")
 </pre>
 		    </div>
 		    				</p>
@@ -223,7 +207,7 @@ $ yarn global add deepl-translator-cli
 		    					The simplest way to use DeepL Translator CLI with Nift is:
 		    <div style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint">
-@system{inject}("deepl translate -t 'country-code' 'text'")
+@system("deepl translate -t 'country-code' 'text'")
 </pre>
 		    </div>
 		    
@@ -238,7 +222,7 @@ $ yarn global add deepl-translator-cli
 		    					If you want to specify the language to translate from use the <mono>-s 'language-code'</mono> option, for example:
 		    <div style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint">
-@system{inject}("deepl translate -s 'EN' -t 'DE' 'How do you do?'")
+@system("deepl translate -s 'EN' -t 'DE' 'How do you do?'")
 </pre>
 		    </div>
 		    				</p>
@@ -247,7 +231,7 @@ $ yarn global add deepl-translator-cli
 		    					You can pipe text from standard input, for example:
 		    <div style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint">
-@system{inject}("echo 'text' | deepl translate -t 'language-code'")
+@system("echo 'text' | deepl translate -t 'language-code'")
 </pre>
 		    </div>
 		    				</p>
@@ -256,11 +240,11 @@ $ yarn global add deepl-translator-cli
 		    					If you want to translate a file, you can do so as follows:
 		    <div style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint">
-@system{inject}("cat file-path | deepl translate -t 'language-code'")@dep("file-path")
+@system("cat file-path | deepl translate -t 'language-code'")@dep("file-path")
 </pre>
 		    </div>
 		    
-		    					where <mono>file-path</mono> is the path from the project root directory to the file you want to translate. It is worth adding the file as a page dependency after the <mono>@system{inject}</mono> call so that Nift will track changes to the file for purposes of knowing when the page needs rebuilding.
+		    					where <mono>file-path</mono> is the path from the project root directory to the file you want to translate. It is worth adding the file as a page dependency after the <mono>@system</mono> call so that Nift will track changes to the file for purposes of knowing when the page needs rebuilding.
 		    				</p>
 		    
 		    				<p>

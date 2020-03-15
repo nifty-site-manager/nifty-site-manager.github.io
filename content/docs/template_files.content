@@ -10,12 +10,12 @@
 
 			<!-- Image -->
 			<center>
-				<img src="@pathtofile{!p}(site/images/badger-icon.svg)" alt="Nift badger mascot" width=300 style="margin-bottom:40px">
+				<img src="@pathtofile(site/images/badger-icon.svg)" alt="Nift badger mascot" width=300 style="margin-bottom:40px">
 			</center>
 
 			<div class="content">
 				<p>
-					Remember that for each file tracked by <mono>Nift</mono> there is a specified template path. When building an output file, <mono>Nift</mono> will start parsing the template file the same as it will parse any other file, using Nift's template language while producing the output. Consequently everything that applied to writing <a href="@pathto{!p}(docs/content_files)">content files</a> also applies to writing template files. However, unlike content files, template files (or one of their dependencies) need to use the page content file as a page dependency.
+					Remember that for each file tracked by <mono>Nift</mono> there is a specified template path. When building an output file, <mono>Nift</mono> will start parsing the template file the same as it will parse any other file, using Nift's template language while producing the output. Consequently everything that applied to writing <a href="@pathto(docs/content_files)">content files</a> also applies to writing template files. However, unlike content files, template files (or one of their dependencies) need to use the page content file as a page dependency.
 				</p>
 
 				<h4>
@@ -23,7 +23,7 @@
 				</h4>
 
 				<p>
-					<mono>Nift</mono> treats any instance of <mono>\@content()</mono> as being equivalent to <mono>\@input(\@[contentpath])</mono>, where <mono>\@[contentpath]</mono> is the content path for the tracked page.
+					<mono>Nift</mono> treats any instance of <mono>\@content()</mono> as being equivalent to <mono>\@input(\$[contentpath])</mono>, where <mono>\$[contentpath]</mono> is the content path for the tracked page.
 				</p>
 
 				<p>
@@ -34,10 +34,10 @@
 					Alternatively to <mono>\@content()</mono> you can:
 					<ul style="text-indent:30px">
 						<li>use <mono>\@content{raw}()</mono> which will input the content file without parsing it with Nift's template language</li>
-						<li>use <mono>\@system{inject, content}(sys-call)</mono> which is equivalent to <mono>\@system{inject}(sys-call \@[contentpath])</mono>, where <mono>\@[contentpath]</mono> injects the content path, except that Nift recognises that the content file has been included. For example if your content files are markdown and you use <mono>\@system{inject, content}("pandoc")</mono> then the content files will be injected after being converted to html using pandoc</li>
-						<li>use <mono>\@script{inject}(\@[contentpath])</mono> (if the content file is a script/program)</li>
-						<li>use <mono>\@script{inject, content}(script-path, param 2, ..., param n)</mono> which is equivalent to <mono>\@script{inject}(script-path, \@[contentpath], param 2, ..., param 2)</mono>, where <mono>\@[contentpath]</mono> injects the content path as parameter 1, except that Nift recognises that the content file has been included</li>
-						<li>use <mono>\@dep(\@[contentpath])</mono></li>
+						<li>use <mono>\@system{content}(sys-call)</mono> which is equivalent to <mono>\@system(sys-call \$[contentpath])</mono>, where <mono>\$[contentpath]</mono> injects the content path, except that Nift recognises that the content file has been included. For example if your content files are markdown and you use <mono>\@system{content}("pandoc")</mono> then the content files will be injected after being converted to html using pandoc</li>
+						<li>use <mono>\@script(\$[contentpath])</mono> (if the content file is a script/program)</li>
+						<li>use <mono>\@script{content}(script-path, param 2, ..., param n)</mono> which is equivalent to <mono>\@script(script-path, \$[contentpath], param 2, ..., param 2)</mono>, where <mono>\$[contentpath]</mono> injects the content path as parameter 1, except that Nift recognises that the content file has been included</li>
+						<li>use <mono>\@dep(\$[contentpath])</mono></li>
 					</ul>
 				</p>
 
@@ -49,17 +49,17 @@
 					To inject a custom head file for each name using a given template you can use for example:
 <div align="center" style="margin-top:-15px; margin-bottom: 20px">
 <pre class="prettyprint inline lang-bash">
-\@input(\@[contentdir]/\@[name].head)
+\@input(\$[contentdir]/\$[name].head)
 </pre>
 </div>
-					which will input <mono>@[contentdir]/name.head</mono>. 
+					which will input <mono>$[content-dir]/name.head</mono>. 
 				</p>
 
 				<p>
 					If you would like to inject a custom head file for only some names using a given template you can use for example:
 <div align="center" style="margin-top:-15px; margin-bottom: 20px">
 <pre class="prettyprint inline lang-bash">
-\@input{if-exists}(\@[contentdir]/\@[name].head)
+\@input{if-exists}(\$[contentdir]/\$[name].head)
 </pre>
 </div>
 				So if you want to optionally add code for a page at that point add a file <mono>name.head</mono> in the same directory as the content file.
@@ -70,7 +70,7 @@
 				</h4>
 
 				<p>
-					When building a page, <mono>Nift</mono> will replace any instance of <mono>\@[title]</mono> with the title <mono>Nift</mono> has tracked for the file. Unlike <mono>\@content()</mono>, <mono>\@[title]</mono> may be placed inside content files (template files inclusive). 
+					When building a page, <mono>Nift</mono> will replace any instance of <mono>\$[title]</mono> with the title <mono>Nift</mono> has tracked for the file. Unlike <mono>\@content()</mono>, <mono>\$[title]</mono> may be placed inside content files (template files inclusive). 
 				</p>
 
 				<h4>
@@ -86,7 +86,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>site title - \@[title]</title>
+		<title>site title - \$[title]</title>
 	</head>
 
 	<body>

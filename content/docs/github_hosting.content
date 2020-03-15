@@ -9,7 +9,7 @@
 			</header>
 
 			<center>
-				<a href="https://pages.github.com/"><img src="@pathtofile{!p}(site/images/Octorabbit.svg)" alt="GitHub Octocat mascot" width=300 style="max-width: 45%; margin-bottom: 20px"></a>
+				<a href="https://pages.github.com/"><img src="@pathtofile(site/images/Octorabbit.svg)" alt="GitHub Octocat mascot" width=300 style="max-width: 45%; margin-bottom: 20px"></a>
 			</center>
 
 			<div class="content">
@@ -31,7 +31,7 @@
 				</h4>
 
 				<p>
-					By far the easiest way to host a website on GitHub is to import or fork an existing site repository from GitHub or any other code sharing platform. See <a href="@pathto{!p}(resources/templates)">here</a> for a variety of templates you can use to make websites.
+					By far the easiest way to host a website on GitHub is to import or fork an existing site repository from GitHub or any other code sharing platform. See <a href="@pathto(resources/templates)">here</a> for a variety of templates you can use to make websites.
 				</p>
 
 				<h4>
