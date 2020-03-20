@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="../assets/css/main.css">
         <link rel="stylesheet" href="../assets/css/pagestyle.css">
         <link rel="stylesheet" href="../assets/css/pre.css">
+        <link rel="stylesheet" href="../assets/css/rainbow.css">
         <link rel='icon' type='image/png' href='../images/favicon.png'>
         
         <!-- uses Font Awesome for vector icons and social logos -->
@@ -67,6 +68,7 @@
 									<li><a href="nift_commands.html">Nift Commands</a></li>
 									<li><a href="content_files.html">Content Files</a></li>
 									<li><a href="template_files.html">Template Files</a></li>
+									<li><a href="lua.html">Lua(JIT)</a></li>
 									<li><a href="scripts.html">Scripts</a></li>
 									<li><a href="template_languages.html">Template Languages</a></li>
 									<li><a href="JSON.html">JSON Data</a></li>
@@ -133,12 +135,11 @@
 		    					The <mono>Nift</mono> documentation covers syntax highlighting code blocks on your site using <a href=https://github.com/google/code-prettify>Google Code Prettify</a>. Using Google Code Prettify on your site is as simple as adding the following code to the head of each page:
 		    
 		    					<div align="center">
-		    <pre class="prettyprint lang-html linenums">
+		    <pre class="prettyprint linenums">
 &lt;!-- uses google-code-prettify for syntax highlighting 
 	 see https://github.com/google/code-prettify for more info -->
 &lt;script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js">
-&lt;/script>
-</pre>
+&lt;/script></pre>
 		    					</div>
 		    				</p>
 		    
@@ -169,7 +170,7 @@
 		    				<br><br>
 		    
 		    				<div align="center">
-		    <pre class="prettyprint linenums lang-cpp">
+		    <pre class="prettyprint linenums">
 int n;
 vector&lt;int> v;
 
@@ -182,14 +183,13 @@ vector&lt;int> v;
 &lt;/pre>
 
 for(int i=0; i &lt; n; i++)
-	cout &lt;&lt; v[i] &lt;&lt; endl;
-</pre>
+	cout &lt;&lt; v[i] &lt;&lt; endl;</pre>
 		    				</div>
 		    
 		    				<br>
 		    
 		    				<div align="center">
-		    <pre class="prettyprint lang-cpp">
+		    <pre class="prettyprint">
 int n;
 vector&lt;int> v;
 
@@ -200,8 +200,7 @@ for(int i=0; i &lt; n; i++)
 	cout &lt;&lt; v[i] &lt;&lt; endl;
 
 for(int i=0; i &lt; n; i++)
-	cout &lt;&lt; v[i] &lt;&lt; endl;
-</pre>
+	cout &lt;&lt; v[i] &lt;&lt; endl;</pre>
 		    				</div>
 		    
 		    				<br>
@@ -364,6 +363,7 @@ linePos += posOffset;
 		</div>
 
 		<!-- Scripts -->
+		<script src="../assets/js/rainbow.min.js"></script>
 		<script src="../assets/js/jquery.min.js"></script>
 		<script src="../assets/js/jquery.dropotron.min.js"></script>
 		<script src="../assets/js/browser.min.js"></script>

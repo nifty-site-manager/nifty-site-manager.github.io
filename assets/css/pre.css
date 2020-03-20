@@ -66,7 +66,7 @@ pre ol.linenums > li
 pre.scroll
 {
 	max-height: 400px;
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 
 pre.square
@@ -88,7 +88,7 @@ pre.wrap
 	word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 
-pre
+pre-old
 {
 	-webkit-overflow-scrolling: touch;
 	background-color: #363331;

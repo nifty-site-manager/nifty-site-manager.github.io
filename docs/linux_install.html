@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="../assets/css/main.css">
         <link rel="stylesheet" href="../assets/css/pagestyle.css">
         <link rel="stylesheet" href="../assets/css/pre.css">
+        <link rel="stylesheet" href="../assets/css/rainbow.css">
         <link rel='icon' type='image/png' href='../images/favicon.png'>
         
         <!-- uses Font Awesome for vector icons and social logos -->
@@ -67,6 +68,7 @@
 									<li><a href="nift_commands.html">Nift Commands</a></li>
 									<li><a href="content_files.html">Content Files</a></li>
 									<li><a href="template_files.html">Template Files</a></li>
+									<li><a href="lua.html">Lua(JIT)</a></li>
 									<li><a href="scripts.html">Scripts</a></li>
 									<li><a href="template_languages.html">Template Languages</a></li>
 									<li><a href="JSON.html">JSON Data</a></li>
@@ -147,7 +149,7 @@ snap install nift --classic
 		    				</p>
 		    
 		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-		    <pre class="prettyprint lang-bash">
+		    <pre class="prettyprint">
 flatpak install --user https://flathub.org/repo/appstream/cc.nift.nsm.flatpakref
 </pre>
 		    </div>
@@ -157,7 +159,7 @@ flatpak install --user https://flathub.org/repo/appstream/cc.nift.nsm.flatpakref
 		    				</p>
 		    
 		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-		    <pre class="prettyprint lang-bash">
+		    <pre class="prettyprint">
 flatpak install cc.nift.nsm.flatpakref
 </pre>
 		    </div>
@@ -182,7 +184,7 @@ alias nift="flatpak run cc.nift.nsm"
 		    				</p>
 		    
 		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-		    <pre class="prettyprint lang-bash">
+		    <pre class="prettyprint">
 flatpak uninstall cc.nift.nsm/x86_64/stable
 </pre>
 		    </div>
@@ -287,7 +289,7 @@ $ emerge -C www-apps/nift
 		    					For example, if you unzipped <mono>nsm-master-*</mono> inside your downloads folder, then steps 1-4 are achieved by entering the following into your terminal window:
 		    
 		    <div align="center">
-		    <pre class="prettyprint inline rounded lang-bsh">
+		    <pre class="prettyprint inline">
 cd ~/Downloads/nsm-master-*
 make
 sudo make install
@@ -342,6 +344,7 @@ sudo make install
 		</div>
 
 		<!-- Scripts -->
+		<script src="../assets/js/rainbow.min.js"></script>
 		<script src="../assets/js/jquery.min.js"></script>
 		<script src="../assets/js/jquery.dropotron.min.js"></script>
 		<script src="../assets/js/browser.min.js"></script>
