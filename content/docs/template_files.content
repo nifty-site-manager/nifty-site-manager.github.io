@@ -48,7 +48,7 @@
 				<p>
 					To inject a custom head file for each name using a given template you can use for example:
 <div align="center" style="margin-top:-15px; margin-bottom: 20px">
-<pre class="prettyprint inline lang-bash">
+<pre class="prettyprint inline">
 \@input(\$[contentdir]/\$[name].head)
 </pre>
 </div>
@@ -58,7 +58,7 @@
 				<p>
 					If you would like to inject a custom head file for only some names using a given template you can use for example:
 <div align="center" style="margin-top:-15px; margin-bottom: 20px">
-<pre class="prettyprint inline lang-bash">
+<pre class="prettyprint inline">
 \@input{if-exists}(\$[contentdir]/\$[name].head)
 </pre>
 </div>

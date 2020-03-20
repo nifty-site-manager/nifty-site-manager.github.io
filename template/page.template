@@ -20,6 +20,7 @@
 		</div>
 
 		<!-- Scripts -->
+		<script src="@pathtofile(site/assets/js/rainbow.min.js)"></script>
 		<script src="@pathtofile(site/assets/js/jquery.min.js)"></script>
 		<script src="@pathtofile(site/assets/js/jquery.dropotron.min.js)"></script>
 		<script src="@pathtofile(site/assets/js/browser.min.js)"></script>

@@ -30,12 +30,11 @@
 					The <mono>Nift</mono> documentation covers syntax highlighting code blocks on your site using <a href=https://github.com/google/code-prettify>Google Code Prettify</a>. Using Google Code Prettify on your site is as simple as adding the following code to the head of each page:
 
 					<div align="center">
-<pre class="prettyprint lang-html linenums">
+<pre class="prettyprint linenums">
 <!-- uses google-code-prettify for syntax highlighting 
 	 see https://github.com/google/code-prettify for more info -->
 <script src="https://cdn.jsdelivr.net/gh/google/code-prettify\@master/loader/run_prettify.js">
-</script>
-</pre>
+</script></pre>
 					</div>
 				</p>
 
@@ -66,7 +65,7 @@
 				<br><br>
 
 				<div align="center">
-<pre class="prettyprint linenums lang-cpp">
+<pre class="prettyprint linenums">
 int n;
 vector<int> v;
 
@@ -79,14 +78,13 @@ vector<int> v;
 </pre>
 
 for(int i=0; i < n; i++)
-	cout << v[i] << endl;
-</pre>
+	cout << v[i] << endl;</pre>
 				</div>
 
 				<br>
 
 				<div align="center">
-<pre class="prettyprint lang-cpp">
+<pre class="prettyprint">
 int n;
 vector<int> v;
 
@@ -97,8 +95,7 @@ for(int i=0; i < n; i++)
 	cout << v[i] << endl;
 
 for(int i=0; i < n; i++)
-	cout << v[i] << endl;
-</pre>
+	cout << v[i] << endl;</pre>
 				</div>
 
 				<br>

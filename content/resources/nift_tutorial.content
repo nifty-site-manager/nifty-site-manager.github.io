@@ -168,7 +168,7 @@ template/page.template
 					<li>
 						Add the following to <mono>content/about.content</mono> without any indenting;
 						<div align="center"  style="margin-top:30px">
-<pre class="inline prettyprint lang-cpp rounded">
+<pre class="inline prettyprint">
 <pre>
 ostream& operator<<(ostream &os, const std::vector<std::string> &v)
 {
@@ -188,7 +188,7 @@ ostream& operator<<(ostream &os, const std::vector<std::string> &v)
 					</li>
 
 					<li>
-						Now try changing the open pre tag in <mono>content/about.content</mono> from <mono>@\<pre></mono> to <mono>@\<pre class="inline rounded prettyprint lang-cpp"></mono>.
+						Now try changing the open pre tag in <mono>content/about.content</mono> from <mono>@\<pre></mono> to <mono>@\<pre class="inline rounded prettyprint"></mono>.
 					</li>
 
 					<li>

@@ -74,7 +74,7 @@ snap install nift --classic
 				</p>
 
 <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-<pre class="prettyprint lang-bash">
+<pre class="prettyprint">
 flatpak install --user https://flathub.org/repo/appstream/cc.nift.nsm.flatpakref
 </pre>
 </div>
@@ -84,7 +84,7 @@ flatpak install --user https://flathub.org/repo/appstream/cc.nift.nsm.flatpakref
 				</p>
 
 <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-<pre class="prettyprint lang-bash">
+<pre class="prettyprint">
 flatpak install cc.nift.nsm.flatpakref
 </pre>
 </div>
@@ -109,7 +109,7 @@ alias nift="flatpak run cc.nift.nsm"
 				</p>
 
 <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-<pre class="prettyprint lang-bash">
+<pre class="prettyprint">
 flatpak uninstall cc.nift.nsm/x86_64/stable
 </pre>
 </div>
@@ -127,7 +127,7 @@ flatpak uninstall cc.nift.nsm/x86_64/stable
 				</p>
 
 <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-<pre class="prettyprint lang-bash">
+<pre class="prettyprint">
 $ cd /usr/ports/www/nift 
 $ make install clean
 </pre>
@@ -147,7 +147,7 @@ $ pkg install www/nift
 					Alternative install using pkgng:
 				</p>
 <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-<pre class="prettyprint lang-bash">
+<pre class="prettyprint">
 $ su -
 # portsnap fetch
 # portsnap update
@@ -192,7 +192,7 @@ $ pkg delete www/nift
 				</p>
 
 <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-<pre class="prettyprint lang-bash">
+<pre class="prettyprint">
 $ layman -f -o https://raw.githubusercontent.com/NuLL3rr0r/gentoo-overlay/master/repositories.xml -a NuLL3rr0r
 </pre>
 </div>
@@ -242,12 +242,12 @@ $ emerge -C www-apps/nift
 				<h3 id="osx-brew">
 					OSX installation using <mono>Homebrew</mono>
 				</h3>
-				<center><img src="@pathtofile(site/images/brew.png)" alt="Homebrew logo" width=350px style="max-width:90%; margin-top: 20px; margin-bottom: 20px"></center>
+				<center><img src="@pathtofile(site/images/brew-icon.png)" alt="Homebrew logo" width=200px style="max-width:90%; margin-top: 20px; margin-bottom: 20px"></center>
 
 				<p>
 					You can install <mono>Nift</mono> on OSX using the <mono>Homebrew</mono> package manager, see <a href="https://formulae.brew.sh/formula/nift">here</a>. Install instructions are <a href="https://brew.sh/">here</a>. Alternatively first install <mono>brew</mono>, eg:, 
 <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-<pre class="prettyprint lang-bash">
+<pre class="prettyprint">
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 </pre>
 </div>

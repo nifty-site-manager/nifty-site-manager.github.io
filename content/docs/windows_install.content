@@ -115,7 +115,7 @@ choco install nift
 					For example, if you unzipped <mono>nsm-master-*</mono> inside your downloads folder, then steps 1-4 are achieved by entering the following into your terminal window:
 
 					<div align="center">
-<pre class="prettyprint inline rounded lang-bsh">
+<pre class="prettyprint inline rounded">
 cd ~/Downloads/nsm-master-*
 make
 make git-bash-install

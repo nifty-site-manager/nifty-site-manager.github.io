@@ -42,6 +42,10 @@
 'lokinet_snapps'
 'template/page.template'
 
+'docs/lua'
+'lua'
+'template/page.template'
+
 'docs/markdown'
 'markdown'
 'template/page.template'

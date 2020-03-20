@@ -12,12 +12,12 @@
 				<h2>
 					OSX installation using <mono>Homebrew</mono>
 				</h2>
-				<center><img src="@pathtofile{!p}(site/images/brew.png)" alt="Homebrew logo" width=350px style="max-width:90%; margin-top: 20px; margin-bottom: 20px"></center>
+				<center><img src="@pathtofile{!p}(site/images/brew-icon.png)" alt="Homebrew logo" width=200px style="max-width:90%; margin-top: 20px; margin-bottom: 20px"></center>
 
 				<p>
 					You can install <mono>Nift</mono> on OSX using the <mono>Homebrew</mono> package manager, see <a href="https://formulae.brew.sh/formula/nift">here</a>. Install instructions are <a href="https://brew.sh/">here</a>. Alternatively first install <mono>brew</mono>, eg:, 
 <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-<pre class="prettyprint lang-bash">
+<pre class="prettyprint">
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 </pre>
 </div>
@@ -71,7 +71,7 @@ brew install nift
 					For example, if you unzipped <mono>nsm-master-*</mono> inside your downloads folder, then steps 1-4 are achieved by entering the following into your terminal window:
 
 					<div align="center">
-<pre class="prettyprint inline rounded lang-bsh">
+<pre class="prettyprint inline rounded">
 cd ~/Downloads/nsm-master-*
 make
 sudo make install

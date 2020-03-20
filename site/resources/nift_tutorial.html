@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="../assets/css/main.css">
         <link rel="stylesheet" href="../assets/css/pagestyle.css">
         <link rel="stylesheet" href="../assets/css/pre.css">
+        <link rel="stylesheet" href="../assets/css/rainbow.css">
         <link rel='icon' type='image/png' href='../images/favicon.png'>
         
         <!-- uses Font Awesome for vector icons and social logos -->
@@ -67,6 +68,7 @@
 									<li><a href="../docs/nift_commands.html">Nift Commands</a></li>
 									<li><a href="../docs/content_files.html">Content Files</a></li>
 									<li><a href="../docs/template_files.html">Template Files</a></li>
+									<li><a href="../docs/lua.html">Lua(JIT)</a></li>
 									<li><a href="../docs/scripts.html">Scripts</a></li>
 									<li><a href="../docs/template_languages.html">Template Languages</a></li>
 									<li><a href="../docs/JSON.html">JSON Data</a></li>
@@ -271,7 +273,7 @@ template/page.template
 		    					<li>
 		    						Add the following to <mono>content/about.content</mono> without any indenting;
 		    						<div align="center"  style="margin-top:30px">
-		    <pre class="inline prettyprint lang-cpp rounded">
+		    <pre class="inline prettyprint">
 &lt;pre>
 ostream& operator&lt;&lt;(ostream &os, const std::vector&lt;std::string> &v)
 {
@@ -291,7 +293,7 @@ ostream& operator&lt;&lt;(ostream &os, const std::vector&lt;std::string> &v)
 		    					</li>
 		    
 		    					<li>
-		    						Now try changing the open pre tag in <mono>content/about.content</mono> from <mono>&lt;pre></mono> to <mono>&lt;pre class="inline rounded prettyprint lang-cpp"></mono>.
+		    						Now try changing the open pre tag in <mono>content/about.content</mono> from <mono>&lt;pre></mono> to <mono>&lt;pre class="inline rounded prettyprint"></mono>.
 		    					</li>
 		    
 		    					<li>
@@ -357,6 +359,7 @@ ostream& operator&lt;&lt;(ostream &os, const std::vector&lt;std::string> &v)
 		</div>
 
 		<!-- Scripts -->
+		<script src="../assets/js/rainbow.min.js"></script>
 		<script src="../assets/js/jquery.min.js"></script>
 		<script src="../assets/js/jquery.dropotron.min.js"></script>
 		<script src="../assets/js/browser.min.js"></script>

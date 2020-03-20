@@ -314,16 +314,7 @@ nsm untrack-from-file file-path
 				</p>
 
 				<p>
-					The file specifying tracked files to untrack should have one tracked file specified on each line with the format:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="inline">
-name
-</pre>
-</div>
-					where:
-					<ul>
-						<li><mono>name</mono> is the name of the file you want to track.</li>
-					</ul>
+					The file specifying tracked files to untrack should have one tracked name specified on each line.
 				</p>
 
 				<p>

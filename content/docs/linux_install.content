@@ -44,7 +44,7 @@ snap install nift --classic
 				</p>
 
 <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-<pre class="prettyprint lang-bash">
+<pre class="prettyprint">
 flatpak install --user https://flathub.org/repo/appstream/cc.nift.nsm.flatpakref
 </pre>
 </div>
@@ -54,7 +54,7 @@ flatpak install --user https://flathub.org/repo/appstream/cc.nift.nsm.flatpakref
 				</p>
 
 <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-<pre class="prettyprint lang-bash">
+<pre class="prettyprint">
 flatpak install cc.nift.nsm.flatpakref
 </pre>
 </div>
@@ -79,7 +79,7 @@ alias nift="flatpak run cc.nift.nsm"
 				</p>
 
 <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-<pre class="prettyprint lang-bash">
+<pre class="prettyprint">
 flatpak uninstall cc.nift.nsm/x86_64/stable
 </pre>
 </div>
@@ -184,7 +184,7 @@ $ emerge -C www-apps/nift
 					For example, if you unzipped <mono>nsm-master-*</mono> inside your downloads folder, then steps 1-4 are achieved by entering the following into your terminal window:
 
 <div align="center">
-<pre class="prettyprint inline rounded lang-bsh">
+<pre class="prettyprint inline">
 cd ~/Downloads/nsm-master-*
 make
 sudo make install

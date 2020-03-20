@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="../assets/css/main.css">
         <link rel="stylesheet" href="../assets/css/pagestyle.css">
         <link rel="stylesheet" href="../assets/css/pre.css">
+        <link rel="stylesheet" href="../assets/css/rainbow.css">
         <link rel='icon' type='image/png' href='../images/favicon.png'>
         
         <!-- uses Font Awesome for vector icons and social logos -->
@@ -67,6 +68,7 @@
 									<li><a href="nift_commands.html">Nift Commands</a></li>
 									<li><a href="content_files.html">Content Files</a></li>
 									<li><a href="template_files.html">Template Files</a></li>
+									<li><a href="lua.html">Lua(JIT)</a></li>
 									<li><a href="scripts.html">Scripts</a></li>
 									<li><a href="template_languages.html">Template Languages</a></li>
 									<li><a href="JSON.html">JSON Data</a></li>
@@ -176,9 +178,7 @@
 		    				<p>
 		    					Some of the functions take input parameters and input options. A function <mono>funcName</mono> is called with <mono>@funcName{options}(parameters)</mono> or <mono class="prettyprint">@funcName{option 1}...{option n}(parameters)</mono> where <mono>options</mono> and <mono>parameters</mono> are separated by commas. You can use Nift's template language with the function name, options and parameters for a function call. For example:
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-@input("$[contentpath]")
-</pre>
+		    <pre class="prettyprint inline">@input("$[contentpath]")</pre>
 		    </div>
 		    				</p>
 		    
@@ -772,7 +772,7 @@ error: 'template/page.template': line 8: @input('content/index.content') failed
 		    					You can define string variables using <mono>@:=(string, <i>var1-name</i> = <i>var1-value</i>, &hellip;, <i>varN-name</i> = <i>varN-value</i>)</mono>, where <mono><i>vari-name</i></mono> is the name of varible <mono>i</mono> and <mono><i>vari-value</i></mono> is the value for variable <mono>i</mono>. Note that you do not have to assign a value to any/all of the variables. For example you might have:
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline lang-bash">
+		    <pre class="prettyprint inline">
 @:=(string, str = "hello, world!", str2)
 </pre>
 		    </div>
@@ -787,13 +787,7 @@ error: 'template/page.template': line 8: @input('content/index.content') failed
 		    				</p>
 		    
 		    				<p>
-		    					For example to reference the string <mono>str</mono> defined above use:
-		    
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline lang-bash">
-$[str]
-</pre>
-		    </div>
+		    					For example to reference the string <mono>str</mono> defined above use <mono>$[str]</mono>.
 		    				</p>
 		    
 		    				<h4 id="scope">
@@ -837,7 +831,7 @@ $[str]
 		    					For example suppose inside a project directory you have <mono>template/footer.content</mono>:
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline lang-bash">
+		    <pre class="inline">
 Page was last built on $[currentdate].
 </pre>
 		    </div>
@@ -906,7 +900,7 @@ Page was last built on $[currentdate].
 		    					For example suppose inside a project directory you have <mono>lib/vector.n</mono> with definitions etc. for a vector type. You can have the function definitions etc. processed and included with:
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline lang-bash">
+		    <pre class="prettyprint inline">
 @include(lib/vector.n)
 </pre>
 		    </div>
@@ -992,7 +986,7 @@ Page was last built on $[currentdate].
 		    				<p>
 		    					Links may be added with <mono>@link{lang}(url)</mono> which will, depending on whether <mono>lang</mono> is <mono>html</mono> (default) or <mono>md>, be replaced in the output file with:
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline lang-html">
+		    <pre class="prettyprint inline">
 &lt;a href="url">url&lt;/a>    @# (.html)
 </pre>
 		    </div>
@@ -1000,7 +994,7 @@ Page was last built on $[currentdate].
 		    
 		    				<p>
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline lang-markdown">
+		    <pre class="prettyprint inline">
 [url](url)               @# (.md)  
 </pre>
 		    </div>
@@ -1009,7 +1003,7 @@ Page was last built on $[currentdate].
 		    				<p>
 		    					You can also use <mono>@link{lang}(url, text)</mono> which will, depending on whether <mono>lang</mono> is <mono>html</mono> (default) or <mono>md>, be replaced in the output file with:
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline lang-html">
+		    <pre class="prettyprint inline">
 &lt;a href="url">txt&lt;/a>    @# (.html)
 </pre>
 		    </div>
@@ -1017,7 +1011,7 @@ Page was last built on $[currentdate].
 		    
 		    				<p>
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline lang-md">
+		    <pre class="prettyprint inline">
 [txt](url)               @# (.md)  
 </pre>
 		    </div>
@@ -1037,7 +1031,7 @@ Page was last built on $[currentdate].
 		    				<p>
 		    					Scripts may be run, with output to the console, using <mono>@script{console}(script-path)</mono>, where <mono>script-path</mono> is the path from the project root directory to the script, which is basically the same as the system call for the script. If you need to pass parameters to your scripts you can use:
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline lang-bash">
+		    <pre class="prettyprint inline">
 @script{console}(script-path, parameter 1, ..., parameter n)
 </pre>
 		    </div>
@@ -1047,7 +1041,7 @@ Page was last built on $[currentdate].
 		    					For example if you want to run a script <mono>'script.py'</mono>, you can do so with:
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline lang-bash">
+		    <pre class="prettyprint inline">
 @script{console}('./script.py')
 </pre>
 		    </div>
@@ -1056,7 +1050,7 @@ Page was last built on $[currentdate].
 		    				<p>
 		    					Also if for example you want to run a script <mono>'script.py'</mono> while passing in the parameters <mono>"light blue"</mono> and <mono>red</mono>, you can do so with:
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline lang-bash">
+		    <pre class="prettyprint inline">
 @script{console}("./script.py", "light blue", "red")
 </pre>
 		    </div>
@@ -1065,7 +1059,7 @@ Page was last built on $[currentdate].
 		    				<p>
 		    					<b>Note:</b> Scripts/programs run with <mono>@script</mono> calls are moved to the project root directory to run and have a backup copy made. If scripts/programs are so large that copying the file will take time, or you are making lots of calls which is slower at scale, you can use the <mono>!bs</mono> option to not have the script backed up, eg.: 
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline lang-bash">
+		    <pre class="prettyprint inline">
 @script{console, !bs}('./script.py')
 </pre>
 		    </div>
@@ -1113,7 +1107,7 @@ Page was last built on $[currentdate].
 		    				<p>
 		    					<b>Note:</b> Scripts/programs run with <mono>@script(script-path)</mono> calls are moved to the project root directory to run and have a backup copy made. If scripts/programs are so large that copying the file will take time, or you are making lots of calls which is slower at scale, you can use the <mono>!bs</mono> option to not have the script backed up, eg.: 
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline lang-bash">
+		    <pre class="prettyprint inline">
 @script{!bs}('./script.py')
 </pre>
 		    </div>
@@ -1157,7 +1151,7 @@ Page was last built on $[currentdate].
 		    				<p>
 		    					<b>Note:</b> Scripts/programs run with <mono>@script{raw}(script-path)</mono> calls are moved to the project root directory to run and have a backup copy made. If scripts/programs are so large that copying the file will take time, or you are making lots of calls which is slower at scale, you can use the <mono>!bs</mono> option to not have the script backed up, eg.: 
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline lang-bash">
+		    <pre class="prettyprint inline">
 @script{raw, !bs}('./script.py')
 </pre>
 		    </div>
@@ -1362,7 +1356,7 @@ Page was last built on $[currentdate].
 		    					For example:
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint lang-js inline">
+		    <pre class="prettyprint inline">
 @in("please enter your name:")
 </pre>
 		    </div>
@@ -1372,7 +1366,7 @@ Page was last built on $[currentdate].
 		    					You can even input the message from file if you would like using <mono>@in(@input(message-file-path))</mono>, for example:
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint lang-js inline">
+		    <pre class="prettyprint inline">
 @in(@input("$[contentdir]/input-message.txt"))
 </pre>
 		    </div>
@@ -1419,7 +1413,7 @@ Page was last built on $[currentdate].
 		    				<p>
 		    					By default text is parsed just once, if you would like some text to be parsed twice you can use <mono>@parse(txt)</mono>. If you would like text to be parsed more times you can use <mono>@parse(noParses, txt)</mono>. A contrived example using <mono>@parse</mono> is below:
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint lang-js inline">
+		    <pre class="prettyprint inline">
 @:=(string, s1="hello", s2="$[s1]", s3="$[s2]")
 @console("@parse(3, $[s3])")
 </pre>
@@ -1712,7 +1706,7 @@ Page was last built on $[currentdate].
 		    					The best way to add CSS files is:
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint lang-js inline">
+		    <pre class="prettyprint inline">
 &lt;link rel='stylesheet' type='text/css' href='@pathtofile(path-to-css-file)'>
 </pre>
 		    </div>
@@ -1723,7 +1717,7 @@ Page was last built on $[currentdate].
 		    					Alternatively you can include a css file using <mono>@cssinclude(path-to-css-file)</mono>, where <mono>path-to-css-file</mono> is the path from the main project directory to the css file (<u>not</u> the path from the page/output file to the css file). When building a page/output file, <mono>Nift</mono> will replace <mono>@cssinclude(path-to-css-file)</mono> with:
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint lang-js inline">
+		    <pre class="prettyprint inline">
 &lt;link rel='stylesheet' type='text/css' href='path-from-page-to-css-file'>
 </pre>
 		    </div>
@@ -1736,7 +1730,7 @@ Page was last built on $[currentdate].
 		    					The best way to add an images to a website page is:
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint lang-js inline">
+		    <pre class="prettyprint inline">
 &lt;img src="@pathtofile(path-to-img-file)" width="120">
 </pre>
 		    </div>
@@ -1747,7 +1741,7 @@ Page was last built on $[currentdate].
 		    					Alternatively, you can include an image file using <mono>@imginclude(path-to-img-file)</mono>, where <mono>path-to-img-file</mono> is the path from the main project directory to the img file (<u>not</u> the path from the page/output file to the img file). When building a page/output file, <mono>Nift</mono> will replace <mono>@imginclude(path-to-img-file)</mono> with the following:
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint lang-js inline">
+		    <pre class="prettyprint inline">
 &lt;img src="path-from-page-to-img-file">
 </pre>
 		    </div>
@@ -1760,7 +1754,7 @@ Page was last built on $[currentdate].
 		    					The best way to add a javscript file is:
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint lang-js inline">
+		    <pre class="prettyprint inline">
 &lt;script src="@pathtofile(path-to-js-file)">&lt;/script>
 </pre>
 		    </div>
@@ -1771,7 +1765,7 @@ Page was last built on $[currentdate].
 		    					Alternatively, you can include a javascript file using <mono>@jsinclude(path-to-js-file)</mono>, where <mono>path-to-js-file</mono> is the path from the main project directory to the js file (<u>not</u> the path from the page/output file to the js file). When building a page/output file, <mono>Nift</mono> will replace <mono>@jsinclude(path-to-js-file)</mono> with: 
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint lang-js inline">
+		    <pre class="prettyprint inline">
 &lt;script src="path-from-page-to-js-file">&lt;/script>
 </pre>
 		    </div>
@@ -1784,7 +1778,7 @@ Page was last built on $[currentdate].
 		    					The best way to add a favicon file is:
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint lang-js inline">
+		    <pre class="prettyprint inline">
 &lt;link rel='icon' type='image/png' href='@pathtofile(path-to-favicon-file)'>
 </pre>
 		    </div>
@@ -1795,7 +1789,7 @@ Page was last built on $[currentdate].
 		    					Alternatively, you can include a favicon file using <mono>@faviconinclude(path-to-favicon-file)</mono>, where <mono>path-to-favicon-file</mono> is the path from the main project directory to the favicon file (<u>not</u> the path from the page/output file to the favicon file). When building a page/output file, <mono>Nift</mono> will replace <mono>@faviconinclude(path-to-favicon-file)</mono> with:
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint lang-js inline">
+		    <pre class="prettyprint inline">
 &lt;link rel='icon' type='image/png' href='path-from-page-to-favicon-file'>
 </pre>
 		    </div>
@@ -1851,6 +1845,7 @@ Page was last built on $[currentdate].
 		</div>
 
 		<!-- Scripts -->
+		<script src="../assets/js/rainbow.min.js"></script>
 		<script src="../assets/js/jquery.min.js"></script>
 		<script src="../assets/js/jquery.dropotron.min.js"></script>
 		<script src="../assets/js/browser.min.js"></script>

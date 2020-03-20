@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="../assets/css/main.css">
         <link rel="stylesheet" href="../assets/css/pagestyle.css">
         <link rel="stylesheet" href="../assets/css/pre.css">
+        <link rel="stylesheet" href="../assets/css/rainbow.css">
         <link rel='icon' type='image/png' href='../images/favicon.png'>
         
         <!-- uses Font Awesome for vector icons and social logos -->
@@ -67,6 +68,7 @@
 									<li><a href="nift_commands.html">Nift Commands</a></li>
 									<li><a href="content_files.html">Content Files</a></li>
 									<li><a href="template_files.html">Template Files</a></li>
+									<li><a href="lua.html">Lua(JIT)</a></li>
 									<li><a href="scripts.html">Scripts</a></li>
 									<li><a href="template_languages.html">Template Languages</a></li>
 									<li><a href="JSON.html">JSON Data</a></li>
@@ -145,7 +147,7 @@
 		    					To use the <mono>Showdown</mono> add includes for the above scripts along with <mono>Showdown</mono> scripts to the end of your <mono>\<body\></mono>. For example a <mono>page.template</mono> file might be:
 		    
 		    					<div align="center">
-		    <pre class="prettyprint lang-html linenums">
+		    <pre class="prettyprint linenums">
 &lt;!DOCTYPE html>
 &lt;html>
 	&lt;head>
@@ -167,8 +169,7 @@
 				elements[i].innerHTML = converter.makeHtml(elements[i].innerHTML.replace(/&amp;lt;/g, "xwxw").replace(/&amp;gt;/g, "pqpq")).replace(/xwxw/g, "&amp;lt;").replace(/pqpq/g, "&amp;gt;");
 		&lt;/script>
 	&lt;/body>
-&lt;/html>
-</pre>
+&lt;/html></pre>
 		    					</div>
 		    				</p>
 		    
@@ -176,7 +177,7 @@
 		    					It's also handy to add the following bit of css to one of your css files to hide visibility of textareas when pages are loading:
 		    
 		    					<div align="center">
-		    <pre class="prettyprint lang-css linenums">
+		    <pre class="prettyprint linenums">
 textarea.markdown
 {
 	visibility: hidden;
@@ -185,8 +186,7 @@ textarea.markdown
 pre.markdown
 {
 	visibility: hidden;
-}
-</pre>
+}</pre>
 		    					</div>
 		    				</p>
 		    
@@ -194,11 +194,10 @@ pre.markdown
 		    					You can then do a block of markdown as follows:
 		    
 		    					<div align="center">
-		    <pre class="prettyprint lang-html linenums">
+		    <pre class="prettyprint linenums">
 &lt;textarea class="markdown">
 	markdown code here
-&lt;/textarea>
-</pre>
+&lt;/textarea></pre>
 		    					</div>
 		    				</p>
 		    
@@ -257,7 +256,7 @@ pre.markdown
 		    				</textarea>
 		    
 		    				<center>
-		    <pre class="prettyprint lang-markdown inline">
+		    <pre class="prettyprint inline">
 | Tables        | Are           | Cool  |
 | ------------- |:-------------:| -----:|
 | **col 3 is**  | right-aligned | $1600 |
@@ -322,6 +321,7 @@ pre.markdown
 		</div>
 
 		<!-- Scripts -->
+		<script src="../assets/js/rainbow.min.js"></script>
 		<script src="../assets/js/jquery.min.js"></script>
 		<script src="../assets/js/jquery.dropotron.min.js"></script>
 		<script src="../assets/js/browser.min.js"></script>
