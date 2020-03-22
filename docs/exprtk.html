@@ -120,7 +120,7 @@
 		    
 		    			<div class="content">
 		    				<p>
-		    					<mono>Nift</mono> has the C++ Mathematical Expression Toolkit Library (<mono>ExprTk</mono>) embedded (<a href="http://www.partow.net/programming/exprtk/index.html">official website</a>, <a href="https://github.com/ArashPartow/exprtk">GitHub</a>). <mono>ExprTk</mono> is a simple to use, easy to integrate and extremely efficient run-time mathematical expression parser and evaluation engine. <mono>ExprTk</mono> supports numerous forms of functional, logical and vector processing semantics and is very easily extendible.
+		    					<mono>Nift</mono> has the C++ Mathematical Expression Toolkit Library (<mono>ExprTk</mono>) embedded (<a href="http://www.partow.net/programming/exprtk/index.html">official website</a>, <a href="https://github.com/ArashPartow/exprtk">GitHub</a>). <mono>ExprTk</mono> is a simple to use, easy to integrate and <a href="#benchmark">extremely efficient</a> run-time mathematical expression parser and evaluation engine. <mono>ExprTk</mono> supports numerous forms of functional, logical and vector processing semantics and is very easily extendible.
 		    				</p>
 		    
 		    				<a href="#contents" class="to_top">[contents]</a>
@@ -135,6 +135,7 @@
 		    						<li><a href="#exprtk-conditions">ExprTk with n++/f++ conditions</a></li>
 		    						<li><a href="#exprtk-vars">ExprTk access to Nift variables</a></li>
 		    						<li><a href="#nift-fns">Nift functions</a></li>
+		    						<li><a href="#benchmark">Benchmark results</a></li>
 		    					</ul>
 		    				</p>
 		    
@@ -255,6 +256,9 @@ for(:=(int, i=0); i&lt;10; i+=1)
 		    				<h4 id="exprtk-vars">
 		    					ExprTk access to Nift variables
 		    				</h4>
+		    				<p>
+		    					<mono>ExprTk</mono> has access to <mono>Nift</mono> variables of the following types: <mono>bool</mono>, <mono>int</mono>, <mono>double</mono>, <mono>char</mono>, <mono>string</mono> and <mono>std::vector&lt;double&gt;</mono>. You can simply use the variables as if they had been defined inside <mono>ExprTk</mono>, although a <mono>char</mono> is treated as a <mono>string</mono>, and a <mono>bool</mono> or an <mono>int</mono> is treated as a <mono>double</mono>.
+		    				</p>
 		    
 		    				<h4 id="nift-fns">
 		    					Nift functions
@@ -305,6 +309,33 @@ for(:=(int, i=0); i&lt;10; i+=1)
 		    							</tfoot>
 		    						</table>
 		    					</center>
+		    				</p>
+		    
+		    				<h4 id="benchmark">
+		    					Benchmark results
+		    				</h4>
+		    				<p>
+		    					Results from <a href="https://github.com/ArashPartow/math-parser-benchmark-project">The Great C++ Mathematical Expression Parser Benchmark</a> are below:
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline">
+Scores:
+  #     Parser                  Type            Points   Score   Failures
+  -----------------------------------------------------------------------
+  00    ExprTk                  double          901      100     0
+  01    ExprTkFloat             float           740       82     9
+  02    muparserSSE             float           726       93     9
+  03    METL                    double          686       52     0
+  04    FParser 4.5             double          584       43     0
+  05    atmsp 1.0.4             double          530       38     2
+  06    muparser 2.2.4          double          517       37     0
+  07    muparser 2.2.4 (omp)    double          444       35     0
+  08    MTParser                double          381       34     0
+  09    MathExpr                double          360       29     2
+  10    TinyExpr                double          354       31     2
+  11    Lepton                  double          134        8     2
+  12    muparserx               double           86        5     0
+</pre>
+		    </div>
 		    				</p>
 		    			</div>
 		    		</section>
