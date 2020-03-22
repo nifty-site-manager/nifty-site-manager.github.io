@@ -1,0 +1,94 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">fn: @ent(>)=</div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<div class="content">
+				<a href="#contents" class="to_top">[contents]</a>
+
+				<p id="contents">
+					Contents:
+					<ul style="text-indent:30px">
+						<li><a href="#syntax">Syntax</a></li>
+						<li><a href="#description">Description</a></li>
+						<li><a href="#f++-eg">f++ example</a></li>
+						<li><a href="#n++-eg">n++ example</a></li>
+					</ul>
+				</p>
+
+				<h4 id="syntax">
+					Syntax
+				</h4>
+				<p>
+					The syntax for <mono>@ent(>)=</mono> calls is:
+<div align="center" style="margin-top:-15px">
+f++: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+@ent(>)=(params)
+</pre>
+</div><br>
+<div align="center">
+n++: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+\@@ent(>)=(params)
+</pre>
+</div>
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+				<p>
+					<mono>@ent(>)=</mono> is the relational <u>greater than or equals</u> operator, it takes a non-zero number of input parameters, if all parameters are greater than or equal to the parameters following it returns 1, otherwise it returns 0.
+				</p>
+
+				<p>
+					<b>Note:</b> It is typically faster to use <a href="@pathtopage(docs/exprtk)">exprtk</a> for relational operators, plus the syntax is nicer.
+				</p>
+
+				<h4 id="f++-eg">
+					f++ example
+				</h4>
+				<p>
+					Examples of <mono>@ent(>)=</mono> being used with <mono>f++</mono>:					
+
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline linenums">
+for(:=(int, i=10); >=(i, 0); i-=1)
+	console("i: ", i)</pre>
+</div>
+				</p>
+
+				<p>
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline linenums">
+:=(int, a=2, b=1, c=0)
+console(>=(a, b, c))
+console(>=(c, a, b))</pre>
+</div>
+				</p>
+
+				<h4 id="n++-eg">
+					n++ example
+				</h4>
+				<p>
+					Examples of <mono>@ent(>)=</mono> being used with <mono>n++</mono>:					
+
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline linenums">
+\@for(:=(int, i=10); >=(i, 0); i-=1)
+	\@console("i: ", i)</pre>
+</div>
+				</p>
+
+				<p>
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline linenums">
+\@:=(int, a=2, b=1, c=0)
+\@console(\@>=(a, b, c))
+\@console(\@>=(c, a, b))</pre>
+</div>
+				</p>
+			</div>
+		</section>
+	</div>
+</section>

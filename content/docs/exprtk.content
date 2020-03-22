@@ -1,0 +1,202 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">ExprTk</div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<header class="style1">
+				<h2>Embedded ExprTk</h2>
+			</header>
+
+			<div class="content">
+				<p>
+					<mono>Nift</mono> has the C++ Mathematical Expression Toolkit Library (<mono>ExprTk</mono>) embedded (<a href="http://www.partow.net/programming/exprtk/index.html">official website</a>, <a href="https://github.com/ArashPartow/exprtk">GitHub</a>). <mono>ExprTk</mono> is a simple to use, easy to integrate and extremely efficient run-time mathematical expression parser and evaluation engine. <mono>ExprTk</mono> supports numerous forms of functional, logical and vector processing semantics and is very easily extendible.
+				</p>
+
+				<a href="#contents" class="to_top">[contents]</a>
+
+				<p id="contents">
+					The ways in which you can use <mono>ExprTk</mono> with <mono>Nift</mono> are documented on this page:
+					<ul style="text-indent:30px">
+						<li><a href="#interpreter">ExprTk interpreter</a></li>
+						<li><a href="#scripts">Running ExprTk scripts</a></li>
+						<li><a href="#exprtk-f++">ExprTk from f++</a></li>
+						<li><a href="#exprtk-n++">ExprTk from n++</a></li>
+						<li><a href="#exprtk-conditions">ExprTk with n++/f++ conditions</a></li>
+						<li><a href="#exprtk-vars">ExprTk access to Nift variables</a></li>
+						<li><a href="#nift-fns">Nift functions</a></li>
+					</ul>
+				</p>
+
+				<h4 id="interpreter">
+					ExprTk interpreter
+				</h4>
+				<p>
+					<mono>Nift</mono> has an <mono>ExprTk</mono> interpreter that you can start with either <mono>nsm interp -exprtk</mono> or <mono>nift interp -exprtk</mono>.
+				</p>
+
+				<p>
+					In Nift's interpreter mode the prompt will just tell you which language you are using. If you would like the prompt to also display the present working directory (up to using half the width of the console) you can switch to the shell mode using <mono>nsm_mode("sh")</mono>. You can switch back again with <mono>nsm_mode("interp")</mono>.
+				</p>
+
+				<p>
+					You can switch to one of the other languages available in Nift's interpreter using <mono>nsm_lang(langStr)</mono> where <mono>langStr</mono> is one of <mono>f++</mono>, <mono>n++</mono>, <mono>lua</mono> or <mono>exprtk</mono>.
+				</p>
+
+
+				<h4 id="scripts">
+					Running ExprTk scripts
+				</h4>
+				<p>
+					If you have an <mono>ExprTk</mono> script saved in a file <mono>path/script-name.exprtk</mono> you can run it with either of the following:
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline">
+nsm run path/script-name.exprtk
+nift run path/script-name.exprtk
+</pre>
+</div>
+				</p>
+
+				<p>
+					If the script has a different extension, say <mono>.ext</mono>, you can run the script with either of the following:
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline">
+nsm run -exprtk path/script-name.ext
+nift run -exprtk path/script-name.ext
+</pre>
+</div>
+				</p>
+
+				<h4 id="exprtk-f++">
+					ExprTk from f++
+				</h4>
+				<p>
+					You can run <mono>ExprTk</mono> code from <mono>f++</mono> using any of the following (without needing the comment syntax):					
+
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline">
+exprtk(/* single line of ExprTk code */)
+</pre>
+</div>
+				</p>
+
+				<p>
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline">
+`/* single line of ExprTk code */`
+</pre>
+</div>
+				</p>
+
+				<p>
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline">
+exprtk
+{
+	// block of ExprTk code
+}
+</pre>
+</div>
+				</p>
+
+				<h4 id="exprtk-n++">
+					ExprTk from n++
+				</h4>
+				<p>
+					You can run <mono>ExprTk</mono> code from <mono>n++</mono> using any of the following (without needing the comment syntax):					
+
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline">
+\@exprtk(/* single line of ExprTk code */)
+</pre>
+</div>
+				</p>
+
+				<p>
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline">
+\@`/* single line of ExprTk code */`
+</pre>
+</div>
+				</p>
+
+				<p>
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline">
+\@exprtk
+{
+	// block of ExprTk code
+}</pre>
+</div>
+				</p>
+
+				<h4 id="exprtk-conditions">
+					ExprTk with n++/f++ conditions
+				</h4>
+				<p>
+					You can use <mono>ExprTk</mono> with conditions for <mono>if</mono>, <mono>else-if</mono> and <mono>else</mono> statements, along with <mono>do-while</mono>, <mono>for</mono>, <mono>while</mono> loops. You can also use <mono>ExprTk</mono> for the post-loop increment code with <mono>for</mono> loops (ie. the code after the second <mono>;</mono>). For example:
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline">
+for(:=(int, i=0); i<10; i+=1)
+	console("i: ", i)</pre>
+</div>
+				</p>
+
+				<h4 id="exprtk-vars">
+					ExprTk access to Nift variables
+				</h4>
+
+				<h4 id="nift-fns">
+					Nift functions
+				</h4>
+				<p>
+					The following functions specific to <mono>Nift</mono> are available inside your <mono>ExprTk</mono> code.
+
+					<center class="table">
+						<table id="exprtk_nift_fns_table" class="alt">
+							<thead>
+								<tr>
+									<th>syntax</th>
+									<th>example</th>
+									<th>about</th>
+								</tr>
+							</thead>
+							<tr>
+								<td><mono>nsm_setnumber(string varName, number value)</mono></td>
+								<td><mono>nsm_setnumber('i', 0)</td>
+								<td>set Nift variable from number</td>
+							</tr>
+							<tr>
+								<td><mono>nsm_setstring(string varName, string value)</mono></td>
+								<td><mono>nsm_setstring('str', 'hello!')</td>
+								<td>set Nift variable from string</td>
+							</tr>
+							<tr>
+								<td><mono>nsm_tonumber(string varName)</mono></td>
+								<td><mono>nsm_tonumber('i')</td>
+								<td>get number from Nift variable</td>
+							</tr>
+							<tr>
+								<td><mono>nsm_tostring(string varName)</mono></td>
+								<td><mono>nsm_tostring('str')</td>
+								<td>get string from Nift variable</td>
+							</tr>
+							<tr>
+								<td><mono>nsm_write(output, params)</mono></td>
+								<td><mono>nsm_write(console, 'x: ', x, endl)</td>
+								<td>write to console, output file (ofile), or a stream</td>
+							</tr>
+							<tfoot>
+								<tr>
+									<th>syntax</th>
+									<th>example</th>
+									<th>about</th>
+								</tr>
+							</tfoot>
+						</table>
+					</center>
+				</p>
+			</div>
+		</section>
+	</div>
+</section>

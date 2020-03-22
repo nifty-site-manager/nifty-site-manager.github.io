@@ -1,0 +1,164 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">Functions</div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<header class="style1">
+				<h2>Index of Nift's hard-coded functions</h2>
+			</header>
+
+			<!-- Image -->
+			<center>
+				<img src="@pathtofile(site/images/badger-icon.svg)" alt="Nift's badger mascot" width=300 style="margin-bottom:40px">
+			</center>
+
+			<div class="content">
+				<h4>Syntax</h4>
+				<p>
+					The syntax for Nift function calls is as follows:
+<div align="center" style="margin-top:-15px">
+f++: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+funcName{options}(params)
+</pre>
+</div><br>
+<div align="center">
+n++: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+\@funcName{options}(params)
+</pre>
+</div>
+				</p>
+
+				<h4>Index</h4>
+				<a href="#contents" class="to_top">[contents]</a>
+				<p id="contents">
+					Below is an index of Nift's hard-coded functions (including functions for defining variables, functions and structs) which can be called from <a href="@pathto(docs/f++)">f++</a> and <a href="@pathto(docs/n++)">n++</a>: 
+					<ul style="text-indent:30px">
+						<li><a href="@pathtopage(docs/fns/!)">!</a> (not operator)</li>
+						<li><a href="@pathtopage(docs/fns/!=)">!=</a> (not equals operator)</li>
+						<li><a href="@pathtopage(docs/fns/$)">$</a> (print variable)</li>
+						<li><a href="@pathtopage(docs/fns/&&)">&&</a> (and operator)</li>
+						<li><a href="@pathtopage(docs/fns/||)">||</a> (or operator)</li>
+						<li><a href="@pathtopage(docs/fns/:=)">:=</a> (define)</li>
+						<li><a href="@pathtopage(docs/fns/=)">=</a> (assignment operator)</li>
+						<li><a href="@pathtopage(docs/fns/==)">==</a> (equals to operator)</li>
+						<li><a href="@pathtopage(docs/fns/<)">@ent(<)</a> (less than operator)</li>
+						<li><a href="@pathtopage(docs/fns/<=)">@ent(<)=</a> (less than or equals to operator)</li>
+						<li><a href="@pathtopage(docs/fns/<--)">@ent(<)--</a> (remove added trailing whitespace)</li>
+						<li><a href="@pathtopage(docs/fns/>)">@ent(>)</a> (greater than operator)</li>
+						<li><a href="@pathtopage(docs/fns/>=)">@ent(>)=</a> (greater than or equals to operator)</li>
+						<li><a href="@pathtopage(docs/fns/+)">+</a> (addition operator)</li>
+						<li><a href="@pathtopage(docs/fns/++)">++</a> (pre-increment operator)</li>
+						<li><a href="@pathtopage(docs/fns/+++)">+++</a> (post-increment operator)</li>
+						<li><a href="@pathtopage(docs/fns/+=)">+=</a> (addition assignment operator)</li>
+						<li><a href="@pathtopage(docs/fns/-)">-</a> (subtraction operator)</li>
+						<li><a href="@pathtopage(docs/fns/--)">--</a> (pre-decrement operator)</li>
+						<li><a href="@pathtopage(docs/fns/---)">---</a> (post-decrement operator)</li>
+						<li><a href="@pathtopage(docs/fns/-->)">--></a> (skip whitespace)</li>
+						<li><a href="@pathtopage(docs/fns/-=)">-=</a> (subtraction assignment operator)</li>
+						<li><a href="@pathtopage(docs/fns/*)">*</a> (multiplication operator)</li>
+						<li><a href="@pathtopage(docs/fns/*=)">*=</a> (multiplication assignment operator)</li>
+						<li><a href="@pathtopage(docs/fns/divide)">/</a> (division operator)</li>
+						<li><a href="@pathtopage(docs/fns/divideequal)">/=</a> (division assignment operator)</li>
+						<li><a href="@pathtopage(docs/fns/%)">%</a> (mod operator)</li>
+						<li><a href="@pathtopage(docs/fns/%=)">%=</a> (mod assignment operator)</li>
+
+						<li><a href="@pathtopage(docs/fns/break)">break</a></li>
+
+						<li><a href="@pathtopage(docs/fns/cd)">cd</a></li>
+						<li><a href="@pathtopage(docs/fns/content)">content</a></li>
+						<li><a href="@pathtopage(docs/fns/console)">console</a></li>
+						<li><a href="@pathtopage('docs/fns/console,lock')">console.lock</a></li>
+						<li><a href="@pathtopage('docs/fns/console,locked')">console.locked</a></li>
+						<li><a href="@pathtopage('docs/fns/console,unlock')">console.unlock</a></li>
+						<li><a href="@pathtopage(docs/fns/continue)">continue</a></li>
+						<li><a href="@pathtopage(docs/fns/cp)">copy/cp</a></li>
+						<li><a href="@pathtopage(docs/fns/cssinclude)">cssinclude</a></li>
+
+						<li><a href="@pathtopage(docs/fns/dep)">dep</a></li>
+						<li><a href="@pathtopage(docs/fns/ls)">dir</a></li>
+						<li><a href="@pathtopage(docs/fns/do-while)">do-while</a></li>
+
+						<li><a href="@pathtopage(docs/fns/ent)">ent</a></li>
+						<li><a href="@pathtopage(docs/fns/error)">error</a></li>
+						<li><a href="@pathtopage(docs/fns/exit)">exit</a></li>
+						<li><a href="@pathtopage(docs/fns/exprtk)">exprtk</a></li>
+						<li><a href="@pathtopage('docs/fns/exprtk,add_package')">exprtk.add_package</a></li>
+
+						<li><a href="@pathtopage(docs/fns/f++)">f++</a></li>
+						<li><a href="@pathtopage(docs/fns/faviconinclude)">faviconinclude</a></li>
+						<li><a href="@pathtopage(docs/fns/for)">for</a></li>
+						<li><a href="@pathtopage(docs/fns/forget)">forget</a></li>
+						<li><a href="@pathtopage(docs/fns/function)">function</a></li>
+
+						<li><a href="@pathtopage(docs/fns/getline)">getline</a></li>
+
+						<li><a href="@pathtopage(docs/fns/if)">if</a></li>
+						<li><a href="@pathtopage(docs/fns/imginclude)">imginclude</a></li>
+						<li><a href="@pathtopage(docs/fns/in)">in</a></li>
+						<li><a href="@pathtopage(docs/fns/include)">include</a></li>
+						<li><a href="@pathtopage(docs/fns/input)">inject/input</a></li>
+						<li><a href="@pathtopage(docs/fns/is-const)">is-const</a></li>
+						<li><a href="@pathtopage(docs/fns/is-private)">is-private</a></li>
+
+						<li><a href="@pathtopage(docs/fns/join)">join</a></li>
+						<li><a href="@pathtopage(docs/fns/jsinclude)">jsinclude</a></li>
+
+						<li><a href="@pathtopage(docs/fns/layer)">layer</a></li>
+						<li><a href="@pathtopage(docs/fns/link)">link</a></li>
+						<li><a href="@pathtopage(docs/fns/ls)">ls</a></li>
+						<li><a href="@pathtopage(docs/fns/lua)">lua</a></li>
+						<li><a href="@pathtopage(docs/fns/lua_addnsmfns)">lua_addnsmfns</a></li>
+						<li><a href="@pathtopage(docs/fns/lua_getglobal)">lua_getglobal</a></li>
+						<li><a href="@pathtopage(docs/fns/lua_gettop)">lua_gettop</a></li>
+						<li><a href="@pathtopage(docs/fns/lua_pop)">lua_pop</a></li>
+						<li><a href="@pathtopage(docs/fns/lua_pushnumber)">lua_pushnumber</a></li>
+						<li><a href="@pathtopage(docs/fns/lua_pushstring)">lua_pushstring</a></li>
+						<li><a href="@pathtopage(docs/fns/lua_remove)">lua_remove</a></li>
+						<li><a href="@pathtopage(docs/fns/lua_tonumber)">lua_tonumber</a></li>
+						<li><a href="@pathtopage(docs/fns/lua_tostring)">lua_tostring</a></li>
+
+						<li><a href="@pathtopage(docs/fns/mv)">move/mv</a></li>
+
+						<li><a href="@pathtopage(docs/fns/n++)">n++</a></li>
+						<li><a href="@pathtopage(docs/fns/nsm_lang)">nsm_lang</a></li>
+						<li><a href="@pathtopage(docs/fns/nsm_mode)">nsm_mode</a></li>
+
+						<li><a href="@pathtopage(docs/fns/out)">out</a></li>
+
+						<li><a href="@pathtopage(docs/fns/parse)">parse</a></li>
+						<li><a href="@pathtopage(docs/fns/pathto)">pathto</a></li>
+						<li><a href="@pathtopage(docs/fns/pathtofile)">pathtofile</a></li>
+						<li><a href="@pathtopage(docs/fns/pathtopage)">pathtopage</a></li>
+						<li><a href="@pathtopage(docs/fns/precision)">precision</a></li>
+						<li><a href="@pathtopage(docs/fns/pwd)">pwd</a></li>
+
+						<li><a href="@pathtopage(docs/fns/quit)">quit</a></li>
+						<li><a href="@pathtopage(docs/fns/quote)">quote</a></li>
+
+						<li><a href="@pathtopage(docs/fns/read)">read</a></li>
+						<li><a href="@pathtopage(docs/fns/return)">return</a></li>
+
+						<li><a href="@pathtopage(docs/fns/scope)">scope</a></li>
+						<li><a href="@pathtopage(docs/fns/script)">script</a></li>
+						<li><a href="@pathtopage(docs/fns/size)">size</a></li>
+						<li><a href="@pathtopage(docs/fns/struct)">struct</a></li>
+						<li><a href="@pathtopage(docs/fns/substr)">substr</a></li>
+						<li><a href="@pathtopage(docs/fns/system)">sys/system</a></li>
+
+						<li><a href="@pathtopage(docs/fns/touch)">touch</a></li>
+						<li><a href="@pathtopage(docs/fns/type)">type</a></li>
+
+						<li><a href="@pathtopage(docs/fns/unquote)">unquote</a></li>
+
+						<li><a href="@pathtopage(docs/fns/valid-type)">valid-type</a></li>
+
+						<li><a href="@pathtopage(docs/fns/warning)">warning</a></li>
+						<li><a href="@pathtopage(docs/fns/while)">while</a></li>
+						<li><a href="@pathtopage(docs/fns/write)">write</a></li>
+					</ul>
+				</p>
+			</div>
+		</section>
+	</div>
+</section>

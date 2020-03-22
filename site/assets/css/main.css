@@ -1642,7 +1642,7 @@ input, select, textarea {
 		display: inline-block;
 		background: #444;
 		text-align: center;
-		text-transform: uppercase;
+		/*text-transform: uppercase;*/
 		font-weight: 700;
 		letter-spacing: 0.25em;
 		text-decoration: none;
@@ -1970,7 +1970,7 @@ input, select, textarea {
 			top: 0;
 			left: 50%;
 			text-align: center;
-			text-transform: uppercase;
+			/*text-transform: uppercase;*/
 			display: block;
 			font-weight: 700;
 			letter-spacing: 0.25em;
@@ -2054,8 +2054,8 @@ input, select, textarea {
     }
 
 		.wrapper.style4 {
-			background: #1a1a1a;  
-      color: white;
+			background: #1a1a1a;
+			color: white;
 			font-size: 13pt;
 		}
 
@@ -2183,7 +2183,7 @@ input, select, textarea {
 
 		#logo h1 {
 			font-weight: 900;
-			text-transform: uppercase;
+			/*text-transform: uppercase;*/
 			color: #fff;
 			font-size: 2em;
 			letter-spacing: 0.25em;
@@ -2192,7 +2192,7 @@ input, select, textarea {
 		#logo p {
 			color: #eee;
 			color: rgba(255, 255, 255, 0.5);
-			text-transform: uppercase;
+			/*text-transform: uppercase;*/
 			margin: 1.25em 0 0 0;
 			display: block;
 			letter-spacing: 0.2em;
@@ -2233,7 +2233,7 @@ input, select, textarea {
 					display: block;
 					color: #eee;
 					color: rgba(255, 255, 255, 0.75);
-					text-transform: uppercase;
+					/*text-transform: uppercase;*/
 					text-decoration: none;
 					font-size: 0.7em;
 					letter-spacing: 0.25em;
@@ -2283,7 +2283,7 @@ input, select, textarea {
 			display: block;
 			color: #eee;
 			color: rgba(255, 255, 255, 0.75);
-			text-transform: uppercase;
+			/*text-transform: uppercase;*/
 			text-decoration: none;
 			font-size: 0.7em;
 			letter-spacing: 0.25em;
@@ -2772,7 +2772,7 @@ input, select, textarea {
 				#navPanel .link {
 					display: block;
 					color: rgba(255, 255, 255, 0.5);
-					text-transform: uppercase;
+					/*text-transform: uppercase;*/
 					text-decoration: none;
 					font-size: 0.85em;
 					letter-spacing: 0.15em;
@@ -3115,7 +3115,7 @@ table {
 			line-height: 1.5;
 			padding: 0 0.75rem 0.75rem 0.75rem;
 			text-align: left;
-			text-transform: uppercase;
+			/*text-transform: uppercase;*/
 		}
 
 			@media screen and (max-width: 980px) {

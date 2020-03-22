@@ -1,8 +1,8 @@
 <!-- Highlights -->
-<section id="highlights" class="wrapper style3">
+<section id="main" class="wrapper style3">
 	<div class="title">PHP Frameworks</div>
 	<div class="container">
-		<div class="content">
+		<div id="highlights" class="content">
 			<div class="row aln-center">
 				<div class="col-4 col-12-medium">
 					<section class="highlight">

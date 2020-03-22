@@ -28,7 +28,7 @@
 
 <!-- Main -->
 <section id="main" class="wrapper style2">
-	<div class="title">The Details</div>
+	<div class="title" id="details-title">The Details</div>
 	<div class="container">
 		<!-- Image -->
 		<center>
@@ -36,7 +36,7 @@
 		</center>
 
 		<!-- Features -->
-		<section id="features">
+		<section id="features" class="content">
 			<header class="style1" style="margin-bottom: -40px">
 				<h2>Recommended by</h2>
 			</header>

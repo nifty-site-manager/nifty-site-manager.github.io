@@ -1,0 +1,133 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">f++</div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<header class="style1">
+				<h2>Nift's in-built scripting language f++</h2>
+			</header>
+
+			<!-- Image -->
+			<center>
+				<img src="@pathtofile(site/images/devil.png)" alt="Nift's unofficial Tasmanian devil mascot" width=300 style="margin-bottom:40px">
+			</center>
+
+			<div class="content">
+				<p>
+					Nift has its own in-built scripting language <mono>f++</mono>. 
+				</p>
+
+				<a href="#contents" class="to_top">[contents]</a>
+
+				<p id="contents">
+					The ways in which you can use <mono>f++</mono> with <mono>Nift</mono> are documented on this page:
+					<ul style="text-indent:30px">
+						<li><a href="#interpreter">f++ interpreter</a></li>
+						<li><a href="#shell">f++ shell</a></li>
+						<li><a href="#scripts">Running f++ scripts</a></li>
+						<li><a href="#f++-from-n++">f++ from n++</a></li>
+						<li><a href="#nift-fns">functions</a></li>
+					</ul>
+				</p>
+
+				<h4 id="interpreter">
+					f++ interpreter
+				</h4>
+				<p>
+					<mono>Nift</mono> has an <mono>f++</mono> interpreter that you can start with either <mono>nsm interp</mono> or <mono>nift interp</mono> (it is the default language for the interpeter mode).
+				</p>
+
+				<p>
+					In the interpreter mode the prompt will just tell you which language you are using. If you would like the prompt to also display the present working directory (up to using half the width of the console) you can switch to the shell mode using <mono>nsm_mode("sh")</mono>. You can switch back again with <mono>nsm_mode("interp")</mono>.
+				</p>
+
+				<p>
+					You can switch to one of the other languages available in Nift's interpreter using <mono>nsm_lang(langStr)</mono> where <mono>langStr</mono> is one of <mono>f++</mono>, <mono>n++</mono>, <mono>lua</mono> or <mono>exprtk</mono>.
+				</p>
+
+				<h4 id="shell">
+					f++ shell
+				</h4>
+				<p>
+					<mono>Nift</mono> has an <mono>f++</mono> shell that you can start with either <mono>nsm sh</mono> or <mono>nift sh</mono> (it is the default language for the shell mode).
+				</p>
+
+				<p>
+					The <mono>f++</mono> shell attempts to work as an extension of the shell it is running from, ie. should work almost identically to the shell it is running from while having a number of additional features (and is often faster than the shell it is running from).
+				</p>
+
+				<p>
+					In the shell mode the prompt will tell you which language you are using and the present working directory (up to using half the width of the console). If you would like the prompt to just display the language you can switch to the interpreter mode using <mono>nsm_mode("interp")</mono>. You can switch back again with <mono>nsm_mode("sh")</mono>.
+				</p>
+
+				<p>
+					You can switch to one of the other languages available in Nift using <mono>nsm_lang(langStr)</mono> where <mono>langStr</mono> is one of <mono>f++</mono>, <mono>n++</mono>, <mono>lua</mono> or <mono>exprtk</mono>.
+				</p>
+
+
+				<h4 id="scripts">
+					Running f++ scripts
+				</h4>
+				<p>
+					If you have an <mono>f++</mono> script saved in a file <mono>path/script-name.f</mono> you can run it with either of the following:
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline">
+nsm run path/script-name.f
+nift run path/script-name.f
+</pre>
+</div>
+				</p>
+
+				<p>
+					If the script has a different extension, say <mono>.ext</mono>, you can run the script with either of the following:
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline">
+nsm run -f++ path/script-name.ext
+nift run -f++ path/script-name.ext
+</pre>
+</div>
+				</p>
+
+				<h4 id="f++-from-n++">
+					f++ from n++
+				</h4>
+				<p>
+					You can run <mono>f++</mono> code from <mono>n++</mono> using either of the following:					
+
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline">
+\@f++(/* single line of f++ code */)
+</pre>
+</div>
+				</p>
+
+				<p>
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline">\@f++
+{
+	// block of f++ code
+}
+</pre>
+</div>
+				</p>
+
+				<h4 id="nift-fns">
+					Nift functions
+				</h4>
+				<p>
+					All of Nift's <a href="@pathtopage(docs/fns)">hard-coded functions</a> (including functions for defining variables, functions and structs) are available in your <mono>f++</mono> code. The syntax for calling a function is as follows:
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline">
+funcName{options}(params)
+</pre>
+</div>
+				</p>
+
+				<p>
+					<b>Note:</b> One of the main differences between <mono>f++</mono> and <mono>n++</mono> are that function calls in <mono>n++</mono> <u>must</u> start with an <mono>@</mono> in front of the function name. However it is okay for there to be an <mono>@</mono> in front of the function name for a function call in <mono>f++</mono>. Consequently quite often valid <mono>n++</mono> code is valid <mono>f++</mono> code, which among other things allows us to conveniently use <mono>f++</mono> for things like <mono>n++</mono> if/else-if/else/while/for/etc. conditions and if the developer accidentally uses <mono>n++</mono> for the condition it will most often run without any syntax or semantic errors. 
+				</p>
+			</div>
+		</section>
+	</div>
+</section>

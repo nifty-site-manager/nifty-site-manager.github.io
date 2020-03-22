@@ -1581,6 +1581,11 @@ Page was last built on \$[currentdate].
 								<td>&amp;nhArr;</td>
 								<td>@ent("<=!=>")</td>
 							</tr>
+							<tr>
+								<td>\@ent("...")</td> 
+								<td>&amp;hellip;</td>
+								<td>@ent("...")</td>
+							</tr>
 							<tfoot>
 								<tr>
 									<th>code</th>

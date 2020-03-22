@@ -5,7 +5,7 @@ pre
 	text-align:left !important;
 	tab-size: 4;
 	border-radius: 5px;
-	display: inline-block !important;
+	min-width: 130px !important;
 	max-width: 90%;
 	overflow: auto;
 
@@ -13,6 +13,8 @@ pre
 	padding-right:10px !important;
 	padding-top:10px !important;
 	padding-bottom:10px !important;
+
+	border: 1px solid #a39e8e !important;
 }
 
 pre.inline

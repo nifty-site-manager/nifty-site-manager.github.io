@@ -4,6 +4,7 @@
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
+			<div class="content">
 				<p>
 					This page contains high quality versions of the Nift logos.
 				</p>
@@ -59,6 +60,7 @@
 				<center>
 					<img src="@pathtofile(site/images/devil.png)" alt="Nift Tassie devil mascot" width="400px" style="max-width:80%">
 				</center>
+			</div>
 		</section>
 	</div>
 </section>

@@ -1,18 +1,18 @@
 <!-- Main -->
-<section id="highlights" class="wrapper style2">
+<section id="main" class="wrapper style2">
 	<div class="title">Template Languages</div>
 	<div class="container">
 		<header class="style1">
 			<h2>How to use template languages</h2>
 		</header>
 
-		<div class="content" style="margin-top:-25px;">
+		<div id="highlights" class="content" style="margin-top:-25px;">
 			<p>
 				You can use any template language that can be converted to html, php, etc. from the command line or at load time in the browser. For template languages that you can convert to html at load time from the browser, just include the required javascript scripts etc. as normal in your website and you should have no issues using the template language in your content and template files used to build pages with.
 			</p>
 
 			<center>
-				<img src="@pathtofile(site/images/template.png)" alt="Template graphic" width=200 style="margin-bottom:20px; max-width:70%">
+				<img src="@pathtofile(site/images/template.png)" alt="Template graphic" width=200 style="margin-bottom:20px; max-width:70%;">
 			</center>
 
 			<h3>Converting template languages post-build</h3>

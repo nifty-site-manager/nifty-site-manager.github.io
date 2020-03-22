@@ -43,7 +43,7 @@ mono
 {
 	font-family: DejaVu Sans Mono, Liberation Mono, Consolas, Ubuntu Mono, Courier New;
 	font-size: 85%;
-	color: #415891;
+	color: #1c9c13;
 }
 
 a.discord
@@ -254,6 +254,22 @@ a.reddit:hover
 	transition:0.3s;
 }
 
+table tr:first-child td:first-child {
+    border-top-left-radius: 5px;
+}
+
+table tr:first-child td:last-child {
+    border-top-right-radius: 5px;
+}
+
+table tr:last-child td:first-child {
+    border-bottom-left-radius: 5px;
+}
+
+table tr:last-child td:last-child {
+    border-bottom-right-radius: 5px;
+}
+
 center.table
 {
 	margin: 0 auto;
@@ -273,6 +289,19 @@ table.Loki td
 {
   overflow-x: auto !important;
 	background-color: #2b2c2e; /*#3c3d40;*/
+}
+
+.th-dark
+{
+	overflow-x: auto !important;
+	color: #78be20 !important;
+}
+
+.td-dark
+{
+	overflow-x: auto !important;
+	background-color: #363331; /*#3c3d40;*/
+	border: 1px solid #a39e8e !important;
 }
 
 /* width */
