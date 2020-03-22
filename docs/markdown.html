@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="../assets/css/pagestyle.css">
         <link rel="stylesheet" href="../assets/css/pre.css">
         <link rel="stylesheet" href="../assets/css/rainbow.css">
+        <link rel="stylesheet" href="../assets/css/toggle.css">
         <link rel='icon' type='image/png' href='../images/favicon.png'>
         
         <!-- uses Font Awesome for vector icons and social logos -->
@@ -68,7 +69,11 @@
 									<li><a href="nift_commands.html">Nift Commands</a></li>
 									<li><a href="content_files.html">Content Files</a></li>
 									<li><a href="template_files.html">Template Files</a></li>
+									<li><a href="fns.html">Functions</a></li>
+									<li><a href="f++.html">f++ (scripting language)</a></li>
+									<li><a href="n++.html">n++ (template language)</a></li>
 									<li><a href="lua.html">Lua(JIT)</a></li>
+									<li><a href="exprtk.html">ExprTk</a></li>
 									<li><a href="scripts.html">Scripts</a></li>
 									<li><a href="template_languages.html">Template Languages</a></li>
 									<li><a href="JSON.html">JSON Data</a></li>
@@ -311,6 +316,11 @@ pre.markdown
 							<li>Creator: <a href="https://n-ham.com">Nicholas Ham</a></li>
 						</ul> <br>
 			
+						<b id="light_dark_LHS">light</b> &nbsp; <label class="light-dark-switch" id="light-dark-switch">
+							<input type="checkbox" id="checkbox_light_dark">
+							<span class="slider round" onclick="toggle_light_dark()" id="slider_light_dark"></span>
+						</label> &nbsp; <b id="light_dark_RHS">dark</b> <br><br>
+			
 						<ul>
 							<li><a href="../tos.html">Terms of Service</a></li>
 							<li><a href="../privacy_policy.html">Privacy Policy</a></li>
@@ -322,6 +332,7 @@ pre.markdown
 
 		<!-- Scripts -->
 		<script src="../assets/js/rainbow.min.js"></script>
+		<script src="../assets/js/toggle.js"></script>
 		<script src="../assets/js/jquery.min.js"></script>
 		<script src="../assets/js/jquery.dropotron.min.js"></script>
 		<script src="../assets/js/browser.min.js"></script>
