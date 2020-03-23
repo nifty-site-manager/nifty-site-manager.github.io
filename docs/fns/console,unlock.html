@@ -112,7 +112,7 @@
 
 		    <!-- Main -->
 		    <section id="main" class="wrapper style2">
-		    	<div class="title">fn: break</div>
+		    	<div class="title">fn: console.unlock</div>
 		    	<div class="container">
 		    		<!-- Features -->
 		    		<section id="features">
@@ -123,6 +123,7 @@
 		    					Contents:
 		    					<ul style="text-indent:30px">
 		    						<li><a href="#syntax">Syntax</a></li>
+		    						<li><a href="#description">Description</a></li>
 		    						<li><a href="#f++-eg">f++ example</a></li>
 		    						<li><a href="#n++-eg">n++ example</a></li>
 		    					</ul>
@@ -132,30 +133,37 @@
 		    					Syntax
 		    				</h4>
 		    				<p>
-		    					The syntax for <mono>break</mono> calls is:
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline"><code data-language="c">break
-</code></pre>
+		    					The syntax for <mono>console.unlock</mono> calls is:
+		    <div align="center" style="margin-top:-15px">
+		    f++: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+console.unlock
+</pre>
+		    </div><br>
+		    <div align="center">
+		    n++: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+@console.unlock
+</pre>
 		    </div>
+		    				</p>
+		    
+		    				<h4 id="description">
+		    					Description
+		    				</h4>
+		    				<p>
+		    					The <mono>console.unlock</mono> function is for reallowing other threads from outputting to the console when it is currently locked, it takes zero parameters.
 		    				</p>
 		    
 		    				<h4 id="f++-eg">
 		    					f++ example
 		    				</h4>
 		    				<p>
-		    					Example of <mono>break</mono> being used with <mono>f++</mono>:					
+		    					Example of <mono>console.unlock</mono> being used with <mono>f++</mono>:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-:=(int, i=0)
-while(1)
-{
-	console("i: ", i)
-	if(i > 10)
-		break
-	++(i)
-}
-</pre>
+		    <pre class="prettyprint inline linenums">
+console.lock
+console("hello, world!")
+console.unlock</pre>
 		    </div>
 		    				</p>
 		    
@@ -163,22 +171,15 @@ while(1)
 		    					n++ example
 		    				</h4>
 		    				<p>
-		    					Example of <mono>break</mono> being used with <mono>n++</mono>:					
+		    					Example of <mono>console.unlock</mono> being used with <mono>n++</mono>:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-@:=(int, i=0)
-@while(1)
-{
-	@console("i: ", i)
-	@if(i > 10)
-		@break
-	@++(i)
-}
-</pre>
+		    <pre class="prettyprint inline linenums">
+@console.lock
+@console("hello, world!")
+@console.unlock</pre>
 		    </div>
 		    				</p>
-		    
 		    			</div>
 		    		</section>
 		    	</div>
