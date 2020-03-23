@@ -112,7 +112,7 @@
 
 		    <!-- Main -->
 		    <section id="main" class="wrapper style2">
-		    	<div class="title">fn: break</div>
+		    	<div class="title">fn: content</div>
 		    	<div class="container">
 		    		<!-- Features -->
 		    		<section id="features">
@@ -123,7 +123,8 @@
 		    					Contents:
 		    					<ul style="text-indent:30px">
 		    						<li><a href="#syntax">Syntax</a></li>
-		    						<li><a href="#f++-eg">f++ example</a></li>
+		    						<li><a href="#description">Description</a></li>
+		    						<li><a href="#options">Options</a></li>
 		    						<li><a href="#n++-eg">n++ example</a></li>
 		    					</ul>
 		    				</p>
@@ -132,53 +133,104 @@
 		    					Syntax
 		    				</h4>
 		    				<p>
-		    					The syntax for <mono>break</mono> calls is:
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline"><code data-language="c">break
-</code></pre>
+		    					The syntax for <mono>content</mono> calls is:
+		    <div align="center" style="margin-top:-15px">
+		    f++: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+content{options}
+</pre>
+		    </div><br>
+		    <div align="center">
+		    n++: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+@content{options}
+</pre>
 		    </div>
 		    				</p>
 		    
-		    				<h4 id="f++-eg">
-		    					f++ example
+		    				<h4 id="description">
+		    					Description
 		    				</h4>
 		    				<p>
-		    					Example of <mono>break</mono> being used with <mono>f++</mono>:					
+		    					The <mono>content</mono> function is for inserting content in to template files and takes zero parameters.
+		    				</p>
 		    
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-:=(int, i=0)
-while(1)
-{
-	console("i: ", i)
-	if(i > 10)
-		break
-	++(i)
-}
-</pre>
-		    </div>
+		    				<h4 id="options">
+		    					Options
+		    				</h4>
+		    				<p>
+		    					The following options are available for <mono>content</mono> calls:
+		    
+		    					<center class="table">
+		    						<table id="exprtk_nift_fns_table" class="alt">
+		    							<thead>
+		    								<tr>
+		    									<th>option</th>
+		    									<th>description</th>
+		    								</tr>
+		    							</thead>
+		    							<tr>
+		    								<td><mono>f++</mono></td>
+		    								<td>inject output of content file parsed with <mono>f++</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>n++</mono></td>
+		    								<td>inject output of content file parsed with <mono>n++</mono> (default)</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>raw</mono></td>
+		    								<td>inject content file as raw text</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>if-exists</mono></td>
+		    								<td>inject content file only if it exists (normally throws an error otherwise)</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>!i</mono></td>
+		    								<td>do not indent</td>
+		    							</tr>
+		    							<tfoot>
+		    								<tr>
+		    									<th>option</th>
+		    									<th>description</th>
+		    								</tr>
+		    							</tfoot>
+		    						</table>
+		    					</center>
 		    				</p>
 		    
 		    				<h4 id="n++-eg">
 		    					n++ example
 		    				</h4>
 		    				<p>
-		    					Example of <mono>break</mono> being used with <mono>n++</mono>:					
+		    					Examples of <mono>content</mono> being used with <mono>n++</mono>:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-@:=(int, i=0)
-@while(1)
-{
-	@console("i: ", i)
-	@if(i > 10)
-		@break
-	@++(i)
-}
-</pre>
+		    <pre class="prettyprint inline linenums">
+&lt;html>
+	&lt;head>
+		@input("template/head.content")
+	&lt;/head>
+
+	&lt;body>
+		@content
+	&lt;/body>
+&lt;/html></pre>
 		    </div>
 		    				</p>
 		    
+		    				<p>
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline linenums">
+&lt;html>
+	&lt;head>
+		@input("template/head.content")
+	&lt;/head>
+
+	&lt;body>
+		@content{if-exists}
+	&lt;/body>
+&lt;/html></pre>
+		    </div>
+		    				</p>
 		    			</div>
 		    		</section>
 		    	</div>

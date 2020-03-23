@@ -112,7 +112,7 @@
 
 		    <!-- Main -->
 		    <section id="main" class="wrapper style2">
-		    	<div class="title">fn: break</div>
+		    	<div class="title">fn: console</div>
 		    	<div class="container">
 		    		<!-- Features -->
 		    		<section id="features">
@@ -123,6 +123,8 @@
 		    					Contents:
 		    					<ul style="text-indent:30px">
 		    						<li><a href="#syntax">Syntax</a></li>
+		    						<li><a href="#description">Description</a></li>
+		    						<li><a href="#options">Options</a></li>
 		    						<li><a href="#f++-eg">f++ example</a></li>
 		    						<li><a href="#n++-eg">n++ example</a></li>
 		    					</ul>
@@ -132,30 +134,79 @@
 		    					Syntax
 		    				</h4>
 		    				<p>
-		    					The syntax for <mono>break</mono> calls is:
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline"><code data-language="c">break
-</code></pre>
+		    					The syntax for <mono>console</mono> calls is:
+		    <div align="center" style="margin-top:-15px">
+		    f++: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+console{options}(params)
+</pre>
+		    </div><br>
+		    <div align="center">
+		    n++: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+@console{options}(params)
+</pre>
 		    </div>
+		    				</p>
+		    
+		    				<h4 id="description">
+		    					Description
+		    				</h4>
+		    				<p>
+		    					The <mono>console</mono> function is for outputting text to the console with a linebreak automatically added to the end, it takes an aribtrary number of parameters. You can use <mono>endl</mono> as a parameter for flushed line breaks, <mono>\n</mono> for unflushed. 
+		    				</p>
+		    
+		    				<h4 id="options">
+		    					Options
+		    				</h4>
+		    				<p>
+		    					The following options are available for <mono>console</mono> calls:
+		    
+		    					<center class="table">
+		    						<table id="exprtk_nift_fns_table" class="alt">
+		    							<thead>
+		    								<tr>
+		    									<th>option</th>
+		    									<th>description</th>
+		    								</tr>
+		    							</thead>
+		    							<tr>
+		    								<td><mono>b</mono> or <mono>block</mono></td>
+		    								<td>read and output block of text following <mono>console</mono> call</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>!pb</mono></td>
+		    								<td>do not parse block of text</td>
+		    							</tr>
+		    							<tfoot>
+		    								<tr>
+		    									<th>option</th>
+		    									<th>description</th>
+		    								</tr>
+		    							</tfoot>
+		    						</table>
+		    					</center>
 		    				</p>
 		    
 		    				<h4 id="f++-eg">
 		    					f++ example
 		    				</h4>
 		    				<p>
-		    					Example of <mono>break</mono> being used with <mono>f++</mono>:					
+		    					Example of <mono>console</mono> being used with <mono>f++</mono>:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-:=(int, i=0)
-while(1)
+		    <pre class="prettyprint inline linenums">
+:=(int, i=12)
+:=(string, str="hello")
+console.lock
+console("i: ", i)
+console(str, ", world!")
+console("first line", endl, "second line")
+console{block}
 {
-	console("i: ", i)
-	if(i > 10)
-		break
-	++(i)
+	first line
+	second line
+	third line
 }
-</pre>
+console.unlock</pre>
 		    </div>
 		    				</p>
 		    
@@ -163,22 +214,25 @@ while(1)
 		    					n++ example
 		    				</h4>
 		    				<p>
-		    					Example of <mono>break</mono> being used with <mono>n++</mono>:					
+		    					Example of <mono>console</mono> being used with <mono>n++</mono>:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-@:=(int, i=0)
-@while(1)
+		    <pre class="prettyprint inline linenums">
+@:=(int, i=12)
+@:=(string, str="hello")
+@console.lock
+@console("i: ", i)
+@console(str, ", world!")
+@console("first line", endl, "second line")
+@console{block}
 {
-	@console("i: ", i)
-	@if(i > 10)
-		@break
-	@++(i)
+	first line
+	second line
+	third line
 }
-</pre>
+@console.unlock</pre>
 		    </div>
 		    				</p>
-		    
 		    			</div>
 		    		</section>
 		    	</div>

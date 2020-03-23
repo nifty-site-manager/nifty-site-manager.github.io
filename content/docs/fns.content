@@ -14,7 +14,17 @@
 			</center>
 
 			<div class="content">
-				<h4>Syntax</h4>
+				<a href="#contents" class="to_top">[contents]</a>
+				<p id="contents">
+					Contents:
+					<ul style="text-indent:30px">
+						<li><a href="#syntax">Syntax</a></li>
+						<li><a href="#options">Options</a></li>
+						<li><a href="#index">Index</a></li>
+					</ul>
+				</p>
+
+				<h4 id="syntax">Syntax</h4>
 				<p>
 					The syntax for Nift function calls is as follows:
 <div align="center" style="margin-top:-15px">
@@ -29,7 +39,43 @@ n++: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
 </div>
 				</p>
 
-				<h4>Index</h4>
+				<h4 id="options">
+					Options
+				</h4>
+				<p>
+					The following options are available for almost all function calls:
+
+					<center class="table">
+						<table id="exprtk_nift_fns_table" class="alt">
+							<thead>
+								<tr>
+									<th>option</th>
+									<th>description</th>
+								</tr>
+							</thead>
+							<tr>
+								<td><mono>!p</mono></td>
+								<td>do not parse parameters</td>
+							</tr>
+							<tr>
+								<td><mono>!v</mono></td>
+								<td>do not replace variables with their values</td>
+							</tr>
+							<tr>
+								<td><mono>1p</mono></td>
+								<td>treat parameter string as one parameter</td>
+							</tr>
+							<tfoot>
+								<tr>
+									<th>option</th>
+									<th>description</th>
+								</tr>
+							</tfoot>
+						</table>
+					</center>
+				</p>
+
+				<h4 id="index">Index</h4>
 				<a href="#contents" class="to_top">[contents]</a>
 				<p id="contents">
 					Below is an index of Nift's hard-coded functions (including functions for defining variables, functions and structs) which can be called from <a href="@pathto(docs/f++)">f++</a> and <a href="@pathto(docs/n++)">n++</a>: 
