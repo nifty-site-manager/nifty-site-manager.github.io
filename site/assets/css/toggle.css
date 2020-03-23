@@ -3,6 +3,14 @@
   color: white !important;
 }
 
+.a-dark {
+  color: #c2bac2 !important;
+}
+
+.mono-dark {
+  color: #c922c9 !important;
+}
+
 /* The switch - the box around the slider */
 .light-dark-switch {
   position: relative;

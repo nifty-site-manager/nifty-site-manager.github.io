@@ -40,6 +40,19 @@ function toggle_light_dark() {
   for(var i=0; i<elements.length; i++)
     elements[i].classList.toggle("td-dark");
 
+  elements = document.getElementsByTagName("mono");
+  for(var i=0; i<elements.length; i++)
+    elements[i].classList.toggle("mono-dark");
+
+  elements = document.getElementsByTagName("a");
+  for(var i=0; i<elements.length; i++)
+    if(elements[i].classList != "bb" &&
+       elements[i].classList != "gh" &&
+       elements[i].classList != "gl" &&
+       elements[i].classList != "discord" &&
+       elements[i].classList != "reddit")
+      elements[i].classList.toggle("a-dark");
+
   dark_mode = (dark_mode+1)%2;
   localStorage.setItem('dark-mode', dark_mode);
 }
