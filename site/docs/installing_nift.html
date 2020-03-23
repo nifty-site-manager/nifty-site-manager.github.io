@@ -50,8 +50,10 @@
 			
 					<p>
 						<a href="https://chocolatey.org/packages/nift"><img src="../images/chocolatey-icon.png" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
-						<a href="installing_nift.html#linux-flatpak"><img src="../images/flathub-icon.png" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a> 
 						<a href="installing_nift.html#osx-brew"><img src="../images/brew-icon.png" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
+						<a href="installing_nift.html#freebsd"><img src="../images/freebsd.png" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
+						<a href="installing_nift.html#linux-flatpak"><img src="../images/flathub-icon.png" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
+						<a href="installing_nift.html#gentoo"><img src="../images/gentoo.svg" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
 						<a href="https://snapcraft.io/nift"><img src="../images/snap-icon.png" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
 					</p>
 					</noselect>
@@ -115,7 +117,7 @@
 		    		<!-- Features -->
 		    		<section id="features">
 		    			<header class="style1">
-		    				<h2>How to install Nift on Linux, OSX and Windows</h2>
+		    				<h2>How to install Nift on FreeBSD, Gentoo, Linux, OSX and Windows</h2>
 		    			</header>
 		    
 		    			<!-- Image -->
@@ -131,13 +133,13 @@
 		    					<ul style="text-indent:30px">
 		    						<li><a href="#linux-snap">On Linux using Snapcraft</a></li>
 		    						<li><a href="#linux-flatpak">On Linux using FlatPak</a></li>
+		    						<li><a href="#install-source">On Linux from source</a></li>
 		    						<li><a href="#freebsd">On FreeBSD</a></li>
 		    						<li><a href="#gentoo">On Gentoo</a></li>
 		    						<li><a href="#osx-brew">On OSX using Homebrew</a></li>
+		    						<li><a href="#install-source">On OSX from source</a></li>
 		    						<li><a href="#windows-chocolatey">On Windows using Chocolatey</a></li>
 		    						<li><a href="#windows-executable">On Windows from executable</a></li>
-		    						<li><a href="#install-source">On Linux from source</a></li>
-		    						<li><a href="#install-source">On OSX from source</a></li>
 		    						<li><a href="#install-source">On Windows from source</a></li>
 		    					</ul>
 		    				</p>
@@ -159,7 +161,7 @@
 		    				<center><img src="../images/snapcraft.png" alt="Snapcraft logo" width=350px style="max-width:90%; margin-top: 20px; margin-bottom: 20px"></center>
 		    
 		    				<p>
-		    					You can install <mono>Nift</mono> on linux using the <mono>Snap</mono> package manager, for instructions see <a href="https://snapcraft.io/nift">here</a>. Alternatively first install <mono>snapd</mono>, eg. <mono>sudo apt-get install snapd</mono> on Ubuntu, then enter:
+		    					You can install <mono>Nift</mono> on Linux using the <mono>Snap</mono> package manager, for instructions see <a href="https://snapcraft.io/nift">here</a>. Alternatively first install <mono>snapd</mono>, eg. <mono>sudo apt-get install snapd</mono> on Ubuntu, then enter:
 		    				</p>
 		    
 		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
@@ -167,6 +169,27 @@
 snap install nift --classic
 </pre>
 		    </div>
+		    
+		    				<p>
+		    					Snapcraft have a <mono>Nift</mono> snap available for the following Linux distributions:
+		    				</p>
+		    
+		    				<center>
+		    					<p>
+		    						<a href="https://snapcraft.io/install/nift/arch"><img src="../images/arch.svg" height="40px" alt="Arch snap" title="Arch snap"></a> &nbsp;
+		    						<a href="https://snapcraft.io/install/nift/centos"><img src="../images/centos.svg" height="40px" alt="CentOS snap" title="CentOS snap"></a> &nbsp;
+		    						<a href="https://snapcraft.io/install/nift/debian"><img src="../images/debian.svg" height="40px" alt="Debian snap" title="Debian snap"></a> &nbsp;
+		    						<a href="https://snapcraft.io/install/nift/elementary"><img src="../images/elementary.svg" height="40px" alt="Elementary OS snap" title="Elementary OS snap"></a> &nbsp;
+		    						<a href="https://snapcraft.io/install/nift/fedora"><img src="../images/fedora.png" height="40px" alt="Fedora snap" title="Fedora snap"></a> &nbsp;
+		    						<a href="https://snapcraft.io/install/nift/kde-neon"><img src="../images/kde-neon.svg" height="40px" alt="KDE Neon snap" title="KDE Neon snap"></a> &nbsp;
+		    						<a href="https://snapcraft.io/install/nift/kubuntu"><img src="../images/kubuntu.svg" height="40px" alt="Kubuntu snap" title="Kubuntu snap"></a> &nbsp;
+		    						<a href="https://snapcraft.io/install/nift/manjaro"><img src="../images/manjaro.svg" height="40px" alt="Manjaro snap" title="Manjaro snap"></a> &nbsp;
+		    						<a href="https://snapcraft.io/install/nift/mint"><img src="../images/mint.svg" height="40px" alt="Linux Mint snap" title="Linux Mint snap"></a> &nbsp;
+		    						<a href="https://snapcraft.io/install/nift/opensuse"><img src="../images/opensuse.svg" height="40px" alt="openSUSE snap" title="openSUSE snap"></a> &nbsp;
+		    						<a href="https://snapcraft.io/install/nift/rhel"><img src="../images/redhat.svg" height="40px" alt="Red Hat Enterprise Linux snap" title="Red Hat Enterprise Linux snap"></a> &nbsp;
+		    						<a href="https://snapcraft.io/install/nift/ubuntu"><img src="../images/ubuntu.svg" height="40px" alt="Ubuntu snap" title="Ubuntu snap"></a>
+		    					</p>
+		    				</center>
 		    
 		    				<p>
 		    					To uninstall <mono>Nift</mono> enter <mono>snap remove nift</mono>.
@@ -438,19 +461,21 @@ choco install nift
 							<li><a href="https://nifty-site-manager.github.io/">GitHub</a></li>
 							<li><a href="https://nifty-site-manager.gitlab.io/">GitLab</a></li>
 							<li><a href="https://nifty-site-manager.netlify.com/">Netlify</a></li>
-						</ul> <br>
+						</ul> <noselect><br></noselect>
 			
 						<center><img src="../images/badger.svg" alt="Nift badger mascot" width="325" style="max-width:90%; margin-bottom:20px"></center>
 			
 						<ul>
 							<li>&copy;&nbsp;2015 - <span name="cyear"></span> <a href="https://nift.cc">Nift</a>.</li>
 							<li>Creator: <a href="https://n-ham.com">Nicholas Ham</a></li>
-						</ul> <br>
+						</ul> <noselect><br></noselect>
 			
-						<b id="light_dark_LHS">light</b> &nbsp; <label class="light-dark-switch" id="light-dark-switch">
-							<input type="checkbox" id="checkbox_light_dark">
-							<span class="slider round" onclick="toggle_light_dark()" id="slider_light_dark"></span>
-						</label> &nbsp; <b id="light_dark_RHS">dark</b> <br><br>
+						<noselect>
+							<b id="light_dark_LHS">light</b> &nbsp; <label class="light-dark-switch" id="light-dark-switch">
+								<input type="checkbox" id="checkbox_light_dark">
+								<span class="slider round" onclick="toggle_light_dark()" id="slider_light_dark"></span>
+							</label> &nbsp; <b id="light_dark_RHS">dark</b> <br><br>
+						</noselect>
 			
 						<ul>
 							<li><a href="../tos.html">Terms of Service</a></li>

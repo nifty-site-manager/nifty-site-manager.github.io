@@ -21,6 +21,10 @@ noselect
 	position:fixed !important;
 	bottom:15px !important;
 	right:15px !important;
+
+	-webkit-user-select: none; /* Chrome/Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
 }
 
 div.content
