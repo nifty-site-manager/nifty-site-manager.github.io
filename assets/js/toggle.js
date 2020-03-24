@@ -13,6 +13,9 @@ function toggle_light_dark() {
   if(elements.length)
     elements[0].classList.toggle("dark-mode");
 
+  if(document.getElementById("promo-title"))
+    document.getElementById("promo-title").classList.toggle("dark-mode");
+
   if(document.getElementById("details-title"))
     document.getElementById("details-title").classList.toggle("dark-mode");
 
@@ -52,6 +55,10 @@ function toggle_light_dark() {
        elements[i].classList != "discord" &&
        elements[i].classList != "reddit")
       elements[i].classList.toggle("a-dark");
+
+  elements = document.getElementsByTagName("b");
+  for(var i=0; i<elements.length; i++)
+    elements[i].classList.toggle("b-dark");
 
   dark_mode = (dark_mode+1)%2;
   localStorage.setItem('dark-mode', dark_mode);

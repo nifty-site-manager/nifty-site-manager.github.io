@@ -112,7 +112,7 @@
 
 		    <!-- Main -->
 		    <section id="main" class="wrapper style2">
-		    	<div class="title">fn: console.lock</div>
+		    	<div class="title">fn: console.unlock</div>
 		    	<div class="container">
 		    		<!-- Features -->
 		    		<section id="features">
@@ -133,15 +133,15 @@
 		    					Syntax
 		    				</h4>
 		    				<p>
-		    					The syntax for <mono>console.lock</mono> calls is:
+		    					The syntax for <mono>console.unlock</mono> calls is:
 		    <div align="center" style="margin-top:-15px">
 		    f++: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
-console.lock
+console.unlock
 </pre>
 		    </div><br>
 		    <div align="center">
 		    n++: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
-@console.lock
+@console.unlock
 </pre>
 		    </div>
 		    				</p>
@@ -150,14 +150,14 @@ console.lock
 		    					Description
 		    				</h4>
 		    				<p>
-		    					The <mono>console.lock</mono> function is for preventing other threads from outputting to the console, it takes zero parameters.
+		    					The <mono>console.unlock</mono> function is for reallowing other threads from outputting to the console when it is currently locked, it takes zero parameters.
 		    				</p>
 		    
 		    				<h4 id="f++-eg">
 		    					f++ example
 		    				</h4>
 		    				<p>
-		    					Example of <mono>console.lock</mono> being used with <mono>f++</mono>:					
+		    					Example of <mono>console.unlock</mono> being used with <mono>f++</mono>:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline linenums">
@@ -171,7 +171,7 @@ console.unlock</pre>
 		    					n++ example
 		    				</h4>
 		    				<p>
-		    					Example of <mono>console.lock</mono> being used with <mono>n++</mono>:					
+		    					Example of <mono>console.unlock</mono> being used with <mono>n++</mono>:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline linenums">
@@ -194,7 +194,7 @@ console.unlock</pre>
 				<div class="container">
 					<div id="copyright">
 						<ul style="margin-top:115px">
-							<li><b>Mirrors:</b></li>
+							<li><b style="color: white !important">Mirrors:</b></li>
 							<li><a href="https://nift.cc/">Official</a></li>
 							<li><a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a></li>
 							<li><a href="https://nifty-site-manager.github.io/">GitHub</a></li>
@@ -210,10 +210,10 @@ console.unlock</pre>
 						</ul> <noselect><br></noselect>
 			
 						<noselect>
-							<b id="light_dark_LHS">light</b> &nbsp; <label class="light-dark-switch" id="light-dark-switch">
+							<b id="light_dark_LHS" style="color: white !important">light</b> &nbsp; <label class="light-dark-switch" id="light-dark-switch">
 								<input type="checkbox" id="checkbox_light_dark">
 								<span class="slider round" onclick="toggle_light_dark()" id="slider_light_dark"></span>
-							</label> &nbsp; <b id="light_dark_RHS">dark</b> <br><br>
+							</label> &nbsp; <b id="light_dark_RHS" style="color: white !important">dark</b> <br><br>
 						</noselect>
 			
 						<ul>

@@ -4,9 +4,15 @@ html
 	max-width: 100%;
 }
 
-img, video, iframe
+img
 {
 	max-width: 80%;
+}
+
+video, iframe
+{
+	max-width: 80%;
+	border-radius:5px;
 }
 
 noselect
