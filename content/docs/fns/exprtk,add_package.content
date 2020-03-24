@@ -1,6 +1,6 @@
 <!-- Main -->
 <section id="main" class="wrapper style2">
-	<div class="title">fn: break</div>
+	<div class="title">fn: exprtk.add_package</div>
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
@@ -11,6 +11,7 @@
 					Contents:
 					<ul style="text-indent:30px">
 						<li><a href="#syntax">Syntax</a></li>
+						<li><a href="#description">Description</a></li>
 						<li><a href="#f++-eg">f++ example</a></li>
 						<li><a href="#n++-eg">n++ example</a></li>
 					</ul>
@@ -20,30 +21,41 @@
 					Syntax
 				</h4>
 				<p>
-					The syntax for <mono>break</mono> calls is:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline"><code data-language="c">break
-</code></pre>
+					The syntax for <mono>exprtk.add_package</mono> calls is:
+<div align="center" style="margin-top:-15px">
+f++: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+exprtk.add_package(params)
+</pre>
+</div><br>
+<div align="center">
+n++: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+\@exprtk.add_package(params)
+</pre>
 </div>
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+				<p>
+					The <mono>exprtk.add_package</mono> function is for <u>adding packages</u> to the <mono>ExprTk</mono> symbol table, it takes a non-zero number of string parameters that should be any of the following:
+					<ul>
+						<li><mono>basicio_package</mono></li>
+						<li><mono>fileio_package</mono></li>
+						<li><mono>vectorops_package</mono></li>
+					</ul>
 				</p>
 
 				<h4 id="f++-eg">
 					f++ example
 				</h4>
 				<p>
-					Example of <mono>break</mono> being used with <mono>f++</mono>:					
+					Example of <mono>exprtk.add_package</mono> being used with <mono>f++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline">
-:=(int, i=0)
-while(1)
-{
-	console("i: ", i)
-	if(i > 10)
-		break
-	++(i)
-}
-</pre>
+<pre class="prettyprint inline linenums">
+exprtk.add_package("basicio_package", 
+                   "fileio_package")</pre>
 </div>
 				</p>
 
@@ -51,22 +63,14 @@ while(1)
 					n++ example
 				</h4>
 				<p>
-					Example of <mono>break</mono> being used with <mono>n++</mono>:					
+					Example of <mono>exprtk.add_package</mono> being used with <mono>n++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline">
-\@:=(int, i=0)
-\@while(1)
-{
-	\@console("i: ", i)
-	\@if(i > 10)
-		\@break
-	\@++(i)
-}
-</pre>
+<pre class="prettyprint inline linenums">
+\@exprtk.add_package("basicio_package", 
+                    "fileio_package")</pre>
 </div>
 				</p>
-
 			</div>
 		</section>
 	</div>

@@ -76,7 +76,7 @@ nift run -exprtk path/script-name.ext
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint inline">
-exprtk(/* single line of ExprTk code */)
+exprtk(expression)
 </pre>
 </div>
 				</p>
@@ -84,7 +84,7 @@ exprtk(/* single line of ExprTk code */)
 				<p>
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint inline">
-`/* single line of ExprTk code */`
+`expression`
 </pre>
 </div>
 				</p>
@@ -108,7 +108,7 @@ exprtk
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint inline">
-\@exprtk(/* single line of ExprTk code */)
+\@exprtk(expression)
 </pre>
 </div>
 				</p>
@@ -116,7 +116,7 @@ exprtk
 				<p>
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint inline">
-\@`/* single line of ExprTk code */`
+\@`expression`
 </pre>
 </div>
 				</p>

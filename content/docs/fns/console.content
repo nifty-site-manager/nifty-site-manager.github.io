@@ -49,7 +49,7 @@ n++: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
 					The following options are available for <mono>console</mono> calls:
 
 					<center class="table">
-						<table id="exprtk_nift_fns_table" class="alt">
+						<table id="console_options_table" class="alt">
 							<thead>
 								<tr>
 									<th>option</th>

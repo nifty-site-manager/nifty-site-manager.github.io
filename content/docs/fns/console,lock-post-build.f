@@ -1,0 +1,1 @@
+mv "site/docs/fns/console,lock.html" "site/docs/fns/console.lock.html"

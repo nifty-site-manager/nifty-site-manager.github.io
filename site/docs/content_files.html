@@ -171,7 +171,6 @@
 		    						<li><a href="#user-input">User input from command-line</a></li>
 		    						<li><a href="#user-file-input">User input from file</a></li>
 		    						<li><a href="#parse">Parsing text multiple times</a></li>
-		    						<li><a href="#entities">Character entities</a></li>
 		    						<li><a href="#css-files">Including css files</a></li>
 		    						<li><a href="#img-files">Including image files</a></li>
 		    						<li><a href="#js-files">Including javascript files</a></li>
@@ -236,7 +235,7 @@
 		    					Escape characters
 		    				</h4>
 		    				<p>
-		    					The escape character options with <mono>Nift</mono> are listed in the table below. There used to be more escape characters for Nift however they conflicted with Nift's goals to both work for more than just websites and integrate with as many different programming/scripting/template languages as possible. See the <a href="#ent">character entity</a> section of this page for the new way to easily get (html) entities of different characters.
+		    					The escape character options with <mono>Nift</mono> are listed in the table below. There used to be more escape characters for Nift however they conflicted with Nift's goals to both work for more than just websites and integrate with as many different programming/scripting/template languages as possible. See the <a href="fns/ent.html">character entity</a> page for how easily get (html) entities of different characters.
 		    				</p>
 		    
 		    				<p>
@@ -1438,279 +1437,6 @@ Page was last built on $[currentdate].
 		    </div>
 		    				</p>
 		    
-		    				<h4 id="entities">
-		    					Character entities
-		    				</h4>
-		    				<p>
-		    					You can get the (html) entity for many characters using <mono>@ent(code)</mono> where <mono>code</mono> is the code for the entity you want. The entities currently available with Nift are in the table below.
-		    				</p>
-		    
-		    				<p>
-		    					<center>
-		    						<table id="escape_character_table" class="alt" style="text-align: center">
-		    							<thead>
-		    								<tr>
-		    									<th>code</th>
-		    									<th>output</th>
-		    									<th>rendered</th>
-		    								</tr>
-		    							</thead>
-		    							<tr>
-		    								<td>@ent('`')</td> 
-		    								<td>&amp;grave;</td>
-		    								<td>&grave;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent('~')</td> 
-		    								<td>&amp;tilde;</td>
-		    								<td>&tilde;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent('!')</td> 
-		    								<td>&amp;excl;</td>
-		    								<td>&excl;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent('\@') or @ent(@)</td> 
-		    								<td>&amp;commat;</td>
-		    								<td>&commat;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent('#')</td> 
-		    								<td>&amp;num;</td>
-		    								<td>&num;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent('$')</td> 
-		    								<td>&amp;dollar;</td>
-		    								<td>&dollar;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent('%')</td> 
-		    								<td>&amp;percnt;</td>
-		    								<td>&percnt;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent('^')</td> 
-		    								<td>&amp;Hat;</td>
-		    								<td>&Hat;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent('&')</td> 
-		    								<td>&amp;amp;</td>
-		    								<td>&amp;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent('*')</td> 
-		    								<td>&amp;ast;</td>
-		    								<td>&ast;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent('?')</td> 
-		    								<td>&amp;quest;</td>
-		    								<td>&quest;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent('<')</td> 
-		    								<td>&amp;lt;</td>
-		    								<td>&lt;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent('>')</td> 
-		    								<td>&amp;gt;</td>
-		    								<td>&gt;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent('(')</td> 
-		    								<td>&amp;lpar;</td>
-		    								<td>&lpar;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent(')')</td> 
-		    								<td>&amp;rpar;</td>
-		    								<td>&rpar;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent('[')</td> 
-		    								<td>&amp;lbrack;</td>
-		    								<td>&grave;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent(']')</td> 
-		    								<td>&amp;rbrack;</td>
-		    								<td>&rbrack;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent('{')</td> 
-		    								<td>&amp;lbrace;</td>
-		    								<td>&lbrace;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent('}')</td> 
-		    								<td>&amp;rbrace;</td>
-		    								<td>&rbrace;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent('-')</td> 
-		    								<td>&amp;minus;</td>
-		    								<td>&minus;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent('_')</td> 
-		    								<td>&amp;lowbar;</td>
-		    								<td>&lowbar;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent('=')</td> 
-		    								<td>&amp;equals;</td>
-		    								<td>&equals;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent('+')</td> 
-		    								<td>&amp;plus;</td>
-		    								<td>&plus;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent('|')</td> 
-		    								<td>&amp;vert;</td>
-		    								<td>&vert;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent('\\') or @ent(\)</td> 
-		    								<td>&amp;bsol;</td>
-		    								<td>&bsol;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent('/')</td> 
-		    								<td>&amp;sol;</td>
-		    								<td>&sol;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent(';')</td> 
-		    								<td>&amp;semi;</td>
-		    								<td>&semi;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent(':')</td> 
-		    								<td>&amp;colon;</td>
-		    								<td>&colon;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent('\'')</td> 
-		    								<td>&amp;apos;</td>
-		    								<td>&apos;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent('"')</td> 
-		    								<td>&amp;quot;</td>
-		    								<td>&quot;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent(',')</td> 
-		    								<td>&amp;comma;</td>
-		    								<td>&comma;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent('.')</td> 
-		    								<td>&amp;period;</td>
-		    								<td>&period;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent('£')</td> 
-		    								<td>&amp;pound;</td>
-		    								<td>&pound;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent('¥')</td> 
-		    								<td>&amp;yen;</td>
-		    								<td>&yen;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent('€')</td> 
-		    								<td>&amp;euro;</td>
-		    								<td>&euro;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent("section")</td> 
-		    								<td>&amp;sect;</td>
-		    								<td>&sect;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent("+-")</td> 
-		    								<td>&amp;pm;</td>
-		    								<td>&pm;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent("-+")</td> 
-		    								<td>&amp;mp;</td>
-		    								<td>&mp;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent("!=")</td> 
-		    								<td>&amp;ne;</td>
-		    								<td>&ne;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent("<=")</td> 
-		    								<td>&amp;leq;</td>
-		    								<td>&leq;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent(">=")</td> 
-		    								<td>&amp;geq;</td>
-		    								<td>&geq;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent("->")</td> 
-		    								<td>&amp;rarr;</td>
-		    								<td>&rarr;</td>
-		    							</tr>
-		    								<tr>
-		    								<td>@ent("&lt;-")</td> 
-		    								<td>&amp;larr;</td>
-		    								<td>&larr;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent("&lt;->")</td> 
-		    								<td>&amp;harr;</td>
-		    								<td>&harr;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent("==>")</td> 
-		    								<td>&amp;rArr;</td>
-		    								<td>&rArr;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent("&lt;==")</td> 
-		    								<td>&amp;lArr;</td>
-		    								<td>&lArr;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent("&lt;==>")</td> 
-		    								<td>&amp;hArr;</td>
-		    								<td>&hArr;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent("<=!=>")</td> 
-		    								<td>&amp;nhArr;</td>
-		    								<td>&nhArr;</td>
-		    							</tr>
-		    							<tr>
-		    								<td>@ent("...")</td> 
-		    								<td>&amp;hellip;</td>
-		    								<td>&hellip;</td>
-		    							</tr>
-		    							<tfoot>
-		    								<tr>
-		    									<th>code</th>
-		    									<th>output</th>
-		    									<th>rendered</th>
-		    								</tr>
-		    							</tfoot>
-		    						</table>
-		    					</center>
-		    				</p>
-		    
 		    				<h4 id="css-files">
 		    					Including css files
 		    				</h4>
@@ -1832,7 +1558,7 @@ Page was last built on $[currentdate].
 				<div class="container">
 					<div id="copyright">
 						<ul style="margin-top:115px">
-							<li><b>Mirrors:</b></li>
+							<li><b style="color: white !important">Mirrors:</b></li>
 							<li><a href="https://nift.cc/">Official</a></li>
 							<li><a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a></li>
 							<li><a href="https://nifty-site-manager.github.io/">GitHub</a></li>
@@ -1848,10 +1574,10 @@ Page was last built on $[currentdate].
 						</ul> <noselect><br></noselect>
 			
 						<noselect>
-							<b id="light_dark_LHS">light</b> &nbsp; <label class="light-dark-switch" id="light-dark-switch">
+							<b id="light_dark_LHS" style="color: white !important">light</b> &nbsp; <label class="light-dark-switch" id="light-dark-switch">
 								<input type="checkbox" id="checkbox_light_dark">
 								<span class="slider round" onclick="toggle_light_dark()" id="slider_light_dark"></span>
-							</label> &nbsp; <b id="light_dark_RHS">dark</b> <br><br>
+							</label> &nbsp; <b id="light_dark_RHS" style="color: white !important">dark</b> <br><br>
 						</noselect>
 			
 						<ul>

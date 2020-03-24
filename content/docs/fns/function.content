@@ -1,6 +1,6 @@
 <!-- Main -->
 <section id="main" class="wrapper style2">
-	<div class="title">fn: break</div>
+	<div class="title">fn: function</div>
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
@@ -11,6 +11,8 @@
 					Contents:
 					<ul style="text-indent:30px">
 						<li><a href="#syntax">Syntax</a></li>
+						<li><a href="#description">Description</a></li>
+						<li><a href="#options">Options</a></li>
 						<li><a href="#f++-eg">f++ example</a></li>
 						<li><a href="#n++-eg">n++ example</a></li>
 					</ul>
@@ -20,30 +22,131 @@
 					Syntax
 				</h4>
 				<p>
-					The syntax for <mono>break</mono> calls is:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline"><code data-language="c">break
-</code></pre>
+					The syntax for <mono>function</mono> definitions is:
+<div align="center" style="margin-top:-15px; margin-bottom:60px">
+f++: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-50px">
+function{options}(name)
+{
+	//function code
+}
+</pre>
+</div><br>
+<div align="center" style="margin-top:-15px; margin-bottom:60px">
+n++: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-50px">
+\@function{options}(name)
+{
+	//function code
+}
+</pre>
 </div>
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+				<p>
+					The <mono>function</mono> function is for <u>user-defined functions</u>, it takes a single parameter specifying a function name and is followed by a block of code to be run whenever the function is called.
+				</p>
+
+				<h4 id="options">
+					Options
+				</h4>
+				<p>
+					The following options are available for <mono>function</mono> calls:
+
+					<center class="table">
+						<table id="function_options_table" class="alt">
+							<thead>
+								<tr>
+									<th>option</th>
+									<th>description</th>
+								</tr>
+							</thead>
+							<tr>
+								<td><mono>f++</mono></td>
+								<td>function is in <mono>f++</mono></td>
+							</tr>
+							<tr>
+								<td><mono>n++</mono></td>
+								<td>function is in <mono>n++</mono></td>
+							</tr>
+							<tr>
+								<td><mono>!const</mono></td>
+								<td>function is not constant</td>
+							</tr>
+							<tr>
+								<td><mono>lambda</mono></td>
+								<td>function is a <mono>lambda</mono></td>
+							</tr>
+							<tr>
+								<td><mono>layer="l"</mono></td>
+								<td>define function at scope layer <mono>l</mono></td>
+							</tr>
+							<tr>
+								<td><mono>!o</mono></td>
+								<td>do not return output (option available at call time)</td>
+							</tr>
+							<tr>
+								<td><mono>o</mono></td>
+								<td>return output (option available at call time)</td>
+							</tr>
+							<tr>
+								<td><mono>pb</mono></td>
+								<td>parse function block at definition time</td>
+							</tr>
+							<tr>
+								<td><mono>private</mono></td>
+								<td>function is private</td>
+							</tr>
+							<tr>
+								<td><mono>scope+="s"</mono></td>
+								<td>function can be called from scope <mono>s</mono></td>
+							</tr>
+							<tr>
+								<td><mono>!s</mono></td>
+								<td>do not add scope when function is called (option available at call time)</td>
+							</tr>
+							<tr>
+								<td><mono>s</mono></td>
+								<td>add scope when function is called [default] (option available at call time)</td>
+							</tr>
+							<tfoot>
+								<tr>
+									<th>option</th>
+									<th>description</th>
+								</tr>
+							</tfoot>
+						</table>
+					</center>
 				</p>
 
 				<h4 id="f++-eg">
 					f++ example
 				</h4>
 				<p>
-					Example of <mono>break</mono> being used with <mono>f++</mono>:					
+					Examples of <mono>function</mono> being used with <mono>f++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline">
-:=(int, i=0)
-while(1)
+<pre class="prettyprint inline linenums">
+function(myFunc)
 {
-	console("i: ", i)
-	if(i > 10)
-		break
-	++(i)
+	console("hello, world!")
 }
-</pre>
+
+myFunc</pre>
+</div>
+				</p>
+
+				<p>
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline linenums">
+function(myFunc)
+{
+	console("options: {", join(options, "; "), "}")
+	console("params: {", join(params, "; "), "}")
+}
+
+myFunc{a, b, c}("hello", "world!")</pre>
 </div>
 				</p>
 
@@ -51,22 +154,16 @@ while(1)
 					n++ example
 				</h4>
 				<p>
-					Example of <mono>break</mono> being used with <mono>n++</mono>:					
+					Example of <mono>function</mono> being used with <mono>n++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline">
-\@:=(int, i=0)
-\@while(1)
-{
-	\@console("i: ", i)
-	\@if(i > 10)
-		\@break
-	\@++(i)
-}
-</pre>
+<pre class="prettyprint inline linenums">
+\@function(myFunc)
+	\@console("hello, world!")
+
+\@myFunc</pre>
 </div>
 				</p>
-
 			</div>
 		</section>
 	</div>

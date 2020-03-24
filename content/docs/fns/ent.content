@@ -1,6 +1,6 @@
 <!-- Main -->
 <section id="main" class="wrapper style2">
-	<div class="title">fn: break</div>
+	<div class="title">fn: ent</div>
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
@@ -11,6 +11,7 @@
 					Contents:
 					<ul style="text-indent:30px">
 						<li><a href="#syntax">Syntax</a></li>
+						<li><a href="#description">Description</a></li>
 						<li><a href="#f++-eg">f++ example</a></li>
 						<li><a href="#n++-eg">n++ example</a></li>
 					</ul>
@@ -20,30 +21,304 @@
 					Syntax
 				</h4>
 				<p>
-					The syntax for <mono>break</mono> calls is:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline"><code data-language="c">break
-</code></pre>
+					The syntax for <mono>ent</mono> calls is:
+<div align="center" style="margin-top:-15px">
+f++: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+ent(string)
+</pre>
+</div><br>
+<div align="center">
+n++: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+\@ent(string)
+</pre>
 </div>
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+				<p>
+					The <mono>ent</mono> function is for getting html <u>entities</u> (other types of entities will be supported in the future), it takes a single string parameter to specify which entity to return. 
+				</p>
+
+				<p>
+					The entities currently available with Nift are in the table below:
+					<center>
+						<table id="entity_table" class="alt" style="text-align: center">
+							<thead>
+								<tr>
+									<th>syntax</th>
+									<th>output</th>
+									<th>rendered</th>
+								</tr>
+							</thead>
+							<tr>
+								<td><mono>ent('`')</mono></td> 
+								<td><mono>&amp;grave;</mono></td>
+								<td>@ent('`')</td>
+							</tr>
+							<tr>
+								<td><mono>ent('~')</mono></td> 
+								<td><mono>&amp;tilde;</mono></td>
+								<td>@ent('~')</td>
+							</tr>
+							<tr>
+								<td><mono>ent('!')</mono></td> 
+								<td><mono>&amp;excl;</mono></td>
+								<td>@ent('!')</td>
+							</tr>
+							<tr>
+								<td><mono>ent('\\@')</mono> or <mono>ent(@)</mono></td> 
+								<td><mono>&amp;commat;</mono></td>
+								<td>@ent('\@')</td>
+							</tr>
+							<tr>
+								<td><mono>ent('#')</mono></td> 
+								<td><mono>&amp;num;</mono></td>
+								<td>@ent('#')</td>
+							</tr>
+							<tr>
+								<td><mono>ent('$')</mono></td> 
+								<td><mono>&amp;dollar;</mono></td>
+								<td>@ent('$')</td>
+							</tr>
+							<tr>
+								<td><mono>ent('%')</mono></td> 
+								<td><mono>&amp;percnt;</mono></td>
+								<td>@ent('%')</td>
+							</tr>
+							<tr>
+								<td><mono>ent('^')</mono></td> 
+								<td><mono>&amp;Hat;</mono></td>
+								<td>@ent('^')</td>
+							</tr>
+							<tr>
+								<td><mono>ent('&')</mono></td> 
+								<td><mono>&amp;amp;</mono></td>
+								<td>@ent('&')</td>
+							</tr>
+							<tr>
+								<td><mono>ent('*')</mono></td> 
+								<td><mono>&amp;ast;</mono></td>
+								<td>@ent('*')</td>
+							</tr>
+							<tr>
+								<td><mono>ent('?')</mono></td> 
+								<td><mono>&amp;quest;</mono></td>
+								<td>@ent('?')</td>
+							</tr>
+							<tr>
+								<td><mono>ent('<')</mono></td> 
+								<td><mono>&amp;lt;</mono></td>
+								<td>@ent('<')</td>
+							</tr>
+							<tr>
+								<td><mono>ent('>')</mono></td> 
+								<td><mono>&amp;gt;</mono></td>
+								<td>@ent('>')</td>
+							</tr>
+							<tr>
+								<td><mono>ent('(')</mono></td> 
+								<td><mono>&amp;lpar;</mono></td>
+								<td>@ent('(')</td>
+							</tr>
+							<tr>
+								<td><mono>ent(')')</mono></td> 
+								<td><mono>&amp;rpar;</mono></td>
+								<td>@ent(')')</td>
+							</tr>
+							<tr>
+								<td><mono>ent('[')</mono></td> 
+								<td><mono>&amp;lbrack;</mono></td>
+								<td>@ent('`')</td>
+							</tr>
+							<tr>
+								<td><mono>ent(']')</mono></td> 
+								<td><mono>&amp;rbrack;</mono></td>
+								<td>@ent(']')</td>
+							</tr>
+							<tr>
+								<td><mono>ent('{')</mono></td> 
+								<td><mono>&amp;lbrace;</mono></td>
+								<td>@ent('{')</td>
+							</tr>
+							<tr>
+								<td><mono>ent('}')</mono></td> 
+								<td><mono>&amp;rbrace;</mono></td>
+								<td>@ent('}')</td>
+							</tr>
+							<tr>
+								<td><mono>ent('-')</mono></td> 
+								<td><mono>&amp;minus;</mono></td>
+								<td>@ent('-')</td>
+							</tr>
+							<tr>
+								<td><mono>ent('_')</mono></td> 
+								<td><mono>&amp;lowbar;</mono></td>
+								<td>@ent('_')</td>
+							</tr>
+							<tr>
+								<td><mono>ent('=')</mono></td> 
+								<td><mono>&amp;equals;</mono></td>
+								<td>@ent('=')</td>
+							</tr>
+							<tr>
+								<td><mono>ent('+')</mono></td> 
+								<td><mono>&amp;plus;</mono></td>
+								<td>@ent('+')</td>
+							</tr>
+							<tr>
+								<td><mono>ent('|')</mono></td> 
+								<td><mono>&amp;vert;</mono></td>
+								<td>@ent('|')</td>
+							</tr>
+							<tr>
+								<td><mono>ent('\\')</mono> or <mono>ent(\)</mono></td> 
+								<td><mono>&amp;bsol;</mono></td>
+								<td>@ent('\\')</td>
+							</tr>
+							<tr>
+								<td><mono>ent('/')</mono></td> 
+								<td><mono>&amp;sol;</mono></td>
+								<td>@ent('/')</td>
+							</tr>
+							<tr>
+								<td><mono>ent(';')</mono></td> 
+								<td><mono>&amp;semi;</mono></td>
+								<td>@ent(';')</td>
+							</tr>
+							<tr>
+								<td><mono>ent(':')</mono></td> 
+								<td><mono>&amp;colon;</mono></td>
+								<td>@ent(':')</td>
+							</tr>
+							<tr>
+								<td><mono>ent('\'')</mono></td> 
+								<td><mono>&amp;apos;</mono></td>
+								<td>@ent('\'')</td>
+							</tr>
+							<tr>
+								<td><mono>ent('"')</mono></td> 
+								<td><mono>&amp;quot;</mono></td>
+								<td>@ent('"')</td>
+							</tr>
+							<tr>
+								<td><mono>ent(',')</mono></td> 
+								<td><mono>&amp;comma;</mono></td>
+								<td>@ent(',')</td>
+							</tr>
+							<tr>
+								<td><mono>ent('.')</mono></td> 
+								<td><mono>&amp;period;</mono></td>
+								<td>@ent('.')</td>
+							</tr>
+							<tr>
+								<td><mono>ent('£')</mono></td> 
+								<td><mono>&amp;pound;</mono></td>
+								<td>@ent('£')</td>
+							</tr>
+							<tr>
+								<td><mono>ent('¥')</mono></td> 
+								<td><mono>&amp;yen;</mono></td>
+								<td>@ent('¥')</td>
+							</tr>
+							<tr>
+								<td><mono>ent('€')</mono></td> 
+								<td><mono>&amp;euro;</mono></td>
+								<td>@ent('€')</td>
+							</tr>
+							<tr>
+								<td><mono>ent("section")</mono></td> 
+								<td><mono>&amp;sect;</mono></td>
+								<td>@ent('§')</td>
+							</tr>
+							<tr>
+								<td><mono>ent("+-")</mono></td> 
+								<td><mono>&amp;pm;</mono></td>
+								<td>@ent('+-')</td>
+							</tr>
+							<tr>
+								<td><mono>ent("-+")</mono></td> 
+								<td><mono>&amp;mp;</mono></td>
+								<td>@ent('-+')</td>
+							</tr>
+							<tr>
+								<td><mono>ent("!=")</mono></td> 
+								<td><mono>&amp;ne;</mono></td>
+								<td>@ent('!=')</td>
+							</tr>
+							<tr>
+								<td><mono>ent("<=")</mono></td> 
+								<td><mono>&amp;leq;</mono></td>
+								<td>@ent('<=')</td>
+							</tr>
+							<tr>
+								<td><mono>ent(">=")</mono></td> 
+								<td><mono>&amp;geq;</mono></td>
+								<td>@ent('>=')</td>
+							</tr>
+							<tr>
+								<td><mono>ent("->")</mono></td> 
+								<td><mono>&amp;rarr;</mono></td>
+								<td>@ent("->")</td>
+							</tr>
+								<tr>
+								<td><mono>ent("@\<-")</mono></td> 
+								<td><mono>&amp;larr;</mono></td>
+								<td>@ent("<-")</td>
+							</tr>
+							<tr>
+								<td><mono>ent("@\<->")</mono></td> 
+								<td><mono>&amp;harr;</mono></td>
+								<td>@ent("<->")</td>
+							</tr>
+							<tr>
+								<td><mono>ent("==>")</mono></td> 
+								<td><mono>&amp;rArr;</mono></td>
+								<td>@ent("==>")</td>
+							</tr>
+							<tr>
+								<td><mono>ent("@\<==")</mono></td> 
+								<td><mono>&amp;lArr;</mono></td>
+								<td>@ent("<==")</td>
+							</tr>
+							<tr>
+								<td><mono>ent("@\<==>")</mono></td> 
+								<td><mono>&amp;hArr;</mono></td>
+								<td>@ent("<==>")</td>
+							</tr>
+							<tr>
+								<td><mono>ent("<=!=>")</mono></td> 
+								<td><mono>&amp;nhArr;</mono></td>
+								<td>@ent("<=!=>")</td>
+							</tr>
+							<tr>
+								<td><mono>ent("...")</mono></td> 
+								<td><mono>&amp;hellip;</mono></td>
+								<td>@ent("...")</td>
+							</tr>
+							<tfoot>
+								<tr>
+									<th>syntax</th>
+									<th>output</th>
+									<th>rendered</th>
+								</tr>
+							</tfoot>
+						</table>
+					</center>
 				</p>
 
 				<h4 id="f++-eg">
 					f++ example
 				</h4>
 				<p>
-					Example of <mono>break</mono> being used with <mono>f++</mono>:					
+					Example of <mono>ent</mono> being used with <mono>f++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline">
-:=(int, i=0)
-while(1)
-{
-	console("i: ", i)
-	if(i > 10)
-		break
-	++(i)
-}
-</pre>
+<pre class="prettyprint inline linenums">
+ent('!')
+ent("<=")
+ent("...")</pre>
 </div>
 				</p>
 
@@ -51,22 +326,15 @@ while(1)
 					n++ example
 				</h4>
 				<p>
-					Example of <mono>break</mono> being used with <mono>n++</mono>:					
+					Example of <mono>ent</mono> being used with <mono>n++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline">
-\@:=(int, i=0)
-\@while(1)
-{
-	\@console("i: ", i)
-	\@if(i > 10)
-		\@break
-	\@++(i)
-}
-</pre>
+<pre class="prettyprint inline linenums">
+\@ent('!')
+\@ent("<=")
+\@ent("...")</pre>
 </div>
 				</p>
-
 			</div>
 		</section>
 	</div>

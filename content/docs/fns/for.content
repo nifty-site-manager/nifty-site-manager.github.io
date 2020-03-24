@@ -1,6 +1,6 @@
 <!-- Main -->
 <section id="main" class="wrapper style2">
-	<div class="title">fn: break</div>
+	<div class="title">fn: for</div>
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
@@ -11,6 +11,8 @@
 					Contents:
 					<ul style="text-indent:30px">
 						<li><a href="#syntax">Syntax</a></li>
+						<li><a href="#description">Description</a></li>
+						<li><a href="#options">Options</a></li>
 						<li><a href="#f++-eg">f++ example</a></li>
 						<li><a href="#n++-eg">n++ example</a></li>
 					</ul>
@@ -20,30 +22,110 @@
 					Syntax
 				</h4>
 				<p>
-					The syntax for <mono>break</mono> calls is:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline"><code data-language="c">break
-</code></pre>
+					The syntax for <mono>for</mono> loops is:
+<div align="center" style="margin-top:-15px; margin-bottom:60px">
+f++: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-50px">
+for{options}(pre-loop code; condition; post-iteration code)
+{
+	//loop code-block
+}
+</pre>
+</div><br>
+<div align="center" style="margin-top:-15px; margin-bottom:60px">
+n++: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-50px">
+\@for{options}(pre-loop code; condition; post-iteration code)
+{
+	//loop code-block
+}
+</pre>
 </div>
+				</p>
+
+				<p>
+					<b>Note:</b> Single-line code blocks do not need to be enclosed in parentheses.
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+				<p>
+					The <mono>for</mono> function takes three parameters separated by <mono>;</mono>, the first parameter is parsed before entering the loop, the second parameter specifies a loop condition and the third parameter is parsed at the end of each loop iteration. <mono>for</mono> calls loop through the code-block following the call while the loop condition does not evaluate to <mono>0</mono> (for <mono>for</mono> loops the loop condition is evaluated before each iteration of the loop code-block).
+				</p>
+
+				<p>
+					<b>Note:</b> <mono>f++</mono> is used for <mono>for</mono> call parameters, even for <mono>n++</mono>. If you accidentally use <mono>n++</mono> for the parameters it will most often run without any syntax or semantic errors anyway. 
+				</p>
+
+				<h4 id="options">
+					Options
+				</h4>
+				<p>
+					The following options are available for <mono>for</mono> loops:
+
+					<center class="table">
+						<table id="while_options_table" class="alt">
+							<thead>
+								<tr>
+									<th>option</th>
+									<th>description</th>
+								</tr>
+							</thead>
+							<tr>
+								<td><mono>f++</mono></td>
+								<td>parse <mono>for</mono> loop code-block with <mono>f++</mono></td>
+							</tr>
+							<tr>
+								<td><mono>n++</mono></td>
+								<td>parse <mono>for</mono> loop code-block with <mono>n++</mono></td>
+							</tr>
+							<tr>
+								<td><mono>!o</mono></td>
+								<td>do not add output</mono></td>
+							</tr>
+							<tr>
+								<td><mono>!s</mono></td>
+								<td>do not add scope</mono></td>
+							</tr>
+							<tr>
+								<td><mono>!\n</mono></td>
+								<td>do not add newline between each loop iteration</td>
+							</tr>
+							<tr>
+								<td><mono>\n</mono></td>
+								<td>add double newline between each loop iteration</td>
+							</tr>
+							<tr>
+								<td><mono>eob="value"</mono></td>
+								<td>add <mono>value</mono> between each loop iteration</td>
+							</tr>
+							<tfoot>
+								<tr>
+									<th>option</th>
+									<th>description</th>
+								</tr>
+							</tfoot>
+						</table>
+					</center>
 				</p>
 
 				<h4 id="f++-eg">
 					f++ example
 				</h4>
 				<p>
-					Example of <mono>break</mono> being used with <mono>f++</mono>:					
+					Examples of <mono>for</mono> being used with <mono>f++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline">
-:=(int, i=0)
-while(1)
-{
-	console("i: ", i)
-	if(i > 10)
-		break
-	++(i)
-}
-</pre>
+<pre class="prettyprint inline linenums">
+for(:=(int, i=0); i < 10, i+=1)
+	console("i: ", i)</pre>
+</div>
+				</p>
+
+				<p>
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline linenums">
+for{!s, !o}(:=(int, i=0); i<10; i+=1)
+	console("i: \$[i]")</pre>
 </div>
 				</p>
 
@@ -51,22 +133,22 @@ while(1)
 					n++ example
 				</h4>
 				<p>
-					Example of <mono>break</mono> being used with <mono>n++</mono>:					
+					Examples of <mono>for</mono> being used with <mono>n++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline">
-\@:=(int, i=0)
-\@while(1)
-{
-	\@console("i: ", i)
-	\@if(i > 10)
-		\@break
-	\@++(i)
-}
-</pre>
+<pre class="prettyprint inline linenums">
+\@for(:=(int, i=0); i < 10, i+=1)
+	\@console("i: ", i)</pre>
 </div>
 				</p>
 
+				<p>
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline linenums">
+\@for{f++, !s, !o}(:=(int, i=0); i<10; i+=1)
+	console("i: \$[i]")</pre>
+</div>
+				</p>
 			</div>
 		</section>
 	</div>

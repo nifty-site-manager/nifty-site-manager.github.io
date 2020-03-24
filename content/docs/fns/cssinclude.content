@@ -39,7 +39,7 @@ n++: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
 				</h4>
 
 				<p>
-					The <mono>cssinclude</mono> function takes a single absolute path as input and outputs code to insert the path as a stylesheet in html using the relative path, it also throws a warning if the css file does not exist.
+					The <mono>cssinclude</mono> function takes a single absolute path as input and returns code to insert the path as a stylesheet in html using the relative path, it also throws a warning if the css file does not exist.
 				</p>
 
 				<h4 id="f++-eg">
