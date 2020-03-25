@@ -24,7 +24,10 @@
 
 				<a href="#contents" class="to_top">[contents]</a>
 
-				<p id="contents">
+				<h4 id="contents">
+					Contents
+				</h4>
+				<p>
 					The following functions available in Nift's template language are documented on this page:
 					<ul style="text-indent:30px">
 						<li><a href="#functions">About functions</a></li>

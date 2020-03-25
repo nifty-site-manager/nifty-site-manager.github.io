@@ -20,36 +20,36 @@
 
 				<a href="#contents" class="to_top">[contents]</a>
 
-				<p id="contents">
-					Contents:
-					<ul style="text-indent:30px">
-						<li><a href="#hosting">Free hosting options</a></li>
-						<li><a href="#email">Email options</a></li>
-						<li><a href="#vm-servers">Hiring linux servers</a></li>
-						<li><a href="#web-servers">Web servers</a></li>
-						<li><a href="#cms">Content Management Systems (CMS)</a></li>
-						<li><a href="#editors">Local editors</a></li>
-						<li><a href="#online-editors">Online editors</a></li>
-						<li><a href="#website-generators">Web generators</a></li>
-						<li><a href="#cloud-storage">Cloud storage</a></li>
-						<li><a href="#code-sharing">Code sharing (hosting Git repositories)</a></li>
-						<li><a href="#ci">Continuous Integration (CI) services</a></li>
-						<li><a href="#highlighting">Syntax highlighting</a></li>
-						<li><a href="#markdown">Markdown</a></li>
-						<li><a href="#auth">Authentication</a></li>
-						<li><a href="#databases">Databases</a></li>
-						<li><a href="#ecommerce">Payment/ecommerce platforms</a></li>
-						<li><a href="#selling-products">Selling digital products</a></li>
-						<li><a href="#forms">Adding forms</a></li>
-						<li><a href="#comments">Adding comments</a></li>
-						<li><a href="#photos&videos">Free photos and videos</a></li>
-						<li><a href="#templates">Website templates</a></li>
-						<li><a href="#image-video-hosting">Image/video hosting/platforms</a></li>
-						<li><a href="#lazy-load">Lazy loading images</a></li>
-						<li><a href="#animation-videos">Animation videos (at cost)</a></li>
-						<li><a href="#useful-links">Useful links</a></li>
-					</ul>
-				</p>
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#hosting">Free hosting options</a></li>
+					<li><a href="#email">Email options</a></li>
+					<li><a href="#vm-servers">Hiring linux servers</a></li>
+					<li><a href="#web-servers">Web servers</a></li>
+					<li><a href="#cms">Content Management Systems (CMS)</a></li>
+					<li><a href="#editors">Local editors</a></li>
+					<li><a href="#online-editors">Online editors</a></li>
+					<li><a href="#website-generators">Web generators</a></li>
+					<li><a href="#cloud-storage">Cloud storage</a></li>
+					<li><a href="#code-sharing">Code sharing (hosting Git repositories)</a></li>
+					<li><a href="#ci">Continuous Integration (CI) services</a></li>
+					<li><a href="#highlighting">Syntax highlighting</a></li>
+					<li><a href="#markdown">Markdown</a></li>
+					<li><a href="#auth">Authentication</a></li>
+					<li><a href="#databases">Databases</a></li>
+					<li><a href="#ecommerce">Payment/ecommerce platforms</a></li>
+					<li><a href="#selling-products">Selling digital products</a></li>
+					<li><a href="#forms">Adding forms</a></li>
+					<li><a href="#comments">Adding comments</a></li>
+					<li><a href="#photos&videos">Free photos and videos</a></li>
+					<li><a href="#templates">Website templates</a></li>
+					<li><a href="#image-video-hosting">Image/video hosting/platforms</a></li>
+					<li><a href="#lazy-load">Lazy loading images</a></li>
+					<li><a href="#animation-videos">Animation videos (at cost)</a></li>
+					<li><a href="#useful-links">Useful links</a></li>
+				</ul>
 
 				<h3 id="hosting">Free Hosting options</h3>
 				<h4>static websites</h4>

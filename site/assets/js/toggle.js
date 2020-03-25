@@ -21,19 +21,21 @@ function toggle_light_dark() {
 
   elements = document.getElementsByTagName("h1");
   for(var i=0; i<elements.length; i++)
-    elements[i].classList.toggle("dark-mode");
+    elements[i].classList.toggle("white");
 
   elements = document.getElementsByTagName("h2");
   for(var i=0; i<elements.length; i++)
-    elements[i].classList.toggle("dark-mode");
+  {
+    elements[i].classList.toggle("white");
+  }
 
   elements = document.getElementsByTagName("h3");
   for(var i=0; i<elements.length; i++)
-    elements[i].classList.toggle("dark-mode");
+    elements[i].classList.toggle("fluro-pink");
 
   elements = document.getElementsByTagName("h4");
   for(var i=0; i<elements.length; i++)
-    elements[i].classList.toggle("dark-mode");
+    elements[i].classList.toggle("fluro-pink");
 
   elements = document.getElementsByTagName("th");
   for(var i=0; i<elements.length; i++)
@@ -42,10 +44,6 @@ function toggle_light_dark() {
   elements = document.getElementsByTagName("td");
   for(var i=0; i<elements.length; i++)
     elements[i].classList.toggle("td-dark");
-
-  elements = document.getElementsByTagName("mono");
-  for(var i=0; i<elements.length; i++)
-    elements[i].classList.toggle("mono-dark");
 
   elements = document.getElementsByTagName("a");
   for(var i=0; i<elements.length; i++)
@@ -56,9 +54,17 @@ function toggle_light_dark() {
        elements[i].classList != "reddit")
       elements[i].classList.toggle("a-dark");
 
+  elements = document.getElementsByTagName("mono");
+  for(var i=0; i<elements.length; i++)
+    elements[i].classList.toggle("fluro-purple");
+
+  var elements = document.getElementsByClassName("button");
+  for(var i=0; i<elements.length; i++)
+    elements[i].classList.toggle("button-dark");
+
   elements = document.getElementsByTagName("b");
   for(var i=0; i<elements.length; i++)
-    elements[i].classList.toggle("b-dark");
+    elements[i].classList.toggle("fluro-green");
 
   dark_mode = (dark_mode+1)%2;
   localStorage.setItem('dark-mode', dark_mode);

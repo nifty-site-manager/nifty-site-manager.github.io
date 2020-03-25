@@ -5,7 +5,7 @@
 		<!-- Features -->
 		<section id="features">
 			<header class="style1">
-				<h2>Embedded ExprTk</h2>
+				<h2>Embedded <mono>ExprTk</mono></h2>
 			</header>
 
 			<div class="content">
@@ -15,19 +15,19 @@
 
 				<a href="#contents" class="to_top">[contents]</a>
 
-				<p id="contents">
-					The ways in which you can use <mono>ExprTk</mono> with <mono>Nift</mono> are documented on this page:
-					<ul style="text-indent:30px">
-						<li><a href="#interpreter">ExprTk interpreter</a></li>
-						<li><a href="#scripts">Running ExprTk scripts</a></li>
-						<li><a href="#exprtk-f++">ExprTk from f++</a></li>
-						<li><a href="#exprtk-n++">ExprTk from n++</a></li>
-						<li><a href="#exprtk-conditions">ExprTk with n++/f++ conditions</a></li>
-						<li><a href="#exprtk-vars">ExprTk access to Nift variables</a></li>
-						<li><a href="#nift-fns">Nift functions</a></li>
-						<li><a href="#benchmark">Benchmark results</a></li>
-					</ul>
-				</p>
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#interpreter">ExprTk interpreter</a></li>
+					<li><a href="#scripts">Running ExprTk scripts</a></li>
+					<li><a href="#exprtk-f++">ExprTk from f++</a></li>
+					<li><a href="#exprtk-n++">ExprTk from n++</a></li>
+					<li><a href="#exprtk-conditions">ExprTk with n++/f++ conditions</a></li>
+					<li><a href="#exprtk-vars">ExprTk access to Nift variables</a></li>
+					<li><a href="#nift-fns">Nift functions</a></li>
+					<li><a href="#benchmark">Benchmark results</a></li>
+				</ul>
 
 				<h4 id="interpreter">
 					ExprTk interpreter

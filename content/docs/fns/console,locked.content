@@ -1,21 +1,21 @@
 <!-- Main -->
 <section id="main" class="wrapper style2">
-	<div class="title">fn: console.locked</div>
+	<div class="title">fn: <mono>console.locked</mono></div>
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
 			<div class="content">
 				<a href="#contents" class="to_top">[contents]</a>
 
-				<p id="contents">
-					Contents:
-					<ul style="text-indent:30px">
-						<li><a href="#syntax">Syntax</a></li>
-						<li><a href="#description">Description</a></li>
-						<li><a href="#f++-eg">f++ example</a></li>
-						<li><a href="#n++-eg">n++ example</a></li>
-					</ul>
-				</p>
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#syntax">Syntax</a></li>
+					<li><a href="#description">Description</a></li>
+					<li><a href="#f++-eg">f++ example</a></li>
+					<li><a href="#n++-eg">n++ example</a></li>
+				</ul>
 
 				<h4 id="syntax">
 					Syntax
@@ -23,12 +23,12 @@
 				<p>
 					The syntax for <mono>console.locked</mono> calls is:
 <div align="center" style="margin-top:-15px">
-f++: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
 console.locked
 </pre>
 </div><br>
 <div align="center">
-n++: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
 \@console.locked
 </pre>
 </div>

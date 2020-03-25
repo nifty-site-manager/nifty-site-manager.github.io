@@ -40,7 +40,7 @@
 				</div>
 				<div class="col-4 col-12-medium">
 					<section class="highlight">
-						<a href="https://nodejs.org/en/"><img src="@pathtofile(site/images/nodejs.svg)" alt="Node.js logo" height="150px" style="max-width:40%"/></a>
+						<a href="https://nodejs.org/en/"><img src="@pathtofile(site/images/nodejs.png)" alt="Node.js logo" height="150px" style="max-width:40%"/></a>
 						<h3><a href="https://nodejs.org/en/">NodeJS</a></h3>
 						<p>JavaScript runtime built on Chrome's V8 JavaScript engine.</p>
 						<ul class="actions">

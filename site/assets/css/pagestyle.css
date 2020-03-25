@@ -12,7 +12,7 @@ img
 video, iframe
 {
 	max-width: 80%;
-	border-radius:5px;
+	border-radius:10px;
 }
 
 noselect
@@ -299,19 +299,6 @@ table.Loki td
 {
   overflow-x: auto !important;
 	background-color: #2b2c2e; /*#3c3d40;*/
-}
-
-.th-dark
-{
-	overflow-x: auto !important;
-	color: #78be20 !important;
-}
-
-.td-dark
-{
-	overflow-x: auto !important;
-	background-color: #363331; /*#3c3d40;*/
-	border: 1px solid #a39e8e !important;
 }
 
 /* width */

@@ -128,7 +128,10 @@
 		    			<div class="content">
 		    				<a href="#contents" class="to_top">[contents]</a>
 		    
-		    				<p id="contents">
+		    				<h4 id="contents">
+		    					Contents
+		    				</h4>
+		    				<p>
 		    					There are a number of different ways you can install <mono>Nift</mono> on all of Linux, OSX and Windows. This page outlines how to install <mono>Nift</mono>:
 		    					<ul style="text-indent:30px">
 		    						<li><a href="#linux-snap">On Linux using Snapcraft</a></li>
@@ -155,9 +158,9 @@
 		    
 		    				<br>
 		    
-		    				<h3 id="linux-snap">
+		    				<h4 id="linux-snap">
 		    					Linux installation using <mono>Snap</mono>
-		    				</h3>
+		    				</h4>
 		    				<center><img src="../images/snapcraft.png" alt="Snapcraft logo" width=350px style="max-width:90%; margin-top: 20px; margin-bottom: 20px"></center>
 		    
 		    				<p>
@@ -195,7 +198,9 @@ snap install nift --classic
 		    					To uninstall <mono>Nift</mono> enter <mono>snap remove nift</mono>.
 		    				</p>
 		    
-		    				<h2 id="linux-flatpak">Linux installation using <mono>Flatpak</mono></h2>
+		    				<h4 id="linux-flatpak">
+		    					Linux installation using <mono>Flatpak</mono>
+		    				</h4>
 		    				<center><img src="../images/flathub.png" alt="Flathub logo" width=450px style="max-width:90%"></center>
 		    
 		    				<p>
@@ -247,9 +252,9 @@ flatpak uninstall cc.nift.nsm/x86_64/stable
 </pre>
 		    </div>
 		    
-		    				<h2 id="freebsd">
+		    				<h4 id="freebsd">
 		    					FreeBSD installation
-		    				</h2>
+		    				</h4>
 		    
 		    				<p>
 		    					There is a FreeBSD port of Nift available <a href="https://svnweb.freebsd.org/ports/head/www/nift/">here</a>.
@@ -312,9 +317,9 @@ $ pkg delete www/nift
 </pre>
 		    </div>
 		    
-		    				<h2 id="gentoo">
+		    				<h4 id="gentoo">
 		    					Gentoo installation
-		    				</h2>
+		    				</h4>
 		    
 		    				<p>
 		    					There is a Gentoo overlay of Nift available <a href="https://gpo.zugaina.org/www-apps/nift">here</a>.
@@ -372,9 +377,9 @@ $ emerge -C www-apps/nift
 </pre>
 		    </div>
 		    
-		    				<h3 id="osx-brew">
+		    				<h4 id="osx-brew">
 		    					OSX installation using <mono>Homebrew</mono>
-		    				</h3>
+		    				</h4>
 		    				<center><img src="../images/brew-icon.png" alt="Homebrew logo" width=200px style="max-width:90%; margin-top: 20px; margin-bottom: 20px"></center>
 		    
 		    				<p>
@@ -418,17 +423,17 @@ choco install nift
 		    					To uninstall <mono>Nift</mono> enter <mono>choco uninstall nift</mono>.
 		    				</p>
 		    
-		    				<h3 id="windows-executable">
+		    				<h4 id="windows-executable">
 		    					Windows installation from executable
-		    				</h3>
+		    				</h4>
 		    
 		    				<p>
 		    					Download <a href="https://github.com/nifty-site-manager/nsm-chocolatey-nift/raw/master/nsm.exe">this</a> executable and <a href="https://github.com/nifty-site-manager/nsm-chocolatey-nift/raw/master/nift.exe">this</a> executable then place them anywhere in your user's path, eg. in <mono>C:\Windows\system32</mono>.
 		    				</p>
 		    
-		    				<h3 id="install-source">
+		    				<h4 id="install-source">
 		    					Instructions for installing <mono>Nift</mono> from source on:
-		    				</h3>
+		    				</h4>
 		    
 		    				<ol>
 		    					<li>
@@ -487,8 +492,8 @@ choco install nift
 		</div>
 
 		<!-- Scripts -->
+		<script src="../assets/js/copy-pre.js"></script>
 		<script src="../assets/js/rainbow.min.js"></script>
-		<script src="../assets/js/toggle.js"></script>
 		<script src="../assets/js/jquery.min.js"></script>
 		<script src="../assets/js/jquery.dropotron.min.js"></script>
 		<script src="../assets/js/browser.min.js"></script>
@@ -506,6 +511,7 @@ choco install nift
 			for(var i=0; i<elements.length; i++)
 				elements[i].innerHTML = converter.makeHtml(elements[i].innerHTML.replace(/&lt;/g, "xwxw").replace(/&gt;/g, "pqpq")).replace(/xwxw/g, "&lt;").replace(/pqpq/g, "&gt;");
 		</script>
+		<script src="../assets/js/toggle.js"></script>
 
 		<!-- Inserts current year -->
 		<script>

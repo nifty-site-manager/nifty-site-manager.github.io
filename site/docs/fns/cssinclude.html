@@ -112,22 +112,22 @@
 
 		    <!-- Main -->
 		    <section id="main" class="wrapper style2">
-		    	<div class="title">fn: cssinclude</div>
+		    	<div class="title">fn: <mono>cssinclude</mono></div>
 		    	<div class="container">
 		    		<!-- Features -->
 		    		<section id="features">
 		    			<div class="content">
 		    				<a href="#contents" class="to_top">[contents]</a>
 		    
-		    				<p id="contents">
-		    					Contents:
-		    					<ul style="text-indent:30px">
-		    						<li><a href="#syntax">Syntax</a></li>
-		    						<li><a href="#description">Description</a></li>
-		    						<li><a href="#f++-eg">f++ example</a></li>
-		    						<li><a href="#n++-eg">n++ example</a></li>
-		    					</ul>
-		    				</p>
+		    				<h4 id="contents">
+		    					Contents
+		    				</h4>
+		    				<ul style="text-indent:30px">
+		    					<li><a href="#syntax">Syntax</a></li>
+		    					<li><a href="#description">Description</a></li>
+		    					<li><a href="#f++-eg">f++ example</a></li>
+		    					<li><a href="#n++-eg">n++ example</a></li>
+		    				</ul>
 		    
 		    				<h4 id="syntax">
 		    					Syntax
@@ -135,12 +135,12 @@
 		    				<p>
 		    					The syntax for <mono>cssinclude</mono> calls is:
 		    <div align="center" style="margin-top:-15px">
-		    f++: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
 cssinclude(path)
 </pre>
 		    </div><br>
 		    <div align="center">
-		    n++: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
 @cssinclude(path)
 </pre>
 		    </div>
@@ -224,8 +224,8 @@ cssinclude("site/assets/css/main.css")</pre>
 		</div>
 
 		<!-- Scripts -->
+		<script src="../../assets/js/copy-pre.js"></script>
 		<script src="../../assets/js/rainbow.min.js"></script>
-		<script src="../../assets/js/toggle.js"></script>
 		<script src="../../assets/js/jquery.min.js"></script>
 		<script src="../../assets/js/jquery.dropotron.min.js"></script>
 		<script src="../../assets/js/browser.min.js"></script>
@@ -243,6 +243,7 @@ cssinclude("site/assets/css/main.css")</pre>
 			for(var i=0; i<elements.length; i++)
 				elements[i].innerHTML = converter.makeHtml(elements[i].innerHTML.replace(/&lt;/g, "xwxw").replace(/&gt;/g, "pqpq")).replace(/xwxw/g, "&lt;").replace(/pqpq/g, "&gt;");
 		</script>
+		<script src="../../assets/js/toggle.js"></script>
 
 		<!-- Inserts current year -->
 		<script>

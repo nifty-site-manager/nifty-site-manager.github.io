@@ -121,7 +121,7 @@
 		    			</header>
 		    
 		    			<center>
-		    				<a href="https://pages.github.com/"><img src="../images/Octocat.svg" alt="GitHub Octocat holding Nift lightning strikes" width=250 style="max-width: 45%; margin-bottom: 20px"></a>
+		    				<a href="https://pages.github.com/"><img src="../images/Octocat.png" alt="GitHub Octocat holding Nift lightning strikes" width=250 style="max-width: 45%; margin-bottom: 20px"></a>
 		    			</center>
 		    
 		    			<div class="content">
@@ -140,10 +140,13 @@
 		    				</p>
 		    
 		    				<center>
-		    					<div style="max-width:90%; margin-top: -20px">
-		    					<a href="https://pages.bitbucket.io/"><img src="../images/bitbucket.svg" alt="BitBucket logo" width=300 style="max-width:45%; vertical-align:middle"></a> 
-		    					<a href="https://pages.github.com/"><img src="../images/github.png" alt="GitHub logo" width=260 style="max-width:45%; vertical-align:middle; margin-left: 20px; margin-right:0px"></a> <br>
-		    					<a href="https://about.gitlab.com/product/pages/"><img src="../images/gitlab.svg" alt="GitLab logo" width=320 style="max-width:45%; vertical-align:middle;"></a>
+		    					<div style="max-width:90%; margin-top: -20px; margin-bottom: 40px">
+		    					<a href="https://pages.bitbucket.io/"><img src="../images/bitbucket-icon.svg" alt="BitBucket logo" width=50 style="max-width:28%; vertical-align:middle"></a> &nbsp;
+		    					<a href="https://pages.github.com/"><img src="../images/github-icon.svg" alt="GitHub logo" width=50 style="max-width:28%; vertical-align:middle;"></a> &nbsp;
+		    					<a href="https://about.gitlab.com/product/pages/"><img src="../images/gitlab-icon.svg" alt="GitLab logo" width=50 style="max-width:28%; vertical-align:middle;"></a> &nbsp;
+		    					<a href="https://www.netlify.com/"><img src="../images/netlify.png" alt="Netlify logo" width=50 style="max-width: 50%; vertical-align: middle"></a> &nbsp;
+		    					<a href="https://surge.sh/"><img src="../images/surge.svg" alt="surge.sh logo" width=50 style="max-width: 30%; vertical-align:middle;"></a>
+		    					<a href="https://zeit.co"><img src="../images/zeit.png" alt="ZEIT Now logo" width=50 style="max-width: 30%; vertical-align:middle;"></a>
 		    					</div>
 		    				</center>
 		    
@@ -163,10 +166,6 @@
 		    					You can also combine any of the above hosting options with <a href="https://netlify.com">Netlify</a>, which works well for custom domains (including subdomains) and automatically renews <a href="https://letsencrypt.org/">Let's Encrypt</a> certificates for your site. Netlify also has built in <a href="https://www.netlify.com/docs/form-handling/">form handling</a> and a full suite of <a href="https://www.netlify.com/docs/identity/">authentication functionality</a> backed by the <a href="https://www.gotrueapi.org/">GoTrue API</a>. For these reasons we recommend Netlify for hosting JAMstack websites.
 		    				</p>
 		    
-		    				<center>
-		    					<a href="https://www.netlify.com/"><img src="../images/netlify.svg" alt="Netlify logo" width=300 style="max-width: 50%; margin-left:-40px; margin-bottom: 20px"></a>
-		    				</center>
-		    
 		    				<p>
 		    					Other good free hosting options for static sites include:
 		    
@@ -185,11 +184,9 @@
 		    					<a href="https://developers.cloudflare.com/workers/sites/"><img src="../images/cloudflare.svg" alt="Cloudfare logo" width=300 style="max-width: 50%; margin-top: -10px; margin-bottom: 40px"></a>
 		    				</center>
 		    
-		    				<center>
+		    				<center style="margin-bottom:30px">
 		    					<a href="https://aws.amazon.com/amplify/console/"><img src="../images/aws.svg" alt="Amazon AWS logo" width=175 style="max-width: 30%; vertical-align:middle; margin-top: 0px"></a>
-		    					<a href="https://firebase.google.com/"><img src="../images/firebase.svg" alt="Google Firebase logo" width=120 style="max-width: 30%; vertical-align:middle; margin-top: 0px; margin-left: 20px"></a><br>
-		    					<a href="https://surge.sh/"><img src="../images/surge.svg" alt="surge.sh logo" width=175 style="max-width: 30%; vertical-align:middle; margin-left:20px; margin-bottom: 20px; margin-top: 30px"></a>
-		    					<a href="https://zeit.co"><img src="../images/zeit.png" alt="ZEIT Now logo" width=175 style="max-width: 30%; vertical-align:middle; margin-left:20px; margin-bottom: 20px; margin-top: 10px"></a>
+		    					<a href="https://firebase.google.com/"><img src="../images/firebase.svg" alt="Google Firebase logo" width=120 style="max-width: 30%; vertical-align:middle; margin-top: 0px; margin-left: 20px"></a>
 		    				</center>
 		    
 		    				<p>
@@ -270,8 +267,8 @@
 		</div>
 
 		<!-- Scripts -->
+		<script src="../assets/js/copy-pre.js"></script>
 		<script src="../assets/js/rainbow.min.js"></script>
-		<script src="../assets/js/toggle.js"></script>
 		<script src="../assets/js/jquery.min.js"></script>
 		<script src="../assets/js/jquery.dropotron.min.js"></script>
 		<script src="../assets/js/browser.min.js"></script>
@@ -289,6 +286,7 @@
 			for(var i=0; i<elements.length; i++)
 				elements[i].innerHTML = converter.makeHtml(elements[i].innerHTML.replace(/&lt;/g, "xwxw").replace(/&gt;/g, "pqpq")).replace(/xwxw/g, "&lt;").replace(/pqpq/g, "&gt;");
 		</script>
+		<script src="../assets/js/toggle.js"></script>
 
 		<!-- Inserts current year -->
 		<script>

@@ -15,14 +15,14 @@
 
 			<div class="content">
 				<a href="#contents" class="to_top">[contents]</a>
-				<p id="contents">
-					Contents:
-					<ul style="text-indent:30px">
-						<li><a href="#syntax">Syntax</a></li>
-						<li><a href="#options">Options</a></li>
-						<li><a href="#index">Index</a></li>
-					</ul>
-				</p>
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#syntax">Syntax</a></li>
+					<li><a href="#options">Options</a></li>
+					<li><a href="#index">Index</a></li>
+				</ul>
 
 				<h4 id="syntax">Syntax</h4>
 				<p>

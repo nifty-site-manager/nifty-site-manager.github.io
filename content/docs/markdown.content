@@ -107,8 +107,8 @@ pre.markdown
 				</textarea>
 
 				<textarea class="markdown">
-					1. You can make text *italic* by surrounding it with \\*, eg. \\*text\\*. 
-					2. You can make text **bold** by surrounding it with \\*\\*, eg. \\*\\*text\\*\\*. 
+					1. You can make text *italic* by surrounding it with \*, eg. \*text\*. 
+					2. You can make text **bold** by surrounding it with \*\*, eg. \*\*text\*\*. 
 					2. You can make text ~~strikethrough~~ by surrounding it with \~\~, eg. \~\~text\~\~. 
 				</textarea>
 

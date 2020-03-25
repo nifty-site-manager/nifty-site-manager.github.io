@@ -8,7 +8,14 @@
 				<h2>How to host a website on BitBucket</h2>
 			</header>
 
+			<center>
+				<a href="https://pages.github.com/"><img src="@pathtofile(site/images/bitbucket-icon.svg)" alt="GitHub Octocat mascot" width=200 style="max-width: 45%; margin-bottom: 40px"></a>
+			</center>
+
 			<div class="content">
+				<h4>
+					Free hosting on BitBucket
+				</h4>
 				<p>
 					Note if you have any dyanmic pages (eg. are using php) then you will need to use an alternative for hosting.
 				</p>

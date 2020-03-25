@@ -5,7 +5,7 @@
 		<!-- Features -->
 		<section id="features">
 			<header class="style1">
-				<h2>Nift's in-built scripting language f++</h2>
+				<h2>Nift's in-built scripting language <mono>f++</mono></h2>
 			</header>
 
 			<!-- Image -->
@@ -15,21 +15,21 @@
 
 			<div class="content">
 				<p>
-					Nift has its own in-built scripting language <mono>f++</mono>. 
+					<mono>f++</mono> is Nift's in-built scripting language. 
 				</p>
 
 				<a href="#contents" class="to_top">[contents]</a>
 
-				<p id="contents">
-					The ways in which you can use <mono>f++</mono> with <mono>Nift</mono> are documented on this page:
-					<ul style="text-indent:30px">
-						<li><a href="#interpreter">f++ interpreter</a></li>
-						<li><a href="#shell">f++ shell</a></li>
-						<li><a href="#scripts">Running f++ scripts</a></li>
-						<li><a href="#f++-from-n++">f++ from n++</a></li>
-						<li><a href="#nift-fns">functions</a></li>
-					</ul>
-				</p>
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#interpreter">f++ interpreter</a></li>
+					<li><a href="#shell">f++ shell</a></li>
+					<li><a href="#scripts">Running f++ scripts</a></li>
+					<li><a href="#f++-from-n++">f++ from n++</a></li>
+					<li><a href="#nift-fns">functions</a></li>
+				</ul>
 
 				<h4 id="interpreter">
 					f++ interpreter

@@ -9,7 +9,7 @@
 			</header>
 
 			<center>
-				<a href="https://pages.github.com/"><img src="@pathtofile(site/images/Octorabbit.svg)" alt="GitHub Octocat mascot" width=300 style="max-width: 45%; margin-bottom: 20px"></a>
+				<a href="https://pages.github.com/"><img src="@pathtofile(site/images/Octorabbit.png)" alt="GitHub Octocat mascot" width=300 style="max-width: 45%; margin-bottom: 20px"></a>
 			</center>
 
 			<div class="content">

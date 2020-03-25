@@ -5,7 +5,7 @@
 		<!-- Features -->
 		<section id="features">
 			<header class="style1">
-				<h2>Nift's in-built template language n++</h2>
+				<h2>Nift's in-built template language <mono>n++</mono></h2>
 			</header>
 
 			<!-- Image -->
@@ -20,16 +20,16 @@
 
 				<a href="#contents" class="to_top">[contents]</a>
 
-				<p id="contents">
-					The ways in which you can use <mono>n++</mono> with <mono>Nift</mono> are documented on this page:
-					<ul style="text-indent:30px">
-						<li><a href="#interpreter">n++ interpreter</a></li>
-						<li><a href="#shell">n++ shell</a></li>
-						<li><a href="#scripts">Running n++ scripts</a></li>
-						<li><a href="#n++-from-f++">n++ from f++</a></li>
-						<li><a href="#nift-fns">functions</a></li>
-					</ul>
-				</p>
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#interpreter">n++ interpreter</a></li>
+					<li><a href="#shell">n++ shell</a></li>
+					<li><a href="#scripts">Running n++ scripts</a></li>
+					<li><a href="#n++-from-f++">n++ from f++</a></li>
+					<li><a href="#nift-fns">functions</a></li>
+				</ul>
 
 				<h4 id="interpreter">
 					n++ interpreter

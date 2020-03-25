@@ -112,31 +112,31 @@
 
 		    <!-- Main -->
 		    <section id="main" class="wrapper style2">
-		    	<div class="title">fn: dir/ls</div>
+		    	<div class="title">fn: <mono>dir</mono>/<mono>ls</mono></div>
 		    	<div class="container">
 		    		<!-- Features -->
 		    		<section id="features">
 		    			<div class="content">
 		    				<a href="#contents" class="to_top">[contents]</a>
 		    
-		    				<p id="contents">
-		    					Contents:
-		    					<ul style="text-indent:30px">
-		    						<li><a href="#syntax">Syntax</a></li>
-		    						<li><a href="#description">Description</a></li>
-		    						<li><a href="#options">Options</a></li>
-		    						<li><a href="#f++-eg">f++ example</a></li>
-		    						<li><a href="#n++-eg">n++ example</a></li>
-		    					</ul>
-		    				</p>
+		    				<h4 id="contents">
+		    					Contents
+		    				</h4>
+		    				<ul style="text-indent:30px">
+		    					<li><a href="#syntax">Syntax</a></li>
+		    					<li><a href="#description">Description</a></li>
+		    					<li><a href="#options">Options</a></li>
+		    					<li><a href="#f++-eg">f++ example</a></li>
+		    					<li><a href="#n++-eg">n++ example</a></li>
+		    				</ul>
 		    
 		    				<h4 id="syntax">
 		    					Syntax
 		    				</h4>
 		    				<p>
-		    					The syntax for <mono>dir/ls</mono> calls is:
+		    					The syntax for <mono>dir</mono>/<mono>ls</mono> calls is:
 		    <div align="center" style="margin-top:-15px; margin-bottom:60px">
-		    f++: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-50px">
+		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-50px">
 dir(param)
 dir param
 ls(param)
@@ -144,7 +144,7 @@ ls param
 </pre>
 		    </div><br>
 		    <div align="center" style="margin-top:-15px; margin-bottom:60px">
-		    n++: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-50px">
+		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-50px">
 @dir(param)
 @dir param
 @ls(param)
@@ -157,7 +157,7 @@ ls param
 		    					Description
 		    				</h4>
 		    				<p>
-		    					The <mono>dir/ls</mono> function is for <u>listing files in a directory</u>, it takes zero parameters or a single parameter specifying which directory to list files for. 
+		    					The <mono>dir</mono>/<mono>ls</mono> function is for <u>listing files in a directory</u>, it takes zero parameters or a single parameter specifying which directory to list files for. 
 		    				</p>
 		    
 		    				<p>
@@ -168,7 +168,7 @@ ls param
 		    					Options
 		    				</h4>
 		    				<p>
-		    					The following options are available for <mono>dir/ls</mono> calls:
+		    					The following options are available for <mono>dir</mono>/<mono>ls</mono> calls:
 		    
 		    					<center class="table">
 		    						<table id="dir/ls_options_table" class="alt">
@@ -203,14 +203,14 @@ ls param
 		    						</table>
 		    					</center>
 		    
-		    					<b>Note:</b> If other options are given Nift will attempt to use the system's underlying <mono>dir/ls</mono> function instead. 
+		    					<b>Note:</b> If other options are given Nift will attempt to use the system's underlying <mono>dir</mono>/<mono>ls</mono> function instead. 
 		    				</p>
 		    
 		    				<h4 id="f++-eg">
 		    					f++ example
 		    				</h4>
 		    				<p>
-		    					Examples of <mono>dir/ls</mono> being used with <mono>f++</mono>:					
+		    					Examples of <mono>dir</mono>/<mono>ls</mono> being used with <mono>f++</mono>:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline linenums">
@@ -225,7 +225,7 @@ dir{a}("/usr/local")</pre>
 		    					n++ example
 		    				</h4>
 		    				<p>
-		    					Example of <mono>dir/ls</mono> being used with <mono>n++</mono>:					
+		    					Example of <mono>dir</mono>/<mono>ls</mono> being used with <mono>n++</mono>:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline linenums">
@@ -281,8 +281,8 @@ dir{a}("/usr/local")</pre>
 		</div>
 
 		<!-- Scripts -->
+		<script src="../../assets/js/copy-pre.js"></script>
 		<script src="../../assets/js/rainbow.min.js"></script>
-		<script src="../../assets/js/toggle.js"></script>
 		<script src="../../assets/js/jquery.min.js"></script>
 		<script src="../../assets/js/jquery.dropotron.min.js"></script>
 		<script src="../../assets/js/browser.min.js"></script>
@@ -300,6 +300,7 @@ dir{a}("/usr/local")</pre>
 			for(var i=0; i<elements.length; i++)
 				elements[i].innerHTML = converter.makeHtml(elements[i].innerHTML.replace(/&lt;/g, "xwxw").replace(/&gt;/g, "pqpq")).replace(/xwxw/g, "&lt;").replace(/pqpq/g, "&gt;");
 		</script>
+		<script src="../../assets/js/toggle.js"></script>
 
 		<!-- Inserts current year -->
 		<script>

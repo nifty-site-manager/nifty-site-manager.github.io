@@ -12,7 +12,7 @@
 			</p>
 
 			<center>
-				<img src="@pathtofile(site/images/template.png)" alt="Template graphic" width=200 style="margin-bottom:20px; max-width:70%;">
+				<img src="@pathtofile(site/images/template.png)" alt="Template graphic" width=500 style="margin-bottom:20px; max-width:70%;">
 			</center>
 
 			<h3>Converting template languages post-build</h3>

@@ -9,9 +9,9 @@
 			</header>
 
 			<div class="content">
-				<h2>
+				<h4>
 					OSX installation using <mono>Homebrew</mono>
-				</h2>
+				</h4>
 				<center><img src="@pathtofile{!p}(site/images/brew-icon.png)" alt="Homebrew logo" width=200px style="max-width:90%; margin-top: 20px; margin-bottom: 20px"></center>
 
 				<p>
@@ -36,14 +36,20 @@ brew install nift
 					To uninstall <mono>Nift</mono> enter <mono>brew uninstall nift</mono>.
 				</p>
 
-				<h2>Installing <mono>Nift</mono> on OSX from source</h2>
-				<h3>Installing a <mono>c++</mono> compiler</h3>
+				<h4>
+					Installing <mono>Nift</mono> on OSX from source
+				</h4>
+				<h4>
+					Installing a <mono>c++</mono> compiler
+				</h4>
 
 				<p>
 					Install <a href="https://itunes.apple.com/au/app/xcode/id497799835?mt=12">Xcode</a>. Should you still encounter any problems compiling <mono>nsm</mono> there is a good chance <mono>command line tools</mono> was not installed by default. To manually install it yourself: open Xcode, go to <mono>preferences</mono>, click on the <mono>downloads</mono> tab, then you should be able to download and install <mono>command line tools</mono>.
 				</p>
 
-				<h3>Installing <mono>Nift</mono></h3>
+				<h4>
+					Installing <mono>Nift</mono>
+				</h4>
 
 				<p>
 					Download <a href="https://gitlab.com/nifty-site-manager/nsm/repository/master/archive.zip">nsm-master-*.zip</a>, then follow these steps to compile and install:
@@ -80,7 +86,9 @@ sudo make install
 				</p>
 
 
-				<h3>Uninstalling <mono>Nift</mono></h3>
+				<h4>
+					Uninstalling <mono>Nift</mono>
+				</h4>
 				<p>
 					Should you ever want to remove <mono>nsm</mono> from your machine, simply run <mono>sudo make uninstall</mono>.
 				</p>
