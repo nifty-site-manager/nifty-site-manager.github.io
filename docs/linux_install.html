@@ -125,9 +125,9 @@
 		    					<b>Note:</b> Currently if you install through Snap you will not be able to use the powerful scripting features that Nift has to their full extent, it is recommended in the meantime that you instead install from Flatpak or source. I am trying to work out how to rectify this, I am hoping getting approved for classic confinement will fix the problem. 
 		    				</p>
 		    
-		    				<h2>
+		    				<h4>
 		    					Linux installation using <mono>Snap</mono>
-		    				</h2>
+		    				</h4>
 		    				<center><img src="../images/snapcraft.png" alt="Snapcraft logo" width=350px style="max-width:90%; margin-top: 20px; margin-bottom: 20px"></center>
 		    
 		    				<p>
@@ -165,7 +165,9 @@ snap install nift --classic
 		    					To uninstall <mono>Nift</mono> enter <mono>snap remove nift</mono>.
 		    				</p>
 		    
-		    				<h2 id="linux-flatpak">Linux installation using <mono>Flatpak</mono></h2>
+		    				<h4 id="linux-flatpak">
+		    					Linux installation using <mono>Flatpak</mono>
+		    				</h4>
 		    				<center><img src="../images/flathub.png" alt="Flathub logo" width=450px style="max-width:90%"></center>
 		    
 		    				<p>
@@ -217,9 +219,9 @@ flatpak uninstall cc.nift.nsm/x86_64/stable
 </pre>
 		    </div>
 		    
-		    				<h2>
+		    				<h4>
 		    					Gentoo installation
-		    				</h2>
+		    				</h4>
 		    
 		    				<p>
 		    					There is a Gentoo overlay of Nift available <a href="https://gpo.zugaina.org/www-apps/nift">here</a>.
@@ -277,9 +279,13 @@ $ emerge -C www-apps/nift
 </pre>
 		    </div>
 		    
-		    				<h2>Installing <mono>Nift</mono> on linux from source</h2>
+		    				<h4>
+		    					Installing <mono>Nift</mono> on linux from source
+		    				</h4>
 		    
-		    				<h3>Installing a <mono>c++</mono> compiler</h3>
+		    				<h4>
+		    					Installing a <mono>c++</mono> compiler
+		    				</h4>
 		    
 		    				<p>
 		    					If you do not already have a <mono>c++</mono> compiler then you will need to install one.
@@ -291,7 +297,9 @@ $ emerge -C www-apps/nift
 		    
 		    				<br>
 		    
-		    				<h3>Installing <mono>Nift</mono></h3>
+		    				<h4>
+		    					Installing <mono>Nift</mono>
+		    				</h4>
 		    
 		    				Download <a href="https://gitlab.com/nifty-site-manager/nsm/repository/master/archive.zip">nsm-master-*.zip</a>, then follow these steps to compile and install:
 		    
@@ -329,7 +337,9 @@ sudo make install
 		    					You can use <mono>make linux-gedit-highlighting</mono> on top of <mono>make install</mono> during step 3 to get <mono>gedit</mono> (not sure if this still works?) to automatically use html syntax highlighting for both <mono>*.content</mono> and <mono>*.template</mono> files.
 		    				</p>
 		    
-		    				<h3>Uninstalling <mono>Nift</mono></h3>
+		    				<h4>
+		    					Uninstalling <mono>Nift</mono>
+		    				</h4>
 		    				<p>
 		    					Should you ever want to remove <mono>Nift</mono> from your machine, simply run <mono>sudo make uninstall</mono>.
 		    				</p>
@@ -379,8 +389,8 @@ sudo make install
 		</div>
 
 		<!-- Scripts -->
+		<script src="../assets/js/copy-pre.js"></script>
 		<script src="../assets/js/rainbow.min.js"></script>
-		<script src="../assets/js/toggle.js"></script>
 		<script src="../assets/js/jquery.min.js"></script>
 		<script src="../assets/js/jquery.dropotron.min.js"></script>
 		<script src="../assets/js/browser.min.js"></script>
@@ -398,6 +408,7 @@ sudo make install
 			for(var i=0; i<elements.length; i++)
 				elements[i].innerHTML = converter.makeHtml(elements[i].innerHTML.replace(/&lt;/g, "xwxw").replace(/&gt;/g, "pqpq")).replace(/xwxw/g, "&lt;").replace(/pqpq/g, "&gt;");
 		</script>
+		<script src="../assets/js/toggle.js"></script>
 
 		<!-- Inserts current year -->
 		<script>

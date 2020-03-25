@@ -3,6 +3,38 @@
 	for the prettyprint readme.
 */
 
+cpbutton
+{
+	z-index:99;
+	float:right !important;
+	/*position: relative;
+	right: 10px;*/
+	margin-left: 10px;
+	padding-left: 7px;
+	padding-right: 7px;
+	text-decoration: none;
+	background: #1f2021 !important;
+	border-radius:5px;
+	opacity: 0.5;
+
+	-webkit-user-select: none; /* Chrome/Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
+}
+
+cpbutton:hover
+{
+	z-index:99;
+	opacity: 1.0;
+	cursor: pointer;
+}
+
+cpbutton:active
+{
+	z-index:99;
+	background: #ff1493 !important;
+}
+
 /* desert scheme ported from vim to google prettify */
 pre .nocode { background-color: none; color: #000 }
 pre .str { color: #ffa0a0 } /* string  - pink */
@@ -86,6 +118,24 @@ pre.wrap
 	white-space: -pre-wrap;      /* Opera 4-6 */
 	white-space: -o-pre-wrap;    /* Opera 7 */
 	word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+pre
+{
+	background-color:#363331;
+	text-align:left !important;
+	tab-size: 4;
+	border-radius: 5px;
+	min-width: 130px !important;
+	max-width: 90%;
+	overflow: auto;
+
+	padding-left: 10px !important; 
+	padding-right:10px !important;
+	padding-top:10px !important;
+	padding-bottom:10px !important;
+
+	border: 1px solid #a39e8e !important;
 }
 
 pre-old

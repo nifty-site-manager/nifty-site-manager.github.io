@@ -112,30 +112,30 @@
 
 		    <!-- Main -->
 		    <section id="main" class="wrapper style2">
-		    	<div class="title">fn: copy/cp</div>
+		    	<div class="title">fn: <mono>copy</mono>/<mono>cp</mono></div>
 		    	<div class="container">
 		    		<!-- Features -->
 		    		<section id="features">
 		    			<div class="content">
 		    				<a href="#contents" class="to_top">[contents]</a>
 		    
-		    				<p id="contents">
-		    					Contents:
-		    					<ul style="text-indent:30px">
-		    						<li><a href="#syntax">Syntax</a></li>
-		    						<li><a href="#description">Description</a></li>
-		    						<li><a href="#f++-eg">f++ example</a></li>
-		    						<li><a href="#n++-eg">n++ example</a></li>
-		    					</ul>
-		    				</p>
+		    				<h4 id="contents">
+		    					Contents
+		    				</h4>
+		    				<ul style="text-indent:30px">
+		    					<li><a href="#syntax">Syntax</a></li>
+		    					<li><a href="#description">Description</a></li>
+		    					<li><a href="#f++-eg">f++ example</a></li>
+		    					<li><a href="#n++-eg">n++ example</a></li>
+		    				</ul>
 		    
 		    				<h4 id="syntax">
 		    					Syntax
 		    				</h4>
 		    				<p>
-		    					The syntax for <mono>copy/cp</mono> calls is:
+		    					The syntax for <mono>copy</mono>/<mono>cp</mono> calls is:
 		    <div align="center" style="margin-top:-15px; margin-bottom:60px">
-		    f++: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-50px">
+		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-50px">
 copy(source, target)
 copy source target
 cp(source, target)
@@ -143,7 +143,7 @@ cp source target
 </pre>
 		    </div><br>
 		    <div align="center" style="margin-top:-15px; margin-bottom:60px">
-		    n++: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-50px">
+		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-50px">
 @copy(source, target)
 @copy source target
 @cp(source, target)
@@ -156,7 +156,7 @@ cp source target
 		    					Description
 		    				</h4>
 		    				<p>
-		    					<mono>copy/cp</mono> is the <u>copy</u> function, it copies the file at the path specified in the first parameter to the path specified in the second parameter.
+		    					<mono>copy</mono>/<mono>cp</mono> is the <u>copy</u> function, it copies the file at the path specified in the first parameter to the path specified in the second parameter.
 		    				</p>
 		    
 		    				<p>
@@ -167,7 +167,7 @@ cp source target
 		    					f++ example
 		    				</h4>
 		    				<p>
-		    					Examples of <mono>copy/cp</mono> being used with <mono>f++</mono>:					
+		    					Examples of <mono>copy</mono>/<mono>cp</mono> being used with <mono>f++</mono>:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline linenums">
@@ -182,7 +182,7 @@ copy /home/teji/.bash_profile /home/teji/.bash_profile_backup</pre>
 		    					n++ example
 		    				</h4>
 		    				<p>
-		    					Example of <mono>copy/cp</mono> being used with <mono>n++</mono>:					
+		    					Example of <mono>copy</mono>/<mono>cp</mono> being used with <mono>n++</mono>:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline linenums">
@@ -237,8 +237,8 @@ copy /home/teji/.bash_profile /home/teji/.bash_profile_backup</pre>
 		</div>
 
 		<!-- Scripts -->
+		<script src="../../assets/js/copy-pre.js"></script>
 		<script src="../../assets/js/rainbow.min.js"></script>
-		<script src="../../assets/js/toggle.js"></script>
 		<script src="../../assets/js/jquery.min.js"></script>
 		<script src="../../assets/js/jquery.dropotron.min.js"></script>
 		<script src="../../assets/js/browser.min.js"></script>
@@ -256,6 +256,7 @@ copy /home/teji/.bash_profile /home/teji/.bash_profile_backup</pre>
 			for(var i=0; i<elements.length; i++)
 				elements[i].innerHTML = converter.makeHtml(elements[i].innerHTML.replace(/&lt;/g, "xwxw").replace(/&gt;/g, "pqpq")).replace(/xwxw/g, "&lt;").replace(/pqpq/g, "&gt;");
 		</script>
+		<script src="../../assets/js/toggle.js"></script>
 
 		<!-- Inserts current year -->
 		<script>

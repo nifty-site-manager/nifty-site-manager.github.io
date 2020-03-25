@@ -219,8 +219,8 @@ pre.markdown
 		    				</textarea>
 		    
 		    				<textarea class="markdown">
-		    					1. You can make text *italic* by surrounding it with \\*, eg. \\*text\\*. 
-		    					2. You can make text **bold** by surrounding it with \\*\\*, eg. \\*\\*text\\*\\*. 
+		    					1. You can make text *italic* by surrounding it with \*, eg. \*text\*. 
+		    					2. You can make text **bold** by surrounding it with \*\*, eg. \*\*text\*\*. 
 		    					2. You can make text ~~strikethrough~~ by surrounding it with \~\~, eg. \~\~text\~\~. 
 		    				</textarea>
 		    
@@ -335,8 +335,8 @@ pre.markdown
 		</div>
 
 		<!-- Scripts -->
+		<script src="../assets/js/copy-pre.js"></script>
 		<script src="../assets/js/rainbow.min.js"></script>
-		<script src="../assets/js/toggle.js"></script>
 		<script src="../assets/js/jquery.min.js"></script>
 		<script src="../assets/js/jquery.dropotron.min.js"></script>
 		<script src="../assets/js/browser.min.js"></script>
@@ -354,6 +354,7 @@ pre.markdown
 			for(var i=0; i<elements.length; i++)
 				elements[i].innerHTML = converter.makeHtml(elements[i].innerHTML.replace(/&lt;/g, "xwxw").replace(/&gt;/g, "pqpq")).replace(/xwxw/g, "&lt;").replace(/pqpq/g, "&gt;");
 		</script>
+		<script src="../assets/js/toggle.js"></script>
 
 		<!-- Inserts current year -->
 		<script>

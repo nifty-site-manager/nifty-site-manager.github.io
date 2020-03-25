@@ -112,50 +112,141 @@
 
 		    <!-- Main -->
 		    <section id="main" class="wrapper style2">
-		    	<div class="title">fn: break</div>
+		    	<div class="title">fn: <mono>if</mono></div>
 		    	<div class="container">
 		    		<!-- Features -->
 		    		<section id="features">
 		    			<div class="content">
 		    				<a href="#contents" class="to_top">[contents]</a>
 		    
-		    				<p id="contents">
-		    					Contents:
-		    					<ul style="text-indent:30px">
-		    						<li><a href="#syntax">Syntax</a></li>
-		    						<li><a href="#f++-eg">f++ example</a></li>
-		    						<li><a href="#n++-eg">n++ example</a></li>
-		    					</ul>
-		    				</p>
+		    				<h4 id="contents">
+		    					Contents
+		    				</h4>
+		    				<ul style="text-indent:30px">
+		    					<li><a href="#syntax">Syntax</a></li>
+		    					<li><a href="#description">Description</a></li>
+		    					<li><a href="#options">Options</a></li>
+		    					<li><a href="#f++-eg">f++ example</a></li>
+		    					<li><a href="#n++-eg">n++ example</a></li>
+		    				</ul>
 		    
 		    				<h4 id="syntax">
 		    					Syntax
 		    				</h4>
 		    				<p>
-		    					The syntax for <mono>break</mono> calls is:
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline"><code data-language="c">break
-</code></pre>
+		    					The syntax for <mono>if</mono> statements is:
+		    <div align="center" style="margin-top:-15px; margin-bottom:137px">
+		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-127px">
+if{options}(condition)
+{
+	//code-block
+}
+else-if(condition)
+{
+	//code-block
+}
+else
+{
+	//code-block
+}
+</pre>
+		    </div><br>
+		    <div align="center" style="margin-top:-15px; margin-bottom:137px">
+		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-127px">
+@if{options}(condition)
+{
+	//code-block
+}
+else-if(condition)
+{
+	//code-block
+}
+else
+{
+	//code-block
+}
+</pre>
 		    </div>
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> Single-line code blocks do not need to be enclosed in parentheses.
+		    				</p>
+		    
+		    				<h4 id="description">
+		    					Description
+		    				</h4>
+		    				<p>
+		    					The <mono>if</mono> function takes a single parameter specifying a condition and the call is followed by a code-block, if the condition does not evaluate to <mono>0</mono> then the code-block is parsed and all following <mono>else-if</mono> and <mono>else</mono> statements are skipped. An <mono>if</mono> call can be followed by any number of <mono>else-if</mono> statements and can optionally be ended with a single <mono>else</mono> statement to be run if none, all of which works as you would expect from other languages. 
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> <mono>f++</mono> is used for <mono>if</mono> and <mono>else-if</mono> conditions, even for <mono>n++</mono>. If you accidentally use <mono>n++</mono> for the condition it will most often run without any syntax or semantic errors anyway. 
+		    				</p>
+		    
+		    				<h4 id="options">
+		    					Options
+		    				</h4>
+		    				<p>
+		    					The following options are available for <mono>if</mono> statements:
+		    
+		    					<center class="table">
+		    						<table id="while_options_table" class="alt">
+		    							<thead>
+		    								<tr>
+		    									<th>option</th>
+		    									<th>description</th>
+		    								</tr>
+		    							</thead>
+		    							<tr>
+		    								<td><mono>f++</mono></td>
+		    								<td>parse code-block with <mono>f++</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>n++</mono></td>
+		    								<td>parse code-block with <mono>n++</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>!o</mono></td>
+		    								<td>do not add output</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>o</mono></td>
+		    								<td>add output</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>!s</mono></td>
+		    								<td>do not add scope</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>s</mono></td>
+		    								<td>add scope (default)</mono></td>
+		    							</tr>
+		    							<tfoot>
+		    								<tr>
+		    									<th>option</th>
+		    									<th>description</th>
+		    								</tr>
+		    							</tfoot>
+		    						</table>
+		    					</center>
 		    				</p>
 		    
 		    				<h4 id="f++-eg">
 		    					f++ example
 		    				</h4>
 		    				<p>
-		    					Example of <mono>break</mono> being used with <mono>f++</mono>:					
+		    					Example of <mono>if</mono> being used with <mono>f++</mono>:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
+		    <pre class="prettyprint inline linenums">
 :=(int, i=0)
-while(1)
-{
-	console("i: ", i)
-	if(i > 10)
-		break
-	++(i)
-}
-</pre>
+if(i &lt; 10)
+	console("this will print")
+else-if(i>10)
+	console("this will not print")
+else
+	console("this also will not print")</pre>
 		    </div>
 		    				</p>
 		    
@@ -163,22 +254,19 @@ while(1)
 		    					n++ example
 		    				</h4>
 		    				<p>
-		    					Example of <mono>break</mono> being used with <mono>n++</mono>:					
+		    					Example of <mono>if</mono> being used with <mono>n++</mono>:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
+		    <pre class="prettyprint inline linenums">
 @:=(int, i=0)
-@while(1)
-{
-	@console("i: ", i)
-	@if(i > 10)
-		@break
-	@++(i)
-}
-</pre>
+@if(i &lt; 10)
+	@console("this will print")
+else-if(i>10)
+	@console("this will not print")
+else
+	@console("this also will not print")</pre>
 		    </div>
 		    				</p>
-		    
 		    			</div>
 		    		</section>
 		    	</div>
@@ -225,8 +313,8 @@ while(1)
 		</div>
 
 		<!-- Scripts -->
+		<script src="../../assets/js/copy-pre.js"></script>
 		<script src="../../assets/js/rainbow.min.js"></script>
-		<script src="../../assets/js/toggle.js"></script>
 		<script src="../../assets/js/jquery.min.js"></script>
 		<script src="../../assets/js/jquery.dropotron.min.js"></script>
 		<script src="../../assets/js/browser.min.js"></script>
@@ -244,6 +332,7 @@ while(1)
 			for(var i=0; i<elements.length; i++)
 				elements[i].innerHTML = converter.makeHtml(elements[i].innerHTML.replace(/&lt;/g, "xwxw").replace(/&gt;/g, "pqpq")).replace(/xwxw/g, "&lt;").replace(/pqpq/g, "&gt;");
 		</script>
+		<script src="../../assets/js/toggle.js"></script>
 
 		<!-- Inserts current year -->
 		<script>

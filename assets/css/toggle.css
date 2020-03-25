@@ -1,17 +1,42 @@
 .dark-mode {
-  background-color: #1a1a1a !important;
+  background-color: #1f2021 !important;
   color: white !important;
 }
 
 .a-dark {
-  color: #c2bac2 !important;
+  color: #c2bac2 !important; 
 }
 
-.b-dark {
-  color: #20cf17 !important;
+.button-dark {
+  color: white !important;
 }
 
-.mono-dark {
+.th-dark
+{
+  overflow-x: auto !important;
+  color: #39ff14 !important;
+}
+
+.td-dark
+{
+  overflow-x: auto !important;
+  background-color: #363331;
+  border: 1px solid #a39e8e !important;
+}
+
+.fluro-green {
+  color: #39ff14 !important;
+}
+
+.white {
+  color: white !important;
+}
+
+.fluro-pink {
+  color: #ff1493 !important;
+}
+
+.fluro-purple {
   color: #c922c9 !important;
 }
 
