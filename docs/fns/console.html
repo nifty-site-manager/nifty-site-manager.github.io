@@ -154,6 +154,10 @@ console{options}(params)
 		    					The <mono>console</mono> function is for outputting text to the console with a linebreak automatically added to the end, it takes an aribtrary number of parameters. You can use <mono>endl</mono> as a parameter for flushed line breaks, <mono>\n</mono> for unflushed. 
 		    				</p>
 		    
+		    				<p>
+		    					<b>Note:</b> If you want multiple <mono>console</mono> calls to print to the console without being interrupted by output from threads building other files then use <a href="console.lock.html"><mono>console.lock</mono></a> and <a href="console.unlock.html"><mono>console.unlock</mono></a>.
+		    				</p>
+		    
 		    				<h4 id="options">
 		    					Options
 		    				</h4>

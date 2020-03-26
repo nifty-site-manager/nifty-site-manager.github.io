@@ -252,32 +252,32 @@ nift run -lua path/script-name.ext
 		    								</tr>
 		    							</thead>
 		    							<tr>
-		    								<td><mono>nsm_setnumber(string / lightuserdata varName, number value)</mono></td>
+		    								<td><mono>nsm_setnumber(string / lightuserdata, number)</mono></td>
 		    								<td><mono>nsm_setnumber("i", 0)</td>
 		    								<td>set Nift variable from number</td>
 		    							</tr>
 		    							<tr>
-		    								<td><mono>nsm_setstring(string / lightuserdata varName, string value)</mono></td>
+		    								<td><mono>nsm_setstring(string / lightuserdata, string)</mono></td>
 		    								<td><mono>nsm_setstring("str", "hello!")</td>
 		    								<td>set Nift variable from string</td>
 		    							</tr>
 		    							<tr>
-		    								<td><mono>nsm_tolightuserdata(string varName)</mono></td>
+		    								<td><mono>nsm_tolightuserdata(string)</mono></td>
 		    								<td><mono>nsm_tolightuserdata("x")</td>
 		    								<td>get pointer to Nift variable</td>
 		    							</tr>
 		    							<tr>
-		    								<td><mono>nsm_tonumber(string varName)</mono></td>
+		    								<td><mono>nsm_tonumber(string)</mono></td>
 		    								<td><mono>nsm_tonumber("i")</td>
 		    								<td>get number from Nift variable</td>
 		    							</tr>
 		    							<tr>
-		    								<td><mono>nsm_tostring(string varName)</mono></td>
+		    								<td><mono>nsm_tostring(string)</mono></td>
 		    								<td><mono>nsm_tostring("str")</td>
 		    								<td>get string from Nift variable</td>
 		    							</tr>
 		    							<tr>
-		    								<td><mono>nsm_write(output, params)</mono></td>
+		    								<td><mono>nsm_write(ostream, params)</mono></td>
 		    								<td><mono>nsm_write(console, "x: ", x, endl)</td>
 		    								<td>write to console, output file (ofile), or a stream</td>
 		    							</tr>
@@ -296,7 +296,7 @@ nift run -lua path/script-name.ext
 		    					LuaRocks
 		    				</h4>
 		    				<p>
-		    					As mentioned above, <a href="https://luarocks.org">LuaRocks</a> may be used to install all sorts of modules for Lua. There is information below about installing LuaRocks on different platforms. 
+		    					As mentioned above, <a href="https://luarocks.org">LuaRocks</a> may be used to install all sorts of modules for Lua. There is information below about installing LuaRocks on different platforms and configuring your platform. 
 		    				</p>
 		    
 		    				<p>

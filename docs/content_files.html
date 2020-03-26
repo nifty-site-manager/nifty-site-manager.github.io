@@ -146,7 +146,6 @@
 		    						<li><a href="#escape-chars">Escape characters</a></li>
 		    						<li><a href="#newlines">Newlines</a></li>
 		    						<li><a href="#comments">Comments</a></li>
-		    						<li><a href="#errors-warnings">Throwing errors and warnings</a></li>
 		    						<li><a href="#logical-operators">Logical operators (!, &&, ||)</a></li>
 		    						<li><a href="#relational-operators">Relational operators (==, !=, <, <=, >, >=)</a></li>
 		    						<li><a href="#[in/de]crement-operators">Increment and decrement operators (++, +++, --, ---)</a></li>
@@ -156,19 +155,13 @@
 		    						<li><a href="#input-date-time-tz-info">Inputting date, time & timezone information</a></li>
 		    						<li><a href="#string-vars">String variables</a></li>
 		    						<li><a href="#scope">Current scope and scope of variables/functions</a></li>
-		    						<li><a href="#input-from-file">Inputting text from other files</a></li>
-		    						<li><a href="#input-raw-from-file">Inputting raw text from other files</a></li>
-		    						<li><a href="#include-from-file">Including text from other files</a></li>
 		    						<li><a href="#paths-between-files">Paths from output files to other (tracked) files</a></li>
-		    						<li><a href="#links">Links</a></li>
-		    						<li><a href="#file-deps">Adding file dependencies</a></li>
 		    						<li><a href="#scripts">Running scripts</a></li>
 		    						<li><a href="#script-output">Inputting script output</a></li>
 		    						<li><a href="#script-output-raw">Inputting script output raw</a></li>
 		    						<li><a href="#system">Running system calls</a></li>
 		    						<li><a href="#system-output">Inputting system call output</a></li>
 		    						<li><a href="#system-output-raw">Inputting system call output raw</a></li>
-		    						<li><a href="#output-to-console">Outputting to console</a></li>
 		    						<li><a href="#(un)locking-console">Locking and unlocking the console</a></li>
 		    						<li><a href="#precision">Precision of doubles</a></li>
 		    						<li><a href="#user-input">User input from command-line</a></li>
@@ -385,42 +378,6 @@ that is broken in to
 @/*
 	multi-line comment without skipping trailing whitespace
 */!
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<h4 id="errors-warnings">
-		    					Throwing errors and warnings
-		    				</h4>
-		    				<p>
-		    					To throw an error when building a page you can use <mono>@error(msg)</mono>, and to throw a warning you can use <mono>@warning(msg)</mono>, eg:
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-@if(some condition)
-	@error("something bad happened, build failed!")
-@else
-{
-	@if(another condition)
-		@warning("something that should be checked happened")
-
-	@/*
-		code to run when there is no error
-	@*/
-}
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    					When an error or warning is thrown, the user will be notified on the console, eg.:
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-error: 'content/index.content': line 17: something bad happened, build failed!
-error: 'template/page.template': line 8: @input('content/index.content') failed
-
----- following failed to build ----
- index
------------------------------------
 </pre>
 		    </div>
 		    				</p>
@@ -825,96 +782,6 @@ error: 'template/page.template': line 8: @input('content/index.content') failed
 		    </div>
 		    				</p>
 		    
-		    				<h4 id="input-from-file">
-		    					Inputting text from other files
-		    				</h4>
-		    				<p>
-		    					Text may be inputted from another file using <mono>@input(path-to-file)</mono>, where <mono>path-to-file</mono> is the path from the main project directory to the input file.
-		    				</p>
-		    
-		    				<p>
-		    					For example suppose inside a project directory you have <mono>template/footer.content</mono>:
-		    
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="inline">
-Page was last built on $[currentdate].
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    					To input <mono>template/footer.content</mono> into another file write:
-		    
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-@input("template/footer.content")
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    					<u>Note:</u> <mono>Nift</mono> will not let you create an input loop, for example you cannot have <mono>@input(page.template)</mono> inside <mono>page.template</mono>, or any of the files that <mono>page.template</mono> inputs, or any of the files that they input, and so on. 
-		    				</p>
-		    
-		    				<p>
-		    					<b>Note:</b> If you would like to input the file only if the file exists, ie. not throw an error if the file does not exist, then use the <mono>if-exists</mono> option, eg:
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-@input{if-exists}(file-path)
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<h4 id="input-raw-from-file">
-		    					Inputting raw text from other files
-		    				</h4>
-		    				<p>
-		    					Raw text (so not parsed with Nift's template language) may be inputted from another file using <mono>@input{raw}(path-to-file)</mono>, where <mono>path-to-file</mono> is the path from the main project directory to the input file.
-		    				</p>
-		    
-		    				<p>
-		    					For example suppose inside your project directory you have <mono>template/footer.content</mono>.
-		    				</p>
-		    
-		    				<p>
-		    					To raw input <mono>template/footer.content</mono> into another file write:
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-@input{raw}("template/footer.content")
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    					<b>Note:</b> If you would like to input the file only if the file exists, ie. not throw an error if the file does not exist, then use the <mono>if-exists</mono> option, eg:
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-@input{raw, if-exists}(file-path)
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<h4 id="include-from-file">
-		    					Including text from other files
-		    				</h4>
-		    				<p>
-		    					Text may be included and processed from another file using <mono>@include(path-to-file)</mono>, where <mono>path-to-file</mono> is the path from the main project directory to the include file.
-		    				</p>
-		    
-		    				<p>
-		    					For example suppose inside a project directory you have <mono>lib/vector.n</mono> with definitions etc. for a vector type. You can have the function definitions etc. processed and included with:
-		    
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-@include(lib/vector.n)
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    					<b>Note:</b> If you attempt to include the same file more than once Nift will not throw an error, it just wont process the file more than once. For example if you have two different type files <mono>lib/type_1.nsm</mono> and <mono>lib/type_2.nsm</mono> that both need to include another identical file, they can do so without preventing you from incluing both <mono>lib/type_1.n</mono> and <mono>lib/type_2.n</mono>. 
-		    				</p>
-		    
 		    				<h4 id="paths-between-files">
 		    					Paths from output files to other (tracked) files
 		    				</h4>
@@ -986,51 +853,6 @@ Page was last built on $[currentdate].
 </pre>
 		    </div>
 		    				</p>
-		    
-		    				<h4 id="links">Links</h4>
-		    				<p>
-		    					Links may be added with <mono>@link{lang}(url)</mono> which will, depending on whether <mono>lang</mono> is <mono>html</mono> (default) or <mono>md>, be replaced in the output file with:
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-&lt;a href="url">url&lt;/a>    @# (.html)
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-[url](url)               @# (.md)  
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    					You can also use <mono>@link{lang}(url, text)</mono> which will, depending on whether <mono>lang</mono> is <mono>html</mono> (default) or <mono>md>, be replaced in the output file with:
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-&lt;a href="url">txt&lt;/a>    @# (.html)
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-[txt](url)               @# (.md)  
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<h4 id="file-deps">Adding file dependencies</h4>
-		    				<p>
-		    					File dependencies may be added using <mono>@dep(dep-path)</mono>, where <mono>dep-path</mono> is the path from the project root directory to the dependency file.
-		    				</p>
-		    
-		    				<p>
-		    					You can also add file dependencies manually by adding a <mono>.deps</mono> file residing in the same directory as the content file. For example if you have <mono>content/index.content</mono> as the content file add a <mono>content/index.deps</mono> file containing the extra dependencies you want to track. 
-		    				</p>
-		    
 		    
 		    				<h4 id="scripts">Running scripts</h4>
 		    				<p>
@@ -1243,51 +1065,6 @@ Page was last built on $[currentdate].
 @system{raw}("curl -sS https://pastebin.com/raw/atjKuxY6")
 </pre>
 		    </div>
-		    				</p>
-		    
-		    				<h4 id="output-to-console">
-		    					Outputting text to console
-		    				</h4>
-		    				<p>
-		    					You can output text to the console with <mono>@console(txt)</mono>. For example:
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-@console("finished building $[output-path]")
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    					<b>Note:</b> If you want multiple <mono>@console</mono> calls to output to the console without being interrupted by output from threads building other pages then use <mono>@console.lock()</mono> and <mono>@console.unlock()</mono> as specified in the following section <a href="#(un)locking-console">Locking and unlocking the console</a>.
-		    				</p>
-		    
-		    				<h4 id="(un)locking-console">
-		    					Locking and unlocking the console
-		    				</h4>
-		    				<p>
-		    					If you want multiple/subsequent function calls to output to the console without being interrupted by output from threads building other pages then you can use <mono>@console.lock()</mono> and <mono>@console.unlock()</mono>, eg.:
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-@console.lock()
-@/*
-	output to the console from subsequent function 
-	calls made here will appear uninterrupted
-@*/
-@console.unlock()
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    					You can check whether the console is locked using <mono>@console.locked()</mono>, which will output <mono>1</mono> if the console is locked and <mono>0</mono> if the console is not locked. 
-		    				</p>
-		    
-		    				<p>
-		    					<b>Note:</b> If a thread building another page attempts to output to the console while it is locked the thread will stall until the console becomes available again, which can slow down build times. 
-		    				</p>
-		    
-		    				<p>
-		    					If the console is locked without being unlocked then it will be automatically unlocked and an error will be thrown with your page failing to build. Further an error will be thrown if you try to unlock the console when it is not already locked. 
 		    				</p>
 		    
 		    				<h4 id="precision">
