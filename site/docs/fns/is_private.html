@@ -85,7 +85,7 @@
 									<li><a href="../displaying_code_blocks.html">Displaying Code Blocks</a></li>
 									<li><a href="../presentations.html">Presentations</a></li>
 									<li><a href="../lokinet_snapps.html">Lokinet SNApps</a></li>
-									<li><a href="../hosting_your_site.html">Hosting Your Site</a></li>
+									<li><a href="../hosting.html">Hosting</a></li>
 								</ul>
 							</li>
 							<li>
@@ -112,50 +112,59 @@
 
 		    <!-- Main -->
 		    <section id="main" class="wrapper style2">
-		    	<div class="title">fn: break</div>
+		    	<div class="title">fn: <mono>is_private</mono></div>
 		    	<div class="container">
 		    		<!-- Features -->
 		    		<section id="features">
 		    			<div class="content">
 		    				<a href="#contents" class="to_top">[contents]</a>
 		    
-		    				<p id="contents">
-		    					Contents:
-		    					<ul style="text-indent:30px">
-		    						<li><a href="#syntax">Syntax</a></li>
-		    						<li><a href="#f++-eg">f++ example</a></li>
-		    						<li><a href="#n++-eg">n++ example</a></li>
-		    					</ul>
-		    				</p>
+		    				<h4 id="contents">
+		    					Contents
+		    				</h4>
+		    				<ul style="text-indent:30px">
+		    					<li><a href="#syntax">Syntax</a></li>
+		    					<li><a href="#description">Description</a></li>
+		    					<li><a href="#f++-eg">f++ example</a></li>
+		    					<li><a href="#n++-eg">n++ example</a></li>
+		    				</ul>
 		    
 		    				<h4 id="syntax">
 		    					Syntax
 		    				</h4>
 		    				<p>
-		    					The syntax for <mono>break</mono> calls is:
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline"><code data-language="c">break
-</code></pre>
+		    					The syntax for <mono>is_private</mono> calls is:
+		    <div align="center" style="margin-top:-15px">
+		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+is_private(variable)
+</pre>
+		    </div><br>
+		    <div align="center">
+		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+@is_private(variable)
+</pre>
 		    </div>
+		    				</p>
+		    
+		    				<h4 id="description">
+		    					Description
+		    				</h4>
+		    				<p>
+		    					The <mono>is_private</mono> function takes a single variable or function as a parameter and returns whether the variable or function is private.
 		    				</p>
 		    
 		    				<h4 id="f++-eg">
 		    					f++ example
 		    				</h4>
 		    				<p>
-		    					Example of <mono>break</mono> being used with <mono>f++</mono>:					
+		    					Example of <mono>is_private</mono> being used with <mono>f++</mono>:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-:=(int, i=0)
-while(1)
-{
-	console("i: ", i)
-	if(i > 10)
-		break
-	++(i)
-}
-</pre>
+		    <pre class="prettyprint inline linenums">
+:={private}(int, a)
+:=(int, b)
+console(is_private(a))
+console(is_private(b))</pre>
 		    </div>
 		    				</p>
 		    
@@ -163,22 +172,16 @@ while(1)
 		    					n++ example
 		    				</h4>
 		    				<p>
-		    					Example of <mono>break</mono> being used with <mono>n++</mono>:					
+		    					Example of <mono>is_private</mono> being used with <mono>n++</mono>:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-@:=(int, i=0)
-@while(1)
-{
-	@console("i: ", i)
-	@if(i > 10)
-		@break
-	@++(i)
-}
-</pre>
+		    <pre class="prettyprint inline linenums">
+@:={private}(int, a)
+@:=(int, b)
+@console(@is_private(a))
+@console(@is_private(b))</pre>
 		    </div>
 		    				</p>
-		    
 		    			</div>
 		    		</section>
 		    	</div>
@@ -201,7 +204,7 @@ while(1)
 							<li><a href="https://nifty-site-manager.netlify.com/">Netlify</a></li>
 						</ul> <noselect><br></noselect>
 			
-						<center><img src="../../images/badger.svg" alt="Nift badger mascot" width="325" style="max-width:90%; margin-bottom:20px"></center>
+						<center><img src="../../images/badger.png" alt="Nift badger mascot" width="325" style="max-width:90%; margin-bottom:20px"></center>
 			
 						<ul>
 							<li>&copy;&nbsp;2015 - <span name="cyear"></span> <a href="https://nift.cc">Nift</a>.</li>

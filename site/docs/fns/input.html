@@ -85,7 +85,7 @@
 									<li><a href="../displaying_code_blocks.html">Displaying Code Blocks</a></li>
 									<li><a href="../presentations.html">Presentations</a></li>
 									<li><a href="../lokinet_snapps.html">Lokinet SNApps</a></li>
-									<li><a href="../hosting_your_site.html">Hosting Your Site</a></li>
+									<li><a href="../hosting.html">Hosting</a></li>
 								</ul>
 							</li>
 							<li>
@@ -112,50 +112,108 @@
 
 		    <!-- Main -->
 		    <section id="main" class="wrapper style2">
-		    	<div class="title">fn: break</div>
+		    	<div class="title">fn: <mono>inject</mono>/<mono>input</mono></div>
 		    	<div class="container">
 		    		<!-- Features -->
 		    		<section id="features">
 		    			<div class="content">
 		    				<a href="#contents" class="to_top">[contents]</a>
 		    
-		    				<p id="contents">
-		    					Contents:
-		    					<ul style="text-indent:30px">
-		    						<li><a href="#syntax">Syntax</a></li>
-		    						<li><a href="#f++-eg">f++ example</a></li>
-		    						<li><a href="#n++-eg">n++ example</a></li>
-		    					</ul>
-		    				</p>
+		    				<h4 id="contents">
+		    					Contents
+		    				</h4>
+		    				<ul style="text-indent:30px">
+		    					<li><a href="#syntax">Syntax</a></li>
+		    					<li><a href="#description">Description</a></li>
+		    					<li><a href="#options">Options</a></li>
+		    					<li><a href="#n++-eg">n++ example</a></li>
+		    				</ul>
 		    
 		    				<h4 id="syntax">
 		    					Syntax
 		    				</h4>
 		    				<p>
-		    					The syntax for <mono>break</mono> calls is:
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline"><code data-language="c">break
-</code></pre>
+		    					The syntax for <mono>inject</mono>/<mono>input</mono> calls is:
+		    <div align="center" style="margin-top:-15px">
+		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+input{options}(string)
+</pre>
+		    </div><br>
+		    <div align="center">
+		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+@input{options}(string)
+</pre>
 		    </div>
+		    				</p>
+		    
+		    				<h4 id="description">
+		    					Description
+		    				</h4>
+		    				<p>
+		    					The <mono>inject</mono>/<mono>input</mono> function is for injecting/inputting the output from parsing another file, it takes a single string parameter specifying the file to parse.
+		    				</p>
+		    
+		    				<h4 id="options">
+		    					Options
+		    				</h4>
+		    				<p>
+		    					The following options are available for <mono>inject</mono>/<mono>input</mono> calls:
+		    
+		    					<center class="table">
+		    						<table id="content_options_table" class="alt">
+		    							<thead>
+		    								<tr>
+		    									<th>option</th>
+		    									<th>description</th>
+		    								</tr>
+		    							</thead>
+		    							<tr>
+		    								<td><mono>f++</mono></td>
+		    								<td>inject output of specified file parsed with <mono>f++</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>n++</mono></td>
+		    								<td>inject output of specified file parsed with <mono>n++</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>raw</mono></td>
+		    								<td>inject content file as raw text</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>if-exists</mono></td>
+		    								<td>inject content file only if it exists (normally throws an error otherwise)</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>!i</mono></td>
+		    								<td>do not indent</td>
+		    							</tr>
+		    							<tfoot>
+		    								<tr>
+		    									<th>option</th>
+		    									<th>description</th>
+		    								</tr>
+		    							</tfoot>
+		    						</table>
+		    					</center>
 		    				</p>
 		    
 		    				<h4 id="f++-eg">
 		    					f++ example
 		    				</h4>
 		    				<p>
-		    					Example of <mono>break</mono> being used with <mono>f++</mono>:					
+		    					Example of <mono>input</mono> being used with <mono>f++</mono>:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-:=(int, i=0)
-while(1)
-{
-	console("i: ", i)
-	if(i > 10)
-		break
-	++(i)
-}
-</pre>
+		    <pre class="prettyprint inline linenums">
+&lt;html>
+	&lt;head>
+		@input("template/head.content")
+	&lt;/head>
+
+	&lt;body>
+		@content
+	&lt;/body>
+&lt;/html></pre>
 		    </div>
 		    				</p>
 		    
@@ -163,22 +221,21 @@ while(1)
 		    					n++ example
 		    				</h4>
 		    				<p>
-		    					Example of <mono>break</mono> being used with <mono>n++</mono>:					
+		    					Example of <mono>input</mono> being used with <mono>n++</mono>:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-@:=(int, i=0)
-@while(1)
-{
-	@console("i: ", i)
-	@if(i > 10)
-		@break
-	@++(i)
-}
-</pre>
+		    <pre class="prettyprint inline linenums">
+&lt;html>
+	&lt;head>
+		@input("template/head.content")
+	&lt;/head>
+
+	&lt;body>
+		@content
+	&lt;/body>
+&lt;/html></pre>
 		    </div>
 		    				</p>
-		    
 		    			</div>
 		    		</section>
 		    	</div>
@@ -201,7 +258,7 @@ while(1)
 							<li><a href="https://nifty-site-manager.netlify.com/">Netlify</a></li>
 						</ul> <noselect><br></noselect>
 			
-						<center><img src="../../images/badger.svg" alt="Nift badger mascot" width="325" style="max-width:90%; margin-bottom:20px"></center>
+						<center><img src="../../images/badger.png" alt="Nift badger mascot" width="325" style="max-width:90%; margin-bottom:20px"></center>
 			
 						<ul>
 							<li>&copy;&nbsp;2015 - <span name="cyear"></span> <a href="https://nift.cc">Nift</a>.</li>

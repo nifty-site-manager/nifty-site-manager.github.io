@@ -1,49 +1,82 @@
 <!-- Main -->
 <section id="main" class="wrapper style2">
-	<div class="title">fn: break</div>
+	<div class="title">fn: <mono>jsinclude</mono></div>
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
 			<div class="content">
 				<a href="#contents" class="to_top">[contents]</a>
 
-				<p id="contents">
-					Contents:
-					<ul style="text-indent:30px">
-						<li><a href="#syntax">Syntax</a></li>
-						<li><a href="#f++-eg">f++ example</a></li>
-						<li><a href="#n++-eg">n++ example</a></li>
-					</ul>
-				</p>
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#syntax">Syntax</a></li>
+					<li><a href="#description">Description</a></li>
+					<li><a href="#options">Options</a></li>
+					<li><a href="#f++-eg">f++ example</a></li>
+					<li><a href="#n++-eg">n++ example</a></li>
+				</ul>
 
 				<h4 id="syntax">
 					Syntax
 				</h4>
 				<p>
-					The syntax for <mono>break</mono> calls is:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline"><code data-language="c">break
-</code></pre>
+					The syntax for <mono>jsinclude</mono> calls is:
+<div align="center" style="margin-top:-15px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+jsinclude{options}(absolute-path)
+</pre>
+</div><br>
+<div align="center">
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+\@jsinclude{options}(absolute-path)
+</pre>
 </div>
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+
+				<p>
+					The <mono>jsinclude</mono> function takes a single absolute path as input and returns the code below to insert the path as a javascript file in html using the relative path:
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline">
+<script src="relative-path" options></script>
+</pre>
+</div>
+				</p>
+
+				<p>
+					The <mono>jsinclude</mono> function also throws a warning if the javascript file does not exist.
+				</p>
+
+				<p>
+					<b>Note:</b> Another good way to include a javascript file, where an error is thrown if the file does not exist, is:
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline">
+<script src="\@pathtofile(absolute-path)"></script>
+</pre>
+</div>
+				</p>
+
+				<h4 id="options">
+					Options
+				</h4>
+				<p>
+					Anything added as an option to a <mono>jsinclude</mono> call will be added to the code to insert the path as a javascript file as outlined in the <a href="#description">Description</a> section.
 				</p>
 
 				<h4 id="f++-eg">
 					f++ example
 				</h4>
 				<p>
-					Example of <mono>break</mono> being used with <mono>f++</mono>:					
+					Example of <mono>jsinclude</mono> being used with <mono>f++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline">
-:=(int, i=0)
-while(1)
-{
-	console("i: ", i)
-	if(i > 10)
-		break
-	++(i)
-}
-</pre>
+<pre class="prettyprint inline linenums">
+jsinclude("site/assets/js/jquery.min.js")</pre>
 </div>
 				</p>
 
@@ -51,19 +84,11 @@ while(1)
 					n++ example
 				</h4>
 				<p>
-					Example of <mono>break</mono> being used with <mono>n++</mono>:					
+					Example of <mono>jsinclude</mono> being used with <mono>n++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline">
-\@:=(int, i=0)
-\@while(1)
-{
-	\@console("i: ", i)
-	\@if(i > 10)
-		\@break
-	\@++(i)
-}
-</pre>
+<pre class="prettyprint inline linenums">
+\@jsinclude("site/assets/js/jquery.min.js")</pre>
 </div>
 				</p>
 

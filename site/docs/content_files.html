@@ -85,7 +85,7 @@
 									<li><a href="displaying_code_blocks.html">Displaying Code Blocks</a></li>
 									<li><a href="presentations.html">Presentations</a></li>
 									<li><a href="lokinet_snapps.html">Lokinet SNApps</a></li>
-									<li><a href="hosting_your_site.html">Hosting Your Site</a></li>
+									<li><a href="hosting.html">Hosting</a></li>
 								</ul>
 							</li>
 							<li>
@@ -174,10 +174,6 @@
 		    						<li><a href="#user-input">User input from command-line</a></li>
 		    						<li><a href="#user-file-input">User input from file</a></li>
 		    						<li><a href="#parse">Parsing text multiple times</a></li>
-		    						<li><a href="#css-files">Including css files</a></li>
-		    						<li><a href="#img-files">Including image files</a></li>
-		    						<li><a href="#js-files">Including javascript files</a></li>
-		    						<li><a href="#favicon-file">Including a favicon file</a></li>
 		    					</ul>
 		    				</p>
 		    
@@ -1439,114 +1435,6 @@ Page was last built on $[currentdate].
 </pre>
 		    </div>
 		    				</p>
-		    
-		    				<h4 id="css-files">
-		    					Including css files
-		    				</h4>
-		    				<p>
-		    					The best way to add CSS files is:
-		    
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-&lt;link rel='stylesheet' type='text/css' href='@pathtofile(path-to-css-file)'>
-</pre>
-		    </div>
-		    					Note that by using <mono>@pathtofile</mono> you will get a build error if the file does not exist (anymore). 
-		    				</p>
-		    
-		    				<p>
-		    					Alternatively you can include a css file using <mono>@cssinclude(path-to-css-file)</mono>, where <mono>path-to-css-file</mono> is the path from the main project directory to the css file (<u>not</u> the path from the page/output file to the css file). When building a page/output file, <mono>Nift</mono> will replace <mono>@cssinclude(path-to-css-file)</mono> with:
-		    
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-&lt;link rel='stylesheet' type='text/css' href='path-from-page-to-css-file'>
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<h4 id="img-files">
-		    					Including img files
-		    				</h4>
-		    				<p>
-		    					The best way to add an images to a website page is:
-		    
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-&lt;img src="@pathtofile(path-to-img-file)" width="120">
-</pre>
-		    </div>
-		    					Note that by using <mono>@pathtofile</mono> you will get a build error if the file does not exist (anymore). 
-		    				</p>
-		    
-		    				<p>
-		    					Alternatively, you can include an image file using <mono>@imginclude(path-to-img-file)</mono>, where <mono>path-to-img-file</mono> is the path from the main project directory to the img file (<u>not</u> the path from the page/output file to the img file). When building a page/output file, <mono>Nift</mono> will replace <mono>@imginclude(path-to-img-file)</mono> with the following:
-		    
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-&lt;img src="path-from-page-to-img-file">
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<h4 id="js-files">
-		    					Including javascript files
-		    				</h4>
-		    				<p>
-		    					The best way to add a javscript file is:
-		    
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-&lt;script src="@pathtofile(path-to-js-file)">&lt;/script>
-</pre>
-		    </div>
-		    					Note that by using <mono>@pathtofile</mono> you will get a build error if the file does not exist (anymore). 
-		    				</p>
-		    
-		    				<p>
-		    					Alternatively, you can include a javascript file using <mono>@jsinclude(path-to-js-file)</mono>, where <mono>path-to-js-file</mono> is the path from the main project directory to the js file (<u>not</u> the path from the page/output file to the js file). When building a page/output file, <mono>Nift</mono> will replace <mono>@jsinclude(path-to-js-file)</mono> with: 
-		    
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-&lt;script src="path-from-page-to-js-file">&lt;/script>
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<h4 id="favicon-file">
-		    					Including a favicon file
-		    				</h4>
-		    				<p>
-		    					The best way to add a favicon file is:
-		    
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-&lt;link rel='icon' type='image/png' href='@pathtofile(path-to-favicon-file)'>
-</pre>
-		    </div>
-		    					Note that by using <mono>@pathtofile</mono> you will get a build error if the file does not exist (anymore). 
-		    				</p>
-		    
-		    				<p>
-		    					Alternatively, you can include a favicon file using <mono>@faviconinclude(path-to-favicon-file)</mono>, where <mono>path-to-favicon-file</mono> is the path from the main project directory to the favicon file (<u>not</u> the path from the page/output file to the favicon file). When building a page/output file, <mono>Nift</mono> will replace <mono>@faviconinclude(path-to-favicon-file)</mono> with:
-		    
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-&lt;link rel='icon' type='image/png' href='path-from-page-to-favicon-file'>
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    					An example of using <mono>@cssinclude(path-to-css-file)</mono>, <mono>@jsinclude(path-to-js-file)</mono> and <mono>@faviconinclude(path-to-favicon-file)</mono> is given below (I typically put these in a <mono>head.content</mono> file located in the <mono>template</mono> directory and included in the <mono>template/page.template</mono> file in between the <mono>&lt;head>&lt;/head></mono> tags):
-		    
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-@cssinclude("site/css/pagestyle.css")
-@jsinclude("site/js/motion.css")
-@faviconinclude("site/files/favicon.ico")
-</pre>
-		    </div>
-		    				</p>
 		    			</div>
 		    		</section>
 		    	</div>
@@ -1569,7 +1457,7 @@ Page was last built on $[currentdate].
 							<li><a href="https://nifty-site-manager.netlify.com/">Netlify</a></li>
 						</ul> <noselect><br></noselect>
 			
-						<center><img src="../images/badger.svg" alt="Nift badger mascot" width="325" style="max-width:90%; margin-bottom:20px"></center>
+						<center><img src="../images/badger.png" alt="Nift badger mascot" width="325" style="max-width:90%; margin-bottom:20px"></center>
 			
 						<ul>
 							<li>&copy;&nbsp;2015 - <span name="cyear"></span> <a href="https://nift.cc">Nift</a>.</li>

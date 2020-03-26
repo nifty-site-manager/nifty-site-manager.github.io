@@ -1,29 +1,84 @@
 <!-- Main -->
 <section id="main" class="wrapper style2">
-	<div class="title">fn: break</div>
+	<div class="title">fn: <mono>imginclude</mono></div>
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
 			<div class="content">
 				<a href="#contents" class="to_top">[contents]</a>
 
-				<p id="contents">
-					Contents:
-					<ul style="text-indent:30px">
-						<li><a href="#syntax">Syntax</a></li>
-						<li><a href="#f++-eg">f++ example</a></li>
-						<li><a href="#n++-eg">n++ example</a></li>
-					</ul>
-				</p>
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#syntax">Syntax</a></li>
+					<li><a href="#description">Description</a></li>
+					<li><a href="#options">Options</a></li>
+					<li><a href="#f++-eg">f++ example</a></li>
+					<li><a href="#n++-eg">n++ example</a></li>
+				</ul>
 
 				<h4 id="syntax">
 					Syntax
 				</h4>
 				<p>
-					The syntax for <mono>break</mono> calls is:
+					The syntax for <mono>imginclude</mono> calls is:
+<div align="center" style="margin-top:-15px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+imginclude{options}(absolute-path)
+</pre>
+</div><br>
+<div align="center">
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+\@imginclude{options}(absolute-path)
+</pre>
+</div>
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+
+				<p>
+					The <mono>imginclude</mono> function takes a single absolute path as input and returns the code below to insert the path as an image in html using the relative path: 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline"><code data-language="c">break
-</code></pre>
+<pre class="prettyprint inline">
+<img src="relative-path" options>
+</pre>
+</div>
+				</p>
+
+				<p>
+					The <mono>imginclude</mono> function also throws a warning if the image file does not exist.
+				</p>
+
+				<p>
+					<b>Note:</b> Another good way to include an image file, where an error is thrown if the file does not exist, is:
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline">
+<img src="\@pathtofile(absolute-path)" width="120px">
+</pre>
+</div>
+				</p>
+
+				<h4 id="options">
+					Options
+				</h4>
+				<p>
+					Anything added as an option to an <mono>imginclude</mono> call will be added to the code to insert the path as an image as outlined in the <a href="#description">Description</a> section. For example if you make the following call:
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline">
+\@imginclude{width="250px", style="border-radius: 5px"}("logo.svg")
+</pre>
+</div>
+				</p>
+
+				<p>
+					The return value will be:
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline">
+<img src="logo.svg" width="250px" style="border-radius: 5px">
+</pre>
 </div>
 				</p>
 
@@ -31,19 +86,12 @@
 					f++ example
 				</h4>
 				<p>
-					Example of <mono>break</mono> being used with <mono>f++</mono>:					
+					Examples of <mono>imginclude</mono> being used with <mono>f++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline">
-:=(int, i=0)
-while(1)
-{
-	console("i: ", i)
-	if(i > 10)
-		break
-	++(i)
-}
-</pre>
+<pre class="prettyprint inline linenums">
+imginclude("site/assets/images/logo.svg")
+imginclude{width="200px"}("site/assets/images/teji.svg")</pre>
 </div>
 				</p>
 
@@ -51,19 +99,12 @@ while(1)
 					n++ example
 				</h4>
 				<p>
-					Example of <mono>break</mono> being used with <mono>n++</mono>:					
+					Examples of <mono>imginclude</mono> being used with <mono>n++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline">
-\@:=(int, i=0)
-\@while(1)
-{
-	\@console("i: ", i)
-	\@if(i > 10)
-		\@break
-	\@++(i)
-}
-</pre>
+<pre class="prettyprint inline linenums">
+\@imginclude("site/assets/images/logo.svg")
+\@imginclude{width="200px"}("site/assets/images/teji.svg")</pre>
 </div>
 				</p>
 

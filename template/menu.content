@@ -59,7 +59,7 @@
 						<li><a href="@pathto(docs/displaying_code_blocks)">Displaying Code Blocks</a></li>
 						<li><a href="@pathto(docs/presentations)">Presentations</a></li>
 						<li><a href="@pathto(docs/lokinet_snapps)">Lokinet SNApps</a></li>
-						<li><a href="@pathto(docs/hosting_your_site)">Hosting Your Site</a></li>
+						<li><a href="@pathto(docs/hosting)">Hosting</a></li>
 					</ul>
 				</li>
 				<li>

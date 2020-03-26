@@ -9,7 +9,7 @@
 			</header>
 
 			<center>
-				<a href="https://pages.github.com/"><img src="@pathtofile(site/images/bitbucket-icon.svg)" alt="GitHub Octocat mascot" width=200 style="max-width: 45%; margin-bottom: 40px"></a>
+				<a href="https://pages.bitbucket.io/"><img src="@pathtofile(site/images/bitbucket-icon.svg)" alt="BitBucket icon" width=200 style="max-width: 45%; margin-bottom: 40px"></a>
 			</center>
 
 			<div class="content">

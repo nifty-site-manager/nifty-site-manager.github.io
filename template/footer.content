@@ -15,7 +15,7 @@
 				<li><a href="https://nifty-site-manager.netlify.com/">Netlify</a></li>
 			</ul> <noselect><br></noselect>
 
-			<center><img src="@pathtofile(site/images/badger.svg)" alt="Nift badger mascot" width="325" style="max-width:90%; margin-bottom:20px"></center>
+			<center><img src="@pathtofile(site/images/badger.png)" alt="Nift badger mascot" width="325" style="max-width:90%; margin-bottom:20px"></center>
 
 			<ul>
 				<li>&copy;&nbsp;2015 - <span name="cyear"></span> <a href="https://nift.cc">Nift</a>.</li>

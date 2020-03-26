@@ -9,7 +9,7 @@
 			</header>
 
 			<center>
-				<a href="https://pages.github.com/"><img src="@pathtofile(site/images/Octorabbit.png)" alt="GitHub Octocat mascot" width=300 style="max-width: 45%; margin-bottom: 20px"></a>
+				<a href="https://pages.github.com/"><img src="@pathtofile(site/images/github-icon.svg)" alt="GitHub icon" width=200 style="max-width: 45%; margin-bottom: 40px"></a>
 			</center>
 
 			<div class="content">
@@ -44,7 +44,7 @@
 
 				<h4>
 					On GitHub with url:
-					<div align="center" style="margin-top:20px">
+<div align="center" style="margin-top:20px">
 <pre class="inline">
 https://username.github.io
 </pre>
@@ -72,7 +72,7 @@ https://username.github.io
 
 					<li>
 						Clone a local copy of your new repository by entering:
-						<div align="center" style="margin-top:20px">
+<div align="center" style="margin-top:20px">
 <pre class="inline">
 git clone https://github.com/username/username.github.io.git
 </pre>
@@ -89,8 +89,8 @@ git clone https://github.com/username/username.github.io.git
 
 					<li>
 						Enter the following into your terminal window:
-						<div align="center" style="margin-top:20px">
-<pre class="inline rounded">
+<div align="center" style="margin-top:20px">
+<pre class="inline">
 git status
 git add .
 git commit -m "added site files"
@@ -105,7 +105,7 @@ git push origin master
 
 					<li>
 						Your site, with url:
-						<div align="center" style="margin-top:20px">
+<div align="center" style="margin-top:20px">
 <pre class="inline">
 https://username.github.io
 </pre>
@@ -120,7 +120,7 @@ https://username.github.io
 
 				<h4>
 					On GitHub with url:
-					<div align="center" style="margin-top:20px">
+<div align="center" style="margin-top:20px">
 <pre class="inline">
 https://username.github.io/site-name
 </pre>
@@ -148,7 +148,7 @@ https://username.github.io/site-name
 
 					<li>
 						Clone a local copy of your new repository by entering: 
-						<div align="center" style="margin-top:20px">
+<div align="center" style="margin-top:20px">
 <pre class="inline">
 git clone https://github.com/username/site-name.git
 </pre>
@@ -166,7 +166,7 @@ git clone https://github.com/username/site-name.git
 
 					<li>
 						Enter the following into your terminal window:
-						<div align="center" style="margin-top:20px">
+<div align="center" style="margin-top:20px">
 <pre class="inline">
 git status
 git add .
@@ -182,7 +182,7 @@ git push origin master
 
 					<li>
 						Your site, with url:
-						<div align="center" style="margin-top:20px">
+<div align="center" style="margin-top:20px">
 <pre class="inline">
 https://username.github.io/site-name
 </pre>
@@ -223,7 +223,7 @@ https://username.github.io/site-name
 
 				<h4>
 					On GitHub with url:
-					<div align="center" style="margin-top:20px">
+<div align="center" style="margin-top:20px">
 <pre class="inline">
 https://username.github.io
 </pre>
@@ -251,7 +251,7 @@ https://username.github.io
 
 					<li>
 						Clone a local copy of your new repository by entering:
-						<div align="center" style="margin-top:20px">
+<div align="center" style="margin-top:20px">
 <pre class="inline">
 git clone https://github.com/username/username.github.io.git
 </pre>
@@ -272,7 +272,7 @@ git clone https://github.com/username/username.github.io.git
 
 					<li>
 						Enter the following into your terminal window:
-						<div align="center" style="margin-top:20px">
+<div align="center" style="margin-top:20px">
 <pre class="inline rounded">
 git status
 git add .
@@ -292,7 +292,7 @@ git push origin stage
 
 					<li>
 						Make a second local clone of your repository by again entering:
-						<div align="center" style="margin-top:20px">
+<div align="center" style="margin-top:20px">
 <pre class="inline">
 git clone https://github.com/username/username.github.io.git
 </pre>
@@ -317,7 +317,7 @@ git clone https://github.com/username/username.github.io.git
 
 					<li>
 						Enter <mono>git status and ensure you get:</mono>
-						<div align="center" style="margin-top:20px">
+<div align="center" style="margin-top:20px">
 <pre class="inline rounded">
 On branch master
 
@@ -334,7 +334,7 @@ nothing to commit (create/copy files and use "git add" to track)
 
 					<li>
 						Enter the following into your terminal window:
-						<div align="center" style="margin-top:20px; margin-bottom: 20px">
+<div align="center" style="margin-top:20px; margin-bottom: 20px">
 <pre class="inline rounded">
 git status
 git add .
@@ -350,7 +350,7 @@ git push origin master
 
 					<li>
 						Your site, with url:
-						<div align="center" style="margin-top:20px">
+<div align="center" style="margin-top:20px">
 <pre class="inline">
 https://username.github.io
 </pre>
@@ -376,7 +376,7 @@ https://username.github.io
 
 				<h4>
 					On GitHub with url:
-					<div align="center" style="margin-top:20px">
+<div align="center" style="margin-top:20px">
 <pre class="inline">
 https://username.github.io/site-name
 </pre>
@@ -404,7 +404,7 @@ https://username.github.io/site-name
 
 					<li>
 						Clone a local copy of your new repository by entering:
-						<div align="center" style="margin-top:20px">
+<div align="center" style="margin-top:20px">
 <pre class="inline">
 git clone https://github.com/username/site-name.git
 </pre>
@@ -426,7 +426,7 @@ git clone https://github.com/username/site-name.git
 
 					<li>
 						Enter the following into your terminal window:
-						<div align="center" style="margin-top:20px">
+<div align="center" style="margin-top:20px">
 <pre class="inline rounded">
 git status
 git add .
@@ -446,7 +446,7 @@ git push origin stage
 
 					<li>
 						Make a second local clone of your repository by again entering:
-						<div align="center" style="margin-top:20px">
+<div align="center" style="margin-top:20px">
 <pre class="inline">
 git clone https://github.com/username/username/site-name.git
 </pre>
@@ -471,7 +471,7 @@ git clone https://github.com/username/username/site-name.git
 
 					<li>
 						Enter <mono>git status and ensure you get:</mono>
-						<div align="center" style="margin-top:20px">
+<div align="center" style="margin-top:20px">
 <pre class="inline rounded">
 On branch gh-pages
 
@@ -488,7 +488,7 @@ nothing to commit (create/copy files and use "git add" to track)
 
 					<li>
 						Enter the following into your terminal window:
-						<div align="center" style="margin-top:20px; margin-bottom: 20px">
+<div align="center" style="margin-top:20px; margin-bottom: 20px">
 <pre class="inline rounded">
 git status
 git add .
@@ -504,7 +504,7 @@ git push origin master
 
 					<li>
 						Your site, with url:
-						<div align="center" style="margin-top:20px">
+<div align="center" style="margin-top:20px">
 <pre class="inline">
 https://username.github.io/site-name
 </pre>

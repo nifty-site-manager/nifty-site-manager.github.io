@@ -13,6 +13,7 @@
 				<ul style="text-indent:30px">
 					<li><a href="#syntax">Syntax</a></li>
 					<li><a href="#description">Description</a></li>
+					<li><a href="#options">Options</a></li>
 					<li><a href="#f++-eg">f++ example</a></li>
 					<li><a href="#n++-eg">n++ example</a></li>
 				</ul>
@@ -24,12 +25,12 @@
 					The syntax for <mono>cssinclude</mono> calls is:
 <div align="center" style="margin-top:-15px">
 <mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
-cssinclude(path)
+cssinclude{options}(abolute-path)
 </pre>
 </div><br>
 <div align="center">
 <mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
-\@cssinclude(path)
+\@cssinclude{options}(absolute-path)
 </pre>
 </div>
 				</p>
@@ -39,7 +40,34 @@ cssinclude(path)
 				</h4>
 
 				<p>
-					The <mono>cssinclude</mono> function takes a single absolute path as input and returns code to insert the path as a stylesheet in html using the relative path, it also throws a warning if the css file does not exist.
+					The <mono>cssinclude</mono> function takes a single absolute path as input and returns the following code to insert the path as a stylesheet in html using the relative path:
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline">
+<link rel="stylesheet" type="text/css" href="relative-path" options>
+</pre>
+</div>
+				</p>
+
+				<p>
+					The <mono>cssinclude</mono> function also throws a warning if the image file does not exist.
+				</p>
+
+				<p>
+					<b>Note:</b> Another good way to include a css file, where an error is thrown if the file does not exist, is:
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline">
+<link rel="stylesheet" 
+      type="text/css" 
+      href="\@pathtofile(absolute-path)">
+</pre>
+</div>
+				</p>
+
+				<h4 id="options">
+					Options
+				</h4>
+				<p>
+					Anything added as an option to a <mono>cssinclude</mono> call will be added to the code to insert the path as a stylesheet as outlined in the <a href="#description">Description</a> section.
 				</p>
 
 				<h4 id="f++-eg">

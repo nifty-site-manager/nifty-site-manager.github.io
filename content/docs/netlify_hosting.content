@@ -9,7 +9,7 @@
 			</header>
 
 			<center>
-				<a href="https://pages.github.com/"><img src="@pathtofile(site/images/netlify.png)" alt="GitHub Octocat mascot" width=200 style="max-width: 45%; margin-bottom: 40px"></a>
+				<a href="https://www.netlify.com/"><img src="@pathtofile(site/images/netlify.png)" alt="Netlify icon" width=200 style="max-width: 45%; margin-bottom: 40px"></a>
 			</center>
 
 			<div class="content">

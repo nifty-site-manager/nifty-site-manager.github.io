@@ -1,49 +1,101 @@
 <!-- Main -->
 <section id="main" class="wrapper style2">
-	<div class="title">fn: break</div>
+	<div class="title">fn: <mono>join</mono></div>
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
 			<div class="content">
 				<a href="#contents" class="to_top">[contents]</a>
 
-				<p id="contents">
-					Contents:
-					<ul style="text-indent:30px">
-						<li><a href="#syntax">Syntax</a></li>
-						<li><a href="#f++-eg">f++ example</a></li>
-						<li><a href="#n++-eg">n++ example</a></li>
-					</ul>
-				</p>
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#syntax">Syntax</a></li>
+					<li><a href="#description">Description</a></li>
+					<li><a href="#options">Options</a></li>
+					<li><a href="#f++-eg">f++ example</a></li>
+					<li><a href="#n++-eg">n++ example</a></li>
+				</ul>
 
 				<h4 id="syntax">
 					Syntax
 				</h4>
 				<p>
-					The syntax for <mono>break</mono> calls is:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline"><code data-language="c">break
-</code></pre>
+					The syntax for <mono>join</mono> calls is:
+<div align="center" style="margin-top:-15px; margin-bottom:50px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-40px">
+join{options}(object, string)
+join{options}(object, string, begin)
+join{options}(object, string, begin, end)
+</pre>
+</div><br>
+<div align="center" style="margin-top:-15px; margin-bottom:50px">
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-40px">
+\@join{options}(object, string)
+\@join{options}(object, string, begin)
+\@join{options}(object, string, begin, end)
+</pre>
 </div>
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+				<p>
+					The <mono>join</mono> function takes all items in an iterable object and returns them joined in to one string, it takes 2-4 input paramters, the first parameter should be an iterable object, the second parameter should be a string to separate each item with, the optional third parameter should be a non-negative integer to specify which position to begin at and the optional fourth parameter should be a non-negative integer to specify which position to end at.
+				</p>
+
+				<h4 id="options">
+					Options
+				</h4>
+				<p>
+					The following options are available for <mono>join</mono> calls:
+
+					<center class="table">
+						<table id="content_options_table" class="alt">
+							<thead>
+								<tr>
+									<th>option</th>
+									<th>description</th>
+								</tr>
+							</thead>
+							<tr>
+								<td><mono>@ent(<)-</mono></td>
+								<td>add separator at beginning</td>
+							</tr>
+							<tr>
+								<td><mono>-@ent(>)</mono></td>
+								<td>add separator at end</td>
+							</tr>
+							<tr>
+								<td><mono>@ent(<)-@ent(>)</mono></td>
+								<td>add separator at both beginning and end</td>
+							</tr>
+							<tfoot>
+								<tr>
+									<th>option</th>
+									<th>description</th>
+								</tr>
+							</tfoot>
+						</table>
+					</center>
 				</p>
 
 				<h4 id="f++-eg">
 					f++ example
 				</h4>
 				<p>
-					Example of <mono>break</mono> being used with <mono>f++</mono>:					
+					Examples of <mono>join</mono> being used with <mono>f++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline">
-:=(int, i=0)
-while(1)
+<pre class="prettyprint inline linenums">
+function(exampleFunc)
 {
-	console("i: ", i)
-	if(i > 10)
-		break
-	++(i)
+	console("params: {", join(params, "; "), "}")
 }
-</pre>
+
+exampleFunc("cat", dog, "%")</pre>
 </div>
 				</p>
 
@@ -51,22 +103,18 @@ while(1)
 					n++ example
 				</h4>
 				<p>
-					Example of <mono>break</mono> being used with <mono>n++</mono>:					
+					Example of <mono>join</mono> being used with <mono>n++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline">
-\@:=(int, i=0)
-\@while(1)
+<pre class="prettyprint inline linenums">
+\@function(exampleFunc)
 {
-	\@console("i: ", i)
-	\@if(i > 10)
-		\@break
-	\@++(i)
+	\@console("params: {", \@join(params, "; "), "}")
 }
-</pre>
+
+\@exampleFunc("cat", dog, "%")</pre>
 </div>
 				</p>
-
 			</div>
 		</section>
 	</div>

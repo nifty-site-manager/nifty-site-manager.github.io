@@ -254,12 +254,12 @@
 'input'
 'template/page.template'
 
-'docs/fns/is-const'
-'is-const'
+'docs/fns/is_const'
+'is_const'
 'template/page.template'
 
-'docs/fns/is-private'
-'is-private'
+'docs/fns/is_private'
+'is_private'
 'template/page.template'
 
 'docs/fns/join'
@@ -418,8 +418,8 @@
 'unquote'
 'template/page.template'
 
-'docs/fns/valid-type'
-'valid-type'
+'docs/fns/valid_type'
+'valid_type'
 'template/page.template'
 
 'docs/fns/warning'
@@ -446,8 +446,8 @@
 'gitlab_hosting'
 'template/page.template'
 
-'docs/hosting_your_site'
-'hosting_your_site'
+'docs/hosting'
+'hosting'
 'template/page.template'
 
 'docs/installing_nift'

@@ -123,7 +123,7 @@ n++: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
 						<li><a href="@pathtopage(docs/fns/cssinclude)">cssinclude</a></li>
 
 						<li><a href="@pathtopage(docs/fns/dep)">dep</a></li>
-						<li><a href="@pathtopage(docs/fns/ls)">dir</a></li>
+						<li><a href="@pathtopage(docs/fns/ls)">dir/ls</a></li>
 						<li><a href="@pathtopage(docs/fns/do-while)">do-while</a></li>
 
 						<li><a href="@pathtopage(docs/fns/ent)">ent</a></li>
@@ -145,15 +145,15 @@ n++: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
 						<li><a href="@pathtopage(docs/fns/in)">in</a></li>
 						<li><a href="@pathtopage(docs/fns/include)">include</a></li>
 						<li><a href="@pathtopage(docs/fns/input)">inject/input</a></li>
-						<li><a href="@pathtopage(docs/fns/is-const)">is-const</a></li>
-						<li><a href="@pathtopage(docs/fns/is-private)">is-private</a></li>
+						<li><a href="@pathtopage(docs/fns/is_const)">is_const</a></li>
+						<li><a href="@pathtopage(docs/fns/is_private)">is_private</a></li>
 
 						<li><a href="@pathtopage(docs/fns/join)">join</a></li>
 						<li><a href="@pathtopage(docs/fns/jsinclude)">jsinclude</a></li>
 
 						<li><a href="@pathtopage(docs/fns/layer)">layer</a></li>
 						<li><a href="@pathtopage(docs/fns/link)">link</a></li>
-						<li><a href="@pathtopage(docs/fns/ls)">ls</a></li>
+						<li><a href="@pathtopage(docs/fns/ls)">ls/dir</a></li>
 						<li><a href="@pathtopage(docs/fns/lua)">lua</a></li>
 						<li><a href="@pathtopage(docs/fns/lua_addnsmfns)">lua_addnsmfns</a></li>
 						<li><a href="@pathtopage(docs/fns/lua_getglobal)">lua_getglobal</a></li>
@@ -198,7 +198,7 @@ n++: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
 
 						<li><a href="@pathtopage(docs/fns/unquote)">unquote</a></li>
 
-						<li><a href="@pathtopage(docs/fns/valid-type)">valid-type</a></li>
+						<li><a href="@pathtopage(docs/fns/valid_type)">valid_type</a></li>
 
 						<li><a href="@pathtopage(docs/fns/warning)">warning</a></li>
 						<li><a href="@pathtopage(docs/fns/while)">while</a></li>

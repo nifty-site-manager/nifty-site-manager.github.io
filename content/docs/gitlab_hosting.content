@@ -9,7 +9,7 @@
 			</header>
 
 			<center>
-				<a href="https://pages.github.com/"><img src="@pathtofile(site/images/gitlab-icon.svg)" alt="GitHub Octocat mascot" width=200 style="max-width: 45%; margin-bottom: 40px"></a>
+				<a href="https://about.gitlab.com/product/pages/"><img src="@pathtofile(site/images/gitlab-icon.svg)" alt="GitLab icon" width=200 style="max-width: 45%; margin-bottom: 40px"></a>
 			</center>
 
 			<div class="content">
