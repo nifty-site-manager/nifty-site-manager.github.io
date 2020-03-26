@@ -302,6 +302,10 @@
 'lua_pop'
 'template/page.template'
 
+'docs/fns/lua_pushlightuserdata'
+'lua_pushlightuserdata'
+'template/page.template'
+
 'docs/fns/lua_pushnumber'
 'lua_pushnumber'
 'template/page.template'
@@ -312,6 +316,10 @@
 
 'docs/fns/lua_remove'
 'lua_remove'
+'template/page.template'
+
+'docs/fns/lua_setglobal'
+'lua_setglobal'
 'template/page.template'
 
 'docs/fns/lua_tonumber'

@@ -112,50 +112,110 @@
 
 		    <!-- Main -->
 		    <section id="main" class="wrapper style2">
-		    	<div class="title">fn: break</div>
+		    	<div class="title">fn: <mono>lua_addnsmfns</mono></div>
 		    	<div class="container">
 		    		<!-- Features -->
 		    		<section id="features">
 		    			<div class="content">
 		    				<a href="#contents" class="to_top">[contents]</a>
 		    
-		    				<p id="contents">
-		    					Contents:
-		    					<ul style="text-indent:30px">
-		    						<li><a href="#syntax">Syntax</a></li>
-		    						<li><a href="#f++-eg">f++ example</a></li>
-		    						<li><a href="#n++-eg">n++ example</a></li>
-		    					</ul>
-		    				</p>
+		    				<h4 id="contents">
+		    					Contents
+		    				</h4>
+		    				<ul style="text-indent:30px">
+		    					<li><a href="#syntax">Syntax</a></li>
+		    					<li><a href="#description">Description</a></li>
+		    					<li><a href="#f++-eg">f++ example</a></li>
+		    					<li><a href="#n++-eg">n++ example</a></li>
+		    				</ul>
 		    
 		    				<h4 id="syntax">
 		    					Syntax
 		    				</h4>
 		    				<p>
-		    					The syntax for <mono>break</mono> calls is:
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline"><code data-language="c">break
-</code></pre>
+		    					The syntax for <mono>lua_addnsmfns</mono> calls is:
+		    <div align="center" style="margin-top:-15px">
+		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+lua_addnsmfns
+</pre>
+		    </div><br>
+		    <div align="center">
+		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+@lua_addnsmfns
+</pre>
 		    </div>
+		    				</p>
+		    
+		    				<h4 id="description">
+		    					Description
+		    				</h4>
+		    				<p>
+		    					The <mono>lua_addnsmfns</mono> function adds the following <mono>Nift</mono> specific functions to <mono>Lua</mono>:
+		    
+		    					<center class="table">
+		    						<table id="lua_nift_fns_table" class="alt">
+		    							<thead>
+		    								<tr>
+		    									<th>syntax</th>
+		    									<th>example</th>
+		    									<th>about</th>
+		    								</tr>
+		    							</thead>
+		    							<tr>
+		    								<td><mono>nsm_setnumber(string / lightuserdata, number)</mono></td>
+		    								<td><mono>nsm_setnumber("i", 0)</td>
+		    								<td>set Nift variable from number</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>nsm_setstring(string / lightuserdata, string)</mono></td>
+		    								<td><mono>nsm_setstring("str", "hello!")</td>
+		    								<td>set Nift variable from string</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>nsm_tolightuserdata(string)</mono></td>
+		    								<td><mono>nsm_tolightuserdata("x")</td>
+		    								<td>get pointer to Nift variable</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>nsm_tonumber(string)</mono></td>
+		    								<td><mono>nsm_tonumber("i")</td>
+		    								<td>get number from Nift variable</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>nsm_tostring(string)</mono></td>
+		    								<td><mono>nsm_tostring("str")</td>
+		    								<td>get string from Nift variable</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>nsm_write(ostream, params)</mono></td>
+		    								<td><mono>nsm_write(console, "x: ", x, endl)</td>
+		    								<td>write to console, output file (ofile), or a stream</td>
+		    							</tr>
+		    							<tfoot>
+		    								<tr>
+		    									<th>syntax</th>
+		    									<th>example</th>
+		    									<th>about</th>
+		    								</tr>
+		    							</tfoot>
+		    						</table>
+		    					</center>
 		    				</p>
 		    
 		    				<h4 id="f++-eg">
 		    					f++ example
 		    				</h4>
 		    				<p>
-		    					Example of <mono>break</mono> being used with <mono>f++</mono>:					
+		    					Example of <mono>lua_addnsmfns</mono> being used with <mono>f++</mono>:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-:=(int, i=0)
-while(1)
+		    <pre class="prettyprint inline linenums">
+:=(int, x=10)
+lua_addnsmfns
+lua
 {
-	console("i: ", i)
-	if(i > 10)
-		break
-	++(i)
-}
-</pre>
+	nsm_write(console, "x: ", nsm_tonumber("x"), endl)
+}</pre>
 		    </div>
 		    				</p>
 		    
@@ -163,22 +223,18 @@ while(1)
 		    					n++ example
 		    				</h4>
 		    				<p>
-		    					Example of <mono>break</mono> being used with <mono>n++</mono>:					
+		    					Example of <mono>lua_addnsmfns</mono> being used with <mono>n++</mono>:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-@:=(int, i=0)
-@while(1)
+		    <pre class="prettyprint inline linenums">
+@:=(int, x=10)
+@lua_addnsmfns
+@lua
 {
-	@console("i: ", i)
-	@if(i > 10)
-		@break
-	@++(i)
-}
-</pre>
+	nsm_write(console, "x: ", nsm_tonumber("x"), endl)
+}</pre>
 		    </div>
 		    				</p>
-		    
 		    			</div>
 		    		</section>
 		    	</div>

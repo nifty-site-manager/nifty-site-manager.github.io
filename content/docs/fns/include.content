@@ -41,6 +41,10 @@ include{options}(params)
 					The <mono>include</mono> function is for including <mono>f++</mono>/<mono>n++</mono> files, for example files that contain function, struct and type definitions, including but not limited to library files. The <mono>include</mono> function takes a non-zero number of string parameters specifying files to include.
 				</p>
 
+				<p>
+					<b>Note:</b> If you attempt to include the same file more than once Nift will not throw an error, it just wont process the file more than once. For example if you have two different type files <mono>lib/type_1.nsm</mono> and <mono>lib/type_2.nsm</mono> that both need to include another identical file, they can do so without preventing you from incluing both <mono>lib/type_1.n</mono> and <mono>lib/type_2.n</mono>. 
+				</p>
+
 				<h4 id="options">
 					Options
 				</h4>
@@ -48,7 +52,7 @@ include{options}(params)
 					The following options are available for <mono>include</mono> calls:
 
 					<center class="table">
-						<table id="content_options_table" class="alt">
+						<table id="include_options_table" class="alt">
 							<thead>
 								<tr>
 									<th>option</th>

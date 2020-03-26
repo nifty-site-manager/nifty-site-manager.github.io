@@ -112,50 +112,107 @@
 
 		    <!-- Main -->
 		    <section id="main" class="wrapper style2">
-		    	<div class="title">fn: break</div>
+		    	<div class="title">fn: <mono>link</mono></div>
 		    	<div class="container">
 		    		<!-- Features -->
 		    		<section id="features">
 		    			<div class="content">
 		    				<a href="#contents" class="to_top">[contents]</a>
 		    
-		    				<p id="contents">
-		    					Contents:
-		    					<ul style="text-indent:30px">
-		    						<li><a href="#syntax">Syntax</a></li>
-		    						<li><a href="#f++-eg">f++ example</a></li>
-		    						<li><a href="#n++-eg">n++ example</a></li>
-		    					</ul>
-		    				</p>
+		    				<h4 id="contents">
+		    					Contents
+		    				</h4>
+		    				<ul style="text-indent:30px">
+		    					<li><a href="#syntax">Syntax</a></li>
+		    					<li><a href="#description">Description</a></li>
+		    					<li><a href="#options">Options</a></li>
+		    					<li><a href="#f++-eg">f++ example</a></li>
+		    					<li><a href="#n++-eg">n++ example</a></li>
+		    				</ul>
 		    
 		    				<h4 id="syntax">
 		    					Syntax
 		    				</h4>
 		    				<p>
-		    					The syntax for <mono>break</mono> calls is:
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline"><code data-language="c">break
-</code></pre>
+		    					The syntax for <mono>link</mono> calls is:
+		    <div align="center" style="margin-top:-15px; margin-bottom:25px">
+		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-27px">
+link{options}(url)
+link{options}(url, string)
+</pre>
+		    </div><br>
+		    <div align="center" style="margin-top:-15px; margin-bottom:15px">
+		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-27px">
+@link{options}(url)
+@link{options}(url, string)
+</pre>
 		    </div>
+		    				</p>
+		    
+		    				<h4 id="description">
+		    					Description
+		    				</h4>
+		    				<p>
+		    					The <mono>link</mono> function returns code for inserting links in to different languages. It either takes just a single string parameter specifying a <mono>url</mono> or the same first parameter with an optional second string parameter specifying the text to be displayed for the link, by default it returns code for <mono>html</mono> links. 
+		    				</p>
+		    
+		    				<p>
+		    					The format of the code returned by <mono>link</mono> is as follows:
+		    <div align="center" style="margin-top:-15px; margin-bottom:25px">
+		    <mono>html</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-27px">
+&lt;a href="url">url&lt;/a>
+&lt;a href="url">string&lt;/a>
+</pre>
+		    </div><br>
+		    <div align="center" style="margin-top:-15px; margin-bottom:15px">
+		    <mono>md</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-27px">
+[url](url)
+[string](url)
+</pre>
+		    </div>
+		    				</p>
+		    
+		    				<h4 id="options">
+		    					Options
+		    				</h4>
+		    				<p>
+		    					The following options are available for <mono>link</mono> calls:
+		    
+		    					<center class="table">
+		    						<table id="link_options_table" class="alt">
+		    							<thead>
+		    								<tr>
+		    									<th>option</th>
+		    									<th>description</th>
+		    								</tr>
+		    							</thead>
+		    							<tr>
+		    								<td><mono>html</mono></td>
+		    								<td>return code for html link</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>md</mono></td>
+		    								<td>return code for markdown link</td>
+		    							</tr>
+		    							<tfoot>
+		    								<tr>
+		    									<th>option</th>
+		    									<th>description</th>
+		    								</tr>
+		    							</tfoot>
+		    						</table>
+		    					</center>
 		    				</p>
 		    
 		    				<h4 id="f++-eg">
 		    					f++ example
 		    				</h4>
 		    				<p>
-		    					Example of <mono>break</mono> being used with <mono>f++</mono>:					
+		    					Examples of <mono>link</mono> being used with <mono>f++</mono>:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-:=(int, i=0)
-while(1)
-{
-	console("i: ", i)
-	if(i > 10)
-		break
-	++(i)
-}
-</pre>
+		    <pre class="prettyprint inline linenums">
+link("https://nift.cc", "Nift website")</pre>
 		    </div>
 		    				</p>
 		    
@@ -163,22 +220,13 @@ while(1)
 		    					n++ example
 		    				</h4>
 		    				<p>
-		    					Example of <mono>break</mono> being used with <mono>n++</mono>:					
+		    					Example of <mono>link</mono> being used with <mono>n++</mono>:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-@:=(int, i=0)
-@while(1)
-{
-	@console("i: ", i)
-	@if(i > 10)
-		@break
-	@++(i)
-}
-</pre>
+		    <pre class="prettyprint inline linenums">
+@link("https://nift.cc", "Nift website")</pre>
 		    </div>
 		    				</p>
-		    
 		    			</div>
 		    		</section>
 		    	</div>

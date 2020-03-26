@@ -41,6 +41,10 @@ console.unlock
 					The <mono>console.unlock</mono> function is for reallowing other threads from outputting to the console when it is currently locked, it takes zero parameters.
 				</p>
 
+				<p>
+					<b>Note:</b> An error will be thrown if you call <mono>console.unlock</mono> when the console is not already locked. 
+				</p>
+
 				<h4 id="f++-eg">
 					f++ example
 				</h4>

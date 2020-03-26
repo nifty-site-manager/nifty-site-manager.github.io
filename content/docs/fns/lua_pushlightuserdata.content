@@ -1,6 +1,6 @@
 <!-- Main -->
 <section id="main" class="wrapper style2">
-	<div class="title">fn: <mono>lua_tonumber</mono></div>
+	<div class="title">fn: <mono>lua_pushlightuserdata</mono></div>
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
@@ -21,15 +21,15 @@
 					Syntax
 				</h4>
 				<p>
-					The syntax for <mono>lua_tonumber</mono> calls is:
+					The syntax for <mono>lua_pushlightuserdata</mono> calls is:
 <div align="center" style="margin-top:-15px">
 <mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
-lua_tonumber(int)
+lua_pushlightuserdata(variable)
 </pre>
 </div><br>
 <div align="center">
 <mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
-\@lua_tonumber(int)
+\@lua_pushlightuserdata(variable)
 </pre>
 </div>
 				</p>
@@ -38,23 +38,42 @@ lua_tonumber(int)
 					Description
 				</h4>
 				<p>
-					The <mono>lua_tonumber</mono> function returns the number value on the <mono>Lua</mono> stack at the given acceptable index, it is a binding for <a href="https://www.lua.org/manual/5.1/manual.html#lua_tonumber">this</a> function. The value on the <mono>Lua</mono> stack at the specified index must be a number or a string convertible to a number (see <a href="https://www.lua.org/manual/5.1/manual.html#2.2.1">§2.2.1</a>), otherwise <mono>lua_tonumber</mono> returns <mono>0</mono>.
+					The <mono>lua_pushlightuserdata</mono> function takes a single variable parameter and pushes a pointer to the variable on to the <mono>Lua</mono> stack as a <mono>lightuserdata</mono>, it is a binding for <a href="https://www.lua.org/manual/5.1/manual.html#lua_pushlightuserdata">this</a> function. 
 				</p>
 
 				<h4 id="f++-eg">
 					f++ example
 				</h4>
 				<p>
-					Example of <mono>lua_tonumber</mono> being used with <mono>f++</mono>:					
+					Example of <mono>lua_pushlightuserdata</mono> being used with <mono>f++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint inline linenums">
+:=(string, str)
+lua_pushlightuserdata(str)
+lua_setglobal("s")
+lua_addnsmfns
 lua
 {
-	x = 10
+	nsm_setstring(s, "hello, world!")
 }
-lua_getglobal("x")
-console(lua_tonumber(1))</pre>
+console(str)</pre>
+</div>
+				</p>
+
+				<p>
+					<b>Note:</b> You can achieve essentially the same as above as follows:					
+
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline linenums">
+:=(string, str)
+lua_addnsmfns
+lua
+{
+	s = nsm_tolightuserdata("str")
+	nsm_setstring(s, "hello, world!")
+}
+console(str)</pre>
 </div>
 				</p>
 
@@ -62,16 +81,19 @@ console(lua_tonumber(1))</pre>
 					n++ example
 				</h4>
 				<p>
-					Example of <mono>lua_tonumber</mono> being used with <mono>n++</mono>:					
+					Example of <mono>lua_pushlightuserdata</mono> being used with <mono>n++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint inline linenums">
+\@:=(string, str)
+\@lua_pushlightuserdata(str)
+\@lua_setglobal("s")
+\@lua_addnsmfns
 \@lua
 {
-	x = 10
+	nsm_setstring(s, "hello, world!")
 }
-\@lua_getglobal("x")
-\@console(\@lua_tonumber(1))</pre>
+\@console(str)</pre>
 </div>
 				</p>
 			</div>

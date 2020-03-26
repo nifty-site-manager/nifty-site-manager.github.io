@@ -112,7 +112,7 @@
 
 		    <!-- Main -->
 		    <section id="main" class="wrapper style2">
-		    	<div class="title">fn: <mono>dep</mono></div>
+		    	<div class="title">fn: <mono>lua_pushlightuserdata</mono></div>
 		    	<div class="container">
 		    		<!-- Features -->
 		    		<section id="features">
@@ -133,15 +133,15 @@
 		    					Syntax
 		    				</h4>
 		    				<p>
-		    					The syntax for <mono>dep</mono> calls is:
+		    					The syntax for <mono>lua_pushlightuserdata</mono> calls is:
 		    <div align="center" style="margin-top:-15px">
 		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
-dep(params)
+lua_pushlightuserdata(variable)
 </pre>
 		    </div><br>
 		    <div align="center">
 		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
-@dep(params)
+@lua_pushlightuserdata(variable)
 </pre>
 		    </div>
 		    				</p>
@@ -150,22 +150,42 @@ dep(params)
 		    					Description
 		    				</h4>
 		    				<p>
-		    					The <mono>dep</mono> function is for specifying <u>dependencies</u>, it takes a non-zero number of parameters that should be paths to existing directories and files, which adds them all as dependencies for the file being built. 
-		    				</p>
-		    
-		    				<p>
-		    					<b>Note:</b> You can also add file dependencies manually by adding a <mono>.deps</mono> file residing in the same directory as the content file. For example if you have <mono>content/index.content</mono> as the content file add a <mono>content/index.deps</mono> file containing the extra dependencies you want to track. 
+		    					The <mono>lua_pushlightuserdata</mono> function takes a single variable parameter and pushes a pointer to the variable on to the <mono>Lua</mono> stack as a <mono>lightuserdata</mono>, it is a binding for <a href="https://www.lua.org/manual/5.1/manual.html#lua_pushlightuserdata">this</a> function. 
 		    				</p>
 		    
 		    				<h4 id="f++-eg">
 		    					f++ example
 		    				</h4>
 		    				<p>
-		    					Example of <mono>dep</mono> being used with <mono>f++</mono>:					
+		    					Example of <mono>lua_pushlightuserdata</mono> being used with <mono>f++</mono>:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline linenums">
-dep("site/index.html")</pre>
+:=(string, str)
+lua_pushlightuserdata(str)
+lua_setglobal("s")
+lua_addnsmfns
+lua
+{
+	nsm_setstring(s, "hello, world!")
+}
+console(str)</pre>
+		    </div>
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> You can achieve essentially the same as above as follows:					
+		    
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline linenums">
+:=(string, str)
+lua_addnsmfns
+lua
+{
+	s = nsm_tolightuserdata("str")
+	nsm_setstring(s, "hello, world!")
+}
+console(str)</pre>
 		    </div>
 		    				</p>
 		    
@@ -173,11 +193,19 @@ dep("site/index.html")</pre>
 		    					n++ example
 		    				</h4>
 		    				<p>
-		    					Example of <mono>dep</mono> being used with <mono>n++</mono>:					
+		    					Example of <mono>lua_pushlightuserdata</mono> being used with <mono>n++</mono>:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline linenums">
-@dep("site/index.html")</pre>
+@:=(string, str)
+@lua_pushlightuserdata(str)
+@lua_setglobal("s")
+@lua_addnsmfns
+@lua
+{
+	nsm_setstring(s, "hello, world!")
+}
+@console(str)</pre>
 		    </div>
 		    				</p>
 		    			</div>

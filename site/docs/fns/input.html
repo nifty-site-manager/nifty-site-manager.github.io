@@ -153,6 +153,10 @@ input{options}(string)
 		    					The <mono>inject</mono>/<mono>input</mono> function is for injecting/inputting the output from parsing another file, it takes a single string parameter specifying the file to parse.
 		    				</p>
 		    
+		    				<p>
+		    					<u>Note:</u> <mono>Nift</mono> will not let you create an input loop, for example you cannot have <mono>@input(page.template)</mono> inside <mono>page.template</mono>, or any of the files that <mono>page.template</mono> injects, or any of the files that they inject, and so on. 
+		    				</p>
+		    
 		    				<h4 id="options">
 		    					Options
 		    				</h4>
@@ -160,7 +164,7 @@ input{options}(string)
 		    					The following options are available for <mono>inject</mono>/<mono>input</mono> calls:
 		    
 		    					<center class="table">
-		    						<table id="content_options_table" class="alt">
+		    						<table id="input_options_table" class="alt">
 		    							<thead>
 		    								<tr>
 		    									<th>option</th>
@@ -177,11 +181,11 @@ input{options}(string)
 		    							</tr>
 		    							<tr>
 		    								<td><mono>raw</mono></td>
-		    								<td>inject content file as raw text</td>
+		    								<td>inject specified file as raw text</td>
 		    							</tr>
 		    							<tr>
 		    								<td><mono>if-exists</mono></td>
-		    								<td>inject content file only if it exists (normally throws an error otherwise)</td>
+		    								<td>inject specified file only if it exists (normally throws an error otherwise)</td>
 		    							</tr>
 		    							<tr>
 		    								<td><mono>!i</mono></td>

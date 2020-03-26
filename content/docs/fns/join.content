@@ -53,7 +53,7 @@ join{options}(object, string, begin, end)
 					The following options are available for <mono>join</mono> calls:
 
 					<center class="table">
-						<table id="content_options_table" class="alt">
+						<table id="join_options_table" class="alt">
 							<thead>
 								<tr>
 									<th>option</th>

@@ -48,7 +48,7 @@ in{options}(message)
 					The following options are available for <mono>in</mono> calls:
 
 					<center class="table">
-						<table id="content_options_table" class="alt">
+						<table id="in_options_table" class="alt">
 							<thead>
 								<tr>
 									<th>option</th>

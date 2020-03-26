@@ -63,7 +63,7 @@ for{options}(pre-loop code; condition; post-iteration code)
 					The following options are available for <mono>for</mono> loops:
 
 					<center class="table">
-						<table id="while_options_table" class="alt">
+						<table id="for_options_table" class="alt">
 							<thead>
 								<tr>
 									<th>option</th>

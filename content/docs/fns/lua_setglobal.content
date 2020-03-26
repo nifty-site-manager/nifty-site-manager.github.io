@@ -1,6 +1,6 @@
 <!-- Main -->
 <section id="main" class="wrapper style2">
-	<div class="title">fn: <mono>lua_gettop</mono></div>
+	<div class="title">fn: <mono>lua_setglobal</mono></div>
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
@@ -21,15 +21,15 @@
 					Syntax
 				</h4>
 				<p>
-					The syntax for <mono>lua_gettop</mono> calls is:
+					The syntax for <mono>lua_setglobal</mono> calls is:
 <div align="center" style="margin-top:-15px">
 <mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
-lua_gettop()
+lua_setglobal(string)
 </pre>
 </div><br>
 <div align="center">
 <mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
-\@lua_gettop()
+\@lua_setglobal(string)
 </pre>
 </div>
 				</p>
@@ -38,19 +38,23 @@ lua_gettop()
 					Description
 				</h4>
 				<p>
-					The <mono>lua_gettop</mono> function takes zero parameters and returns the number of elements in the <mono>Lua</mono> stack, which is the index of the top element in the stack, it is a binding for <a href="https://www.lua.org/manual/5.1/manual.html#lua_gettop">this</a> function. 
+					The <mono>lua_setglobal</mono> function takes a single string parameter, pops a value from the <mono>Lua</mono> stack and sets it as the value for a <mono>Lua</mono> global variable given the name of the input parameter, it is a binding for <a href="https://www.lua.org/manual/5.1/manual.html#lua_setglobal">this</a> function. 
 				</p>
 
 				<h4 id="f++-eg">
 					f++ example
 				</h4>
 				<p>
-					Example of <mono>lua_gettop</mono> being used with <mono>f++</mono>:					
+					Example of <mono>lua_setglobal</mono> being used with <mono>f++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint inline linenums">
-lua_pushnumber(14)
-console(lua_gettop())</pre>
+lua_pushstring("hello, world!")
+lua_setglobal("str")
+lua
+{
+	print(str)
+}</pre>
 </div>
 				</p>
 
@@ -58,12 +62,16 @@ console(lua_gettop())</pre>
 					n++ example
 				</h4>
 				<p>
-					Example of <mono>lua_gettop</mono> being used with <mono>n++</mono>:					
+					Example of <mono>lua_setglobal</mono> being used with <mono>n++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint inline linenums">
-\@lua_pushnumber(14)
-\@console(\@lua_gettop())</pre>
+\@lua_pushstring("hello, world!")
+\@lua_setglobal("str")
+\@lua
+{
+	print(str)
+}</pre>
 </div>
 				</p>
 			</div>

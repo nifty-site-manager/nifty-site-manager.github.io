@@ -1,9 +1,9 @@
 00:41:55 Friday March 27 2020
-'docs/fns/lua_tostring'
-'lua_tostring'
+'docs/fns/lua_setglobal'
+'lua_setglobal'
 'template/page.template'
 
-'content/docs/fns/lua_tostring.content'
+'content/docs/fns/lua_setglobal.content'
 'template/footer.content'
 'template/head.content'
 'template/menu.content'

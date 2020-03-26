@@ -41,6 +41,10 @@ dep(params)
 					The <mono>dep</mono> function is for specifying <u>dependencies</u>, it takes a non-zero number of parameters that should be paths to existing directories and files, which adds them all as dependencies for the file being built. 
 				</p>
 
+				<p>
+					<b>Note:</b> You can also add file dependencies manually by adding a <mono>.deps</mono> file residing in the same directory as the content file. For example if you have <mono>content/index.content</mono> as the content file add a <mono>content/index.deps</mono> file containing the extra dependencies you want to track. 
+				</p>
+
 				<h4 id="f++-eg">
 					f++ example
 				</h4>

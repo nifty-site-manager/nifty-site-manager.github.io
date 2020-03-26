@@ -41,6 +41,14 @@ console.lock
 					The <mono>console.lock</mono> function is for preventing other threads from outputting to the console, it takes zero parameters.
 				</p>
 
+				<p>
+					If the console is locked without being unlocked then it will be automatically unlocked and an error will be thrown with your file failing to build or script failing.
+				</p>
+
+				<p>
+					<b>Note:</b> If a thread building another page attempts to output to the console while it is locked the thread will stall until the console becomes available again, which can slow down build times. 
+				</p>
+
 				<h4 id="f++-eg">
 					f++ example
 				</h4>

@@ -1,49 +1,104 @@
 <!-- Main -->
 <section id="main" class="wrapper style2">
-	<div class="title">fn: break</div>
+	<div class="title">fn: <mono>lua</mono></div>
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
 			<div class="content">
 				<a href="#contents" class="to_top">[contents]</a>
 
-				<p id="contents">
-					Contents:
-					<ul style="text-indent:30px">
-						<li><a href="#syntax">Syntax</a></li>
-						<li><a href="#f++-eg">f++ example</a></li>
-						<li><a href="#n++-eg">n++ example</a></li>
-					</ul>
-				</p>
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#syntax">Syntax</a></li>
+					<li><a href="#description">Description</a></li>
+					<li><a href="#options">Options</a></li>
+					<li><a href="#f++-eg">f++ example</a></li>
+					<li><a href="#n++-eg">n++ example</a></li>
+				</ul>
 
 				<h4 id="syntax">
 					Syntax
 				</h4>
 				<p>
-					The syntax for <mono>break</mono> calls is:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline"><code data-language="c">break
-</code></pre>
+					The syntax for <mono>lua</mono> calls is:
+<div align="center" style="margin-top:-15px; margin-bottom:70px">
+<mono>f++</mono>: &nbsp; <pre class="inline" style="margin-bottom:-60px">
+<code data-language="lua">lua{options}(-- line of Lua code)
+lua{options}
+{
+	-- block of Lua code
+}</code></pre>
+</div><br>
+<div align="center" style="margin-top:-15px; margin-bottom:70px">
+<mono>n++</mono>: &nbsp; <pre class="inline" style="margin-bottom:-60px">
+<code data-language="lua">\@lua{options}(-- line of Lua code)
+\@lua{options}
+{
+	-- block of Lua code
+}</code></pre>
 </div>
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+				<p>
+					The <mono>lua</mono> function is for running <mono>Lua</mono> code, it takes zero parameters with the call followed by a block of <mono>Lua</mono> code otherwise a single parameter that should be the code to run. See <a href="@pathtopage(docs/lua)">here</a> for more information about <mono>Lua</mono>.
+				</p>
+
+				<h4 id="options">
+					Options
+				</h4>
+				<p>
+					The following options are available for <mono>lua</mono> calls:
+
+					<center class="table">
+						<table id="Lua_options_table" class="alt">
+							<thead>
+								<tr>
+									<th>option</th>
+									<th>description</th>
+								</tr>
+							</thead>
+							<tr>
+								<td><mono>!o</mono></td>
+								<td>do not return result</td>
+							</tr>
+							<tr>
+								<td><mono>o</mono></td>
+								<td>return result</td>
+							</tr>
+							<tr>
+								<td><mono>pb</mono></td>
+								<td>parse block with language call is made from before running code with <mono>Lua</mono></td>
+							</tr>
+							<tfoot>
+								<tr>
+									<th>option</th>
+									<th>description</th>
+								</tr>
+							</tfoot>
+						</table>
+					</center>
 				</p>
 
 				<h4 id="f++-eg">
 					f++ example
 				</h4>
 				<p>
-					Example of <mono>break</mono> being used with <mono>f++</mono>:					
+					Examples of <mono>lua</mono> being used with <mono>f++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline">
-:=(int, i=0)
-while(1)
+<pre class="prettyprint inline linenums">
+lua
 {
-	console("i: ", i)
-	if(i > 10)
-		break
-	++(i)
-}
-</pre>
+	local vips = require "vips"
+
+	local image = vips.Image.new_from_file("logo.png")
+	image:resize(0.5):webpsave("logo.webp")
+}</pre>
 </div>
 				</p>
 
@@ -51,22 +106,19 @@ while(1)
 					n++ example
 				</h4>
 				<p>
-					Example of <mono>break</mono> being used with <mono>n++</mono>:					
+					Example of <mono>lua</mono> being used with <mono>n++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline">
-\@:=(int, i=0)
-\@while(1)
+<pre class="prettyprint inline linenums">
+\@lua
 {
-	\@console("i: ", i)
-	\@if(i > 10)
-		\@break
-	\@++(i)
-}
-</pre>
+	local vips = require "vips"
+
+	local image = vips.Image.new_from_file("logo.png")
+	image:resize(0.5):webpsave("logo.webp")
+}</pre>
 </div>
 				</p>
-
 			</div>
 		</section>
 	</div>

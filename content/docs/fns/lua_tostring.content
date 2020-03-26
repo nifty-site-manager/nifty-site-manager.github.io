@@ -1,49 +1,64 @@
 <!-- Main -->
 <section id="main" class="wrapper style2">
-	<div class="title">fn: break</div>
+	<div class="title">fn: <mono>lua_tostring</mono></div>
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
 			<div class="content">
 				<a href="#contents" class="to_top">[contents]</a>
 
-				<p id="contents">
-					Contents:
-					<ul style="text-indent:30px">
-						<li><a href="#syntax">Syntax</a></li>
-						<li><a href="#f++-eg">f++ example</a></li>
-						<li><a href="#n++-eg">n++ example</a></li>
-					</ul>
-				</p>
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#syntax">Syntax</a></li>
+					<li><a href="#description">Description</a></li>
+					<li><a href="#f++-eg">f++ example</a></li>
+					<li><a href="#n++-eg">n++ example</a></li>
+				</ul>
 
 				<h4 id="syntax">
 					Syntax
 				</h4>
 				<p>
-					The syntax for <mono>break</mono> calls is:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline"><code data-language="c">break
-</code></pre>
+					The syntax for <mono>lua_tostring</mono> calls is:
+<div align="center" style="margin-top:-15px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+lua_tostring(int)
+</pre>
+</div><br>
+<div align="center">
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+\@lua_tostring(int)
+</pre>
 </div>
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+				<p>
+					The <mono>lua_tostring</mono> function returns the string value on the <mono>Lua</mono> stack at the given acceptable index, it is a binding for <a href="https://www.lua.org/manual/5.1/manual.html#lua_tostring">this</a> function (which is equivalent to <a href="https://www.lua.org/manual/5.1/manual.html#lua_tolstring">this</a> function). 
+				</p>
+
+				<p>
+					<b>Note:</b> The value on the <mono>Lua</mono> stack at the specified index must be a string or a number; otherwise, the function returns <mono>NULL</mono>. If the value is a number, then <mono>lua_tostring</mono> also changes the actual value in the stack to a <mono>string</mono>. (This change confuses <mono>lua_next</mono> when <mono>lua_tostring</mono> is applied to keys during a table traversal.)
 				</p>
 
 				<h4 id="f++-eg">
 					f++ example
 				</h4>
 				<p>
-					Example of <mono>break</mono> being used with <mono>f++</mono>:					
+					Example of <mono>lua_tostring</mono> being used with <mono>f++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline">
-:=(int, i=0)
-while(1)
+<pre class="prettyprint inline linenums">
+lua
 {
-	console("i: ", i)
-	if(i > 10)
-		break
-	++(i)
+	str = "hello, world!"
 }
-</pre>
+lua_getglobal("str")
+console("lua_tostring(1)")</pre>
 </div>
 				</p>
 
@@ -51,22 +66,18 @@ while(1)
 					n++ example
 				</h4>
 				<p>
-					Example of <mono>break</mono> being used with <mono>n++</mono>:					
+					Example of <mono>lua_tostring</mono> being used with <mono>n++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline">
-\@:=(int, i=0)
-\@while(1)
+<pre class="prettyprint inline linenums">
+\@lua
 {
-	\@console("i: ", i)
-	\@if(i > 10)
-		\@break
-	\@++(i)
+	str = "hello, world!"
 }
-</pre>
+\@lua_getglobal("str")
+\@console("\@lua_tostring(1)")</pre>
 </div>
 				</p>
-
 			</div>
 		</section>
 	</div>
