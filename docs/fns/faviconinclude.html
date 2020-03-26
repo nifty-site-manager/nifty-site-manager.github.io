@@ -85,7 +85,7 @@
 									<li><a href="../displaying_code_blocks.html">Displaying Code Blocks</a></li>
 									<li><a href="../presentations.html">Presentations</a></li>
 									<li><a href="../lokinet_snapps.html">Lokinet SNApps</a></li>
-									<li><a href="../hosting_your_site.html">Hosting Your Site</a></li>
+									<li><a href="../hosting.html">Hosting</a></li>
 								</ul>
 							</li>
 							<li>
@@ -125,6 +125,7 @@
 		    				<ul style="text-indent:30px">
 		    					<li><a href="#syntax">Syntax</a></li>
 		    					<li><a href="#description">Description</a></li>
+		    					<li><a href="#options">Options</a></li>
 		    					<li><a href="#f++-eg">f++ example</a></li>
 		    					<li><a href="#n++-eg">n++ example</a></li>
 		    				</ul>
@@ -136,12 +137,12 @@
 		    					The syntax for <mono>faviconinclude</mono> calls is:
 		    <div align="center" style="margin-top:-15px">
 		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
-faviconinclude(path)
+faviconinclude{options}(absolute-path)
 </pre>
 		    </div><br>
 		    <div align="center">
 		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
-@faviconinclude(path)
+@faviconinclude{options}(absolute-path)
 </pre>
 		    </div>
 		    				</p>
@@ -151,7 +152,32 @@ faviconinclude(path)
 		    				</h4>
 		    
 		    				<p>
-		    					The <mono>faviconinclude</mono> function takes a single absolute path as input and returns code to insert the path as a favicon in html using the relative path, it also throws a warning if the favicon file does not exist.
+		    					The <mono>faviconinclude</mono> function takes a single absolute path as input and returns the code below to insert the path as a favicon in html using the relative path:
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline">
+&lt;link rel="icon" type="image/png" href="relative-path" options>
+</pre>
+		    </div>
+		    				</p>
+		    
+		    				<p>
+		    					The <mono>faviconinclude</mono> function also throws a warning if the favicon file does not exist.
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> Another good way to include a favicon file, where an error is thrown if the file does not exist, is:
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline">
+&lt;link rel="icon" type="image/png" href="@pathtofile(absolute-path)">
+</pre>
+		    </div>
+		    				</p>
+		    
+		    				<h4 id="options">
+		    					Options
+		    				</h4>
+		    				<p>
+		    					Anything added as an option to a <mono>faviconinclude</mono> call will be added to the code to insert the path as a favicon as outlined in the <a href="#description">Description</a> section.
 		    				</p>
 		    
 		    				<h4 id="f++-eg">
@@ -200,7 +226,7 @@ faviconinclude("site/assets/images/favicon.png")</pre>
 							<li><a href="https://nifty-site-manager.netlify.com/">Netlify</a></li>
 						</ul> <noselect><br></noselect>
 			
-						<center><img src="../../images/badger.svg" alt="Nift badger mascot" width="325" style="max-width:90%; margin-bottom:20px"></center>
+						<center><img src="../../images/badger.png" alt="Nift badger mascot" width="325" style="max-width:90%; margin-bottom:20px"></center>
 			
 						<ul>
 							<li>&copy;&nbsp;2015 - <span name="cyear"></span> <a href="https://nift.cc">Nift</a>.</li>
