@@ -123,6 +123,11 @@ pre.wrap
 	word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 
+pre.resize
+{
+	resize: both;
+}
+
 pre
 {
 	background-color:#363331;
