@@ -76,7 +76,7 @@ function toggle_light_dark()
   if(document.getElementById("zeit-logo"))
   {
     if(dark_mode == 1)
-      document.getElementById("zeit-logo").src = "../images/zeit.png";
+      document.getElementById("zeit-logo").src = "../images/zeit-colour.svg";
     else
       document.getElementById("zeit-logo").src = "../images/zeit-dark.png";
   }
