@@ -1,72 +1,60 @@
 <!-- Main -->
 <section id="main" class="wrapper style2">
-	<div class="title">fn: break</div>
+	<div class="title">fn: <mono>pathtofile</mono></div>
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
 			<div class="content">
 				<a href="#contents" class="to_top">[contents]</a>
 
-				<p id="contents">
-					Contents:
-					<ul style="text-indent:30px">
-						<li><a href="#syntax">Syntax</a></li>
-						<li><a href="#f++-eg">f++ example</a></li>
-						<li><a href="#n++-eg">n++ example</a></li>
-					</ul>
-				</p>
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#syntax">Syntax</a></li>
+					<li><a href="#description">Description</a></li>
+					<li><a href="#options">Options</a></li>
+					<li><a href="#n++-eg">n++ example</a></li>
+				</ul>
 
 				<h4 id="syntax">
 					Syntax
 				</h4>
 				<p>
-					The syntax for <mono>break</mono> calls is:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline"><code data-language="c">break
-</code></pre>
+					The syntax for <mono>pathtofile</mono> calls is:
+<div align="center" style="margin-top:-15px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
+pathtofile(string)
+</pre>
+</div><br>
+<div align="center">
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
+\@pathtofile(string)
+</pre>
 </div>
 				</p>
 
-				<h4 id="f++-eg">
-					f++ example
+				<h4 id="description">
+					Description
 				</h4>
 				<p>
-					Example of <mono>break</mono> being used with <mono>f++</mono>:					
-
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline">
-:=(int, i=0)
-while(1)
-{
-	console("i: ", i)
-	if(i > 10)
-		break
-	++(i)
-}
-</pre>
-</div>
+					The <mono>pathtofile</mono> function takes a single string parameter specifying an absolute path to a file from the project root directory and returns the relative path from the file being built to the file specified by the input parameter. 
 				</p>
 
 				<h4 id="n++-eg">
 					n++ example
 				</h4>
 				<p>
-					Example of <mono>break</mono> being used with <mono>n++</mono>:					
+					Examples of <mono>pathtofile</mono> being used with <mono>n++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline">
-\@:=(int, i=0)
-\@while(1)
-{
-	\@console("i: ", i)
-	\@if(i > 10)
-		\@break
-	\@++(i)
-}
-</pre>
+<pre class="prettyprint inline linenums">
+<img src="\@pathtofile('assets/images/logo.svg')">
+<link rel="stylesheet" 
+      type="text/css" 
+      href="\@pathtofile(site/assets/main.css)"></pre>
 </div>
 				</p>
-
 			</div>
 		</section>
 	</div>

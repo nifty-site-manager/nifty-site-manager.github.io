@@ -28,12 +28,12 @@
 				<p>
 					The syntax for Nift function calls is as follows:
 <div align="center" style="margin-top:-15px">
-f++: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
 funcName{options}(params)
 </pre>
 </div><br>
 <div align="center">
-n++: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
 \@funcName{options}(params)
 </pre>
 </div>

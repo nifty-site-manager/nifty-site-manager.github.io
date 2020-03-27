@@ -1,49 +1,56 @@
 <!-- Main -->
 <section id="main" class="wrapper style2">
-	<div class="title">fn: break</div>
+	<div class="title">fn: <mono>substr</mono></div>
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
 			<div class="content">
 				<a href="#contents" class="to_top">[contents]</a>
 
-				<p id="contents">
-					Contents:
-					<ul style="text-indent:30px">
-						<li><a href="#syntax">Syntax</a></li>
-						<li><a href="#f++-eg">f++ example</a></li>
-						<li><a href="#n++-eg">n++ example</a></li>
-					</ul>
-				</p>
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#syntax">Syntax</a></li>
+					<li><a href="#description">Description</a></li>
+					<li><a href="#f++-eg">f++ example</a></li>
+					<li><a href="#n++-eg">n++ example</a></li>
+				</ul>
 
 				<h4 id="syntax">
 					Syntax
 				</h4>
 				<p>
-					The syntax for <mono>break</mono> calls is:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline"><code data-language="c">break
-</code></pre>
+					The syntax for <mono>substr</mono> calls is:
+<div align="center" style="margin-top:-15px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
+substr(string, begin, end)
+</pre>
+</div><br>
+<div align="center">
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
+\@substr(string, begin, end)
+</pre>
 </div>
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+				<p>
+					The <mono>substr</mono> function takes three parameters, the first is a string and the following two are non-negative integers, it returns the substring of the first paramter beginning at the position specified in the second parameter and of length equal to the third parameter. 
 				</p>
 
 				<h4 id="f++-eg">
 					f++ example
 				</h4>
 				<p>
-					Example of <mono>break</mono> being used with <mono>f++</mono>:					
+					Example of <mono>substr</mono> being used with <mono>f++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline">
-:=(int, i=0)
-while(1)
-{
-	console("i: ", i)
-	if(i > 10)
-		break
-	++(i)
-}
-</pre>
+<pre class="prettyprint inline linenums lang-nift">
+:=(string, str="hello\, world!")
+console(substr(str, 1, 4))</pre>
 </div>
 				</p>
 
@@ -51,22 +58,14 @@ while(1)
 					n++ example
 				</h4>
 				<p>
-					Example of <mono>break</mono> being used with <mono>n++</mono>:					
+					Example of <mono>substr</mono> being used with <mono>n++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline">
-\@:=(int, i=0)
-\@while(1)
-{
-	\@console("i: ", i)
-	\@if(i > 10)
-		\@break
-	\@++(i)
-}
-</pre>
+<pre class="prettyprint inline linenums lang-nift">
+\@:=(string, str="hello\, world!")
+\@console(\@substr(str, 1, 4))</pre>
 </div>
 				</p>
-
 			</div>
 		</section>
 	</div>

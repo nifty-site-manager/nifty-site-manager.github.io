@@ -23,13 +23,13 @@
 				<p>
 					The syntax for <mono>in</mono> calls is:
 <div align="center" style="margin-top:-15px">
-<mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
-in{options}(message)
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
+in{options}(string)
 </pre>
 </div><br>
 <div align="center">
-<mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
-\@in{options}(message)
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
+\@in{options}(string)
 </pre>
 </div>
 				</p>
@@ -38,7 +38,7 @@ in{options}(message)
 					Description
 				</h4>
 				<p>
-					The <mono>in</mono> function is for reading user input from console or from file. It takes zero parameters or a single string parameter that is an input message or even as a templat when reading user input from file. There is also an option for the call to be followed by a block of text to use as the input message or even as a template when reading user input from file. 
+					The <mono>in</mono> function is for reading user input from console or from file. It takes zero parameters or a single string parameter that is an input message or even as a template when reading user input from file. There is also an option for the call to be followed by a block of text to use as the input message or even as a template when reading user input from file. 
 				</p>
 
 				<h4 id="options">
@@ -84,14 +84,14 @@ in{options}(message)
 					Examples of <mono>in</mono> being used with <mono>f++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline linenums">
+<pre class="prettyprint inline linenums lang-nift">
 in("please enter a name for your project:")</pre>
 </div>
 				</p>
 
 				<p>
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline linenums">
+<pre class="prettyprint inline linenums lang-nift">
 in{b, from-file}
 {
 	name: 
@@ -108,14 +108,14 @@ in{b, from-file}
 					Examples of <mono>in</mono> being used with <mono>n++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline linenums">
+<pre class="prettyprint inline linenums lang-nift">
 \@in("please enter a name for your project:")</pre>
 </div>
 				</p>
 
 				<p>
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline linenums">
+<pre class="prettyprint inline linenums lang-nift">
 \@in{b, from-file}
 {
 	name: 

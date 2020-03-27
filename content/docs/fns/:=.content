@@ -13,6 +13,7 @@
 				<ul style="text-indent:30px">
 					<li><a href="#syntax">Syntax</a></li>
 					<li><a href="#description">Description</a></li>
+					<li><a href="#options">Options</a></li>
 					<li><a href="#f++-eg">f++ example</a></li>
 					<li><a href="#n++-eg">n++ example</a></li>
 				</ul>
@@ -39,6 +40,50 @@
 				</h4>
 				<p>
 					The <mono>:=</mono> function is used for defining variables, the first parameter specifies the type of variables being defined, the remainder of the parameters should be variable definitions.
+				</p>
+
+				<h4 id="options">
+					Options
+				</h4>
+				<p>
+					The following options are available for <mono>:=</mono> calls:
+
+					<center class="table">
+						<table id=":=_options_table" class="alt">
+							<thead>
+								<tr>
+									<th>option</th>
+									<th>description</th>
+								</tr>
+							</thead>
+							<tr>
+								<td><mono>const</mono></td>
+								<td>definition of a <mono>constant</mono></td>
+							</tr>
+							<tr>
+								<td><mono>!exprtk</mono></td>
+								<td>do not register variable with <mono>ExprTk</mono></td>
+							</tr>
+							<tr>
+								<td><mono>layer="x"</mono></td>
+								<td>define variable at layer <mono>x</mono></td>
+							</tr>
+							<tr>
+								<td><mono>private</mono></td>
+								<td>definition of a <mono>private</mono></td>
+							</tr>
+							<tr>
+								<td><mono>scope+="x"</mono></td>
+								<td>add <mono>x</mono> to scopes variable can be accessed from</td>
+							</tr>
+							<tfoot>
+								<tr>
+									<th>option</th>
+									<th>description</th>
+								</tr>
+							</tfoot>
+						</table>
+					</center>
 				</p>
 
 				<h4 id="f++-eg">

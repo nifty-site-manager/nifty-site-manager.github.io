@@ -24,13 +24,13 @@
 				<p>
 					The syntax for <mono>getline</mono> calls is:
 <div align="center" style="margin-top:-15px">
-<mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
-getline(params)
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
+getline{option}(istream, params)
 </pre>
 </div><br>
 <div align="center">
-<mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
-\@getline(params)
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
+\@getline{option}(istream, params)
 </pre>
 </div>
 				</p>
@@ -39,7 +39,7 @@ getline(params)
 					Description
 				</h4>
 				<p>
-					The <mono>getline</mono> function is for <u>reading a line of input</u>, it takes a non-zero number of parameters, the first parameter should be either <mono>console</mono> or a defined input stream, the remainder of the parameters should be either <mono>ofile</mono> where input is injected directly to the file being built or a string variable name to read in to. Having one input parameter is the same as having a second parameter that is <mono>ofile</mono>. If not reading to the output file being built <mono>getline</mono> will return whether or not it was successful. 
+					The <mono>getline</mono> function is for <u>reading a line of input</u>, it takes a non-zero number of parameters, the first parameter should be an input stream (either <mono>console</mono>, a file stream or a string stream), the remainder of the parameters should be either <mono>ofile</mono> where input is injected directly to the file being built or a string variable name to read in to. Having one input parameter is the same as having a second parameter that is <mono>ofile</mono>. If not reading to the output file being built <mono>getline</mono> will return whether or not it was successful. 
 				</p>
 
 				<h4 id="options">
@@ -77,7 +77,7 @@ getline(params)
 					Examples of <mono>getline</mono> being used with <mono>f++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline linenums">
+<pre class="prettyprint inline linenums lang-nift">
 :=(string, s)
 getline(console, s)</pre>
 </div>
@@ -85,7 +85,7 @@ getline(console, s)</pre>
 
 				<p>
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline linenums">
+<pre class="prettyprint inline linenums lang-nift">
 :=(string, s)
 :=(ifstream, ifs("input.txt"))
 while(getline(ifs, s))
@@ -101,7 +101,7 @@ ifs.close()</pre>
 					Examples of <mono>getline</mono> being used with <mono>n++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline linenums">
+<pre class="prettyprint inline linenums lang-nift">
 \@:=(string, s)
 \@getline{!r}(console, s)</pre>
 </div>
@@ -109,7 +109,7 @@ ifs.close()</pre>
 
 				<p>
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline linenums">
+<pre class="prettyprint inline linenums lang-nift">
 \@:=(string, s)
 \@:=(ifstream, ifs("input.txt"))
 \@while(getline(ifs, s))

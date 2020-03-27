@@ -1,49 +1,119 @@
 <!-- Main -->
 <section id="main" class="wrapper style2">
-	<div class="title">fn: break</div>
+	<div class="title">fn: <mono>precision</mono></div>
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
 			<div class="content">
 				<a href="#contents" class="to_top">[contents]</a>
 
-				<p id="contents">
-					Contents:
-					<ul style="text-indent:30px">
-						<li><a href="#syntax">Syntax</a></li>
-						<li><a href="#f++-eg">f++ example</a></li>
-						<li><a href="#n++-eg">n++ example</a></li>
-					</ul>
-				</p>
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#syntax">Syntax</a></li>
+					<li><a href="#description">Description</a></li>
+					<li><a href="#f++-eg">f++ example</a></li>
+					<li><a href="#n++-eg">n++ example</a></li>
+				</ul>
 
 				<h4 id="syntax">
 					Syntax
 				</h4>
 				<p>
-					The syntax for <mono>break</mono> calls is:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline"><code data-language="c">break
-</code></pre>
+					The syntax for <mono>precision</mono> calls is:
+<div align="center" style="margin-top:-15px; margin-bottom:25px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-27px">
+precision()
+precision(param)
+</pre>
+</div><br>
+<div align="center" style="margin-top:-15px; margin-bottom:15px">
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-27px">
+\@precision()
+\@precision(param)
+</pre>
 </div>
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+				<p>
+					The <mono>precision</mono> function either:
+					<ul>
+						<li>takes zero parameters and returns the current level of precision that is set when writing doubles</li>
+						<li>takes a single parameter that is either an integer to set to level of precision when writing doubles or a string to set the type of precision used when writing doubles</li>
+					</ul>
+				</p>
+
+				<p>
+					The following are valid parameters for <mono>precision</mono> calls:
+
+					<center class="table">
+						<table id="precision_parameters_table" class="alt">
+							<thead>
+								<tr>
+									<th>param</th>
+									<th>description</th>
+								</tr>
+							</thead>
+							<tr>
+								<td><mono>[nonNegInteger]</mono></td>
+								<td>maximum number of decimal places</td>
+							</tr>
+							<tr>
+								<td><mono>defaultfloat</mono></td>
+								<td>write floating-point values in default floating-point notation (default)</td>
+							</tr>
+							<tr>
+								<td><mono>fixed</mono></td>
+								<td>write floating-point values in fixed-point notation</td>
+							</tr>
+							<tr>
+								<td><mono>!fixed</mono></td>
+								<td>unset writing floating-point values in fixed-point notation.</td>
+							</tr>
+							<tr>
+								<td><mono>scientific</mono></td>
+								<td>write floating-point values in scientific notation</td>
+							</tr>
+							<tr>
+								<td><mono>!scientific</mono></td>
+								<td>unset writing floating-point values in scientific notation</td>
+							</tr>
+							<tr>
+								<td><mono>hexfloat</mono></td>
+								<td>write floating-point values in hexadecimal format (same as <mono>fixed</mono> and <mono>scientific</mono>)</td>
+							</tr>
+							<tr>
+								<td><mono>!hexfloat</mono></td>
+								<td>unset writing floating-point values in hexadecimal format</td>
+							</tr>
+							<tfoot>
+								<tr>
+									<th>param</th>
+									<th>description</th>
+								</tr>
+							</tfoot>
+						</table>
+					</center>
+
+					You can find more information about <mono>fixed</mono>, <mono>scientific</mono>, <mono>hexfloat</mono> and <mono>defaultfloat</mono> <a href="https://en.cppreference.com/w/cpp/io/manip/fixed">here</a>.
 				</p>
 
 				<h4 id="f++-eg">
 					f++ example
 				</h4>
 				<p>
-					Example of <mono>break</mono> being used with <mono>f++</mono>:					
+					Examples of <mono>precision</mono> being used with <mono>f++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline">
-:=(int, i=0)
-while(1)
-{
-	console("i: ", i)
-	if(i > 10)
-		break
-	++(i)
-}
-</pre>
+<pre class="prettyprint inline linenums lang-nift">
+:=(double, d=1.23456)
+precision("fixed")
+precision(3)
+console(d)</pre>
 </div>
 				</p>
 
@@ -51,22 +121,16 @@ while(1)
 					n++ example
 				</h4>
 				<p>
-					Example of <mono>break</mono> being used with <mono>n++</mono>:					
+					Example of <mono>precision</mono> being used with <mono>n++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline">
-\@:=(int, i=0)
-\@while(1)
-{
-	\@console("i: ", i)
-	\@if(i > 10)
-		\@break
-	\@++(i)
-}
-</pre>
+<pre class="prettyprint inline linenums lang-nift">
+\@:=(double, d=1.23456)
+\@precision("fixed")
+\@precision(3)
+\@console(d)</pre>
 </div>
 				</p>
-
 			</div>
 		</section>
 	</div>

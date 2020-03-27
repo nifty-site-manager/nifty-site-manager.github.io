@@ -1,49 +1,130 @@
 <!-- Main -->
 <section id="main" class="wrapper style2">
-	<div class="title">fn: break</div>
+	<div class="title">fn: <mono>script</mono></div>
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
 			<div class="content">
 				<a href="#contents" class="to_top">[contents]</a>
 
-				<p id="contents">
-					Contents:
-					<ul style="text-indent:30px">
-						<li><a href="#syntax">Syntax</a></li>
-						<li><a href="#f++-eg">f++ example</a></li>
-						<li><a href="#n++-eg">n++ example</a></li>
-					</ul>
-				</p>
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#syntax">Syntax</a></li>
+					<li><a href="#description">Description</a></li>
+					<li><a href="#options">Options</a></li>
+					<li><a href="#f++-eg">f++ example</a></li>
+					<li><a href="#n++-eg">n++ example</a></li>
+				</ul>
 
 				<h4 id="syntax">
 					Syntax
 				</h4>
 				<p>
-					The syntax for <mono>break</mono> calls is:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline"><code data-language="c">break
-</code></pre>
+					The syntax for <mono>script</mono> calls is:
+<div align="center" style="margin-top:-15px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
+script{options}(params)
+</pre>
+</div><br>
+<div align="center">
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
+\@script{options}(params)
+</pre>
 </div>
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+				<p>
+					The <mono>script</mono> function is for running scripts/programs, it takes a non-zero number of parameters, the first parameter is the name or path of the script/program to run and the remaining parameters are input parameters for the script/program. 
+				</p>
+
+				<h4 id="options">
+					Options
+				</h4>
+				<p>
+					The following options are available for <mono>script</mono> calls:
+
+					<center class="table">
+						<table id="scripts_options_table" class="alt">
+							<thead>
+								<tr>
+									<th>option</th>
+									<th>description</th>
+								</tr>
+							</thead>
+							<tr>
+								<td><mono>b</mono> or <mono>block</mono></td>
+								<td>call is followed by a code-block to save to the script path for running</td>
+							</tr>
+							<tr>
+								<td><mono>pb</mono></td>
+								<td>parse code-block following call before saving to script path for running</td>
+							</tr>
+							<tr>
+								<td><mono>!bs</mono></td>
+								<td>do not backup script</td>
+							</tr>
+							<tr>
+								<td><mono>content</mono></td>
+								<td>add content file path of file being built as first input parameter to script/program</td>
+							</tr>
+							<tr>
+								<td><mono>console</mono></td>
+								<td>print script output to console</td>
+							</tr>
+							<tr>
+								<td><mono>if-exists</mono></td>
+								<td>do not throw an error if the script does not exist</td>
+							</tr>
+							<tr>
+								<td><mono>inject</mono></td>
+								<td>inject in to file being built after parsing with language call is made from</td>
+							</tr>
+							<tr>
+								<td><mono>!o</mono></td>
+								<td>do not add script output to file being built</td>
+							</tr>
+							<tr>
+								<td><mono>raw</mono></td>
+								<td>inject in to file being built raw</td>
+							</tr>
+							<tr>
+								<td><mono>!ret</mono></td>
+								<td>do not return script/program return value</td>
+							</tr>
+							<tfoot>
+								<tr>
+									<th>option</th>
+									<th>description</th>
+								</tr>
+							</tfoot>
+						</table>
+					</center>
 				</p>
 
 				<h4 id="f++-eg">
 					f++ example
 				</h4>
 				<p>
-					Example of <mono>break</mono> being used with <mono>f++</mono>:					
+					Examples of <mono>script</mono> being used with <mono>f++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline">
-:=(int, i=0)
-while(1)
+<pre class="prettyprint inline linenums lang-nift">
+script("pre-build.rb")</pre>
+</div>
+				</p>
+
+				<p>
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline linenums lang-nift">
+script{b}("pre-build.py")
 {
-	console("i: ", i)
-	if(i > 10)
-		break
-	++(i)
-}
-</pre>
+	print("hello, world!")
+}</pre>
 </div>
 				</p>
 
@@ -51,22 +132,23 @@ while(1)
 					n++ example
 				</h4>
 				<p>
-					Example of <mono>break</mono> being used with <mono>n++</mono>:					
+					Examples of <mono>script</mono> being used with <mono>n++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline">
-\@:=(int, i=0)
-\@while(1)
-{
-	\@console("i: ", i)
-	\@if(i > 10)
-		\@break
-	\@++(i)
-}
-</pre>
+<pre class="prettyprint inline linenums lang-nift">
+\@script("pre-build.rb")</pre>
 </div>
 				</p>
 
+				<p>
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline linenums lang-nift">
+\@script{b}("pre-build.py")
+{
+	print("hello, world!")
+}</pre>
+</div>
+				</p>
 			</div>
 		</section>
 	</div>

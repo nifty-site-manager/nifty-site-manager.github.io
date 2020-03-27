@@ -1,49 +1,119 @@
 <!-- Main -->
 <section id="main" class="wrapper style2">
-	<div class="title">fn: break</div>
+	<div class="title">fn: <mono>struct</mono></div>
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
 			<div class="content">
 				<a href="#contents" class="to_top">[contents]</a>
 
-				<p id="contents">
-					Contents:
-					<ul style="text-indent:30px">
-						<li><a href="#syntax">Syntax</a></li>
-						<li><a href="#f++-eg">f++ example</a></li>
-						<li><a href="#n++-eg">n++ example</a></li>
-					</ul>
-				</p>
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#syntax">Syntax</a></li>
+					<li><a href="#description">Description</a></li>
+					<li><a href="#options">Options</a></li>
+					<li><a href="#f++-eg">f++ example</a></li>
+					<li><a href="#n++-eg">n++ example</a></li>
+				</ul>
 
 				<h4 id="syntax">
 					Syntax
 				</h4>
 				<p>
-					The syntax for <mono>break</mono> calls is:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline"><code data-language="c">break
-</code></pre>
+					The syntax for <mono>struct</mono> definitions is:
+<div align="center" style="margin-top:-15px; margin-bottom:60px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-50px">
+struct{options}(name)
+{
+	//struct code
+}
+</pre>
+</div><br>
+<div align="center" style="margin-top:-15px; margin-bottom:60px">
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-50px">
+\@struct{options}(name)
+{
+	//struct code
+}
+</pre>
 </div>
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+				<p>
+					The <mono>struct</mono> function is for <u>user-defined structures/types</u>, it takes a single parameter specifying a structure/type name and is followed by a block of code to be run whenever an object of that type is defined.
+				</p>
+
+				<h4 id="options">
+					Options
+				</h4>
+				<p>
+					The following options are available for <mono>struct</mono> calls (more to come):
+
+					<center class="table">
+						<table id="struct_options_table" class="alt">
+							<thead>
+								<tr>
+									<th>option</th>
+									<th>description</th>
+								</tr>
+							</thead>
+							<tr>
+								<td><mono>pb</mono></td>
+								<td>parse struct block at definition time</td>
+							</tr>
+							<tfoot>
+								<tr>
+									<th>option</th>
+									<th>description</th>
+								</tr>
+							</tfoot>
+						</table>
+					</center>
 				</p>
 
 				<h4 id="f++-eg">
 					f++ example
 				</h4>
 				<p>
-					Example of <mono>break</mono> being used with <mono>f++</mono>:					
+					Examples of <mono>struct</mono> being used with <mono>f++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline">
-:=(int, i=0)
-while(1)
+<pre class="prettyprint inline linenums lang-nift">
+struct(circle)
 {
-	console("i: ", i)
-	if(i > 10)
-		break
-	++(i)
+	if(!=(params.size, 2))
+		error("circle: expected 2 parameters, got \$[params.size]")
+	:=(int, \$[params.name].radius = \$[params[0]])
+	:=(string, \$[params.name].colour = \$[params[1]])
 }
-</pre>
+
+:=(circle, c(2, "fluro green"))
+console("radius: ", c.radius)
+console("colour: ", c.colour)</pre>
+</div>
+				</p>
+
+				<p>
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline linenums lang-nift">
+struct(pair)
+{
+	if(!=(types.size, 2))
+		error("pair: expected 2 types, got \$[types.size]")
+	if(!=(params.size, 2))
+		error("pair: expected 2 parameters, got \$[params.size]")
+	:=(\$[types[0]], \$[params.name].first = \$[params[0]])
+	:=(\$[types[1]], \$[params.name].second = \$[params[1]])
+}
+
+:=(pair<int, string>, p(10, "hello, world!"))
+console("p.first: ", p.first)
+console("p.second: ", p.second)</pre>
 </div>
 				</p>
 
@@ -51,22 +121,42 @@ while(1)
 					n++ example
 				</h4>
 				<p>
-					Example of <mono>break</mono> being used with <mono>n++</mono>:					
+					Examples of <mono>struct</mono> being used with <mono>n++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline">
-\@:=(int, i=0)
-\@while(1)
+<pre class="prettyprint inline linenums lang-nift">
+\@struct(circle)
 {
-	\@console("i: ", i)
-	\@if(i > 10)
-		\@break
-	\@++(i)
+	\@if(!=(params.size, 2))
+		\@error("circle: expected 2 parameters, got \$[params.size]")
+	\@:=(int, \$[params.name].radius = \$[params[0]])
+	\@:=(string, \$[params.name].colour = \$[params[1]])
 }
-</pre>
+
+\@:=(circle, c(2, "fluro green"))
+\@console("radius: ", c.radius)
+\@console("colour: ", c.colour)</pre>
 </div>
 				</p>
 
+				<p>
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline linenums lang-nift">
+\@struct(pair)
+{
+	\@if(!=(types.size, 2))
+		\@error("pair: expected 2 types, got \$[types.size]")
+	\@if(!=(params.size, 2))
+		\@error("pair: expected 2 parameters, got \$[params.size]")
+	\@:=(\$[types[0]], \$[params.name].first = \$[params[0]])
+	\@:=(\$[types[1]], \$[params.name].second = \$[params[1]])
+}
+
+\@:=(pair<int, string>, p(10, "hello, world!"))
+\@console("p.first: ", p.first)
+\@console("p.second: ", p.second)</pre>
+</div>
+				</p>
 			</div>
 		</section>
 	</div>

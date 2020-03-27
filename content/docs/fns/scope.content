@@ -1,49 +1,97 @@
 <!-- Main -->
 <section id="main" class="wrapper style2">
-	<div class="title">fn: break</div>
+	<div class="title">fn: <mono>scope</mono></div>
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
 			<div class="content">
 				<a href="#contents" class="to_top">[contents]</a>
 
-				<p id="contents">
-					Contents:
-					<ul style="text-indent:30px">
-						<li><a href="#syntax">Syntax</a></li>
-						<li><a href="#f++-eg">f++ example</a></li>
-						<li><a href="#n++-eg">n++ example</a></li>
-					</ul>
-				</p>
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#syntax">Syntax</a></li>
+					<li><a href="#description">Description</a></li>
+					<li><a href="#options">Options</a></li>
+					<li><a href="#f++-eg">f++ example</a></li>
+					<li><a href="#n++-eg">n++ example</a></li>
+				</ul>
 
 				<h4 id="syntax">
 					Syntax
 				</h4>
 				<p>
-					The syntax for <mono>break</mono> calls is:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline"><code data-language="c">break
-</code></pre>
+					The syntax for <mono>scope</mono> calls is:
+<div align="center" style="margin-top:-15px; margin-bottom:25px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-27px">
+scope()
+scope{option}(var) 
+</pre>
+</div><br>
+<div align="center" style="margin-top:-15px; margin-bottom:15px">
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-27px">
+\@scope()
+\@scope{option}(var) 
+</pre>
 </div>
 				</p>
 
-				<h4 id="f++-eg">
+				<h4 id="description">
+					Description
+				</h4>
+				<p>
+					The <mono>scope</mono> function either:
+					<ul style="margin-top:-20px">
+						<li>takes zero parameters and returns the current scope; or</li>
+						<li>takes a single variable parameter and either returns the scope the variable is defined at or with the <mono>in</mono> option returns the set of scopes at which the variable can be accessed from</li>
+					</ul>
+				</p>
+
+				<h4 id="options">
+					Options
+				</h4>
+				<p>
+					The following options are available for <mono>content</mono> calls:
+
+					<center class="table">
+						<table id="content_options_table" class="alt">
+							<thead>
+								<tr>
+									<th>option</th>
+									<th>description</th>
+								</tr>
+							</thead>
+							<tr>
+								<td><mono>in</mono></td>
+								<td>return set of scopes at which variable can be accessed from</td>
+							</tr>
+							<tfoot>
+								<tr>
+									<th>option</th>
+									<th>description</th>
+								</tr>
+							</tfoot>
+						</table>
+					</center>
+				</p>
+
+				<h4 id="n++-eg">
 					f++ example
 				</h4>
 				<p>
-					Example of <mono>break</mono> being used with <mono>f++</mono>:					
+					Example of <mono>scope</mono> being used with <mono>f++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline">
-:=(int, i=0)
-while(1)
+<pre class="prettyprint inline linenums lang-nift">
+function(example.fn)
 {
-	console("i: ", i)
-	if(i > 10)
-		break
-	++(i)
+	:={scope+="teji."}(int, x=0)
+	console(scope(x))
+	console(scope{in}(x))
 }
-</pre>
+
+example.fn()</pre>
 </div>
 				</p>
 
@@ -51,22 +99,20 @@ while(1)
 					n++ example
 				</h4>
 				<p>
-					Example of <mono>break</mono> being used with <mono>n++</mono>:					
+					Example of <mono>scope</mono> being used with <mono>n++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline">
-\@:=(int, i=0)
-\@while(1)
+<pre class="prettyprint inline linenums lang-nift">
+\@function(example.fn)
 {
-	\@console("i: ", i)
-	\@if(i > 10)
-		\@break
-	\@++(i)
+	\@:={scope+="teji."}(int, x=0)
+	\@console(\@scope(x))
+	\@console(\@scope{in}(x))
 }
-</pre>
+
+\@example.fn()</pre>
 </div>
 				</p>
-
 			</div>
 		</section>
 	</div>

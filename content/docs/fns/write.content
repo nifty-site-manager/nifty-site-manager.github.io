@@ -1,49 +1,111 @@
 <!-- Main -->
 <section id="main" class="wrapper style2">
-	<div class="title">fn: break</div>
+	<div class="title">fn: <mono>write</mono></div>
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
 			<div class="content">
 				<a href="#contents" class="to_top">[contents]</a>
 
-				<p id="contents">
-					Contents:
-					<ul style="text-indent:30px">
-						<li><a href="#syntax">Syntax</a></li>
-						<li><a href="#f++-eg">f++ example</a></li>
-						<li><a href="#n++-eg">n++ example</a></li>
-					</ul>
-				</p>
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#syntax">Syntax</a></li>
+					<li><a href="#description">Description</a></li>
+					<li><a href="#options">Options</a></li>
+					<li><a href="#f++-eg">f++ example</a></li>
+					<li><a href="#n++-eg">n++ example</a></li>
+				</ul>
 
 				<h4 id="syntax">
 					Syntax
 				</h4>
 				<p>
-					The syntax for <mono>break</mono> calls is:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline"><code data-language="c">break
-</code></pre>
+					The syntax for <mono>write</mono> calls is:
+<div align="center" style="margin-top:-15px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
+write{option}(ostream, params)
+</pre>
+</div><br>
+<div align="center">
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
+\@write{option}(ostream, params)
+</pre>
 </div>
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+				<p>
+					The <mono>write</mono> function is for <u>writing/printing output</u>, it takes at least two parameters, the first parameter should be an output stream (either <mono>console</mono>, <mono>ofile</mono>, a file stream or a string stream), the remainder of the parameters should be either <mono>endl</mono> for a new line, a variable to print or a number/string to print.
+				</p>
+
+				<h4 id="options">
+					Options
+				</h4>
+				<p>
+					The following options are available for <mono>read</mono> calls:
+
+					<center class="table">
+						<table id="read_options_table" class="alt">
+							<thead>
+								<tr>
+									<th>option</th>
+									<th>description</th>
+								</tr>
+							</thead>
+							<tr>
+								<td><mono>b</mono> or <mono>block</mono></td>
+								<td>call follows with a block of text to write/print</td>
+							</tr>
+							<tr>
+								<td><mono>!pb</mono></td>
+								<td>do not parse block of text with <mono>b</mono>/<mono>block</mono> option</td>
+							</tr>
+							<tfoot>
+								<tr>
+									<th>option</th>
+									<th>description</th>
+								</tr>
+							</tfoot>
+						</table>
+					</center>
 				</p>
 
 				<h4 id="f++-eg">
 					f++ example
 				</h4>
 				<p>
-					Example of <mono>break</mono> being used with <mono>f++</mono>:					
+					Examples of <mono>write</mono> being used with <mono>f++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline">
-:=(int, i=0)
-while(1)
+<pre class="prettyprint inline linenums lang-nift">
+write(console, "hello, world!", endl)</pre>
+</div>
+				</p>
+
+				<p>
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline linenums lang-nift">
+write{b}(console)
 {
-	console("i: ", i)
-	if(i > 10)
-		break
-	++(i)
-}
-</pre>
+	First line
+	Second line
+		Indented Line
+	Last line
+}</pre>
+</div>
+				</p>
+
+				<p>
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline linenums lang-nift">
+:=(string, s = "hello, world!")
+:=(ofstream, ofs("output.txt"))
+write(ofs, s, endl)
+ofs.close()</pre>
 </div>
 				</p>
 
@@ -51,22 +113,36 @@ while(1)
 					n++ example
 				</h4>
 				<p>
-					Example of <mono>break</mono> being used with <mono>n++</mono>:					
+					Examples of <mono>read</mono> being used with <mono>n++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline">
-\@:=(int, i=0)
-\@while(1)
-{
-	\@console("i: ", i)
-	\@if(i > 10)
-		\@break
-	\@++(i)
-}
-</pre>
+<pre class="prettyprint inline linenums lang-nift">
+\@write(console, "hello, world!", endl)</pre>
 </div>
 				</p>
 
+				<p>
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline linenums lang-nift">
+\@write{b}(console)
+{
+	First line
+	Second line
+		Indented Line
+	Last line
+}</pre>
+</div>
+				</p>
+
+				<p>
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline linenums lang-nift">
+\@:=(string, s = "hello, world!")
+\@:=(ofstream, ofs("output.txt"))
+\@write(ofs, s, endl)
+\@ofs.close()</pre>
+</div>
+				</p>
 			</div>
 		</section>
 	</div>

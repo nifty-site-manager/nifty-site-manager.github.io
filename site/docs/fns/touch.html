@@ -111,50 +111,90 @@
 
 		    <!-- Main -->
 		    <section id="main" class="wrapper style2">
-		    	<div class="title">fn: break</div>
+		    	<div class="title">fn: <mono>touch</mono></div>
 		    	<div class="container">
 		    		<!-- Features -->
 		    		<section id="features">
 		    			<div class="content">
 		    				<a href="#contents" class="to_top">[contents]</a>
 		    
-		    				<p id="contents">
-		    					Contents:
-		    					<ul style="text-indent:30px">
-		    						<li><a href="#syntax">Syntax</a></li>
-		    						<li><a href="#f++-eg">f++ example</a></li>
-		    						<li><a href="#n++-eg">n++ example</a></li>
-		    					</ul>
-		    				</p>
+		    				<h4 id="contents">
+		    					Contents
+		    				</h4>
+		    				<ul style="text-indent:30px">
+		    					<li><a href="#syntax">Syntax</a></li>
+		    					<li><a href="#description">Description</a></li>
+		    					<li><a href="#options">Options</a></li>
+		    					<li><a href="#f++-eg">f++ example</a></li>
+		    					<li><a href="#n++-eg">n++ example</a></li>
+		    				</ul>
 		    
 		    				<h4 id="syntax">
 		    					Syntax
 		    				</h4>
 		    				<p>
-		    					The syntax for <mono>break</mono> calls is:
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline"><code data-language="c">break
-</code></pre>
+		    					The syntax for <mono>touch</mono> calls is:
+		    <div align="center" style="margin-top:-15px">
+		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
+touch{option}(params)
+</pre>
+		    </div><br>
+		    <div align="center">
+		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
+@touch{option}(params)
+</pre>
 		    </div>
+		    				</p>
+		    
+		    				<h4 id="description">
+		    					Description
+		    				</h4>
+		    				<p>
+		    					The <mono>touch</mono> function takes a non-zero number of string parameters that should be paths to create, you can create files or directories.
+		    				</p>
+		    
+		    				<h4 id="options">
+		    					Options
+		    				</h4>
+		    				<p>
+		    					The following options are available for <mono>touch</mono> calls:
+		    
+		    					<center class="table">
+		    						<table id="touch_options_table" class="alt">
+		    							<thead>
+		    								<tr>
+		    									<th>option</th>
+		    									<th>description</th>
+		    								</tr>
+		    							</thead>
+		    							<tr>
+		    								<td><mono>dirs</mono></td>
+		    								<td>create directories</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>files</mono></td>
+		    								<td>create files (default)</td>
+		    							</tr>
+		    							<tfoot>
+		    								<tr>
+		    									<th>option</th>
+		    									<th>description</th>
+		    								</tr>
+		    							</tfoot>
+		    						</table>
+		    					</center>
 		    				</p>
 		    
 		    				<h4 id="f++-eg">
 		    					f++ example
 		    				</h4>
 		    				<p>
-		    					Example of <mono>break</mono> being used with <mono>f++</mono>:					
+		    					Examples of <mono>touch</mono> being used with <mono>f++</mono>:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-:=(int, i=0)
-while(1)
-{
-	console("i: ", i)
-	if(i > 10)
-		break
-	++(i)
-}
-</pre>
+		    <pre class="prettyprint inline linenums lang-nift">
+touch("example.txt")
+touch{dirs}("dir/")</pre>
 		    </div>
 		    				</p>
 		    
@@ -162,22 +202,14 @@ while(1)
 		    					n++ example
 		    				</h4>
 		    				<p>
-		    					Example of <mono>break</mono> being used with <mono>n++</mono>:					
+		    					Examples of <mono>touch</mono> being used with <mono>n++</mono>:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-@:=(int, i=0)
-@while(1)
-{
-	@console("i: ", i)
-	@if(i > 10)
-		@break
-	@++(i)
-}
-</pre>
+		    <pre class="prettyprint inline linenums lang-nift">
+@touch("example.txt")
+@touch{dirs}("dir/")</pre>
 		    </div>
 		    				</p>
-		    
 		    			</div>
 		    		</section>
 		    	</div>
@@ -186,38 +218,38 @@ while(1)
 			<!-- Footer -->
 			<section id="footer" class="wrapper">
 				<div class="title">
-					<img src="../../images/nsm.png" alt="nsm signature on parchment" width="120" style="margin-top:40px; margin-bottom:20px">
+					<img src="../../images/nsm.png" alt="nsm signature on parchment" width="120" style="margin-top:40px; margin-bottom:20px; border-radius: 4px">
 				</div>
 			
 				<div class="container">
 					<div id="copyright">
-						<ul style="margin-top:115px">
-							<li><b style="color: white !important">Mirrors:</b></li>
-							<li><a href="https://nift.cc/">Official</a></li>
-							<li><a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a></li>
-							<li><a href="https://nifty-site-manager.github.io/">GitHub</a></li>
-							<li><a href="https://nifty-site-manager.gitlab.io/">GitLab</a></li>
-							<li><a href="https://nifty-site-manager.netlify.com/">Netlify</a></li>
-						</ul> <noselect><br></noselect>
-			
-						<center><img src="../../images/badger.png" alt="Nift badger mascot" width="325" style="max-width:90%; margin-bottom:20px"></center>
-			
-						<ul>
-							<li>&copy;&nbsp;2015 - <span name="cyear"></span> <a href="https://nift.cc">Nift</a>.</li>
-							<li>Creator: <a href="https://n-ham.com">Nicholas Ham</a></li>
-						</ul> <noselect><br></noselect>
-			
 						<noselect>
+							<ul style="margin-top:115px">
+								<li><b style="color: white !important">Mirrors:</b></li>
+								<li><a href="https://nift.cc/">Official</a></li>
+								<li><a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a></li>
+								<li><a href="https://nifty-site-manager.github.io/">GitHub</a></li>
+								<li><a href="https://nifty-site-manager.gitlab.io/">GitLab</a></li>
+								<li><a href="https://nifty-site-manager.netlify.com/">Netlify</a></li>
+							</ul> <br>
+			
+							<center><img src="../../images/badger.png" alt="Nift badger mascot" width="325" style="max-width:90%; margin-bottom:20px"></center>
+			
+							<ul>
+								<li>&copy;&nbsp;2015 - <span name="cyear"></span> <a href="https://nift.cc">Nift</a>.</li>
+								<li>Creator: <a href="https://n-ham.com">Nicholas Ham</a></li>
+							</ul> <br>
+						
 							<b id="light_dark_LHS" style="color: white !important">light</b> &nbsp; <label class="light-dark-switch" id="light-dark-switch">
 								<input type="checkbox" id="checkbox_light_dark">
 								<span class="slider round" onclick="toggle_light_dark()" id="slider_light_dark"></span>
 							</label> &nbsp; <b id="light_dark_RHS" style="color: white !important">dark</b> <br><br>
-						</noselect>
 			
-						<ul>
-							<li><a href="../../tos.html">Terms of Service</a></li>
-							<li><a href="../../privacy_policy.html">Privacy Policy</a></li>
-						</ul>
+							<ul>
+								<li><a href="../../tos.html">Terms of Service</a></li>
+								<li><a href="../../privacy_policy.html">Privacy Policy</a></li>
+							</ul>
+						</noselect>
 					</div>
 				</div>
 			</section>
@@ -252,13 +284,12 @@ while(1)
 				x[i].innerHTML = new Date().getFullYear();
 		</script>
 
-		
 		<!-- uses google-code-prettify for syntax highlighting 
 			 see https://github.com/google/code-prettify/ for more info -->
 		<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 		<script src="../../assets/js/lang-lua.js"></script>
 		<script src="../../assets/js/lang-nift.js"></script>
-		
+
 		<!-- uses MathJax CDC for LaTeX support
 			 see http://docs.mathjax.org/en/latest/start.html for more info -->
 		<script type="text/x-mathjax-config">

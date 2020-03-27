@@ -134,13 +134,13 @@
 		    				<p>
 		    					The syntax for <mono>in</mono> calls is:
 		    <div align="center" style="margin-top:-15px">
-		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
-in{options}(message)
+		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
+in{options}(string)
 </pre>
 		    </div><br>
 		    <div align="center">
-		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
-@in{options}(message)
+		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
+@in{options}(string)
 </pre>
 		    </div>
 		    				</p>
@@ -149,7 +149,7 @@ in{options}(message)
 		    					Description
 		    				</h4>
 		    				<p>
-		    					The <mono>in</mono> function is for reading user input from console or from file. It takes zero parameters or a single string parameter that is an input message or even as a templat when reading user input from file. There is also an option for the call to be followed by a block of text to use as the input message or even as a template when reading user input from file. 
+		    					The <mono>in</mono> function is for reading user input from console or from file. It takes zero parameters or a single string parameter that is an input message or even as a template when reading user input from file. There is also an option for the call to be followed by a block of text to use as the input message or even as a template when reading user input from file. 
 		    				</p>
 		    
 		    				<h4 id="options">
@@ -195,14 +195,14 @@ in{options}(message)
 		    					Examples of <mono>in</mono> being used with <mono>f++</mono>:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline linenums">
+		    <pre class="prettyprint inline linenums lang-nift">
 in("please enter a name for your project:")</pre>
 		    </div>
 		    				</p>
 		    
 		    				<p>
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline linenums">
+		    <pre class="prettyprint inline linenums lang-nift">
 in{b, from-file}
 {
 	name: 
@@ -219,14 +219,14 @@ in{b, from-file}
 		    					Examples of <mono>in</mono> being used with <mono>n++</mono>:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline linenums">
+		    <pre class="prettyprint inline linenums lang-nift">
 @in("please enter a name for your project:")</pre>
 		    </div>
 		    				</p>
 		    
 		    				<p>
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline linenums">
+		    <pre class="prettyprint inline linenums lang-nift">
 @in{b, from-file}
 {
 	name: 
@@ -243,38 +243,38 @@ in{b, from-file}
 			<!-- Footer -->
 			<section id="footer" class="wrapper">
 				<div class="title">
-					<img src="../../images/nsm.png" alt="nsm signature on parchment" width="120" style="margin-top:40px; margin-bottom:20px">
+					<img src="../../images/nsm.png" alt="nsm signature on parchment" width="120" style="margin-top:40px; margin-bottom:20px; border-radius: 4px">
 				</div>
 			
 				<div class="container">
 					<div id="copyright">
-						<ul style="margin-top:115px">
-							<li><b style="color: white !important">Mirrors:</b></li>
-							<li><a href="https://nift.cc/">Official</a></li>
-							<li><a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a></li>
-							<li><a href="https://nifty-site-manager.github.io/">GitHub</a></li>
-							<li><a href="https://nifty-site-manager.gitlab.io/">GitLab</a></li>
-							<li><a href="https://nifty-site-manager.netlify.com/">Netlify</a></li>
-						</ul> <noselect><br></noselect>
-			
-						<center><img src="../../images/badger.png" alt="Nift badger mascot" width="325" style="max-width:90%; margin-bottom:20px"></center>
-			
-						<ul>
-							<li>&copy;&nbsp;2015 - <span name="cyear"></span> <a href="https://nift.cc">Nift</a>.</li>
-							<li>Creator: <a href="https://n-ham.com">Nicholas Ham</a></li>
-						</ul> <noselect><br></noselect>
-			
 						<noselect>
+							<ul style="margin-top:115px">
+								<li><b style="color: white !important">Mirrors:</b></li>
+								<li><a href="https://nift.cc/">Official</a></li>
+								<li><a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a></li>
+								<li><a href="https://nifty-site-manager.github.io/">GitHub</a></li>
+								<li><a href="https://nifty-site-manager.gitlab.io/">GitLab</a></li>
+								<li><a href="https://nifty-site-manager.netlify.com/">Netlify</a></li>
+							</ul> <br>
+			
+							<center><img src="../../images/badger.png" alt="Nift badger mascot" width="325" style="max-width:90%; margin-bottom:20px"></center>
+			
+							<ul>
+								<li>&copy;&nbsp;2015 - <span name="cyear"></span> <a href="https://nift.cc">Nift</a>.</li>
+								<li>Creator: <a href="https://n-ham.com">Nicholas Ham</a></li>
+							</ul> <br>
+						
 							<b id="light_dark_LHS" style="color: white !important">light</b> &nbsp; <label class="light-dark-switch" id="light-dark-switch">
 								<input type="checkbox" id="checkbox_light_dark">
 								<span class="slider round" onclick="toggle_light_dark()" id="slider_light_dark"></span>
 							</label> &nbsp; <b id="light_dark_RHS" style="color: white !important">dark</b> <br><br>
-						</noselect>
 			
-						<ul>
-							<li><a href="../../tos.html">Terms of Service</a></li>
-							<li><a href="../../privacy_policy.html">Privacy Policy</a></li>
-						</ul>
+							<ul>
+								<li><a href="../../tos.html">Terms of Service</a></li>
+								<li><a href="../../privacy_policy.html">Privacy Policy</a></li>
+							</ul>
+						</noselect>
 					</div>
 				</div>
 			</section>
@@ -309,13 +309,12 @@ in{b, from-file}
 				x[i].innerHTML = new Date().getFullYear();
 		</script>
 
-		
 		<!-- uses google-code-prettify for syntax highlighting 
 			 see https://github.com/google/code-prettify/ for more info -->
 		<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 		<script src="../../assets/js/lang-lua.js"></script>
 		<script src="../../assets/js/lang-nift.js"></script>
-		
+
 		<!-- uses MathJax CDC for LaTeX support
 			 see http://docs.mathjax.org/en/latest/start.html for more info -->
 		<script type="text/x-mathjax-config">
