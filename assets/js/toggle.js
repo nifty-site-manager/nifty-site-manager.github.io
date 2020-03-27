@@ -1,6 +1,9 @@
 var dark_mode = 0;
 
-function toggle_light_dark() {
+function toggle_light_dark() 
+{
+  dark_mode = (dark_mode+1)%2;
+  localStorage.setItem('dark-mode', dark_mode);
 
   if(document.getElementById("main"))
     document.getElementById("main").classList.toggle("dark-mode");
@@ -70,8 +73,21 @@ function toggle_light_dark() {
   for(var i=0; i<elements.length; i++)
     elements[i].classList.toggle("fluro-green");
 
-  dark_mode = (dark_mode+1)%2;
-  localStorage.setItem('dark-mode', dark_mode);
+  if(document.getElementById("zeit-logo"))
+  {
+    if(dark_mode == 1)
+      document.getElementById("zeit-logo").src = "../images/zeit.png";
+    else
+      document.getElementById("zeit-logo").src = "../images/zeit-dark.png";
+  }
+
+  if(document.getElementById("gh-logo"))
+  {
+    if(dark_mode == 1)
+      document.getElementById("gh-logo").src = "../images/github-icon.png";
+    else
+      document.getElementById("gh-logo").src = "../images/github-icon.svg";
+  }
 }
 
 if(localStorage.getItem('dark-mode') && localStorage.getItem('dark-mode') === "1") 
