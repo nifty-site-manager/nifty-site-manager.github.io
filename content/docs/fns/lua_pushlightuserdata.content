@@ -23,13 +23,13 @@
 				<p>
 					The syntax for <mono>lua_pushlightuserdata</mono> calls is:
 <div align="center" style="margin-top:-15px">
-<mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
-lua_pushlightuserdata(variable)
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-lua" style="margin-bottom:-15px">
+lua_pushlightuserdata(var)
 </pre>
 </div><br>
 <div align="center">
-<mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
-\@lua_pushlightuserdata(variable)
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-lua" style="margin-bottom:-15px">
+\@lua_pushlightuserdata(var)
 </pre>
 </div>
 				</p>
@@ -48,7 +48,7 @@ lua_pushlightuserdata(variable)
 					Example of <mono>lua_pushlightuserdata</mono> being used with <mono>f++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline linenums">
+<pre class="prettyprint inline linenums lang-lua">
 :=(string, str)
 lua_pushlightuserdata(str)
 lua_setglobal("s")
@@ -65,7 +65,7 @@ console(str)</pre>
 					<b>Note:</b> You can achieve essentially the same as above as follows:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline linenums">
+<pre class="prettyprint inline linenums lang-lua">
 :=(string, str)
 lua_addnsmfns
 lua
@@ -84,7 +84,7 @@ console(str)</pre>
 					Example of <mono>lua_pushlightuserdata</mono> being used with <mono>n++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline linenums">
+<pre class="prettyprint inline linenums lang-lua">
 \@:=(string, str)
 \@lua_pushlightuserdata(str)
 \@lua_setglobal("s")

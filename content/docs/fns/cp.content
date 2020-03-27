@@ -23,19 +23,19 @@
 				<p>
 					The syntax for <mono>copy</mono>/<mono>cp</mono> calls is:
 <div align="center" style="margin-top:-15px; margin-bottom:60px">
-<mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-50px">
-copy(source, target)
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-50px">
 copy source target
+copy(source, target)
+cp source target 
 cp(source, target)
-cp source target
 </pre>
 </div><br>
 <div align="center" style="margin-top:-15px; margin-bottom:60px">
-<mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-50px">
-\@copy(source, target)
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-50px">
 \@copy source target
+\@copy(source, target)
+\@cp source target 
 \@cp(source, target)
-\@cp source target
 </pre>
 </div>
 				</p>
@@ -58,7 +58,7 @@ cp source target
 					Examples of <mono>copy</mono>/<mono>cp</mono> being used with <mono>f++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline linenums">
+<pre class="prettyprint inline linenums lang-nift">
 cp("~/.bashrc", "~/.bashrc-backup")
 sudo cp /etc/sudoers /etc/sudoers-backup
 sudo(cp, "/etc/sudoers", "/etc/sudoers-backup")
@@ -73,7 +73,7 @@ copy /home/teji/.bash_profile /home/teji/.bash_profile_backup</pre>
 					Example of <mono>copy</mono>/<mono>cp</mono> being used with <mono>n++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline linenums">
+<pre class="prettyprint inline linenums lang-nift">
 \@cp "~/.bashrc" "~/.bashrc-backup"
 \@sys(sudo cp '/etc/sudoers' '/etc/sudoers-backup')
 \@copy(/home/teji/.bash_profile, /home/teji/.bash_profile_backup)</pre>

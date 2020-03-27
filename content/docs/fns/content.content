@@ -23,12 +23,12 @@
 				<p>
 					The syntax for <mono>content</mono> calls is:
 <div align="center" style="margin-top:-15px">
-<mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
 content{options}
 </pre>
 </div><br>
 <div align="center">
-<mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
 \@content{options}
 </pre>
 </div>
@@ -92,7 +92,7 @@ content{options}
 					Examples of <mono>content</mono> being used with <mono>n++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline linenums">
+<pre class="prettyprint inline linenums lang-nift">
 <html>
 	<head>
 		\@input("template/head.content")
@@ -107,7 +107,7 @@ content{options}
 
 				<p>
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline linenums">
+<pre class="prettyprint inline linenums lang-nift">
 <html>
 	<head>
 		\@input("template/head.content")

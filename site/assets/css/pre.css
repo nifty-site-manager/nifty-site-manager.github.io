@@ -5,13 +5,16 @@
 
 cpbutton
 {
+	text-align: center;
 	z-index:99;
 	float:right !important;
 	/*position: relative;
 	right: 10px;*/
 	margin-left: 10px;
-	padding-left: 7px;
-	padding-right: 7px;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-top: 0px;
+	padding-bottom: 2px !important;
 	text-decoration: none;
 	background: #1f2021 !important;
 	border-radius:5px;
@@ -32,7 +35,7 @@ cpbutton:hover
 cpbutton:active
 {
 	z-index:99;
-	background: #ff1493 !important;
+	background: white !important;
 }
 
 /* desert scheme ported from vim to google prettify */
@@ -129,6 +132,9 @@ pre
 	min-width: 130px !important;
 	max-width: 90%;
 	overflow: auto;
+
+	font-family:'Monaco', 'Menlo', courier, monospace;
+	font-size: 0.8em;
 
 	padding-left: 10px !important; 
 	padding-right:10px !important;

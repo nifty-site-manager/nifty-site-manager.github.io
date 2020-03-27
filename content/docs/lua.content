@@ -87,18 +87,20 @@ nift run -lua path/script-name.ext
 					You can run <mono>Lua</mono> code from <mono>f++</mono> using either of the following (without needing the comment syntax):					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="inline"><code data-language="lua">lua(-- single line of Lua code)
-</code></pre>
+<pre class="prettyprint inline lang-lua">
+lua(--[[ line of Lua code ]]--)
+</pre>
 </div>
 				</p>
 
 				<p>
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="inline"><code data-language="lua">lua
+<pre class="prettyprint inline lang-lua">
+lua
 {
 	-- block of Lua code
 }
-</code></pre>
+</pre>
 </div>
 				</p>
 
@@ -109,18 +111,20 @@ nift run -lua path/script-name.ext
 					You can run <mono>Lua</mono> code from <mono>n++</mono> using either of the following (without needing the comment syntax):					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="inline"><code data-language="lua">\@lua(-- single line of Lua code)
-</code></pre>
+<pre class="prettyprint inline lang-lua">
+\@lua(--[[ line of Lua code ]]--)
+</pre>
 </div>
 				</p>
 
 				<p>
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="inline"><code data-language="lua">\@lua
+<pre class="prettyprint inline lang-lua">
+\@lua
 {
 	-- block of Lua code
 }
-</code></pre>
+</pre>
 </div>
 				</p>
 
@@ -178,6 +182,22 @@ nift run -lua path/script-name.ext
 							</tfoot>
 						</table>
 					</center>
+				</p>
+
+				<p>
+					An example of using <mono>nsm_setstring</mono>, <mono>nsm_tostring</mono> and <mono>nsm_wite</mono> with <mono>f++</mono> is below:
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline linenums lang-lua">
+:=(string, str="hello, world!")
+lua_addnsmfns()
+lua 
+{
+	nsm_write(console, nsm_tostring("str"), endl)
+	nsm_setstring("str", "hello, mars!")
+	nsm_write(console, nsm_tostring("str"), endl)
+}
+</pre>
+</div>
 				</p>
 
 				<h4 id="luarocks">
@@ -396,7 +416,8 @@ sudo luarocks install LuaFileSystem
 				<p>
 					Suppose you have a moonscript file <mono>functions.moon</mono>:
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="inline"><code data-language="lua">func1 = ->
+<pre class="prettyprint inline linenums lang-lua">
+func1 = ->
 	print "hello, world!"
 	
 func2 = ->
@@ -404,18 +425,19 @@ func2 = ->
 
 { :func }
 { :func2 }
-</code></pre>
+</pre>
 </div>
 				</p>
 
 				<p>
 					Inside <mono>Lua</mono> code (in a file in the same directory) you can require <mono>functions.moon</mono> and use its functions as follows:
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="inline"><code data-language="lua">require "moonscript"
+<pre class="prettyprint inline linenums lang-lua">
+require "moonscript"
 fns = require "functions"
 fns.func()
 fns.func2()
-</code></pre>
+</pre>
 </div>
 				</p>
 			</div>

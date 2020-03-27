@@ -24,20 +24,20 @@
 				<p>
 					The syntax for <mono>lua</mono> calls is:
 <div align="center" style="margin-top:-15px; margin-bottom:70px">
-<mono>f++</mono>: &nbsp; <pre class="inline" style="margin-bottom:-60px">
-<code data-language="lua">lua{options}(-- line of Lua code)
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-lua" style="margin-bottom:-60px">
+lua{options}(--[[ line of Lua code ]]--)
 lua{options}
 {
 	-- block of Lua code
-}</code></pre>
+}</pre>
 </div><br>
 <div align="center" style="margin-top:-15px; margin-bottom:70px">
-<mono>n++</mono>: &nbsp; <pre class="inline" style="margin-bottom:-60px">
-<code data-language="lua">\@lua{options}(-- line of Lua code)
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-lua" style="margin-bottom:-60px">
+\@lua{options}(--[[ line of Lua code ]]--)
 \@lua{options}
 {
 	-- block of Lua code
-}</code></pre>
+}</pre>
 </div>
 				</p>
 

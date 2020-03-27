@@ -23,12 +23,12 @@
 				<p>
 					The syntax for <mono>lua_tostring</mono> calls is:
 <div align="center" style="margin-top:-15px">
-<mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-lua" style="margin-bottom:-15px">
 lua_tostring(int)
 </pre>
 </div><br>
 <div align="center">
-<mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-lua" style="margin-bottom:-15px">
 \@lua_tostring(int)
 </pre>
 </div>
@@ -52,7 +52,7 @@ lua_tostring(int)
 					Example of <mono>lua_tostring</mono> being used with <mono>f++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline linenums">
+<pre class="prettyprint inline linenums lang-lua">
 lua
 {
 	str = "hello, world!"
@@ -69,7 +69,7 @@ console("lua_tostring(1)")</pre>
 					Example of <mono>lua_tostring</mono> being used with <mono>n++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline linenums">
+<pre class="prettyprint inline linenums lang-lua">
 \@lua
 {
 	str = "hello, world!"

@@ -23,12 +23,12 @@
 				<p>
 					The syntax for <mono>dep</mono> calls is:
 <div align="center" style="margin-top:-15px">
-<mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
 dep(params)
 </pre>
 </div><br>
 <div align="center">
-<mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
 \@dep(params)
 </pre>
 </div>
@@ -52,7 +52,7 @@ dep(params)
 					Example of <mono>dep</mono> being used with <mono>f++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline linenums">
+<pre class="prettyprint inline linenums lang-nift">
 dep("site/index.html")</pre>
 </div>
 				</p>
@@ -64,7 +64,7 @@ dep("site/index.html")</pre>
 					Example of <mono>dep</mono> being used with <mono>n++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline linenums">
+<pre class="prettyprint inline linenums lang-nift">
 \@dep("site/index.html")</pre>
 </div>
 				</p>

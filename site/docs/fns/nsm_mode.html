@@ -15,7 +15,6 @@
         <link rel="stylesheet" href="../../assets/css/main.css">
         <link rel="stylesheet" href="../../assets/css/pagestyle.css">
         <link rel="stylesheet" href="../../assets/css/pre.css">
-        <link rel="stylesheet" href="../../assets/css/rainbow.css">
         <link rel="stylesheet" href="../../assets/css/toggle.css">
         <link rel='icon' type='image/png' href='../../images/favicon.png'>
         
@@ -30,7 +29,7 @@
 				<!-- Logo -->
 				<div id="logo">
 					<noselect>
-					<img src="../../images/rabbit.svg" alt="Nift bunny mascot" width=325 style="max-width:90%">
+					<img src="../../images/rabbit.png" alt="Nift bunny mascot" width=325 style="max-width:90%">
 			
 					<p style="margin-bottom:0px">
 						<a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; 
@@ -112,50 +111,60 @@
 
 		    <!-- Main -->
 		    <section id="main" class="wrapper style2">
-		    	<div class="title">fn: break</div>
+		    	<div class="title">fn: <mono>nsm_mode</mono></div>
 		    	<div class="container">
 		    		<!-- Features -->
 		    		<section id="features">
 		    			<div class="content">
 		    				<a href="#contents" class="to_top">[contents]</a>
 		    
-		    				<p id="contents">
-		    					Contents:
-		    					<ul style="text-indent:30px">
-		    						<li><a href="#syntax">Syntax</a></li>
-		    						<li><a href="#f++-eg">f++ example</a></li>
-		    						<li><a href="#n++-eg">n++ example</a></li>
-		    					</ul>
-		    				</p>
+		    				<h4 id="contents">
+		    					Contents
+		    				</h4>
+		    				<ul style="text-indent:30px">
+		    					<li><a href="#syntax">Syntax</a></li>
+		    					<li><a href="#description">Description</a></li>
+		    					<li><a href="#f++-eg">f++ example</a></li>
+		    					<li><a href="#n++-eg">n++ example</a></li>
+		    				</ul>
 		    
 		    				<h4 id="syntax">
 		    					Syntax
 		    				</h4>
 		    				<p>
-		    					The syntax for <mono>break</mono> calls is:
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline"><code data-language="c">break
-</code></pre>
+		    					The syntax for <mono>nsm_mode</mono> calls is:
+		    <div align="center" style="margin-top:-15px">
+		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
+nsm_mode(string)
+</pre>
+		    </div><br>
+		    <div align="center">
+		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
+@nsm_mode(string)
+</pre>
 		    </div>
+		    				</p>
+		    
+		    				<h4 id="description">
+		    					Description
+		    				</h4>
+		    				<p>
+		    					The <mono>nsm_mode</mono> function is for changing the mode in an interactive session, it is available from both the <mono>interpreter</mono> and <mono>shell</mono> modes, it takes a single string parameter to specify the mode which should be one of the following:
+		    					<ul>
+		    						<li><mono>interp</mono></li>
+		    						<li><mono>sh</mono></li>
+		    					</ul>
 		    				</p>
 		    
 		    				<h4 id="f++-eg">
 		    					f++ example
 		    				</h4>
 		    				<p>
-		    					Example of <mono>break</mono> being used with <mono>f++</mono>:					
+		    					Example of <mono>nsm_mode</mono> being used with <mono>f++</mono>:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-:=(int, i=0)
-while(1)
-{
-	console("i: ", i)
-	if(i > 10)
-		break
-	++(i)
-}
-</pre>
+		    <pre class="prettyprint inline linenums lang-nift">
+nsm_mode("interp")</pre>
 		    </div>
 		    				</p>
 		    
@@ -163,22 +172,13 @@ while(1)
 		    					n++ example
 		    				</h4>
 		    				<p>
-		    					Example of <mono>break</mono> being used with <mono>n++</mono>:					
+		    					Example of <mono>nsm_mode</mono> being used with <mono>n++</mono>:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-@:=(int, i=0)
-@while(1)
-{
-	@console("i: ", i)
-	@if(i > 10)
-		@break
-	@++(i)
-}
-</pre>
+		    <pre class="prettyprint inline linenums lang-nift">
+@nsm_mode("sh")</pre>
 		    </div>
 		    				</p>
-		    
 		    			</div>
 		    		</section>
 		    	</div>
@@ -226,7 +226,6 @@ while(1)
 
 		<!-- Scripts -->
 		<script src="../../assets/js/copy-pre.js"></script>
-		<script src="../../assets/js/rainbow.min.js"></script>
 		<script src="../../assets/js/jquery.min.js"></script>
 		<script src="../../assets/js/jquery.dropotron.min.js"></script>
 		<script src="../../assets/js/browser.min.js"></script>
@@ -254,20 +253,13 @@ while(1)
 				x[i].innerHTML = new Date().getFullYear();
 		</script>
 
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-62165905-2"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-
-		  gtag('config', 'UA-62165905-2');
-		</script>
-
+		
 		<!-- uses google-code-prettify for syntax highlighting 
 			 see https://github.com/google/code-prettify/ for more info -->
 		<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
-
+		<script src="../../assets/js/lang-lua.js"></script>
+		<script src="../../assets/js/lang-nift.js"></script>
+		
 		<!-- uses MathJax CDC for LaTeX support
 			 see http://docs.mathjax.org/en/latest/start.html for more info -->
 		<script type="text/x-mathjax-config">
@@ -286,6 +278,16 @@ while(1)
 		</script>
 		<script type="text/javascript" 
 				src="https://cdn.mathjax.org/mathjax/latest/MathJax.js">
+		</script>
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-62165905-2"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-62165905-2');
 		</script>
     </body>
 </html>

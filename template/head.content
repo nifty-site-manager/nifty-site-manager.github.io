@@ -5,7 +5,6 @@
 <link rel="stylesheet" href="@pathtofile(site/assets/css/main.css)">
 <link rel="stylesheet" href="@pathtofile(site/assets/css/pagestyle.css)">
 <link rel="stylesheet" href="@pathtofile(site/assets/css/pre.css)">
-<link rel="stylesheet" href="@pathtofile(site/assets/css/rainbow.css)">
 <link rel="stylesheet" href="@pathtofile(site/assets/css/toggle.css)">
 <link rel='icon' type='image/png' href='@pathtofile("site/images/favicon.png")'>
 

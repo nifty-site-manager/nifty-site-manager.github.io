@@ -23,12 +23,12 @@
 				<p>
 					The syntax for <mono>lua_getglobal</mono> calls is:
 <div align="center" style="margin-top:-15px">
-<mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-lua" style="margin-bottom:-15px">
 lua_getglobal(string)
 </pre>
 </div><br>
 <div align="center">
-<mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-lua" style="margin-bottom:-15px">
 \@lua_getglobal(string)
 </pre>
 </div>
@@ -48,7 +48,7 @@ lua_getglobal(string)
 					Example of <mono>lua_getglobal</mono> being used with <mono>f++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline linenums">
+<pre class="prettyprint inline linenums lang-lua">
 lua
 {
 	x = 10
@@ -65,7 +65,7 @@ console(lua_tonumber(1))</pre>
 					Example of <mono>lua_getglobal</mono> being used with <mono>n++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline linenums">
+<pre class="prettyprint inline linenums lang-lua">
 \@lua
 {
 	x = 10

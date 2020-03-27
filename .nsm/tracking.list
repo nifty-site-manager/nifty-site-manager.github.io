@@ -346,10 +346,6 @@
 'nsm_mode'
 'template/page.template'
 
-'docs/fns/out'
-'out'
-'template/page.template'
-
 'docs/fns/parse'
 'parse'
 'template/page.template'

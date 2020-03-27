@@ -24,7 +24,7 @@
 				<p>
 					The syntax for <mono>do-while</mono> loops is:
 <div align="center" style="margin-top:-15px; margin-bottom:60px">
-<mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-50px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-50px">
 do-while{options}(condition)
 {
 	//loop code-block
@@ -32,7 +32,7 @@ do-while{options}(condition)
 </pre>
 </div><br>
 <div align="center" style="margin-top:-15px; margin-bottom:60px">
-<mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-50px">
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-50px">
 \@do-while{options}(condition)
 {
 	//loop code-block
@@ -115,7 +115,7 @@ do-while{options}(condition)
 					Examples of <mono>do-while</mono> being used with <mono>f++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline linenums">
+<pre class="prettyprint inline linenums lang-nift">
 :=(int, i=0)
 do-while(i < 10)
 	console("i: `i+=1`")</pre>
@@ -124,7 +124,7 @@ do-while(i < 10)
 
 				<p>
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline linenums">
+<pre class="prettyprint inline linenums lang-nift">
 :=(int, i=0)
 do-while{!s, !o}(i+=1; i<10)
 	console("i: ", i)</pre>
@@ -138,7 +138,7 @@ do-while{!s, !o}(i+=1; i<10)
 					Examples of <mono>do-while</mono> being used with <mono>n++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline linenums">
+<pre class="prettyprint inline linenums lang-nift">
 \@:=(int, i=0)
 \@do-while{\n}(i < 10)
 	i:  \@++(i)</pre>
@@ -147,7 +147,7 @@ do-while{!s, !o}(i+=1; i<10)
 
 				<p>
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline linenums">
+<pre class="prettyprint inline linenums lang-nift">
 \@:=(int, i=0)
 \@do-while{f++, !o, !s}(i+=1; i<10)
 {

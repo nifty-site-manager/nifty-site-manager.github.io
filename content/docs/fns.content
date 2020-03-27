@@ -113,11 +113,11 @@ n++: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
 						<li><a href="@pathtopage(docs/fns/break)">break</a></li> <br>
 
 						<li><a href="@pathtopage(docs/fns/cd)">cd</a></li>
-						<li><a href="@pathtopage(docs/fns/content)">content</a></li>
 						<li><a href="@pathtopage(docs/fns/console)">console</a></li>
 						<li><a href="@pathtofile('site/docs/fns/console.lock.html')">console.lock</a></li>
 						<li><a href="@pathtofile('site/docs/fns/console.locked.html')">console.locked</a></li>
 						<li><a href="@pathtofile('site/docs/fns/console.unlock.html')">console.unlock</a></li>
+						<li><a href="@pathtopage(docs/fns/content)">content</a></li>
 						<li><a href="@pathtopage(docs/fns/continue)">continue</a></li>
 						<li><a href="@pathtopage(docs/fns/cp)">copy/cp</a></li>
 						<li><a href="@pathtopage(docs/fns/cssinclude)">cssinclude</a></li> <br>
@@ -172,8 +172,6 @@ n++: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
 						<li><a href="@pathtopage(docs/fns/n++)">n++</a></li>
 						<li><a href="@pathtopage(docs/fns/nsm_lang)">nsm_lang</a></li>
 						<li><a href="@pathtopage(docs/fns/nsm_mode)">nsm_mode</a></li> <br>
-
-						<li><a href="@pathtopage(docs/fns/out)">out</a></li> <br>
 
 						<li><a href="@pathtopage(docs/fns/parse)">parse</a></li>
 						<li><a href="@pathtopage(docs/fns/pathto)">pathto</a></li>

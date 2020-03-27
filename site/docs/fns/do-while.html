@@ -15,7 +15,6 @@
         <link rel="stylesheet" href="../../assets/css/main.css">
         <link rel="stylesheet" href="../../assets/css/pagestyle.css">
         <link rel="stylesheet" href="../../assets/css/pre.css">
-        <link rel="stylesheet" href="../../assets/css/rainbow.css">
         <link rel="stylesheet" href="../../assets/css/toggle.css">
         <link rel='icon' type='image/png' href='../../images/favicon.png'>
         
@@ -30,7 +29,7 @@
 				<!-- Logo -->
 				<div id="logo">
 					<noselect>
-					<img src="../../images/rabbit.svg" alt="Nift bunny mascot" width=325 style="max-width:90%">
+					<img src="../../images/rabbit.png" alt="Nift bunny mascot" width=325 style="max-width:90%">
 			
 					<p style="margin-bottom:0px">
 						<a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; 
@@ -136,7 +135,7 @@
 		    				<p>
 		    					The syntax for <mono>do-while</mono> loops is:
 		    <div align="center" style="margin-top:-15px; margin-bottom:60px">
-		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-50px">
+		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-50px">
 do-while{options}(condition)
 {
 	//loop code-block
@@ -144,7 +143,7 @@ do-while{options}(condition)
 </pre>
 		    </div><br>
 		    <div align="center" style="margin-top:-15px; margin-bottom:60px">
-		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-50px">
+		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-50px">
 @do-while{options}(condition)
 {
 	//loop code-block
@@ -227,7 +226,7 @@ do-while{options}(condition)
 		    					Examples of <mono>do-while</mono> being used with <mono>f++</mono>:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline linenums">
+		    <pre class="prettyprint inline linenums lang-nift">
 :=(int, i=0)
 do-while(i &lt; 10)
 	console("i: `i+=1`")</pre>
@@ -236,7 +235,7 @@ do-while(i &lt; 10)
 		    
 		    				<p>
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline linenums">
+		    <pre class="prettyprint inline linenums lang-nift">
 :=(int, i=0)
 do-while{!s, !o}(i+=1; i&lt;10)
 	console("i: ", i)</pre>
@@ -250,7 +249,7 @@ do-while{!s, !o}(i+=1; i&lt;10)
 		    					Examples of <mono>do-while</mono> being used with <mono>n++</mono>:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline linenums">
+		    <pre class="prettyprint inline linenums lang-nift">
 @:=(int, i=0)
 @do-while{\n}(i &lt; 10)
 	i:  @++(i)</pre>
@@ -259,7 +258,7 @@ do-while{!s, !o}(i+=1; i&lt;10)
 		    
 		    				<p>
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline linenums">
+		    <pre class="prettyprint inline linenums lang-nift">
 @:=(int, i=0)
 @do-while{f++, !o, !s}(i+=1; i&lt;10)
 {
@@ -314,7 +313,6 @@ do-while{!s, !o}(i+=1; i&lt;10)
 
 		<!-- Scripts -->
 		<script src="../../assets/js/copy-pre.js"></script>
-		<script src="../../assets/js/rainbow.min.js"></script>
 		<script src="../../assets/js/jquery.min.js"></script>
 		<script src="../../assets/js/jquery.dropotron.min.js"></script>
 		<script src="../../assets/js/browser.min.js"></script>
@@ -342,20 +340,13 @@ do-while{!s, !o}(i+=1; i&lt;10)
 				x[i].innerHTML = new Date().getFullYear();
 		</script>
 
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-62165905-2"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-
-		  gtag('config', 'UA-62165905-2');
-		</script>
-
+		
 		<!-- uses google-code-prettify for syntax highlighting 
 			 see https://github.com/google/code-prettify/ for more info -->
 		<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
-
+		<script src="../../assets/js/lang-lua.js"></script>
+		<script src="../../assets/js/lang-nift.js"></script>
+		
 		<!-- uses MathJax CDC for LaTeX support
 			 see http://docs.mathjax.org/en/latest/start.html for more info -->
 		<script type="text/x-mathjax-config">
@@ -374,6 +365,16 @@ do-while{!s, !o}(i+=1; i&lt;10)
 		</script>
 		<script type="text/javascript" 
 				src="https://cdn.mathjax.org/mathjax/latest/MathJax.js">
+		</script>
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-62165905-2"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-62165905-2');
 		</script>
     </body>
 </html>

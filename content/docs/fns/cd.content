@@ -23,15 +23,15 @@
 				<p>
 					The syntax for <mono>cd</mono> calls is:
 <div align="center" style="margin-top:-15px; margin-bottom:25px">
-<mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-27px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-27px">
 cd(path)
-cd path
+cd path 
 </pre>
 </div><br>
 <div align="center" style="margin-top:-15px; margin-bottom:15px">
-<mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-27px">
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-27px">
 \@cd(path)
-\@cd path
+\@cd path 
 </pre>
 </div>
 				</p>
@@ -50,7 +50,7 @@ cd path
 					Examples of <mono>cd</mono> being used with <mono>f++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline linenums">
+<pre class="prettyprint inline linenums lang-nift">
 cd("~/Downloads")
 cd /usr/local/bin
 cd "C:\Windows\system32"</pre>
@@ -64,7 +64,7 @@ cd "C:\Windows\system32"</pre>
 					Example of <mono>cd</mono> being used with <mono>n++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline linenums">
+<pre class="prettyprint inline linenums lang-nift">
 \@cd("~/Downloads")
 \@cd /usr/local/bin
 \@cd "C:\Windows\system32)"</pre>
