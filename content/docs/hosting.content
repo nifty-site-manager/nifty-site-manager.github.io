@@ -30,11 +30,11 @@
 				<center>
 					<div style="max-width:90%; margin-top: -20px; margin-bottom: 40px">
 					<a href="https://pages.bitbucket.io/"><img src="@pathtofile(site/images/bitbucket-icon.svg)" alt="BitBucket logo" width=50 style="max-width:14%; vertical-align:middle"></a> &nbsp;
-					<a href="https://pages.github.com/"><img src="@pathtofile(site/images/github-icon.svg)" alt="GitHub logo" width=50 style="max-width:14%; vertical-align:middle;"></a> &nbsp;
+					<a href="https://pages.github.com/"><img src="@pathtofile(site/images/github-icon.svg)" id="gh-logo" alt="GitHub logo" width=50 style="max-width:14%; vertical-align:middle;"></a> &nbsp;
 					<a href="https://about.gitlab.com/product/pages/"><img src="@pathtofile(site/images/gitlab-icon.svg)" alt="GitLab logo" width=50 style="max-width:14%; vertical-align:middle;"></a> &nbsp;
 					<a href="https://www.netlify.com/"><img src="@pathtofile(site/images/netlify.png)" alt="Netlify logo" width=50 style="max-width: 14%; vertical-align: middle"></a> &nbsp;
 					<a href="https://surge.sh/"><img src="@pathtofile(site/images/surge.svg)" alt="surge.sh logo" width=50 style="max-width: 14%; vertical-align:middle;"></a>
-					<a href="https://zeit.co"><img src="@pathtofile(site/images/zeit.png)" alt="ZEIT Now logo" width=50 style="max-width: 14%; vertical-align:middle;"></a>
+					<a href="https://zeit.co"><img src="@pathtofile(site/images/zeit-dark.png)" id="zeit-logo" alt="ZEIT Now logo" width=50 style="max-width: 14%; vertical-align:middle;"></a>
 					</div>
 				</center>
 
