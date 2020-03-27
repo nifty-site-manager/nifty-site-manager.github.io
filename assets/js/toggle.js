@@ -58,9 +58,13 @@ function toggle_light_dark() {
   for(var i=0; i<elements.length; i++)
     elements[i].classList.toggle("fluro-purple");
 
-  var elements = document.getElementsByClassName("button");
+  elements = document.getElementsByClassName("button");
   for(var i=0; i<elements.length; i++)
     elements[i].classList.toggle("button-dark");
+
+  elements = document.getElementsByTagName("cpbutton");
+  for(var i=0; i<elements.length; i++)
+    elements[i].classList.toggle("cpbutton-dark");
 
   elements = document.getElementsByTagName("b");
   for(var i=0; i<elements.length; i++)

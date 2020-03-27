@@ -11,6 +11,10 @@
   color: white !important;
 }
 
+.cpbutton-dark:active {
+  background: #ff1493 !important;
+}
+
 .th-dark
 {
   overflow-x: auto !important;

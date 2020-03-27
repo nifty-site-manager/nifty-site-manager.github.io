@@ -7,7 +7,7 @@ for(var i=0; i<pre_blocks.length; i++)
 	while(pre_blocks[i].innerHTML[pre_blocks[i].innerHTML.length-1] == '\n')
 		pre_blocks[i].innerHTML = pre_blocks[i].innerHTML.substring(0, pre_blocks[i].innerHTML.length-1);
 	pre_blocks_txt.push(pre_blocks[i].innerHTML);
-	pre_blocks[i].innerHTML = pre_blocks[i].innerHTML + "<noselect><cpbutton onclick='copy_pre_block(" + i + ")'>cp</cpbutton></noselect>";
+	pre_blocks[i].innerHTML = pre_blocks[i].innerHTML + "<noselect><cpbutton onclick='copy_pre_block(" + i + ")'><img src='../../images/copy.png' width='25px' style='vertical-align:middle'></cpbutton></noselect>";
 }
 
 function copy_pre_block(i)
