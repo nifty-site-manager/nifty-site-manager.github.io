@@ -131,6 +131,7 @@ pre.resize
 pre
 {
 	background-color:#363331;
+	color: white !important;
 	text-align:left !important;
 	tab-size: 4;
 	border-radius: 5px;
