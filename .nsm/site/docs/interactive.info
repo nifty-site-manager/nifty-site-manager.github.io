@@ -1,9 +1,9 @@
 02:41:17 Monday March 30 2020
-'resources/css_frameworks'
-'css_frameworks'
+'docs/interactive'
+'interactive'
 'template/page.template'
 
-'content/resources/css_frameworks.content'
+'content/docs/interactive.content'
 'template/footer.content'
 'template/head.content'
 'template/menu.content'

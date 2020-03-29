@@ -112,53 +112,212 @@
 
 		    <!-- Main -->
 		    <section id="main" class="wrapper style2">
-		    	<div class="title">Netlify Hosting</div>
+		    	<div class="title">Interactive</div>
 		    	<div class="container">
 		    		<!-- Features -->
 		    		<section id="features">
 		    			<header class="style1">
-		    				<h2>How to host a website on Netlify</h2>
+		    				<h2>Interactive sessions</h2>
 		    			</header>
 		    
+		    			<!-- Image -->
 		    			<center>
-		    				<a href="https://www.netlify.com/"><img src="../images/netlify.png" alt="Netlify icon" width=200 style="max-width: 45%; margin-bottom: 40px"></a>
+		    				<img src="../images/devil.png" alt="Nift's unofficial Tasmanian devil mascot" width=300 style="margin-bottom:40px">
 		    			</center>
 		    
 		    			<div class="content">
-		    				<h4>
-		    					Free hosting on Netlify
+		    				<p>
+		    					There are two modes in which you can run an <mono>interactive</mono> session with <mono>Nift</mono>, interpreter mode <mono>interp</mono> and shell mode <mono>sh</mono>. The only difference between the two modes is that the interpreter mode just has the language in the prompt, whereas the shell mode has both the language and the present working directory in the prompt.
+		    				</p>
+		    
+		    				<a href="#contents" class="to_top">[contents]</a>
+		    
+		    				<h4 id="contents">
+		    					Contents
+		    				</h4>
+		    				<ul style="text-indent:30px">
+		    					<li><a href="#interpreter">Interpreter mode</a></li>
+		    					<li><a href="#shell">Shell mode</a></li>
+		    					<li><a href="#languages">Languages</a></li>
+		    					<li><a href="#multi-line-input">Multi-line input</a></li>
+		    					<li><a href="#shortcuts">Shortcuts</a></li>
+		    				</ul>
+		    
+		    				<h4 id="interpreter">
+		    					Interpreter mode
 		    				</h4>
 		    				<p>
-		    					Note if you have any dyanmic pages (eg. are using php) then you will need to use an alternative for hosting.
+		    					An <mono>interactive</mono> session can be started with either of:
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline">
+nsm interp -lang
+nift interp -lang
+</pre>
+		    </div>
 		    				</p>
 		    
 		    				<p>
-		    					Information on Netlify may be found <a href="https://www.netlify.com/docs/">here</a>.
+		    					<b>Note:</b> <mono>f++</mono> is the default language used when no language option is specified.
 		    				</p>
 		    
 		    				<p>
-		    					To host a website on Netlify you will first need to upload your website to a respository on BitBucket, GitHub or GitLab. 
+		    					In the interpreter mode the prompt will just tell you which language you are using. If you would like the prompt to also display the present working directory (up to using half the width of the console) you can switch to the shell mode using <mono>nsm_mode("sh")</mono>. You can switch back again with <mono>nsm_mode("interp")</mono>.
+		    				</p>
+		    
+		    				<h4 id="shell">
+		    					Shell mode
+		    				</h4>
+		    				<p>
+		    					A <mono>shell</mono> session can be started with either of:
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline">
+nsm sh -lang
+nift sh -lang
+</pre>
+		    </div>
 		    				</p>
 		    
 		    				<p>
-		    					By far the easiest way to host a website on BitBucket, GitHub or GitLab is to import or fork an existing site repository from BitBucket, GitHub, GitLab or any other code sharing platform. See <a href="../resources/templates.html">here</a> for a variety of templates you can use to make websites.
+		    					<b>Note:</b> <mono>f++</mono> is the default language used when no language option is specified.
 		    				</p>
 		    
 		    				<p>
-		    					Once you have a website on BitBucket, GitHub or GitLab you can host it on Netlify by following these steps:
-		    					<ol>
-		    						<li>Singup for Netlify using either BitBucket, GitHub, GitLab or email;</li>
-		    						<li>Login to Netlify using either BitBucket, GitHub, GitLab or email;</li>
-		    						<li>Click on <mono>New site from Git</mono>;</li>
-		    						<li>Choose which Git provider you want to use (BitBucket, GitHub or Gitlab);</li>
-		    						<li>Select the repository containing your website;</li>
-		    						<li>Select the branch containing the website (typically master), leave the build command blank and enter the directory containing the website (typically left blank for BitBucket and GitHub, and <mono>site</mono> for GitLab);</li>
-		    						<li>Click deploy site.</li>
-		    					</ol>
+		    					The <mono>f++</mono> shell attempts to work as an extension of the shell it is running from, ie. attempts to work almost identically to the shell it is running from while having a number of additional features (and can often do many things faster than the shell it is running from).
 		    				</p>
 		    
 		    				<p>
-		    					If you go in to <mono>domain settings</mono> you can add a custom domain, Netlify will sort out auto renewing Let's encrypt certificates for you which is really handy! 
+		    					In the shell mode the prompt will tell you which language you are using and the present working directory (up to using half the width of the console). If you would like the prompt to just display the language you can switch to the interpreter mode using <mono>nsm_mode("interp")</mono>. You can switch back again with <mono>nsm_mode("sh")</mono>.
+		    				</p>
+		    
+		    
+		    				<h4 id="languages">
+		    					Languages
+		    				</h4>
+		    				<p>
+		    					The following language options are available:
+		    					<ul>
+		    						<li><mono>exprtk</mono></li>
+		    						<li><mono>f++</mono> (default)</li>
+		    						<li><mono>lua</mono></li>
+		    						<li><mono>n++</mono></li>
+		    					</ul>
+		    				</p>
+		    
+		    				<p>
+		    					You can switch to one of the other languages available during an interactive session using <mono>nsm_lang(langStr)</mono> where <mono>langStr</mono> is one of <mono>f++</mono>, <mono>n++</mono>, <mono>lua</mono> or <mono>exprtk</mono>.
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> You can presently only start an <mono>interactive</mono> session in shell mode <mono>sh</mono> with the language options <mono>f++</mono> and <mono>n++</mono>, <mono>exprtk</mono> and <mono>lua</mono> will be available once more shell-like functionality has been added. In the meantime you can switch to any language from an existing shell session and/or switch to the shell mode from any language. 
+		    				</p>
+		    
+		    				<h4 id="multi-line-input">
+		    					Multi-line input
+		    				</h4>
+		    				<p>
+		    					The are various ways to achieve multi-line input during an interactive session. The following section includes the shortcuts on different platforms to input another line before parsing. Alternatively if a line ends with <mono>\</mono> then the interactive session will input another line before parsing.
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> An interactive session will continue to input lines before parsing while the input to be parsed has an unequal number of open and close brackets (there is a bug with <mono>v2.2</mono> where <mono>&lt;</mono> and <mono>&gt;</mono> were counted with the brackets, which just causes problems with relational operators, this is fixed for future versions). To override this put an <mono>=</mono> at the end of an input line with no whitespace following. A couple of examples follow:
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline">
+:=(int, x=10)
+if(x == 10) {
+	console("code-blocks in interactive sessions")
+}
+</pre>
+		    </div>
+		    				</p>
+		    
+		    				<p>
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline">
+console("example with ( and { not closed") =
+</pre>
+		    </div>
+		    				</p>
+		    
+		    				<h4 id="shortcuts">
+		    					Shortcuts
+		    				</h4>
+		    				<p>
+		    					The following shortcuts are available during interactive sessions:					
+		    
+		    					<center class="table">
+		    						<table id="interactive_shortcuts_table" class="alt">
+		    							<thead>
+		    								<tr>
+		    									<th>description</th>
+		    									<th>FreeBSD/Linux</th>
+		    									<th>OSX</th>
+		    									<th>Windows</th>
+		    								</tr>
+		    							</thead>
+		    							<tr>
+		    								<td>go to start of line</td>
+		    								<td><mono>ctrl-a</mono></td>
+		    								<td><mono>ctrl-a</mono></td>
+		    								<td><mono>ctrl-a</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>go to end of line</td>
+		    								<td><mono>ctrl-e</mono></td>
+		    								<td><mono>ctrl-e</mono></td>
+		    								<td><mono>ctrl-e</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>move cursor forwards one position</td>
+		    								<td><mono>&rarr;</mono> <br><mono>ctrl-f</mono></td>
+		    								<td><mono>&rarr;</mono> <br><mono>ctrl-f</mono></td>
+		    								<td><mono>&rarr;</mono> <br><mono>ctrl-f</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>move cursor backwards one position</td>
+		    								<td><mono>&larr;</mono> <br><mono>ctrl-b</mono></td>
+		    								<td><mono>&larr;</mono> <br><mono>ctrl-b</mono></td>
+		    								<td><mono>&larr;</mono> <br><mono>ctrl-b</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>move cursor forwards to next space</td>
+		    								<td><mono>alt-&rarr;</mono> <br><mono>ctrl-&rarr;</mono></td>
+		    								<td><mono>alt-&rarr;</mono></td>
+		    								<td><mono>ctrl-&rarr;</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>move cursor backwards to previous space</td>
+		    								<td><mono>alt-&larr;</mono> <br><mono>ctrl-&larr;</mono></td>
+		    								<td><mono>alt-&larr;</mono></td>
+		    								<td><mono>ctrl-&larr;</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>delete from cursor to end of line</td>
+		    								<td><mono>ctrl-d</mono></td>
+		    								<td><mono>ctrl-d</mono></td>
+		    								<td><mono>ctrl-d</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>delete from cursor to start of previous word</td>
+		    								<td><mono>ctrl-delete</mono> <br><mono>ctrl-shift-'-'</mono></td>
+		    								<td><mono>ctrl-'-'</mono> <br><mono>ctrl-shift-'-'</mono></td>
+		    								<td><mono>ctrl-delete</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>line break (input another line before parsing)</td>
+		    								<td><mono>ctrl-r</mono> <br><mono>alt-enter</mono></td>
+		    								<td><mono>ctrl-r</mono></td>
+		    								<td><mono>ctrl-r</mono> <br><mono>ctrl-enter</mono></td>
+		    							</tr>
+		    							<tfoot>
+		    								<tr>
+		    									<th>description</th>
+		    									<th>FreeBSD/Linux</th>
+		    									<th>OSX</th>
+		    									<th>Windows</th>
+		    								</tr>
+		    							</tfoot>
+		    						</table>
+		    					</center>
 		    				</p>
 		    			</div>
 		    		</section>

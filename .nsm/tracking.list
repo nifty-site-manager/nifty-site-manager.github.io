@@ -458,6 +458,10 @@
 'installing_nift'
 'template/page.template'
 
+'docs/interactive'
+'interactive'
+'template/page.template'
+
 'docs/linux_install'
 'linux_install'
 'template/page.template'

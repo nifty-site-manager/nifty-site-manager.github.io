@@ -50,6 +50,7 @@
 						<li><a href="@pathto(docs/n++)">n++ (template language)</a></li>
 						<li><a href="@pathto(docs/lua)">Lua(JIT)</a></li>
 						<li><a href="@pathto(docs/exprtk)">ExprTk</a></li>
+						<li><a href="@pathto(docs/interactive)">Interactive</a></li>
 						<li><a href="@pathto(docs/scripts)">Scripts</a></li>
 						<li><a href="@pathto(docs/template_languages)">Template Languages</a></li>
 						<li><a href="@pathto(docs/JSON)">JSON Data</a></li>
