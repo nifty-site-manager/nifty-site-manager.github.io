@@ -216,7 +216,7 @@ lua
 					<ul>
 						<li><a href="https://luarocks.org/modules/leafo/cloud_storage">cloud_storage</a> - access Google Cloud Storage from Lua</li>
 						<li><a href="https://luarocks.org/modules/moteus/lua-curl">Lua-cURL</a> - binding to libcurl (<a href="http://lua-curl.github.io/">official website</a>, <a href="https://github.com/Lua-cURL/Lua-cURLv3">GitHub</a>)</li>
-						<li><a href="https://luarocks.org/modules/luarocks/lua-discount">lua-discount</a> - binding to a <b>fast</b> C implementation of the Markdown text-to-html markup system (<a href="http://asbradbury.org/projects/lua-discount/">official website</a>)</li>
+						<li><a href="https://luarocks.org/modules/luarocks/lua-discount">lua-discount</a> - binding to a <u>fast</u> C implementation of the Markdown text-to-html markup system (<a href="http://asbradbury.org/projects/lua-discount/">official website</a>)</li>
 						<li><a href="https://luarocks.org/modules/leafo/etlua">etlua</a> - allows you to render ERB style templates but with Lua. Supports <% %>, <%=%> and <%- %> tags (with optional newline slurping) for embedding code</li>
 						<li><a href="https://luarocks.org/modules/openresty/lua-cjson">lua-cjson</a> - fast JSON encoding/parsing support</li>
 						<li><a href="https://luarocks.org/modules/x25/luajwt">luajwt</a> - JSON Web Tokens for Lua, very fast and compatible with pyjwt, php-jwt and ruby-jwt</li>
@@ -282,9 +282,9 @@ Expression Grammars (PEGs)</li>
 					</ul>
 				</p>
 
-				<h5>
+				<h4>
 					LuaRocks on Linux
-				</h5>
+				</h4>
 				<p>
 					<mono>LuaRocks</mono> can typically be installed through the package manager for your distribution. For example on Ubuntu you can run:
 
@@ -312,9 +312,9 @@ sudo luarocks install LuaFileSystem
 					<mono>LuaRocks</mono> should work fine with Nift installed from source or through Snapcraft, I have not had much luck yet getting it to work with installs through Flatpak however.
 				</p>
 
-				<h5>
+				<h4>
 					LuaRocks on OSX
-				</h5>
+				</h4>
 
 				<p>
 					The easiest way to install LuaRocks on OSX is to use homebrew with: 
@@ -337,7 +337,26 @@ luarocks install moonscript --lua-version=5.1
 				</p>
 
 				<p>
-					Once <mono>LuaRocks</mono> is installed run <mono>luarocks path --lua-version=5.1 --bin</mono> and add the lines for <mono>LUA_PATH</mono> and <mono>LUA_CPATH</mono> to the end of <mono>~/.bash_profile</mono> (I find you typically do not need to add the value given for <mono>PATH</mono> to your path variable).
+					To change the <mono>Homebrew</mono> install of <mono>LuaRocks</mono> to use <mono>Lua 5.1</mono>: 
+					<ol>
+						<li>run <mono>luarocks</mono> and note where the <b>system configuration file</b> is located;</li>
+						<li>run <mono>sudo nano system-config-path</mono> and make sure it has the following two lines:</li>
+					</ol>
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="inline">
+lua_interpreter = "lua5.1"
+lua_version = "5.1"
+</pre>
+</div>
+					Now you do not need <mono>--lua-version=5.1</mono> when calling <mono>LuaRocks</mono>.
+				</p>
+
+				<p>
+					Once <mono>LuaRocks</mono> is installed and configured to use <mono>Lua 5.1</mono> run <mono>luarocks path --bin</mono> and add the lines for <mono>LUA_PATH</mono> and <mono>LUA_CPATH</mono> to the end of <mono>~/.bash_profile</mono> (I find you typically do not need to add the value given for <mono>PATH</mono> to your path variable).
+				</p>
+
+				<p>
+					<b>Note:</b> If you do not configure <mono>LuaRocks</mono> to use <mono>Lua 5.1</mono> then you will need to use for example <mono>luarocks path --lua-version=5.1 --bin</mono> and <mono>sudo luarocks install --lua-version=5.1 lua-cjson</mono>.
 				</p>
 
 				<p>
@@ -368,9 +387,9 @@ sudo luarocks install lua-cjson
 					<mono>LuaRocks</mono> should work fine with <mono>Nift</mono> installed from source or through Homebrew.
 				</p>
 
-				<h5>
+				<h4>
 					LuaRocks on Windows
-				</h5>
+				</h4>
 				<p>
 					LuaRocks can be installed through Chocolatey with:
 
@@ -387,7 +406,7 @@ choco install luarocks
 					You can supposedly also install <mono>LuaRocks</mono> to use MingW for building rocks, see <a href="https://github.com/luarocks/luarocks/wiki/Installation-instructions-for-Windows">here</a> for instructions. Note that when running the install script, use:
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
 <pre class="inline">
-INSTALL.BAT /MW /LV 5.1
+INSTALL.BAT /MW /L
 </pre>
 </div>
 				</p>
@@ -410,9 +429,9 @@ sudo luarocks install LuaFileSystem
 				</p>
 
 
-				<h5 id="moonscript-fns">
+				<h4 id="moonscript-fns">
 					Moonscript functions
-				</h5>
+				</h4>
 				<p>
 					Suppose you have a moonscript file <mono>functions.moon</mono>:
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
