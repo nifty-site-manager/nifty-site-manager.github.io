@@ -9,7 +9,7 @@
 			</header>
 
 			<center>
-				<a href="https://pages.github.com/"><img src="@pathtofile(site/images/github-icon.svg)" alt="GitHub icon" width=200 style="max-width: 45%; margin-bottom: 40px"></a>
+				<a href="https://pages.github.com/"><img src="@pathtofile(site/images/github-icon.svg)" id="gh-logo-big" alt="GitHub icon" width=200 style="max-width: 45%; margin-bottom: 40px"></a>
 			</center>
 
 			<div class="content">

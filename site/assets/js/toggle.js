@@ -73,20 +73,48 @@ function toggle_light_dark()
   for(var i=0; i<elements.length; i++)
     elements[i].classList.toggle("fluro-green");
 
+  if(document.getElementById("gh-logo"))
+  {
+    if(dark_mode == 1)
+      document.getElementById("gh-logo").src = "../images/github-watercolor.png";
+    else
+      document.getElementById("gh-logo").src = "../images/github-icon.svg";
+  }
+
+  if(document.getElementById("gh-logo-big"))
+  {
+    if(dark_mode == 1)
+    {
+      document.getElementById("gh-logo-big").src = "../images/github-watercolor.png";
+      document.getElementById("gh-logo-big").width = 250;
+    }
+    else
+    {
+      document.getElementById("gh-logo-big").src = "../images/github-icon.svg";
+      document.getElementById("gh-logo-big").width = 200;
+    }
+  }
+
+  if(document.getElementById("lua-logo"))
+  {
+    if(dark_mode == 1)
+    {
+      document.getElementById("lua-logo").src = "../images/lua-watercolor.png";
+      document.getElementById("lua-logo").width = 250;
+    }
+    else
+    {
+      document.getElementById("lua-logo").src = "../images/lua.png";
+      document.getElementById("lua-logo").width = 128;
+    }
+  }
+
   if(document.getElementById("zeit-logo"))
   {
     if(dark_mode == 1)
       document.getElementById("zeit-logo").src = "../images/zeit-colour.svg";
     else
       document.getElementById("zeit-logo").src = "../images/zeit-dark.png";
-  }
-
-  if(document.getElementById("gh-logo"))
-  {
-    if(dark_mode == 1)
-      document.getElementById("gh-logo").src = "../images/github-icon.png";
-    else
-      document.getElementById("gh-logo").src = "../images/github-icon.svg";
   }
 }
 

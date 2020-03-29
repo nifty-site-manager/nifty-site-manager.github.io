@@ -10,7 +10,7 @@
 
 			<!-- Image -->
 			<center>
-				<img src="@pathtofile(site/images/lua.png)" alt="Lua logo" width=128 style="margin-bottom:40px">
+				<img src="@pathtofile(site/images/lua.png)" id="lua-logo" alt="Lua logo" width=128 style="margin-bottom:40px">
 			</center>
 
 			<div class="content">
