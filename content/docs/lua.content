@@ -15,7 +15,7 @@
 
 			<div class="content">
 				<p>
-					<mono>LuaJIT</mono> is a programming language which is embedded in <mono>Nift</mono> (<a href="https://luajit.org">official website</a>). <mono>LuaJIT</mono> is an <a href="https://github.com/r-lyeh-archived/scriptorium">extremely fast</a> version of the already fast and popular scripting language <mono>Lua</mono> (<a href="https://lua.org">official website</a>), note that <mono>LuaJIT</mono> uses version 5.1 of <mono>Lua</mono> (<a href="https://www.lua.org/manual/5.1/index.html">reference manual</a>).
+					<mono>LuaJIT</mono> (<a href="https://luajit.org">official website</a>) is a Just-In-Time compiler for <mono>Lua</mono> (<a href="https://lua.org">official website</a>) which is embedded in <mono>Nift</mono>. <mono>LuaJIT</mono> is <a href="https://github.com/r-lyeh-archived/scriptorium">extremely fast</a>, note that <mono>LuaJIT</mono> uses version 5.1 of <mono>Lua</mono> (<a href="https://www.lua.org/manual/5.1/index.html">reference manual</a>).
 				</p>
 
 				<p>
