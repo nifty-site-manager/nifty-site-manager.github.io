@@ -38,6 +38,10 @@
 					<li><a href="#lua-n++">Lua from n++</a></li>
 					<li><a href="#nift-fns">Nift functions</a></li>
 					<li><a href="#luarocks">LuaRocks</a></li>
+					<li><a href="#luarocks-freebsd">Installing LuaRocks on FreeBSD</a></li>
+					<li><a href="#luarocks-linux">Installing LuaRocks on Linux</a></li>
+					<li><a href="#luarocks-osx">Installing LuaRocks on OSX</a></li>
+					<li><a href="#luarocks-windows">Installing LuaRocks on Windows</a></li>
 					<li><a href="#moonscript-fns">Moonscript functions</a></li>
 				</ul>
 
@@ -62,7 +66,7 @@
 				</h4>
 				<p>
 					If you have a <mono>Lua</mono> script saved in a file <mono>path/script-name.lua</mono> you can run it with either of the following:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline">
 nsm run path/script-name.lua
 nift run path/script-name.lua
@@ -72,7 +76,7 @@ nift run path/script-name.lua
 
 				<p>
 					If the script has a different extension, say <mono>.ext</mono>, you can run the script with either of the following:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline">
 nsm run -lua path/script-name.ext
 nift run -lua path/script-name.ext
@@ -86,7 +90,7 @@ nift run -lua path/script-name.ext
 				<p>
 					You can run <mono>Lua</mono> code from <mono>f++</mono> using either of the following (without needing the comment syntax):					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline lang-lua">
 lua(--[[ line of Lua code ]]--)
 </pre>
@@ -94,7 +98,7 @@ lua(--[[ line of Lua code ]]--)
 				</p>
 
 				<p>
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline lang-lua">
 lua
 {
@@ -110,7 +114,7 @@ lua
 				<p>
 					You can run <mono>Lua</mono> code from <mono>n++</mono> using either of the following (without needing the comment syntax):					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline lang-lua">
 \@lua(--[[ line of Lua code ]]--)
 </pre>
@@ -118,7 +122,7 @@ lua
 				</p>
 
 				<p>
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline lang-lua">
 \@lua
 {
@@ -186,7 +190,7 @@ lua
 
 				<p>
 					An example of using <mono>nsm_setstring</mono>, <mono>nsm_tostring</mono> and <mono>nsm_wite</mono> with <mono>f++</mono> is below:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline linenums lang-lua">
 :=(string, str="hello, world!")
 lua_addnsmfns()
@@ -282,13 +286,67 @@ Expression Grammars (PEGs)</li>
 					</ul>
 				</p>
 
-				<h4>
-					LuaRocks on Linux
+				<h4 id="luarocks-freebsd">
+					Installing LuaRocks on FreeBSD
+				</h4>
+				<p>
+					Instructions for installing <mono>LuaRocks</mono> from source for <mono>Lua v5.1</mono> can be found <a href="https://www.cambus.net/luarocks-on-freebsd/">here</a>. Alternatively, <mono>LuaRocks</mono> can be installed for <mono>Lua <u>v5.2</u></mono> through <mono>pkg</mono> using:
+
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="inline">
+sudo pkg install devel/lua-luarocks
+</pre>
+</div>
+				</p>
+
+				<p>
+					If you installed <mono>LuaRocks</mono> with <mono>pkg</mono> then the default command to run <mono>LuaRocks</mono> is <mono>luarocks-5.2</mono> so you should add an alias called <mono>luarocks</mono>, and you need to change the configuration for <mono>Lua v5.1</mono> instead of <mono>Lua v5.2</mono>. Run your alias <mono>luarocks</mono> which should give you the location of the system/global configuration file for LuaRocks and open it up with administator privileges in your favourit text editor, eg. (you can install <mono>micro</mono> with <mono>pkg</mono>):
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="inline">
+sudo micro /usr/local/etc/luarocks/config-5.2.lua
+</pre>
+</div>
+				</p>
+
+				<p>
+					Then modify the appropriate lines so that the configuration file has the following:
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline">
+lua_interpreter = "lua5.1";
+lua_version = "5.1";
+
+variables = {
+	LUA_DIR = "/usr/local";
+	LUA_INCDIR = "/usr/local/include/lua51";
+	LUA_BINDIR = "/usr/local/bin";
+}
+</pre>
+</div>
+				</p>
+
+				<p>
+					Once <mono>LuaRocks</mono> is configured for <mono>Lua v5.1</mono>, run <mono>luarocks path --bin</mono> and add the values for <mono>LUA_PATH</mono> and <mono>LUA_CPATH</mono> as environemnt variables on your machine (I find you typically do not need to add the value given for <mono>PATH</mono> to your path variable). For example if you use <mono>bash</mono> then for the current shell session you can run <mono>eval \$(luarocks path --bin)</mono>, and for future shell sessions you should be able to add the first two lines of output to <mono>~/.bashrc</mono>.
+				</p>
+
+				<p>
+					You should then be able to install rocks using for example:
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="inline">
+sudo luarocks install LuaFileSystem
+</pre>
+</div>
+				</p>
+
+				<p>
+					<mono>LuaRocks</mono> should work fine with Nift installed from source or through <mono>pkg</mono>.
+				</p>
+
+				<h4 id="luarocks-linux">
+					Installing LuaRocks on Linux
 				</h4>
 				<p>
 					<mono>LuaRocks</mono> can typically be installed through the package manager for your distribution. For example on Ubuntu you can run:
-
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="inline">
 sudo apt-get install luarocks
 </pre>
@@ -297,7 +355,7 @@ sudo apt-get install luarocks
 
 				<p>
 					You should then be able to install rocks using for example:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="inline">
 sudo luarocks install LuaFileSystem
 </pre>
@@ -312,13 +370,13 @@ sudo luarocks install LuaFileSystem
 					<mono>LuaRocks</mono> should work fine with Nift installed from source or through Snapcraft, I have not had much luck yet getting it to work with installs through Flatpak however.
 				</p>
 
-				<h4>
-					LuaRocks on OSX
+				<h4 id="luarocks-osx">
+					Installing LuaRocks on OSX
 				</h4>
 
 				<p>
 					The easiest way to install LuaRocks on OSX is to use homebrew with: 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="inline">
 brew install luarocks
 </pre>
@@ -329,7 +387,7 @@ brew install luarocks
 				<p>
 					Note however that this typically sets <mono>LuaRocks</mono> up for <mono>Lua</mono> v5.3 by default, whereas for <mono>LuaJIT</mono> we want it to install rocks for v5.1, it will tell you which version is configured near the bottom of the output from calling <mono>luarocks</mono> from the command line. When it is configured for <mono>Lua</mono> v5.3, when installing a rock you will need to add <mono>--lua-version=5.1</mono>, for example:
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="inline">
 luarocks install moonscript --lua-version=5.1
 </pre>
@@ -342,7 +400,7 @@ luarocks install moonscript --lua-version=5.1
 						<li>run <mono>luarocks</mono> and note where the <b>system configuration file</b> is located;</li>
 						<li>run <mono>sudo nano system-config-path</mono> and make sure it has the following two lines:</li>
 					</ol>
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="inline">
 lua_interpreter = "lua5.1"
 lua_version = "5.1"
@@ -361,7 +419,7 @@ lua_version = "5.1"
 
 				<p>
 					Alternatively, assuming you have command line tools installed for XCode, you can download the latest <mono>.tar.gz</mono> version of the source for <mono>LuaRocks</mono> from <a href="https://luarocks.github.io/luarocks/releases/">here</a>. Extract the contents of the archive, open the directory in a terminal window and run:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="inline">
 ./configure --lua-version=5.1
 make
@@ -372,7 +430,7 @@ sudo make install
 
 				<p>
 					Then you can install rocks using for example:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="inline">
 sudo luarocks install lua-cjson
 </pre>
@@ -387,13 +445,13 @@ sudo luarocks install lua-cjson
 					<mono>LuaRocks</mono> should work fine with <mono>Nift</mono> installed from source or through Homebrew.
 				</p>
 
-				<h4>
-					LuaRocks on Windows
+				<h4 id="luarocks-windows">
+					Installing LuaRocks on Windows
 				</h4>
 				<p>
 					LuaRocks can be installed through Chocolatey with:
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="inline">
 choco install luarocks
 </pre>
@@ -404,7 +462,7 @@ choco install luarocks
 
 				<p>
 					You can supposedly also install <mono>LuaRocks</mono> to use MingW for building rocks, see <a href="https://github.com/luarocks/luarocks/wiki/Installation-instructions-for-Windows">here</a> for instructions. Note that when running the install script, use:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="inline">
 INSTALL.BAT /MW /L
 </pre>
@@ -413,7 +471,7 @@ INSTALL.BAT /MW /L
 
 				<p>
 					You should then be able to install rocks using for example:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="inline">
 sudo luarocks install LuaFileSystem
 </pre>
@@ -434,7 +492,7 @@ sudo luarocks install LuaFileSystem
 				</h4>
 				<p>
 					Suppose you have a moonscript file <mono>functions.moon</mono>:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline linenums lang-lua">
 func1 = ->
 	print "hello, world!"
@@ -450,7 +508,7 @@ func2 = ->
 
 				<p>
 					Inside <mono>Lua</mono> code (in a file in the same directory) you can require <mono>functions.moon</mono> and use its functions as follows:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline linenums lang-lua">
 require "moonscript"
 fns = require "functions"
