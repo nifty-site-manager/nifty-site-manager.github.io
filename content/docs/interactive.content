@@ -103,12 +103,39 @@ nift sh -lang
 					Multi-line input
 				</h4>
 				<p>
-					The are various ways to achieve multi-line input during an interactive session. The following section includes the shortcuts on different platforms to input another line before parsing. Alternatively if a line ends with <mono>\</mono> then the interactive session will input another line before parsing.
+					The are various ways to achieve multi-line input during an interactive session, when reading additional lines of input before parsing the end of the prompt changes to <mono>@ent('>')</mono> instead of its normal <mono>@ent('$')</mono>. The following table lists the shortcuts on different platforms to input another line before parsing (including ending a line with <mono>\</mono>):
+
+					<center class="table">
+						<table id="multi-line_input_shortcuts_table" class="alt">
+							<thead>
+								<tr>
+									<th style="min-width: 145px">FreeBSD</th>
+									<th style="min-width: 145px">Linux</th>
+									<th style="min-width: 145px">OSX</th>
+									<th style="min-width: 140px">Windows</th>
+								</tr>
+							</thead>
+							<tr>
+								<td><mono>alt enter</mono> <br><mono>ctrl r</mono> <br><mono>\ enter</mono></td>
+								<td><mono>alt enter</mono> <br><mono>ctrl r</mono> <br><mono>\ enter</mono></td>
+								<td><mono>ctrl r</mono> <br><mono>\ enter</mono></td>
+								<td><mono>ctrl enter</mono> <br><mono>ctrl r</mono> <br><mono>\ enter</mono></td>
+							</tr>
+							<tfoot>
+								<tr>
+									<th>FreeBSD</th>
+									<th>Linux</th>
+									<th>OSX</th>
+									<th>Windows</th>
+								</tr>
+							</tfoot>
+						</table>
+					</center>
 				</p>
 
 				<p>
-					<b>Note:</b> An interactive session will continue to input lines before parsing while the input to be parsed has an unequal number of open and close brackets (there is a bug with <mono>v2.2</mono> where <mono>@ent('<')</mono> and <mono>@ent('>')</mono> were counted with the brackets, which just causes problems with relational operators, this is fixed for future versions). To override this put an <mono>=</mono> at the end of an input line with no whitespace following. A couple of examples follow:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+					<b>Note:</b> An interactive session will continue to input lines before parsing until the input to be parsed has an equal number of open and close brackets (there is a bug with <mono>v2.2</mono> where <mono>@ent('<')</mono> and <mono>@ent('>')</mono> are counted with the brackets, which causes problems with relational operators, this is fixed for future versions). To override this put an <mono>=</mono> at the end of an input line with no whitespace following. A couple of <mono>f++</mono> examples follow:
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline">
 :=(int, x=10)
 if(x == 10) {
@@ -119,7 +146,7 @@ if(x == 10) {
 				</p>
 
 				<p>
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline">
 console("example with ( and { not closed") =
 </pre>
@@ -136,70 +163,81 @@ console("example with ( and { not closed") =
 						<table id="interactive_shortcuts_table" class="alt">
 							<thead>
 								<tr>
-									<th>description</th>
-									<th>FreeBSD/Linux</th>
-									<th>OSX</th>
-									<th>Windows</th>
+									<th style="min-width: 230px">Description</th>
+									<th style="min-width: 145px">FreeBSD</th>
+									<th style="min-width: 145px">Linux</th>
+									<th style="min-width: 145px">OSX</th>
+									<th style="min-width: 140px">Windows</th>
 								</tr>
 							</thead>
 							<tr>
 								<td>go to start of line</td>
-								<td><mono>ctrl-a</mono></td>
-								<td><mono>ctrl-a</mono></td>
-								<td><mono>ctrl-a</mono></td>
+								<td><mono>ctrl a</mono></td>
+								<td><mono>ctrl a</mono></td>
+								<td><mono>ctrl a</mono></td>
+								<td><mono>ctrl a</mono></td>
 							</tr>
 							<tr>
 								<td>go to end of line</td>
-								<td><mono>ctrl-e</mono></td>
-								<td><mono>ctrl-e</mono></td>
-								<td><mono>ctrl-e</mono></td>
+								<td><mono>ctrl e</mono></td>
+								<td><mono>ctrl e</mono></td>
+								<td><mono>ctrl e</mono></td>
+								<td><mono>ctrl e</mono></td>
 							</tr>
 							<tr>
 								<td>move cursor forwards one position</td>
-								<td><mono>@ent("->")</mono> <br><mono>ctrl-f</mono></td>
-								<td><mono>@ent("->")</mono> <br><mono>ctrl-f</mono></td>
-								<td><mono>@ent("->")</mono> <br><mono>ctrl-f</mono></td>
+								<td><mono>@ent("->")</mono> <br><mono>ctrl f</mono></td>
+								<td><mono>@ent("->")</mono> <br><mono>ctrl f</mono></td>
+								<td><mono>@ent("->")</mono> <br><mono>ctrl f</mono></td>
+								<td><mono>@ent("->")</mono> <br><mono>ctrl f</mono></td>
 							</tr>
 							<tr>
 								<td>move cursor backwards one position</td>
-								<td><mono>@ent("<-")</mono> <br><mono>ctrl-b</mono></td>
-								<td><mono>@ent("<-")</mono> <br><mono>ctrl-b</mono></td>
-								<td><mono>@ent("<-")</mono> <br><mono>ctrl-b</mono></td>
+								<td><mono>@ent("<-")</mono> <br><mono>ctrl b</mono></td>
+								<td><mono>@ent("<-")</mono> <br><mono>ctrl b</mono></td>
+								<td><mono>@ent("<-")</mono> <br><mono>ctrl b</mono></td>
+								<td><mono>@ent("<-")</mono> <br><mono>ctrl b</mono></td>
 							</tr>
 							<tr>
 								<td>move cursor forwards to next space</td>
-								<td><mono>alt-@ent("->")</mono> <br><mono>ctrl-@ent("->")</mono></td>
-								<td><mono>alt-@ent("->")</mono></td>
-								<td><mono>ctrl-@ent("->")</mono></td>
+								<td><mono>alt f</mono></td>
+								<td><mono>alt @ent("->")</mono> <br><mono>alt f</mono> <br><mono>ctrl @ent("->")</mono></td>
+								<td><mono>alt @ent("->")</mono></td>
+								<td><mono><mono>ctrl @ent("->")</mono></td>
 							</tr>
 							<tr>
 								<td>move cursor backwards to previous space</td>
-								<td><mono>alt-@ent("<-")</mono> <br><mono>ctrl-@ent("<-")</mono></td>
-								<td><mono>alt-@ent("<-")</mono></td>
-								<td><mono>ctrl-@ent("<-")</mono></td>
+								<td><mono>alt b</mono></td>
+								<td><mono>alt @ent("<-")</mono> <br><mono>alt b</mono> <br><mono>ctrl @ent("<-")</mono></td>
+								<td><mono>alt @ent("<-")</mono></td>
+								<td><mono><mono>ctrl @ent("<-")</mono></td>
 							</tr>
 							<tr>
 								<td>delete from cursor to end of line</td>
-								<td><mono>ctrl-d</mono></td>
-								<td><mono>ctrl-d</mono></td>
-								<td><mono>ctrl-d</mono></td>
+								<td><mono>ctrl d</mono></td>
+								<td><mono>ctrl d</mono></td>
+								<td><mono>ctrl d</mono></td>
+								<td><mono>ctrl d</mono></td>
 							</tr>
 							<tr>
 								<td>delete from cursor to start of previous word</td>
-								<td><mono>ctrl-delete</mono> <br><mono>ctrl-shift-'-'</mono></td>
-								<td><mono>ctrl-'-'</mono> <br><mono>ctrl-shift-'-'</mono></td>
-								<td><mono>ctrl-delete</mono></td>
+								<td><mono>ctrl delete</mono> <br><mono>ctrl shift -</mono> <br><mono>ctrl -</mono></td>
+								<td><mono>ctrl delete</mono> <br><mono>ctrl shift -</mono></td>
+								<td><mono>ctrl shift -</mono> <br><mono>ctrl -</mono></td>
+								<td><mono>ctrl delete</mono></td>
 							</tr>
 							<tr>
 								<td>line break (input another line before parsing)</td>
-								<td><mono>ctrl-r</mono> <br><mono>alt-enter</mono></td>
-								<td><mono>ctrl-r</mono></td>
-								<td><mono>ctrl-r</mono> <br><mono>ctrl-enter</mono></td>
+								<td><mono>alt enter</mono> <br><mono>ctrl r</mono> <br><mono>\ enter</mono></td>
+								<td><mono>alt enter</mono> <br><mono>ctrl r</mono> <br><mono>\ enter</mono></td>
+								<td><mono>ctrl r</mono> <br><mono>\ enter</mono></td>
+								<td><mono>ctrl enter</mono> <br><mono>ctrl r</mono> <br><mono>\ enter</mono></td>
 							</tr>
 							<tfoot>
 								<tr>
-									<th>description</th>
-									<th>FreeBSD/Linux</th>
+									<th>Description</th>
+									<th>FreeBSD</th>
+									<th>Linux</th>
 									<th>OSX</th>
 									<th>Windows</th>
 								</tr>

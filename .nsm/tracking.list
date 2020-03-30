@@ -138,6 +138,10 @@
 'cd'
 'template/page.template'
 
+'docs/fns/comments'
+'comments'
+'template/page.template'
+
 'docs/fns/console'
 'console'
 'template/page.template'

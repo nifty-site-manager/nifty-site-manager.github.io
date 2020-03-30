@@ -5,7 +5,7 @@
 		<!-- Features -->
 		<section id="features">
 			<header class="style1">
-				<h2>Index for Nift's hard-coded functions</h2>
+				<h2>Index of Nift's hard-coded functions</h2>
 			</header>
 
 			<!-- Image -->
@@ -14,6 +14,7 @@
 			</center>
 
 			<div class="content">
+				<a href="#contents" class="to_top">[contents]</a>
 				<h4 id="contents">
 					Contents
 				</h4>
@@ -75,9 +76,9 @@ funcName{options}(params)
 				</p>
 
 				<h4 id="index">Index</h4>
-				<a href="#index" class="to_top">[index]</a>
-				<p id="index">
-					Below is an index of Nift's hard-coded functions (including functions for defining variables, functions and structures/types) which can be called from <a href="@pathto(docs/f++)">f++</a> and <a href="@pathto(docs/n++)">n++</a>: 
+				<a href="#contents" class="to_top">[contents]</a>
+				<p id="contents">
+					Below is an index of Nift's hard-coded functions (including functions for defining variables, functions and structs) which can be called from <a href="@pathto(docs/f++)">f++</a> and <a href="@pathto(docs/n++)">n++</a>: 
 					<ul style="text-indent:30px">
 						<li><a href="@pathtopage(docs/fns/exprtk)">`expression`</a> (evaluate ExprTk expression)</li>
 						<li><a href="@pathtopage(docs/fns/!)">!</a> (not operator)</li>
@@ -112,7 +113,6 @@ funcName{options}(params)
 						<li><a href="@pathtopage(docs/fns/break)">break</a></li> <br>
 
 						<li><a href="@pathtopage(docs/fns/cd)">cd</a></li>
-						<li><a href="@pathtopage(docs/fns/comments)"><i>comments</i></a></li>
 						<li><a href="@pathtopage(docs/fns/console)">console</a></li>
 						<li><a href="@pathtofile('site/docs/fns/console.lock.html')">console.lock</a></li>
 						<li><a href="@pathtofile('site/docs/fns/console.locked.html')">console.locked</a></li>

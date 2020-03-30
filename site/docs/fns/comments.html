@@ -1,0 +1,437 @@
+<!DOCTYPE HTML>
+
+<!--
+	Official Nift Website
+
+	Nift is a cross-platform open source website generator developed from the ground up in C++.
+-->
+
+<html lang="en">
+    <head>
+        <title>Nift</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Nift is the world's fastest framework for managing and generating websites. It's cross-platform, open source, lightning fast, developed from the ground up in C++, and released for free under the MIT license - use it for any of your personal or commercial projects">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../../assets/css/main.css">
+        <link rel="stylesheet" href="../../assets/css/pagestyle.css">
+        <link rel="stylesheet" href="../../assets/css/pre.css">
+        <link rel="stylesheet" href="../../assets/css/toggle.css">
+        <link rel='icon' type='image/png' href='../../images/favicon.png'>
+        
+        <!-- uses Font Awesome for vector icons and social logos -->
+        <script src="https://kit.fontawesome.com/b51e6952ec.js"></script>
+    </head>
+    <body class="is-preload">
+		<div id="page-wrapper">
+			<!-- Header -->
+			<section id="header" class="wrapper">
+			
+				<!-- Logo -->
+				<div id="logo">
+					<noselect>
+					<img src="../../images/rabbit.png" alt="Nift bunny mascot" width=325 style="max-width:90%">
+			
+					<p style="margin-bottom:0px">
+						<a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; 
+						<a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a> &nbsp; 
+						<a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a> <!--&nbsp; 
+						<a href="https://nift.teemill.com/" title="TeeMill" class="teemill"><i class="fas fa-tshirt fa-2x"></i></a> &nbsp;
+						<a href="https://teespring.com/stores/nift-3" title="TeeSpring" class="teespring"><i class="fas fa-tshirt fa-2x"></i></a>-->
+					</p>
+					<p style="margin-top:10px">
+						<!--<a href="https://gitter.im/nifty_site_manager/community" title="Gitter" class="gitter"><i class="fab fa-gitter fa-2x"></i></a> &nbsp;-->
+						<a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a> &nbsp; 
+						<a href="https://old.reddit.com/r/nift" title="Reddit" class="reddit"><i class="fab fa-reddit-square fa-2x"></i></a> &nbsp; 
+						<a href="https://twitter.com/nifty_site_man" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a>
+					</p>
+			
+					<p style="color:#372C2A">A cross-platform open source website generator</p>
+			
+					<p>
+						<a href="https://chocolatey.org/packages/nift"><img src="../../images/chocolatey-icon.png" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
+						<a href="../installing_nift.html#osx-brew"><img src="../../images/brew-icon.png" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
+						<a href="../installing_nift.html#freebsd"><img src="../../images/freebsd.png" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
+						<a href="../installing_nift.html#linux-flatpak"><img src="../../images/flathub-icon.png" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
+						<a href="../installing_nift.html#gentoo"><img src="../../images/gentoo.svg" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
+						<a href="https://snapcraft.io/nift"><img src="../../images/snap-icon.png" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
+					</p>
+					</noselect>
+				</div>
+			
+				<!-- Nav -->
+				<noselect>
+					<nav id="nav">
+						<ul>
+							<li><a href="../../index.html">Home</a></li>
+							<li>
+								<a href="">Documentation</a>
+								<ul>
+									<li><a href="../installing_nift.html">Installing Nift</a></li>
+									<li><a href="../nift_commands.html">Nift Commands</a></li>
+									<li><a href="../content_files.html">Content Files</a></li>
+									<li><a href="../template_files.html">Template Files</a></li>
+									<li><a href="../fns.html">Functions</a></li>
+									<li><a href="../f++.html">f++ (scripting language)</a></li>
+									<li><a href="../n++.html">n++ (template language)</a></li>
+									<li><a href="../lua.html">Lua(JIT)</a></li>
+									<li><a href="../exprtk.html">ExprTk</a></li>
+									<li><a href="../interactive.html">Interactive</a></li>
+									<li><a href="../scripts.html">Scripts</a></li>
+									<li><a href="../template_languages.html">Template Languages</a></li>
+									<li><a href="../JSON.html">JSON Data</a></li>
+									<li><a href="../markdown.html">Markdown</a></li>
+									<li><a href="../translators.html">Translators</a></li>
+									<li><a href="../displaying_mathematics.html">Displaying Mathematics</a></li>
+									<li><a href="../displaying_code_blocks.html">Displaying Code Blocks</a></li>
+									<li><a href="../presentations.html">Presentations</a></li>
+									<li><a href="../lokinet_snapps.html">Lokinet SNApps</a></li>
+									<li><a href="../hosting.html">Hosting</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="">Resources</a>
+								<ul>
+									<li><a href="../../resources/css_frameworks.html">CSS Frameworks</a></li>
+									<li><a href="../../resources/examples.html">Examples</a></li>
+									<li><a href="../../resources/get_started.html">Get Started</a></li>
+									<li><a href="../../resources/js_frameworks.html">JS Frameworks</a></li>
+									<li><a href="../../resources/links.html">Links</a></li>
+									<li><a href="../../resources/logos.html">Logos</a></li>
+									<li><a href="../../resources/nift_tutorial.html">Nift Tutorial</a></li>
+									<li><a href="../../resources/php_frameworks.html">PHP Frameworks</a></li>
+									<li><a href="../../resources/templates.html">Templates</a></li>
+									<li><a href="../../resources/SNApp_templates.html">SNApp Templates</a></li>
+									<li><a href="../../resources/blog_templates.html">Blog Templates</a></li>
+								</ul>
+							</li>
+							<li><a href="../../support.html">Support</a></li>
+						</ul>
+					</nav>
+				</noselect>
+			</section>
+
+		    <!-- Main -->
+		    <section id="main" class="wrapper style2">
+		    	<div class="title">Functions</div>
+		    	<div class="container">
+		    		<!-- Features -->
+		    		<section id="features">
+		    			<header class="style1">
+		    				<h2>Index of Nift's hard-coded functions</h2>
+		    			</header>
+		    
+		    			<!-- Image -->
+		    			<center>
+		    				<img src="../../images/badger-icon.svg" alt="Nift's badger mascot" width=300 style="margin-bottom:40px">
+		    			</center>
+		    
+		    			<div class="content">
+		    				<a href="#contents" class="to_top">[contents]</a>
+		    				<h4 id="contents">
+		    					Contents
+		    				</h4>
+		    				<ul style="text-indent:30px">
+		    					<li><a href="#syntax">Syntax</a></li>
+		    					<li><a href="#options">Options</a></li>
+		    					<li><a href="#index">Index</a></li>
+		    				</ul>
+		    
+		    				<h4 id="syntax">Syntax</h4>
+		    				<p>
+		    					The syntax for Nift function calls is as follows:
+		    <div align="center" style="margin-top:-15px">
+		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
+funcName{options}(params)
+</pre>
+		    </div><br>
+		    <div align="center">
+		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
+@funcName{options}(params)
+</pre>
+		    </div>
+		    				</p>
+		    
+		    				<h4 id="options">
+		    					Options
+		    				</h4>
+		    				<p>
+		    					The following options are available for almost all function calls:
+		    
+		    					<center class="table">
+		    						<table id="exprtk_nift_fns_table" class="alt">
+		    							<thead>
+		    								<tr>
+		    									<th>option</th>
+		    									<th>description</th>
+		    								</tr>
+		    							</thead>
+		    							<tr>
+		    								<td><mono>!p</mono></td>
+		    								<td>do not parse parameters</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>!v</mono></td>
+		    								<td>do not replace variables with their values</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>1p</mono></td>
+		    								<td>treat parameter string as one parameter</td>
+		    							</tr>
+		    							<tfoot>
+		    								<tr>
+		    									<th>option</th>
+		    									<th>description</th>
+		    								</tr>
+		    							</tfoot>
+		    						</table>
+		    					</center>
+		    				</p>
+		    
+		    				<h4 id="index">Index</h4>
+		    				<a href="#contents" class="to_top">[contents]</a>
+		    				<p id="contents">
+		    					Below is an index of Nift's hard-coded functions (including functions for defining variables, functions and structs) which can be called from <a href="../f++.html">f++</a> and <a href="../n++.html">n++</a>: 
+		    					<ul style="text-indent:30px">
+		    						<li><a href="exprtk.html">`expression`</a> (evaluate ExprTk expression)</li>
+		    						<li><a href="!.html">!</a> (not operator)</li>
+		    						<li><a href="!=.html">!=</a> (not equals operator)</li>
+		    						<li><a href="$.html">$</a> (print variable)</li>
+		    						<li><a href="&&.html">&&</a> (and operator)</li>
+		    						<li><a href="||.html">||</a> (or operator)</li>
+		    						<li><a href=":=.html">:=</a> (define)</li>
+		    						<li><a href="=.html">=</a> (assignment operator)</li>
+		    						<li><a href="==.html">==</a> (equals to operator)</li>
+		    						<li><a href="<.html">&lt;</a> (less than operator)</li>
+		    						<li><a href="<=.html">&lt;=</a> (less than or equals to operator)</li>
+		    						<li><a href="<--.html">&lt;--</a> (remove added trailing whitespace)</li>
+		    						<li><a href=">.html">&gt;</a> (greater than operator)</li>
+		    						<li><a href=">=.html">&gt;=</a> (greater than or equals to operator)</li>
+		    						<li><a href="+.html">+</a> (addition operator)</li>
+		    						<li><a href="++.html">++</a> (pre-increment operator)</li>
+		    						<li><a href="+++.html">+++</a> (post-increment operator)</li>
+		    						<li><a href="+=.html">+=</a> (addition assignment operator)</li>
+		    						<li><a href="-.html">-</a> (subtraction operator)</li>
+		    						<li><a href="--.html">--</a> (pre-decrement operator)</li>
+		    						<li><a href="---.html">---</a> (post-decrement operator)</li>
+		    						<li><a href="-->.html">--></a> (skip whitespace)</li>
+		    						<li><a href="-=.html">-=</a> (subtraction assignment operator)</li>
+		    						<li><a href="*.html">*</a> (multiplication operator)</li>
+		    						<li><a href="*=.html">*=</a> (multiplication assignment operator)</li>
+		    						<li><a href="divide.html">/</a> (division operator)</li>
+		    						<li><a href="divideequal.html">/=</a> (division assignment operator)</li>
+		    						<li><a href="%.html">%</a> (mod operator)</li>
+		    						<li><a href="%=.html">%=</a> (mod assignment operator)</li> <br>
+		    
+		    						<li><a href="break.html">break</a></li> <br>
+		    
+		    						<li><a href="cd.html">cd</a></li>
+		    						<li><a href="console.html">console</a></li>
+		    						<li><a href="console.lock.html">console.lock</a></li>
+		    						<li><a href="console.locked.html">console.locked</a></li>
+		    						<li><a href="console.unlock.html">console.unlock</a></li>
+		    						<li><a href="content.html">content</a></li>
+		    						<li><a href="continue.html">continue</a></li>
+		    						<li><a href="cp.html">copy/cp</a></li>
+		    						<li><a href="cssinclude.html">cssinclude</a></li> <br>
+		    
+		    						<li><a href="dep.html">dep</a></li>
+		    						<li><a href="ls.html">dir/ls</a></li>
+		    						<li><a href="do-while.html">do-while</a></li> <br>
+		    
+		    						<li><a href="ent.html">ent</a></li>
+		    						<li><a href="error.html">error</a></li>
+		    						<li><a href="exit.html">exit</a></li>
+		    						<li><a href="exprtk.html">exprtk</a></li>
+		    						<li><a href="exprtk.add_package.html">exprtk.add_package</a></li> <br>
+		    
+		    						<li><a href="f++.html">f++</a></li>
+		    						<li><a href="faviconinclude.html">faviconinclude</a></li>
+		    						<li><a href="for.html">for</a></li>
+		    						<li><a href="forget.html">forget</a></li>
+		    						<li><a href="function.html">function</a></li> <br>
+		    
+		    						<li><a href="getline.html">getline</a></li> <br>
+		    
+		    						<li><a href="if.html">if</a></li>
+		    						<li><a href="imginclude.html">imginclude</a></li>
+		    						<li><a href="in.html">in</a></li>
+		    						<li><a href="include.html">include</a></li>
+		    						<li><a href="input.html">inject/input</a></li>
+		    						<li><a href="is_const.html">is_const</a></li>
+		    						<li><a href="is_private.html">is_private</a></li> <br>
+		    
+		    						<li><a href="join.html">join</a></li>
+		    						<li><a href="jsinclude.html">jsinclude</a></li> <br>
+		    
+		    						<li><a href="layer.html">layer</a></li>
+		    						<li><a href="link.html">link</a></li>
+		    						<li><a href="ls.html">ls/dir</a></li>
+		    						<li><a href="lua.html">lua</a></li>
+		    						<li><a href="lua_addnsmfns.html">lua_addnsmfns</a></li>
+		    						<li><a href="lua_getglobal.html">lua_getglobal</a></li>
+		    						<li><a href="lua_gettop.html">lua_gettop</a></li>
+		    						<li><a href="lua_pop.html">lua_pop</a></li>
+		    						<li><a href="lua_pushlightuserdata.html">lua_pushlightuserdata</a></li>
+		    						<li><a href="lua_pushnumber.html">lua_pushnumber</a></li>
+		    						<li><a href="lua_pushstring.html">lua_pushstring</a></li>
+		    						<li><a href="lua_remove.html">lua_remove</a></li>
+		    						<li><a href="lua_setglobal.html">lua_setglobal</a></li>
+		    						<li><a href="lua_tonumber.html">lua_tonumber</a></li>
+		    						<li><a href="lua_tostring.html">lua_tostring</a></li> <br>
+		    
+		    						<li><a href="mv.html">move/mv</a></li> <br>
+		    
+		    						<li><a href="n++.html">n++</a></li>
+		    						<li><a href="nsm_lang.html">nsm_lang</a></li>
+		    						<li><a href="nsm_mode.html">nsm_mode</a></li> <br>
+		    
+		    						<li><a href="parse.html">parse</a></li>
+		    						<li><a href="pathto.html">pathto</a></li>
+		    						<li><a href="pathtofile.html">pathtofile</a></li>
+		    						<li><a href="pathtopage.html">pathtopage</a></li>
+		    						<li><a href="precision.html">precision</a></li>
+		    						<li><a href="pwd.html">pwd</a></li> <br>
+		    
+		    						<li><a href="quit.html">quit</a></li>
+		    						<li><a href="quote.html">quote</a></li> <br>
+		    
+		    						<li><a href="read.html">read</a></li>
+		    						<li><a href="return.html">return</a></li> <br>
+		    
+		    						<li><a href="scope.html">scope</a></li>
+		    						<li><a href="script.html">script</a></li>
+		    						<li><a href="size.html">size</a></li>
+		    						<li><a href="struct.html">struct</a></li>
+		    						<li><a href="substr.html">substr</a></li>
+		    						<li><a href="system.html">sys/system</a></li> <br>
+		    
+		    						<li><a href="touch.html">touch</a></li>
+		    						<li><a href="type.html">type</a></li> <br>
+		    
+		    						<li><a href="unquote.html">unquote</a></li> <br>
+		    
+		    						<li><a href="valid_type.html">valid_type</a></li> <br>
+		    
+		    						<li><a href="warning.html">warning</a></li>
+		    						<li><a href="while.html">while</a></li>
+		    						<li><a href="write.html">write</a></li>
+		    					</ul>
+		    				</p>
+		    			</div>
+		    		</section>
+		    	</div>
+		    </section>
+
+			<!-- Footer -->
+			<section id="footer" class="wrapper">
+				<div class="title">
+					<img src="../../images/nsm.png" alt="nsm signature on parchment" width="120" style="margin-top:40px; margin-bottom:20px; border-radius: 4px">
+				</div>
+			
+				<div class="container">
+					<div id="copyright">
+						<noselect>
+							<ul style="margin-top:115px">
+								<li><b style="color: white !important">Mirrors:</b></li>
+								<li><a href="https://nift.cc/">Official</a></li>
+								<li><a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a></li>
+								<li><a href="https://nifty-site-manager.github.io/">GitHub</a></li>
+								<li><a href="https://nifty-site-manager.gitlab.io/">GitLab</a></li>
+								<li><a href="https://nift.netlify.com/">Netlify</a></li>
+								<li><a href="https://nift.now.sh/">ZEIT</a></li>
+							</ul> <br>
+			
+							<center><img src="../../images/badger.png" alt="Nift badger mascot" width="325" style="max-width:90%; margin-bottom:20px"></center>
+			
+							<ul>
+								<li>&copy;&nbsp;2015 - <span name="cyear"></span> <a href="https://nift.cc">Nift</a>.</li>
+								<li>Creator: <a href="https://n-ham.com">Nicholas Ham</a></li>
+							</ul> <br>
+						
+							<b id="light_dark_LHS" style="color: white !important">light</b> &nbsp; <label class="light-dark-switch" id="light-dark-switch">
+								<input type="checkbox" id="checkbox_light_dark">
+								<span class="slider round" onclick="toggle_light_dark()" id="slider_light_dark"></span>
+							</label> &nbsp; <b id="light_dark_RHS" style="color: white !important">dark</b> <br><br>
+			
+							<ul>
+								<li><a href="../../tos.html">Terms of Service</a></li>
+								<li><a href="../../privacy_policy.html">Privacy Policy</a></li>
+							</ul>
+						</noselect>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<!-- Scripts -->
+		<script src="../../assets/js/copy-pre.js"></script>
+		<script src="../../assets/js/jquery.min.js"></script>
+		<script src="../../assets/js/jquery.dropotron.min.js"></script>
+		<script src="../../assets/js/browser.min.js"></script>
+		<script src="../../assets/js/breakpoints.min.js"></script>
+		<script src="../../assets/js/util.js"></script>
+		<script src="../../assets/js/main.js"></script>
+		<script src='../../assets/js/process_md_blocks.js'></script>
+		<script src="../../assets/js/showdown.min.js"></script>
+		<script>
+			var converter = new showdown.Converter();
+			converter.setOption('emoji', 'on');
+			converter.setOption('tables', 'on');
+			converter.setOption('strikethrough', 'on');
+			elements = document.getElementsByClassName('markdown');
+			for(var i=0; i<elements.length; i++)
+				elements[i].innerHTML = converter.makeHtml(elements[i].innerHTML.replace(/&lt;/g, "xwxw").replace(/&gt;/g, "pqpq")).replace(/xwxw/g, "&lt;").replace(/pqpq/g, "&gt;");
+		</script>
+		<script src="../../assets/js/toggle.js"></script>
+
+		<!-- Inserts current year -->
+		<script>
+			var x = document.getElementsByName("cyear");
+
+			for(var i=0; i<x.length; i++)
+				x[i].innerHTML = new Date().getFullYear();
+		</script>
+
+		<!-- uses google-code-prettify for syntax highlighting 
+			 see https://github.com/google/code-prettify/ for more info -->
+		<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+		<script src="../../assets/js/lang-lua.js"></script>
+		<script src="../../assets/js/lang-nift.js"></script>
+
+		<!-- uses MathJax CDC for LaTeX support
+			 see http://docs.mathjax.org/en/latest/start.html for more info -->
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config
+			({
+				extensions: ["tex2jax.js"],
+				jax: ["input/TeX", "output/HTML-CSS"],
+				tex2jax: 
+				{
+					inlineMath: [['$','$'], ['\\(','\\)']],
+					displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+					processEscapes: true
+				},
+				"HTML-CSS": { availableFonts: ["MathJax TeX"] }
+			});
+		</script>
+		<script type="text/javascript" 
+				src="https://cdn.mathjax.org/mathjax/latest/MathJax.js">
+		</script>
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-62165905-2"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-62165905-2');
+		</script>
+    </body>
+</html>
+
+<!--
+	Design: Escape Velocity by Pixelarity
+	pixelarity.com | @ajlkn hello@pixelarity.com
+	License: pixelarity.com/license
+-->
