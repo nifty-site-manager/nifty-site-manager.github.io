@@ -149,9 +149,9 @@ funcName{options}(params)
 						<li><a href="@pathtopage(docs/fns/=)">=</a> (assignment operator)</li>
 						<li><a href="@pathtopage(docs/fns/==)">==</a> (equals to operator)</li>
 						<li><a href="@pathtopage(docs/fns/<)">@ent(<)</a> (less than operator)</li>
-						<li><a href="@replace_all(@pathtopage(docs/fns/#), '#', '%23')">#</a> (raw single-line comment)</li>
-						<li><a href="@replace_all(@pathtopage(docs/fns/#--), '#', '%23')">#--</a> (parsed multi-line comment)</li>
-						<li><a href="@replace_all(@pathtopage(docs/fns/<#--), '#', '%23')"><\#--</a> (raw multi-line comment)</li>
+						<li><a href="@pathtopage(docs/fns/HASH)">#</a> (raw single-line comment)</li>
+						<li><a href="@pathtopage(docs/fns/HASH--)">#--</a> (parsed multi-line comment)</li>
+						<li><a href="@pathtopage(docs/fns/<HASH--)"><\#--</a> (raw multi-line comment)</li>
 						<li><a href="@pathtopage(docs/fns/<=)">@ent(<)=</a> (less than or equals to operator)</li>
 						<li><a href="@pathtopage(docs/fns/<--)">@ent(<)--</a> (remove added trailing whitespace)</li>
 						<li><a href="@pathtopage(docs/fns/>)">@ent(>)</a> (greater than operator)</li>
@@ -172,8 +172,8 @@ funcName{options}(params)
 						<li><a href="@pathtopage(docs/fns/divequal)">/=</a> (division assignment operator)</li>
 						<li><a href="@pathtopage(docs/fns/div*)">/*</a> (raw multi-line comment)</li>
 						<li><a href="@pathtopage(docs/fns/divdiv)">//</a> (raw single-line comment)</li>
-						<li><a href="@pathtopage(docs/fns/%)">%</a> (mod operator)</li>
-						<li><a href="@pathtopage(docs/fns/%=)">%=</a> (mod assignment operator)</li> <br>
+						<li><a href="@pathtopage(docs/fns/MOD)">%</a> (mod operator)</li>
+						<li><a href="@pathtopage(docs/fns/MOD=)">%=</a> (mod assignment operator)</li> <br>
 
 						<li><a href="@pathtopage(docs/fns/break)">break</a></li> <br>
 

@@ -38,24 +38,8 @@
 '!newline'
 'template/page.template'
 
-'docs/fns/#'
-'#'
-'template/page.template'
-
-'docs/fns/#--'
-'#--'
-'template/page.template'
-
 'docs/fns/$'
 '$'
-'template/page.template'
-
-'docs/fns/%'
-'%'
-'template/page.template'
-
-'docs/fns/%='
-'%='
 'template/page.template'
 
 'docs/fns/&&'
@@ -114,10 +98,6 @@
 ':='
 'template/page.template'
 
-'docs/fns/<#--'
-'<#--'
-'template/page.template'
-
 'docs/fns/<'
 '<'
 'template/page.template'
@@ -128,6 +108,10 @@
 
 'docs/fns/<='
 '<='
+'template/page.template'
+
+'docs/fns/<HASH--'
+'<HASH--'
 'template/page.template'
 
 'docs/fns/='
@@ -144,6 +128,22 @@
 
 'docs/fns/>='
 '>='
+'template/page.template'
+
+'docs/fns/HASH'
+'HASH'
+'template/page.template'
+
+'docs/fns/HASH--'
+'HASH--'
+'template/page.template'
+
+'docs/fns/MOD'
+'MOD'
+'template/page.template'
+
+'docs/fns/MOD='
+'MOD='
 'template/page.template'
 
 'docs/fns/break'
