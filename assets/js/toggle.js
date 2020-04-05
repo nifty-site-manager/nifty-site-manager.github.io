@@ -48,7 +48,8 @@ function toggle_light_dark()
   for(var i=0; i<elements.length; i++)
     elements[i].classList.toggle("td-dark");
 
-  elements = document.getElementsByTagName("a");
+  /*elements = document.getElementsByTagName("a");*/
+  elements = document.getElementById("main").querySelectorAll("a");
   for(var i=0; i<elements.length; i++)
     if(elements[i].classList != "bb" &&
        elements[i].classList != "gh" &&
@@ -118,7 +119,8 @@ function toggle_light_dark()
   }
 }
 
-if(localStorage.getItem('dark-mode') && localStorage.getItem('dark-mode') === "1") 
+//dark mode is default
+if(!localStorage.getItem('dark-mode') || localStorage.getItem('dark-mode') === "1") 
 {
   toggle_light_dark();
   document.getElementById("light_dark_LHS").innerHTML = "dark";

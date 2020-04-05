@@ -68,14 +68,13 @@
 								<ul>
 									<li><a href="../installing_nift.html">Installing Nift</a></li>
 									<li><a href="../nift_commands.html">Nift Commands</a></li>
-									<li><a href="../content_files.html">Content Files</a></li>
 									<li><a href="../template_files.html">Template Files</a></li>
 									<li><a href="../fns.html">Functions</a></li>
 									<li><a href="../f++.html">f++ (scripting language)</a></li>
 									<li><a href="../n++.html">n++ (template language)</a></li>
 									<li><a href="../lua.html">Lua(JIT)</a></li>
 									<li><a href="../exprtk.html">ExprTk</a></li>
-									<li><a href="../interactive.html">Interactive</a></li>
+									<li><a href="../interactive.html">Interactive REPL</a></li>
 									<li><a href="../scripts.html">Scripts</a></li>
 									<li><a href="../template_languages.html">Template Languages</a></li>
 									<li><a href="../JSON.html">JSON Data</a></li>
@@ -136,7 +135,7 @@
 		    				<p>
 		    					The syntax for <mono>while</mono> loops is:
 		    <div align="center" style="margin-top:-15px; margin-bottom:60px">
-		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-50px">
+		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-50px">
 while{options}(condition)
 {
 	//loop code-block
@@ -144,7 +143,7 @@ while{options}(condition)
 </pre>
 		    </div><br>
 		    <div align="center" style="margin-top:-15px; margin-bottom:60px">
-		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-50px">
+		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-50px">
 @while{options}(condition)
 {
 	//loop code-block
@@ -227,8 +226,8 @@ while{options}(condition)
 		    					Examples of <mono>while</mono> being used with <mono>f++</mono>:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline linenums">
-:=(int, i=0)
+		    <pre class="prettyprint inline linenums lang-nift">
+int i=0
 while(i &lt; 10)
 	console("i: `i+=1`")</pre>
 		    </div>
@@ -236,8 +235,8 @@ while(i &lt; 10)
 		    
 		    				<p>
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline linenums">
-:=(int, i=0)
+		    <pre class="prettyprint inline linenums lang-nift">
+int i=0
 while{!s, !o}(i+=1; i&lt;10)
 	console("i: ", i)</pre>
 		    </div>
@@ -250,8 +249,8 @@ while{!s, !o}(i+=1; i&lt;10)
 		    					Examples of <mono>while</mono> being used with <mono>n++</mono>:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline linenums">
-@:=(int, i=0)
+		    <pre class="prettyprint inline linenums lang-nift">
+@int i=0
 @while{\n}(i &lt; 10)
 	i:  @++(i)</pre>
 		    </div>
@@ -259,8 +258,8 @@ while{!s, !o}(i+=1; i&lt;10)
 		    
 		    				<p>
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline linenums">
-@:=(int, i=0)
+		    <pre class="prettyprint inline linenums lang-nift">
+@int i=0
 @while{f++, !o, !s}(i+=1; i &lt; 10)
 {
 	//f++ code for scripting

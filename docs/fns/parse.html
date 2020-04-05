@@ -68,14 +68,13 @@
 								<ul>
 									<li><a href="../installing_nift.html">Installing Nift</a></li>
 									<li><a href="../nift_commands.html">Nift Commands</a></li>
-									<li><a href="../content_files.html">Content Files</a></li>
 									<li><a href="../template_files.html">Template Files</a></li>
 									<li><a href="../fns.html">Functions</a></li>
 									<li><a href="../f++.html">f++ (scripting language)</a></li>
 									<li><a href="../n++.html">n++ (template language)</a></li>
 									<li><a href="../lua.html">Lua(JIT)</a></li>
 									<li><a href="../exprtk.html">ExprTk</a></li>
-									<li><a href="../interactive.html">Interactive</a></li>
+									<li><a href="../interactive.html">Interactive REPL</a></li>
 									<li><a href="../scripts.html">Scripts</a></li>
 									<li><a href="../template_languages.html">Template Languages</a></li>
 									<li><a href="../JSON.html">JSON Data</a></li>
@@ -159,7 +158,7 @@ parse(int, string)
 		    				<p>
 		    					Example of <mono>parse</mono> being used with <mono>f++</mono>:					
 		    
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
 		    <pre class="prettyprint inline linenums lang-nift">
 function(funcA)
 {
@@ -179,9 +178,9 @@ parse(2, "funcB()")</pre>
 		    					n++ example
 		    				</h4>
 		    				<p>
-		    					Example of <mono>parse</mono> being used with <mono>n++</mono>:					
+		    					Examples of <mono>parse</mono> being used with <mono>n++</mono>:					
 		    
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
 		    <pre class="prettyprint inline linenums lang-nift">
 @function(funcA)
 {
@@ -194,6 +193,23 @@ parse(2, "funcB()")</pre>
 }
 
 @parse(2, "@funcB()")</pre>
+		    </div>
+		    				</p>
+		    
+		    				<p>
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
+		    <pre class="prettyprint inline linenums lang-nift">
+@:=(string, s1="hello", s2="$[s1]", s3="$[s2]")
+@console("@parse(3, $[s3])")</pre>
+		    </div>
+		    				</p>
+		    
+		    				<p>
+		    					Note that the above is slightly different to the following:
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
+		    <pre class="prettyprint inline linenums lang-nift">
+@:=(string, s1="hello", s2="s1", s3="s2")
+@console("$[$[$[s3]]]")</pre>
 		    </div>
 		    				</p>
 		    			</div>
