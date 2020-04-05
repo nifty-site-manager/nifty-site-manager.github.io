@@ -116,7 +116,7 @@ do-while{options}(condition)
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint inline linenums lang-nift">
-:=(int, i=0)
+int i=0
 do-while(i < 10)
 	console("i: `i+=1`")</pre>
 </div>
@@ -125,7 +125,7 @@ do-while(i < 10)
 				<p>
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint inline linenums lang-nift">
-:=(int, i=0)
+int i=0
 do-while{!s, !o}(i+=1; i<10)
 	console("i: ", i)</pre>
 </div>
@@ -139,7 +139,7 @@ do-while{!s, !o}(i+=1; i<10)
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint inline linenums lang-nift">
-\@:=(int, i=0)
+\@int i=0
 \@do-while{\n}(i < 10)
 	i:  \@++(i)</pre>
 </div>
@@ -148,7 +148,7 @@ do-while{!s, !o}(i+=1; i<10)
 				<p>
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint inline linenums lang-nift">
-\@:=(int, i=0)
+\@int i=0
 \@do-while{f++, !o, !s}(i+=1; i<10)
 {
 	//f++ code for scripting

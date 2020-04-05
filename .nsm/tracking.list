@@ -6,10 +6,6 @@
 'bitbucket_hosting'
 'template/page.template'
 
-'docs/content_files'
-'content_files'
-'template/page.template'
-
 'docs/displaying_code_blocks'
 'displaying_code_blocks'
 'template/page.template'
@@ -36,6 +32,18 @@
 
 'docs/fns/!='
 '!='
+'template/page.template'
+
+'docs/fns/!newline'
+'!newline'
+'template/page.template'
+
+'docs/fns/#'
+'#'
+'template/page.template'
+
+'docs/fns/#--'
+'#--'
 'template/page.template'
 
 'docs/fns/$'
@@ -94,12 +102,20 @@
 '-->'
 'template/page.template'
 
+'docs/fns/--divdiv'
+'--divdiv'
+'template/page.template'
+
 'docs/fns/-='
 '-='
 'template/page.template'
 
 'docs/fns/:='
 ':='
+'template/page.template'
+
+'docs/fns/<#--'
+'<#--'
 'template/page.template'
 
 'docs/fns/<'
@@ -132,6 +148,10 @@
 
 'docs/fns/break'
 'break'
+'template/page.template'
+
+'docs/fns/bsol'
+'bsol'
 'template/page.template'
 
 'docs/fns/cd'
@@ -178,12 +198,20 @@
 'dep'
 'template/page.template'
 
-'docs/fns/divide'
-'divide'
+'docs/fns/div'
+'div'
 'template/page.template'
 
-'docs/fns/divideequal'
-'divideequal'
+'docs/fns/div*'
+'div*'
+'template/page.template'
+
+'docs/fns/divdiv'
+'divdiv'
+'template/page.template'
+
+'docs/fns/divequal'
+'divequal'
 'template/page.template'
 
 'docs/fns/do-while'
@@ -230,6 +258,10 @@
 'function'
 'template/page.template'
 
+'docs/fns/getenv'
+'getenv'
+'template/page.template'
+
 'docs/fns/getlin'
 'getlin'
 'template/page.template'
@@ -264,6 +296,10 @@
 
 'docs/fns/is_private'
 'is_private'
+'template/page.template'
+
+'docs/fns/item'
+'item'
 'template/page.template'
 
 'docs/fns/join'
@@ -350,6 +386,22 @@
 'nsm_mode'
 'template/page.template'
 
+'docs/fns/paginate'
+'paginate'
+'template/page.template'
+
+'docs/fns/paginate,no_items_per_page'
+'paginate,no_items_per_page'
+'template/page.template'
+
+'docs/fns/paginate,separator'
+'paginate,separator'
+'template/page.template'
+
+'docs/fns/paginate,template'
+'paginate,template'
+'template/page.template'
+
 'docs/fns/parse'
 'parse'
 'template/page.template'
@@ -384,6 +436,14 @@
 
 'docs/fns/read'
 'read'
+'template/page.template'
+
+'docs/fns/refresh_completions'
+'refresh_completions'
+'template/page.template'
+
+'docs/fns/replace_all'
+'replace_all'
 'template/page.template'
 
 'docs/fns/return'

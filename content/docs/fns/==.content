@@ -53,7 +53,7 @@
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint inline linenums">
-for(:=(int, i=0); ; i+=1)
+for(int i=0; ; i+=1)
 {
 	if(==(i, 10))
 		break
@@ -70,7 +70,7 @@ for(:=(int, i=0); ; i+=1)
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint inline linenums">
-\@for(:=(int, i=0); ; i+=1)
+\@for(int i=0; ; i+=1)
 {
 	\@if(==(i, 10))
 		\@break

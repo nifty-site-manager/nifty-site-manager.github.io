@@ -1,0 +1,104 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">fn: <mono>\</mono></div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<div class="content">
+				<a href="#contents" class="to_top">[contents]</a>
+
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#syntax">Syntax</a></li>
+					<li><a href="#description">Description</a></li>
+					<li><a href="#n++-eg">n++ example</a></li>
+				</ul>
+
+				<h4 id="syntax">
+					Syntax
+				</h4>
+				<p>
+					Syntax available <mono>\</mono> calls:
+					<center>
+						<table id="escape_character_table" class="alt">
+							<thead>
+								<tr>
+									<th>f++</th>
+									<th>n++</th>
+									<th>output</th>
+								</tr>
+							</thead>
+							<tr>
+								<td>\\@</td>
+								<td>\\@</td> 
+								<td><mono>\@</mono></td>
+							</tr>
+							<tr>
+								<td>\\</td> 
+								<td>\@\\</td> 
+								<td><mono>@\\</mono></td>
+							</tr>
+							<tr>
+								<td>\t</td> 
+								<td>\@\t</td> 
+								<td><mono>*<i>tab</i>*</mono></td>
+							</tr>
+							<tr>
+								<td>\n</td> 
+								<td>\@\n</td> 
+								<td><mono>*<i>newline</i>*</mono></td>
+							</tr>
+							<tr>
+								<td></td> 
+								<td>\@\\@</td>
+								<td><mono>&amp;commat;</mono></td>
+							</tr>
+							<tr>
+								<td>@ent(\)@ent(<)</td> 
+								<td>\@@ent(\)@ent(<)</td> 
+								<td><mono>&amp;lt;</mono></td>
+							</tr>
+							<tfoot>
+								<tr>
+									<th>f++</th>
+									<th>n++</th>
+									<th>output</th>
+								</tr>
+							</tfoot>
+						</table>
+					</center>	
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+				<p>
+					The <mono>\</mono> function is used for escaping characters in various ways.
+				</p>
+
+				<h4 id="n++-eg">
+					n++ example
+				</h4>
+				<p>
+					Example of <mono>\</mono> being used with <mono>n++</mono>:					
+
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="inline">
+This is a line \@\nthat is broken in to\@\n three lines.</pre>
+</div>
+				</p>
+
+				<p>
+					The above will result in the built output file having the following written to it when it reaches that point in the build process:
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="inline">
+This is a line @\nthat is broken in to@\n three lines.
+</pre>
+</div>
+				</p>
+			</div>
+		</section>
+	</div>
+</section>

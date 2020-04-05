@@ -48,6 +48,14 @@ system{options}(string)
 					</ul>
 				</p>
 
+				<p>
+					<b>Note:</b> <mono>system</mono> calls are run from the project root directory so all paths should start from there. Also do not change directory in your system calls or scripts/programs they call as it will mess up the other threads that are also building output files. If you really must change directories in your scripts then you will have to set the number of build threads to <mono>1</mono> and change back to the project root directory before each script ends.
+				</p>
+
+				<p>
+					<b>Note:</b> <mono>system</mono> calls do not scale very well to hundreds of thousands of calls, it is much better to combine as much as possible in to as few <mono>script</mono>/<mono>system</mono> calls as possible for very large projects (moving stuff to the pre/post build scripts is the best place, you can output stuff to file and process the files when building). For example if possible it is much faster to have a few pre-build scripts to download text from multiple urls using cURL, and/or make all the api calls, all the database queries, and work on JSON data needed and distribute the needed output in to different files to be inputted when needed. Note that file-specific build scripts have the benefit of running in parallel to each other, whereas project-wide build scripts do not.
+				</p>
+
 				<h4 id="options">
 					Options
 				</h4>
@@ -106,7 +114,7 @@ system{options}(string)
 				<p>
 					Examples of <mono>system</mono> being used with <mono>f++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline linenums lang-nift">
 system("ls *.txt")
 system("./script.rb")</pre>
@@ -114,7 +122,7 @@ system("./script.rb")</pre>
 				</p>
 
 				<p>
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline linenums lang-nift">
 system
 {
@@ -130,15 +138,17 @@ system
 				<p>
 					Examples of <mono>system</mono> being used with <mono>n++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline linenums lang-nift">
 \@system("ls *.txt")
+\@system('pandoc -o out.html file.md')
+\@system("curl -sS https://pastebin.com/raw/atjKuxY6")
 \@system("./script.rb")</pre>
 </div>
 				</p>
 
 				<p>
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline linenums lang-nift">
 \@system
 {

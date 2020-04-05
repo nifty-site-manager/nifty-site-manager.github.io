@@ -53,7 +53,7 @@
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint inline linenums">
-for(:=(int, i=10); >(i, 0); i-=1)
+for(int i=10; >(i, 0); i-=1)
 	console("i: ", i)</pre>
 </div>
 				</p>
@@ -61,7 +61,7 @@ for(:=(int, i=10); >(i, 0); i-=1)
 				<p>
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint inline linenums">
-:=(int, a=2, b=1, c=0)
+int a=2, b=1, c=0
 console(>(a, b, c))
 console(>(c, a, b))</pre>
 </div>
@@ -75,7 +75,7 @@ console(>(c, a, b))</pre>
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint inline linenums">
-\@for(:=(int, i=10); >(i, 0); i-=1)
+\@for(int i=10; >(i, 0); i-=1)
 	\@console("i: ", i)</pre>
 </div>
 				</p>
@@ -83,7 +83,7 @@ console(>(c, a, b))</pre>
 				<p>
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint inline linenums">
-\@:=(int, a=2, b=1, c=0)
+\@int a=2, b=1, c=0
 \@console(\@>(a, b, c))
 \@console(\@>(c, a, b))</pre>
 </div>

@@ -23,12 +23,12 @@
 				<p>
 					The syntax for <mono>&&</mono> calls is:
 <div align="center" style="margin-top:-15px">
-<mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
 &&(params)
 </pre>
 </div><br>
 <div align="center">
-<mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
 \@&&(params)
 </pre>
 </div>
@@ -51,9 +51,9 @@
 				<p>
 					Example of <mono>&&</mono> being used with <mono>f++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline linenums">
-:=(int, x=3, y=7)
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline linenums lang-nift">
+int x=3, y=7
 if(&&(<(1, y), <(x, y))
 	console("y is greater than both 1 and x")</pre>
 </div>
@@ -65,19 +65,29 @@ if(&&(<(1, y), <(x, y))
 				<p>
 					Examples of <mono>&&</mono> being used with <mono>n++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline linenums">
-\@:=(int, x=3, y=7)
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline linenums lang-nift">
+\@int x=3, y=7
 \@if(&&(<(1, y), <(x, y))
 	\@console("y is greater than both 1 and x")</pre>
 </div>
 				</p>
 
 				<p>
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline linenums">
-\@:=(int, x=3, y=7)
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline linenums lang-nift">
+\@int x=3, y=7
 \@console(\@&&(<(1, y), <(x, y)))</pre>
+</div>
+				</p>
+
+				<p>
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline linenums lang-nift">
+\@int a=3, b=-2
+
+\@console("\@&&(\@>(a, 0), \@>(b, 0))")
+\@# expected output: 0</pre>
 </div>
 				</p>
 			</div>

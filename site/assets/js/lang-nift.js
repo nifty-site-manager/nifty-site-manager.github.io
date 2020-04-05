@@ -38,20 +38,29 @@ PR['registerLangHandler'](
         [
          // /*comments*/
          [PR['PR_COMMENT'], /^\/\*[\s\S]*?(?:\*\/|$)/, null],
+         [PR['PR_COMMENT'], /^\@\/\*[\s\S]*?(?:\*\/|$)/, null],
          // //comments
          [PR['PR_COMMENT'], /^\/\/[\s\S]*?(?:\n|$)/, null],
+         [PR['PR_COMMENT'], /^\@\/\/[\s\S]*?(?:\n|$)/, null],
+         // --[[comments]]--
+         //[PR['PR_COMMENT'], /^--\[\[[\s\S]*?(?:\]\]--|$)/, null],
+         // --comments
+         //[PR['PR_COMMENT'], /^--[\s\S]*?(?:\n|$)/, null],
+         // --//comments
+         [PR['PR_COMMENT'], /^--\/\/[\s\S]*?(?:\n|$)/, null],
+         [PR['PR_COMMENT'], /^\@--\/\/[\s\S]*?(?:\n|$)/, null],
+         // #--comments--#
+         [PR['PR_COMMENT'], /^\#--[\s\S]*?(?:--\#|$)/, null],
+         [PR['PR_COMMENT'], /^\@\#--[\s\S]*?(?:--\#|$)/, null],
+         // <#--comments--#>
+         [PR['PR_COMMENT'], /^<\#--[\s\S]*?(?:--\#>|$)/, null],
          // #comments
          [PR['PR_COMMENT'], /^\#[\s\S]*?(?:\n|$)/, null],
-         // --[[comments]]--
-         [PR['PR_COMMENT'], /^--\[\[[\s\S]*?(?:\]\]--|$)/, null],
-         // --comments
-         [PR['PR_COMMENT'], /^--[\s\S]*?(?:\n|$)/, null],
-         // @---comments@---
-         [PR['PR_COMMENT'], /^\@---[\s\S]*?(?:\@---|$)/, null],
+         [PR['PR_COMMENT'], /^\@\#[\s\S]*?(?:\n|$)/, null],
          
          // A long bracketed block not preceded by -- is a string
          [PR['PR_STRING'],  /^\[(=*)\[[\s\S]*?(?:\]\1\]|$)/],
-         [PR['PR_KEYWORD'], /^(?:and|begin|break|console|const|do|else|elseif|end|endl|exit|false|for|function|if|in|local|nil|not|option|options|or|param|params|print|private|quit|read|repeat|return|require|start|struct|then|true|until|while|write)\b/, null],
+         [PR['PR_KEYWORD'], /^(?:and|begin|break|console|const|do|else|elseif|end|endl|exit|false|for|function|if|in|local|nil|not|option|options|or|param|params|print|private|quit|read|repeat|return|require|start|struct|then|true|type|until|while|write)\b/, null],
          [PR['PR_KEYWORD'], /^(?:bin|cd|del|dir|copy|cp|ls|move|mv|remove|rm|sudo|usr)\b/, null],
          [PR['PR_LITERAL'], /^(?:lua|lua_addnsmfns|lua_getglobal|lua_gettop|lua_pop|lua_pushlightuserdata|lua_pushnumber|lua_pushstring|lua_remove|lua_setglobal|lua_tonumber|lua_tostring|nsm_setnumber|nsm_setstring|nsm_tolightuserdata|nsm_tonumber|nsm_tostring|nsm_write|:=)\b/, null],
          [PR['PR_LITERAL'], /^(?:exprtk|exprtk.add_package)\b/, null],
@@ -59,9 +68,11 @@ PR['registerLangHandler'](
          // operations and order relations
          [PR['PR_DECLARATION'], /^(?:->|<-|<=|>=)/, null],
          // := and :
-         [PR['PR_LITERAL'], /^(?::=|:)/, null],
+         [PR['PR_LITERAL'], /^(?::=|:|\$)/, null],
+         //logical operators
+         [PR['PR_KEYWORD'], /^(?:\&\&|\|\||\!)/, null],
          // n++ functions
-         [PR['PR_LITERAL'], /^@(?:\[(=*)\[[\s\S]*?(?:\]\1\]|$)|[^ ({[\r\n]*)/],
+         [PR['PR_LITERAL'], /^@(?:\[(=*)\[[\s\S]*?(?:\]\1\]|$)|[^ ({[.\r\n]*)/],
          // A number is a hex integer literal, a decimal real literal, or in scientific notation
          [PR['PR_TYPE'], /^[+-]?(?:0x[\da-f]+|(?:(?:\.\d+|\d+(?:\.\d*)?)(?:e[+\-]?\d+)?))/i],
          // An identifier

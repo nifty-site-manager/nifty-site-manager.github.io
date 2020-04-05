@@ -14,6 +14,14 @@
 			</center>
 
 			<div class="content">
+
+				<h4>
+					Introduction
+				</h4>
+				<p>
+					Nift has its own poweful in-built template language <a href="@pathtopage(docs/n++)">n++</a> which you can use in amongst any other scripting, programming and/or template language you want. It also has its own in-built scripting language <a href="@pathtopage(docs/f++)">f++</a> which also works well in interactive <mono>shell</mono> mode as a shell extension. This page is an index for all the functions available with the template language <mono>n++</mono> and scripting/shell extension language <mono>f++</mono>.
+				</p>
+
 				<h4 id="contents">
 					Contents
 				</h4>
@@ -27,15 +35,65 @@
 				<p>
 					The syntax for Nift function calls is as follows:
 <div align="center" style="margin-top:-15px">
-<mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-19px">
 funcName{options}(params)
 </pre>
 </div><br>
 <div align="center">
-<mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-19px">
 \@funcName{options}(params)
 </pre>
 </div>
+				</p>
+
+				<p>
+					You can use Nift's template language with the function name, options and parameters for a function call. For example:
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline">\@input("\$[contentpath]")</pre>
+</div>
+				</p>
+
+				<p>
+					You can even expand multiple options or parameters when parsing the options or parameters string with both <mono>f++</mono> and <mono>n++</mono>. A contrived <mono>n++</mono> example that is equivalent to calling <mono>\@funcName(param 1, param2)</mono> is below:
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline">
+\@:=(string, str = "param 1, param 2")
+\@funcName(\$[str])
+</pre>
+</div>
+				</p>
+
+				<p>
+					<b>Note:</b> you need to quote the function name when doing things like printing variables or calling functions in the function name. A contrived <mono>n++</mono> example is below:
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline">
+\@:=(string, str = "input")
+\@"\$[str]"("\$[contentpath]")
+</pre>
+</div>
+				</p>
+
+				<p>
+					Nift is pretty good at working out when it does or does not need to parse things like the function name, options and/or parameters. If you insist on manually telling Nift to <u>not</u> parse the function name and parameters use the <mono>!p</mono> option. For example:
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline">
+\@input("\@{!p}[contentpath]")
+</pre>
+</div>
+				</p>
+				<p>
+					<b>Note:</b> For options and parameters (including variable names and values), you can use:
+					<ul>
+						<li><mono>\n</mono> for the newline character</li>
+						<li><mono>\t</mono> for tabs (though normal tabs also work)</li>
+						<li><mono>\\</mono> for <mono>\</mono></li>
+						<li><mono>\'</mono> for <mono>'</mono></li>
+						<li><mono>\"</mono> for <mono>"</mono></li>
+					</ul>
+				</p>
+
+				<p>
+					Function names, options and parameters (including variable names and values) can be unquoted, single quoted or double quoted, whichever is more convenient, integrates with the other programming, scripting and/or template languages you are using and/or has nice syntax highlighting with the extensions and editor(s) you are using. Also for functions that can take multiple parameters, parameters containing commas '<mono>,</mono>' should be quoted, there can also be other times that things need to be quoted, for example if you want to have equals <mono>'='</mono> in a variable name during its definition then it will need to be quoted (though will not need to be quoted when referenced). 
 				</p>
 
 				<h4 id="options">
@@ -74,21 +132,26 @@ funcName{options}(params)
 					</center>
 				</p>
 
-				<h4 id="index">Index</h4>
 				<a href="#index" class="to_top">[index]</a>
+				<h4 id="index">Index</h4>
 				<p id="index">
 					Below is an index of Nift's hard-coded functions (including functions for defining variables, functions and structures/types) which can be called from <a href="@pathto(docs/f++)">f++</a> and <a href="@pathto(docs/n++)">n++</a>: 
 					<ul style="text-indent:30px">
 						<li><a href="@pathtopage(docs/fns/exprtk)">`expression`</a> (evaluate ExprTk expression)</li>
 						<li><a href="@pathtopage(docs/fns/!)">!</a> (not operator)</li>
+						<li><a href="@pathtopage(docs/fns/!newline)">!\n</a> (special single-line comment)</li>
 						<li><a href="@pathtopage(docs/fns/!=)">!=</a> (not equals operator)</li>
 						<li><a href="@pathtopage(docs/fns/$)">$</a> (print variable)</li>
 						<li><a href="@pathtopage(docs/fns/&&)">&&</a> (and operator)</li>
 						<li><a href="@pathtopage(docs/fns/||)">||</a> (or operator)</li>
+						<li><a href="@pathtopage(docs/fns/bsol)">\</a> (escape characters)</li>
 						<li><a href="@pathtopage(docs/fns/:=)">:=</a> (define)</li>
 						<li><a href="@pathtopage(docs/fns/=)">=</a> (assignment operator)</li>
 						<li><a href="@pathtopage(docs/fns/==)">==</a> (equals to operator)</li>
 						<li><a href="@pathtopage(docs/fns/<)">@ent(<)</a> (less than operator)</li>
+						<li><a href="@replace_all(@pathtopage(docs/fns/#), '#', '%23')">#</a> (raw single-line comment)</li>
+						<li><a href="@replace_all(@pathtopage(docs/fns/#--), '#', '%23')">#--</a> (parsed multi-line comment)</li>
+						<li><a href="@replace_all(@pathtopage(docs/fns/<#--), '#', '%23')"><\#--</a> (raw multi-line comment)</li>
 						<li><a href="@pathtopage(docs/fns/<=)">@ent(<)=</a> (less than or equals to operator)</li>
 						<li><a href="@pathtopage(docs/fns/<--)">@ent(<)--</a> (remove added trailing whitespace)</li>
 						<li><a href="@pathtopage(docs/fns/>)">@ent(>)</a> (greater than operator)</li>
@@ -99,13 +162,16 @@ funcName{options}(params)
 						<li><a href="@pathtopage(docs/fns/+=)">+=</a> (addition assignment operator)</li>
 						<li><a href="@pathtopage(docs/fns/-)">-</a> (subtraction operator)</li>
 						<li><a href="@pathtopage(docs/fns/--)">--</a> (pre-decrement operator)</li>
+						<li><a href="@pathtopage(docs/fns/--divdiv)">--//</a> (parsed single-line comment)</li>
 						<li><a href="@pathtopage(docs/fns/---)">---</a> (post-decrement operator)</li>
 						<li><a href="@pathtopage(docs/fns/-->)">--></a> (skip whitespace)</li>
 						<li><a href="@pathtopage(docs/fns/-=)">-=</a> (subtraction assignment operator)</li>
 						<li><a href="@pathtopage(docs/fns/*)">*</a> (multiplication operator)</li>
 						<li><a href="@pathtopage(docs/fns/*=)">*=</a> (multiplication assignment operator)</li>
-						<li><a href="@pathtopage(docs/fns/divide)">/</a> (division operator)</li>
-						<li><a href="@pathtopage(docs/fns/divideequal)">/=</a> (division assignment operator)</li>
+						<li><a href="@pathtopage(docs/fns/div)">/</a> (division operator)</li>
+						<li><a href="@pathtopage(docs/fns/divequal)">/=</a> (division assignment operator)</li>
+						<li><a href="@pathtopage(docs/fns/div*)">/*</a> (raw multi-line comment)</li>
+						<li><a href="@pathtopage(docs/fns/divdiv)">//</a> (raw single-line comment)</li>
 						<li><a href="@pathtopage(docs/fns/%)">%</a> (mod operator)</li>
 						<li><a href="@pathtopage(docs/fns/%=)">%=</a> (mod assignment operator)</li> <br>
 
@@ -138,6 +204,7 @@ funcName{options}(params)
 						<li><a href="@pathtopage(docs/fns/forget)">forget</a></li>
 						<li><a href="@pathtopage(docs/fns/function)">function</a></li> <br>
 
+						<li><a href="@pathtopage(docs/fns/getenv)">getenv</a></li>
 						<li><a href="@pathtopage(docs/fns/getline)">getline</a></li> <br>
 
 						<li><a href="@pathtopage(docs/fns/if)">if</a></li>
@@ -146,7 +213,8 @@ funcName{options}(params)
 						<li><a href="@pathtopage(docs/fns/include)">include</a></li>
 						<li><a href="@pathtopage(docs/fns/input)">inject/input</a></li>
 						<li><a href="@pathtopage(docs/fns/is_const)">is_const</a></li>
-						<li><a href="@pathtopage(docs/fns/is_private)">is_private</a></li> <br>
+						<li><a href="@pathtopage(docs/fns/is_private)">is_private</a></li>
+						<li><a href="@pathtopage(docs/fns/item)">item</a></li> <br>
 
 						<li><a href="@pathtopage(docs/fns/join)">join</a></li>
 						<li><a href="@pathtopage(docs/fns/jsinclude)">jsinclude</a></li> <br>
@@ -173,6 +241,10 @@ funcName{options}(params)
 						<li><a href="@pathtopage(docs/fns/nsm_lang)">nsm_lang</a></li>
 						<li><a href="@pathtopage(docs/fns/nsm_mode)">nsm_mode</a></li> <br>
 
+						<li><a href="@pathtopage(docs/fns/paginate)">paginate</a></li>
+						<li><a href="@pathtofile('site/docs/fns/paginate.no_items_per_page.html')">paginate.no_items_per_page</a></li>
+						<li><a href="@pathtofile('site/docs/fns/paginate.separator.html')">paginate.separator</a></li>
+						<li><a href="@pathtofile('site/docs/fns/paginate.template.html')">paginate.template</a></li>
 						<li><a href="@pathtopage(docs/fns/parse)">parse</a></li>
 						<li><a href="@pathtopage(docs/fns/pathto)">pathto</a></li>
 						<li><a href="@pathtopage(docs/fns/pathtofile)">pathtofile</a></li>
@@ -184,6 +256,8 @@ funcName{options}(params)
 						<li><a href="@pathtopage(docs/fns/quote)">quote</a></li> <br>
 
 						<li><a href="@pathtopage(docs/fns/read)">read</a></li>
+						<li><a href="@pathtopage(docs/fns/refresh_completions)">refresh_completions</a></li>
+						<li><a href="@pathtopage(docs/fns/replace_all)">replace_all</a></li>
 						<li><a href="@pathtopage(docs/fns/return)">return</a></li> <br>
 
 						<li><a href="@pathtopage(docs/fns/scope)">scope</a></li>

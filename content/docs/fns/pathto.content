@@ -83,10 +83,38 @@ pathto{option}(string)
 				<p>
 					Examples of <mono>pathto</mono> being used with <mono>n++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline linenums">
 <a href="\@pathto(index)">home</a>
 <img src="\@pathto('assets/images/logo.svg')"></pre>
+</div>
+				</p>
+
+				<p>
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline linenums">
+<nav>
+	<ul class="drop_menu">
+		<li></li>
+		<li class="dm_li">
+			<a href="\@pathto(index)">Home</a>
+		</li>
+
+		<li class ="dm_li">
+			<div class="dm_text">Documentation</div>
+			<ul class ="drop_submenu">
+				<li class="dsm_li"><a href="\@pathto(documentation/installing_nift)">Installing Nift</a></li>
+				<li class="dsm_li"><a href="\@pathto(documentation/nift_tutorial)">Nift tutorial</a></li>
+				<li class="dsm_li"><a href="\@pathto(documentation/nift_commands)">Nift commands</a></li>
+			</ul>
+		</li>
+
+		<li class ="dm_li">
+			<a href="\@pathto(support)">Support</a>
+		</li>
+		<li></li>
+	</ul>
+</nav></pre>
 </div>
 				</p>
 			</div>

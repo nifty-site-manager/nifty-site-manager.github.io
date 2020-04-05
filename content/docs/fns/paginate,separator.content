@@ -1,0 +1,81 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title" style="overflow: hidden; padding-left: 10px; padding-right: 10px"><p style="overflow-x: auto;">fn:&nbsp;<mono>paginate.separator</mono></p></div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<div class="content">
+				<a href="#contents" class="to_top">[contents]</a>
+
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#syntax">Syntax</a></li>
+					<li><a href="#description">Description</a></li>
+					<li><a href="#n++-eg">n++ example</a></li>
+				</ul>
+
+				<h4 id="syntax">
+					Syntax
+				</h4>
+				<p>
+					The syntax for <mono>paginate.separator</mono> calls is:
+<div align="center" style="margin-top:-15px; margin-bottom:70px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-60px">
+paginate.separator(string)
+paginate.separator
+{
+	//separator code
+}
+</pre>
+</div><br>
+<div align="center" style="margin-top:-15px; margin-bottom:70px">
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-60px">
+\@paginate.separator(string)
+\@paginate.separator
+{
+	//separator code
+}
+</pre>
+</div>
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+				<p>
+					The <mono>paginate.separator</mono> function is for, when using pagination, specifying code to separate items on each page with, it takes one string parameter or zero parameters and is followed by a block of <mono>n++</mono> code. 
+				</p>
+
+				<p>
+					<b>Note:</b> Specifying a separator for pagination is optional, the default separator is "<mono>\n\n</mono>" which leaves an empty line between each item in the built file.
+				</p>
+
+				<h4 id="n++-eg">
+					n++ example
+				</h4>
+				<p>
+					Examples of <mono>paginate.separator</mono> being used with <mono>n++</mono>:					
+
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline linenums lang-nift">
+\@paginate.separator("<br>\n\n")</pre>
+</div>
+				</p>
+
+				<p>
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline linenums lang-nift">
+\@paginate.separator
+{
+
+	<br>
+
+}</pre>
+</div>
+				</p>
+			</div>
+		</section>
+	</div>
+</section>

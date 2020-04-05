@@ -53,9 +53,8 @@
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint inline linenums">
-:=(int, a=10, 
-        b=12)
-:=(string, str="hello, world!")
+int a=10, b=12
+string str="hello, world!"
 =(a, \$[b])
 =(a, b, 14)
 =(str, "hello, mars!")</pre>
@@ -70,9 +69,8 @@
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint inline linenums">
-\@:=(int, a=10, 
-         b=12)
-\@:=(string, str="hello, world!")
+\@int a=10, b=12
+\@string str="hello, world!"
 \@=(a, \$[b])
 \@=(a, b, 14)
 \@=(str, "hello, mars!")</pre>

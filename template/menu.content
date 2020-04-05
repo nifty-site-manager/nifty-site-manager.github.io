@@ -43,14 +43,13 @@
 					<ul>
 						<li><a href="@pathto(docs/installing_nift)">Installing Nift</a></li>
 						<li><a href="@pathto(docs/nift_commands)">Nift Commands</a></li>
-						<li><a href="@pathto(docs/content_files)">Content Files</a></li>
 						<li><a href="@pathto(docs/template_files)">Template Files</a></li>
 						<li><a href="@pathto(docs/fns)">Functions</a></li>
 						<li><a href="@pathto(docs/f++)">f++ (scripting language)</a></li>
 						<li><a href="@pathto(docs/n++)">n++ (template language)</a></li>
 						<li><a href="@pathto(docs/lua)">Lua(JIT)</a></li>
 						<li><a href="@pathto(docs/exprtk)">ExprTk</a></li>
-						<li><a href="@pathto(docs/interactive)">Interactive</a></li>
+						<li><a href="@pathto(docs/interactive)">Interactive REPL</a></li>
 						<li><a href="@pathto(docs/scripts)">Scripts</a></li>
 						<li><a href="@pathto(docs/template_languages)">Template Languages</a></li>
 						<li><a href="@pathto(docs/JSON)">JSON Data</a></li>

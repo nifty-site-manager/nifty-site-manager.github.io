@@ -68,14 +68,13 @@
 								<ul>
 									<li><a href="../installing_nift.html">Installing Nift</a></li>
 									<li><a href="../nift_commands.html">Nift Commands</a></li>
-									<li><a href="../content_files.html">Content Files</a></li>
 									<li><a href="../template_files.html">Template Files</a></li>
 									<li><a href="../fns.html">Functions</a></li>
 									<li><a href="../f++.html">f++ (scripting language)</a></li>
 									<li><a href="../n++.html">n++ (template language)</a></li>
 									<li><a href="../lua.html">Lua(JIT)</a></li>
 									<li><a href="../exprtk.html">ExprTk</a></li>
-									<li><a href="../interactive.html">Interactive</a></li>
+									<li><a href="../interactive.html">Interactive REPL</a></li>
 									<li><a href="../scripts.html">Scripts</a></li>
 									<li><a href="../template_languages.html">Template Languages</a></li>
 									<li><a href="../JSON.html">JSON Data</a></li>
@@ -135,16 +134,24 @@
 		    				</h4>
 		    				<p>
 		    					The syntax for <mono>:=</mono> calls is:
-		    <div align="center" style="margin-top:-15px">
-		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+		    <div align="center" style="margin-top:-15px; margin-bottom:50px">
+		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-40px">
+type definitions
+type(definitions)
 :=(type, definitions)
 </pre>
 		    </div><br>
-		    <div align="center">
-		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+		    <div align="center" style="margin-top:-15px; margin-bottom:50px">
+		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-40px">
+@type definitions
+@type(definitions)
 @:=(type, definitions)
 </pre>
 		    </div>
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> If you are using the first syntax for variable definitions and want to have more code and/or text following on the same line then simply end the definition with '<mono>;</mono>'.
 		    				</p>
 		    
 		    				<h4 id="description">
@@ -152,6 +159,10 @@
 		    				</h4>
 		    				<p>
 		    					The <mono>:=</mono> function is used for defining variables, the first parameter specifies the type of variables being defined, the remainder of the parameters should be variable definitions.
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> If you need to define thousands of variables then <mono>:=</mono> is faster, plus it has useful error messages for unrecognised types.
 		    				</p>
 		    
 		    				<h4 id="options">
@@ -205,11 +216,11 @@
 		    					Examples of <mono>:=</mono> being used with <mono>f++</mono>:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline linenums">
-:=(int, a=10, 
-        b=12)
-:=(string, str="hello, world!")
-:=(ofstream, ofs("input.txt"))</pre>
+		    <pre class="prettyprint inline linenums lang-nift">
+int a=10, b=12
+string(str="hello, world!")
+:=(ofstream, ofs("input.txt"))
+ofs.close()</pre>
 		    </div>
 		    				</p>
 		    
@@ -220,11 +231,11 @@
 		    					Examples of <mono>:=</mono> being used with <mono>n++</mono>:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline linenums">
-@:=(int, a=10, 
-         b=12)
-@:=(string, str="hello, world!")
-@:=(ofstream, ofs("input.txt"))</pre>
+		    <pre class="prettyprint inline linenums lang-nift">
+@int a=10, b=12
+@string(str="hello, world!")
+@:=(ofstream, ofs("input.txt"))
+@ofs.close()</pre>
 		    </div>
 		    				</p>
 		    			</div>

@@ -52,7 +52,7 @@ nsm clone https://gitlab.com/nsm-templates/parchment-site.git;
 </pre>
 					</div></li>
 					<li>To view the website locally, open up one of the pages in the <mono>site</mono> directory with a browser of your choice;</li>
-					<li>Try modifying some of the files in the <mono>content</mono> directory and run <mono>nsm build-updated</mono>, then refresh your browser to view the changes (check out the <a href="@pathto(docs/content_files)">content files</a> page from the documentation for information about writing content files);</li>
+					<li>Try modifying some of the files in the <mono>content</mono> directory and run <mono>nsm build-updated</mono>, then refresh your browser to view the changes (check out the documentation pages for <a href="@pathto(docs/fns)">functions</a> giving information about functions you can use and <a href="@pathto(docs/n++)">n++</a> which is the template language being used;</li>
 					<li>Try modifying some of the files in the template directory and run <mono>nsm build-updated</mono>, then refresh your browser to view the changes (check out the <a href="@pathto(docs/template_files)">template files</a> page from the documentation for information about writing template files);</li>
 					<li>You can push your changes back to Bitbucket/GitHub/GitLab using <mono>nsm bcp "commit message"</mono> (there may be some delay before your changes go live).</li>
 					<li>Check out the <a href="@pathto(docs/hosting)">hosting</a> page from the documentation for information about hosting websites. Especially useful is <a href="https://www.netlify.com/">Netlify</a> for custom domains with auto renewing Let's encrypt certificates or <a href="https://www.heroku.com/">Heroku</a> for free hosting of dynamic websites;</li>

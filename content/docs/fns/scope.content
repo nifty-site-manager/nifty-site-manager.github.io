@@ -82,7 +82,7 @@ scope{option}(var)
 				<p>
 					Example of <mono>scope</mono> being used with <mono>f++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline linenums lang-nift">
 function(example.fn)
 {
@@ -99,9 +99,9 @@ example.fn()</pre>
 					n++ example
 				</h4>
 				<p>
-					Example of <mono>scope</mono> being used with <mono>n++</mono>:					
+					Examples of <mono>scope</mono> being used with <mono>n++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline linenums lang-nift">
 \@function(example.fn)
 {
@@ -111,6 +111,31 @@ example.fn()</pre>
 }
 
 \@example.fn()</pre>
+</div>
+				</p>
+
+				<p>
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline linenums lang-nift">
+\@:={private}(int, obj.pair.first, obj.pair.second)
+\@funcdef{private}(obj.pair.set){}
+\@funcdef(another.example.func)
+{
+	\@console("current scope: '\@scope()'")
+}
+
+\@console("root scope: '\@scope()'")
+\@console("scope of obj.pair.first: '\@scope(obj.pair.first)'")
+\@console("scope of obj.pair.set: '\@scope(obj.pair.set)'")
+\@another.example.func()
+
+\@/*
+	expected output:
+		root scope: ''
+		scope of obj.pair.first: 'obj.pair.'
+		scope of obj.pair.set: 'obj.pair.'
+		current scope: 'another.example.'
+*/</pre>
 </div>
 				</p>
 			</div>

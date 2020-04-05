@@ -68,14 +68,13 @@
 								<ul>
 									<li><a href="../installing_nift.html">Installing Nift</a></li>
 									<li><a href="../nift_commands.html">Nift Commands</a></li>
-									<li><a href="../content_files.html">Content Files</a></li>
 									<li><a href="../template_files.html">Template Files</a></li>
 									<li><a href="../fns.html">Functions</a></li>
 									<li><a href="../f++.html">f++ (scripting language)</a></li>
 									<li><a href="../n++.html">n++ (template language)</a></li>
 									<li><a href="../lua.html">Lua(JIT)</a></li>
 									<li><a href="../exprtk.html">ExprTk</a></li>
-									<li><a href="../interactive.html">Interactive</a></li>
+									<li><a href="../interactive.html">Interactive REPL</a></li>
 									<li><a href="../scripts.html">Scripts</a></li>
 									<li><a href="../template_languages.html">Template Languages</a></li>
 									<li><a href="../JSON.html">JSON Data</a></li>
@@ -117,204 +116,39 @@
 		    		<!-- Features -->
 		    		<section id="features">
 		    			<header class="style1">
-		    				<h2>Index of Nift's hard-coded functions</h2>
+		    				<h2>Index for Nift comments</h2>
 		    			</header>
 		    
-		    			<!-- Image -->
-		    			<center>
-		    				<img src="../../images/badger-icon.svg" alt="Nift's badger mascot" width=300 style="margin-bottom:40px">
-		    			</center>
-		    
 		    			<div class="content">
-		    				<a href="#contents" class="to_top">[contents]</a>
-		    				<h4 id="contents">
-		    					Contents
-		    				</h4>
-		    				<ul style="text-indent:30px">
-		    					<li><a href="#syntax">Syntax</a></li>
-		    					<li><a href="#options">Options</a></li>
-		    					<li><a href="#index">Index</a></li>
-		    				</ul>
-		    
-		    				<h4 id="syntax">Syntax</h4>
 		    				<p>
-		    					The syntax for Nift function calls is as follows:
-		    <div align="center" style="margin-top:-15px">
-		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
-funcName{options}(params)
-</pre>
-		    </div><br>
-		    <div align="center">
-		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
-@funcName{options}(params)
-</pre>
-		    </div>
+		    					If you are building <mono>html</mono> or <mono>php</mono> pages then you can use <mono>html</mono> or <mono>php</mono> coments in your content and template files which will also appear in the source code for the built pages. If you are building output files for another language, you should also have no problems using the comment syntax for that language in your content and template files which will appear in the source code for the built output files. The index below is for comments that will be stripped at build-time with <mono>Nift</mono>.
 		    				</p>
 		    
-		    				<h4 id="options">
-		    					Options
-		    				</h4>
 		    				<p>
-		    					The following options are available for almost all function calls:
-		    
-		    					<center class="table">
-		    						<table id="exprtk_nift_fns_table" class="alt">
-		    							<thead>
-		    								<tr>
-		    									<th>option</th>
-		    									<th>description</th>
-		    								</tr>
-		    							</thead>
-		    							<tr>
-		    								<td><mono>!p</mono></td>
-		    								<td>do not parse parameters</td>
-		    							</tr>
-		    							<tr>
-		    								<td><mono>!v</mono></td>
-		    								<td>do not replace variables with their values</td>
-		    							</tr>
-		    							<tr>
-		    								<td><mono>1p</mono></td>
-		    								<td>treat parameter string as one parameter</td>
-		    							</tr>
-		    							<tfoot>
-		    								<tr>
-		    									<th>option</th>
-		    									<th>description</th>
-		    								</tr>
-		    							</tfoot>
-		    						</table>
-		    					</center>
+		    					The syntax for Nift comments should be reasonably easy to remember as it is very close to the comment syntax used in languages like html, php, javascript, css, bash, python, c/c++, etc.. An added benefit is it being easy to turn comments from those languages in to Nift comments and back again.
 		    				</p>
 		    
+		    				<p>
+		    					<b>Raw vs. Parsed:</b> Parsed comments have the comment text parsed with Nift's template language, so for example string definitions would be recognised, whereas raw comments do <u>not</u> have the comment text parsed with Nift's template language. 
+		    				</p>
+		    
+		    				<p>
+		    					<u>Special single-line comments</u> are almost the same as raw single-line comments except that in the source code for the built output file the following line is placed on the same line after the text before <mono>@!\n</mono>. You cannot put two instances of <mono>@!\n</mono> on the same line, Nift will throw a build error.
+		    				</p>
+		    
+		    				<a href="#index" class="to_top">[index]</a>
 		    				<h4 id="index">Index</h4>
-		    				<a href="#contents" class="to_top">[contents]</a>
+		    				
 		    				<p id="contents">
-		    					Below is an index of Nift's hard-coded functions (including functions for defining variables, functions and structs) which can be called from <a href="../f++.html">f++</a> and <a href="../n++.html">n++</a>: 
+		    					Below is an index of Nift's hard-coded comments which can be called from <a href="../f++.html">f++</a> and <a href="../n++.html">n++</a>: 
 		    					<ul style="text-indent:30px">
-		    						<li><a href="exprtk.html">`expression`</a> (evaluate ExprTk expression)</li>
-		    						<li><a href="!.html">!</a> (not operator)</li>
-		    						<li><a href="!=.html">!=</a> (not equals operator)</li>
-		    						<li><a href="$.html">$</a> (print variable)</li>
-		    						<li><a href="&&.html">&&</a> (and operator)</li>
-		    						<li><a href="||.html">||</a> (or operator)</li>
-		    						<li><a href=":=.html">:=</a> (define)</li>
-		    						<li><a href="=.html">=</a> (assignment operator)</li>
-		    						<li><a href="==.html">==</a> (equals to operator)</li>
-		    						<li><a href="<.html">&lt;</a> (less than operator)</li>
-		    						<li><a href="<=.html">&lt;=</a> (less than or equals to operator)</li>
-		    						<li><a href="<--.html">&lt;--</a> (remove added trailing whitespace)</li>
-		    						<li><a href=">.html">&gt;</a> (greater than operator)</li>
-		    						<li><a href=">=.html">&gt;=</a> (greater than or equals to operator)</li>
-		    						<li><a href="+.html">+</a> (addition operator)</li>
-		    						<li><a href="++.html">++</a> (pre-increment operator)</li>
-		    						<li><a href="+++.html">+++</a> (post-increment operator)</li>
-		    						<li><a href="+=.html">+=</a> (addition assignment operator)</li>
-		    						<li><a href="-.html">-</a> (subtraction operator)</li>
-		    						<li><a href="--.html">--</a> (pre-decrement operator)</li>
-		    						<li><a href="---.html">---</a> (post-decrement operator)</li>
-		    						<li><a href="-->.html">--></a> (skip whitespace)</li>
-		    						<li><a href="-=.html">-=</a> (subtraction assignment operator)</li>
-		    						<li><a href="*.html">*</a> (multiplication operator)</li>
-		    						<li><a href="*=.html">*=</a> (multiplication assignment operator)</li>
-		    						<li><a href="divide.html">/</a> (division operator)</li>
-		    						<li><a href="divideequal.html">/=</a> (division assignment operator)</li>
-		    						<li><a href="%.html">%</a> (mod operator)</li>
-		    						<li><a href="%=.html">%=</a> (mod assignment operator)</li> <br>
-		    
-		    						<li><a href="break.html">break</a></li> <br>
-		    
-		    						<li><a href="cd.html">cd</a></li>
-		    						<li><a href="console.html">console</a></li>
-		    						<li><a href="console.lock.html">console.lock</a></li>
-		    						<li><a href="console.locked.html">console.locked</a></li>
-		    						<li><a href="console.unlock.html">console.unlock</a></li>
-		    						<li><a href="content.html">content</a></li>
-		    						<li><a href="continue.html">continue</a></li>
-		    						<li><a href="cp.html">copy/cp</a></li>
-		    						<li><a href="cssinclude.html">cssinclude</a></li> <br>
-		    
-		    						<li><a href="dep.html">dep</a></li>
-		    						<li><a href="ls.html">dir/ls</a></li>
-		    						<li><a href="do-while.html">do-while</a></li> <br>
-		    
-		    						<li><a href="ent.html">ent</a></li>
-		    						<li><a href="error.html">error</a></li>
-		    						<li><a href="exit.html">exit</a></li>
-		    						<li><a href="exprtk.html">exprtk</a></li>
-		    						<li><a href="exprtk.add_package.html">exprtk.add_package</a></li> <br>
-		    
-		    						<li><a href="f++.html">f++</a></li>
-		    						<li><a href="faviconinclude.html">faviconinclude</a></li>
-		    						<li><a href="for.html">for</a></li>
-		    						<li><a href="forget.html">forget</a></li>
-		    						<li><a href="function.html">function</a></li> <br>
-		    
-		    						<li><a href="getline.html">getline</a></li> <br>
-		    
-		    						<li><a href="if.html">if</a></li>
-		    						<li><a href="imginclude.html">imginclude</a></li>
-		    						<li><a href="in.html">in</a></li>
-		    						<li><a href="include.html">include</a></li>
-		    						<li><a href="input.html">inject/input</a></li>
-		    						<li><a href="is_const.html">is_const</a></li>
-		    						<li><a href="is_private.html">is_private</a></li> <br>
-		    
-		    						<li><a href="join.html">join</a></li>
-		    						<li><a href="jsinclude.html">jsinclude</a></li> <br>
-		    
-		    						<li><a href="layer.html">layer</a></li>
-		    						<li><a href="link.html">link</a></li>
-		    						<li><a href="ls.html">ls/dir</a></li>
-		    						<li><a href="lua.html">lua</a></li>
-		    						<li><a href="lua_addnsmfns.html">lua_addnsmfns</a></li>
-		    						<li><a href="lua_getglobal.html">lua_getglobal</a></li>
-		    						<li><a href="lua_gettop.html">lua_gettop</a></li>
-		    						<li><a href="lua_pop.html">lua_pop</a></li>
-		    						<li><a href="lua_pushlightuserdata.html">lua_pushlightuserdata</a></li>
-		    						<li><a href="lua_pushnumber.html">lua_pushnumber</a></li>
-		    						<li><a href="lua_pushstring.html">lua_pushstring</a></li>
-		    						<li><a href="lua_remove.html">lua_remove</a></li>
-		    						<li><a href="lua_setglobal.html">lua_setglobal</a></li>
-		    						<li><a href="lua_tonumber.html">lua_tonumber</a></li>
-		    						<li><a href="lua_tostring.html">lua_tostring</a></li> <br>
-		    
-		    						<li><a href="mv.html">move/mv</a></li> <br>
-		    
-		    						<li><a href="n++.html">n++</a></li>
-		    						<li><a href="nsm_lang.html">nsm_lang</a></li>
-		    						<li><a href="nsm_mode.html">nsm_mode</a></li> <br>
-		    
-		    						<li><a href="parse.html">parse</a></li>
-		    						<li><a href="pathto.html">pathto</a></li>
-		    						<li><a href="pathtofile.html">pathtofile</a></li>
-		    						<li><a href="pathtopage.html">pathtopage</a></li>
-		    						<li><a href="precision.html">precision</a></li>
-		    						<li><a href="pwd.html">pwd</a></li> <br>
-		    
-		    						<li><a href="quit.html">quit</a></li>
-		    						<li><a href="quote.html">quote</a></li> <br>
-		    
-		    						<li><a href="read.html">read</a></li>
-		    						<li><a href="return.html">return</a></li> <br>
-		    
-		    						<li><a href="scope.html">scope</a></li>
-		    						<li><a href="script.html">script</a></li>
-		    						<li><a href="size.html">size</a></li>
-		    						<li><a href="struct.html">struct</a></li>
-		    						<li><a href="substr.html">substr</a></li>
-		    						<li><a href="system.html">sys/system</a></li> <br>
-		    
-		    						<li><a href="touch.html">touch</a></li>
-		    						<li><a href="type.html">type</a></li> <br>
-		    
-		    						<li><a href="unquote.html">unquote</a></li> <br>
-		    
-		    						<li><a href="valid_type.html">valid_type</a></li> <br>
-		    
-		    						<li><a href="warning.html">warning</a></li>
-		    						<li><a href="while.html">while</a></li>
-		    						<li><a href="write.html">write</a></li>
+		    						<li><a href="!newline.html">!\n</a> (special single-line comment)</li>
+		    						<li><a href="%23.html">#</a> (raw single-line comment)</li>
+		    						<li><a href="%23--.html">#--</a> (parsed multi-line comment)</li>
+		    						<li><a href="<%23--.html"><#--</a> (raw multi-line comment)</li>
+		    						<li><a href="--divdiv.html">--//</a> (parsed single-line comment)</li>
+		    						<li><a href="div*.html">/*</a> (raw multi-line comment)</li>
+		    						<li><a href="divdiv.html">//</a> (raw single-line comment)</li>
 		    					</ul>
 		    				</p>
 		    			</div>

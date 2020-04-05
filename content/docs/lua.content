@@ -136,7 +136,7 @@ lua
 					Nift functions
 				</h4>
 				<p>
-					The following functions specific to Nift may be made available inside your <mono>Lua</mono> code. When using the interpreter or running a script these functions will be added for you, if you want to use them for <mono>Lua</mono> code inside <mono>f++</mono> first call <mono>lua_addnsmfns()</mono>, similarly for inside <mono>n++</mono> first call <mono>\@lua_addnsmfns()</mono>. 
+					The following functions specific to Nift may be made available inside <mono>Lua</mono> code. When using the interpreter or running a script these functions will be added for you, if you want to use them for <mono>Lua</mono> code inside <mono>f++</mono> first call <mono>lua_addnsmfns()</mono>, similarly for inside <mono>n++</mono> first call <mono>\@lua_addnsmfns()</mono>. 
 
 					<center class="table">
 						<table id="lua_nift_fns_table" class="alt">
@@ -147,6 +147,11 @@ lua
 									<th>about</th>
 								</tr>
 							</thead>
+							<tr>
+								<td><mono>cd(string)</mono></td>
+								<td><mono>cd("~/")</td>
+								<td>change directory</td>
+							</tr>
 							<tr>
 								<td><mono>nsm_setnumber(string / lightuserdata, number)</mono></td>
 								<td><mono>nsm_setnumber("i", 0)</td>
@@ -192,7 +197,7 @@ lua
 					An example of using <mono>nsm_setstring</mono>, <mono>nsm_tostring</mono> and <mono>nsm_wite</mono> with <mono>f++</mono> is below:
 <div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline linenums lang-lua">
-:=(string, str="hello, world!")
+string str="hello, world!"
 lua_addnsmfns()
 lua 
 {

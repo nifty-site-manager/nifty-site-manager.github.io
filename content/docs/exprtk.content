@@ -37,7 +37,7 @@
 				</p>
 
 				<p>
-					In Nift's interpreter mode the prompt will just tell you which language you are using. If you would like the prompt to also display the present working directory (up to using half the width of the console) you can switch to the shell mode using <mono>nsm_mode("sh")</mono>. You can switch back again with <mono>nsm_mode("interp")</mono>.
+					In Nift's interpreter mode the prompt will just display the language. If you would like the prompt to also display the present working directory (up to using half the width of the console) you can switch to the shell mode using <mono>nsm_mode("sh")</mono>. You can switch back again with <mono>nsm_mode("interp")</mono>.
 				</p>
 
 				<p>
@@ -50,7 +50,7 @@
 				</h4>
 				<p>
 					If you have an <mono>ExprTk</mono> script saved in a file <mono>path/script-name.exprtk</mono> you can run it with either of the following:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline">
 nsm run path/script-name.exprtk
 nift run path/script-name.exprtk
@@ -60,7 +60,7 @@ nift run path/script-name.exprtk
 
 				<p>
 					If the script has a different extension, say <mono>.ext</mono>, you can run the script with either of the following:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline">
 nsm run -exprtk path/script-name.ext
 nift run -exprtk path/script-name.ext
@@ -74,7 +74,7 @@ nift run -exprtk path/script-name.ext
 				<p>
 					You can run <mono>ExprTk</mono> code from <mono>f++</mono> using any of the following (without needing the comment syntax):					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline">
 exprtk(expression)
 </pre>
@@ -82,7 +82,7 @@ exprtk(expression)
 				</p>
 
 				<p>
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline">
 `expression`
 </pre>
@@ -90,7 +90,7 @@ exprtk(expression)
 				</p>
 
 				<p>
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline">
 exprtk
 {
@@ -106,7 +106,7 @@ exprtk
 				<p>
 					You can run <mono>ExprTk</mono> code from <mono>n++</mono> using any of the following (without needing the comment syntax):					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline">
 \@exprtk(expression)
 </pre>
@@ -114,7 +114,7 @@ exprtk
 				</p>
 
 				<p>
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline">
 \@`expression`
 </pre>
@@ -122,7 +122,7 @@ exprtk
 				</p>
 
 				<p>
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline">
 \@exprtk
 {
@@ -136,9 +136,9 @@ exprtk
 				</h4>
 				<p>
 					You can use <mono>ExprTk</mono> with conditions for <mono>if</mono>, <mono>else-if</mono> and <mono>else</mono> statements, along with <mono>do-while</mono>, <mono>for</mono>, <mono>while</mono> loops. You can also use <mono>ExprTk</mono> for the post-loop increment code with <mono>for</mono> loops (ie. the code after the second <mono>;</mono>). For example:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline">
-for(:=(int, i=0); i<10; i+=1)
+for(int i=0; i<10; i+=1)
 	console("i: ", i)</pre>
 </div>
 				</p>
@@ -154,7 +154,7 @@ for(:=(int, i=0); i<10; i+=1)
 					Nift functions
 				</h4>
 				<p>
-					The following functions specific to <mono>Nift</mono> are available inside your <mono>ExprTk</mono> code.
+					The following functions specific to <mono>Nift</mono> are available inside <mono>ExprTk</mono> code.
 
 					<center class="table">
 						<table id="exprtk_nift_fns_table" class="alt">
@@ -166,27 +166,37 @@ for(:=(int, i=0); i<10; i+=1)
 								</tr>
 							</thead>
 							<tr>
-								<td><mono>nsm_setnumber(string varName, number value)</mono></td>
+								<td><mono>cd(string)</mono></td>
+								<td><mono>cd('~/')</td>
+								<td>change directory</td>
+							</tr>
+							<tr>
+								<td><mono>sys(string)</mono></td>
+								<td><mono>sys('ls *.txt')</td>
+								<td>execute system call/command</td>
+							</tr>
+							<tr>
+								<td><mono>nsm_setnumber(string, number)</mono></td>
 								<td><mono>nsm_setnumber('i', 0)</td>
 								<td>set Nift variable from number</td>
 							</tr>
 							<tr>
-								<td><mono>nsm_setstring(string varName, string value)</mono></td>
+								<td><mono>nsm_setstring(string, string)</mono></td>
 								<td><mono>nsm_setstring('str', 'hello!')</td>
 								<td>set Nift variable from string</td>
 							</tr>
 							<tr>
-								<td><mono>nsm_tonumber(string varName)</mono></td>
+								<td><mono>nsm_tonumber(string)</mono></td>
 								<td><mono>nsm_tonumber('i')</td>
 								<td>get number from Nift variable</td>
 							</tr>
 							<tr>
-								<td><mono>nsm_tostring(string varName)</mono></td>
+								<td><mono>nsm_tostring(string)</mono></td>
 								<td><mono>nsm_tostring('str')</td>
 								<td>get string from Nift variable</td>
 							</tr>
 							<tr>
-								<td><mono>nsm_write(output, params)</mono></td>
+								<td><mono>nsm_write(ostream, params)</mono></td>
 								<td><mono>nsm_write(console, 'x: ', x, endl)</td>
 								<td>write to console, output file (ofile), or a stream</td>
 							</tr>
@@ -206,7 +216,7 @@ for(:=(int, i=0); i<10; i+=1)
 				</h4>
 				<p>
 					Results from <a href="https://github.com/ArashPartow/math-parser-benchmark-project">The Great C++ Mathematical Expression Parser Benchmark</a> are below:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline">
 Scores:
   #     Parser                  Type            Points   Score   Failures

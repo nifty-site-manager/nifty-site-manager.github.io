@@ -68,14 +68,13 @@
 								<ul>
 									<li><a href="../installing_nift.html">Installing Nift</a></li>
 									<li><a href="../nift_commands.html">Nift Commands</a></li>
-									<li><a href="../content_files.html">Content Files</a></li>
 									<li><a href="../template_files.html">Template Files</a></li>
 									<li><a href="../fns.html">Functions</a></li>
 									<li><a href="../f++.html">f++ (scripting language)</a></li>
 									<li><a href="../n++.html">n++ (template language)</a></li>
 									<li><a href="../lua.html">Lua(JIT)</a></li>
 									<li><a href="../exprtk.html">ExprTk</a></li>
-									<li><a href="../interactive.html">Interactive</a></li>
+									<li><a href="../interactive.html">Interactive REPL</a></li>
 									<li><a href="../scripts.html">Scripts</a></li>
 									<li><a href="../template_languages.html">Template Languages</a></li>
 									<li><a href="../JSON.html">JSON Data</a></li>
@@ -154,6 +153,27 @@ script{options}(params)
 		    					The <mono>script</mono> function is for running scripts/programs, it takes a non-zero number of parameters, the first parameter is the name or path of the script/program to run and the remaining parameters are input parameters for the script/program. 
 		    				</p>
 		    
+		    				<p>
+		    					<b>Note:</b> Scripts/programs run with <mono>@script</mono> calls are moved to the project root directory to run and have a backup copy made. If scripts/programs are so large that copying the file will take time, or you are making lots of calls which is slower at scale, you can use the <mono>!bs</mono> option to not have the script backed up, eg.: 
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
+		    <pre class="prettyprint inline">
+@script{!bs}('./script.py')
+</pre>
+		    </div>
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> If you need to have different files/threads running the same script during the build process you will either need to set the number of build threads to <mono>1</mono> or put up with having to rebuild on the occassions where Nift unsuccessfully tries to run both scripts at the same time. You can always have duplicate copies of the same script in different files and have each file/thread run a different version.
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> Scripts and system calls are run from the project root directory so all paths in your scripts should start from there. Also do not change directory in your scripts as it will mess up the other threads that are also building output files (this is an unfortunate limitation of C++). If you really must change directories in your scripts then you can take a reduction in build times and set the number of build threads to <mono>1</mono>, make sure to change back to the project root directory before each script ends. 
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> <mono>script</mono> calls do not scale very well to hundreds of thousands of calls, it is much better to combine as much as possible in to as few <mono>script</mono>/<mono>system</mono> calls as possible for very large projects (moving stuff to the pre/post build scripts is the best place, you can output stuff to file and process the files when building). For example if possible it is much faster to have a few pre-build scripts to download text from multiple urls using cURL, and/or make all the api calls, all the database queries, and work on JSON data needed and distribute the needed output in to different files to be inputted when needed. Note that file-specific build scripts have the benefit of running in parallel to each other, whereas project-wide build scripts do not.
+		    				</p>
+		    
 		    				<h4 id="options">
 		    					Options
 		    				</h4>
@@ -224,14 +244,14 @@ script{options}(params)
 		    				<p>
 		    					Examples of <mono>script</mono> being used with <mono>f++</mono>:					
 		    
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
 		    <pre class="prettyprint inline linenums lang-nift">
 script("pre-build.rb")</pre>
 		    </div>
 		    				</p>
 		    
 		    				<p>
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
 		    <pre class="prettyprint inline linenums lang-nift">
 script{b}("pre-build.py")
 {
@@ -246,14 +266,21 @@ script{b}("pre-build.py")
 		    				<p>
 		    					Examples of <mono>script</mono> being used with <mono>n++</mono>:					
 		    
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
 		    <pre class="prettyprint inline linenums lang-nift">
 @script("pre-build.rb")</pre>
 		    </div>
 		    				</p>
 		    
 		    				<p>
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
+		    <pre class="prettyprint inline linenums lang-nift">
+@script("./script.py", "light blue", "red")</pre>
+		    </div>
+		    				</p>
+		    
+		    				<p>
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
 		    <pre class="prettyprint inline linenums lang-nift">
 @script{b}("pre-build.py")
 {

@@ -1,0 +1,95 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">fn: <mono>paginate</mono></div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<div class="content">
+				<a href="#contents" class="to_top">[contents]</a>
+
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#syntax">Syntax</a></li>
+					<li><a href="#description">Description</a></li>
+					<li><a href="#n++-eg">n++ example</a></li>
+				</ul>
+
+				<h4 id="syntax">
+					Syntax
+				</h4>
+				<p>
+					The syntax for <mono>paginate</mono> calls is:
+<div align="center" style="margin-top:-15px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
+paginate
+</pre>
+</div><br>
+<div align="center">
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
+\@paginate
+</pre>
+</div>
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+				<p>
+					The <mono>paginate</mono> function is for specifying with pagination where to insert pages in to the file being built, it takes zero parameters.
+
+				<h4 id="n++-eg">
+					n++ example
+				</h4>
+				<p>
+					Example of <mono>paginate</mono> being used with <mono>n++</mono>:					
+
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline linenums lang-nift">
+\@paginate
+
+\@paginate.no_items_per_page(2)
+
+\@paginate.template
+{
+	<p>
+		\@if{!s}(\$[paginate.page_no] > 1)
+			<a href="\@pathtopageno(\@`\$[paginate.page_no]-1`)">previous</a> 
+		\@if{!s}(\$[paginate.page_no] < \$[paginate.no_pages])
+			<a href="\@pathtopageno(\@`\$[paginate.page_no]+1`)">next</a>
+	</p>
+
+	\$[paginate.page]
+}
+
+\@item
+{
+	<p>
+		item 1
+	</p>
+}
+\@item
+{
+	<p>
+		item 2
+	</p>
+}
+\@item
+{
+	<p>
+		item 3
+	</p>
+}
+\@item
+{
+	<p>
+		item 4
+	</p>
+}</pre>
+</div>
+				</p>
+			</div>
+		</section>
+	</div>
+</section>

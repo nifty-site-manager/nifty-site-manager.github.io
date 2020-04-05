@@ -15,7 +15,7 @@
 
 			<div class="content">
 				<p>
-					Nift has its own in-built template language <mono>n++</mono>. 
+					Nift has its own in-built template language <mono>n++</mono>. The <mono>n</mono> comes from <mono>Nift</mono>/<mono>nsm</mono>, while the <mono>++</mono> comes from the language being developed in C++. 
 				</p>
 
 				<a href="#contents" class="to_top">[contents]</a>

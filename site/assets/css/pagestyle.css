@@ -309,7 +309,19 @@ table.Loki td
 
 /* Track */
 ::-webkit-scrollbar-track {
- 	background: #4a4233; 
+	background: #1f2021;
+}
+
+ul::-webkit-scrollbar-track {
+ 	background: url("images/overlay.png");
+	border-radius:5px;
+	margin-top:2px;
+	margin-bottom:2px;
+}
+
+pre::-webkit-scrollbar-track {
+	background: url("images/overlay.png");
+ 	/*background: #363331;*/
 	border-radius:5px;
 }
  

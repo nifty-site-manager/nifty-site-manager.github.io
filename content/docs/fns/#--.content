@@ -1,0 +1,74 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">fn: <mono>#--</mono></div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<div class="content">
+				<a href="#contents" class="to_top">[contents]</a>
+
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#syntax">Syntax</a></li>
+					<li><a href="#description">Description</a></li>
+					<li><a href="#n++-eg">n++ example</a></li>
+				</ul>
+
+				<h4 id="syntax">
+					Syntax
+				</h4>
+				<p>
+					The syntax for <mono>#--</mono> comments is:
+<div align="center" style="margin-top:-15px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
+#-- comment --#
+</pre>
+</div><br>
+<div align="center">
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
+\@#-- comment --#
+</pre>
+</div>
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+				<p>
+					The <mono>#--</mono> function is for <u>parsed multi-line comments</u>, it parses the text between <mono>#--</mono> and <mono>--#</mono> but does <u>not</u> add the output to the file being built. 
+				</p>
+
+				<p>
+					<b>Note:</b> <mono>Nift</mono> will skip to the first non-whitespace (ie. to the first character that is not a space, tab or newline) after a multi-line comment and inject it to the output file where the comment started. If you want to prevent <mono>Nift</mono> from doing this put a '<mono>!</mono>' after the comment close tag, eg.:
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline lang-nift">
+\#--
+	multi-line comment without skipping trailing whitespace
+--\#!
+</pre>
+</div>
+				</p>
+
+				<h4 id="n++-eg">
+					n++ example
+				</h4>
+				<p>
+					Example of <mono>#--</mono> being used with <mono>n++</mono>:					
+
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline linenums lang-nift">
+First paragraph
+
+\@#--
+	Second paragraph
+--#
+
+Third paragraph</pre>
+</div>
+				</p>
+			</div>
+		</section>
+	</div>
+</section>

@@ -24,7 +24,7 @@
 				<p>
 					The syntax for <mono>for</mono> loops is:
 <div align="center" style="margin-top:-15px; margin-bottom:60px">
-<mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-50px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-50px">
 for{options}(pre-loop code; condition; post-iteration code)
 {
 	//loop code-block
@@ -32,7 +32,7 @@ for{options}(pre-loop code; condition; post-iteration code)
 </pre>
 </div><br>
 <div align="center" style="margin-top:-15px; margin-bottom:60px">
-<mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-50px">
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-50px">
 \@for{options}(pre-loop code; condition; post-iteration code)
 {
 	//loop code-block
@@ -115,16 +115,16 @@ for{options}(pre-loop code; condition; post-iteration code)
 					Examples of <mono>for</mono> being used with <mono>f++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline linenums">
-for(:=(int, i=0); i < 10, i+=1)
+<pre class="prettyprint inline linenums lang-nift">
+for(int i=0; i < 10; i+=1)
 	console("i: ", i)</pre>
 </div>
 				</p>
 
 				<p>
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline linenums">
-for{!s, !o}(:=(int, i=0); i<10; i+=1)
+<pre class="prettyprint inline linenums lang-nift">
+for{!s, !o}(int i=0; i<10; i+=1)
 	console("i: \$[i]")</pre>
 </div>
 				</p>
@@ -136,16 +136,16 @@ for{!s, !o}(:=(int, i=0); i<10; i+=1)
 					Examples of <mono>for</mono> being used with <mono>n++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline linenums">
-\@for(:=(int, i=0); i < 10, i+=1)
+<pre class="prettyprint inline linenums lang-nift">
+\@for(int i=0; i < 10; i+=1)
 	\@console("i: ", i)</pre>
 </div>
 				</p>
 
 				<p>
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline linenums">
-\@for{f++, !s, !o}(:=(int, i=0); i<10; i+=1)
+<pre class="prettyprint inline linenums lang-nift">
+\@for{f++, !s, !o}(int i=0; i<10; i+=1)
 	console("i: \$[i]")</pre>
 </div>
 				</p>

@@ -68,14 +68,13 @@
 								<ul>
 									<li><a href="../installing_nift.html">Installing Nift</a></li>
 									<li><a href="../nift_commands.html">Nift Commands</a></li>
-									<li><a href="../content_files.html">Content Files</a></li>
 									<li><a href="../template_files.html">Template Files</a></li>
 									<li><a href="../fns.html">Functions</a></li>
 									<li><a href="../f++.html">f++ (scripting language)</a></li>
 									<li><a href="../n++.html">n++ (template language)</a></li>
 									<li><a href="../lua.html">Lua(JIT)</a></li>
 									<li><a href="../exprtk.html">ExprTk</a></li>
-									<li><a href="../interactive.html">Interactive</a></li>
+									<li><a href="../interactive.html">Interactive REPL</a></li>
 									<li><a href="../scripts.html">Scripts</a></li>
 									<li><a href="../template_languages.html">Template Languages</a></li>
 									<li><a href="../JSON.html">JSON Data</a></li>
@@ -127,6 +126,12 @@
 		    					<li><a href="#description">Description</a></li>
 		    					<li><a href="#f++-eg">f++ example</a></li>
 		    					<li><a href="#n++-eg">n++ example</a></li>
+		    					<li><a href="#hard-coded">Hard-coded variables</a></li>
+		    					<li><a href="#inject-file-info">Injecting file information</a></li>
+		    					<li><a href="#inject-pagination-info">Injecting pagination information</a></li>
+		    					<li><a href="#inject-project-info">Injecting project information</a></li>
+		    					<li><a href="#inject-os-info">Injecting operating system information</a></li>
+		    					<li><a href="#inject-date-time-tz-info">Injecting date, time & timezone information</a></li>
 		    				</ul>
 		    
 		    				<h4 id="syntax">
@@ -135,13 +140,13 @@
 		    				<p>
 		    					The syntax for <mono>$</mono> calls is:
 		    <div align="center" style="margin-top:-15px">
-		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
-$[paramName]
+		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
+$[string]
 </pre>
 		    </div><br>
 		    <div align="center">
-		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
-$[paramName]
+		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
+$[string]
 </pre>
 		    </div>
 		    				</p>
@@ -159,12 +164,13 @@ $[paramName]
 		    				<p>
 		    					Example of <mono>$</mono> being used with <mono>f++</mono>:					
 		    
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline linenums">
-:=(int, a=0)
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
+		    <pre class="prettyprint inline linenums lang-nift">
+int a=0
 
-# following two lines are essentially the same
+# following three lines are essentially the same
 console("a: ", a)
+console("a: ", $[a])
 console("a: $[a]")</pre>
 		    </div>
 		    				</p>
@@ -175,14 +181,317 @@ console("a: $[a]")</pre>
 		    				<p>
 		    					Example of <mono>$</mono> being used with <mono>n++</mono>:					
 		    
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline linenums">
-@:=(int, a=0)
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
+		    <pre class="prettyprint inline linenums lang-nift">
+@int a=0
 
-# following two lines are essentially the same
+@# following three lines are essentially the same
 @console("a: ", a)
+@console("a: ", $[a])
 @console("a: $[a]")</pre>
 		    </div>
+		    				</p>
+		    
+		    				<h4 id="hard-coded">
+		    					Hard-coded variables
+		    				</h4>
+		    				<p>
+		    					A number of hard-coded variables are available with both <mono>f++</mono> and <mono>n++</mono> which are outlined in the following sections.
+		    				</p>
+		    
+		    				<h4 id="inject-file-info">
+		    					Injecting file information
+		    				</h4>
+		    				<p>
+		    					The following information about the output file being built can be injected:
+		    
+		    					<center>
+		    						<table id="file_info_syntax_table" class="alt">
+		    							<thead>
+		    								<tr>
+		    									<th>type</th>
+		    									<th>syntax</th>
+		    								</tr>
+		    							</thead>
+		    							<tr>
+		    								<td>name</td>
+		    								<td><mono>$[name]</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>title</td>
+		    								<td><mono>$[title]</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>output file path</td>
+		    								<td><mono>$[output-path]</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>output extension</td>
+		    								<td><mono>$[output-ext]</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>content file path</td>
+		    								<td><mono>$[content-path]</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>content extension</td>
+		    								<td><mono>$[content-ext]</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>script extension</td>
+		    								<td><mono>$[script-ext]</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>template path</td>
+		    								<td><mono>$[template-path]</mono></td>
+		    							</tr>
+		    							<tfoot>
+		    								<tr>
+		    									<th>type</th>
+		    									<th>syntax</th>
+		    								</tr>
+		    							</tfoot>
+		    						</table>
+		    					</center>
+		    				</p>
+		    
+		    				<p>
+		    					For example in a file <mono>template/head.content</mono> you may want something along the lines of:
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
+		    <pre class="prettyprint inline linenums">
+&lt;title>sitename - $[title]&lt;/title></pre>
+		    </div>
+		    				</p>
+		    
+		    				<h4 id="inject-pagination-info">
+		    					Injecting pagination information
+		    				</h4>
+		    				<p>
+		    					The following information about pagination for the output file being built can be injected:
+		    
+		    					<center>
+		    						<table id="pagination_info_syntax_table" class="alt">
+		    							<thead>
+		    								<tr>
+		    									<th>type</th>
+		    									<th>syntax</th>
+		    								</tr>
+		    							</thead>
+		    							<tr>
+		    								<td>number of items to add per page</td>
+		    								<td><mono>$[paginate.no_items_per_page]</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>current number of pages</td>
+		    								<td><mono>$[paginate.no_pages]</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>output file path</td>
+		    								<td><mono>$[paginate.page]</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>current page number</td>
+		    								<td><mono>$[paginate.page_no]</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>code injected between items</td>
+		    								<td><mono>$[paginate.separator]</mono></td>
+		    							</tr>
+		    							</tr>
+		    							<tfoot>
+		    								<tr>
+		    									<th>type</th>
+		    									<th>syntax</th>
+		    								</tr>
+		    							</tfoot>
+		    						</table>
+		    					</center>
+		    				</p>
+		    
+		    				<h4 id="inject-project-info">
+		    					Injecting project information
+		    				</h4>
+		    				<p>
+		    					The following information about the project <mono>Nift</mono> is managing can be injected:
+		    
+		    					<center>
+		    						<table id="project_info_syntax_table" class="alt">
+		    							<thead>
+		    								<tr>
+		    									<th>type</th>
+		    									<th>syntax</th>
+		    								</tr>
+		    							</thead>
+		    							<tr>
+		    								<td>content directory</td>
+		    								<td><mono>$[content-dir]</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>output directory</td>
+		    								<td><mono>$[output-dir]</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>default content extension</td>
+		    								<td><mono>$[default-content-ext]</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>default output extension</td>
+		    								<td><mono>$[default-output-ext]</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>default script extension</td>
+		    								<td><mono>$[default-script-ext]</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>default template</td>
+		    								<td><mono>$[default-template]</mono></td>
+		    							</tr>
+		    							<tfoot>
+		    								<tr>
+		    									<th>type</th>
+		    									<th>syntax</th>
+		    								</tr>
+		    							</tfoot>
+		    						</table>
+		    					</center>
+		    				</p>
+		    
+		    				<h4 id="inject-os-info">
+		    					Injecting operating system information
+		    				</h4>
+		    				<p>
+		    					The following information about the operating system <mono>Nift</mono> is run from can be injected:
+		    
+		    					<center>
+		    						<table id="os_info_syntax_table" class="alt">
+		    							<thead>
+		    								<tr>
+		    									<th>type</th>
+		    									<th>syntax</th>
+		    								</tr>
+		    							</thead>
+		    							<tr>
+		    								<td>build operating system</td>
+		    								<td><mono>$[build-OS]</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>call operating system</td>
+		    								<td><mono>$[current-OS]</mono></td>
+		    							</tr>
+		    							<tfoot>
+		    								<tr>
+		    									<th>type</th>
+		    									<th>syntax</th>
+		    								</tr>
+		    							</tfoot>
+		    						</table>
+		    					</center>
+		    				</p>
+		    
+		    				<h4 id="inject-date-time-tz-info">
+		    					Injecting date, time and timezone information
+		    				</h4>
+		    				<p>
+		    					The following information about dates and times can be injected:
+		    
+		    					<center>
+		    						<table id="date_time_info_syntax_table" class="alt">
+		    							<thead>
+		    								<tr>
+		    									<th>type</th>
+		    									<th>syntax</th>
+		    								</tr>
+		    							</thead>
+		    							<tr>
+		    								<td>date of build</td>
+		    								<td><mono>$[build-date]</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>time of build</td>
+		    								<td><mono>$[build-time]</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>timezone of build</td>
+		    								<td><mono>$[build-timezone]</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>UTC date of build</td>
+		    								<td><mono>$[build-UTC-date]</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>UTC time of build</td>
+		    								<td><mono>$[build-UTC-time]</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>year of build</td>
+		    								<td><mono>$[build-YY]</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>full year of build</td>
+		    								<td><mono>$[build-YYYY]</mono></td>
+		    							</tr>
+		    								<td>date of call</td>
+		    								<td><mono>$[current-date]</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>time of call</td>
+		    								<td><mono>$[current-time]</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>timezone of call</td>
+		    								<td><mono>$[current-timezone]</mono> <br><mono>$[timezone]</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>UTC date of call</td>
+		    								<td><mono>$[current-UTC-date]</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>UTC time of call</td>
+		    								<td><mono>$[current-UTC-time]</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>year of call</td>
+		    								<td><mono>$[current-YY]</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>full year of call</td>
+		    								<td><mono>$[current-YYYY]</mono></td>
+		    							</tr>
+		    								<td>date of loading</td>
+		    								<td><mono>$[load-date]</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>time of loading</td>
+		    								<td><mono>$[load-time]</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>timezone of loading</td>
+		    								<td><mono>$[load-timezone]</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>UTC date of loading</td>
+		    								<td><mono>$[load-UTC-date]</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>UTC time of loading</td>
+		    								<td><mono>$[load-UTC-time]</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>year of loading</td>
+		    								<td><mono>$[load-YY]</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td>full year of loading</td>
+		    								<td><mono>$[load-YYYY]</mono></td>
+		    							</tr>
+		    							<tfoot>
+		    								<tr>
+		    									<th>type</th>
+		    									<th>syntax</th>
+		    								</tr>
+		    							</tfoot>
+		    						</table>
+		    					</center>
 		    				</p>
 		    			</div>
 		    		</section>

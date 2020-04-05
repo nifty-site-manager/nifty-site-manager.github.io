@@ -5,204 +5,39 @@
 		<!-- Features -->
 		<section id="features">
 			<header class="style1">
-				<h2>Index of Nift's hard-coded functions</h2>
+				<h2>Index for Nift comments</h2>
 			</header>
 
-			<!-- Image -->
-			<center>
-				<img src="@pathtofile(site/images/badger-icon.svg)" alt="Nift's badger mascot" width=300 style="margin-bottom:40px">
-			</center>
-
 			<div class="content">
-				<a href="#contents" class="to_top">[contents]</a>
-				<h4 id="contents">
-					Contents
-				</h4>
-				<ul style="text-indent:30px">
-					<li><a href="#syntax">Syntax</a></li>
-					<li><a href="#options">Options</a></li>
-					<li><a href="#index">Index</a></li>
-				</ul>
-
-				<h4 id="syntax">Syntax</h4>
 				<p>
-					The syntax for Nift function calls is as follows:
-<div align="center" style="margin-top:-15px">
-<mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
-funcName{options}(params)
-</pre>
-</div><br>
-<div align="center">
-<mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
-\@funcName{options}(params)
-</pre>
-</div>
+					If you are building <mono>html</mono> or <mono>php</mono> pages then you can use <mono>html</mono> or <mono>php</mono> coments in your content and template files which will also appear in the source code for the built pages. If you are building output files for another language, you should also have no problems using the comment syntax for that language in your content and template files which will appear in the source code for the built output files. The index below is for comments that will be stripped at build-time with <mono>Nift</mono>.
 				</p>
 
-				<h4 id="options">
-					Options
-				</h4>
 				<p>
-					The following options are available for almost all function calls:
-
-					<center class="table">
-						<table id="exprtk_nift_fns_table" class="alt">
-							<thead>
-								<tr>
-									<th>option</th>
-									<th>description</th>
-								</tr>
-							</thead>
-							<tr>
-								<td><mono>!p</mono></td>
-								<td>do not parse parameters</td>
-							</tr>
-							<tr>
-								<td><mono>!v</mono></td>
-								<td>do not replace variables with their values</td>
-							</tr>
-							<tr>
-								<td><mono>1p</mono></td>
-								<td>treat parameter string as one parameter</td>
-							</tr>
-							<tfoot>
-								<tr>
-									<th>option</th>
-									<th>description</th>
-								</tr>
-							</tfoot>
-						</table>
-					</center>
+					The syntax for Nift comments should be reasonably easy to remember as it is very close to the comment syntax used in languages like html, php, javascript, css, bash, python, c/c++, etc.. An added benefit is it being easy to turn comments from those languages in to Nift comments and back again.
 				</p>
 
+				<p>
+					<b>Raw vs. Parsed:</b> Parsed comments have the comment text parsed with Nift's template language, so for example string definitions would be recognised, whereas raw comments do <u>not</u> have the comment text parsed with Nift's template language. 
+				</p>
+
+				<p>
+					<u>Special single-line comments</u> are almost the same as raw single-line comments except that in the source code for the built output file the following line is placed on the same line after the text before <mono>\@!\n</mono>. You cannot put two instances of <mono>\@!\n</mono> on the same line, Nift will throw a build error.
+				</p>
+
+				<a href="#index" class="to_top">[index]</a>
 				<h4 id="index">Index</h4>
-				<a href="#contents" class="to_top">[contents]</a>
+				@#<a href="#contents" class="to_top">[contents]</a>
 				<p id="contents">
-					Below is an index of Nift's hard-coded functions (including functions for defining variables, functions and structs) which can be called from <a href="@pathto(docs/f++)">f++</a> and <a href="@pathto(docs/n++)">n++</a>: 
+					Below is an index of Nift's hard-coded comments which can be called from <a href="@pathto(docs/f++)">f++</a> and <a href="@pathto(docs/n++)">n++</a>: 
 					<ul style="text-indent:30px">
-						<li><a href="@pathtopage(docs/fns/exprtk)">`expression`</a> (evaluate ExprTk expression)</li>
-						<li><a href="@pathtopage(docs/fns/!)">!</a> (not operator)</li>
-						<li><a href="@pathtopage(docs/fns/!=)">!=</a> (not equals operator)</li>
-						<li><a href="@pathtopage(docs/fns/$)">$</a> (print variable)</li>
-						<li><a href="@pathtopage(docs/fns/&&)">&&</a> (and operator)</li>
-						<li><a href="@pathtopage(docs/fns/||)">||</a> (or operator)</li>
-						<li><a href="@pathtopage(docs/fns/:=)">:=</a> (define)</li>
-						<li><a href="@pathtopage(docs/fns/=)">=</a> (assignment operator)</li>
-						<li><a href="@pathtopage(docs/fns/==)">==</a> (equals to operator)</li>
-						<li><a href="@pathtopage(docs/fns/<)">@ent(<)</a> (less than operator)</li>
-						<li><a href="@pathtopage(docs/fns/<=)">@ent(<)=</a> (less than or equals to operator)</li>
-						<li><a href="@pathtopage(docs/fns/<--)">@ent(<)--</a> (remove added trailing whitespace)</li>
-						<li><a href="@pathtopage(docs/fns/>)">@ent(>)</a> (greater than operator)</li>
-						<li><a href="@pathtopage(docs/fns/>=)">@ent(>)=</a> (greater than or equals to operator)</li>
-						<li><a href="@pathtopage(docs/fns/+)">+</a> (addition operator)</li>
-						<li><a href="@pathtopage(docs/fns/++)">++</a> (pre-increment operator)</li>
-						<li><a href="@pathtopage(docs/fns/+++)">+++</a> (post-increment operator)</li>
-						<li><a href="@pathtopage(docs/fns/+=)">+=</a> (addition assignment operator)</li>
-						<li><a href="@pathtopage(docs/fns/-)">-</a> (subtraction operator)</li>
-						<li><a href="@pathtopage(docs/fns/--)">--</a> (pre-decrement operator)</li>
-						<li><a href="@pathtopage(docs/fns/---)">---</a> (post-decrement operator)</li>
-						<li><a href="@pathtopage(docs/fns/-->)">--></a> (skip whitespace)</li>
-						<li><a href="@pathtopage(docs/fns/-=)">-=</a> (subtraction assignment operator)</li>
-						<li><a href="@pathtopage(docs/fns/*)">*</a> (multiplication operator)</li>
-						<li><a href="@pathtopage(docs/fns/*=)">*=</a> (multiplication assignment operator)</li>
-						<li><a href="@pathtopage(docs/fns/divide)">/</a> (division operator)</li>
-						<li><a href="@pathtopage(docs/fns/divideequal)">/=</a> (division assignment operator)</li>
-						<li><a href="@pathtopage(docs/fns/%)">%</a> (mod operator)</li>
-						<li><a href="@pathtopage(docs/fns/%=)">%=</a> (mod assignment operator)</li> <br>
-
-						<li><a href="@pathtopage(docs/fns/break)">break</a></li> <br>
-
-						<li><a href="@pathtopage(docs/fns/cd)">cd</a></li>
-						<li><a href="@pathtopage(docs/fns/console)">console</a></li>
-						<li><a href="@pathtofile('site/docs/fns/console.lock.html')">console.lock</a></li>
-						<li><a href="@pathtofile('site/docs/fns/console.locked.html')">console.locked</a></li>
-						<li><a href="@pathtofile('site/docs/fns/console.unlock.html')">console.unlock</a></li>
-						<li><a href="@pathtopage(docs/fns/content)">content</a></li>
-						<li><a href="@pathtopage(docs/fns/continue)">continue</a></li>
-						<li><a href="@pathtopage(docs/fns/cp)">copy/cp</a></li>
-						<li><a href="@pathtopage(docs/fns/cssinclude)">cssinclude</a></li> <br>
-
-						<li><a href="@pathtopage(docs/fns/dep)">dep</a></li>
-						<li><a href="@pathtopage(docs/fns/ls)">dir/ls</a></li>
-						<li><a href="@pathtopage(docs/fns/do-while)">do-while</a></li> <br>
-
-						<li><a href="@pathtopage(docs/fns/ent)">ent</a></li>
-						<li><a href="@pathtopage(docs/fns/error)">error</a></li>
-						<li><a href="@pathtopage(docs/fns/exit)">exit</a></li>
-						<li><a href="@pathtopage(docs/fns/exprtk)">exprtk</a></li>
-						<li><a href="@pathtofile('site/docs/fns/exprtk.add_package.html')">exprtk.add_package</a></li> <br>
-
-						<li><a href="@pathtopage(docs/fns/f++)">f++</a></li>
-						<li><a href="@pathtopage(docs/fns/faviconinclude)">faviconinclude</a></li>
-						<li><a href="@pathtopage(docs/fns/for)">for</a></li>
-						<li><a href="@pathtopage(docs/fns/forget)">forget</a></li>
-						<li><a href="@pathtopage(docs/fns/function)">function</a></li> <br>
-
-						<li><a href="@pathtopage(docs/fns/getline)">getline</a></li> <br>
-
-						<li><a href="@pathtopage(docs/fns/if)">if</a></li>
-						<li><a href="@pathtopage(docs/fns/imginclude)">imginclude</a></li>
-						<li><a href="@pathtopage(docs/fns/in)">in</a></li>
-						<li><a href="@pathtopage(docs/fns/include)">include</a></li>
-						<li><a href="@pathtopage(docs/fns/input)">inject/input</a></li>
-						<li><a href="@pathtopage(docs/fns/is_const)">is_const</a></li>
-						<li><a href="@pathtopage(docs/fns/is_private)">is_private</a></li> <br>
-
-						<li><a href="@pathtopage(docs/fns/join)">join</a></li>
-						<li><a href="@pathtopage(docs/fns/jsinclude)">jsinclude</a></li> <br>
-
-						<li><a href="@pathtopage(docs/fns/layer)">layer</a></li>
-						<li><a href="@pathtopage(docs/fns/link)">link</a></li>
-						<li><a href="@pathtopage(docs/fns/ls)">ls/dir</a></li>
-						<li><a href="@pathtopage(docs/fns/lua)">lua</a></li>
-						<li><a href="@pathtopage(docs/fns/lua_addnsmfns)">lua_addnsmfns</a></li>
-						<li><a href="@pathtopage(docs/fns/lua_getglobal)">lua_getglobal</a></li>
-						<li><a href="@pathtopage(docs/fns/lua_gettop)">lua_gettop</a></li>
-						<li><a href="@pathtopage(docs/fns/lua_pop)">lua_pop</a></li>
-						<li><a href="@pathtopage(docs/fns/lua_pushlightuserdata)">lua_pushlightuserdata</a></li>
-						<li><a href="@pathtopage(docs/fns/lua_pushnumber)">lua_pushnumber</a></li>
-						<li><a href="@pathtopage(docs/fns/lua_pushstring)">lua_pushstring</a></li>
-						<li><a href="@pathtopage(docs/fns/lua_remove)">lua_remove</a></li>
-						<li><a href="@pathtopage(docs/fns/lua_setglobal)">lua_setglobal</a></li>
-						<li><a href="@pathtopage(docs/fns/lua_tonumber)">lua_tonumber</a></li>
-						<li><a href="@pathtopage(docs/fns/lua_tostring)">lua_tostring</a></li> <br>
-
-						<li><a href="@pathtopage(docs/fns/mv)">move/mv</a></li> <br>
-
-						<li><a href="@pathtopage(docs/fns/n++)">n++</a></li>
-						<li><a href="@pathtopage(docs/fns/nsm_lang)">nsm_lang</a></li>
-						<li><a href="@pathtopage(docs/fns/nsm_mode)">nsm_mode</a></li> <br>
-
-						<li><a href="@pathtopage(docs/fns/parse)">parse</a></li>
-						<li><a href="@pathtopage(docs/fns/pathto)">pathto</a></li>
-						<li><a href="@pathtopage(docs/fns/pathtofile)">pathtofile</a></li>
-						<li><a href="@pathtopage(docs/fns/pathtopage)">pathtopage</a></li>
-						<li><a href="@pathtopage(docs/fns/precision)">precision</a></li>
-						<li><a href="@pathtopage(docs/fns/pwd)">pwd</a></li> <br>
-
-						<li><a href="@pathtopage(docs/fns/quit)">quit</a></li>
-						<li><a href="@pathtopage(docs/fns/quote)">quote</a></li> <br>
-
-						<li><a href="@pathtopage(docs/fns/read)">read</a></li>
-						<li><a href="@pathtopage(docs/fns/return)">return</a></li> <br>
-
-						<li><a href="@pathtopage(docs/fns/scope)">scope</a></li>
-						<li><a href="@pathtopage(docs/fns/script)">script</a></li>
-						<li><a href="@pathtopage(docs/fns/size)">size</a></li>
-						<li><a href="@pathtopage(docs/fns/struct)">struct</a></li>
-						<li><a href="@pathtopage(docs/fns/substr)">substr</a></li>
-						<li><a href="@pathtopage(docs/fns/system)">sys/system</a></li> <br>
-
-						<li><a href="@pathtopage(docs/fns/touch)">touch</a></li>
-						<li><a href="@pathtopage(docs/fns/type)">type</a></li> <br>
-
-						<li><a href="@pathtopage(docs/fns/unquote)">unquote</a></li> <br>
-
-						<li><a href="@pathtopage(docs/fns/valid_type)">valid_type</a></li> <br>
-
-						<li><a href="@pathtopage(docs/fns/warning)">warning</a></li>
-						<li><a href="@pathtopage(docs/fns/while)">while</a></li>
-						<li><a href="@pathtopage(docs/fns/write)">write</a></li>
+						<li><a href="@pathtopage(docs/fns/!newline)">!\n</a> (special single-line comment)</li>
+						<li><a href="@replace_all(@pathtopage(docs/fns/#), '#', '%23')">#</a> (raw single-line comment)</li>
+						<li><a href="@replace_all(@pathtopage(docs/fns/#--), '#', '%23')">#--</a> (parsed multi-line comment)</li>
+						<li><a href="@replace_all(@pathtopage(docs/fns/<#--), '#', '%23')"><\#--</a> (raw multi-line comment)</li>
+						<li><a href="@pathtopage(docs/fns/--divdiv)">--//</a> (parsed single-line comment)</li>
+						<li><a href="@pathtopage(docs/fns/div*)">/*</a> (raw multi-line comment)</li>
+						<li><a href="@pathtopage(docs/fns/divdiv)">//</a> (raw single-line comment)</li>
 					</ul>
 				</p>
 			</div>
