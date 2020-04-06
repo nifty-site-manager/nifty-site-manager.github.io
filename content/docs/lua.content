@@ -34,6 +34,7 @@
 				<ul style="text-indent:30px">
 					<li><a href="#interpreter">Lua interpreter</a></li>
 					<li><a href="#scripts">Running Lua scripts</a></li>
+					<li><a href="#exprtk-lua">ExprTk from Lua</a></li>
 					<li><a href="#lua-f++">Lua from f++</a></li>
 					<li><a href="#lua-n++">Lua from n++</a></li>
 					<li><a href="#nift-fns">Nift functions</a></li>
@@ -80,6 +81,19 @@ nift run path/script-name.lua
 <pre class="prettyprint inline">
 nsm run -lua path/script-name.ext
 nift run -lua path/script-name.ext
+</pre>
+</div>
+				</p>
+
+				<h4 id="exprtk-lua">
+					ExprTk from Lua
+				</h4>
+				<p>
+					You can run <mono>ExprTk</mono> code from <mono>Lua</mono> using:					
+
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline lang-lua">
+exprtk("ExprTk code")
 </pre>
 </div>
 				</p>
@@ -305,7 +319,7 @@ Expression Grammars (PEGs)</li>
 					Installing LuaRocks on FreeBSD
 				</h4>
 				<p>
-					Instructions for installing <mono>LuaRocks</mono> from source for <mono>Lua v5.1</mono> can be found <a href="https://www.cambus.net/luarocks-on-freebsd/">here</a>. Alternatively, <mono>LuaRocks</mono> can be installed for <mono>Lua <u>v5.2</u></mono> through <mono>pkg</mono> using:
+					Instructions for installing <mono>LuaRocks</mono> from source for <mono>Lua v5.1</mono> can be found <a href="https://www.cambus.net/luarocks-on-freebsd/">here</a>. Alternatively, <mono>LuaRocks</mono> can be installed for <mono>Lua v5.2</mono> through <mono>pkg</mono> using:
 
 <div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="inline">
