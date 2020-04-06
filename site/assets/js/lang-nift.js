@@ -60,7 +60,7 @@ PR['registerLangHandler'](
          
          // A long bracketed block not preceded by -- is a string
          [PR['PR_STRING'],  /^\[(=*)\[[\s\S]*?(?:\]\1\]|$)/],
-         [PR['PR_KEYWORD'], /^(?:and|begin|break|console|const|do|else|elseif|end|endl|exit|false|for|function|if|in|local|nil|not|option|options|or|param|params|print|private|quit|read|repeat|return|require|start|struct|then|true|type|until|while|write)\b/, null],
+         [PR['PR_KEYWORD'], /^(?:and|begin|break|close|console|const|do|else|elseif|end|endl|exit|false|for|function|getline|if|in|local|nil|not|option|options|or|param|params|print|private|quit|read|repeat|return|require|start|struct|then|true|type|until|while|write)\b/, null],
          [PR['PR_KEYWORD'], /^(?:bin|cd|del|dir|copy|cp|ls|move|mv|remove|rm|sudo|usr)\b/, null],
          [PR['PR_LITERAL'], /^(?:lua|lua_addnsmfns|lua_getglobal|lua_gettop|lua_pop|lua_pushlightuserdata|lua_pushnumber|lua_pushstring|lua_remove|lua_setglobal|lua_tonumber|lua_tostring|nsm_setnumber|nsm_setstring|nsm_tolightuserdata|nsm_tonumber|nsm_tostring|nsm_write|:=)\b/, null],
          [PR['PR_LITERAL'], /^(?:exprtk|exprtk.add_package)\b/, null],

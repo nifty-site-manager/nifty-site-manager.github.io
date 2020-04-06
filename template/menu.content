@@ -45,6 +45,7 @@
 						<li><a href="@pathto(docs/nift_commands)">Nift Commands</a></li>
 						<li><a href="@pathto(docs/template_files)">Template Files</a></li>
 						<li><a href="@pathto(docs/fns)">Functions</a></li>
+						<li><a href="@pathto(docs/types)">Types</a></li>
 						<li><a href="@pathto(docs/f++)">f++ (scripting language)</a></li>
 						<li><a href="@pathto(docs/n++)">n++ (template language)</a></li>
 						<li><a href="@pathto(docs/lua)">Lua(JIT)</a></li>

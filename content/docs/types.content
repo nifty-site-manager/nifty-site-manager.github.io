@@ -1,0 +1,56 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">Types</div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<header class="style1">
+				<h2>Nift's type system</h2>
+			</header>
+
+			<!-- Image -->
+			<center>
+				<img src="@pathtofile(site/images/badger-icon.svg)" alt="Nift's badger mascot" width=300 style="margin-bottom:40px">
+			</center>
+
+			<div class="content">
+
+				<h4>
+					Introduction
+				</h4>
+				<p>
+					Both Nift's in-built scripting language <mono>f++</mono> and in-built template language <mono>n++</mono> have a type system implemented. The purpose of this page is to index the different types that are available, see <a href="@pathtopage(docs/fns/:=)">here</a> for general documentation on how to define variables and <a href="@pathtopage(docs/fns/struct)">here</a> for documentation on syntax for user-defined structs/types. 
+				</p>
+
+				<a href="#index" class="to_top">[index]</a>
+				<h4 id="index">Index</h4>
+				<ul style="text-indent:30px">
+					<li><a href="@pathtopage(docs/types/bool)">bool</a> (boolean)</li>
+					<li><a href="@pathtopage(docs/types/char)">char</a> (character)</li>
+					<li><a href="@pathtopage(docs/types/double)">double</a> (floating point)</li>
+					<li><a href="@pathtopage(docs/types/fstream)">fstream</a> (file stream)</li>
+					<li><a href="@pathtopage(docs/types/ifstream)">ifstream</a> (input file stream)</li>
+					<li><a href="@pathtopage(docs/types/int)">int</a> (integer)</li>
+					<li><a href="@pathtopage(docs/types/string)">string</a> (string)</li>
+					<li><a href="@pathtopage(docs/types/ofstream)">ofstream</a> (output file stream)</li>
+					<li><a href="@pathtopage(docs/types/std::bool)">std::bool</a> (standard bool)</li>
+					<li><a href="@pathtopage(docs/types/std::char)">std::char</a> (standard character)</li>
+					<li><a href="@pathtopage(docs/types/std::double)">std::double</a> (standard floating point)</li>
+					<li><a href="@pathtopage(docs/types/std::int)">std::int</a> (standard integer)</li>
+					<li><a href="@pathtopage(docs/types/std::string)">std::string</a> (standard string)</li>
+				</ul>
+
+				<h4>
+					Coming soon
+				</h4>
+				<p>
+					There will be more types added soon, including but not limited to:
+					<ul>
+						<li>c++ single-dimensional vectors for <mono>bool</mono>, <mono>int</mono>, <mono>double</mono>, <mono>char</mono>, <mono>string</mono>, etc.</li>
+						<li>standard libraries for both <mono>f++</mono> and <mono>n++</mono> including things like arrays and vectors for arbitrary types (which can handle multiple dimensions)</li>
+					</ul>
+				</p>
+			</div>
+		</section>
+	</div>
+</section>
