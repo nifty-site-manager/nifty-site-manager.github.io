@@ -10,7 +10,7 @@
 
 			<!-- Image -->
 			<center>
-				<img src="@pathtofile(site/images/badger-icon.svg)" alt="Nift's badger mascot" width=300 style="margin-bottom:40px">
+				<img src="@pathtofile(site/images/banner-nift.png)" alt="Nift banner" width="500px" style="max-width:90%; border-radius:20px; margin-bottom: 60px; opacity: 0.8">
 			</center>
 
 			<div class="content">
