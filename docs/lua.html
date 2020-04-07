@@ -210,6 +210,10 @@ exprtk("ExprTk code")
 		    </div>
 		    				</p>
 		    
+		    				<p>
+		    					<b>Note:</b> When using the interpreter or running a script the ability to call <mono>ExprTk</mono> is added for you, if you want the ability at other times inside <mono>f++</mono> first call <mono>lua_addnsmfns()</mono>, similarly for inside <mono>n++</mono> first call <mono>@lua_addnsmfns()</mono>. 
+		    				</p>
+		    
 		    				<h4 id="lua-f++">
 		    					Lua from f++
 		    				</h4>
@@ -262,7 +266,7 @@ lua
 		    					Nift functions
 		    				</h4>
 		    				<p>
-		    					The following functions specific to Nift may be made available inside <mono>Lua</mono> code. When using the interpreter or running a script these functions will be added for you, if you want to use them for <mono>Lua</mono> code inside <mono>f++</mono> first call <mono>lua_addnsmfns()</mono>, similarly for inside <mono>n++</mono> first call <mono>@lua_addnsmfns()</mono>. 
+		    					The following functions specific to Nift may be made available inside <mono>Lua</mono> code. When running an interactive REPL session or running a Lua script these functions will be added for you, if you want to use them for <mono>Lua</mono> code inside <mono>f++</mono> first call <mono>lua_addnsmfns()</mono>, similarly for inside <mono>n++</mono> first call <mono>@lua_addnsmfns()</mono>. 
 		    
 		    					<center class="table">
 		    						<table id="lua_nift_fns_table" class="alt">
