@@ -16,6 +16,8 @@
 
 		    @content()
 
+			@input(template/sponsors.content)
+
 			@input(template/footer.content)
 		</div>
 

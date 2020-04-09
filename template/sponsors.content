@@ -1,0 +1,12 @@
+<!-- Sponsors -->
+<section id="sponsors" class="wrapper style6">
+	<div class="title">Sponsors</div>
+
+	<div class="container">
+		<div id="copyright">
+			<noselect>
+				<center><a href="https://zeit.co"><img src="@pathtofile(site/images/zeit-white.svg)" title="ZEIT Now" alt="ZEIT NOW logo" width="150px" style="max-width:80%"></a></center>
+			</noselect>
+		</div>
+	</div>
+</section>

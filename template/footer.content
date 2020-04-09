@@ -33,6 +33,8 @@
 					<li><a href="@pathto(tos)">Terms of Service</a></li>
 					<li><a href="@pathto(privacy_policy)">Privacy Policy</a></li>
 				</ul>
+
+				<center><a href="https://zeit.co"><img src="@pathtofile(site/images/powered-by-zeit.svg)" alt="Powered by ZEIT badge" width="234" style="max-width:80%"></a></center>
 			</noselect>
 		</div>
 	</div>

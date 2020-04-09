@@ -2130,6 +2130,17 @@ input, select, textarea {
 				border: solid 10px #fff;
 			}
 
+		.wrapper.style6 {
+			background: #303030; /*#30506e #1B1B1B #353839*/
+			color: #dcdee0;
+			font-size: 14pt;
+		}
+
+			.wrapper.style6 .title {
+				background: #303030;
+				color: #dcdee0;
+			}
+
 /* Page Wrapper */
 
 	#page-wrapper > section {

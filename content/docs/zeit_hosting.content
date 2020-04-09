@@ -1,27 +1,27 @@
 <!-- Main -->
 <section id="main" class="wrapper style2">
-	<div class="title">ZEIT Hosting</div>
+	<div class="title">ZEIT Now Hosting</div>
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
 			<header class="style1">
-				<h2>How to host a website on ZEIT</h2>
+				<h2>How to host a website on ZEIT Now</h2>
 			</header>
 
 			<center>
-				<a href="https://www.zeit.co/"><img src="@pathtofile(site/images/zeit-dark.png)" id="zeit-logo" alt="ZEIT logo" width=200 style="max-width: 45%; margin-bottom: 40px"></a>
+				<a href="https://www.zeit.co/"><img src="@pathtofile(site/images/zeit-black.svg)" id="zeit-logo" alt="ZEIT Now logo" width=200 style="max-width: 45%; margin-bottom: 40px"></a>
 			</center>
 
 			<div class="content">
 				<h4>
-					Hosting on ZEIT
+					Hosting on ZEIT Now
 				</h4>
 				<p>
 					Note if you have any dyanmic pages (eg. are using php) then you will need to use an alternative for hosting.
 				</p>
 
 				<p>
-					Information on ZEIT may be found <a href="https://zeit.co/docs">here</a>. The <a href="https://zeit.co/pricing">pricing</a> for ZEIT is quite generous:
+					Information on ZEIT Now may be found <a href="https://zeit.co/docs">here</a>. The <a href="https://zeit.co/pricing">pricing</a> for ZEIT Now is quite generous:
 					<ul>
 						<li>Hobby use is free forever</li>
 						<li>Pro accounts are $20/month per team member</li>
@@ -29,7 +29,7 @@
 				</p>
 
 				<p>
-					We find the best way to host a website on ZEIT is to upload/push your website to a respository on BitBucket, GitHub or GitLab, then whenever you push website changes to the repository they are automatically deployed by ZEIT. 
+					We find the best way to host a website on ZEIT Now is to upload/push your website to a respository on BitBucket, GitHub or GitLab, then whenever you push website changes to the repository they are automatically deployed by ZEIT Now. 
 				</p>
 
 				<p>
@@ -37,22 +37,22 @@
 				</p>
 
 				<p>
-					Once you have a website on BitBucket, GitHub or GitLab you can host it on ZEIT by following these steps:
+					Once you have a website on BitBucket, GitHub or GitLab you can host it on ZEIT Now by following these steps:
 					<ol>
-						<li>Singup for ZEIT and login using either BitBucket, GitHub, GitLab;</li>
+						<li>Singup for ZEIT Now and login using either BitBucket, GitHub, GitLab;</li>
 						<li>Click on <a href="https://zeit.co/import">Import Project</a>;</li>
 						<li>Choose <mono>From Git Repository</mono> and select the tab for the provider you want to use;</li>
-						<li>Follow the instructions about linking ZEIT with BitBucket, GitHub and/or GitLab;</li>
+						<li>Follow the instructions about linking ZEIT Now with BitBucket, GitHub and/or GitLab;</li>
 						<li>Select the repository containing your website;</li>
 						<li>Pick a name for your project (using the same name as the repository is a good choice);</li>
 						<li>Enter the directory containing the website (typically <mono>./</mono> if you forked/imported a template from BitBucket or GitHub and <mono>site/</mono> if you forked/imported a template from GitLab);</li>
-						<li>Leave the build and development commands blank (note, you are then expected to build your website before pushing changes through <mono>git</mono>, though you can put the Ubuntu Nift binary from GitHub releases in your repository and build on ZEIT's servers with that) and enter the directory containing the website (again typically <mono>./</mono> if you forked/imported a template from BitBucket or GitHub and <mono>site/</mono> if you forked/imported a template from GitLab);</li>
+						<li>Leave the build and development commands blank (note, you are then expected to build your website before pushing changes through <mono>git</mono>, though you can put the Ubuntu Nift binary from GitHub releases in your repository and build on ZEIT Now's servers with that) and enter the directory containing the website (again typically <mono>./</mono> if you forked/imported a template from BitBucket or GitHub and <mono>site/</mono> if you forked/imported a template from GitLab);</li>
 						<li>Click deploy site.</li>
 					</ol>
 				</p>
 
 				<p>
-					If you go in to <mono>View Domains</mono> you can add a custom domain, ZEIT will sort out auto renewing Let's encrypt certificates for you which is really handy! 
+					If you go in to <mono>View Domains</mono> you can add a custom domain, ZEIT Now will sort out auto renewing Let's encrypt certificates for you which is really handy! 
 				</p>
 			</div>
 		</section>
