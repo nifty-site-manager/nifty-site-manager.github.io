@@ -112,242 +112,59 @@
 
 		    <!-- Main -->
 		    <section id="main" class="wrapper style2">
-		    	<div class="title">ExprTk</div>
+		    	<div class="title">ZEIT Hosting</div>
 		    	<div class="container">
 		    		<!-- Features -->
 		    		<section id="features">
 		    			<header class="style1">
-		    				<h2>Embedded <mono>ExprTk</mono></h2>
+		    				<h2>How to host a website on ZEIT</h2>
 		    			</header>
 		    
+		    			<center>
+		    				<a href="https://www.zeit.co/"><img src="../images/zeit-dark.png" id="zeit-logo" alt="ZEIT logo" width=200 style="max-width: 45%; margin-bottom: 40px"></a>
+		    			</center>
+		    
 		    			<div class="content">
-		    				<p>
-		    					<mono>Nift</mono> has the C++ Mathematical Expression Toolkit Library (<mono>ExprTk</mono>) embedded (<a href="http://www.partow.net/programming/exprtk/index.html">official website</a>, <a href="https://github.com/ArashPartow/exprtk">GitHub</a>). <mono>ExprTk</mono> is a simple to use, easy to integrate and <a href="#benchmark">extremely efficient</a> run-time mathematical expression parser and evaluation engine. <mono>ExprTk</mono> supports numerous forms of functional, logical and vector processing semantics and is very easily extendible.
-		    				</p>
-		    
-		    				<a href="#contents" class="to_top">[contents]</a>
-		    
-		    				<h4 id="contents">
-		    					Contents
-		    				</h4>
-		    				<ul style="text-indent:30px">
-		    					<li><a href="#interpreter">ExprTk interpreter</a></li>
-		    					<li><a href="#scripts">Running ExprTk scripts</a></li>
-		    					<li><a href="#exprtk-f++">ExprTk from f++</a></li>
-		    					<li><a href="#exprtk-n++">ExprTk from n++</a></li>
-		    					<li><a href="#exprtk-conditions">ExprTk with n++/f++ conditions</a></li>
-		    					<li><a href="#exprtk-vars">ExprTk access to Nift variables</a></li>
-		    					<li><a href="#nift-fns">Nift functions</a></li>
-		    					<li><a href="#benchmark">Benchmark results</a></li>
-		    				</ul>
-		    
-		    				<h4 id="interpreter">
-		    					ExprTk interpreter
+		    				<h4>
+		    					Hosting on ZEIT
 		    				</h4>
 		    				<p>
-		    					<mono>Nift</mono> has an <mono>ExprTk</mono> interpreter that you can start with either <mono>nsm interp -exprtk</mono> or <mono>nift interp -exprtk</mono>.
+		    					Note if you have any dyanmic pages (eg. are using php) then you will need to use an alternative for hosting.
 		    				</p>
 		    
 		    				<p>
-		    					In Nift's interpreter mode the prompt will just display the language. If you would like the prompt to also display the present working directory (up to using half the width of the console) you can switch to the shell mode using <mono>nsm_mode("sh")</mono>. You can switch back again with <mono>nsm_mode("interp")</mono>.
+		    					Information on ZEIT may be found <a href="https://zeit.co/docs">here</a>. The <a href="https://zeit.co/pricing">pricing</a> for ZEIT is quite generous:
+		    					<ul>
+		    						<li>Hobby use is free forever</li>
+		    						<li>Pro accounts are $20/month per team member</li>
+		    						<li><a href="https://zeit.co/contact/sales">Enterprise</a> accounts can be made suited to your needs</li>
 		    				</p>
 		    
 		    				<p>
-		    					You can switch to one of the other languages available in Nift's interpreter using <mono>nsm_lang(langStr)</mono> where <mono>langStr</mono> is one of <mono>f++</mono>, <mono>n++</mono>, <mono>lua</mono> or <mono>exprtk</mono>.
-		    				</p>
-		    
-		    
-		    				<h4 id="scripts">
-		    					Running ExprTk scripts
-		    				</h4>
-		    				<p>
-		    					If you have an <mono>ExprTk</mono> script saved in a file <mono>path/script-name.exprtk</mono> you can run it with either of the following:
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-nsm run path/script-name.exprtk
-nift run path/script-name.exprtk
-</pre>
-		    </div>
+		    					We find the best way to host a website on ZEIT is to upload/push your website to a respository on BitBucket, GitHub or GitLab, then whenever you push website changes to the repository they are automatically deployed by ZEIT. 
 		    				</p>
 		    
 		    				<p>
-		    					If the script has a different extension, say <mono>.ext</mono>, you can run the script with either of the following:
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-nsm run -exprtk path/script-name.ext
-nift run -exprtk path/script-name.ext
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<h4 id="exprtk-f++">
-		    					ExprTk from f++
-		    				</h4>
-		    				<p>
-		    					You can run <mono>ExprTk</mono> code from <mono>f++</mono> using any of the following (without needing the comment syntax):					
-		    
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-exprtk(expression)
-</pre>
-		    </div>
+		    					By far the easiest way to host a website on BitBucket, GitHub or GitLab is to import or fork an existing site repository from BitBucket, GitHub, GitLab or any other code sharing platform. See <a href="../resources/templates.html">here</a> for a variety of templates you can use to make websites.
 		    				</p>
 		    
 		    				<p>
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-`expression`
-</pre>
-		    </div>
+		    					Once you have a website on BitBucket, GitHub or GitLab you can host it on ZEIT by following these steps:
+		    					<ol>
+		    						<li>Singup for ZEIT and login using either BitBucket, GitHub, GitLab;</li>
+		    						<li>Click on <a href="https://zeit.co/import">Import Project</a>;</li>
+		    						<li>Choose <mono>From Git Repository</mono> and select the tab for the provider you want to use;</li>
+		    						<li>Follow the instructions about linking ZEIT with BitBucket, GitHub and/or GitLab;</li>
+		    						<li>Select the repository containing your website;</li>
+		    						<li>Pick a name for your project (using the same name as the repository is a good choice);</li>
+		    						<li>Enter the directory containing the website (typically <mono>./</mono> if you forked/imported a template from BitBucket or GitHub and <mono>site/</mono> if you forked/imported a template from GitLab);</li>
+		    						<li>Leave the build and development commands blank (note, you are then expected to build your website before pushing changes through <mono>git</mono>, though you can put the Ubuntu Nift binary from GitHub releases in your repository and build on ZEIT's servers with that) and enter the directory containing the website (again typically <mono>./</mono> if you forked/imported a template from BitBucket or GitHub and <mono>site/</mono> if you forked/imported a template from GitLab);</li>
+		    						<li>Click deploy site.</li>
+		    					</ol>
 		    				</p>
 		    
 		    				<p>
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-exprtk
-{
-	// block of ExprTk code
-}
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<h4 id="exprtk-n++">
-		    					ExprTk from n++
-		    				</h4>
-		    				<p>
-		    					You can run <mono>ExprTk</mono> code from <mono>n++</mono> using any of the following (without needing the comment syntax):					
-		    
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-@exprtk(expression)
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-@`expression`
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-@exprtk
-{
-	// block of ExprTk code
-}</pre>
-		    </div>
-		    				</p>
-		    
-		    				<h4 id="exprtk-conditions">
-		    					ExprTk with n++/f++ conditions
-		    				</h4>
-		    				<p>
-		    					You can use <mono>ExprTk</mono> with conditions for <mono>if</mono>, <mono>else-if</mono> and <mono>else</mono> statements, along with <mono>do-while</mono>, <mono>for</mono>, <mono>while</mono> loops. You can also use <mono>ExprTk</mono> for the post-loop increment code with <mono>for</mono> loops (ie. the code after the second <mono>;</mono>). For example:
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-for(int i=0; i&lt;10; i+=1)
-	console("i: ", i)</pre>
-		    </div>
-		    				</p>
-		    
-		    				<h4 id="exprtk-vars">
-		    					ExprTk access to Nift variables
-		    				</h4>
-		    				<p>
-		    					<mono>ExprTk</mono> has access to <mono>Nift</mono> variables of the following types: <mono>bool</mono>, <mono>int</mono>, <mono>double</mono>, <mono>char</mono>, <mono>string</mono> and <mono>std::vector&lt;double&gt;</mono>. You can simply use the variables as if they had been defined inside <mono>ExprTk</mono>, although a <mono>char</mono> is treated as a <mono>string</mono>, and a <mono>bool</mono> or an <mono>int</mono> is treated as a <mono>double</mono>.
-		    				</p>
-		    
-		    				<h4 id="nift-fns">
-		    					Nift functions
-		    				</h4>
-		    				<p>
-		    					The following functions specific to <mono>Nift</mono> are available inside <mono>ExprTk</mono> code.
-		    
-		    					<center class="table">
-		    						<table id="exprtk_nift_fns_table" class="alt">
-		    							<thead>
-		    								<tr>
-		    									<th>syntax</th>
-		    									<th>example</th>
-		    									<th>about</th>
-		    								</tr>
-		    							</thead>
-		    							<tr>
-		    								<td><mono>cd(string)</mono></td>
-		    								<td><mono>cd('~/')</td>
-		    								<td>change directory</td>
-		    							</tr>
-		    							<tr>
-		    								<td><mono>sys(string)</mono></td>
-		    								<td><mono>sys('ls *.txt')</td>
-		    								<td>execute system call/command</td>
-		    							</tr>
-		    							<tr>
-		    								<td><mono>nsm_setnumber(string, number)</mono></td>
-		    								<td><mono>nsm_setnumber('i', 0)</td>
-		    								<td>set Nift variable from number</td>
-		    							</tr>
-		    							<tr>
-		    								<td><mono>nsm_setstring(string, string)</mono></td>
-		    								<td><mono>nsm_setstring('str', 'hello!')</td>
-		    								<td>set Nift variable from string</td>
-		    							</tr>
-		    							<tr>
-		    								<td><mono>nsm_tonumber(string)</mono></td>
-		    								<td><mono>nsm_tonumber('i')</td>
-		    								<td>get number from Nift variable</td>
-		    							</tr>
-		    							<tr>
-		    								<td><mono>nsm_tostring(string)</mono></td>
-		    								<td><mono>nsm_tostring('str')</td>
-		    								<td>get string from Nift variable</td>
-		    							</tr>
-		    							<tr>
-		    								<td><mono>nsm_write(ostream, params)</mono></td>
-		    								<td><mono>nsm_write(console, 'x: ', x, endl)</td>
-		    								<td>write to console, output file (ofile), or a stream</td>
-		    							</tr>
-		    							<tfoot>
-		    								<tr>
-		    									<th>syntax</th>
-		    									<th>example</th>
-		    									<th>about</th>
-		    								</tr>
-		    							</tfoot>
-		    						</table>
-		    					</center>
-		    				</p>
-		    
-		    				<h4 id="benchmark">
-		    					Benchmark results
-		    				</h4>
-		    				<p>
-		    					Results from <a href="https://github.com/ArashPartow/math-parser-benchmark-project">The Great C++ Mathematical Expression Parser Benchmark</a> are below:
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-Scores:
-  #     Parser                  Type            Points   Score   Failures
-  -----------------------------------------------------------------------
-  00    ExprTk                  double          901      100     0
-  01    ExprTkFloat             float           740       82     9
-  02    muparserSSE             float           726       93     9
-  03    METL                    double          686       52     0
-  04    FParser 4.5             double          584       43     0
-  05    atmsp 1.0.4             double          530       38     2
-  06    muparser 2.2.4          double          517       37     0
-  07    muparser 2.2.4 (omp)    double          444       35     0
-  08    MTParser                double          381       34     0
-  09    MathExpr                double          360       29     2
-  10    TinyExpr                double          354       31     2
-  11    Lepton                  double          134        8     2
-  12    muparserx               double           86        5     0
-</pre>
-		    </div>
+		    					If you go in to <mono>View Domains</mono> you can add a custom domain, ZEIT will sort out auto renewing Let's encrypt certificates for you which is really handy! 
 		    				</p>
 		    			</div>
 		    		</section>
