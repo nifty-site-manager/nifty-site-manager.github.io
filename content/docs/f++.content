@@ -10,17 +10,17 @@
 
 			<!-- Image -->
 			<center>
-				<img src="@pathtofile(site/images/devil.png)" alt="Nift's unofficial Tasmanian devil mascot" width=300 style="margin-bottom:40px">
+				<img src="@pathtofile(site/images/banner-retro-neon-rainbow.png)" alt="Nift retro neon rainbow banner" width="500px" style="max-width:90%; border-radius:20px; margin-bottom: 60px">
 			</center>
 
 			<div class="content">
 				<p>
-					<mono>f++</mono> is Nift's in-built scripting language. The <mono>++</mono> comes from the language being developed in C++, while the <mono>f</mono> comes from functions playing a central role basically everywhere in the language and can be thought of as standing for any of the following: 
+					<mono>f++</mono> is Nift's in-built scripting language. The <mono>++</mono> comes from the language being developed in c++, while the <mono>f</mono> comes from functions playing a central role basically everywhere in the language and can be thought of as standing for any of the following: 
 					<ul style="margin-top:-20px">
+						<li><mono>frankenstein++</mono> (f++/n++/Lua/ExprTK)</li>
 						<li><mono>functions++</mono></li>
 						<li><mono>functions everywhere</mono></li>
 						<li><mono>functions with superpowers</mono></li>
-						<li><mono>Frankenstein++</mono> (f++/n++/Lua/ExprTK)</li>
 					</ul>
 				</p>
 

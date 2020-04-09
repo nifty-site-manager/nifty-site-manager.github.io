@@ -10,12 +10,12 @@
 
 			<!-- Image -->
 			<center>
-				<img src="@pathtofile(site/images/devil.png)" alt="Nift's unofficial Tasmanian devil mascot" width=300 style="margin-bottom:40px">
+				<img src="@pathtofile(site/images/banner-planet-palms.png)" alt="Nift planet palms banner" width="500px" style="max-width:90%; border-radius:20px; margin-bottom: 60px">
 			</center>
 
 			<div class="content">
 				<p>
-					Nift has its own in-built template language <mono>n++</mono>. The <mono>n</mono> comes from <mono>Nift</mono>/<mono>nsm</mono>, while the <mono>++</mono> comes from the language being developed in C++. 
+					Nift has its own in-built template language <mono>n++</mono>. The <mono>n</mono> comes from <mono>Nift</mono>/<mono>nsm</mono>, while the <mono>++</mono> comes from the language being developed in c++. 
 				</p>
 
 				<a href="#contents" class="to_top">[contents]</a>

@@ -39,7 +39,7 @@
 				</center>
 
 				<p>
-					For creating static websites on code collaboration sites offering repository management like <a href="https://aws.amazon.com/codecommit/">Amazon CodeCommit</a>, <a href="https://pages.bitbucket.io/">BitBucket</a>, <a href="https://pages.github.com/">GitHub</a> and <a href="https://about.gitlab.com/product/pages/">GitLab</a> you can import/fork, rename and clone a site repository template and work from that (use <mono>nsm clone <i>repository-url</i></mono>). I personally find hosting on GitLab the easiest, because you only need one branch (standard <mono>master</mono>) then have it deploy the site when you push using a <mono>.gitlab-ci.yaml</mono> file.
+					For creating static websites on code collaboration sites offering repository management like <a href="https://aws.amazon.com/codecommit/">Amazon CodeCommit</a>, <a href="https://pages.bitbucket.io/">BitBucket</a>, <a href="https://pages.github.com/">GitHub</a> and <a href="https://about.gitlab.com/product/pages/">GitLab</a> you can import/fork, rename and clone a site repository template and work from that (use <mono>nsm clone <i>repository-url</i></mono>). I personally find hosting on GitLab easier than BitBucket or GitHub, because you only need one branch (standard <mono>master</mono>, though you can use one branch on BitBucket and GitHub when hosting with places like <a href="https://zeit.co/">ZEIT</a> or <a href="https://netlify.com">Netlify</a> as well) then have it deploy the site when you push using a <mono>.gitlab-ci.yaml</mono> file.
 				</p>
 
 				<p>
@@ -51,7 +51,7 @@
 				</p>
 
 				<p>
-					You can also combine any of the above hosting options with <a href="https://netlify.com">Netlify</a>, which works well for custom domains (including subdomains) and automatically renews <a href="https://letsencrypt.org/">Let's Encrypt</a> certificates for your websites. Netlify also has built in <a href="https://www.netlify.com/docs/form-handling/">form handling</a> and a full suite of <a href="https://www.netlify.com/docs/identity/">authentication functionality</a> backed by the <a href="https://www.gotrueapi.org/">GoTrue API</a>. For these reasons we recommend Netlify for hosting JAMstack websites.
+					You can also combine any of the above hosting options with <a href="https://zeit.co/">ZEIT</a>, which works well for custom domains (including subdomains) and automatically renews <a href="https://letsencrypt.org/">Let's Encrypt</a> certificates for your websites. For these reasons we recommend ZEIT for hosting JAMstack websites.
 				</p>
 
 				<p>
@@ -61,8 +61,8 @@
 						<li><a href="https://developers.cloudflare.com/workers/sites/">CloudFlare</a></li>
 						<li><a href="https://aws.amazon.com/amplify/console/">Amazon Amplify Console</a></li>
 						<li><a href="https://firebase.google.com/">Google FireBase</a></li>
+						<li><a href="https://netlify.com">Netlify</a></li>
 						<li><a href="https://surge.sh/">surge.sh</a></li>
-						<li><a href="https://zeit.co/now">ZEIT Now</a></li>
 						<li><a href="https://linc.sh/pricing">Linc</a></li>
 						<li><a href="https://render.com/">Render</a></li>
 					</ul>
@@ -82,7 +82,7 @@
 				</p>
 
 				<p>
-					If you would like to be a masochist and set up your own site repositories from scratch for any of BitBucket, GitHub or GitLab then see:
+					If you would like to set up your own site repositories from scratch for any of BitBucket, GitHub or GitLab then see:
 
 					<ol>
 						<li><a href="./bitbucket_hosting.html">Hosting on BitBucket</a>;</li>
