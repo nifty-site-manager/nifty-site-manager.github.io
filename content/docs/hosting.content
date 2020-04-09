@@ -23,7 +23,7 @@
 						<li><a href="@pathtopage(docs/bitbucket_hosting)">BitBucket</a></li>
 						<li><a href="@pathtopage(docs/github_hosting)">GitHub</a></li>
 						<li><a href="@pathtopage(docs/gitlab_hosting)">GitLab</a></li>
-						<li><a href="@pathtopage(docs/netlify_hosting)">Netlify</a></li>
+						<li><a href="@pathtopage(docs/zeit_hosting)">ZEIT</a> (recommended)</li>
 					</ul>
 				</p>
 
@@ -51,7 +51,7 @@
 				</p>
 
 				<p>
-					You can also combine any of the above hosting options with <a href="https://zeit.co/">ZEIT</a>, which works well for custom domains (including subdomains) and automatically renews <a href="https://letsencrypt.org/">Let's Encrypt</a> certificates for your websites. For these reasons we recommend ZEIT for hosting JAMstack websites.
+					You can also combine any of the above hosting options with <a href="https://zeit.co/">ZEIT</a>, which works well for custom domains (including subdomains) and automatically renews <a href="https://letsencrypt.org/">Let's Encrypt</a> certificates for your websites. We recommend ZEIT for hosting JAMstack websites.
 				</p>
 
 				<p>

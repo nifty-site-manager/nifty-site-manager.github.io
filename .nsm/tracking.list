@@ -638,6 +638,10 @@
 'windows_install'
 'template/page.template'
 
+'docs/zeit_hosting'
+"netlify_hosting'"
+'template/page.template'
+
 'index'
 'index'
 'template/page.template'
