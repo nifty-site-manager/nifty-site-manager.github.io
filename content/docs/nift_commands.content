@@ -228,7 +228,7 @@ home
 				</p>
 
 				<p>
-					<b>Note:</b> When you track a file, the content file path is <mono>\@[contentdir]/\@[name]\@[contentext]</mono> and the output file path is <mono>\@[outputdir]/\@[name]\@[outputext]</mono>. For example, if you have content directory <mono>content/</mono>, content extension <mono>.content</mono>, output directory <mono>site/</mono> and output extension <mono>.html</mono> and you track <mono>about</mono>, then the content file will be located at <mono>content/about.content</mono> and the output file will be built to <mono>site/about.html</mono>.
+					<b>Note:</b> When you track a file, the content file path is <mono>\$[contentdir]/\$[name]\$[contentext]</mono> and the output file path is <mono>\$[outputdir]/\$[name]\$[outputext]</mono>. For example, if you have content directory <mono>content/</mono>, content extension <mono>.content</mono>, output directory <mono>site/</mono> and output extension <mono>.html</mono> and you track <mono>about</mono>, then the content file will be located at <mono>content/about.content</mono> and the output file will be built to <mono>site/about.html</mono>.
 				</p>
 
 				<p>
