@@ -49,10 +49,10 @@
 			
 					<p>
 						<a href="https://chocolatey.org/packages/nift"><img src="../../images/chocolatey-icon.png" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
-						<a href="../installing_nift.html#osx-brew"><img src="../../images/brew-icon.png" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
-						<a href="../installing_nift.html#freebsd"><img src="../../images/freebsd.png" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
-						<a href="../installing_nift.html#linux-flatpak"><img src="../../images/flathub-icon.png" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
-						<a href="../installing_nift.html#gentoo"><img src="../../images/gentoo.svg" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
+						<a href="../installing.html#osx-brew"><img src="../../images/brew-icon.png" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
+						<a href="../installing.html#freebsd"><img src="../../images/freebsd.png" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
+						<a href="../installing.html#linux-flatpak"><img src="../../images/flathub-icon.png" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
+						<a href="../installing.html#gentoo"><img src="../../images/gentoo.svg" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
 						<a href="https://snapcraft.io/nift"><img src="../../images/snap-icon.png" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
 					</p>
 					</noselect>
@@ -66,13 +66,14 @@
 							<li>
 								<a href="">Documentation</a>
 								<ul>
-									<li><a href="../installing_nift.html">Installing Nift</a></li>
-									<li><a href="../nift_commands.html">Nift Commands</a></li>
+									<li><a href="../installing.html">Installing</a></li>
+									<li><a href="../hosting.html">Hosting</a></li>
+									<li><a href="../commands.html">Commands</a></li>
 									<li><a href="../template_files.html">Template Files</a></li>
 									<li><a href="../fns.html">Functions</a></li>
 									<li><a href="../types.html">Types</a></li>
-									<li><a href="../f++.html">f++ (scripting language)</a></li>
-									<li><a href="../n++.html">n++ (template language)</a></li>
+									<li><a href="../f++.html">f++ (scripting)</a></li>
+									<li><a href="../n++.html">n++ (templates)</a></li>
 									<li><a href="../lua.html">Lua(JIT)</a></li>
 									<li><a href="../exprtk.html">ExprTk</a></li>
 									<li><a href="../interactive.html">Interactive REPL</a></li>
@@ -81,11 +82,10 @@
 									<li><a href="../JSON.html">JSON Data</a></li>
 									<li><a href="../markdown.html">Markdown</a></li>
 									<li><a href="../translators.html">Translators</a></li>
-									<li><a href="../displaying_mathematics.html">Displaying Mathematics</a></li>
-									<li><a href="../displaying_code_blocks.html">Displaying Code Blocks</a></li>
+									<li><a href="../mathematics.html">Mathematics</a></li>
+									<li><a href="../code_blocks.html">Code Blocks</a></li>
 									<li><a href="../presentations.html">Presentations</a></li>
-									<li><a href="../lokinet_snapps.html">Lokinet SNApps</a></li>
-									<li><a href="../hosting.html">Hosting</a></li>
+									
 								</ul>
 							</li>
 							<li>
@@ -97,11 +97,11 @@
 									<li><a href="../../resources/js_frameworks.html">JS Frameworks</a></li>
 									<li><a href="../../resources/links.html">Links</a></li>
 									<li><a href="../../resources/logos.html">Logos</a></li>
-									<li><a href="../../resources/nift_tutorial.html">Nift Tutorial</a></li>
 									<li><a href="../../resources/php_frameworks.html">PHP Frameworks</a></li>
 									<li><a href="../../resources/templates.html">Templates</a></li>
-									<li><a href="../../resources/SNApp_templates.html">SNApp Templates</a></li>
+									
 									<li><a href="../../resources/blog_templates.html">Blog Templates</a></li>
+									<li><a href="../../resources/tutorial.html">Tutorial</a></li>
 								</ul>
 							</li>
 							<li><a href="../../support.html">Support</a></li>
@@ -112,7 +112,7 @@
 
 		    <!-- Main -->
 		    <section id="main" class="wrapper style2">
-		    	<div class="title">fn: <mono>copy</mono>/<mono>cp</mono></div>
+		    	<div class="title">fn: <mono>lolcat</mono></div>
 		    	<div class="container">
 		    		<!-- Features -->
 		    		<section id="features">
@@ -125,6 +125,7 @@
 		    				<ul style="text-indent:30px">
 		    					<li><a href="#syntax">Syntax</a></li>
 		    					<li><a href="#description">Description</a></li>
+		    					<li><a href="#options">Options</a></li>
 		    					<li><a href="#f++-eg">f++ example</a></li>
 		    					<li><a href="#n++-eg">n++ example</a></li>
 		    				</ul>
@@ -133,21 +134,15 @@
 		    					Syntax
 		    				</h4>
 		    				<p>
-		    					The syntax for <mono>copy</mono>/<mono>cp</mono> calls is:
-		    <div align="center" style="margin-top:-15px; margin-bottom:60px">
-		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-50px">
-copy source target
-copy(source, target)
-cp source target 
-cp(source, target)
+		    					The syntax for <mono>lolcat</mono> calls is:
+		    <div align="center" style="margin-top:-15px">
+		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+lolcat{options}(params)
 </pre>
 		    </div><br>
-		    <div align="center" style="margin-top:-15px; margin-bottom:60px">
-		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-50px">
-@copy source target
-@copy(source, target)
-@cp source target 
-@cp(source, target)
+		    <div align="center">
+		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+@lolcat{options}(params)
 </pre>
 		    </div>
 		    				</p>
@@ -156,25 +151,79 @@ cp(source, target)
 		    					Description
 		    				</h4>
 		    				<p>
-		    					<mono>copy</mono>/<mono>cp</mono> is the <u>copy</u> function, it copies the file at the path specified in the first parameter to the path specified in the second parameter.
+		    					The <mono>lolcat</mono> function is for outputting text with rainbow colours to the console with a linebreak automatically added to the end, it takes an aribtrary number of parameters (it is similar to <a href="console.html">console</a> except with rainbows). You can use <mono>endl</mono> as a parameter for flushed line breaks, <mono>\n</mono> for unflushed. 
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> Paths can be unoquoted, single quoted or double quoted.
+		    					<b>Note:</b> <mono>lolcat</mono> will only work if you have the program <mono>lolcat</mono> installed on your machine. It is available for:
+		    					<ul>
+		    						<li>FreeBSD (<a href="https://www.freshports.org/games/lolcat">ports</a>, <a href="https://github.com/jaseg/lolcat">fast C implementation</a>)</li>
+		    						<li style="margin-top: 10px">Linux (<a href="https://snapcraft.io/lolcat-c"><img src="../../images/snap-icon.png" width="30px" style="vertical-align:middle; margin-bottom:5px"></a>, <a href="https://aur.archlinux.org/packages/c-lolcat"><img src="../../images/arch.svg" width="30px" style="vertical-align:middle; margin-bottom:5px"></a>, <a href="https://packages.ubuntu.com/eoan/lolcat"><img src="../../images/ubuntu.svg" width="30px" style="vertical-align:middle; margin-bottom:5px"></a>, <a href="https://pypi.org/project/lolcat/"><img src="../../images/python.svg" width="30px" style="vertical-align:middle; margin-bottom:5px"></a>, <a href="https://snapcraft.io/lolcat-rs">Rust implementation</a>)</li>
+		    						<li>OSX (<a href="https://formulae.brew.sh/formula/lolcat"><img src="../../images/brew-icon.png" width="30px" style="vertical-align:middle; margin-bottom:5px"></a>, <a href="https://pypi.org/project/lolcat/"><img src="../../images/python.svg" width="30px" style="vertical-align:middle; margin-bottom:5px"></a>, <a href="https://github.com/jaseg/lolcat">fast C implementation</a>)</li>
+		    					</ul>
+		    				</p>
+		    
+		    				<p>
+		    					If you find a working version for Windows please let us know.
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> If you want multiple <mono>lolcat</mono> calls to print to the console without being interrupted by output from threads building other files then use <a href="console.lock.html">console.lock</a> and <a href="console.unlock.html">console.unlock</a>.
+		    				</p>
+		    
+		    				<h4 id="options">
+		    					Options
+		    				</h4>
+		    				<p>
+		    					The following options are available for <mono>lolcat</mono> calls:
+		    
+		    					<center class="table">
+		    						<table id="lolcat_options_table" class="alt">
+		    							<thead>
+		    								<tr>
+		    									<th>option</th>
+		    									<th>description</th>
+		    								</tr>
+		    							</thead>
+		    							<tr>
+		    								<td><mono>b</mono> or <mono>block</mono></td>
+		    								<td>read and output block of text following <mono>console</mono> call</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>!pb</mono></td>
+		    								<td>do not parse block of text</td>
+		    							</tr>
+		    							<tfoot>
+		    								<tr>
+		    									<th>option</th>
+		    									<th>description</th>
+		    								</tr>
+		    							</tfoot>
+		    						</table>
+		    					</center>
 		    				</p>
 		    
 		    				<h4 id="f++-eg">
 		    					f++ example
 		    				</h4>
 		    				<p>
-		    					Examples of <mono>copy</mono>/<mono>cp</mono> being used with <mono>f++</mono>:					
+		    					Example of <mono>lolcat</mono> being used with <mono>f++</mono>:					
 		    
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline linenums lang-nift">
-cp("~/.bashrc", "~/.bashrc-backup")
-sudo cp /etc/sudoers /etc/sudoers-backup
-sudo(cp, "/etc/sudoers", "/etc/sudoers-backup")
-copy /home/teji/.bash_profile /home/teji/.bash_profile_backup</pre>
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
+		    <pre class="prettyprint inline linenums">
+:=(int, i=12)
+:=(string, str="hello")
+console.lock
+lolcat("i: ", i)
+lolcat(str, ", world!")
+lolcat("first line", endl, "second line")
+lolcat{block}
+{
+	first line
+	second line
+	third line
+}
+console.unlock</pre>
 		    </div>
 		    				</p>
 		    
@@ -182,13 +231,23 @@ copy /home/teji/.bash_profile /home/teji/.bash_profile_backup</pre>
 		    					n++ example
 		    				</h4>
 		    				<p>
-		    					Example of <mono>copy</mono>/<mono>cp</mono> being used with <mono>n++</mono>:					
+		    					Example of <mono>lolcat</mono> being used with <mono>n++</mono>:					
 		    
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline linenums lang-nift">
-@cp "~/.bashrc" "~/.bashrc-backup"
-@sys(sudo cp '/etc/sudoers' '/etc/sudoers-backup')
-@copy(/home/teji/.bash_profile, /home/teji/.bash_profile_backup)</pre>
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
+		    <pre class="prettyprint inline linenums">
+@:=(int, i=12)
+@:=(string, str="hello")
+@console.lock
+@lolcat("i: ", i)
+@lolcat(str, ", world!")
+@lolcat("first line", endl, "second line")
+@lolcat{block}
+{
+	first line
+	second line
+	third line
+}
+@console.unlock</pre>
 		    </div>
 		    				</p>
 		    			</div>
@@ -231,19 +290,15 @@ copy /home/teji/.bash_profile /home/teji/.bash_profile_backup</pre>
 							<center><img src="../../images/badger.png" alt="Nift badger mascot" width="325" style="max-width:90%; margin-bottom:20px"></center>
 			
 							<ul>
-								<li>&copy;&nbsp;2015 - <span name="cyear"></span> <a href="https://nift.cc">Nift</a>.</li>
-								<li>Created by: <a href="https://n-ham.com">Nicholas Ham</a></li>
+								<li>&copy;&nbsp;2015 - <span name="cyear"></span> <a href="https://nift.cc">Nift</a></li>
+								<li><a href="../../tos.html">Terms of Service</a></li>
+								<li><a href="../../privacy_policy.html">Privacy Policy</a></li>
 							</ul> <br>
 						
 							<b id="light_dark_LHS" style="color: white !important">light</b> &nbsp; <label class="light-dark-switch" id="light-dark-switch">
 								<input type="checkbox" id="checkbox_light_dark">
 								<span class="slider round" onclick="toggle_light_dark()" id="slider_light_dark"></span>
 							</label> &nbsp; <b id="light_dark_RHS" style="color: white !important">dark</b> <br><br>
-			
-							<ul>
-								<li><a href="../../tos.html">Terms of Service</a></li>
-								<li><a href="../../privacy_policy.html">Privacy Policy</a></li>
-							</ul>
 			
 							<center><a href="https://zeit.co"><img src="../../images/powered-by-zeit.svg" alt="Powered by ZEIT badge" width="234" style="max-width:80%"></a></center> <br>
 						</noselect>

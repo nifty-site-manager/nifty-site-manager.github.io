@@ -112,7 +112,7 @@
 
 		    <!-- Main -->
 		    <section id="main" class="wrapper style2">
-		    	<div class="title">fn: <mono>*=</mono></div>
+		    	<div class="title">fn: <mono>cpy</mono></div>
 		    	<div class="container">
 		    		<!-- Features -->
 		    		<section id="features">
@@ -125,6 +125,7 @@
 		    				<ul style="text-indent:30px">
 		    					<li><a href="#syntax">Syntax</a></li>
 		    					<li><a href="#description">Description</a></li>
+		    					<li><a href="#options">Options</a></li>
 		    					<li><a href="#f++-eg">f++ example</a></li>
 		    					<li><a href="#n++-eg">n++ example</a></li>
 		    				</ul>
@@ -133,15 +134,17 @@
 		    					Syntax
 		    				</h4>
 		    				<p>
-		    					The syntax for <mono>*=</mono> calls is:
-		    <div align="center" style="margin-top:-15px">
-		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
-*=(params)
+		    					The syntax for <mono>cpy</mono> calls is:
+		    <div align="center" style="margin-top:-15px; margin-bottom:40px">
+		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-30px">
+cpy(sources, target)
+cpy sources target
 </pre>
 		    </div><br>
-		    <div align="center">
-		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
-@*=(params)
+		    <div align="center" style="margin-top:-15px; margin-bottom:40px">
+		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-30px">
+@cpy(sources, target)
+@cpy sources target
 </pre>
 		    </div>
 		    				</p>
@@ -150,24 +153,80 @@
 		    					Description
 		    				</h4>
 		    				<p>
-		    					<mono>*=</mono> is the arithmetic assignment operator for <u>multiplication</u>, it takes at least two input parameters with the first specifying a variable name and the remainder to be numbers, it adds the product of the numbers to the variable specified in the first parameter.
+		    					<mono>cpy</mono> is the <u>copy</u> function, it copies the files and/or directories specified by the <mono>sources</mono> parameters to the <mono>target</mono> specified in the trailing parameter. For more than one source the target should be an existing dirctory, for a single source the target can be either an existing directory or a file to copy to.
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> It is typically faster to use <a href="../exprtk.html">exprtk</a> for arithmetic assignment operators, plus the syntax is nicer.
+		    					<b>Note:</b> Paths can be unoquoted, single quoted or double quoted.
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> You should also be able to use the copy function for the underlying shell as well, typically <mono>copy</mono> on Windows and <mono>cp</mono> on other platforms like FreeBSD, Linux, OSX, etc.. 
+		    				</p>
+		    
+		    				<h4 id="options">
+		    					Options
+		    				</h4>
+		    				<p>
+		    					The following options are available for <mono>cpy</mono> calls:
+		    
+		    					<center class="table">
+		    						<table id="cpy_options_table" class="alt">
+		    							<thead>
+		    								<tr>
+		    									<th>option</th>
+		    									<th>description</th>
+		    								</tr>
+		    							</thead>
+		    							<tr>
+		    								<td><mono>b</mono></td>
+		    								<td>backup files to be replaced</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>f</mono></td>
+		    								<td>ensures files have write permission before trying to overwrite them</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>i</mono></td>
+		    								<td>prompt when moving files</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>n</mono></td>
+		    								<td>do <u>not</u> overwrite existing files</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>T</mono></td>
+		    								<td>treat target as a file rather than a directory</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>u</mono></td>
+		    								<td>only overwrite files if file to replace is newer</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>v</mono></td>
+		    								<td>output which files are being moved and where (verbose)</td>
+		    							</tr>
+		    							<tfoot>
+		    								<tr>
+		    									<th>option</th>
+		    									<th>description</th>
+		    								</tr>
+		    							</tfoot>
+		    						</table>
+		    					</center>
 		    				</p>
 		    
 		    				<h4 id="f++-eg">
 		    					f++ example
 		    				</h4>
 		    				<p>
-		    					Example of <mono>*=</mono> being used with <mono>f++</mono>:					
+		    					Examples of <mono>cpy</mono> being used with <mono>f++</mono>:					
 		    
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
 		    <pre class="prettyprint inline linenums">
-:=(int, a=10, b=13)
-*=(a, b, 3)
-console(a)</pre>
+cpy("sample.txt", "sample1.txt")
+cpy dir1 dir2 dir3
+cpy{u} *.txt dir</pre>
 		    </div>
 		    				</p>
 		    
@@ -175,13 +234,13 @@ console(a)</pre>
 		    					n++ example
 		    				</h4>
 		    				<p>
-		    					Example of <mono>*=</mono> being used with <mono>n++</mono>:					
+		    					Example of <mono>cpy</mono> being used with <mono>n++</mono>:					
 		    
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
 		    <pre class="prettyprint inline linenums">
-@:=(int, a=10, b=13)
-@*=(a, b, 3)
-@console(a)</pre>
+@cpy("sample.txt", "sample1.txt")
+@cpy dir1 dir2 dir3
+@cpy{u} *.txt dir</pre>
 		    </div>
 		    				</p>
 		    			</div>
