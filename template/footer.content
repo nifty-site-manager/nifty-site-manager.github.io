@@ -20,19 +20,15 @@
 				<center><img src="@pathtofile(site/images/badger.png)" alt="Nift badger mascot" width="325" style="max-width:90%; margin-bottom:20px"></center>
 
 				<ul>
-					<li>&copy;&nbsp;2015 - <span name="cyear"></span> <a href="https://nift.cc">Nift</a>.</li>
-					<li>Created by: <a href="https://n-ham.com">Nicholas Ham</a></li>
+					<li>&copy;&nbsp;2015 - <span name="cyear"></span> <a href="https://nift.cc">Nift</a></li>
+					<li><a href="@pathto(tos)">Terms of Service</a></li>
+					<li><a href="@pathto(privacy_policy)">Privacy Policy</a></li>
 				</ul> <br>
 			
 				<b id="light_dark_LHS" style="color: white !important">light</b> &nbsp; <label class="light-dark-switch" id="light-dark-switch">
 					<input type="checkbox" id="checkbox_light_dark">
 					<span class="slider round" onclick="toggle_light_dark()" id="slider_light_dark"></span>
 				</label> &nbsp; <b id="light_dark_RHS" style="color: white !important">dark</b> <br><br>
-
-				<ul>
-					<li><a href="@pathto(tos)">Terms of Service</a></li>
-					<li><a href="@pathto(privacy_policy)">Privacy Policy</a></li>
-				</ul>
 
 				<center><a href="https://zeit.co"><img src="@pathtofile(site/images/powered-by-zeit.svg)" alt="Powered by ZEIT badge" width="234" style="max-width:80%"></a></center> <br>
 			</noselect>

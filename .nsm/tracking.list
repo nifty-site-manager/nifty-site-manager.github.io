@@ -6,12 +6,12 @@
 'bitbucket_hosting'
 'template/page.template'
 
-'docs/displaying_code_blocks'
-'displaying_code_blocks'
+'docs/code_blocks'
+'code_blocks'
 'template/page.template'
 
-'docs/displaying_mathematics'
-'displaying_mathematics'
+'docs/commands'
+'commands'
 'template/page.template'
 
 'docs/exprtk'
@@ -186,8 +186,8 @@
 'continue'
 'template/page.template'
 
-'docs/fns/cp'
-'cp'
+'docs/fns/cpy'
+'cpy'
 'template/page.template'
 
 'docs/fns/cssinclude'
@@ -318,8 +318,20 @@
 'link'
 'template/page.template'
 
-'docs/fns/ls'
-'ls'
+'docs/fns/lolcat'
+'lolcat'
+'template/page.template'
+
+'docs/fns/lolcat,off'
+'lolcat,off'
+'template/page.template'
+
+'docs/fns/lolcat,on'
+'lolcat,on'
+'template/page.template'
+
+'docs/fns/lst'
+'lst'
 'template/page.template'
 
 'docs/fns/lua'
@@ -370,8 +382,8 @@
 'lua_tostring'
 'template/page.template'
 
-'docs/fns/mv'
-'mv'
+'docs/fns/mve'
+'mve'
 'template/page.template'
 
 'docs/fns/n++'
@@ -418,6 +430,10 @@
 'pathtopage'
 'template/page.template'
 
+'docs/fns/poke'
+'poke'
+'template/page.template'
+
 'docs/fns/precision'
 'precision'
 'template/page.template'
@@ -450,6 +466,10 @@
 'return'
 'template/page.template'
 
+'docs/fns/rmv'
+'rmv'
+'template/page.template'
+
 'docs/fns/scope'
 'scope'
 'template/page.template'
@@ -472,10 +492,6 @@
 
 'docs/fns/system'
 'system'
-'template/page.template'
-
-'docs/fns/touch'
-'touch'
 'template/page.template'
 
 'docs/fns/type'
@@ -518,8 +534,8 @@
 'hosting'
 'template/page.template'
 
-'docs/installing_nift'
-'installing_nift'
+'docs/installing'
+'installing'
 'template/page.template'
 
 'docs/interactive'
@@ -542,16 +558,16 @@
 'markdown'
 'template/page.template'
 
+'docs/mathematics'
+'mathematics'
+'template/page.template'
+
 'docs/n++'
 'n++'
 'template/page.template'
 
 'docs/netlify_hosting'
 "netlify_hosting'"
-'template/page.template'
-
-'docs/nift_commands'
-'nift_commands'
 'template/page.template'
 
 'docs/osx_install'
@@ -682,16 +698,16 @@
 'logos'
 'template/page.template'
 
-'resources/nift_tutorial'
-'nift_tutorial'
-'template/page.template'
-
 'resources/php_frameworks'
 'php_frameworks'
 'template/page.template'
 
 'resources/templates'
 'templates'
+'template/page.template'
+
+'resources/tutorial'
+'tutorial'
 'template/page.template'
 
 'support'

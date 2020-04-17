@@ -57,7 +57,7 @@ funcName{options}(params)
 					You can even expand multiple options or parameters when parsing the options or parameters string with both <mono>f++</mono> and <mono>n++</mono>. A contrived <mono>n++</mono> example that is equivalent to calling <mono>\@funcName(param 1, param2)</mono> is below:
 <div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline">
-\@:=(string, str = "param 1, param 2")
+\@string str = "param 1, param 2"
 \@funcName(\$[str])
 </pre>
 </div>
@@ -67,7 +67,7 @@ funcName{options}(params)
 					<b>Note:</b> you need to quote the function name when doing things like printing variables or calling functions in the function name. A contrived <mono>n++</mono> example is below:
 <div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline">
-\@:=(string, str = "input")
+\@string str = "input"
 \@"\$[str]"("\$[contentpath]")
 </pre>
 </div>
@@ -185,11 +185,10 @@ funcName{options}(params)
 						<li><a href="@pathtofile('site/docs/fns/console.unlock.html')">console.unlock</a></li>
 						<li><a href="@pathtopage(docs/fns/content)">content</a></li>
 						<li><a href="@pathtopage(docs/fns/continue)">continue</a></li>
-						<li><a href="@pathtopage(docs/fns/cp)">copy/cp</a></li>
+						<li><a href="@pathtopage(docs/fns/cpy)">cpy</a></li>
 						<li><a href="@pathtopage(docs/fns/cssinclude)">cssinclude</a></li> <br>
 
 						<li><a href="@pathtopage(docs/fns/dep)">dep</a></li>
-						<li><a href="@pathtopage(docs/fns/ls)">dir/ls</a></li>
 						<li><a href="@pathtopage(docs/fns/do-while)">do-while</a></li> <br>
 
 						<li><a href="@pathtopage(docs/fns/ent)">ent</a></li>
@@ -221,7 +220,10 @@ funcName{options}(params)
 
 						<li><a href="@pathtopage(docs/fns/layer)">layer</a></li>
 						<li><a href="@pathtopage(docs/fns/link)">link</a></li>
-						<li><a href="@pathtopage(docs/fns/ls)">ls/dir</a></li>
+						<li><a href="@pathtopage(docs/fns/lolcat)">lolcat</a></li>
+						<li><a href="@pathtofile(site/docs/fns/lolcat.off.html)">lolcat.off</a></li>
+						<li><a href="@pathtofile(site/docs/fns/lolcat.on.html)">lolcat.on</a></li>
+						<li><a href="@pathtopage(docs/fns/lst)">lst</a></li>
 						<li><a href="@pathtopage(docs/fns/lua)">lua</a></li>
 						<li><a href="@pathtopage(docs/fns/lua_addnsmfns)">lua_addnsmfns</a></li>
 						<li><a href="@pathtopage(docs/fns/lua_getglobal)">lua_getglobal</a></li>
@@ -235,7 +237,7 @@ funcName{options}(params)
 						<li><a href="@pathtopage(docs/fns/lua_tonumber)">lua_tonumber</a></li>
 						<li><a href="@pathtopage(docs/fns/lua_tostring)">lua_tostring</a></li> <br>
 
-						<li><a href="@pathtopage(docs/fns/mv)">move/mv</a></li> <br>
+						<li><a href="@pathtopage(docs/fns/mve)">mve</a></li> <br>
 
 						<li><a href="@pathtopage(docs/fns/n++)">n++</a></li>
 						<li><a href="@pathtopage(docs/fns/nsm_lang)">nsm_lang</a></li>
@@ -249,6 +251,7 @@ funcName{options}(params)
 						<li><a href="@pathtopage(docs/fns/pathto)">pathto</a></li>
 						<li><a href="@pathtopage(docs/fns/pathtofile)">pathtofile</a></li>
 						<li><a href="@pathtopage(docs/fns/pathtopage)">pathtopage</a></li>
+						<li><a href="@pathtopage(docs/fns/poke)">poke</a></li>
 						<li><a href="@pathtopage(docs/fns/precision)">precision</a></li>
 						<li><a href="@pathtopage(docs/fns/pwd)">pwd</a></li> <br>
 
@@ -258,16 +261,16 @@ funcName{options}(params)
 						<li><a href="@pathtopage(docs/fns/read)">read</a></li>
 						<li><a href="@pathtopage(docs/fns/refresh_completions)">refresh_completions</a></li>
 						<li><a href="@pathtopage(docs/fns/replace_all)">replace_all</a></li>
-						<li><a href="@pathtopage(docs/fns/return)">return</a></li> <br>
+						<li><a href="@pathtopage(docs/fns/return)">return</a></li>
+						<li><a href="@pathtopage(docs/fns/rmv)">rmv</a></li> <br>
 
 						<li><a href="@pathtopage(docs/fns/scope)">scope</a></li>
 						<li><a href="@pathtopage(docs/fns/script)">script</a></li>
 						<li><a href="@pathtopage(docs/fns/size)">size</a></li>
 						<li><a href="@pathtopage(docs/fns/struct)">struct</a></li>
 						<li><a href="@pathtopage(docs/fns/substr)">substr</a></li>
-						<li><a href="@pathtopage(docs/fns/system)">sys/system</a></li> <br>
+						<li><a href="@pathtopage(docs/fns/system)">system/sys</a></li> <br>
 
-						<li><a href="@pathtopage(docs/fns/touch)">touch</a></li>
 						<li><a href="@pathtopage(docs/fns/type)">type</a></li> <br>
 
 						<li><a href="@pathtopage(docs/fns/unquote)">unquote</a></li> <br>

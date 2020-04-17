@@ -49,10 +49,10 @@
 			
 					<p>
 						<a href="https://chocolatey.org/packages/nift"><img src="../images/chocolatey-icon.png" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
-						<a href="installing_nift.html#osx-brew"><img src="../images/brew-icon.png" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
-						<a href="installing_nift.html#freebsd"><img src="../images/freebsd.png" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
-						<a href="installing_nift.html#linux-flatpak"><img src="../images/flathub-icon.png" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
-						<a href="installing_nift.html#gentoo"><img src="../images/gentoo.svg" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
+						<a href="installing.html#osx-brew"><img src="../images/brew-icon.png" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
+						<a href="installing.html#freebsd"><img src="../images/freebsd.png" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
+						<a href="installing.html#linux-flatpak"><img src="../images/flathub-icon.png" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
+						<a href="installing.html#gentoo"><img src="../images/gentoo.svg" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
 						<a href="https://snapcraft.io/nift"><img src="../images/snap-icon.png" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
 					</p>
 					</noselect>
@@ -66,13 +66,14 @@
 							<li>
 								<a href="">Documentation</a>
 								<ul>
-									<li><a href="installing_nift.html">Installing Nift</a></li>
-									<li><a href="nift_commands.html">Nift Commands</a></li>
+									<li><a href="installing.html">Installing</a></li>
+									<li><a href="hosting.html">Hosting</a></li>
+									<li><a href="commands.html">Commands</a></li>
 									<li><a href="template_files.html">Template Files</a></li>
 									<li><a href="fns.html">Functions</a></li>
 									<li><a href="types.html">Types</a></li>
-									<li><a href="f++.html">f++ (scripting language)</a></li>
-									<li><a href="n++.html">n++ (template language)</a></li>
+									<li><a href="f++.html">f++ (scripting)</a></li>
+									<li><a href="n++.html">n++ (templates)</a></li>
 									<li><a href="lua.html">Lua(JIT)</a></li>
 									<li><a href="exprtk.html">ExprTk</a></li>
 									<li><a href="interactive.html">Interactive REPL</a></li>
@@ -81,11 +82,10 @@
 									<li><a href="JSON.html">JSON Data</a></li>
 									<li><a href="markdown.html">Markdown</a></li>
 									<li><a href="translators.html">Translators</a></li>
-									<li><a href="displaying_mathematics.html">Displaying Mathematics</a></li>
-									<li><a href="displaying_code_blocks.html">Displaying Code Blocks</a></li>
+									<li><a href="mathematics.html">Mathematics</a></li>
+									<li><a href="code_blocks.html">Code Blocks</a></li>
 									<li><a href="presentations.html">Presentations</a></li>
-									<li><a href="lokinet_snapps.html">Lokinet SNApps</a></li>
-									<li><a href="hosting.html">Hosting</a></li>
+									
 								</ul>
 							</li>
 							<li>
@@ -97,11 +97,11 @@
 									<li><a href="../resources/js_frameworks.html">JS Frameworks</a></li>
 									<li><a href="../resources/links.html">Links</a></li>
 									<li><a href="../resources/logos.html">Logos</a></li>
-									<li><a href="../resources/nift_tutorial.html">Nift Tutorial</a></li>
 									<li><a href="../resources/php_frameworks.html">PHP Frameworks</a></li>
 									<li><a href="../resources/templates.html">Templates</a></li>
-									<li><a href="../resources/SNApp_templates.html">SNApp Templates</a></li>
+									
 									<li><a href="../resources/blog_templates.html">Blog Templates</a></li>
+									<li><a href="../resources/tutorial.html">Tutorial</a></li>
 								</ul>
 							</li>
 							<li><a href="../support.html">Support</a></li>
@@ -169,7 +169,7 @@ funcName{options}(params)
 		    					You can even expand multiple options or parameters when parsing the options or parameters string with both <mono>f++</mono> and <mono>n++</mono>. A contrived <mono>n++</mono> example that is equivalent to calling <mono>@funcName(param 1, param2)</mono> is below:
 		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
 		    <pre class="prettyprint inline">
-@:=(string, str = "param 1, param 2")
+@string str = "param 1, param 2"
 @funcName($[str])
 </pre>
 		    </div>
@@ -179,7 +179,7 @@ funcName{options}(params)
 		    					<b>Note:</b> you need to quote the function name when doing things like printing variables or calling functions in the function name. A contrived <mono>n++</mono> example is below:
 		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
 		    <pre class="prettyprint inline">
-@:=(string, str = "input")
+@string str = "input"
 @"$[str]"("$[contentpath]")
 </pre>
 		    </div>
@@ -297,11 +297,10 @@ funcName{options}(params)
 		    						<li><a href="fns/console.unlock.html">console.unlock</a></li>
 		    						<li><a href="fns/content.html">content</a></li>
 		    						<li><a href="fns/continue.html">continue</a></li>
-		    						<li><a href="fns/cp.html">copy/cp</a></li>
+		    						<li><a href="fns/cpy.html">cpy</a></li>
 		    						<li><a href="fns/cssinclude.html">cssinclude</a></li> <br>
 		    
 		    						<li><a href="fns/dep.html">dep</a></li>
-		    						<li><a href="fns/ls.html">dir/ls</a></li>
 		    						<li><a href="fns/do-while.html">do-while</a></li> <br>
 		    
 		    						<li><a href="fns/ent.html">ent</a></li>
@@ -333,7 +332,10 @@ funcName{options}(params)
 		    
 		    						<li><a href="fns/layer.html">layer</a></li>
 		    						<li><a href="fns/link.html">link</a></li>
-		    						<li><a href="fns/ls.html">ls/dir</a></li>
+		    						<li><a href="fns/lolcat.html">lolcat</a></li>
+		    						<li><a href="fns/lolcat.off.html">lolcat.off</a></li>
+		    						<li><a href="fns/lolcat.on.html">lolcat.on</a></li>
+		    						<li><a href="fns/lst.html">lst</a></li>
 		    						<li><a href="fns/lua.html">lua</a></li>
 		    						<li><a href="fns/lua_addnsmfns.html">lua_addnsmfns</a></li>
 		    						<li><a href="fns/lua_getglobal.html">lua_getglobal</a></li>
@@ -347,7 +349,7 @@ funcName{options}(params)
 		    						<li><a href="fns/lua_tonumber.html">lua_tonumber</a></li>
 		    						<li><a href="fns/lua_tostring.html">lua_tostring</a></li> <br>
 		    
-		    						<li><a href="fns/mv.html">move/mv</a></li> <br>
+		    						<li><a href="fns/mve.html">mve</a></li> <br>
 		    
 		    						<li><a href="fns/n++.html">n++</a></li>
 		    						<li><a href="fns/nsm_lang.html">nsm_lang</a></li>
@@ -361,6 +363,7 @@ funcName{options}(params)
 		    						<li><a href="fns/pathto.html">pathto</a></li>
 		    						<li><a href="fns/pathtofile.html">pathtofile</a></li>
 		    						<li><a href="fns/pathtopage.html">pathtopage</a></li>
+		    						<li><a href="fns/poke.html">poke</a></li>
 		    						<li><a href="fns/precision.html">precision</a></li>
 		    						<li><a href="fns/pwd.html">pwd</a></li> <br>
 		    
@@ -370,16 +373,16 @@ funcName{options}(params)
 		    						<li><a href="fns/read.html">read</a></li>
 		    						<li><a href="fns/refresh_completions.html">refresh_completions</a></li>
 		    						<li><a href="fns/replace_all.html">replace_all</a></li>
-		    						<li><a href="fns/return.html">return</a></li> <br>
+		    						<li><a href="fns/return.html">return</a></li>
+		    						<li><a href="fns/rmv.html">rmv</a></li> <br>
 		    
 		    						<li><a href="fns/scope.html">scope</a></li>
 		    						<li><a href="fns/script.html">script</a></li>
 		    						<li><a href="fns/size.html">size</a></li>
 		    						<li><a href="fns/struct.html">struct</a></li>
 		    						<li><a href="fns/substr.html">substr</a></li>
-		    						<li><a href="fns/system.html">sys/system</a></li> <br>
+		    						<li><a href="fns/system.html">system/sys</a></li> <br>
 		    
-		    						<li><a href="fns/touch.html">touch</a></li>
 		    						<li><a href="fns/type.html">type</a></li> <br>
 		    
 		    						<li><a href="fns/unquote.html">unquote</a></li> <br>
@@ -431,19 +434,15 @@ funcName{options}(params)
 							<center><img src="../images/badger.png" alt="Nift badger mascot" width="325" style="max-width:90%; margin-bottom:20px"></center>
 			
 							<ul>
-								<li>&copy;&nbsp;2015 - <span name="cyear"></span> <a href="https://nift.cc">Nift</a>.</li>
-								<li>Created by: <a href="https://n-ham.com">Nicholas Ham</a></li>
+								<li>&copy;&nbsp;2015 - <span name="cyear"></span> <a href="https://nift.cc">Nift</a></li>
+								<li><a href="../tos.html">Terms of Service</a></li>
+								<li><a href="../privacy_policy.html">Privacy Policy</a></li>
 							</ul> <br>
 						
 							<b id="light_dark_LHS" style="color: white !important">light</b> &nbsp; <label class="light-dark-switch" id="light-dark-switch">
 								<input type="checkbox" id="checkbox_light_dark">
 								<span class="slider round" onclick="toggle_light_dark()" id="slider_light_dark"></span>
 							</label> &nbsp; <b id="light_dark_RHS" style="color: white !important">dark</b> <br><br>
-			
-							<ul>
-								<li><a href="../tos.html">Terms of Service</a></li>
-								<li><a href="../privacy_policy.html">Privacy Policy</a></li>
-							</ul>
 			
 							<center><a href="https://zeit.co"><img src="../images/powered-by-zeit.svg" alt="Powered by ZEIT badge" width="234" style="max-width:80%"></a></center> <br>
 						</noselect>

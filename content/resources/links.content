@@ -140,6 +140,7 @@
 					<li><a href="https://wiki.gnome.org/Apps/Gedit">Gedit (GNOME text editor)</a> (<a href="https://github.com/GNOME/gedit">GitHub</a>) - also available for osx and Windows</li>
 					<li><a href="https://joe-editor.sourceforge.io/">Joe's Own Editor</a></li>
 					<li><a href="https://www.nano-editor.org/">GNU nano</a></li>
+					<li><a href="https://micro-editor.github.io/">Micro</a> (<a href="https://github.com/zyedidia/micro">GitHub</a>)</li>
 					<li><a href="https://notepad-plus-plus.org/">Notepad++</a> (<a href="https://github.com/notepad-plus-plus/notepad-plus-plus">GitHub</a>)</li>
 					<li><a href="https://www.vim.org/">Vim</a> (<a href="https://github.com/vim/vim">GitHub</a>)</li>
 					<li><a href="https://code.visualstudio.com/">Visual Studo Code (VS Code)</a> (<a href="https://github.com/Microsoft/vscode/">GitHub</a>)</li>

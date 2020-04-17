@@ -109,7 +109,7 @@ sxf7fx9eb4i3u5gyxpkka6wufzfsxyxsuep54c4kqk8axsfo17go.loki
 
 			<h2 id="creating_snapp">2. Creating your SNApp</h2>
 			<p>
-				If you have not already, follow <a href="@pathto(docs/installing_nift)">these</a> instructions to install <mono class="Loki">Nift</mono>. Create a new directory within your home folder, for example on Linux by running the following command in a terminal:
+				If you have not already, follow <a href="@pathto(docs/installing)">these</a> instructions to install <mono class="Loki">Nift</mono>. Create a new directory within your home folder, for example on Linux by running the following command in a terminal:
 			<p>
 
 			<div align="center" style="margin-top:-20px; margin-bottom:15px">

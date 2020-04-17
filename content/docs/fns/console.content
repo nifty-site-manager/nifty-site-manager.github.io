@@ -43,7 +43,7 @@ console{options}(params)
 				</p>
 
 				<p>
-					<b>Note:</b> If you want multiple <mono>console</mono> calls to print to the console without being interrupted by output from threads building other files then use <a href="@pathtofile(site/docs/fns/console.lock.html)"><mono>console.lock</mono></a> and <a href="@pathtofile(site/docs/fns/console.unlock.html)"><mono>console.unlock</mono></a>.
+					<b>Note:</b> If you want multiple <mono>console</mono> calls to print to the console without being interrupted by output from threads building other files then use <a href="@pathtofile(site/docs/fns/console.lock.html)">console.lock</a> and <a href="@pathtofile(site/docs/fns/console.unlock.html)">console.unlock</a>.
 				</p>
 
 				<h4 id="options">

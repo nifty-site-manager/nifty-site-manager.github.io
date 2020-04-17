@@ -1,0 +1,121 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">fn: <mono>rmv</mono></div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<div class="content">
+				<a href="#contents" class="to_top">[contents]</a>
+
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#syntax">Syntax</a></li>
+					<li><a href="#description">Description</a></li>
+					<li><a href="#options">Options</a></li>
+					<li><a href="#f++-eg">f++ example</a></li>
+					<li><a href="#n++-eg">n++ example</a></li>
+				</ul>
+
+				<h4 id="syntax">
+					Syntax
+				</h4>
+				<p>
+					The syntax for <mono>rmv</mono> calls is:
+<div align="center" style="margin-top:-15px; margin-bottom:40px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-30px">
+rmv(params)
+rmv params
+</pre>
+</div><br>
+<div align="center" style="margin-top:-15px; margin-bottom:40px">
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-30px">
+\@rmv(params)
+\@rmv params
+</pre>
+</div>
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+				<p>
+					<mono>rmv</mono> is the <u>remove</u> function, it removes the files and/or directories specified by the parameters.
+				</p>
+
+				<p>
+					<b>Note:</b> Paths can be unoquoted, single quoted or double quoted.
+				</p>
+
+				<p>
+					<b>Note:</b> You should also be able to use the remove function for the underlying shell as well, typically <mono>del</mono> on Windows and <mono>rm</mono> and <mono>rmdir</mono> on other platforms like FreeBSD, Linux, OSX, etc.. 
+				</p>
+
+				<h4 id="options">
+					Options
+				</h4>
+				<p>
+					The following options are available for <mono>rmv</mono> calls:
+
+					<center class="table">
+						<table id="rmv_options_table" class="alt">
+							<thead>
+								<tr>
+									<th>option</th>
+									<th>description</th>
+								</tr>
+							</thead>
+							<tr>
+								<td><mono>f</mono></td>
+								<td>ensures files have write permission before trying to remove them</td>
+							</tr>
+							<tr>
+								<td><mono>i</mono></td>
+								<td>prompt when moving files</td>
+							</tr>
+							<tr>
+								<td><mono>v</mono></td>
+								<td>output which files are being moved and where (verbose)</td>
+							</tr>
+							<tfoot>
+								<tr>
+									<th>option</th>
+									<th>description</th>
+								</tr>
+							</tfoot>
+						</table>
+					</center>
+				</p>
+
+				<h4 id="f++-eg">
+					f++ example
+				</h4>
+				<p>
+					Examples of <mono>rmv</mono> being used with <mono>f++</mono>:					
+
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline linenums">
+rmv("sample.txt")
+rmv dir1 dir2 dir3
+rmv *.txt</pre>
+</div>
+				</p>
+
+				<h4 id="n++-eg">
+					n++ example
+				</h4>
+				<p>
+					Example of <mono>rmv</mono> being used with <mono>n++</mono>:					
+
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline linenums">
+\@rmv("sample.txt")
+\@rmv dir1 dir2 dir3
+\@rmv *.txt</pre>
+</div>
+				</p>
+			</div>
+		</section>
+	</div>
+</section>

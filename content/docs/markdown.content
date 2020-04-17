@@ -22,7 +22,7 @@
 				</p>
 
 				<p>
-					<b>Note:</b> changes to the markdown file will not be recognised by build-updated unless you manually add it as a user-defined page dependency. See the <a href="@pathto(docs/nift_commands)">Nift commands</a> page for how to manually add user-defined page dependencies.
+					<b>Note:</b> changes to the markdown file will not be recognised by build-updated unless you manually add it as a user-defined page dependency. See the <a href="@pathto(docs/commands)">Nift commands</a> page for how to manually add user-defined page dependencies.
 				</p>
 
 				<p>

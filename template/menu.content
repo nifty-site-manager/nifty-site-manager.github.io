@@ -24,10 +24,10 @@
 
 		<p>
 			<a href="https://chocolatey.org/packages/nift"><img src="@pathtofile(site/images/chocolatey-icon.png)" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
-			<a href="@pathto(docs/installing_nift)#osx-brew"><img src="@pathtofile(site/images/brew-icon.png)" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
-			<a href="@pathto(docs/installing_nift)#freebsd"><img src="@pathtofile(site/images/freebsd.png)" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
-			<a href="@pathto(docs/installing_nift)#linux-flatpak"><img src="@pathtofile(site/images/flathub-icon.png)" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
-			<a href="@pathto(docs/installing_nift)#gentoo"><img src="@pathtofile(site/images/gentoo.svg)" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
+			<a href="@pathto(docs/installing)#osx-brew"><img src="@pathtofile(site/images/brew-icon.png)" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
+			<a href="@pathto(docs/installing)#freebsd"><img src="@pathtofile(site/images/freebsd.png)" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
+			<a href="@pathto(docs/installing)#linux-flatpak"><img src="@pathtofile(site/images/flathub-icon.png)" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
+			<a href="@pathto(docs/installing)#gentoo"><img src="@pathtofile(site/images/gentoo.svg)" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
 			<a href="https://snapcraft.io/nift"><img src="@pathtofile(site/images/snap-icon.png)" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
 		</p>
 		</noselect>
@@ -41,13 +41,14 @@
 				<li>
 					<a href="">Documentation</a>
 					<ul>
-						<li><a href="@pathto(docs/installing_nift)">Installing Nift</a></li>
-						<li><a href="@pathto(docs/nift_commands)">Nift Commands</a></li>
+						<li><a href="@pathto(docs/installing)">Installing</a></li>
+						<li><a href="@pathto(docs/hosting)">Hosting</a></li>
+						<li><a href="@pathto(docs/commands)">Commands</a></li>
 						<li><a href="@pathto(docs/template_files)">Template Files</a></li>
 						<li><a href="@pathto(docs/fns)">Functions</a></li>
 						<li><a href="@pathto(docs/types)">Types</a></li>
-						<li><a href="@pathto(docs/f++)">f++ (scripting language)</a></li>
-						<li><a href="@pathto(docs/n++)">n++ (template language)</a></li>
+						<li><a href="@pathto(docs/f++)">f++ (scripting)</a></li>
+						<li><a href="@pathto(docs/n++)">n++ (templates)</a></li>
 						<li><a href="@pathto(docs/lua)">Lua(JIT)</a></li>
 						<li><a href="@pathto(docs/exprtk)">ExprTk</a></li>
 						<li><a href="@pathto(docs/interactive)">Interactive REPL</a></li>
@@ -56,11 +57,10 @@
 						<li><a href="@pathto(docs/JSON)">JSON Data</a></li>
 						<li><a href="@pathto(docs/markdown)">Markdown</a></li>
 						<li><a href="@pathto(docs/translators)">Translators</a></li>
-						<li><a href="@pathto(docs/displaying_mathematics)">Displaying Mathematics</a></li>
-						<li><a href="@pathto(docs/displaying_code_blocks)">Displaying Code Blocks</a></li>
+						<li><a href="@pathto(docs/mathematics)">Mathematics</a></li>
+						<li><a href="@pathto(docs/code_blocks)">Code Blocks</a></li>
 						<li><a href="@pathto(docs/presentations)">Presentations</a></li>
-						<li><a href="@pathto(docs/lokinet_snapps)">Lokinet SNApps</a></li>
-						<li><a href="@pathto(docs/hosting)">Hosting</a></li>
+						@#<li><a href="@pathto(docs/lokinet_snapps)">Lokinet SNApps</a></li>
 					</ul>
 				</li>
 				<li>
@@ -72,11 +72,11 @@
 						<li><a href="@pathto(resources/js_frameworks)">JS Frameworks</a></li>
 						<li><a href="@pathto(resources/links)">Links</a></li>
 						<li><a href="@pathto(resources/logos)">Logos</a></li>
-						<li><a href="@pathto(resources/nift_tutorial)">Nift Tutorial</a></li>
 						<li><a href="@pathto(resources/php_frameworks)">PHP Frameworks</a></li>
 						<li><a href="@pathto(resources/templates)">Templates</a></li>
-						<li><a href="@pathto(resources/SNApp_templates)">SNApp Templates</a></li>
+						@#<li><a href="@pathto(resources/SNApp_templates)">SNApp Templates</a></li>
 						<li><a href="@pathto(resources/blog_templates)">Blog Templates</a></li>
+						<li><a href="@pathto(resources/tutorial)">Tutorial</a></li>
 					</ul>
 				</li>
 				<li><a href="@pathto(support)">Support</a></li>

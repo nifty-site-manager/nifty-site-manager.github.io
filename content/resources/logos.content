@@ -5,10 +5,6 @@
 		<!-- Features -->
 		<section id="features">
 			<div class="content">
-				<p style="color: white">
-					This page contains high quality versions of the Nift logos.
-				</p>
-
 				<center>
 					<img src="@pathtofile(site/images/rabbit.svg)" alt="Nift bunny mascot with white text" width="450px" style="max-width:80%; margin-bottom: 20px">
 				</center>

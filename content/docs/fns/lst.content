@@ -1,6 +1,6 @@
 <!-- Main -->
 <section id="main" class="wrapper style2">
-	<div class="title">fn: <mono>dir</mono>/<mono>ls</mono></div>
+	<div class="title">fn: <mono>lst</mono></div>
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
@@ -22,21 +22,17 @@
 					Syntax
 				</h4>
 				<p>
-					The syntax for <mono>dir</mono>/<mono>ls</mono> calls is:
-<div align="center" style="margin-top:-15px; margin-bottom:60px">
-<mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-50px">
-dir(param)
-dir param
-ls(param)
-ls param
+					The syntax for <mono>lst</mono> calls is:
+<div align="center" style="margin-top:-15px; margin-bottom:50px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-30px">
+lst(param)
+lst param
 </pre>
 </div><br>
-<div align="center" style="margin-top:-15px; margin-bottom:60px">
-<mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-50px">
-\@dir(param)
-\@dir param
-\@ls(param)
-\@ls param
+<div align="center" style="margin-top:-15px; margin-bottom:50px">
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-30px">
+\@lst(param)
+\@lst param
 </pre>
 </div>
 				</p>
@@ -45,21 +41,21 @@ ls param
 					Description
 				</h4>
 				<p>
-					The <mono>dir</mono>/<mono>ls</mono> function is for <u>listing files in a directory</u>, it takes zero parameters or a single parameter specifying which directory to list files for. 
+					The <mono>lst</mono> function is for <u>listing files in a directory</u>, it takes zero parameters or a single parameter specifying which directory to list files for. 
 				</p>
 
 				<p>
 					<b>Note:</b> Paths can be unoquoted, single quoted or double quoted.
 				</p>
 
-								<h4 id="options">
+				<h4 id="options">
 					Options
 				</h4>
 				<p>
-					The following options are available for <mono>dir</mono>/<mono>ls</mono> calls:
+					The following options are available for <mono>lst</mono> calls:
 
 					<center class="table">
-						<table id="dir/ls_options_table" class="alt">
+						<table id="lst_options_table" class="alt">
 							<thead>
 								<tr>
 									<th>option</th>
@@ -69,6 +65,10 @@ ls param
 							<tr>
 								<td><mono>1</mono></td>
 								<td>list one file per line</td>
+							</tr>
+							<tr>
+								<td><mono>\,</mono></td>
+								<td>separate files with commas</td>
 							</tr>
 							<tr>
 								<td><mono>a</mono></td>
@@ -82,6 +82,10 @@ ls param
 								<td><mono>c</mono></td>
 								<td>list files on console</td>
 							</tr>
+							<tr>
+								<td><mono>P</mono></td>
+								<td>list full paths to files</td>
+							</tr>
 							<tfoot>
 								<tr>
 									<th>option</th>
@@ -91,21 +95,21 @@ ls param
 						</table>
 					</center>
 
-					<b>Note:</b> If other options are given Nift will attempt to use the system's underlying <mono>dir</mono>/<mono>ls</mono> function instead. 
+					<b>Note:</b> If other options are given Nift will attempt to use the system's underlying list function instead, typically <mono>dir</mono> on Windows and <mono>ls</mono> on platforms like FreeBSD, Linux, OSX, etc.. 
 				</p>
 
 				<h4 id="f++-eg">
 					f++ example
 				</h4>
 				<p>
-					Examples of <mono>dir</mono>/<mono>ls</mono> being used with <mono>f++</mono>:					
+					Examples of <mono>lst</mono> being used with <mono>f++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline linenums">
-ls
-ls 1 ~/
-dir -l "/usr/local/bin"
-dir{a}("/usr/local")</pre>
+lst
+lst{1} ~/
+lst{-l} "/usr/local/bin"
+lst{a}("/usr/local")</pre>
 </div>
 				</p>
 
@@ -113,14 +117,14 @@ dir{a}("/usr/local")</pre>
 					n++ example
 				</h4>
 				<p>
-					Example of <mono>dir</mono>/<mono>ls</mono> being used with <mono>n++</mono>:					
+					Example of <mono>lst</mono> being used with <mono>n++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline linenums">
-\@ls
-\@ls 1 ~/
-\@dir -l "/usr/local/bin"
-\@dir{a}("/usr/local")</pre>
+\@lst
+\@lst{1} ~/
+\@lst{-l} "/usr/local/bin"
+\@lst{a}("/usr/local")</pre>
 </div>
 				</p>
 			</div>

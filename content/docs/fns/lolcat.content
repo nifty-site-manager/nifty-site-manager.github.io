@@ -1,0 +1,144 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">fn: <mono>lolcat</mono></div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<div class="content">
+				<a href="#contents" class="to_top">[contents]</a>
+
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#syntax">Syntax</a></li>
+					<li><a href="#description">Description</a></li>
+					<li><a href="#options">Options</a></li>
+					<li><a href="#f++-eg">f++ example</a></li>
+					<li><a href="#n++-eg">n++ example</a></li>
+				</ul>
+
+				<h4 id="syntax">
+					Syntax
+				</h4>
+				<p>
+					The syntax for <mono>lolcat</mono> calls is:
+<div align="center" style="margin-top:-15px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+lolcat{options}(params)
+</pre>
+</div><br>
+<div align="center">
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+\@lolcat{options}(params)
+</pre>
+</div>
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+				<p>
+					The <mono>lolcat</mono> function is for outputting text with rainbow colours to the console with a linebreak automatically added to the end, it takes an aribtrary number of parameters (it is similar to <a href="@pathtopage(docs/fns/console)">console</a> except with rainbows). You can use <mono>endl</mono> as a parameter for flushed line breaks, <mono>\n</mono> for unflushed. 
+				</p>
+
+				<p>
+					<b>Note:</b> <mono>lolcat</mono> will only work if you have the program <mono>lolcat</mono> installed on your machine. It is available for:
+					<ul>
+						<li>FreeBSD (<a href="https://www.freshports.org/games/lolcat">ports</a>, <a href="https://github.com/jaseg/lolcat">fast C implementation</a>)</li>
+						<li style="margin-top: 10px">Linux (<a href="https://snapcraft.io/lolcat-c"><img src="@pathtofile(site/images/snap-icon.png)" width="30px" style="vertical-align:middle; margin-bottom:5px"></a>, <a href="https://aur.archlinux.org/packages/c-lolcat"><img src="@pathtofile(site/images/arch.svg)" width="30px" style="vertical-align:middle; margin-bottom:5px"></a>, <a href="https://packages.ubuntu.com/eoan/lolcat"><img src="@pathtofile(site/images/ubuntu.svg)" width="30px" style="vertical-align:middle; margin-bottom:5px"></a>, <a href="https://pypi.org/project/lolcat/"><img src="@pathtofile(site/images/python.svg)" width="30px" style="vertical-align:middle; margin-bottom:5px"></a>, <a href="https://snapcraft.io/lolcat-rs">Rust implementation</a>)</li>
+						<li>OSX (<a href="https://formulae.brew.sh/formula/lolcat"><img src="@pathtofile(site/images/brew-icon.png)" width="30px" style="vertical-align:middle; margin-bottom:5px"></a>, <a href="https://pypi.org/project/lolcat/"><img src="@pathtofile(site/images/python.svg)" width="30px" style="vertical-align:middle; margin-bottom:5px"></a>, <a href="https://github.com/jaseg/lolcat">fast C implementation</a>)</li>
+					</ul>
+				</p>
+
+				<p>
+					If you find a working version for Windows please let us know.
+				</p>
+
+				<p>
+					<b>Note:</b> If you want multiple <mono>lolcat</mono> calls to print to the console without being interrupted by output from threads building other files then use <a href="@pathtofile(site/docs/fns/console.lock.html)">console.lock</a> and <a href="@pathtofile(site/docs/fns/console.unlock.html)">console.unlock</a>.
+				</p>
+
+				<h4 id="options">
+					Options
+				</h4>
+				<p>
+					The following options are available for <mono>lolcat</mono> calls:
+
+					<center class="table">
+						<table id="lolcat_options_table" class="alt">
+							<thead>
+								<tr>
+									<th>option</th>
+									<th>description</th>
+								</tr>
+							</thead>
+							<tr>
+								<td><mono>b</mono> or <mono>block</mono></td>
+								<td>read and output block of text following <mono>console</mono> call</td>
+							</tr>
+							<tr>
+								<td><mono>!pb</mono></td>
+								<td>do not parse block of text</td>
+							</tr>
+							<tfoot>
+								<tr>
+									<th>option</th>
+									<th>description</th>
+								</tr>
+							</tfoot>
+						</table>
+					</center>
+				</p>
+
+				<h4 id="f++-eg">
+					f++ example
+				</h4>
+				<p>
+					Example of <mono>lolcat</mono> being used with <mono>f++</mono>:					
+
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline linenums">
+:=(int, i=12)
+:=(string, str="hello")
+console.lock
+lolcat("i: ", i)
+lolcat(str, ", world!")
+lolcat("first line", endl, "second line")
+lolcat{block}
+{
+	first line
+	second line
+	third line
+}
+console.unlock</pre>
+</div>
+				</p>
+
+				<h4 id="n++-eg">
+					n++ example
+				</h4>
+				<p>
+					Example of <mono>lolcat</mono> being used with <mono>n++</mono>:					
+
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline linenums">
+\@:=(int, i=12)
+\@:=(string, str="hello")
+\@console.lock
+\@lolcat("i: ", i)
+\@lolcat(str, ", world!")
+\@lolcat("first line", endl, "second line")
+\@lolcat{block}
+{
+	first line
+	second line
+	third line
+}
+\@console.unlock</pre>
+</div>
+				</p>
+			</div>
+		</section>
+	</div>
+</section>

@@ -1,6 +1,6 @@
 <!-- Main -->
 <section id="main" class="wrapper style2">
-	<div class="title">fn: <mono>touch</mono></div>
+	<div class="title">fn: <mono>poke</mono></div>
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
@@ -22,15 +22,15 @@
 					Syntax
 				</h4>
 				<p>
-					The syntax for <mono>touch</mono> calls is:
+					The syntax for <mono>poke</mono> calls is:
 <div align="center" style="margin-top:-15px">
 <mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
-touch{option}(params)
+poke{option}(params)
 </pre>
 </div><br>
 <div align="center">
 <mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
-\@touch{option}(params)
+\@poke{option}(params)
 </pre>
 </div>
 				</p>
@@ -39,17 +39,17 @@ touch{option}(params)
 					Description
 				</h4>
 				<p>
-					The <mono>touch</mono> function takes a non-zero number of string parameters that should be paths to create, you can create files or directories.
+					The <mono>poke</mono> function takes a non-zero number of string parameters that should be paths to create or just update the modification time for, you can poke files or directories.
 				</p>
 
 				<h4 id="options">
 					Options
 				</h4>
 				<p>
-					The following options are available for <mono>touch</mono> calls:
+					The following options are available for <mono>poke</mono> calls:
 
 					<center class="table">
-						<table id="touch_options_table" class="alt">
+						<table id="poke_options_table" class="alt">
 							<thead>
 								<tr>
 									<th>option</th>
@@ -78,12 +78,12 @@ touch{option}(params)
 					f++ example
 				</h4>
 				<p>
-					Examples of <mono>touch</mono> being used with <mono>f++</mono>:					
+					Examples of <mono>poke</mono> being used with <mono>f++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint inline linenums lang-nift">
-touch("example.txt")
-touch{dirs}("dir/")</pre>
+poke("example.txt")
+poke{dirs}("dir/")</pre>
 </div>
 				</p>
 
@@ -91,12 +91,12 @@ touch{dirs}("dir/")</pre>
 					n++ example
 				</h4>
 				<p>
-					Examples of <mono>touch</mono> being used with <mono>n++</mono>:					
+					Examples of <mono>poke</mono> being used with <mono>n++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint inline linenums lang-nift">
-\@touch("example.txt")
-\@touch{dirs}("dir/")</pre>
+\@poke("example.txt")
+\@poke{dirs}("dir/")</pre>
 </div>
 				</p>
 			</div>
