@@ -18,6 +18,11 @@
 					<li><a href="#n++-eg">n++ example</a></li>
 				</ul>
 
+				<!-- Image -->
+				<center>
+					<a href="@pathtofile(site/images/laptop-nift.png)"><img src="@pathtofile(site/images/laptop-nift.png)" alt="Nift console screenshot" width="600px" style="max-width:90%; border-radius:20px; margin-bottom: 60px"></a>
+				</center>
+
 				<h4 id="syntax">
 					Syntax
 				</h4>

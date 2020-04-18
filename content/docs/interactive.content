@@ -10,7 +10,7 @@
 
 			<!-- Image -->
 			<center>
-				<img src="@pathtofile(site/images/banner-vaporwave.png)" alt="Nift vaporwave banner" width="500px" style="max-width:90%; border-radius:20px; margin-bottom: 60px">
+				<img src="@pathtofile(site/images/laptop-vaporwave.png)" alt="Nift vaporwave artwork" width="500px" style="max-width:90%; border-radius:20px; margin-bottom: 60px">
 			</center>
 
 			<div class="content">
