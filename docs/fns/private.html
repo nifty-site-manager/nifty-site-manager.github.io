@@ -112,7 +112,7 @@
 
 		    <!-- Main -->
 		    <section id="main" class="wrapper style2">
-		    	<div class="title">type: <mono>bool</mono></div>
+		    	<div class="title">fn: <mono>private</mono></div>
 		    	<div class="container">
 		    		<!-- Features -->
 		    		<section id="features">
@@ -134,50 +134,56 @@
 		    					Syntax
 		    				</h4>
 		    				<p>
-		    					The syntax for <mono>bool</mono> definitions is:
+		    					The syntax for <mono>private</mono> calls is:
 		    <div align="center" style="margin-top:-15px; margin-bottom:50px">
 		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-40px">
-bool definitions
-bool(definitions)
-:=(bool, definitions)
+private type definitions
+type{private}(definitions)
+:={private}(type, definitions)
 </pre>
 		    </div><br>
 		    <div align="center" style="margin-top:-15px; margin-bottom:50px">
 		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-40px">
-@bool definitions
-@bool(definitions)
-@:=(bool, definitions)
+@private type definitions
+@type{private}(definitions)
+@:={private}(type, definitions)
 </pre>
 		    </div>
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> If you are using the first syntax for variable definitions and want to have more code and/or text following on the same line then simply end the definition with '<mono>;</mono>'.
+		    					<b>Note:</b> If you are using the first syntax for private variable definitions and want to have more code and/or text following on the same line then simply end the definition with '<mono>;</mono>'.
 		    				</p>
 		    
 		    				<h4 id="description">
 		    					Description
 		    				</h4>
 		    				<p>
-		    					The <mono>bool</mono> type is used for boolean values, though note that <mono>ExprTk</mono> will happily assign any floating point value to them (one limitation of <mono>ExprTk</mono> is that it only really works with doubles and strings). 
-		    				</p>
-		    
-		    				<p>
-		    					<b>Note:</b> So that <mono>ExprTk</mono> has direct access to booleans (for the sake of convenience), underneath they are actually doubles. If you are defining large volumes of bools where memory usage is of concern then <a href="std::bool.html">std::bool</a> uses proper bools underneath, which you can still access from all of <mono>f++</mono>, <mono>ExprTk</mono>, <mono>Lua</mono> and <mono>n++</mono>, however accessing and setting them with <mono>ExprTk</mono> is not quite as nice syntactically and not as efficient. 
+		    					The <mono>private</mono> function is used for defining <u>private</u> variables, the first parameter specifies the type of variables being defined, the remainder of the parameters should be variable definitions.
 		    				</p>
 		    
 		    				<p>
 		    					<b>Note:</b> If you need to define thousands of variables then <mono>:=</mono> is faster, plus it has useful error messages for unrecognised types.
 		    				</p>
 		    
+		    				<p>
+		    					<b>Note:</b> <mono>Nift</mono> will skip to the first non-whitespace (ie. to the first character that is not a space, tab or newline) after a private definition and inject it to the output file where the definition started. If you want to prevent <mono>Nift</mono> from doing this put a '<mono>!</mono>' after the definition, eg.:
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
+		    <pre class="prettyprint inline lang-nift">
+@:={private}(int, x=10)!
+
+</pre>
+		    </div>
+		    				</p>
+		    
 		    				<h4 id="options">
 		    					Options
 		    				</h4>
 		    				<p>
-		    					The following options are available for <mono>bool</mono> definitions:
+		    					The following options are available for <mono>private</mono> calls:
 		    
 		    					<center class="table">
-		    						<table id="bool_options_table" class="alt">
+		    						<table id="private_options_table" class="alt">
 		    							<thead>
 		    								<tr>
 		    									<th>option</th>
@@ -197,10 +203,6 @@ bool(definitions)
 		    								<td>define variable at layer <mono>x</mono></td>
 		    							</tr>
 		    							<tr>
-		    								<td><mono>private</mono></td>
-		    								<td>definition of a <mono>private</mono></td>
-		    							</tr>
-		    							<tr>
 		    								<td><mono>scope+="x"</mono></td>
 		    								<td>add <mono>x</mono> to scopes variable can be accessed from</td>
 		    							</tr>
@@ -218,13 +220,16 @@ bool(definitions)
 		    					f++ example
 		    				</h4>
 		    				<p>
-		    					Examples of <mono>bool</mono> being defined with <mono>f++</mono>:					
+		    					Examples of <mono>private</mono> being used with <mono>f++</mono>:					
 		    
 		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
 		    <pre class="prettyprint inline linenums lang-nift">
-bool a=0, b=1
-bool(x, y, z)
-:=(bool, finished = 0)</pre>
+private int a=10, b=12; private double d=3.14
+string{private}(str="hello, world!")
+:=(ofstream, ofs("output.txt"))
+write(ofs, a, " ", b, " ", d, endl)
+write(ofs, str, endl)
+ofs.close()</pre>
 		    </div>
 		    				</p>
 		    
@@ -232,13 +237,16 @@ bool(x, y, z)
 		    					n++ example
 		    				</h4>
 		    				<p>
-		    					Examples of <mono>int</mono> being defined with <mono>n++</mono>:					
+		    					Examples of <mono>private</mono> being used with <mono>n++</mono>:					
 		    
 		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
 		    <pre class="prettyprint inline linenums lang-nift">
-@bool a=0, b=1
-@bool(x, y, z)
-@:=(bool, finished = 0)</pre>
+@private int a=10, b=12; @private double d=3.14
+@string{private}(str="hello, world!")
+@:=(ofstream, ofs("output.txt"))
+@write(ofs, a, " ", b, " ", d, endl)
+@write(ofs, str, endl)
+@ofs.close()</pre>
 		    </div>
 		    				</p>
 		    			</div>
