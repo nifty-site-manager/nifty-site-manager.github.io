@@ -23,12 +23,14 @@
 				<p>
 					The syntax for <mono>++</mono> calls is:
 <div align="center" style="margin-top:-15px">
-<mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-30px">
+++param
 ++(params)
 </pre>
 </div><br>
-<div align="center">
-<mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+<div align="center" style="margin-top:15px">
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-30px">
+\@++param
 \@++(params)
 </pre>
 </div>
@@ -42,7 +44,7 @@
 				</p>
 
 				<p>
-					<b>Note:</b> It is typically faster to use <a href="@pathtopage(docs/exprtk)">exprtk</a> for incrementing variables.
+					<b>Note:</b> It is typically faster to use <a href="@pathtopage(docs/exprtk)">exprtk</a> for incrementing variables, especially with the post-loop code with <mono>for</mono> loops.
 				</p>
 
 				<h4 id="f++-eg">
@@ -51,10 +53,11 @@
 				<p>
 					Example of <mono>++</mono> being used with <mono>f++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px">
 <pre class="prettyprint inline linenums">
-int a=0
-console(++(a))</pre>
+int a=0, b=0
+console(++a)
+console(++(a, b))</pre>
 </div>
 				</p>
 
@@ -64,10 +67,11 @@ console(++(a))</pre>
 				<p>
 					Example of <mono>++</mono> being used with <mono>n++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px">
 <pre class="prettyprint inline linenums">
-\@int a=0
-\@console(\@++(a))</pre>
+\@int a=0, b=0
+\@console(\@++a)
+\@console(\@++(a, b))</pre>
 </div>
 				</p>
 			</div>
