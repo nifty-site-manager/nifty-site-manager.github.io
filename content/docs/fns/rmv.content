@@ -52,6 +52,16 @@ rmv params
 					<b>Note:</b> You should also be able to use the remove function for the underlying shell as well, typically <mono>del</mono> on Windows and <mono>rm</mono> and <mono>rmdir</mono> on other platforms like FreeBSD, Linux, OSX, etc.. 
 				</p>
 
+				<p>
+					<b>Note:</b> <mono>Nift</mono> will skip to the first non-whitespace (ie. to the first character that is not a space, tab or newline) after a <mono>rmv</mono> call and inject it to the output file where the call started. If you want to prevent <mono>Nift</mono> from doing this put a '<mono>!</mono>' after the call, eg.:
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline lang-nift">
+\@rmv file.txt;!
+\@rmv(dir)!
+</pre>
+</div>
+				</p>
+
 				<h4 id="options">
 					Options
 				</h4>

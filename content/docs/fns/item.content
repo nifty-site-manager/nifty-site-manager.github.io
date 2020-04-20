@@ -45,6 +45,18 @@ dep(params)
 					<b>Note:</b> You can also add file dependencies manually by adding a <mono>.deps</mono> file residing in the same directory as the content file. For example if you have <mono>content/index.content</mono> as the content file add a <mono>content/index.deps</mono> file containing the extra dependencies you want to track. 
 				</p>
 
+				<p>
+					<b>Note:</b> <mono>Nift</mono> will skip to the first non-whitespace (ie. to the first character that is not a space, tab or newline) after a <mono>item</mono> call and inject it to the output file where the call started. If you want to prevent <mono>Nift</mono> from doing this put a '<mono>!</mono>' after the call, eg.:
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline lang-nift">
+\@item
+{
+	# block
+}!
+</pre>
+</div>
+				</p>
+
 				<h4 id="f++-eg">
 					f++ example
 				</h4>

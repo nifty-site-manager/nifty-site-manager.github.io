@@ -6,6 +6,10 @@
 'bitbucket_hosting'
 'template/page.template'
 
+'docs/cmds/commands'
+'commands'
+'template/page.template'
+
 'docs/code_blocks'
 'code_blocks'
 'template/page.template'
@@ -176,6 +180,10 @@
 
 'docs/fns/console,unlock'
 'console,unlock'
+'template/page.template'
+
+'docs/fns/const'
+'const'
 'template/page.template'
 
 'docs/fns/content'
@@ -436,6 +444,10 @@
 
 'docs/fns/precision'
 'precision'
+'template/page.template'
+
+'docs/fns/private'
+'private'
 'template/page.template'
 
 'docs/fns/pwd'

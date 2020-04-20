@@ -166,6 +166,16 @@ type(definitions)
 		    					<b>Note:</b> If you need to define thousands of variables then <mono>:=</mono> is faster, plus it has useful error messages for unrecognised types.
 		    				</p>
 		    
+		    				<p>
+		    					<b>Note:</b> <mono>Nift</mono> will skip to the first non-whitespace (ie. to the first character that is not a space, tab or newline) after a definition and inject it to the output file where the definition started. If you want to prevent <mono>Nift</mono> from doing this put a '<mono>!</mono>' after the definition, eg.:
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
+		    <pre class="prettyprint inline lang-nift">
+@:=(int, x=10)!
+
+</pre>
+		    </div>
+		    				</p>
+		    
 		    				<h4 id="options">
 		    					Options
 		    				</h4>
@@ -216,11 +226,13 @@ type(definitions)
 		    				<p>
 		    					Examples of <mono>:=</mono> being used with <mono>f++</mono>:					
 		    
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
 		    <pre class="prettyprint inline linenums lang-nift">
-int a=10, b=12
+int a=10, b=12; double d=3.14
 string(str="hello, world!")
-:=(ofstream, ofs("input.txt"))
+:=(ofstream, ofs("output.txt"))
+write(ofs, a, " ", b, " ", d, endl)
+write(ofs, str, endl)
 ofs.close()</pre>
 		    </div>
 		    				</p>
@@ -231,11 +243,13 @@ ofs.close()</pre>
 		    				<p>
 		    					Examples of <mono>:=</mono> being used with <mono>n++</mono>:					
 		    
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
 		    <pre class="prettyprint inline linenums lang-nift">
-@int a=10, b=12
+@int a=10, b=12; @double d=3.14
 @string(str="hello, world!")
-@:=(ofstream, ofs("input.txt"))
+@:=(ofstream, ofs("output.txt"))
+@write(ofs, a, " ", b, " ", d, endl)
+@write(ofs, str, endl)
 @ofs.close()</pre>
 		    </div>
 		    				</p>
@@ -279,7 +293,7 @@ ofs.close()</pre>
 							<center><img src="../../images/badger.png" alt="Nift badger mascot" width="325" style="max-width:90%; margin-bottom:20px"></center>
 			
 							<ul>
-								<li>&copy;&nbsp;2015 - <span name="cyear"></span> <a href="https://nift.cc">Nift</a></li>
+								<li>&copy;&nbsp;<span name="cyear"></span> <a href="https://nift.cc">Nift</a></li>
 								<li><a href="../../tos.html">Terms of Service</a></li>
 								<li><a href="../../privacy_policy.html">Privacy Policy</a></li>
 							</ul> <br>
@@ -354,17 +368,11 @@ ofs.close()</pre>
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-62165905-2"></script>
 		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
 
-		  gtag('config', 'UA-62165905-2');
+			gtag('config', 'UA-62165905-2');
 		</script>
     </body>
 </html>
-
-<!--
-	Design: Escape Velocity by Pixelarity
-	pixelarity.com | @ajlkn hello@pixelarity.com
-	License: pixelarity.com/license
--->

@@ -12,7 +12,7 @@ function load()
     	for(var i=0; i<pre_blocks.length; i++)
 		{
 			//alert(pre_blocks[i].innerHTML);
-			while(pre_blocks[i].innerHTML[pre_blocks[i].innerHTML.length-1] == '\n')
+			if(pre_blocks[i].innerHTML[pre_blocks[i].innerHTML.length-1] == '\n')
 				pre_blocks[i].innerHTML = pre_blocks[i].innerHTML.substring(0, pre_blocks[i].innerHTML.length-1);
 			pre_blocks_txt.push(pre_blocks[i].innerHTML);
 

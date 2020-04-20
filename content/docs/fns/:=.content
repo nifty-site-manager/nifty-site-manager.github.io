@@ -54,6 +54,16 @@ type(definitions)
 					<b>Note:</b> If you need to define thousands of variables then <mono>:=</mono> is faster, plus it has useful error messages for unrecognised types.
 				</p>
 
+				<p>
+					<b>Note:</b> <mono>Nift</mono> will skip to the first non-whitespace (ie. to the first character that is not a space, tab or newline) after a definition and inject it to the output file where the definition started. If you want to prevent <mono>Nift</mono> from doing this put a '<mono>!</mono>' after the definition, eg.:
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline lang-nift">
+\@:=(int, x=10)!
+@int x=10;!
+</pre>
+</div>
+				</p>
+
 				<h4 id="options">
 					Options
 				</h4>
@@ -104,11 +114,13 @@ type(definitions)
 				<p>
 					Examples of <mono>:=</mono> being used with <mono>f++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline linenums lang-nift">
-int a=10, b=12
+int a=10, b=12; double d=3.14
 string(str="hello, world!")
-:=(ofstream, ofs("input.txt"))
+:=(ofstream, ofs("output.txt"))
+write(ofs, a, " ", b, " ", d, endl)
+write(ofs, str, endl)
 ofs.close()</pre>
 </div>
 				</p>
@@ -119,11 +131,13 @@ ofs.close()</pre>
 				<p>
 					Examples of <mono>:=</mono> being used with <mono>n++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline linenums lang-nift">
-\@int a=10, b=12
+\@int a=10, b=12; \@double d=3.14
 \@string(str="hello, world!")
-\@:=(ofstream, ofs("input.txt"))
+\@:=(ofstream, ofs("output.txt"))
+\@write(ofs, a, " ", b, " ", d, endl)
+\@write(ofs, str, endl)
 \@ofs.close()</pre>
 </div>
 				</p>

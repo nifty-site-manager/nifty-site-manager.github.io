@@ -48,6 +48,18 @@ function{options}(name)
 					The <mono>function</mono> function is for <u>user-defined functions</u>, it takes a single parameter specifying a function name and is followed by a block of code to be run whenever the function is called.
 				</p>
 
+				<p>
+					<b>Note:</b> <mono>Nift</mono> will skip to the first non-whitespace (ie. to the first character that is not a space, tab or newline) after a <mono>function</mono> definition and inject it to the output file where the definition started. If you want to prevent <mono>Nift</mono> from doing this put a '<mono>!</mono>' after the definition, eg.:
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline lang-nift">
+\@function(f)
+{
+	# block
+}!
+</pre>
+</div>
+				</p>
+
 				<h4 id="options">
 					Options
 				</h4>

@@ -43,13 +43,23 @@ cd path
 					<mono>cd</mono> is the <u>change directory</u> function, it takes a single parameter that should be a path to change directory to.
 				</p>
 
+				<p>
+					<b>Note:</b> <mono>Nift</mono> will skip to the first non-whitespace (ie. to the first character that is not a space, tab or newline) after a <mono>cd</mono> call and inject it to the output file where the call started. If you want to prevent <mono>Nift</mono> from doing this put a '<mono>!</mono>' after the call, eg.:
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline lang-nift">
+\@cd ~/;!
+\@cd(~/)!
+</pre>
+</div>
+				</p>
+
 				<h4 id="f++-eg">
 					f++ example
 				</h4>
 				<p>
 					Examples of <mono>cd</mono> being used with <mono>f++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline linenums lang-nift">
 cd("~/Downloads")
 cd /usr/local/bin
@@ -63,7 +73,7 @@ cd "C:\Windows\system32"</pre>
 				<p>
 					Example of <mono>cd</mono> being used with <mono>n++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline linenums lang-nift">
 \@cd("~/Downloads")
 \@cd /usr/local/bin

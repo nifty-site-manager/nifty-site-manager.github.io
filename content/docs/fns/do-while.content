@@ -56,6 +56,18 @@ do-while{options}(condition)
 					<b>Note:</b> <mono>f++</mono> is used for <mono>do-while</mono> conditions, even for <mono>n++</mono>. If you accidentally use <mono>n++</mono> for the condition it will most often run without any syntax or semantic errors anyway. 
 				</p>
 
+				<p>
+					<b>Note:</b> If not writing to the output file <mono>Nift</mono> will skip to the first non-whitespace (ie. to the first character that is not a space, tab or newline) after a <mono>do-while</mono> loop and inject it to the output file where the call started. If you want to prevent <mono>Nift</mono> from doing this put a '<mono>!</mono>' after the loop, eg.:
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline lang-nift">
+\@do-while{!o}(condition)
+{
+	# block
+}!
+</pre>
+</div>
+				</p>
+
 				<h4 id="options">
 					Options
 				</h4>

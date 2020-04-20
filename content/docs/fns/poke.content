@@ -42,6 +42,15 @@ poke{option}(params)
 					The <mono>poke</mono> function takes a non-zero number of string parameters that should be paths to create or just update the modification time for, you can poke files or directories.
 				</p>
 
+				<p>
+					<b>Note:</b> <mono>Nift</mono> will skip to the first non-whitespace (ie. to the first character that is not a space, tab or newline) after a <mono>poke</mono> call and inject it to the output file where the call started. If you want to prevent <mono>Nift</mono> from doing this put a '<mono>!</mono>' after the call, eg.:
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline lang-nift">
+\@poke(dir)!
+</pre>
+</div>
+				</p>
+
 				<h4 id="options">
 					Options
 				</h4>

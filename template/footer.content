@@ -20,7 +20,7 @@
 				<center><img src="@pathtofile(site/images/badger.png)" alt="Nift badger mascot" width="325" style="max-width:90%; margin-bottom:20px"></center>
 
 				<ul>
-					<li>&copy;&nbsp;2015 - <span name="cyear"></span> <a href="https://nift.cc">Nift</a></li>
+					<li>&copy;&nbsp;<span name="cyear"></span> <a href="https://nift.cc">Nift</a></li>
 					<li><a href="@pathto(tos)">Terms of Service</a></li>
 					<li><a href="@pathto(privacy_policy)">Privacy Policy</a></li>
 				</ul> <br>

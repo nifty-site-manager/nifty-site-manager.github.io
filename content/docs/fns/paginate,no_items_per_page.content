@@ -39,6 +39,16 @@ paginate.no_items_per_page(int)
 				</h4>
 				<p>
 					The <mono>paginate.no_items_per_page</mono> function is for specifying how many items to include per page with pagination, it takes a single non-negative integer parameter as input.
+				</p>
+
+				<p>
+					<b>Note:</b> <mono>Nift</mono> will skip to the first non-whitespace (ie. to the first character that is not a space, tab or newline) after a <mono>paginate.no_items_per_page</mono> call and inject it to the output file where the call started. If you want to prevent <mono>Nift</mono> from doing this put a '<mono>!</mono>' after the call, eg.:
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline lang-nift">
+\@paginate.no_items_per_page(10)!
+</pre>
+</div>
+				</p>
 
 				<h4 id="f++-eg">
 					f++ example

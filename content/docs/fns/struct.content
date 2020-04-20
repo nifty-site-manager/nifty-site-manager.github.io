@@ -48,6 +48,18 @@ struct{options}(name)
 					The <mono>struct</mono> function is for <u>user-defined structures/types</u>, it takes a single parameter specifying a structure/type name and is followed by a block of code to be run whenever an object of that type is defined.
 				</p>
 
+				<p>
+					<b>Note:</b> <mono>Nift</mono> will skip to the first non-whitespace (ie. to the first character that is not a space, tab or newline) after a <mono>struct</mono> definition and inject it to the output file where the definition started. If you want to prevent <mono>Nift</mono> from doing this put a '<mono>!</mono>' after the definition, eg.:
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline lang-nift">
+\@struct(s)
+{
+	# block
+}!
+</pre>
+</div>
+				</p>
+
 				<h4 id="options">
 					Options
 				</h4>

@@ -38,6 +38,7 @@ paginate
 				</h4>
 				<p>
 					The <mono>paginate</mono> function is for specifying with pagination where to insert pages in to the file being built, it takes zero parameters.
+				</p>
 
 				<h4 id="n++-eg">
 					n++ example

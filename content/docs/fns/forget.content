@@ -13,6 +13,7 @@
 				<ul style="text-indent:30px">
 					<li><a href="#syntax">Syntax</a></li>
 					<li><a href="#description">Description</a></li>
+					<li><a href="#options">Options</a></li>
 					<li><a href="#f++-eg">f++ example</a></li>
 					<li><a href="#n++-eg">n++ example</a></li>
 				</ul>
@@ -41,16 +42,57 @@ forget(params)
 					The <mono>forget</mono> function is for <u>forgetting variables</u>, it takes a non-zero number of parameters that should be variables that have previously been defined and forgets them.
 				</p>
 
+				<p>
+					<b>Note:</b> <mono>Nift</mono> will skip to the first non-whitespace (ie. to the first character that is not a space, tab or newline) after a <mono>forget</mono> call and inject it to the output file where the call started. If you want to prevent <mono>Nift</mono> from doing this put a '<mono>!</mono>' after the call, eg.:
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline lang-nift">
+\@forget(x)!
+</pre>
+</div>
+				</p>
+
+				<h4 id="options">
+					Options
+				</h4>
+				<p>
+					The following options are available for <mono>forget</mono> calls:
+
+					<center class="table">
+						<table id="forget_options_table" class="alt">
+							<thead>
+								<tr>
+									<th>option</th>
+									<th>description</th>
+								</tr>
+							</thead>
+							<tr>
+								<td><mono>exprtk</mono></td>
+								<td>remove <mono>bool</mono>, <mono>int</mono>, <mono>double</mono>, <mono>char</mono>, <mono>string</mono> and <mono>std::vector@ent(<)double@ent(>)</mono> variables from <mono>ExprTk</mono> symbol table</td>
+							</tr>
+							<tfoot>
+								<tr>
+									<th>option</th>
+									<th>description</th>
+								</tr>
+							</tfoot>
+						</table>
+					</center>
+				</p>
+
+				<p>
+					<b>Note:</b> If you use the option to remove a variable/symbol from the <mono>ExprTk</mono> symbol table then try to evaluate an expression using the variable/symbol without it being redefined then you will get a segmentation fault. This is why <mono>forget</mono> does not remove variables/symbols from the <mono>ExprTk</mono> symbol table by default. 
+				</p>
+
 				<h4 id="f++-eg">
 					f++ example
 				</h4>
 				<p>
 					Example of <mono>forget</mono> being used with <mono>f++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline linenums">
-:=(int, i=0)
-:=(string, str="hello")
+int i = 0
+string str = "hello"
 forget(i, str)</pre>
 </div>
 				</p>
@@ -61,10 +103,10 @@ forget(i, str)</pre>
 				<p>
 					Example of <mono>forget</mono> being used with <mono>n++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline linenums">
-\@:=(int, i=0)
-\@:=(string, str="hello")
+\@int i = 0
+\@string str = "hello"
 \@forget(i, str)</pre>
 </div>
 				</p>

@@ -45,6 +45,15 @@ console.unlock
 					<b>Note:</b> An error will be thrown if you call <mono>console.unlock</mono> when the console is not already locked. 
 				</p>
 
+				<p>
+					<b>Note:</b> <mono>Nift</mono> will skip to the first non-whitespace (ie. to the first character that is not a space, tab or newline) after a <mono>console.unlock</mono> call and inject it to the output file where the call started. If you want to prevent <mono>Nift</mono> from doing this put a '<mono>!</mono>' after the call, eg.:
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline lang-nift">
+\@console.unlock()!
+</pre>
+</div>
+				</p>
+
 				<h4 id="f++-eg">
 					f++ example
 				</h4>

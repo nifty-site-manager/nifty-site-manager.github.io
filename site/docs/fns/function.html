@@ -160,6 +160,18 @@ function{options}(name)
 		    					The <mono>function</mono> function is for <u>user-defined functions</u>, it takes a single parameter specifying a function name and is followed by a block of code to be run whenever the function is called.
 		    				</p>
 		    
+		    				<p>
+		    					<b>Note:</b> <mono>Nift</mono> will skip to the first non-whitespace (ie. to the first character that is not a space, tab or newline) after a <mono>function</mono> definition and inject it to the output file where the definition started. If you want to prevent <mono>Nift</mono> from doing this put a '<mono>!</mono>' after the definition, eg.:
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
+		    <pre class="prettyprint inline lang-nift">
+@function(f)
+{
+	# block
+}!
+</pre>
+		    </div>
+		    				</p>
+		    
 		    				<h4 id="options">
 		    					Options
 		    				</h4>
@@ -316,7 +328,7 @@ myFunc{a, b, c}("hello", "world!")</pre>
 							<center><img src="../../images/badger.png" alt="Nift badger mascot" width="325" style="max-width:90%; margin-bottom:20px"></center>
 			
 							<ul>
-								<li>&copy;&nbsp;2015 - <span name="cyear"></span> <a href="https://nift.cc">Nift</a></li>
+								<li>&copy;&nbsp;<span name="cyear"></span> <a href="https://nift.cc">Nift</a></li>
 								<li><a href="../../tos.html">Terms of Service</a></li>
 								<li><a href="../../privacy_policy.html">Privacy Policy</a></li>
 							</ul> <br>
@@ -391,17 +403,11 @@ myFunc{a, b, c}("hello", "world!")</pre>
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-62165905-2"></script>
 		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
 
-		  gtag('config', 'UA-62165905-2');
+			gtag('config', 'UA-62165905-2');
 		</script>
     </body>
 </html>
-
-<!--
-	Design: Escape Velocity by Pixelarity
-	pixelarity.com | @ajlkn hello@pixelarity.com
-	License: pixelarity.com/license
--->
