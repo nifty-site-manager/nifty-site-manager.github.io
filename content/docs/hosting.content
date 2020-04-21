@@ -23,7 +23,7 @@
 						<li><a href="@pathtopage(docs/bitbucket_hosting)">BitBucket</a></li>
 						<li><a href="@pathtopage(docs/github_hosting)">GitHub</a></li>
 						<li><a href="@pathtopage(docs/gitlab_hosting)">GitLab</a></li>
-						<li><a href="@pathtopage(docs/zeit_hosting)">ZEIT Now</a> (recommended)</li>
+						<li><a href="@pathtopage(docs/vercel_hosting)">Vercel</a> (recommended)</li>
 					</ul>
 				</p>
 
@@ -34,12 +34,12 @@
 					<a href="https://about.gitlab.com/product/pages/"><img src="@pathtofile(site/images/gitlab-icon.svg)" alt="GitLab logo" width=50 style="max-width:14%; vertical-align:middle;"></a> &nbsp;
 					<a href="https://www.netlify.com/"><img src="@pathtofile(site/images/netlify.png)" alt="Netlify logo" width=50 style="max-width: 14%; vertical-align: middle"></a> &nbsp;
 					<a href="https://surge.sh/"><img src="@pathtofile(site/images/surge.svg)" alt="surge.sh logo" width=50 style="max-width: 14%; vertical-align:middle;"></a>
-					<a href="https://zeit.co"><img src="@pathtofile(site/images/zeit-black.svg)" id="zeit-logo" alt="ZEIT Now logo" width=50 style="max-width: 14%; vertical-align:middle;"></a>
+					<a href="https://vercel.com"><img src="@pathtofile(site/images/vercel-black.svg)" id="vercel-logo" alt="Vercel logo" width=50 style="max-width: 14%; vertical-align:middle;"></a>
 					</div>
 				</center>
 
 				<p>
-					For creating static websites on code collaboration sites offering repository management like <a href="https://aws.amazon.com/codecommit/">Amazon CodeCommit</a>, <a href="https://pages.bitbucket.io/">BitBucket</a>, <a href="https://pages.github.com/">GitHub</a> and <a href="https://about.gitlab.com/product/pages/">GitLab</a> you can import/fork, rename and clone a site repository template and work from that (use <mono>nsm clone <i>repository-url</i></mono>). I personally find hosting on GitLab easier than BitBucket or GitHub, because you only need one branch (standard <mono>master</mono>, though you can use one branch on BitBucket and GitHub when hosting with places like <a href="https://zeit.co/">ZEIT Now</a> or <a href="https://netlify.com">Netlify</a> as well) then have it deploy the site when you push using a <mono>.gitlab-ci.yaml</mono> file.
+					For creating static websites on code collaboration sites offering repository management like <a href="https://aws.amazon.com/codecommit/">Amazon CodeCommit</a>, <a href="https://pages.bitbucket.io/">BitBucket</a>, <a href="https://pages.github.com/">GitHub</a> and <a href="https://about.gitlab.com/product/pages/">GitLab</a> you can import/fork, rename and clone a site repository template and work from that (use <mono>nsm clone <i>repository-url</i></mono>). I personally find hosting on GitLab easier than BitBucket or GitHub, because you only need one branch (standard <mono>master</mono>, though you can use one branch on BitBucket and GitHub when hosting with places like <a href="https://vercel.com/">Vercel</a> or <a href="https://netlify.com">Netlify</a> as well) then have it deploy the site when you push using a <mono>.gitlab-ci.yaml</mono> file.
 				</p>
 
 				<p>
@@ -51,7 +51,7 @@
 				</p>
 
 				<p>
-					You can also combine any of the above hosting options with <a href="https://zeit.co/">ZEIT Now</a>, which works well for custom domains (including subdomains) and automatically renews <a href="https://letsencrypt.org/">Let's Encrypt</a> certificates for your websites. We recommend ZEIT Now for hosting JAMstack websites.
+					You can also combine any of the above hosting options with <a href="https://vercel.com/">Vercel</a>, which works well for custom domains (including subdomains) and automatically renews <a href="https://letsencrypt.org/">Let's Encrypt</a> certificates for your websites. We recommend <mono>Vercel</mono> for hosting serverless websites.
 				</p>
 
 				<p>

@@ -662,12 +662,12 @@
 'string'
 'template/page.template'
 
-'docs/windows_install'
-'windows_install'
+'docs/vercel_hosting'
+"netlify_hosting'"
 'template/page.template'
 
-'docs/zeit_hosting'
-"netlify_hosting'"
+'docs/windows_install'
+'windows_install'
 'template/page.template'
 
 'index'
