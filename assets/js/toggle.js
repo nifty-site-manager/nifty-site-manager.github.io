@@ -110,12 +110,12 @@ function toggle_light_dark()
     }
   }
 
-  if(document.getElementById("zeit-logo"))
+  if(document.getElementById("vercel-logo"))
   {
     if(dark_mode == 1)
-      document.getElementById("zeit-logo").src = "../images/zeit-white.svg";
+      document.getElementById("vercel-logo").src = "../images/vercel-white.svg";
     else
-      document.getElementById("zeit-logo").src = "../images/zeit-dark.png";
+      document.getElementById("vercel-logo").src = "../images/vercel-dark.png";
   }
 }
 
