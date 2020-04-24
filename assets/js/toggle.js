@@ -110,6 +110,20 @@ function toggle_light_dark()
     }
   }
 
+  if(document.getElementById("markdown-logo"))
+  {
+    if(dark_mode == 1)
+    {
+      document.getElementById("markdown-logo").src = "../images/markdown.png";
+      document.getElementById("markdown-logo").width = 250;
+    }
+    else
+    {
+      document.getElementById("markdown-logo").src = "../images/markdown.svg";
+      document.getElementById("markdown-logo").width = 250;
+    }
+  }
+
   if(document.getElementById("vercel-logo"))
   {
     if(dark_mode == 1)

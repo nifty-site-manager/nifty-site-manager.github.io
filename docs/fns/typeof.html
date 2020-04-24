@@ -112,7 +112,7 @@
 
 		    <!-- Main -->
 		    <section id="main" class="wrapper style2">
-		    	<div class="title">fn: <mono>type</mono></div>
+		    	<div class="title">fn: <mono>typeof</mono></div>
 		    	<div class="container">
 		    		<!-- Features -->
 		    		<section id="features">
@@ -133,15 +133,15 @@
 		    					Syntax
 		    				</h4>
 		    				<p>
-		    					The syntax for <mono>type</mono> calls is:
+		    					The syntax for <mono>typeof</mono> calls is:
 		    <div align="center" style="margin-top:-15px">
 		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
-type(var)
+typeof(var)
 </pre>
 		    </div><br>
 		    <div align="center">
 		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
-@type(var)
+@typeof(var)
 </pre>
 		    </div>
 		    				</p>
@@ -150,19 +150,19 @@ type(var)
 		    					Description
 		    				</h4>
 		    				<p>
-		    					The <mono>type</mono> function takes a single variable parameter and returns the type of the variable.
+		    					The <mono>typeof</mono> function takes a single variable parameter and returns the type of the variable.
 		    				</p>
 		    
 		    				<h4 id="f++-eg">
 		    					f++ example
 		    				</h4>
 		    				<p>
-		    					Example of <mono>type</mono> being used with <mono>f++</mono>:					
+		    					Example of <mono>typeof</mono> being used with <mono>f++</mono>:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline linenums lang-nift">
 :=(string, str="hello, world!")
-console(type(str))</pre>
+console(typeof(str))</pre>
 		    </div>
 		    				</p>
 		    
@@ -170,12 +170,12 @@ console(type(str))</pre>
 		    					n++ example
 		    				</h4>
 		    				<p>
-		    					Example of <mono>type</mono> being used with <mono>n++</mono>:					
+		    					Example of <mono>typeof</mono> being used with <mono>n++</mono>:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline linenums lang-nift">
 @:=(string, str="hello, world!")
-@console(@type(str))</pre>
+@console(@typeof(str))</pre>
 		    </div>
 		    				</p>
 		    			</div>

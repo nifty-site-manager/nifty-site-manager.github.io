@@ -138,7 +138,7 @@ input, select, textarea {
 
 	strong, b {
 		font-weight: 700;
-		color: #484d55;
+		color: #5d7363; /*#484d55*/
 	}
 
 	blockquote {
