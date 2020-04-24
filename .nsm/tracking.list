@@ -506,8 +506,8 @@
 'system'
 'template/page.template'
 
-'docs/fns/type'
-'type'
+'docs/fns/typeof'
+'typeof'
 'template/page.template'
 
 'docs/fns/unquote'

@@ -37,14 +37,14 @@ snap install nift --classic
 						<a href="https://snapcraft.io/install/nift/arch"><img src="@pathtofile(site/images/arch.svg)" height="40px" alt="Arch snap" title="Arch snap"></a> &nbsp;
 						<a href="https://snapcraft.io/install/nift/centos"><img src="@pathtofile(site/images/centos.svg)" height="40px" alt="CentOS snap" title="CentOS snap"></a> &nbsp;
 						<a href="https://snapcraft.io/install/nift/debian"><img src="@pathtofile(site/images/debian.svg)" height="40px" alt="Debian snap" title="Debian snap"></a> &nbsp;
-						<a href="https://snapcraft.io/install/nift/elementary"><img src="@pathtofile(site/images/elementary.svg)" height="40px" alt="Elementary OS snap" title="Elementary OS snap"></a> &nbsp;
+						<a href="https://snapcraft.io/install/nift/elementary"><img src="@pathtofile(site/images/elementary.png)" height="40px" alt="Elementary OS snap" title="Elementary OS snap"></a> &nbsp;
 						<a href="https://snapcraft.io/install/nift/fedora"><img src="@pathtofile(site/images/fedora.png)" height="40px" alt="Fedora snap" title="Fedora snap"></a> &nbsp;
 						<a href="https://snapcraft.io/install/nift/kde-neon"><img src="@pathtofile(site/images/kde-neon.svg)" height="40px" alt="KDE Neon snap" title="KDE Neon snap"></a> &nbsp;
 						<a href="https://snapcraft.io/install/nift/kubuntu"><img src="@pathtofile(site/images/kubuntu.svg)" height="40px" alt="Kubuntu snap" title="Kubuntu snap"></a> &nbsp;
 						<a href="https://snapcraft.io/install/nift/manjaro"><img src="@pathtofile(site/images/manjaro.svg)" height="40px" alt="Manjaro snap" title="Manjaro snap"></a> &nbsp;
 						<a href="https://snapcraft.io/install/nift/mint"><img src="@pathtofile(site/images/mint.svg)" height="40px" alt="Linux Mint snap" title="Linux Mint snap"></a> &nbsp;
 						<a href="https://snapcraft.io/install/nift/opensuse"><img src="@pathtofile(site/images/opensuse.svg)" height="40px" alt="openSUSE snap" title="openSUSE snap"></a> &nbsp;
-						<a href="https://snapcraft.io/install/nift/rhel"><img src="@pathtofile(site/images/redhat.svg)" height="40px" alt="Red Hat Enterprise Linux snap" title="Red Hat Enterprise Linux snap"></a> &nbsp;
+						<a href="https://snapcraft.io/install/nift/rhel"><img src="@pathtofile(site/images/redhat.png)" height="40px" alt="Red Hat Enterprise Linux snap" title="Red Hat Enterprise Linux snap"></a> &nbsp;
 						<a href="https://snapcraft.io/install/nift/ubuntu"><img src="@pathtofile(site/images/ubuntu.svg)" height="40px" alt="Ubuntu snap" title="Ubuntu snap"></a>
 					</p>
 				</center>

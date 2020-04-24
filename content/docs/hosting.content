@@ -32,6 +32,7 @@
 					<a href="https://pages.bitbucket.io/"><img src="@pathtofile(site/images/bitbucket-icon.svg)" alt="BitBucket logo" width=50 style="max-width:14%; vertical-align:middle"></a> &nbsp;
 					<a href="https://pages.github.com/"><img src="@pathtofile(site/images/github-icon.svg)" id="gh-logo" alt="GitHub logo" width=50 style="max-width:14%; vertical-align:middle;"></a> &nbsp;
 					<a href="https://about.gitlab.com/product/pages/"><img src="@pathtofile(site/images/gitlab-icon.svg)" alt="GitLab logo" width=50 style="max-width:14%; vertical-align:middle;"></a> &nbsp;
+					<a href="https://www.fleek.co/"><img src="@pathtofile(site/images/fleek.png)" alt="Fleek logo" width=40 style="max-width: 14%; vertical-align: middle"></a> &nbsp;
 					<a href="https://www.netlify.com/"><img src="@pathtofile(site/images/netlify.png)" alt="Netlify logo" width=50 style="max-width: 14%; vertical-align: middle"></a> &nbsp;
 					<a href="https://surge.sh/"><img src="@pathtofile(site/images/surge.svg)" alt="surge.sh logo" width=50 style="max-width: 14%; vertical-align:middle;"></a>
 					<a href="https://vercel.com"><img src="@pathtofile(site/images/vercel-black.svg)" id="vercel-logo" alt="Vercel logo" width=50 style="max-width: 14%; vertical-align:middle;"></a>
@@ -60,6 +61,7 @@
 					<ul>
 						<li><a href="https://developers.cloudflare.com/workers/sites/">CloudFlare</a></li>
 						<li><a href="https://aws.amazon.com/amplify/console/">Amazon Amplify Console</a></li>
+						<li><a href="https://fleek.co/">Fleek</a></li>
 						<li><a href="https://firebase.google.com/">Google FireBase</a></li>
 						<li><a href="https://netlify.com">Netlify</a></li>
 						<li><a href="https://surge.sh/">surge.sh</a></li>
