@@ -1,9 +1,9 @@
 04:19:03 Monday April 27 2020
-'docs/fns'
-'fns'
+'docs/fns/hash'
+'hash'
 'template/page.template'
 
-'content/docs/fns.content'
+'content/docs/fns/hash.content'
 'template/footer.content'
 'template/head.content'
 'template/menu.content'

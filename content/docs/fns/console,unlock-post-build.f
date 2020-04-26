@@ -1,1 +1,1 @@
-mve "site/docs/fns/console,unlock.html" "site/docs/fns/console.unlock.html"
+mve{f} "site/docs/fns/console,unlock.html" "site/docs/fns/console.unlock.html"

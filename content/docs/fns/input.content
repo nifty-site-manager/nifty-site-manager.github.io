@@ -22,14 +22,16 @@
 				</h4>
 				<p>
 					The syntax for <mono>inject</mono>/<mono>input</mono> calls is:
-<div align="center" style="margin-top:-15px">
-<mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+<div align="center" style="margin-top:-35px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-30px">
 input{options}(string)
+inject{options}(string)
 </pre>
 </div><br>
-<div align="center">
-<mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+<div align="center" style="margin-top:15px">
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-30px">
 \@input{options}(string)
+\@inject{options}(string)
 </pre>
 </div>
 				</p>
@@ -95,7 +97,7 @@ input{options}(string)
 				<p>
 					Example of <mono>input</mono> being used with <mono>f++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline linenums">
 <html>
 	<head>
@@ -115,7 +117,7 @@ input{options}(string)
 				<p>
 					Example of <mono>input</mono> being used with <mono>n++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline linenums">
 <html>
 	<head>

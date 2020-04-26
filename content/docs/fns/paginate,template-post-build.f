@@ -1,1 +1,1 @@
-mve "site/docs/fns/paginate,template.html" "site/docs/fns/paginate.template.html"
+mve{f} "site/docs/fns/paginate,template.html" "site/docs/fns/paginate.template.html"

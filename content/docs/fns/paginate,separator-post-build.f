@@ -1,1 +1,1 @@
-mve "site/docs/fns/paginate,separator.html" "site/docs/fns/paginate.separator.html"
+mve{f} "site/docs/fns/paginate,separator.html" "site/docs/fns/paginate.separator.html"

@@ -207,6 +207,8 @@ funcName{options}(params)
 						<li><a href="@pathtopage(docs/fns/getenv)">getenv</a></li>
 						<li><a href="@pathtopage(docs/fns/getline)">getline</a></li> <br>
 
+						<li><a href="@pathtopage(docs/fns/hash)">hash</a></li> <br>
+
 						<li><a href="@pathtopage(docs/fns/if)">if</a></li>
 						<li><a href="@pathtopage(docs/fns/imginclude)">imginclude</a></li>
 						<li><a href="@pathtopage(docs/fns/in)">in</a></li>

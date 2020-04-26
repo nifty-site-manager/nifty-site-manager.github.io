@@ -278,6 +278,10 @@
 'getline'
 'template/page.template'
 
+'docs/fns/hash'
+'hash'
+'template/page.template'
+
 'docs/fns/if'
 'if'
 'template/page.template'
