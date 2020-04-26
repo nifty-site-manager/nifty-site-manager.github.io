@@ -133,10 +133,33 @@ function toggle_light_dark()
   }
 }
 
-//dark mode is default
-if(!localStorage.getItem('dark-mode') || localStorage.getItem('dark-mode') === "1") 
+//default is to use os colour mode and dark mode if unavailable
+if(localStorage.getItem('dark-mode') == "1") 
 {
   toggle_light_dark();
   document.getElementById("light_dark_LHS").innerHTML = "dark";
   document.getElementById("light_dark_RHS").innerHTML = "light";
+}
+else if(!localStorage.getItem('dark-mode'))
+{
+  if (window.matchMedia) 
+  {
+    // Check if the dark-mode Media-Query matches
+    if(window.matchMedia('(prefers-color-scheme: dark)').matches) // Dark
+    {
+      toggle_light_dark();
+      document.getElementById("light_dark_LHS").innerHTML = "dark";
+      document.getElementById("light_dark_RHS").innerHTML = "light";
+    } 
+    else //Light
+    {
+    }
+  } 
+  else 
+  {
+    // Default (when Media-Queries are not supported)
+    toggle_light_dark();
+    document.getElementById("light_dark_LHS").innerHTML = "dark";
+    document.getElementById("light_dark_RHS").innerHTML = "light";
+  }
 }

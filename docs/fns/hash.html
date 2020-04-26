@@ -112,7 +112,7 @@
 
 		    <!-- Main -->
 		    <section id="main" class="wrapper style2">
-		    	<div class="title">fn: <mono>inject</mono>/<mono>input</mono></div>
+		    	<div class="title">fn: <mono>hash</mono></div>
 		    	<div class="container">
 		    		<!-- Features -->
 		    		<section id="features">
@@ -133,17 +133,15 @@
 		    					Syntax
 		    				</h4>
 		    				<p>
-		    					The syntax for <mono>inject</mono>/<mono>input</mono> calls is:
-		    <div align="center" style="margin-top:-35px">
-		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-30px">
-input{options}(string)
-inject{options}(string)
+		    					The syntax for <mono>hash</mono> calls is:
+		    <div align="center" style="margin-top:-15px">
+		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+hash{option}(string)
 </pre>
 		    </div><br>
-		    <div align="center" style="margin-top:15px">
-		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-30px">
-@input{options}(string)
-@inject{options}(string)
+		    <div align="center">
+		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+@hash{option}(string)
 </pre>
 		    </div>
 		    				</p>
@@ -152,21 +150,82 @@ inject{options}(string)
 		    					Description
 		    				</h4>
 		    				<p>
-		    					The <mono>inject</mono>/<mono>input</mono> function is for injecting/inputting the output from parsing another file, it takes a single string parameter specifying the file to parse.
+		    					The <mono>hash</mono> function is for getting the hash value of a string. It can take a single string parameter and returns the <mono>RS</mono> hash of the string, or takes a string parameter followed by a code indicating which hashing algorithm to use. The available codes are as follows:
+		    
+		    					<center class="table">
+		    						<table id="hash_code_table" class="alt">
+		    							<thead>
+		    								<tr>
+		    									<th>code</th>
+		    									<th>description</th>
+		    								</tr>
+		    							</thead>
+		    							<tr>
+		    								<td><mono>RS</mono></td>
+		    								<td>A simple hash function from Robert Sedgwicks Algorithms in C book, with some added some simple optimizations to the algorithm in order to speed up its hashing process</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>JS</mono></td>
+		    								<td>A bitwise hash function written by Justin Sobel</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>PJW</mono></td>
+		    								<td>based on work by Peter J. Weinberger of Renaissance Technologies. The book Compilers (Principles, Techniques and Tools) by Aho, Sethi and Ulman, recommends the use of hash functions that employ the hashing methodology found in this particular algorithm</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>ELF</mono></td>
+		    								<td>Similar to the PJW Hash function, but tweaked for 32-bit processors. It is a widley used hash function on UNIX based systems</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>BKDR</mono></td>
+		    								<td>This hash function comes from Brian Kernighan and Dennis Ritchie's book "The C Programming Language". It is a simple hash function using a strange set of possible seeds which all constitute a pattern of 31....31...31 etc, it seems to be very similar to the DJB hash function</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>SDBM</mono></td>
+		    								<td>This is the algorithm of choice which is used in the open source SDBM project. The hash function seems to have a good over-all distribution for many different data sets. It seems to work well in situations where there is a high variance in the MSBs of the elements in a data set</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>DJB</mono></td>
+		    								<td>An algorithm produced by Professor Daniel J. Bernstein and shown first to the world on the usenet newsgroup comp.lang.c. It is one of the most efficient hash functions ever published</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>DEK</mono></td>
+		    								<td>An algorithm proposed by Donald E. Knuth in The Art Of Computer Programming Volume 3, under the topic of sorting and search chapter 6.4</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>FNV</mono></td>
+		    								<td>Fowler–Noll–Vo is a non-cryptographic hash function created by Glenn Fowler, Landon Curt Noll, and Kiem-Phong Vo</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>BP</mono></td>
+		    								<td>Another non-cryptographic hash function, not a lot of information about it is available</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>AP</mono></td>
+		    								<td>An algorithm produced by Arash Partow (developer of these hasing algorithms along with <mono>ExprTk</mono>). He took ideas from all of the above hash functions making a hybrid rotative and additive hash function algorithm. He suggests there is not any real mathematical analysis explaining why one should use this hash function instead of the others described above other than the fact that he tired to resemble the design as close as possible to a simple LFSR. An empirical result which demonstrated the distributive abilities of the hash algorithm was obtained using a hash-table with 100003 buckets, hashing The Project Gutenberg Etext of Webster's Unabridged Dictionary, the longest encountered chain length was 7, the average chain length was 2, the number of empty buckets was 4579</td>
+		    							</tr>
+		    							<tfoot>
+		    								<tr>
+		    									<th>code</th>
+		    									<th>description</th>
+		    								</tr>
+		    							</tfoot>
+		    						</table>
+		    					</center>
 		    				</p>
 		    
 		    				<p>
-		    					<u>Note:</u> <mono>Nift</mono> will not let you create an input loop, for example you cannot have <mono>@input(page.template)</mono> inside <mono>page.template</mono>, or any of the files that <mono>page.template</mono> injects, or any of the files that they inject, and so on. 
+		    					<b>Note:</b> The hash functions available with Nift come from <a href="http://www.partow.net/programming/hashfunctions/index.html">General Purpose Hash Function Algorithms</a> (<a href="https://github.com/ArashPartow/hash">GitHub</a>) by Arash Partow (the same person who makes <mono>ExprTk</mono>).
 		    				</p>
 		    
 		    				<h4 id="options">
 		    					Options
 		    				</h4>
 		    				<p>
-		    					The following options are available for <mono>inject</mono>/<mono>input</mono> calls:
+		    					The following options are available for <mono>hash</mono> calls:
 		    
 		    					<center class="table">
-		    						<table id="input_options_table" class="alt">
+		    						<table id="hash_options_table" class="alt">
 		    							<thead>
 		    								<tr>
 		    									<th>option</th>
@@ -174,24 +233,8 @@ inject{options}(string)
 		    								</tr>
 		    							</thead>
 		    							<tr>
-		    								<td><mono>f++</mono></td>
-		    								<td>inject output of specified file parsed with <mono>f++</mono></td>
-		    							</tr>
-		    							<tr>
-		    								<td><mono>n++</mono></td>
-		    								<td>inject output of specified file parsed with <mono>n++</mono></td>
-		    							</tr>
-		    							<tr>
-		    								<td><mono>raw</mono></td>
-		    								<td>inject specified file as raw text</td>
-		    							</tr>
-		    							<tr>
-		    								<td><mono>if-exists</mono></td>
-		    								<td>inject specified file only if it exists (normally throws an error otherwise)</td>
-		    							</tr>
-		    							<tr>
-		    								<td><mono>!i</mono></td>
-		    								<td>do not indent</td>
+		    								<td><mono>f</mono></td>
+		    								<td>parameter specifies file to hash contents of</td>
 		    							</tr>
 		    							<tfoot>
 		    								<tr>
@@ -207,19 +250,13 @@ inject{options}(string)
 		    					f++ example
 		    				</h4>
 		    				<p>
-		    					Example of <mono>input</mono> being used with <mono>f++</mono>:					
+		    					Examples of <mono>hash</mono> being used with <mono>f++</mono>:					
 		    
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
+		    <div align="center" style="margin-top:-10px">
 		    <pre class="prettyprint inline linenums">
-&lt;html>
-	&lt;head>
-		@input("template/head.content")
-	&lt;/head>
-
-	&lt;body>
-		@content
-	&lt;/body>
-&lt;/html></pre>
+hash("hello, world!")
+hash("hello, world!", FNV)
+hash{f}(file.txt, AP)</pre>
 		    </div>
 		    				</p>
 		    
@@ -227,19 +264,13 @@ inject{options}(string)
 		    					n++ example
 		    				</h4>
 		    				<p>
-		    					Example of <mono>input</mono> being used with <mono>n++</mono>:					
+		    					Examples of <mono>hash</mono> being used with <mono>n++</mono>:					
 		    
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
+		    <div align="center" style="margin-top:-10px">
 		    <pre class="prettyprint inline linenums">
-&lt;html>
-	&lt;head>
-		@input("template/head.content")
-	&lt;/head>
-
-	&lt;body>
-		@content
-	&lt;/body>
-&lt;/html></pre>
+@hash("hello, world!")
+@hash("hello, world!", FNV)
+@hash{f}(file.txt, AP)</pre>
 		    </div>
 		    				</p>
 		    			</div>
