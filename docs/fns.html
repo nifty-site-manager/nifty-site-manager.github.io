@@ -137,11 +137,13 @@
 		    				<h4 id="contents">
 		    					Contents
 		    				</h4>
-		    				<ul style="text-indent:30px">
-		    					<li><a href="#syntax">Syntax</a></li>
-		    					<li><a href="#options">Options</a></li>
-		    					<li><a href="#index">Index</a></li>
-		    				</ul>
+		    				<div style="text-indent:30px; margin-top:10px">
+		    					<ul>
+		    						<li><a href="#syntax">Syntax</a></li>
+		    						<li><a href="#options">Options</a></li>
+		    						<li><a href="#index">Index</a></li>
+		    					</ul>
+		    				</div>
 		    
 		    				<h4 id="syntax">Syntax</h4>
 		    				<p>
@@ -195,6 +197,8 @@ funcName{options}(params)
 		    				</p>
 		    				<p>
 		    					<b>Note:</b> For options and parameters (including variable names and values), you can use:
+		    				</p>
+		    				<div style="text-indent:30px; margin-top:-20px">
 		    					<ul>
 		    						<li><mono>\n</mono> for the newline character</li>
 		    						<li><mono>\t</mono> for tabs (though normal tabs also work)</li>
@@ -202,7 +206,7 @@ funcName{options}(params)
 		    						<li><mono>\'</mono> for <mono>'</mono></li>
 		    						<li><mono>\"</mono> for <mono>"</mono></li>
 		    					</ul>
-		    				</p>
+		    				</div>
 		    
 		    				<p>
 		    					Function names, options and parameters (including variable names and values) can be unquoted, single quoted or double quoted, whichever is more convenient, integrates with the other programming, scripting and/or template languages you are using and/or has nice syntax highlighting with the extensions and editor(s) you are using. Also for functions that can take multiple parameters, parameters containing commas '<mono>,</mono>' should be quoted, there can also be other times that things need to be quoted, for example if you want to have equals <mono>'='</mono> in a variable name during its definition then it will need to be quoted (though will not need to be quoted when referenced). 
@@ -248,7 +252,9 @@ funcName{options}(params)
 		    				<h4 id="index">Index</h4>
 		    				<p id="index">
 		    					Below is an index of Nift's hard-coded functions (including functions for defining variables, functions and structures/types) which can be called from <a href="f++.html">f++</a> and <a href="n++.html">n++</a>: 
-		    					<ul style="text-indent:30px">
+		    				</p>
+		    				<div style="text-indent:30px; margin-top:-20px">
+		    					<ul>
 		    						<li><a href="fns/exprtk.html">`expression`</a> (evaluate ExprTk expression)</li>
 		    						<li><a href="fns/!.html">!</a> (not operator)</li>
 		    						<li><a href="fns/!newline.html">!\n</a> (special single-line comment)</li>
@@ -325,7 +331,8 @@ funcName{options}(params)
 		    						<li><a href="fns/imginclude.html">imginclude</a></li>
 		    						<li><a href="fns/in.html">in</a></li>
 		    						<li><a href="fns/include.html">include</a></li>
-		    						<li><a href="fns/input.html">inject/input</a></li>
+		    						<li><a href="fns/input.html">inject</a></li>
+		    						<li><a href="fns/input.html">input</a></li>
 		    						<li><a href="fns/is_const.html">is_const</a></li>
 		    						<li><a href="fns/is_private.html">is_private</a></li>
 		    						<li><a href="fns/item.html">item</a></li> <br>
@@ -385,7 +392,8 @@ funcName{options}(params)
 		    						<li><a href="fns/size.html">size</a></li>
 		    						<li><a href="fns/struct.html">struct</a></li>
 		    						<li><a href="fns/substr.html">substr</a></li>
-		    						<li><a href="fns/system.html">system/sys</a></li> <br>
+		    						<li><a href="fns/system.html">sys</a></li>
+		    						<li><a href="fns/system.html">system</a></li> <br>
 		    
 		    						<li><a href="fns/typeof.html">typeof</a></li> <br>
 		    
@@ -397,7 +405,7 @@ funcName{options}(params)
 		    						<li><a href="fns/while.html">while</a></li>
 		    						<li><a href="fns/write.html">write</a></li>
 		    					</ul>
-		    				</p>
+		    				</div>
 		    			</div>
 		    		</section>
 		    	</div>

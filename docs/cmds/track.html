@@ -112,7 +112,7 @@
 
 		    <!-- Main -->
 		    <section id="main" class="wrapper style2">
-		    	<div class="title">cmd: <mono>commands</mono></div>
+		    	<div class="title">cmd: <mono>track</mono></div>
 		    	<div class="container">
 		    		<!-- Features -->
 		    		<section id="features">
@@ -125,17 +125,18 @@
 		    				<ul style="text-indent:30px">
 		    					<li><a href="#syntax">Syntax</a></li>
 		    					<li><a href="#description">Description</a></li>
+		    					<li><a href="#eg">Example</a></li>
 		    				</ul>
 		    
 		    				<h4 id="syntax">
 		    					Syntax
 		    				</h4>
 		    				<p>
-		    					The syntax for the <mono>commands</mono> command is:
+		    					The syntax for the <mono>track</mono> command is:
 		    <div align="center">
 		    <pre class="prettyprint inline lang-nift" style="margin-bottom:-10px">
-nift commands
-nsm commands
+nift track name (title) (template-path)
+nsm track name (title) (template-path)
 </pre>
 		    </div>
 		    				</p>
@@ -144,59 +145,44 @@ nsm commands
 		    					Description
 		    				</h4>
 		    				<p>
-		    					The <mono>commands</mono> command lists the commands available with <mono>Nift</mono>. The output will look similar to:
+		    					The <mono>track</mono> command is for tracking new files to be generated during a build with <mono>Nift</mono>, <mono>title</mono> and <mono>template-path</mono> are optional (default <mono>title</mono> is the specified <mono>name</mono>, and default <mono>template-path</mono> is the project-wide template path specified in the project configuration file <mono>.nsm/nift.config</mono>). Surround any names, titles and/or paths containing spaces with single or double quotes.
+		    				</p>
 		    
-		    <div align="center">
-		    <pre class="inline rounded">
-+--------- available commands ---------------------------------+
-| commands          | list all commands                        |
-| config            | list or set git email/username           |
-| clone             | par: clone-url                           |
-| diff              | par: file-path                           |
-| pull              | pull remote changes locally              |
-| bcp               | par: commit-message                      |
-| init              | start managing project - par: (out-ext)  |
-| init-html         | start managing html website              |
-| status            | list updated & problem files             |
-| info              | par: name-1 .. name-k                    |
-| info-all          | list watched dirs & tracked files        |
-| info-config       | list config settings                     |
-| info-names        | list tracked names                       |
-| info-tracking     | list tracked files                       |
-| info-watching     | list watched dirs                        |
-| track             | par: name (title) (template)             |
-| track-from-file   | par: file-path                           |
-| track-dir         | par: dir (cont-ext) (template) (out-ext) |
-| untrack           | par: name                                |
-| untrack-from-file | par: file-path                           |
-| untrack-dir       | par: dir-path (content-ext)              |
-| rm or del         | par: name                                |
-| rm-from-file      | par: file-path                           |
-| rm-dir            | par: dir-path (content-ext)              |
-| mv or move        | par: old-name new-name                   |
-| cp or copy        | par: tracked-name new-name               |
-| run               | par: (lang-opt) script-path              |
-| interp            | par: (lang-opt)                          |
-| sh                | par: (lang-opt)                          |
-| build-names       | par: name-1 .. name-k                    |
-| build-updated     | build updated output files               |
-| build-all         | build all tracked output files           |
-| serve             | serve project locally par: (sleep-sec)   |
-| new-title         | par: name new-title                      |
-| new-template      | par: (name) template                     |
-| new-output-dir    | par: dir-path                            |
-| new-cont-dir      | par: dir-path                            |
-| new-cont-ext      | par: (name) content-ext                  |
-| new-output-ext    | par: (name) output-ext                   |
-| new-script-ext    | par: (name) script-ext                   |
-| no-build-thrds    | par: (no-threads) [-n == n*cores]        |
-| backup-scripts    | par: (option)                            |
-| incr-mode         | par: (mode)                              |
-| watch             | par: dir (cont-ext) (template) (out-ext) |
-| unwatch           | par: dir (cont-ext)                      |
-+--------------------------------------------------------------+
-
-</pre>
+		    				<p>
+		    					<b>Note:</b> you should not do any of the following with names, titles or paths:
+		    					<ul>
+		    						<li>use tabs;</li>
+		    						<li>use consecutive spaces;</li>
+		    						<li>use both single and double quotes;</li>
+		    						<li>single and double quote the entire string, eg. <mono>'"bad idea"'</mono>.</li>
+		    					</ul>
+		    					Also names cannot contain periods. If you need the output filename to contain periods other than in the extension then use a post-build script to move or copy the built file, or alternatively put everything from the first period onwards in the tracked output extension for the file. 
+		    				</p>
+		    
+		    				<p>
+		    					With websites you can either put asset files like <mono>css</mono> and <mono>javascript</mono> files straight in the output/website directory and modify them from there, or you can track them similar to your pages and use <a href="../n++.html">n++</a> and <a href="../f++.html">f++</a> with them as well. For eg. <mono>scss</mono> and <mono>typescript</mono> files you can build them similar to <mono>css</mono> and <mono>javascript</mono> files but also add a post-build script to compile them to <mono>css</mono> or <mono>javscript</mono> files.
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> When you track a file, the content file path is <mono>\$[contentdir]/\$[name]\$[contentext]</mono> and the output file path is <mono>\$[outputdir]/\$[name]\$[outputext]</mono>. For example, if you have content directory <mono>content/</mono>, content extension <mono>.content</mono>, output directory <mono>site/</mono> and output extension <mono>.html</mono> and you track <mono>about</mono>, then the content file will be located at <mono>content/about.content</mono> and the output file will be built to <mono>site/about.html</mono>.
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> <a href="track-dir.html">track-dir</a> and <a href="track-from-file.html">track-from-file</a> are much faster for tracking large volumes of files than <mono>track<mono>.
+		    				</p>
+		    
+		    				<h4 id="eg">
+		    					Example
+		    				</h4>
+		    				<p>
+		    					Example of <mono>track</mono> being used:					
+		    
+		    <div align="center" style="margin-top:-10px">
+		    <pre class="prettyprint inline linenums lang-nift">
+nift track index
+nift track about 'about page' 'template/page.template'
+nsm track docs/installing
+nsm track "John's page"</pre>
 		    </div>
 		    				</p>
 		    			</div>

@@ -112,7 +112,7 @@
 
 		    <!-- Main -->
 		    <section id="main" class="wrapper style2">
-		    	<div class="title">cmd: <mono>commands</mono></div>
+		    	<div class="title">cmd: <mono>untrack-from-file</mono></div>
 		    	<div class="container">
 		    		<!-- Features -->
 		    		<section id="features">
@@ -125,17 +125,18 @@
 		    				<ul style="text-indent:30px">
 		    					<li><a href="#syntax">Syntax</a></li>
 		    					<li><a href="#description">Description</a></li>
+		    					<li><a href="#eg">Example</a></li>
 		    				</ul>
 		    
 		    				<h4 id="syntax">
 		    					Syntax
 		    				</h4>
 		    				<p>
-		    					The syntax for the <mono>commands</mono> command is:
+		    					The syntax for the <mono>untrack-from-file</mono> command is:
 		    <div align="center">
 		    <pre class="prettyprint inline lang-nift" style="margin-bottom:-10px">
-nift commands
-nsm commands
+nift untrack-from-file file
+nsm untrack-from-file file
 </pre>
 		    </div>
 		    				</p>
@@ -144,59 +145,27 @@ nsm commands
 		    					Description
 		    				</h4>
 		    				<p>
-		    					The <mono>commands</mono> command lists the commands available with <mono>Nift</mono>. The output will look similar to:
+		    					The <mono>untrack-from-file</mono> command is for untracking large volumes of files from a project. The file outlining files to untrack should have one name specified on each line.
+		    				</p>
 		    
-		    <div align="center">
-		    <pre class="inline rounded">
-+--------- available commands ---------------------------------+
-| commands          | list all commands                        |
-| config            | list or set git email/username           |
-| clone             | par: clone-url                           |
-| diff              | par: file-path                           |
-| pull              | pull remote changes locally              |
-| bcp               | par: commit-message                      |
-| init              | start managing project - par: (out-ext)  |
-| init-html         | start managing html website              |
-| status            | list updated & problem files             |
-| info              | par: name-1 .. name-k                    |
-| info-all          | list watched dirs & tracked files        |
-| info-config       | list config settings                     |
-| info-names        | list tracked names                       |
-| info-tracking     | list tracked files                       |
-| info-watching     | list watched dirs                        |
-| track             | par: name (title) (template)             |
-| track-from-file   | par: file-path                           |
-| track-dir         | par: dir (cont-ext) (template) (out-ext) |
-| untrack           | par: name                                |
-| untrack-from-file | par: file-path                           |
-| untrack-dir       | par: dir-path (content-ext)              |
-| rm or del         | par: name                                |
-| rm-from-file      | par: file-path                           |
-| rm-dir            | par: dir-path (content-ext)              |
-| mv or move        | par: old-name new-name                   |
-| cp or copy        | par: tracked-name new-name               |
-| run               | par: (lang-opt) script-path              |
-| interp            | par: (lang-opt)                          |
-| sh                | par: (lang-opt)                          |
-| build-names       | par: name-1 .. name-k                    |
-| build-updated     | build updated output files               |
-| build-all         | build all tracked output files           |
-| serve             | serve project locally par: (sleep-sec)   |
-| new-title         | par: name new-title                      |
-| new-template      | par: (name) template                     |
-| new-output-dir    | par: dir-path                            |
-| new-cont-dir      | par: dir-path                            |
-| new-cont-ext      | par: (name) content-ext                  |
-| new-output-ext    | par: (name) output-ext                   |
-| new-script-ext    | par: (name) script-ext                   |
-| no-build-thrds    | par: (no-threads) [-n == n*cores]        |
-| backup-scripts    | par: (option)                            |
-| incr-mode         | par: (mode)                              |
-| watch             | par: dir (cont-ext) (template) (out-ext) |
-| unwatch           | par: dir (cont-ext)                      |
-+--------------------------------------------------------------+
-
-</pre>
+		    				<p>
+		    					<b>Note:</b> the file with untrack information can have empty lines and comment lines beginning with '<mono>#</mono>' and you should quote any names containing spaces.
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> <mono>untrack-from-file</mono> and <a href="untrack-dir.html">untrack-dir</a> are much more convenient for untracking large volumes of files than <a href="untrack.html">untrack</a>.
+		    				</p>
+		    
+		    				<h4 id="eg">
+		    					Example
+		    				</h4>
+		    				<p>
+		    					Example of <mono>untrack-from-file</mono> being used:					
+		    
+		    <div align="center" style="margin-top:-10px">
+		    <pre class="prettyprint inline linenums lang-nift">
+nift untrack-from-file to-untrack.txt
+nsm untrack-from-file to-untrack.txt</pre>
 		    </div>
 		    				</p>
 		    			</div>

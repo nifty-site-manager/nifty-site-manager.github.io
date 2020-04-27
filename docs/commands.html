@@ -127,592 +127,157 @@
 		    
 		    			<div class="content">
 		    				<p>
-		    					<mono>Nift</mono> has a number of commands you can use that will help you manage and generate your projects and websites. This page outlines how to list all the available commands and outlines what most of them do.
+		    					<mono>Nift</mono> has a number of commands you can use from the command line (ie. a terminal) that will help you manage and generate your projects and websites. This page has an index linking to documentation for each command.
 		    				</p>
-		    
-		    				<p>
-		    					To use a command, enter <mono>nsm <i>command</i> <i>parameter-1</i> ... <i>parameter-n</i></mono> in to a terminal, command prompt or power shell window. 
-		    				</p>
-		    
-		    				<a href="#contents" class="to_top">[contents]</a>
 		    
 		    				<h4 id="contents">
 		    					Contents
 		    				</h4>
-		    				<p>
-		    					The following have commands available with Nift that are documented on this page:
-		    					<ul style="text-indent:30px">
-		    						<li><a href="#commands">Listing available Nift commands</a></li>
-		    						<li><a href="#init">Initialise managing a project or website</a></li>
-		    						<li><a href="#config">Listing and setting Git username/email</li>
-		    						<li><a href="#clone">Importing/forking, renaming and cloning a project repository from BitBucket/GitHub/GitLab</a></li>
-		    						<li><a href="#diff">Diff of file since last commit</a></li>
-		    						<li><a href="#pull">Pulling remote changes locally</a></li>
-		    						<li><a href="#bcp">Building, committing and pushing changes to BitBucket/GitHub/GitLab</a></li>
-		    						<li><a href="#status">Listing files that need building</a></li>
-		    						<li><a href="#track">Tracking files</a></li>
-		    						<li><a href="#info">Listing information about the project</a></li>
-		    						<li><a href="#untrack">Untracking tracked files</a></li>
-		    						<li><a href="#mv">Moving tracked files</a></li>
-		    						<li><a href="#cp">Copying tracked files</a></li>
-		    						<li><a href="#rm">Removing tracked files</a></li>
-		    						<li><a href="#watch">Watching directories</a></li>
-		    						<li><a href="#unwatch">Unwatching directories</a></li>
-		    						<li><a href="#build">Building output files</a></li>
-		    						<li><a href="#serve">Serving your project locally</a></li>
-		    						<li><a href="#new-title">Changing a title</a></li>
-		    						<li><a href="#new-template-path">Changing template path</a></li>
-		    						<li><a href="#new-output-dir">Changing output directory</a></li>
-		    						<li><a href="#new-cont-dir">Changing content directory</a></li>
-		    						<li><a href="#new-cont-ext">Changing content extension</a></li>
-		    						<li><a href="#new-output-ext">Changing output extension</a></li>
-		    						<li><a href="#new-script-ext">Changing script extension</a></li>
-		    						<li><a href="#no-build-thrds">Checking and setting number of build threads</a></li>
-		    						<li><a href="#backup-scripts">Checking and setting whether to backup scripts</a></li>
-		    						<li><a href="#about">What information is tracked?</a></li>
-		    						<li><a href="#file-deps">What is a file dependency?</a></li>
-		    						<li><a href="#about-tracking">How does Nift track modifications to file dependencies?</a></li>
-		    						<li><a href="#deps">User-defined file dependencies</a></li>
+		    				<div style="text-indent:30px; margin-top:10px">
+		    					<ul>
+		    						<li><a href="#syntax">Syntax</a></li>
+		    						<li><a href="#list">Commands list</a></li>
+		    						<li><a href="#index">Index</a></li>
 		    					</ul>
-		    				</p>
+		    				</div>
 		    
-		    				<h4 id="commands">
-		    					Listing available <mono>Nift</mono> commands
+		    				<h4 id="syntax">
+		    					Syntax
 		    				</h4>
 		    
 		    				<p>
-		    					To list available <mono>Nift</mono> commands run <mono>nsm commands</mono>. The list will look similar to:
+		    					To use a command, enter <mono>nift command parameters</mono> or <mono>nsm command parameters</mono> in to a terminal, command prompt or power shell window. 
+		    				</p>
 		    
-		    					<div align="center">
+		    				<h4 id="list">
+		    					Commands list
+		    				</h4>
+		    				<p>
+		    					The <mono>commands</mono> command lists the commands available with <mono>Nift</mono>. The output will look similar to:
+		    
+		    <div align="center">
 		    <pre class="inline rounded">
-+--------- available commands ------------------------------------------+
-| commands          | lists all Nift commands                           |
-| config            | list or set Git email/username                    |
-| clone             | input: clone-url                                  |
-| diff              | input: file-path                                  |
-| pull              | pull remote changes locally                       |
-| bcp               | input: commit-message                             |
-| init              | start managing a project - input: output-ext      |
-| init-html         | start managing html website - input: (site-name)  |
-| status            | lists updated and problem files                   |
-| info              | input: name-1 .. name-k                           |
-| info-all          | lists watched directories and tracked files       |
-| info-config       | lists config settings                             |
-| info-names        | lists tracked names                               |
-| info-tracking     | lists tracked files                               |
-| info-watching     | lists watched directories                         |
-| track             | input: name (title) (template-path)               |
-| track-from-file   | input: file-path                                  |
-| track-dir         | input: dir-path (cont-ext) (temp-path) (out-ext)  |
-| untrack           | input: name                                       |
-| untrack-from-file | input: file-path                                  |
-| untrack-dir       | input: dir-path (content-ext)                     |
-| rm or del         | input: name                                       |
-| rm-from-file      | input: file-path                                  |
-| rm-dir            | input: dir-path (content-ext)                     |
-| mv or move        | input: old-name new-name                          |
-| cp or copy        | input: tracked-name new-name                      |
-| build-names       | input: name-1 .. name-k                           |
-| build-updated     | builds updated output files                       |
-| build-all         | builds all tracked output files                   |
-| serve             | serves project locally                            |
-| new-title         | input: name new-title                             |
-| new-template      | input: (name) template-path                       |
-| new-output-dir    | input: dir-path                                   |
-| new-cont-dir      | input: dir-path                                   |
-| new-cont-ext      | input: (name) content-extension                   |
-| new-output-ext    | input: (name) output-extension                    |
-| new-script-ext    | input: (name) script-extension                    |
-| no-build-thrds    | input: (no-threads) [-n == n*cores]               |
-| backup-scripts    | input: (option)                                   |
-| watch             | input: dir-path (cont-ext) (temp-path) (out-ext)  |
-| unwatch           | input: dir-path (cont-ext)                        |
-+-----------------------------------------------------------------------+
++--------- available commands ---------------------------------+
+| commands          | list all commands                        |
+| config            | list or set git email/username           |
+| clone             | par: clone-url                           |
+| diff              | par: file-path                           |
+| pull              | pull remote changes locally              |
+| bcp               | par: commit-message                      |
+| init              | start managing project - par: (out-ext)  |
+| init-html         | start managing html website              |
+| status            | list updated & problem files             |
+| info              | par: name-1 .. name-k                    |
+| info-all          | list watched dirs & tracked files        |
+| info-config       | list config settings                     |
+| info-names        | list tracked names                       |
+| info-tracking     | list tracked files                       |
+| info-watching     | list watched dirs                        |
+| track             | par: name (title) (template)             |
+| track-from-file   | par: file-path                           |
+| track-dir         | par: dir (cont-ext) (template) (out-ext) |
+| untrack           | par: name                                |
+| untrack-from-file | par: file-path                           |
+| untrack-dir       | par: dir-path (content-ext)              |
+| rm or del         | par: name                                |
+| rm-from-file      | par: file-path                           |
+| rm-dir            | par: dir-path (content-ext)              |
+| mv or move        | par: old-name new-name                   |
+| cp or copy        | par: tracked-name new-name               |
+| run               | par: (lang-opt) script-path              |
+| interp            | par: (lang-opt)                          |
+| sh                | par: (lang-opt)                          |
+| build-names       | par: name-1 .. name-k                    |
+| build-updated     | build updated output files               |
+| build-all         | build all tracked output files           |
+| serve             | serve project locally par: (sleep-sec)   |
+| new-title         | par: name new-title                      |
+| new-template      | par: (name) template                     |
+| new-output-dir    | par: dir-path                            |
+| new-cont-dir      | par: dir-path                            |
+| new-cont-ext      | par: (name) content-ext                  |
+| new-output-ext    | par: (name) output-ext                   |
+| new-script-ext    | par: (name) script-ext                   |
+| no-build-thrds    | par: (no-threads) [-n == n*cores]        |
+| backup-scripts    | par: (option)                            |
+| incr-mode         | par: (mode)                              |
+| watch             | par: dir (cont-ext) (template) (out-ext) |
+| unwatch           | par: dir (cont-ext)                      |
++--------------------------------------------------------------+
+
 </pre>
-		    					</div>
+		    </div>
 		    				</p>
 		    
-		    				<h4 id="init">
-		    					Initialise managing a project or website
+		    				<a href="#index" class="to_top">[index]</a>
+		    				<h4 id="index">
+		    					Index
 		    				</h4>
-		    
-		    				<p>
-		    					To start managing a project: first change to the directory you would like to act as the project root directory, that is the directory containing all project related files (content and template files inclusive); then run <mono>nsm init output-extension</mono> where <mono>output-extension</mono> is a parameter for the default output extension used when building files. A hidden directory <mono>.nsm</mono> will be created containing a <mono>tracking.list</mono> file and config file <mono>nift.config</mono>.
-		    				</p>
-		    
-		    				<p>
-		    					To start managing a website: first change to the directory you would like to act as the project root directory, that is the directory containing all site related files (content and template files inclusive); then run <mono>nsm init (site-name)</mono> where <mono>site-name</mono> is an optional parameter for the name of the site. A hidden directory <mono>.nsm</mono> will be created containing a <mono>tracking.list</mono> file and config file <mono>nift.config</mono>.
-		    				</p>
-		    
-		    				<p>
-		    					<u>Note:</u> once the project root directory for your project is set up, much the same as with Git, <mono>Nift</mono> may be run from any directory within the project root directory (project root directory inclusive).
-		    				</p>
-		    
-		    				<h4 id="config">
-		    					Listing and setting Git username/email
-		    				</h4>
-		    
-		    				<p>
-		    					Especially is you are installing through Snap where its own version of Git needs to be installed, you can list the configured username and email for Git with <mono>nsm config --global user.name</mono> and <mono>nsm config --global user.email</mono>. Further you can add a username/email address after either of the commands to set the username or password. 
-		    				<p>
-		    
-		    				<h4 id="clone">
-		    					Importing/forking, renaming and cloning a project repository from BitBucket/GitHub/GitLab
-		    				</h4>
-		    
-		    				<p>
-		    					You can import/fork and rename an existing project repository on BitBucket, GitHub or GitLab, then clone it using <mono>nsm clone <i>repository-url</i></mono>. Note - You can rename a repository when importing it, rather than forking and renaming, plus on BitBucket and GitHub you cannot remove fork relationships. Also to host a website on GitHub you will need to go in to the website repository's settings, find the GitHub Pages section and set the source branch (typically <mono>master branch</mono>).
-		    				</p>
-		    
-		    				<h4 id="diff">
-		    					Diff of file since last commit
-		    				</h4>
-		    
-		    				<p>
-		    					If your project directory is a Git repository you can get the diff of a file using <mono>nsm diff file-path</mono> where <mono>file-path</mono> is the path from the project root directory to the file you want the diff of.
-		    				</p>
-		    
-		    				<h4 id="pull">
-		    					Pulling remote changes locally
-		    				</h4>
-		    
-		    				<p>
-		    					If your project root directory is a Git repository you can pull remote changes locally using <mono>nsm pull</mono>
-		    				</p>
-		    
-		    				<h4 id="bcp">
-		    					Building, committing and pushing changes to BitBucket/GitHub/GitLab
-		    				</h4>
-		    
-		    				<p>
-		    					If your project is part of a repository for BitBucket, GitHub or GitLab you can have updated files built along with the changes being committed and pushed using <mono>nsm bcp "commit message"</mono>. 
-		    				</p>
-		    
-		    				<h4 id="status">
-		    					Listing files that need building
-		    				</h4>
-		    
-		    				<p>
-		    					For information on files that need building and why run <mono>nsm status</mono>.
-		    				</p>
-		    
-		    				<h4 id="track">
-		    					Tracking files
-		    				</h4>
-		    
-		    				<p>
-		    					The easiest way to track a new file is with <mono>nsm track name title template-path</mono>, where <mono>title</mono> and <mono>template-path</mono> are optional (default <mono>title</mono> is the specified <mono>name</mono>, and default <mono>template-path</mono> is the site-wide template path specified in the site configuration file). Surround any titles and/or paths containg spaces with single or double quotes. If you want both spaces and single/double quotes in your title/path then surround it by double/single quotes. 
-		    				</p>
-		    
-		    				<p>
-		    					The following work as valid names titles:
-		    
-		    					<div align="center">
-		    <pre class="inline rounded">
-index
-'about page'
-docs/installing
-"path with spaces/filename"
-</pre>
-		    
-		    <pre class="inline rounded">
-home
-'home'
-"home page"
-"John's page"
-</pre>
-		    					</div>
-		    				</p>
-		    
-		    				<p>
-		    					<u>Note:</u> you should not do any of the following with names, titles or paths:
+		    				<div style="text-indent:30px; margin-top:10px">
 		    					<ul>
-		    						<li>use tabs;</li>
-		    						<li>use consecutive spaces;</li>
-		    						<li>use both single and double quotes;</li>
-		    						<li>single and double quote the entire string, eg. <mono>'"bad idea"'</mono>.</li>
+		    						<li><a href="cmds/backup-scripts.html">backup-scripts</a></li>
+		    						<li><a href="cmds/bcp.html">bcp</a> (build, commit & push)</li>
+		    						<li><a href="cmds/build-all.html">build-all</a> (full build)</li>
+		    						<li><a href="cmds/build-names.html">build-names</a></li>
+		    						<li><a href="cmds/build-updated.html">build-updated</a> (incremental build)</li> <br>
+		    
+		    						<li><a href="cmds/clone.html">clone</a></li>
+		    						<li><a href="cmds/commands.html">commands</a></li>
+		    						<li><a href="cmds/config.html">config</a></li> 
+		    						<li><a href="cmds/cpy.html">copy</a></li> 
+		    						<li><a href="cmds/cpy.html">cp</a></li> 
+		    						<li><a href="cmds/cpy.html">cpy</a></li> <br>
+		    
+		    						<li><a href="cmds/rmv.html">del</a></li>
+		    						<li><a href="cmds/rmv-dir.html">del-dir</a></li>
+		    						<li><a href="cmds/rmv-from-file.html">del-from-file</a></li>
+		    						<li><a href="cmds/diff.html">diff</a></li> <br>
+		    						
+		    						<li><a href="cmds/incr-mode.html">incr-mode</a></li>
+		    						<li><a href="cmds/info-all.html">info-all</a></li>
+		    						<li><a href="cmds/info-config.html">info-config</a></li>
+		    						<li><a href="cmds/info-names.html">info-names</a></li>
+		    						<li><a href="cmds/info-tracking.html">info-tracking</a></li>
+		    						<li><a href="cmds/info-watching.html">info-watching</a></li>
+		    						<li><a href="cmds/init.html">init</a></li> <br>
+		    
+		    						<li><a href="cmds/mve.html">move</a></li> 
+		    						<li><a href="cmds/mve.html">mv</a></li> 
+		    						<li><a href="cmds/mve.html">mve</a></li> <br>
+		    
+		    						<li><a href="cmds/new-cont-dir.html">new-cont-dir</a></li>
+		    						<li><a href="cmds/new-cont-ext.html">new-cont-ext</a></li>
+		    						<li><a href="cmds/new-output-dir.html">new-output-dir</a></li>
+		    						<li><a href="cmds/new-output-ext.html">new-output-ext</a></li>
+		    						<li><a href="cmds/new-script-ext.html">new-script-ext</a></li>
+		    						<li><a href="cmds/new-template.html">new-template</a></li>
+		    						<li><a href="cmds/new-title.html">new-title</a></li>
+		    						<li><a href="cmds/no-build-thrds.html">no-build-thrds</a></li> <br>
+		    
+		    						<li><a href="cmds/pull.html">pull</a></li> <br>
+		    
+		    						<li><a href="cmds/rmv.html">rm</a></li>
+		    						<li><a href="cmds/rmv-dir.html">rm-dir</a></li>
+		    						<li><a href="cmds/rmv-from-file.html">rm-from-file</a></li>
+		    						<li><a href="cmds/rmv.html">rmv</a></li>
+		    						<li><a href="cmds/rmv-dir.html">rmv-dir</a></li>
+		    						<li><a href="cmds/rmv-from-file.html">rmv-from-file</a></li> <br>
+		    
+		    						<li><a href="cmds/serve.html">serve</a></li>
+		    						<li><a href="cmds/status.html">status</a></li> <br>
+		    
+		    						<li><a href="cmds/track.html">track</a></li>
+		    						<li><a href="cmds/track-dir.html">track-dir</a></li>
+		    						<li><a href="cmds/track-from-file.html">track-from-file</a></li> <br>
+		    
+		    						<li><a href="cmds/untrack.html">untrack</a></li>
+		    						<li><a href="cmds/untrack-dir.html">untrack-dir</a></li>
+		    						<li><a href="cmds/untrack-from-file.html">untrack-from-file</a></li>
+		    						<li><a href="cmds/unwatch.html">unwatch</a></li> <br>
+		    
+		    						<li><a href="cmds/watch.html">watch</a></li>
 		    					</ul>
-		    					Also names cannot contain fullstops. If you desperately need the output file to contain fullstops other than in the extension then use a post-build script to move or copy the built file. 
-		    				</p>
-		    
-		    				<p>
-		    					With websites you can either put asset files like css and javascript files straight in the output/website directory and modify them from there, or you can track them similar to your pages and use Nift's template language when coding them as well. 
-		    				</p>
-		    
-		    				<p>
-		    					<b>Note:</b> When you track a file, the content file path is <mono>\$[contentdir]/\$[name]\$[contentext]</mono> and the output file path is <mono>\$[outputdir]/\$[name]\$[outputext]</mono>. For example, if you have content directory <mono>content/</mono>, content extension <mono>.content</mono>, output directory <mono>site/</mono> and output extension <mono>.html</mono> and you track <mono>about</mono>, then the content file will be located at <mono>content/about.content</mono> and the output file will be built to <mono>site/about.html</mono>.
-		    				</p>
-		    
-		    				<p>
-		    					To track all files in a specified directory with a specified content extension you can use:
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="inline">
-nsm track-dir dir-path (content-extension) (template-path) (output-extension)
-</pre>
-		    </div>
-		    					where:
-		    					<ul>
-		    						<li><mono>dir-path</mono> is the directory you want to track files from;</li>
-		    						<li><mono>content-extension</mono> is the content extension to check for, if not specified the project-wide content extension is used;</li>
-		    						<li><mono>template-path</mono> is the template path to track with, if not specified the project-wide default template path is used;</li>
-		    						<li><mono>output-extension</mono> is the output extension to track with, if not specified the project-wide output extension is used.</li>
-		    					</ul>
-		    				</p>
-		    
-		    				<p>
-		    					Another way to track large volumes of files is from a file using:
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="inline">
-nsm track-from-file file-path
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    					The file specifying files to track should have one file specified on each line with the format:
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="inline">
-name (title) (content-extension) (template-path) (output-extension)
-</pre>
-		    </div>
-		    					where:
-		    					<ul>
-		    						<li><mono>name</mono> is the name of the file you want to track;</li>
-		    						<li><mono>title</mono> is the title, if not specified the <mono>name</mono> is used;</li>
-		    						<li><mono>content-ext</mono> is the content extension to use, if not specified the project-wide content extension is used;</li>
-		    						<li><mono>template-path</mono> is the template path to track with, if not specified the project-wide default template path is used;</li>
-		    						<li><mono>output-ext</mono> is the output extension to track with, if not specified the project-wide output extension is used.</li>
-		    					</ul>
-		    				</p>
-		    
-		    				<p>
-		    					<b>Note:</b> the file with files to track can have empty lines and comment lines beginning with <mono>'#'</mono> and you should quote any names, titles, extensions or paths containing spaces.
-		    				</p>
-		    
-		    				<h4 id="info">
-		    					Listing information about the project
-		    				</h4>
-		    
-		    				<p>
-		    					To list information about the project configuration run <mono>nsm info-config</mono>, for all watched directories and tracked files run <mono>nsm info-all</mono>, for just tracked files run <mono>nsm info-tracking</mono>, for just watched directories run <mono>nsm info-watching</mono>, for just names run <mono>nsm info-names</mono> and for information on specific files run <mono>nsm info name-1 .. name-k</mono>.
-		    				</p>
-		    
-		    				<h4 id="untrack">
-		    					Untracking tracked files
-		    				</h4>
-		    
-		    				<p>
-		    					To untrack a file run <mono>nsm untrack name</mono>. All information about the file is removed from <mono>.nsm/tracking.list</mono> along with the output file and the info file. It is up to you whether you want to manually remove any associated content and/or template files (or alternatively use <mono>rm/del</mono>).
-		    				</p>
-		    
-		    				<p>
-		    					To untrack all tracked files in a specified directory with a specified content extension you can use:
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="inline">
-nsm untrack-dir dir-path (content-extension)
-</pre>
-		    </div>
-		    					where:
-		    					<ul>
-		    						<li><mono>dir-path</mono> is the directory you want to untrack files from;</li>
-		    						<li><mono>content-extension</mono> is the content extension to check for, if not specified the project-wide content extension is used.</li>
-		    					</ul>
-		    				</p>
-		    
-		    				<p>
-		    					Another way to untrack large volumes of files is from a file using:
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="inline">
-nsm untrack-from-file file-path
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    					The file specifying tracked files to untrack should have one tracked name specified on each line.
-		    				</p>
-		    
-		    				<p>
-		    					<b>Note:</b> the file with files to untrack can have empty lines and comment lines beginning with <mono>'#'</mono> and you should quote any names containing spaces. Also everything after the name on each line is ignored, so you can use the same file used to track the files to untrack them again.
-		    				</p>
-		    
-		    				<h4 id="mv">
-		    					Moving tracked files
-		    				</h4>
-		    
-		    				<p>
-		    					To move a tracked file run <mono>nsm mv old-name new-name</mono>. All information about <mono>old-name</mono> is removed from <mono>.nsm/tracking.list</mono> along with the old output file and the old info file, while information about the new file is added to <mono>.nsm/tracking.list</mono> and the old content file is moved to the new content path.
-		    				</p>
-		    
-		    				<h4 id="cp">
-		    					Copying tracked files
-		    				</h4>
-		    
-		    				<p>
-		    					To copy a tracked file run <mono>nsm cp tracked-name new-name</mono>. Information about <mono>new-name</mono> is added to <mono>.nsm/tracking.list</mono> and the old content file is copied to the new content path.
-		    				</p>
-		    
-		    				<h4 id="rm">
-		    					Removing tracked files
-		    				</h4>
-		    
-		    				<p>
-		    					To remove a tracked file run <mono>nsm rm name</mono>. The only difference to <mono>untrack</mono> is that the content file will also be removed from your system.
-		    				</p>
-		    
-		    				<p>
-		    					To remove all tracked files in a specified directory with a specified content extension you can use either of the following:
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="inline">
-nsm rm-dir dir-path (content-extension)
-nsm del-dir dir-path (content-extension)
-</pre>
-		    </div>
-		    					where:
-		    					<ul>
-		    						<li><mono>dir-path</mono> is the directory you want to remove files from;</li>
-		    						<li><mono>content-extension</mono> is the content extension to check for, if not specified the project-wide content extension is used.</li>
-		    					</ul>
-		    				</p>
-		    
-		    				<p>
-		    					Another way to remove large volumes of tracked files is from a file using either of the following:
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="inline">
-nsm rm-from-file file-path
-nsm del-from-file file-path
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    					The file specifying tracked files to remove should have one tracked file specified on each line with the format:
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="inline">
-name
-</pre>
-		    </div>
-		    					where:
-		    					<ul>
-		    						<li><mono>name</mono> is the name of the tracked file you want to remove.</li>
-		    					</ul>
-		    				</p>
-		    
-		    				<p>
-		    					<b>Note:</b> the file with tracked file to remove can have empty lines and comment lines beginning with <mono>'#'</mono> and you should quote any names containing spaces. Also everything after the name on each line is ignored, so you can use the same file used to track the files to remove them again.
-		    				</p>
-		    
-		    				<h4 id="watch">
-		    					Watching directories
-		    				</h4>
-		    
-		    				<p>
-		    					If you want to automatically track and untrack files based on the existence of content files in a specified directory you can do so by watching directories. To watch a specified directory with a specified content extension you can use:
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="inline">
-nsm watch dir-path (content-extension) (template-path) (output-extension)
-</pre>
-		    </div>
-		    					where:
-		    					<ul>
-		    						<li><mono>dir-path</mono> is the directory you want to watch files from;</li>
-		    						<li><mono>content-extension</mono> is the content extension to check for, if not specified the project-wide content extension is used;</li>
-		    						<li><mono>template-path</mono> is the template path to track files with, if not specified the project-wide default template path is used;</li>
-		    						<li><mono>output-extension</mono> is the output extension to track files with, if not specified the project-wide output extension is used.</li>
-		    					</ul>
-		    				</p>
-		    
-		    				<p>
-		    					When a build is run, any new files in a watched directory with the specified content extension will be tracked and built, and any files where the content file has been removed will be untracked. 
-		    				</p>
-		    
-		    				<p>
-		    					<b>Note:</b> you can watch the same directory multiple times with different content extensions, and subdirectories are not included you must watch them separately.
-		    				</p>
-		    
-		    				<h4 id="unwatch">
-		    					Unwatching directories
-		    				</h4>
-		    
-		    				<p>
-		    					To unwatch a specified directory with a specified content extension you can use:
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="inline">
-nsm unwatch dir-path (content-extension)
-</pre>
-		    </div>
-		    					where:
-		    					<ul>
-		    						<li><mono>dir-path</mono> is the directory you want to stop watching files from;</li>
-		    						<li><mono>content-extension</mono> is the content extension to stop watching files from, if not specified the site-wide content extension is used.</li>
-		    					</ul>
-		    				</p>
-		    
-		    				<h4 id="build">
-		    					Building output files
-		    				</h4>
-		    
-		    				<p>
-		    					To build updated output files run <mono>nsm build-updated</mono>, to build all output files run <mono>nsm build-all</mono>, and to build specific files run <mono>nsm build-names name-1 .. name-k</mono>.
-		    				</p>
-		    
-		    				<h4 id="serve">
-		    					Serving your project locally
-		    				</h4>
-		    
-		    				<p>
-		    					To serve a project locally run <mono>nsm serve</mono>, enter <mono>exit</mono> to stop serving your website. <mono>Nift</mono> will repeatedly run <mono>build-updated</mono> then sleep for 500ms (0.5s), if you want <mono>Nift</mono> to sleep for a different amount of time you can use <mono>nsm serve sleep-ms</mono>. If your updates are not appearing upon refresh or reload of the output file there's a chance the builds are failing, try checking the <mono>.serve-build-log.txt</mono> file in the project root directory.
-		    				</p>
-		    
-		    				<p>
-		    					On linux you can also run <mono>nsm serve -s &</mono> to serve in the background then to stop serving run <mono>killall nsm</mono>. Then you can open the webpages/output files in the <mono>output</mono> directory and Nift will automatically build the project in the background, picking up any changes, just reload your browser window or reload the output file in your editor (often they will pop up a dialogue saying the file has been changed and asking whether you would like to reload). 
-		    				</p>
-		    
-		    				<p>
-		    					If you would like your website to be served at an IP address, eg. if you are using Nift on a server or a virtual machine, try using Python (there are also options available through npm). Run either of the following in the project root directory for a url similar to <mono>0.0.0.0:8000/site</mono> and from the site directory for a url similar to <mono>0.0.0.0:8000</mono>.
-		    
-		    					<div align="center">
-		    <pre class="inline">
-python3 -m http.server 8000
-</pre>
-		    					</div>
-		    
-		    					<div align="center">
-		    <pre class="inline">
-python -m SimpleHTTPServer
-</pre>
-		    					</div>
-		    				</p>
-		    
-		    				<p>
-		    					If you want live reloading for a website check out <a href="https://github.com/tapio/live-server">Live Server</a> which you can get from <mono>npm</mono>, or <a href="http://livereload.com/">Live Reload</a>. In either case you can add them to <a href="scripts.html">pre/post serve scripts</a> for your website so that it is all integrated in to the Nift serve command and requires no manual effort on your part.
-		    				</p>
-		    
-		    				<h4 id="new-title">
-		    					Changing a title
-		    				</h4>
-		    
-		    				<p>
-		    					To set a new title run <mono>nsm new-title name new-title</mono>.
-		    				</p>
-		    
-		    				<h4 id="new-template-path">
-		    					Changing template path
-		    				</h4>
-		    
-		    				<p>
-		    					To set a new template path run <mono>nsm (name) new-template-path</mono>.
-		    				</p>
-		    
-		    				<h4 id="new-output-dir">
-		    					Changing output directory
-		    				</h4>
-		    
-		    				<p>
-		    					To move the output directory run <mono>nsm new-output-dir directory-path</mono>.
-		    				</p>
-		    
-		    				<h4 id="new-cont-dir">
-		    					Changing content directory
-		    				</h4>
-		    
-		    				<p>
-		    					To move the content directory run <mono>nsm new-cont-dir directory-path</mono>.
-		    				</p>
-		    
-		    				<h4 id="new-cont-ext">
-		    					Changing content extension
-		    				</h4>
-		    
-		    				<p>
-		    					To set a new content extension run <mono>nsm new-cont-ext (name) content-extension</mono>.
-		    				</p>
-		    
-		    				<h4 id="new-output-ext">
-		    					Changing output extension
-		    				</h4>
-		    
-		    				<p>
-		    					To set a new output extension run <mono>nsm new-output-ext (name) extension</mono>.
-		    				</p>
-		    
-		    				<h4 id="new-script-ext">
-		    					Changing script extension
-		    				</h4>
-		    
-		    				<p>
-		    					To set a new script extension run <mono>nsm new-script-ext (name) script-extension</mono>.
-		    				</p>
-		    
-		    				<p>
-		    					<b>Note:</b> You may set the extension to the empty string <mono>""</mono> for pre/post build/serve programs on unix (just set it to <mono>.exe</mono> on Windows).
-		    				</p>
-		    
-		    				<h4 id="no-build-thrds">
-		    					Checking and setting number of build threads
-		    				</h4>
-		    
-		    				<p>
-		    					You can check the number of build threads with <mono>nsm no-build-thrds</mono> or <mono>nsm info-config</mono> and set the number of build threads with <mono>nsm no-build-thrds no-threads</mono>. 
-		    				</p>
-		    
-		    				<p>
-		    					<b>Note:</b> <mono>-n</mono> build threads represents using <mono>n</mono> times the number of cores on the machine threads when building projects.
-		    				</p>
-		    
-		    				<h4 id="backup-scripts">
-		    					Checking and setting whether to backup scripts
-		    				</h4>
-		    
-		    				<p>
-		    					You can check whether scripts will be backed up with <mono>nsm backup-scripts</mono> or <mono>nsm info-config</mono> and set whether to backup scripts with <mono>nsm backup-scripts option</mono>, where to not back up you can use <mono>option = 0</mono> and to backup you can use <mono>option = 1</mono>.
-		    				</p>
-		    
-		    				<h4 id="about">
-		    					What information is tracked for a file?
-		    				</h4>
-		    
-		    				<p>
-		    					While <mono>Nift</mono> is easiest to learn and understand by using, users may find it useful to remember that for each tracked file <mono>Nift</mono> tracks a name, title, template path, content extension, output extension and script extension. In more detail, a list of tracked files is stored in the file <mono>.nam/tracking.list</mono> from where <mono>Nift</mono> is initialised. When building an output file, say with name <mono>index</mono>, an info file is created that stores information about file dependencies. 
-		    				</p>
-		    
-		    				<h4 id="file-deps">
-		    					What is a file dependency?
-		    				</h4>
-		    
-		    				Anything that when modified requires an output file to be rubuilt, including:
-		    				<ul>
-		    					<li>changes to some information about a tracked file; and</li>
-		    					<li>modifications to content files and/or template files.</li>
-		    				</ul>
-		    
-		    				<p>
-		    					<u>Note:</u> the modification/removal of an output file is intentionally not considered a dependency. This is so that, should the user want to, output files may be moved (not just copied) outside the project without <mono>Nift</mono> thinking the output files need to be built when in fact they do not (though this is not really recommended, better to just copy the files elsewhere).
-		    				</p>
-		    
-		    				<h4 id="about-tracking">
-		    					How does <mono>Nift</mono> track modifications to file dependencies?
-		    				</h4>
-		    
-		    				<p>
-		    					The information stored in an information file for a tracked file represents the information from the last time the output file was built. If the information file does not exist, as far as <mono>Nift</mono> is concerned the file has never been built. It will compare both: the information from the info file against the information in <mono>.nsm/tracking.list</mono>; and whether any of the content and/or template files have been modified since the info file was modified, and hence since the output file was last built.
-		    				</p>
-		    
-		    				<p>
-		    					While <mono>Nift</mono> will not directly pick up the existence of new content/template files that are merely added via other content/template files, in order for this to occur a content file which is already recorded as a file dependency must be modified, resulting in Nift picking up the new file(s) indirectly. Consequently <mono>Nift</mono> will inform the user that any relevant output files require building, and upon the user building (updated) files any new content files will also be recorded as file dependencies.
-		    				</p>
-		    
-		    				<h4 id="deps">
-		    					User-defined file dependencies
-		    				</h4>
-		    
-		    				<p>
-		    					You can add file dependencies manually by adding a <mono>.deps</mono> file residing in the same directory as the content file for the file. For example if you have <mono>content/index.content</mono> as the content file add a <mono>content/index.deps</mono> file containing the extra dependencies you want to track. 
-		    				</p>
-		    
-		    				<p>
-		    					File dependencies may also be added using the <mono>@dep(dep-path)</mono> syntax in Nift's template language, which you can read more about on the documentation page for the function <a href="fns/dep.html">dep</a>. 
-		    				</p>
+		    				</div>
 		    			</div>
 		    		</section>
 		    	</div>

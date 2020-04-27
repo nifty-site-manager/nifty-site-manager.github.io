@@ -112,7 +112,7 @@
 
 		    <!-- Main -->
 		    <section id="main" class="wrapper style2">
-		    	<div class="title">cmd: <mono>commands</mono></div>
+		    	<div class="title">cmd: <mono>del</mono>/<mono>rm</mono>/<mono>rmv</mono></div>
 		    	<div class="container">
 		    		<!-- Features -->
 		    		<section id="features">
@@ -125,17 +125,22 @@
 		    				<ul style="text-indent:30px">
 		    					<li><a href="#syntax">Syntax</a></li>
 		    					<li><a href="#description">Description</a></li>
+		    					<li><a href="#eg">Example</a></li>
 		    				</ul>
 		    
 		    				<h4 id="syntax">
 		    					Syntax
 		    				</h4>
 		    				<p>
-		    					The syntax for the <mono>commands</mono> command is:
+		    					The syntax for the <mono>del</mono>/<mono>rm</mono>/<mono>rmv</mono> command is:
 		    <div align="center">
 		    <pre class="prettyprint inline lang-nift" style="margin-bottom:-10px">
-nift commands
-nsm commands
+nift del names
+nift rm names
+nift rmv names
+nsm del names
+nsm rm names
+nsm rmv names
 </pre>
 		    </div>
 		    				</p>
@@ -144,60 +149,15 @@ nsm commands
 		    					Description
 		    				</h4>
 		    				<p>
-		    					The <mono>commands</mono> command lists the commands available with <mono>Nift</mono>. The output will look similar to:
+		    					The <mono>del</mono>/<mono>rm</mono>/<mono>rmv</mono> command is for deleting/removing files from a project, it takes a non-zero number of string parameters that should specify names of files to delete/remove. All information about the file is deleted/removed from <mono>.nsm/tracking.list</mono> along with the content file, output file and the info file. You will still have to manually delete/remove any associated content and/or template files unique to the files being deleted/removed. 
+		    				</p>
 		    
-		    <div align="center">
-		    <pre class="inline rounded">
-+--------- available commands ---------------------------------+
-| commands          | list all commands                        |
-| config            | list or set git email/username           |
-| clone             | par: clone-url                           |
-| diff              | par: file-path                           |
-| pull              | pull remote changes locally              |
-| bcp               | par: commit-message                      |
-| init              | start managing project - par: (out-ext)  |
-| init-html         | start managing html website              |
-| status            | list updated & problem files             |
-| info              | par: name-1 .. name-k                    |
-| info-all          | list watched dirs & tracked files        |
-| info-config       | list config settings                     |
-| info-names        | list tracked names                       |
-| info-tracking     | list tracked files                       |
-| info-watching     | list watched dirs                        |
-| track             | par: name (title) (template)             |
-| track-from-file   | par: file-path                           |
-| track-dir         | par: dir (cont-ext) (template) (out-ext) |
-| untrack           | par: name                                |
-| untrack-from-file | par: file-path                           |
-| untrack-dir       | par: dir-path (content-ext)              |
-| rm or del         | par: name                                |
-| rm-from-file      | par: file-path                           |
-| rm-dir            | par: dir-path (content-ext)              |
-| mv or move        | par: old-name new-name                   |
-| cp or copy        | par: tracked-name new-name               |
-| run               | par: (lang-opt) script-path              |
-| interp            | par: (lang-opt)                          |
-| sh                | par: (lang-opt)                          |
-| build-names       | par: name-1 .. name-k                    |
-| build-updated     | build updated output files               |
-| build-all         | build all tracked output files           |
-| serve             | serve project locally par: (sleep-sec)   |
-| new-title         | par: name new-title                      |
-| new-template      | par: (name) template                     |
-| new-output-dir    | par: dir-path                            |
-| new-cont-dir      | par: dir-path                            |
-| new-cont-ext      | par: (name) content-ext                  |
-| new-output-ext    | par: (name) output-ext                   |
-| new-script-ext    | par: (name) script-ext                   |
-| no-build-thrds    | par: (no-threads) [-n == n*cores]        |
-| backup-scripts    | par: (option)                            |
-| incr-mode         | par: (mode)                              |
-| watch             | par: dir (cont-ext) (template) (out-ext) |
-| unwatch           | par: dir (cont-ext)                      |
-+--------------------------------------------------------------+
-
-</pre>
-		    </div>
+		    				<p>
+		    					<b>Note:</b> <a href="rmv-dir.html">del-dir/rm-dir/rmv-dir</a> and <a href="rmv-from-file.html">del-from-file/rm-from-file/rmv-from-file</a> are much more convenient for deleting/removing large volumes of files than <mono>del</mono>/<mono>rm</mono>/<mono>rmv</mono>.
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> Surround any names containing spaces with single or double quotes.
 		    				</p>
 		    			</div>
 		    		</section>

@@ -112,7 +112,7 @@
 
 		    <!-- Main -->
 		    <section id="main" class="wrapper style2">
-		    	<div class="title">cmd: <mono>commands</mono></div>
+		    	<div class="title">cmd: <mono>incr-mode</mono></div>
 		    	<div class="container">
 		    		<!-- Features -->
 		    		<section id="features">
@@ -125,17 +125,22 @@
 		    				<ul style="text-indent:30px">
 		    					<li><a href="#syntax">Syntax</a></li>
 		    					<li><a href="#description">Description</a></li>
+		    					<li><a href="#modes">Modes</a></li>
+		    					<li><a href="#about">How do build-updated and status work?</a></li>
+		    					<li><a href="#file-deps">What is a file dependency?</a></li>
+		    					<li><a href="#about-tracking">How does Nift track modifications to file dependencies?</a></li>
+		    					<li><a href="#deps">User-defined file dependencies</a></li>
 		    				</ul>
 		    
 		    				<h4 id="syntax">
 		    					Syntax
 		    				</h4>
 		    				<p>
-		    					The syntax for the <mono>commands</mono> command is:
+		    					The syntax for the <mono>incr-mode</mono> command is:
 		    <div align="center">
 		    <pre class="prettyprint inline lang-nift" style="margin-bottom:-10px">
-nift commands
-nsm commands
+nift incr-mode (mode)
+nsm incr-mode (mode)
 </pre>
 		    </div>
 		    				</p>
@@ -144,60 +149,101 @@ nsm commands
 		    					Description
 		    				</h4>
 		    				<p>
-		    					The <mono>commands</mono> command lists the commands available with <mono>Nift</mono>. The output will look similar to:
+		    					The <mono>incr-mode</mono> command is for getting and setting the mode to use for <a href="build-updated.html">incremental builds</a> and checking the <a href="status.html">status</a> of a project, it either takes zero parameters and returns the incremental mode being used for the current project, or it takes a string parameter to specify which mode to set. There are a number of modes available outlined in the following section.
+		    				</p>
 		    
-		    <div align="center">
-		    <pre class="inline rounded">
-+--------- available commands ---------------------------------+
-| commands          | list all commands                        |
-| config            | list or set git email/username           |
-| clone             | par: clone-url                           |
-| diff              | par: file-path                           |
-| pull              | pull remote changes locally              |
-| bcp               | par: commit-message                      |
-| init              | start managing project - par: (out-ext)  |
-| init-html         | start managing html website              |
-| status            | list updated & problem files             |
-| info              | par: name-1 .. name-k                    |
-| info-all          | list watched dirs & tracked files        |
-| info-config       | list config settings                     |
-| info-names        | list tracked names                       |
-| info-tracking     | list tracked files                       |
-| info-watching     | list watched dirs                        |
-| track             | par: name (title) (template)             |
-| track-from-file   | par: file-path                           |
-| track-dir         | par: dir (cont-ext) (template) (out-ext) |
-| untrack           | par: name                                |
-| untrack-from-file | par: file-path                           |
-| untrack-dir       | par: dir-path (content-ext)              |
-| rm or del         | par: name                                |
-| rm-from-file      | par: file-path                           |
-| rm-dir            | par: dir-path (content-ext)              |
-| mv or move        | par: old-name new-name                   |
-| cp or copy        | par: tracked-name new-name               |
-| run               | par: (lang-opt) script-path              |
-| interp            | par: (lang-opt)                          |
-| sh                | par: (lang-opt)                          |
-| build-names       | par: name-1 .. name-k                    |
-| build-updated     | build updated output files               |
-| build-all         | build all tracked output files           |
-| serve             | serve project locally par: (sleep-sec)   |
-| new-title         | par: name new-title                      |
-| new-template      | par: (name) template                     |
-| new-output-dir    | par: dir-path                            |
-| new-cont-dir      | par: dir-path                            |
-| new-cont-ext      | par: (name) content-ext                  |
-| new-output-ext    | par: (name) output-ext                   |
-| new-script-ext    | par: (name) script-ext                   |
-| no-build-thrds    | par: (no-threads) [-n == n*cores]        |
-| backup-scripts    | par: (option)                            |
-| incr-mode         | par: (mode)                              |
-| watch             | par: dir (cont-ext) (template) (out-ext) |
-| unwatch           | par: dir (cont-ext)                      |
-+--------------------------------------------------------------+
-
-</pre>
-		    </div>
+		    				<h4 id="modes">
+		    					Modes
+		    				</h4>
+		    				<p>
+		    					The following options are available for <mono>incr-mode</mono> calls:
+		    
+		    					<center class="table">
+		    						<table id="incr-mode_modes_table" class="alt">
+		    							<thead>
+		    								<tr>
+		    									<th>mode</th>
+		    									<th>description</th>
+		    								</tr>
+		    							</thead>
+		    							<tr>
+		    								<td><mono>mod</mono></td>
+		    								<td>use file modification times to determine which files have been updated</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>hash</mono></td>
+		    								<td>use file hashes to determine which files have been updated</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>hybrid</mono></td>
+		    								<td>use both file modification times and file hashes to determine which files have been updated</td>
+		    							</tr>
+		    							<tfoot>
+		    								<tr>
+		    									<th>mode</th>
+		    									<th>description</th>
+		    								</tr>
+		    							</tfoot>
+		    						</table>
+		    					</center>
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> <mono>mod</mono> mode is fastest and will have a slightly smaller project size, however if you need to copy the entire project to another machine/server and have the <mono>build-updated</mono> and <mono>status</mono> commands still work then you need to use either the <mono>hash</mono> or <mono>hybrid</mono> modes. If you can use something like Git to push changes from a development machine/server to another machine which also uses Git to pull only the changes to the project/repository then <mono>mod</mono> mode will work provided you have not built any of the files that require updating during development, if you do then again you will need to use either the <mono>hash</mono> or <mono>hybrid</mono> modes.
+		    				</p>
+		    
+		    				<h4 id="about">
+		    					How do build-updated (ie. incremental builds) and status work?
+		    				</h4>
+		    
+		    				<p>
+		    					While <mono>Nift</mono> is easiest to learn and understand by using, you may find it useful to remember that for each tracked file <mono>Nift</mono> tracks a name, title, template path, content extension, output extension and script extension. In more detail, a list of tracked files is stored in the file <mono>.nam/tracking.list</mono> from where <mono>Nift</mono> is initialised. When building an output file, say with name <mono>index</mono>, an info file is created that stores information about file dependencies. 
+		    				</p>
+		    
+		    				<h4 id="file-deps">
+		    					What is a file dependency?
+		    				</h4>
+		    
+		    				Anything that when modified requires an output file to be rubuilt, including:
+		    				<ul>
+		    					<li>changes to some information about a tracked file; and</li>
+		    					<li>modifications to content files and/or template files.</li>
+		    				</ul>
+		    
+		    				<p>
+		    					<u>Note:</u> the modification/removal of an output file is intentionally not considered a dependency. This is so that, should the you want to, output files may be moved (not just copied) outside the project without <mono>Nift</mono> thinking the output files need to be built when in fact they do not (though this is not really recommended, better to just copy the files elsewhere).
+		    				</p>
+		    
+		    				<h4 id="about-tracking">
+		    					How does <mono>Nift</mono> track modifications to file dependencies?
+		    				</h4>
+		    
+		    				<p>
+		    					Nift can use both file modification times and file hashes to track modifications to file dependencies, see the docs page for the <a href="incr-mode.html">incr-mode</a> command for more information than below.
+		    				</p>
+		    
+		    				<p>
+		    					The information stored in an information file for a tracked file represents the information from the last time the output file was built. If the information file does not exist, as far as <mono>Nift</mono> is concerned the file has never been built. It will compare both: the information from the info file against the information in <mono>.nsm/tracking.list</mono>; and whether any of the content and/or template files have been modified since the info file was modified, and hence since the output file was last built.
+		    				</p>
+		    
+		    				<p>
+		    					The value stored in a hash file for a tracked file is the hash value of the file from the last time the output file was built. If the hash file does not exist, <mono>Nift</mono> will flag the file for building.
+		    				</p>
+		    
+		    				<p>
+		    					While <mono>Nift</mono> will not directly pick up the existence of new content/template files that are merely added via other content/template files, in order for this to occur a content file which is already recorded as a file dependency must be modified, resulting in Nift picking up the new file(s) indirectly. Consequently <mono>Nift</mono> will inform you that any relevant output files require building, and upon building (updated) files any new content files will also be recorded as file dependencies.
+		    				</p>
+		    
+		    				<h4 id="deps">
+		    					User-defined file dependencies
+		    				</h4>
+		    
+		    				<p>
+		    					You can add file dependencies manually by adding a <mono>.deps</mono> file residing in the same directory as the content file for the file. For example if you have <mono>content/index.content</mono> as the content file add a <mono>content/index.deps</mono> file containing the extra dependencies you want to track. 
+		    				</p>
+		    
+		    				<p>
+		    					File dependencies may also be added using the <mono>@dep(dep-path)</mono> syntax in Nift's template language, which you can read more about on the documentation page for the function <a href="../fns/dep.html">dep</a>. 
 		    				</p>
 		    			</div>
 		    		</section>
