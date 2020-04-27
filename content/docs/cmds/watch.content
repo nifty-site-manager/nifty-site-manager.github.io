@@ -1,0 +1,62 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">cmd: <mono>watch</mono></div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<div class="content">
+				<a href="#contents" class="to_top">[contents]</a>
+
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#syntax">Syntax</a></li>
+					<li><a href="#description">Description</a></li>
+					<li><a href="#eg">Example</a></li>
+				</ul>
+
+				<h4 id="syntax">
+					Syntax
+				</h4>
+				<p>
+					The syntax for the <mono>watch</mono> command is:
+<div align="center">
+<pre class="prettyprint inline lang-nift" style="margin-bottom:-10px">
+nsm watch dir (content-extension) (template-path) (output-extension)
+nsm watch dir (content-extension) (template-path) (output-extension)
+</pre>
+</div>
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+				<p>
+					The <mono>watch</mono> command is for automatically tracking and untracking files based on the existence of content files in a specified directory. The default values for <mono>content-extension</mono>, <mono>template-path</mono> and <mono>output-extension</mono> if none are provided are specified in the project configuration file <mono>.nsm/nift.config</mono>.
+				</p>
+
+				<p>
+					When a build is run, any new files in a watched directory with the specified content extension will be tracked and built, and any files where the content file has been removed will be untracked. 
+				</p>
+
+				<p>
+					<b>Note:</b> you can watch the same directory multiple times with different content extensions, and subdirectories are not included you must watch them separately.
+				</p>
+
+				<h4 id="eg">
+					Example
+				</h4>
+				<p>
+					Example of <mono>watch</mono> being used:					
+
+<div align="center" style="margin-top:-10px">
+<pre class="prettyprint inline linenums lang-nift">
+nift watch content
+nsm watch content/blog/posts ".md"</pre>
+</div>
+				</p>
+			</div>
+		</section>
+	</div>
+</section>

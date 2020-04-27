@@ -1,0 +1,101 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">cmd: <mono>status</mono></div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<div class="content">
+				<a href="#contents" class="to_top">[contents]</a>
+
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#syntax">Syntax</a></li>
+					<li><a href="#description">Description</a></li>
+					<li><a href="#options">Options</a></li>
+				</ul>
+
+				<h4 id="syntax">
+					Syntax
+				</h4>
+				<p>
+					The syntax for the <mono>status</mono> command is:
+<div align="center">
+<pre class="prettyprint inline lang-nift" style="margin-bottom:-10px">
+nift status (option)
+nsm status (option)
+</pre>
+</div>
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+				<p>
+					The <mono>status</mono> command is for checking which files have been updated in a project without running an incremental or full build.
+				</p>
+
+				<p>
+					<b>Note:</b> There are also a number of different modes available for the <mono>status</mono> command, which are outlined on the docs page for the <a href="@pathtopage(docs/cmds/incr-mode)">incr-mode</a> command.
+				</p>
+
+				<h4 id="options">
+					Options
+				</h4>
+				<p>
+					The following options are available for the <mono>status</mono> command:
+
+					<center class="table">
+						<table id="status_options_table" class="alt">
+							<thead>
+								<tr>
+									<th>option</th>
+									<th>description</th>
+								</tr>
+							</thead>
+							<tr>
+								<td><mono>-a</mono></td>
+								<td>print why files need building</td>
+							</tr>
+							<tr>
+								<td><mono>-ab</mono></td>
+								<td>print why files need building and do not print lists of files</td>
+							</tr>
+							<tr>
+								<td><mono>-as</mono></td>
+								<td>print why files need building and do not print build progress</td>
+							</tr>
+							<tr>
+								<td><mono>-abs</mono></td>
+								<td>print why files need building, do not print lists of files and do not print build progress</td>
+							</tr>
+							<tr>
+								<td><mono>-b</mono></td>
+								<td>do not print lists of files (basic)</td>
+							</tr>
+							<tr>
+								<td><mono>-bs</mono></td>
+								<td>do not print lists of files and do not print build progress</td>
+							</tr>
+							<tr>
+								<td><mono>-n</mono></td>
+								<td>add newline to end of progress lines (useful for getting progress with lolcat activated)</td>
+							</tr>
+							<tr>
+								<td><mono>-s</mono></td>
+								<td>do not print build progress (silent)</td>
+							</tr>
+							<tfoot>
+								<tr>
+									<th>option</th>
+									<th>description</th>
+								</tr>
+							</tfoot>
+						</table>
+					</center>
+				</p>
+			</div>
+		</section>
+	</div>
+</section>

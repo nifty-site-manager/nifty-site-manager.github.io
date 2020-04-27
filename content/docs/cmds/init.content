@@ -1,0 +1,49 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">cmd: <mono>init</mono></div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<div class="content">
+				<a href="#contents" class="to_top">[contents]</a>
+
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#syntax">Syntax</a></li>
+					<li><a href="#description">Description</a></li>
+				</ul>
+
+				<h4 id="syntax">
+					Syntax
+				</h4>
+				<p>
+					The syntax for the <mono>init</mono> command is:
+<div align="center">
+<pre class="prettyprint inline lang-nift" style="margin-bottom:-10px">
+nift init (output-extension)
+nsm init (output-extension)
+</pre>
+</div>
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+				<p>
+					The <mono>init</mono> command is to initialise a <mono>Nift</mono> project, it either takes zero parameters where the default is to use an output extension of <mono>.html</mono> or takes a single string parameter specifying what the default output extension should be for the project. The <mono>init</mono> command will:
+					<ul>
+						<li>create a hidden directory <mono>.nsm</mono> containing a config file <mono>nift.config</mono> and a <mono>tracking.list</mono> file for keeping a record of tracked files, this directory will also be used for storing other files <mono>Nift</mono> needs in order to manage and generate your project;</li>
+						<li>create a basic template file for you called either <mono>template/page.template</mono> for <mono>html</mono> projects and <mono>template/project.template</mono> otherwise; and</li>
+						<li>for <mono>html</mono> projects an empty page named <mono>index</mono> will also be tracked and built.</li>
+					</ul>
+				</p>
+
+				<p>
+					<u>Note:</u> Once the project root directory for your project is initialised, much the same as with <mono>Git</mono>, <mono>Nift</mono> may be run from any directory within the project root directory (project root directory inclusive).
+				</p>
+			</div>
+		</section>
+	</div>
+</section>

@@ -1,0 +1,54 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">cmd: <mono>diff</mono></div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<div class="content">
+				<a href="#contents" class="to_top">[contents]</a>
+
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#syntax">Syntax</a></li>
+					<li><a href="#description">Description</a></li>
+					<li><a href="#eg">Example</a></li>
+				</ul>
+
+				<h4 id="syntax">
+					Syntax
+				</h4>
+				<p>
+					The syntax for the <mono>diff</mono> command is:
+<div align="center">
+<pre class="prettyprint inline lang-nift" style="margin-bottom:-10px">
+nift diff file
+nsm diff file
+</pre>
+</div>
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+				<p>
+					The <mono>diff</mono> command is for getting the difference of a file between its current state and when the project repository was last committed to Git, it takes a single parameter which should be the path from the project root directory to the file you want to <mono>diff</mono>.
+				</p>
+
+				<h4 id="eg">
+					Example
+				</h4>
+				<p>
+					Example of <mono>diff</mono> being used:					
+
+<div align="center" style="margin-top:-10px">
+<pre class="prettyprint inline linenums lang-nift">
+nift diff "template/page.template"
+nsm diff content/index.content</pre>
+</div>
+				</p>
+			</div>
+		</section>
+	</div>
+</section>

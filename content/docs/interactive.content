@@ -23,13 +23,15 @@
 				<h4 id="contents">
 					Contents
 				</h4>
-				<ul style="text-indent:30px">
-					<li><a href="#interpreter">Interpreter mode</a></li>
-					<li><a href="#shell">Shell mode</a></li>
-					<li><a href="#languages">Languages</a></li>
-					<li><a href="#multi-line-input">Multi-line input</a></li>
-					<li><a href="#shortcuts">Shortcuts</a></li>
-				</ul>
+				<div style="text-indent:30px; margin-top:10px">
+					<ul>
+						<li><a href="#interpreter">Interpreter mode</a></li>
+						<li><a href="#shell">Shell mode</a></li>
+						<li><a href="#languages">Languages</a></li>
+						<li><a href="#multi-line-input">Multi-line input</a></li>
+						<li><a href="#shortcuts">Shortcuts</a></li>
+					</ul>
+				</div>
 
 				<h4 id="interpreter">
 					Interpreter mode

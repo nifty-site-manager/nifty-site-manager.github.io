@@ -41,6 +41,7 @@
 | new-script-ext    | par: (name) script-ext                   |
 | no-build-thrds    | par: (no-threads) [-n == n*cores]        |
 | backup-scripts    | par: (option)                            |
+| incr-mode         | par: (mode)                              |
 | watch             | par: dir (cont-ext) (template) (out-ext) |
 | unwatch           | par: dir (cont-ext)                      |
 +--------------------------------------------------------------+

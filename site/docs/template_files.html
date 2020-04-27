@@ -139,12 +139,14 @@
 		    				<h4 id="contents">
 		    					Contents
 		    				</h4>
-		    				<ul style="text-indent:30px">
-		    					<li><a href="#content">Specifying where to input/inject content</a></li>
-		    					<li><a href="#head-content">Optionally injecting head content</a></li>
-		    					<li><a href="#inject-title">Inputting/injecting titles</a></li>
-		    					<li><a href="#examples">Example template files</a></li>
-		    				</ul>
+		    				<div style="text-indent:30px; margin-top:10px">
+		    					<ul>
+		    						<li><a href="#content">Specifying where to input/inject content</a></li>
+		    						<li><a href="#head-content">Optionally injecting head content</a></li>
+		    						<li><a href="#inject-title">Inputting/injecting titles</a></li>
+		    						<li><a href="#examples">Example template files</a></li>
+		    					</ul>
+		    				</div>
 		    
 		    				<h4 id="inject">
 		    					Specifying where to input/inject content
@@ -160,14 +162,16 @@
 		    
 		    				<p>
 		    					Alternatively to <mono>@content</mono> you can:
-		    					<ul style="text-indent:30px">
+		    				</p>
+		    				<div style="text-indent:30px; margin-top:-20px">
+		    					<ul>
 		    						<li>use <mono>@content{raw}</mono> which will input the content file without parsing it with Nift's template language</li>
 		    						<li>use <mono>@system{content}(sys-call)</mono> which is equivalent to <mono>@system(sys-call $[contentpath])</mono>, where <mono>$[contentpath]</mono> injects the content path, except <mono>Nift</mono> also recognises that the content file has been inject. For example if your content files are markdown and you use <mono>@system{content}("pandoc")</mono> then the content files will be injected after being converted to html using pandoc</li>
 		    						<li>use <mono>@script($[contentpath])</mono> (if the content file is a script/program)</li>
 		    						<li>use <mono>@script{content}(script-path, params)</mono> which is equivalent to <mono>@script(script-path, $[contentpath], params)</mono>, where <mono>$[contentpath]</mono> injects the content path as parameter 1, except <mono>Nift</mono> also recognises that the content file has been injected</li>
 		    						<li>use <mono>@dep($[contentpath])</mono></li>
 		    					</ul>
-		    				</p>
+		    				</div>
 		    
 		    				<h4 id="head-content">
 		    					Optionally injecting head content 

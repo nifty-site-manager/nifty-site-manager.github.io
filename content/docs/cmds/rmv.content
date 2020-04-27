@@ -1,0 +1,53 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">cmd: <mono>del</mono>/<mono>rm</mono>/<mono>rmv</mono></div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<div class="content">
+				<a href="#contents" class="to_top">[contents]</a>
+
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#syntax">Syntax</a></li>
+					<li><a href="#description">Description</a></li>
+					<li><a href="#eg">Example</a></li>
+				</ul>
+
+				<h4 id="syntax">
+					Syntax
+				</h4>
+				<p>
+					The syntax for the <mono>del</mono>/<mono>rm</mono>/<mono>rmv</mono> command is:
+<div align="center">
+<pre class="prettyprint inline lang-nift" style="margin-bottom:-10px">
+nift del names
+nift rm names
+nift rmv names
+nsm del names
+nsm rm names
+nsm rmv names
+</pre>
+</div>
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+				<p>
+					The <mono>del</mono>/<mono>rm</mono>/<mono>rmv</mono> command is for deleting/removing files from a project, it takes a non-zero number of string parameters that should specify names of files to delete/remove. All information about the file is deleted/removed from <mono>.nsm/tracking.list</mono> along with the content file, output file and the info file. You will still have to manually delete/remove any associated content and/or template files unique to the files being deleted/removed. 
+				</p>
+
+				<p>
+					<b>Note:</b> <a href="@pathtopage(docs/cmds/rmv-dir)">del-dir/rm-dir/rmv-dir</a> and <a href="@pathtopage(docs/cmds/rmv-from-file)">del-from-file/rm-from-file/rmv-from-file</a> are much more convenient for deleting/removing large volumes of files than <mono>del</mono>/<mono>rm</mono>/<mono>rmv</mono>.
+				</p>
+
+				<p>
+					<b>Note:</b> Surround any names containing spaces with single or double quotes.
+				</p>
+			</div>
+		</section>
+	</div>
+</section>

@@ -1,0 +1,62 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">cmd: <mono>rm-dir</mono></div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<div class="content">
+				<a href="#contents" class="to_top">[contents]</a>
+
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#syntax">Syntax</a></li>
+					<li><a href="#description">Description</a></li>
+					<li><a href="#eg">Examples</a></li>
+				</ul>
+
+				<h4 id="syntax">
+					Syntax
+				</h4>
+				<p>
+					The syntax for the <mono>del-dir</mono>/<mono>rm-dir</mono>/<mono>rmv-dir</mono> command is:
+<div align="center">
+<pre class="prettyprint inline lang-nift" style="margin-bottom:-10px">
+nift del-dir dir (content-extension)
+nift rm-dir dir (content-extension)
+nift rmv-dir dir (content-extension)
+nsm del-dir dir (content-extension)
+nsm rm-dir dir (content-extension)
+nsm rmv-dir dir (content-extension)
+</pre>
+</div>
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+				<p>
+					The <mono>del-dir</mono>/<mono>rm-dir</mono>/<mono>rmv-dir</mono> command is for deleting/removing all tracked files in a specified directory with the given <mono>content-extension</mono>, the default value for <mono>content-extension</mono> if one is not provided is specified in the project configuration file <mono>.nsm/nift.config</mono>). 
+				</p>
+
+				<p>
+					<b>Note:</b> <mono>del-dir</mono>/<mono>rm-dir</mono>/<mono>rmv-dir</mono> and <a href="@pathtopage(docs/cmds/rmv-from-file)">del-from-file/rm-from-file/rmv-from-file</a> are much more convenient for deleting/removing large volumes of files than <a href="@pathtopage(docs/cmds/rmv)">del/rm/rmv</a>.
+				</p>
+
+				<h4 id="eg">
+					Examples
+				</h4>
+				<p>
+					Examples of <mono>del-dir</mono>/<mono>rm-dir</mono>/<mono>rmv-dir</mono> being used:					
+
+<div align="center" style="margin-top:-10px">
+<pre class="prettyprint inline linenums lang-nift">
+nift rm-dir content/docs
+nsm rmv-dir content/blog/posts ".md"</pre>
+</div>
+				</p>
+			</div>
+		</section>
+	</div>
+</section>

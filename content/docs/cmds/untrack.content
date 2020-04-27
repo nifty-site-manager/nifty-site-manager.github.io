@@ -1,0 +1,49 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">cmd: <mono>untrack</mono></div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<div class="content">
+				<a href="#contents" class="to_top">[contents]</a>
+
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#syntax">Syntax</a></li>
+					<li><a href="#description">Description</a></li>
+					<li><a href="#eg">Example</a></li>
+				</ul>
+
+				<h4 id="syntax">
+					Syntax
+				</h4>
+				<p>
+					The syntax for the <mono>untrack</mono> command is:
+<div align="center">
+<pre class="prettyprint inline lang-nift" style="margin-bottom:-10px">
+nift untrack names
+nsm untrack names
+</pre>
+</div>
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+				<p>
+					The <mono>untrack</mono> command is for untracking files from a project, it takes a non-zero number of string parameters that should specify names of files to untrack. All information about the file is removed from <mono>.nsm/tracking.list</mono> along with the output file and the info file. It is up to you whether you want to manually remove any associated content and/or template files (or alternatively use the <a href="@pathtopage(docs/cmds/rmv)">del/rm/rmv</a> command). 
+				</p>
+
+				<p>
+					<b>Note:</b> Surround any names containing spaces with single or double quotes.
+				</p>
+
+				<p>
+					<b>Note:</b> <a href="@pathtopage(docs/cmds/untrack-dir)">untrack-dir</a> and <a href="@pathtopage(docs/cmds/untrack-from-file)">untrack-from-file</a> are much more convenient for untracking large volumes of files than <mono>untrack</mono>.
+				</p>
+			</div>
+		</section>
+	</div>
+</section>

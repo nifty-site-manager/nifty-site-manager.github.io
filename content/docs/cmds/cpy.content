@@ -1,0 +1,55 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">cmd: <mono>copy</mono>/<mono>cp</mono>/<mono>cpy</mono></div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<div class="content">
+				<a href="#contents" class="to_top">[contents]</a>
+
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#syntax">Syntax</a></li>
+					<li><a href="#description">Description</a></li>
+				</ul>
+
+				<h4 id="syntax">
+					Syntax
+				</h4>
+				<p>
+					The syntax for the <mono>copy</mono>/<mono>cp</mono>/<mono>cpy</mono> command is:
+<div align="center">
+<pre class="prettyprint inline lang-nift" style="margin-bottom:-10px">
+nift copy tracked-name new-name
+nift cp tracked-name new-name
+nift cpy tracked-name new-name
+nsm copy tracked-name new-name
+nsm cp tracked-name new-name
+nsm cpy tracked-name new-name
+</pre>
+</div>
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+				<p>
+					The <mono>copy</mono>/<mono>cp</mono>/<mono>cpy</mono> command is copying tracked files. Surround any names containing spaces with single or double quotes.
+				</p>
+
+				<p>
+					<b>Note:</b> you should not do any of the following with names:
+					<ul>
+						<li>use tabs;</li>
+						<li>use consecutive spaces;</li>
+						<li>use both single and double quotes;</li>
+						<li>single and double quote the entire string, eg. <mono>'"bad idea"'</mono>.</li>
+					</ul>
+					Also names cannot contain periods. If you need the output filename to contain periods other than in the extension then use a post-build script to move or copy the built file, or alternatively put everything from the first period onwards in the tracked output extension for the file. 
+				</p>
+			</div>
+		</section>
+	</div>
+</section>

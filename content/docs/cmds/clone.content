@@ -1,0 +1,62 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">cmd: <mono>clone</mono></div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<div class="content">
+				<a href="#contents" class="to_top">[contents]</a>
+
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#syntax">Syntax</a></li>
+					<li><a href="#description">Description</a></li>
+					<li><a href="#eg">Example</a></li>
+				</ul>
+
+				<h4 id="syntax">
+					Syntax
+				</h4>
+				<p>
+					The syntax for the <mono>clone</mono> command is:
+<div align="center">
+<pre class="prettyprint inline lang-nift" style="margin-bottom:-10px">
+nift clone clone-url
+nsm clone clone-url
+</pre>
+</div>
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+				<p>
+					The <mono>clone</mono> command is for cloning website repositories using Git from websites offering repository management like <a href="https://bitbucket.org">BitBucket</a>, <a href="https://github.com">GitHub</a> and <a href="https://gitlab.com">GitLab</a>, it takes a single parameter which should be the url to clone using Git with. 
+				</p>
+
+				<p>
+					Check out the <a href="@pathtopage(resources/templates)">templates</a> and <a href="@pathtopage(resources/blog_templates)">blog templates</a> pages for template website repositories that you can import/fork and rename on BitBucket, GitHub or GitLab then clone. You can rename a repository when importing it, rather than forking and renaming, plus on BitBucket and GitHub you cannot remove fork relationships. Also to host a website on GitHub you will need to go in to the website repository's settings, find the GitHub Pages section and set the source branch (typically <mono>master branch</mono>).
+				</p>
+
+				<p>
+					<b>Note:</b> Often <mono>Nift</mono> will do more than just a Git clone when cloning, so it is better to use the <mono>clone</mono> command available with <mono>Nift</mono>.
+				</p>
+
+				<h4 id="eg">
+					Example
+				</h4>
+				<p>
+					Example of <mono>clone</mono> being used:					
+
+<div align="center" style="margin-top:-10px">
+<pre class="inline">
+nift clone https://github.com/nifty-site-manager/nifty-site-manager.github.io.git
+nsm clone https://github.com/nifty-site-manager/nifty-site-manager.github.io.git</pre>
+</div>
+				</p>
+			</div>
+		</section>
+	</div>
+</section>

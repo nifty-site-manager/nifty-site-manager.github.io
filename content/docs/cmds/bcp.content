@@ -1,0 +1,49 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">cmd: <mono>bcp</mono></div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<div class="content">
+				<a href="#contents" class="to_top">[contents]</a>
+
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#syntax">Syntax</a></li>
+					<li><a href="#description">Description</a></li>
+				</ul>
+
+				<h4 id="syntax">
+					Syntax
+				</h4>
+				<p>
+					The syntax for the <mono>bcp</mono> command is:
+<div align="center">
+<pre class="prettyprint inline lang-nift" style="margin-bottom:-10px">
+nift bcp "commit message"
+nsm bcp "commit message"
+</pre>
+</div>
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+				<p>
+					The <mono>bcp</mono> command is for building, committing and pushing changes to a project, ie. deploying it to somewhere like BitBucket, GitHub or GitLab. <mono>bcp</mono> will:
+					<ul>
+						<li>run an incremental build using the <mono>-b</mono> (basic) option;</li>
+						<li>commit any changes to the local project repository using the given commit message;</li>
+						<li>push the committed changes to the remote repository.</li>
+					</ul> 
+				</p>
+
+				<p>
+					<b>Note:</b> While <mono>Nift</mono> uses <mono>Git</mono> to push changes, often website repositories have multiple branches in them and <mono>Nift</mono> will push changes from all branches with the one command, rather than having to manually push changes from both the project root directory and the output/site/build directory. 
+				</p>
+			</div>
+		</section>
+	</div>
+</section>

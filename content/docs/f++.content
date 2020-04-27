@@ -16,26 +16,30 @@
 			<div class="content">
 				<p>
 					<mono>f++</mono> is Nift's in-built scripting language. The <mono>++</mono> comes from the language being developed in c++, while the <mono>f</mono> comes from functions playing a central role basically everywhere in the language and can be thought of as standing for any of the following: 
-					<ul style="margin-top:-20px">
+				</p>
+				<div style="text-indent:30px; margin-top:-20px">
+					<ul>
 						<li><mono>frankenstein++</mono> (f++/n++/Lua/ExprTK)</li>
 						<li><mono>functions++</mono></li>
 						<li><mono>functions everywhere</mono></li>
 						<li><mono>functions with superpowers</mono></li>
 					</ul>
-				</p>
+				</div>
 
 				<a href="#contents" class="to_top">[contents]</a>
 
 				<h4 id="contents">
 					Contents
 				</h4>
-				<ul style="text-indent:30px">
-					<li><a href="#interpreter">f++ interpreter</a></li>
-					<li><a href="#shell">f++ shell</a></li>
-					<li><a href="#scripts">Running f++ scripts</a></li>
-					<li><a href="#f++-from-n++">f++ from n++</a></li>
-					<li><a href="#nift-fns">functions</a></li>
-				</ul>
+				<div style="text-indent:30px; margin-top:10px">
+					<ul>
+						<li><a href="#interpreter">f++ interpreter</a></li>
+						<li><a href="#shell">f++ shell</a></li>
+						<li><a href="#scripts">Running f++ scripts</a></li>
+						<li><a href="#f++-from-n++">f++ from n++</a></li>
+						<li><a href="#nift-fns">functions</a></li>
+					</ul>
+				</div>
 
 				<h4 id="interpreter">
 					f++ interpreter

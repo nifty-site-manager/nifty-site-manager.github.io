@@ -31,12 +31,12 @@
 
 			<p>
 				The benefits of converting the template language post-build include:
-				<ul>
-					<li>You can have definitions and other code in one file (eg. the template files) which are still 'in scope' with code in other files (eg. content files);</li>
-					<li>You can use Nift's template language in amongst the other template language(s) you're using anywhere you want, as that will be parsed before you parse the built page with another template engine;</li>
-					<li>You can reduce the number of C++ system calls made, which can reduce build times.</li>
-				</ul>
 			</p>
+			<ul>
+				<li>You can have definitions and other code in one file (eg. the template files) which are still 'in scope' with code in other files (eg. content files);</li>
+				<li>You can use Nift's template language in amongst the other template language(s) you're using anywhere you want, as that will be parsed before you parse the built page with another template engine;</li>
+				<li>You can reduce the number of C++ system calls made, which can reduce build times.</li>
+			</ul>
 
 			<h3>Converting template languages pre-build</h3>
 			<p>
