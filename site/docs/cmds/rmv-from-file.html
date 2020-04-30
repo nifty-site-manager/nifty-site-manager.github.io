@@ -132,14 +132,10 @@
 		    					Syntax
 		    				</h4>
 		    				<p>
-		    					The syntax for the <mono>del-from-file</mono>/<mono>rm-from-file</mono>/<mono>rmv-from-file</mono> command is:
+		    					The syntax for the <mono>rmv-from-file</mono> command is:
 		    <div align="center">
 		    <pre class="prettyprint inline lang-nift" style="margin-bottom:-10px">
-nift del-from-file file
-nift rm-from-file file
 nift rmv-from-file file
-nsm del-from-file file
-nsm rm-from-file file
 nsm rmv-from-file file
 </pre>
 		    </div>
@@ -149,7 +145,7 @@ nsm rmv-from-file file
 		    					Description
 		    				</h4>
 		    				<p>
-		    					The <mono>del-from-file</mono>/<mono>rm-from-file</mono>/<mono>rmv-from-file</mono> command is for deleting/removing large volumes of files from a project. The file outlining files to delete/remove should have one name specified on each line.
+		    					The <mono>rmv-from-file</mono> command is for deleting/removing large volumes of files from a project. The file outlining files to delete/remove should have one name specified on each line.
 		    				</p>
 		    
 		    				<p>
@@ -157,18 +153,18 @@ nsm rmv-from-file file
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> <mono>del-from-file</mono>/<mono>rm-from-file</mono>/<mono>rmv-from-file</mono> and <a href="rmv-dir.html">del-dir/rm-dir/rmv-dir</a> are much more convenient for deleting/removing large volumes of files than <a href="rmv.html">del/rm/rmv</a>.
+		    					<b>Note:</b> <mono>rmv-from-file</mono> and <a href="rmv-dir.html">rmv-dir</a> are much more convenient for deleting/removing large volumes of files than <a href="rmv.html">rmv</a>.
 		    				</p>
 		    
 		    				<h4 id="eg">
 		    					Example
 		    				</h4>
 		    				<p>
-		    					Example of <mono>del-from-file</mono>/<mono>rm-from-file</mono>/<mono>rmv-from-file</mono> being used:					
+		    					Example of <mono>rmv-from-file</mono> being used:					
 		    
 		    <div align="center" style="margin-top:-10px">
 		    <pre class="prettyprint inline linenums lang-nift">
-nift del-from-file to-del.txt
+nift rmv-from-file to-del.txt
 nsm rmv-from-file to-rmv.txt</pre>
 		    </div>
 		    				</p>

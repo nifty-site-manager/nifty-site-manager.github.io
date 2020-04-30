@@ -1,6 +1,6 @@
 <!-- Main -->
 <section id="main" class="wrapper style2">
-	<div class="title">cmd: <mono>move</mono>/<mono>mv</mono>/<mono>mve</mono></div>
+	<div class="title">cmd: <mono>mve</mono></div>
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
@@ -19,14 +19,10 @@
 					Syntax
 				</h4>
 				<p>
-					The syntax for the <mono>move</mono>/<mono>mv</mono>/<mono>mve</mono> command is:
+					The syntax for the <mono>mve</mono> command is:
 <div align="center">
 <pre class="prettyprint inline lang-nift" style="margin-bottom:-10px">
-nift move old-name new-name
-nift mv old-name new-name
 nift mve old-name new-name
-nsm move old-name new-name
-nsm mv old-name new-name
 nsm mve old-name new-name
 </pre>
 </div>
@@ -36,7 +32,7 @@ nsm mve old-name new-name
 					Description
 				</h4>
 				<p>
-					The <mono>move</mono>/<mono>mv</mono>/<mono>mve</mono> command is moving tracked files. Surround any names containing spaces with single or double quotes.
+					The <mono>mve</mono> command is moving tracked files. Surround any names containing spaces with single or double quotes.
 				</p>
 
 				<p>

@@ -1,6 +1,6 @@
 <!-- Main -->
 <section id="main" class="wrapper style2">
-	<div class="title">cmd: <mono>new-output-dir</mono></div>
+	<div class="title">cmd: <mono>mve-cont-dir</mono></div>
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
@@ -20,11 +20,11 @@
 					Syntax
 				</h4>
 				<p>
-					The syntax for the <mono>new-output-dir</mono> command is:
+					The syntax for the <mono>mve-cont-dir</mono> command is:
 <div align="center">
 <pre class="prettyprint inline lang-nift" style="margin-bottom:-10px">
-nift new-output-dir dir
-nsm new-output-dir dir
+nift mve-cont-dir dir
+nsm mve-cont-dir dir
 </pre>
 </div>
 				</p>
@@ -33,19 +33,19 @@ nsm new-output-dir dir
 					Description
 				</h4>
 				<p>
-					The <mono>new-output-dir</mono> command is for setting the output directory for a project, it takes a single string parameter specifying what to rename the output directory as.
+					The <mono>mve-cont-dir</mono> command is for setting the content directory for a project, it takes a single string parameter specifying what to rename the content directory as.
 				</p>
 
 				<h4 id="eg">
 					Example
 				</h4>
 				<p>
-					Example of <mono>new-output-dir</mono> being used:					
+					Example of <mono>mve-content-dir</mono> being used:					
 
 <div align="center" style="margin-top:-10px">
 <pre class="prettyprint inline linenums lang-nift">
-nift new-output-dir site
-nsm new-output-dir built</pre>
+nift mve-content-dir input
+nsm mve-content-dir content</pre>
 </div>
 				</p>
 			</div>

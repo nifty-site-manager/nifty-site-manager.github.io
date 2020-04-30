@@ -78,16 +78,16 @@
 'mve'
 'template/page.template'
 
-'docs/cmds/new-cont-dir'
-'new-cont-dir'
+'docs/cmds/mve-cont-dir'
+'mve-cont-dir'
+'template/page.template'
+
+'docs/cmds/mve-output-dir'
+'mve-output-dir'
 'template/page.template'
 
 'docs/cmds/new-cont-ext'
 'new-cont-ext'
-'template/page.template'
-
-'docs/cmds/new-output-dir'
-'new-output-dir'
 'template/page.template'
 
 'docs/cmds/new-output-ext'
