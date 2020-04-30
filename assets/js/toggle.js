@@ -22,6 +22,15 @@ function toggle_light_dark()
   if(document.getElementById("details-title"))
     document.getElementById("details-title").classList.toggle("dark-mode");
 
+  elements = document.getElementsByTagName("body");
+  for(var i=0; i<elements.length; i++)
+  {
+    if(dark_mode)
+      elements[i].style.setProperty('--selection-background', "#ff1493");
+    else
+      elements[i].style.setProperty('--selection-background', "#fd3a4a");
+  }
+
   elements = document.getElementsByTagName("h1");
   for(var i=0; i<elements.length; i++)
     elements[i].classList.toggle("white");

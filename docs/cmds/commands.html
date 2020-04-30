@@ -170,11 +170,11 @@ nsm commands
 | untrack           | par: name                                |
 | untrack-from-file | par: file-path                           |
 | untrack-dir       | par: dir-path (content-ext)              |
-| rm or del         | par: name                                |
-| rm-from-file      | par: file-path                           |
-| rm-dir            | par: dir-path (content-ext)              |
-| mv or move        | par: old-name new-name                   |
-| cp or copy        | par: tracked-name new-name               |
+| rmv               | par: name                                |
+| rmv-from-file     | par: file-path                           |
+| rmv-dir           | par: dir-path (content-ext)              |
+| mve               | par: old-name new-name                   |
+| cpy               | par: tracked-name new-name               |
 | run               | par: (lang-opt) script-path              |
 | interp            | par: (lang-opt)                          |
 | sh                | par: (lang-opt)                          |
@@ -182,10 +182,10 @@ nsm commands
 | build-updated     | build updated output files               |
 | build-all         | build all tracked output files           |
 | serve             | serve project locally par: (sleep-sec)   |
+| mve-output-dir    | par: dir-path                            |
+| mve-cont-dir      | par: dir-path                            |
 | new-title         | par: name new-title                      |
 | new-template      | par: (name) template                     |
-| new-output-dir    | par: dir-path                            |
-| new-cont-dir      | par: dir-path                            |
 | new-cont-ext      | par: (name) content-ext                  |
 | new-output-ext    | par: (name) output-ext                   |
 | new-script-ext    | par: (name) script-ext                   |

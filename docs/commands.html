@@ -179,11 +179,11 @@
 | untrack           | par: name                                |
 | untrack-from-file | par: file-path                           |
 | untrack-dir       | par: dir-path (content-ext)              |
-| rm or del         | par: name                                |
-| rm-from-file      | par: file-path                           |
-| rm-dir            | par: dir-path (content-ext)              |
-| mv or move        | par: old-name new-name                   |
-| cp or copy        | par: tracked-name new-name               |
+| rmv               | par: name                                |
+| rmv-from-file     | par: file-path                           |
+| rmv-dir           | par: dir-path (content-ext)              |
+| mve               | par: old-name new-name                   |
+| cpy               | par: tracked-name new-name               |
 | run               | par: (lang-opt) script-path              |
 | interp            | par: (lang-opt)                          |
 | sh                | par: (lang-opt)                          |
@@ -191,10 +191,10 @@
 | build-updated     | build updated output files               |
 | build-all         | build all tracked output files           |
 | serve             | serve project locally par: (sleep-sec)   |
+| mve-output-dir    | par: dir-path                            |
+| mve-cont-dir      | par: dir-path                            |
 | new-title         | par: name new-title                      |
 | new-template      | par: (name) template                     |
-| new-output-dir    | par: dir-path                            |
-| new-cont-dir      | par: dir-path                            |
 | new-cont-ext      | par: (name) content-ext                  |
 | new-output-ext    | par: (name) output-ext                   |
 | new-script-ext    | par: (name) script-ext                   |
@@ -223,14 +223,9 @@
 		    
 		    						<li><a href="cmds/clone.html">clone</a></li>
 		    						<li><a href="cmds/commands.html">commands</a></li>
-		    						<li><a href="cmds/config.html">config</a></li> 
-		    						<li><a href="cmds/cpy.html">copy</a></li> 
-		    						<li><a href="cmds/cpy.html">cp</a></li> 
+		    						<li><a href="cmds/config.html">config</a></li>
 		    						<li><a href="cmds/cpy.html">cpy</a></li> <br>
 		    
-		    						<li><a href="cmds/rmv.html">del</a></li>
-		    						<li><a href="cmds/rmv-dir.html">del-dir</a></li>
-		    						<li><a href="cmds/rmv-from-file.html">del-from-file</a></li>
 		    						<li><a href="cmds/diff.html">diff</a></li> <br>
 		    						
 		    						<li><a href="cmds/incr-mode.html">incr-mode</a></li>
@@ -241,13 +236,12 @@
 		    						<li><a href="cmds/info-watching.html">info-watching</a></li>
 		    						<li><a href="cmds/init.html">init</a></li> <br>
 		    
-		    						<li><a href="cmds/mve.html">move</a></li> 
-		    						<li><a href="cmds/mve.html">mv</a></li> 
-		    						<li><a href="cmds/mve.html">mve</a></li> <br>
+		    						<li><a href="cmds/mve.html">mve</a></li>
+		    						<li><a href="cmds/mve-cont-dir.html">mve-cont-dir</a></li>
+		    						<li><a href="cmds/mve-output-dir.html">mve-output-dir</a></li> <br>
+		    						
 		    
-		    						<li><a href="cmds/new-cont-dir.html">new-cont-dir</a></li>
 		    						<li><a href="cmds/new-cont-ext.html">new-cont-ext</a></li>
-		    						<li><a href="cmds/new-output-dir.html">new-output-dir</a></li>
 		    						<li><a href="cmds/new-output-ext.html">new-output-ext</a></li>
 		    						<li><a href="cmds/new-script-ext.html">new-script-ext</a></li>
 		    						<li><a href="cmds/new-template.html">new-template</a></li>
@@ -256,9 +250,6 @@
 		    
 		    						<li><a href="cmds/pull.html">pull</a></li> <br>
 		    
-		    						<li><a href="cmds/rmv.html">rm</a></li>
-		    						<li><a href="cmds/rmv-dir.html">rm-dir</a></li>
-		    						<li><a href="cmds/rmv-from-file.html">rm-from-file</a></li>
 		    						<li><a href="cmds/rmv.html">rmv</a></li>
 		    						<li><a href="cmds/rmv-dir.html">rmv-dir</a></li>
 		    						<li><a href="cmds/rmv-from-file.html">rmv-from-file</a></li> <br>

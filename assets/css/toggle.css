@@ -40,6 +40,19 @@
   color: #ff1493 !important;
 }
 
+body {
+  --selection-background: #fd3a4a;
+}
+
+::selection {
+  background-color: var(--selection-background);
+  color: white;
+}
+::-moz-selection {
+  background-color: var(--selection-background);
+  color: white;
+}
+
 .fluro-purple {
   color: #c922c9 !important;
 }
