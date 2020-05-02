@@ -290,12 +290,12 @@
 '>='
 'template/page.template'
 
-'docs/fns/HASH'
-'HASH'
-'template/page.template'
-
 'docs/fns/HASH--'
 'HASH--'
+'template/page.template'
+
+'docs/fns/HASH_'
+'HASH_'
 'template/page.template'
 
 'docs/fns/MOD'

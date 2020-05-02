@@ -155,7 +155,7 @@ funcName{options}(params)
 						<li><a href="@pathtopage(docs/fns/=)">=</a> (assignment operator)</li>
 						<li><a href="@pathtopage(docs/fns/==)">==</a> (equals to operator)</li>
 						<li><a href="@pathtopage(docs/fns/<)">@ent(<)</a> (less than operator)</li>
-						<li><a href="@pathtopage(docs/fns/HASH)">#</a> (raw single-line comment)</li>
+						<li><a href="@pathtopage(docs/fns/HASH_)">#</a> (raw single-line comment)</li>
 						<li><a href="@pathtopage(docs/fns/HASH--)">#--</a> (parsed multi-line comment)</li>
 						<li><a href="@pathtopage(docs/fns/<HASH--)"><\#--</a> (raw multi-line comment)</li>
 						<li><a href="@pathtopage(docs/fns/<=)">@ent(<)=</a> (less than or equals to operator)</li>

@@ -32,7 +32,7 @@
 					Below is an index of Nift's hard-coded comments which can be called from <a href="@pathto(docs/f++)">f++</a> and <a href="@pathto(docs/n++)">n++</a>: 
 					<ul style="text-indent:30px">
 						<li><a href="@pathtopage(docs/fns/!newline)">!\n</a> (special single-line comment)</li>
-						<li><a href="@replace_all(@pathtopage(docs/fns/HASH), '#', '%23')">#</a> (raw single-line comment)</li>
+						<li><a href="@replace_all(@pathtopage(docs/fns/HASH_), '#', '%23')">#</a> (raw single-line comment)</li>
 						<li><a href="@replace_all(@pathtopage(docs/fns/HASH--), '#', '%23')">#--</a> (parsed multi-line comment)</li>
 						<li><a href="@replace_all(@pathtopage(docs/fns/<HASH--), '#', '%23')"><\#--</a> (raw multi-line comment)</li>
 						<li><a href="@pathtopage(docs/fns/--divdiv)">--//</a> (parsed single-line comment)</li>
