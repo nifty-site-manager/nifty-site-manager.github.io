@@ -83,6 +83,14 @@ function toggle_light_dark()
   for(var i=0; i<elements.length; i++)
     elements[i].classList.toggle("fluro-green");
 
+  if(document.getElementById("cloudflare-logo"))
+  {
+    if(dark_mode == 1)
+      document.getElementById("cloudflare-logo").src = "../images/cloudflare.svg";
+    else
+      document.getElementById("cloudflare-logo").src = "../images/cloudflare-dark.svg";
+  }
+
   if(document.getElementById("gh-logo"))
   {
     if(dark_mode == 1)
@@ -103,6 +111,14 @@ function toggle_light_dark()
       document.getElementById("gh-logo-big").src = "../images/github-icon.svg";
       document.getElementById("gh-logo-big").width = 200;
     }
+  }
+
+  if(document.getElementById("linode-logo"))
+  {
+    if(dark_mode == 1)
+      document.getElementById("linode-logo").src = "../images/linode.png";
+    else
+      document.getElementById("linode-logo").src = "../images/linode-dark.png";
   }
 
   if(document.getElementById("lua-logo"))
@@ -138,7 +154,15 @@ function toggle_light_dark()
     if(dark_mode == 1)
       document.getElementById("vercel-logo").src = "../images/vercel-white.svg";
     else
-      document.getElementById("vercel-logo").src = "../images/vercel-dark.png";
+      document.getElementById("vercel-logo").src = "../images/vercel-black.png";
+  }
+
+  if(document.getElementById("vultr-logo"))
+  {
+    if(dark_mode == 1)
+      document.getElementById("vultr-logo").src = "../images/vultr.svg";
+    else
+      document.getElementById("vultr-logo").src = "../images/vultr-dark.svg";
   }
 }
 
