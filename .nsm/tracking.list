@@ -726,6 +726,10 @@
 'lua'
 'template/page.template'
 
+'docs/make'
+'make'
+'template/page.template'
+
 'docs/markdown'
 'markdown'
 'template/page.template'

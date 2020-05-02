@@ -169,47 +169,47 @@ lua
 							</thead>
 							<tr>
 								<td><mono>cd(string)</mono></td>
-								<td><mono>cd("~/")</td>
+								<td><mono>cd("~/")</mono></td>
 								<td>change directory</td>
 							</tr>
 							<tr>
 								<td><mono>exprtk(string)</mono></td>
-								<td><mono>exprtk("println('hello, world!')")</td>
+								<td><mono>exprtk("println('hello, world!')")</mono></td>
 								<td>compile and evaluate <mono>ExprTk</mono> expression</td>
 							</tr>
 							<tr>
 								<td><mono>sys(string)</mono></td>
-								<td><mono>sys("ls *.txt")</td>
+								<td><mono>sys("ls *.txt")</mono></td>
 								<td>execute system call/command</td>
 							</tr>
 							<tr>
 								<td><mono>nsm_setnumber(string / lightuserdata, number)</mono></td>
-								<td><mono>nsm_setnumber("i", 0)</td>
+								<td><mono>nsm_setnumber("i", 0)</mono></td>
 								<td>set Nift variable from number</td>
 							</tr>
 							<tr>
 								<td><mono>nsm_setstring(string / lightuserdata, string)</mono></td>
-								<td><mono>nsm_setstring("str", "hello!")</td>
+								<td><mono>nsm_setstring("str", "hello!")</mono></td>
 								<td>set Nift variable from string</td>
 							</tr>
 							<tr>
 								<td><mono>nsm_tolightuserdata(string)</mono></td>
-								<td><mono>nsm_tolightuserdata("x")</td>
+								<td><mono>nsm_tolightuserdata("x")</mono></td>
 								<td>get pointer to Nift variable</td>
 							</tr>
 							<tr>
 								<td><mono>nsm_tonumber(string)</mono></td>
-								<td><mono>nsm_tonumber("i")</td>
+								<td><mono>nsm_tonumber("i")</mono></td>
 								<td>get number from Nift variable</td>
 							</tr>
 							<tr>
 								<td><mono>nsm_tostring(string)</mono></td>
-								<td><mono>nsm_tostring("str")</td>
+								<td><mono>nsm_tostring("str")</mono></td>
 								<td>get string from Nift variable</td>
 							</tr>
 							<tr>
 								<td><mono>nsm_write(ostream, params)</mono></td>
-								<td><mono>nsm_write(console, "x: ", x, endl)</td>
+								<td><mono>nsm_write(console, "x: ", x, endl)</mono></td>
 								<td>write to console, output file (ofile), or a stream</td>
 							</tr>
 							<tfoot>

@@ -61,6 +61,10 @@ choco install nift
 					Note you may need to open a new command prompt window for <mono>nsm</mono> to start working.
 				</p>
 
+				<p>
+					<b>Note:</b> See <a href="@pathtopage(docs/make)">here</a> for information about the variables you can pass to the Makefile when compiling <mono>Nift</mono>.
+				</p>
+
 				<h4>
 					Uninstalling <mono>Nift</mono>
 				</h4>

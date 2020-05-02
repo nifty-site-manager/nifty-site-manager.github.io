@@ -1,0 +1,84 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">Compiling <mono>Nift</mono></div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<div class="content">
+				<p>
+					This page outlines the variables you can pass to the Makefile when compiling <mono>Nift</mono>, for information about compiling and installing from source see <a href="@pathtopage(docs/installing)#install-source">here</a>.
+				</p>
+
+				<h4>
+					Passing variables to the Makefile
+				</h4>
+				<p>
+					Below is an example of passing a couple of variables to the Makefile:
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline">
+make BUNDLED=0 LUA_VERSION=5.3; sudo make install
+</pre>
+</div>
+				</p>
+
+				<p>
+					The following table outlines the variables that can be passed to the Makefile:
+
+					<center class="table">
+						<table id="make_variables_table" class="alt">
+							<thead>
+								<tr>
+									<th>variable</th>
+									<th>values</th>
+									<th>description</th>
+								</tr>
+							</thead>
+							<tr>
+								<td><mono>BUNDLED</mono></td>
+								<td><mono>0</mono></td>
+								<td>use system install of Lua(JIT)</td>
+							</tr>
+							<tr>
+								<td><mono>CXX</mono></td>
+								<td><mono>clang</mono>, <mono>g++</mono></td>
+								<td>which compiler to use</td>
+							</tr>
+							<tr>
+								<td><mono>LUA_VERSION</mono></td>
+								<td><mono>5.3</mono></td>
+								<td>compile with Lua 5.3 instead of LuaJIT</td>
+							</tr>
+							<tr>
+								<td><mono>NO_CLEAR_LINES</mono></td>
+								<td><mono>1</mono></td>
+								<td>does not clear lines in the source code</td>
+							</tr>
+							<tr>
+								<td><mono>NO_COLOR</mono></td>
+								<td><mono>1</mono></td>
+								<td>does not add colour to console output</td>
+							</tr>
+							<tr>
+								<td><mono>NO_PROGRESS</mono></td>
+								<td><mono>1</mono></td>
+								<td>does not add progress to build and status commands</td>
+							</tr>
+							<tr>
+								<td><mono>VERCEL</mono></td>
+								<td><mono>1</mono></td>
+								<td>compile binaries for use on Vercel's servers</td>
+							</tr>
+							<tfoot>
+								<tr>
+									<th>variable</th>
+									<th>values</th>
+									<th>description</th>
+								</tr>
+							</tfoot>
+						</table>
+					</center>
+				</p>
+			</div>
+		</section>
+	</div>
+</section>
