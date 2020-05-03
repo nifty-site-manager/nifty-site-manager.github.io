@@ -157,8 +157,13 @@ make BUNDLED=0 LUA_VERSION=5.3; sudo make install
 		    							</tr>
 		    							<tr>
 		    								<td><mono>LUA_VERSION</mono></td>
-		    								<td><mono>5.3</mono></td>
-		    								<td>compile with Lua 5.3 instead of LuaJIT</td>
+		    								<td><mono>x</mono>, <mono>5.4</mono>, <mono>5.3</mono>, <mono>5.2</mono>, <mono>5.1</mono></td>
+		    								<td>compile with Lua <mono>5.x</mono> (use <mono>x</mono> when compiling and installing Lua from source)</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>LUAJIT_VERSION</mono></td>
+		    								<td><mono>2.1</mono>, <mono>2.0</mono></td>
+		    								<td>compile with LuaJIT <mono>2.x</mono></td>
 		    							</tr>
 		    							<tr>
 		    								<td><mono>NO_CLEAR_LINES</mono></td>
@@ -166,7 +171,7 @@ make BUNDLED=0 LUA_VERSION=5.3; sudo make install
 		    								<td>does not clear lines in the source code</td>
 		    							</tr>
 		    							<tr>
-		    								<td><mono>NO_COLOR</mono></td>
+		    								<td><mono>NO_COLOR</mono>, <mono>NO_COLOUR</mono></td>
 		    								<td><mono>1</mono></td>
 		    								<td>does not add colour to console output</td>
 		    							</tr>
@@ -174,6 +179,11 @@ make BUNDLED=0 LUA_VERSION=5.3; sudo make install
 		    								<td><mono>NO_PROGRESS</mono></td>
 		    								<td><mono>1</mono></td>
 		    								<td>does not add progress to build and status commands</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>POSIX</mono></td>
+		    								<td><mono>1</mono></td>
+		    								<td>compile Lua <mono>5.x</mono> Makefile with <mono>posix</mono> rather than <mono>generic</mono></td>
 		    							</tr>
 		    							<tr>
 		    								<td><mono>VERCEL</mono></td>
