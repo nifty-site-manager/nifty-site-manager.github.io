@@ -121,8 +121,10 @@
 				</p>
 				<div style="text-indent:30px; margin-top:-20px">
 					<ul>
+						<li><a href="https://caddyserver.com/">Caddy 2</a> (<a href="https://github.com/caddyserver/caddy">GitHub</a>).</li>
 						<li><a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)">LAMP stack</a>; or</li>
 						<li><a href="https://www.nginx.com/">NGINX</a> (check out NGINX Open Source).</li>
+						<li><a href="https://containo.us/traefik/">Traefik</a> (<a href="https://github.com/containous/traefik/">GitHub</a>).</li>
 					</ul>
 				</div>
 
