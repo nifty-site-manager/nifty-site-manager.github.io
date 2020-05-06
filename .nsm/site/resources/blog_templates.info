@@ -1,4 +1,4 @@
-22:34:00 Saturday May 02 2020
+20:32:38 Wednesday May 06 2020
 'resources/blog_templates'
 'blog_templates'
 'template/page.template'
@@ -6,6 +6,7 @@
 'content/resources/blog_templates.content'
 'content/resources/tables/blogs.table'
 'content/resources/tables/html5up_blogs.table'
+'content/resources/tables/html5up_paginate_blogs.table'
 'template/footer.content'
 'template/head.content'
 'template/menu.content'

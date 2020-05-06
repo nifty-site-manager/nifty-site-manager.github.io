@@ -76,7 +76,7 @@ funcName{options}(params)
 				</p>
 
 				<p>
-					Nift is pretty good at working out when it does or does not need to parse things like the function name, options and/or parameters. If you insist on manually telling Nift to <u>not</u> parse the function name and parameters use the <mono>!p</mono> option. For example:
+					Nift is pretty good at working out when it does or does not need to parse things like the function name, options and/or parameters. You can manually tell Nift to <u>not</u> parse the function name and parameters using the <mono>!p</mono> option. For example:
 <div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline">
 \@input("\@{!p}[contentpath]")
@@ -261,6 +261,7 @@ funcName{options}(params)
 						<li><a href="@pathtopage(docs/fns/pathto)">pathto</a></li>
 						<li><a href="@pathtopage(docs/fns/pathtofile)">pathtofile</a></li>
 						<li><a href="@pathtopage(docs/fns/pathtopage)">pathtopage</a></li>
+						<li><a href="@pathtopage(docs/fns/pathtopageno)">pathtopageno</a></li>
 						<li><a href="@pathtopage(docs/fns/poke)">poke</a></li>
 						<li><a href="@pathtopage(docs/fns/precision)">precision</a></li>
 						<li><a href="@pathtopage(docs/fns/private)">private</a></li>

@@ -598,6 +598,10 @@
 'pathtopage'
 'template/page.template'
 
+'docs/fns/pathtopageno'
+'pathtopageno'
+'template/page.template'
+
 'docs/fns/poke'
 'poke'
 'template/page.template'

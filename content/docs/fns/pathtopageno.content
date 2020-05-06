@@ -1,6 +1,6 @@
 <!-- Main -->
 <section id="main" class="wrapper style2">
-	<div class="title">fn: <mono>paginate</mono></div>
+	<div class="title">fn: <mono>pathtopageno</mono></div>
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
@@ -20,15 +20,15 @@
 					Syntax
 				</h4>
 				<p>
-					The syntax for <mono>paginate</mono> calls is:
+					The syntax for <mono>pathtopageno</mono> calls is:
 <div align="center" style="margin-top:-15px">
 <mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
-paginate
+pathtopageno(int)
 </pre>
 </div><br>
 <div align="center">
 <mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
-\@paginate
+\@pathtopageno(int)
 </pre>
 </div>
 				</p>
@@ -37,7 +37,7 @@ paginate
 					Description
 				</h4>
 				<p>
-					The <mono>paginate</mono> function is for specifying with pagination where to insert pages in to the file being built, it takes zero parameters.
+					The <mono>pathtopageno</mono> function takes a single integer parameter specifying the pagination page number and returns the relative path from the file being built to the output file for the paginated page. 
 				</p>
 
 				<p>
@@ -52,50 +52,12 @@ paginate
 					n++ example
 				</h4>
 				<p>
-					Example of <mono>paginate</mono> being used with <mono>n++</mono>:					
+					Example of <mono>pathtopageno</mono> being used with <mono>n++</mono>:					
 
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
-<pre class="prettyprint inline linenums lang-nift">
-\@paginate
-
-\@paginate.no_items_per_page(2)
-
-\@paginate.template
-{
-	<p>
-		\@if{!s}(\$[paginate.page_no] > 1)
-			<a href="\@pathtopageno(\@`\$[paginate.page_no]-1`)">previous</a> 
-		\@if{!s}(\$[paginate.page_no] < \$[paginate.no_pages])
-			<a href="\@pathtopageno(\@`\$[paginate.page_no]+1`)">next</a>
-	</p>
-
-	\$[paginate.page]
-}
-
-\@item
-{
-	<p>
-		item 1
-	</p>
-}
-\@item
-{
-	<p>
-		item 2
-	</p>
-}
-\@item
-{
-	<p>
-		item 3
-	</p>
-}
-\@item
-{
-	<p>
-		item 4
-	</p>
-}</pre>
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline linenums">
+\@if{!s}(\$[paginate.page_no] < \$[paginate.no_pages])
+	<a href="\@pathtopageno(\$[paginate.no_pages])">last page</a></pre>
 </div>
 				</p>
 			</div>

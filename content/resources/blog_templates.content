@@ -36,6 +36,18 @@
 						</table>
 					</div>
 				</center>
+
+				<p>
+					The following table contains essentially the same modified <a href="https://html5up.net/">HTML5 UP</a> template blogs as the above table except it does the pagination at build time using <mono>Nift</mono> rather than in the browser using Javascript.
+				</p>
+
+				<center>
+					<div class="xscroll">
+						<table id="html5up_paginate_blogs_table" class="alt">
+							@input(content/resources/tables/html5up_paginate_blogs.table)
+						</table>
+					</div>
+				</center>
 			</div>
 		</section>
 	</div>

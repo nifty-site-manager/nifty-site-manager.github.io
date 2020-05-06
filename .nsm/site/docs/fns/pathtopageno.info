@@ -1,9 +1,9 @@
 20:32:38 Wednesday May 06 2020
-'docs/fns/paginate'
-'paginate'
+'docs/fns/pathtopageno'
+'pathtopageno'
 'template/page.template'
 
-'content/docs/fns/paginate.content'
+'content/docs/fns/pathtopageno.content'
 'template/footer.content'
 'template/head.content'
 'template/menu.content'
