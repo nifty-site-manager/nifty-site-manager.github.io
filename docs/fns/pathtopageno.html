@@ -112,7 +112,7 @@
 
 		    <!-- Main -->
 		    <section id="main" class="wrapper style2">
-		    	<div class="title" style="overflow: hidden; padding-left: 10px; padding-right: 10px"><p style="overflow-x: auto;">fn:&nbsp;<mono>paginate.separator</mono></p></div>
+		    	<div class="title">fn: <mono>pathtopageno</mono></div>
 		    	<div class="container">
 		    		<!-- Features -->
 		    		<section id="features">
@@ -132,23 +132,15 @@
 		    					Syntax
 		    				</h4>
 		    				<p>
-		    					The syntax for <mono>paginate.separator</mono> calls is:
-		    <div align="center" style="margin-top:-15px; margin-bottom:70px">
-		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-60px">
-paginate.separator(string)
-paginate.separator
-{
-	//separator code
-}
+		    					The syntax for <mono>pathtopageno</mono> calls is:
+		    <div align="center" style="margin-top:-15px">
+		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
+pathtopageno(int)
 </pre>
 		    </div><br>
-		    <div align="center" style="margin-top:-15px; margin-bottom:70px">
-		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-60px">
-@paginate.separator(string)
-@paginate.separator
-{
-	//separator code
-}
+		    <div align="center">
+		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
+@pathtopageno(int)
 </pre>
 		    </div>
 		    				</p>
@@ -157,11 +149,7 @@ paginate.separator
 		    					Description
 		    				</h4>
 		    				<p>
-		    					The <mono>paginate.separator</mono> function is for, when using pagination, specifying code to separate items on each page with, it takes one string parameter or zero parameters and is followed by a block of <mono>n++</mono> code. 
-		    				</p>
-		    
-		    				<p>
-		    					<b>Note:</b> Specifying a separator for pagination is optional, the default separator is "<mono>\n\n</mono>" which leaves an empty line between each item in the built file.
+		    					The <mono>pathtopageno</mono> function takes a single integer parameter specifying the pagination page number and returns the relative path from the file being built to the output file for the paginated page. 
 		    				</p>
 		    
 		    				<p>
@@ -172,39 +160,16 @@ paginate.separator
 		    					See <a href="../../resources/blog_templates.html#html5up_paginate_blogs_table">here</a> for some blog templates which use pagination for the posts table, specifically see <a href="https://gitlab.com/html5up-nsm-paginate-blogs/landed-blog/-/blob/master/content/blog/index.content">here</a> (<a href="https://html5up-nsm-paginate-blogs.gitlab.io/landed-blog/blog/">demo</a>) for an example of pagination code. 
 		    				</p>
 		    
-		    				<p>
-		    					<b>Note:</b> <mono>Nift</mono> will skip to the first non-whitespace (ie. to the first character that is not a space, tab or newline) after a <mono>paginate.separator</mono> call and inject it to the output file where the call started. If you want to prevent <mono>Nift</mono> from doing this put a '<mono>!</mono>' after the call, eg.:
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="prettyprint inline lang-nift">
-@paginate.separator
-{
-	# block
-}!
-</pre>
-		    </div>
-		    				</p>
-		    
 		    				<h4 id="n++-eg">
 		    					n++ example
 		    				</h4>
 		    				<p>
-		    					Examples of <mono>paginate.separator</mono> being used with <mono>n++</mono>:					
+		    					Example of <mono>pathtopageno</mono> being used with <mono>n++</mono>:					
 		    
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="prettyprint inline linenums lang-nift">
-@paginate.separator("&lt;br>\n\n")</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="prettyprint inline linenums lang-nift">
-@paginate.separator
-{
-
-	&lt;br>
-
-}</pre>
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline linenums">
+@if{!s}($[paginate.page_no] &lt; $[paginate.no_pages])
+	&lt;a href="@pathtopageno($[paginate.no_pages])">last page&lt;/a></pre>
 		    </div>
 		    				</p>
 		    			</div>
