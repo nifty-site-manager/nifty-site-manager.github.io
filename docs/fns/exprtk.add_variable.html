@@ -108,7 +108,7 @@
 
 		    <!-- Main -->
 		    <section id="main" class="wrapper style2">
-		    	<div class="title">fn: <mono>poke</mono></div>
+		    	<div class="title">fn: <mono>exprtk.add_variable</mono></div>
 		    	<div class="container">
 		    		<!-- Features -->
 		    		<section id="features">
@@ -121,7 +121,6 @@
 		    				<ul style="text-indent:30px">
 		    					<li><a href="#syntax">Syntax</a></li>
 		    					<li><a href="#description">Description</a></li>
-		    					<li><a href="#options">Options</a></li>
 		    					<li><a href="#f++-eg">f++ example</a></li>
 		    					<li><a href="#n++-eg">n++ example</a></li>
 		    				</ul>
@@ -130,15 +129,15 @@
 		    					Syntax
 		    				</h4>
 		    				<p>
-		    					The syntax for <mono>poke</mono> calls is:
+		    					The syntax for <mono>exprtk.add_variable</mono> calls is:
 		    <div align="center" style="margin-top:-15px">
-		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
-poke{option}(params)
+		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+exprtk.add_variable(params)
 </pre>
 		    </div><br>
 		    <div align="center">
-		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
-@poke{option}(params)
+		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+@exprtk.add_variable(params)
 </pre>
 		    </div>
 		    				</p>
@@ -147,74 +146,58 @@ poke{option}(params)
 		    					Description
 		    				</h4>
 		    				<p>
-		    					The <mono>poke</mono> function takes a non-zero number of string parameters that should be paths to create or just update the modification time for, you can poke files or directories.
+		    					The <mono>exprtk.add_variable</mono> function is for <u>adding variables</u> to the <mono>ExprTk</mono> symbol table, it takes a non-zero number of variables which should each be one of the following types:
+		    					<ul>
+		    						<li><mono>bool</mono></li>
+		    						<li><mono>int</mono></li>
+		    						<li><mono>double</mono></li>
+		    						<li><mono>std::double</mono></li>
+		    						<li><mono>char</mono></li>
+		    						<li><mono>string</mono></li>
+		    						<li><mono>std::vector&lt;double&gt;</mono></li>
+		    					</ul>
 		    				</p>
 		    
 		    				<p>
-		    					<b>Note:</b> <mono>Nift</mono> will skip to the first non-whitespace (ie. to the first character that is not a space, tab or newline) after a <mono>poke</mono> call and inject it to the output file where the call started. If you want to prevent <mono>Nift</mono> from doing this put a '<mono>!</mono>' after the call, eg.:
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="prettyprint inline lang-nift">
-@poke(dir)!
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<h4 id="options">
-		    					Options
-		    				</h4>
-		    				<p>
-		    					The following options are available for <mono>poke</mono> calls:
-		    
-		    					<center class="table">
-		    						<table id="poke_options_table" class="alt">
-		    							<thead>
-		    								<tr>
-		    									<th>option</th>
-		    									<th>description</th>
-		    								</tr>
-		    							</thead>
-		    							<tr>
-		    								<td><mono>dirs</mono></td>
-		    								<td>create directories</td>
-		    							</tr>
-		    							<tr>
-		    								<td><mono>files</mono></td>
-		    								<td>create files (default)</td>
-		    							</tr>
-		    							<tfoot>
-		    								<tr>
-		    									<th>option</th>
-		    									<th>description</th>
-		    								</tr>
-		    							</tfoot>
-		    						</table>
-		    					</center>
+		    					<b>Note:</b> With the exception of <mono>std::double</mono>, variables of the above types are all registed to the <mono>ExprTk</mono> symbol table for you when defined, however if you overload a variable name in a different scope you will need to manually re-add variables you want to use in <mono>ExprTk</mono> expressions once that scope has been destroyed. 
 		    				</p>
 		    
 		    				<h4 id="f++-eg">
 		    					f++ example
 		    				</h4>
 		    				<p>
-		    					Examples of <mono>poke</mono> being used with <mono>f++</mono>:					
+		    					Example of <mono>exprtk.add_variable</mono> being used with <mono>f++</mono>:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline linenums lang-nift">
-poke("example.txt")
-poke{dirs}("dir/")</pre>
+		    <pre class="prettyprint inline linenums">
+int i=12
+for(int i=0; i&lt;10; i+=1){}
+exprtk.add_variable(i)
+exprtk{!o}(println(i))</pre>
 		    </div>
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> If you do not manually re-add the original <mono>i</mono> back the the <mono>ExprTk</mono> symbol table then the output of the above example will be <mono>10.00000</mono> rather than the desired <mono>12.00000</mono>.
 		    				</p>
 		    
 		    				<h4 id="n++-eg">
 		    					n++ example
 		    				</h4>
 		    				<p>
-		    					Examples of <mono>poke</mono> being used with <mono>n++</mono>:					
+		    					Example of <mono>exprtk.add_package</mono> being used with <mono>n++</mono>:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline linenums lang-nift">
-@poke("example.txt")
-@poke{dirs}("dir/")</pre>
+		    <pre class="prettyprint inline linenums">
+@int(i=12)
+@for(int i=0; i&lt;10; i+=1){}
+@exprtk.add_variable(i)
+@exprtk{!o}(println(i))</pre>
 		    </div>
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> If you do not manually re-add the original <mono>i</mono> back the the <mono>ExprTk</mono> symbol table then the output of the above example will be <mono>10.00000</mono> rather than the desired <mono>12.00000</mono>.
 		    				</p>
 		    			</div>
 		    		</section>
