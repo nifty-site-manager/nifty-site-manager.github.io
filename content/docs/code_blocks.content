@@ -55,7 +55,7 @@
 				</p>
 
 				<p>
-					Also see the <a href="@pathto(resources/tutorial)">tutorial</a> for a better idea of how to nicely display code blocks. 
+					Also see the <a href="@pathto(resources/tutorials/basic_usage)">basic usage tutorial</a> for a better idea of how to nicely display code blocks. 
 				</p>
 
 				<center>

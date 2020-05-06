@@ -1,0 +1,32 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">Tutorials</div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<!-- Image -->
+			<center>
+				<img src="@pathtofile(site/images/teaching.svg)" alt="unDraw teaching illustration" width=300 style="margin-bottom:40px">
+			</center>
+
+			<header class="style1">
+				<h2>Nift Tutorials</h2>
+			</header>
+
+			<div class="content">
+				<p>
+					Below are some tutorials to help you get a better understanding of how Nift works:
+
+					<ul>
+						<li><a href="@pathtopage(resources/tutorials/get_started)">get started</a></li>
+						<li><a href="@pathtopage(resources/tutorials/basic_usage)">basic usage</a></li>
+					</ul>
+				</p>
+
+				<p>
+					More coming soon..
+				</p>
+			</div>
+		</section>
+	</div>
+</section>

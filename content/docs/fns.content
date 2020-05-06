@@ -202,7 +202,8 @@ funcName{options}(params)
 						<li><a href="@pathtopage(docs/fns/error)">error</a></li>
 						<li><a href="@pathtopage(docs/fns/exit)">exit</a></li>
 						<li><a href="@pathtopage(docs/fns/exprtk)">exprtk</a></li>
-						<li><a href="@pathtofile('site/docs/fns/exprtk.add_package.html')">exprtk.add_package</a></li> <br>
+						<li><a href="@pathtofile('site/docs/fns/exprtk.add_package.html')">exprtk.add_package</a></li>
+						<li><a href="@pathtofile('site/docs/fns/exprtk.add_variable.html')">exprtk.add_variable</a></li> <br>
 
 						<li><a href="@pathtopage(docs/fns/f++)">f++</a></li>
 						<li><a href="@pathtopage(docs/fns/faviconinclude)">faviconinclude</a></li>
@@ -245,7 +246,8 @@ funcName{options}(params)
 						<li><a href="@pathtopage(docs/fns/lua_remove)">lua_remove</a></li>
 						<li><a href="@pathtopage(docs/fns/lua_setglobal)">lua_setglobal</a></li>
 						<li><a href="@pathtopage(docs/fns/lua_tonumber)">lua_tonumber</a></li>
-						<li><a href="@pathtopage(docs/fns/lua_tostring)">lua_tostring</a></li> <br>
+						<li><a href="@pathtopage(docs/fns/lua_tostring)">lua_tostring</a></li>
+						<li><a href="@pathtopage(docs/fns/lua_version)">lua_version</a></li> <br>
 
 						<li><a href="@pathtopage(docs/fns/mve)">mve</a></li> <br>
 

@@ -1,25 +1,20 @@
 <!-- Main -->
 <section id="main" class="wrapper style2">
-	<div class="title">Nift Tutorial</div>
+	<div class="title">Basic Usage</div>
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
 			<header class="style1">
-				<h2>Tutorial to get a better understanding of how Nift works</h2>
+				<h2>Basic usage tutorial</h2>
 			</header>
-
-			<!-- Image -->
-			<center>
-				<img src="@pathtofile(site/images/teaching.svg)" alt="unDraw teaching illustration" width=300 style="margin-bottom:40px">
-			</center>
 
 			<div class="content">
 				<p>
-					The following tutorial will help you learn how <mono>Nift</mono> works, if you are just taking a look at <mono>Nift</mono> you may prefer the <a href="@pathto(resources/get_started)">getting started guide</a> which will get you up and running much quicker, then come back when you want to have a better understanding of how <mono>Nift</mono> works.
+					The following tutorial will help you learn the basic usage of <mono>Nift</mono>, if you are just taking a look at <mono>Nift</mono> you may prefer the <a href="@pathto(resources/tutorials/get_started)">get started tutorial</a> which will get you up and running much quicker, then come back when you want to have a better understanding of how <mono>Nift</mono> works.
 				</p>
 
 				<p>
-					The easiest way to learn how <mono>Nift</mono> works is to get your feet wet and hands dirty playing with a simple site. If there is any problems with the following tutorial please file an issue <a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io/issues">here</a> or <a href="https://gitlab.com/nifty-site-manager/nifty-site-manager.gitlab.io/issues">here</a>.
+					The easiest way to learn how <mono>Nift</mono> works is to get your feet wet and hands dirty playing with a simple site. If there is any problems with the following tutorial please file an issue <a href="https://github.com/nifty-site-manager/nsm/issues">here</a>.
 				</p>
 
 				<ol>
@@ -85,7 +80,7 @@ template/page.template
 					</li>
 
 					<li>
-						Enter <mono>nsm rm first_page</mono> and repeat the last step;
+						Enter <mono>nsm rmv first_page</mono> and repeat the last step;
 					</li>
 
 					<li>
@@ -196,15 +191,15 @@ ostream& operator<<(ostream &os, const std::vector<std::string> &v)
 					</li>
 
 					<li>
-						Enter <mono>nsm mv about test</mono>, check that: <mono>.siteinfo/pages.list</mono> has been updated; both <mono>site/index.html</mono> and <mono>.siteinfo/site/index.info</mono> were removed; and <mono>content/about.content</mono> was moved to <mono>content/test.content</mono>;
+						Enter <mono>nsm mve about test</mono>, check that: <mono>.siteinfo/pages.list</mono> has been updated; both <mono>site/index.html</mono> and <mono>.siteinfo/site/index.info</mono> were removed; and <mono>content/about.content</mono> was moved to <mono>content/test.content</mono>;
 					</li>
 
 					<li>
-						Enter <mono>nsm cp test about</mono>, check that <mono>.siteinfo/pages.list</mono> has been updated and <mono>content/test.content</mono> was copied to <mono>content/about.content</mono>;
+						Enter <mono>nsm cpy test about</mono>, check that <mono>.siteinfo/pages.list</mono> has been updated and <mono>content/test.content</mono> was copied to <mono>content/about.content</mono>;
 					</li>
 
 					<li>
-						Enter <mono>nsm rm test</mono>, check that <mono>content/test.content</mono>, <mono>site/test.html</mono> and <mono>.siteinfo/site/test.info</mono> were all removed. 
+						Enter <mono>nsm rmv test</mono>, check that <mono>content/test.content</mono>, <mono>site/test.html</mono> and <mono>.siteinfo/site/test.info</mono> were all removed. 
 					</li>
 
 					<li>

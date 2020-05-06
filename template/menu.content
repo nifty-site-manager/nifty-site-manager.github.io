@@ -60,23 +60,22 @@
 						<li><a href="@pathto(docs/mathematics)">Mathematics</a></li>
 						<li><a href="@pathto(docs/code_blocks)">Code Blocks</a></li>
 						<li><a href="@pathto(docs/presentations)">Presentations</a></li>
-						@#<li><a href="@pathto(docs/lokinet_snapps)">Lokinet SNApps</a></li>
+						@/*<li><a href="@pathto(docs/lokinet_snapps)">Lokinet SNApps</a></li>*/
 					</ul>
 				</li>
 				<li>
 					<a href="">Resources</a>
 					<ul>
+						<li><a href="@pathto(resources/tutorials)">Tutorials</a></li>
+						<li><a href="@pathto(resources/templates)">Templates</a></li>
+						@/*<li><a href="@pathto(resources/SNApp_templates)">SNApp Templates</a></li>*/
+						<li><a href="@pathto(resources/blog_templates)">Blog Templates</a></li>
 						<li><a href="@pathto(resources/css_frameworks)">CSS Frameworks</a></li>
-						<li><a href="@pathto(resources/examples)">Examples</a></li>
-						<li><a href="@pathto(resources/get_started)">Get Started</a></li>
+						@/*<li><a href="@pathto(resources/examples)">Examples</a></li>*/
 						<li><a href="@pathto(resources/js_frameworks)">JS Frameworks</a></li>
 						<li><a href="@pathto(resources/links)">Links</a></li>
 						<li><a href="@pathto(resources/logos)">Logos</a></li>
 						<li><a href="@pathto(resources/php_frameworks)">PHP Frameworks</a></li>
-						<li><a href="@pathto(resources/templates)">Templates</a></li>
-						@#<li><a href="@pathto(resources/SNApp_templates)">SNApp Templates</a></li>
-						<li><a href="@pathto(resources/blog_templates)">Blog Templates</a></li>
-						<li><a href="@pathto(resources/tutorial)">Tutorial</a></li>
 					</ul>
 				</li>
 				<li><a href="@pathto(support)">Support</a></li>

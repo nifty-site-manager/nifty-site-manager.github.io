@@ -139,7 +139,7 @@
 					<div class="col-6 col-12-medium">
 						<section>
 							<h3 class="icon solid fa-check">Template Selection</h3>
-							<p>Nift has a variety of stylishly designed templates available for making <a href="@pathto(resources/templates)">websites</a>, <a href="@pathto(resources/blog_templates)">blogs</a> and <a href="@pathto(resources/SNApp_templates)">SNApps</a>, including templates modified from <a href="@pathto(resources/templates)#html5up">HTML5 UP</a>, <a href="@pathto(resources/templates)">unDraw</a> and <a href="@pathto(resources/templates)#w3css">W3.CSS</a>.</p>
+							<p>Nift has a variety of stylishly designed templates available for making <a href="@pathto(resources/templates)">websites</a> and <a href="@pathto(resources/blog_templates)">blogs</a>, including templates modified from <a href="@pathto(resources/templates)#html5up">HTML5 UP</a>, <a href="@pathto(resources/templates)">unDraw</a> and <a href="@pathto(resources/templates)#w3css">W3.CSS</a>.</p>
 						</section>
 					</div>
 				</div>
@@ -148,10 +148,10 @@
 			<div>
 				<center>
 					<br><br><br>
-					<a href="@pathto(resources/get_started)" class="button style1 large"style="margin-bottom: 10px">Get Started</a> &nbsp;
-					<a href="@pathto(docs/fns)" class="button style1 large" style="margin-bottom: 10px">Documentation</a></li> &nbsp;
+					<a href="@pathto(resources/tutorials)" class="button style1 large"style="margin-bottom: 10px">Tutorials</a> &nbsp;
+					<a href="@pathto(docs/fns)" class="button style1 large" style="margin-bottom: 10px">Docs</a></li> &nbsp;
 					<a href="@pathto(resources/templates)" class="button style1 large"style="margin-bottom: 10px">Templates</a> &nbsp;
-					<a href="@pathto(docs/hosting)" class="button style1 large"style="margin-bottom: 10px">Hosting Options</a></li> 
+					<a href="@pathto(docs/hosting)" class="button style1 large"style="margin-bottom: 10px">Hosting</a></li> 
 				</center>
 			</div>
 		</section>

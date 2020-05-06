@@ -1,0 +1,97 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">fn: <mono>exprtk.add_variable</mono></div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<div class="content">
+				<a href="#contents" class="to_top">[contents]</a>
+
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#syntax">Syntax</a></li>
+					<li><a href="#description">Description</a></li>
+					<li><a href="#f++-eg">f++ example</a></li>
+					<li><a href="#n++-eg">n++ example</a></li>
+				</ul>
+
+				<h4 id="syntax">
+					Syntax
+				</h4>
+				<p>
+					The syntax for <mono>exprtk.add_variable</mono> calls is:
+<div align="center" style="margin-top:-15px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+exprtk.add_variable(params)
+</pre>
+</div><br>
+<div align="center">
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+\@exprtk.add_variable(params)
+</pre>
+</div>
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+				<p>
+					The <mono>exprtk.add_variable</mono> function is for <u>adding variables</u> to the <mono>ExprTk</mono> symbol table, it takes a non-zero number of variables which should each be one of the following types:
+					<ul>
+						<li><mono>bool</mono></li>
+						<li><mono>int</mono></li>
+						<li><mono>double</mono></li>
+						<li><mono>std::double</mono></li>
+						<li><mono>char</mono></li>
+						<li><mono>string</mono></li>
+						<li><mono>std::vector@ent(<)double@ent(>)</mono></li>
+					</ul>
+				</p>
+
+				<p>
+					<b>Note:</b> With the exception of <mono>std::double</mono>, variables of the above types are all registed to the <mono>ExprTk</mono> symbol table for you when defined, however if you overload a variable name in a different scope you will need to manually re-add variables you want to use in <mono>ExprTk</mono> expressions once that scope has been destroyed. 
+				</p>
+
+				<h4 id="f++-eg">
+					f++ example
+				</h4>
+				<p>
+					Example of <mono>exprtk.add_variable</mono> being used with <mono>f++</mono>:					
+
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline linenums">
+int i=12
+for(int i=0; i<10; i+=1){}
+exprtk.add_variable(i)
+exprtk{!o}(println(i))</pre>
+</div>
+				</p>
+
+				<p>
+					<b>Note:</b> If you do not manually re-add the original <mono>i</mono> back the the <mono>ExprTk</mono> symbol table then the output of the above example will be <mono>10.00000</mono> rather than the desired <mono>12.00000</mono>.
+				</p>
+
+				<h4 id="n++-eg">
+					n++ example
+				</h4>
+				<p>
+					Example of <mono>exprtk.add_package</mono> being used with <mono>n++</mono>:					
+
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline linenums">
+\@int(i=12)
+\@for(int i=0; i<10; i+=1){}
+\@exprtk.add_variable(i)
+\@exprtk{!o}(println(i))</pre>
+</div>
+				</p>
+
+				<p>
+					<b>Note:</b> If you do not manually re-add the original <mono>i</mono> back the the <mono>ExprTk</mono> symbol table then the output of the above example will be <mono>10.00000</mono> rather than the desired <mono>12.00000</mono>.
+				</p>
+			</div>
+		</section>
+	</div>
+</section>

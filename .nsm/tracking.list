@@ -402,6 +402,10 @@
 'exprtk,add_package'
 'template/page.template'
 
+'docs/fns/exprtk,add_variable'
+'exprtk,add_variable'
+'template/page.template'
+
 'docs/fns/f++'
 'f++'
 'template/page.template'
@@ -548,6 +552,10 @@
 
 'docs/fns/lua_tostring'
 'lua_tostring'
+'template/page.template'
+
+'docs/fns/lua_version'
+'lua_version'
 'template/page.template'
 
 'docs/fns/mve'
@@ -862,10 +870,6 @@
 'examples'
 'template/page.template'
 
-'resources/get_started'
-'get_started'
-'template/page.template'
-
 'resources/js_frameworks'
 'js_frameworks'
 'template/page.template'
@@ -886,8 +890,16 @@
 'templates'
 'template/page.template'
 
-'resources/tutorial'
-'tutorial'
+'resources/tutorials'
+'tutorials'
+'template/page.template'
+
+'resources/tutorials/basic_usage'
+'basic_usage'
+'template/page.template'
+
+'resources/tutorials/get_started'
+'get_started'
 'template/page.template'
 
 'support'

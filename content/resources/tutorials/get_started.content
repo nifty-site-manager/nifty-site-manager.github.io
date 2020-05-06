@@ -15,7 +15,7 @@
 
 			<div class="content">
 				<p>
-					If you are new to <mono>Nift</mono> the following guide will help you get started. To understand how <mono>Nift/nsm</mono> works even better check out the <a href="@pathto(resources/tutorial)">Nift tutorial</a> which will give you a more thorough understanding of how different parts of <mono>Nift</mono> work.
+					If you are new to <mono>Nift</mono> the following guide will help you get started. To understand how <mono>Nift/nsm</mono> works even better check out the <a href="@pathto(resources/tutorials)">Nift tutorials</a> which will give you a more thorough understanding of how different parts of <mono>Nift</mono> work.
 				</p>
 
 				<p>

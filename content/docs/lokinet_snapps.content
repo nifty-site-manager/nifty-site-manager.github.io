@@ -194,7 +194,7 @@ sudo python3 -m http.server --bind 172.16.10.1 80
 
 			<h2>Finish</h2>
 			<p>
-				Well done, you have finished the guide and your SNApp is served on the Lokinet. For more on Lokinet, see the <a href="https://docs.loki.network/Lokinet/Guides/PublicTestingGuide/">Lokinet public testing guide</a>. See the <a href="@pathto(resources/get_started)">Getting Started With Nift Guide</a> for how to edit, manage and generate your SNApps. See <a href="@pathto(resources/SNApp_templates)">here</a> for template SNApp repositories that you can import/fork/clone to start making SNApps.
+				Well done, you have finished the guide and your SNApp is served on the Lokinet. For more on Lokinet, see the <a href="https://docs.loki.network/Lokinet/Guides/PublicTestingGuide/">Lokinet public testing guide</a>. See the <a href="@pathto(resources/tutorials/get_started)">Getting Started With Nift Tutorial</a> for how to edit, manage and generate your SNApps. See <a href="@pathto(resources/SNApp_templates)">here</a> for template SNApp repositories that you can import/fork/clone to start making SNApps.
 			</p>
 
 			<center>
