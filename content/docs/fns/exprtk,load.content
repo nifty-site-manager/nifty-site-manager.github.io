@@ -1,0 +1,82 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">fn: <mono>exprtk.load</mono></div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<div class="content">
+				<a href="#contents" class="to_top">[contents]</a>
+
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#syntax">Syntax</a></li>
+					<li><a href="#description">Description</a></li>
+					<li><a href="#f++-eg">f++ example</a></li>
+					<li><a href="#n++-eg">n++ example</a></li>
+				</ul>
+
+				<h4 id="syntax">
+					Syntax
+				</h4>
+				<p>
+					The syntax for <mono>exprtk.load</mono> calls is:
+<div align="center" style="margin-top:-15px; margin-bottom:30px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-20px">
+exprtk.load(name)
+</pre>
+</div><br>
+<div align="center" style="margin-top:-15px; margin-bottom:30px">
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-20px">
+\@exprtk.load(name)
+</pre>
+</div>
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+				<p>
+					The <mono>exprtk.load</mono> function is for <u>loading compiled <mono>ExprTk</mono> expressions</u>, it takes a single parameter which should be the name of the compiled <mono>ExprTk</mono> expression to load. See <a href="@pathtopage(docs/exprtk)">here</a> for more information about <mono>ExprTk</mono>.
+				</p>
+
+				<p>
+					<b>Note:</b> If you need to repeatedly evaluate the same expression multiple times in a row it is faster to load it, otherwise the expression needs to be found in a map every time it is evaluated. 
+				</p>
+
+				<h4 id="f++-eg">
+					f++ example
+				</h4>
+				<p>
+					Example of <mono>exprtk.load</mono> being used with <mono>f++</mono>:					
+
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline linenums">
+exprtk.add_package(basicio_package)
+exprtk.compile(hello, println('hello, world!'))
+exprtk.compile(mars, println('hello, mars!'))
+exprtk.load(hello)
+exprtk.eval</pre>
+</div>
+				</p>
+
+				<h4 id="n++-eg">
+					n++ example
+				</h4>
+				<p>
+					Example of <mono>exprtk.load</mono> being used with <mono>n++</mono>:					
+
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline linenums">
+\@exprtk.add_package(basicio_package)
+\@exprtk.compile(hello, println('hello, world!'))
+\@exprtk.compile(mars, println('hello, mars!'))
+\@exprtk.load(hello)
+\@exprtk.eval</pre>
+</div>
+				</p>
+			</div>
+		</section>
+	</div>
+</section>

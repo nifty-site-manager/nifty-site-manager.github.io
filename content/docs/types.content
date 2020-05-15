@@ -32,13 +32,15 @@
 						<li><a href="@pathtopage(docs/types/fstream)">fstream</a> (file stream)</li>
 						<li><a href="@pathtopage(docs/types/ifstream)">ifstream</a> (input file stream)</li>
 						<li><a href="@pathtopage(docs/types/int)">int</a> (integer)</li>
-						<li><a href="@pathtopage(docs/types/string)">string</a> (string)</li>
 						<li><a href="@pathtopage(docs/types/ofstream)">ofstream</a> (output file stream)</li>
 						<li><a href="@pathtopage(docs/types/std::bool)">std::bool</a> (standard bool)</li>
 						<li><a href="@pathtopage(docs/types/std::char)">std::char</a> (standard character)</li>
 						<li><a href="@pathtopage(docs/types/std::double)">std::double</a> (standard floating point)</li>
 						<li><a href="@pathtopage(docs/types/std::int)">std::int</a> (standard integer)</li>
 						<li><a href="@pathtopage(docs/types/std::string)">std::string</a> (standard string)</li>
+						<li><a href="@pathtopage(docs/types/std::vector<double>)">std::vector@ent(<)double@ent(>)</a> (standard vector of doubles)</li>
+						<li><a href="@pathtopage(docs/types/std::vector<string>)">std::vector@ent(<)string@ent(>)</a> (standard vector of strings)</li>
+						<li><a href="@pathtopage(docs/types/string)">string</a> (string)</li>
 					</ul>
 				</div>
 
@@ -48,7 +50,6 @@
 				<p>
 					There will be more types added soon, including but not limited to:
 					<ul>
-						<li>c++ single-dimensional vectors for <mono>bool</mono>, <mono>int</mono>, <mono>double</mono>, <mono>char</mono>, <mono>string</mono>, etc.</li>
 						<li>standard libraries for both <mono>f++</mono> and <mono>n++</mono> including things like arrays and vectors for arbitrary types (which can handle multiple dimensions)</li>
 					</ul>
 				</p>

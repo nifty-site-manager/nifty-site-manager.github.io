@@ -53,9 +53,9 @@ ent(string)
 								</tr>
 							</thead>
 							<tr>
-								<td><mono>ent('`')</mono></td> 
+								<td><mono>ent('\`')</mono></td> 
 								<td><mono>&amp;grave;</mono></td>
-								<td>@ent('`')</td>
+								<td>@ent('\`')</td>
 							</tr>
 							<tr>
 								<td><mono>ent('~')</mono></td> 
@@ -130,7 +130,7 @@ ent(string)
 							<tr>
 								<td><mono>ent('[')</mono></td> 
 								<td><mono>&amp;lbrack;</mono></td>
-								<td>@ent('`')</td>
+								<td>@ent('[')</td>
 							</tr>
 							<tr>
 								<td><mono>ent(']')</mono></td> 

@@ -203,7 +203,11 @@ funcName{options}(params)
 						<li><a href="@pathtopage(docs/fns/exit)">exit</a></li>
 						<li><a href="@pathtopage(docs/fns/exprtk)">exprtk</a></li>
 						<li><a href="@pathtofile('site/docs/fns/exprtk.add_package.html')">exprtk.add_package</a></li>
-						<li><a href="@pathtofile('site/docs/fns/exprtk.add_variable.html')">exprtk.add_variable</a></li> <br>
+						<li><a href="@pathtofile('site/docs/fns/exprtk.add_variable.html')">exprtk.add_variable</a></li> 
+						<li><a href="@pathtofile('site/docs/fns/exprtk.compile.html')">exprtk.compile</a></li> 
+						<li><a href="@pathtofile('site/docs/fns/exprtk.eval.html')">exprtk.eval</a></li>
+						<li><a href="@pathtofile('site/docs/fns/exprtk.load.html')">exprtk.load</a></li>
+						<li><a href="@pathtofile('site/docs/fns/exprtk.str.html')">exprtk.str</a></li> <br>
 
 						<li><a href="@pathtopage(docs/fns/f++)">f++</a></li>
 						<li><a href="@pathtopage(docs/fns/faviconinclude)">faviconinclude</a></li>
@@ -281,6 +285,14 @@ funcName{options}(params)
 						<li><a href="@pathtopage(docs/fns/scope)">scope</a></li>
 						<li><a href="@pathtopage(docs/fns/script)">script</a></li>
 						<li><a href="@pathtopage(docs/fns/size)">size</a></li>
+						<li><a href="@pathtofile('site/docs/fns/std::vector.at.html')">std::vector.at</a></li>
+						<li><a href="@pathtofile('site/docs/fns/std::vector.erase.html')">std::vector.erase</a></li>
+						<li><a href="@pathtofile('site/docs/fns/std::vector.pop_back.html')">std::vector.pop_back</a></li>
+						<li><a href="@pathtofile('site/docs/fns/std::vector.push_back.html')">std::vector.push_back</a></li>
+						<li><a href="@pathtofile('site/docs/fns/std::vector.set.html')">std::vector.set</a></li>
+						<li><a href="@pathtofile('site/docs/fns/std::vector.size.html')">std::vector.size</a></li>
+						<li><a href="@pathtofile('site/docs/fns/stream.close.html')">stream.close</a></li>
+						<li><a href="@pathtofile('site/docs/fns/stream.open.html')">stream.open</a></li>
 						<li><a href="@pathtopage(docs/fns/struct)">struct</a></li>
 						<li><a href="@pathtopage(docs/fns/substr)">substr</a></li>
 						<li><a href="@pathtopage(docs/fns/system)">sys</a></li>

@@ -1,0 +1,80 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">fn: <mono>stream.close</mono></div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<div class="content">
+				<a href="#contents" class="to_top">[contents]</a>
+
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#syntax">Syntax</a></li>
+					<li><a href="#description">Description</a></li>
+					<li><a href="#f++-eg">f++ example</a></li>
+					<li><a href="#n++-eg">n++ example</a></li>
+				</ul>
+
+				<h4 id="syntax">
+					Syntax
+				</h4>
+				<p>
+					The syntax for <mono>stream.close</mono> calls is:
+<div align="center" style="margin-top:-15px; margin-bottom:40px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-30px">
+name.close()
+stream.close(names)
+</pre>
+</div><br>
+<div align="center" style="margin-top:-15px; margin-bottom:40px">
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-30px">
+\@name.close()
+\@stream.close(names)
+</pre>
+</div>
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+				<p>
+					The <mono>stream.close</mono> function takes a non-zero number of parameters specifying the names of variables to close of type <mono>ifstream</mono>, <mono>fstream</mono> and <mono>ofstream</mono>. As a member function it takes zero functions and closes the stream.
+				</p>
+
+				<p>
+					<b>Note:</b> For large scale projects you will find specifying the <mono>!mf</mono> option to not add member functions during definitions and using <mono>stream.close</mono> is faster than using the <mono>close</mono> member function.
+				</p>
+
+				<h4 id="f++-eg">
+					f++ example
+				</h4>
+				<p>
+					Example of <mono>stream.close</mono> being used with <mono>f++</mono>:					
+
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline linenums lang-nift">
+ofstream ofs("output.txt")
+write(ofs, "hello, world!")
+ofs.close</pre>
+</div>
+				</p>
+
+				<h4 id="n++-eg">
+					n++ example
+				</h4>
+				<p>
+					Example of <mono>stream.close</mono> being used with <mono>n++</mono>:					
+
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline linenums lang-nift">
+\@ofstream ofs("output.txt")
+\@write(ofs, "hello, world!")
+\@ofs.close</pre>
+</div>
+				</p>
+			</div>
+		</section>
+	</div>
+</section>

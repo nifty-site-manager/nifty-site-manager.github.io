@@ -49,7 +49,7 @@ exprtk{options}
 					Description
 				</h4>
 				<p>
-					The <mono>exprtk</mono> function is for <u>evaluating <mono>ExprTk</mono> expressions</u>, it takes zero parameters with the call followed by a block of <mono>ExprTk</mono> code otherwise a single parameter that should be the expression to be evaluated. See <a href="@pathtopage(docs/exprtk)">here</a> for more information about <mono>ExprTk</mono>.
+					The <mono>exprtk</mono> function is for <u>compiling and evaluating <mono>ExprTk</mono> expressions</u>, it takes zero parameters with the call followed by a block of <mono>ExprTk</mono> code to compile and evaluate otherwise a single parameter that should be the expression to be compiled and evaluated. See <a href="@pathtopage(docs/exprtk)">here</a> for more information about <mono>ExprTk</mono>.
 				</p>
 
 				<h4 id="options">
@@ -76,7 +76,11 @@ exprtk{options}
 							</tr>
 							<tr>
 								<td><mono>pb</mono></td>
-								<td>parse block with language call is made from before evaluating with <mono>ExprTk</mono></td>
+								<td>parse block with language call is made from before compiling and evaluating with <mono>ExprTk</mono></td>
+							</tr>
+							<tr>
+								<td><mono>!round</mono></td>
+								<td>do not round value of <mono>ExprTk</mono> expression</td>
 							</tr>
 							<tfoot>
 								<tr>
@@ -92,18 +96,18 @@ exprtk{options}
 					f++ example
 				</h4>
 				<p>
-					Examples of <mono>cd</mono> being used with <mono>f++</mono>:					
+					Examples of <mono>exprtk</mono> being used with <mono>f++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline linenums">
-`var x:=0; nsm_write(x, endl)`
-exprtk(var x:=0; nsm_write(x, endl))
-exprtk.add_package("basicio_package")
+`var x:=0; nsm_write(console, x, endl)`
+exprtk(var x:=0; nsm_write(console, x, endl))
+exprtk.add_package(basicio_package)
 exprtk
 {
-	for(var x:=0; x<10; x+=1)
+	for(var i:=0; i<10; i+=1)
 	{
-		println("x: ", x);
+		println('i: ', i);
 	}
 }</pre>
 </div>
@@ -113,18 +117,18 @@ exprtk
 					n++ example
 				</h4>
 				<p>
-					Example of <mono>cd</mono> being used with <mono>n++</mono>:					
+					Example of <mono>exprtk</mono> being used with <mono>n++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline linenums">
-\@`var x:=0; nsm_write(x, endl)`
-\@exprtk(var x:=0; nsm_write(x, endl))
-\@exprtk.add_package("basicio_package")
+\@`var x:=0; nsm_write(console, x, endl)`
+\@exprtk(var x:=0; nsm_write(console, x, endl))
+\@exprtk.add_package(basicio_package)
 \@exprtk
 {
-	for(var x:=0; x<10; x+=1)
+	for(var i:=0; i<10; i+=1)
 	{
-		println("x: ", x);
+		println('i: ', i);
 	}
 }</pre>
 </div>

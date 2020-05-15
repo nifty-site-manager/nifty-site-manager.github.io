@@ -142,6 +142,7 @@
 		    				</h4>
 		    				<div style="text-indent:30px; margin-top:10px">
 		    					<ul>
+		    						<li><a href="#regular">Embedding regular versions of Lua</a></li>
 		    						<li><a href="#interpreter">Lua interpreter</a></li>
 		    						<li><a href="#scripts">Running Lua scripts</a></li>
 		    						<li><a href="#exprtk-lua">ExprTk from Lua</a></li>
@@ -156,6 +157,13 @@
 		    						<li><a href="#moonscript-fns">Moonscript functions</a></li>
 		    					</ul>
 		    				</div>
+		    
+		    				<h4 id="regular">
+		    					Embedding regular versions of Lua
+		    				</h4>
+		    				<p>
+		    					See <a href="make.html">here</a> for information on how to compile <mono>Nift</mono> with regular (non-JIT) versions of Lua.
+		    				</p>
 		    
 		    				<h4 id="interpreter">
 		    					Lua interpreter
@@ -287,9 +295,39 @@ lua
 		    								<td>compile and evaluate <mono>ExprTk</mono> expression</td>
 		    							</tr>
 		    							<tr>
-		    								<td><mono>sys(string)</mono></td>
-		    								<td><mono>sys("ls *.txt")</mono></td>
-		    								<td>execute system call/command</td>
+		    								<td><mono>exprtk_compile(string)</mono></td>
+		    								<td><mono>exprtk_compile("println('hello, world!')")</mono></td>
+		    								<td>compile <mono>ExprTk</mono> expression</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>exprtk_compile(string, string)</mono></td>
+		    								<td><mono>exprtk_compile("hello", "println('hello, world!')")</mono></td>
+		    								<td>compile <mono>ExprTk</mono> expression</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>exprtk_eval()</mono></td>
+		    								<td><mono>exprtk_eval("println('hello, world!')")</mono></td>
+		    								<td>evaluate <mono>ExprTk</mono> expression</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>exprtk_eval(string)</mono></td>
+		    								<td><mono>exprtk_eval("hello")</mono></td>
+		    								<td>evaluate <mono>ExprTk</mono> expression</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>exprtk_load(string)</mono></td>
+		    								<td><mono>exprtk_load("hello")</mono></td>
+		    								<td>load <mono>ExprTk</mono> expression</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>exprtk_str()</mono></td>
+		    								<td><mono>exprtk_str()</mono></td>
+		    								<td>return string of compiled <mono>ExprTk</mono> expression</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>exprtk_str(string)</mono></td>
+		    								<td><mono>exprtk_str("hello")</mono></td>
+		    								<td>return string of compiled <mono>ExprTk</mono> expression</td>
 		    							</tr>
 		    							<tr>
 		    								<td><mono>nsm_setnumber(string / lightuserdata, number)</mono></td>
@@ -320,6 +358,11 @@ lua
 		    								<td><mono>nsm_write(ostream, params)</mono></td>
 		    								<td><mono>nsm_write(console, "x: ", x, endl)</mono></td>
 		    								<td>write to console, output file (ofile), or a stream</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>sys(string)</mono></td>
+		    								<td><mono>sys("ls *.txt")</mono></td>
+		    								<td>execute system call/command</td>
 		    							</tr>
 		    							<tfoot>
 		    								<tr>

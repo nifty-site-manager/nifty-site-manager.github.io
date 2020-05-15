@@ -1,0 +1,188 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">fn: <mono>exprtk.compile</mono></div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<div class="content">
+				<a href="#contents" class="to_top">[contents]</a>
+
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#syntax">Syntax</a></li>
+					<li><a href="#description">Description</a></li>
+					<li><a href="#options">Options</a></li>
+					<li><a href="#f++-eg">f++ example</a></li>
+					<li><a href="#n++-eg">n++ example</a></li>
+				</ul>
+
+				<h4 id="syntax">
+					Syntax
+				</h4>
+				<p>
+					The syntax for <mono>exprtk.compile</mono> calls is:
+<div align="center" style="margin-top:-15px; margin-bottom:125px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-115px">
+exprtk.compile{options}(expression)
+exprtk.compile{options}
+{
+	//block of ExprTk code
+}
+exprtk.compile{options}(name, expression)
+exprtk.compile{block, options}(name)
+{
+	//block of ExprTk code
+}
+</pre>
+</div><br>
+<div align="center" style="margin-top:-15px; margin-bottom:125px">
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-115px">
+\@exprtk.compile{options}(expression)
+\@exprtk.compile{options}
+{
+	//block of ExprTk code
+}
+\@exprtk.compile{options}(name, expression)
+\@exprtk.compile{block, options}(name)
+{
+	//block of ExprTk code
+}
+</pre>
+</div>
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+				<p>
+					The <mono>exprtk.compile</mono> function is for <u>compiling <mono>ExprTk</mono> expressions</u>, it takes:
+					<ul>
+						<li>zero parameters with the call followed by a block of <mono>ExprTk</mono> code to compile;</li>
+						<li>a single parameter that should either be the expression to be compiled or for the <mono>b</mono>/<mono>block</mono> option a name to assign to the following block of <mono>ExprTk</mono> code to compile; or</li>
+						<li>two parameters, the first being the name to assign to the second parameter which should be the <mono>ExprTk</mono> expression to compile.</li>
+					</ul>
+
+					See <a href="@pathtopage(docs/exprtk)">here</a> for more information about <mono>ExprTk</mono>.
+				</p>
+
+				<p>
+					<b>Note:</b> An expression will need to be recompiled if another variable/symbol with the same name has been in-scope since the expression was compiled. See also <a href="@pathtofile(site/docs/fns/exprtk.add_variable.html)">exprtk.add_variable</a>.
+				</p>
+
+				<h4 id="options">
+					Options
+				</h4>
+				<p>
+					The following options are available for <mono>exprtk.compile</mono> calls:
+
+					<center class="table">
+						<table id="exprtk.compile_options_table" class="alt">
+							<thead>
+								<tr>
+									<th>option</th>
+									<th>description</th>
+								</tr>
+							</thead>
+							<tr>
+								<td><mono>b</mono> or <mono>block</mono></td>
+								<td>call is followed by a block of <mono>ExprTk</mono> code</td>
+							</tr>
+							<tr>
+								<td><mono>pb</mono></td>
+								<td>parse block with language call is made from before compiling with <mono>ExprTk</mono></td>
+							</tr>
+							<tfoot>
+								<tr>
+									<th>option</th>
+									<th>description</th>
+								</tr>
+							</tfoot>
+						</table>
+					</center>
+				</p>
+
+				<h4 id="f++-eg">
+					f++ example
+				</h4>
+				<p>
+					Examples of <mono>exprtk.compile</mono> being used with <mono>f++</mono>:					
+
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline linenums">
+int i=0
+exprtk.compile(nsm_write(console, 'i: ', i, endl))
+for(; i<10; i+=1)
+	exprtk.eval</pre>
+</div>
+				</p>
+
+				<p>
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline linenums">
+exprtk.add_package(basicio_package)
+exprtk.compile(world, println('hello, world!'))
+exprtk.compile(mars, println('hello, mars!'))
+exprtk.eval(world)</pre>
+</div>
+				</p>
+
+				<p>
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline linenums">
+exprtk.add_package(basicio_package)
+exprtk.compile{block}(eg)
+{
+	for(var i:=0; i<10; i+=1)
+	{
+		println('i: ', i)
+	}
+}
+exprtk.eval(eg)</pre>
+</div>
+				</p>
+
+				<h4 id="n++-eg">
+					n++ example
+				</h4>
+				<p>
+					Example of <mono>exprtk.compile</mono> being used with <mono>n++</mono>:					
+
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline linenums">
+\@int(i=0)
+\@exprtk.compile(nsm_write(console, 'i: ', i, endl))
+\@for(; i<10; i+=1)
+	\@exprtk.eval</pre>
+</div>
+				</p>
+
+				<p>
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline linenums">
+\@exprtk.add_package(basicio_package)
+\@exprtk.compile(world, println('hello, world!'))
+\@exprtk.compile(mars, println('hello, mars!'))
+\@exprtk.eval(world)</pre>
+</div>
+				</p>
+
+				<p>
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline linenums">
+\@exprtk.add_package(basicio_package)
+\@exprtk.compile{block}(eg)
+{
+	for(var i:=0; i<10; i+=1)
+	{
+		println('i: ', i)
+	}
+}
+\@exprtk.eval(eg)</pre>
+</div>
+				</p>
+			</div>
+		</section>
+	</div>
+</section>
