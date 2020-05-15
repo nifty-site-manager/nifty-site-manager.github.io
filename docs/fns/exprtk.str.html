@@ -109,7 +109,7 @@
 
 		    <!-- Main -->
 		    <section id="main" class="wrapper style2">
-		    	<div class="title">fn: <mono>--&gt;</mono></div>
+		    	<div class="title">fn: <mono>exprtk.str</mono></div>
 		    	<div class="container">
 		    		<!-- Features -->
 		    		<section id="features">
@@ -130,15 +130,17 @@
 		    					Syntax
 		    				</h4>
 		    				<p>
-		    					The syntax for <mono>--&gt;</mono> calls is:
-		    <div align="center" style="margin-top:-15px">
-		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
---&gt;
+		    					The syntax for <mono>exprtk.str</mono> calls is:
+		    <div align="center" style="margin-top:-15px; margin-bottom:40px">
+		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-30px">
+exprtk.str()
+exprtk.str(name)
 </pre>
 		    </div><br>
-		    <div align="center">
-		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
-@--&gt;
+		    <div align="center" style="margin-top:-15px; margin-bottom:40px">
+		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-30px">
+@exprtk.str()
+@exprtk.str(name)
 </pre>
 		    </div>
 		    				</p>
@@ -147,33 +149,52 @@
 		    					Description
 		    				</h4>
 		    				<p>
-		    					The <mono>--&gt;</mono> function takes zero parameters and skips to the next non-whitespace with the input to be parsed. It is mostly intended for use with <mono>n++</mono>.
+		    					The <mono>exprtk.str</mono> function either takes zero parameters and returns the currently compiled <mono>ExprTk</mono> expression as a string, otherwise a single parameter that should be the name of a compiled expression and returns the compiled <mono>ExprTk</mono> expression for that name as a string. See <a href="../exprtk.html">here</a> for more information about <mono>ExprTk</mono>.
+		    				</p>
+		    
+		    				<h4 id="f++-eg">
+		    					f++ example
+		    				</h4>
+		    				<p>
+		    					Examples of <mono>exprtk.str</mono> being used with <mono>f++</mono>:					
+		    
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
+		    <pre class="prettyprint inline linenums">
+exprtk.add_package(basicio_package)
+exprtk.compile(println('hello, world!'))
+console(exprtk.str())</pre>
+		    </div>
+		    				</p>
+		    
+		    				<p>
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
+		    <pre class="prettyprint inline linenums">
+exprtk.add_package(basicio_package)
+exprtk.compile(hello, println('hello, world!'))
+console(exprtk.str(hello))</pre>
+		    </div>
 		    				</p>
 		    
 		    				<h4 id="n++-eg">
 		    					n++ example
 		    				</h4>
 		    				<p>
-		    					Example of <mono>--&gt;</mono> being used with <mono>n++</mono>:					
+		    					Examples of <mono>exprtk.str</mono> being used with <mono>n++</mono>:					
 		    
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
 		    <pre class="prettyprint inline linenums">
-Example text
-
-@:=(int, i=0)@--&gt;
-
-Second paragraph</pre>
+@exprtk.add_package(basicio_package)
+@exprtk.compile(println('hello, world!'))
+@console(exprtk.str())</pre>
 		    </div>
 		    				</p>
 		    
 		    				<p>
-		    					Output:					
-		    
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
 		    <pre class="prettyprint inline linenums">
-Example text
-
-Second paragraph</pre>
+@exprtk.add_package(basicio_package)
+@exprtk.compile(hello, println('hello, world!'))
+@console(exprtk.str(hello))</pre>
 		    </div>
 		    				</p>
 		    			</div>

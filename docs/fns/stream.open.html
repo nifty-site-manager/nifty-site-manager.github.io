@@ -109,7 +109,7 @@
 
 		    <!-- Main -->
 		    <section id="main" class="wrapper style2">
-		    	<div class="title">fn: <mono>--&gt;</mono></div>
+		    	<div class="title">fn: <mono>stream.open</mono></div>
 		    	<div class="container">
 		    		<!-- Features -->
 		    		<section id="features">
@@ -130,15 +130,17 @@
 		    					Syntax
 		    				</h4>
 		    				<p>
-		    					The syntax for <mono>--&gt;</mono> calls is:
-		    <div align="center" style="margin-top:-15px">
-		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
---&gt;
+		    					The syntax for <mono>stream.open</mono> calls is:
+		    <div align="center" style="margin-top:-15px; margin-bottom:40px">
+		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-30px">
+name.open(path)
+stream.open(name, path)
 </pre>
 		    </div><br>
-		    <div align="center">
-		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
-@--&gt;
+		    <div align="center" style="margin-top:-15px; margin-bottom:40px">
+		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-30px">
+@name.open(path)
+@stream.open(name, path)
 </pre>
 		    </div>
 		    				</p>
@@ -147,33 +149,66 @@
 		    					Description
 		    				</h4>
 		    				<p>
-		    					The <mono>--&gt;</mono> function takes zero parameters and skips to the next non-whitespace with the input to be parsed. It is mostly intended for use with <mono>n++</mono>.
+		    					The <mono>stream.open</mono> function takes two parameters specifying:
+		    					<ul>
+		    						<li>the name of a variable of type <mono>ifstream</mono>, <mono>fstream</mono> and <mono>ofstream</mono>; and</li>
+		    						<li>the path to open</li>
+		    					</ul>
+		    
+		    					As a member function it takes a single parameter specifying the path to open.
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> For large scale projects you will find specifying the <mono>!mf</mono> option to not add member functions during definitions and using <mono>stream.open</mono> is faster than using the <mono>open</mono> member function.
+		    				</p>
+		    
+		    				<h4 id="f++-eg">
+		    					f++ example
+		    				</h4>
+		    				<p>
+		    					Examples of <mono>stream.open</mono> being used with <mono>f++</mono>:					
+		    
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
+		    <pre class="prettyprint inline linenums lang-nift">
+ofstream ofs
+ofs.open("output.txt")
+write(ofs, "hello, world!")
+ofs.close</pre>
+		    </div>
+		    				</p>
+		    
+		    				<p>
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
+		    <pre class="prettyprint inline linenums lang-nift">
+ofstream ofs
+stream.open(ofs, "output.txt")
+write(ofs, "hello, world!")
+ofs.close</pre>
+		    </div>
 		    				</p>
 		    
 		    				<h4 id="n++-eg">
 		    					n++ example
 		    				</h4>
 		    				<p>
-		    					Example of <mono>--&gt;</mono> being used with <mono>n++</mono>:					
+		    					Examples of <mono>stream.open</mono> being used with <mono>n++</mono>:					
 		    
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline linenums">
-Example text
-
-@:=(int, i=0)@--&gt;
-
-Second paragraph</pre>
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
+		    <pre class="prettyprint inline linenums lang-nift">
+@ofstream ofs
+@ofs.open("output.txt")
+@write(ofs, "hello, world!")
+@ofs.close</pre>
 		    </div>
 		    				</p>
 		    
 		    				<p>
-		    					Output:					
-		    
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline linenums">
-Example text
-
-Second paragraph</pre>
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
+		    <pre class="prettyprint inline linenums lang-nift">
+@ofstream ofs
+@stream.open(ofs, "output.txt")
+@write(ofs, "hello, world!")
+@ofs.close</pre>
 		    </div>
 		    				</p>
 		    			</div>

@@ -109,7 +109,7 @@
 
 		    <!-- Main -->
 		    <section id="main" class="wrapper style2">
-		    	<div class="title">fn: <mono>--&gt;</mono></div>
+		    	<div class="title" style="overflow: hidden; padding-left: 10px; padding-right: 10px"><p style="overflow-x: auto;">fn:&nbsp;<mono>std::vector.pop_back</mono></p></div>
 		    	<div class="container">
 		    		<!-- Features -->
 		    		<section id="features">
@@ -130,15 +130,17 @@
 		    					Syntax
 		    				</h4>
 		    				<p>
-		    					The syntax for <mono>--&gt;</mono> calls is:
-		    <div align="center" style="margin-top:-15px">
-		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
---&gt;
+		    					The syntax for <mono>std::vector.pop_back</mono> calls is:
+		    <div align="center" style="margin-top:-15px; margin-bottom:40px">
+		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-30px">
+name.pop_back()
+std::vector.pop_back(name)
 </pre>
 		    </div><br>
-		    <div align="center">
-		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
-@--&gt;
+		    <div align="center" style="margin-top:-15px; margin-bottom:40px">
+		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-30px">
+@name.pop_back()
+@std::vector.pop_back(name)
 </pre>
 		    </div>
 		    				</p>
@@ -147,33 +149,42 @@
 		    					Description
 		    				</h4>
 		    				<p>
-		    					The <mono>--&gt;</mono> function takes zero parameters and skips to the next non-whitespace with the input to be parsed. It is mostly intended for use with <mono>n++</mono>.
+		    					The <mono>std::vector.pop_back</mono> function takes a single parameter specifying the name of a standard C++ vector variable, it erases the last element. As a member function it takes zero parameters.
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> For large scale projects you will find specifying the <mono>!mf</mono> option to not add member functions during definitions and using <mono>std::vector.pop_back</mono> is faster than using the <mono>pop_back</mono> member function.
+		    				</p>
+		    
+		    				<h4 id="f++-eg">
+		    					f++ example
+		    				</h4>
+		    				<p>
+		    					Example of <mono>std::vector.pop_back</mono> being used with <mono>f++</mono>:					
+		    
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
+		    <pre class="prettyprint inline linenums lang-nift">
+std::vector&lt;double> v
+v.push_back(2.0, 5.3, 3.26)
+v.pop_back
+std::vector.pop_back(v)
+console(v.at(0))</pre>
+		    </div>
 		    				</p>
 		    
 		    				<h4 id="n++-eg">
 		    					n++ example
 		    				</h4>
 		    				<p>
-		    					Example of <mono>--&gt;</mono> being used with <mono>n++</mono>:					
+		    					Example of <mono>std::vector.pop_back</mono> being used with <mono>n++</mono>:					
 		    
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline linenums">
-Example text
-
-@:=(int, i=0)@--&gt;
-
-Second paragraph</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    					Output:					
-		    
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline linenums">
-Example text
-
-Second paragraph</pre>
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
+		    <pre class="prettyprint inline linenums lang-nift">
+@std::vector&lt;double> v
+@v.push_back(2.0, 5.3, 3.26)
+@v.pop_back
+@std::vector.pop_back(v)
+@console(v.at(0))</pre>
 		    </div>
 		    				</p>
 		    			</div>

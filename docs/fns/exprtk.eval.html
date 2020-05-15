@@ -109,7 +109,7 @@
 
 		    <!-- Main -->
 		    <section id="main" class="wrapper style2">
-		    	<div class="title">fn: <mono>--&gt;</mono></div>
+		    	<div class="title">fn: <mono>exprtk.eval</mono></div>
 		    	<div class="container">
 		    		<!-- Features -->
 		    		<section id="features">
@@ -122,6 +122,7 @@
 		    				<ul style="text-indent:30px">
 		    					<li><a href="#syntax">Syntax</a></li>
 		    					<li><a href="#description">Description</a></li>
+		    					<li><a href="#options">Options</a></li>
 		    					<li><a href="#f++-eg">f++ example</a></li>
 		    					<li><a href="#n++-eg">n++ example</a></li>
 		    				</ul>
@@ -130,15 +131,17 @@
 		    					Syntax
 		    				</h4>
 		    				<p>
-		    					The syntax for <mono>--&gt;</mono> calls is:
-		    <div align="center" style="margin-top:-15px">
-		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
---&gt;
+		    					The syntax for <mono>exprtk.eval</mono> calls is:
+		    <div align="center" style="margin-top:-15px; margin-bottom:40px">
+		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-30px">
+exprtk.eval{options}()
+exprtk.eval{options}(name)
 </pre>
 		    </div><br>
-		    <div align="center">
-		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
-@--&gt;
+		    <div align="center" style="margin-top:-15px; margin-bottom:40px">
+		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-30px">
+@exprtk.eval{options}()
+@exprtk.eval{options}(name)
 </pre>
 		    </div>
 		    				</p>
@@ -147,33 +150,88 @@
 		    					Description
 		    				</h4>
 		    				<p>
-		    					The <mono>--&gt;</mono> function takes zero parameters and skips to the next non-whitespace with the input to be parsed. It is mostly intended for use with <mono>n++</mono>.
+		    					The <mono>exprtk.eval</mono> function is for <u>evaluating <mono>ExprTk</mono> expressions</u>, it takes zero parameters and returns the current value of the most recently compiled <mono>ExprTk</mono> expression, otherwise a single parameter that should be the name of a compiled expression to return the current value of. See <a href="../exprtk.html">here</a> for more information about <mono>ExprTk</mono>.
+		    				</p>
+		    
+		    				<h4 id="options">
+		    					Options
+		    				</h4>
+		    				<p>
+		    					The following options are available for <mono>exprtk.eval</mono> calls:
+		    
+		    					<center class="table">
+		    						<table id="exprtk.eval_options_table" class="alt">
+		    							<thead>
+		    								<tr>
+		    									<th>option</th>
+		    									<th>description</th>
+		    								</tr>
+		    							</thead>
+		    							<tr>
+		    								<td><mono>!o</mono></td>
+		    								<td>do not return output</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>o</mono></td>
+		    								<td>return output</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>!round</mono></td>
+		    								<td>do not round value of <mono>ExprTk</mono> expression</td>
+		    							</tr>
+		    							<tfoot>
+		    								<tr>
+		    									<th>option</th>
+		    									<th>description</th>
+		    								</tr>
+		    							</tfoot>
+		    						</table>
+		    					</center>
+		    				</p>
+		    
+		    				<h4 id="f++-eg">
+		    					f++ example
+		    				</h4>
+		    				<p>
+		    					Examples of <mono>exprtk.eval</mono> being used with <mono>f++</mono>:					
+		    
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
+		    <pre class="prettyprint inline linenums">
+exprtk.add_package(basicio_package)
+exprtk.compile(println('hello, world!'))
+exprtk.eval()</pre>
+		    </div>
+		    				</p>
+		    
+		    				<p>
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
+		    <pre class="prettyprint inline linenums">
+exprtk.add_package(basicio_package)
+exprtk.compile(hello, println('hello, world!'))
+exprtk.eval(hello)</pre>
+		    </div>
 		    				</p>
 		    
 		    				<h4 id="n++-eg">
 		    					n++ example
 		    				</h4>
 		    				<p>
-		    					Example of <mono>--&gt;</mono> being used with <mono>n++</mono>:					
+		    					Examples of <mono>exprtk.eval</mono> being used with <mono>n++</mono>:					
 		    
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
 		    <pre class="prettyprint inline linenums">
-Example text
-
-@:=(int, i=0)@--&gt;
-
-Second paragraph</pre>
+@exprtk.add_package(basicio_package)
+@exprtk.compile(println('hello, world!'))
+@exprtk.eval()</pre>
 		    </div>
 		    				</p>
 		    
 		    				<p>
-		    					Output:					
-		    
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
 		    <pre class="prettyprint inline linenums">
-Example text
-
-Second paragraph</pre>
+@exprtk.add_package(basicio_package)
+@exprtk.compile(hello, println('hello, world!'))
+@exprtk.eval(hello)</pre>
 		    </div>
 		    				</p>
 		    			</div>

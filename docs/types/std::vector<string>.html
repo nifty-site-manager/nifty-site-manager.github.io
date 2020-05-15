@@ -109,7 +109,7 @@
 
 		    <!-- Main -->
 		    <section id="main" class="wrapper style2">
-		    	<div class="title">fn: <mono>--&gt;</mono></div>
+		    	<div class="title" style="overflow: hidden; padding-left: 10px; padding-right: 10px"><p style="overflow-x: auto;">fn:&nbsp;<mono>std::vector&lt;string&gt;</mono></p></div>
 		    	<div class="container">
 		    		<!-- Features -->
 		    		<section id="features">
@@ -122,6 +122,8 @@
 		    				<ul style="text-indent:30px">
 		    					<li><a href="#syntax">Syntax</a></li>
 		    					<li><a href="#description">Description</a></li>
+		    					<li><a href="#fns">Member functions</a></li>
+		    					<li><a href="#options">Options</a></li>
 		    					<li><a href="#f++-eg">f++ example</a></li>
 		    					<li><a href="#n++-eg">n++ example</a></li>
 		    				</ul>
@@ -130,50 +132,193 @@
 		    					Syntax
 		    				</h4>
 		    				<p>
-		    					The syntax for <mono>--&gt;</mono> calls is:
-		    <div align="center" style="margin-top:-15px">
-		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
---&gt;
+		    					The syntax for <mono>std::vector&lt;string&gt;</mono> definitions is:
+		    <div align="center" style="margin-top:-15px; margin-bottom:50px">
+		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-40px">
+std::vector&lt;string&gt; definitions
+std::vector&lt;string&gt;(definitions)
+:=(std::vector&lt;string&gt;, definitions)
 </pre>
 		    </div><br>
-		    <div align="center">
-		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
-@--&gt;
+		    <div align="center" style="margin-top:-15px; margin-bottom:50px">
+		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-40px">
+@std::vector&lt;string&gt; definitions
+@std::vector&lt;string&gt;(definitions)
+@:=(std::vector&lt;string&gt;, definitions)
 </pre>
 		    </div>
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> If you are using the first syntax for variable definitions and want to have more code and/or text following on the same line then simply end the definition with '<mono>;</mono>'.
 		    				</p>
 		    
 		    				<h4 id="description">
 		    					Description
 		    				</h4>
 		    				<p>
-		    					The <mono>--&gt;</mono> function takes zero parameters and skips to the next non-whitespace with the input to be parsed. It is mostly intended for use with <mono>n++</mono>.
+		    					The <mono>std::vector&lt;string&gt;</mono> type is used for standard C++ vectors of strings.
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> If you need to define thousands of variables then <mono>:=</mono> is faster, plus it has useful error messages for unrecognised types.
+		    				</p>
+		    
+		    				<h4 id="fns">
+		    					Member functions
+		    				</h4>
+		    				<p>
+		    					The following member functions are available for <mono>std::vector&lt;string&gt;</mono> variables:
+		    
+		    					<center class="table">
+		    						<table id="std::vector<string>_fns_table" class="alt">
+		    							<thead>
+		    								<tr>
+		    									<th>option</th>
+		    									<th>description</th>
+		    								</tr>
+		    							</thead>
+		    							<tr>
+		    								<td><a href="../fns/std::vector.at.html">at(index)</a></td>
+		    								<td>get element at specified index</td>
+		    							</tr>
+		    							<tr>
+		    								<td><a href="../fns/std::vector.erase.html">erase(index)</a></td>
+		    								<td>erase element at specified index</td>
+		    							</tr>
+		    							<tr>
+		    								<td><a href="../fns/std::vector.erase.html">erase(index, index)</a></td>
+		    								<td>erase elements between specified indices</td>
+		    							</tr>
+		    							<tr>
+		    								<td><a href="../fns/std::vector.pop_back.html">pop_back()</a></td>
+		    								<td>erase last element</td>
+		    							</tr>
+		    							<tr>
+		    								<td><a href="../fns/std::vector.push_back.html">push_back(params)</a></td>
+		    								<td>push elements on to back</td>
+		    							</tr>
+		    							<tr>
+		    								<td><a href="../fns/std::vector.set.html">set(index, param)</a></td>
+		    								<td>set element at specified index</td>
+		    							</tr>
+		    							<tr>
+		    								<td><a href="../fns/std::vector.size.html">size()</a></td>
+		    								<td>returns current size</td>
+		    							</tr>
+		    							<tfoot>
+		    								<tr>
+		    									<th>option</th>
+		    									<th>description</th>
+		    								</tr>
+		    							</tfoot>
+		    						</table>
+		    					</center>
+		    				</p>
+		    
+		    				<h4 id="options">
+		    					Options
+		    				</h4>
+		    				<p>
+		    					The following options are available for <mono>std::vector&lt;string&gt;</mono> definitions:
+		    
+		    					<center class="table">
+		    						<table id="std::vector<string>_options_table" class="alt">
+		    							<thead>
+		    								<tr>
+		    									<th>option</th>
+		    									<th>description</th>
+		    								</tr>
+		    							</thead>
+		    							<tr>
+		    								<td><mono>const</mono></td>
+		    								<td>definition of a <mono>constant</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>layer="x"</mono></td>
+		    								<td>define variable at layer <mono>x</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>!mf</mono></td>
+		    								<td>do not add member functions for variables</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>private</mono></td>
+		    								<td>definition of a <mono>private</mono></td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>scope+="x"</mono></td>
+		    								<td>add <mono>x</mono> to scopes variable can be accessed from</td>
+		    							</tr>
+		    							<tfoot>
+		    								<tr>
+		    									<th>option</th>
+		    									<th>description</th>
+		    								</tr>
+		    							</tfoot>
+		    						</table>
+		    					</center>
+		    				</p>
+		    
+		    				<h4 id="f++-eg">
+		    					f++ example
+		    				</h4>
+		    				<p>
+		    					Examples of <mono>std::vector&lt;string&gt;</mono> being defined with <mono>f++</mono>:					
+		    
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
+		    <pre class="prettyprint inline linenums lang-nift">
+std::vector&lt;string> v
+v.push_back("cat", "dog")
+console(v.at(1))</pre>
+		    </div>
+		    				</p>
+		    
+		    				<p>
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
+		    <pre class="prettyprint inline linenums lang-nift">
+std::vector&lt;string> v(20), v2(30)
+v2.set(20, "hello")
+console(v2.at(20))</pre>
+		    </div>
+		    				</p>
+		    
+		    				<p>
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
+		    <pre class="prettyprint inline linenums lang-nift">
+std::vector&lt;string> v(2000, "hello")
+console(v.at(20))</pre>
+		    </div>
 		    				</p>
 		    
 		    				<h4 id="n++-eg">
 		    					n++ example
 		    				</h4>
 		    				<p>
-		    					Example of <mono>--&gt;</mono> being used with <mono>n++</mono>:					
+		    					Examples of <mono>std::vector&lt;string&gt;</mono> being defined with <mono>n++</mono>:					
 		    
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline linenums">
-Example text
-
-@:=(int, i=0)@--&gt;
-
-Second paragraph</pre>
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
+		    <pre class="prettyprint inline linenums lang-nift">
+@std::vector&lt;string> v
+@v.push_back("cat", "dog")
+@console(v.at(1))</pre>
 		    </div>
 		    				</p>
 		    
 		    				<p>
-		    					Output:					
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
+		    <pre class="prettyprint inline linenums lang-nift">
+@std::vector&lt;string> v(20), v2(30)
+@v2.set(20, "hello")
+@console(v2.at(20))</pre>
+		    </div>
+		    				</p>
 		    
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline linenums">
-Example text
-
-Second paragraph</pre>
+		    				<p>
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
+		    <pre class="prettyprint inline linenums lang-nift">
+@std::vector&lt;string> v(2000, "hello")
+@console(v.at(20))</pre>
 		    </div>
 		    				</p>
 		    			</div>
