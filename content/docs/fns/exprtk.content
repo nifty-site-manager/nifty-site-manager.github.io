@@ -67,6 +67,14 @@ exprtk{options}
 								</tr>
 							</thead>
 							<tr>
+								<td><mono>f++</mono></td>
+								<td>use <mono>f++</mono> if parsing block</td>
+							</tr>
+							<tr>
+								<td><mono>n++</mono></td>
+								<td>use <mono>n++</mono> if parsing block</td>
+							</tr>
+							<tr>
 								<td><mono>!o</mono></td>
 								<td>do not return output</td>
 							</tr>

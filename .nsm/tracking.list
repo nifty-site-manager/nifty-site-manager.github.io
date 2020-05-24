@@ -306,6 +306,14 @@
 'MOD='
 'template/page.template'
 
+'docs/fns/add_member_fns'
+'add_member_fns'
+'template/page.template'
+
+'docs/fns/add_scope'
+'add_scope'
+'template/page.template'
+
 'docs/fns/break'
 'break'
 'template/page.template'
@@ -662,6 +670,10 @@
 'replace_all'
 'template/page.template'
 
+'docs/fns/replace_vars'
+'replace_vars'
+'template/page.template'
+
 'docs/fns/return'
 'return'
 'template/page.template'
@@ -726,6 +738,10 @@
 'system'
 'template/page.template'
 
+'docs/fns/tern'
+'tern'
+'template/page.template'
+
 'docs/fns/typeof'
 'typeof'
 'template/page.template'
@@ -736,6 +752,10 @@
 
 'docs/fns/valid_type'
 'valid_type'
+'template/page.template'
+
+'docs/fns/vjoin'
+'vjoin'
 'template/page.template'
 
 'docs/fns/warning'

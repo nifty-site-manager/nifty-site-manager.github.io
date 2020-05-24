@@ -119,12 +119,45 @@ funcName{options}(params)
 								<td>do not parse parameters</td>
 							</tr>
 							<tr>
+								<td><mono>v</mono></td>
+								<td>replace variables with their values (where applicable)</td>
+							</tr>
+							<tr>
 								<td><mono>!v</mono></td>
-								<td>do not replace variables with their values</td>
+								<td>do not replace variables with their values (where applicable)</td>
 							</tr>
 							<tr>
 								<td><mono>1p</mono></td>
 								<td>treat parameter string as one parameter</td>
+							</tr>
+							<tfoot>
+								<tr>
+									<th>option</th>
+									<th>description</th>
+								</tr>
+							</tfoot>
+						</table>
+					</center>
+				</p>
+
+				<p>
+					The following options are available for user-defined function calls:
+
+					<center class="table">
+						<table id="exprtk_nift_fns_table" class="alt">
+							<thead>
+								<tr>
+									<th>option</th>
+									<th>description</th>
+								</tr>
+							</thead>
+							<tr>
+								<td><mono>mf</mono></td>
+								<td>add member functions for <mono>options</mono> and <mono>params</mono> vectors</td>
+							</tr>
+							<tr>
+								<td><mono>!mf</mono></td>
+								<td>do not add member functions for <mono>options</mono> and <mono>params</mono> vectors</td>
 							</tr>
 							<tfoot>
 								<tr>
@@ -148,6 +181,7 @@ funcName{options}(params)
 						<li><a href="@pathtopage(docs/fns/!newline)">!\n</a> (special single-line comment)</li>
 						<li><a href="@pathtopage(docs/fns/!=)">!=</a> (not equals operator)</li>
 						<li><a href="@pathtopage(docs/fns/$)">$</a> (print variable)</li>
+						<li><a href="@pathtopage(docs/fns/tern)">?</a> (ternary operator)</li>
 						<li><a href="@pathtopage(docs/fns/&&)">&&</a> (and operator)</li>
 						<li><a href="@pathtopage(docs/fns/||)">||</a> (or operator)</li>
 						<li><a href="@pathtopage(docs/fns/bsol)">\</a> (escape characters)</li>
@@ -180,6 +214,9 @@ funcName{options}(params)
 						<li><a href="@pathtopage(docs/fns/divdiv)">//</a> (raw single-line comment)</li>
 						<li><a href="@pathtopage(docs/fns/MOD)">%</a> (mod operator)</li>
 						<li><a href="@pathtopage(docs/fns/MOD=)">%=</a> (mod assignment operator)</li> <br>
+
+						<li><a href="@pathtopage(docs/fns/add_member_fns)">add_member_fns</a></li>
+						<li><a href="@pathtopage(docs/fns/add_scope)">add_scope</a></li> <br>
 
 						<li><a href="@pathtopage(docs/fns/break)">break</a></li> <br>
 
@@ -279,6 +316,7 @@ funcName{options}(params)
 						<li><a href="@pathtopage(docs/fns/read)">read</a></li>
 						<li><a href="@pathtopage(docs/fns/refresh_completions)">refresh_completions</a></li>
 						<li><a href="@pathtopage(docs/fns/replace_all)">replace_all</a></li>
+						<li><a href="@pathtopage(docs/fns/replace_vars)">replace_vars</a></li>
 						<li><a href="@pathtopage(docs/fns/return)">return</a></li>
 						<li><a href="@pathtopage(docs/fns/rmv)">rmv</a></li> <br>
 
@@ -302,7 +340,8 @@ funcName{options}(params)
 
 						<li><a href="@pathtopage(docs/fns/unquote)">unquote</a></li> <br>
 
-						<li><a href="@pathtopage(docs/fns/valid_type)">valid_type</a></li> <br>
+						<li><a href="@pathtopage(docs/fns/valid_type)">valid_type</a></li> 
+						<li><a href="@pathtopage(docs/fns/vjoin)">vjoin</a></li> <br>
 
 						<li><a href="@pathtopage(docs/fns/warning)">warning</a></li>
 						<li><a href="@pathtopage(docs/fns/while)">while</a></li>

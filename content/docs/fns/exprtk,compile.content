@@ -90,6 +90,14 @@ exprtk.compile{block, options}(name)
 								<td>call is followed by a block of <mono>ExprTk</mono> code</td>
 							</tr>
 							<tr>
+								<td><mono>f++</mono></td>
+								<td>use <mono>f++</mono> if parsing block</td>
+							</tr>
+							<tr>
+								<td><mono>n++</mono></td>
+								<td>use <mono>n++</mono> if parsing block</td>
+							</tr>
+							<tr>
 								<td><mono>pb</mono></td>
 								<td>parse block with language call is made from before compiling with <mono>ExprTk</mono></td>
 							</tr>

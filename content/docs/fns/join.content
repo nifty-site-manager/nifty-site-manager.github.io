@@ -43,7 +43,7 @@ join{options}(object, string, begin, end)
 					Description
 				</h4>
 				<p>
-					The <mono>join</mono> function takes all items in an iterable object and returns them joined in to one string, it takes 2-4 input paramters, the first parameter should be an iterable object, the second parameter should be a string to separate each item with, the optional third parameter should be a non-negative integer to specify which position to begin at and the optional fourth parameter should be a non-negative integer to specify which position to end at.
+					The <mono>join</mono> function takes all items in an iterable object and returns them joined in to one string, it takes 2-4 input parameters, the first parameter should be an iterable object, the second parameter should be a string to separate each item with, the optional third parameter should be a non-negative integer to specify which position to begin at and the optional fourth parameter should be a non-negative integer to specify which position to end at.
 				</p>
 
 				<h4 id="options">
@@ -88,14 +88,14 @@ join{options}(object, string, begin, end)
 				<p>
 					Examples of <mono>join</mono> being used with <mono>f++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline linenums">
-function(exampleFunc)
-{
-	console("params: {", join(params, "; "), "}")
-}
+int eg.size = 3
+string eg[0] = "cat",
+       eg[1] = "dog",
+       eg[2] = "%"
 
-exampleFunc("cat", dog, "%")</pre>
+console("{", join(eg, "; "), "}")</pre>
 </div>
 				</p>
 
@@ -105,14 +105,14 @@ exampleFunc("cat", dog, "%")</pre>
 				<p>
 					Example of <mono>join</mono> being used with <mono>n++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline linenums">
-\@function(exampleFunc)
-{
-	\@console("params: {", \@join(params, "; "), "}")
-}
+\@int eg.size = 3
+\@string eg[0] = "cat",
+        eg[1] = "dog",
+        eg[2] = "%"
 
-\@exampleFunc("cat", dog, "%")</pre>
+\@console("{", join(eg, "; "), "}")</pre>
 </div>
 				</p>
 			</div>

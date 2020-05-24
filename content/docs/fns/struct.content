@@ -27,7 +27,7 @@
 <mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-50px">
 struct{options}(name)
 {
-	//struct code
+	//struct block
 }
 </pre>
 </div><br>
@@ -35,7 +35,7 @@ struct{options}(name)
 <mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-50px">
 \@struct{options}(name)
 {
-	//struct code
+	//struct block
 }
 </pre>
 </div>
@@ -54,7 +54,7 @@ struct{options}(name)
 <pre class="prettyprint inline lang-nift">
 \@struct(s)
 {
-	# block
+	# struct block
 }!
 </pre>
 </div>
@@ -75,6 +75,14 @@ struct{options}(name)
 								</tr>
 							</thead>
 							<tr>
+								<td><mono>f++</mono></td>
+								<td>struct block uses <mono>f++</mono> (default)</td>
+							</tr>
+							<tr>
+								<td><mono>n++</mono></td>
+								<td>struct block uses <mono>f++</mono></td>
+							</tr>
+							<tr>
 								<td><mono>pb</mono></td>
 								<td>parse struct block at definition time</td>
 							</tr>
@@ -94,14 +102,14 @@ struct{options}(name)
 				<p>
 					Examples of <mono>struct</mono> being used with <mono>f++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline linenums lang-nift">
 struct(circle)
 {
-	if(!=(params.size, 2))
+	if(params.size() != 2)
 		error("circle: expected 2 parameters, got \$[params.size]")
-	:=(int, \$[params.name].radius = \$[params[0]])
-	:=(string, \$[params.name].colour = \$[params[1]])
+	:=(int, \$[params.name].radius = params.at(0))
+	:=(string, \$[params.name].colour = params.at(1))
 }
 
 :=(circle, c(2, "fluro green"))
@@ -111,16 +119,16 @@ console("colour: ", c.colour)</pre>
 				</p>
 
 				<p>
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline linenums lang-nift">
 struct(pair)
 {
-	if(!=(types.size, 2))
-		error("pair: expected 2 types, got \$[types.size]")
-	if(!=(params.size, 2))
-		error("pair: expected 2 parameters, got \$[params.size]")
-	:=(\$[types[0]], \$[params.name].first = \$[params[0]])
-	:=(\$[types[1]], \$[params.name].second = \$[params[1]])
+	if(types.size() != 2)
+		error("pair: expected 2 types, got types.size()")
+	if(params.size() != 2)
+		error("pair: expected 2 parameters, got params.size()")
+	:=(types.at(0), \$[params.name].first = params.at(0))
+	:=(types.at(1), \$[params.name].second = params.at(1))
 }
 
 :=(pair<int, string>, p(10, "hello, world!"))
@@ -135,14 +143,14 @@ console("p.second: ", p.second)</pre>
 				<p>
 					Examples of <mono>struct</mono> being used with <mono>n++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline linenums lang-nift">
 \@struct(circle)
 {
-	\@if(!=(params.size, 2))
-		\@error("circle: expected 2 parameters, got \$[params.size]")
-	\@:=(int, \$[params.name].radius = \$[params[0]])
-	\@:=(string, \$[params.name].colour = \$[params[1]])
+	if(params.size() != 2)
+		error("circle: expected 2 parameters, got \$[params.size]")
+	:=(int, \$[params.name].radius = params.at(0))
+	:=(string, \$[params.name].colour = params.at(1))
 }
 
 \@:=(circle, c(2, "fluro green"))
@@ -152,16 +160,16 @@ console("p.second: ", p.second)</pre>
 				</p>
 
 				<p>
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline linenums lang-nift">
-\@struct(pair)
+\@struct{f++}(pair)
 {
-	\@if(!=(types.size, 2))
-		\@error("pair: expected 2 types, got \$[types.size]")
-	\@if(!=(params.size, 2))
-		\@error("pair: expected 2 parameters, got \$[params.size]")
-	\@:=(\$[types[0]], \$[params.name].first = \$[params[0]])
-	\@:=(\$[types[1]], \$[params.name].second = \$[params[1]])
+	if(types.size() != 2)
+		error("pair: expected 2 types, got types.size()")
+	if(params.size() != 2)
+		error("pair: expected 2 parameters, got params.size()")
+	:=(types.at(0), \$[params.name].first = params.at(0))
+	:=(types.at(1), \$[params.name].second = params.at(1))
 }
 
 \@:=(pair<int, string>, p(10, "hello, world!"))

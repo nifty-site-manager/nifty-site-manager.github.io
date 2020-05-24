@@ -13,6 +13,7 @@
 				<ul style="text-indent:30px">
 					<li><a href="#syntax">Syntax</a></li>
 					<li><a href="#description">Description</a></li>
+					<li><a href="#options">Options</a></li>
 					<li><a href="#f++-eg">f++ example</a></li>
 					<li><a href="#n++-eg">n++ example</a></li>
 					<li><a href="#hard-coded">Hard-coded variables</a></li>
@@ -45,6 +46,38 @@
 				</h4>
 				<p>
 					The <mono>$</mono> function is used for printing variables, it takes a single string as an input parameter, which should be a variable name, and prints the value of the variable.
+				</p>
+
+				<h4 id="options">
+					Options
+				</h4>
+				<p>
+					The following options are available for <mono>$</mono> calls:
+
+					<center class="table">
+						<table id="$_options_table" class="alt">
+							<thead>
+								<tr>
+									<th>option</th>
+									<th>description</th>
+								</tr>
+							</thead>
+							<tr>
+								<td><mono>\n</mono></td>
+								<td>add <mono>\n</mono> instead of newlines</td>
+							</tr>
+							<tr>
+								<td><mono>!round<mono></td>
+								<td>do not round floating point values</td>
+							</tr>
+							<tfoot>
+								<tr>
+									<th>option</th>
+									<th>description</th>
+								</tr>
+							</tfoot>
+						</table>
+					</center>
 				</p>
 
 				<h4 id="f++-eg">

@@ -115,12 +115,12 @@ else
 								<td>add output</mono></td>
 							</tr>
 							<tr>
-								<td><mono>!s</mono></td>
-								<td>do not add scope</mono></td>
+								<td><mono>s</mono></td>
+								<td>add scope</mono></td>
 							</tr>
 							<tr>
-								<td><mono>s</mono></td>
-								<td>add scope (default)</mono></td>
+								<td><mono>!s</mono></td>
+								<td>do not add scope</mono></td>
 							</tr>
 							<tfoot>
 								<tr>

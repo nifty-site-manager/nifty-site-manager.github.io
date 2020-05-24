@@ -1,0 +1,140 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">fn: <mono>?</mono></div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<div class="content">
+				<a href="#contents" class="to_top">[contents]</a>
+
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#syntax">Syntax</a></li>
+					<li><a href="#description">Description</a></li>
+					<li><a href="#options">Options</a></li>
+					<li><a href="#f++-eg">f++ example</a></li>
+					<li><a href="#n++-eg">n++ example</a></li>
+				</ul>
+
+				<h4 id="syntax">
+					Syntax
+				</h4>
+				<p>
+					The syntax for <mono>?</mono> calls is:
+<div align="center" style="margin-top:-15px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
+?{options}(condition; expression_1; expression_2)
+</pre>
+</div><br>
+<div align="center">
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
+\@?{options}(condition; expression_1; expression_2)
+</pre>
+</div>
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+				<p>
+					The <mono>?</mono> function implements a ternary operator, if the condition evaluates to <mono>1</mono> then the first expression is evaluated, otherwise the second expression is evaluated.
+				</p>
+
+				<h4 id="options">
+					Options
+				</h4>
+				<p>
+					The following options are available for <mono>?</mono> calls:
+
+					<center class="table">
+						<table id="?_options_table" class="alt">
+							<thead>
+								<tr>
+									<th>option</th>
+									<th>description</th>
+								</tr>
+							</thead>
+							<tr>
+								<td><mono>f++</mono></td>
+								<td>evaluate expression with <mono>f++</mono></td>
+							</tr>
+							<tr>
+								<td><mono>n++</mono></td>
+								<td>evaluate expression with <mono>n++</mono></td>
+							</tr>
+							<tr>
+								<td><mono>o</mono></td>
+								<td>return output</td>
+							</tr>
+							<tr>
+								<td><mono>!o</mono></td>
+								<td>do not return output</td>
+							</tr>
+							<tfoot>
+								<tr>
+									<th>option</th>
+									<th>description</th>
+								</tr>
+							</tfoot>
+						</table>
+					</center>
+				</p>
+
+				<h4 id="f++-eg">
+					f++ example
+				</h4>
+				<p>
+					Examples of <mono>?</mono> being used with <mono>f++</mono>:					
+
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline linenums lang-nift">
+int a = 15, b = 10
+int max = ?(a > b; \$[a]; \$[b])
+
+console(max)</pre>
+</div>
+				</p>
+
+				<p>
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline linenums lang-nift">
+int a = 15, b = 10
+
+`?(a > b; a; b) := 20`
+console(a)</pre>
+</div>
+				</p>
+
+				<h4 id="n++-eg">
+					n++ example
+				</h4>
+				<p>
+					Examples of <mono>?</mono> being used with <mono>n++</mono>:					
+
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline linenums lang-nift">
+\@int(a = 15, b = 10)
+\@int(max = ?(a > b; \$[a]; \$[b]))
+
+\@console(max)</pre>
+</div>
+				</p>
+
+				<p>
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline linenums lang-nift">
+\@int(a = 15, b = 10)
+
+\@`\@?(a > b; a; b) := 20`
+\@console(a)
+
+\@exprtk(?(a > b; a; b) := 30)
+\@console(a)</pre>
+</div>
+				</p>
+			</div>
+		</section>
+	</div>
+</section>

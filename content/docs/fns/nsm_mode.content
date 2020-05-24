@@ -51,7 +51,7 @@ nsm_mode(string)
 				<p>
 					Example of <mono>nsm_mode</mono> being used with <mono>f++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline linenums lang-nift">
 nsm_mode("interp")</pre>
 </div>
@@ -63,7 +63,7 @@ nsm_mode("interp")</pre>
 				<p>
 					Example of <mono>nsm_mode</mono> being used with <mono>n++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline linenums lang-nift">
 \@nsm_mode("sh")</pre>
 </div>

@@ -39,8 +39,8 @@
 						<a href="https://teespring.com/stores/nift-3" title="TeeSpring" class="teespring"><i class="fas fa-tshirt fa-2x"></i></a>-->
 					</p>
 					<p style="margin-top:10px">
-						<!--<a href="https://gitter.im/nifty_site_manager/community" title="Gitter" class="gitter"><i class="fab fa-gitter fa-2x"></i></a> &nbsp;-->
-						<a href="https://github.com/orgs/nifty-site-manager/teams/nift/discussions" title="GitHub Discussions" class="ghdisc"><i class="fas fa-comment-dots fa-2x"></i></a> &nbsp; 
+						
+						
 						<a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a> &nbsp; 
 						<a href="https://old.reddit.com/r/nift" title="Reddit" class="reddit"><i class="fab fa-reddit-square fa-2x"></i></a> &nbsp; 
 						<a href="https://twitter.com/nifty_site_man" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a>
@@ -152,7 +152,7 @@ join{options}(object, string, begin, end)
 		    					Description
 		    				</h4>
 		    				<p>
-		    					The <mono>join</mono> function takes all items in an iterable object and returns them joined in to one string, it takes 2-4 input paramters, the first parameter should be an iterable object, the second parameter should be a string to separate each item with, the optional third parameter should be a non-negative integer to specify which position to begin at and the optional fourth parameter should be a non-negative integer to specify which position to end at.
+		    					The <mono>join</mono> function takes all items in an iterable object and returns them joined in to one string, it takes 2-4 input parameters, the first parameter should be an iterable object, the second parameter should be a string to separate each item with, the optional third parameter should be a non-negative integer to specify which position to begin at and the optional fourth parameter should be a non-negative integer to specify which position to end at.
 		    				</p>
 		    
 		    				<h4 id="options">
@@ -197,14 +197,14 @@ join{options}(object, string, begin, end)
 		    				<p>
 		    					Examples of <mono>join</mono> being used with <mono>f++</mono>:					
 		    
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
 		    <pre class="prettyprint inline linenums">
-function(exampleFunc)
-{
-	console("params: {", join(params, "; "), "}")
-}
+int eg.size = 3
+string eg[0] = "cat",
+       eg[1] = "dog",
+       eg[2] = "%"
 
-exampleFunc("cat", dog, "%")</pre>
+console("{", join(eg, "; "), "}")</pre>
 		    </div>
 		    				</p>
 		    
@@ -214,14 +214,14 @@ exampleFunc("cat", dog, "%")</pre>
 		    				<p>
 		    					Example of <mono>join</mono> being used with <mono>n++</mono>:					
 		    
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
 		    <pre class="prettyprint inline linenums">
-@function(exampleFunc)
-{
-	@console("params: {", @join(params, "; "), "}")
-}
+@int eg.size = 3
+@string eg[0] = "cat",
+        eg[1] = "dog",
+        eg[2] = "%"
 
-@exampleFunc("cat", dog, "%")</pre>
+@console("{", join(eg, "; "), "}")</pre>
 		    </div>
 		    				</p>
 		    			</div>

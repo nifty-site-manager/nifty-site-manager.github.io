@@ -95,6 +95,10 @@ for{options}(pre-loop code; condition; post-iteration code)
 								<td>do not add output</mono></td>
 							</tr>
 							<tr>
+								<td><mono>s</mono></td>
+								<td>add scope</mono></td>
+							</tr>
+							<tr>
 								<td><mono>!s</mono></td>
 								<td>do not add scope</mono></td>
 							</tr>

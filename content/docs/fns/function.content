@@ -154,8 +154,8 @@ myFunc</pre>
 <pre class="prettyprint inline linenums lang-nift">
 function(myFunc)
 {
-	console("options: {", join(options, "; "), "}")
-	console("params: {", join(params, "; "), "}")
+	console("options: {", vjoin(options, "; "), "}")
+	console("params: {", vjoin(params, "; "), "}")
 }
 
 myFunc{a, b, c}("hello", "world!")</pre>

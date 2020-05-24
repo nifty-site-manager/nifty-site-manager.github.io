@@ -53,7 +53,7 @@ nsm_lang(string)
 				<p>
 					Example of <mono>nsm_lang</mono> being used with <mono>f++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline linenums lang-nift">
 nsm_lang("lua")</pre>
 </div>
@@ -65,7 +65,7 @@ nsm_lang("lua")</pre>
 				<p>
 					Example of <mono>nsm_lang</mono> being used with <mono>n++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline linenums lang-nift">
 \@nsm_lang("f++")</pre>
 </div>

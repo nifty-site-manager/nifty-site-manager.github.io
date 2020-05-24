@@ -1,0 +1,123 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">fn: <mono>vjoin</mono></div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<div class="content">
+				<a href="#contents" class="to_top">[contents]</a>
+
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#syntax">Syntax</a></li>
+					<li><a href="#description">Description</a></li>
+					<li><a href="#options">Options</a></li>
+					<li><a href="#f++-eg">f++ example</a></li>
+					<li><a href="#n++-eg">n++ example</a></li>
+				</ul>
+
+				<h4 id="syntax">
+					Syntax
+				</h4>
+				<p>
+					The syntax for <mono>vjoin</mono> calls is:
+<div align="center" style="margin-top:-15px; margin-bottom:50px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-40px">
+vjoin{options}(std::vector, string)
+vjoin{options}(std::vector, string, begin)
+vjoin{options}(std::vector, string, begin, end)
+</pre>
+</div><br>
+<div align="center" style="margin-top:-15px; margin-bottom:50px">
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-40px">
+\@vjoin{options}(std::vector, string)
+\@vjoin{options}(std::vector, string, begin)
+\@vjoin{options}(std::vector, string, begin, end)
+</pre>
+</div>
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+				<p>
+					The <mono>vjoin</mono> function takes all items in a standard vector (of type <mono>double</mono> or <mono>string</mono>) and returns them joined in to one string, it takes 2-4 input parameters, the first parameter should be a standard vector, the second parameter should be a string to separate each item with, the optional third parameter should be a non-negative integer to specify which position to begin at and the optional fourth parameter should be a non-negative integer to specify which position to end at.
+				</p>
+
+				<h4 id="options">
+					Options
+				</h4>
+				<p>
+					The following options are available for <mono>join</mono> calls:
+
+					<center class="table">
+						<table id="join_options_table" class="alt">
+							<thead>
+								<tr>
+									<th>option</th>
+									<th>description</th>
+								</tr>
+							</thead>
+							<tr>
+								<td><mono>@ent(<)-</mono></td>
+								<td>add separator at beginning</td>
+							</tr>
+							<tr>
+								<td><mono>-@ent(>)</mono></td>
+								<td>add separator at end</td>
+							</tr>
+							<tr>
+								<td><mono>@ent(<)-@ent(>)</mono></td>
+								<td>add separator at both beginning and end</td>
+							</tr>
+							<tr>
+								<td><mono>!round</mono></td>
+								<td>do not round values of type <mono>double</mono></td>
+							</tr>
+							<tfoot>
+								<tr>
+									<th>option</th>
+									<th>description</th>
+								</tr>
+							</tfoot>
+						</table>
+					</center>
+				</p>
+
+				<h4 id="f++-eg">
+					f++ example
+				</h4>
+				<p>
+					Examples of <mono>vjoin</mono> being used with <mono>f++</mono>:					
+
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline linenums">
+std::vector<string> v
+v.push_back("cat")
+v.push_back("dog")
+
+console('{vjoin(v, ", ")}')</pre>
+</div>
+				</p>
+
+				<h4 id="n++-eg">
+					n++ example
+				</h4>
+				<p>
+					Example of <mono>vjoin</mono> being used with <mono>n++</mono>:					
+
+<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<pre class="prettyprint inline linenums">
+\@std::vector<string>(v)
+\@v.push_back("cat")
+\@v.push_back("dog")
+
+\@console('{vjoin(v, ", ")}')</pre>
+</div>
+				</p>
+			</div>
+		</section>
+	</div>
+</section>

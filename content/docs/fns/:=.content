@@ -91,6 +91,10 @@ type(definitions)
 								<td>define variable at layer <mono>x</mono></td>
 							</tr>
 							<tr>
+								<td><mono>mf</mono></td>
+								<td>add member functions for variables</td>
+							</tr>
+							<tr>
 								<td><mono>!mf</mono></td>
 								<td>do not add member functions for variables</td>
 							</tr>
@@ -101,6 +105,10 @@ type(definitions)
 							<tr>
 								<td><mono>scope+="x"</mono></td>
 								<td>add <mono>x</mono> to scopes variable can be accessed from</td>
+							</tr>
+							<tr>
+								<td><mono>...</mono></td>
+								<td>parameters specify values for std::vector definition</td>
 							</tr>
 							<tfoot>
 								<tr>
