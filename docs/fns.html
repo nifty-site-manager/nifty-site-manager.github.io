@@ -39,8 +39,8 @@
 						<a href="https://teespring.com/stores/nift-3" title="TeeSpring" class="teespring"><i class="fas fa-tshirt fa-2x"></i></a>-->
 					</p>
 					<p style="margin-top:10px">
-						<!--<a href="https://gitter.im/nifty_site_manager/community" title="Gitter" class="gitter"><i class="fab fa-gitter fa-2x"></i></a> &nbsp;-->
-						<a href="https://github.com/orgs/nifty-site-manager/teams/nift/discussions" title="GitHub Discussions" class="ghdisc"><i class="fas fa-comment-dots fa-2x"></i></a> &nbsp; 
+						
+						
 						<a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a> &nbsp; 
 						<a href="https://old.reddit.com/r/nift" title="Reddit" class="reddit"><i class="fab fa-reddit-square fa-2x"></i></a> &nbsp; 
 						<a href="https://twitter.com/nifty_site_man" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a>
@@ -228,12 +228,45 @@ funcName{options}(params)
 		    								<td>do not parse parameters</td>
 		    							</tr>
 		    							<tr>
+		    								<td><mono>v</mono></td>
+		    								<td>replace variables with their values (where applicable)</td>
+		    							</tr>
+		    							<tr>
 		    								<td><mono>!v</mono></td>
-		    								<td>do not replace variables with their values</td>
+		    								<td>do not replace variables with their values (where applicable)</td>
 		    							</tr>
 		    							<tr>
 		    								<td><mono>1p</mono></td>
 		    								<td>treat parameter string as one parameter</td>
+		    							</tr>
+		    							<tfoot>
+		    								<tr>
+		    									<th>option</th>
+		    									<th>description</th>
+		    								</tr>
+		    							</tfoot>
+		    						</table>
+		    					</center>
+		    				</p>
+		    
+		    				<p>
+		    					The following options are available for user-defined function calls:
+		    
+		    					<center class="table">
+		    						<table id="exprtk_nift_fns_table" class="alt">
+		    							<thead>
+		    								<tr>
+		    									<th>option</th>
+		    									<th>description</th>
+		    								</tr>
+		    							</thead>
+		    							<tr>
+		    								<td><mono>mf</mono></td>
+		    								<td>add member functions for <mono>options</mono> and <mono>params</mono> vectors</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>!mf</mono></td>
+		    								<td>do not add member functions for <mono>options</mono> and <mono>params</mono> vectors</td>
 		    							</tr>
 		    							<tfoot>
 		    								<tr>
@@ -257,6 +290,7 @@ funcName{options}(params)
 		    						<li><a href="fns/!newline.html">!\n</a> (special single-line comment)</li>
 		    						<li><a href="fns/!=.html">!=</a> (not equals operator)</li>
 		    						<li><a href="fns/$.html">$</a> (print variable)</li>
+		    						<li><a href="fns/tern.html">?</a> (ternary operator)</li>
 		    						<li><a href="fns/&&.html">&&</a> (and operator)</li>
 		    						<li><a href="fns/||.html">||</a> (or operator)</li>
 		    						<li><a href="fns/bsol.html">\</a> (escape characters)</li>
@@ -289,6 +323,9 @@ funcName{options}(params)
 		    						<li><a href="fns/divdiv.html">//</a> (raw single-line comment)</li>
 		    						<li><a href="fns/MOD.html">%</a> (mod operator)</li>
 		    						<li><a href="fns/MOD=.html">%=</a> (mod assignment operator)</li> <br>
+		    
+		    						<li><a href="fns/add_member_fns.html">add_member_fns</a></li>
+		    						<li><a href="fns/add_scope.html">add_scope</a></li> <br>
 		    
 		    						<li><a href="fns/break.html">break</a></li> <br>
 		    
@@ -388,6 +425,7 @@ funcName{options}(params)
 		    						<li><a href="fns/read.html">read</a></li>
 		    						<li><a href="fns/refresh_completions.html">refresh_completions</a></li>
 		    						<li><a href="fns/replace_all.html">replace_all</a></li>
+		    						<li><a href="fns/replace_vars.html">replace_vars</a></li>
 		    						<li><a href="fns/return.html">return</a></li>
 		    						<li><a href="fns/rmv.html">rmv</a></li> <br>
 		    
@@ -411,7 +449,8 @@ funcName{options}(params)
 		    
 		    						<li><a href="fns/unquote.html">unquote</a></li> <br>
 		    
-		    						<li><a href="fns/valid_type.html">valid_type</a></li> <br>
+		    						<li><a href="fns/valid_type.html">valid_type</a></li> 
+		    						<li><a href="fns/vjoin.html">vjoin</a></li> <br>
 		    
 		    						<li><a href="fns/warning.html">warning</a></li>
 		    						<li><a href="fns/while.html">while</a></li>

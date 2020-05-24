@@ -39,8 +39,8 @@
 						<a href="https://teespring.com/stores/nift-3" title="TeeSpring" class="teespring"><i class="fas fa-tshirt fa-2x"></i></a>-->
 					</p>
 					<p style="margin-top:10px">
-						<!--<a href="https://gitter.im/nifty_site_manager/community" title="Gitter" class="gitter"><i class="fab fa-gitter fa-2x"></i></a> &nbsp;-->
-						<a href="https://github.com/orgs/nifty-site-manager/teams/nift/discussions" title="GitHub Discussions" class="ghdisc"><i class="fas fa-comment-dots fa-2x"></i></a> &nbsp; 
+						
+						
 						<a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a> &nbsp; 
 						<a href="https://old.reddit.com/r/nift" title="Reddit" class="reddit"><i class="fab fa-reddit-square fa-2x"></i></a> &nbsp; 
 						<a href="https://twitter.com/nifty_site_man" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a>
@@ -122,6 +122,7 @@
 		    				<ul style="text-indent:30px">
 		    					<li><a href="#syntax">Syntax</a></li>
 		    					<li><a href="#description">Description</a></li>
+		    					<li><a href="#options">Options</a></li>
 		    					<li><a href="#f++-eg">f++ example</a></li>
 		    					<li><a href="#n++-eg">n++ example</a></li>
 		    					<li><a href="#hard-coded">Hard-coded variables</a></li>
@@ -154,6 +155,38 @@ $[string]
 		    				</h4>
 		    				<p>
 		    					The <mono>$</mono> function is used for printing variables, it takes a single string as an input parameter, which should be a variable name, and prints the value of the variable.
+		    				</p>
+		    
+		    				<h4 id="options">
+		    					Options
+		    				</h4>
+		    				<p>
+		    					The following options are available for <mono>$</mono> calls:
+		    
+		    					<center class="table">
+		    						<table id="$_options_table" class="alt">
+		    							<thead>
+		    								<tr>
+		    									<th>option</th>
+		    									<th>description</th>
+		    								</tr>
+		    							</thead>
+		    							<tr>
+		    								<td><mono>\n</mono></td>
+		    								<td>add <mono>\n</mono> instead of newlines</td>
+		    							</tr>
+		    							<tr>
+		    								<td><mono>!round<mono></td>
+		    								<td>do not round floating point values</td>
+		    							</tr>
+		    							<tfoot>
+		    								<tr>
+		    									<th>option</th>
+		    									<th>description</th>
+		    								</tr>
+		    							</tfoot>
+		    						</table>
+		    					</center>
 		    				</p>
 		    
 		    				<h4 id="f++-eg">
