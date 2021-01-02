@@ -23,11 +23,11 @@
 				</p>
 
 				<p>
-					The script extension for website-wide scripts/programs is specified with <mono>scriptExt</mono> in the <mono>.siteinfo/nsm.config</mono> configuration file, which you can check using the <a href="@pathto(docs/commands)">Nift command</a> <mono>config</mono>. To check page-specific script extensions use the <a href="@pathto(docs/commands)">Nift command</a> <mono>info page-name</mono>. Site wide and page-specific script extensions may be set using the <a href="@pathto(docs/commands)">Nift command</a> <mono>new-script-ext (page-name) script-extension</mono>.
+					The script extension for website-wide scripts/programs is specified with <mono>scriptExt</mono> in the <mono>.nsm/nift.config</mono> configuration file, which you can check using the <a href="@pathto(docs/commands)">Nift command</a> <mono>config</mono>. To check page-specific script extensions use the <a href="@pathto(docs/commands)">Nift command</a> <mono>info page-name</mono>. Site wide and page-specific script extensions may be set using the <a href="@pathto(docs/commands)">Nift command</a> <mono>new-script-ext (page-name) script-extension</mono>.
 				</p>
 
 				<p>
-					<b>Note:</b> Build/serve scripts/programs are moved to the project root directory to run and by default have a backup copy made. If scripts/programs are so large that copying the file will take time, your site configuration file <mono>.siteinfo/nsm.config</mono> can optionally include <mono>backupScripts bool</mono> to indicate whether build/serve scripts/programs should be backed up when run.
+					<b>Note:</b> Build/serve scripts/programs are moved to the project root directory to run and by default have a backup copy made. If scripts/programs are so large that copying the file will take time, your site configuration file <mono>.nsm/nift.config</mono> can optionally include <mono>backupScripts bool</mono> to indicate whether build/serve scripts/programs should be backed up when run.
 				</p>
 
 				<p>
