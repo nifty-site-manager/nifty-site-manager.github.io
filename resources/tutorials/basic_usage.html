@@ -164,21 +164,21 @@
 		    					</li>
 		    
 		    					<li>
-		    						The page list file <mono>.siteinfo/pages.list</mono> should now contain the following information for pages <mono>about</mono> and <mono>index</mono>;
+		    						The page list file <mono>.nsm/tracking.list</mono> should now contain the following information for pages <mono>about</mono> and <mono>index</mono>;
 		    
 		    						<div align="center" style="margin-top:30px">
 		    <pre class="inline rounded">
-about
-about
-template/page.template
+'about'
+'about'
+'template/page.template'
 
-first_page
-myPageTitle
-template/page.template
+'first_page'
+'myPageTitle'
+'template/page.template'
 
-index
-home
-template/page.template
+'index'
+'home'
+'template/page.template'
 
 </pre>
 		    						</div> <br>
@@ -196,17 +196,17 @@ template/page.template
 		    						Enter <mono>nsm build-updated</mono>;
 		    						<ul>
 		    							<li>
-		    								The directory <mono>site/</mono> should now contain the pages <mono>index.html</mono> and <mono>about.html</mono>. By default users do not have permission to write to page files, this is to prevent users from accidentally modifying a page file when they more than likely intended to modify a content file. Should users want to manually edit a page file they can simply change the file permissions (eg. <mono>chmod +w page-path</mono>); 
+		    								The directory <mono>output/</mono> should now contain the pages <mono>index.html</mono> and <mono>about.html</mono>. By default users do not have permission to write to page files, this is to prevent users from accidentally modifying a page file when they more than likely intended to modify a content file. Should users want to manually edit a page file they can simply change the file permissions (eg. <mono>chmod +w page-path</mono>); 
 		    							</li>
 		    
 		    							<li>
-		    								Another directory <mono>.siteinfo/site/</mono> should have been created containing the info files <mono>index.info</mono> and <mono>about.info</mono>. By default users do not have permission to write to info files, and users should beware of ever doing so. The modification time of info files is how <mono>Nift</mono> knows when pages were last built (actually I am pretty sure <mono>Nift</mono> gets this information from the first line of the information files), furthermore the content inside info files represents page dependencies from the last time pages were built, <u>not necessarily</u> current page dependencies, hence users should not have any reason to modify them;
+		    								Another directory <mono>.nsm/output/</mono> should have been created containing the info files <mono>index.info</mono> and <mono>about.info</mono>. By default users do not have permission to write to info files, and users should beware of ever doing so. The modification time of info files is how <mono>Nift</mono> knows when pages were last built (actually I am pretty sure <mono>Nift</mono> gets this information from the first line of the information files), furthermore the content inside info files represents page dependencies from the last time pages were built, <u>not necessarily</u> current page dependencies, hence users should not have any reason to modify them;
 		    							</li>
 		    						</ul>
 		    					</li>
 		    
 		    					<li>
-		    						Open <mono>site/index.html</mono> in a browser, click through to the about page, and view the source for both pages. Compare what you have locally to a <a href="https://nsm-templates.gitlab.io/simple-site/">pre-built</a> version of <mono>site/index.html</mono> 
+		    						Open <mono>output/index.html</mono> in a browser, click through to the about page, and view the source for both pages. Compare what you have locally to a <a href="https://nsm-templates.gitlab.io/simple-site/">pre-built</a> version of <mono>output/index.html</mono> 
 		    					</li>
 		    
 		    					<li>
@@ -266,7 +266,7 @@ template/page.template
 		    					</li>
 		    
 		    					<li>
-		    						Enter <mono>nsm build-updated</mono> and reload <mono>site/about.html</mono>;
+		    						Enter <mono>nsm build-updated</mono> and reload <mono>output/about.html</mono>;
 		    					</li>
 		    
 		    					<li>
@@ -288,7 +288,7 @@ ostream& operator&lt;&lt;(ostream &os, const std::vector&lt;std::string> &v)
 		    					</li>
 		    
 		    					<li>
-		    						Enter <mono>nsm build-updated</mono> and reload <mono>site/about.html</mono>. View the source for <mono>site/about.html</mono> and look at the text inside the pre tags. Notice how every < character has been escaped to \&lt;, <mono>Nift</mono> automatically does this so you can simply paste your code straight into content files, otherwise you would need to manually replace < characters (if you want, add write permissions to <mono>site/about.html</mono> and see what happens when you revert back to using < inside the pre tags);
+		    						Enter <mono>nsm build-updated</mono> and reload <mono>output/about.html</mono>. View the source for <mono>output/about.html</mono> and look at the text inside the pre tags. Notice how every &lt; character has been escaped to &bsol;&lt;, <mono>Nift</mono> automatically does this so you can simply paste your code straight into content files, otherwise you would need to manually replace &lt; characters (if you want, add write permissions to <mono>output/about.html</mono> and see what happens when you revert back to using < inside the pre tags);
 		    					</li>
 		    
 		    					<li>
@@ -296,23 +296,23 @@ ostream& operator&lt;&lt;(ostream &os, const std::vector&lt;std::string> &v)
 		    					</li>
 		    
 		    					<li>
-		    						Enter <mono>nsm build-updated</mono> and reload <mono>site/about.html</mono>. See <mono>site/css/pre.css</mono> for how the simple site styles pre blocks.
+		    						Enter <mono>nsm build-updated</mono> and reload <mono>output/about.html</mono>. See <mono>output/css/pre.css</mono> for how the simple site styles pre blocks.
 		    					</li>
 		    
 		    					<li>
-		    						Enter <mono>nsm mve about test</mono>, check that: <mono>.siteinfo/pages.list</mono> has been updated; both <mono>site/index.html</mono> and <mono>.siteinfo/site/index.info</mono> were removed; and <mono>content/about.content</mono> was moved to <mono>content/test.content</mono>;
+		    						Enter <mono>nsm mve about test</mono>, check that: <mono>.nsm/tracking.list</mono> has been updated; both <mono>output/about.html</mono> and <mono>.nsm/output/about.info</mono> were removed; and <mono>content/about.content</mono> was moved to <mono>content/test.content</mono>;
 		    					</li>
 		    
 		    					<li>
-		    						Enter <mono>nsm cpy test about</mono>, check that <mono>.siteinfo/pages.list</mono> has been updated and <mono>content/test.content</mono> was copied to <mono>content/about.content</mono>;
+		    						Enter <mono>nsm cpy test about</mono>, check that <mono>.nsm/tracking.list</mono> has been updated and <mono>content/test.content</mono> was copied to <mono>content/about.content</mono>;
 		    					</li>
 		    
 		    					<li>
-		    						Enter <mono>nsm rmv test</mono>, check that <mono>content/test.content</mono>, <mono>site/test.html</mono> and <mono>.siteinfo/site/test.info</mono> were all removed. 
+		    						Enter <mono>nsm rmv test</mono>, check that <mono>content/test.content</mono>, <mono>output/test.html</mono> and <mono>.nsm/output/test.info</mono> were all removed. 
 		    					</li>
 		    
 		    					<li>
-		    						Enter <mono>nsm untrack index</mono>, check that both <mono>site/index.html</mono> and <mono>.siteinfo/site/index.info</mono> were removed.
+		    						Enter <mono>nsm untrack index</mono>, check that both <mono>output/index.html</mono> and <mono>.nsm/output/index.info</mono> were removed.
 		    					</li>
 		    
 		    					<li>
@@ -323,19 +323,6 @@ ostream& operator&lt;&lt;(ostream &os, const std::vector&lt;std::string> &v)
 		    		</section>
 		    	</div>
 		    </section>
-
-			<!-- Sponsors -->
-			<section id="sponsors" class="wrapper style6">
-				<div class="title">Sponsors</div>
-			
-				<div class="container">
-					<div id="copyright">
-						<noselect>
-							<center><br><a href="https://vercel.com"><img src="../../images/vercel.svg" title="Vercel" alt="Vercellogo" width="250px" style="max-width:80%"></a></center>
-						</noselect>
-					</div>
-				</div>
-			</section>
 
 			<!-- Footer -->
 			<section id="footer" class="wrapper">
@@ -368,8 +355,7 @@ ostream& operator&lt;&lt;(ostream &os, const std::vector&lt;std::string> &v)
 								<span class="slider round" onclick="toggle_light_dark()" id="slider_light_dark"></span>
 							</label> &nbsp; <b id="light_dark_RHS" style="color: white !important">dark</b> <br><br>
 			
-							<center><a href="https://vercel.com"><img src="../../images/powered-by-vercel.svg" alt="Powered by Vercel badge" width="234" style="max-width:80%"></a></center> <br>
-						</noselect>
+							</noselect>
 					</div>
 				</div>
 			</section>

@@ -175,7 +175,7 @@ if(localStorage.getItem('dark-mode') == "1")
 }
 else if(!localStorage.getItem('dark-mode'))
 {
-  if (window.matchMedia) 
+  /*if (window.matchMedia) 
   {
     // Check if the dark-mode Media-Query matches
     if(window.matchMedia('(prefers-color-scheme: dark)').matches) // Dark
@@ -188,7 +188,7 @@ else if(!localStorage.getItem('dark-mode'))
     {
     }
   } 
-  else 
+  else */
   {
     // Default (when Media-Queries are not supported)
     toggle_light_dark();
