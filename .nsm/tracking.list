@@ -423,11 +423,11 @@
 'template/page.template'
 
 'docs/fns/exprtk,load'
-'exprtk,load'
+"exprtk,load'"
 'template/page.template'
 
 'docs/fns/exprtk,str'
-'exprtk,str'
+"exprtk,str'"
 'template/page.template'
 
 'docs/fns/f++'

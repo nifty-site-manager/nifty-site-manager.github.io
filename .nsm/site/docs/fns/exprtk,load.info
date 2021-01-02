@@ -1,6 +1,6 @@
-21:10:48 Sunday May 24 2020
+05:12:16 Sunday January 03 2021
 'docs/fns/exprtk,load'
-'exprtk,load'
+"exprtk,load'"
 'template/page.template'
 
 'content/docs/fns/exprtk,load-post-build.f'
@@ -9,4 +9,3 @@
 'template/head.content'
 'template/menu.content'
 'template/page.template'
-'template/sponsors.content'

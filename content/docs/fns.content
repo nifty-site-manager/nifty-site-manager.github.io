@@ -153,11 +153,27 @@ funcName{options}(params)
 							</thead>
 							<tr>
 								<td><mono>mf</mono></td>
-								<td>add member functions for <mono>options</mono> and <mono>params</mono> vectors</td>
+								<td>add member functions for <mono>options</mono>, <mono>params</mono> and <mono>types</mono> vectors</td>
 							</tr>
 							<tr>
 								<td><mono>!mf</mono></td>
-								<td>do not add member functions for <mono>options</mono> and <mono>params</mono> vectors</td>
+								<td>do not add member functions for <mono>options</mono>, <mono>params</mono> and <mono>types</mono> vectors</td>
+							</tr>
+							<tr>
+								<td><mono>o</mono></td>
+								<td>add output</td>
+							</tr>
+							<tr>
+								<td><mono>!o</mono></td>
+								<td>do not add output</td>
+							</tr>
+							<tr>
+								<td><mono>s</mono></td>
+								<td>add scope</td>
+							</tr>
+							<tr>
+								<td><mono>!s</mono></td>
+								<td>do not add scope</td>
 							</tr>
 							<tfoot>
 								<tr>
