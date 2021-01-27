@@ -165,10 +165,10 @@ funcName{options}(params)
 		    				</p>
 		    
 		    				<p>
-		    					You can even expand multiple options or parameters when parsing the options or parameters string with both <mono>f++</mono> and <mono>n++</mono>. A contrived <mono>n++</mono> example that is equivalent to calling <mono>@funcName(param 1, param2)</mono> is below:
+		    					You can even expand multiple options or parameters when parsing the options or parameters string with both <mono>f++</mono> and <mono>n++</mono>. A contrived <mono>n++</mono> example that is equivalent to calling <mono>@funcName(param_1, param_2)</mono> is below:
 		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
 		    <pre class="prettyprint inline">
-@string str = "param 1, param 2"
+@string str = "param_1, param_2"
 @funcName($[str])
 </pre>
 		    </div>
@@ -188,7 +188,7 @@ funcName{options}(params)
 		    					Nift is pretty good at working out when it does or does not need to parse things like the function name, options and/or parameters. You can manually tell Nift to <u>not</u> parse the function name and parameters using the <mono>!p</mono> option. For example:
 		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
 		    <pre class="prettyprint inline">
-@input("@{!p}[contentpath]")
+@input("${!p}[contentpath]")
 </pre>
 		    </div>
 		    				</p>
