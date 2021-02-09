@@ -76,6 +76,7 @@
 						<li><a href="@pathto(resources/js_frameworks)">JS Frameworks</a></li>
 						<li><a href="@pathto(resources/links)">Links</a></li>
 						<li><a href="@pathto(resources/logos)">Logos</a></li>
+						<li><a href="@pathto(resources/promos)">Promos</a></li>
 						<li><a href="@pathto(resources/php_frameworks)">PHP Frameworks</a></li>
 					</ul>
 				</li>

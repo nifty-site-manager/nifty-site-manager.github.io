@@ -962,6 +962,10 @@
 'php_frameworks'
 'template/page.template'
 
+'resources/promos'
+'promos'
+'template/page.template'
+
 'resources/templates'
 'templates'
 'template/page.template'
