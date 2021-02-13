@@ -141,7 +141,7 @@ console(x)</pre>
 		println('i: ', i);
 	}
 }
-\@int(x, `2^2 + 3*8 + 4`)
+\@int(x = `2^2 + 3*8 + 4`)
 \@console(x)</pre>
 </div>
 				</p>
