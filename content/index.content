@@ -73,6 +73,12 @@
 					</div>
 					<div class="col-6 col-12-medium">
 						<section>
+							<h3 class="icon solid fa-check">Lua(JIT) and ExprTk embedded</h3>
+							<p>Nift can be compiled with either <a href="https://luajit.org/">LuaJIT</a> (default) or <a href="http://www.lua.org/">Lua</a> along with <a href="https://github.com/ArashPartow/exprtk">ExprTk</a> which has a very impressive <a href="http://www.partow.net/programming/exprtk/#exprtkusers">userbase</a>. These are basically the world's fastest interpreted language and world's fastest mathematical expression parser.</p>
+						</section>
+					</div>
+					<div class="col-6 col-12-medium">
+						<section>
 							<h3 class="icon solid fa-check">Script Support</h3>
 							<p>Nift has support for pre/post build/serve scripts, useful for things like integrating with webpack, Babel, npm, Bower, Yeoman, Browserify, Parcel, Brunch, SASS, Grunt, Puppeteer, GraphQL, Python Web Server, Live Server/Reload, etc..</p>
 						</section>
