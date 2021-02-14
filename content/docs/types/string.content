@@ -47,7 +47,7 @@ string(definitions)
 					Description
 				</h4>
 				<p>
-					The <mono>string</mono> type is used for string values.
+					The <mono>string</mono> type is used for string variables.
 				</p>
 
 				<p>
