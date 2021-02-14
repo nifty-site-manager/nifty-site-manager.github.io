@@ -80,7 +80,7 @@ struct{options}(name)
 							</tr>
 							<tr>
 								<td><mono>n++</mono></td>
-								<td>struct block uses <mono>f++</mono></td>
+								<td>struct block uses <mono>n++</mono></td>
 							</tr>
 							<tr>
 								<td><mono>pb</mono></td>
@@ -162,7 +162,7 @@ console("p.second: ", p.second)</pre>
 				<p>
 <div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline linenums lang-nift">
-\@struct{f++}(pair)
+\@struct(pair)
 {
 	if(types.size() != 2)
 		error("pair: expected 2 types, got types.size()")
