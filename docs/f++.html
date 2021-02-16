@@ -191,7 +191,7 @@
 		    				<p>
 		    					If you have an <mono>f++</mono> script saved in a file <mono>path/script-name.f</mono> you can run it with either of the following:
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
+		    <pre class="prettyprint inline lang-nift">
 nsm run path/script-name.f
 nift run path/script-name.f
 </pre>
@@ -201,7 +201,7 @@ nift run path/script-name.f
 		    				<p>
 		    					If the script has a different extension, say <mono>.ext</mono>, you can run the script with either of the following:
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
+		    <pre class="prettyprint inline lang-nift">
 nsm run -f++ path/script-name.ext
 nift run -f++ path/script-name.ext
 </pre>
@@ -215,7 +215,7 @@ nift run -f++ path/script-name.ext
 		    					You can run <mono>f++</mono> code from <mono>n++</mono> using either of the following:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
+		    <pre class="prettyprint inline lang-nift">
 @f++(/* single line of f++ code */)
 </pre>
 		    </div>
@@ -223,7 +223,7 @@ nift run -f++ path/script-name.ext
 		    
 		    				<p>
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">@f++
+		    <pre class="prettyprint inline lang-nift">@f++
 {
 	// block of f++ code
 }
@@ -237,7 +237,7 @@ nift run -f++ path/script-name.ext
 		    				<p>
 		    					All of Nift's <a href="fns.html">hard-coded functions</a> (including functions for defining variables, functions and structs) are available in your <mono>f++</mono> code. The syntax for calling a function is as follows:
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
+		    <pre class="prettyprint inline lang-nift">
 funcName{options}(params)
 </pre>
 		    </div>
