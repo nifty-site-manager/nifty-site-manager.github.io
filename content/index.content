@@ -86,7 +86,7 @@
 					<div class="col-6 col-12-medium">
 						<section>
 							<h3 class="icon solid fa-check">In-built interactive REPL and shell extension</h3>
-							<p>Nift has in-built interactive REPLs for each of <mono>ExprTk</mono>, <mono>Lua(JIT)</mono>, <mono>functionstein</mono> and <mono>n++</mono>, with documentation available <a href="@pathto(docs/interactive)">here</a>. You can easily switch between languages, and has a shell extenion mode most useful for <a href="@pathto(docs/f++)">functionstein</a>.</p>
+							<p>Nift has in-built interactive REPLs for each of <mono>ExprTk</mono>, <mono>Lua(JIT)</mono>, <mono>functionstein</mono> and <mono>n++</mono>, with documentation available <a href="@pathto(docs/interactive)">here</a>. You can easily switch between languages, and has a shell extension mode most useful for <a href="@pathto(docs/f++)">functionstein</a>.</p>
 						</section>
 					</div>
 					<div class="col-6 col-12-medium">
