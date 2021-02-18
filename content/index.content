@@ -74,7 +74,19 @@
 					<div class="col-6 col-12-medium">
 						<section>
 							<h3 class="icon solid fa-check">Lua(JIT) and ExprTk embedded</h3>
-							<p>Nift can be compiled with either <a href="https://luajit.org/">LuaJIT</a> (default) or <a href="http://www.lua.org/">Lua</a> along with <a href="https://github.com/ArashPartow/exprtk">ExprTk</a> which has a very impressive <a href="http://www.partow.net/programming/exprtk/#exprtkusers">userbase</a>. LuaJIT is basically the world's fastest interpreted language and ExprTk is basically the world's fastest mathematical expression parser.</p>
+							<p>Nift can be compiled with either <a href="https://luajit.org/">LuaJIT</a> (default) or <a href="http://www.lua.org/">Lua</a> along with <a href="https://github.com/ArashPartow/exprtk">ExprTk</a> which has a very impressive <a href="http://www.partow.net/programming/exprtk/#exprtkusers">userbase</a>. LuaJIT is basically the world's fastest interpreted language and ExprTk is basically the world's fastest mathematical expression parser. Nift specific documentation is available for <a href="@pathto(docs/lua)">Lua(JIT)</a> and <a href="@pathto(docs/exprtk)">ExprTk</a>.</p>
+						</section>
+					</div>
+					<div class="col-6 col-12-medium">
+						<section>
+							<h3 class="icon solid fa-check">In-built scripting and template languages</h3>
+							<p>Nift has two in-built languages which use mostly the same underlying code with a few minor differences under the hood and in how the syntax is structured. It has a <a href="@pathto(docs/f++)">scripting</a> language called <mono>functionstein (f++)</mono> and a <a href="@pathto(docs/n++)">template</a> language called <mono>n++</mono>.</p>
+						</section>
+					</div>
+					<div class="col-6 col-12-medium">
+						<section>
+							<h3 class="icon solid fa-check">In-built interactive REPL and shell extension</h3>
+							<p>Nift has in-built interactive REPLs for each of <mono>ExprTk</mono>, <mono>Lua(JIT)</mono>, <mono>functionstein</mono> and <mono>n++</mono>, with documentation available <a href="@pathto(docs/interactive)">here</a>. You can easily switch between languages, and has a shell extenion mode most useful for <a href="@pathto(docs/f++)">functionstein</a>.</p>
 						</section>
 					</div>
 					<div class="col-6 col-12-medium">
