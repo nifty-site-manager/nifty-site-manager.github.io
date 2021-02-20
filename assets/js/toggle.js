@@ -113,6 +113,14 @@ function toggle_light_dark()
     }
   }
 
+  if(document.getElementById("install-img"))
+  {
+    if(dark_mode == 1)
+      document.getElementById("install-img").src = "../images/neon-nift-logo.png";
+    else
+      document.getElementById("install-img").src = "../images/hacker-mind.svg";
+  }
+
   if(document.getElementById("linode-logo"))
   {
     if(dark_mode == 1)
