@@ -73,6 +73,12 @@
 					</div>
 					<div class="col-6 col-12-medium">
 						<section>
+							<h3 class="icon solid fa-check">Pagination</h3>
+							<p>Nift can handle pagination at build time with multithreading or using javascript at load time, depending on your preferences on load times and usability. See the <a href="@pathto(docs/fns)#p">functions</a> docs for several <mono>paginate</mono> functions.</p>
+						</section>
+					</div>
+					<div class="col-6 col-12-medium">
+						<section>
 							<h3 class="icon solid fa-check">Lua(JIT) and ExprTk embedded</h3>
 							<p>Nift can be compiled with either <a href="https://luajit.org/">LuaJIT</a> (default) or <a href="http://www.lua.org/">Lua</a> along with <a href="https://github.com/ArashPartow/exprtk">ExprTk</a> which has a very impressive <a href="http://www.partow.net/programming/exprtk/#exprtkusers">userbase</a>. LuaJIT is basically the world's fastest interpreted language and ExprTk is basically the world's fastest mathematical expression parser. Nift specific documentation is available for <a href="@pathto(docs/lua)">Lua(JIT)</a> and <a href="@pathto(docs/exprtk)">ExprTk</a>.</p>
 						</section>
