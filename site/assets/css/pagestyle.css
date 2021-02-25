@@ -22,6 +22,32 @@ noselect, br
 	-ms-user-select: none; /* IE10+ */
 }
 
+/*fonts from https://www.fontspace.com/*/
+
+@font-face 
+{
+	font-family:"monsterz";
+	src: url("../webfonts/MonstersAttack-WpDz.ttf") format("truetype");
+}
+
+@font-face 
+{
+	font-family:"lightning";
+	src: url("../webfonts/Lightningvolt-xoqm.ttf") format("truetype");
+}
+
+mnstr
+{
+	font-family:"monsterz";
+	color: #509716;
+}
+
+zapfont
+{
+	font-family:"lightning";
+	color: #f2fa19;
+}
+
 .to_top
 {
 	position:fixed !important;
