@@ -363,6 +363,10 @@ funcName{options}(params)
 						<li><a href="@pathtopage(docs/fns/while)">while</a></li>
 						<li><a href="@pathtopage(docs/fns/write)">write</a></li>
 					</ul>
+
+					<div style="display: inline-block; align: right">
+						<img src="@pathtofile(site/images/mask.png)" alt="hockey mask" width=200 style="margin-bottom:40px">
+					</div>
 				</div>
 			</div>
 		</section>
