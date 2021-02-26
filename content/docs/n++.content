@@ -7,11 +7,13 @@
 			<header class="style1">
 				<h2>
 					Nift's in-built template language<br><br><br>
-
-					<noselect>
-						<mnstr style = "font-size:52px;">TEMPLATESTEIN</mnstr>
-					</noselect>
 				</h2>
+
+				<noselect>
+					<h2>
+						<mnstr style = "font-size:52px;">TEMPLATESTEIN</mnstr>
+					</h2>
+				</noselect>
 			</header>
 
 			<!-- Image -->
