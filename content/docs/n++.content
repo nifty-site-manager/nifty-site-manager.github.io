@@ -18,6 +18,7 @@
 
 			<!-- Image -->
 			<center>
+				<#-- https://icon-library.com/png/921451.html --#>
 				<img src="@pathtofile(site/images/roboreaper.png)" alt="Robot reaper" width="350px" style="max-width:90%; border-radius:20px; margin-bottom: 60px">
 			</center>
 
