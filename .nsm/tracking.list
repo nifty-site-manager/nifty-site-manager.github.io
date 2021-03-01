@@ -178,6 +178,10 @@
 'commands'
 'template/page.template'
 
+'docs/config'
+"config'"
+'template/page.template'
+
 'docs/exprtk'
 'exprtk'
 'template/page.template'
@@ -800,10 +804,6 @@
 
 'docs/linux_install'
 'linux_install'
-'template/page.template'
-
-'docs/lokinet_snapps'
-'lokinet_snapps'
 'template/page.template'
 
 'docs/lua'

@@ -1,0 +1,68 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">Configuration</div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<header class="style1">
+				<h2>Configuring Nift</h2>
+			</header>
+
+			<!-- Image -->
+			<center>
+				<img src="@pathtofile(site/images/devil.png)" alt="Nift Tassie devil mascot" width=300 style="margin-bottom:40px">
+			</center>
+
+			<div class="content">
+				<p>
+					The configuration file for a Nift project is stored in <mono>.nsm/nift.config</mono>. You can check the location of the global configuration file when starting <zapfont style = "font-size:30px;">FLASHELL</zapfont> with <mono>nift sh</mono>. 
+				</p>
+
+				<h4 id="contents">
+					Contents
+				</h4>
+				<div style="text-indent:30px; margin-top:10px">
+					<ul>
+						<li><a href="#syntax">Syntax</a></li>
+						<li><a href="#project-config">Project Configuration Files</a></li>
+						<li><a href="#global-config">Global Configuration File</a></li>
+					</ul>
+				</div>
+
+				<h4 id="syntax">
+					Syntax
+				</h4>
+
+				<p>
+					To use a command, enter <mono>nift command parameters</mono> or <mono>nsm command parameters</mono> in to a terminal, command prompt or power shell window. 
+				</p>
+
+				<h4 id="project-config">
+					Project Configuration Files
+				</h4>
+				<p>
+					Each Nift project has its own configuration file located at <mono>.nsm/nift.config</mono>. The project configuration file for this website is:
+
+<div align="center">
+<pre class="inline rounded">
+@input(.nsm/nift.config)
+</pre>
+</div>
+				</p>
+
+				<h4 id="global-config">
+					Global Configuration File
+				</h4>
+				<p>
+					Each system you have Nift installed on will have its own global configuration file, you can check the location of the global configuration file when starting <zapfont style = "font-size:30px;">FLASHELL</zapfont> with <mono>nift sh</mono>.
+
+<div align="center">
+<pre class="inline rounded">
+@input(content/docs/eg-global.config)
+</pre>
+</div>
+				</p>
+			</div>
+		</section>
+	</div>
+</section>

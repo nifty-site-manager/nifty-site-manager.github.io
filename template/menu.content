@@ -45,6 +45,7 @@
 						<li><a href="@pathto(docs/installing)">Installing</a></li>
 						<li><a href="@pathto(docs/hosting)">Hosting</a></li>
 						<li><a href="@pathto(docs/commands)">Commands</a></li>
+						<li><a href="@pathto(docs/config)">Config</a></li>
 						<li><a href="@pathto(docs/template_files)">Template Files</a></li>
 						<li><a href="@pathto(docs/fns)">Functions</a></li>
 						<li><a href="@pathto(docs/types)">Types</a></li>
@@ -61,7 +62,7 @@
 						<li><a href="@pathto(docs/mathematics)">Mathematics</a></li>
 						<li><a href="@pathto(docs/code_blocks)">Code Blocks</a></li>
 						<li><a href="@pathto(docs/presentations)">Presentations</a></li>
-						@/*<li><a href="@pathto(docs/lokinet_snapps)">Lokinet SNApps</a></li>*/
+						<#--<li><a href="@pathto(docs/lokinet_snapps)">Lokinet SNApps</a></li>--#>
 					</ul>
 				</li>
 				<li>
