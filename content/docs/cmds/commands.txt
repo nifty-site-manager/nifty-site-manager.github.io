@@ -1,6 +1,6 @@
 +--------- available commands ---------------------------------+
 | commands          | list all commands                        |
-| config            | list or set git email/username           |
+| config            | configuring Nift                         |
 | clone             | par: clone-url                           |
 | diff              | par: file-path                           |
 | pull              | pull remote changes locally              |

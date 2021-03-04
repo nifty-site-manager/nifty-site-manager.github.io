@@ -33,6 +33,10 @@ brew install nift
 				</p>
 
 				<p>
+					You can find compiler options including building with a normal version of <mono>Lua</mono> on the documentation page for <a href="@pathto(docs/make)">make</a>.
+				</p>
+
+				<p>
 					To uninstall <mono>Nift</mono> enter <mono>brew uninstall nift</mono>.
 				</p>
 
