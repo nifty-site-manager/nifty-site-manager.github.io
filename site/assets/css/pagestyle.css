@@ -36,6 +36,12 @@ noselect, br
 	src: url("../webfonts/Lightningvolt-xoqm.ttf") format("truetype");
 }
 
+@font-face 
+{
+	font-family:"overfont";
+	src: url("../webfonts/AgainstMyself-OA38.ttf") format("truetype");
+}
+
 mnstr
 {
 	font-family:"monsterz";
@@ -46,6 +52,17 @@ zapfont
 {
 	font-family:"lightning";
 	color: #f2fa19;
+}
+
+overthehedge
+{
+	font-family:"overfont";
+	color: #918f89;
+}
+
+zoomzoom
+{
+	font-size: 4vw; !important
 }
 
 .to_top
