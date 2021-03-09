@@ -25,7 +25,7 @@
 					The syntax for <mono>exprtk</mono> calls is:
 <div align="center" style="margin-top:-15px; margin-bottom:80px">
 <mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-70px">
-`expression`
+\$`expression`
 exprtk{options}(expression)
 exprtk{options}
 {
@@ -35,7 +35,7 @@ exprtk{options}
 </div><br>
 <div align="center" style="margin-top:-15px; margin-bottom:80px">
 <mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-70px">
-\@`expression`
+\$`expression`
 \@exprtk{options}(expression)
 \@exprtk{options}
 {
@@ -50,6 +50,10 @@ exprtk{options}
 				</h4>
 				<p>
 					The <mono>exprtk</mono> function is for <u>compiling and evaluating <mono>ExprTk</mono> expressions</u>, it takes zero parameters with the call followed by a block of <mono>ExprTk</mono> code to compile and evaluate otherwise a single parameter that should be the expression to be compiled and evaluated. See <a href="@pathtopage(docs/exprtk)">here</a> for more information about <mono>ExprTk</mono>.
+				</p>
+
+				<p>
+					<b>Note:</b> The preceding <mono>$</mono> has only been added since <mono>v2.3.13</mono>, primarily so that <mnstr style="font-size:18px">functionstein</mnstr> works better as an extension language, in particular with <zapfont style = "font-size:30px;">FLASHELL</zapfont> working as a shell extension.
 				</p>
 
 				<h4 id="options">
@@ -108,7 +112,7 @@ exprtk{options}
 
 <div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline linenums">
-`var x:=0; nsm_write(console, x, endl)`
+\$`var x:=0; nsm_write(console, x, endl)`
 exprtk(var x:=0; nsm_write(console, x, endl))
 exprtk.add_package(basicio_package)
 exprtk
@@ -118,7 +122,7 @@ exprtk
 		println('i: ', i);
 	}
 }
-int x = `2^2 + 3*8 + 4`
+int x = \$`2^2 + 3*8 + 4`
 console(x)</pre>
 </div>
 				</p>
@@ -131,7 +135,7 @@ console(x)</pre>
 
 <div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline linenums">
-\@`var x:=0; nsm_write(console, x, endl)`
+\$`var x:=0; nsm_write(console, x, endl)`
 \@exprtk(var x:=0; nsm_write(console, x, endl))
 \@exprtk.add_package(basicio_package)
 \@exprtk
@@ -141,7 +145,7 @@ console(x)</pre>
 		println('i: ', i);
 	}
 }
-\@int(x = `2^2 + 3*8 + 4`)
+\@int(x = \$`2^2 + 3*8 + 4`)
 \@console(x)</pre>
 </div>
 				</p>

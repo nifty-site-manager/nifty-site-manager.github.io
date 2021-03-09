@@ -192,11 +192,11 @@ funcName{options}(params)
 				</p>
 				<div style="text-indent:30px; margin-top:-20px">
 					<ul>
-						<li><a href="@pathtopage(docs/fns/exprtk)">`expression`</a> (evaluate ExprTk expression)</li>
+						<li><a href="@pathtopage(docs/fns/exprtk)">\$`expression`</a> (evaluate ExprTk expression)</li>
+						<li><a href="@pathtopage(docs/fns/$)">$</a> (print variable)</li>
 						<li><a href="@pathtopage(docs/fns/!)">!</a> (not operator)</li>
 						<li><a href="@pathtopage(docs/fns/!newline)">!\n</a> (special single-line comment)</li>
 						<li><a href="@pathtopage(docs/fns/!=)">!=</a> (not equals operator)</li>
-						<li><a href="@pathtopage(docs/fns/$)">$</a> (print variable)</li>
 						<li><a href="@pathtopage(docs/fns/tern)">?</a> (ternary operator)</li>
 						<li><a href="@pathtopage(docs/fns/&&)">&&</a> (and operator)</li>
 						<li><a href="@pathtopage(docs/fns/||)">||</a> (or operator)</li>
