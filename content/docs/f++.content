@@ -1,6 +1,6 @@
 <!-- Main -->
 <section id="main" class="wrapper style2">
-	<div class="title">f++</div>
+	<div class="title"><mono>f++</mono></div>
 	<div class="container">
 		<!-- Features -->
 		<section id="features">

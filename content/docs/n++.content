@@ -1,6 +1,6 @@
 <!-- Main -->
 <section id="main" class="wrapper style2">
-	<div class="title">n++</div>
+	<div class="title"><mono>n++</mono></div>
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
