@@ -45,7 +45,7 @@ lolcat.on(string)
 					Description
 				</h4>
 				<p>
-					The <mono>lolcat.on</mono> function is for turning on outputting text to the console with rainbow colours, it takes zero parameters or a single parameter, though currently just uses (I'm pretty sure) the in-built version of <mono>lolcat-cc</mono>, I will try to provide an alternative later. 
+					The <mono>lolcat.on</mono> function is for turning on outputting text to the console with rainbow colours, it takes zero parameters or a single parameter. For internal output <mono>Nift</mono> uses the in-built version of <a href="">lolcat-cc</a>, however you can specify in the global and project <a href="@pathto(docs/cmds/lolcat)">configuration</a> files which external <mono>lolcat</mono> program to use, depending on your preferences for things like speed and/or being able to watch animations, and possible formatting issues for edge cases like emojis.
 				</p>
 
 				<p>

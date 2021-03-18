@@ -5,8 +5,14 @@
 		<!-- Features -->
 		<section id="features">
 			<header class="style1">
-				<h2>Promo videos</h2>
+				<h2>Promos</h2>
 			</header>
+
+			<center>
+				<noselect>
+					<img src="@pathtofile(site/images/NIFT-101ween.gif)" alt="animated gif of NIFT using 101ween font" width="560px" style="max-width: 80%; margin-bottom:100px; border-radius:20px"><br>
+				</noselect>
+			</center>
 
 			<div class="content">
 				<section id="promo-features">

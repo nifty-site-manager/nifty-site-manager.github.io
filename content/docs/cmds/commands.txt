@@ -1,6 +1,6 @@
 +--------- available commands ---------------------------------+
-| commands          | list all commands                        |
-| config            | configuring Nift                         |
+| commands (cmds)   | list all commands                        |
+| config            | configure Nift                           |
 | clone             | par: clone-url                           |
 | diff              | par: file-path                           |
 | pull              | pull remote changes locally              |
@@ -29,7 +29,7 @@
 | interp            | par: (lang-opt)                          |
 | sh                | par: (lang-opt)                          |
 | build-names       | par: name-1 .. name-k                    |
-| build-updated     | build updated output files               |
+| build(-updated)   | build updated output files               |
 | build-all         | build all tracked output files           |
 | serve             | serve project locally par: (sleep-sec)   |
 | mve-output-dir    | par: dir-path                            |
@@ -44,5 +44,7 @@
 | incr-mode         | par: (mode)                              |
 | watch             | par: dir (cont-ext) (template) (out-ext) |
 | unwatch           | par: dir (cont-ext)                      |
+| lolcat            | par: (options) use when no other lolcat  |
+|                   |                installed on machine      |
 +--------------------------------------------------------------+
 

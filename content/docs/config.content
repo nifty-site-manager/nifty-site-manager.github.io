@@ -5,12 +5,16 @@
 		<!-- Features -->
 		<section id="features">
 			<header class="style1">
-				<h2>Configuring Nift</h2>
+				<h2>Config</h2>
 			</header>
+
+			<script>
+				var x =0;
+			</script>
 
 			<!-- Image -->
 			<center>
-				<img src="@pathtofile(site/images/devil.png)" alt="Nift Tassie devil mascot" width=300 style="margin-bottom:40px">
+				<img id="nift101ween"  onclick="toggle_ween()" src="@pathtofile(site/images/NIFT-101!Ween.png)" alt="Nift in 101ween font" width=300 style="margin-bottom:40px">
 			</center>
 
 			<div class="content">

@@ -5,12 +5,12 @@
 		<!-- Features -->
 		<section id="features">
 			<header class="style1">
-				<h2>Index for Nift's hard-coded functions</h2>
+				<h2>Hard-Coded Functions Index</h2>
 			</header>
 
 			<!-- Image -->
 			<center>
-				<img src="@pathtofile(site/images/badger-icon.svg)" alt="Nift's badger mascot" width=300 style="margin-bottom:40px">
+				<img src="@pathtofile(site/images/NIFT-101!\'Ween.png)" alt="Nift using 101!'Ween font, coloured with GIMP" width=400px style="max-width:75%; margin-bottom:40px">
 			</center>
 
 			<div class="content">

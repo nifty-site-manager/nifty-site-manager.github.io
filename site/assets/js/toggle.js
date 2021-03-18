@@ -174,6 +174,19 @@ function toggle_light_dark()
   }
 }
 
+/*var touched = 0;
+function toggle_ween()
+{
+  if(document.getElementById("nift101ween"))
+  {
+    if(!touched)
+      document.getElementById("nift101ween").src = "../images/NIFT-101ween.gif";
+    else
+      document.getElementById("nift101ween").src = "../images/NIFT-101!Ween.png";
+    touched = (touched++)%2;
+  }
+}*/
+
 //default is to use os colour mode and dark mode if unavailable
 if(localStorage.getItem('dark-mode') == "1") 
 {

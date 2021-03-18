@@ -78,6 +78,10 @@
 'init'
 'template/page.template'
 
+'docs/cmds/lolcat'
+'lolcat'
+'template/page.template'
+
 'docs/cmds/mve'
 'mve'
 'template/page.template'

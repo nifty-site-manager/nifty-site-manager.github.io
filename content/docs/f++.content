@@ -1,6 +1,6 @@
 <!-- Main -->
 <section id="main" class="wrapper style2">
-	<div class="title"><mono>f++</mono></div>
+	<div class="title"><mnstr style="font-size:16px">f++</mnstr></div>
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
@@ -26,14 +26,13 @@
 
 			<!-- Image -->
 			<center>
-				@//<img src="@pathtofile(site/images/functionstein.png)" alt="f++ koala mascot" width=450 style="margin-bottom:40px"><br>
-
-				<img src="@pathtofile(site/images/koala.svg)" alt="f++ koala mascot" width=350 style="margin-bottom:40px">
+				<#-- https://icon-library.com/png/921451.html --#>
+				<img src="@pathtofile(site/images/reaper.png)" alt="Functionstein reaper mascot" width="350px" style="max-width:90%; border-radius:20px; margin-bottom: 60px">
 			</center>
 
 			<div class="content">
 				<p>
-					Nift has its own in-built scripting language <mnstr style="font-size:16px">FUNCTIONSTEIN</mnstr>, or just <mono>f++</mono>. The <mono>++</mono> comes from the language being developed in <mono>c++</mono>, while the <mono>f</mono> comes from functions with superpowers playing a central role nearly almost everywhere in the language.
+					Nift has its own in-built scripting language <mnstr style="font-size:16px">FUNCTIONSTEIN</mnstr>, or either <mnstr style="font-size:16px">FNSTEIN</mnstr> or <mnstr style="font-size:16px">f++</mnstr>. The <mono>++</mono> comes from the language being developed in <mono>c++</mono>, while the <mono>f</mono> comes from functions with superpowers playing a central role nearly almost everywhere in the language.
 				</p>
 
 				<a href="#contents" class="to_top">[contents]</a>
@@ -52,10 +51,10 @@
 				</div>
 
 				<h4 id="interpreter">
-					f++ interpreter
+					<mnstr style="font-size:16px">f++</mnstr> interpreter
 				</h4>
 				<p>
-					<mono>Nift</mono> has an <mono>f++</mono> interpreter that you can start with either <mono>nsm interp</mono> or <mono>nift interp</mono> (it is the default language for the interpeter mode). See the <a href="@pathto(docs/interactive)">interactive REPL</a> page for docs.
+					<mono>Nift</mono> has an <mnstr style="font-size:16px">f++</mnstr> interpreter that you can start with either <mono>nsm interp</mono> or <mono>nift interp</mono> (it is the default language for the interpeter mode). See the <a href="@pathto(docs/interactive)">interactive REPL</a> page for docs.
 				</p>
 
 				<p>
@@ -63,18 +62,18 @@
 				</p>
 
 				<p>
-					You can switch to one of the other languages available in Nift's interpreter using <mono>nsm_lang(langStr)</mono> where <mono>langStr</mono> is one of <mono>f++</mono>, <mono>n++</mono>, <mono>lua</mono> or <mono>exprtk</mono>.
+					You can switch to one of the other languages available in Nift's interpreter using <mono>nsm_lang(langStr)</mono> where <mono>langStr</mono> is one of <mnstr style="font-size:16px">f++</mnstr>, <mnstr style="font-size:16px">N++</mnstr>, <mono>lua</mono> or <mono>exprtk</mono>.
 				</p>
 
 				<h4 id="shell">
-					<zapfont style = "font-size:36px;">FLASHELL</zapfont> - f++ shell
+					<zapfont style = "font-size:36px;">FLASHELL</zapfont> - <mnstr style="font-size:16px">f++</mnstr> shell
 				</h4>
 				<p>
-					<mono>Nift</mono> has an <mono>f++</mono> shell that you can start with either <mono>nsm sh</mono> or <mono>nift sh</mono> (it is the default language for the shell mode). See the <a href="@pathto(docs/interactive)">interactive REPL</a> page for docs.
+					<mono>Nift</mono> has an <mnstr style="font-size:16px">f++</mnstr> shell that you can start with either <mono>nsm sh</mono> or <mono>nift sh</mono> (it is the default language for the shell mode). See the <a href="@pathto(docs/interactive)">interactive REPL</a> page for docs.
 				</p>
 
 				<p>
-					The <mono>f++</mono> shell attempts to work as an extension of the shell it is running from, ie. should work almost identically to the shell it is running from while having a number of additional features (and is often faster than the shell it is running from).
+					The <mnstr style="font-size:16px">f++</mnstr> shell attempts to work as an extension of the shell it is running from, ie. should work almost identically to the shell it is running from while having a number of additional features (and is often faster than the shell it is running from).
 				</p>
 
 				<p>
@@ -82,7 +81,7 @@
 				</p>
 
 				<p>
-					You can switch to one of the other languages available in Nift using <mono>nsm_lang(langStr)</mono> where <mono>langStr</mono> is one of <mono>f++</mono>, <mono>n++</mono>, <mono>lua</mono> or <mono>exprtk</mono>.
+					You can switch to one of the other languages available in Nift using <mono>nsm_lang(langStr)</mono> where <mono>langStr</mono> is one of <mnstr style="font-size:16px">f++</mnstr>, <mnstr style="font-size:16px">N++</mnstr>, <mono>lua</mono> or <mono>exprtk</mono>.
 				</p>
 
 
@@ -90,7 +89,7 @@
 					Running f++ scripts
 				</h4>
 				<p>
-					If you have an <mono>f++</mono> script saved in a file <mono>path/script-name.f</mono> you can run it with either of the following:
+					If you have an <mnstr style="font-size:16px">f++</mnstr> script saved in a file <mono>path/script-name.f</mono> you can run it with either of the following:
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint inline lang-nift">
 nsm run path/script-name.f
@@ -110,10 +109,10 @@ nift run -f++ path/script-name.ext
 				</p>
 
 				<h4 id="f++-from-n++">
-					f++ from n++
+					<mnstr style="font-size:16px">f++</mnstr> from <mnstr style="font-size:16px">N++</mnstr>
 				</h4>
 				<p>
-					You can run <mono>f++</mono> code from <mono>n++</mono> using either of the following:					
+					You can run <mnstr style="font-size:16px">f++</mnstr> code from <mnstr style="font-size:16px">N++</mnstr> using either of the following:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint inline lang-nift">
@@ -136,7 +135,7 @@ nift run -f++ path/script-name.ext
 					Nift functions
 				</h4>
 				<p>
-					All of Nift's <a href="@pathtopage(docs/fns)">hard-coded functions</a> (including functions for defining variables, functions and structs) are available in your <mono>f++</mono> code. The syntax for calling a function is as follows:
+					All of Nift's <a href="@pathtopage(docs/fns)">hard-coded functions</a> (including functions for defining variables, functions and structs) are available in your <mnstr style="font-size:16px">f++</mnstr> code. The syntax for calling a function is as follows:
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint inline lang-nift">
 funcName{options}(params)
