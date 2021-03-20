@@ -10,7 +10,8 @@
 
 			<!-- Image -->
 			<center>
-				<img src="@pathtofile(site/images/NIFT-101!\'Ween.png)" alt="Nift using 101!'Ween font, coloured with GIMP" width=400px style="max-width:75%; margin-bottom:40px">
+				<#-- https://icon-library.com/png/921451.html --#>
+				<img src="@pathtofile(site/images/reaper.png)" alt="Functionstein reaper mascot" width="350px" style="max-width:90%; margin-left:-60px; border-radius:20px; margin-bottom: 60px">
 			</center>
 
 			<div class="content">
@@ -285,6 +286,14 @@ funcName{options}(params)
 
 						<li id="j"><a href="@pathtopage(docs/fns/join)">join</a></li>
 						<li><a href="@pathtopage(docs/fns/jsinclude)">jsinclude</a></li> <br>
+
+						<center style="margin-top:-30px">
+							<noselect>
+								<img src="@pathtofile(site/images/jackjumper-flipped.png)" alt="testing" width=50px style="max-width:75%;">
+								<img src="@pathtofile(site/images/jackjumper-flipped.png)" alt="testing" width=50px style="max-width:75%;">
+								<img src="@pathtofile(site/images/jackjumper-flipped.png)" alt="testing" width=50px style="max-width:75%;">
+							</noselect>
+						</center style="margin-bottom:-30px">
 
 						<li id="l"><a href="@pathtopage(docs/fns/layer)">layer</a></li>
 						<li><a href="@pathtopage(docs/fns/link)">link</a></li>

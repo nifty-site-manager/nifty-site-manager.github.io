@@ -156,6 +156,12 @@
 					<li><a href="https://stackblitz.com/">StackBlitz</a> (<a href="https://github.com/stackblitz/core/">GitHub</a>)</li>
 				</ul>
 
+				<ul>
+					<li><a href="https://www.gimp.org/">GNU Image Manipulation Program (GIMP)</a></li>
+					<li><a href="https://www.pinta-project.com/">Pinta</a></li>
+					<li><a href="https://www.photopea.com/">Photopea</a> (photoshop-esque website)</li>
+				</ul>
+
 				<h3 id="website-generators">Website generators</h3>
 				<ul>
 					<li><a href="https://www.staticgen.com/">StaticGen</a> - a list of static site generators for JAMstack sites</li>

@@ -141,7 +141,13 @@ nift run -f++ path/script-name.ext
 funcName{options}(params)
 </pre>
 </div>
-				</p>
+				</p><br><br><br><br><br>
+
+				<center>
+					<div>
+						<noselect><mnstr style = "font-size:20vw">}</mnstr></noselect>
+					</div>
+				</center>
 			</div>
 		</section>
 	</div>
