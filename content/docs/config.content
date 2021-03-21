@@ -28,6 +28,7 @@
 						<li><a href="#syntax">Syntax</a></li>
 						<li><a href="#project-config">Project Configuration Files</a></li>
 						<li><a href="#global-config">Global Configuration File</a></li>
+						<li><a href="#configurable">Global Configuration File</a></li>
 					</ul>
 				</div>
 
@@ -63,6 +64,142 @@
 @input(content/docs/eg-global.config)
 </pre>
 </div>
+				</p>
+
+				<h4 id="configurable">
+					Configurable
+				</h4>
+
+				<p>
+					The table below contains information about what can be configured in the configuration files:
+
+					<center class="table">
+						<table id="interactive_shortcuts_table" class="alt">
+							<thead>
+								<tr>
+									<th style="min-width: 145px">Name</th>
+									<th style="min-width: 330px">Description</th>
+									<th style="min-width: 145px">Valid Values</th>
+									<th style="min-width: 145px">Global</th>
+									<th style="min-width: 145px">Project</th>
+								</tr>
+							</thead>
+							<tr>
+								<td><mono>contentDir</mono></td>
+								<td>path to content directory</td>
+								<td><mono>quoted path</mono></td>
+								<td><mono></mono></td>
+								<td><mono>Y</mono></td>
+							</tr>
+							<tr>
+								<td><mono>contentExt</mono></td>
+								<td>extension used for content files</td>
+								<td><mono>quoted extension</mono></td>
+								<td><mono></mono></td>
+								<td><mono>Y</mono></td>
+							</tr>
+							<tr>
+								<td><mono>outputDir</mono></td>
+								<td>path to output directory</td>
+								<td><mono>quoted path</mono></td>
+								<td><mono></mono></td>
+								<td><mono>Y</mono></td>
+							</tr>
+							<tr>
+								<td><mono>outputExt</mono></td>
+								<td>extension used for build files</td>
+								<td><mono>quoted extension</mono></td>
+								<td><mono></mono></td>
+								<td><mono>Y</mono></td>
+							</tr>
+							<tr>
+								<td><mono>scriptExt</mono></td>
+								<td>extension used for pre/post build scripts</td>
+								<td><mono>quoted extension</mono></td>
+								<td><mono></mono></td>
+								<td><mono>Y</mono></td>
+							</tr>
+							<tr>
+								<td><mono>defaultTemplate</mono></td>
+								<td>default template file to use when tracking new pages</td>
+								<td><mono>quoted path</mono></td>
+								<td><mono></mono></td>
+								<td><mono>Y</mono></td>
+							</tr>
+							<tr>
+								<td><mono>backupScripts</mono></td>
+								<td>backup scripts before running them</td>
+								<td><mono>{0,1}</mono></td>
+								<td><mono>Y</mono></td>
+								<td><mono>Y</mono></td>
+							</tr>
+							<tr>
+								<td><mono>lolcat</mono></td>
+								<td>whether to use lolcat for output</td>
+								<td><mono>{0,1}</mono></td>
+								<td><mono>Y</mono></td>
+								<td><mono>Y</mono></td>
+							</tr>
+							<tr>
+								<td><mono>lolcatCmd</mono></td>
+								<td>quoted command to use when running lolcat</td>
+								<td><mono>{0,1}</mono></td>
+								<td><mono>Y</mono></td>
+								<td><mono>Y</mono></td>
+							</tr>
+							<tr>
+								<td><mono>buildThreads</mono></td>
+								<td>max number of threads to use when building ($-x \rightarrow x*no\_cores$)</td>
+								<td><mono>integer</mono></td>
+								<td><mono>Y</mono></td>
+								<td><mono>Y</mono></td>
+							</tr>
+							<tr>
+								<td><mono>paginateThreads</mono></td>
+								<td>max number of threads to use with pagination ($-x \rightarrow x*no\_cores$)</td>
+								<td><mono>integer</mono></td>
+								<td><mono>Y</mono></td>
+								<td><mono>Y</mono></td>
+							</tr>
+							<tr>
+								<td><mono>incrementalMode</mono></td>
+								<td>choose between incremental mode using modification times or file hashes</td>
+								<td><mono>{mod, hash, hybrid}</mono></td>
+								<td><mono>Y</mono></td>
+								<td><mono>Y</mono></td>
+							</tr>
+							<tr>
+								<td><mono>terminal</mono></td>
+								<td>mostly just to change output background colour for Powershell on Windows</td>
+								<td><mono>"ps"</mono> or <mono>"powershell"</mono></td>
+								<td><mono>Y</mono></td>
+								<td><mono>Y</mono></td>
+							</tr>
+							<tr>
+								<td><mono>unixTextEditor</mono></td>
+								<td>specifies which text editor to use on *nix machines</td>
+								<td>eg. <mono>"subl -n"</mono> or <mono>"vi"</mono></td>
+								<td><mono>Y</mono></td>
+								<td><mono>Y</mono></td>
+							</tr>
+							<tr>
+								<td><mono>winTextEditor</mono></td>
+								<td>specifies which text editor to use on Windows machines</td>
+								<td>eg. <mono>"subl -n"</mono> or <mono>"notepad"</mono></td>
+								<td><mono>Y</mono></td>
+								<td><mono>Y</mono></td>
+							</tr>
+							<tfoot>
+								<tr>
+									<th>Name</th>
+									<th>Description</th>
+									<th>Valid Values</th>
+									<th>Global</th>
+									<th>Project</th>
+								</tr>
+							</tfoot>
+						</table>
+					</center>
 				</p>
 			</div>
 		</section>

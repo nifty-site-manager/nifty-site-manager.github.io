@@ -938,10 +938,6 @@
 'privacy_policy'
 'template/page.template'
 
-'resources/SNApp_templates'
-'SNApp_templates'
-'template/page.template'
-
 'resources/blog_templates'
 'blog_templates'
 'template/page.template'
