@@ -54,7 +54,7 @@
 					<mnstr style="font-size:16px">f++</mnstr> interpreter
 				</h4>
 				<p>
-					<mono>Nift</mono> has an <mnstr style="font-size:16px">f++</mnstr> interpreter that you can start with either <mono>nsm interp</mono> or <mono>nift interp</mono> (it is the default language for the interpeter mode). See the <a href="@pathto(docs/interactive)">interactive REPL</a> page for docs.
+					<mono>Nift</mono> has an <mnstr style="font-size:16px">f++</mnstr> interpreter that you can start with either <mono>nsm interp</mono> or <mono>nift interp</mono> (it is the default language for the interpeter mode). See the <a href="@pathto(docs/REPL)">interactive REPL</a> page for docs.
 				</p>
 
 				<p>
@@ -69,7 +69,7 @@
 					<zapfont style = "font-size:36px;">FLASHELL</zapfont> - <mnstr style="font-size:16px">f++</mnstr> shell
 				</h4>
 				<p>
-					<mono>Nift</mono> has an <mnstr style="font-size:16px">f++</mnstr> shell that you can start with either <mono>nsm sh</mono> or <mono>nift sh</mono> (it is the default language for the shell mode). See the <a href="@pathto(docs/interactive)">interactive REPL</a> page for docs.
+					<mono>Nift</mono> has an <mnstr style="font-size:16px">f++</mnstr> shell that you can start with either <mono>nsm sh</mono> or <mono>nift sh</mono> (it is the default language for the shell mode). See the <a href="@pathto(docs/REPL)">interactive REPL</a> page for docs.
 				</p>
 
 				<p>

@@ -47,7 +47,7 @@
 					<mnstr style="font-size:16px">N++</mnstr> interpreter
 				</h4>
 				<p>
-					<mono>Nift</mono> has an <mnstr style="font-size:16px">N++</mnstr> interpreter that you can start with either <mono>nsm interp -n++</mono> or <mono>nift interp -n++</mono>. See the <a href="@pathto(docs/interactive)">interactive REPL</a> page for docs.
+					<mono>Nift</mono> has an <mnstr style="font-size:16px">N++</mnstr> interpreter that you can start with either <mono>nsm interp -n++</mono> or <mono>nift interp -n++</mono>. See the <a href="@pathto(docs/REPL)">interactive REPL</a> page for docs.
 				</p>
 
 				<p>
@@ -62,7 +62,7 @@
 					<mnstr style="font-size:16px">N++</mnstr> shell
 				</h4>
 				<p>
-					<mono>Nift</mono> has an <mnstr style="font-size:16px">N++</mnstr> shell that you can start with either <mono>nsm sh -n++</mono> or <mono>nift sh -n++</mono>. See the <a href="@pathto(docs/interactive)">interactive REPL</a> page for docs.
+					<mono>Nift</mono> has an <mnstr style="font-size:16px">N++</mnstr> shell that you can start with either <mono>nsm sh -n++</mono> or <mono>nift sh -n++</mono>. See the <a href="@pathto(docs/REPL)">interactive REPL</a> page for docs.
 				</p>
 
 				<p>

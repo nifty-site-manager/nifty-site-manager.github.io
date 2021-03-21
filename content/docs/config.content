@@ -123,7 +123,7 @@
 								<td><mono>defaultTemplate</mono></td>
 								<td>default template file to use when tracking new pages</td>
 								<td><mono>quoted path</mono></td>
-								<td><mono></mono></td>
+								<td><mono>Y</mono></td>
 								<td><mono>Y</mono></td>
 							</tr>
 							<tr>

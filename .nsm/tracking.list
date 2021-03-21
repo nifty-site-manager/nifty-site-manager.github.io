@@ -6,6 +6,10 @@
 'JSON'
 'template/page.template'
 
+'docs/REPL'
+'REPL'
+'template/page.template'
+
 'docs/bitbucket_hosting'
 'bitbucket_hosting'
 'template/page.template'
@@ -800,10 +804,6 @@
 
 'docs/installing'
 'installing'
-'template/page.template'
-
-'docs/interactive'
-'interactive'
 'template/page.template'
 
 'docs/linux_install'
