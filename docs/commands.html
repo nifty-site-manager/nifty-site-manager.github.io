@@ -159,18 +159,18 @@
 		    <div align="center">
 		    <pre class="inline rounded">
 +--------- available commands ---------------------------------+
-| commands (cmds)   | list all commands                        |
+| commands or cmds  | list all commands                        |
 | config            | configure Nift                           |
 | clone             | par: clone-url                           |
 | diff              | par: file-path                           |
 | pull              | pull remote changes locally              |
 | bcp               | par: commit-message                      |
+| mbcp              | par: dir-1 .. dir-k commit-message       |
 | init              | start managing project - par: (out-ext)  |
 | init-html         | start managing html website              |
 | status            | list updated & problem files             |
 | info              | par: name-1 .. name-k                    |
 | info-all          | list watched dirs & tracked files        |
-| info-config       | list config settings                     |
 | info-names        | list tracked names                       |
 | info-tracking     | list tracked files                       |
 | info-watching     | list watched dirs                        |
@@ -204,8 +204,10 @@
 | incr-mode         | par: (mode)                              |
 | watch             | par: dir (cont-ext) (template) (out-ext) |
 | unwatch           | par: dir (cont-ext)                      |
-| lolcat            | par: (options) use when no other lolcat  |
-|                   |                installed on machine      |
+| edit or open      | par: name-1 .. name-k                    |
+| medit or mopen    | par: dir-1 .. dir-k name                 |
+| lolcat            | par: (options) used when no other lolcat |
+|                   |                versions are installed    |
 +--------------------------------------------------------------+
 
 </pre>
@@ -220,9 +222,9 @@
 		    					<ul>
 		    						<li><a href="cmds/backup-scripts.html">backup-scripts</a></li>
 		    						<li><a href="cmds/bcp.html">bcp</a> (build, commit & push)</li>
-		    						<li><a href="cmds/build-updated.html">build(-updated)</a> (incremental build)</li> <br>
+		    						<li><a href="cmds/build-updated.html">build(-updated)</a> (incremental build)</li>
 		    						<li><a href="cmds/build-all.html">build-all</a> (full build)</li>
-		    						<li><a href="cmds/build-names.html">build-names</a></li>
+		    						<li><a href="cmds/build-names.html">build-names</a></li> <br>
 		    
 		    						<li><a href="cmds/clone.html">clone</a></li>
 		    						<li><a href="cmds/commands.html">commands</a></li>

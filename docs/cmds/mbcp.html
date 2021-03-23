@@ -8,7 +8,7 @@
 
 <html lang="en">
     <head>
-        <title>Nift - commands</title>
+        <title>Nift - mbcp'</title>
         <meta charset="utf-8">
         <meta name="description" content="Nift is the world's fastest framework for 
                     managing and generating websites. It's cross-platform, opensource, 
@@ -113,7 +113,7 @@
 
 		    <!-- Main -->
 		    <section id="main" class="wrapper style2">
-		    	<div class="title">cmd: <mono>commands</mono></div>
+		    	<div class="title">cmd: <mono>mbcp</mono></div>
 		    	<div class="container">
 		    		<!-- Features -->
 		    		<section id="features">
@@ -126,17 +126,18 @@
 		    				<ul style="text-indent:30px">
 		    					<li><a href="#syntax">Syntax</a></li>
 		    					<li><a href="#description">Description</a></li>
+		    					<li><a href="#eg">Example</a></li>
 		    				</ul>
 		    
 		    				<h4 id="syntax">
 		    					Syntax
 		    				</h4>
 		    				<p>
-		    					The syntax for the <mono>commands</mono> command is:
+		    					The syntax for the <mono>track</mono> command is:
 		    <div align="center">
 		    <pre class="prettyprint inline lang-nift" style="margin-bottom:-10px">
-nift commands
-nsm commands
+nift mbcp project-dirs "commit message"
+nsm mbcp project-dirs "commit message"
 </pre>
 		    </div>
 		    				</p>
@@ -145,62 +146,18 @@ nsm commands
 		    					Description
 		    				</h4>
 		    				<p>
-		    					The <mono>commands</mono> command lists the commands available with <mono>Nift</mono>. The output will look similar to:
+		    					The <mono>mbcp</mono> command is for running <a href="bcp.html">build-commit-push</a> on multiple mirrored project directories.
+		    				</p>
 		    
-		    <div align="center">
-		    <pre class="inline rounded">
-+--------- available commands ---------------------------------+
-| commands or cmds  | list all commands                        |
-| config            | configure Nift                           |
-| clone             | par: clone-url                           |
-| diff              | par: file-path                           |
-| pull              | pull remote changes locally              |
-| bcp               | par: commit-message                      |
-| mbcp              | par: dir-1 .. dir-k commit-message       |
-| init              | start managing project - par: (out-ext)  |
-| init-html         | start managing html website              |
-| status            | list updated & problem files             |
-| info              | par: name-1 .. name-k                    |
-| info-all          | list watched dirs & tracked files        |
-| info-names        | list tracked names                       |
-| info-tracking     | list tracked files                       |
-| info-watching     | list watched dirs                        |
-| track             | par: name (title) (template)             |
-| track-from-file   | par: file-path                           |
-| track-dir         | par: dir (cont-ext) (template) (out-ext) |
-| untrack           | par: name                                |
-| untrack-from-file | par: file-path                           |
-| untrack-dir       | par: dir-path (content-ext)              |
-| rmv               | par: name                                |
-| rmv-from-file     | par: file-path                           |
-| rmv-dir           | par: dir-path (content-ext)              |
-| mve               | par: old-name new-name                   |
-| cpy               | par: tracked-name new-name               |
-| run               | par: (lang-opt) script-path              |
-| interp            | par: (lang-opt)                          |
-| sh                | par: (lang-opt)                          |
-| build-names       | par: name-1 .. name-k                    |
-| build(-updated)   | build updated output files               |
-| build-all         | build all tracked output files           |
-| serve             | serve project locally par: (sleep-sec)   |
-| mve-output-dir    | par: dir-path                            |
-| mve-cont-dir      | par: dir-path                            |
-| new-title         | par: name new-title                      |
-| new-template      | par: (name) template                     |
-| new-cont-ext      | par: (name) content-ext                  |
-| new-output-ext    | par: (name) output-ext                   |
-| new-script-ext    | par: (name) script-ext                   |
-| no-build-thrds    | par: (no-threads) [-n == n*cores]        |
-| backup-scripts    | par: (option)                            |
-| incr-mode         | par: (mode)                              |
-| watch             | par: dir (cont-ext) (template) (out-ext) |
-| unwatch           | par: dir (cont-ext)                      |
-| edit or open      | par: name-1 .. name-k                    |
-| medit or mopen    | par: dir-1 .. dir-k name                 |
-| lolcat            | par: (options) used when no other lolcat |
-|                   |                versions are installed    |
-+--------------------------------------------------------------+
-
+		    				<h4 id="eg">
+		    					Example
+		    				</h4>
+		    				<p>
+		    					Example of <mono>mbcp</mono> being used with mirror directories <mono>example-mirror-gh</mono> and <mono>example-mirror-bb</mono>:					
+		    
+		    <div align="center" style="margin-top:-10px">
+		    <pre class="prettyprint inline linenums lang-nift">
+nift mbcp example-mirror-* "commit message"
 </pre>
 		    </div>
 		    				</p>
