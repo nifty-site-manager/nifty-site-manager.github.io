@@ -1,9 +1,9 @@
 13:00:21 Tuesday March 23 2021
-'docs/cmds/build-updated'
-'build-updated'
+'docs/cmds/edit'
+"edit'"
 'template/page.template'
 
-'content/docs/cmds/build-updated.content'
+'content/docs/cmds/edit.content'
 'template/footer.content'
 'template/head.content'
 'template/menu.content'

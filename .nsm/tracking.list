@@ -54,6 +54,10 @@
 'diff'
 'template/page.template'
 
+'docs/cmds/edit'
+"edit'"
+'template/page.template'
+
 'docs/cmds/incr-mode'
 'incr-mode'
 'template/page.template'
@@ -84,6 +88,14 @@
 
 'docs/cmds/lolcat'
 'lolcat'
+'template/page.template'
+
+'docs/cmds/mbcp'
+"mbcp'"
+'template/page.template'
+
+'docs/cmds/medit'
+"medit'"
 'template/page.template'
 
 'docs/cmds/mve'
