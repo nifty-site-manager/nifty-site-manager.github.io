@@ -298,8 +298,10 @@ funcName{options}(params)
 						<li id="l"><a href="@pathtopage(docs/fns/layer)">layer</a></li>
 						<li><a href="@pathtopage(docs/fns/link)">link</a></li>
 						<li><a href="@pathtopage(docs/fns/lolcat)">lolcat</a></li>
+						<li><a href="@pathtofile(site/docs/fns/lolcat.cmd.html)">lolcat.cmd</a></li>
 						<li><a href="@pathtofile(site/docs/fns/lolcat.off.html)">lolcat.off</a></li>
 						<li><a href="@pathtofile(site/docs/fns/lolcat.on.html)">lolcat.on</a></li>
+						<li><a href="@pathtofile(site/docs/fns/lolcat.status.html)">lolcat.status</a></li>
 						<li><a href="@pathtopage(docs/fns/lst)">lst</a></li>
 						<li><a href="@pathtopage(docs/fns/lua)">lua</a></li>
 						<li><a href="@pathtopage(docs/fns/lua_addnsmfns)">lua_addnsmfns</a></li>

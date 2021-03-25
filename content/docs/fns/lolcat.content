@@ -57,10 +57,6 @@ lolcat{options}(params)
 				</p>
 
 				<p>
-					<b>Note:</b> One limitation of <a href="https://github.com/n-ham/lolcat-cc">lolcat-cc</a> is it does not seem to handle ascii animations very well, and sometimes you need to close and open a new terminal after running an ascii animation through <a href="https://github.com/n-ham/lolcat-cc">lolcat-cc</a>.
-				</p>
-
-				<p>
 					<b>Note:</b> If you want multiple <mono>lolcat</mono> calls to print to the console without being interrupted by output from threads building other files then use <a href="@pathtofile(site/docs/fns/console.lock.html)">console.lock</a> and <a href="@pathtofile(site/docs/fns/console.unlock.html)">console.unlock</a>.
 				</p>
 
