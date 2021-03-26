@@ -186,7 +186,19 @@ nift sh -lang
 		    				</p>
 		    
 		    				<p>
-		    					The <mono>f++</mono> shell attempts to work as an extension of the default shell for the terminal it is running from, ie. attempts to work almost identically to the default shell for the terminal it is running from while having a number of additional features (and can often do many things faster than the shell it is running from).
+		    					The <mono>f++</mono> shell, also called <zapfont style = "font-size:36px;">FLASHELL</zapfont> or <zapfont style = "font-size:36px;">FLASH</zapfont> (<mono>fla-sh</mono>) or even <zapfont style = "font-size:36px;">FSH</zapfont> if people want to be even more succinct (and helps cover for <mono>F++</mono> who also use <mono>FSH</mono>), or make up your own names for the binaries and other parts if you need to hide things better, attempts to work as an extension of the default shell for <mono>c++</mono> system calls, which is likely to remain always being <mono>bash</mono> on posix compliant platforms, it does also work on Windows and I am unsure whether you can change the shell anywhere on Windows that modifies the shell used by <mono>c++</mono> system calls. 
+		    				</p>
+		    
+		    				<p>
+		    					<zapfont style = "font-size:36px;">FLASH</zapfont> attempts to work almost identically to the default shell for the terminal it is running from while having a number of additional features. For example you can often do many things faster than the shell it is running from. For example on my machine (which is quite old) <a href="https://pastebin.com/5FM7Hzef">this</a>  <mnstr style="font-size:16px">FNSTEIN</mnstr> script runs in ~3s whereas <a href="https://pastebin.com/RTXXEHBg">this</a> <mono>bash</mono> script runs in more like ~3m. 
+		    				</p>
+		    
+		    				<p>
+		    					<b>Note:</b> To get the <mnstr style="font-size:16px">FNSTEIN</mnstr> script to work you will need to add a <mono>$</mono> before the <mono>``</mono>'s for the <mono>ExprTk</mono> expression as the syntax has changed. Also be weary that if downloading the <mnstr style="font-size:16px">FNSTEIN</mnstr> script it has a <mono>.cpp</mono> extension for syntax highlighting purposes on <mono>pastebin</mono>. Also you do <u><b>DO NOT</b></u> want to leave the directory open in your file browser (the gui) when running either script.
+		    				</p>
+		    
+		    				<p>
+		    					One major limitation is not being able to define bash variables and have them exist beyond the <mono>c++</mono> system call they are used for. There is however access to the type systems and everything else for all of <zapfont style = "font-size:36px;">FLASH</zapfont>/<mnstr style="font-size:16px">FNSTEIN</mnstr>, <mnstr style="font-size:16px">TMPLTSTEIN</mnstr>, <mono>Lua(JIT)</mono> and <mono>ExprTk</mono>, you can write blocks of code at a time for <mono>sys/system</mono> calls where variable definitions etc. carry over and you can parse the block first with any of the languages in-built or embedded in to <mono>Nift</mono>. You can also run scripts that exist, or are contained in a block of code following the <mono>script</mono> function call.
 		    				</p>
 		    
 		    				<p>
