@@ -113,7 +113,7 @@ nift run -f++ path/script-name.ext
 				</p>
 
 				<p>
-					From <mono>gnome-session-flashback</mono> I am able to create an application launcher from the gui by doing <mono>alt</mono> and right click in some free space on the top or bottom panel and selecting <mono>Add to Panel...</mono>. Alternatively create a file titled something like <mono>flash.desktop</mono> below:
+					From <mono>gnome-session-flashback</mono> I am able to create an application launcher from the gui by doing <mono>alt</mono> and right click in some free space on the top or bottom panel and selecting <mono>Add to Panel...</mono>. Alternatively create a file titled something like <mono>flash.desktop</mono> below and give exec permissions:
 <div align="center" style="margin-top:30px; margin-bottom:10px">
 <pre class="prettyprint inline">
 #!/usr/bin/env xdg-open
