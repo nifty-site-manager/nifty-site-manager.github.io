@@ -44,6 +44,7 @@
 					<ul>
 						<li><a href="#interpreter">f++ interpreter</a></li>
 						<li><a href="#shell">f++ shell</a></li>
+						<li><a href="#automatic-flashell-startup">Automatic <zapfont style = "font-size:36px;">FLASHELL</zapfont> startup</a></li>
 						<li><a href="#scripts">Running f++ scripts</a></li>
 						<li><a href="#f++-from-n++">f++ from n++</a></li>
 						<li><a href="#nift-fns">functions</a></li>
@@ -70,10 +71,6 @@
 				</h4>
 				<p>
 					<mono>Nift</mono> has an <mnstr style="font-size:16px">f++</mnstr> shell that you can start with either <mono>nsm sh</mono> or <mono>nift sh</mono> (it is the default language for the shell mode). See the <a href="@pathto(docs/REPL)">interactive REPL</a> page for docs.
-				</p>
-
-				<p>
-					The <mnstr style="font-size:16px">f++</mnstr> shell attempts to work as an extension of the shell it is running from, ie. should work almost identically to the shell it is running from while having a number of additional features (and is often faster than the shell it is running from).
 				</p>
 
 				<p>
@@ -106,6 +103,17 @@ nsm run -f++ path/script-name.ext
 nift run -f++ path/script-name.ext
 </pre>
 </div>
+				</p>
+
+				<h4 id="automatic-flashell-startup">
+					Automatic <zapfont style = "font-size:36px;">FLASHELL</zapfont> startup
+				</h4>
+				<p>
+					On Unix based platforms (eg. probably all posix compliant Linux distributions, OSX, FreeBSD, Gentoo etc.), you can create an application launcher with <mono>x-terminal-emulator -e nift sh</mono> as the short-cut command, which will open a terminal session running <zapfont style = "font-size:36px;">FLASHELL</zapfont>. You can start a session of for example bash shell by simply typing <mono>bash</mono> from <zapfont style = "font-size:36px;">FLASHELL</zapfont>, which will also do <mono>lolcat</mono> output through bash if you have <mono>lolcat</mono> activated, however if you start another Nift shell or interpreter the prompt line including user input stays invisible until you hit enter (just enter<mono>exit</mono> if you accidentally do this).
+				</p>
+
+				<p>
+					On Windows one approach is to create a shortcut to <mono>cmd.exe</mono> to the command that is executed when the shortcut is opened (or the powershell executeable if you would prefer) and add <mono>/k nift sh; exit</mono> (I still need to check this sorry and see if we can just create the short-cuts which should work fine).
 				</p>
 
 				<h4 id="f++-from-n++">
