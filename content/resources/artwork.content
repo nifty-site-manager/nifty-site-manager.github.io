@@ -13,6 +13,7 @@
 					<!-- Image -->
 					<center>
 						<img src="@pathtofile(site/images/nift-neofetch.gif)" alt="neofetch lolcat-cc party" style="max-width: 80%; margin-bottom:20px"><br>
+						<img src="@pathtofile(site/images/badger-transparent-ascii.gif)" alt="ascii badger gif" style="max-width: 80%; margin-bottom:20px"><br>
 						<img src="@pathtofile(site/images/blur_edges_cropped.png)" alt="ascii-badger" style="max-width: 80%; margin-bottom:20px"><br>
 						<img src="@pathtofile(site/images/blur_edges.png)" alt="ascii-badger" style="max-width: 80%; margin-bottom:20px"><br>
 						<img src="@pathtofile(site/images/badger-ascii-removebg.png)" alt="ascii-badger" style="max-width: 80%; margin-bottom:20px"><br>
