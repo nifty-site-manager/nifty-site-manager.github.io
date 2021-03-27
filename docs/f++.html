@@ -222,11 +222,11 @@ nift run -f++ path/script-name.ext
 		    					Automatic <zapfont style = "font-size:36px;">FLASHELL</zapfont> startup
 		    				</h4>
 		    				<p>
-		    					On Unix based platforms (eg. probably all posix compliant Linux distributions, OSX, FreeBSD, Gentoo etc.), you can create an application launcher with <mono>x-terminal-emulator -e "nift sh"</mono> or <mono>gnome-terminal -e "nift sh"</mono> as the short-cut command (the former seems to start up better), which will open a terminal session running <zapfont style = "font-size:36px;">FLASHELL</zapfont>. 
+		    					On Unix based platforms (eg. probably all posix compliant Linux distributions, OSX, FreeBSD, Gentoo etc.), you can create an application launcher with <mono>x-terminal-emulator -e nift sh</mono> or <mono>gnome-terminal -- nift sh</mono> as the short-cut command, which will open a terminal session running <zapfont style = "font-size:36px;">FLASHELL</zapfont> and close when <zapfont style = "font-size:36px;">FLASHELL</zapfont> is exited. 
 		    				</p>
 		    
 		    				<p>
-		    					From <mono>gnome-session-flashback</mono> I am able to create an application launcher from the gui by doing <mono>alt</mono> and right click in some free space on the top or bottom panel and selecting <mono>Add to Panel...</mono>. Alternatively create a file titled something like <mono>flash.desktop</mono> below and give exec permissions:
+		    					From <mono>gnome-session-flashback</mono> I am able to create an application launcher from the gui by doing <mono>alt</mono> and right click in some free space on the top or bottom panel and selecting <mono>Add to Panel...</mono>. Alternatively create a file titled something like <mono>Terminal.desktop</mono> below and give exec permissions (calling the application <mono>Terminal</mono> gives a more native feel as it is going to be hijacked and renamed otherwise, you will already get some training there with regards to your chosen icon being hiacked):
 		    <div align="center" style="margin-top:30px; margin-bottom:10px">
 		    <pre class="prettyprint inline">
 #!/usr/bin/env xdg-open
@@ -235,9 +235,9 @@ nift run -f++ path/script-name.ext
 Version=1.0
 Type=Application
 Terminal=true
-Exec=x-terminal-emulator -e "nift sh"
+Exec=x-terminal-emulator -e nift sh
 Name=Terminal
-Comment=flashell
+Comment=flashell shortcut
 Icon=&lt;path-to-icon>
 </pre>
 		    </div>
@@ -252,7 +252,15 @@ Icon=&lt;path-to-icon>
 		    				</p>
 		    
 		    				<p>
-		    					You can start a session of for example bash shell by simply typing <mono>bash</mono> from <zapfont style = "font-size:36px;">FLASHELL</zapfont>, which will also do <mono>lolcat</mono> output through bash if you have <mono>lolcat</mono> activated, however if you start another <mono>Nift</mono> shell or interpreter with <mono>lolcat</mono> activated the prompt line including user input stays invisible until you hit enter (just type <mono>exit</mono> if you accidentally do this).
+		    					If you prefer a more native feel without the icon being hijacked, the default icon used for <mono>gnome-terminal</mono> on <mono>gnome-session-flashback</mono>, at least on <mono>Ubuntu</mono>, is below:
+		    
+		    					<center>
+		    						<img src="../images/terminal-icon.svg" alt="gnome-terminal icon" width="100px" style="max-width:90%;">
+		    					</center>
+		    				</p>
+		    
+		    				<p>
+		    					You can start a session of for example bash shell by simply typing <mono>bash</mono> from <zapfont style = "font-size:36px;">FLASHELL</zapfont>, which will also do <mono>lolcat</mono> output through bash if you have <mono>lolcat</mono> activated (which actually quite surprises me), however if you start another <mono>Nift</mono> shell or interpreter with <mono>lolcat</mono> activated the prompt line including user input stays invisible until you hit enter (just type <mono>exit</mono> if you accidentally do this).
 		    				</p>
 		    
 		    				<p>
