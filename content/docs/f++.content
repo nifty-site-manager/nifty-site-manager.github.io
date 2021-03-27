@@ -109,7 +109,7 @@ nift run -f++ path/script-name.ext
 					Automatic <zapfont style = "font-size:36px;">FLASHELL</zapfont> startup
 				</h4>
 				<p>
-					On Unix based platforms (eg. probably all posix compliant Linux distributions, OSX, FreeBSD, Gentoo etc.), you can create an application launcher with <mono>x-terminal-emulator -e nift sh</mono> as the short-cut command, which will open a terminal session running <zapfont style = "font-size:36px;">FLASHELL</zapfont>. 
+					On Unix based platforms (eg. probably all posix compliant Linux distributions, OSX, FreeBSD, Gentoo etc.), you can create an application launcher with <mono>x-terminal-emulator -e "nift sh"</mono> or <mono>gnome-terminal -e "nift sh"</mono> as the short-cut command (the former seems to start up better), which will open a terminal session running <zapfont style = "font-size:36px;">FLASHELL</zapfont>. 
 				</p>
 
 				<p>
@@ -122,8 +122,8 @@ nift run -f++ path/script-name.ext
 Version=1.0
 Type=Application
 Terminal=true
-Exec=x-terminal-emulator -e nift sh
-Name=flash
+Exec=x-terminal-emulator -e "nift sh"
+Name=Terminal
 Comment=flashell
 Icon=<path-to-icon>
 </pre>
@@ -131,17 +131,15 @@ Icon=<path-to-icon>
 				</p>
 
 				<p>
-					I often find it easier to just use the properties of the file through the desktop or file system to be easier for navigating to the icon. An icon which I tend to use for the above purposes is below (all images below are the same, it is the width they are displayed at being noted): <br>
+					I often find it easier to just use the properties of the file through the gui to acccess the filesystem for linking to the icon file, typically from the desktop. Below is an icon people might like to use with their short-cut(s): <br>
 
 					<center>
-						<img src="@pathtofile(site/images/flash-icon.png)" alt="flash icon" width="25px" style="max-width:90%;"> (25px width) <br>
-						<img src="@pathtofile(site/images/flash-icon.png)" alt="flash icon" width="50px" style="max-width:90%;"> (50px width) <br>
-						<img src="@pathtofile(site/images/flash-icon.png)" alt="flash icon" width="100px" style="max-width:90%;"> (100px width)
+						<img src="@pathtofile(site/images/flash-icon.png)" alt="flash icon" width="100px" style="max-width:90%;">
 					</center>
 				</p>
 
 				<p>
-					You can start a session of for example bash shell by simply typing <mono>bash</mono> from <zapfont style = "font-size:36px;">FLASHELL</zapfont>, which will also do <mono>lolcat</mono> output through bash if you have <mono>lolcat</mono> activated, however if you start another Nift shell or interpreter the prompt line including user input stays invisible until you hit enter (just type <mono>exit</mono> if you accidentally do this).
+					You can start a session of for example bash shell by simply typing <mono>bash</mono> from <zapfont style = "font-size:36px;">FLASHELL</zapfont>, which will also do <mono>lolcat</mono> output through bash if you have <mono>lolcat</mono> activated, however if you start another <mono>Nift</mono> shell or interpreter with <mono>lolcat</mono> activated the prompt line including user input stays invisible until you hit enter (just type <mono>exit</mono> if you accidentally do this).
 				</p>
 
 				<p>
