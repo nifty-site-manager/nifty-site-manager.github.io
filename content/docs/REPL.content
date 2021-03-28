@@ -104,7 +104,7 @@ nift sh -lang
 				</p>
 
 				<p>
-					From version <mono>v2.4.5</mono> you can also name the global and project "run commands" scripts with the language as the extension rather than just the first letter, for example <mono>niftrc.lua</mono> or <mono>interp.exprtk</mono> or <mono>sh.f++</mono>, etc..
+					From version <mono>v2.4.6</mono> you can also name the global and project "run commands" scripts with the language as the extension rather than just the first letter, for example <mono>niftrc.lua</mono> or <mono>interp.exprtk</mono> or <mono>sh.f++</mono>, etc..
 				</p>
 
 				<h4 id="languages">
