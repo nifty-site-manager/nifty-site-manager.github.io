@@ -260,6 +260,7 @@ funcName{options}(params)
 						<li><a href="@pathtofile('site/docs/fns/exprtk.add_variable.html')">exprtk.add_variable</a></li> 
 						<li><a href="@pathtofile('site/docs/fns/exprtk.compile.html')">exprtk.compile</a></li> 
 						<li><a href="@pathtofile('site/docs/fns/exprtk.eval.html')">exprtk.eval</a></li>
+						<li><a href="@pathtofile('site/docs/fns/exprtk.file.html')">exprtk.file</a></li>
 						<li><a href="@pathtofile('site/docs/fns/exprtk.load.html')">exprtk.load</a></li>
 						<li><a href="@pathtofile('site/docs/fns/exprtk.str.html')">exprtk.str</a></li> <br>
 
