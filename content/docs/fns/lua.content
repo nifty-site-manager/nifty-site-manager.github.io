@@ -25,7 +25,7 @@
 					The syntax for <mono>lua</mono> calls is:
 <div align="center" style="margin-top:-15px; margin-bottom:70px">
 <mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-lua" style="margin-bottom:-60px">
-lua{options}(--[[ line of Lua code ]]--)
+lua{options}(file-path)
 lua{options}
 {
 	-- block of Lua code
@@ -33,7 +33,7 @@ lua{options}
 </div><br>
 <div align="center" style="margin-top:-15px; margin-bottom:70px">
 <mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-lua" style="margin-bottom:-60px">
-\@lua{options}(--[[ line of Lua code ]]--)
+\@lua{options}(file-path)
 \@lua{options}
 {
 	-- block of Lua code
@@ -45,7 +45,7 @@ lua{options}
 					Description
 				</h4>
 				<p>
-					The <mono>lua</mono> function is for running <mono>Lua</mono> code, it takes zero parameters with the call followed by a block of <mono>Lua</mono> code otherwise a single parameter that should be the code to run. See <a href="@pathtopage(docs/lua)">here</a> for more information about <mono>Lua</mono>.
+					The <mono>lua</mono> function is for running <mono>Lua</mono> code, it takes zero parameters with the call followed by a block of <mono>Lua</mono> code otherwise a single parameter that should be a file-path to <mono>Lua</mono> code to run. See <a href="@pathtopage(docs/lua)">here</a> for more information about <mono>Lua</mono>.
 				</p>
 
 				<h4 id="options">

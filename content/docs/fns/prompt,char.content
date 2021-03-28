@@ -1,0 +1,74 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">fn: <mono>prompt.char</mono></div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<div class="content">
+				<a href="#contents" class="to_top">[contents]</a>
+
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#syntax">Syntax</a></li>
+					<li><a href="#description">Description</a></li>
+					<li><a href="#f++-eg">f++ example</a></li>
+					<li><a href="#n++-eg">n++ example</a></li>
+				</ul>
+
+				<h4 id="syntax">
+					Syntax
+				</h4>
+				<p>
+					The syntax for <mono>prompt.char</mono> calls is:
+<div align="center" style="margin-top:-15px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+prompt.char(char)
+</pre>
+</div><br>
+<div align="center">
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+\@prompt.char(char)
+</pre>
+</div>
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+				<p>
+					The <mono>prompt.char</mono> function is for changing the trailing character for the prompt for REPL's in both <mono>interp</mono> and <mono>sh</mono> modes, it takes a single <mono>char</mono> parameter specifying the character to use. For example the lightning emoji ⚡ can be a fun choice for <zapfont style = "font-size:36px;">FLASHELL</zapfont>
+				</p>
+
+				<p>
+					If you want you can set up a global <a href="@pathto('docs/REPL')#rc">"run commands" script</a> to change the prompt when starting a shell or intepreter mode REPL session.
+				</p>
+
+				<h4 id="f++-eg">
+					f++ example
+				</h4>
+				<p>
+					Example of <mono>prompt.char</mono> being used with <mono>f++</mono>:					
+
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline linenums lang-nift">
+prompt.char('⚡')</pre>
+</div>
+				</p>
+
+				<h4 id="n++-eg">
+					n++ example
+				</h4>
+				<p>
+					Example of <mono>prompt.char</mono> being used with <mono>n++</mono>:					
+
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline linenums lang-nift">
+\@prompt.char('⚡')</pre>
+</div>
+				</p>
+			</div>
+		</section>
+	</div>
+</section>

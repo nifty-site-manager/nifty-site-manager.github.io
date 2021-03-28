@@ -27,6 +27,7 @@
 <mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-70px">
 \$`expression`
 exprtk{options}(expression)
+exprtk{f, options}(file-path)
 exprtk{options}
 {
 	//block of ExprTk code
@@ -37,6 +38,7 @@ exprtk{options}
 <mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-70px">
 \$`expression`
 \@exprtk{options}(expression)
+\@exprtk{f, options}(file-path)
 \@exprtk{options}
 {
 	//block of ExprTk code
@@ -49,7 +51,7 @@ exprtk{options}
 					Description
 				</h4>
 				<p>
-					The <mono>exprtk</mono> function is for <u>compiling and evaluating <mono>ExprTk</mono> expressions</u>, it takes zero parameters with the call followed by a block of <mono>ExprTk</mono> code to compile and evaluate otherwise a single parameter that should be the expression to be compiled and evaluated. See <a href="@pathtopage(docs/exprtk)">here</a> for more information about <mono>ExprTk</mono>.
+					The <mono>exprtk</mono> function is for <u>compiling and evaluating <mono>ExprTk</mono> expressions</u>, it takes zero parameters with the call followed by a block of <mono>ExprTk</mono> code to compile and evaluate otherwise a single parameter that should be a file-path to <mono>ExprTk</mono> code to compile and run (you need to specify the option to use a file). See <a href="@pathtopage(docs/exprtk)">here</a> for more information about <mono>ExprTk</mono>.
 				</p>
 
 				<p>
@@ -70,6 +72,10 @@ exprtk{options}
 									<th>description</th>
 								</tr>
 							</thead>
+							<tr>
+								<td><mono>f/file</mono></td>
+								<td>param specifies file-path</td>
+							</tr>
 							<tr>
 								<td><mono>f++</mono></td>
 								<td>use <mono>f++</mono> if parsing block</td>
@@ -113,7 +119,12 @@ exprtk{options}
 <div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline linenums">
 \$`var x:=0; nsm_write(console, x, endl)`
-exprtk(var x:=0; nsm_write(console, x, endl))
+exprtk
+{
+	var x:=0; 
+	nsm_write(console, x, endl);
+}
+exprtk("./path.exptk")
 exprtk.add_package(basicio_package)
 exprtk
 {
@@ -136,7 +147,12 @@ console(x)</pre>
 <div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline linenums">
 \$`var x:=0; nsm_write(console, x, endl)`
-\@exprtk(var x:=0; nsm_write(console, x, endl))
+\@exprtk
+{
+	var x:=0; 
+	nsm_write(console, x, endl);
+}
+\@exprtk("./path.exprtk")
 \@exprtk.add_package(basicio_package)
 \@exprtk
 {

@@ -335,6 +335,7 @@ funcName{options}(params)
 						<li><a href="@pathtopage(docs/fns/poke)">poke</a></li>
 						<li><a href="@pathtopage(docs/fns/precision)">precision</a></li>
 						<li><a href="@pathtopage(docs/fns/private)">private</a></li>
+						<li><a href="@pathtofile(site/docs/fns/prompt.char.html)">lolcat.cmd</a></li>
 						<li><a href="@pathtopage(docs/fns/pwd)">pwd</a></li> <br>
 
 						<li id="q"><a href="@pathtopage(docs/fns/quit)">quit</a></li>

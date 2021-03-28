@@ -27,6 +27,7 @@
 					<ul>
 						<li><a href="#interpreter">Interpreter mode</a></li>
 						<li><a href="#shell">Shell mode</a></li>
+						<li><a href="#rc">RC Scripts</a></li>
 						<li><a href="#languages">Languages</a></li>
 						<li><a href="#multi-line-input">Multi-line input</a></li>
 						<li><a href="#shortcuts">Shortcuts</a></li>
@@ -89,6 +90,17 @@ nift sh -lang
 
 				<p>
 					In the <mono>shell</mono> mode the prompt will tell you which language you are using and the present working directory (up to using half the width of the console). If you would like the prompt to just display the language you can switch to interpreter mode using <mono>nsm_mode("interp")</mono>. You can switch back again with <mono>nsm_mode("sh")</mono>.
+				</p>
+
+				<h4 id="rc">
+					RC Scripts
+				</h4>
+				<p>
+					You should have a global script titled along the lines of <mono>niftrc.f</mono> in the same directory as your global config file (try opening up a shell or interpreter from outside any Nift projects to find the location of the global config file), the file is empty by default.
+				</p>
+
+				<p>
+					Alternatively, you can do project specific "run commands" scripts for the language being used following the naming structure <mono>[interp/sh].langChar</mono>, eg. <mono>sh.f</mono> and <mono>interp.l</mono>.
 				</p>
 
 
