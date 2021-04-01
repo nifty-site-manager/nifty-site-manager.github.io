@@ -96,7 +96,7 @@ nift sh -lang
 					RC Scripts
 				</h4>
 				<p>
-					You should have a global script titled along the lines of <mono>niftrc.f</mono> in the same directory as your global config file (try opening up a shell or interpreter from outside any Nift projects to find the location of the global config file), the file is empty by default.
+					You can have a global script titled similar to <mono>niftrc.f</mono> but for the exec name you use in the same directory as your global config file (try opening up a shell or interpreter from outside any Nift projects to find the location of the global config file).
 				</p>
 
 				<p>
@@ -104,7 +104,7 @@ nift sh -lang
 				</p>
 
 				<p>
-					From version <mono>v2.4.6</mono> you can also name the global and project "run commands" scripts with the language as the extension rather than just the first letter, for example <mono>niftrc.lua</mono> or <mono>interp.exprtk</mono> or <mono>sh.f++</mono>, etc..
+					You can also name the global and project "run commands" scripts with the language as the extension rather than just the first letter, for example <mono>niftrc.lua</mono> or <mono>interp.exprtk</mono> or <mono>sh.f++</mono>, etc..
 				</p>
 
 				<h4 id="languages">
