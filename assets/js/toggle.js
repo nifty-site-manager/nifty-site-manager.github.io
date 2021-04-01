@@ -91,6 +91,11 @@ function toggle_light_dark()
       document.getElementById("cloudflare-logo").src = "../images/cloudflare-dark.svg";
   }
 
+  if(document.getElementById("footer-mascot") && (new Date().getSeconds())%2)
+  {
+    document.getElementById("footer-mascot").src = "../images/jack-jumper-text.svg";
+  }
+
   if(document.getElementById("gh-logo"))
   {
     if(dark_mode == 1)
@@ -174,16 +179,19 @@ function toggle_light_dark()
   }
 }
 
-var touched = 0;
-function toggle_ween()
+function animate_ween()
 {
-  if(document.getElementById("nift101ween"))
+  //if(document.getElementById("nift101ween"))
   {
-    touched = (touched+1)%2;
-    if(!touched)
-      document.getElementById("nift101ween").src = "../images/NIFT-101!Ween.png";
-    else
-      document.getElementById("nift101ween").src = "../images/NIFT-101ween.gif";
+    document.getElementById("nift101ween").src = "../images/NIFT-101ween.gif";
+  }
+}
+
+function static_ween()
+{
+  //if(document.getElementById("nift101ween"))
+  {
+    document.getElementById("nift101ween").src = "../images/NIFT-101!Ween.png";
     
   }
 }
