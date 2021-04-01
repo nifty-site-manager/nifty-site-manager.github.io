@@ -161,6 +161,7 @@
 		    						<li><a href="#scripts">Running f++ scripts</a></li>
 		    						<li><a href="#f++-from-n++">f++ from n++</a></li>
 		    						<li><a href="#nift-fns">functions</a></li>
+		    						<li><a href="#examples">examples</a></li>
 		    					</ul>
 		    				</div>
 		    
@@ -216,6 +217,19 @@ nsm run -f++ path/script-name.ext
 nift run -f++ path/script-name.ext
 </pre>
 		    </div>
+		    				</p>
+		    
+		    				<p>
+		    					If you want to run a normal file, eg. <mono>script.f</mono>, as a script then use something typical like the following as a shebang:
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline">
+#!/usr/bin/env nift
+</pre>
+		    </div>
+		    				</p>
+		    
+		    				<p>
+		    					There's information about "run commands" scripts, eg. <mono>niftrc.f</mono> available on the <a href="REPL.html#rc">REPL</a> page.
 		    				</p>
 		    
 		    				<h4 id="automatic-flashell-startup">
@@ -306,6 +320,39 @@ Icon=&lt;path-to-icon>
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline lang-nift">
 funcName{options}(params)
+</pre>
+		    </div>
+		    				</p>
+		    
+		    				<h4 id="examples">
+		    					Examples
+		    				</h4>
+		    				<p>
+		    					The following script will create and delete 100k files on your machine:
+		    <div align="center" style="margin-bottom:10px">
+		    <pre class="prettyprint inline lang-nift">
+#!/usr/bin/env nift
+string params = "file0.txt";
+ 
+for(int i=1; i&lt;100000; i+=1) 
+    $`params += ', file$[i].txt'`;
+ 
+poke($[params]);
+rmv($[params]);
+</pre>
+		    </div>
+		    
+		    					<b>Note:</b> do not leave the directory you are running the script from open on your machine, run it from a terminal. The following bash script will do the same but much slower, feel free to provide a similar windows script in powershell or a batch file:
+		    <div align="center" style="margin-top:30px; margin-bottom:10px">
+		    <pre class="prettyprint inline">
+#!/usr/bin/env bash
+COUNTER=0
+while [  $COUNTER -lt 100000 ]; do
+    let COUNTER=COUNTER+1 
+ 
+    touch file${COUNTER}.txt
+    rm file${COUNTER}.txt
+done
 </pre>
 		    </div>
 		    				</p><br><br><br><br><br>
