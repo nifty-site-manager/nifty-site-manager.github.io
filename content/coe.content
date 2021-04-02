@@ -51,9 +51,9 @@
 						<img src="@pathtofile(site/images/clown-facepaint.png)" alt="klown" height="200px" style="margin-bottom:40px">
 						<img src="@pathtofile(site/images/used-mask.png)" alt="anti-abuse used mask" height="180px" style="margin-bottom:40px"> 
 						<img src="@pathtofile(site/images/green-haired-skull.png)" alt="green-haired skill" height="200px" style="margin-bottom:40px">
+						<img src="@pathtofile(site/images/reaper-orig.png)" alt="reaper cooee mascot" height="225px" style="margin-bottom:10px">
 						<img src="@pathtofile(site/images/hockey-mask.png)" alt="anti-abuse hockey mask" height="150px" style="margin-bottom:40px">
-						<img src="@pathtofile(site/images/reaper-orig.png)" alt="reaper cooee mascot" height="150px" style="margin-bottom:40px">
-						<img src="@pathtofile(site/images/pirate.png)" alt="anti-abuse-pirate" height="200px" style="margin-bottom:40px">
+						<img src="@pathtofile(site/images/pirate.png)" alt="anti-abuse-pirate" height="200px" style="margin-bottom:10px">
 					</noselect>
 				</center>
 			</div>
