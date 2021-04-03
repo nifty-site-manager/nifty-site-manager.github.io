@@ -94,6 +94,7 @@ function toggle_light_dark()
   if(document.getElementById("footer-mascot") && (new Date().getSeconds())%2)
   {
     document.getElementById("footer-mascot").src = "../images/jack-jumper-text.svg";
+    document.getElementById("footer-mascot").alt = "Nift jack jumper mascot";
   }
 
   if(document.getElementById("gh-logo"))
