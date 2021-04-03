@@ -215,6 +215,10 @@ funcName{options}(params)
 					Examples
 				</h4>
 				<p>
+					There are some basic solutions to Project Euler problems available <a href="https://github.com/nifty-site-manager/project-euler">here</a>.
+				</p>
+
+				<p>
 					The following script will create and delete 100k files on your machine:
 <div align="center" style="margin-bottom:10px">
 <pre class="prettyprint inline lang-nift">
