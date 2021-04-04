@@ -64,7 +64,10 @@
 					<ul>
 						<li><a href="https://developers.cloudflare.com/workers/sites/">CloudFlare</a></li>
 						<li><a href="https://aws.amazon.com/amplify/console/">Amazon Amplify Console</a></li>
+						<li><a href="https://support.atlassian.com/bitbucket-cloud/docs/publishing-a-website-on-bitbucket-cloud/">BitBucket</a></li>
 						<li><a href="https://fleek.co/">Fleek</a></li>
+						<li><a href="https://pages.github.com/">GitHub</a></li>
+						<li><a href="https://docs.gitlab.com/ee/user/project/pages/">GitLab</a></li>
 						<li><a href="https://firebase.google.com/">Google FireBase</a></li>
 						<li><a href="https://netlify.com">Netlify</a></li>
 						<li><a href="https://surge.sh/">surge.sh</a></li>
