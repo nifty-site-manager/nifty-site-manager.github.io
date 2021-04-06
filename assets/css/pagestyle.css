@@ -42,6 +42,12 @@ noselect, br
 	src: url("../webfonts/AgainstMyself-OA38.ttf") format("truetype");
 }
 
+@font-face 
+{
+	font-family:"brutalworld";
+	src: url("../webfonts/Brutalworld-owxEa.ttf") format("truetype");
+}
+
 mnstr
 {
 	font-family:"monsterz";
@@ -58,6 +64,26 @@ overthehedge
 {
 	font-family:"overfont";
 	color: #918f89;
+}
+
+brutal
+{
+	font-family:"brutalworld";
+	color: #4CAF50 !important;
+	text-decoration: none !important;
+}
+
+a.brutal
+{
+	font-family:"brutalworld";
+	color: #4CAF50 !important;
+	text-decoration: none !important;
+}
+
+a.brutal:hover
+{
+	font-size: larger;
+	color: #09ed11 !important;
 }
 
 zoomzoom
