@@ -19,7 +19,7 @@
 
 				<!-- Image -->
 				<center>
-					<a href="@pathtofile(site/images/laptop-nift.png)"><img src="@pathtofile(site/images/laptop-nift.png)" alt="Nift console screenshot" width="600px" style="max-width:90%; border-radius:20px; margin-bottom: 60px"></a>
+					<img src="@pathtofile(site/images/laptop-nift.png)" alt="Nift console screenshot" width="600px" style="max-width:90%; border-radius:20px; margin-bottom: 60px">
 				</center>
 
 				<h4 id="syntax">
@@ -75,6 +75,10 @@ lolcat.cmd</pre>
 \@console.cmd</pre>
 </div>
 				</p>
+
+				<center>
+					<img src="@pathtofile(site/images/lolcat-cc.png)" alt="lolcat-cc mascot" width="400px">
+				</center>
 			</div>
 		</section>
 	</div>
