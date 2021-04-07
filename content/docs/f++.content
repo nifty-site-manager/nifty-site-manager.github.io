@@ -232,7 +232,31 @@ poke(\$[params]);
 rmv(\$[params]);
 </pre>
 </div>
+				</p>
 
+				<p>
+					The following script uses more <mono>ExprTk</mono> than above and runs faster:
+<div align="center" style="margin-bottom:10px">
+<pre class="prettyprint inline lang-nift">
+#!/usr/bin/env nift
+string params = "file0.txt";
+int i;
+
+exprtk
+{
+	for(i:=1; i<100000; i+=1) 
+	{
+	    params += ', file' + nsm_tostring('i') + '.txt';
+	}
+}
+ 
+poke(\$[params]);
+rmv(\$[params]);
+</pre>
+</div>
+				</p>
+
+				<p>
 					<b>Note:</b> do not leave the directory you are running the script from open on your machine, run it from a terminal. The following bash script will do the same but much slower, feel free to provide a similar windows script in powershell or a batch file:
 <div align="center" style="margin-top:30px; margin-bottom:10px">
 <pre class="prettyprint inline">
