@@ -11,7 +11,7 @@
 			<!-- Image -->
 			<center>
 				<#-- https://icon-library.com/png/921451.html --#>
-				<img src="@pathtofile(site/images/jack-jumper-text.png)" alt="Functionstein jack jumper mascot" width="350px" style="max-width:90%; margin-left:-60px; border-radius:20px; margin-bottom: 60px">
+				<img src="@pathtofile(site/images/jack-jumper-text.svg)" alt="Functionstein jack jumper mascot" width="350px" style="max-width:90%; margin-left:-60px; border-radius:20px; margin-bottom: 60px">
 			</center>
 
 			<div class="content">
