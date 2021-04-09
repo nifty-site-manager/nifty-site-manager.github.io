@@ -270,12 +270,12 @@ struct(vector)
 		console($[params.name].str())
 
 	function{pb, !s}($[params.name].push_back)
-		"@types.at(0)" $[params.name][$[$[params.name].size]](params.at(0))
+		"@types.at(0)" $[params.name][\$[$[params.name].size]](params.at(0))
 		++($[params.name].size)
 
 	function{pb}($[params.name].pop_back)
 		--($[params.name].size)
-		forget($[params.name][$[$[params.name].size]])
+		forget($[params.name][\$[$[params.name].size]])
 			
 
 vector&lt;int> v(5, 4);
