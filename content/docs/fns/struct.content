@@ -144,25 +144,24 @@ struct(vector)
 	if(params.size() != 2)
 		error("vector: expected 2 parameters, got ", params.size())
 
-	int $[params.name].size = params.at(0)
+	int \$[params.name].size = params.at(0)
 
-	for{!s}(int i=0; i<$[params.name].size; i+=1; forget(i))
-		"types.at(0)" $[params.name][$[i]](params.at(1))
+	for{!s}(int i=0; i<\$[params.name].size; i+=1; forget(i))
+		"types.at(0)" \$[params.name][\$[i]](params.at(1))
 
-	function{pb}($[params.name].str)
-		join($[params.name], " ")
+	function{pb}(\$[params.name].str)
+		join(\$[params.name], " ")
 
-	function{pb}($[params.name].print)
-		console($[params.name].str())
-		//console(join($[params.name], " "))
+	function{pb}(\$[params.name].print)
+		console(\$[params.name].str())
 
-	function{pb, !s}($[params.name].push_back)
-		"@types.at(0)" $[params.name][$[$[params.name].size]](params.at(0))
-		++($[params.name].size)
+	function{pb, !s}(\$[params.name].push_back)
+		"\@types.at(0)" \$[params.name][\$[\$[params.name].size]](params.at(0))
+		++(\$[params.name].size)
 
-	function{pb}($[params.name].pop_back)
-		--($[params.name].size)
-		forget($[params.name][$[$[params.name].size]])
+	function{pb}(\$[params.name].pop_back)
+		--(\$[params.name].size)
+		forget(\$[params.name][\$[\$[params.name].size]])
 			
 
 vector<int> v(5, 4);
