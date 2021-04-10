@@ -186,6 +186,12 @@ funcName{options}(params)
 					</center>
 				</p>
 
+				<center>
+					<img src="@pathtofile(site/images/mask.png)" alt="hockey mask" height=225 style="margin-bottom:40px">
+					<img src="@pathtofile(site/images/wolf-trip.png)" alt="hockey mask" height=250 style="margin-bottom:40px">
+					<img src="@pathtofile(site/images/devil-tongue.png)" alt="hockey mask" height=275 style="margin-bottom:20px; margin-left:-30px">
+				</center>
+
 				<a href="#index" class="to_top">[index]</a>
 				<h4 id="index">Index</h4>
 				<p id="index">
@@ -378,9 +384,11 @@ funcName{options}(params)
 						<li><a href="@pathtopage(docs/fns/write)">write</a></li>
 					</ul>
 
-					<div style="display: inline-block; align: right">
-						<img src="@pathtofile(site/images/mask.png)" alt="hockey mask" width=200 style="margin-bottom:40px">
-					</div>
+					<center>
+						<img src="@pathtofile(site/images/skweed.png)" alt="hockey mask" height=250 style="margin-bottom:40px">
+						<img src="@pathtofile(site/images/baseball.png)" alt="hockey mask" height=200 style="margin-bottom:40px">
+						<img src="@pathtofile(site/images/cannonymous.png)" alt="hockey mask" height=250 style="margin-bottom:40px">
+					</center>
 				</div>
 			</div>
 		</section>
