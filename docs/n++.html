@@ -8,9 +8,13 @@
 
 <html lang="en">
     <head>
-        <title>Nift</title>
+        <title>Nift - n++</title>
         <meta charset="utf-8">
-        <meta name="description" content="Nift is the world's fastest framework for managing and generating websites. It's cross-platform, open source, lightning fast, developed from the ground up in C++, and released for free under the MIT license - use it for any of your personal or commercial projects">
+        <meta name="description" content="Nift is the world's fastest framework for 
+                    managing and generating websites. It's cross-platform, opensource, 
+                    lightning fast, developed from the ground up in C++, and released 
+                    for free under the MIT license - use it for any of your personal 
+                    or commercial projects">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../assets/css/main.css">
         <link rel="stylesheet" href="../assets/css/pagestyle.css">
@@ -34,13 +38,10 @@
 					<p style="margin-bottom:0px">
 						<a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; 
 						<a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a> &nbsp; 
-						<a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a> <!--&nbsp; 
-						<a href="https://nift.teemill.com/" title="TeeMill" class="teemill"><i class="fas fa-tshirt fa-2x"></i></a> &nbsp;
-						<a href="https://teespring.com/stores/nift-3" title="TeeSpring" class="teespring"><i class="fas fa-tshirt fa-2x"></i></a>-->
-					</p>
+						<a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a> &nbsp; 
+						<a href="https://nift.teemill.com/" title="TeeMill" class="teemill"><i class="fas fa-tshirt fa-2x"></i></a> </p>
 					<p style="margin-top:10px">
-						
-						
+						<a href="https://github.com/nifty-site-manager/nsm/discussions" title="GitHub Discussions" class="gh"><i class="fas fa-comment-dots fa-2x"></i></a> &nbsp;
 						<a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a> &nbsp; 
 						<a href="https://old.reddit.com/r/nift" title="Reddit" class="reddit"><i class="fab fa-reddit-square fa-2x"></i></a> &nbsp; 
 						<a href="https://twitter.com/nifty_site_man" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a>
@@ -70,6 +71,7 @@
 									<li><a href="installing.html">Installing</a></li>
 									<li><a href="hosting.html">Hosting</a></li>
 									<li><a href="commands.html">Commands</a></li>
+									<li><a href="config.html">Config</a></li>
 									<li><a href="template_files.html">Template Files</a></li>
 									<li><a href="fns.html">Functions</a></li>
 									<li><a href="types.html">Types</a></li>
@@ -77,7 +79,7 @@
 									<li><a href="n++.html">n++ (templates)</a></li>
 									<li><a href="lua.html">Lua(JIT)</a></li>
 									<li><a href="exprtk.html">ExprTk</a></li>
-									<li><a href="interactive.html">Interactive REPL</a></li>
+									<li><a href="REPL.html">Interactive REPL</a></li>
 									<li><a href="scripts.html">Scripts</a></li>
 									<li><a href="template_languages.html">Template Languages</a></li>
 									<li><a href="JSON.html">JSON Data</a></li>
@@ -86,7 +88,7 @@
 									<li><a href="mathematics.html">Mathematics</a></li>
 									<li><a href="code_blocks.html">Code Blocks</a></li>
 									<li><a href="presentations.html">Presentations</a></li>
-									</ul>
+								</ul>
 							</li>
 							<li>
 								<a href="">Resources</a>
@@ -95,6 +97,7 @@
 									<li><a href="../resources/templates.html">Templates</a></li>
 									<li><a href="../resources/blog_templates.html">Blog Templates</a></li>
 									<li><a href="../resources/css_frameworks.html">CSS Frameworks</a></li>
+									<li><a href="../resources/examples.html">Examples</a></li>
 									<li><a href="../resources/js_frameworks.html">JS Frameworks</a></li>
 									<li><a href="../resources/links.html">Links</a></li>
 									<li><a href="../resources/logos.html">Logos</a></li>
@@ -110,22 +113,32 @@
 
 		    <!-- Main -->
 		    <section id="main" class="wrapper style2">
-		    	<div class="title">n++</div>
+		    	<div class="title"><mnstr style="font-size:16px">N++</mnstr></div>
 		    	<div class="container">
 		    		<!-- Features -->
 		    		<section id="features">
 		    			<header class="style1">
-		    				<h2>Nift's in-built template language <mono>n++</mono></h2>
+		    				<h2 style="margin-bottom: 100px">
+		    					Nift's in-built template language
+		    				</h2>
+		    
+		    				<noselect>
+		    					<h2>
+		    						<mnstr style = "font-size:9vw;">TEMPLATESTEIN</mnstr>
+		    					</h2>
+		    				</noselect>
 		    			</header>
 		    
 		    			<!-- Image -->
 		    			<center>
-		    				<img src="../images/banner-planet-palms.png" alt="Nift planet palms banner" width="500px" style="max-width:90%; border-radius:20px; margin-bottom: 60px">
+		    				
+		    
+		    				<img src="../images/koala.svg" alt="templatesteign koala mascot" width=350 style="margin-bottom:40px">
 		    			</center>
 		    
 		    			<div class="content">
 		    				<p>
-		    					Nift has its own in-built template language <mono>n++</mono>. The <mono>n</mono> comes from <mono>Nift</mono>/<mono>nsm</mono>, while the <mono>++</mono> comes from the language being developed in c++. 
+		    					Nift has its own in-built template language <mnstr style="font-size:16px">TEMPLATESTEIN</mnstr>, or just <mnstr style="font-size:16px">N++</mnstr>. The <mono>n</mono> comes from <mono>Nift</mono> (a.k.a <mono>nsm</mono>), while the <mono>++</mono> comes from the language being developed in <mono>c++</mono>. 
 		    				</p>
 		    
 		    				<a href="#contents" class="to_top">[contents]</a>
@@ -140,14 +153,15 @@
 		    						<li><a href="#scripts">Running n++ scripts</a></li>
 		    						<li><a href="#n++-from-f++">n++ from f++</a></li>
 		    						<li><a href="#nift-fns">functions</a></li>
+		    						<li><a href="#examples">examples</a></li>
 		    					</ul>
 		    				</div>
 		    
 		    				<h4 id="interpreter">
-		    					n++ interpreter
+		    					<mnstr style="font-size:16px">N++</mnstr> interpreter
 		    				</h4>
 		    				<p>
-		    					<mono>Nift</mono> has an <mono>n++</mono> interpreter that you can start with either <mono>nsm interp -n++</mono> or <mono>nift interp -n++</mono>.
+		    					<mono>Nift</mono> has an <mnstr style="font-size:16px">N++</mnstr> interpreter that you can start with either <mono>nsm interp -n++</mono> or <mono>nift interp -n++</mono>. See the <a href="REPL.html">interactive REPL</a> page for docs.
 		    				</p>
 		    
 		    				<p>
@@ -155,14 +169,14 @@
 		    				</p>
 		    
 		    				<p>
-		    					You can switch to one of the other languages available in Nift's interpreter using <mono>nsm_lang(langStr)</mono> where <mono>langStr</mono> is one of <mono>f++</mono>, <mono>n++</mono>, <mono>lua</mono> or <mono>exprtk</mono>.
+		    					You can switch to one of the other languages available in Nift's interpreter using <mono>nsm_lang(langStr)</mono> where <mono>langStr</mono> is one of <mono>f++</mono>, <mnstr style="font-size:16px">N++</mnstr>, <mono>lua</mono> or <mono>exprtk</mono>.
 		    				</p>
 		    
 		    				<h4 id="shell">
-		    					n++ shell
+		    					<mnstr style="font-size:16px">N++</mnstr> shell
 		    				</h4>
 		    				<p>
-		    					<mono>Nift</mono> has an <mono>n++</mono> shell that you can start with either <mono>nsm sh -n++</mono> or <mono>nift sh -n++</mono>.
+		    					<mono>Nift</mono> has an <mnstr style="font-size:16px">N++</mnstr> shell that you can start with either <mono>nsm sh -n++</mono> or <mono>nift sh -n++</mono>. See the <a href="REPL.html">interactive REPL</a> page for docs.
 		    				</p>
 		    
 		    				<p>
@@ -170,7 +184,7 @@
 		    				</p>
 		    
 		    				<p>
-		    					You can switch to one of the other languages available in Nift using <mono>nsm_lang(langStr)</mono> where <mono>langStr</mono> is one of <mono>f++</mono>, <mono>n++</mono>, <mono>lua</mono> or <mono>exprtk</mono>.
+		    					You can switch to one of the other languages available in Nift using <mono>nsm_lang(langStr)</mono> where <mono>langStr</mono> is one of <mono>f++</mono>, <mnstr style="font-size:16px">N++</mnstr>, <mono>lua</mono> or <mono>exprtk</mono>.
 		    				</p>
 		    
 		    
@@ -178,7 +192,7 @@
 		    					Running n++ scripts
 		    				</h4>
 		    				<p>
-		    					If you have an <mono>n++</mono> script saved in a file <mono>path/script-name.n</mono> you can run it with either of the following:
+		    					If you have an <mnstr style="font-size:16px">N++</mnstr> script saved in a file <mono>path/script-name.n</mono> you can run it with either of the following:
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline">
 nsm run path/script-name.n
@@ -197,11 +211,24 @@ nift run -n++ path/script-name.ext
 		    </div>
 		    				</p>
 		    
+		    				<p>
+		    					If you want to run a normal file, eg. <mono>script.n</mono>, as a script then use something typical like the following as a shebang:
+		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
+		    <pre class="prettyprint inline">
+#!/usr/bin/env nift
+</pre>
+		    </div>
+		    				</p>
+		    
+		    				<p>
+		    					There's information about "run commands" scripts, eg. <mono>niftrc.f</mono> available on the <a href="REPL.html#rc">REPL</a> page.
+		    				</p>
+		    
 		    				<h4 id="n++-from-f++">
 		    					n++ from f++
 		    				</h4>
 		    				<p>
-		    					You can run <mono>n++</mono> code from <mono>f++</mono> using either of the following:					
+		    					You can run <mnstr style="font-size:16px">N++</mnstr> code from <mono>f++</mono> using either of the following:					
 		    
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline">
@@ -225,7 +252,7 @@ n++
 		    					Nift functions
 		    				</h4>
 		    				<p>
-		    					All of Nift's <a href="fns.html">hard-coded functions</a> (including functions for defining variables, functions and structs) are available in your <mono>n++</mono> code. The syntax for calling a function is as follows:
+		    					All of Nift's <a href="fns.html">hard-coded functions</a> (including functions for defining variables, functions and structs) are available in your <mnstr style="font-size:16px">N++</mnstr> code. The syntax for calling a function is as follows:
 		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
 		    <pre class="prettyprint inline">
 @funcName{options}(params)
@@ -233,9 +260,44 @@ n++
 		    </div>
 		    				</p>
 		    
+		    				<h4 id="examples">
+		    					Examples
+		    				</h4>
 		    				<p>
-		    					<b>Note:</b> One of the main differences between <mono>f++</mono> and <mono>n++</mono> are that function calls in <mono>n++</mono> <u>must</u> start with an <mono>@</mono> in front of the function name. However it is okay for there to be an <mono>@</mono> in front of the function name for a function call in <mono>f++</mono>. Consequently quite often valid <mono>n++</mono> code is valid <mono>f++</mono> code, which among other things allows us to conveniently use <mono>f++</mono> for things like <mono>n++</mono> if/else-if/else/while/for/etc. conditions and if the developer accidentally uses <mono>n++</mono> for the condition it will most often run without any syntax or semantic errors. 
-		    				</p>
+		    					The following script will create and delete 100k files on your machine:
+		    <div align="center" style="margin-bottom:10px">
+		    <pre class="prettyprint inline lang-nift">
+#!/usr/bin/env nift
+@string(params = "file0.txt");
+ 
+@for(int i=1; i&lt;100000; i+=1) 
+    $`params += ', file$[i].txt'`;
+ 
+@poke($[params]);
+@rmv($[params]);
+</pre>
+		    </div>
+		    
+		    					<b>Note:</b> do not leave the directory you are running the script from open on your machine, run it from a terminal/command prompt. The following bash script will do the same but much slower, feel free to provide a similar windows script in powershell or a batch file:
+		    <div align="center" style="margin-top:30px; margin-bottom:10px">
+		    <pre class="prettyprint inline">
+#!/usr/bin/env bash
+COUNTER=0
+while [  $COUNTER -lt 100000 ]; do
+    let COUNTER=COUNTER+1 
+ 
+    touch file${COUNTER}.txt
+    rm file${COUNTER}.txt
+done
+</pre>
+		    </div>
+		    				</p><br><br><br><br><br>
+		    
+		    				<center>
+		    					<div>
+		    						<noselect><mnstr style = "font-size:20vw">{</mnstr></noselect>
+		    					</div>
+		    				</center>
 		    			</div>
 		    		</section>
 		    	</div>
@@ -256,15 +318,21 @@ n++
 								<li><a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a></li>
 								<li><a href="https://nifty-site-manager.github.io/">GitHub</a></li>
 								<li><a href="https://nifty-site-manager.gitlab.io/">GitLab</a></li>
+								<li><a href="https://nift.netlify.app/">Netlify</a></li>
 								<li><a href="https://nift.now.sh/">Vercel</a></li>
 							</ul> <br>
 			
-							<center><img src="../images/badger.png" alt="Nift badger mascot" width="325" style="max-width:90%; margin-bottom:20px"></center>
+							<center><img id="footer-mascot" src="../images/badger.png" alt="Nift badger mascot" width="325" style="max-width:90%; margin-bottom:20px"></center>
 			
 							<ul>
-								<li>&copy;&nbsp;<span name="cyear"></span> <a href="https://nift.cc">Nift</a></li>
+								<li>&copy;&nbsp;2015-<span name="cyear"></span> <a href="https://nift.cc">Nift</a></li>
 								<li><a href="../tos.html">Terms of Service</a></li>
 								<li><a href="../privacy_policy.html">Privacy Policy</a></li>
+							</ul> <br>
+			
+							<ul>
+								<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
+								<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
 								<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
 							</ul> <br>
 						
@@ -273,7 +341,11 @@ n++
 								<span class="slider round" onclick="toggle_light_dark()" id="slider_light_dark"></span>
 							</label> &nbsp; <b id="light_dark_RHS" style="color: white !important">dark</b> <br><br>
 			
-							</noselect>
+							<ul>
+								<li>Creator & Developer:</li>
+								<li><a href="https://n-ham.com">Nicholas Ham</a></li>
+							</ul><br>
+						</noselect>
 					</div>
 				</div>
 			</section>

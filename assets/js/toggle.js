@@ -113,6 +113,14 @@ function toggle_light_dark()
     }
   }
 
+  if(document.getElementById("install-img"))
+  {
+    if(dark_mode == 1)
+      document.getElementById("install-img").src = "../images/neon-nift-logo.png";
+    else
+      document.getElementById("install-img").src = "../images/hacker-mind.svg";
+  }
+
   if(document.getElementById("linode-logo"))
   {
     if(dark_mode == 1)
@@ -163,6 +171,23 @@ function toggle_light_dark()
       document.getElementById("vultr-logo").src = "../images/vultr.svg";
     else
       document.getElementById("vultr-logo").src = "../images/vultr-dark.svg";
+  }
+}
+
+function animate_ween()
+{
+  //if(document.getElementById("nift101ween"))
+  {
+    document.getElementById("nift101ween").src = "../images/NIFT-101ween.gif";
+  }
+}
+
+function static_ween()
+{
+  //if(document.getElementById("nift101ween"))
+  {
+    document.getElementById("nift101ween").src = "../images/NIFT-101!Ween.png";
+    
   }
 }
 
