@@ -8,6 +8,10 @@
 				<h2>Embedded <mono>ExprTk</mono></h2>
 			</header>
 
+			<center>
+				<img src="@pathtofile(site/images/banner-planet-palms.png)" alt="Nift planet palms banner" width="500px" style="max-width:90%; border-radius:20px; margin-bottom: 60px">
+			</center>
+
 			<div class="content">
 				<p>
 					<mono>Nift</mono> has the C++ Mathematical Expression Toolkit Library (<mono>ExprTk</mono>) embedded (<a href="http://www.partow.net/programming/exprtk/index.html">official website</a>, <a href="https://github.com/ArashPartow/exprtk">GitHub</a>). <mono>ExprTk</mono> is a simple to use, easy to integrate and <a href="#benchmark">extremely efficient</a> run-time mathematical expression parser and evaluation engine. <mono>ExprTk</mono> supports numerous forms of functional, logical and vector processing semantics and is very easily extendible.
@@ -39,11 +43,11 @@
 				</p>
 
 				<p>
-					In Nift's interpreter mode the prompt will just display the language. If you would like the prompt to also display the present working directory (up to using half the width of the console) you can switch to the shell mode using <mono>nsm_mode("sh")</mono>. You can switch back again with <mono>nsm_mode("interp")</mono>.
+					In Nift's interpreter mode the prompt will just display the language. If you would like the prompt to also display the present working directory (up to using half the width of the console) you can switch to the shell mode using <mono>nsm_mode('sh')</mono>. You can switch back again with <mono>nsm_mode('interp')</mono>.
 				</p>
 
 				<p>
-					You can switch to one of the other languages available in Nift's interpreter using <mono>nsm_lang(langStr)</mono> where <mono>langStr</mono> is one of <mono>f++</mono>, <mono>n++</mono>, <mono>lua</mono> or <mono>exprtk</mono>.
+					You can switch to one of the other languages available in Nift's interpreter using <mono>nsm_lang('langStr')</mono> where <mono>langStr</mono> is one of <mnstr style="font-size:16px">f++</mnstr>, <mnstr style="font-size:16px">N++</mnstr>, <mono>lua</mono> or <mono>exprtk</mono>.
 				</p>
 
 
@@ -71,10 +75,10 @@ nift run -exprtk path/script-name.ext
 				</p>
 
 				<h4 id="exprtk-f++">
-					ExprTk from f++
+					ExprTk from <mnstr style="font-size:16px">f++</mnstr>
 				</h4>
 				<p>
-					You can run <mono>ExprTk</mono> code from <mono>f++</mono> using any of the following (without needing the comment syntax):					
+					You can run <mono>ExprTk</mono> code from <mnstr style="font-size:16px">f++</mnstr> using any of the following (without needing the comment syntax):					
 
 <div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline">
@@ -106,7 +110,7 @@ exprtk
 					ExprTk from n++
 				</h4>
 				<p>
-					You can run <mono>ExprTk</mono> code from <mono>n++</mono> using any of the following (without needing the comment syntax):					
+					You can run <mono>ExprTk</mono> code from <mnstr style="font-size:16px">N++</mnstr> using any of the following (without needing the comment syntax):					
 
 <div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline">
@@ -134,7 +138,7 @@ exprtk
 				</p>
 
 				<h4 id="exprtk-conditions">
-					ExprTk with n++/f++ conditions
+					ExprTk with <mnstr style="font-size:16px">f++</mnstr>/<mnstr style="font-size:16px">N++</mnstr> conditions
 				</h4>
 				<p>
 					You can use <mono>ExprTk</mono> with conditions for <mono>if</mono>, <mono>else-if</mono> and <mono>else</mono> statements, along with <mono>do-while</mono>, <mono>for</mono>, <mono>while</mono> loops. You can also use <mono>ExprTk</mono> for the post-loop increment code with <mono>for</mono> loops (ie. the code after the second <mono>;</mono>). For example:

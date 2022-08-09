@@ -9,13 +9,13 @@
 		<p style="margin-bottom:0px">
 			<a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; 
 			<a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a> &nbsp; 
-			<a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a> <!--&nbsp; 
-			<a href="https://nift.teemill.com/" title="TeeMill" class="teemill"><i class="fas fa-tshirt fa-2x"></i></a> &nbsp;
-			<a href="https://teespring.com/stores/nift-3" title="TeeSpring" class="teespring"><i class="fas fa-tshirt fa-2x"></i></a>-->
+			<a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a> &nbsp; 
+			<a href="https://nift.teemill.com/" title="TeeMill" class="teemill"><i class="fas fa-tshirt fa-2x"></i></a> <#--&nbsp;
+			<a href="https://teespring.com/stores/nift-3" title="TeeSpring" class="teespring"><i class="fas fa-tshirt fa-2x"></i></a>--#>
 		</p>
 		<p style="margin-top:10px">
-			@#<a href="https://gitter.im/nifty_site_manager/community" title="Gitter" class="gitter"><i class="fab fa-gitter fa-2x"></i></a> &nbsp;
-			@#<a href="https://github.com/orgs/nifty-site-manager/teams/nift/discussions" title="GitHub Discussions" class="ghdisc"><i class="fas fa-comment-dots fa-2x"></i></a> &nbsp;
+			<#--<a href="https://gitter.im/nifty_site_manager/community" title="Gitter" class="gitter"><i class="fab fa-gitter fa-2x"></i></a> &nbsp;--#>
+			<a href="https://github.com/nifty-site-manager/nsm/discussions" title="GitHub Discussions" class="gh"><i class="fas fa-comment-dots fa-2x"></i></a> &nbsp;
 			<a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a> &nbsp; 
 			<a href="https://old.reddit.com/r/nift" title="Reddit" class="reddit"><i class="fab fa-reddit-square fa-2x"></i></a> &nbsp; 
 			<a href="https://twitter.com/nifty_site_man" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a>
@@ -45,6 +45,7 @@
 						<li><a href="@pathto(docs/installing)">Installing</a></li>
 						<li><a href="@pathto(docs/hosting)">Hosting</a></li>
 						<li><a href="@pathto(docs/commands)">Commands</a></li>
+						<li><a href="@pathto(docs/config)">Config</a></li>
 						<li><a href="@pathto(docs/template_files)">Template Files</a></li>
 						<li><a href="@pathto(docs/fns)">Functions</a></li>
 						<li><a href="@pathto(docs/types)">Types</a></li>
@@ -52,7 +53,7 @@
 						<li><a href="@pathto(docs/n++)">n++ (templates)</a></li>
 						<li><a href="@pathto(docs/lua)">Lua(JIT)</a></li>
 						<li><a href="@pathto(docs/exprtk)">ExprTk</a></li>
-						<li><a href="@pathto(docs/interactive)">Interactive REPL</a></li>
+						<li><a href="@pathto(docs/REPL)">Interactive REPL</a></li>
 						<li><a href="@pathto(docs/scripts)">Scripts</a></li>
 						<li><a href="@pathto(docs/template_languages)">Template Languages</a></li>
 						<li><a href="@pathto(docs/JSON)">JSON Data</a></li>
@@ -61,7 +62,6 @@
 						<li><a href="@pathto(docs/mathematics)">Mathematics</a></li>
 						<li><a href="@pathto(docs/code_blocks)">Code Blocks</a></li>
 						<li><a href="@pathto(docs/presentations)">Presentations</a></li>
-						@/*<li><a href="@pathto(docs/lokinet_snapps)">Lokinet SNApps</a></li>*/
 					</ul>
 				</li>
 				<li>
@@ -69,10 +69,9 @@
 					<ul>
 						<li><a href="@pathto(resources/tutorials)">Tutorials</a></li>
 						<li><a href="@pathto(resources/templates)">Templates</a></li>
-						@/*<li><a href="@pathto(resources/SNApp_templates)">SNApp Templates</a></li>*/
 						<li><a href="@pathto(resources/blog_templates)">Blog Templates</a></li>
 						<li><a href="@pathto(resources/css_frameworks)">CSS Frameworks</a></li>
-						@/*<li><a href="@pathto(resources/examples)">Examples</a></li>*/
+						<li><a href="@pathto(resources/examples)">Examples</a></li>
 						<li><a href="@pathto(resources/js_frameworks)">JS Frameworks</a></li>
 						<li><a href="@pathto(resources/links)">Links</a></li>
 						<li><a href="@pathto(resources/logos)">Logos</a></li>

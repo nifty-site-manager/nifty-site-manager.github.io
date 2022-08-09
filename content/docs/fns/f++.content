@@ -23,8 +23,17 @@
 				<p>
 					The syntax for <mono>f++</mono> calls is:
 <div align="center" style="margin-top:-15px; margin-bottom:70px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-62px">
+f++{options}(file-path)
+f++{options}
+{
+	//block of f++ code
+}
+</pre> <br><br>
+</div>
+<div align="center" style="margin-top:-15px; margin-bottom:70px">
 <mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-62px">
-\@f++{options}(/* line of f++ code */)
+\@f++{options}(file-path)
 \@f++{options}
 {
 	//block of f++ code
@@ -37,7 +46,7 @@
 					Description
 				</h4>
 				<p>
-					The <mono>f++</mono> function is for <u>evaluating <mono>f++</mono> code from <mono>n++</mono></u>, it takes zero parameters with the call followed by a block of <mono>f++</mono> code otherwise a single parameter that should be a line of <mono>f++</mono> code to be parsed. See <a href="@pathtopage(docs/f++)">here</a> for more information about <mono>f++</mono>.
+					The <mono>f++</mono> function is for <u>evaluating <mono>f++</mono> code, it takes zero parameters with the call followed by a block of <mono>f++</mono> code otherwise a single parameter that should be a file-path to <mono>f++</mono> code to be parsed. See <a href="@pathtopage(docs/f++)">here</a> for more information about <mono>f++</mono>.
 				</p>
 
 				<h4 id="options">
@@ -55,12 +64,24 @@
 								</tr>
 							</thead>
 							<tr>
+								<td><mono>f</mono> or <mono>file</mono></td>
+								<td>parse file-path given as single param</td>
+							</tr>
+							<tr>
 								<td><mono>!o</mono></td>
 								<td>do not return output</td>
 							</tr>
 							<tr>
 								<td><mono>o</mono></td>
 								<td>return output</td>
+							</tr>
+							<tr>
+								<td><mono>!p</mono></td>
+								<td>do not parse params</td>
+							</tr>
+							<tr>
+								<td><mono>p</mono></td>
+								<td>parse params (default)</td>
 							</tr>
 							<tfoot>
 								<tr>
@@ -80,7 +101,12 @@
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint inline linenums">
-\@f++(:=(string, str="hello, world!")console(str))
+\@f++("./script.f")
+\@f++
+{
+	string str = "hello, world!";
+	console(str);
+}
 \@f++
 {
 	for(:=(int, i=0); i<10; i+=1)

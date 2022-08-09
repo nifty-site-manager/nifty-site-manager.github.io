@@ -79,8 +79,8 @@ system{options}(string)
 								<td>print script output to console</td>
 							</tr>
 							<tr>
-								<td><mono>inject</mono></td>
-								<td>inject in to file being built after parsing with language call is made from</td>
+								<td><mono>inject</mono> or <mono>inj</mono></td>
+								<td>inject in to file being built after parsing with underlying shell</td>
 							</tr>
 							<tr>
 								<td><mono>!o</mono></td>

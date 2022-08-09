@@ -64,7 +64,7 @@ exprtk.compile{block, options}(name)
 						<li>two parameters, the first being the name to assign to the second parameter which should be the <mono>ExprTk</mono> expression to compile.</li>
 					</ul>
 
-					See <a href="@pathtopage(docs/exprtk)">here</a> for more information about <mono>ExprTk</mono>.
+					See <a href="@pathtopage(docs/exprtk)">here</a> for more information about <mono>ExprTk</mono>, and see the <mono>f</mono>/<mono>file</mono> option on this page.
 				</p>
 
 				<p>
@@ -88,6 +88,10 @@ exprtk.compile{block, options}(name)
 							<tr>
 								<td><mono>b</mono> or <mono>block</mono></td>
 								<td>call is followed by a block of <mono>ExprTk</mono> code</td>
+							</tr>
+							<tr>
+								<td><mono>f</mono> or <mono>file</mono></td>
+								<td>file param instead of expression param, named by path if no name specified</td>
 							</tr>
 							<tr>
 								<td><mono>f++</mono></td>

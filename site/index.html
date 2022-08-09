@@ -8,9 +8,13 @@
 
 <html lang="en">
     <head>
-        <title>Nift</title>
+        <title>Nift - index</title>
         <meta charset="utf-8">
-        <meta name="description" content="Nift is the world's fastest framework for managing and generating websites. It's cross-platform, open source, lightning fast, developed from the ground up in C++, and released for free under the MIT license - use it for any of your personal or commercial projects">
+        <meta name="description" content="Nift is the world's fastest framework for 
+                    managing and generating websites. It's cross-platform, opensource, 
+                    lightning fast, developed from the ground up in C++, and released 
+                    for free under the MIT license - use it for any of your personal 
+                    or commercial projects">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="assets/css/main.css">
         <link rel="stylesheet" href="assets/css/pagestyle.css">
@@ -34,13 +38,10 @@
 					<p style="margin-bottom:0px">
 						<a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; 
 						<a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a> &nbsp; 
-						<a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a> <!--&nbsp; 
-						<a href="https://nift.teemill.com/" title="TeeMill" class="teemill"><i class="fas fa-tshirt fa-2x"></i></a> &nbsp;
-						<a href="https://teespring.com/stores/nift-3" title="TeeSpring" class="teespring"><i class="fas fa-tshirt fa-2x"></i></a>-->
-					</p>
+						<a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a> &nbsp; 
+						<a href="https://nift.teemill.com/" title="TeeMill" class="teemill"><i class="fas fa-tshirt fa-2x"></i></a> </p>
 					<p style="margin-top:10px">
-						
-						
+						<a href="https://github.com/nifty-site-manager/nsm/discussions" title="GitHub Discussions" class="gh"><i class="fas fa-comment-dots fa-2x"></i></a> &nbsp;
 						<a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a> &nbsp; 
 						<a href="https://old.reddit.com/r/nift" title="Reddit" class="reddit"><i class="fab fa-reddit-square fa-2x"></i></a> &nbsp; 
 						<a href="https://twitter.com/nifty_site_man" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a>
@@ -70,6 +71,7 @@
 									<li><a href="docs/installing.html">Installing</a></li>
 									<li><a href="docs/hosting.html">Hosting</a></li>
 									<li><a href="docs/commands.html">Commands</a></li>
+									<li><a href="docs/config.html">Config</a></li>
 									<li><a href="docs/template_files.html">Template Files</a></li>
 									<li><a href="docs/fns.html">Functions</a></li>
 									<li><a href="docs/types.html">Types</a></li>
@@ -77,7 +79,7 @@
 									<li><a href="docs/n++.html">n++ (templates)</a></li>
 									<li><a href="docs/lua.html">Lua(JIT)</a></li>
 									<li><a href="docs/exprtk.html">ExprTk</a></li>
-									<li><a href="docs/interactive.html">Interactive REPL</a></li>
+									<li><a href="docs/REPL.html">Interactive REPL</a></li>
 									<li><a href="docs/scripts.html">Scripts</a></li>
 									<li><a href="docs/template_languages.html">Template Languages</a></li>
 									<li><a href="docs/JSON.html">JSON Data</a></li>
@@ -86,7 +88,7 @@
 									<li><a href="docs/mathematics.html">Mathematics</a></li>
 									<li><a href="docs/code_blocks.html">Code Blocks</a></li>
 									<li><a href="docs/presentations.html">Presentations</a></li>
-									</ul>
+								</ul>
 							</li>
 							<li>
 								<a href="">Resources</a>
@@ -95,6 +97,7 @@
 									<li><a href="resources/templates.html">Templates</a></li>
 									<li><a href="resources/blog_templates.html">Blog Templates</a></li>
 									<li><a href="resources/css_frameworks.html">CSS Frameworks</a></li>
+									<li><a href="resources/examples.html">Examples</a></li>
 									<li><a href="resources/js_frameworks.html">JS Frameworks</a></li>
 									<li><a href="resources/links.html">Links</a></li>
 									<li><a href="resources/logos.html">Logos</a></li>
@@ -143,7 +146,7 @@
 		    	<div class="container">
 		    		<!-- Features -->
 		    		<section id="features" class="content">
-		    			<header class="style1" style="margin-bottom: -40px">
+		    			<header class="style1" style="margin-bottom: -75px">
 		    				<h2>Recommended by</h2>
 		    			</header>
 		    			<center>
@@ -179,6 +182,30 @@
 		    					</div>
 		    					<div class="col-6 col-12-medium">
 		    						<section>
+		    							<h3 class="icon solid fa-check">Pagination</h3>
+		    							<p>Nift can handle pagination at build time with multithreading or using javascript at load time, depending on your preferences on load times and usability. See the <a href="docs/fns.html#p">functions</a> docs for several <mono>paginate</mono> functions.</p>
+		    						</section>
+		    					</div>
+		    					<div class="col-6 col-12-medium">
+		    						<section>
+		    							<h3 class="icon solid fa-check">Lua(JIT) and ExprTk embedded</h3>
+		    							<p>Nift can be compiled with either <a href="https://luajit.org/">LuaJIT</a> (default) or <a href="http://www.lua.org/">Lua</a> along with <a href="https://github.com/ArashPartow/exprtk">ExprTk</a> which has a very impressive <a href="http://www.partow.net/programming/exprtk/#exprtkusers">userbase</a>. LuaJIT is basically the world's fastest interpreted language and ExprTk is basically the world's fastest mathematical expression parser. Nift specific documentation is available for <a href="docs/lua.html">Lua(JIT)</a> and <a href="docs/exprtk.html">ExprTk</a>.</p>
+		    						</section>
+		    					</div>
+		    					<div class="col-6 col-12-medium">
+		    						<section>
+		    							<h3 class="icon solid fa-check">In-built scripting and template languages</h3>
+		    							<p>Nift has two in-built languages which use mostly the same underlying code with a few minor differences under the hood and in how the syntax is structured. It has a <a href="docs/f++.html">scripting</a> language called <mnstr style="font-size:18px">functionstein</mnstr> <mono>(aka <mnstr style="font-size:16px">FNSTEIN</mnstr> or <mnstr style="font-size:16px">F++</mnstr>)</mono> and a <a href="docs/n++.html">template</a> language called <mnstr style="font-size:17px;">templatestein</mnstr> <mono>(<mnstr style="font-size:16px">N++</mnstr>)</mono>.</p>
+		    						</section>
+		    					</div>
+		    					<div class="col-6 col-12-medium">
+		    						<section>
+		    							<h3 class="icon solid fa-check">In-built interactive REPL and shell extension</h3>
+		    							<p>Nift has in-built interactive REPLs for each of <mnstr style="font-size:18px">functionstein</mnstr>, <mnstr style="font-size:18px">templatestein</mnstr>, <mono>ExprTk</mono> and <mono>Lua(JIT)</mono>, with documentation available <a href="docs/REPL.html">here</a>. You can easily switch between languages, and has a shell extension mode most useful for <a href="docs/f++.html">functionstein</a> called <zapfont style = "font-size:30px;">FLASHELL</zapfont>.</p>
+		    						</section>
+		    					</div>
+		    					<div class="col-6 col-12-medium">
+		    						<section>
 		    							<h3 class="icon solid fa-check">Script Support</h3>
 		    							<p>Nift has support for pre/post build/serve scripts, useful for things like integrating with webpack, Babel, npm, Bower, Yeoman, Browserify, Parcel, Brunch, SASS, Grunt, Puppeteer, GraphQL, Python Web Server, Live Server/Reload, etc..</p>
 		    						</section>
@@ -192,7 +219,7 @@
 		    					<div class="col-6 col-12-medium">
 		    						<section>
 		    							<h3 class="icon solid fa-check">Git Integration</h3>
-		    							<p>Nift integrates seamlessly with Git to clone from and push to <a href="https://aws.amazon.com/amplify/console/">AWS Amplify Console</a>, <a href="https://aws.amazon.com/codecommit/">AWS CodeCommit</a>, <a href="https://bitbucket.org/">BitBucket</a>, <a href="https://github.com/">GitHub</a>, <a href="https://gitlab.com/">GitLab</a>, <a href="https://www.netlify.com/">Netlify</a>, <a href="https://surge.sh/">surge.sh</a>, <a href="https://vercel.com/">Vercel</a> etc..</p>
+		    							<p>Nift integrates seamlessly with Git using either <mono>https</mono> or <mono>ssh</mono> to clone from and push to <a href="https://aws.amazon.com/amplify/console/">AWS Amplify Console</a>, <a href="https://aws.amazon.com/codecommit/">AWS CodeCommit</a>, <a href="https://bitbucket.org/">BitBucket</a>, <a href="https://github.com/">GitHub</a>, <a href="https://gitlab.com/">GitLab</a>, <a href="https://www.netlify.com/">Netlify</a>, <a href="https://surge.sh/">surge.sh</a>, <a href="https://vercel.com/">Vercel</a> etc..</p>
 		    						</section>
 		    					</div>
 		    					<div class="col-6 col-12-medium">
@@ -280,15 +307,21 @@
 								<li><a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a></li>
 								<li><a href="https://nifty-site-manager.github.io/">GitHub</a></li>
 								<li><a href="https://nifty-site-manager.gitlab.io/">GitLab</a></li>
+								<li><a href="https://nift.netlify.app/">Netlify</a></li>
 								<li><a href="https://nift.now.sh/">Vercel</a></li>
 							</ul> <br>
 			
-							<center><img src="images/badger.png" alt="Nift badger mascot" width="325" style="max-width:90%; margin-bottom:20px"></center>
+							<center><img id="footer-mascot" src="images/badger.png" alt="Nift badger mascot" width="325" style="max-width:90%; margin-bottom:20px"></center>
 			
 							<ul>
-								<li>&copy;&nbsp;<span name="cyear"></span> <a href="https://nift.cc">Nift</a></li>
+								<li>&copy;&nbsp;2015-<span name="cyear"></span> <a href="https://nift.cc">Nift</a></li>
 								<li><a href="tos.html">Terms of Service</a></li>
 								<li><a href="privacy_policy.html">Privacy Policy</a></li>
+							</ul> <br>
+			
+							<ul>
+								<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
+								<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
 								<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
 							</ul> <br>
 						
@@ -297,7 +330,11 @@
 								<span class="slider round" onclick="toggle_light_dark()" id="slider_light_dark"></span>
 							</label> &nbsp; <b id="light_dark_RHS" style="color: white !important">dark</b> <br><br>
 			
-							</noselect>
+							<ul>
+								<li>Creator & Developer:</li>
+								<li><a href="https://n-ham.com">Nicholas Ham</a></li>
+							</ul><br>
+						</noselect>
 					</div>
 				</div>
 			</section>

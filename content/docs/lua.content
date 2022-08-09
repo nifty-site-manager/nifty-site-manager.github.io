@@ -68,7 +68,7 @@
 				</p>
 
 				<p>
-					You can switch to one of the other languages available in Nift's interpreter using <mono>nsm_lang(langStr)</mono> where <mono>langStr</mono> is one of <mono>f++</mono>, <mono>n++</mono>, <mono>lua</mono> or <mono>exprtk</mono>.
+					You can switch to one of the other languages available in Nift's interpreter using <mono>nsm_lang("langStr")</mono> where <mono>langStr</mono> is one of <mnstr style="font-size:16px">f++</mnstr>, <mnstr style="font-size:16px">N++</mnstr>, <mono>lua</mono> or <mono>exprtk</mono>.
 				</p>
 
 
@@ -109,14 +109,14 @@ exprtk("ExprTk code")
 				</p>
 
 				<p>
-					<b>Note:</b> When using the interpreter or running a script the ability to call <mono>ExprTk</mono> is added for you, if you want the ability at other times inside <mono>f++</mono> first call <mono>lua_addnsmfns()</mono>, similarly for inside <mono>n++</mono> first call <mono>\@lua_addnsmfns()</mono>. 
+					<b>Note:</b> When using the interpreter or running a script the ability to call <mono>ExprTk</mono> is added for you, if you want the ability at other times inside <mnstr style="font-size:16px">f++</mnstr> first call <mono>lua_addnsmfns()</mono>, similarly for inside <mnstr style="font-size:16px">N++</mnstr> first call <mono>\@lua_addnsmfns()</mono>. 
 				</p>
 
 				<h4 id="lua-f++">
-					Lua from f++
+					Lua from <mnstr style="font-size:16px">f++</mnstr>
 				</h4>
 				<p>
-					You can run <mono>Lua</mono> code from <mono>f++</mono> using either of the following (without needing the comment syntax):					
+					You can run <mono>Lua</mono> code from <mnstr style="font-size:16px">f++</mnstr> using either of the following (without needing the comment syntax):					
 
 <div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline lang-lua">
@@ -137,10 +137,10 @@ lua
 				</p>
 
 				<h4 id="lua-n++">
-					Lua from n++
+					Lua from <mnstr style="font-size:16px">N++</mnstr>
 				</h4>
 				<p>
-					You can run <mono>Lua</mono> code from <mono>n++</mono> using either of the following (without needing the comment syntax):					
+					You can run <mono>Lua</mono> code from <mnstr style="font-size:16px">N++</mnstr> using either of the following (without needing the comment syntax):					
 
 <div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline lang-lua">
@@ -164,7 +164,7 @@ lua
 					Nift functions
 				</h4>
 				<p>
-					The following functions specific to Nift may be made available inside <mono>Lua</mono> code. When running an interactive REPL session or running a Lua script these functions will be added for you, if you want to use them for <mono>Lua</mono> code inside <mono>f++</mono> first call <mono>lua_addnsmfns()</mono>, similarly for inside <mono>n++</mono> first call <mono>\@lua_addnsmfns()</mono>. 
+					The following functions specific to Nift may be made available inside <mono>Lua</mono> code. When running an interactive REPL session or running a Lua script these functions will be added for you, if you want to use them for <mono>Lua</mono> code inside <mnstr style="font-size:16px">f++</mnstr> first call <mono>lua_addnsmfns()</mono>, similarly for inside <mnstr style="font-size:16px">f++</mnstr> first call <mono>\@lua_addnsmfns()</mono>. 
 
 					<center class="table">
 						<table id="lua_nift_fns_table" class="alt">
@@ -267,7 +267,7 @@ lua
 				</p>
 
 				<p>
-					An example of using <mono>nsm_setstring</mono>, <mono>nsm_tostring</mono> and <mono>nsm_wite</mono> with <mono>f++</mono> is below:
+					An example of using <mono>nsm_setstring</mono>, <mono>nsm_tostring</mono> and <mono>nsm_wite</mono> with <mnstr style="font-size:16px">f++</mnstr> is below:
 <div align="center" style="margin-top:-10px; margin-bottom:10px">
 <pre class="prettyprint inline linenums lang-lua">
 string str="hello, world!"

@@ -13,15 +13,22 @@
 					<li><a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a></li>
 					<li><a href="https://nifty-site-manager.github.io/">GitHub</a></li>
 					<li><a href="https://nifty-site-manager.gitlab.io/">GitLab</a></li>
+					<li><a href="https://nift.netlify.app/">Netlify</a></li>
 					<li><a href="https://nift.now.sh/">Vercel</a></li>
 				</ul> <br>
 
-				<center><img src="@pathtofile(site/images/badger.png)" alt="Nift badger mascot" width="325" style="max-width:90%; margin-bottom:20px"></center>
+				<center><img id="footer-mascot" src="@pathtofile(site/images/badger.png)" alt="Nift badger mascot" width="325" style="max-width:90%; margin-bottom:20px"></center>
 
 				<ul>
-					<li>&copy;&nbsp;<span name="cyear"></span> <a href="https://nift.cc">Nift</a></li>
+					<li>&copy;&nbsp;2015-<span name="cyear"></span> <a href="https://nift.cc">Nift</a></li>
+					@/*<li><a href="@pathto(coe)">Code of Etiquette</a></li>*/
 					<li><a href="@pathto(tos)">Terms of Service</a></li>
 					<li><a href="@pathto(privacy_policy)">Privacy Policy</a></li>
+				</ul> <br>
+
+				<ul>
+					<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
+					<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
 					<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
 				</ul> <br>
 			
@@ -30,7 +37,10 @@
 					<span class="slider round" onclick="toggle_light_dark()" id="slider_light_dark"></span>
 				</label> &nbsp; <b id="light_dark_RHS" style="color: white !important">dark</b> <br><br>
 
-				<#--<center><a href="https://vercel.com"><img src="@pathtofile(site/images/powered-by-vercel.svg)" alt="Powered by Vercel badge" width="234" style="max-width:80%"></a></center> <br>--#>
+				<ul>
+					<li>Creator & Developer:</li>
+					<li><a href="https://n-ham.com">Nicholas Ham</a></li>
+				</ul><br>
 			</noselect>
 		</div>
 	</div>

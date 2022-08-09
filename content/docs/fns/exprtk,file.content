@@ -1,0 +1,107 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">fn: <mono>exprtk.file</mono></div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<div class="content">
+				<a href="#contents" class="to_top">[contents]</a>
+
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#syntax">Syntax</a></li>
+					<li><a href="#description">Description</a></li>
+					<li><a href="#options">Options</a></li>
+					<li><a href="#f++-eg">f++ example</a></li>
+					<li><a href="#n++-eg">n++ example</a></li>
+				</ul>
+
+				<h4 id="syntax">
+					Syntax
+				</h4>
+				<p>
+					The syntax for <mono>exprtk.file</mono> calls is:
+<div align="center" style="margin-top:-15px; margin-bottom:80px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-70px">
+exprtk.file{options}(file-path)
+</pre>
+</div><br>
+<div align="center" style="margin-top:-15px; margin-bottom:80px">
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-70px">
+\@exprtk.file{options}(file-path)
+</pre>
+</div>
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+				<p>
+					The <mono>exprtk.file</mono> function is for <u>compiling and evaluating <mono>ExprTk</mono> code files</u>, it takes a single parameter that should be a file-path to <mono>ExprTk</mono> code to compile and run. See <a href="@pathtopage(docs/exprtk)">here</a> for more information about <mono>ExprTk</mono>.
+				</p>
+
+				<h4 id="options">
+					Options
+				</h4>
+				<p>
+					The following options are available for <mono>exprtk.file</mono> calls:
+
+					<center class="table">
+						<table id="ExprTk_file_options_table" class="alt">
+							<thead>
+								<tr>
+									<th>option</th>
+									<th>description</th>
+								</tr>
+							</thead>
+							<tr>
+								<td><mono>!o</mono></td>
+								<td>do not return output</td>
+							</tr>
+							<tr>
+								<td><mono>o</mono></td>
+								<td>return output</td>
+							</tr>
+							<tr>
+								<td><mono>!round</mono></td>
+								<td>do not round value of <mono>ExprTk</mono> expression</td>
+							</tr>
+							<tfoot>
+								<tr>
+									<th>option</th>
+									<th>description</th>
+								</tr>
+							</tfoot>
+						</table>
+					</center>
+				</p>
+
+				<h4 id="f++-eg">
+					f++ example
+				</h4>
+				<p>
+					Examples of <mono>exprtk.file</mono> being used with <mono>f++</mono>:					
+
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline linenums">
+exprtk.file("./path.exprtk")</pre>
+</div>
+				</p>
+
+				<h4 id="n++-eg">
+					n++ example
+				</h4>
+				<p>
+					Example of <mono>exprtk.file</mono> being used with <mono>n++</mono>:					
+
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline linenums">
+\@exprtk.file("./path.exprtk")
+</pre>
+</div>
+				</p>
+		</section>
+	</div>
+</section>

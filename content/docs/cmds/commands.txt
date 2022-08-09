@@ -1,16 +1,16 @@
 +--------- available commands ---------------------------------+
-| commands          | list all commands                        |
-| config            | list or set git email/username           |
+| commands or cmds  | list all commands                        |
+| config            | configure Nift                           |
 | clone             | par: clone-url                           |
 | diff              | par: file-path                           |
 | pull              | pull remote changes locally              |
 | bcp               | par: commit-message                      |
+| mbcp              | par: dir-1 .. dir-k commit-message       |
 | init              | start managing project - par: (out-ext)  |
 | init-html         | start managing html website              |
 | status            | list updated & problem files             |
 | info              | par: name-1 .. name-k                    |
 | info-all          | list watched dirs & tracked files        |
-| info-config       | list config settings                     |
 | info-names        | list tracked names                       |
 | info-tracking     | list tracked files                       |
 | info-watching     | list watched dirs                        |
@@ -29,7 +29,7 @@
 | interp            | par: (lang-opt)                          |
 | sh                | par: (lang-opt)                          |
 | build-names       | par: name-1 .. name-k                    |
-| build-updated     | build updated output files               |
+| build(-updated)   | build updated output files               |
 | build-all         | build all tracked output files           |
 | serve             | serve project locally par: (sleep-sec)   |
 | mve-output-dir    | par: dir-path                            |
@@ -44,5 +44,9 @@
 | incr-mode         | par: (mode)                              |
 | watch             | par: dir (cont-ext) (template) (out-ext) |
 | unwatch           | par: dir (cont-ext)                      |
+| edit or open      | par: name-1 .. name-k                    |
+| medit or mopen    | par: dir-1 .. dir-k name                 |
+| lolcat            | par: (options) used when no other lolcat |
+|                   |                versions are installed    |
 +--------------------------------------------------------------+
 

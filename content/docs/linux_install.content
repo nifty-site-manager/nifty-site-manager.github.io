@@ -180,7 +180,7 @@ $ emerge -C www-apps/nift
 				</p>
 
 				<p>
-					Use your package manager to install <mono>build-essential</mono>. For example on Ubuntu, run <mono>sudo apt-get install build-essential</mono> from a terminal window. 
+					Use your package manager to install <mono>build-essential</mono>. For example on Ubuntu, run <mono>sudo apt-get install build-essential</mono> from a terminal window. You can find compiler options including building with a normal version of <mono>Lua</mono> on the documentation page for <a href="@pathto(docs/make)">make</a>.
 				</p>
 
 				<br>

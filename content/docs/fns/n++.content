@@ -24,8 +24,17 @@
 					The syntax for <mono>n++</mono> calls is:
 <div align="center" style="margin-top:-15px; margin-bottom:70px">
 <mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-62px">
-n++{options}(/* line of n++ code */)
+n++{options}(file-path)
 n++{options}
+{
+	//block of n++ code
+}
+</pre><br><br>
+</div>
+<div align="center" style="margin-top:-15px; margin-bottom:70px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-62px">
+\@n++{options}(file-path)
+\@n++{options}
 {
 	//block of n++ code
 }
@@ -37,7 +46,7 @@ n++{options}
 					Description
 				</h4>
 				<p>
-					The <mono>n++</mono> function is for <u>evaluating <mono>n++</mono> code from <mono>f++</mono></u>, it takes zero parameters with the call followed by a block of <mono>n++</mono> code otherwise a single parameter that should be a line of <mono>n++</mono> code to be parsed. See <a href="@pathtopage(docs/n++)">here</a> for more information about <mono>n++</mono>.
+					The <mono>n++</mono> function is for <u>evaluating <mono>n++</mono> code, it takes zero parameters with the call followed by a block of <mono>n++</mono> code otherwise a single parameter that should be a file-path to <mono>n++</mono> code to be parsed. See <a href="@pathtopage(docs/n++)">here</a> for more information about <mono>n++</mono>.
 				</p>
 
 				<h4 id="options">
@@ -80,7 +89,12 @@ n++{options}
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint inline linenums">
-n++(\@:=(string, str="hello, world!")\@console(str))
+n++(./script.n)
+n++
+{
+	\@:=(string, str="hello, world!")
+	\@console(str)
+}
 n++
 {
 	\@for(:=(int, i=0); i<10; i+=1)

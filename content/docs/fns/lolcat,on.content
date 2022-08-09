@@ -13,13 +13,14 @@
 				<ul style="text-indent:30px">
 					<li><a href="#syntax">Syntax</a></li>
 					<li><a href="#description">Description</a></li>
+					<li><a href="#config">Config</a></li>
 					<li><a href="#f++-eg">f++ example</a></li>
 					<li><a href="#n++-eg">n++ example</a></li>
 				</ul>
 
 				<!-- Image -->
 				<center>
-					<a href="@pathtofile(site/images/laptop-nift.png)"><img src="@pathtofile(site/images/laptop-nift.png)" alt="Nift console screenshot" width="600px" style="max-width:90%; border-radius:20px; margin-bottom: 60px"></a>
+					<img src="@pathtofile(site/images/laptop-nift.png)" alt="Nift console screenshot" width="600px" style="max-width:90%; border-radius:20px; margin-bottom: 60px">
 				</center>
 
 				<h4 id="syntax">
@@ -30,11 +31,13 @@
 <div align="center" style="margin-top:-15px">
 <mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
 lolcat.on
+lolcat.on(string)
 </pre>
 </div><br>
 <div align="center">
 <mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
 \@lolcat.on
+\@lolcat.on(string)
 </pre>
 </div>
 				</p>
@@ -43,20 +46,16 @@ lolcat.on
 					Description
 				</h4>
 				<p>
-					The <mono>lolcat.on</mono> function is for turning on outputting text to the console with rainbow colours, it takes zero parameters. 
+					The <mono>lolcat.on</mono> function is for turning on outputting text to the console with rainbow colours, it takes zero parameters or a single parameter. For internal output <mono>Nift</mono> uses the in-built version of <a href="">lolcat-cc</a>, however you can specify in the global and project <a href="@pathto(docs/cmds/lolcat)">configuration</a> files which external <mono>lolcat</mono> program to use, depending on your preferences for things like speed and/or being able to watch animations, and possible formatting issues for edge cases like emojis.
 				</p>
 
 				<p>
-					<b>Note:</b> <mono>lolcat</mono> will only work if you have the program <mono>lolcat</mono> installed on your machine. It is available for:
+					<b>Note:</b> There is a modified version of my <a href="https://github.com/n-ham/lolcat-cc">lolcat-cc</a> in-built in to Nift which has a taste of what other platforms can do for Windows, however you can use <mono>lolcat.on</mono> with quite a few different <mono>lolcat</mono> implementations installed on your machine. It is available for:
 					<ul>
 						<li>FreeBSD (<a href="https://www.freshports.org/games/lolcat">ports</a>, <a href="https://github.com/jaseg/lolcat">fast C implementation</a>)</li>
 						<li style="margin-top: 10px">Linux (<a href="https://snapcraft.io/lolcat-c"><img src="@pathtofile(site/images/snap-icon.png)" width="30px" style="vertical-align:middle; margin-bottom:5px"></a>, <a href="https://aur.archlinux.org/packages/c-lolcat"><img src="@pathtofile(site/images/arch.svg)" width="30px" style="vertical-align:middle; margin-bottom:5px"></a>, <a href="https://packages.ubuntu.com/eoan/lolcat"><img src="@pathtofile(site/images/ubuntu.svg)" width="30px" style="vertical-align:middle; margin-bottom:5px"></a>, <a href="https://pypi.org/project/lolcat/"><img src="@pathtofile(site/images/python.svg)" width="30px" style="vertical-align:middle; margin-bottom:5px"></a>, <a href="https://snapcraft.io/lolcat-rs">Rust implementation</a>)</li>
 						<li>OSX (<a href="https://formulae.brew.sh/formula/lolcat"><img src="@pathtofile(site/images/brew-icon.png)" width="30px" style="vertical-align:middle; margin-bottom:5px"></a>, <a href="https://pypi.org/project/lolcat/"><img src="@pathtofile(site/images/python.svg)" width="30px" style="vertical-align:middle; margin-bottom:5px"></a>, <a href="https://github.com/jaseg/lolcat">fast C implementation</a>)</li>
 					</ul>
-				</p>
-
-				<p>
-					If you find a working version for Windows please let us know.
 				</p>
 
 				<p>
@@ -68,6 +67,21 @@ lolcat.on
 </div>
 				</p>
 
+				<h4 id="config">
+					Config
+				</h4>
+				
+				<p>
+					You can configure lolcat output bein turned on automatically when running scripts, using <zapfont style = "font-size:30px;">FLASHELL</zapfont>, the other shell extensions and the interpreters by adding the following to the global and project config files:
+
+					<ul>
+						<li>lolcat 1</li>
+						<li>lolcatCmd "lolcat-cc -f"</li>
+					</ul>
+
+					<b>Note:</b> you can use any <mono>lolcat</mono> program you want provided the command is set properly. The in-built version of lolcat for example does not handle animations like Star Wars very well but is faster than the others. Some may like to watch all the way through with the in-built version of <mono>lolcat-cc</mono> and see what happens, or just use the original version of lolcat to terminal star wars in rainbow mode. 
+				</p>
+
 				<h4 id="f++-eg">
 					f++ example
 				</h4>
@@ -75,7 +89,7 @@ lolcat.on
 					Example of <mono>lolcat.on</mono> being used with <mono>f++</mono>:					
 
 <div align="center" style="margin-top:-10px; margin-bottom:10px">
-<pre class="prettyprint inline linenums">
+<pre class="prettyprint inline linenums lang-nift">
 :=(int, i=12)
 :=(string, str="hello")
 lolcat.on
@@ -101,7 +115,7 @@ lolcat.off</pre>
 					Example of <mono>lolcat.on</mono> being used with <mono>n++</mono>:					
 
 <div align="center" style="margin-top:-10px; margin-bottom:10px">
-<pre class="prettyprint inline linenums">
+<pre class="prettyprint inline linenums lang-nift">
 \@:=(int, i=12)
 \@:=(string, str="hello")
 \@lolcat.on
@@ -119,6 +133,10 @@ lolcat.off</pre>
 \@lolcat.off</pre>
 </div>
 				</p>
+
+				<center>
+					<img src="@pathtofile(site/images/lolcat-cc.png)" alt="lolcat-cc mascot" width="400px">
+				</center>
 			</div>
 		</section>
 	</div>

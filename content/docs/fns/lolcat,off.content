@@ -19,7 +19,7 @@
 
 				<!-- Image -->
 				<center>
-					<a href="@pathtofile(site/images/laptop-nift.png)"><img src="@pathtofile(site/images/laptop-nift.png)" alt="Nift console screenshot" width="600px" style="max-width:90%; border-radius:20px; margin-bottom: 60px"></a>
+					<img src="@pathtofile(site/images/laptop-nift.png)" alt="Nift console screenshot" width="600px" style="max-width:90%; border-radius:20px; margin-bottom: 60px">
 				</center>
 
 				<h4 id="syntax">
@@ -47,16 +47,12 @@ lolcat.off
 				</p>
 
 				<p>
-					<b>Note:</b> <mono>lolcat</mono> will only work if you have the program <mono>lolcat</mono> installed on your machine. It is available for:
+					<b>Note:</b> There is a modified version of my <a href="https://github.com/n-ham/lolcat-cc">lolcat-cc</a> in-built in to Nift which has a taste of what other platforms can do for Windows, however you can use <mono>lolcat.off</mono> with quite a few different <mono>lolcat</mono> implementations installed on your machine. It is available for:
 					<ul>
 						<li>FreeBSD (<a href="https://www.freshports.org/games/lolcat">ports</a>, <a href="https://github.com/jaseg/lolcat">fast C implementation</a>)</li>
 						<li style="margin-top: 10px">Linux (<a href="https://snapcraft.io/lolcat-c"><img src="@pathtofile(site/images/snap-icon.png)" width="30px" style="vertical-align:middle; margin-bottom:5px"></a>, <a href="https://aur.archlinux.org/packages/c-lolcat"><img src="@pathtofile(site/images/arch.svg)" width="30px" style="vertical-align:middle; margin-bottom:5px"></a>, <a href="https://packages.ubuntu.com/eoan/lolcat"><img src="@pathtofile(site/images/ubuntu.svg)" width="30px" style="vertical-align:middle; margin-bottom:5px"></a>, <a href="https://pypi.org/project/lolcat/"><img src="@pathtofile(site/images/python.svg)" width="30px" style="vertical-align:middle; margin-bottom:5px"></a>, <a href="https://snapcraft.io/lolcat-rs">Rust implementation</a>)</li>
 						<li>OSX (<a href="https://formulae.brew.sh/formula/lolcat"><img src="@pathtofile(site/images/brew-icon.png)" width="30px" style="vertical-align:middle; margin-bottom:5px"></a>, <a href="https://pypi.org/project/lolcat/"><img src="@pathtofile(site/images/python.svg)" width="30px" style="vertical-align:middle; margin-bottom:5px"></a>, <a href="https://github.com/jaseg/lolcat">fast C implementation</a>)</li>
 					</ul>
-				</p>
-
-				<p>
-					If you find a working version for Windows please let us know.
 				</p>
 
 				<p>
@@ -75,7 +71,7 @@ lolcat.off
 					Example of <mono>lolcat.off</mono> being used with <mono>f++</mono>:					
 
 <div align="center" style="margin-top:-10px; margin-bottom:10px">
-<pre class="prettyprint inline linenums">
+<pre class="prettyprint inline linenums lang-nift">
 :=(int, i=12)
 :=(string, str="hello")
 lolcat.on
@@ -101,7 +97,7 @@ lolcat.off</pre>
 					Example of <mono>lolcat.off</mono> being used with <mono>n++</mono>:					
 
 <div align="center" style="margin-top:-10px; margin-bottom:10px">
-<pre class="prettyprint inline linenums">
+<pre class="prettyprint inline linenums lang-nift">
 \@:=(int, i=12)
 \@:=(string, str="hello")
 \@lolcat.on
@@ -119,6 +115,10 @@ lolcat.off</pre>
 \@lolcat.off</pre>
 </div>
 				</p>
+
+				<center>
+					<img src="@pathtofile(site/images/lolcat-cc.png)" alt="lolcat-cc mascot" width="400px">
+				</center>
 			</div>
 		</section>
 	</div>

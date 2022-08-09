@@ -2,6 +2,10 @@
 'JSON'
 'template/page.template'
 
+'docs/REPL'
+'REPL'
+'template/page.template'
+
 'docs/bitbucket_hosting'
 'bitbucket_hosting'
 'template/page.template'
@@ -46,6 +50,10 @@
 'diff'
 'template/page.template'
 
+'docs/cmds/edit'
+"edit'"
+'template/page.template'
+
 'docs/cmds/incr-mode'
 'incr-mode'
 'template/page.template'
@@ -72,6 +80,18 @@
 
 'docs/cmds/init'
 'init'
+'template/page.template'
+
+'docs/cmds/lolcat'
+'lolcat'
+'template/page.template'
+
+'docs/cmds/mbcp'
+"mbcp'"
+'template/page.template'
+
+'docs/cmds/medit'
+"medit'"
 'template/page.template'
 
 'docs/cmds/mve'
@@ -172,6 +192,10 @@
 
 'docs/commands'
 'commands'
+'template/page.template'
+
+'docs/config'
+'config'
 'template/page.template'
 
 'docs/exprtk'
@@ -422,6 +446,10 @@
 'exprtk,eval'
 'template/page.template'
 
+'docs/fns/exprtk,file'
+'exprtk,file'
+'template/page.template'
+
 'docs/fns/exprtk,load'
 "exprtk,load'"
 'template/page.template'
@@ -518,12 +546,20 @@
 'lolcat'
 'template/page.template'
 
+'docs/fns/lolcat,cmd'
+'lolcat,cmd'
+'template/page.template'
+
 'docs/fns/lolcat,off'
 'lolcat,off'
 'template/page.template'
 
 'docs/fns/lolcat,on'
 'lolcat,on'
+'template/page.template'
+
+'docs/fns/lolcat,status'
+'lolcat,status'
 'template/page.template'
 
 'docs/fns/lst'
@@ -644,6 +680,10 @@
 
 'docs/fns/private'
 'private'
+'template/page.template'
+
+'docs/fns/prompt,char'
+'prompt,char'
 'template/page.template'
 
 'docs/fns/pwd'
@@ -790,16 +830,8 @@
 'installing'
 'template/page.template'
 
-'docs/interactive'
-'interactive'
-'template/page.template'
-
 'docs/linux_install'
 'linux_install'
-'template/page.template'
-
-'docs/lokinet_snapps'
-'lokinet_snapps'
 'template/page.template'
 
 'docs/lua'
@@ -930,8 +962,8 @@
 'privacy_policy'
 'template/page.template'
 
-'resources/SNApp_templates'
-'SNApp_templates'
+'resources/artwork'
+'artwork'
 'template/page.template'
 
 'resources/blog_templates'

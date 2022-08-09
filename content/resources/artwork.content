@@ -1,0 +1,31 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">Artwork</div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<header class="style1">
+				<h2>Artwork made with some relation to Nift</h2>
+			</header>
+
+			<div class="content">
+				<p>
+					<!-- Image -->
+					<center>
+						<img src="@pathtofile(site/images/nift-neofetch.gif)" alt="neofetch lolcat-cc party" style="max-width: 80%; margin-bottom:20px"><br>
+						<img src="@pathtofile(site/images/badger-transparent-ascii.gif)" alt="ascii badger gif" style="max-width: 80%; margin-bottom:20px"><br>
+						<img src="@pathtofile(site/images/blur_edges_cropped.png)" alt="ascii-badger" style="max-width: 80%; margin-bottom:20px"><br>
+						<img src="@pathtofile(site/images/blur_edges.png)" alt="ascii-badger" style="max-width: 80%; margin-bottom:20px"><br>
+						<img src="@pathtofile(site/images/badger-ascii-removebg.png)" alt="ascii-badger" style="max-width: 80%; margin-bottom:20px"><br>
+						<img src="@pathtofile(site/images/nift-ween.gif)" alt="ween Nift gif" style="max-width: 80%; margin-bottom:20px"><br>
+						<img src="@pathtofile(site/images/lolcat.gif)" alt="ween Nift gif" width="400px" style="max-width: 80%; margin-bottom:20px"><br>
+					</center>
+				</p>
+
+				<p>
+					If you would like to have your own Nift related artwork displayed on this page please start a <a href="https://github.com/nifty-site-manager/nsm/discussions">GitHub discussion</a>.
+				</p>
+			</div>
+		</section>
+	</div>
+</section>

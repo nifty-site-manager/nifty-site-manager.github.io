@@ -1,0 +1,54 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">cmd: <mono>medit</mono>/<mono>mopen</mono></div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<div class="content">
+				<a href="#contents" class="to_top">[contents]</a>
+
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#syntax">Syntax</a></li>
+					<li><a href="#description">Description</a></li>
+					<li><a href="#eg">Example</a></li>
+				</ul>
+
+				<h4 id="syntax">
+					Syntax
+				</h4>
+				<p>
+					The syntax for the <mono>medit</mono>/<mono>mopen</mono> command is:
+<div align="center">
+<pre class="prettyprint inline lang-nift" style="margin-bottom:-10px">
+nift medit project-dirs name
+nsm mopen project-dirs name
+</pre>
+</div>
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+				<p>
+					The <mono>medit</mono>/<mono>mopen</mono> command is for opening the content files for a single page name across mirrored projects.
+				</p>
+
+				<h4 id="eg">
+					Example
+				</h4>
+				<p>
+					Example of <mono>medit</mono>/<mono>mopen</mono> being used:					
+
+<div align="center" style="margin-top:-10px">
+<pre class="prettyprint inline linenums lang-nift">
+nift medit nifty-site* index
+nsm mopen nifty_site* docs/fns/system</pre>
+</div>
+				</p>
+			</div>
+		</section>
+	</div>
+</section>

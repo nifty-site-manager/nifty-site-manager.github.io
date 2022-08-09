@@ -33,7 +33,7 @@
 	<div class="container">
 		<!-- Features -->
 		<section id="features" class="content">
-			<header class="style1" style="margin-bottom: -40px">
+			<header class="style1" style="margin-bottom: -75px">
 				<h2>Recommended by</h2>
 			</header>
 			<center>
@@ -73,6 +73,30 @@
 					</div>
 					<div class="col-6 col-12-medium">
 						<section>
+							<h3 class="icon solid fa-check">Pagination</h3>
+							<p>Nift can handle pagination at build time with multithreading or using javascript at load time, depending on your preferences on load times and usability. See the <a href="@pathto(docs/fns)#p">functions</a> docs for several <mono>paginate</mono> functions.</p>
+						</section>
+					</div>
+					<div class="col-6 col-12-medium">
+						<section>
+							<h3 class="icon solid fa-check">Lua(JIT) and ExprTk embedded</h3>
+							<p>Nift can be compiled with either <a href="https://luajit.org/">LuaJIT</a> (default) or <a href="http://www.lua.org/">Lua</a> along with <a href="https://github.com/ArashPartow/exprtk">ExprTk</a> which has a very impressive <a href="http://www.partow.net/programming/exprtk/#exprtkusers">userbase</a>. LuaJIT is basically the world's fastest interpreted language and ExprTk is basically the world's fastest mathematical expression parser. Nift specific documentation is available for <a href="@pathto(docs/lua)">Lua(JIT)</a> and <a href="@pathto(docs/exprtk)">ExprTk</a>.</p>
+						</section>
+					</div>
+					<div class="col-6 col-12-medium">
+						<section>
+							<h3 class="icon solid fa-check">In-built scripting and template languages</h3>
+							<p>Nift has two in-built languages which use mostly the same underlying code with a few minor differences under the hood and in how the syntax is structured. It has a <a href="@pathto(docs/f++)">scripting</a> language called <mnstr style="font-size:18px">functionstein</mnstr> <mono>(aka <mnstr style="font-size:16px">FNSTEIN</mnstr> or <mnstr style="font-size:16px">F++</mnstr>)</mono> and a <a href="@pathto(docs/n++)">template</a> language called <mnstr style="font-size:17px;">templatestein</mnstr> <mono>(<mnstr style="font-size:16px">N++</mnstr>)</mono>.</p>
+						</section>
+					</div>
+					<div class="col-6 col-12-medium">
+						<section>
+							<h3 class="icon solid fa-check">In-built interactive REPL and shell extension</h3>
+							<p>Nift has in-built interactive REPLs for each of <mnstr style="font-size:18px">functionstein</mnstr>, <mnstr style="font-size:18px">templatestein</mnstr>, <mono>ExprTk</mono> and <mono>Lua(JIT)</mono>, with documentation available <a href="@pathto(docs/REPL)">here</a>. You can easily switch between languages, and has a shell extension mode most useful for <a href="@pathto(docs/f++)">functionstein</a> called <zapfont style = "font-size:30px;">FLASHELL</zapfont>.</p>
+						</section>
+					</div>
+					<div class="col-6 col-12-medium">
+						<section>
 							<h3 class="icon solid fa-check">Script Support</h3>
 							<p>Nift has support for pre/post build/serve scripts, useful for things like integrating with webpack, Babel, npm, Bower, Yeoman, Browserify, Parcel, Brunch, SASS, Grunt, Puppeteer, GraphQL, Python Web Server, Live Server/Reload, etc..</p>
 						</section>
@@ -86,7 +110,7 @@
 					<div class="col-6 col-12-medium">
 						<section>
 							<h3 class="icon solid fa-check">Git Integration</h3>
-							<p>Nift integrates seamlessly with Git to clone from and push to <a href="https://aws.amazon.com/amplify/console/">AWS Amplify Console</a>, <a href="https://aws.amazon.com/codecommit/">AWS CodeCommit</a>, <a href="https://bitbucket.org/">BitBucket</a>, <a href="https://github.com/">GitHub</a>, <a href="https://gitlab.com/">GitLab</a>, <a href="https://www.netlify.com/">Netlify</a>, <a href="https://surge.sh/">surge.sh</a>, <a href="https://vercel.com/">Vercel</a> etc..</p>
+							<p>Nift integrates seamlessly with Git using either <mono>https</mono> or <mono>ssh</mono> to clone from and push to <a href="https://aws.amazon.com/amplify/console/">AWS Amplify Console</a>, <a href="https://aws.amazon.com/codecommit/">AWS CodeCommit</a>, <a href="https://bitbucket.org/">BitBucket</a>, <a href="https://github.com/">GitHub</a>, <a href="https://gitlab.com/">GitLab</a>, <a href="https://www.netlify.com/">Netlify</a>, <a href="https://surge.sh/">surge.sh</a>, <a href="https://vercel.com/">Vercel</a> etc..</p>
 						</section>
 					</div>
 					<div class="col-6 col-12-medium">

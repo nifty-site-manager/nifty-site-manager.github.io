@@ -1,6 +1,6 @@
 <!-- Main -->
 <section id="main" class="wrapper style2">
-	<div class="title">fn: <mono>dep</mono></div>
+	<div class="title">fn: <mono>item</mono></div>
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
@@ -13,7 +13,6 @@
 				<ul style="text-indent:30px">
 					<li><a href="#syntax">Syntax</a></li>
 					<li><a href="#description">Description</a></li>
-					<li><a href="#f++-eg">f++ example</a></li>
 					<li><a href="#n++-eg">n++ example</a></li>
 				</ul>
 
@@ -21,15 +20,21 @@
 					Syntax
 				</h4>
 				<p>
-					The syntax for <mono>dep</mono> calls is:
+					The syntax for <mono>item</mono> calls is:
 <div align="center" style="margin-top:-15px">
 <mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
-dep(params)
+item
+{
+	#block for item
+}
 </pre>
 </div><br>
 <div align="center">
 <mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
-\@dep(params)
+\@item
+{
+	\@# block for item
+}
 </pre>
 </div>
 				</p>
@@ -38,11 +43,7 @@ dep(params)
 					Description
 				</h4>
 				<p>
-					The <mono>dep</mono> function is for specifying <u>dependencies</u>, it takes a non-zero number of parameters that should be paths to existing directories and files, which adds them all as dependencies for the file being built. 
-				</p>
-
-				<p>
-					<b>Note:</b> You can also add file dependencies manually by adding a <mono>.deps</mono> file residing in the same directory as the content file. For example if you have <mono>content/index.content</mono> as the content file add a <mono>content/index.deps</mono> file containing the extra dependencies you want to track. 
+					The <mono>item</mono> function is for use with <a href="@pathto(docs/fns/paginate)">paginate</a> where you can find a basic example, it takes zero parameters and is followed by a block.  
 				</p>
 
 				<p>
@@ -57,27 +58,26 @@ dep(params)
 </div>
 				</p>
 
-				<h4 id="f++-eg">
-					f++ example
-				</h4>
-				<p>
-					Example of <mono>dep</mono> being used with <mono>f++</mono>:					
-
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline linenums lang-nift">
-dep("site/index.html")</pre>
-</div>
-				</p>
-
 				<h4 id="n++-eg">
 					n++ example
 				</h4>
 				<p>
-					Example of <mono>dep</mono> being used with <mono>n++</mono>:					
+					Example of <mono>item</mono> being used with <mono>n++</mono>:					
 
 <div align="center" style="margin-top:-30px; margin-bottom:10px">
 <pre class="prettyprint inline linenums lang-nift">
-\@dep("site/index.html")</pre>
+\@item
+{
+	<p>
+		item 1
+	</p>
+}
+\@item
+{
+	<p>
+		item 2
+	</p>
+}</pre>
 </div>
 				</p>
 			</div>

@@ -10,7 +10,7 @@
 
 			<!-- Image -->
 			<center>
-				<img src="@pathtofile(site/images/hacker_mind.svg)" alt="unDraw hacker mind illustration" width=300 style="margin-bottom:40px">
+				<img id="install-img" src="@pathtofile(site/images/hacker_mind.svg)" alt="unDraw hacker mind illustration" width=300 style="margin-bottom:40px">
 			</center>
 
 			<div class="content">
@@ -24,6 +24,7 @@
 				</p>
 				<div style="text-indent:30px; margin-top:-20px">
 					<ul>
+						<li><a href="#github-releases">Using GitHub release binaries</a></li>
 						<li><a href="#linux-snap">On Linux using Snapcraft</a></li>
 						<li><a href="#linux-flatpak">On Linux using FlatPak</a></li>
 						<li><a href="#install-source">On Linux from source</a></li>
@@ -49,6 +50,13 @@
 				</div>
 
 				<br>
+
+				<h4 id="github-releases">
+					Installation from <mono>GitHub</mono> release binaries
+				</h4>
+				<p>
+					There are binary releases for some platforms available directly from the Nift GitHub repo <a href="https://github.com/nifty-site-manager/nsm/releases">releases</a> page. It should be reasonably easy to clone or download the repo to compile and install the project yourself with a <mono>c++</mono> compiler installed (you may be able to share the binary around once one person has figured out how to compile the source), see the sections to compile from source for each platform (on some platforms like Windows you will need to copy the binary rather than installing from the makefile). 
+				</p>
 
 				<h4 id="linux-snap">
 					Linux installation using <mono>Snap</mono>

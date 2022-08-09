@@ -29,6 +29,10 @@ nsm build-updated (option)
 </div>
 				</p>
 
+				<p>
+					<b>Note:</b> The <mono>build</mono> command is the same as the <mono>build-updated</mono> command.
+				</p>
+
 				<h4 id="description">
 					Description
 				</h4>

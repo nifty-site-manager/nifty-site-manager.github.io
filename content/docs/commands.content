@@ -58,9 +58,9 @@
 					<ul>
 						<li><a href="@pathtopage(docs/cmds/backup-scripts)">backup-scripts</a></li>
 						<li><a href="@pathtopage(docs/cmds/bcp)">bcp</a> (build, commit & push)</li>
+						<li><a href="@pathtopage(docs/cmds/build-updated)">build(-updated)</a> (incremental build)</li>
 						<li><a href="@pathtopage(docs/cmds/build-all)">build-all</a> (full build)</li>
-						<li><a href="@pathtopage(docs/cmds/build-names)">build-names</a></li>
-						<li><a href="@pathtopage(docs/cmds/build-updated)">build-updated</a> (incremental build)</li> <br>
+						<li><a href="@pathtopage(docs/cmds/build-names)">build-names</a></li> <br>
 
 						<li><a href="@pathtopage(docs/cmds/clone)">clone</a></li>
 						<li><a href="@pathtopage(docs/cmds/commands)">commands</a></li>
@@ -76,6 +76,8 @@
 						<li><a href="@pathtopage(docs/cmds/info-tracking)">info-tracking</a></li>
 						<li><a href="@pathtopage(docs/cmds/info-watching)">info-watching</a></li>
 						<li><a href="@pathtopage(docs/cmds/init)">init</a></li> <br>
+
+						<li><a href="@pathtopage(docs/cmds/lolcat)">lolcat</a></li> <br>
 
 						<li><a href="@pathtopage(docs/cmds/mve)">mve</a></li>
 						<li><a href="@pathtopage(docs/cmds/mve-cont-dir)">mve-cont-dir</a></li>

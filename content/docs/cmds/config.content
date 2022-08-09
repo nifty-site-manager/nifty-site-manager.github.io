@@ -19,9 +19,11 @@
 					Syntax
 				</h4>
 				<p>
-					The syntax for the <mono>init</mono> command is:
+					The syntax for the <mono>config</mono> command is:
 <div align="center">
 <pre class="prettyprint inline lang-nift" style="margin-bottom:-10px">
+nift config global
+nift config project
 nift config --global user.name (username)
 nift config --global user.email (address)
 nsm config --global user.name (username)
@@ -34,7 +36,7 @@ nsm config --global user.email (address)
 					Description
 				</h4>
 				<p>
-					The <mono>config</mono> command is for getting and setting the username and email address configured with Git, this is particularly useful if installing through a package manager or app store which sandboxes <mono>Nift</mono> and requires Nift be bundled with <mono>Git</mono>. The syntax is almost identical to the syntax used with <mono>Git</mono>.
+					The <mono>config</mono> command is for modifying the global/project configuration file or getting and setting the username and email address configured with Git. The latter is particularly useful if installing through a package manager or app store which sandboxes <mono>Nift</mono> and requires Nift be bundled with <mono>Git</mono>. The syntax is almost identical to the syntax used with <mono>Git</mono>.
 				</p>
 			</div>
 		</section>

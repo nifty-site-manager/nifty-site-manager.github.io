@@ -47,7 +47,7 @@ std::string(definitions)
 					Description
 				</h4>
 				<p>
-					The <mono>std::string</mono> type is used for integer values.
+					The <mono>std::string</mono> type is used for string variables.
 				</p>
 
 				<p>

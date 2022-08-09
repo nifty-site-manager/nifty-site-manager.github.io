@@ -32,6 +32,10 @@ choco install nift
 				</div>
 
 				<p>
+					You can find compiler options including building with a normal version of <mono>Lua</mono> on the documentation page for <a href="@pathto(docs/make)">make</a>.
+				</p>
+
+				<p>
 					To uninstall <mono>Nift</mono> enter <mono>choco uninstall nift</mono>.
 				</p>
 

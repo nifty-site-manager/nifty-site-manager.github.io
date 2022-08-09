@@ -1,0 +1,60 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title">cmd: <mono>lolcat</mono></div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<div class="content">
+				<a href="#contents" class="to_top">[contents]</a>
+
+				<h4 id="contents">
+					Contents
+				</h4>
+				<ul style="text-indent:30px">
+					<li><a href="#syntax">Syntax</a></li>
+					<li><a href="#description">Description</a></li>
+					<li><a href="#eg-cmd">Command Line Examples</a></li>
+				</ul>
+
+				<h4 id="syntax">
+					Syntax
+				</h4>
+				<p>
+					The syntax for the <mono>lolcat</mono> command is:
+<div align="center">
+<pre class="prettyprint inline lang-nift" style="margin-bottom:-10px">
+nift lolcat
+nsm lolcat
+</pre>
+</div>
+				</p>
+
+				<h4 id="description">
+					Description
+				</h4>
+				<p>
+					The <mono>lolcat</mono> command works the same as basically all other lolcat implementations, ensuring there is a way for the <mnstr style="font-size:18px">functionstein</mnstr> <mono>(f++)</mono> and <mnstr style="font-size:18px">templatestein</mnstr> <mono>(f++)</mono> function <a href="@pathto(docs/fns/lolcat\,on)">lolcat.on</a> to do rainbow output when fetching output from using <mono>c++ system</mono> calls for <zapfont style = "font-size:30px;">FLASHELL</zapfont> and the other shell extensions and interpreters in-built in to <mono>Nift</mono>.
+				</p>
+
+				<p>
+					<b>Note:</b> using the above <mono>nift lolcat</mono> command has to run the Nift binary just to use the modified version of <a href="https://gihtub.com/n-ham/lolcat-cc">lolcat-cc</a> in-built in to <mono>Nift</mono>, it is better to also have <a href="https://gihtub.com/n-ham/lolcat-cc">lolcat-cc</a> installed on your machine to specify as the <mono>lolcatCmd</mono> in the <a href="@pathto(docs/config)">global and/or project configuration files</a>. You can specify other implementations of <mono>lolcat</mono> in your configuration files as well. See the docs page for <a href="@pathto(docs/fns/lolcat\,on)"></a>.
+				</p>
+
+				<h4 id="cmd-eg">
+					command line example
+				</h4>
+				<p>
+					Example of <mono>nift lolcat</mono> command being used from a terminal:					
+
+<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<pre class="prettyprint inline linenums lang-nift">
+ls -l | nift lolcat
+ls /usr/bin | nsm lolcat -ln
+echo "hello, world!" | nift lolcat -f
+</pre>
+</div>
+				</p>
+			</div>
+		</section>
+	</div>
+</section>
