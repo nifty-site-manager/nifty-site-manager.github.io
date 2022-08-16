@@ -271,25 +271,19 @@ for(int i=0; !=(i, 10); i+=1)
 		<script src="../../assets/js/lang-lua.js"></script>
 		<script src="../../assets/js/lang-nift.js"></script>
 
-		<!-- uses MathJax CDC for LaTeX support
-			 see http://docs.mathjax.org/en/latest/start.html for more info -->
-		<script type="text/x-mathjax-config">
-			MathJax.Hub.Config
-			({
-				extensions: ["tex2jax.js"],
-				jax: ["input/TeX", "output/HTML-CSS"],
-				tex2jax: 
-				{
-					inlineMath: [['$','$'], ['\\(','\\)']],
-					displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+		<script id="MathJax-script" async
+		        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+		</script>
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['$', '$'], ['\\(', '\\)']],
+					displayMath: [['$$', '$$'], ["\\[", "\\]"]],
 					processEscapes: true
-				},
-				"HTML-CSS": { availableFonts: ["MathJax TeX"] }
-			});
+				}
+			};
 		</script>
-		<script type="text/javascript" 
-				src="https://cdn.mathjax.org/mathjax/latest/MathJax.js">
-		</script>
+		
 
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-62165905-2"></script>
