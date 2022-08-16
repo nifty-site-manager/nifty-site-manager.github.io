@@ -26,37 +26,32 @@
 	</p>
 
 	<p>
-		The <mono>Nift</mono> documentation covers how to display $\LaTeX$ on your websites using <a href=https://www.mathjax.org/>MathJax</a>. Repeating the information on <a href="http://docs.mathjax.org/en/latest/start.html">this</a> page, using MathJax on your site is as simple as adding the following code to the head of each page:
+		The <mono>Nift</mono> documentation covers how to display $\LaTeX$ on your websites using <a href=https://www.mathjax.org/>MathJax</a>. Repeating the information on <a href="https://docs.mathjax.org/en/latest/web/configuration.html">this</a> page, using MathJax on your site is as simple as adding the following code to the head of each page:
 
 		<div align="center">
 <pre class="prettyprint inline">
-<!-- uses MathJax CDC for LaTeX support
-	 see http://docs.mathjax.org/en/latest/start.html for more info -->
-<script type="text/x-mathjax-config">
-	MathJax.Hub.Config
-	({
-		extensions: ["tex2jax.js"],
-		jax: ["input/TeX", "output/HTML-CSS"],
-		tex2jax: 
-		{
-			inlineMath: [['$','$'], ['\\(','\\)']],
-			displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-			processEscapes: true
-		},
-		"HTML-CSS": { availableFonts: ["MathJax TeX"] }
-	});
+<!-- uses MathJax CDN for LaTeX support
+	 see https://docs.mathjax.org/en/latest/web/configuration.html for more info -->
+<script id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 </script>
-<script type="text/javascript" 
-		src="https://cdn.mathjax.org/mathjax/latest/MathJax.js">
+<script>
+	window.MathJax = {
+		tex: {
+			inlineMath: [['$', '$'], ['\\(', '\\)']],
+			displayMath: [['$$', '$$'], ["\\[", "\\]"]],
+			processEscapes: true
+		}
+	};
 </script>
 </pre>
 		</div>
 	</p>
 
 	<div>
-		You should then be able to paste $\LaTeX$ equations straight into content files. Both <mono>`$..\$`</mono> and <mono>`\(..\)`</mono> work for inline equations, and both <mono>`\$\$..\$\$`</mono> and <mono>`\[..\]`</mono> work for displayed equations (note inside markdown/showdown blocks use <mono>`\\(..\\)`</mono> and <mono>`\\[..\\]`</mono>, or the <mono>`\$`</mono> syntax). Eg. When \\(a \ne 0\\), there are two solutions to \\(ax^2 + bx + c = 0\\) and they are:
+		You should then be able to paste $\LaTeX$ equations straight into content files. Both <mono>`\\$..\\$`</mono> and <mono>`\\(..\\)`</mono> work for inline equations, and both <mono>`\\$\\$..\\$\\$`</mono> and <mono>`\\[..\\]`</mono> work for displayed equations (note inside markdown/showdown blocks use <mono>`\\(..\\)`</mono> and <mono>`\\[..\\]`</mono>, or the <mono>`\$`</mono> syntax). Eg. When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are:
 
-		\\[x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}\\]
+		\[x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}\]
 	</div>
 
 	<p>
