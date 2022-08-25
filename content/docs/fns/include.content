@@ -5,12 +5,12 @@
 		<!-- Features -->
 		<section id="features">
 			<div class="content">
-				<a href="#contents" class="to_top">[contents]</a>
+				<a href="#contents" class="to-top">[contents]</a>
 
 				<h4 id="contents">
 					Contents
 				</h4>
-				<ul style="text-indent:30px">
+				<ul>
 					<li><a href="#syntax">Syntax</a></li>
 					<li><a href="#description">Description</a></li>
 					<li><a href="#options">Options</a></li>
@@ -83,7 +83,7 @@ include{options}(params)
 				<p>
 					Examples of <mono>include</mono> being used with <mono>f++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums">
 include("process.f")
 include{n++}("process.n")</pre>
@@ -96,7 +96,7 @@ include{n++}("process.n")</pre>
 				<p>
 					Examples of <mono>include</mono> being used with <mono>n++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums">
 \@include{f++}("process.f")
 \@include("process.n")</pre>

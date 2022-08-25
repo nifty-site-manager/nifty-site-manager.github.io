@@ -4,13 +4,9 @@
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
-			<header class="style1">
-				<h2>How to use markdown on your websites</h2>
-			</header>
-
-			<div class="content" style="margin-top:-50px;">
+			<div class="content">
 				<center>
-					<img src="@pathtofile(site/images/markdown.svg)" id="markdown-logo" alt="Markdown logo" width=250 style="margin-bottom:20px">
+					<img src="@pathtofile(site/images/markdown.png)" id="markdown-logo" alt="Markdown logo" width=250 style="margin-bottom:20px">
 				</center>
 
 				<p>
@@ -27,7 +23,7 @@
 
 				<p>
 					Options for converting markdown to html at load-time on your websites include:
-					<ul style="text-indent:30px">
+					<ul>
 						<li><a href="http://showdownjs.com/">Showdown</a></li>
 						<li><a href="https://marked.js.org">Marked.js</a></li>
 						<li><a href="https://github.com/markdown-it/markdown-it">markdown-it</a></li>

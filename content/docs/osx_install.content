@@ -4,10 +4,6 @@
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
-			<header class="style1">
-				<h2>How to install Nift on OSX</h2>
-			</header>
-
 			<div class="content">
 				<h4>
 					OSX installation using <mono>Homebrew</mono>
@@ -16,7 +12,7 @@
 
 				<p>
 					You can install <mono>Nift</mono> on OSX using the <mono>Homebrew</mono> package manager, see <a href="https://formulae.brew.sh/formula/nift">here</a>. Install instructions are <a href="https://brew.sh/">here</a>. Alternatively first install <mono>brew</mono>, eg:, 
-<div align="center" style="margin-top:-20px; margin-bottom: 20px">
+<div align="center">
 <pre class="prettyprint">
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 </pre>
@@ -25,7 +21,7 @@
 
 				<p>
 					then enter:
-<div align="center" style="margin-top:-20px; margin-bottom: 20px">
+<div align="center">
 <pre class="prettyprint">
 brew install nift
 </pre>

@@ -25,12 +25,12 @@
 					<u>Special single-line comments</u> are almost the same as raw single-line comments except that in the source code for the built output file the following line is placed on the same line after the text before <mono>\@!\n</mono>. You cannot put two instances of <mono>\@!\n</mono> on the same line, Nift will throw a build error.
 				</p>
 
-				<a href="#index" class="to_top">[index]</a>
+				<a href="#index" class="to-top">[index]</a>
 				<h4 id="index">Index</h4>
-				@#<a href="#contents" class="to_top">[contents]</a>
+				@#<a href="#contents" class="to-top">[contents]</a>
 				<p id="contents">
 					Below is an index of Nift's hard-coded comments which can be called from <a href="@pathto(docs/f++)">f++</a> and <a href="@pathto(docs/n++)">n++</a>: 
-					<ul style="text-indent:30px">
+					<ul>
 						<li><a href="@pathtopage(docs/fns/!newline)">!\n</a> (special single-line comment)</li>
 						<li><a href="@replace_all(@pathtopage(docs/fns/HASH_), '#', '%23')">#</a> (raw single-line comment)</li>
 						<li><a href="@replace_all(@pathtopage(docs/fns/HASH--), '#', '%23')">#--</a> (parsed multi-line comment)</li>

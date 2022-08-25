@@ -4,11 +4,7 @@
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
-			<header class="style1">
-				<h2>How to work with JSON data</h2>
-			</header>
-
-			<div class="content" style="margin-top:-50px;">
+			<div class="content">
 				<center>
 					<img src="@pathtofile(site/images/JSON.svg)" alt="JSON file icon image" width=250 style="margin-bottom:20px; max-width:70%">
 				</center>
@@ -27,7 +23,7 @@
 					
 							</ul>
 
-<div style="margin-top:-30px; margin-bottom:20px">
+<div align="center">
 For example you can use:
 <pre class="prettyprint">
 \@system("curl 'https://api.github.com/repos/stedolan/jq/commits?per_page=5' | jq '.[0]'")
@@ -63,7 +59,7 @@ For example you can use:
 								</li>
 							</ul>
 
-<div style="margin-top:-30px; margin-bottom:20px">
+<div align="center">
 For example you can use:
 <pre class="prettyprint">
 \@system{console}("curl -o todos.json https://jsonplaceholder.typicode.com/todos")
@@ -83,7 +79,7 @@ or alternatively,
 				<p>
 					Other tools you might find useful include:
 				</p>
-				<div style="text-indent:30px; margin-top:-20px">
+				<div>
 					<ul>
 						<li><a href="http://kmkeen.com/jshon/">Jshon</a> - Jshon parses, reads and creates JSON. It is designed to be as usable as possible from within the shell and replaces fragile adhoc parsers made from grep/sed/awk as well as heavyweight one-line parsers made from perl/python. Requires <a href="http://www.digip.org/jansson/">Jansson</a>;</li>
 						<li><a href="https://rapidjson.org/">RapidJSON</a> - A fast JSON parser/generator for C++ with both SAX/DOM style API;</li>
@@ -102,7 +98,7 @@ or alternatively,
 						<li><a href="https://github.com/dflemstr/rq">Record Query</a> - A tool for doing record analysis and transformation;</li>
 						<li><a href="https://github.com/benbernard/RecordStream">Record Stream</a> - commandline tools for slicing and dicing JSON records;</li>
 						<li><a href="https://github.com/chrisdone/jl">JSON lambda (jl)</a> - Functional sed for JSON (a tiny functional language for querying and manipulating JSON);</li>
-						<li><a href="https://github.com/jmespath/jp">jp</a> - command is a command line interface to <a href="http://jmespath.org/">JMESPath</a>, an expression language for manipulating JSON;</li>
+						<li><a href="https://github.com/jmespath/jp">jp</a> - a command line interface to <a href="http://jmespath.org/">JMESPath</a>, an expression language for manipulating JSON;</li>
 						<li><a href="https://github.com/zpoley/json-command">json-command</a> - JSON command line processing toolkit;</li>
 						<li><a href="http://jgrep.org/">JSON-grep</a> (<a href="https://github.com/ploubser/JSON-Grep">GitHub</a>) - command line tool and API for parsing JSON documents based on logical expressions;</li>
 						<li><a href="https://github.com/jtopjian/jsed">jsed</a> - command line JSON editor.</li>

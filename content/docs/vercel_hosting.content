@@ -4,12 +4,8 @@
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
-			<header class="style1">
-				<h2>How to host a website on Vercel</h2>
-			</header>
-
 			<center>
-				<a href="https://www.vercel.com/"><img src="@pathtofile(site/images/vercel-black.svg)" id="vercel-logo" alt="Vercel logo" width=200 style="max-width: 45%; margin-bottom: 40px"></a>
+				<a href="https://www.vercel.com/"><img src="@pathtofile(site/images/vercel-white.svg)" id="vercel-logo" alt="Vercel logo" style="width: 150px; max-width: 45%; margin-bottom: 40px"></a>
 			</center>
 
 			<div class="content">

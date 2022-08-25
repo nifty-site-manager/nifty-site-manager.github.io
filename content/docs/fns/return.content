@@ -5,11 +5,11 @@
 		<!-- Features -->
 		<section id="features">
 			<div class="content">
-				<a href="#contents" class="to_top">[contents]</a>
+				<a href="#contents" class="to-top">[contents]</a>
 
 				<p id="contents">
 					Contents:
-					<ul style="text-indent:30px">
+					<ul>
 						<li><a href="#syntax">Syntax</a></li>
 						<li><a href="#f++-eg">f++ example</a></li>
 						<li><a href="#n++-eg">n++ example</a></li>
@@ -21,7 +21,7 @@
 				</h4>
 				<p>
 					The syntax for <mono>break</mono> calls is:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline"><code data-language="c">break
 </code></pre>
 </div>
@@ -33,7 +33,7 @@
 				<p>
 					Example of <mono>break</mono> being used with <mono>f++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline">
 :=(int, i=0)
 while(1)
@@ -53,7 +53,7 @@ while(1)
 				<p>
 					Example of <mono>break</mono> being used with <mono>n++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline">
 \@:=(int, i=0)
 \@while(1)

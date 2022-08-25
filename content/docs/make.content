@@ -14,7 +14,7 @@
 				</h4>
 				<p>
 					Below is an example of passing a couple of variables to the Makefile:
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline">
 make BUNDLED=0 LUA_VERSION=5.3; sudo make install
 </pre>

@@ -1,39 +1,29 @@
 <!-- Main -->
 <section id="main" class="wrapper style2">
-	<div class="title"><mnstr style="font-size:16px">N++</mnstr></div>
+	<div class="title"><mono>n++</mono> (template language)</div>
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
-			<header class="style1">
-				<h2 style="margin-bottom: 100px">
-					Nift's in-built template language
-				</h2>
-
-				<noselect>
-					<h2>
-						<mnstr style = "font-size:9vw;">TEMPLATESTEIN</mnstr>
-					</h2>
-				</noselect>
-			</header>
+			@/*<header class="style1">
+				<h2 class="noselect" style="margin-top: 5vw; margin-bottom: 2vw"><mnstr style="font-size:8vw">TEMPLATESTEIN</mnstr></h2>
+			</header>*/
 
 			<!-- Image -->
 			<center>
-				@//<img src="@pathtofile(site/images/functionstein.png)" alt="templatestein koala mascot" width=450 style="margin-bottom:40px"><br>
-
-				<img src="@pathtofile(site/images/koala.svg)" alt="templatesteign koala mascot" width=350 style="margin-bottom:40px">
+				<img src="@pathtofile(site/images/koala.svg)" alt="templatestein koala mascot" style="width: 350px; max-width: 70%; margin-bottom:40px">
 			</center>
 
 			<div class="content">
 				<p>
-					Nift has its own in-built template language <mnstr style="font-size:16px">TEMPLATESTEIN</mnstr>, or just <mnstr style="font-size:16px">N++</mnstr>. The <mono>n</mono> comes from <mono>Nift</mono> (a.k.a <mono>nsm</mono>), while the <mono>++</mono> comes from the language being developed in <mono>c++</mono>. 
+					Nift has its own in-built template language <mono>n++</mono>, also nicknamed <mnstr style="font-size:16px">TEMPLATESTEIN</mnstr>.
 				</p>
 
-				<a href="#contents" class="to_top">[contents]</a>
+				<a href="#contents" class="to-top">[contents]</a>
 
 				<h4 id="contents">
 					Contents
 				</h4>
-				<div style="text-indent:30px; margin-top:10px">
+				<div>
 					<ul>
 						<li><a href="#interpreter">n++ interpreter</a></li>
 						<li><a href="#shell">n++ shell</a></li>
@@ -45,10 +35,10 @@
 				</div>
 
 				<h4 id="interpreter">
-					<mnstr style="font-size:16px">N++</mnstr> interpreter
+					<mono>n++</mono> interpreter
 				</h4>
 				<p>
-					<mono>Nift</mono> has an <mnstr style="font-size:16px">N++</mnstr> interpreter that you can start with either <mono>nsm interp -n++</mono> or <mono>nift interp -n++</mono>. See the <a href="@pathto(docs/REPL)">interactive REPL</a> page for docs.
+					<mono>Nift</mono> has an <mono>n++</mono> interpreter that you can start with either <mono>nsm interp -n++</mono> or <mono>nift interp -n++</mono>. See the <a href="@pathto(docs/REPL)">interactive REPL</a> page for docs.
 				</p>
 
 				<p>
@@ -56,14 +46,14 @@
 				</p>
 
 				<p>
-					You can switch to one of the other languages available in Nift's interpreter using <mono>nsm_lang(langStr)</mono> where <mono>langStr</mono> is one of <mono>f++</mono>, <mnstr style="font-size:16px">N++</mnstr>, <mono>lua</mono> or <mono>exprtk</mono>.
+					You can switch to one of the other languages available in Nift's interpreter using <mono>nsm_lang(langStr)</mono> where <mono>langStr</mono> is one of <mono>f++</mono>, <mono>n++</mono>, <mono>lua</mono> or <mono>exprtk</mono>.
 				</p>
 
 				<h4 id="shell">
-					<mnstr style="font-size:16px">N++</mnstr> shell
+					<mono>n++</mono> shell
 				</h4>
 				<p>
-					<mono>Nift</mono> has an <mnstr style="font-size:16px">N++</mnstr> shell that you can start with either <mono>nsm sh -n++</mono> or <mono>nift sh -n++</mono>. See the <a href="@pathto(docs/REPL)">interactive REPL</a> page for docs.
+					<mono>Nift</mono> has an <mono>n++</mono> shell that you can start with either <mono>nsm sh -n++</mono> or <mono>nift sh -n++</mono>. See the <a href="@pathto(docs/REPL)">interactive REPL</a> page for docs.
 				</p>
 
 				<p>
@@ -71,7 +61,7 @@
 				</p>
 
 				<p>
-					You can switch to one of the other languages available in Nift using <mono>nsm_lang(langStr)</mono> where <mono>langStr</mono> is one of <mono>f++</mono>, <mnstr style="font-size:16px">N++</mnstr>, <mono>lua</mono> or <mono>exprtk</mono>.
+					You can switch to one of the other languages available in Nift using <mono>nsm_lang(langStr)</mono> where <mono>langStr</mono> is one of <mono>f++</mono>, <mono>n++</mono>, <mono>lua</mono> or <mono>exprtk</mono>.
 				</p>
 
 
@@ -79,33 +69,33 @@
 					Running n++ scripts
 				</h4>
 				<p>
-					If you have an <mnstr style="font-size:16px">N++</mnstr> script saved in a file <mono>path/script-name.n</mono> you can run it with either of the following:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+					If you have an <mono>n++</mono> script saved in a file <mono>path/script-name.n</mono> you can run it with either of the following:
+				</p>
+<div align="center">
 <pre class="prettyprint inline">
 nsm run path/script-name.n
 nift run path/script-name.n
 </pre>
 </div>
-				</p>
 
 				<p>
 					If the script has a different extension, say <mono>.ext</mono>, you can run the script with either of the following:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+				</p>
+<div align="center">
 <pre class="prettyprint inline">
 nsm run -n++ path/script-name.ext
 nift run -n++ path/script-name.ext
 </pre>
 </div>
-				</p>
 
 				<p>
 					If you want to run a normal file, eg. <mono>script.n</mono>, as a script then use something typical like the following as a shebang:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+				</p>
+<div align="center">
 <pre class="prettyprint inline">
 #!/usr/bin/env nift
 </pre>
 </div>
-				</p>
 
 				<p>
 					There's information about "run commands" scripts, eg. <mono>niftrc.f</mono> available on the <a href="@pathto('docs/REPL')#rc">REPL</a> page.
@@ -115,17 +105,15 @@ nift run -n++ path/script-name.ext
 					n++ from f++
 				</h4>
 				<p>
-					You can run <mnstr style="font-size:16px">N++</mnstr> code from <mono>f++</mono> using either of the following:					
-
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+					You can run <mono>n++</mono> code from <mono>f++</mono> using either of the following:	
+				</p>			
+<div align="center">
 <pre class="prettyprint inline">
 n++(/* single line of n++ code */)
 </pre>
 </div>
-				</p>
 
-				<p>
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline">
 n++
 {
@@ -133,25 +121,25 @@ n++
 }
 </pre>
 </div>
-				</p>
 
 				<h4 id="nift-fns">
 					Nift functions
 				</h4>
 				<p>
-					All of Nift's <a href="@pathtopage(docs/fns)">hard-coded functions</a> (including functions for defining variables, functions and structs) are available in your <mnstr style="font-size:16px">N++</mnstr> code. The syntax for calling a function is as follows:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+					All of Nift's <a href="@pathtopage(docs/fns)">hard-coded functions</a> (including functions for defining variables, functions and structs) are available in your <mono>n++</mono> code. The syntax for calling a function is as follows:
+				</p>
+<div align="center">
 <pre class="prettyprint inline">
 \@funcName{options}(params)
 </pre>
 </div>
-				</p>
 
 				<h4 id="examples">
 					Examples
 				</h4>
 				<p>
 					The following script will create and delete 100k files on your machine:
+				</p>
 <div align="center" style="margin-bottom:10px">
 <pre class="prettyprint inline lang-nift">
 #!/usr/bin/env nift
@@ -165,8 +153,10 @@ n++
 </pre>
 </div>
 
+				<p>
 					<b>Note:</b> do not leave the directory you are running the script from open on your machine, run it from a terminal/command prompt. The following bash script will do the same but much slower, feel free to provide a similar windows script in powershell or a batch file:
-<div align="center" style="margin-top:30px; margin-bottom:10px">
+				</p>
+<div align="center">
 <pre class="prettyprint inline">
 #!/usr/bin/env bash
 COUNTER=0
@@ -178,13 +168,10 @@ while [  $COUNTER -lt 100000 ]; do
 done
 </pre>
 </div>
-				</p><br><br><br><br><br>
 
-				<center>
-					<div>
-						<noselect><mnstr style = "font-size:20vw">{</mnstr></noselect>
-					</div>
-				</center>
+				<div align="center" class="noselect" style="margin-top: 11vw">
+					<mnstr style="font-size:20vw">{</mnstr>
+				</div>
 			</div>
 		</section>
 	</div>

@@ -5,12 +5,12 @@
 		<!-- Features -->
 		<section id="features">
 			<div class="content">
-				<a href="#contents" class="to_top">[contents]</a>
+				<a href="#contents" class="to-top">[contents]</a>
 
 				<h4 id="contents">
 					Contents
 				</h4>
-				<ul style="text-indent:30px">
+				<ul>
 					<li><a href="#syntax">Syntax</a></li>
 					<li><a href="#description">Description</a></li>
 					<li><a href="#f++-eg">f++ example</a></li>
@@ -47,7 +47,7 @@ parse(int, string)
 				<p>
 					Example of <mono>parse</mono> being used with <mono>f++</mono>:					
 
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums lang-nift">
 function(funcA)
 {
@@ -69,7 +69,7 @@ parse(2, "funcB()")</pre>
 				<p>
 					Examples of <mono>parse</mono> being used with <mono>n++</mono>:					
 
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums lang-nift">
 \@function(funcA)
 {
@@ -86,7 +86,7 @@ parse(2, "funcB()")</pre>
 				</p>
 
 				<p>
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums lang-nift">
 \@:=(string, s1="hello", s2="\$[s1]", s3="\$[s2]")
 \@console("\@parse(3, \$[s3])")</pre>
@@ -95,7 +95,7 @@ parse(2, "funcB()")</pre>
 
 				<p>
 					Note that the above is slightly different to the following:
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums lang-nift">
 \@:=(string, s1="hello", s2="s1", s3="s2")
 \@console("\$[\$[\$[s3]]]")</pre>

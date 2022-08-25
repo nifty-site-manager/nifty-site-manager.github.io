@@ -5,12 +5,12 @@
 		<!-- Features -->
 		<section id="features">
 			<div class="content">
-				<a href="#contents" class="to_top">[contents]</a>
+				<a href="#contents" class="to-top">[contents]</a>
 
 				<h4 id="contents">
 					Contents
 				</h4>
-				<ul style="text-indent:30px">
+				<ul>
 					<li><a href="#syntax">Syntax</a></li>
 					<li><a href="#description">Description</a></li>
 					<li><a href="#eg">Example</a></li>
@@ -22,7 +22,7 @@
 				<p>
 					The syntax for the <mono>track</mono> command is:
 <div align="center">
-<pre class="prettyprint inline lang-nift" style="margin-bottom:-10px">
+<pre class="prettyprint inline lang-nift">
 nift track name (title) (template-path)
 nsm track name (title) (template-path)
 </pre>
@@ -65,7 +65,7 @@ nsm track name (title) (template-path)
 				<p>
 					Example of <mono>track</mono> being used:					
 
-<div align="center" style="margin-top:-10px">
+<div align="center">
 <pre class="prettyprint inline linenums lang-nift">
 nift track index
 nift track about 'about page' 'template/page.template'

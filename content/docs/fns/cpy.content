@@ -5,12 +5,12 @@
 		<!-- Features -->
 		<section id="features">
 			<div class="content">
-				<a href="#contents" class="to_top">[contents]</a>
+				<a href="#contents" class="to-top">[contents]</a>
 
 				<h4 id="contents">
 					Contents
 				</h4>
-				<ul style="text-indent:30px">
+				<ul>
 					<li><a href="#syntax">Syntax</a></li>
 					<li><a href="#description">Description</a></li>
 					<li><a href="#options">Options</a></li>
@@ -54,7 +54,7 @@ cpy sources target
 
 				<p>
 					<b>Note:</b> <mono>Nift</mono> will skip to the first non-whitespace (ie. to the first character that is not a space, tab or newline) after a <mono>cpy</mono> call and inject it to the output file where the call started. If you want to prevent <mono>Nift</mono> from doing this put a '<mono>!</mono>' after the call, eg.:
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline lang-nift">
 \@cpy dir1 dir2;!
 \@cp(dir1, dir2)!
@@ -120,7 +120,7 @@ cpy sources target
 				<p>
 					Examples of <mono>cpy</mono> being used with <mono>f++</mono>:					
 
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums">
 cpy("sample.txt", "sample1.txt")
 cpy dir1 dir2 dir3
@@ -134,7 +134,7 @@ cpy{u} *.txt dir</pre>
 				<p>
 					Example of <mono>cpy</mono> being used with <mono>n++</mono>:					
 
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums">
 \@cpy("sample.txt", "sample1.txt")
 \@cpy dir1 dir2 dir3

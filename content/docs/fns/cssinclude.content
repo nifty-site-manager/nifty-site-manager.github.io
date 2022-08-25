@@ -5,12 +5,12 @@
 		<!-- Features -->
 		<section id="features">
 			<div class="content">
-				<a href="#contents" class="to_top">[contents]</a>
+				<a href="#contents" class="to-top">[contents]</a>
 
 				<h4 id="contents">
 					Contents
 				</h4>
-				<ul style="text-indent:30px">
+				<ul>
 					<li><a href="#syntax">Syntax</a></li>
 					<li><a href="#description">Description</a></li>
 					<li><a href="#options">Options</a></li>
@@ -41,7 +41,7 @@ cssinclude{options}(abolute-path)
 
 				<p>
 					The <mono>cssinclude</mono> function takes a single absolute path as input and returns the following code to insert the path as a stylesheet in html using the relative path:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline">
 <link rel="stylesheet" type="text/css" href="relative-path" options>
 </pre>
@@ -54,7 +54,7 @@ cssinclude{options}(abolute-path)
 
 				<p>
 					<b>Note:</b> Another good way to include a css file, where an error is thrown if the file does not exist, is:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline">
 <link rel="stylesheet" 
       type="text/css" 
@@ -76,7 +76,7 @@ cssinclude{options}(abolute-path)
 				<p>
 					Example of <mono>cssinclude</mono> being used with <mono>f++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums">
 cssinclude("site/assets/css/main.css")</pre>
 </div>
@@ -88,7 +88,7 @@ cssinclude("site/assets/css/main.css")</pre>
 				<p>
 					Example of <mono>cssinclude</mono> being used with <mono>n++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums">
 \@cssinclude("site/assets/css/main.css")</pre>
 </div>

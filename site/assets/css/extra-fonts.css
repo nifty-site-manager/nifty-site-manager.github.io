@@ -1,0 +1,17 @@
+@font-face {
+  font-family:"monsterz";
+  src: url("../webfonts/MonstersAttack-WpDz.ttf") format("truetype");
+}
+@font-face {
+  font-family:"lightning";
+  src: url("../webfonts/Lightningvolt-xoqm.ttf") format("truetype");
+}
+
+mnstr {
+  font-family:"monsterz";
+  color: #509716;
+}
+zapfont {
+  font-family:"lightning";
+  color: #f2fa19;
+}

@@ -1,249 +1,27 @@
-<!DOCTYPE HTML>
-
-<!--
-	Official Nift Website
-
-	Nift is a cross-platform open source website generator developed from the ground up in C++.
--->
-
+<!doctype html>
 <html lang="en">
-    <head>
-        <title>Nift - scripts</title>
-        <meta charset="utf-8">
-        <meta name="description" content="Nift is the world's fastest framework for 
-                    managing and generating websites. It's cross-platform, opensource, 
-                    lightning fast, developed from the ground up in C++, and released 
-                    for free under the MIT license - use it for any of your personal 
-                    or commercial projects">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../assets/css/main.css">
-        <link rel="stylesheet" href="../assets/css/pagestyle.css">
-        <link rel="stylesheet" href="../assets/css/pre.css">
-        <link rel="stylesheet" href="../assets/css/toggle.css">
-        <link rel='icon' type='image/png' href='../images/favicon.png'>
-        
-        <!-- uses Font Awesome for vector icons and social logos -->
-        <script src="https://kit.fontawesome.com/b51e6952ec.js"></script>
-    </head>
-    <body class="is-preload">
-		<div id="page-wrapper">
-			<!-- Header -->
-			<section id="header" class="wrapper">
-			
-				<!-- Logo -->
-				<div id="logo">
-					<noselect>
-					<img src="../images/rabbit.png" alt="Nift bunny mascot" width=325 style="max-width:90%">
-			
-					<p style="margin-bottom:0px">
-						<a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; 
-						<a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a> &nbsp; 
-						<a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a> &nbsp; 
-						<a href="https://nift.teemill.com/" title="TeeMill" class="teemill"><i class="fas fa-tshirt fa-2x"></i></a> </p>
-					<p style="margin-top:10px">
-						<a href="https://github.com/nifty-site-manager/nsm/discussions" title="GitHub Discussions" class="gh"><i class="fas fa-comment-dots fa-2x"></i></a> &nbsp;
-						<a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a> &nbsp; 
-						<a href="https://old.reddit.com/r/nift" title="Reddit" class="reddit"><i class="fab fa-reddit-square fa-2x"></i></a> &nbsp; 
-						<a href="https://twitter.com/nifty_site_man" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a>
-					</p>
-			
-					<p style="color:#372C2A">A cross-platform open source website generator</p>
-			
-					<p>
-						<a href="https://chocolatey.org/packages/nift"><img src="../images/chocolatey-icon.png" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
-						<a href="installing.html#osx-brew"><img src="../images/brew-icon.png" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
-						<a href="installing.html#freebsd"><img src="../images/freebsd.png" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
-						<a href="installing.html#linux-flatpak"><img src="../images/flathub-icon.png" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
-						<a href="installing.html#gentoo"><img src="../images/gentoo.svg" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
-						<a href="https://snapcraft.io/nift"><img src="../images/snap-icon.png" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
-					</p>
-					</noselect>
-				</div>
-			
-				<!-- Nav -->
-				<noselect>
-					<nav id="nav">
-						<ul>
-							<li><a href="../index.html">Home</a></li>
-							<li>
-								<a href="">Documentation</a>
-								<ul>
-									<li><a href="installing.html">Installing</a></li>
-									<li><a href="hosting.html">Hosting</a></li>
-									<li><a href="commands.html">Commands</a></li>
-									<li><a href="config.html">Config</a></li>
-									<li><a href="template_files.html">Template Files</a></li>
-									<li><a href="fns.html">Functions</a></li>
-									<li><a href="types.html">Types</a></li>
-									<li><a href="f++.html">f++ (scripting)</a></li>
-									<li><a href="n++.html">n++ (templates)</a></li>
-									<li><a href="lua.html">Lua(JIT)</a></li>
-									<li><a href="exprtk.html">ExprTk</a></li>
-									<li><a href="REPL.html">Interactive REPL</a></li>
-									<li><a href="scripts.html">Scripts</a></li>
-									<li><a href="template_languages.html">Template Languages</a></li>
-									<li><a href="JSON.html">JSON Data</a></li>
-									<li><a href="markdown.html">Markdown</a></li>
-									<li><a href="translators.html">Translators</a></li>
-									<li><a href="mathematics.html">Mathematics</a></li>
-									<li><a href="code_blocks.html">Code Blocks</a></li>
-									<li><a href="presentations.html">Presentations</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="">Resources</a>
-								<ul>
-									<li><a href="../resources/tutorials.html">Tutorials</a></li>
-									<li><a href="../resources/templates.html">Templates</a></li>
-									<li><a href="../resources/blog_templates.html">Blog Templates</a></li>
-									<li><a href="../resources/css_frameworks.html">CSS Frameworks</a></li>
-									<li><a href="../resources/examples.html">Examples</a></li>
-									<li><a href="../resources/js_frameworks.html">JS Frameworks</a></li>
-									<li><a href="../resources/links.html">Links</a></li>
-									<li><a href="../resources/logos.html">Logos</a></li>
-									<li><a href="../resources/promos.html">Promos</a></li>
-									<li><a href="../resources/php_frameworks.html">PHP Frameworks</a></li>
-								</ul>
-							</li>
-							<li><a href="../support.html">Support</a></li>
-						</ul>
-					</nav>
-				</noselect>
-			</section>
-
-		    <!-- Main -->
-		    <section id="main" class="wrapper style2">
-		    	<div class="title">Scripts/Programs</div>
-		    	<div class="container">
-		    		<!-- Features -->
-		    		<section id="features">
-		    			<header class="style1">
-		    				<h2>Pre/Post Build/Serve Scripts/Programs</h2>
-		    			</header>
-		    
-		    			<!-- Image -->
-		    			<center>
-		    				<img src="../images/scripts.png" alt="servers and scripts image" width=300 style="margin-bottom:40px">
-		    			</center>
-		    
-		    			<div class="content">
-		    				<p>
-		    					Nift has support for you to optionally add in pre/post build/serve scripts/programs to your websites. Just a few of the things this can be useful for includes integrating with <a href="https://webpack.js.org/">webpack</a>, <a href="https://babeljs.io/">Babel</a>, <a href="https://www.npmjs.com/">npm</a>, <a href="https://bower.io/">Bower</a>, <a href="https://yeoman.io/">Yeoman</a>, <a href="http://browserify.org/">Browserify</a>, <a href="https://parceljs.org/">Parcel</a>, <a href="https://brunch.io/">Brunch</a>, <a href="https://sass-lang.com/">SASS</a>, <a href="https://gruntjs.com/">Grunt</a>, <a href="https://github.com/puppeteer/puppeteer">Puppeteer</a>, Python webserver, <a href="https://www.npmjs.com/package/live-server">Live Server</a>, <a href="http://livereload.com/">Live Reload</a>, etc.. You can use any scripting or programming language you want, eg. batch, bash shell, C/C++, C#, fish, go, Haskell, Java, Javascript, Objective-C, Perl, PHP, Python, Ruby, Swift, Zsh shell and many more.
-		    				</p>
-		    
-		    				<p>
-		    					<b>Note:</b> Make sure your scripts/programs have executable permissions, otherwise Nift will be unable to run them and should throw a build error.
-		    				</p>
-		    
-		    				<p>
-		    					The script extension for website-wide scripts/programs is specified with <mono>scriptExt</mono> in the <mono>.nsm/nift.config</mono> configuration file, which you can check using the <a href="commands.html">Nift command</a> <mono>config</mono>. To check page-specific script extensions use the <a href="commands.html">Nift command</a> <mono>info page-name</mono>. Site wide and page-specific script extensions may be set using the <a href="commands.html">Nift command</a> <mono>new-script-ext (page-name) script-extension</mono>.
-		    				</p>
-		    
-		    				<p>
-		    					<b>Note:</b> Build/serve scripts/programs are moved to the project root directory to run and by default have a backup copy made. If scripts/programs are so large that copying the file will take time, your site configuration file <mono>.nsm/nift.config</mono> can optionally include <mono>backupScripts bool</mono> to indicate whether build/serve scripts/programs should be backed up when run.
-		    				</p>
-		    
-		    				<p>
-		    					Alternatively you can write scripts/programs that you run yourself (not using Nift) which they themselves add the Nift build process in to them, leaving you with just one program that you need to run when building. You will still get to take advantage of Nift's unbeaten build times and powerful template language doing this.
-		    				</p>
-		    
-		    				<p>
-		    					<b>Note:</b> Scripts/programs are run from the project root directory, so all paths in scripts/programs should be starting from that location. Also do not change directory in your scripts/programs as it will mess up the other threads that are also running scripts/programs and/or building pages. If you really must change directories in your scripts/programs then you will have to set the number of build threads to 1 and change back to the project root directory before each script/program ends. Furthermore the output of scripts/programs is not displayed to you when building until after they have finished running, so there is no way to display messages to the user if using user input methods and so are discouraged from being used (plus you would have interference output from other threads), a compromise for much much faster build times (user input is not how you want to be building websites anyway).
-		    				</p>
-		    
-		    				<p>
-		    					Website-wide scripts/programs should reside in the project root directory in a file to be named as follows:
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="inline">
-pre-build.scriptExt
-post-build.scriptExt
-pre-serve.scriptExt
-post-serve.scriptExt
-</pre>
-		    </div>
-		    
-		    					It should be reasonably self-explanatory what each will do, though note the pre-build and post-build scripts/programs are run before or after each of the Nift commands <mono>build</mono>, <mono>build-all</mono>, <mono>build-updated</mono>. 
-		    				</p>
-		    
-		    				<p>
-		    					Page specific scripts/programs should reside in the same directory as the content file for the page in a file to be named as follows:
-		    <div align="center" style="margin-top:-30px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-pagename-pre-build.scriptExt
-pagename-post-build.scriptExt
-</pre>
-		    </div>
-		    
-		    					<b>Note:</b> Running lots of page-specific pre/post build scripts/programs does not scale well to hundreds of thousands of scripts/programs. If you are working on projects that large you might have more luck calling one site-wide build script/program with multithreading.
-		    				</p>
-		    
-		    				<p>
-		    					<b>Note:</b> Scripts/programs are run from the project root directory, so all paths in scripts/programs should be starting from that location. Also do not change directory in your scripts/programs as it will mess up the other threads that are also running scripts/programs and/or building pages. If you really must change directories in your scripts/programs then you will have to set the number of build threads to 1 and change back to the project root directory before each script/program ends. Furthermore the output of scripts/programs is not displayed to you when building until after they have finished running, so there is no way to display messages to the user if using user input methods and so are discouraged from being used (plus you would have interference output from other threads), a compromise for much much faster build times (user input is not how you want to be building websites anyway).
-		    				</p>
-		    
-		    			</div>
-		    		</section>
-		    	</div>
-		    </section>
-
-			<!-- Footer -->
-			<section id="footer" class="wrapper">
-				<div class="title">
-					<img src="../images/nsm.png" alt="nsm signature on parchment" width="120" style="margin-top:40px; margin-bottom:20px; border-radius: 4px">
-				</div>
-			
-				<div class="container">
-					<div id="copyright">
-						<noselect>
-							<ul style="margin-top:115px">
-								<li><b style="color: white !important">Mirrors:</b></li>
-								<li><a href="https://nift.cc/">Official</a></li>
-								<li><a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a></li>
-								<li><a href="https://nifty-site-manager.github.io/">GitHub</a></li>
-								<li><a href="https://nifty-site-manager.gitlab.io/">GitLab</a></li>
-								<li><a href="https://nift.netlify.app/">Netlify</a></li>
-								<li><a href="https://nift.now.sh/">Vercel</a></li>
-							</ul> <br>
-			
-							<center><img id="footer-mascot" src="../images/badger.png" alt="Nift badger mascot" width="325" style="max-width:90%; margin-bottom:20px"></center>
-			
-							<ul>
-								<li>&copy;&nbsp;2015-<span name="cyear"></span> <a href="https://nift.cc">Nift</a></li>
-								<li><a href="../tos.html">Terms of Service</a></li>
-								<li><a href="../privacy_policy.html">Privacy Policy</a></li>
-							</ul> <br>
-			
-							<ul>
-								<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
-								<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
-								<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
-							</ul> <br>
-						
-							<b id="light_dark_LHS" style="color: white !important">light</b> &nbsp; <label class="light-dark-switch" id="light-dark-switch">
-								<input type="checkbox" id="checkbox_light_dark">
-								<span class="slider round" onclick="toggle_light_dark()" id="slider_light_dark"></span>
-							</label> &nbsp; <b id="light_dark_RHS" style="color: white !important">dark</b> <br><br>
-			
-							<ul>
-								<li>Creator & Developer:</li>
-								<li><a href="https://n-ham.com">Nicholas Ham</a></li>
-							</ul><br>
-						</noselect>
-					</div>
-				</div>
-			</section>
-		</div>
-
-		<!-- Scripts -->
-		<script src="../assets/js/copy-pre.js"></script>
-		<script src="../assets/js/jquery.min.js"></script>
-		<script src="../assets/js/jquery.dropotron.min.js"></script>
-		<script src="../assets/js/browser.min.js"></script>
-		<script src="../assets/js/breakpoints.min.js"></script>
-		<script src="../assets/js/util.js"></script>
-		<script src="../assets/js/main.js"></script>
-		<script src='../assets/js/process_md_blocks.js'></script>
-		<script src="../assets/js/showdown.min.js"></script>
+	<head>
+		<title>Nift - scripts</title>
+		<meta name="description" 
+		      content="Nift is an opinionless web development framework, specialising
+		            in static websites with serverless backends. It's lightning fast, 
+		            cross-platform, opinionless, open source (MIT license) and 
+		            developed from the ground up in C++. Use it for any of your 
+		            personal or commercial projects!">
+		
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" href="../assets/css/pagestyle.css">
+		<link rel="stylesheet" href="../assets/css/menu.css">
+		<link rel="stylesheet" href="../assets/css/font-awesome.css">
+		<link rel="stylesheet" href="../assets/css/pre.css">
+		<link rel="stylesheet" href="../assets/css/extra-fonts.css"><link rel='icon' type='image/png' href='../images/lightning.png'>
+		
+		<script async src="../assets/js/menu.js"></script>
+		<script async src="../assets/js/copy-pre.js"></script>
+		<script async src="../assets/js/process-md-blocks.js"></script>
+		<script async src="../assets/js/showdown.min.js"></script>
 		<script>
 			var converter = new showdown.Converter();
 			converter.setOption('emoji', 'on');
@@ -253,22 +31,14 @@ pagename-post-build.scriptExt
 			for(var i=0; i<elements.length; i++)
 				elements[i].innerHTML = converter.makeHtml(elements[i].innerHTML.replace(/&lt;/g, "xwxw").replace(/&gt;/g, "pqpq")).replace(/xwxw/g, "&lt;").replace(/pqpq/g, "&gt;");
 		</script>
-		<script src="../assets/js/toggle.js"></script>
-
-		<!-- Inserts current year -->
-		<script>
-			var x = document.getElementsByName("cyear");
-
-			for(var i=0; i<x.length; i++)
-				x[i].innerHTML = new Date().getFullYear();
-		</script>
-
 		<!-- uses google-code-prettify for syntax highlighting 
 			 see https://github.com/google/code-prettify/ for more info -->
-		<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
-		<script src="../assets/js/lang-lua.js"></script>
-		<script src="../assets/js/lang-nift.js"></script>
-
+		<script async src="../assets/js/prettify.js" onload="PR.prettyPrint()"></script>
+		<script async src="../assets/js/lang-lua.js"></script>
+		<script async src="../assets/js/lang-nift.js"></script>
+		
+		<!-- uses MathJax CDN for LaTeX support
+			 see https://docs.mathjax.org/en/latest/web/configuration.html for more info -->
 		<script id="MathJax-script" async
 		        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 		</script>
@@ -281,7 +51,184 @@ pagename-post-build.scriptExt
 				}
 			};
 		</script>
+	</head>
+
+	<body>
+		<nav id="nav" class="noselect">
+		  <ul class="menu">
+		    <a href="../index.html"><li class="logo">Nift</li></a>
+		    <li class="nav-space-left"></li>
+		    <li class="item icons">
+		      <a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a>
+		      <a href="https://github.com/nifty-site-manager/nsm/discussions" title="GitHub Discussions" class="gh"><i class="fas fa-comment-dots fa-2x"></i></a>
+		      <a href="https://twitter.com/nift_dev" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a>
+		      <a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a>
+		    </li>
+		    <a href="../index.html" class="item hover-hl"><li>Home</li></a>
+		    <li class="item hover-hl has-submenu" onclick="toggleItem(0)">
+		      <a tabindex="0" class="item-link">Docs</a>
+		      <ul class="submenu">
+		        <li class="subitem"><a href="installing.html">Installing</a></li>
+		        <li class="subitem"><a href="hosting.html">Hosting</a></li>
+		        <li class="subitem"><a href="commands.html">Commands</a></li>
+		        <li class="subitem"><a href="config.html">Config</a></li>
+		        <li class="subitem"><a href="template_files.html">Template Files</a></li>
+		        <li class="subitem"><a href="fns.html">Functions</a></li>
+		        <li class="subitem"><a href="types.html">Types</a></li>
+		        <li class="subitem"><a href="f++.html">f++ (scripting)</a></li>
+		        <li class="subitem"><a href="n++.html">n++ (templates)</a></li>
+		        <li class="subitem"><a href="lua.html">Lua(JIT)</a></li>
+		        <li class="subitem"><a href="exprtk.html">ExprTk</a></li>
+		        <li class="subitem"><a href="REPL.html">Interactive REPL</a></li>
+		        <li class="subitem"><a href="scripts.html">Scripts</a></li>
+		        <li class="subitem"><a href="template_languages.html">Template Languages</a></li>
+		        <li class="subitem"><a href="JSON.html">JSON Data</a></li>
+		        <li class="subitem"><a href="markdown.html">Markdown</a></li>
+		        <li class="subitem"><a href="translators.html">Translators</a></li>
+		        <li class="subitem"><a href="mathematics.html">Mathematics</a></li>
+		        <li class="subitem"><a href="code_blocks.html">Code Blocks</a></li>
+		        <li class="subitem"><a href="presentations.html">Presentations</a></li>
+		      </ul>
+		    </li>
+		    <li class="item hover-hl has-submenu" onclick="toggleItem(1)">
+		      <a tabindex="0" class="item-link">Resources</a>
+		      <ul class="submenu">
+		        <li class="subitem"><a href="../resources/tutorials.html">Tutorials</a></li>
+		        <li class="subitem"><a href="../resources/templates.html">Templates</a></li>
+		        <li class="subitem"><a href="../resources/blog_templates.html">Blog Templates</a></li>
+		        <li class="subitem"><a href="../resources/css_frameworks.html">CSS Frameworks</a></li>
+		        <li class="subitem"><a href="../resources/js_frameworks.html">JS Frameworks</a></li>
+		        <li class="subitem"><a href="../resources/links.html">Links</a></li>
+		        <li class="subitem"><a href="../resources/logos.html">Logos</a></li>
+		        <li class="subitem"><a href="../resources/promos.html">Promos</a></li>
+		        <li class="subitem"><a href="../resources/php_frameworks.html">PHP Frameworks</a></li>
+		      </ul>
+		    </li>
+		    <li class="toggle"><a href="#" onclick="toggleMenu()" id="menu-link"><i class="fas fa-bars fa-2x"></i></a></li>
+		  </ul>
+		</nav>
 		
+		<!-- Header -->
+		<section class="wrapper" id="header">
+		  <div id="logo" class="noselect">
+		    <img src="../images/rabbit-tags-white.png" alt="Nift bunny mascot" style="width: 400px; max-width:90%"><br>
+		
+		    <p style="color:#372C2A">An opinionless web development framework</p>
+		
+		    <p>
+		      <a href="https://chocolatey.org/packages/nift"><img src="../images/chocolatey-icon.png" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
+		      <a href="installing.html#osx-brew"><img src="../images/brew-icon.png" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
+		      <a href="installing.html#freebsd"><img src="../images/freebsd.png" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
+		      <a href="installing.html#linux-flatpak"><img src="../images/flathub-icon.png" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
+		      <a href="installing.html#gentoo"><img src="../images/gentoo.svg" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
+		      <a href="https://snapcraft.io/nift"><img src="../images/snap-icon.png" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
+		    </p>
+		  </div>
+		</section>
+
+		<!-- Main -->
+		<section id="main" class="wrapper style2">
+			<div class="title">Scripts</div>
+			<div class="container">
+				<!-- Features -->
+				<section id="features">
+					<div class="content">
+						<p>
+							Nift has support to optionally run pre/post build/serve scripts/programs when building a website. Just a few of the things this can be useful for includes integrating with <a href="https://webpack.js.org/">webpack</a>, <a href="https://babeljs.io/">Babel</a>, <a href="https://www.npmjs.com/">npm</a>, <a href="https://bower.io/">Bower</a>, <a href="https://yeoman.io/">Yeoman</a>, <a href="http://browserify.org/">Browserify</a>, <a href="https://parceljs.org/">Parcel</a>, <a href="https://brunch.io/">Brunch</a>, <a href="https://sass-lang.com/">SASS</a>, <a href="https://gruntjs.com/">Grunt</a>, <a href="https://github.com/puppeteer/puppeteer">Puppeteer</a>, Python webserver, <a href="https://www.npmjs.com/package/live-server">Live Server</a>, <a href="http://livereload.com/">Live Reload</a>, etc.. Use any scripting or programming language, eg. batch, bash shell, C/C++, C#, fish, go, Haskell, Java, Javascript, Objective-C, Perl, PHP, Python, Ruby, Swift, Zsh shell.
+						</p>
+		
+						<p>
+							<b>Note:</b> Make sure all scripts/programs have executable permissions, otherwise Nift will be unable to run them and should throw a build error.
+						</p>
+		
+						<p>
+							The script extension for website-wide scripts/programs is specified with <mono>scriptExt</mono> in the <mono>.nsm/nift.config</mono> configuration file, which may be checked using the <a href="commands.html">Nift command</a> <mono>config</mono>. To check page-specific script extensions use the <a href="commands.html">Nift command</a> <mono>info page-name</mono>. Site wide and page-specific script extensions may be set using the <a href="commands.html">Nift command</a> <mono>new-script-ext (page-name) script-extension</mono>.
+						</p>
+		
+						<p>
+							<b>Note:</b> Build/serve scripts/programs are moved to the project root directory to run and by default have a backup copy made. If scripts/programs are so large that copying the file will take time, the site configuration file <mono>.nsm/nift.config</mono> can optionally include <mono>backupScripts bool</mono> to indicate whether build/serve scripts/programs should be backed up when run.
+						</p>
+		
+						<p>
+							Alternatively one can write scripts/programs that are run manually (not using Nift) which themselves add the Nift build process, leaving just one program that needs to be run when building.
+						</p>
+		
+						<p>
+							<b>Note:</b> Scripts/programs are run from the project root directory, so all paths in scripts/programs should be starting from that location. Also do not change directory in scripts/programs as it will mess up the other threads that are also running scripts/programs and/or building pages. If you really must change directories in scripts/programs then set the number of build threads to <mono>1</mono> and change back to the project root directory before each script/program ends. Furthermore the output of scripts/programs is not displayed when building until after they have finished running, so there is no way to display messages to the user if using user input methods and so are discouraged from being used (plus you would have interference output from other threads), a compromise for much faster build times.
+						</p>
+		
+						<p>
+							Website-wide scripts/programs should reside in the project root directory in a file to be named as follows:
+						</p>
+		<div align="center">
+		<pre class="inline">
+pre-build.scriptExt
+post-build.scriptExt
+pre-serve.scriptExt
+post-serve.scriptExt
+</pre>
+		</div>
+		
+						<p>
+							It should be reasonably self-explanatory what each will do, though note the pre-build and post-build scripts/programs are run before or after each of the Nift commands <mono>build</mono>, <mono>build-all</mono>, <mono>build-updated</mono>. 
+						</p>
+		
+						<p>
+							Page specific scripts/programs should reside in the same directory as the content file for the page in a file to be named as follows:
+						</p>
+		<div align="center">
+		<pre class="prettyprint inline">
+pagename-pre-build.scriptExt
+pagename-post-build.scriptExt
+</pre>
+		</div>
+		
+						<p>
+							<b>Note:</b> Running lots of page-specific pre/post build scripts/programs does not scale well to hundreds of thousands of scripts/programs. If working on projects that large you might have more luck calling one site-wide build script/program with multithreading.
+						</p>
+		
+						<p>
+							<b>Note:</b> Scripts/programs are run from the project root directory, so all paths in scripts/programs should be starting from that location. Also do not change directory scripts/programs as it will mess up the other threads that are also running scripts/programs and/or building pages. If one really must change directories in scripts/programs then set the number of build threads to <mono>1</mono> and change back to the project root directory before each script/program ends. Furthermore the output of scripts/programs is not displayed when building until after they have finished running, so there is no way to display messages to the user if using user input methods and so are discouraged from being used (plus you would have interference output from other threads), a compromise for much faster build times.
+						</p>
+					</div>
+				</section>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer" class="wrapper">
+			<div class="title">
+				<img src="../images/rabbit-tags-icon.png" alt="Nift rabbit mascot with code tag boomerangs" loading="lazy" width="200" style="margin-top:20px; border-radius: 4px">
+			</div>
+		
+			<div class="container">
+				<div id="copyright" class="noselect">
+					<ul>
+						<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
+						<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
+						<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
+					</ul> <br>
+		
+					<ul>
+						<li><a href="../tos.html">Terms of Service</a></li>
+						<li><a href="../privacy_policy.html">Privacy Policy</a></li>
+					</ul> <br>
+		
+					<ul>
+						<li><span>&copy;</span> 2015-<span name="cyear"></span></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- Inserts current year -->
+		<script async>
+			var x = document.getElementsByName("cyear");
+			for(var i=0; i<x.length; i++)
+			{
+				x[i].innerHTML = new Date().getFullYear();
+			}
+		</script>
 
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-62165905-2"></script>
@@ -289,8 +236,8 @@ pagename-post-build.scriptExt
 			window.dataLayer = window.dataLayer || [];
 			function gtag(){dataLayer.push(arguments);}
 			gtag('js', new Date());
-
 			gtag('config', 'UA-62165905-2');
 		</script>
-    </body>
+	</body>
 </html>
+

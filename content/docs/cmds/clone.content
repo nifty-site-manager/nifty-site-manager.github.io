@@ -5,12 +5,12 @@
 		<!-- Features -->
 		<section id="features">
 			<div class="content">
-				<a href="#contents" class="to_top">[contents]</a>
+				<a href="#contents" class="to-top">[contents]</a>
 
 				<h4 id="contents">
 					Contents
 				</h4>
-				<ul style="text-indent:30px">
+				<ul>
 					<li><a href="#syntax">Syntax</a></li>
 					<li><a href="#description">Description</a></li>
 					<li><a href="#eg">Example</a></li>
@@ -22,7 +22,7 @@
 				<p>
 					The syntax for the <mono>clone</mono> command is:
 <div align="center">
-<pre class="prettyprint inline lang-nift" style="margin-bottom:-10px">
+<pre class="prettyprint inline lang-nift">
 nift clone clone-url
 nsm clone clone-url
 </pre>
@@ -50,7 +50,7 @@ nsm clone clone-url
 				<p>
 					Example of <mono>clone</mono> being used:					
 
-<div align="center" style="margin-top:-10px">
+<div align="center">
 <pre class="inline">
 nift clone https://github.com/nifty-site-manager/nifty-site-manager.github.io.git
 nsm clone https://github.com/nifty-site-manager/nifty-site-manager.github.io.git</pre>

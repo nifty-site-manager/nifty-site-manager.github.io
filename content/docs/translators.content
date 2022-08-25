@@ -4,11 +4,7 @@
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
-			<header class="style1">
-				<h2>How to translate text when building websites</h2>
-			</header>
-
-			<div class="content" style="margin-top:-50px;">
+			<div class="content">
 				<center>
 					<img src="@pathtofile(site/images/translate.jpg)" alt="Google translate on Globe image" width=300 style="margin-bottom:20px; border-radius: 50%; max-width:70%">
 				</center>
@@ -41,60 +37,64 @@
 
 				<p>
 					The simplest way to use Translate Shell with Nift is:
-<div style="margin-top:-30px; margin-bottom:10px">
+				</p>
+<div align="center">
 <pre class="prettyprint">
 \@system("trans -brief 'text'")
 </pre>
 </div>
 
+				<p>
 					where <mono>text</mono> is the text you want translated. 
 				</p>
 
 				<p>
 					If you want to translate text in a file use 
-<div style="margin-top:-30px; margin-bottom:10px">
+				</p>
+<div align="center">
 <pre class="prettyprint">
 \@system("trans -brief file://file-path")\@dep("file-path")
 </pre>
 </div>
 
+				<p>
 					where <mono>file-path</mono> is the path from the project root directory to the file you want to translate. It is worth adding the file as a dependency after the <mono>\@system</mono> call so that Nift will track changes to the file for purposes of knowing when the page needs rebuilding.
 				</p>
 
 				<p>
 					To specify which language to translate to add <mono>:language-code</mono> after <mono>-brief</mono> and to specify which language to translate from add <mono>language-code:</mono> after <mono>-brief</mono>, the language codes that are available can be found <a href="https://www.soimort.org/translate-shell/#code-list">here</a>. For example:
-<div style="margin-top:-30px; margin-bottom:10px">
+				</p>
+<div align="center">
 <pre class="prettyprint">
 \@system("trans -brief eo: 'vorto'")
 \@system("trans -brief :zh-CN 'hello'")
 \@system("trans -brief en: :zh-CN 'hello'")
 </pre>
 </div>
-				</p>
 
 				<p>
 					To list the available translation engines enter <mono>trans -S</mono>. To use a non-default translation engine use the <mono>-e <i>engine</i></mono> option, for example:
-<div style="margin-top:-30px; margin-bottom:10px">
+				</p>
+<div align="center">
 <pre class="prettyprint">
 \@system("trans -e yandex -brief :en '你好'")
 </pre>
 </div>
-				</p>
 
 				<center>
-					<img src="@pathtofile(site/images/translate-world.png)" alt="translated text on world map" width=400 style="margin-bottom:20px; border-radius: 30%; max-width:80%">
+					<img src="@pathtofile(site/images/translate-world.png)" alt="translated text on world map" width=400 style="border-radius: 30%">
 				</center>
 
 				<h2>DeepL Translator CLI</h2>
 
 				<p>
 					You can use <mono>yarn</mono> to install DeepL Translator CLI with the command:
-<div style="margin-top:-30px; margin-bottom:10px">
+				</p>
+<div align="center">
 <pre class="prettyprint">
 $ yarn global add deepl-translator-cli
 </pre>
 </div>
-				</p>
 
 				<p>
 					Along with below, there are examples to help you get started <a href="https://github.com/vsetka/deepl-translator-cli">here</a>.
@@ -102,12 +102,14 @@ $ yarn global add deepl-translator-cli
 
 				<p>
 					The simplest way to use DeepL Translator CLI with Nift is:
-<div style="margin-top:-30px; margin-bottom:10px">
+				</p>
+<div align="center">
 <pre class="prettyprint">
 \@system("deepl translate -t 'country-code' 'text'")
 </pre>
 </div>
 
+				<p>
 					where:
 					<ul>
 						<li><mono>language-code</mono> is the code for the language you want to translate in to (the available codes are in the table below); and</li>
@@ -117,91 +119,87 @@ $ yarn global add deepl-translator-cli
 
 				<p>
 					If you want to specify the language to translate from use the <mono>-s 'language-code'</mono> option, for example:
-<div style="margin-top:-30px; margin-bottom:10px">
+				</p>
+<div align="center">
 <pre class="prettyprint">
 \@system("deepl translate -s 'EN' -t 'DE' 'How do you do?'")
 </pre>
 </div>
-				</p>
 
 				<p>
 					You can pipe text from standard input, for example:
-<div style="margin-top:-30px; margin-bottom:10px">
+				</p>
+<div align="center">
 <pre class="prettyprint">
 \@system("echo 'text' | deepl translate -t 'language-code'")
 </pre>
 </div>
-				</p>
 
 				<p>
 					If you want to translate a file, you can do so as follows:
-<div style="margin-top:-30px; margin-bottom:10px">
+				</p>
+<div align="center">
 <pre class="prettyprint">
 \@system("cat file-path | deepl translate -t 'language-code'")\@dep("file-path")
 </pre>
 </div>
 
+				<p>
 					where <mono>file-path</mono> is the path from the project root directory to the file you want to translate. It is worth adding the file as a page dependency after the <mono>\@system</mono> call so that Nift will track changes to the file for purposes of knowing when the page needs rebuilding.
 				</p>
 
 				<p>
-				</p>
-
-				<p>
-				</p>
-
-				<p>
 					The available languages and codes are:
-
-					<center>
-						<table id="deepl_language_codes_table" class="alt">
-							<thead>
-								<tr>
-									<th>language</th>
-									<th>code</th>
-								</tr>
-							</thead>
-							<tr>
-								<td>English</td>
-								<td>EN</td>
-							</tr>
-							<tr>
-								<td>German</td>
-								<td>DE</td>
-							</tr>
-							<tr>
-								<td>French</td>
-								<td>FR</td>
-							</tr>
-							<tr>
-								<td>Spanish</td>
-								<td>ES</td>
-							</tr>
-							<tr>
-								<td>Italian</td>
-								<td>IT</td>
-							</tr>
-							<tr>
-								<td>Dutch</td>
-								<td>NL</td>
-							</tr>
-							<tr>
-								<td>Polish</td>
-								<td>PL</td>
-							</tr>
-							<tfoot>
-								<tr>
-									<th>language</th>
-									<th>code</th>
-								</tr>
-							</tfoot>
-						</table>
-					</center>
 				</p>
 
-				<center>
-					<img src="@pathtofile(site/images/trans.png)" alt="translated text on mobile, tablet and PC" width=400 style="margin-bottom:20px; border-radius: 10%; max-width:80%">
-				</center>
+				<div align="center">
+					<table id="deepl_language_codes_table" class="alt">
+						<thead>
+							<tr>
+								<th>language</th>
+								<th>code</th>
+							</tr>
+						</thead>
+						<tr>
+							<td>English</td>
+							<td>EN</td>
+						</tr>
+						<tr>
+							<td>German</td>
+							<td>DE</td>
+						</tr>
+						<tr>
+							<td>French</td>
+							<td>FR</td>
+						</tr>
+						<tr>
+							<td>Spanish</td>
+							<td>ES</td>
+						</tr>
+						<tr>
+							<td>Italian</td>
+							<td>IT</td>
+						</tr>
+						<tr>
+							<td>Dutch</td>
+							<td>NL</td>
+						</tr>
+						<tr>
+							<td>Polish</td>
+							<td>PL</td>
+						</tr>
+						<tfoot>
+							<tr>
+								<th>language</th>
+								<th>code</th>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+
+				<div align="center">
+					<img src="@pathtofile(site/images/trans.png)" alt="translated text on mobile, tablet and PC" width=400 style="border-radius: 10%">
+				</div>
 			</div>
 		</section>
 	</div>

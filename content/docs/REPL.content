@@ -4,13 +4,9 @@
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
-			<header class="style1">
-				<h2>Interactive REPL sessions</h2>
-			</header>
-
 			<!-- Image -->
 			<center>
-				<img src="@pathtofile(site/images/laptop-vaporwave.png)" alt="Nift vaporwave artwork" width="500px" style="max-width:90%; border-radius:20px; margin-bottom: 60px">
+				<img src="@pathtofile(site/images/laptop-vaporwave.png)" alt="Nift vaporwave artwork" style="width: 500px; max-width:90%; border-radius:20px; margin: 1em">
 			</center>
 
 			<div class="content">
@@ -18,12 +14,12 @@
 					There are two modes in which you can run an <mono>interactive REPL session</mono> with <mono>Nift</mono>, interpreter mode <mono>interp</mono> and shell mode <mono>sh</mono>. The only difference between the two modes is that interpreter mode just has the language in the prompt, whereas shell mode has both the language and the present working directory in the prompt.
 				</p>
 
-				<a href="#contents" class="to_top">[contents]</a>
+				<a href="#contents" class="to-top">[contents]</a>
 
 				<h4 id="contents">
 					Contents
 				</h4>
-				<div style="text-indent:30px; margin-top:10px">
+				<div>
 					<ul>
 						<li><a href="#interpreter">Interpreter mode</a></li>
 						<li><a href="#shell">Shell mode</a></li>
@@ -39,7 +35,7 @@
 				</h4>
 				<p>
 					An <mono>interpreter</mono> REPL session can be started with either of:
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline">
 nsm interp -lang
 nift interp -lang
@@ -60,7 +56,7 @@ nift interp -lang
 				</h4>
 				<p>
 					A <mono>shell</mono> REPL session can be started with either of:
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline">
 nsm sh -lang
 nift sh -lang
@@ -73,19 +69,7 @@ nift sh -lang
 				</p>
 
 				<p>
-					The <mono>f++</mono> shell, also called <zapfont style = "font-size:36px;">FLASHELL</zapfont> or <zapfont style = "font-size:36px;">FLASH</zapfont> (<mono>fla-sh</mono>) or even <zapfont style = "font-size:36px;">FSH</zapfont> if people want to be even more succinct (and helps cover for <mono>F++</mono> who also use <mono>FSH</mono>), or make up your own names for the binaries and other parts if you need to hide things better, attempts to work as an extension of the default shell for <mono>c++</mono> system calls, which is likely to remain always being <mono>bash</mono> on posix compliant platforms, it does also work on Windows and I am unsure whether you can change the shell anywhere on Windows that modifies the shell used by <mono>c++</mono> system calls. 
-				</p>
-
-				<p>
-					<zapfont style = "font-size:36px;">FLASH</zapfont> for example can often do many things faster than the shell being used for <mono>c++</mono> system calls. For example on my machine (which is quite old) <a href="https://pastebin.com/5FM7Hzef">this</a>  <mnstr style="font-size:16px">FNSTEIN</mnstr> script runs in ~3s whereas <a href="https://pastebin.com/RTXXEHBg">this</a> <mono>bash</mono> script runs in more like ~3m. 
-				</p>
-
-				<p>
-					<b>Note:</b> To get the <mnstr style="font-size:16px">FNSTEIN</mnstr> script to work you will need to add a <mono>$</mono> before the <mono>``</mono>'s for the <mono>ExprTk</mono> expression as the syntax has changed. Also be weary that if downloading the <mnstr style="font-size:16px">FNSTEIN</mnstr> script it has a <mono>.cpp</mono> extension for syntax highlighting purposes on <mono>pastebin</mono>. Also you do <u><b>DO NOT</b></u> want to leave the directory open in your file browser (the gui) when running either script.
-				</p>
-
-				<p>
-					One major limitation is not being able to define bash variables and have them exist beyond the <mono>c++</mono> system call they are used for. There is however access to the type systems and everything else for all of <zapfont style = "font-size:36px;">FLASH</zapfont>/<mnstr style="font-size:16px">FNSTEIN</mnstr>, <mnstr style="font-size:16px">TMPLTSTEIN</mnstr>, <mono>Lua(JIT)</mono> and <mono>ExprTk</mono>, you can write blocks of code at a time for <mono>sys/system</mono> calls where variable definitions etc. carry over and you can parse the block first with any of the languages in-built or embedded in to <mono>Nift</mono>. You can also run scripts that exist, or are contained in a block of code following the <mono>script</mono> function call.
+					The <mono>f++</mono> shell, nicknamed <zapfont style = "font-size:36px;">FLASHELL</zapfont>, works as an extension of the default shell for <mono>c++</mono> system calls. 
 				</p>
 
 				<p>
@@ -160,7 +144,7 @@ nift sh -lang
 
 				<p>
 					<b>Note:</b> An interactive REPL session will continue to input lines before parsing until the input to be parsed has an equal number of open and close brackets. To override this put an <mono>=</mono> at the end of an input line with no whitespace following. A couple of <mono>f++</mono> examples follow:
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline">
 int x=10
 if(x == 10) {
@@ -171,7 +155,7 @@ if(x == 10) {
 				</p>
 
 				<p>
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline">
 console("example with ( and { not closed") =
 </pre>

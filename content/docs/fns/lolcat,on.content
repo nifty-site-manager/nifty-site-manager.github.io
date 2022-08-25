@@ -5,12 +5,12 @@
 		<!-- Features -->
 		<section id="features">
 			<div class="content">
-				<a href="#contents" class="to_top">[contents]</a>
+				<a href="#contents" class="to-top">[contents]</a>
 
 				<h4 id="contents">
 					Contents
 				</h4>
-				<ul style="text-indent:30px">
+				<ul>
 					<li><a href="#syntax">Syntax</a></li>
 					<li><a href="#description">Description</a></li>
 					<li><a href="#config">Config</a></li>
@@ -60,7 +60,7 @@ lolcat.on(string)
 
 				<p>
 					<b>Note:</b> <mono>Nift</mono> will skip to the first non-whitespace (ie. to the first character that is not a space, tab or newline) after a <mono>lolcat.on</mono> call and inject it to the output file where the call started. If you want to prevent <mono>Nift</mono> from doing this put a '<mono>!</mono>' after the call, eg.:
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline lang-nift">
 \@lolcat.on()!
 </pre>
@@ -88,7 +88,7 @@ lolcat.on(string)
 				<p>
 					Example of <mono>lolcat.on</mono> being used with <mono>f++</mono>:					
 
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums lang-nift">
 :=(int, i=12)
 :=(string, str="hello")
@@ -114,7 +114,7 @@ lolcat.off</pre>
 				<p>
 					Example of <mono>lolcat.on</mono> being used with <mono>n++</mono>:					
 
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums lang-nift">
 \@:=(int, i=12)
 \@:=(string, str="hello")

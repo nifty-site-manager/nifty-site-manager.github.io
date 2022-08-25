@@ -4,15 +4,19 @@
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
-			<header class="style1">
-				<h2>Options for hosting websites</h2>
-			</header>
-
-			<center>
-				<a href="https://pages.github.com/"><img src="@pathtofile(site/images/Octocat.png)" alt="GitHub Octocat holding Nift lightning strikes" width=250 style="max-width: 45%; margin-bottom: 20px"></a>
-			</center>
-
 			<div class="content">
+				<div align="center">
+					<div style="max-width:90%; margin: 2em 0">
+					<a href="https://pages.bitbucket.io/"><img src="@pathtofile(site/images/bitbucket-icon.svg)" alt="BitBucket logo" width=50 style="max-width:14%; vertical-align:middle"></a> &nbsp;
+					<a href="https://pages.github.com/"><img src="@pathtofile(site/images/github-watercolor.png)" id="gh-logo" alt="GitHub logo" width=50 style="max-width:14%; vertical-align:middle;"></a> &nbsp;
+					<a href="https://about.gitlab.com/product/pages/"><img src="@pathtofile(site/images/gitlab-icon.svg)" alt="GitLab logo" width=50 style="max-width:14%; vertical-align:middle;"></a> &nbsp;
+					<a href="https://www.fleek.co/"><img src="@pathtofile(site/images/fleek.png)" alt="Fleek logo" width=40 style="max-width: 14%; vertical-align: middle"></a> &nbsp;
+					<a href="https://www.netlify.com/"><img src="@pathtofile(site/images/netlify.png)" alt="Netlify logo" width=50 style="max-width: 14%; vertical-align: middle"></a> &nbsp;
+					<a href="https://surge.sh/"><img src="@pathtofile(site/images/surge.svg)" alt="surge.sh logo" width=50 style="max-width: 14%; vertical-align:middle;"></a>
+					<a href="https://vercel.com"><img src="@pathtofile(site/images/vercel-white.svg)" id="vercel-logo" alt="Vercel logo" width=50 style="max-width: 14%; vertical-align:middle;"></a>
+					</div>
+				</div>
+
 				<p>
 					To host a website made with <mono>Nift</mono> just copy everything from the output directory (not the project directory) to the server on which you would like to host it.
 				</p>
@@ -20,7 +24,7 @@
 				<p>
 					There are specific instructions at the following links for:
 				</p>
-				<div style="text-indent:30px; margin-top:-20px">
+				<div>
 					<ul>
 						<li><a href="@pathtopage(docs/bitbucket_hosting)">BitBucket</a></li>
 						<li><a href="@pathtopage(docs/github_hosting)">GitHub</a></li>
@@ -28,18 +32,6 @@
 						<li><a href="@pathtopage(docs/vercel_hosting)">Vercel</a></li>
 					</ul>
 				</div>
-
-				<center>
-					<div style="max-width:90%; margin-top: -20px; margin-bottom: 40px">
-					<a href="https://pages.bitbucket.io/"><img src="@pathtofile(site/images/bitbucket-icon.svg)" alt="BitBucket logo" width=50 style="max-width:14%; vertical-align:middle"></a> &nbsp;
-					<a href="https://pages.github.com/"><img src="@pathtofile(site/images/github-icon.svg)" id="gh-logo" alt="GitHub logo" width=50 style="max-width:14%; vertical-align:middle;"></a> &nbsp;
-					<a href="https://about.gitlab.com/product/pages/"><img src="@pathtofile(site/images/gitlab-icon.svg)" alt="GitLab logo" width=50 style="max-width:14%; vertical-align:middle;"></a> &nbsp;
-					<a href="https://www.fleek.co/"><img src="@pathtofile(site/images/fleek.png)" alt="Fleek logo" width=40 style="max-width: 14%; vertical-align: middle"></a> &nbsp;
-					<a href="https://www.netlify.com/"><img src="@pathtofile(site/images/netlify.png)" alt="Netlify logo" width=50 style="max-width: 14%; vertical-align: middle"></a> &nbsp;
-					<a href="https://surge.sh/"><img src="@pathtofile(site/images/surge.svg)" alt="surge.sh logo" width=50 style="max-width: 14%; vertical-align:middle;"></a>
-					<a href="https://vercel.com"><img src="@pathtofile(site/images/vercel-black.svg)" id="vercel-logo" alt="Vercel logo" width=50 style="max-width: 14%; vertical-align:middle;"></a>
-					</div>
-				</center>
 
 				<p>
 					For creating static websites on code collaboration sites offering repository management like <a href="https://aws.amazon.com/codecommit/">Amazon CodeCommit</a>, <a href="https://pages.bitbucket.io/">BitBucket</a>, <a href="https://pages.github.com/">GitHub</a> and <a href="https://about.gitlab.com/product/pages/">GitLab</a> you can import/fork, rename and clone a site repository template and work from that (use <mono>nsm clone <i>repository-url</i></mono>). I personally find hosting on GitLab easier than BitBucket or GitHub, because you only need one branch (standard <mono>master</mono>, though you can use one branch on BitBucket and GitHub when hosting with places like <a href="https://vercel.com/">Vercel</a> or <a href="https://netlify.com">Netlify</a> as well) then have it deploy the site when you push using a <mono>.gitlab-ci.yaml</mono> file.
@@ -60,7 +52,7 @@
 				<p>
 					Other good free hosting options for static sites include:
 				</p>
-				<div style="text-indent:30px; margin-top:-20px">
+				<div>
 					<ul>
 						<li><a href="https://developers.cloudflare.com/workers/sites/">CloudFlare</a></li>
 						<li><a href="https://aws.amazon.com/amplify/console/">Amazon Amplify Console</a></li>
@@ -77,34 +69,30 @@
 					</ul>
 				</div>
 
-				<center>
-					<a href="https://developers.cloudflare.com/workers/sites/"><img src="@pathtofile(site/images/cloudflare-dark.svg)" id="cloudflare-logo" alt="Cloudfare logo" width="350px" style="max-width: 50%; margin-top: -10px; margin-bottom: 40px"></a>
-				</center>
+				<div align="center">
+					<a href="https://developers.cloudflare.com/workers/sites/"><img src="@pathtofile(site/images/cloudflare.svg)" id="cloudflare-logo" alt="Cloudfare logo" width="350px" style="max-width: 70%; margin-bottom: 20px"></a>
+				</div>
 
-				<center style="margin-bottom:30px">
-					<a href="https://aws.amazon.com/amplify/console/"><img src="@pathtofile(site/images/aws.png)" alt="Amazon AWS logo" width=175 style="max-width: 30%; vertical-align:middle; margin-top: 0px"></a>
-					<a href="https://firebase.google.com/"><img src="@pathtofile(site/images/firebase.svg)" alt="Google Firebase logo" width=120 style="max-width: 30%; vertical-align:middle; margin-top: 0px; margin-left: 20px"></a>
-				</center>
-
-				<p>
-					Also check out <a href="https://www.aerobatic.com/">Aerobatic</a> and <a href="https://www.pancake.io/">Pancake</a>.
-				</p>
+				<div align="center" style="margin-bottom:20px">
+					<a href="https://aws.amazon.com/amplify/console/"><img src="@pathtofile(site/images/aws.png)" alt="Amazon AWS logo" width=175 style="max-width: 60%; vertical-align:middle; margin-top: 0px"></a>
+					<a href="https://firebase.google.com/"><img src="@pathtofile(site/images/firebase.svg)" alt="Google Firebase logo" width=120 style="max-width: 60%; vertical-align:middle; margin-top: 0px; margin-left: 20px"></a>
+				</div>
 
 				<p>
 					If you would like to set up your own site repositories from scratch for any of BitBucket, GitHub or GitLab then see:
 				</p>
-				<div style="text-indent:30px; margin-top:-20px">
+				<div>
 					<ul>
-						<li><a href="./bitbucket_hosting.html">Hosting on BitBucket</a>;</li>
-						<li><a href="./github_hosting.html">Hosting on GitHub</a>; or</li>
-						<li><a href="./gitlab_hosting.html">Hosting on GitLab</a>.</li>
+						<li><a href="@pathto(docs/bitbucket_hosting)">Hosting on BitBucket</a>;</li>
+						<li><a href="@pathto(docs/github_hosting)">Hosting on GitHub</a>; or</li>
+						<li><a href="@pathto(docs/gitlab_hosting)">Hosting on GitLab</a>.</li>
 					</ul>
 				</div>
 
 				<p>
-					To host dynamic websites for free check out <a href="https://www.heroku.com/">Heroku</a>. Other options for hosting dynamic websites (or static sites if you would like) include hiring a server with somewhere like:
+					To host dynamic websites for free check out <a href="https://www.heroku.com/">Heroku</a>. Other options for hosting dynamic websites (or even static sites) include hiring a server with somewhere like:
 				</p>
-				<div style="text-indent:30px; margin-top:-20px">
+				<div>
 					<ul>
 						<li><a href="https://buyvm.net/">BuyVM</a>;</li>
 						<li><a href="https://joesdatacenter.com/">Joe's Datacenter</a>;</li>
@@ -114,16 +102,16 @@
 				</div>
 
 				<p>
-					<center>
-						<#--<a href="https://www.linode.com/"><img src="@pathtofile(site/images/linode-dark.png)" id="linode-logo" alt="Linode logo" width=250 style="max-width: 40%; vertical-align:middle"></a> <br>--#>
-						<a href="https://www.vultr.com/"><img src="@pathtofile(site/images/vultr-dark.svg)" id="vultr-logo" alt="Vultr logo" width=250 style="max-width: 40%; vertical-align:middle"></a>
-					</center>
+					<div align="center">
+						<a href="https://www.linode.com/"><img src="@pathtofile(site/images/linode.png)" id="linode-logo" alt="Linode logo" width=250 style="max-width: 60%; margin: 10px; vertical-align:middle"></a>
+						<a href="https://www.vultr.com/"><img src="@pathtofile(site/images/vultr.svg)" id="vultr-logo" alt="Vultr logo" width=250 style="max-width: 60%; margin: 10px 20px; vertical-align:middle"></a>
+					</div>
 				</p>
 
 				<p>
 					or any site that offers linux VPS hiring, then using something like the following to set up a web server on the server you have hired:
 				</p>
-				<div style="text-indent:30px; margin-top:-20px">
+				<div>
 					<ul>
 						<li><a href="https://caddyserver.com/">Caddy 2</a> (<a href="https://github.com/caddyserver/caddy">GitHub</a>).</li>
 						<li><a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)">LAMP stack</a>; or</li>
@@ -133,7 +121,7 @@
 				</div>
 
 				<center>
-					<a href="https://www.nginx.com/"><img src="@pathtofile(site/images/nginx.svg)" alt="NGINX logo" width=250 style="max-width: 40%; vertical-align:middle"></a>
+					<a href="https://www.nginx.com/"><img src="@pathtofile(site/images/nginx.svg)" alt="NGINX logo" width=250 style="max-width: 60%; vertical-align:middle"></a>
 				</center>
 			</div>
 		</section>

@@ -5,12 +5,12 @@
 		<!-- Features -->
 		<section id="features">
 			<div class="content">
-				<a href="#contents" class="to_top">[contents]</a>
+				<a href="#contents" class="to-top">[contents]</a>
 
 				<h4 id="contents">
 					Contents
 				</h4>
-				<ul style="text-indent:30px">
+				<ul>
 					<li><a href="#syntax">Syntax</a></li>
 					<li><a href="#description">Description</a></li>
 					<li><a href="#options">Options</a></li>
@@ -50,7 +50,7 @@ struct{options}(name)
 
 				<p>
 					<b>Note:</b> <mono>Nift</mono> will skip to the first non-whitespace (ie. to the first character that is not a space, tab or newline) after a <mono>struct</mono> definition and inject it to the output file where the definition started. If you want to prevent <mono>Nift</mono> from doing this put a '<mono>!</mono>' after the definition, eg.:
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline lang-nift">
 \@struct(s)
 {
@@ -102,7 +102,7 @@ struct{options}(name)
 				<p>
 					Examples of <mono>struct</mono> being used with <mono>f++</mono>:					
 
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums lang-nift">
 struct(circle)
 {
@@ -119,7 +119,7 @@ console("colour: ", c.colour)</pre>
 				</p>
 
 				<p>
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums lang-nift">
 struct(pair)
 {
@@ -138,7 +138,7 @@ console("p.second: ", p.second)</pre>
 				</p>
 
 				<p>
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums lang-nift">
 struct(vector)
 	if(params.size() != 2)
@@ -182,7 +182,7 @@ console(v.size)</pre>
 				<p>
 					Examples of <mono>struct</mono> being used with <mono>n++</mono>:					
 
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums lang-nift">
 \@struct(circle)
 {
@@ -199,7 +199,7 @@ console(v.size)</pre>
 				</p>
 
 				<p>
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums lang-nift">
 \@struct(pair)
 {

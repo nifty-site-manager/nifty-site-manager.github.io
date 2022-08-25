@@ -5,12 +5,12 @@
 		<!-- Features -->
 		<section id="features">
 			<div class="content">
-				<a href="#contents" class="to_top">[contents]</a>
+				<a href="#contents" class="to-top">[contents]</a>
 
 				<h4 id="contents">
 					Contents
 				</h4>
-				<ul style="text-indent:30px">
+				<ul>
 					<li><a href="#syntax">Syntax</a></li>
 					<li><a href="#description">Description</a></li>
 					<li><a href="#options">Options</a></li>
@@ -41,7 +41,7 @@ faviconinclude{options}(absolute-path)
 
 				<p>
 					The <mono>faviconinclude</mono> function takes a single absolute path as input and returns the code below to insert the path as a favicon in html using the relative path:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline">
 <link rel="icon" type="image/png" href="relative-path" options>
 </pre>
@@ -54,7 +54,7 @@ faviconinclude{options}(absolute-path)
 
 				<p>
 					<b>Note:</b> Another good way to include a favicon file, where an error is thrown if the file does not exist, is:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline">
 <link rel="icon" type="image/png" href="\@pathtofile(absolute-path)">
 </pre>
@@ -74,7 +74,7 @@ faviconinclude{options}(absolute-path)
 				<p>
 					Example of <mono>faviconinclude</mono> being used with <mono>f++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums">
 faviconinclude("site/assets/images/favicon.png")</pre>
 </div>
@@ -86,7 +86,7 @@ faviconinclude("site/assets/images/favicon.png")</pre>
 				<p>
 					Example of <mono>faviconinclude</mono> being used with <mono>n++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums">
 \@faviconinclude("site/assets/images/favicon.png")</pre>
 </div>

@@ -1,776 +1,27 @@
-<!DOCTYPE HTML>
-
-<!--
-	Official Nift Website
-
-	Nift is a cross-platform open source website generator developed from the ground up in C++.
--->
-
+<!doctype html>
 <html lang="en">
-    <head>
-        <title>Nift - lua</title>
-        <meta charset="utf-8">
-        <meta name="description" content="Nift is the world's fastest framework for 
-                    managing and generating websites. It's cross-platform, opensource, 
-                    lightning fast, developed from the ground up in C++, and released 
-                    for free under the MIT license - use it for any of your personal 
-                    or commercial projects">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../assets/css/main.css">
-        <link rel="stylesheet" href="../assets/css/pagestyle.css">
-        <link rel="stylesheet" href="../assets/css/pre.css">
-        <link rel="stylesheet" href="../assets/css/toggle.css">
-        <link rel='icon' type='image/png' href='../images/favicon.png'>
-        
-        <!-- uses Font Awesome for vector icons and social logos -->
-        <script src="https://kit.fontawesome.com/b51e6952ec.js"></script>
-    </head>
-    <body class="is-preload">
-		<div id="page-wrapper">
-			<!-- Header -->
-			<section id="header" class="wrapper">
-			
-				<!-- Logo -->
-				<div id="logo">
-					<noselect>
-					<img src="../images/rabbit.png" alt="Nift bunny mascot" width=325 style="max-width:90%">
-			
-					<p style="margin-bottom:0px">
-						<a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; 
-						<a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a> &nbsp; 
-						<a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a> &nbsp; 
-						<a href="https://nift.teemill.com/" title="TeeMill" class="teemill"><i class="fas fa-tshirt fa-2x"></i></a> </p>
-					<p style="margin-top:10px">
-						<a href="https://github.com/nifty-site-manager/nsm/discussions" title="GitHub Discussions" class="gh"><i class="fas fa-comment-dots fa-2x"></i></a> &nbsp;
-						<a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a> &nbsp; 
-						<a href="https://old.reddit.com/r/nift" title="Reddit" class="reddit"><i class="fab fa-reddit-square fa-2x"></i></a> &nbsp; 
-						<a href="https://twitter.com/nifty_site_man" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a>
-					</p>
-			
-					<p style="color:#372C2A">A cross-platform open source website generator</p>
-			
-					<p>
-						<a href="https://chocolatey.org/packages/nift"><img src="../images/chocolatey-icon.png" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
-						<a href="installing.html#osx-brew"><img src="../images/brew-icon.png" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
-						<a href="installing.html#freebsd"><img src="../images/freebsd.png" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
-						<a href="installing.html#linux-flatpak"><img src="../images/flathub-icon.png" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
-						<a href="installing.html#gentoo"><img src="../images/gentoo.svg" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
-						<a href="https://snapcraft.io/nift"><img src="../images/snap-icon.png" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
-					</p>
-					</noselect>
-				</div>
-			
-				<!-- Nav -->
-				<noselect>
-					<nav id="nav">
-						<ul>
-							<li><a href="../index.html">Home</a></li>
-							<li>
-								<a href="">Documentation</a>
-								<ul>
-									<li><a href="installing.html">Installing</a></li>
-									<li><a href="hosting.html">Hosting</a></li>
-									<li><a href="commands.html">Commands</a></li>
-									<li><a href="config.html">Config</a></li>
-									<li><a href="template_files.html">Template Files</a></li>
-									<li><a href="fns.html">Functions</a></li>
-									<li><a href="types.html">Types</a></li>
-									<li><a href="f++.html">f++ (scripting)</a></li>
-									<li><a href="n++.html">n++ (templates)</a></li>
-									<li><a href="lua.html">Lua(JIT)</a></li>
-									<li><a href="exprtk.html">ExprTk</a></li>
-									<li><a href="REPL.html">Interactive REPL</a></li>
-									<li><a href="scripts.html">Scripts</a></li>
-									<li><a href="template_languages.html">Template Languages</a></li>
-									<li><a href="JSON.html">JSON Data</a></li>
-									<li><a href="markdown.html">Markdown</a></li>
-									<li><a href="translators.html">Translators</a></li>
-									<li><a href="mathematics.html">Mathematics</a></li>
-									<li><a href="code_blocks.html">Code Blocks</a></li>
-									<li><a href="presentations.html">Presentations</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="">Resources</a>
-								<ul>
-									<li><a href="../resources/tutorials.html">Tutorials</a></li>
-									<li><a href="../resources/templates.html">Templates</a></li>
-									<li><a href="../resources/blog_templates.html">Blog Templates</a></li>
-									<li><a href="../resources/css_frameworks.html">CSS Frameworks</a></li>
-									<li><a href="../resources/examples.html">Examples</a></li>
-									<li><a href="../resources/js_frameworks.html">JS Frameworks</a></li>
-									<li><a href="../resources/links.html">Links</a></li>
-									<li><a href="../resources/logos.html">Logos</a></li>
-									<li><a href="../resources/promos.html">Promos</a></li>
-									<li><a href="../resources/php_frameworks.html">PHP Frameworks</a></li>
-								</ul>
-							</li>
-							<li><a href="../support.html">Support</a></li>
-						</ul>
-					</nav>
-				</noselect>
-			</section>
-
-		    <!-- Main -->
-		    <section id="main" class="wrapper style2">
-		    	<div class="title">Lua</div>
-		    	<div class="container">
-		    		<!-- Features -->
-		    		<section id="features">
-		    			<header class="style1">
-		    				<h2>Embedded <mono>LuaJIT</mono></h2>
-		    			</header>
-		    
-		    			<!-- Image -->
-		    			<center>
-		    				<img src="../images/lua.png" id="lua-logo" alt="Lua logo" width=128 style="margin-bottom:40px">
-		    			</center>
-		    
-		    			<div class="content">
-		    				<p>
-		    					<mono>LuaJIT</mono> (<a href="https://luajit.org">official website</a>) is a Just-In-Time compiler for <mono>Lua</mono> (<a href="https://lua.org">official website</a>) which is embedded in <mono>Nift</mono>. <mono>LuaJIT</mono> is <a href="https://github.com/r-lyeh-archived/scriptorium">extremely fast</a>, note that <mono>LuaJIT</mono> uses version 5.1 of <mono>Lua</mono> (<a href="https://www.lua.org/manual/5.1/index.html">reference manual</a>).
-		    				</p>
-		    
-		    				<p>
-		    					There are lots of modules available for <mono>Lua</mono> that can be installed as self-contained packages called <mono>rocks</mono>. These can be installed using either <a href="https://luarocks.org">LuaRocks</a> or <a href="https://luadist.org">LuaDist</a>. There is documentation below on how to use <mono>LuaRocks</mono> with most of the operating systems that Nift runs on, for other platforms try searching Google for <mono><i>os</i> luarocks</mono>.  
-		    				</p>
-		    
-		    				<center>
-		    					<img src="../images/luajit.jpg" alt="LuaJit logo" width=300 style="margin-bottom:40px">
-		    				</center>
-		    
-		    				<a href="#contents" class="to_top">[contents]</a>
-		    
-		    				<h4 id="contents">
-		    					Contents
-		    				</h4>
-		    				<div style="text-indent:30px; margin-top:10px">
-		    					<ul>
-		    						<li><a href="#regular">Embedding regular versions of Lua</a></li>
-		    						<li><a href="#interpreter">Lua interpreter</a></li>
-		    						<li><a href="#scripts">Running Lua scripts</a></li>
-		    						<li><a href="#exprtk-lua">ExprTk from Lua</a></li>
-		    						<li><a href="#lua-f++">Lua from f++</a></li>
-		    						<li><a href="#lua-n++">Lua from n++</a></li>
-		    						<li><a href="#nift-fns">Nift functions</a></li>
-		    						<li><a href="#luarocks">LuaRocks</a></li>
-		    						<li><a href="#luarocks-freebsd">Installing LuaRocks on FreeBSD</a></li>
-		    						<li><a href="#luarocks-linux">Installing LuaRocks on Linux</a></li>
-		    						<li><a href="#luarocks-osx">Installing LuaRocks on OSX</a></li>
-		    						<li><a href="#luarocks-windows">Installing LuaRocks on Windows</a></li>
-		    						<li><a href="#moonscript-fns">Moonscript functions</a></li>
-		    					</ul>
-		    				</div>
-		    
-		    				<h4 id="regular">
-		    					Embedding regular versions of Lua
-		    				</h4>
-		    				<p>
-		    					See <a href="make.html">here</a> for information on how to compile <mono>Nift</mono> with regular (non-JIT) versions of Lua.
-		    				</p>
-		    
-		    				<h4 id="interpreter">
-		    					Lua interpreter
-		    				</h4>
-		    				<p>
-		    					<mono>Nift</mono> has a <mono>Lua</mono> interpreter that you can start with either <mono>nsm interp -lua</mono> or <mono>nift interp -lua</mono>.
-		    				</p>
-		    
-		    				<p>
-		    					In Nift's interpreter mode the prompt will just tell you which language you are using. If you would like the prompt to also display the present working directory (up to using half the width of the console) you can switch to the shell mode using <mono>nsm_mode("sh")</mono>. You can switch back again with <mono>nsm_mode("interp")</mono>.
-		    				</p>
-		    
-		    				<p>
-		    					You can switch to one of the other languages available in Nift's interpreter using <mono>nsm_lang("langStr")</mono> where <mono>langStr</mono> is one of <mnstr style="font-size:16px">f++</mnstr>, <mnstr style="font-size:16px">N++</mnstr>, <mono>lua</mono> or <mono>exprtk</mono>.
-		    				</p>
-		    
-		    
-		    				<h4 id="scripts">
-		    					Running Lua scripts
-		    				</h4>
-		    				<p>
-		    					If you have a <mono>Lua</mono> script saved in a file <mono>path/script-name.lua</mono> you can run it with either of the following:
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-nsm run path/script-name.lua
-nift run path/script-name.lua
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    					If the script has a different extension, say <mono>.ext</mono>, you can run the script with either of the following:
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-nsm run -lua path/script-name.ext
-nift run -lua path/script-name.ext
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<h4 id="exprtk-lua">
-		    					ExprTk from Lua
-		    				</h4>
-		    				<p>
-		    					You can run <mono>ExprTk</mono> code from <mono>Lua</mono> using:					
-		    
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="prettyprint inline lang-lua">
-exprtk("ExprTk code")
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    					<b>Note:</b> When using the interpreter or running a script the ability to call <mono>ExprTk</mono> is added for you, if you want the ability at other times inside <mnstr style="font-size:16px">f++</mnstr> first call <mono>lua_addnsmfns()</mono>, similarly for inside <mnstr style="font-size:16px">N++</mnstr> first call <mono>@lua_addnsmfns()</mono>. 
-		    				</p>
-		    
-		    				<h4 id="lua-f++">
-		    					Lua from <mnstr style="font-size:16px">f++</mnstr>
-		    				</h4>
-		    				<p>
-		    					You can run <mono>Lua</mono> code from <mnstr style="font-size:16px">f++</mnstr> using either of the following (without needing the comment syntax):					
-		    
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="prettyprint inline lang-lua">
-lua(--[[ line of Lua code ]]--)
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="prettyprint inline lang-lua">
-lua
-{
-	-- block of Lua code
-}
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<h4 id="lua-n++">
-		    					Lua from <mnstr style="font-size:16px">N++</mnstr>
-		    				</h4>
-		    				<p>
-		    					You can run <mono>Lua</mono> code from <mnstr style="font-size:16px">N++</mnstr> using either of the following (without needing the comment syntax):					
-		    
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="prettyprint inline lang-lua">
-@lua(--[[ line of Lua code ]]--)
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="prettyprint inline lang-lua">
-@lua
-{
-	-- block of Lua code
-}
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<h4 id="nift-fns">
-		    					Nift functions
-		    				</h4>
-		    				<p>
-		    					The following functions specific to Nift may be made available inside <mono>Lua</mono> code. When running an interactive REPL session or running a Lua script these functions will be added for you, if you want to use them for <mono>Lua</mono> code inside <mnstr style="font-size:16px">f++</mnstr> first call <mono>lua_addnsmfns()</mono>, similarly for inside <mnstr style="font-size:16px">f++</mnstr> first call <mono>@lua_addnsmfns()</mono>. 
-		    
-		    					<center class="table">
-		    						<table id="lua_nift_fns_table" class="alt">
-		    							<thead>
-		    								<tr>
-		    									<th>syntax</th>
-		    									<th>example</th>
-		    									<th>about</th>
-		    								</tr>
-		    							</thead>
-		    							<tr>
-		    								<td><mono>cd(string)</mono></td>
-		    								<td><mono>cd("~/")</mono></td>
-		    								<td>change directory</td>
-		    							</tr>
-		    							<tr>
-		    								<td><mono>exprtk(string)</mono></td>
-		    								<td><mono>exprtk("println('hello, world!')")</mono></td>
-		    								<td>compile and evaluate <mono>ExprTk</mono> expression</td>
-		    							</tr>
-		    							<tr>
-		    								<td><mono>exprtk_compile(string)</mono></td>
-		    								<td><mono>exprtk_compile("println('hello, world!')")</mono></td>
-		    								<td>compile <mono>ExprTk</mono> expression</td>
-		    							</tr>
-		    							<tr>
-		    								<td><mono>exprtk_compile(string, string)</mono></td>
-		    								<td><mono>exprtk_compile("hello", "println('hello, world!')")</mono></td>
-		    								<td>compile <mono>ExprTk</mono> expression</td>
-		    							</tr>
-		    							<tr>
-		    								<td><mono>exprtk_eval()</mono></td>
-		    								<td><mono>exprtk_eval("println('hello, world!')")</mono></td>
-		    								<td>evaluate <mono>ExprTk</mono> expression</td>
-		    							</tr>
-		    							<tr>
-		    								<td><mono>exprtk_eval(string)</mono></td>
-		    								<td><mono>exprtk_eval("hello")</mono></td>
-		    								<td>evaluate <mono>ExprTk</mono> expression</td>
-		    							</tr>
-		    							<tr>
-		    								<td><mono>exprtk_load(string)</mono></td>
-		    								<td><mono>exprtk_load("hello")</mono></td>
-		    								<td>load <mono>ExprTk</mono> expression</td>
-		    							</tr>
-		    							<tr>
-		    								<td><mono>exprtk_str()</mono></td>
-		    								<td><mono>exprtk_str()</mono></td>
-		    								<td>return string of compiled <mono>ExprTk</mono> expression</td>
-		    							</tr>
-		    							<tr>
-		    								<td><mono>exprtk_str(string)</mono></td>
-		    								<td><mono>exprtk_str("hello")</mono></td>
-		    								<td>return string of compiled <mono>ExprTk</mono> expression</td>
-		    							</tr>
-		    							<tr>
-		    								<td><mono>nsm_setnumber(string / lightuserdata, number)</mono></td>
-		    								<td><mono>nsm_setnumber("i", 0)</mono></td>
-		    								<td>set Nift variable from number</td>
-		    							</tr>
-		    							<tr>
-		    								<td><mono>nsm_setstring(string / lightuserdata, string)</mono></td>
-		    								<td><mono>nsm_setstring("str", "hello!")</mono></td>
-		    								<td>set Nift variable from string</td>
-		    							</tr>
-		    							<tr>
-		    								<td><mono>nsm_tolightuserdata(string)</mono></td>
-		    								<td><mono>nsm_tolightuserdata("x")</mono></td>
-		    								<td>get pointer to Nift variable</td>
-		    							</tr>
-		    							<tr>
-		    								<td><mono>nsm_tonumber(string)</mono></td>
-		    								<td><mono>nsm_tonumber("i")</mono></td>
-		    								<td>get number from Nift variable</td>
-		    							</tr>
-		    							<tr>
-		    								<td><mono>nsm_tostring(string)</mono></td>
-		    								<td><mono>nsm_tostring("str")</mono></td>
-		    								<td>get string from Nift variable</td>
-		    							</tr>
-		    							<tr>
-		    								<td><mono>nsm_write(ostream, params)</mono></td>
-		    								<td><mono>nsm_write(console, "x: ", x, endl)</mono></td>
-		    								<td>write to console, output file (ofile), or a stream</td>
-		    							</tr>
-		    							<tr>
-		    								<td><mono>sys(string)</mono></td>
-		    								<td><mono>sys("ls *.txt")</mono></td>
-		    								<td>execute system call/command</td>
-		    							</tr>
-		    							<tfoot>
-		    								<tr>
-		    									<th>syntax</th>
-		    									<th>example</th>
-		    									<th>about</th>
-		    								</tr>
-		    							</tfoot>
-		    						</table>
-		    					</center>
-		    				</p>
-		    
-		    				<p>
-		    					An example of using <mono>nsm_setstring</mono>, <mono>nsm_tostring</mono> and <mono>nsm_wite</mono> with <mnstr style="font-size:16px">f++</mnstr> is below:
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="prettyprint inline linenums lang-lua">
-string str="hello, world!"
-lua_addnsmfns()
-lua 
-{
-	nsm_write(console, nsm_tostring("str"), endl)
-	nsm_setstring("str", "hello, mars!")
-	nsm_write(console, nsm_tostring("str"), endl)
-}
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<h4 id="luarocks">
-		    					LuaRocks
-		    				</h4>
-		    				<p>
-		    					As mentioned above, <a href="https://luarocks.org">LuaRocks</a> may be used to install all sorts of modules for Lua. There is information below about installing LuaRocks on different platforms and configuring your platform. 
-		    				</p>
-		    
-		    				<p>
-		    					<b>Note:</b> Some rocks are to interface with other programs that you also need to have installed on your machine, for example <a href="https://luarocks.org/modules/tomasguisasola/luasql-mysql">LuaSQL-MySQL</a> expects you to have <mono>MYSQL</mono> installed on your machine with the header <mono>mysql.h</mono> available somewhere in your <mono>PATH</mono> variable. Similarly <a href="https://luarocks.org/modules/dougcurrie/lsqlite3">lsqlite3</a> expects you to have <mono>SQLITE</mono> installed on your machine with the header <mono>sqlite3.h</mono> available somewhere in your PATH variable.
-		    				</p>
-		    
-		    				<p>
-		    					Some of the rocks you might find useful with Nift are:
-		    					<ul>
-		    						<li><a href="https://luarocks.org/modules/leafo/cloud_storage">cloud_storage</a> - access Google Cloud Storage from Lua</li>
-		    						<li><a href="https://luarocks.org/modules/moteus/lua-curl">Lua-cURL</a> - binding to libcurl (<a href="http://lua-curl.github.io/">official website</a>, <a href="https://github.com/Lua-cURL/Lua-cURLv3">GitHub</a>)</li>
-		    						<li><a href="https://luarocks.org/modules/luarocks/lua-discount">lua-discount</a> - binding to a <u>fast</u> C implementation of the Markdown text-to-html markup system (<a href="http://asbradbury.org/projects/lua-discount/">official website</a>)</li>
-		    						<li><a href="https://luarocks.org/modules/leafo/etlua">etlua</a> - allows you to render ERB style templates but with Lua. Supports <% %>, <%=%> and <%- %> tags (with optional newline slurping) for embedding code</li>
-		    						<li><a href="https://luarocks.org/modules/openresty/lua-cjson">lua-cjson</a> - fast JSON encoding/parsing support</li>
-		    						<li><a href="https://luarocks.org/modules/x25/luajwt">luajwt</a> - JSON Web Tokens for Lua, very fast and compatible with pyjwt, php-jwt and ruby-jwt</li>
-		    						<li><a href="https://luarocks.org/modules/hisham/graphql">graphql</a> - Lua GraphQL implementation (<a href="https://github.com/bjornbytes/graphql-lua">GitHub</a>)</li>
-		    						<li><a href="https://luarocks.org/modules/luarocks/luahaml">luahaml</a> - implementation of the Haml markup language for Lua</li>
-		    						<li><a href="https://luarocks.org/modules/daurnimator/http">http</a> - HTTP library for Lua: optionally asynchronous (including DNS lookups and TLS), supports HTTP(S) version 1.0, 1.1 and 2, functionality for both client and server, cookie Management, websockets</li>
-		    						<li><a href="https://luarocks.org/modules/olivine-labs/lustache">lustache</a> - allows you to use the Mustache templating standard in Lua by passing in a string, data, and partial templates. It precompiles and caches templates for speed, and allows you to build complex strings such as html pages by iterating through a table and inserting values (<a href="http://olivinelabs.com/lustache/">official website</a>)</li>
-		    						<li><a href="https://luarocks.org/modules/leafo/mailgun">mailgun</a> - send email with Mailgun</li>
-		    						<li><a href="https://luarocks.org/modules/mpeterv/markdown">Markdown</a> - pure-lua implementation of the Markdown text-to-html markup system</li>
-		    						<li><a href="https://luarocks.org/modules/leafo/magick">magick</a> - bindings to ImageMagick for LuaJIT using FFI</li>
-		    						<li><a href="https://luarocks.org/modules/leafo/moonscript">moonscript</a> - programmer friendly language that compiles to Lua (<a href="http://moonscript.org/">official website</a>)</li>
-		    						<li><a href="https://luarocks.org/modules/tomasguisasola/luasql-mysql">LuaSQL-MySQL</a> - database connectivity for Lua (MySQL driver), enables a Lua program to connect to databases, execute arbitrary SQL statements and retrieve results in a row-by-row cursor fashion</li>
-		    						<li><a href="https://luarocks.org/modules/dougcurrie/lsqlite3">lsqlite3</a> - a binding for Lua to the SQLite3 database library</li>
-		    						<li><a href="https://luarocks.org/modules/tomasguisasola/luasql-sqlite3">LuaSQL-SQLite3</a> - database connectivity for Lua (SQLite3 driver), enables a Lua program to connect to databases, execute arbitrary SQL statements and retrieve results in a row-by-row cursor fashion</li>
-		    						<li><a href="https://luarocks.org/modules/luarocks/nixio">nixio</a> - a multi-platform library offering a wide variety of features such as IPv4, IPv6 and UNIX networking, large file I/O, file system operations, system and process control, POSIX user/group management, basic cryptographical hashing, hmac and TLS support, bit operations and binary conversion (also see <a href="https://neopallium.github.io/nixio/modules/nixio.html">here</a>)</li>
-		    						<li><a href="https://luarocks.org/modules/leafo/pgmoon">pgmoon</a> - PostgreSQL driver written in pure Lua for use with OpenResty's cosocket API. Can also be used in regular Lua with LuaSocket and LuaCrypto</li>
-		    						<li><a href="https://luarocks.org/modules/pyericz/redux-lua">redux-lua</a> - implements redux using Lua language</li>
-		    						<li><a href="https://luarocks.org/modules/jakeg/lua-requests">lua-requests</a> - HTTP requests made easy! Support for Basic Auth, Digest Auth. HTTP response parsing has never been easier (<a href="https://github.com/JakobGreen/lua-requests">GitHub</a>)</li>
-		    						<li><a href="https://luarocks.org/modules/bungle/lua-resty-template">lua-resty-template</a> - templating engine (HTML) for Lua and OpenResty</li>
-		    						<li><a href="https://luarocks.org/modules/luasocket/luasocket">LuaSocket</a> - an extension library that is composed by two parts: a C core that provides support for the TCP and UDP transport layers, and a set of Lua modules that add support for functionality commonly needed by applications that deal with the Internet</li>
-		    						<li><a href="https://luarocks.org/modules/leafo/web_sanitize">web_sanitize</a> - library for sanitizing untrusted HTML</li>
-		    						<li><a href="https://luarocks.org/modules/jcupitt/lua-vips">lua-vips</a> - a binding for the libvips image processing library. it is usually faster and needs less memory than similar libraries</li>
-		    						<li><a href="https://luarocks.org/modules/hisham/luafilesystem">LuaFileSystem</a> - offers a portable way to access the
-		    underlying directory structure and file attributes</li>
-		    						<li><a href="https://luarocks.org/modules/moteus/lua-path">lua-path</a> - file system path manipulation library</li>
-		    						<li><a href="https://luarocks.org/modules/benoitgermain/lanes">lanes</a> - multithreading support for Lua</li>
-		    						<li><a href="https://luarocks.org/modules/moteus/lua-llthreads2">lua-llthreads2</a> - low-level threads for Lua, in additional module supports: thread join with zero timeout; logging thread errors with custom logger; run detached joinable threads; pass cfunctions as argument to child thread</li>
-		    						<li><a href="https://luarocks.org/modules/olim/luasystem">luasystem</a> - platform independent system calls</li>
-		    						<li><a href="https://luarocks.org/modules/ckobus/sys">sys</a> - provides system functionalities for <a href="http://torch.ch/">Torch</a></li>
-		    						<li><a href="https://luarocks.org/modules/gvvaughan/lpeg">LPeg</a> - new pattern-matching library for Lua, based on Parsing
-		    Expression Grammars (PEGs)</li>
-		    						<li><a href="https://luarocks.org/modules/daurnimator/luaossl">luaossl</a> - most comprehensive OpenSSL module in the Luaverse</li>
-		    						<li><a href="https://luarocks.org/modules/starius/luacrypto">LuaCrypto</a> - frontend to the OpenSSL cryptographic library, the OpenSSL features that are currently exposed are: digests (MD5, SHA-1, HMAC, and more), encryption, decryption and crypto-grade random number generators</li>
-		    						<li><a href="https://luarocks.org/modules/tomasguisasola/md5">MD5</a> - offers basic cryptographic facilities: a hash (digest) function, a pair crypt/decrypt based on MD5 and CFB, and a pair crypt/decrypt based on DES with 56-bit keys</li>
-		    						<li><a href="https://luarocks.org/modules/gvvaughan/luaposix">luaposix</a> - library binding various POSIX APIs (see also <a href="http://25thandclement.com/~william/projects/lunix.html">lunix</a>)</li>
-		    						<li><a href="https://luarocks.org/modules/gaspard/xml">xml</a> - fast xml parser based on RapidXML</li>
-		    						<li><a href="https://luarocks.org/modules/gvvaughan/lyaml">lyaml</a> - libYAML binding for Lua, read and write YAML format files with Lua</li>
-		    						<li><a href="https://luarocks.org/modules/gaspard/yaml">yaml</a> - Lua YAML serialization using LibYAML, LibYAML is generally considered to be the best C YAML 1.1 implementation</li>
-		    					</ul>
-		    				</p>
-		    
-		    				<p>
-		    					Other Lua resources worth checking out include:
-		    					<ul>
-		    						<li><a href="https://fengari.io/">Fengari</a> - the Lua VM written in JavaScript, it uses JavaScript's garbage collector so that interoperability with the DOM is non-leaky (<a href="https://github.com/fengari-lua/fengari">GitHub</a>)</li>
-		    						<li><a href="https://luajit.org/ext_ffi.html">FFI Library</a> - allows calling external C functions and using C data structures from pure Lua code</li>
-		    						<li><a href="https://libgit2.org/">libgit2</a> - portable, pure C implementation of the Git core methods provided as a re-entrant linkable library with a solid API, allowing you to write native speed custom Git applications in any language which supports C bindings (<a href="https://github.com/libgit2/luagit2">luagit2</a> - Lua bindings for libgit2)</li>
-		    						<li><a href="https://scilua.org/">SciLua</a> - Scientific computing with LuaJIT</li>
-		    						<li><a href="http://torch.ch/">Torch</a> - a scientific computing framework with wide support for machine learning algorithms that puts GPUs first</li>
-		    					</ul>
-		    				</p>
-		    
-		    				<p>
-		    					You can also compile the following languages to Lua (see <a href="https://github.com/hengestone/lua-languages">here</a> for a longer list):
-		    					<ul>
-		    						<li><a href="https://amulet.works/">Amulet</a> - simple, functional programming language in the ML tradition</li>
-		    						<li><a href="https://github.com/yanghuan/CSharp.lua">CSharp.lua</a> - C# to Lua compiler</li>
-		    						<li><a href="https://fennel-lang.org/">Fennel</a> - a programming language that brings together the speed, simplicity, and reach of Lua with the flexibility of a lisp syntax and macro system</li>
-		    						<li><a href="https://haxe.org/">Haxe</a> - an open source high-level strictly-typed programming language with a fast optimizing cross-compiler</li>
-		    						<li><a href="https://moonscript.org/">MoonScript</a> - a dynamic scripting language that compiles into Lua</li>
-		    						<li><a href="https://github.com/TypeScriptToLua/TypeScriptToLua">TypeScriptToLua</a> - generic TypeScript to Lua transpiler. Write your code in TypeScript and publish Lua!</li>
-		    						<li><a href="https://urn-lang.com/">Urn</a> - a Lisp dialect with a focus on minimalism</li>
-		    					</ul>
-		    				</p>
-		    
-		    				<h4 id="luarocks-freebsd">
-		    					Installing LuaRocks on FreeBSD
-		    				</h4>
-		    				<p>
-		    					Instructions for installing <mono>LuaRocks</mono> from source for <mono>Lua v5.1</mono> can be found <a href="https://www.cambus.net/luarocks-on-freebsd/">here</a>. Alternatively, <mono>LuaRocks</mono> can be installed for <mono>Lua v5.2</mono> through <mono>pkg</mono> using:
-		    
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="inline">
-sudo pkg install devel/lua-luarocks
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    					If you installed <mono>LuaRocks</mono> with <mono>pkg</mono> then the default command to run <mono>LuaRocks</mono> is <mono>luarocks-5.2</mono> so you should add an alias called <mono>luarocks</mono>, and you need to change the configuration for <mono>Lua v5.1</mono> instead of <mono>Lua v5.2</mono>. Run your alias <mono>luarocks</mono> which should give you the location of the system/global configuration file for LuaRocks and open it up with administator privileges in your favourit text editor, eg. (you can install <mono>micro</mono> with <mono>pkg</mono>):
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="inline">
-sudo micro /usr/local/etc/luarocks/config-5.2.lua
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    					Then modify the appropriate lines so that the configuration file has the following:
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-lua_interpreter = "lua5.1";
-lua_version = "5.1";
-
-variables = {
-	LUA_DIR = "/usr/local";
-	LUA_INCDIR = "/usr/local/include/lua51";
-	LUA_BINDIR = "/usr/local/bin";
-}
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    					Once <mono>LuaRocks</mono> is configured for <mono>Lua v5.1</mono>, run <mono>luarocks path --bin</mono> and add the values for <mono>LUA_PATH</mono> and <mono>LUA_CPATH</mono> as environemnt variables on your machine (I find you typically do not need to add the value given for <mono>PATH</mono> to your path variable). For example if you use <mono>bash</mono> then for the current shell session you can run <mono>eval $(luarocks path --bin)</mono>, and for future shell sessions you should be able to add the first two lines of output to <mono>~/.bashrc</mono>.
-		    				</p>
-		    
-		    				<p>
-		    					You should then be able to install rocks using for example:
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="inline">
-sudo luarocks install LuaFileSystem
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    					<mono>LuaRocks</mono> should work fine with Nift installed from source or through <mono>pkg</mono>.
-		    				</p>
-		    
-		    				<h4 id="luarocks-linux">
-		    					Installing LuaRocks on Linux
-		    				</h4>
-		    				<p>
-		    					<mono>LuaRocks</mono> can typically be installed through the package manager for your distribution. For example on Ubuntu you can run:
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="inline">
-sudo apt-get install luarocks
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    					You should then be able to install rocks using for example:
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="inline">
-sudo luarocks install LuaFileSystem
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    					Once <mono>LuaRocks</mono> is installed run <mono>luarocks path --bin</mono> and add the lines for <mono>LUA_PATH</mono> and <mono>LUA_CPATH</mono> to the end of <mono>~/.bashrc</mono> (I find you typically do not need to add the value given for <mono>PATH</mono> to your path variable).
-		    				</p>
-		    
-		    				<p>
-		    					<mono>LuaRocks</mono> should work fine with Nift installed from source or through Snapcraft, I have not had much luck yet getting it to work with installs through Flatpak however.
-		    				</p>
-		    
-		    				<h4 id="luarocks-osx">
-		    					Installing LuaRocks on OSX
-		    				</h4>
-		    
-		    				<p>
-		    					The easiest way to install LuaRocks on OSX is to use homebrew with: 
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="inline">
-brew install luarocks
-</pre>
-		    </div>
-		    				</p>
-		    
-		    
-		    				<p>
-		    					Note however that this typically sets <mono>LuaRocks</mono> up for <mono>Lua</mono> v5.3 by default, whereas for <mono>LuaJIT</mono> we want it to install rocks for v5.1, it will tell you which version is configured near the bottom of the output from calling <mono>luarocks</mono> from the command line. When it is configured for <mono>Lua</mono> v5.3, when installing a rock you will need to add <mono>--lua-version=5.1</mono>, for example:
-		    
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="inline">
-luarocks install moonscript --lua-version=5.1
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    					To change the <mono>Homebrew</mono> install of <mono>LuaRocks</mono> to use <mono>Lua 5.1</mono>: 
-		    					<ol>
-		    						<li>run <mono>luarocks</mono> and note where the <b>system configuration file</b> is located;</li>
-		    						<li>run <mono>sudo nano system-config-path</mono> and make sure it has the following two lines:</li>
-		    					</ol>
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="inline">
-lua_interpreter = "lua5.1"
-lua_version = "5.1"
-</pre>
-		    </div>
-		    					Now you do not need <mono>--lua-version=5.1</mono> when calling <mono>LuaRocks</mono>.
-		    				</p>
-		    
-		    				<p>
-		    					Once <mono>LuaRocks</mono> is installed and configured to use <mono>Lua 5.1</mono> run <mono>luarocks path --bin</mono> and add the lines for <mono>LUA_PATH</mono> and <mono>LUA_CPATH</mono> to the end of <mono>~/.bash_profile</mono> (I find you typically do not need to add the value given for <mono>PATH</mono> to your path variable).
-		    				</p>
-		    
-		    				<p>
-		    					<b>Note:</b> If you do not configure <mono>LuaRocks</mono> to use <mono>Lua 5.1</mono> then you will need to use for example <mono>luarocks path --lua-version=5.1 --bin</mono> and <mono>sudo luarocks install --lua-version=5.1 lua-cjson</mono>.
-		    				</p>
-		    
-		    				<p>
-		    					Alternatively, assuming you have command line tools installed for XCode, you can download the latest <mono>.tar.gz</mono> version of the source for <mono>LuaRocks</mono> from <a href="https://luarocks.github.io/luarocks/releases/">here</a>. Extract the contents of the archive, open the directory in a terminal window and run:
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="inline">
-./configure --lua-version=5.1
-make
-sudo make install
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    					Then you can install rocks using for example:
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="inline">
-sudo luarocks install lua-cjson
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    					Same as above, once <mono>LuaRocks</mono> is installed run <mono>luarocks path --bin</mono> and add the lines for <mono>LUA_PATH</mono> and <mono>LUA_CPATH</mono> to the end of <mono>~/.bash_profile</mono> (I find you typically do not need to add the value given for <mono>PATH</mono> to your path variable).
-		    				</p>
-		    
-		    				<p>
-		    					<mono>LuaRocks</mono> should work fine with <mono>Nift</mono> installed from source or through Homebrew.
-		    				</p>
-		    
-		    				<h4 id="luarocks-windows">
-		    					Installing LuaRocks on Windows
-		    				</h4>
-		    				<p>
-		    					LuaRocks can be installed through Chocolatey with:
-		    
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="inline">
-choco install luarocks
-</pre>
-		    </div>
-		    
-		    					Note however that Chocolatey installs of <mono>LuaRocks</mono> expect you to have Visual Studio Code installed with its build tools for C++, which can take up quite a lot of disk space. 
-		    				</p>
-		    
-		    				<p>
-		    					You can supposedly also install <mono>LuaRocks</mono> to use MingW for building rocks, see <a href="https://github.com/luarocks/luarocks/wiki/Installation-instructions-for-Windows">here</a> for instructions. Note that when running the install script, use:
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="inline">
-INSTALL.BAT /MW /L
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    					You should then be able to install rocks using for example:
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="inline">
-sudo luarocks install LuaFileSystem
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    					Once <mono>LuaRocks</mono> is installed run <mono>luarocks path --bin</mono> and add the values for <mono>LUA_PATH</mono> and <mono>LUA_CPATH</mono> as environemnt variables on your machine (I find you typically do not need to add the value given for <mono>PATH</mono> to your path variable). To modify environment variables in Windows 10 you can type <mono>environment variables</mono> in to <mono>Cortana</mono> who should then give you a link straight to where you need to go in Control Panel. 
-		    				</p>
-		    
-		    				<p>
-		    					<mono>LuaRocks</mono> should work fine with Nift installed from source or through Chocolatey, though so far I have not had much luck getting LuaRocks to build rocks on Windows, I will update this page once I figure out a reliable way to install <mono>LuaRocks</mono> on Windows.
-		    				</p>
-		    
-		    
-		    				<h4 id="moonscript-fns">
-		    					Moonscript functions
-		    				</h4>
-		    				<p>
-		    					Suppose you have a moonscript file <mono>functions.moon</mono>:
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="prettyprint inline linenums lang-lua">
-func1 = ->
-	print "hello, world!"
-	
-func2 = ->
-	print "hello, mars!"
-
-{ :func }
-{ :func2 }
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    					Inside <mono>Lua</mono> code (in a file in the same directory) you can require <mono>functions.moon</mono> and use its functions as follows:
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="prettyprint inline linenums lang-lua">
-require "moonscript"
-fns = require "functions"
-fns.func()
-fns.func2()
-</pre>
-		    </div>
-		    				</p>
-		    			</div>
-		    		</section>
-		    	</div>
-		    </section>
-
-			<!-- Footer -->
-			<section id="footer" class="wrapper">
-				<div class="title">
-					<img src="../images/nsm.png" alt="nsm signature on parchment" width="120" style="margin-top:40px; margin-bottom:20px; border-radius: 4px">
-				</div>
-			
-				<div class="container">
-					<div id="copyright">
-						<noselect>
-							<ul style="margin-top:115px">
-								<li><b style="color: white !important">Mirrors:</b></li>
-								<li><a href="https://nift.cc/">Official</a></li>
-								<li><a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a></li>
-								<li><a href="https://nifty-site-manager.github.io/">GitHub</a></li>
-								<li><a href="https://nifty-site-manager.gitlab.io/">GitLab</a></li>
-								<li><a href="https://nift.netlify.app/">Netlify</a></li>
-								<li><a href="https://nift.now.sh/">Vercel</a></li>
-							</ul> <br>
-			
-							<center><img id="footer-mascot" src="../images/badger.png" alt="Nift badger mascot" width="325" style="max-width:90%; margin-bottom:20px"></center>
-			
-							<ul>
-								<li>&copy;&nbsp;2015-<span name="cyear"></span> <a href="https://nift.cc">Nift</a></li>
-								<li><a href="../tos.html">Terms of Service</a></li>
-								<li><a href="../privacy_policy.html">Privacy Policy</a></li>
-							</ul> <br>
-			
-							<ul>
-								<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
-								<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
-								<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
-							</ul> <br>
-						
-							<b id="light_dark_LHS" style="color: white !important">light</b> &nbsp; <label class="light-dark-switch" id="light-dark-switch">
-								<input type="checkbox" id="checkbox_light_dark">
-								<span class="slider round" onclick="toggle_light_dark()" id="slider_light_dark"></span>
-							</label> &nbsp; <b id="light_dark_RHS" style="color: white !important">dark</b> <br><br>
-			
-							<ul>
-								<li>Creator & Developer:</li>
-								<li><a href="https://n-ham.com">Nicholas Ham</a></li>
-							</ul><br>
-						</noselect>
-					</div>
-				</div>
-			</section>
-		</div>
-
-		<!-- Scripts -->
-		<script src="../assets/js/copy-pre.js"></script>
-		<script src="../assets/js/jquery.min.js"></script>
-		<script src="../assets/js/jquery.dropotron.min.js"></script>
-		<script src="../assets/js/browser.min.js"></script>
-		<script src="../assets/js/breakpoints.min.js"></script>
-		<script src="../assets/js/util.js"></script>
-		<script src="../assets/js/main.js"></script>
-		<script src='../assets/js/process_md_blocks.js'></script>
-		<script src="../assets/js/showdown.min.js"></script>
+	<head>
+		<title>Nift - lua</title>
+		<meta name="description" 
+		      content="Nift is an opinionless web development framework, specialising
+		            in static websites with serverless backends. It's lightning fast, 
+		            cross-platform, opinionless, open source (MIT license) and 
+		            developed from the ground up in C++. Use it for any of your 
+		            personal or commercial projects!">
+		
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" href="../assets/css/pagestyle.css">
+		<link rel="stylesheet" href="../assets/css/menu.css">
+		<link rel="stylesheet" href="../assets/css/font-awesome.css">
+		<link rel="stylesheet" href="../assets/css/pre.css">
+		<link rel="stylesheet" href="../assets/css/extra-fonts.css"><link rel='icon' type='image/png' href='../images/lightning.png'>
+		
+		<script async src="../assets/js/menu.js"></script>
+		<script async src="../assets/js/copy-pre.js"></script>
+		<script async src="../assets/js/process-md-blocks.js"></script>
+		<script async src="../assets/js/showdown.min.js"></script>
 		<script>
 			var converter = new showdown.Converter();
 			converter.setOption('emoji', 'on');
@@ -780,22 +31,14 @@ fns.func2()
 			for(var i=0; i<elements.length; i++)
 				elements[i].innerHTML = converter.makeHtml(elements[i].innerHTML.replace(/&lt;/g, "xwxw").replace(/&gt;/g, "pqpq")).replace(/xwxw/g, "&lt;").replace(/pqpq/g, "&gt;");
 		</script>
-		<script src="../assets/js/toggle.js"></script>
-
-		<!-- Inserts current year -->
-		<script>
-			var x = document.getElementsByName("cyear");
-
-			for(var i=0; i<x.length; i++)
-				x[i].innerHTML = new Date().getFullYear();
-		</script>
-
 		<!-- uses google-code-prettify for syntax highlighting 
 			 see https://github.com/google/code-prettify/ for more info -->
-		<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
-		<script src="../assets/js/lang-lua.js"></script>
-		<script src="../assets/js/lang-nift.js"></script>
-
+		<script async src="../assets/js/prettify.js" onload="PR.prettyPrint()"></script>
+		<script async src="../assets/js/lang-lua.js"></script>
+		<script async src="../assets/js/lang-nift.js"></script>
+		
+		<!-- uses MathJax CDN for LaTeX support
+			 see https://docs.mathjax.org/en/latest/web/configuration.html for more info -->
 		<script id="MathJax-script" async
 		        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 		</script>
@@ -808,7 +51,713 @@ fns.func2()
 				}
 			};
 		</script>
+	</head>
+
+	<body>
+		<nav id="nav" class="noselect">
+		  <ul class="menu">
+		    <a href="../index.html"><li class="logo">Nift</li></a>
+		    <li class="nav-space-left"></li>
+		    <li class="item icons">
+		      <a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a>
+		      <a href="https://github.com/nifty-site-manager/nsm/discussions" title="GitHub Discussions" class="gh"><i class="fas fa-comment-dots fa-2x"></i></a>
+		      <a href="https://twitter.com/nift_dev" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a>
+		      <a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a>
+		    </li>
+		    <a href="../index.html" class="item hover-hl"><li>Home</li></a>
+		    <li class="item hover-hl has-submenu" onclick="toggleItem(0)">
+		      <a tabindex="0" class="item-link">Docs</a>
+		      <ul class="submenu">
+		        <li class="subitem"><a href="installing.html">Installing</a></li>
+		        <li class="subitem"><a href="hosting.html">Hosting</a></li>
+		        <li class="subitem"><a href="commands.html">Commands</a></li>
+		        <li class="subitem"><a href="config.html">Config</a></li>
+		        <li class="subitem"><a href="template_files.html">Template Files</a></li>
+		        <li class="subitem"><a href="fns.html">Functions</a></li>
+		        <li class="subitem"><a href="types.html">Types</a></li>
+		        <li class="subitem"><a href="f++.html">f++ (scripting)</a></li>
+		        <li class="subitem"><a href="n++.html">n++ (templates)</a></li>
+		        <li class="subitem"><a href="lua.html">Lua(JIT)</a></li>
+		        <li class="subitem"><a href="exprtk.html">ExprTk</a></li>
+		        <li class="subitem"><a href="REPL.html">Interactive REPL</a></li>
+		        <li class="subitem"><a href="scripts.html">Scripts</a></li>
+		        <li class="subitem"><a href="template_languages.html">Template Languages</a></li>
+		        <li class="subitem"><a href="JSON.html">JSON Data</a></li>
+		        <li class="subitem"><a href="markdown.html">Markdown</a></li>
+		        <li class="subitem"><a href="translators.html">Translators</a></li>
+		        <li class="subitem"><a href="mathematics.html">Mathematics</a></li>
+		        <li class="subitem"><a href="code_blocks.html">Code Blocks</a></li>
+		        <li class="subitem"><a href="presentations.html">Presentations</a></li>
+		      </ul>
+		    </li>
+		    <li class="item hover-hl has-submenu" onclick="toggleItem(1)">
+		      <a tabindex="0" class="item-link">Resources</a>
+		      <ul class="submenu">
+		        <li class="subitem"><a href="../resources/tutorials.html">Tutorials</a></li>
+		        <li class="subitem"><a href="../resources/templates.html">Templates</a></li>
+		        <li class="subitem"><a href="../resources/blog_templates.html">Blog Templates</a></li>
+		        <li class="subitem"><a href="../resources/css_frameworks.html">CSS Frameworks</a></li>
+		        <li class="subitem"><a href="../resources/js_frameworks.html">JS Frameworks</a></li>
+		        <li class="subitem"><a href="../resources/links.html">Links</a></li>
+		        <li class="subitem"><a href="../resources/logos.html">Logos</a></li>
+		        <li class="subitem"><a href="../resources/promos.html">Promos</a></li>
+		        <li class="subitem"><a href="../resources/php_frameworks.html">PHP Frameworks</a></li>
+		      </ul>
+		    </li>
+		    <li class="toggle"><a href="#" onclick="toggleMenu()" id="menu-link"><i class="fas fa-bars fa-2x"></i></a></li>
+		  </ul>
+		</nav>
 		
+		<!-- Header -->
+		<section class="wrapper" id="header">
+		  <div id="logo" class="noselect">
+		    <img src="../images/rabbit-tags-white.png" alt="Nift bunny mascot" style="width: 400px; max-width:90%"><br>
+		
+		    <p style="color:#372C2A">An opinionless web development framework</p>
+		
+		    <p>
+		      <a href="https://chocolatey.org/packages/nift"><img src="../images/chocolatey-icon.png" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
+		      <a href="installing.html#osx-brew"><img src="../images/brew-icon.png" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
+		      <a href="installing.html#freebsd"><img src="../images/freebsd.png" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
+		      <a href="installing.html#linux-flatpak"><img src="../images/flathub-icon.png" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
+		      <a href="installing.html#gentoo"><img src="../images/gentoo.svg" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
+		      <a href="https://snapcraft.io/nift"><img src="../images/snap-icon.png" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
+		    </p>
+		  </div>
+		</section>
+
+		<!-- Main -->
+		<section id="main" class="wrapper style2">
+			<div class="title">Lua</div>
+			<div class="container">
+				<!-- Features -->
+				<section id="features">
+					<!-- Image -->
+					<center>
+						<img src="../images/lua-watercolor.png" id="lua-logo" alt="Lua logo" style="width: 250px; margin-bottom:40px">
+					</center>
+		
+					<div class="content">
+						<p>
+							<mono>LuaJIT</mono> (<a href="https://luajit.org">official website</a>) is a Just-In-Time compiler for <mono>Lua</mono> (<a href="https://lua.org">official website</a>) which is embedded in <mono>Nift</mono>. <mono>LuaJIT</mono> is <a href="https://github.com/r-lyeh-archived/scriptorium">extremely fast</a>, note that <mono>LuaJIT</mono> uses version 5.1 of <mono>Lua</mono> (<a href="https://www.lua.org/manual/5.1/index.html">reference manual</a>).
+						</p>
+		
+						<p>
+							There are lots of modules available for <mono>Lua</mono> that can be installed as self-contained packages called <mono>rocks</mono>. These can be installed using either <a href="https://luarocks.org">LuaRocks</a> or <a href="https://luadist.org">LuaDist</a>. There is documentation below on how to use <mono>LuaRocks</mono> with most of the operating systems that Nift runs on, for other platforms try searching Google for <mono><i>os</i> luarocks</mono>.  
+						</p>
+		
+						<center>
+							<img src="../images/luajit.jpg" alt="LuaJit logo" width=300 style="margin-bottom:40px">
+						</center>
+		
+						<a href="#contents" class="to-top">[contents]</a>
+		
+						<h4 id="contents">
+							Contents
+						</h4>
+						<div>
+							<ul>
+								<li><a href="#regular">Embedding regular versions of Lua</a></li>
+								<li><a href="#interpreter">Lua interpreter</a></li>
+								<li><a href="#scripts">Running Lua scripts</a></li>
+								<li><a href="#exprtk-lua">ExprTk from Lua</a></li>
+								<li><a href="#lua-f++">Lua from f++</a></li>
+								<li><a href="#lua-n++">Lua from n++</a></li>
+								<li><a href="#nift-fns">Nift functions</a></li>
+								<li><a href="#luarocks">LuaRocks</a></li>
+								<li><a href="#luarocks-freebsd">Installing LuaRocks on FreeBSD</a></li>
+								<li><a href="#luarocks-linux">Installing LuaRocks on Linux</a></li>
+								<li><a href="#luarocks-osx">Installing LuaRocks on OSX</a></li>
+								<li><a href="#luarocks-windows">Installing LuaRocks on Windows</a></li>
+								<li><a href="#moonscript-fns">Moonscript functions</a></li>
+							</ul>
+						</div>
+		
+						<h4 id="regular">
+							Embedding regular versions of Lua
+						</h4>
+						<p>
+							See <a href="make.html">here</a> for information on how to compile <mono>Nift</mono> with regular (non-JIT) versions of Lua.
+						</p>
+		
+						<h4 id="interpreter">
+							Lua interpreter
+						</h4>
+						<p>
+							<mono>Nift</mono> has a <mono>Lua</mono> interpreter that you can start with either <mono>nsm interp -lua</mono> or <mono>nift interp -lua</mono>.
+						</p>
+		
+						<p>
+							In Nift's interpreter mode the prompt will just tell you which language you are using. If you would like the prompt to also display the present working directory (up to using half the width of the console) you can switch to the shell mode using <mono>nsm_mode("sh")</mono>. You can switch back again with <mono>nsm_mode("interp")</mono>.
+						</p>
+		
+						<p>
+							You can switch to one of the other languages available in Nift's interpreter using <mono>nsm_lang("langStr")</mono> where <mono>langStr</mono> is one of <mnstr style="font-size:16px">f++</mnstr>, <mnstr style="font-size:16px">N++</mnstr>, <mono>lua</mono> or <mono>exprtk</mono>.
+						</p>
+		
+		
+						<h4 id="scripts">
+							Running Lua scripts
+						</h4>
+						<p>
+							If you have a <mono>Lua</mono> script saved in a file <mono>path/script-name.lua</mono> you can run it with either of the following:
+		<div align="center">
+		<pre class="prettyprint inline">
+nsm run path/script-name.lua
+nift run path/script-name.lua
+</pre>
+		</div>
+						</p>
+		
+						<p>
+							If the script has a different extension, say <mono>.ext</mono>, you can run the script with either of the following:
+		<div align="center">
+		<pre class="prettyprint inline">
+nsm run -lua path/script-name.ext
+nift run -lua path/script-name.ext
+</pre>
+		</div>
+						</p>
+		
+						<h4 id="exprtk-lua">
+							ExprTk from Lua
+						</h4>
+						<p>
+							You can run <mono>ExprTk</mono> code from <mono>Lua</mono> using:					
+		
+		<div align="center">
+		<pre class="prettyprint inline lang-lua">
+exprtk("ExprTk code")
+</pre>
+		</div>
+						</p>
+		
+						<p>
+							<b>Note:</b> When using the interpreter or running a script the ability to call <mono>ExprTk</mono> is added for you, if you want the ability at other times inside <mnstr style="font-size:16px">f++</mnstr> first call <mono>lua_addnsmfns()</mono>, similarly for inside <mnstr style="font-size:16px">N++</mnstr> first call <mono>@lua_addnsmfns()</mono>. 
+						</p>
+		
+						<h4 id="lua-f++">
+							Lua from <mnstr style="font-size:16px">f++</mnstr>
+						</h4>
+						<p>
+							You can run <mono>Lua</mono> code from <mnstr style="font-size:16px">f++</mnstr> using either of the following (without needing the comment syntax):					
+		
+		<div align="center">
+		<pre class="prettyprint inline lang-lua">
+lua(--[[ line of Lua code ]]--)
+</pre>
+		</div>
+						</p>
+		
+						<p>
+		<div align="center">
+		<pre class="prettyprint inline lang-lua">
+lua
+{
+	-- block of Lua code
+}
+</pre>
+		</div>
+						</p>
+		
+						<h4 id="lua-n++">
+							Lua from <mnstr style="font-size:16px">N++</mnstr>
+						</h4>
+						<p>
+							You can run <mono>Lua</mono> code from <mnstr style="font-size:16px">N++</mnstr> using either of the following (without needing the comment syntax):					
+		
+		<div align="center">
+		<pre class="prettyprint inline lang-lua">
+@lua(--[[ line of Lua code ]]--)
+</pre>
+		</div>
+						</p>
+		
+						<p>
+		<div align="center">
+		<pre class="prettyprint inline lang-lua">
+@lua
+{
+	-- block of Lua code
+}
+</pre>
+		</div>
+						</p>
+		
+						<h4 id="nift-fns">
+							Nift functions
+						</h4>
+						<p>
+							The following functions specific to Nift may be made available inside <mono>Lua</mono> code. When running an interactive REPL session or running a Lua script these functions will be added for you, if you want to use them for <mono>Lua</mono> code inside <mnstr style="font-size:16px">f++</mnstr> first call <mono>lua_addnsmfns()</mono>, similarly for inside <mnstr style="font-size:16px">f++</mnstr> first call <mono>@lua_addnsmfns()</mono>. 
+		
+							<center class="table">
+								<table id="lua_nift_fns_table" class="alt">
+									<thead>
+										<tr>
+											<th>syntax</th>
+											<th>example</th>
+											<th>about</th>
+										</tr>
+									</thead>
+									<tr>
+										<td><mono>cd(string)</mono></td>
+										<td><mono>cd("~/")</mono></td>
+										<td>change directory</td>
+									</tr>
+									<tr>
+										<td><mono>exprtk(string)</mono></td>
+										<td><mono>exprtk("println('hello, world!')")</mono></td>
+										<td>compile and evaluate <mono>ExprTk</mono> expression</td>
+									</tr>
+									<tr>
+										<td><mono>exprtk_compile(string)</mono></td>
+										<td><mono>exprtk_compile("println('hello, world!')")</mono></td>
+										<td>compile <mono>ExprTk</mono> expression</td>
+									</tr>
+									<tr>
+										<td><mono>exprtk_compile(string, string)</mono></td>
+										<td><mono>exprtk_compile("hello", "println('hello, world!')")</mono></td>
+										<td>compile <mono>ExprTk</mono> expression</td>
+									</tr>
+									<tr>
+										<td><mono>exprtk_eval()</mono></td>
+										<td><mono>exprtk_eval("println('hello, world!')")</mono></td>
+										<td>evaluate <mono>ExprTk</mono> expression</td>
+									</tr>
+									<tr>
+										<td><mono>exprtk_eval(string)</mono></td>
+										<td><mono>exprtk_eval("hello")</mono></td>
+										<td>evaluate <mono>ExprTk</mono> expression</td>
+									</tr>
+									<tr>
+										<td><mono>exprtk_load(string)</mono></td>
+										<td><mono>exprtk_load("hello")</mono></td>
+										<td>load <mono>ExprTk</mono> expression</td>
+									</tr>
+									<tr>
+										<td><mono>exprtk_str()</mono></td>
+										<td><mono>exprtk_str()</mono></td>
+										<td>return string of compiled <mono>ExprTk</mono> expression</td>
+									</tr>
+									<tr>
+										<td><mono>exprtk_str(string)</mono></td>
+										<td><mono>exprtk_str("hello")</mono></td>
+										<td>return string of compiled <mono>ExprTk</mono> expression</td>
+									</tr>
+									<tr>
+										<td><mono>nsm_setnumber(string / lightuserdata, number)</mono></td>
+										<td><mono>nsm_setnumber("i", 0)</mono></td>
+										<td>set Nift variable from number</td>
+									</tr>
+									<tr>
+										<td><mono>nsm_setstring(string / lightuserdata, string)</mono></td>
+										<td><mono>nsm_setstring("str", "hello!")</mono></td>
+										<td>set Nift variable from string</td>
+									</tr>
+									<tr>
+										<td><mono>nsm_tolightuserdata(string)</mono></td>
+										<td><mono>nsm_tolightuserdata("x")</mono></td>
+										<td>get pointer to Nift variable</td>
+									</tr>
+									<tr>
+										<td><mono>nsm_tonumber(string)</mono></td>
+										<td><mono>nsm_tonumber("i")</mono></td>
+										<td>get number from Nift variable</td>
+									</tr>
+									<tr>
+										<td><mono>nsm_tostring(string)</mono></td>
+										<td><mono>nsm_tostring("str")</mono></td>
+										<td>get string from Nift variable</td>
+									</tr>
+									<tr>
+										<td><mono>nsm_write(ostream, params)</mono></td>
+										<td><mono>nsm_write(console, "x: ", x, endl)</mono></td>
+										<td>write to console, output file (ofile), or a stream</td>
+									</tr>
+									<tr>
+										<td><mono>sys(string)</mono></td>
+										<td><mono>sys("ls *.txt")</mono></td>
+										<td>execute system call/command</td>
+									</tr>
+									<tfoot>
+										<tr>
+											<th>syntax</th>
+											<th>example</th>
+											<th>about</th>
+										</tr>
+									</tfoot>
+								</table>
+							</center>
+						</p>
+		
+						<p>
+							An example of using <mono>nsm_setstring</mono>, <mono>nsm_tostring</mono> and <mono>nsm_wite</mono> with <mnstr style="font-size:16px">f++</mnstr> is below:
+		<div align="center">
+		<pre class="prettyprint inline linenums lang-lua">
+string str="hello, world!"
+lua_addnsmfns()
+lua 
+{
+	nsm_write(console, nsm_tostring("str"), endl)
+	nsm_setstring("str", "hello, mars!")
+	nsm_write(console, nsm_tostring("str"), endl)
+}
+</pre>
+		</div>
+						</p>
+		
+						<h4 id="luarocks">
+							LuaRocks
+						</h4>
+						<p>
+							As mentioned above, <a href="https://luarocks.org">LuaRocks</a> may be used to install all sorts of modules for Lua. There is information below about installing LuaRocks on different platforms and configuring your platform. 
+						</p>
+		
+						<p>
+							<b>Note:</b> Some rocks are to interface with other programs that you also need to have installed on your machine, for example <a href="https://luarocks.org/modules/tomasguisasola/luasql-mysql">LuaSQL-MySQL</a> expects you to have <mono>MYSQL</mono> installed on your machine with the header <mono>mysql.h</mono> available somewhere in your <mono>PATH</mono> variable. Similarly <a href="https://luarocks.org/modules/dougcurrie/lsqlite3">lsqlite3</a> expects you to have <mono>SQLITE</mono> installed on your machine with the header <mono>sqlite3.h</mono> available somewhere in your PATH variable.
+						</p>
+		
+						<p>
+							Some of the rocks you might find useful with Nift are:
+							<ul>
+								<li><a href="https://luarocks.org/modules/leafo/cloud_storage">cloud_storage</a> - access Google Cloud Storage from Lua</li>
+								<li><a href="https://luarocks.org/modules/moteus/lua-curl">Lua-cURL</a> - binding to libcurl (<a href="http://lua-curl.github.io/">official website</a>, <a href="https://github.com/Lua-cURL/Lua-cURLv3">GitHub</a>)</li>
+								<li><a href="https://luarocks.org/modules/luarocks/lua-discount">lua-discount</a> - binding to a <u>fast</u> C implementation of the Markdown text-to-html markup system (<a href="http://asbradbury.org/projects/lua-discount/">official website</a>)</li>
+								<li><a href="https://luarocks.org/modules/leafo/etlua">etlua</a> - allows you to render ERB style templates but with Lua. Supports <% %>, <%=%> and <%- %> tags (with optional newline slurping) for embedding code</li>
+								<li><a href="https://luarocks.org/modules/openresty/lua-cjson">lua-cjson</a> - fast JSON encoding/parsing support</li>
+								<li><a href="https://luarocks.org/modules/x25/luajwt">luajwt</a> - JSON Web Tokens for Lua, very fast and compatible with pyjwt, php-jwt and ruby-jwt</li>
+								<li><a href="https://luarocks.org/modules/hisham/graphql">graphql</a> - Lua GraphQL implementation (<a href="https://github.com/bjornbytes/graphql-lua">GitHub</a>)</li>
+								<li><a href="https://luarocks.org/modules/luarocks/luahaml">luahaml</a> - implementation of the Haml markup language for Lua</li>
+								<li><a href="https://luarocks.org/modules/daurnimator/http">http</a> - HTTP library for Lua: optionally asynchronous (including DNS lookups and TLS), supports HTTP(S) version 1.0, 1.1 and 2, functionality for both client and server, cookie Management, websockets</li>
+								<li><a href="https://luarocks.org/modules/olivine-labs/lustache">lustache</a> - allows you to use the Mustache templating standard in Lua by passing in a string, data, and partial templates. It precompiles and caches templates for speed, and allows you to build complex strings such as html pages by iterating through a table and inserting values (<a href="http://olivinelabs.com/lustache/">official website</a>)</li>
+								<li><a href="https://luarocks.org/modules/leafo/mailgun">mailgun</a> - send email with Mailgun</li>
+								<li><a href="https://luarocks.org/modules/mpeterv/markdown">Markdown</a> - pure-lua implementation of the Markdown text-to-html markup system</li>
+								<li><a href="https://luarocks.org/modules/leafo/magick">magick</a> - bindings to ImageMagick for LuaJIT using FFI</li>
+								<li><a href="https://luarocks.org/modules/leafo/moonscript">moonscript</a> - programmer friendly language that compiles to Lua (<a href="http://moonscript.org/">official website</a>)</li>
+								<li><a href="https://luarocks.org/modules/tomasguisasola/luasql-mysql">LuaSQL-MySQL</a> - database connectivity for Lua (MySQL driver), enables a Lua program to connect to databases, execute arbitrary SQL statements and retrieve results in a row-by-row cursor fashion</li>
+								<li><a href="https://luarocks.org/modules/dougcurrie/lsqlite3">lsqlite3</a> - a binding for Lua to the SQLite3 database library</li>
+								<li><a href="https://luarocks.org/modules/tomasguisasola/luasql-sqlite3">LuaSQL-SQLite3</a> - database connectivity for Lua (SQLite3 driver), enables a Lua program to connect to databases, execute arbitrary SQL statements and retrieve results in a row-by-row cursor fashion</li>
+								<li><a href="https://luarocks.org/modules/luarocks/nixio">nixio</a> - a multi-platform library offering a wide variety of features such as IPv4, IPv6 and UNIX networking, large file I/O, file system operations, system and process control, POSIX user/group management, basic cryptographical hashing, hmac and TLS support, bit operations and binary conversion (also see <a href="https://neopallium.github.io/nixio/modules/nixio.html">here</a>)</li>
+								<li><a href="https://luarocks.org/modules/leafo/pgmoon">pgmoon</a> - PostgreSQL driver written in pure Lua for use with OpenResty's cosocket API. Can also be used in regular Lua with LuaSocket and LuaCrypto</li>
+								<li><a href="https://luarocks.org/modules/pyericz/redux-lua">redux-lua</a> - implements redux using Lua language</li>
+								<li><a href="https://luarocks.org/modules/jakeg/lua-requests">lua-requests</a> - HTTP requests made easy! Support for Basic Auth, Digest Auth. HTTP response parsing has never been easier (<a href="https://github.com/JakobGreen/lua-requests">GitHub</a>)</li>
+								<li><a href="https://luarocks.org/modules/bungle/lua-resty-template">lua-resty-template</a> - templating engine (HTML) for Lua and OpenResty</li>
+								<li><a href="https://luarocks.org/modules/luasocket/luasocket">LuaSocket</a> - an extension library that is composed by two parts: a C core that provides support for the TCP and UDP transport layers, and a set of Lua modules that add support for functionality commonly needed by applications that deal with the Internet</li>
+								<li><a href="https://luarocks.org/modules/leafo/web_sanitize">web_sanitize</a> - library for sanitizing untrusted HTML</li>
+								<li><a href="https://luarocks.org/modules/jcupitt/lua-vips">lua-vips</a> - a binding for the libvips image processing library. it is usually faster and needs less memory than similar libraries</li>
+								<li><a href="https://luarocks.org/modules/hisham/luafilesystem">LuaFileSystem</a> - offers a portable way to access the
+		underlying directory structure and file attributes</li>
+								<li><a href="https://luarocks.org/modules/moteus/lua-path">lua-path</a> - file system path manipulation library</li>
+								<li><a href="https://luarocks.org/modules/benoitgermain/lanes">lanes</a> - multithreading support for Lua</li>
+								<li><a href="https://luarocks.org/modules/moteus/lua-llthreads2">lua-llthreads2</a> - low-level threads for Lua, in additional module supports: thread join with zero timeout; logging thread errors with custom logger; run detached joinable threads; pass cfunctions as argument to child thread</li>
+								<li><a href="https://luarocks.org/modules/olim/luasystem">luasystem</a> - platform independent system calls</li>
+								<li><a href="https://luarocks.org/modules/ckobus/sys">sys</a> - provides system functionalities for <a href="http://torch.ch/">Torch</a></li>
+								<li><a href="https://luarocks.org/modules/gvvaughan/lpeg">LPeg</a> - new pattern-matching library for Lua, based on Parsing
+		Expression Grammars (PEGs)</li>
+								<li><a href="https://luarocks.org/modules/daurnimator/luaossl">luaossl</a> - most comprehensive OpenSSL module in the Luaverse</li>
+								<li><a href="https://luarocks.org/modules/starius/luacrypto">LuaCrypto</a> - frontend to the OpenSSL cryptographic library, the OpenSSL features that are currently exposed are: digests (MD5, SHA-1, HMAC, and more), encryption, decryption and crypto-grade random number generators</li>
+								<li><a href="https://luarocks.org/modules/tomasguisasola/md5">MD5</a> - offers basic cryptographic facilities: a hash (digest) function, a pair crypt/decrypt based on MD5 and CFB, and a pair crypt/decrypt based on DES with 56-bit keys</li>
+								<li><a href="https://luarocks.org/modules/gvvaughan/luaposix">luaposix</a> - library binding various POSIX APIs (see also <a href="http://25thandclement.com/~william/projects/lunix.html">lunix</a>)</li>
+								<li><a href="https://luarocks.org/modules/gaspard/xml">xml</a> - fast xml parser based on RapidXML</li>
+								<li><a href="https://luarocks.org/modules/gvvaughan/lyaml">lyaml</a> - libYAML binding for Lua, read and write YAML format files with Lua</li>
+								<li><a href="https://luarocks.org/modules/gaspard/yaml">yaml</a> - Lua YAML serialization using LibYAML, LibYAML is generally considered to be the best C YAML 1.1 implementation</li>
+							</ul>
+						</p>
+		
+						<p>
+							Other Lua resources worth checking out include:
+							<ul>
+								<li><a href="https://fengari.io/">Fengari</a> - the Lua VM written in JavaScript, it uses JavaScript's garbage collector so that interoperability with the DOM is non-leaky (<a href="https://github.com/fengari-lua/fengari">GitHub</a>)</li>
+								<li><a href="https://luajit.org/ext_ffi.html">FFI Library</a> - allows calling external C functions and using C data structures from pure Lua code</li>
+								<li><a href="https://libgit2.org/">libgit2</a> - portable, pure C implementation of the Git core methods provided as a re-entrant linkable library with a solid API, allowing you to write native speed custom Git applications in any language which supports C bindings (<a href="https://github.com/libgit2/luagit2">luagit2</a> - Lua bindings for libgit2)</li>
+								<li><a href="https://scilua.org/">SciLua</a> - Scientific computing with LuaJIT</li>
+								<li><a href="http://torch.ch/">Torch</a> - a scientific computing framework with wide support for machine learning algorithms that puts GPUs first</li>
+							</ul>
+						</p>
+		
+						<p>
+							You can also compile the following languages to Lua (see <a href="https://github.com/hengestone/lua-languages">here</a> for a longer list):
+							<ul>
+								<li><a href="https://amulet.works/">Amulet</a> - simple, functional programming language in the ML tradition</li>
+								<li><a href="https://github.com/yanghuan/CSharp.lua">CSharp.lua</a> - C# to Lua compiler</li>
+								<li><a href="https://fennel-lang.org/">Fennel</a> - a programming language that brings together the speed, simplicity, and reach of Lua with the flexibility of a lisp syntax and macro system</li>
+								<li><a href="https://haxe.org/">Haxe</a> - an open source high-level strictly-typed programming language with a fast optimizing cross-compiler</li>
+								<li><a href="https://moonscript.org/">MoonScript</a> - a dynamic scripting language that compiles into Lua</li>
+								<li><a href="https://github.com/TypeScriptToLua/TypeScriptToLua">TypeScriptToLua</a> - generic TypeScript to Lua transpiler. Write your code in TypeScript and publish Lua!</li>
+								<li><a href="https://urn-lang.com/">Urn</a> - a Lisp dialect with a focus on minimalism</li>
+							</ul>
+						</p>
+		
+						<h4 id="luarocks-freebsd">
+							Installing LuaRocks on FreeBSD
+						</h4>
+						<p>
+							Instructions for installing <mono>LuaRocks</mono> from source for <mono>Lua v5.1</mono> can be found <a href="https://www.cambus.net/luarocks-on-freebsd/">here</a>. Alternatively, <mono>LuaRocks</mono> can be installed for <mono>Lua v5.2</mono> through <mono>pkg</mono> using:
+		
+		<div align="center">
+		<pre class="inline">
+sudo pkg install devel/lua-luarocks
+</pre>
+		</div>
+						</p>
+		
+						<p>
+							If you installed <mono>LuaRocks</mono> with <mono>pkg</mono> then the default command to run <mono>LuaRocks</mono> is <mono>luarocks-5.2</mono> so you should add an alias called <mono>luarocks</mono>, and you need to change the configuration for <mono>Lua v5.1</mono> instead of <mono>Lua v5.2</mono>. Run your alias <mono>luarocks</mono> which should give you the location of the system/global configuration file for LuaRocks and open it up with administator privileges in your favourit text editor, eg. (you can install <mono>micro</mono> with <mono>pkg</mono>):
+		<div align="center">
+		<pre class="inline">
+sudo micro /usr/local/etc/luarocks/config-5.2.lua
+</pre>
+		</div>
+						</p>
+		
+						<p>
+							Then modify the appropriate lines so that the configuration file has the following:
+		<div align="center">
+		<pre class="prettyprint inline">
+lua_interpreter = "lua5.1";
+lua_version = "5.1";
+
+variables = {
+	LUA_DIR = "/usr/local";
+	LUA_INCDIR = "/usr/local/include/lua51";
+	LUA_BINDIR = "/usr/local/bin";
+}
+</pre>
+		</div>
+						</p>
+		
+						<p>
+							Once <mono>LuaRocks</mono> is configured for <mono>Lua v5.1</mono>, run <mono>luarocks path --bin</mono> and add the values for <mono>LUA_PATH</mono> and <mono>LUA_CPATH</mono> as environemnt variables on your machine (I find you typically do not need to add the value given for <mono>PATH</mono> to your path variable). For example if you use <mono>bash</mono> then for the current shell session you can run <mono>eval $(luarocks path --bin)</mono>, and for future shell sessions you should be able to add the first two lines of output to <mono>~/.bashrc</mono>.
+						</p>
+		
+						<p>
+							You should then be able to install rocks using for example:
+		<div align="center">
+		<pre class="inline">
+sudo luarocks install LuaFileSystem
+</pre>
+		</div>
+						</p>
+		
+						<p>
+							<mono>LuaRocks</mono> should work fine with Nift installed from source or through <mono>pkg</mono>.
+						</p>
+		
+						<h4 id="luarocks-linux">
+							Installing LuaRocks on Linux
+						</h4>
+						<p>
+							<mono>LuaRocks</mono> can typically be installed through the package manager for your distribution. For example on Ubuntu you can run:
+		<div align="center">
+		<pre class="inline">
+sudo apt-get install luarocks
+</pre>
+		</div>
+						</p>
+		
+						<p>
+							You should then be able to install rocks using for example:
+		<div align="center">
+		<pre class="inline">
+sudo luarocks install LuaFileSystem
+</pre>
+		</div>
+						</p>
+		
+						<p>
+							Once <mono>LuaRocks</mono> is installed run <mono>luarocks path --bin</mono> and add the lines for <mono>LUA_PATH</mono> and <mono>LUA_CPATH</mono> to the end of <mono>~/.bashrc</mono> (I find you typically do not need to add the value given for <mono>PATH</mono> to your path variable).
+						</p>
+		
+						<p>
+							<mono>LuaRocks</mono> should work fine with Nift installed from source or through Snapcraft, I have not had much luck yet getting it to work with installs through Flatpak however.
+						</p>
+		
+						<h4 id="luarocks-osx">
+							Installing LuaRocks on OSX
+						</h4>
+		
+						<p>
+							The easiest way to install LuaRocks on OSX is to use homebrew with: 
+		<div align="center">
+		<pre class="inline">
+brew install luarocks
+</pre>
+		</div>
+						</p>
+		
+		
+						<p>
+							Note however that this typically sets <mono>LuaRocks</mono> up for <mono>Lua</mono> v5.3 by default, whereas for <mono>LuaJIT</mono> we want it to install rocks for v5.1, it will tell you which version is configured near the bottom of the output from calling <mono>luarocks</mono> from the command line. When it is configured for <mono>Lua</mono> v5.3, when installing a rock you will need to add <mono>--lua-version=5.1</mono>, for example:
+		
+		<div align="center">
+		<pre class="inline">
+luarocks install moonscript --lua-version=5.1
+</pre>
+		</div>
+						</p>
+		
+						<p>
+							To change the <mono>Homebrew</mono> install of <mono>LuaRocks</mono> to use <mono>Lua 5.1</mono>: 
+							<ol>
+								<li>run <mono>luarocks</mono> and note where the <b>system configuration file</b> is located;</li>
+								<li>run <mono>sudo nano system-config-path</mono> and make sure it has the following two lines:</li>
+							</ol>
+		<div align="center">
+		<pre class="inline">
+lua_interpreter = "lua5.1"
+lua_version = "5.1"
+</pre>
+		</div>
+							Now you do not need <mono>--lua-version=5.1</mono> when calling <mono>LuaRocks</mono>.
+						</p>
+		
+						<p>
+							Once <mono>LuaRocks</mono> is installed and configured to use <mono>Lua 5.1</mono> run <mono>luarocks path --bin</mono> and add the lines for <mono>LUA_PATH</mono> and <mono>LUA_CPATH</mono> to the end of <mono>~/.bash_profile</mono> (I find you typically do not need to add the value given for <mono>PATH</mono> to your path variable).
+						</p>
+		
+						<p>
+							<b>Note:</b> If you do not configure <mono>LuaRocks</mono> to use <mono>Lua 5.1</mono> then you will need to use for example <mono>luarocks path --lua-version=5.1 --bin</mono> and <mono>sudo luarocks install --lua-version=5.1 lua-cjson</mono>.
+						</p>
+		
+						<p>
+							Alternatively, assuming you have command line tools installed for XCode, you can download the latest <mono>.tar.gz</mono> version of the source for <mono>LuaRocks</mono> from <a href="https://luarocks.github.io/luarocks/releases/">here</a>. Extract the contents of the archive, open the directory in a terminal window and run:
+		<div align="center">
+		<pre class="inline">
+./configure --lua-version=5.1
+make
+sudo make install
+</pre>
+		</div>
+						</p>
+		
+						<p>
+							Then you can install rocks using for example:
+		<div align="center">
+		<pre class="inline">
+sudo luarocks install lua-cjson
+</pre>
+		</div>
+						</p>
+		
+						<p>
+							Same as above, once <mono>LuaRocks</mono> is installed run <mono>luarocks path --bin</mono> and add the lines for <mono>LUA_PATH</mono> and <mono>LUA_CPATH</mono> to the end of <mono>~/.bash_profile</mono> (I find you typically do not need to add the value given for <mono>PATH</mono> to your path variable).
+						</p>
+		
+						<p>
+							<mono>LuaRocks</mono> should work fine with <mono>Nift</mono> installed from source or through Homebrew.
+						</p>
+		
+						<h4 id="luarocks-windows">
+							Installing LuaRocks on Windows
+						</h4>
+						<p>
+							LuaRocks can be installed through Chocolatey with:
+		
+		<div align="center">
+		<pre class="inline">
+choco install luarocks
+</pre>
+		</div>
+		
+							Note however that Chocolatey installs of <mono>LuaRocks</mono> expect you to have Visual Studio Code installed with its build tools for C++, which can take up quite a lot of disk space. 
+						</p>
+		
+						<p>
+							You can supposedly also install <mono>LuaRocks</mono> to use MingW for building rocks, see <a href="https://github.com/luarocks/luarocks/wiki/Installation-instructions-for-Windows">here</a> for instructions. Note that when running the install script, use:
+		<div align="center">
+		<pre class="inline">
+INSTALL.BAT /MW /L
+</pre>
+		</div>
+						</p>
+		
+						<p>
+							You should then be able to install rocks using for example:
+		<div align="center">
+		<pre class="inline">
+sudo luarocks install LuaFileSystem
+</pre>
+		</div>
+						</p>
+		
+						<p>
+							Once <mono>LuaRocks</mono> is installed run <mono>luarocks path --bin</mono> and add the values for <mono>LUA_PATH</mono> and <mono>LUA_CPATH</mono> as environemnt variables on your machine (I find you typically do not need to add the value given for <mono>PATH</mono> to your path variable). To modify environment variables in Windows 10 you can type <mono>environment variables</mono> in to <mono>Cortana</mono> who should then give you a link straight to where you need to go in Control Panel. 
+						</p>
+		
+						<p>
+							<mono>LuaRocks</mono> should work fine with Nift installed from source or through Chocolatey, though so far I have not had much luck getting LuaRocks to build rocks on Windows, I will update this page once I figure out a reliable way to install <mono>LuaRocks</mono> on Windows.
+						</p>
+		
+		
+						<h4 id="moonscript-fns">
+							Moonscript functions
+						</h4>
+						<p>
+							Suppose you have a moonscript file <mono>functions.moon</mono>:
+		<div align="center">
+		<pre class="prettyprint inline linenums lang-lua">
+func1 = ->
+	print "hello, world!"
+	
+func2 = ->
+	print "hello, mars!"
+
+{ :func }
+{ :func2 }
+</pre>
+		</div>
+						</p>
+		
+						<p>
+							Inside <mono>Lua</mono> code (in a file in the same directory) you can require <mono>functions.moon</mono> and use its functions as follows:
+		<div align="center">
+		<pre class="prettyprint inline linenums lang-lua">
+require "moonscript"
+fns = require "functions"
+fns.func()
+fns.func2()
+</pre>
+		</div>
+						</p>
+					</div>
+				</section>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer" class="wrapper">
+			<div class="title">
+				<img src="../images/rabbit-tags-icon.png" alt="Nift rabbit mascot with code tag boomerangs" loading="lazy" width="200" style="margin-top:20px; border-radius: 4px">
+			</div>
+		
+			<div class="container">
+				<div id="copyright" class="noselect">
+					<ul>
+						<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
+						<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
+						<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
+					</ul> <br>
+		
+					<ul>
+						<li><a href="../tos.html">Terms of Service</a></li>
+						<li><a href="../privacy_policy.html">Privacy Policy</a></li>
+					</ul> <br>
+		
+					<ul>
+						<li><span>&copy;</span> 2015-<span name="cyear"></span></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- Inserts current year -->
+		<script async>
+			var x = document.getElementsByName("cyear");
+			for(var i=0; i<x.length; i++)
+			{
+				x[i].innerHTML = new Date().getFullYear();
+			}
+		</script>
 
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-62165905-2"></script>
@@ -816,8 +765,8 @@ fns.func2()
 			window.dataLayer = window.dataLayer || [];
 			function gtag(){dataLayer.push(arguments);}
 			gtag('js', new Date());
-
 			gtag('config', 'UA-62165905-2');
 		</script>
-    </body>
+	</body>
 </html>
+

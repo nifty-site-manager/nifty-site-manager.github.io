@@ -5,12 +5,12 @@
 		<!-- Features -->
 		<section id="features">
 			<div class="content">
-				<a href="#contents" class="to_top">[contents]</a>
+				<a href="#contents" class="to-top">[contents]</a>
 
 				<h4 id="contents">
 					Contents
 				</h4>
-				<ul style="text-indent:30px">
+				<ul>
 					<li><a href="#syntax">Syntax</a></li>
 					<li><a href="#description">Description</a></li>
 					<li><a href="#options">Options</a></li>
@@ -83,14 +83,14 @@ in{options}(string)
 				<p>
 					Examples of <mono>in</mono> being used with <mono>f++</mono>:					
 
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums lang-nift">
 in("please enter a name for your project:")</pre>
 </div>
 				</p>
 
 				<p>
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums lang-nift">
 in{b, from-file}
 {
@@ -107,28 +107,28 @@ in{b, from-file}
 				<p>
 					Examples of <mono>in</mono> being used with <mono>n++</mono>:				
 
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums lang-nift">
 \@in("please enter a name for your project:")</pre>
 </div>
 				</p>
 
 				<p>
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums lang-nift">
 \@in(\@input("\$[contentdir]/input-message.txt"))</pre>
 </div>
 				</p>
 
 				<p>
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums lang-nift">
 \@in{from-file}(\@input("\$[contentdir]/input-template.txt"))</pre>
 </div>
 				</p>
 
 				<p>
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums lang-nift">
 \@in{b, from-file}
 {

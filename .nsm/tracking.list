@@ -51,7 +51,7 @@
 'template/page.template'
 
 'docs/cmds/edit'
-"edit'"
+"edit"
 'template/page.template'
 
 'docs/cmds/incr-mode'
@@ -87,11 +87,11 @@
 'template/page.template'
 
 'docs/cmds/mbcp'
-"mbcp'"
+"mbcp"
 'template/page.template'
 
 'docs/cmds/medit'
-"medit'"
+"medit"
 'template/page.template'
 
 'docs/cmds/mve'
@@ -451,11 +451,11 @@
 'template/page.template'
 
 'docs/fns/exprtk,load'
-"exprtk,load'"
+"exprtk,load"
 'template/page.template'
 
 'docs/fns/exprtk,str'
-"exprtk,str'"
+"exprtk,str"
 'template/page.template'
 
 'docs/fns/f++'
@@ -855,7 +855,7 @@
 'template/page.template'
 
 'docs/netlify_hosting'
-"netlify_hosting'"
+'netlify_hosting'
 'template/page.template'
 
 'docs/osx_install'
@@ -947,7 +947,7 @@
 'template/page.template'
 
 'docs/vercel_hosting'
-"netlify_hosting'"
+'vercel_hosting'
 'template/page.template'
 
 'docs/windows_install'
@@ -962,20 +962,12 @@
 'privacy_policy'
 'template/page.template'
 
-'resources/artwork'
-'artwork'
-'template/page.template'
-
 'resources/blog_templates'
 'blog_templates'
 'template/page.template'
 
 'resources/css_frameworks'
 'css_frameworks'
-'template/page.template'
-
-'resources/examples'
-'examples'
 'template/page.template'
 
 'resources/js_frameworks'

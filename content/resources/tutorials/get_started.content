@@ -58,7 +58,6 @@ nsm clone https://gitlab.com/nsm-templates/parchment-site.git;
 					<li>Check out the <a href="@pathto(docs/hosting)">hosting</a> page from the documentation for information about hosting websites. Especially useful is <a href="https://www.netlify.com/">Netlify</a> for custom domains with auto renewing Let's encrypt certificates or <a href="https://www.heroku.com/">Heroku</a> for free hosting of dynamic websites;</li>
 					<li>Check out the <a href="@pathto(docs/mathematics)">mathematics</a> page from the documentation for information about $\LaTeX$ support for your webpages using MathJax;</li>
 					<li>Check out the <a href="@pathto(docs/code_blocks)">code blocks</a> page from the documentation for information about syntax highlighting support for your webpages using <a href="https://github.com/google/code-prettify">Google Code Prettify</a>;</li>
-					<li>Check <a href="@pathto(resources/examples)">here</a> for examples of websites managed and generated using <mono>Nift</mono>;</li>
 					<li>Check <a href="@pathto(resources/links)">here</a> for all sorts of useful links.</li>
 				</ol>
 			</div>

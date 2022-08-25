@@ -1,16 +1,59 @@
 <title>Nift - $[title]</title>
-<meta charset="utf-8">
-<meta name="description" content="Nift is the world's fastest framework for 
-            managing and generating websites. It's cross-platform, opensource, 
-            lightning fast, developed from the ground up in C++, and released 
-            for free under the MIT license - use it for any of your personal 
-            or commercial projects">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="@pathtofile(site/assets/css/main.css)">
-<link rel="stylesheet" href="@pathtofile(site/assets/css/pagestyle.css)">
-<link rel="stylesheet" href="@pathtofile(site/assets/css/pre.css)">
-<link rel="stylesheet" href="@pathtofile(site/assets/css/toggle.css)">
-<link rel='icon' type='image/png' href='@pathtofile("site/images/favicon.png")'>
+<meta name="description" 
+      content="Nift is an opinionless web development framework, specialising
+            in static websites with serverless backends. It's lightning fast, 
+            cross-platform, opinionless, open source (MIT license) and 
+            developed from the ground up in C++. Use it for any of your 
+            personal or commercial projects!">
 
-<!-- uses Font Awesome for vector icons and social logos -->
-<script src="https://kit.fontawesome.com/b51e6952ec.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="@pathto(site/assets/css/pagestyle.css)">
+<link rel="stylesheet" href="@pathto(site/assets/css/menu.css)">
+<link rel="stylesheet" href="@pathtofile(site/assets/css/font-awesome.css)">
+@string pname = $[name]
+@if(pname != 'index')
+{
+	<link rel="stylesheet" href="@pathtofile(site/assets/css/pre.css)">
+	<link rel="stylesheet" href="@pathtofile(site/assets/css/extra-fonts.css)">
+}
+
+<link rel='icon' type='image/png' href='@pathtofile("site/images/lightning.png")'>
+
+<script async src="@pathto(site/assets/js/menu.js)"></script>
+@if(pname != 'index')
+{
+	<script async src="@pathtofile(site/assets/js/copy-pre.js)"></script>
+	<script async src="@pathtofile(site/assets/js/process-md-blocks.js)"></script>
+	<script async src="@pathtofile(site/assets/js/showdown.min.js)"></script>
+	<script>
+		var converter = new showdown.Converter();
+		converter.setOption('emoji', 'on');
+		converter.setOption('tables', 'on');
+		converter.setOption('strikethrough', 'on');
+		elements = document.getElementsByClassName('markdown');
+		for(var i=0; i<elements.length; i++)
+			elements[i].innerHTML = converter.makeHtml(elements[i].innerHTML.replace(/&lt;/g, "xwxw").replace(/&gt;/g, "pqpq")).replace(/xwxw/g, "&lt;").replace(/pqpq/g, "&gt;");
+	</script>
+	<!-- uses google-code-prettify for syntax highlighting 
+		 see https://github.com/google/code-prettify/ for more info -->
+	<script async src="@pathtofile(site/assets/js/prettify.js)" onload="PR.prettyPrint()"></script>
+	<script async src="@pathtofile(site/assets/js/lang-lua.js)"></script>
+	<script async src="@pathtofile(site/assets/js/lang-nift.js)"></script>
+
+	<!-- uses MathJax CDN for LaTeX support
+		 see https://docs.mathjax.org/en/latest/web/configuration.html for more info -->
+	<script id="MathJax-script" async
+	        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+	</script>
+	<script>
+		window.MathJax = {
+			tex: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']],
+				displayMath: [['$$', '$$'], ["\\[", "\\]"]],
+				processEscapes: true
+			}
+		};
+	</script>
+}

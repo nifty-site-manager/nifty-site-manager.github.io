@@ -5,12 +5,12 @@
 		<!-- Features -->
 		<section id="features">
 			<div class="content">
-				<a href="#contents" class="to_top">[contents]</a>
+				<a href="#contents" class="to-top">[contents]</a>
 
 				<h4 id="contents">
 					Contents
 				</h4>
-				<ul style="text-indent:30px">
+				<ul>
 					<li><a href="#syntax">Syntax</a></li>
 					<li><a href="#description">Description</a></li>
 					<li><a href="#fns">Member functions</a></li>
@@ -24,15 +24,15 @@
 				</h4>
 				<p>
 					The syntax for <mono>std::vector@ent(<)string@ent(>)</mono> definitions is:
-<div align="center" style="margin-top:-15px; margin-bottom:50px">
-<mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-40px">
+<div align="center" style="margin-bottom:60px">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-50px">
 std::vector@ent(<)string@ent(>) definitions
 std::vector@ent(<)string@ent(>)(definitions)
 :=(std::vector@ent(<)string@ent(>), definitions)
 </pre>
-</div><br>
-<div align="center" style="margin-top:-15px; margin-bottom:50px">
-<mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-40px">
+</div>
+<div align="center" style="margin-bottom:60px">
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-50px">
 \@std::vector@ent(<)string@ent(>) definitions
 \@std::vector@ent(<)string@ent(>)(definitions)
 \@:=(std::vector@ent(<)string@ent(>), definitions)
@@ -157,7 +157,7 @@ std::vector@ent(<)string@ent(>)(definitions)
 				<p>
 					Examples of <mono>std::vector@ent(<)string@ent(>)</mono> being defined with <mono>f++</mono>:					
 
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums lang-nift">
 std::vector<string> v
 v.push_back("cat", "dog")
@@ -166,7 +166,7 @@ console(v.at(1))</pre>
 				</p>
 
 				<p>
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums lang-nift">
 std::vector<string> v(20), v2(30)
 v2.set(20, "hello")
@@ -175,7 +175,7 @@ console(v2.at(20))</pre>
 				</p>
 
 				<p>
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums lang-nift">
 std::vector<string> v(2000, "hello")
 console(v.at(20))</pre>
@@ -188,7 +188,7 @@ console(v.at(20))</pre>
 				<p>
 					Examples of <mono>std::vector@ent(<)string@ent(>)</mono> being defined with <mono>n++</mono>:					
 
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums lang-nift">
 \@std::vector<string> v
 \@v.push_back("cat", "dog")
@@ -197,7 +197,7 @@ console(v.at(20))</pre>
 				</p>
 
 				<p>
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums lang-nift">
 \@std::vector<string> v(20), v2(30)
 \@v2.set(20, "hello")
@@ -206,7 +206,7 @@ console(v.at(20))</pre>
 				</p>
 
 				<p>
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums lang-nift">
 \@std::vector<string> v(2000, "hello")
 \@console(v.at(20))</pre>

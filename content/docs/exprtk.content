@@ -4,10 +4,6 @@
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
-			<header class="style1">
-				<h2>Embedded <mono>ExprTk</mono></h2>
-			</header>
-
 			<center>
 				<img src="@pathtofile(site/images/banner-planet-palms.png)" alt="Nift planet palms banner" width="500px" style="max-width:90%; border-radius:20px; margin-bottom: 60px">
 			</center>
@@ -17,12 +13,12 @@
 					<mono>Nift</mono> has the C++ Mathematical Expression Toolkit Library (<mono>ExprTk</mono>) embedded (<a href="http://www.partow.net/programming/exprtk/index.html">official website</a>, <a href="https://github.com/ArashPartow/exprtk">GitHub</a>). <mono>ExprTk</mono> is a simple to use, easy to integrate and <a href="#benchmark">extremely efficient</a> run-time mathematical expression parser and evaluation engine. <mono>ExprTk</mono> supports numerous forms of functional, logical and vector processing semantics and is very easily extendible.
 				</p>
 
-				<a href="#contents" class="to_top">[contents]</a>
+				<a href="#contents" class="to-top">[contents]</a>
 
 				<h4 id="contents">
 					Contents
 				</h4>
-				<div style="text-indent:30px; margin-top:10px">
+				<div>
 					<ul>
 						<li><a href="#interpreter">ExprTk interpreter</a></li>
 						<li><a href="#scripts">Running ExprTk scripts</a></li>
@@ -56,47 +52,44 @@
 				</h4>
 				<p>
 					If you have an <mono>ExprTk</mono> script saved in a file <mono>path/script-name.exprtk</mono> you can run it with either of the following:
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+				</p>
+<div align="center">
 <pre class="prettyprint inline">
 nsm run path/script-name.exprtk
 nift run path/script-name.exprtk
 </pre>
 </div>
-				</p>
 
 				<p>
 					If the script has a different extension, say <mono>.ext</mono>, you can run the script with either of the following:
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+				</p>
+<div align="center">
 <pre class="prettyprint inline">
 nsm run -exprtk path/script-name.ext
 nift run -exprtk path/script-name.ext
 </pre>
 </div>
-				</p>
 
 				<h4 id="exprtk-f++">
 					ExprTk from <mnstr style="font-size:16px">f++</mnstr>
 				</h4>
 				<p>
-					You can run <mono>ExprTk</mono> code from <mnstr style="font-size:16px">f++</mnstr> using any of the following (without needing the comment syntax):					
+					You can run <mono>ExprTk</mono> code from <mnstr style="font-size:16px">f++</mnstr> using any of the following (without needing the comment syntax):
+				</p>					
 
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline">
 exprtk(expression)
 </pre>
 </div>
-				</p>
 
-				<p>
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline">
 `expression`
 </pre>
 </div>
-				</p>
 
-				<p>
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline">
 exprtk
 {
@@ -104,50 +97,45 @@ exprtk
 }
 </pre>
 </div>
-				</p>
 
 				<h4 id="exprtk-n++">
 					ExprTk from n++
 				</h4>
 				<p>
-					You can run <mono>ExprTk</mono> code from <mnstr style="font-size:16px">N++</mnstr> using any of the following (without needing the comment syntax):					
+					You can run <mono>ExprTk</mono> code from <mnstr style="font-size:16px">N++</mnstr> using any of the following (without needing the comment syntax):
+				</p>					
 
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline">
 \@exprtk(expression)
 </pre>
 </div>
-				</p>
 
-				<p>
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline">
 \@`expression`
 </pre>
 </div>
-				</p>
 
-				<p>
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline">
 \@exprtk
 {
 	// block of ExprTk code
 }</pre>
 </div>
-				</p>
 
 				<h4 id="exprtk-conditions">
 					ExprTk with <mnstr style="font-size:16px">f++</mnstr>/<mnstr style="font-size:16px">N++</mnstr> conditions
 				</h4>
 				<p>
 					You can use <mono>ExprTk</mono> with conditions for <mono>if</mono>, <mono>else-if</mono> and <mono>else</mono> statements, along with <mono>do-while</mono>, <mono>for</mono>, <mono>while</mono> loops. You can also use <mono>ExprTk</mono> for the post-loop increment code with <mono>for</mono> loops (ie. the code after the second <mono>;</mono>). For example:
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+				</p>
+<div align="center">
 <pre class="prettyprint inline">
 for(int i=0; i<10; i+=1)
 	console("i: ", i)</pre>
 </div>
-				</p>
 
 				<h4 id="exprtk-vars">
 					ExprTk access to Nift variables
@@ -227,10 +215,11 @@ for(int i=0; i<10; i+=1)
 				</h4>
 				<p>
 					Results from <a href="https://github.com/ArashPartow/math-parser-benchmark-project">The Great C++ Mathematical Expression Parser Benchmark</a> are below:
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+				</p>
+<div align="center">
 <pre class="prettyprint inline">
 Scores:
-  #     Parser                  Type            Points   Score   Failures
+  #     Parser                  Type            Points   Score   Failures 
   -----------------------------------------------------------------------
   00    ExprTk                  double          901      100     0
   01    ExprTkFloat             float           740       82     9
@@ -247,7 +236,6 @@ Scores:
   12    muparserx               double           86        5     0
 </pre>
 </div>
-				</p>
 			</div>
 		</section>
 	</div>

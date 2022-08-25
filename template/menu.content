@@ -1,86 +1,87 @@
+<nav id="nav" class="noselect">
+  <ul class="menu">
+    <a href="@pathto(index)"><li class="logo">Nift</li></a>
+    <li class="nav-space-left"></li>
+    <li class="item icons">
+      <a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a>
+      <a href="https://github.com/nifty-site-manager/nsm/discussions" title="GitHub Discussions" class="gh"><i class="fas fa-comment-dots fa-2x"></i></a>
+      <a href="https://twitter.com/nift_dev" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a>
+      <a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a>
+    </li>
+    <a href="@pathto(index)" class="item hover-hl"><li>Home</li></a>
+    <li class="item hover-hl has-submenu" onclick="toggleItem(0)">
+      <a tabindex="0" class="item-link">Docs</a>
+      <ul class="submenu">
+        <li class="subitem"><a href="@pathto(docs/installing)">Installing</a></li>
+        <li class="subitem"><a href="@pathto(docs/hosting)">Hosting</a></li>
+        <li class="subitem"><a href="@pathto(docs/commands)">Commands</a></li>
+        <li class="subitem"><a href="@pathto(docs/config)">Config</a></li>
+        <li class="subitem"><a href="@pathto(docs/template_files)">Template Files</a></li>
+        <li class="subitem"><a href="@pathto(docs/fns)">Functions</a></li>
+        <li class="subitem"><a href="@pathto(docs/types)">Types</a></li>
+        <li class="subitem"><a href="@pathto(docs/f++)">f++ (scripting)</a></li>
+        <li class="subitem"><a href="@pathto(docs/n++)">n++ (templates)</a></li>
+        <li class="subitem"><a href="@pathto(docs/lua)">Lua(JIT)</a></li>
+        <li class="subitem"><a href="@pathto(docs/exprtk)">ExprTk</a></li>
+        <li class="subitem"><a href="@pathto(docs/REPL)">Interactive REPL</a></li>
+        <li class="subitem"><a href="@pathto(docs/scripts)">Scripts</a></li>
+        <li class="subitem"><a href="@pathto(docs/template_languages)">Template Languages</a></li>
+        <li class="subitem"><a href="@pathto(docs/JSON)">JSON Data</a></li>
+        <li class="subitem"><a href="@pathto(docs/markdown)">Markdown</a></li>
+        <li class="subitem"><a href="@pathto(docs/translators)">Translators</a></li>
+        <li class="subitem"><a href="@pathto(docs/mathematics)">Mathematics</a></li>
+        <li class="subitem"><a href="@pathto(docs/code_blocks)">Code Blocks</a></li>
+        <li class="subitem"><a href="@pathto(docs/presentations)">Presentations</a></li>
+      </ul>
+    </li>
+    <li class="item hover-hl has-submenu" onclick="toggleItem(1)">
+      <a tabindex="0" class="item-link">Resources</a>
+      <ul class="submenu">
+        <li class="subitem"><a href="@pathto(resources/tutorials)">Tutorials</a></li>
+        <li class="subitem"><a href="@pathto(resources/templates)">Templates</a></li>
+        <li class="subitem"><a href="@pathto(resources/blog_templates)">Blog Templates</a></li>
+        <li class="subitem"><a href="@pathto(resources/css_frameworks)">CSS Frameworks</a></li>
+        <li class="subitem"><a href="@pathto(resources/js_frameworks)">JS Frameworks</a></li>
+        <li class="subitem"><a href="@pathto(resources/links)">Links</a></li>
+        <li class="subitem"><a href="@pathto(resources/logos)">Logos</a></li>
+        <li class="subitem"><a href="@pathto(resources/promos)">Promos</a></li>
+        <li class="subitem"><a href="@pathto(resources/php_frameworks)">PHP Frameworks</a></li>
+      </ul>
+    </li>
+    <li class="toggle"><a href="#" onclick="toggleMenu()" id="menu-link"><i class="fas fa-bars fa-2x"></i></a></li>
+  </ul>
+</nav>
+
 <!-- Header -->
-<section id="header" class="wrapper">
+<section class="wrapper" id="header">
+  <div id="logo" class="noselect">
+    <img src="@pathtofile(site/images/rabbit-tags-white.png)" alt="Nift bunny mascot" style="width: 400px; max-width:90%"><br>
 
-	<!-- Logo -->
-	<div id="logo">
-		<noselect>
-		<img src="@pathtofile(site/images/rabbit.png)" alt="Nift bunny mascot" width=325 style="max-width:90%">
+    @/*<p style="margin-bottom:0px">
+      <a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; 
+      <a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a> &nbsp; 
+      <a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a> &nbsp; 
+      <a href="https://nift.teemill.com/" title="TeeMill" class="teemill"><i class="fas fa-tshirt fa-2x"></i></a> <#--&nbsp;
+      <a href="https://teespring.com/stores/nift-3" title="TeeSpring" class="teespring"><i class="fas fa-tshirt fa-2x"></i></a>--#>
+    </p>
+    <p style="margin-top:10px">
+      <#--<a href="https://gitter.im/nifty_site_manager/community" title="Gitter" class="gitter"><i class="fab fa-gitter fa-2x"></i></a> &nbsp;--#>
+      <a href="https://github.com/nifty-site-manager/nsm/discussions" title="GitHub Discussions" class="gh"><i class="fas fa-comment-dots fa-2x"></i></a> &nbsp;
+      <a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a> &nbsp; 
+      <a href="https://old.reddit.com/r/nift" title="Reddit" class="reddit"><i class="fab fa-reddit-square fa-2x"></i></a> &nbsp; 
+      <a href="https://twitter.com/nifty_site_man" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a>
+    </p>*/
 
-		<p style="margin-bottom:0px">
-			<a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; 
-			<a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a> &nbsp; 
-			<a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a> &nbsp; 
-			<a href="https://nift.teemill.com/" title="TeeMill" class="teemill"><i class="fas fa-tshirt fa-2x"></i></a> <#--&nbsp;
-			<a href="https://teespring.com/stores/nift-3" title="TeeSpring" class="teespring"><i class="fas fa-tshirt fa-2x"></i></a>--#>
-		</p>
-		<p style="margin-top:10px">
-			<#--<a href="https://gitter.im/nifty_site_manager/community" title="Gitter" class="gitter"><i class="fab fa-gitter fa-2x"></i></a> &nbsp;--#>
-			<a href="https://github.com/nifty-site-manager/nsm/discussions" title="GitHub Discussions" class="gh"><i class="fas fa-comment-dots fa-2x"></i></a> &nbsp;
-			<a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a> &nbsp; 
-			<a href="https://old.reddit.com/r/nift" title="Reddit" class="reddit"><i class="fab fa-reddit-square fa-2x"></i></a> &nbsp; 
-			<a href="https://twitter.com/nifty_site_man" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a>
-		</p>
+    @//<p style="color:#372C2A">A cross-platform open source website generator</p>
+    <p style="color:#372C2A">An opinionless web development framework</p>
 
-		<p style="color:#372C2A">A cross-platform open source website generator</p>
-
-		<p>
-			<a href="https://chocolatey.org/packages/nift"><img src="@pathtofile(site/images/chocolatey-icon.png)" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
-			<a href="@pathto(docs/installing)#osx-brew"><img src="@pathtofile(site/images/brew-icon.png)" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
-			<a href="@pathto(docs/installing)#freebsd"><img src="@pathtofile(site/images/freebsd.png)" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
-			<a href="@pathto(docs/installing)#linux-flatpak"><img src="@pathtofile(site/images/flathub-icon.png)" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
-			<a href="@pathto(docs/installing)#gentoo"><img src="@pathtofile(site/images/gentoo.svg)" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
-			<a href="https://snapcraft.io/nift"><img src="@pathtofile(site/images/snap-icon.png)" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
-		</p>
-		</noselect>
-	</div>
-
-	<!-- Nav -->
-	<noselect>
-		<nav id="nav">
-			<ul>
-				<li><a href="@pathto(index)">Home</a></li>
-				<li>
-					<a href="">Documentation</a>
-					<ul>
-						<li><a href="@pathto(docs/installing)">Installing</a></li>
-						<li><a href="@pathto(docs/hosting)">Hosting</a></li>
-						<li><a href="@pathto(docs/commands)">Commands</a></li>
-						<li><a href="@pathto(docs/config)">Config</a></li>
-						<li><a href="@pathto(docs/template_files)">Template Files</a></li>
-						<li><a href="@pathto(docs/fns)">Functions</a></li>
-						<li><a href="@pathto(docs/types)">Types</a></li>
-						<li><a href="@pathto(docs/f++)">f++ (scripting)</a></li>
-						<li><a href="@pathto(docs/n++)">n++ (templates)</a></li>
-						<li><a href="@pathto(docs/lua)">Lua(JIT)</a></li>
-						<li><a href="@pathto(docs/exprtk)">ExprTk</a></li>
-						<li><a href="@pathto(docs/REPL)">Interactive REPL</a></li>
-						<li><a href="@pathto(docs/scripts)">Scripts</a></li>
-						<li><a href="@pathto(docs/template_languages)">Template Languages</a></li>
-						<li><a href="@pathto(docs/JSON)">JSON Data</a></li>
-						<li><a href="@pathto(docs/markdown)">Markdown</a></li>
-						<li><a href="@pathto(docs/translators)">Translators</a></li>
-						<li><a href="@pathto(docs/mathematics)">Mathematics</a></li>
-						<li><a href="@pathto(docs/code_blocks)">Code Blocks</a></li>
-						<li><a href="@pathto(docs/presentations)">Presentations</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="">Resources</a>
-					<ul>
-						<li><a href="@pathto(resources/tutorials)">Tutorials</a></li>
-						<li><a href="@pathto(resources/templates)">Templates</a></li>
-						<li><a href="@pathto(resources/blog_templates)">Blog Templates</a></li>
-						<li><a href="@pathto(resources/css_frameworks)">CSS Frameworks</a></li>
-						<li><a href="@pathto(resources/examples)">Examples</a></li>
-						<li><a href="@pathto(resources/js_frameworks)">JS Frameworks</a></li>
-						<li><a href="@pathto(resources/links)">Links</a></li>
-						<li><a href="@pathto(resources/logos)">Logos</a></li>
-						<li><a href="@pathto(resources/promos)">Promos</a></li>
-						<li><a href="@pathto(resources/php_frameworks)">PHP Frameworks</a></li>
-					</ul>
-				</li>
-				<li><a href="@pathto(support)">Support</a></li>
-			</ul>
-		</nav>
-	</noselect>
+    <p>
+      <a href="https://chocolatey.org/packages/nift"><img src="@pathtofile(site/images/chocolatey-icon.png)" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
+      <a href="@pathto(docs/installing)#osx-brew"><img src="@pathtofile(site/images/brew-icon.png)" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
+      <a href="@pathto(docs/installing)#freebsd"><img src="@pathtofile(site/images/freebsd.png)" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
+      <a href="@pathto(docs/installing)#linux-flatpak"><img src="@pathtofile(site/images/flathub-icon.png)" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
+      <a href="@pathto(docs/installing)#gentoo"><img src="@pathtofile(site/images/gentoo.svg)" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
+      <a href="https://snapcraft.io/nift"><img src="@pathtofile(site/images/snap-icon.png)" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
+    </p>
+  </div>
 </section>

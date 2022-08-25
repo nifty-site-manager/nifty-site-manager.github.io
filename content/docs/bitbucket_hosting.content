@@ -4,10 +4,6 @@
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
-			<header class="style1">
-				<h2>How to host a website on BitBucket</h2>
-			</header>
-
 			<center>
 				<a href="https://pages.bitbucket.io/"><img src="@pathtofile(site/images/bitbucket-icon.svg)" alt="BitBucket icon" width=200 style="max-width: 45%; margin-bottom: 40px"></a>
 			</center>

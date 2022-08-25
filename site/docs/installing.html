@@ -1,530 +1,27 @@
-<!DOCTYPE HTML>
-
-<!--
-	Official Nift Website
-
-	Nift is a cross-platform open source website generator developed from the ground up in C++.
--->
-
+<!doctype html>
 <html lang="en">
-    <head>
-        <title>Nift - installing</title>
-        <meta charset="utf-8">
-        <meta name="description" content="Nift is the world's fastest framework for 
-                    managing and generating websites. It's cross-platform, opensource, 
-                    lightning fast, developed from the ground up in C++, and released 
-                    for free under the MIT license - use it for any of your personal 
-                    or commercial projects">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../assets/css/main.css">
-        <link rel="stylesheet" href="../assets/css/pagestyle.css">
-        <link rel="stylesheet" href="../assets/css/pre.css">
-        <link rel="stylesheet" href="../assets/css/toggle.css">
-        <link rel='icon' type='image/png' href='../images/favicon.png'>
-        
-        <!-- uses Font Awesome for vector icons and social logos -->
-        <script src="https://kit.fontawesome.com/b51e6952ec.js"></script>
-    </head>
-    <body class="is-preload">
-		<div id="page-wrapper">
-			<!-- Header -->
-			<section id="header" class="wrapper">
-			
-				<!-- Logo -->
-				<div id="logo">
-					<noselect>
-					<img src="../images/rabbit.png" alt="Nift bunny mascot" width=325 style="max-width:90%">
-			
-					<p style="margin-bottom:0px">
-						<a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; 
-						<a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a> &nbsp; 
-						<a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a> &nbsp; 
-						<a href="https://nift.teemill.com/" title="TeeMill" class="teemill"><i class="fas fa-tshirt fa-2x"></i></a> </p>
-					<p style="margin-top:10px">
-						<a href="https://github.com/nifty-site-manager/nsm/discussions" title="GitHub Discussions" class="gh"><i class="fas fa-comment-dots fa-2x"></i></a> &nbsp;
-						<a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a> &nbsp; 
-						<a href="https://old.reddit.com/r/nift" title="Reddit" class="reddit"><i class="fab fa-reddit-square fa-2x"></i></a> &nbsp; 
-						<a href="https://twitter.com/nifty_site_man" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a>
-					</p>
-			
-					<p style="color:#372C2A">A cross-platform open source website generator</p>
-			
-					<p>
-						<a href="https://chocolatey.org/packages/nift"><img src="../images/chocolatey-icon.png" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
-						<a href="installing.html#osx-brew"><img src="../images/brew-icon.png" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
-						<a href="installing.html#freebsd"><img src="../images/freebsd.png" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
-						<a href="installing.html#linux-flatpak"><img src="../images/flathub-icon.png" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
-						<a href="installing.html#gentoo"><img src="../images/gentoo.svg" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
-						<a href="https://snapcraft.io/nift"><img src="../images/snap-icon.png" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
-					</p>
-					</noselect>
-				</div>
-			
-				<!-- Nav -->
-				<noselect>
-					<nav id="nav">
-						<ul>
-							<li><a href="../index.html">Home</a></li>
-							<li>
-								<a href="">Documentation</a>
-								<ul>
-									<li><a href="installing.html">Installing</a></li>
-									<li><a href="hosting.html">Hosting</a></li>
-									<li><a href="commands.html">Commands</a></li>
-									<li><a href="config.html">Config</a></li>
-									<li><a href="template_files.html">Template Files</a></li>
-									<li><a href="fns.html">Functions</a></li>
-									<li><a href="types.html">Types</a></li>
-									<li><a href="f++.html">f++ (scripting)</a></li>
-									<li><a href="n++.html">n++ (templates)</a></li>
-									<li><a href="lua.html">Lua(JIT)</a></li>
-									<li><a href="exprtk.html">ExprTk</a></li>
-									<li><a href="REPL.html">Interactive REPL</a></li>
-									<li><a href="scripts.html">Scripts</a></li>
-									<li><a href="template_languages.html">Template Languages</a></li>
-									<li><a href="JSON.html">JSON Data</a></li>
-									<li><a href="markdown.html">Markdown</a></li>
-									<li><a href="translators.html">Translators</a></li>
-									<li><a href="mathematics.html">Mathematics</a></li>
-									<li><a href="code_blocks.html">Code Blocks</a></li>
-									<li><a href="presentations.html">Presentations</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="">Resources</a>
-								<ul>
-									<li><a href="../resources/tutorials.html">Tutorials</a></li>
-									<li><a href="../resources/templates.html">Templates</a></li>
-									<li><a href="../resources/blog_templates.html">Blog Templates</a></li>
-									<li><a href="../resources/css_frameworks.html">CSS Frameworks</a></li>
-									<li><a href="../resources/examples.html">Examples</a></li>
-									<li><a href="../resources/js_frameworks.html">JS Frameworks</a></li>
-									<li><a href="../resources/links.html">Links</a></li>
-									<li><a href="../resources/logos.html">Logos</a></li>
-									<li><a href="../resources/promos.html">Promos</a></li>
-									<li><a href="../resources/php_frameworks.html">PHP Frameworks</a></li>
-								</ul>
-							</li>
-							<li><a href="../support.html">Support</a></li>
-						</ul>
-					</nav>
-				</noselect>
-			</section>
-
-		    <!-- Main -->
-		    <section id="main" class="wrapper style2">
-		    	<div class="title">Installing Nift</div>
-		    	<div class="container">
-		    		<!-- Features -->
-		    		<section id="features">
-		    			<header class="style1">
-		    				<h2>How to install Nift on FreeBSD, Gentoo, Linux, OSX and Windows</h2>
-		    			</header>
-		    
-		    			<!-- Image -->
-		    			<center>
-		    				<img id="install-img" src="../images/hacker_mind.svg" alt="unDraw hacker mind illustration" width=300 style="margin-bottom:40px">
-		    			</center>
-		    
-		    			<div class="content">
-		    				<a href="#contents" class="to_top">[contents]</a>
-		    
-		    				<h4 id="contents">
-		    					Contents
-		    				</h4>
-		    				<p>
-		    					There are a number of different ways you can install <mono>Nift</mono> on all of Linux, OSX and Windows. This page outlines how to install <mono>Nift</mono>:
-		    				</p>
-		    				<div style="text-indent:30px; margin-top:-20px">
-		    					<ul>
-		    						<li><a href="#github-releases">Using GitHub release binaries</a></li>
-		    						<li><a href="#linux-snap">On Linux using Snapcraft</a></li>
-		    						<li><a href="#linux-flatpak">On Linux using FlatPak</a></li>
-		    						<li><a href="#install-source">On Linux from source</a></li>
-		    						<li><a href="#freebsd">On FreeBSD</a></li>
-		    						<li><a href="#gentoo">On Gentoo</a></li>
-		    						<li><a href="#osx-brew">On OSX using Homebrew</a></li>
-		    						<li><a href="#install-source">On OSX from source</a></li>
-		    						<li><a href="#windows-chocolatey">On Windows using Chocolatey</a></li>
-		    						<li><a href="#windows-executable">On Windows from executable</a></li>
-		    						<li><a href="#install-source">On Windows from source</a></li>
-		    					</ul>
-		    				</div>
-		    
-		    				<p>
-		    					There are also specific instructions at the following links for:
-		    				</p>
-		    				<div style="text-indent:30px; margin-top:-20px">
-		    					<ul>
-		    						<li><a href="linux_install.html">Linux</a></li>
-		    						<li><a href="osx_install.html">OSX</a></li>
-		    						<li><a href="windows_install.html">Windows</a></li>
-		    					</ul>
-		    				</div>
-		    
-		    				<br>
-		    
-		    				<h4 id="github-releases">
-		    					Installation from <mono>GitHub</mono> release binaries
-		    				</h4>
-		    				<p>
-		    					There are binary releases for some platforms available directly from the Nift GitHub repo <a href="https://github.com/nifty-site-manager/nsm/releases">releases</a> page. It should be reasonably easy to clone or download the repo to compile and install the project yourself with a <mono>c++</mono> compiler installed (you may be able to share the binary around once one person has figured out how to compile the source), see the sections to compile from source for each platform (on some platforms like Windows you will need to copy the binary rather than installing from the makefile). 
-		    				</p>
-		    
-		    				<h4 id="linux-snap">
-		    					Linux installation using <mono>Snap</mono>
-		    				</h4>
-		    				<center><img src="../images/snapcraft.png" alt="Snapcraft logo" width=350px style="max-width:90%; margin-top: 20px; margin-bottom: 20px"></center>
-		    
-		    				<p>
-		    					You can install <mono>Nift</mono> on Linux using the <mono>Snap</mono> package manager, for instructions see <a href="https://snapcraft.io/nift">here</a>. Alternatively first install <mono>snapd</mono>, eg. <mono>sudo apt-get install snapd</mono> on Ubuntu, then enter:
-		    				</p>
-		    
-		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-		    <pre class="prettyprint">
-snap install nift --classic
-</pre>
-		    </div>
-		    
-		    				<p>
-		    					Snapcraft have a <mono>Nift</mono> snap available for the following Linux distributions:
-		    				</p>
-		    
-		    				<center>
-		    					<p>
-		    						<a href="https://snapcraft.io/install/nift/arch"><img src="../images/arch.svg" height="40px" alt="Arch snap" title="Arch snap"></a> &nbsp;
-		    						<a href="https://snapcraft.io/install/nift/centos"><img src="../images/centos.svg" height="40px" alt="CentOS snap" title="CentOS snap"></a> &nbsp;
-		    						<a href="https://snapcraft.io/install/nift/debian"><img src="../images/debian.svg" height="40px" alt="Debian snap" title="Debian snap"></a> &nbsp;
-		    						<a href="https://snapcraft.io/install/nift/elementary"><img src="../images/elementary.png" height="40px" alt="Elementary OS snap" title="Elementary OS snap"></a> &nbsp;
-		    						<a href="https://snapcraft.io/install/nift/fedora"><img src="../images/fedora.png" height="40px" alt="Fedora snap" title="Fedora snap"></a> &nbsp;
-		    						<a href="https://snapcraft.io/install/nift/kde-neon"><img src="../images/kde-neon.svg" height="40px" alt="KDE Neon snap" title="KDE Neon snap"></a> &nbsp;
-		    						<a href="https://snapcraft.io/install/nift/kubuntu"><img src="../images/kubuntu.svg" height="40px" alt="Kubuntu snap" title="Kubuntu snap"></a> &nbsp;
-		    						<a href="https://snapcraft.io/install/nift/manjaro"><img src="../images/manjaro.svg" height="40px" alt="Manjaro snap" title="Manjaro snap"></a> &nbsp;
-		    						<a href="https://snapcraft.io/install/nift/mint"><img src="../images/mint.svg" height="40px" alt="Linux Mint snap" title="Linux Mint snap"></a> &nbsp;
-		    						<a href="https://snapcraft.io/install/nift/opensuse"><img src="../images/opensuse.svg" height="40px" alt="openSUSE snap" title="openSUSE snap"></a> &nbsp;
-		    						<a href="https://snapcraft.io/install/nift/rhel"><img src="../images/redhat.png" height="40px" alt="Red Hat Enterprise Linux snap" title="Red Hat Enterprise Linux snap"></a> &nbsp;
-		    						<a href="https://snapcraft.io/install/nift/ubuntu"><img src="../images/ubuntu.svg" height="40px" alt="Ubuntu snap" title="Ubuntu snap"></a>
-		    					</p>
-		    				</center>
-		    
-		    				<p>
-		    					To uninstall <mono>Nift</mono> enter <mono>snap remove nift</mono>.
-		    				</p>
-		    
-		    				<h4 id="linux-flatpak">
-		    					Linux installation using <mono>Flatpak</mono>
-		    				</h4>
-		    				<center><img src="../images/flathub.png" alt="Flathub logo" width=450px style="max-width:90%"></center>
-		    
-		    				<p>
-		    					Thanks to <a href="https://github.com/refi64">refi64</a> for making the installation through Flatpak much easier and cleaner. 
-		    				</p>
-		    
-		    				<p>
-		    					You can install <mono>Nift</mono> on linux using the <mono>Flatpak</mono> package manager. First <a href="https://flatpak.org/setup/">install</a> <mono>Flatpak</mono> then enter in to a terminal:
-		    				</p>
-		    
-		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-		    <pre class="prettyprint">
-flatpak install --user https://flathub.org/repo/appstream/cc.nift.nsm.flatpakref
-</pre>
-		    </div>
-		    
-		    				<p>
-		    					Alternatively, download <a href="https://flathub.org/repo/appstream/cc.nift.nsm.flatpakref">cc.nift.nsm.flatpakref</a> to <mono>~/Downloads</mono> then open up a terminal and enter:
-		    				</p>
-		    
-		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-		    <pre class="prettyprint">
-flatpak install cc.nift.nsm.flatpakref
-</pre>
-		    </div>
-		    
-		    				<p>
-		    					Note you can just open <mono>cc.nift.nsm.flatpakref</mono> in GNOME Software or KDE Discover if you have either of those.
-		    				</p>
-		    
-		    				<p>
-		    					Then add the following aliases to <mono>~/.bashrc</mono> (or the equivalent to the configuration profile file for your shell):
-		    				</p>
-		    
-		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-		    <pre class="prettyprint">
-alias nsm="flatpak run cc.nift.nsm"
-alias nift="flatpak run cc.nift.nsm" 
-</pre>
-		    </div>
-		    
-		    				<p>
-		    					To uninstall <mono>Nift</mono> remove the aliases from <mono>~/.bashrc</mono> and enter <mono>flatpak uninstall nift</mono>, if that doesn't work try <mono>flatpak uninstall cc.nift.nsm</mono> and if that fails try:
-		    				</p>
-		    
-		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-		    <pre class="prettyprint">
-flatpak uninstall cc.nift.nsm/x86_64/stable
-</pre>
-		    </div>
-		    
-		    				<h4 id="freebsd">
-		    					FreeBSD installation
-		    				</h4>
-		    				<p>
-		    					<center><img src="../images/freebsd-devil.png" alt="Flathub logo" width=200px style="max-width:80%"></center>
-		    				</p>
-		    
-		    				<p>
-		    					There is a FreeBSD port of Nift available <a href="https://svnweb.freebsd.org/ports/head/www/nift/">here</a>.
-		    				</p>
-		    
-		    				<p>
-		    					For a source install from FreeBSD ports:
-		    				</p>
-		    
-		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-		    <pre class="prettyprint">
-$ cd /usr/ports/www/nift 
-$ make install clean
-</pre>
-		    </div>
-		    
-		    				<p>
-		    					For a binary install using pkgng:
-		    				</p>
-		    
-		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-		    <pre class="prettyprint">
-$ pkg install www/nift
-</pre>
-		    </div>
-		    
-		    				<p>
-		    					Alternative install using pkgng:
-		    				</p>
-		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-		    <pre class="prettyprint">
-$ su -
-# portsnap fetch
-# portsnap update
-# cd /usr/ports/www/nift
-# make
-# make install
-# exit
-</pre>
-		    </div>
-		    
-		    				<p>
-		    					To uninstall <mono>Nift</mono> using ports enter:
-		    				</p>
-		    
-		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-		    <pre class="prettyprint">
-$ cd /usr/ports/www/nift
-$ make deinstall
-</pre>
-		    </div>
-		    
-		    				<p>
-		    					and using <mono>pkgng</mono> enter:
-		    				</p>
-		    
-		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-		    <pre class="prettyprint">
-$ pkg delete www/nift
-</pre>
-		    </div>
-		    
-		    				<h4 id="gentoo">
-		    					Gentoo installation
-		    				</h4>
-		    
-		    				<p>
-		    					There is a Gentoo overlay of Nift available <a href="https://gpo.zugaina.org/www-apps/nift">here</a>.
-		    				</p>
-		    
-		    				<p>
-		    					Add the overlay containing Nift Ebuilds:
-		    				</p>
-		    
-		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-		    <pre class="prettyprint">
-$ layman -f -o https://raw.githubusercontent.com/NuLL3rr0r/gentoo-overlay/master/repositories.xml -a NuLL3rr0r
-</pre>
-		    </div>
-		    
-		    				<p>
-		    					For installing the latest stable release of Nift:
-		    				</p>
-		    
-		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-		    <pre class="prettyprint">
-$ emerge -atuv www-apps/nift
-</pre>
-		    </div>
-		    
-		    				<p>
-		    					And, for the development version (note that some shells require quotation of this syntax):
-		    				</p>
-		    
-		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-		    <pre class="prettyprint">
-$ emerge -atuv '=www-apps/nift-9999'
-</pre>
-		    </div>
-		    
-		    				<p>
-		    					In order to set the development version as the default installed version of Nift, and avoid getting it downgraded by Portage on subsequent @world upgrades:
-		    				</p>
-		    
-		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-		    <pre class="prettyprint">
-$ mkdir -p /etc/portage/package.accept_keywords/
-$ echo '=www-apps/nift-9999 **' &gt; /etc/portage/package.accept_keywords/www-apps_nift
-$ emerge -atuv '=www-apps/nift-9999'
-</pre>
-		    </div>
-		    
-		    				<p>
-		    					To uninstall <mono>Nift</mono> enter:
-		    				</p>
-		    
-		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-		    <pre class="prettyprint">
-$ emerge -C www-apps/nift
-</pre>
-		    </div>
-		    
-		    				<h4 id="osx-brew">
-		    					OSX installation using <mono>Homebrew</mono>
-		    				</h4>
-		    				<center><img src="../images/brew-icon.png" alt="Homebrew logo" width=200px style="max-width:90%; margin-top: 20px; margin-bottom: 20px"></center>
-		    
-		    				<p>
-		    					You can install <mono>Nift</mono> on OSX using the <mono>Homebrew</mono> package manager, see <a href="https://formulae.brew.sh/formula/nift">here</a>. Install instructions are <a href="https://brew.sh/">here</a>. Alternatively first install <mono>brew</mono>, eg:, 
-		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-		    <pre class="prettyprint">
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    					then enter:
-		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-		    <pre class="prettyprint">
-brew install nift
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    					To uninstall <mono>Nift</mono> enter <mono>brew uninstall nift</mono>.
-		    				</p>
-		    
-		    				<h3 id="windows-chocolatey">
-		    					Windows installation using <mono>Chocolatey</mono>
-		    				</h3>
-		    				<center><img src="../images/chocolatey.svg" alt="Chocolatey logo" width=350px style="max-width:70%; margin-top: 20px; margin-bottom: 20px"></center>
-		    
-		    				<p>
-		    					You can install <mono>Nift</mono> on Windows using <mono>Chocolatey</mono>. First <a href="https://chocolatey.org/docs/installation">install</a> <mono>Chocolatey</mono>, then follow the instructions <a href="https://chocolatey.org/packages/nift">here</a>, or alternatively enter:
-		    				</p>
-		    
-		    <div align="center" style="margin-top:-20px; margin-bottom: 20px">
-		    <pre class="prettyprint">
-choco install nift
-</pre>
-		    </div>
-		    
-		    				<p>
-		    					To uninstall <mono>Nift</mono> enter <mono>choco uninstall nift</mono>.
-		    				</p>
-		    
-		    				<h4 id="windows-executable">
-		    					Windows installation from executable
-		    				</h4>
-		    
-		    				<p>
-		    					Download <a href="https://github.com/nifty-site-manager/nsm-chocolatey-nift/raw/master/nsm.exe">this</a> executable and <a href="https://github.com/nifty-site-manager/nsm-chocolatey-nift/raw/master/nift.exe">this</a> executable then place them anywhere in your user's path, eg. in <mono>C:\Windows\system32</mono>.
-		    				</p>
-		    
-		    				<h4 id="install-source">
-		    					Instructions for installing <mono>Nift</mono> from source on:
-		    				</h4>
-		    
-		    				<ol>
-		    					<li>
-		    						<a href="./linux_install.html">linux</a>
-		    					</li>
-		    					<li>
-		    						<a href="./osx_install.html">osx</a>
-		    					</li>
-		    					<li>
-		    						<a href="./windows_install.html">windows</a>
-		    					</li>
-		    				</ol>
-		    			</div>
-		    		</section>
-		    	</div>
-		    </section>
-
-			<!-- Footer -->
-			<section id="footer" class="wrapper">
-				<div class="title">
-					<img src="../images/nsm.png" alt="nsm signature on parchment" width="120" style="margin-top:40px; margin-bottom:20px; border-radius: 4px">
-				</div>
-			
-				<div class="container">
-					<div id="copyright">
-						<noselect>
-							<ul style="margin-top:115px">
-								<li><b style="color: white !important">Mirrors:</b></li>
-								<li><a href="https://nift.cc/">Official</a></li>
-								<li><a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a></li>
-								<li><a href="https://nifty-site-manager.github.io/">GitHub</a></li>
-								<li><a href="https://nifty-site-manager.gitlab.io/">GitLab</a></li>
-								<li><a href="https://nift.netlify.app/">Netlify</a></li>
-								<li><a href="https://nift.now.sh/">Vercel</a></li>
-							</ul> <br>
-			
-							<center><img id="footer-mascot" src="../images/badger.png" alt="Nift badger mascot" width="325" style="max-width:90%; margin-bottom:20px"></center>
-			
-							<ul>
-								<li>&copy;&nbsp;2015-<span name="cyear"></span> <a href="https://nift.cc">Nift</a></li>
-								<li><a href="../tos.html">Terms of Service</a></li>
-								<li><a href="../privacy_policy.html">Privacy Policy</a></li>
-							</ul> <br>
-			
-							<ul>
-								<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
-								<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
-								<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
-							</ul> <br>
-						
-							<b id="light_dark_LHS" style="color: white !important">light</b> &nbsp; <label class="light-dark-switch" id="light-dark-switch">
-								<input type="checkbox" id="checkbox_light_dark">
-								<span class="slider round" onclick="toggle_light_dark()" id="slider_light_dark"></span>
-							</label> &nbsp; <b id="light_dark_RHS" style="color: white !important">dark</b> <br><br>
-			
-							<ul>
-								<li>Creator & Developer:</li>
-								<li><a href="https://n-ham.com">Nicholas Ham</a></li>
-							</ul><br>
-						</noselect>
-					</div>
-				</div>
-			</section>
-		</div>
-
-		<!-- Scripts -->
-		<script src="../assets/js/copy-pre.js"></script>
-		<script src="../assets/js/jquery.min.js"></script>
-		<script src="../assets/js/jquery.dropotron.min.js"></script>
-		<script src="../assets/js/browser.min.js"></script>
-		<script src="../assets/js/breakpoints.min.js"></script>
-		<script src="../assets/js/util.js"></script>
-		<script src="../assets/js/main.js"></script>
-		<script src='../assets/js/process_md_blocks.js'></script>
-		<script src="../assets/js/showdown.min.js"></script>
+	<head>
+		<title>Nift - installing</title>
+		<meta name="description" 
+		      content="Nift is an opinionless web development framework, specialising
+		            in static websites with serverless backends. It's lightning fast, 
+		            cross-platform, opinionless, open source (MIT license) and 
+		            developed from the ground up in C++. Use it for any of your 
+		            personal or commercial projects!">
+		
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" href="../assets/css/pagestyle.css">
+		<link rel="stylesheet" href="../assets/css/menu.css">
+		<link rel="stylesheet" href="../assets/css/font-awesome.css">
+		<link rel="stylesheet" href="../assets/css/pre.css">
+		<link rel="stylesheet" href="../assets/css/extra-fonts.css"><link rel='icon' type='image/png' href='../images/lightning.png'>
+		
+		<script async src="../assets/js/menu.js"></script>
+		<script async src="../assets/js/copy-pre.js"></script>
+		<script async src="../assets/js/process-md-blocks.js"></script>
+		<script async src="../assets/js/showdown.min.js"></script>
 		<script>
 			var converter = new showdown.Converter();
 			converter.setOption('emoji', 'on');
@@ -534,22 +31,14 @@ choco install nift
 			for(var i=0; i<elements.length; i++)
 				elements[i].innerHTML = converter.makeHtml(elements[i].innerHTML.replace(/&lt;/g, "xwxw").replace(/&gt;/g, "pqpq")).replace(/xwxw/g, "&lt;").replace(/pqpq/g, "&gt;");
 		</script>
-		<script src="../assets/js/toggle.js"></script>
-
-		<!-- Inserts current year -->
-		<script>
-			var x = document.getElementsByName("cyear");
-
-			for(var i=0; i<x.length; i++)
-				x[i].innerHTML = new Date().getFullYear();
-		</script>
-
 		<!-- uses google-code-prettify for syntax highlighting 
 			 see https://github.com/google/code-prettify/ for more info -->
-		<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
-		<script src="../assets/js/lang-lua.js"></script>
-		<script src="../assets/js/lang-nift.js"></script>
-
+		<script async src="../assets/js/prettify.js" onload="PR.prettyPrint()"></script>
+		<script async src="../assets/js/lang-lua.js"></script>
+		<script async src="../assets/js/lang-nift.js"></script>
+		
+		<!-- uses MathJax CDN for LaTeX support
+			 see https://docs.mathjax.org/en/latest/web/configuration.html for more info -->
 		<script id="MathJax-script" async
 		        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 		</script>
@@ -562,7 +51,467 @@ choco install nift
 				}
 			};
 		</script>
+	</head>
+
+	<body>
+		<nav id="nav" class="noselect">
+		  <ul class="menu">
+		    <a href="../index.html"><li class="logo">Nift</li></a>
+		    <li class="nav-space-left"></li>
+		    <li class="item icons">
+		      <a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a>
+		      <a href="https://github.com/nifty-site-manager/nsm/discussions" title="GitHub Discussions" class="gh"><i class="fas fa-comment-dots fa-2x"></i></a>
+		      <a href="https://twitter.com/nift_dev" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a>
+		      <a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a>
+		    </li>
+		    <a href="../index.html" class="item hover-hl"><li>Home</li></a>
+		    <li class="item hover-hl has-submenu" onclick="toggleItem(0)">
+		      <a tabindex="0" class="item-link">Docs</a>
+		      <ul class="submenu">
+		        <li class="subitem"><a href="installing.html">Installing</a></li>
+		        <li class="subitem"><a href="hosting.html">Hosting</a></li>
+		        <li class="subitem"><a href="commands.html">Commands</a></li>
+		        <li class="subitem"><a href="config.html">Config</a></li>
+		        <li class="subitem"><a href="template_files.html">Template Files</a></li>
+		        <li class="subitem"><a href="fns.html">Functions</a></li>
+		        <li class="subitem"><a href="types.html">Types</a></li>
+		        <li class="subitem"><a href="f++.html">f++ (scripting)</a></li>
+		        <li class="subitem"><a href="n++.html">n++ (templates)</a></li>
+		        <li class="subitem"><a href="lua.html">Lua(JIT)</a></li>
+		        <li class="subitem"><a href="exprtk.html">ExprTk</a></li>
+		        <li class="subitem"><a href="REPL.html">Interactive REPL</a></li>
+		        <li class="subitem"><a href="scripts.html">Scripts</a></li>
+		        <li class="subitem"><a href="template_languages.html">Template Languages</a></li>
+		        <li class="subitem"><a href="JSON.html">JSON Data</a></li>
+		        <li class="subitem"><a href="markdown.html">Markdown</a></li>
+		        <li class="subitem"><a href="translators.html">Translators</a></li>
+		        <li class="subitem"><a href="mathematics.html">Mathematics</a></li>
+		        <li class="subitem"><a href="code_blocks.html">Code Blocks</a></li>
+		        <li class="subitem"><a href="presentations.html">Presentations</a></li>
+		      </ul>
+		    </li>
+		    <li class="item hover-hl has-submenu" onclick="toggleItem(1)">
+		      <a tabindex="0" class="item-link">Resources</a>
+		      <ul class="submenu">
+		        <li class="subitem"><a href="../resources/tutorials.html">Tutorials</a></li>
+		        <li class="subitem"><a href="../resources/templates.html">Templates</a></li>
+		        <li class="subitem"><a href="../resources/blog_templates.html">Blog Templates</a></li>
+		        <li class="subitem"><a href="../resources/css_frameworks.html">CSS Frameworks</a></li>
+		        <li class="subitem"><a href="../resources/js_frameworks.html">JS Frameworks</a></li>
+		        <li class="subitem"><a href="../resources/links.html">Links</a></li>
+		        <li class="subitem"><a href="../resources/logos.html">Logos</a></li>
+		        <li class="subitem"><a href="../resources/promos.html">Promos</a></li>
+		        <li class="subitem"><a href="../resources/php_frameworks.html">PHP Frameworks</a></li>
+		      </ul>
+		    </li>
+		    <li class="toggle"><a href="#" onclick="toggleMenu()" id="menu-link"><i class="fas fa-bars fa-2x"></i></a></li>
+		  </ul>
+		</nav>
 		
+		<!-- Header -->
+		<section class="wrapper" id="header">
+		  <div id="logo" class="noselect">
+		    <img src="../images/rabbit-tags-white.png" alt="Nift bunny mascot" style="width: 400px; max-width:90%"><br>
+		
+		    <p style="color:#372C2A">An opinionless web development framework</p>
+		
+		    <p>
+		      <a href="https://chocolatey.org/packages/nift"><img src="../images/chocolatey-icon.png" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
+		      <a href="installing.html#osx-brew"><img src="../images/brew-icon.png" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
+		      <a href="installing.html#freebsd"><img src="../images/freebsd.png" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
+		      <a href="installing.html#linux-flatpak"><img src="../images/flathub-icon.png" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
+		      <a href="installing.html#gentoo"><img src="../images/gentoo.svg" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
+		      <a href="https://snapcraft.io/nift"><img src="../images/snap-icon.png" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
+		    </p>
+		  </div>
+		</section>
+
+		<!-- Main -->
+		<section id="main" class="wrapper style2">
+			<div class="title">Installing Nift</div>
+			<div class="container">
+				<!-- Features -->
+				<section id="features">
+					<!-- Image -->
+					<center>
+						<img id="install-img" src="../images/neon-nift-logo.png" alt="Neon Nift logo" style="margin: 1em; width: 400px; max-width: 75%">
+					</center>
+		
+					<div class="content">
+						<a href="#contents" class="to-top">[contents]</a>
+		
+						<h4 id="contents">
+							Contents
+						</h4>
+						<p>
+							There are a number of different ways you can install <mono>Nift</mono> on all of Linux, OSX and Windows. This page outlines how to install <mono>Nift</mono>:
+						</p>
+						<div>
+							<ul>
+								<li><a href="#github-releases">Using GitHub release binaries</a></li>
+								<li><a href="#linux-snap">On Linux using Snapcraft</a></li>
+								<li><a href="#linux-flatpak">On Linux using FlatPak</a></li>
+								<li><a href="#install-source">On Linux from source</a></li>
+								<li><a href="#freebsd">On FreeBSD</a></li>
+								<li><a href="#gentoo">On Gentoo</a></li>
+								<li><a href="#osx-brew">On OSX using Homebrew</a></li>
+								<li><a href="#install-source">On OSX from source</a></li>
+								<li><a href="#windows-chocolatey">On Windows using Chocolatey</a></li>
+								<li><a href="#windows-executable">On Windows from executable</a></li>
+								<li><a href="#install-source">On Windows from source</a></li>
+							</ul>
+						</div>
+		
+						<p>
+							There are also specific instructions at the following links for:
+						</p>
+						<div>
+							<ul>
+								<li><a href="linux_install.html">Linux</a></li>
+								<li><a href="osx_install.html">OSX</a></li>
+								<li><a href="windows_install.html">Windows</a></li>
+							</ul>
+						</div>
+		
+						<br>
+		
+						<h4 id="github-releases">
+							Installation from <mono>GitHub</mono> release binaries
+						</h4>
+						<p>
+							There are binary releases for some platforms available directly from the Nift GitHub repo <a href="https://github.com/nifty-site-manager/nsm/releases">releases</a> page. It should be reasonably easy to clone or download the repo to compile and install the project yourself with a <mono>c++</mono> compiler installed (you may be able to share the binary around once one person has figured out how to compile the source), see the sections to compile from source for each platform (on some platforms like Windows you will need to copy the binary rather than installing from the makefile). 
+						</p>
+		
+						<h4 id="linux-snap">
+							Linux installation using <mono>Snap</mono>
+						</h4>
+						<center><img src="../images/snapcraft.png" alt="Snapcraft logo" width=350px style="max-width:90%; margin-top: 20px; margin-bottom: 20px"></center>
+		
+						<p>
+							You can install <mono>Nift</mono> on Linux using the <mono>Snap</mono> package manager, for instructions see <a href="https://snapcraft.io/nift">here</a>. Alternatively first install <mono>snapd</mono>, eg. <mono>sudo apt-get install snapd</mono> on Ubuntu, then enter:
+						</p>
+		
+		<div align="center">
+		<pre class="prettyprint">
+snap install nift --classic
+</pre>
+		</div>
+		
+						<p>
+							Snapcraft have a <mono>Nift</mono> snap available for the following Linux distributions:
+						</p>
+		
+						<center>
+							<p>
+								<a href="https://snapcraft.io/install/nift/arch"><img src="../images/arch.svg" height="40px" alt="Arch snap" title="Arch snap"></a> &nbsp;
+								<a href="https://snapcraft.io/install/nift/centos"><img src="../images/centos.svg" height="40px" alt="CentOS snap" title="CentOS snap"></a> &nbsp;
+								<a href="https://snapcraft.io/install/nift/debian"><img src="../images/debian.svg" height="40px" alt="Debian snap" title="Debian snap"></a> &nbsp;
+								<a href="https://snapcraft.io/install/nift/elementary"><img src="../images/elementary.png" height="40px" alt="Elementary OS snap" title="Elementary OS snap"></a> &nbsp;
+								<a href="https://snapcraft.io/install/nift/fedora"><img src="../images/fedora.png" height="40px" alt="Fedora snap" title="Fedora snap"></a> &nbsp;
+								<a href="https://snapcraft.io/install/nift/kde-neon"><img src="../images/kde-neon.svg" height="40px" alt="KDE Neon snap" title="KDE Neon snap"></a> &nbsp;
+								<a href="https://snapcraft.io/install/nift/kubuntu"><img src="../images/kubuntu.svg" height="40px" alt="Kubuntu snap" title="Kubuntu snap"></a> &nbsp;
+								<a href="https://snapcraft.io/install/nift/manjaro"><img src="../images/manjaro.svg" height="40px" alt="Manjaro snap" title="Manjaro snap"></a> &nbsp;
+								<a href="https://snapcraft.io/install/nift/mint"><img src="../images/mint.svg" height="40px" alt="Linux Mint snap" title="Linux Mint snap"></a> &nbsp;
+								<a href="https://snapcraft.io/install/nift/opensuse"><img src="../images/opensuse.svg" height="40px" alt="openSUSE snap" title="openSUSE snap"></a> &nbsp;
+								<a href="https://snapcraft.io/install/nift/rhel"><img src="../images/redhat.png" height="40px" alt="Red Hat Enterprise Linux snap" title="Red Hat Enterprise Linux snap"></a> &nbsp;
+								<a href="https://snapcraft.io/install/nift/ubuntu"><img src="../images/ubuntu.svg" height="40px" alt="Ubuntu snap" title="Ubuntu snap"></a>
+							</p>
+						</center>
+		
+						<p>
+							To uninstall <mono>Nift</mono> enter <mono>snap remove nift</mono>.
+						</p>
+		
+						<h4 id="linux-flatpak">
+							Linux installation using <mono>Flatpak</mono>
+						</h4>
+						<center><img src="../images/flathub.png" alt="Flathub logo" width=450px style="max-width:90%"></center>
+		
+						<p>
+							Thanks to <a href="https://github.com/refi64">refi64</a> for making the installation through Flatpak much easier and cleaner. 
+						</p>
+		
+						<p>
+							You can install <mono>Nift</mono> on linux using the <mono>Flatpak</mono> package manager. First <a href="https://flatpak.org/setup/">install</a> <mono>Flatpak</mono> then enter in to a terminal:
+						</p>
+		
+		<div align="center">
+		<pre class="prettyprint">
+flatpak install --user https://flathub.org/repo/appstream/cc.nift.nsm.flatpakref
+</pre>
+		</div>
+		
+						<p>
+							Alternatively, download <a href="https://flathub.org/repo/appstream/cc.nift.nsm.flatpakref">cc.nift.nsm.flatpakref</a> to <mono>~/Downloads</mono> then open up a terminal and enter:
+						</p>
+		
+		<div align="center">
+		<pre class="prettyprint">
+flatpak install cc.nift.nsm.flatpakref
+</pre>
+		</div>
+		
+						<p>
+							Note you can just open <mono>cc.nift.nsm.flatpakref</mono> in GNOME Software or KDE Discover if you have either of those.
+						</p>
+		
+						<p>
+							Then add the following aliases to <mono>~/.bashrc</mono> (or the equivalent to the configuration profile file for your shell):
+						</p>
+		
+		<div align="center">
+		<pre class="prettyprint">
+alias nsm="flatpak run cc.nift.nsm"
+alias nift="flatpak run cc.nift.nsm" 
+</pre>
+		</div>
+		
+						<p>
+							To uninstall <mono>Nift</mono> remove the aliases from <mono>~/.bashrc</mono> and enter <mono>flatpak uninstall nift</mono>, if that doesn't work try <mono>flatpak uninstall cc.nift.nsm</mono> and if that fails try:
+						</p>
+		
+		<div align="center">
+		<pre class="prettyprint">
+flatpak uninstall cc.nift.nsm/x86_64/stable
+</pre>
+		</div>
+		
+						<h4 id="freebsd">
+							FreeBSD installation
+						</h4>
+						<p>
+							<center><img src="../images/freebsd-devil.png" alt="Flathub logo" width=200px style="max-width:80%"></center>
+						</p>
+		
+						<p>
+							There is a FreeBSD port of Nift available <a href="https://svnweb.freebsd.org/ports/head/www/nift/">here</a>.
+						</p>
+		
+						<p>
+							For a source install from FreeBSD ports:
+						</p>
+		
+		<div align="center">
+		<pre class="prettyprint">
+$ cd /usr/ports/www/nift 
+$ make install clean
+</pre>
+		</div>
+		
+						<p>
+							For a binary install using pkgng:
+						</p>
+		
+		<div align="center">
+		<pre class="prettyprint">
+$ pkg install www/nift
+</pre>
+		</div>
+		
+						<p>
+							Alternative install using pkgng:
+						</p>
+		<div align="center">
+		<pre class="prettyprint">
+$ su -
+# portsnap fetch
+# portsnap update
+# cd /usr/ports/www/nift
+# make
+# make install
+# exit
+</pre>
+		</div>
+		
+						<p>
+							To uninstall <mono>Nift</mono> using ports enter:
+						</p>
+		
+		<div align="center">
+		<pre class="prettyprint">
+$ cd /usr/ports/www/nift
+$ make deinstall
+</pre>
+		</div>
+		
+						<p>
+							and using <mono>pkgng</mono> enter:
+						</p>
+		
+		<div align="center">
+		<pre class="prettyprint">
+$ pkg delete www/nift
+</pre>
+		</div>
+		
+						<h4 id="gentoo">
+							Gentoo installation
+						</h4>
+		
+						<p>
+							There is a Gentoo overlay of Nift available <a href="https://gpo.zugaina.org/www-apps/nift">here</a>.
+						</p>
+		
+						<p>
+							Add the overlay containing Nift Ebuilds:
+						</p>
+		
+		<div align="center">
+		<pre class="prettyprint">
+$ layman -f -o https://raw.githubusercontent.com/NuLL3rr0r/gentoo-overlay/master/repositories.xml -a NuLL3rr0r
+</pre>
+		</div>
+		
+						<p>
+							For installing the latest stable release of Nift:
+						</p>
+		
+		<div align="center">
+		<pre class="prettyprint">
+$ emerge -atuv www-apps/nift
+</pre>
+		</div>
+		
+						<p>
+							And, for the development version (note that some shells require quotation of this syntax):
+						</p>
+		
+		<div align="center">
+		<pre class="prettyprint">
+$ emerge -atuv '=www-apps/nift-9999'
+</pre>
+		</div>
+		
+						<p>
+							In order to set the development version as the default installed version of Nift, and avoid getting it downgraded by Portage on subsequent @world upgrades:
+						</p>
+		
+		<div align="center">
+		<pre class="prettyprint">
+$ mkdir -p /etc/portage/package.accept_keywords/
+$ echo '=www-apps/nift-9999 **' &gt; /etc/portage/package.accept_keywords/www-apps_nift
+$ emerge -atuv '=www-apps/nift-9999'
+</pre>
+		</div>
+		
+						<p>
+							To uninstall <mono>Nift</mono> enter:
+						</p>
+		
+		<div align="center">
+		<pre class="prettyprint">
+$ emerge -C www-apps/nift
+</pre>
+		</div>
+		
+						<h4 id="osx-brew">
+							OSX installation using <mono>Homebrew</mono>
+						</h4>
+						<center><img src="../images/brew-icon.png" alt="Homebrew logo" width=200px style="max-width:90%; margin-top: 20px; margin-bottom: 20px"></center>
+		
+						<p>
+							You can install <mono>Nift</mono> on OSX using the <mono>Homebrew</mono> package manager, see <a href="https://formulae.brew.sh/formula/nift">here</a>. Install instructions are <a href="https://brew.sh/">here</a>. Alternatively first install <mono>brew</mono>, eg:, 
+		<div align="center">
+		<pre class="prettyprint">
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+</pre>
+		</div>
+						</p>
+		
+						<p>
+							then enter:
+		<div align="center">
+		<pre class="prettyprint">
+brew install nift
+</pre>
+		</div>
+						</p>
+		
+						<p>
+							To uninstall <mono>Nift</mono> enter <mono>brew uninstall nift</mono>.
+						</p>
+		
+						<h3 id="windows-chocolatey">
+							Windows installation using <mono>Chocolatey</mono>
+						</h3>
+						<center><img src="../images/chocolatey.svg" alt="Chocolatey logo" width=350px style="max-width:70%; margin-top: 20px; margin-bottom: 20px"></center>
+		
+						<p>
+							You can install <mono>Nift</mono> on Windows using <mono>Chocolatey</mono>. First <a href="https://chocolatey.org/docs/installation">install</a> <mono>Chocolatey</mono>, then follow the instructions <a href="https://chocolatey.org/packages/nift">here</a>, or alternatively enter:
+						</p>
+		
+		<div align="center">
+		<pre class="prettyprint">
+choco install nift
+</pre>
+		</div>
+		
+						<p>
+							To uninstall <mono>Nift</mono> enter <mono>choco uninstall nift</mono>.
+						</p>
+		
+						<h4 id="windows-executable">
+							Windows installation from executable
+						</h4>
+		
+						<p>
+							Download <a href="https://github.com/nifty-site-manager/nsm-chocolatey-nift/raw/master/nsm.exe">this</a> executable and <a href="https://github.com/nifty-site-manager/nsm-chocolatey-nift/raw/master/nift.exe">this</a> executable then place them anywhere in your user's path, eg. in <mono>C:\Windows\system32</mono>.
+						</p>
+		
+						<h4 id="install-source">
+							Instructions for installing <mono>Nift</mono> from source on:
+						</h4>
+		
+						<ol>
+							<li>
+								<a href="./linux_install.html">linux</a>
+							</li>
+							<li>
+								<a href="./osx_install.html">osx</a>
+							</li>
+							<li>
+								<a href="./windows_install.html">windows</a>
+							</li>
+						</ol>
+					</div>
+				</section>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer" class="wrapper">
+			<div class="title">
+				<img src="../images/rabbit-tags-icon.png" alt="Nift rabbit mascot with code tag boomerangs" loading="lazy" width="200" style="margin-top:20px; border-radius: 4px">
+			</div>
+		
+			<div class="container">
+				<div id="copyright" class="noselect">
+					<ul>
+						<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
+						<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
+						<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
+					</ul> <br>
+		
+					<ul>
+						<li><a href="../tos.html">Terms of Service</a></li>
+						<li><a href="../privacy_policy.html">Privacy Policy</a></li>
+					</ul> <br>
+		
+					<ul>
+						<li><span>&copy;</span> 2015-<span name="cyear"></span></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- Inserts current year -->
+		<script async>
+			var x = document.getElementsByName("cyear");
+			for(var i=0; i<x.length; i++)
+			{
+				x[i].innerHTML = new Date().getFullYear();
+			}
+		</script>
 
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-62165905-2"></script>
@@ -570,8 +519,8 @@ choco install nift
 			window.dataLayer = window.dataLayer || [];
 			function gtag(){dataLayer.push(arguments);}
 			gtag('js', new Date());
-
 			gtag('config', 'UA-62165905-2');
 		</script>
-    </body>
+	</body>
 </html>
+

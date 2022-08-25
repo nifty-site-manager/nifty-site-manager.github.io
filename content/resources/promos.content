@@ -4,91 +4,81 @@
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
-			<header class="style1">
-				<h2>Promos</h2>
-			</header>
-
-			<center>
-				<noselect>
-					<img src="@pathtofile(site/images/NIFT-101ween.gif)" alt="animated gif of NIFT using 101ween font" width="560px" style="max-width: 80%; margin-bottom:100px; border-radius:20px"><br>
-				</noselect>
-			</center>
-
 			<div class="content">
 				<section id="promo-features">
 					<!-- template promo video purchased from Render Forest https://www.renderforest.com/ -->
 					<center>
-						<iframe width="560" height="315" src="https://www.youtube.com/embed/OA9sn_n3nA0" frameborder="0" title="Nift promo video" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/OA9sn_n3nA0" frameborder="0" title="Nift promo video" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</center>
 				</section>
 
 				<section id="promo-features">
 					<!-- template promo video purchased from Render Forest https://www.renderforest.com/ -->
 					<center>
-						<iframe width="560" height="315" src="https://www.youtube.com/embed/wjyKDYGkmY8?playlist=wjyKDYGkmY8&loop=1" frameborder="0" title="Nift promo video" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/wjyKDYGkmY8?playlist=wjyKDYGkmY8&loop=1" frameborder="0" title="Nift promo video" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</center>
 				</section>
 
 				<section id="promo-features">
 					<!-- template promo video purchased from Render Forest https://www.renderforest.com/ -->
 					<center>
-						<iframe width="560" height="315" src="https://www.youtube.com/embed/5Ix0jwZ9aJQ?playlist=5Ix0jwZ9aJQ&loop=1" frameborder="0" title="Nift promo video" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/5Ix0jwZ9aJQ?playlist=5Ix0jwZ9aJQ&loop=1" frameborder="0" title="Nift promo video" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</center>
 				</section>
 
 				<section id="promo-features">
 					<!-- template promo video purchased from Render Forest https://www.renderforest.com/ -->
 					<center>
-						<iframe width="560" height="315" src="https://www.youtube.com/embed/80Q6gVxqc-8?playlist=80Q6gVxqc-8&loop=1" frameborder="0" title="Nift promo video" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/80Q6gVxqc-8?playlist=80Q6gVxqc-8&loop=1" frameborder="0" title="Nift promo video" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</center>
 				</section>
 
 				<section id="promo-features">
 					<!-- template promo video purchased from Render Forest https://www.renderforest.com/ -->
 					<center>
-						<iframe width="560" height="315" src="https://www.youtube.com/embed/emgSieQg8bw?playlist=emgSieQg8bw&loop=1" frameborder="0" title="Nift promo video" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/emgSieQg8bw?playlist=emgSieQg8bw&loop=1" frameborder="0" title="Nift promo video" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</center>
 				</section>
 
 				<section id="promo-features">
 					<!-- template promo video purchased from Render Forest https://www.renderforest.com/ -->
 					<center>
-						<iframe width="560" height="315" src="https://www.youtube.com/embed/sQOxFY3S104" frameborder="0" title="Nift promo video" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/sQOxFY3S104" frameborder="0" title="Nift promo video" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</center>
 				</section>
 
 				<section id="promo-features">
 					<!-- template promo video purchased from Render Forest https://www.renderforest.com/ -->
 					<center>
-						<iframe width="560" height="315" src="https://www.youtube.com/embed/xz57mxB029k" frameborder="0" title="Nift promo video" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/xz57mxB029k" frameborder="0" title="Nift promo video" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</center>
 				</section>
 
 				<section id="promo-features">
 					<!-- template promo video purchased from Render Forest https://www.renderforest.com/ -->
 					<center>
-						<iframe width="560" height="315" src="https://www.youtube.com/embed/cS567Sg77uU" frameborder="0" title="Nift promo video" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/cS567Sg77uU" frameborder="0" title="Nift promo video" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</center>
 				</section>
 
 				<section id="promo-features">
 					<!-- template promo video purchased from Render Forest https://www.renderforest.com/ -->
 					<center>
-						<iframe width="560" height="315" src="https://www.youtube.com/embed/eqRYEjQ30RU" frameborder="0" title="Nift promo video" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/eqRYEjQ30RU" frameborder="0" title="Nift promo video" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</center>
 				</section>
 
 				<section id="promo-features">
 					<!-- promo video made by Hash One Creatives team https://hashonecreatives.com/ -->
 					<center>
-						<iframe width="560" height="315" src="https://www.youtube.com/embed/iCEqkTXuzOY" frameborder="0" title="Nift promo video" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/iCEqkTXuzOY" frameborder="0" title="Nift promo video" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</center>
 				</section>
 
 				<section id="promo-features">
 					<!-- template render forest promo video  -->
 					<center>
-						<iframe width="560" height="315" src="https://www.youtube.com/embed/YwNQ0h5s9Zs" frameborder="0" title="Nift promo video" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/YwNQ0h5s9Zs" frameborder="0" title="Nift promo video" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</center>
 				</section>
 			</div>

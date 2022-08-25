@@ -1,47 +1,27 @@
 <!-- Footer -->
 <section id="footer" class="wrapper">
 	<div class="title">
-		<img src="@pathtofile(site/images/nsm.png)" alt="nsm signature on parchment" width="120" style="margin-top:40px; margin-bottom:20px; border-radius: 4px">
+		<img src="@pathtofile(site/images/rabbit-tags-icon.png)" alt="Nift rabbit mascot with code tag boomerangs" loading="lazy" width="200" style="margin-top:20px; border-radius: 4px">
 	</div>
 
 	<div class="container">
-		<div id="copyright">
-			<noselect>
-				<ul style="margin-top:115px">
-					<li><b style="color: white !important">Mirrors:</b></li>
-					<li><a href="https://nift.cc/">Official</a></li>
-					<li><a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a></li>
-					<li><a href="https://nifty-site-manager.github.io/">GitHub</a></li>
-					<li><a href="https://nifty-site-manager.gitlab.io/">GitLab</a></li>
-					<li><a href="https://nift.netlify.app/">Netlify</a></li>
-					<li><a href="https://nift.now.sh/">Vercel</a></li>
-				</ul> <br>
+		<div id="copyright" class="noselect">
+			<ul>
+				<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
+				<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
+				<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
+			</ul> <br>
 
-				<center><img id="footer-mascot" src="@pathtofile(site/images/badger.png)" alt="Nift badger mascot" width="325" style="max-width:90%; margin-bottom:20px"></center>
+			@/*<center><img id="footer-mascot" src="@pathtofile(site/images/badger.png)" alt="Nift badger mascot" width="325" style="max-width:90%; margin-bottom:20px"></center>*/
 
-				<ul>
-					<li>&copy;&nbsp;2015-<span name="cyear"></span> <a href="https://nift.cc">Nift</a></li>
-					@/*<li><a href="@pathto(coe)">Code of Etiquette</a></li>*/
-					<li><a href="@pathto(tos)">Terms of Service</a></li>
-					<li><a href="@pathto(privacy_policy)">Privacy Policy</a></li>
-				</ul> <br>
+			<ul>
+				<li><a href="@pathto(tos)">Terms of Service</a></li>
+				<li><a href="@pathto(privacy_policy)">Privacy Policy</a></li>
+			</ul> <br>
 
-				<ul>
-					<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
-					<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
-					<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
-				</ul> <br>
-			
-				<b id="light_dark_LHS" style="color: white !important">light</b> &nbsp; <label class="light-dark-switch" id="light-dark-switch">
-					<input type="checkbox" id="checkbox_light_dark">
-					<span class="slider round" onclick="toggle_light_dark()" id="slider_light_dark"></span>
-				</label> &nbsp; <b id="light_dark_RHS" style="color: white !important">dark</b> <br><br>
-
-				<ul>
-					<li>Creator & Developer:</li>
-					<li><a href="https://n-ham.com">Nicholas Ham</a></li>
-				</ul><br>
-			</noselect>
+			<ul>
+				<li><span>&copy;</span> 2015-<span name="cyear"></span></li>
+			</ul>
 		</div>
 	</div>
 </section>

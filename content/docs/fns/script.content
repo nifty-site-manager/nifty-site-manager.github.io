@@ -5,12 +5,12 @@
 		<!-- Features -->
 		<section id="features">
 			<div class="content">
-				<a href="#contents" class="to_top">[contents]</a>
+				<a href="#contents" class="to-top">[contents]</a>
 
 				<h4 id="contents">
 					Contents
 				</h4>
-				<ul style="text-indent:30px">
+				<ul>
 					<li><a href="#syntax">Syntax</a></li>
 					<li><a href="#description">Description</a></li>
 					<li><a href="#options">Options</a></li>
@@ -44,7 +44,7 @@ script{options}(params)
 
 				<p>
 					<b>Note:</b> Scripts/programs run with <mono>\@script</mono> calls are moved to the project root directory to run and have a backup copy made. If scripts/programs are so large that copying the file will take time, or you are making lots of calls which is slower at scale, you can use the <mono>!bs</mono> option to not have the script backed up, eg.: 
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline">
 \@script{!bs}('./script.py')
 </pre>
@@ -133,14 +133,14 @@ script{options}(params)
 				<p>
 					Examples of <mono>script</mono> being used with <mono>f++</mono>:					
 
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums lang-nift">
 script("pre-build.rb")</pre>
 </div>
 				</p>
 
 				<p>
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums lang-nift">
 script{b}("pre-build.py")
 {
@@ -155,21 +155,21 @@ script{b}("pre-build.py")
 				<p>
 					Examples of <mono>script</mono> being used with <mono>n++</mono>:					
 
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums lang-nift">
 \@script("pre-build.rb")</pre>
 </div>
 				</p>
 
 				<p>
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums lang-nift">
 \@script("./script.py", "light blue", "red")</pre>
 </div>
 				</p>
 
 				<p>
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums lang-nift">
 \@script{b}("pre-build.py")
 {

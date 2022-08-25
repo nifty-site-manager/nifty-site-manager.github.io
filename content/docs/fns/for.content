@@ -5,12 +5,12 @@
 		<!-- Features -->
 		<section id="features">
 			<div class="content">
-				<a href="#contents" class="to_top">[contents]</a>
+				<a href="#contents" class="to-top">[contents]</a>
 
 				<h4 id="contents">
 					Contents
 				</h4>
-				<ul style="text-indent:30px">
+				<ul>
 					<li><a href="#syntax">Syntax</a></li>
 					<li><a href="#description">Description</a></li>
 					<li><a href="#options">Options</a></li>
@@ -58,7 +58,7 @@ for{options}(pre-loop code; condition; post-iteration code)
 
 				<p>
 					<b>Note:</b> If not writing to the output file <mono>Nift</mono> will skip to the first non-whitespace (ie. to the first character that is not a space, tab or newline) after a <mono>for</mono> loop and inject it to the output file where the call started. If you want to prevent <mono>Nift</mono> from doing this put a '<mono>!</mono>' after the loop, eg.:
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline lang-nift">
 \@for{!o}(pre-loop code; condition; post-iteration code)
 {
@@ -130,7 +130,7 @@ for{options}(pre-loop code; condition; post-iteration code)
 				<p>
 					Examples of <mono>for</mono> being used with <mono>f++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums lang-nift">
 for(int i=0; i < 10; i+=1)
 	console("i: ", i)</pre>
@@ -138,7 +138,7 @@ for(int i=0; i < 10; i+=1)
 				</p>
 
 				<p>
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums lang-nift">
 for{!s, !o}(int i=0; i<10; i+=1)
 	console("i: \$[i]")</pre>
@@ -151,7 +151,7 @@ for{!s, !o}(int i=0; i<10; i+=1)
 				<p>
 					Examples of <mono>for</mono> being used with <mono>n++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums lang-nift">
 \@for(int i=0; i < 10; i+=1)
 	\@console("i: ", i)</pre>
@@ -159,7 +159,7 @@ for{!s, !o}(int i=0; i<10; i+=1)
 				</p>
 
 				<p>
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums lang-nift">
 \@for{f++, !s, !o}(int i=0; i<10; i+=1)
 	console("i: \$[i]")</pre>

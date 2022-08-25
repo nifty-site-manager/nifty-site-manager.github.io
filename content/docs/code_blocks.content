@@ -4,21 +4,17 @@
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
-			<header class="style1">
-				<h2>How to display code blocks on your websites</h2>
-			</header>
-
-			<div class="content" style="margin-top:-50px;">
-				<center>
+			<div class="content">
+				@/*<center>
 					<img src="@pathtofile(site/images/code_review.svg)" alt="unDraw code review illustration" width=250 style="margin-bottom:20px">
-				</center>
+				</center>*/
 
 				<h3>
 					Syntax Highlighting
 				</h3>
 				<p>
 					Options for including code blocks with syntax highlighting on your website include:
-					<ul style="text-indent:30px">
+					<ul>
 						<li><a href="https://github.com/google/code-prettify">Google Code Prettify</a></li>
 						<li><a href="https://prismjs.com/">PrismJS</a></li>
 						<li><a href="https://highlightjs.org/">HighlightJS</a></li>
@@ -28,15 +24,15 @@
 
 				<p>
 					The <mono>Nift</mono> documentation covers syntax highlighting code blocks on your site using <a href=https://github.com/google/code-prettify>Google Code Prettify</a>. Using Google Code Prettify on your site is as simple as adding the following code to the head of each page:
+				</p>
 
-					<div align="center">
+<div align="center">
 <pre class="prettyprint linenums">
 <!-- uses google-code-prettify for syntax highlighting 
 	 see https://github.com/google/code-prettify for more info -->
 <script src="https://cdn.jsdelivr.net/gh/google/code-prettify\@master/loader/run_prettify.js">
 </script></pre>
-					</div>
-				</p>
+</div>
 
 				<p>
 					See <a href="https://raw.githack.com/google/code-prettify/master/styles/index.html">here</a> for a gallery of themes for Google Code Prettify. 
@@ -58,13 +54,11 @@
 					Also see the <a href="@pathto(resources/tutorials/basic_usage)">basic usage tutorial</a> for a better idea of how to nicely display code blocks. 
 				</p>
 
-				<center>
+				@/*<div align="center">
 					<h4>Example code blocks</h4>
-				</center>
+				</div>
 
-				<br><br>
-
-				<div align="center">
+<div align="center">
 <pre class="prettyprint linenums">
 int n;
 vector<int> v;
@@ -79,11 +73,9 @@ vector<int> v;
 
 for(int i=0; i < n; i++)
 	cout << v[i] << endl;</pre>
-				</div>
+</div>
 
-				<br>
-
-				<div align="center">
+<div align="center">
 <pre class="prettyprint">
 int n;
 vector<int> v;
@@ -96,27 +88,21 @@ for(int i=0; i < n; i++)
 
 for(int i=0; i < n; i++)
 	cout << v[i] << endl;</pre>
-				</div>
+</div>
 
-				<br>
-
-				<div align="center">
+<div align="center">
 <pre class="prettyprint linenums scroll wrap">
 @input(./content/cpp/Quoted.cpp)
 </pre>
-				</div>
+</div>
 
-				<br>
-
-				<div align="center">
+<div align="center">
 <pre class="prettyprint linenums">
 @input(./content/cpp/Quoted.cpp)
 </pre>
-				</div>
+</div>
 
-				<br>
-
-				<div align="center">
+<div align="center">
 <pre class="prettyprint linenums">
 //adds insert file
 if(read_and_process(insertLocation, antiDepsOfReadLocation, contentLocation, pageTitle, dateTimeInfo, indentAmount, codeBlockDepth, htmlCommentDepth, contentInserted, processedPage, pageDeps) > 0)
@@ -124,7 +110,7 @@ if(read_and_process(insertLocation, antiDepsOfReadLocation, contentLocation, pag
 //indent amount updated inside read_and_process
 linePos += posOffset;
 </pre>
-				</div>
+</div>*/
 			</div>
 		</section>
 	</div>

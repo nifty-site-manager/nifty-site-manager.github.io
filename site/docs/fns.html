@@ -1,545 +1,27 @@
-<!DOCTYPE HTML>
-
-<!--
-	Official Nift Website
-
-	Nift is a cross-platform open source website generator developed from the ground up in C++.
--->
-
+<!doctype html>
 <html lang="en">
-    <head>
-        <title>Nift - fns</title>
-        <meta charset="utf-8">
-        <meta name="description" content="Nift is the world's fastest framework for 
-                    managing and generating websites. It's cross-platform, opensource, 
-                    lightning fast, developed from the ground up in C++, and released 
-                    for free under the MIT license - use it for any of your personal 
-                    or commercial projects">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../assets/css/main.css">
-        <link rel="stylesheet" href="../assets/css/pagestyle.css">
-        <link rel="stylesheet" href="../assets/css/pre.css">
-        <link rel="stylesheet" href="../assets/css/toggle.css">
-        <link rel='icon' type='image/png' href='../images/favicon.png'>
-        
-        <!-- uses Font Awesome for vector icons and social logos -->
-        <script src="https://kit.fontawesome.com/b51e6952ec.js"></script>
-    </head>
-    <body class="is-preload">
-		<div id="page-wrapper">
-			<!-- Header -->
-			<section id="header" class="wrapper">
-			
-				<!-- Logo -->
-				<div id="logo">
-					<noselect>
-					<img src="../images/rabbit.png" alt="Nift bunny mascot" width=325 style="max-width:90%">
-			
-					<p style="margin-bottom:0px">
-						<a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; 
-						<a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a> &nbsp; 
-						<a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a> &nbsp; 
-						<a href="https://nift.teemill.com/" title="TeeMill" class="teemill"><i class="fas fa-tshirt fa-2x"></i></a> </p>
-					<p style="margin-top:10px">
-						<a href="https://github.com/nifty-site-manager/nsm/discussions" title="GitHub Discussions" class="gh"><i class="fas fa-comment-dots fa-2x"></i></a> &nbsp;
-						<a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a> &nbsp; 
-						<a href="https://old.reddit.com/r/nift" title="Reddit" class="reddit"><i class="fab fa-reddit-square fa-2x"></i></a> &nbsp; 
-						<a href="https://twitter.com/nifty_site_man" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a>
-					</p>
-			
-					<p style="color:#372C2A">A cross-platform open source website generator</p>
-			
-					<p>
-						<a href="https://chocolatey.org/packages/nift"><img src="../images/chocolatey-icon.png" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
-						<a href="installing.html#osx-brew"><img src="../images/brew-icon.png" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
-						<a href="installing.html#freebsd"><img src="../images/freebsd.png" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
-						<a href="installing.html#linux-flatpak"><img src="../images/flathub-icon.png" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
-						<a href="installing.html#gentoo"><img src="../images/gentoo.svg" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
-						<a href="https://snapcraft.io/nift"><img src="../images/snap-icon.png" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
-					</p>
-					</noselect>
-				</div>
-			
-				<!-- Nav -->
-				<noselect>
-					<nav id="nav">
-						<ul>
-							<li><a href="../index.html">Home</a></li>
-							<li>
-								<a href="">Documentation</a>
-								<ul>
-									<li><a href="installing.html">Installing</a></li>
-									<li><a href="hosting.html">Hosting</a></li>
-									<li><a href="commands.html">Commands</a></li>
-									<li><a href="config.html">Config</a></li>
-									<li><a href="template_files.html">Template Files</a></li>
-									<li><a href="fns.html">Functions</a></li>
-									<li><a href="types.html">Types</a></li>
-									<li><a href="f++.html">f++ (scripting)</a></li>
-									<li><a href="n++.html">n++ (templates)</a></li>
-									<li><a href="lua.html">Lua(JIT)</a></li>
-									<li><a href="exprtk.html">ExprTk</a></li>
-									<li><a href="REPL.html">Interactive REPL</a></li>
-									<li><a href="scripts.html">Scripts</a></li>
-									<li><a href="template_languages.html">Template Languages</a></li>
-									<li><a href="JSON.html">JSON Data</a></li>
-									<li><a href="markdown.html">Markdown</a></li>
-									<li><a href="translators.html">Translators</a></li>
-									<li><a href="mathematics.html">Mathematics</a></li>
-									<li><a href="code_blocks.html">Code Blocks</a></li>
-									<li><a href="presentations.html">Presentations</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="">Resources</a>
-								<ul>
-									<li><a href="../resources/tutorials.html">Tutorials</a></li>
-									<li><a href="../resources/templates.html">Templates</a></li>
-									<li><a href="../resources/blog_templates.html">Blog Templates</a></li>
-									<li><a href="../resources/css_frameworks.html">CSS Frameworks</a></li>
-									<li><a href="../resources/examples.html">Examples</a></li>
-									<li><a href="../resources/js_frameworks.html">JS Frameworks</a></li>
-									<li><a href="../resources/links.html">Links</a></li>
-									<li><a href="../resources/logos.html">Logos</a></li>
-									<li><a href="../resources/promos.html">Promos</a></li>
-									<li><a href="../resources/php_frameworks.html">PHP Frameworks</a></li>
-								</ul>
-							</li>
-							<li><a href="../support.html">Support</a></li>
-						</ul>
-					</nav>
-				</noselect>
-			</section>
-
-		    <!-- Main -->
-		    <section id="main" class="wrapper style2">
-		    	<div class="title">Functions</div>
-		    	<div class="container">
-		    		<!-- Features -->
-		    		<section id="features">
-		    			<header class="style1">
-		    				<h2>Hard-Coded Functions Index</h2>
-		    			</header>
-		    
-		    			<div class="content">
-		    
-		    				<h4>
-		    					Introduction
-		    				</h4>
-		    				<p>
-		    					Nift has its own poweful in-built template language <mnstr style="font-size:16px">TEMPLATESTEIN</mnstr> <a href="n++.html">n++</a> which you can use in amongst any other scripting, programming and/or template language you want. It also has its own in-built scripting language <mnstr style="font-size:16px">FUNCTIONSTEIN</mnstr> <a href="f++.html">f++</a> which also works well in interactive <mono>shell</mono> mode as a shell extension called <zapfont style="font-size:25px">FLASHELL</zapfont>. This page is an index for all the functions available with <zapfont style="font-size:25px">FLASHELL</zapfont>, <mnstr style="font-size:16px">FUNCTIONSTEIN</mnstr>, <mnstr style="font-size:16px">TEMPLATESTEIN</mnstr>.
-		    				</p>
-		    
-		    				<h4 id="contents">
-		    					Contents
-		    				</h4>
-		    				<div style="text-indent:30px; margin-top:10px">
-		    					<ul>
-		    						<li><a href="#syntax">Syntax</a></li>
-		    						<li><a href="#options">Options</a></li>
-		    						<li><a href="#index">Index</a></li>
-		    					</ul>
-		    				</div>
-		    
-		    				<h4 id="syntax">Syntax</h4>
-		    				<p>
-		    					The syntax for Nift function calls is as follows:
-		    <div align="center" style="margin-top:-15px">
-		    <mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-19px">
-funcName{options}(params)
-</pre>
-		    </div><br>
-		    <div align="center">
-		    <mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-19px">
-@funcName{options}(params)
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    					You can use Nift's template language with the function name, options and parameters for a function call. For example:
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="prettyprint inline">@input("$[contentpath]")</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    					You can even expand multiple options or parameters when parsing the options or parameters string with both <mono>f++</mono> and <mono>n++</mono>. A contrived <mono>n++</mono> example that is equivalent to calling <mono>@funcName(param_1, param_2)</mono> is below:
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-@string str = "param_1, param_2"
-@funcName($[str])
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    					<b>Note:</b> you need to quote the function name when doing things like printing variables or calling functions in the function name. A contrived <mono>n++</mono> example is below:
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-@string str = "input"
-@"$[str]"("$[contentpath]")
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    					Nift is pretty good at working out when it does or does not need to parse things like the function name, options and/or parameters. You can manually tell Nift to <u>not</u> parse the function name and parameters using the <mono>!p</mono> option. For example:
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-@input("${!p}[contentpath]")
-</pre>
-		    </div>
-		    				</p>
-		    				<p>
-		    					<b>Note:</b> For options and parameters (including variable names and values), you can use:
-		    				</p>
-		    				<div style="text-indent:30px; margin-top:-20px">
-		    					<ul>
-		    						<li><mono>\n</mono> for the newline character</li>
-		    						<li><mono>\t</mono> for tabs (though normal tabs also work)</li>
-		    						<li><mono>\\</mono> for <mono>\</mono></li>
-		    						<li><mono>\'</mono> for <mono>'</mono></li>
-		    						<li><mono>\"</mono> for <mono>"</mono></li>
-		    					</ul>
-		    				</div>
-		    
-		    				<p>
-		    					Function names, options and parameters (including variable names and values) can be unquoted, single quoted or double quoted, whichever is more convenient, integrates with the other programming, scripting and/or template languages you are using and/or has nice syntax highlighting with the extensions and editor(s) you are using. Also for functions that can take multiple parameters, parameters containing commas '<mono>,</mono>' should be quoted, there can also be other times that things need to be quoted, for example if you want to have equals <mono>'='</mono> in a variable name during its definition then it will need to be quoted (though will not need to be quoted when referenced). 
-		    				</p>
-		    
-		    				<h4 id="options">
-		    					Options
-		    				</h4>
-		    				<p>
-		    					The following options are available for almost all function calls:
-		    
-		    					<center class="table">
-		    						<table id="exprtk_nift_fns_table" class="alt">
-		    							<thead>
-		    								<tr>
-		    									<th>option</th>
-		    									<th>description</th>
-		    								</tr>
-		    							</thead>
-		    							<tr>
-		    								<td><mono>!p</mono></td>
-		    								<td>do not parse parameters</td>
-		    							</tr>
-		    							<tr>
-		    								<td><mono>v</mono></td>
-		    								<td>replace variables with their values (where applicable)</td>
-		    							</tr>
-		    							<tr>
-		    								<td><mono>!v</mono></td>
-		    								<td>do not replace variables with their values (where applicable)</td>
-		    							</tr>
-		    							<tr>
-		    								<td><mono>1p</mono></td>
-		    								<td>treat parameter string as one parameter</td>
-		    							</tr>
-		    							<tfoot>
-		    								<tr>
-		    									<th>option</th>
-		    									<th>description</th>
-		    								</tr>
-		    							</tfoot>
-		    						</table>
-		    					</center>
-		    				</p>
-		    
-		    				<p>
-		    					The following options are available for user-defined function calls:
-		    
-		    					<center class="table">
-		    						<table id="exprtk_nift_fns_table" class="alt">
-		    							<thead>
-		    								<tr>
-		    									<th>option</th>
-		    									<th>description</th>
-		    								</tr>
-		    							</thead>
-		    							<tr>
-		    								<td><mono>mf</mono></td>
-		    								<td>add member functions for <mono>options</mono>, <mono>params</mono> and <mono>types</mono> vectors</td>
-		    							</tr>
-		    							<tr>
-		    								<td><mono>!mf</mono></td>
-		    								<td>do not add member functions for <mono>options</mono>, <mono>params</mono> and <mono>types</mono> vectors</td>
-		    							</tr>
-		    							<tr>
-		    								<td><mono>o</mono></td>
-		    								<td>add output</td>
-		    							</tr>
-		    							<tr>
-		    								<td><mono>!o</mono></td>
-		    								<td>do not add output</td>
-		    							</tr>
-		    							<tr>
-		    								<td><mono>s</mono></td>
-		    								<td>add scope</td>
-		    							</tr>
-		    							<tr>
-		    								<td><mono>!s</mono></td>
-		    								<td>do not add scope</td>
-		    							</tr>
-		    							<tfoot>
-		    								<tr>
-		    									<th>option</th>
-		    									<th>description</th>
-		    								</tr>
-		    							</tfoot>
-		    						</table>
-		    					</center>
-		    				</p>
-		    
-		    				<a href="#index" class="to_top">[index]</a>
-		    				<h4 id="index">Index</h4>
-		    				<p id="index">
-		    					Below is an index of Nift's hard-coded functions (including functions for defining variables, functions and structures/types) which can be called from <a href="f++.html">f++</a> and <a href="n++.html">n++</a>: 
-		    				</p>
-		    				<div style="text-indent:30px; margin-top:-20px">
-		    					<ul>
-		    						<li><a href="fns/exprtk.html">$`expression`</a> (evaluate ExprTk expression)</li>
-		    						<li><a href="fns/$.html">$</a> (print variable)</li>
-		    						<li><a href="fns/!.html">!</a> (not operator)</li>
-		    						<li><a href="fns/!newline.html">!\n</a> (special single-line comment)</li>
-		    						<li><a href="fns/!=.html">!=</a> (not equals operator)</li>
-		    						<li><a href="fns/tern.html">?</a> (ternary operator)</li>
-		    						<li><a href="fns/&&.html">&&</a> (and operator)</li>
-		    						<li><a href="fns/||.html">||</a> (or operator)</li>
-		    						<li><a href="fns/bsol.html">\</a> (escape characters)</li>
-		    						<li><a href="fns/:=.html">:=</a> (define)</li>
-		    						<li><a href="fns/=.html">=</a> (assignment operator)</li>
-		    						<li><a href="fns/==.html">==</a> (equals to operator)</li>
-		    						<li><a href="fns/<.html">&lt;</a> (less than operator)</li>
-		    						<li><a href="fns/HASH_.html">#</a> (raw single-line comment)</li>
-		    						<li><a href="fns/HASH--.html">#--</a> (parsed multi-line comment)</li>
-		    						<li><a href="fns/<HASH--.html"><#--</a> (raw multi-line comment)</li>
-		    						<li><a href="fns/<=.html">&lt;=</a> (less than or equals to operator)</li>
-		    						<li><a href="fns/<--.html">&lt;--</a> (remove added trailing whitespace)</li>
-		    						<li><a href="fns/>.html">&gt;</a> (greater than operator)</li>
-		    						<li><a href="fns/>=.html">&gt;=</a> (greater than or equals to operator)</li>
-		    						<li><a href="fns/+.html">+</a> (addition operator)</li>
-		    						<li><a href="fns/++.html">++</a> (pre-increment operator)</li>
-		    						<li><a href="fns/+++.html">+++</a> (post-increment operator)</li>
-		    						<li><a href="fns/+=.html">+=</a> (addition assignment operator)</li>
-		    						<li><a href="fns/-.html">-</a> (subtraction operator)</li>
-		    						<li><a href="fns/--.html">--</a> (pre-decrement operator)</li>
-		    						<li><a href="fns/--divdiv.html">--//</a> (parsed single-line comment)</li>
-		    						<li><a href="fns/---.html">---</a> (post-decrement operator)</li>
-		    						<li><a href="fns/-->.html">--></a> (skip whitespace)</li>
-		    						<li><a href="fns/-=.html">-=</a> (subtraction assignment operator)</li>
-		    						<li><a href="fns/*.html">*</a> (multiplication operator)</li>
-		    						<li><a href="fns/*=.html">*=</a> (multiplication assignment operator)</li>
-		    						<li><a href="fns/div.html">/</a> (division operator)</li>
-		    						<li><a href="fns/divequal.html">/=</a> (division assignment operator)</li>
-		    						<li><a href="fns/div*.html">/*</a> (raw multi-line comment)</li>
-		    						<li><a href="fns/divdiv.html">//</a> (raw single-line comment)</li>
-		    						<li><a href="fns/MOD.html">%</a> (mod operator)</li>
-		    						<li><a href="fns/MOD=.html">%=</a> (mod assignment operator)</li> <br>
-		    
-		    						<li id="a"><a href="fns/add_member_fns.html">add_member_fns</a></li>
-		    						<li><a href="fns/add_scope.html">add_scope</a></li> <br>
-		    
-		    						<li id="b"><a href="fns/break.html">break</a></li> <br>
-		    
-		    						<li id="c"><a href="fns/cd.html">cd</a></li>
-		    						<li><a href="fns/comments.html"><i>comments</i></a></li>
-		    						<li><a href="fns/console.html">console</a></li>
-		    						<li><a href="fns/console.lock.html">console.lock</a></li>
-		    						<li><a href="fns/console.locked.html">console.locked</a></li>
-		    						<li><a href="fns/console.unlock.html">console.unlock</a></li>
-		    						<li><a href="fns/const.html">const</a></li>
-		    						<li><a href="fns/content.html">content</a></li>
-		    						<li><a href="fns/continue.html">continue</a></li>
-		    						<li><a href="fns/cpy.html">cpy</a></li>
-		    						<li><a href="fns/cssinclude.html">cssinclude</a></li> <br>
-		    
-		    						<li id="d"><a href="fns/dep.html">dep</a></li>
-		    						<li><a href="fns/do-while.html">do-while</a></li> <br>
-		    
-		    						<li id="e"><a href="fns/ent.html">ent</a></li>
-		    						<li><a href="fns/error.html">error</a></li>
-		    						<li><a href="fns/exit.html">exit</a></li>
-		    						<li><a href="fns/exprtk.html">exprtk</a></li>
-		    						<li><a href="fns/exprtk.add_package.html">exprtk.add_package</a></li>
-		    						<li><a href="fns/exprtk.add_variable.html">exprtk.add_variable</a></li> 
-		    						<li><a href="fns/exprtk.compile.html">exprtk.compile</a></li> 
-		    						<li><a href="fns/exprtk.eval.html">exprtk.eval</a></li>
-		    						<li><a href="fns/exprtk.file.html">exprtk.file</a></li>
-		    						<li><a href="fns/exprtk.load.html">exprtk.load</a></li>
-		    						<li><a href="fns/exprtk.str.html">exprtk.str</a></li> <br>
-		    
-		    						<li id="f"><a href="fns/f++.html">f++</a></li>
-		    						<li><a href="fns/faviconinclude.html">faviconinclude</a></li>
-		    						<li><a href="fns/function.html">fn</a></li>
-		    						<li><a href="fns/for.html">for</a></li>
-		    						<li><a href="fns/forget.html">forget</a></li>
-		    						<li><a href="fns/function.html">function</a></li> <br>
-		    
-		    						<li id="g"><a href="fns/getenv.html">getenv</a></li>
-		    						<li><a href="fns/getline.html">getline</a></li> <br>
-		    
-		    						<li id="h"><a href="fns/hash.html">hash</a></li> <br>
-		    
-		    						<li id="i"><a href="fns/if.html">if</a></li>
-		    						<li><a href="fns/imginclude.html">imginclude</a></li>
-		    						<li><a href="fns/in.html">in</a></li>
-		    						<li><a href="fns/include.html">include</a></li>
-		    						<li><a href="fns/input.html">inject</a></li>
-		    						<li><a href="fns/input.html">input</a></li>
-		    						<li><a href="fns/is_const.html">is_const</a></li>
-		    						<li><a href="fns/is_private.html">is_private</a></li>
-		    						<li><a href="fns/item.html">item</a></li> <br>
-		    
-		    						<li id="j"><a href="fns/join.html">join</a></li>
-		    						<li><a href="fns/jsinclude.html">jsinclude</a></li> <br>
-		    
-		    						<li id="l"><a href="fns/layer.html">layer</a></li>
-		    						<li><a href="fns/link.html">link</a></li>
-		    						<li><a href="fns/lolcat.html">lolcat</a></li>
-		    						<li><a href="fns/lolcat.cmd.html">lolcat.cmd</a></li>
-		    						<li><a href="fns/lolcat.off.html">lolcat.off</a></li>
-		    						<li><a href="fns/lolcat.on.html">lolcat.on</a></li>
-		    						<li><a href="fns/lolcat.status.html">lolcat.status</a></li>
-		    						<li><a href="fns/lst.html">lst</a></li>
-		    						<li><a href="fns/lua.html">lua</a></li>
-		    						<li><a href="fns/lua_addnsmfns.html">lua_addnsmfns</a></li>
-		    						<li><a href="fns/lua_getglobal.html">lua_getglobal</a></li>
-		    						<li><a href="fns/lua_gettop.html">lua_gettop</a></li>
-		    						<li><a href="fns/lua_pop.html">lua_pop</a></li>
-		    						<li><a href="fns/lua_pushlightuserdata.html">lua_pushlightuserdata</a></li>
-		    						<li><a href="fns/lua_pushnumber.html">lua_pushnumber</a></li>
-		    						<li><a href="fns/lua_pushstring.html">lua_pushstring</a></li>
-		    						<li><a href="fns/lua_remove.html">lua_remove</a></li>
-		    						<li><a href="fns/lua_setglobal.html">lua_setglobal</a></li>
-		    						<li><a href="fns/lua_tonumber.html">lua_tonumber</a></li>
-		    						<li><a href="fns/lua_tostring.html">lua_tostring</a></li>
-		    						<li><a href="fns/lua_version.html">lua_version</a></li> <br>
-		    
-		    						<li id="m"><a href="fns/mve.html">mve</a></li> <br>
-		    
-		    						<li id="n"><a href="fns/n++.html">n++</a></li>
-		    						<li><a href="fns/nsm_lang.html">nsm_lang</a></li>
-		    						<li><a href="fns/nsm_mode.html">nsm_mode</a></li> <br>
-		    
-		    						<li id="p"><a href="fns/paginate.html">paginate</a></li>
-		    						<li><a href="fns/paginate.no_items_per_page.html">paginate.no_items_per_page</a></li>
-		    						<li><a href="fns/paginate.separator.html">paginate.separator</a></li>
-		    						<li><a href="fns/paginate.template.html">paginate.template</a></li>
-		    						<li><a href="fns/parse.html">parse</a></li>
-		    						<li><a href="fns/pathto.html">pathto</a></li>
-		    						<li><a href="fns/pathtofile.html">pathtofile</a></li>
-		    						<li><a href="fns/pathtopage.html">pathtopage</a></li>
-		    						<li><a href="fns/pathtopageno.html">pathtopageno</a></li>
-		    						<li><a href="fns/poke.html">poke</a></li>
-		    						<li><a href="fns/precision.html">precision</a></li>
-		    						<li><a href="fns/private.html">private</a></li>
-		    						<li><a href="fns/prompt.char.html">prompt.char</a></li>
-		    						<li><a href="fns/pwd.html">pwd</a></li> <br>
-		    
-		    						<li id="q"><a href="fns/quit.html">quit</a></li>
-		    						<li><a href="fns/quote.html">quote</a></li> <br>
-		    
-		    						<li id="r"><a href="fns/read.html">read</a></li>
-		    						<li><a href="fns/refresh_completions.html">refresh_completions</a></li>
-		    						<li><a href="fns/replace_all.html">replace_all</a></li>
-		    						<li><a href="fns/replace_vars.html">replace_vars</a></li>
-		    						<li><a href="fns/return.html">return</a></li>
-		    						<li><a href="fns/rmv.html">rmv</a></li> <br>
-		    
-		    						<li id="s"><a href="fns/scope.html">scope</a></li>
-		    						<li><a href="fns/script.html">script</a></li>
-		    						<li><a href="fns/size.html">size</a></li>
-		    						<li><a href="fns/std::vector.at.html">std::vector.at</a></li>
-		    						<li><a href="fns/std::vector.erase.html">std::vector.erase</a></li>
-		    						<li><a href="fns/std::vector.pop_back.html">std::vector.pop_back</a></li>
-		    						<li><a href="fns/std::vector.push_back.html">std::vector.push_back</a></li>
-		    						<li><a href="fns/std::vector.set.html">std::vector.set</a></li>
-		    						<li><a href="fns/std::vector.size.html">std::vector.size</a></li>
-		    						<li><a href="fns/stream.close.html">stream.close</a></li>
-		    						<li><a href="fns/stream.open.html">stream.open</a></li>
-		    						<li><a href="fns/struct.html">struct</a></li>
-		    						<li><a href="fns/substr.html">substr</a></li>
-		    						<li><a href="fns/system.html">sys</a></li>
-		    						<li><a href="fns/system.html">system</a></li> <br>
-		    
-		    						<li id="t"><a href="fns/typeof.html">typeof</a></li> <br>
-		    
-		    						<li id="u"><a href="fns/unquote.html">unquote</a></li> <br>
-		    
-		    						<li id="v"><a href="fns/valid_type.html">valid_type</a></li> 
-		    						<li><a href="fns/vjoin.html">vjoin</a></li> <br>
-		    
-		    						<li id="w"><a href="fns/warning.html">warning</a></li>
-		    						<li><a href="fns/while.html">while</a></li>
-		    						<li><a href="fns/write.html">write</a></li>
-		    					</ul>
-		    				</div>
-		    			</div>
-		    		</section>
-		    	</div>
-		    </section>
-
-			<!-- Footer -->
-			<section id="footer" class="wrapper">
-				<div class="title">
-					<img src="../images/nsm.png" alt="nsm signature on parchment" width="120" style="margin-top:40px; margin-bottom:20px; border-radius: 4px">
-				</div>
-			
-				<div class="container">
-					<div id="copyright">
-						<noselect>
-							<ul style="margin-top:115px">
-								<li><b style="color: white !important">Mirrors:</b></li>
-								<li><a href="https://nift.cc/">Official</a></li>
-								<li><a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a></li>
-								<li><a href="https://nifty-site-manager.github.io/">GitHub</a></li>
-								<li><a href="https://nifty-site-manager.gitlab.io/">GitLab</a></li>
-								<li><a href="https://nift.netlify.app/">Netlify</a></li>
-								<li><a href="https://nift.now.sh/">Vercel</a></li>
-							</ul> <br>
-			
-							<center><img id="footer-mascot" src="../images/badger.png" alt="Nift badger mascot" width="325" style="max-width:90%; margin-bottom:20px"></center>
-			
-							<ul>
-								<li>&copy;&nbsp;2015-<span name="cyear"></span> <a href="https://nift.cc">Nift</a></li>
-								<li><a href="../tos.html">Terms of Service</a></li>
-								<li><a href="../privacy_policy.html">Privacy Policy</a></li>
-							</ul> <br>
-			
-							<ul>
-								<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
-								<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
-								<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
-							</ul> <br>
-						
-							<b id="light_dark_LHS" style="color: white !important">light</b> &nbsp; <label class="light-dark-switch" id="light-dark-switch">
-								<input type="checkbox" id="checkbox_light_dark">
-								<span class="slider round" onclick="toggle_light_dark()" id="slider_light_dark"></span>
-							</label> &nbsp; <b id="light_dark_RHS" style="color: white !important">dark</b> <br><br>
-			
-							<ul>
-								<li>Creator & Developer:</li>
-								<li><a href="https://n-ham.com">Nicholas Ham</a></li>
-							</ul><br>
-						</noselect>
-					</div>
-				</div>
-			</section>
-		</div>
-
-		<!-- Scripts -->
-		<script src="../assets/js/copy-pre.js"></script>
-		<script src="../assets/js/jquery.min.js"></script>
-		<script src="../assets/js/jquery.dropotron.min.js"></script>
-		<script src="../assets/js/browser.min.js"></script>
-		<script src="../assets/js/breakpoints.min.js"></script>
-		<script src="../assets/js/util.js"></script>
-		<script src="../assets/js/main.js"></script>
-		<script src='../assets/js/process_md_blocks.js'></script>
-		<script src="../assets/js/showdown.min.js"></script>
+	<head>
+		<title>Nift - fns</title>
+		<meta name="description" 
+		      content="Nift is an opinionless web development framework, specialising
+		            in static websites with serverless backends. It's lightning fast, 
+		            cross-platform, opinionless, open source (MIT license) and 
+		            developed from the ground up in C++. Use it for any of your 
+		            personal or commercial projects!">
+		
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" href="../assets/css/pagestyle.css">
+		<link rel="stylesheet" href="../assets/css/menu.css">
+		<link rel="stylesheet" href="../assets/css/font-awesome.css">
+		<link rel="stylesheet" href="../assets/css/pre.css">
+		<link rel="stylesheet" href="../assets/css/extra-fonts.css"><link rel='icon' type='image/png' href='../images/lightning.png'>
+		
+		<script async src="../assets/js/menu.js"></script>
+		<script async src="../assets/js/copy-pre.js"></script>
+		<script async src="../assets/js/process-md-blocks.js"></script>
+		<script async src="../assets/js/showdown.min.js"></script>
 		<script>
 			var converter = new showdown.Converter();
 			converter.setOption('emoji', 'on');
@@ -549,22 +31,14 @@ funcName{options}(params)
 			for(var i=0; i<elements.length; i++)
 				elements[i].innerHTML = converter.makeHtml(elements[i].innerHTML.replace(/&lt;/g, "xwxw").replace(/&gt;/g, "pqpq")).replace(/xwxw/g, "&lt;").replace(/pqpq/g, "&gt;");
 		</script>
-		<script src="../assets/js/toggle.js"></script>
-
-		<!-- Inserts current year -->
-		<script>
-			var x = document.getElementsByName("cyear");
-
-			for(var i=0; i<x.length; i++)
-				x[i].innerHTML = new Date().getFullYear();
-		</script>
-
 		<!-- uses google-code-prettify for syntax highlighting 
 			 see https://github.com/google/code-prettify/ for more info -->
-		<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
-		<script src="../assets/js/lang-lua.js"></script>
-		<script src="../assets/js/lang-nift.js"></script>
-
+		<script async src="../assets/js/prettify.js" onload="PR.prettyPrint()"></script>
+		<script async src="../assets/js/lang-lua.js"></script>
+		<script async src="../assets/js/lang-nift.js"></script>
+		
+		<!-- uses MathJax CDN for LaTeX support
+			 see https://docs.mathjax.org/en/latest/web/configuration.html for more info -->
 		<script id="MathJax-script" async
 		        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 		</script>
@@ -577,7 +51,477 @@ funcName{options}(params)
 				}
 			};
 		</script>
+	</head>
+
+	<body>
+		<nav id="nav" class="noselect">
+		  <ul class="menu">
+		    <a href="../index.html"><li class="logo">Nift</li></a>
+		    <li class="nav-space-left"></li>
+		    <li class="item icons">
+		      <a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a>
+		      <a href="https://github.com/nifty-site-manager/nsm/discussions" title="GitHub Discussions" class="gh"><i class="fas fa-comment-dots fa-2x"></i></a>
+		      <a href="https://twitter.com/nift_dev" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a>
+		      <a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a>
+		    </li>
+		    <a href="../index.html" class="item hover-hl"><li>Home</li></a>
+		    <li class="item hover-hl has-submenu" onclick="toggleItem(0)">
+		      <a tabindex="0" class="item-link">Docs</a>
+		      <ul class="submenu">
+		        <li class="subitem"><a href="installing.html">Installing</a></li>
+		        <li class="subitem"><a href="hosting.html">Hosting</a></li>
+		        <li class="subitem"><a href="commands.html">Commands</a></li>
+		        <li class="subitem"><a href="config.html">Config</a></li>
+		        <li class="subitem"><a href="template_files.html">Template Files</a></li>
+		        <li class="subitem"><a href="fns.html">Functions</a></li>
+		        <li class="subitem"><a href="types.html">Types</a></li>
+		        <li class="subitem"><a href="f++.html">f++ (scripting)</a></li>
+		        <li class="subitem"><a href="n++.html">n++ (templates)</a></li>
+		        <li class="subitem"><a href="lua.html">Lua(JIT)</a></li>
+		        <li class="subitem"><a href="exprtk.html">ExprTk</a></li>
+		        <li class="subitem"><a href="REPL.html">Interactive REPL</a></li>
+		        <li class="subitem"><a href="scripts.html">Scripts</a></li>
+		        <li class="subitem"><a href="template_languages.html">Template Languages</a></li>
+		        <li class="subitem"><a href="JSON.html">JSON Data</a></li>
+		        <li class="subitem"><a href="markdown.html">Markdown</a></li>
+		        <li class="subitem"><a href="translators.html">Translators</a></li>
+		        <li class="subitem"><a href="mathematics.html">Mathematics</a></li>
+		        <li class="subitem"><a href="code_blocks.html">Code Blocks</a></li>
+		        <li class="subitem"><a href="presentations.html">Presentations</a></li>
+		      </ul>
+		    </li>
+		    <li class="item hover-hl has-submenu" onclick="toggleItem(1)">
+		      <a tabindex="0" class="item-link">Resources</a>
+		      <ul class="submenu">
+		        <li class="subitem"><a href="../resources/tutorials.html">Tutorials</a></li>
+		        <li class="subitem"><a href="../resources/templates.html">Templates</a></li>
+		        <li class="subitem"><a href="../resources/blog_templates.html">Blog Templates</a></li>
+		        <li class="subitem"><a href="../resources/css_frameworks.html">CSS Frameworks</a></li>
+		        <li class="subitem"><a href="../resources/js_frameworks.html">JS Frameworks</a></li>
+		        <li class="subitem"><a href="../resources/links.html">Links</a></li>
+		        <li class="subitem"><a href="../resources/logos.html">Logos</a></li>
+		        <li class="subitem"><a href="../resources/promos.html">Promos</a></li>
+		        <li class="subitem"><a href="../resources/php_frameworks.html">PHP Frameworks</a></li>
+		      </ul>
+		    </li>
+		    <li class="toggle"><a href="#" onclick="toggleMenu()" id="menu-link"><i class="fas fa-bars fa-2x"></i></a></li>
+		  </ul>
+		</nav>
 		
+		<!-- Header -->
+		<section class="wrapper" id="header">
+		  <div id="logo" class="noselect">
+		    <img src="../images/rabbit-tags-white.png" alt="Nift bunny mascot" style="width: 400px; max-width:90%"><br>
+		
+		    <p style="color:#372C2A">An opinionless web development framework</p>
+		
+		    <p>
+		      <a href="https://chocolatey.org/packages/nift"><img src="../images/chocolatey-icon.png" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
+		      <a href="installing.html#osx-brew"><img src="../images/brew-icon.png" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
+		      <a href="installing.html#freebsd"><img src="../images/freebsd.png" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
+		      <a href="installing.html#linux-flatpak"><img src="../images/flathub-icon.png" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
+		      <a href="installing.html#gentoo"><img src="../images/gentoo.svg" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
+		      <a href="https://snapcraft.io/nift"><img src="../images/snap-icon.png" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
+		    </p>
+		  </div>
+		</section>
+
+		<!-- Main -->
+		<section id="main" class="wrapper style2">
+			<div class="title">Functions</div>
+			<div class="container">
+				<!-- Features -->
+				<section id="features">
+					<div class="content">
+						<h4>Introduction</h4>
+						<p>
+							Nift has its own poweful in-built template language <mnstr style="font-size:16px">TEMPLATESTEIN</mnstr> <a href="n++.html">n++</a> which you can use in amongst any other scripting, programming and/or template language you want. It also has its own in-built scripting language <mnstr style="font-size:16px">FUNCTIONSTEIN</mnstr> <a href="f++.html">f++</a> which also works well in interactive <mono>shell</mono> mode as a shell extension called <zapfont style="font-size:25px">FLASHELL</zapfont>. This page is an index for all the functions available with <zapfont style="font-size:25px">FLASHELL</zapfont>, <mnstr style="font-size:16px">FUNCTIONSTEIN</mnstr>, <mnstr style="font-size:16px">TEMPLATESTEIN</mnstr>.
+						</p>
+		
+						<h4 id="contents">Contents</h4>
+						<div>
+							<ul>
+								<li><a href="#syntax">Syntax</a></li>
+								<li><a href="#options">Options</a></li>
+								<li><a href="#index">Index</a></li>
+							</ul>
+						</div>
+		
+						<h4 id="syntax">Syntax</h4>
+						<p>
+							The syntax for Nift function calls is as follows:
+						</p>
+		<div align="center">
+		<mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-25px">
+funcName{options}(params)
+</pre>
+		</div><br>
+		<div align="center" style="margin-bottom: 3em">
+		<mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-25px">
+@funcName{options}(params)
+</pre>
+		</div>
+		
+						<p>
+							You can use Nift's template language with the function name, options and parameters for a function call. For example:
+						</p>
+		<div align="center">
+		<pre class="prettyprint inline">@input("$[contentpath]")</pre>
+		</div>
+		
+						<p>
+							You can even expand multiple options or parameters when parsing the options or parameters string with both <mono>f++</mono> and <mono>n++</mono>. A contrived <mono>n++</mono> example that is equivalent to calling <mono>@funcName(param_1, param_2)</mono> is below:
+						</p>
+		<div align="center">
+		<pre class="prettyprint inline">
+@string str = "param_1, param_2"
+@funcName($[str])
+</pre>
+		</div>
+		
+						<p>
+							<b>Note:</b> you need to quote the function name when doing things like printing variables or calling functions in the function name. A contrived <mono>n++</mono> example is below:
+						</p>
+		<div align="center">
+		<pre class="prettyprint inline">
+@string str = "input"
+@"$[str]"("$[contentpath]")
+</pre>
+		</div>
+		
+						<p>
+							Nift is pretty good at working out when it does or does not need to parse things like the function name, options and/or parameters. You can manually tell Nift to <u>not</u> parse the function name and parameters using the <mono>!p</mono> option. For example:
+						</p>
+		<div align="center">
+		<pre class="prettyprint inline">
+@input("${!p}[contentpath]")
+</pre>
+		</div>
+		
+						<p>
+							<b>Note:</b> For options and parameters (including variable names and values), you can use:
+						</p>
+		
+						<div>
+							<ul>
+								<li><mono>\n</mono> for the newline character</li>
+								<li><mono>\t</mono> for tabs (though normal tabs also work)</li>
+								<li><mono>\\</mono> for <mono>\</mono></li>
+								<li><mono>\'</mono> for <mono>'</mono></li>
+								<li><mono>\"</mono> for <mono>"</mono></li>
+							</ul>
+						</div>
+		
+						<p>
+							Function names, options and parameters (including variable names and values) can be unquoted, single quoted or double quoted, whichever is more convenient, integrates with the other programming, scripting and/or template languages you are using and/or has nice syntax highlighting with the extensions and editor(s) you are using. Also for functions that can take multiple parameters, parameters containing commas <mono>,</mono> should be quoted, there can also be other times that things need to be quoted, for example if you want to have equals <mono>=</mono> in a variable name during its definition then it will need to be quoted (though will not need to be quoted when referenced). 
+						</p>
+		
+						<h4 id="options">Options</h4>
+						<p>
+							The following options are available for almost all function calls:
+						</p>
+		
+						<center class="table">
+							<table id="exprtk_nift_fns_table" class="alt">
+								<thead>
+									<tr>
+										<th>option</th>
+										<th>description</th>
+									</tr>
+								</thead>
+								<tr>
+									<td><mono>!p</mono></td>
+									<td>do not parse parameters</td>
+								</tr>
+								<tr>
+									<td><mono>v</mono></td>
+									<td>replace variables with their values (where applicable)</td>
+								</tr>
+								<tr>
+									<td><mono>!v</mono></td>
+									<td>do not replace variables with their values (where applicable)</td>
+								</tr>
+								<tr>
+									<td><mono>1p</mono></td>
+									<td>treat parameter string as one parameter</td>
+								</tr>
+								<tfoot>
+									<tr>
+										<th>option</th>
+										<th>description</th>
+									</tr>
+								</tfoot>
+							</table>
+						</center>
+		
+						<p>
+							The following options are available for user-defined function calls:
+						</p>
+		
+						<center class="table">
+							<table id="exprtk_nift_fns_table" class="alt">
+								<thead>
+									<tr>
+										<th>option</th>
+										<th>description</th>
+									</tr>
+								</thead>
+								<tr>
+									<td><mono>mf</mono></td>
+									<td>add member functions for <mono>options</mono>, <mono>params</mono> and <mono>types</mono> vectors</td>
+								</tr>
+								<tr>
+									<td><mono>!mf</mono></td>
+									<td>do not add member functions for <mono>options</mono>, <mono>params</mono> and <mono>types</mono> vectors</td>
+								</tr>
+								<tr>
+									<td><mono>o</mono></td>
+									<td>add output</td>
+								</tr>
+								<tr>
+									<td><mono>!o</mono></td>
+									<td>do not add output</td>
+								</tr>
+								<tr>
+									<td><mono>s</mono></td>
+									<td>add scope</td>
+								</tr>
+								<tr>
+									<td><mono>!s</mono></td>
+									<td>do not add scope</td>
+								</tr>
+								<tfoot>
+									<tr>
+										<th>option</th>
+										<th>description</th>
+									</tr>
+								</tfoot>
+							</table>
+						</center>
+		
+						<a href="#index" class="to-top">[index]</a>
+						<h4 id="index">Index</h4>
+						<p id="index">
+							Below is an index of Nift's hard-coded functions (including functions for defining variables, functions and structures/types) which can be called from <a href="f++.html">f++</a> and <a href="n++.html">n++</a>: 
+						</p>
+						<div>
+							<ul>
+								<li><a href="fns/exprtk.html">$`expression`</a> (evaluate ExprTk expression)</li>
+								<li><a href="fns/$.html">$</a> (print variable)</li>
+								<li><a href="fns/!.html">!</a> (not operator)</li>
+								<li><a href="fns/!newline.html">!\n</a> (special single-line comment)</li>
+								<li><a href="fns/!=.html">!=</a> (not equals operator)</li>
+								<li><a href="fns/tern.html">?</a> (ternary operator)</li>
+								<li><a href="fns/&&.html">&&</a> (and operator)</li>
+								<li><a href="fns/||.html">||</a> (or operator)</li>
+								<li><a href="fns/bsol.html">\</a> (escape characters)</li>
+								<li><a href="fns/:=.html">:=</a> (define)</li>
+								<li><a href="fns/=.html">=</a> (assignment operator)</li>
+								<li><a href="fns/==.html">==</a> (equals to operator)</li>
+								<li><a href="fns/<.html">&lt;</a> (less than operator)</li>
+								<li><a href="fns/HASH_.html">#</a> (raw single-line comment)</li>
+								<li><a href="fns/HASH--.html">#--</a> (parsed multi-line comment)</li>
+								<li><a href="fns/<HASH--.html"><#--</a> (raw multi-line comment)</li>
+								<li><a href="fns/<=.html">&lt;=</a> (less than or equals to operator)</li>
+								<li><a href="fns/<--.html">&lt;--</a> (remove added trailing whitespace)</li>
+								<li><a href="fns/>.html">&gt;</a> (greater than operator)</li>
+								<li><a href="fns/>=.html">&gt;=</a> (greater than or equals to operator)</li>
+								<li><a href="fns/+.html">+</a> (addition operator)</li>
+								<li><a href="fns/++.html">++</a> (pre-increment operator)</li>
+								<li><a href="fns/+++.html">+++</a> (post-increment operator)</li>
+								<li><a href="fns/+=.html">+=</a> (addition assignment operator)</li>
+								<li><a href="fns/-.html">-</a> (subtraction operator)</li>
+								<li><a href="fns/--.html">--</a> (pre-decrement operator)</li>
+								<li><a href="fns/--divdiv.html">--//</a> (parsed single-line comment)</li>
+								<li><a href="fns/---.html">---</a> (post-decrement operator)</li>
+								<li><a href="fns/-->.html">--></a> (skip whitespace)</li>
+								<li><a href="fns/-=.html">-=</a> (subtraction assignment operator)</li>
+								<li><a href="fns/*.html">*</a> (multiplication operator)</li>
+								<li><a href="fns/*=.html">*=</a> (multiplication assignment operator)</li>
+								<li><a href="fns/div.html">/</a> (division operator)</li>
+								<li><a href="fns/divequal.html">/=</a> (division assignment operator)</li>
+								<li><a href="fns/div*.html">/*</a> (raw multi-line comment)</li>
+								<li><a href="fns/divdiv.html">//</a> (raw single-line comment)</li>
+								<li><a href="fns/MOD.html">%</a> (mod operator)</li>
+								<li><a href="fns/MOD=.html">%=</a> (mod assignment operator)</li> <br>
+		
+								<li id="a"><a href="fns/add_member_fns.html">add_member_fns</a></li>
+								<li><a href="fns/add_scope.html">add_scope</a></li> <br>
+		
+								<li id="b"><a href="fns/break.html">break</a></li> <br>
+		
+								<li id="c"><a href="fns/cd.html">cd</a></li>
+								<li><a href="fns/comments.html"><i>comments</i></a></li>
+								<li><a href="fns/console.html">console</a></li>
+								<li><a href="fns/console.lock.html">console.lock</a></li>
+								<li><a href="fns/console.locked.html">console.locked</a></li>
+								<li><a href="fns/console.unlock.html">console.unlock</a></li>
+								<li><a href="fns/const.html">const</a></li>
+								<li><a href="fns/content.html">content</a></li>
+								<li><a href="fns/continue.html">continue</a></li>
+								<li><a href="fns/cpy.html">cpy</a></li>
+								<li><a href="fns/cssinclude.html">cssinclude</a></li> <br>
+		
+								<li id="d"><a href="fns/dep.html">dep</a></li>
+								<li><a href="fns/do-while.html">do-while</a></li> <br>
+		
+								<li id="e"><a href="fns/ent.html">ent</a></li>
+								<li><a href="fns/error.html">error</a></li>
+								<li><a href="fns/exit.html">exit</a></li>
+								<li><a href="fns/exprtk.html">exprtk</a></li>
+								<li><a href="fns/exprtk.add_package.html">exprtk.add_package</a></li>
+								<li><a href="fns/exprtk.add_variable.html">exprtk.add_variable</a></li> 
+								<li><a href="fns/exprtk.compile.html">exprtk.compile</a></li> 
+								<li><a href="fns/exprtk.eval.html">exprtk.eval</a></li>
+								<li><a href="fns/exprtk.file.html">exprtk.file</a></li>
+								<li><a href="fns/exprtk.load.html">exprtk.load</a></li>
+								<li><a href="fns/exprtk.str.html">exprtk.str</a></li> <br>
+		
+								<li id="f"><a href="fns/f++.html">f++</a></li>
+								<li><a href="fns/faviconinclude.html">faviconinclude</a></li>
+								<li><a href="fns/function.html">fn</a></li>
+								<li><a href="fns/for.html">for</a></li>
+								<li><a href="fns/forget.html">forget</a></li>
+								<li><a href="fns/function.html">function</a></li> <br>
+		
+								<li id="g"><a href="fns/getenv.html">getenv</a></li>
+								<li><a href="fns/getline.html">getline</a></li> <br>
+		
+								<li id="h"><a href="fns/hash.html">hash</a></li> <br>
+		
+								<li id="i"><a href="fns/if.html">if</a></li>
+								<li><a href="fns/imginclude.html">imginclude</a></li>
+								<li><a href="fns/in.html">in</a></li>
+								<li><a href="fns/include.html">include</a></li>
+								<li><a href="fns/input.html">inject</a></li>
+								<li><a href="fns/input.html">input</a></li>
+								<li><a href="fns/is_const.html">is_const</a></li>
+								<li><a href="fns/is_private.html">is_private</a></li>
+								<li><a href="fns/item.html">item</a></li> <br>
+		
+								<li id="j"><a href="fns/join.html">join</a></li>
+								<li><a href="fns/jsinclude.html">jsinclude</a></li> <br>
+		
+								<li id="l"><a href="fns/layer.html">layer</a></li>
+								<li><a href="fns/link.html">link</a></li>
+								<li><a href="fns/lolcat.html">lolcat</a></li>
+								<li><a href="fns/lolcat.cmd.html">lolcat.cmd</a></li>
+								<li><a href="fns/lolcat.off.html">lolcat.off</a></li>
+								<li><a href="fns/lolcat.on.html">lolcat.on</a></li>
+								<li><a href="fns/lolcat.status.html">lolcat.status</a></li>
+								<li><a href="fns/lst.html">lst</a></li>
+								<li><a href="fns/lua.html">lua</a></li>
+								<li><a href="fns/lua_addnsmfns.html">lua_addnsmfns</a></li>
+								<li><a href="fns/lua_getglobal.html">lua_getglobal</a></li>
+								<li><a href="fns/lua_gettop.html">lua_gettop</a></li>
+								<li><a href="fns/lua_pop.html">lua_pop</a></li>
+								<li><a href="fns/lua_pushlightuserdata.html">lua_pushlightuserdata</a></li>
+								<li><a href="fns/lua_pushnumber.html">lua_pushnumber</a></li>
+								<li><a href="fns/lua_pushstring.html">lua_pushstring</a></li>
+								<li><a href="fns/lua_remove.html">lua_remove</a></li>
+								<li><a href="fns/lua_setglobal.html">lua_setglobal</a></li>
+								<li><a href="fns/lua_tonumber.html">lua_tonumber</a></li>
+								<li><a href="fns/lua_tostring.html">lua_tostring</a></li>
+								<li><a href="fns/lua_version.html">lua_version</a></li> <br>
+		
+								<li id="m"><a href="fns/mve.html">mve</a></li> <br>
+		
+								<li id="n"><a href="fns/n++.html">n++</a></li>
+								<li><a href="fns/nsm_lang.html">nsm_lang</a></li>
+								<li><a href="fns/nsm_mode.html">nsm_mode</a></li> <br>
+		
+								<li id="p"><a href="fns/paginate.html">paginate</a></li>
+								<li><a href="fns/paginate.no_items_per_page.html">paginate.no_items_per_page</a></li>
+								<li><a href="fns/paginate.separator.html">paginate.separator</a></li>
+								<li><a href="fns/paginate.template.html">paginate.template</a></li>
+								<li><a href="fns/parse.html">parse</a></li>
+								<li><a href="fns/pathto.html">pathto</a></li>
+								<li><a href="fns/pathtofile.html">pathtofile</a></li>
+								<li><a href="fns/pathtopage.html">pathtopage</a></li>
+								<li><a href="fns/pathtopageno.html">pathtopageno</a></li>
+								<li><a href="fns/poke.html">poke</a></li>
+								<li><a href="fns/precision.html">precision</a></li>
+								<li><a href="fns/private.html">private</a></li>
+								<li><a href="fns/prompt.char.html">prompt.char</a></li>
+								<li><a href="fns/pwd.html">pwd</a></li> <br>
+		
+								<li id="q"><a href="fns/quit.html">quit</a></li>
+								<li><a href="fns/quote.html">quote</a></li> <br>
+		
+								<li id="r"><a href="fns/read.html">read</a></li>
+								<li><a href="fns/refresh_completions.html">refresh_completions</a></li>
+								<li><a href="fns/replace_all.html">replace_all</a></li>
+								<li><a href="fns/replace_vars.html">replace_vars</a></li>
+								<li><a href="fns/return.html">return</a></li>
+								<li><a href="fns/rmv.html">rmv</a></li> <br>
+		
+								<li id="s"><a href="fns/scope.html">scope</a></li>
+								<li><a href="fns/script.html">script</a></li>
+								<li><a href="fns/size.html">size</a></li>
+								<li><a href="fns/std::vector.at.html">std::vector.at</a></li>
+								<li><a href="fns/std::vector.erase.html">std::vector.erase</a></li>
+								<li><a href="fns/std::vector.pop_back.html">std::vector.pop_back</a></li>
+								<li><a href="fns/std::vector.push_back.html">std::vector.push_back</a></li>
+								<li><a href="fns/std::vector.set.html">std::vector.set</a></li>
+								<li><a href="fns/std::vector.size.html">std::vector.size</a></li>
+								<li><a href="fns/stream.close.html">stream.close</a></li>
+								<li><a href="fns/stream.open.html">stream.open</a></li>
+								<li><a href="fns/struct.html">struct</a></li>
+								<li><a href="fns/substr.html">substr</a></li>
+								<li><a href="fns/system.html">sys</a></li>
+								<li><a href="fns/system.html">system</a></li> <br>
+		
+								<li id="t"><a href="fns/typeof.html">typeof</a></li> <br>
+		
+								<li id="u"><a href="fns/unquote.html">unquote</a></li> <br>
+		
+								<li id="v"><a href="fns/valid_type.html">valid_type</a></li> 
+								<li><a href="fns/vjoin.html">vjoin</a></li> <br>
+		
+								<li id="w"><a href="fns/warning.html">warning</a></li>
+								<li><a href="fns/while.html">while</a></li>
+								<li><a href="fns/write.html">write</a></li>
+							</ul>
+						</div>
+					</div>
+				</section>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer" class="wrapper">
+			<div class="title">
+				<img src="../images/rabbit-tags-icon.png" alt="Nift rabbit mascot with code tag boomerangs" loading="lazy" width="200" style="margin-top:20px; border-radius: 4px">
+			</div>
+		
+			<div class="container">
+				<div id="copyright" class="noselect">
+					<ul>
+						<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
+						<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
+						<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
+					</ul> <br>
+		
+					<ul>
+						<li><a href="../tos.html">Terms of Service</a></li>
+						<li><a href="../privacy_policy.html">Privacy Policy</a></li>
+					</ul> <br>
+		
+					<ul>
+						<li><span>&copy;</span> 2015-<span name="cyear"></span></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- Inserts current year -->
+		<script async>
+			var x = document.getElementsByName("cyear");
+			for(var i=0; i<x.length; i++)
+			{
+				x[i].innerHTML = new Date().getFullYear();
+			}
+		</script>
 
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-62165905-2"></script>
@@ -585,8 +529,8 @@ funcName{options}(params)
 			window.dataLayer = window.dataLayer || [];
 			function gtag(){dataLayer.push(arguments);}
 			gtag('js', new Date());
-
 			gtag('config', 'UA-62165905-2');
 		</script>
-    </body>
+	</body>
 </html>
+

@@ -5,12 +5,12 @@
 		<!-- Features -->
 		<section id="features">
 			<div class="content">
-				<a href="#contents" class="to_top">[contents]</a>
+				<a href="#contents" class="to-top">[contents]</a>
 
 				<h4 id="contents">
 					Contents
 				</h4>
-				<ul style="text-indent:30px">
+				<ul>
 					<li><a href="#syntax">Syntax</a></li>
 					<li><a href="#description">Description</a></li>
 					<li><a href="#n++-eg">n++ example</a></li>
@@ -54,7 +54,7 @@ pathtopageno(int)
 				<p>
 					Example of <mono>pathtopageno</mono> being used with <mono>n++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums">
 \@if{!s}(\$[paginate.page_no] < \$[paginate.no_pages])
 	<a href="\@pathtopageno(\$[paginate.no_pages])">last page</a></pre>

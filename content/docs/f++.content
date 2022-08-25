@@ -1,50 +1,34 @@
 <!-- Main -->
 <section id="main" class="wrapper style2">
-	<div class="title"><mnstr style="font-size:16px">f++</mnstr></div>
+	<div class="title"><mono>f++</mono> (scripting language)</div>
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
-			<header class="style1">
-				<h2 style="margin-bottom: 100px">
-					Nift's in-built scripting language
-				</h2>
-
-				<noselect> 
-						<h2>
-							<mnstr style = "font-size:9vw">FUNCTIONSTEIN</mnstr>
-						</h2>
-				</noselect>
-			</header>
-
-			<!--<noselect> 
-					<center>
-						<h2>
-							<overthehedge style = "font-size:24px">Nick Ham's World Take Over Attempt</overthehedge>
-						</h2>
-					</center>
-			</noselect>-->
+			@/*<header class="style1">
+				<h2 class="noselect" style="margin-top: 5vw; margin-bottom: 2vw"><mnstr style="font-size:8vw">FUNCTIONSTEIN</mnstr></h2>
+			</header>*/
 
 			<!-- Image -->
 			<center>
 				<#-- https://icon-library.com/png/921451.html --#>
-				<img src="@pathtofile(site/images/reaper.png)" alt="Functionstein reaper mascot" width="350px" style="max-width:90%; border-radius:20px; margin-bottom: 60px">
+				<img src="@pathtofile(site/images/jack-jumper-icon.png)" alt="functionstein jack jumper mascot" style="width: 200px; max-width:70%; margin: 1em 0">
 			</center>
 
 			<div class="content">
 				<p>
-					Nift has its own in-built scripting language <mnstr style="font-size:16px">FUNCTIONSTEIN</mnstr>, or either <mnstr style="font-size:16px">FNSTEIN</mnstr> or <mnstr style="font-size:16px">f++</mnstr>. The <mono>++</mono> comes from the language being developed in <mono>c++</mono>, while the <mono>f</mono> comes from functions with superpowers playing a central role nearly almost everywhere in the language.
+					Nift has its own in-built scripting language <mono>f++</mono>, also nicknamed <mnstr style="font-size:16px">FUNCTIONSTEIN</mnstr> or <mnstr style="font-size:16px">FNSTEIN</mnstr>. 
 				</p>
 
-				<a href="#contents" class="to_top">[contents]</a>
+				<a href="#contents" class="to-top">[contents]</a>
 
 				<h4 id="contents">
 					Contents
 				</h4>
-				<div style="text-indent:30px; margin-top:10px">
+				<div>
 					<ul>
 						<li><a href="#interpreter">f++ interpreter</a></li>
 						<li><a href="#shell">f++ shell</a></li>
-						<li><a href="#automatic-flashell-startup">Automatic <zapfont style = "font-size:36px;">FLASHELL</zapfont> startup</a></li>
+						<li><a href="#automatic-flashell-startup">automatic shell startup</a></li>
 						<li><a href="#scripts">Running f++ scripts</a></li>
 						<li><a href="#f++-from-n++">f++ from n++</a></li>
 						<li><a href="#nift-fns">functions</a></li>
@@ -53,10 +37,10 @@
 				</div>
 
 				<h4 id="interpreter">
-					<mnstr style="font-size:16px">f++</mnstr> interpreter
+					<mono>f++</mono> interpreter
 				</h4>
 				<p>
-					<mono>Nift</mono> has an <mnstr style="font-size:16px">f++</mnstr> interpreter that you can start with either <mono>nsm interp</mono> or <mono>nift interp</mono> (it is the default language for the interpeter mode). See the <a href="@pathto(docs/REPL)">interactive REPL</a> page for docs.
+					<mono>Nift</mono> has an <mono>f++</mono> interpreter that you can start with either <mono>nsm interp</mono> or <mono>nift interp</mono> (it is the default language for the interpeter mode). See the <a href="@pathto(docs/REPL)">interactive REPL</a> page for docs.
 				</p>
 
 				<p>
@@ -64,14 +48,14 @@
 				</p>
 
 				<p>
-					You can switch to one of the other languages available in Nift's interpreter using <mono>nsm_lang(langStr)</mono> where <mono>langStr</mono> is one of <mnstr style="font-size:16px">f++</mnstr>, <mnstr style="font-size:16px">N++</mnstr>, <mono>lua</mono> or <mono>exprtk</mono>.
+					You can switch to one of the other languages available in Nift's interpreter using <mono>nsm_lang(langStr)</mono> where <mono>langStr</mono> is one of <mono>f++</mono>, <mono>n++</mono>, <mono>lua</mono> or <mono>exprtk</mono>.
 				</p>
 
 				<h4 id="shell">
-					<zapfont style = "font-size:36px;">FLASHELL</zapfont> - <mnstr style="font-size:16px">f++</mnstr> shell
+					<mono>f++</mono> shell
 				</h4>
 				<p>
-					<mono>Nift</mono> has an <mnstr style="font-size:16px">f++</mnstr> shell that you can start with either <mono>nsm sh</mono> or <mono>nift sh</mono> (it is the default language for the shell mode). See the <a href="@pathto(docs/REPL)">interactive REPL</a> page for docs.
+					<mono>Nift</mono> has an <mono>f++</mono> shell, also nicknamed <zapfont style = "font-size:36px;">FLASHELL</zapfont>, that you can start with either <mono>nsm sh</mono> or <mono>nift sh</mono> (it is the default language for the shell mode). See the <a href="@pathto(docs/REPL)">interactive REPL</a> page for docs.
 				</p>
 
 				<p>
@@ -79,7 +63,7 @@
 				</p>
 
 				<p>
-					You can switch to one of the other languages available in Nift using <mono>nsm_lang(langStr)</mono> where <mono>langStr</mono> is one of <mnstr style="font-size:16px">f++</mnstr>, <mnstr style="font-size:16px">N++</mnstr>, <mono>lua</mono> or <mono>exprtk</mono>.
+					You can switch to one of the other languages available in Nift using <mono>nsm_lang(langStr)</mono> where <mono>langStr</mono> is one of <mono>f++</mono>, <mono>n++</mono>, <mono>lua</mono> or <mono>exprtk</mono>.
 				</p>
 
 
@@ -87,48 +71,49 @@
 					Running f++ scripts
 				</h4>
 				<p>
-					If you have an <mnstr style="font-size:16px">f++</mnstr> script saved in a file <mono>path/script-name.f</mono> you can run it with either of the following:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+					If you have an <mono>f++</mono> script saved in a file <mono>path/script-name.f</mono> you can run it with either of the following:
+				</p>
+<div align="center">
 <pre class="prettyprint inline lang-nift">
 nsm run path/script-name.f
 nift run path/script-name.f
 </pre>
 </div>
-				</p>
 
 				<p>
 					If the script has a different extension, say <mono>.ext</mono>, you can run the script with either of the following:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+				</p>
+<div align="center">
 <pre class="prettyprint inline lang-nift">
 nsm run -f++ path/script-name.ext
 nift run -f++ path/script-name.ext
 </pre>
 </div>
-				</p>
 
 				<p>
 					If you want to run a normal file, eg. <mono>script.f</mono>, as a script then use something typical like the following as a shebang:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+				</p>
+<div align="center">
 <pre class="prettyprint inline">
 #!/usr/bin/env nift
 </pre>
 </div>
-				</p>
 
 				<p>
 					There's information about "run commands" scripts, eg. <mono>niftrc.f</mono> available on the <a href="@pathto('docs/REPL')#rc">REPL</a> page.
 				</p>
 
 				<h4 id="automatic-flashell-startup">
-					Automatic <zapfont style = "font-size:36px;">FLASHELL</zapfont> startup
+					Automatic shell startup
 				</h4>
 				<p>
-					On Unix based platforms (eg. probably all posix compliant Linux distributions, OSX, FreeBSD, Gentoo etc.), you can create an application launcher with <mono>x-terminal-emulator -e nift sh</mono> or <mono>gnome-terminal -- nift sh</mono> as the short-cut command, which will open a terminal session running <zapfont style = "font-size:36px;">FLASHELL</zapfont> and close when <zapfont style = "font-size:36px;">FLASHELL</zapfont> is exited. 
+					On Unix based platforms (eg. probably all posix compliant Linux distributions, OSX, FreeBSD, Gentoo etc.), you can create an application launcher with <mono>x-terminal-emulator -e nift sh</mono> or <mono>gnome-terminal -- nift sh</mono> as the short-cut command, which will open a terminal session running <zapfont style = "font-size:36px;">FLASHELL</zapfont> and close upon exit. 
 				</p>
 
 				<p>
 					From <mono>gnome-session-flashback</mono> I am able to create an application launcher from the gui by doing <mono>alt</mono> and right click in some free space on the top or bottom panel and selecting <mono>Add to Panel...</mono>. Alternatively create a file titled something like <mono>Terminal.desktop</mono> below and give exec permissions (calling the application <mono>Terminal</mono> gives a more native feel as it is going to be hijacked and renamed otherwise):
-<div align="center" style="margin-top:30px; margin-bottom:10px">
+				</p>
+<div align="center">
 <pre class="prettyprint inline">
 #!/usr/bin/env xdg-open
 
@@ -142,7 +127,6 @@ Comment=flashell shortcut
 Icon=<path-to-icon>
 </pre>
 </div>
-				</p>
 
 				<p>
 					I often find it easier to just use the properties of the file through the gui to acccess the filesystem for linking to the icon file, typically from the desktop. Below is an icon people might like to use with their short-cut(s): <br>
@@ -169,7 +153,7 @@ Icon=<path-to-icon>
 				</p>
 
 				<p>
-					You can start a session of for example bash shell by simply typing <mono>bash</mono> from <zapfont style = "font-size:36px;">FLASHELL</zapfont>, which will also do <mono>lolcat</mono> output through bash if you have <mono>lolcat</mono> activated (which actually quite surprises me), however if you start another <mono>Nift</mono> shell or interpreter with <mono>lolcat</mono> activated the prompt line including user input stays invisible until you hit enter (just type <mono>exit</mono> if you accidentally do this).
+					You can start a session of eg. bash shell by simply typing <mono>bash</mono> from <zapfont style = "font-size:36px;">FLASHELL</zapfont>, which will also do <mono>lolcat</mono> output through bash if you have <mono>lolcat</mono> activated (which actually quite surprises me), however if you start another <mono>Nift</mono> shell or interpreter with <mono>lolcat</mono> activated the prompt line including user input stays invisible until you hit enter (just type <mono>exit</mono> if you accidentally do this).
 				</p>
 
 				<p>
@@ -177,34 +161,33 @@ Icon=<path-to-icon>
 				</p>
 
 				<h4 id="f++-from-n++">
-					<mnstr style="font-size:16px">f++</mnstr> from <mnstr style="font-size:16px">N++</mnstr>
+					<mono>f++</mono> from <mono>n++</mono>
 				</h4>
 				<p>
-					You can run <mnstr style="font-size:16px">f++</mnstr> code from <mnstr style="font-size:16px">N++</mnstr> using either of the following:					
+					You can run <mono>f++</mono> code from <mono>n++</mono> using either of the following:
+				</p>					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline lang-nift">
 \@f++(/* single line of f++ code */)
 </pre>
 </div>
-				</p>
 
-				<p>
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
-<pre class="prettyprint inline lang-nift">\@f++
+<div align="center">
+<pre class="prettyprint inline lang-nift">
+\@f++
 {
 	// block of f++ code
 }
 </pre>
 </div>
-				</p>
 
 				<h4 id="nift-fns">
 					Nift functions
 				</h4>
 				<p>
-					All of Nift's <a href="@pathtopage(docs/fns)">hard-coded functions</a> (including functions for defining variables, functions and structs) are available in your <mnstr style="font-size:16px">f++</mnstr> code. The syntax for calling a function is as follows:
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+					All of Nift's <a href="@pathtopage(docs/fns)">hard-coded functions</a> (including functions for defining variables, functions and structs) are available in your <mono>f++</mono> code. The syntax for calling a function is as follows:
+<div align="center">
 <pre class="prettyprint inline lang-nift">
 funcName{options}(params)
 </pre>
@@ -258,7 +241,7 @@ rmv(\$[params]);
 
 				<p>
 					<b>Note:</b> do not leave the directory you are running the script from open on your machine, run it from a terminal. The following bash script will do the same but much slower, feel free to provide a similar windows script in powershell or a batch file:
-<div align="center" style="margin-top:30px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline">
 #!/usr/bin/env bash
 COUNTER=0
@@ -270,13 +253,10 @@ while [  $COUNTER -lt 100000 ]; do
 done
 </pre>
 </div>
-				</p><br><br><br><br><br>
 
-				<center>
-					<div>
-						<noselect><mnstr style = "font-size:20vw">}</mnstr></noselect>
-					</div>
-				</center>
+				<div align="center" class="noselect" style="margin-top: 11vw">
+					<mnstr style = "font-size:20vw">}</mnstr>
+				</div>
 			</div>
 		</section>
 	</div>

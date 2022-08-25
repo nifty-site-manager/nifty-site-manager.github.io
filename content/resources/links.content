@@ -18,12 +18,12 @@
 					This page contains links to all sorts of useful resources when making websites with <mono>Nift</mono>, for example hosting options, custom domain registrars, email options, server hiring options, web servers, lists of site managers, cloud storage, code sharing websites, CI services, syntax highlighting options for your websites, adding form and comment sections to websites, Javascript and PHP frameworks, website templates and lots of other useful links.
 				</p>
 
-				<a href="#contents" class="to_top">[contents]</a>
+				<a href="#contents" class="to-top">[contents]</a>
 
 				<h4 id="contents">
 					Contents
 				</h4>
-				<ul style="text-indent:30px">
+				<ul>
 					<li><a href="#hosting">Free hosting options</a></li>
 					<li><a href="#email">Email options</a></li>
 					<li><a href="#vm-servers">Hiring linux servers</a></li>

@@ -4,23 +4,18 @@
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
-			<header class="style1">
+			@/*<header class="style1">
 				<h2>Hard-Coded Functions Index</h2>
-			</header>
+			</header>*/
 
 			<div class="content">
-
-				<h4>
-					Introduction
-				</h4>
+				<h4>Introduction</h4>
 				<p>
 					Nift has its own poweful in-built template language <mnstr style="font-size:16px">TEMPLATESTEIN</mnstr> <a href="@pathtopage(docs/n++)">n++</a> which you can use in amongst any other scripting, programming and/or template language you want. It also has its own in-built scripting language <mnstr style="font-size:16px">FUNCTIONSTEIN</mnstr> <a href="@pathtopage(docs/f++)">f++</a> which also works well in interactive <mono>shell</mono> mode as a shell extension called <zapfont style="font-size:25px">FLASHELL</zapfont>. This page is an index for all the functions available with <zapfont style="font-size:25px">FLASHELL</zapfont>, <mnstr style="font-size:16px">FUNCTIONSTEIN</mnstr>, <mnstr style="font-size:16px">TEMPLATESTEIN</mnstr>.
 				</p>
 
-				<h4 id="contents">
-					Contents
-				</h4>
-				<div style="text-indent:30px; margin-top:10px">
+				<h4 id="contents">Contents</h4>
+				<div>
 					<ul>
 						<li><a href="#syntax">Syntax</a></li>
 						<li><a href="#options">Options</a></li>
@@ -31,57 +26,59 @@
 				<h4 id="syntax">Syntax</h4>
 				<p>
 					The syntax for Nift function calls is as follows:
-<div align="center" style="margin-top:-15px">
-<mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-19px">
+				</p>
+<div align="center">
+<mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-25px">
 funcName{options}(params)
 </pre>
 </div><br>
-<div align="center">
-<mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-19px">
+<div align="center" style="margin-bottom: 3em">
+<mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-25px">
 \@funcName{options}(params)
 </pre>
 </div>
-				</p>
 
 				<p>
 					You can use Nift's template language with the function name, options and parameters for a function call. For example:
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+				</p>
+<div align="center">
 <pre class="prettyprint inline">\@input("\$[contentpath]")</pre>
 </div>
-				</p>
 
 				<p>
 					You can even expand multiple options or parameters when parsing the options or parameters string with both <mono>f++</mono> and <mono>n++</mono>. A contrived <mono>n++</mono> example that is equivalent to calling <mono>\@funcName(param_1, param_2)</mono> is below:
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+				</p>
+<div align="center">
 <pre class="prettyprint inline">
 \@string str = "param_1, param_2"
 \@funcName(\$[str])
 </pre>
 </div>
-				</p>
 
 				<p>
 					<b>Note:</b> you need to quote the function name when doing things like printing variables or calling functions in the function name. A contrived <mono>n++</mono> example is below:
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+				</p>
+<div align="center">
 <pre class="prettyprint inline">
 \@string str = "input"
 \@"\$[str]"("\$[contentpath]")
 </pre>
 </div>
-				</p>
 
 				<p>
 					Nift is pretty good at working out when it does or does not need to parse things like the function name, options and/or parameters. You can manually tell Nift to <u>not</u> parse the function name and parameters using the <mono>!p</mono> option. For example:
-<div align="center" style="margin-top:-10px; margin-bottom:10px">
+				</p>
+<div align="center">
 <pre class="prettyprint inline">
 \@input("\${!p}[contentpath]")
 </pre>
 </div>
-				</p>
+
 				<p>
 					<b>Note:</b> For options and parameters (including variable names and values), you can use:
 				</p>
-				<div style="text-indent:30px; margin-top:-20px">
+
+				<div>
 					<ul>
 						<li><mono>\n</mono> for the newline character</li>
 						<li><mono>\t</mono> for tabs (though normal tabs also work)</li>
@@ -92,100 +89,98 @@ funcName{options}(params)
 				</div>
 
 				<p>
-					Function names, options and parameters (including variable names and values) can be unquoted, single quoted or double quoted, whichever is more convenient, integrates with the other programming, scripting and/or template languages you are using and/or has nice syntax highlighting with the extensions and editor(s) you are using. Also for functions that can take multiple parameters, parameters containing commas '<mono>,</mono>' should be quoted, there can also be other times that things need to be quoted, for example if you want to have equals <mono>'='</mono> in a variable name during its definition then it will need to be quoted (though will not need to be quoted when referenced). 
+					Function names, options and parameters (including variable names and values) can be unquoted, single quoted or double quoted, whichever is more convenient, integrates with the other programming, scripting and/or template languages you are using and/or has nice syntax highlighting with the extensions and editor(s) you are using. Also for functions that can take multiple parameters, parameters containing commas <mono>,</mono> should be quoted, there can also be other times that things need to be quoted, for example if you want to have equals <mono>=</mono> in a variable name during its definition then it will need to be quoted (though will not need to be quoted when referenced). 
 				</p>
 
-				<h4 id="options">
-					Options
-				</h4>
+				<h4 id="options">Options</h4>
 				<p>
 					The following options are available for almost all function calls:
-
-					<center class="table">
-						<table id="exprtk_nift_fns_table" class="alt">
-							<thead>
-								<tr>
-									<th>option</th>
-									<th>description</th>
-								</tr>
-							</thead>
-							<tr>
-								<td><mono>!p</mono></td>
-								<td>do not parse parameters</td>
-							</tr>
-							<tr>
-								<td><mono>v</mono></td>
-								<td>replace variables with their values (where applicable)</td>
-							</tr>
-							<tr>
-								<td><mono>!v</mono></td>
-								<td>do not replace variables with their values (where applicable)</td>
-							</tr>
-							<tr>
-								<td><mono>1p</mono></td>
-								<td>treat parameter string as one parameter</td>
-							</tr>
-							<tfoot>
-								<tr>
-									<th>option</th>
-									<th>description</th>
-								</tr>
-							</tfoot>
-						</table>
-					</center>
 				</p>
+
+				<center class="table">
+					<table id="exprtk_nift_fns_table" class="alt">
+						<thead>
+							<tr>
+								<th>option</th>
+								<th>description</th>
+							</tr>
+						</thead>
+						<tr>
+							<td><mono>!p</mono></td>
+							<td>do not parse parameters</td>
+						</tr>
+						<tr>
+							<td><mono>v</mono></td>
+							<td>replace variables with their values (where applicable)</td>
+						</tr>
+						<tr>
+							<td><mono>!v</mono></td>
+							<td>do not replace variables with their values (where applicable)</td>
+						</tr>
+						<tr>
+							<td><mono>1p</mono></td>
+							<td>treat parameter string as one parameter</td>
+						</tr>
+						<tfoot>
+							<tr>
+								<th>option</th>
+								<th>description</th>
+							</tr>
+						</tfoot>
+					</table>
+				</center>
 
 				<p>
 					The following options are available for user-defined function calls:
-
-					<center class="table">
-						<table id="exprtk_nift_fns_table" class="alt">
-							<thead>
-								<tr>
-									<th>option</th>
-									<th>description</th>
-								</tr>
-							</thead>
-							<tr>
-								<td><mono>mf</mono></td>
-								<td>add member functions for <mono>options</mono>, <mono>params</mono> and <mono>types</mono> vectors</td>
-							</tr>
-							<tr>
-								<td><mono>!mf</mono></td>
-								<td>do not add member functions for <mono>options</mono>, <mono>params</mono> and <mono>types</mono> vectors</td>
-							</tr>
-							<tr>
-								<td><mono>o</mono></td>
-								<td>add output</td>
-							</tr>
-							<tr>
-								<td><mono>!o</mono></td>
-								<td>do not add output</td>
-							</tr>
-							<tr>
-								<td><mono>s</mono></td>
-								<td>add scope</td>
-							</tr>
-							<tr>
-								<td><mono>!s</mono></td>
-								<td>do not add scope</td>
-							</tr>
-							<tfoot>
-								<tr>
-									<th>option</th>
-									<th>description</th>
-								</tr>
-							</tfoot>
-						</table>
-					</center>
 				</p>
 
-				<a href="#index" class="to_top">[index]</a>
+				<center class="table">
+					<table id="exprtk_nift_fns_table" class="alt">
+						<thead>
+							<tr>
+								<th>option</th>
+								<th>description</th>
+							</tr>
+						</thead>
+						<tr>
+							<td><mono>mf</mono></td>
+							<td>add member functions for <mono>options</mono>, <mono>params</mono> and <mono>types</mono> vectors</td>
+						</tr>
+						<tr>
+							<td><mono>!mf</mono></td>
+							<td>do not add member functions for <mono>options</mono>, <mono>params</mono> and <mono>types</mono> vectors</td>
+						</tr>
+						<tr>
+							<td><mono>o</mono></td>
+							<td>add output</td>
+						</tr>
+						<tr>
+							<td><mono>!o</mono></td>
+							<td>do not add output</td>
+						</tr>
+						<tr>
+							<td><mono>s</mono></td>
+							<td>add scope</td>
+						</tr>
+						<tr>
+							<td><mono>!s</mono></td>
+							<td>do not add scope</td>
+						</tr>
+						<tfoot>
+							<tr>
+								<th>option</th>
+								<th>description</th>
+							</tr>
+						</tfoot>
+					</table>
+				</center>
+
+				<a href="#index" class="to-top">[index]</a>
 				<h4 id="index">Index</h4>
 				<p id="index">
 					Below is an index of Nift's hard-coded functions (including functions for defining variables, functions and structures/types) which can be called from <a href="@pathto(docs/f++)">f++</a> and <a href="@pathto(docs/n++)">n++</a>: 
 				</p>
-				<div style="text-indent:30px; margin-top:-20px">
+				<div>
 					<ul>
 						<li><a href="@pathtopage(docs/fns/exprtk)">\$`expression`</a> (evaluate ExprTk expression)</li>
 						<li><a href="@pathtopage(docs/fns/$)">$</a> (print variable)</li>

@@ -4,10 +4,6 @@
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
-			<header class="style1">
-				<h2>Nift's type system</h2>
-			</header>
-
 			<!-- Image -->
 			<center>
 				<img src="@pathtofile(site/images/banner-helmet-projection.png)" alt="Nift helmet projection banner" width="500px" style="max-width:90%; border-radius:20px; margin-bottom: 60px">
@@ -22,9 +18,9 @@
 					Both Nift's in-built scripting language <mono>f++</mono> and in-built template language <mono>n++</mono> have a type system implemented. The purpose of this page is to index the different types that are available, see <a href="@pathtopage(docs/fns/:=)">here</a> for general documentation on how to define variables and <a href="@pathtopage(docs/fns/struct)">here</a> for documentation on syntax for user-defined structs/types. 
 				</p>
 
-				<a href="#index" class="to_top">[index]</a>
+				<a href="#index" class="to-top">[index]</a>
 				<h4 id="index">Index</h4>
-				<div style="text-indent:30px; margin-top:10px">
+				<div>
 					<ul>
 						<li><a href="@pathtopage(docs/types/bool)">bool</a> (boolean)</li>
 						<li><a href="@pathtopage(docs/types/char)">char</a> (character)</li>

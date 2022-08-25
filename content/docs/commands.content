@@ -4,10 +4,6 @@
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
-			<header class="style1">
-				<h2>Available commands</h2>
-			</header>
-
 			<!-- Image -->
 			<center>
 				<img src="@pathtofile(site/images/devil.png)" alt="Nift Tassie devil mascot" width=300 style="margin-bottom:40px">
@@ -21,7 +17,7 @@
 				<h4 id="contents">
 					Contents
 				</h4>
-				<div style="text-indent:30px; margin-top:10px">
+				<div>
 					<ul>
 						<li><a href="#syntax">Syntax</a></li>
 						<li><a href="#list">Commands list</a></li>
@@ -50,11 +46,11 @@
 </div>
 				</p>
 
-				<a href="#index" class="to_top">[index]</a>
+				<a href="#index" class="to-top">[index]</a>
 				<h4 id="index">
 					Index
 				</h4>
-				<div style="text-indent:30px; margin-top:10px">
+				<div>
 					<ul>
 						<li><a href="@pathtopage(docs/cmds/backup-scripts)">backup-scripts</a></li>
 						<li><a href="@pathtopage(docs/cmds/bcp)">bcp</a> (build, commit & push)</li>
@@ -63,11 +59,14 @@
 						<li><a href="@pathtopage(docs/cmds/build-names)">build-names</a></li> <br>
 
 						<li><a href="@pathtopage(docs/cmds/clone)">clone</a></li>
+						<li><a href="@pathtopage(docs/cmds/commands)">cmds</a></li>
 						<li><a href="@pathtopage(docs/cmds/commands)">commands</a></li>
 						<li><a href="@pathtopage(docs/cmds/config)">config</a></li>
 						<li><a href="@pathtopage(docs/cmds/cpy)">cpy</a></li> <br>
 
 						<li><a href="@pathtopage(docs/cmds/diff)">diff</a></li> <br>
+
+						<li><a href="@pathtopage(docs/cmds/edit)">edit</a></li> <br>
 						
 						<li><a href="@pathtopage(docs/cmds/incr-mode)">incr-mode</a></li>
 						<li><a href="@pathtopage(docs/cmds/info-all)">info-all</a></li>
@@ -79,6 +78,9 @@
 
 						<li><a href="@pathtopage(docs/cmds/lolcat)">lolcat</a></li> <br>
 
+						<li><a href="@pathtopage(docs/cmds/mbcp)">mbcp</a></li>
+						<li><a href="@pathtopage(docs/cmds/medit)">medit</a></li>
+						<li><a href="@pathtopage(docs/cmds/medit)">mopen</a></li>
 						<li><a href="@pathtopage(docs/cmds/mve)">mve</a></li>
 						<li><a href="@pathtopage(docs/cmds/mve-cont-dir)">mve-cont-dir</a></li>
 						<li><a href="@pathtopage(docs/cmds/mve-output-dir)">mve-output-dir</a></li> <br>
@@ -90,6 +92,8 @@
 						<li><a href="@pathtopage(docs/cmds/new-template)">new-template</a></li>
 						<li><a href="@pathtopage(docs/cmds/new-title)">new-title</a></li>
 						<li><a href="@pathtopage(docs/cmds/no-build-thrds)">no-build-thrds</a></li> <br>
+
+						<li><a href="@pathtopage(docs/cmds/edit)">open</a></li> <br>
 
 						<li><a href="@pathtopage(docs/cmds/pull)">pull</a></li> <br>
 

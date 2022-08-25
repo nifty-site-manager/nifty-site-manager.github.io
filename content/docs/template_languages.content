@@ -2,18 +2,14 @@
 <section id="main" class="wrapper style2">
 	<div class="title">Template Languages</div>
 	<div class="container">
-		<header class="style1">
-			<h2>How to use template languages</h2>
-		</header>
-
-		<div id="highlights" class="content" style="margin-top:-25px;">
+		<div id="highlights" class="content">
 			<p>
 				You can use any template language that can be converted to html, php, etc. from the command line or at load time in the browser. For template languages that you can convert to html at load time from the browser, just include the required javascript scripts etc. as normal in your website and you should have no issues using the template language in your content and template files used to build pages with.
 			</p>
 
-			<center>
-				<img src="@pathtofile(site/images/template.png)" alt="Template graphic" width=500 style="margin-bottom:20px; max-width:70%;">
-			</center>
+			<div align="center" style="margin-top: 2em">
+				<img src="@pathtofile(site/images/template.png)" alt="Template graphic" style="width: 500px; max-width: 90%">
+			</div>
 
 			<h3>Converting template languages post-build</h3>
 			<p>
@@ -46,15 +42,15 @@
 			<h3>Converting template languages mid-build</h3>
 			<p>
 				Similar to converting individual files with pre-build scripts, you can convert individual files mid-build using the <mono>\@system(sys-call)</mono> function in Nift's template language. For example if you have Haml installed on your machine you can convert a haml file <mono>input.haml</mono> to html using the system call <mono>haml input.haml</mono>. Hence, to input the haml file <mono>input.haml</mono> converted to html in a content or template file for a Nift website simply use:
+			</p>
 
-<div style="margin-top:-30px; margin-bottom:20px">
+<div align="center">
 <center>
 <pre class="prettyprint inline">
 \@system("haml input.haml")
 </pre>
 </center>
 </div>
-			</p>
 
 			<header class="style1">
 				<h2>Template Languages</h2>
@@ -66,9 +62,7 @@
 						<a href="http://haml.info/"><img src="@pathtofile(site/images/haml.svg)" alt="Haml logo" height="150px" style="max-width:40%"/></a>
 						<h3><a href="http://haml.info/">Haml</a></h3>
 						<p>A templating system that is designed to avoid writing inline code in a web document and make the HTML cleaner. Haml gives the flexibility to have some dynamic content in HTML.</p>
-						<ul class="actions">
-							<li><a href="http://haml.info/docs.html" class="button style1">Learn More</a></li>
-						</ul>
+						<p><a href="http://haml.info/docs.html" class="button style1">Learn More</a></p>
 					</section>
 				</div>
 				<div class="col-4 col-12-medium">
@@ -76,9 +70,7 @@
 						<a href="https://pugjs.org/api/getting-started.html"><img src="@pathtofile(site/images/pug.svg)" alt="Pug mascot" height="150px" style="max-width:40%"/></a>
 						<h3><a href="https://pugjs.org/api/getting-started.html">Pug</a></h3>
 						<p>A high-performance template engine heavily influenced by Haml and implemented with JavaScript for Node.js and browsers.</p>
-						<ul class="actions">
-							<li><a href="https://github.com/pugjs/pug" class="button style1">Learn More</a></li>
-						</ul>
+						<p><a href="https://github.com/pugjs/pug" class="button style1">Learn More</a></p>
 					</section>
 				</div>
 				<div class="col-4 col-12-medium">
@@ -86,9 +78,7 @@
 						<a href="https://mozilla.github.io/nunjucks/"><img src="@pathtofile(site/images/nunjucks.svg)" alt="Nunjucks logo" height="150px" style="max-width:40%"/></a>
 						<h3><a href="https://mozilla.github.io/nunjucks/">Nunjucks</a></h3>
 						<p>A rich and powerful templating language for JavaScript.</p>
-						<ul class="actions">
-							<li><a href="https://mozilla.github.io/nunjucks/getting-started.html" class="button style1">Learn More</a></li>
-						</ul>
+						<p><a href="https://mozilla.github.io/nunjucks/getting-started.html" class="button style1">Learn More</a></p>
 					</section>
 				</div>
 				<div class="col-4 col-12-medium">
@@ -96,9 +86,7 @@
 						<a href="https://palletsprojects.com/p/jinja/"><img src="@pathtofile(site/images/jinja2.svg)" alt="Jinja2 logo" height="150px" style="max-width:40%"/></a>
 						<h3><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></h3>
 						<p>A web template engine for the Python programming language and is licensed under a BSD License created by Armin Ronacher. It is similar to the Django template engine but provides Python-like expressions while ensuring that the templates are evaluated in a sandbox.</p>
-						<ul class="actions">
-							<li><a href="https://jinja.palletsprojects.com/en/2.10.x/" class="button style1">Learn More</a></li>
-						</ul>
+						<p><a href="https://jinja.palletsprojects.com/en/2.10.x/" class="button style1">Learn More</a></p>
 					</section>
 				</div>
 				<div class="col-4 col-12-medium">
@@ -106,9 +94,7 @@
 						<a href="https://pantor.github.io/inja/"><img src="@pathtofile(site/images/inja.jpg)" alt="Jinja2 logo" height="150px" style="max-width:40%"/></a>
 						<h3><a href="https://pantor.github.io/inja/">Inja</a></h3>
 						<p>A template engine for modern C++, loosely inspired by jinja for python. It has an easy and yet powerful template syntax with all variables, loops, conditions, includes, callbacks, comments you need, nested and combined as you like.</p>
-						<ul class="actions">
-							<li><a href="https://github.com/pantor/inja" class="button style1">Learn More</a></li>
-						</ul>
+						<p><a href="https://github.com/pantor/inja" class="button style1">Learn More</a></p>
 					</section>
 				</div>
 				<div class="col-4 col-12-medium">
@@ -116,9 +102,7 @@
 						<a href="https://mustache.github.io/"><img src="@pathtofile(site/images/mustache.png)" alt="Mustache logo" height="150px" style="max-width:40%"/></a>
 						<h3><a href="https://mustache.github.io/">Mustache</a></h3>
 						<p>Described as a "logic-less" system because it lacks any explicit control flow statements, like if and else conditionals or for loops; however, both looping and conditional evaluation can be achieved using section tags processing lists and lambdas.</p>
-						<ul class="actions">
-							<li><a href="https://mustache.github.io/mustache.5.html" class="button style1">Learn More</a></li>
-						</ul>
+						<p><a href="https://mustache.github.io/mustache.5.html" class="button style1">Learn More</a></p>
 					</section>
 				</div>
 				<div class="col-4 col-12-medium">
@@ -126,9 +110,7 @@
 						<a href="https://handlebarsjs.com/"><img src="@pathtofile(site/images/handlebars.svg)" alt="Handlebards logo" height="150px" style="max-width:40%"/></a>
 						<h3><a href="https://handlebarsjs.com/">Handlebars</a></h3>
 						<p>Minimal templating on steroids. Handlebars provides the power necessary to let you build semantic templates effectively with no frustration. Handlebars compiles templates into JavaScript functions. This makes the template execution faster than most other template engines.</p>
-						<ul class="actions">
-							<li><a href="https://handlebarsjs.com/guide/#what-is-handlebars" class="button style1">Learn More</a></li>
-						</ul>
+						<p><a href="https://handlebarsjs.com/guide/#what-is-handlebars" class="button style1">Learn More</a></p>
 					</section>
 				</div>
 				<div class="col-4 col-12-medium">
@@ -136,9 +118,7 @@
 						<a href="http://jade-lang.com/"><img src="@pathtofile(site/images/jade.svg)" alt="Jade logo/mascot" height="150px" style="max-width:40%"/></a>
 						<h3><a href="http://jade-lang.com/">Jade</a></h3>
 						<p>A templating engine primarily used for server-side templating in NodeJS.</p>
-						<ul class="actions">
-							<li><a href="http://jade-lang.com/command-line" class="button style1">Learn More</a></li>
-						</ul>
+						<p><a href="http://jade-lang.com/command-line" class="button style1">Learn More</a></p>
 					</section>
 				</div>
 				<div class="col-4 col-12-medium">
@@ -146,9 +126,7 @@
 						<a href="https://docs.djangoproject.com/en/2.2/ref/templates/language/"><img src="@pathtofile(site/images/django.svg)" alt="Grunt mascot" height="150px" style="max-width:40%"/></a>
 						<h3><a href="https://docs.djangoproject.com/en/2.2/ref/templates/language/">Django</a></h3>
 						<p>Designed to strike a balance between power and ease. It’s designed to feel comfortable to those used to working with HTML. If you have any exposure to other text-based template languages, such as Smarty or Jinja2, you should feel right at home with Django’s templates.</p>
-						<ul class="actions">
-							<li><a href="https://docs.djangoproject.com/en/2.2/ref/templates/language/" class="button style1">Learn More</a></li>
-						</ul>
+						<p><a href="https://docs.djangoproject.com/en/2.2/ref/templates/language/" class="button style1">Learn More</a></p>
 					</section>
 				</div>
 				<div class="col-4 col-12-medium">
@@ -156,9 +134,7 @@
 						<a href="https://olado.github.io/doT/"><img src="@pathtofile(site/images/dot.png)" alt="doT.js logo" height="150px" style="max-width:40%"/></a>
 						<h3><a href="https://olado.github.io/doT/">doT.js</a></h3>
 						<p>A race car of templating engines - doT lacks bells and whistles that other templating engines have, but it allows to achive more than any other, if you use it right, doT.js is fast, small and has no dependencies.</p>
-						<ul class="actions">
-							<li><a href="https://github.com/olado/doT" class="button style1">Learn More</a></li>
-						</ul>
+						<p><a href="https://github.com/olado/doT" class="button style1">Learn More</a></p>
 					</section>
 				</div>
 				<div class="col-4 col-12-medium">
@@ -166,9 +142,7 @@
 						<a href="https://ejs.co/"><img src="@pathtofile(site/images/ejs.png)" alt="EJS logo" height="150px" style="max-width:40%"/></a>
 						<h3><a href="https://ejs.co/">EJS</a></h3>
 						<p>A simple templating language that lets you generate HTML markup with plain JavaScript. No religiousness about how to organize things. No reinvention of iteration and control-flow. It's just plain JavaScript.</p>
-						<ul class="actions">
-							<li><a href="https://ejs.co/#install" class="button style1">Learn More</a></li>
-						</ul>
+						<p><a href="https://ejs.co/#install" class="button style1">Learn More</a></p>
 					</section>
 				</div>
 				<div class="col-4 col-12-medium">
@@ -176,9 +150,7 @@
 						<a href="https://markojs.com/"><img src="@pathtofile(site/images/marko.png)" alt="Marko logo" height="150px" style="max-width:40%"/></a>
 						<h3><a href="https://markojs.com/">Marko</a></h3>
 						<p>HTML re-imagined as a language for building dynamic and reactive user interfaces. Just about any valid HTML is valid Marko, but Marko extends the HTML language to allow building modern applications in a declarative way. Among these extensions are conditionals, lists, state, and components. Marko supports both single-file components and components broken into separate files.</p>
-						<ul class="actions">
-							<li><a href="https://github.com/marko-js/marko" class="button style1">Learn More</a></li>
-						</ul>
+						<p><a href="https://github.com/marko-js/marko" class="button style1">Learn More</a></p>
 					</section>
 				</div>
 				<div class="col-4 col-12-medium">
@@ -186,9 +158,7 @@
 						<a href="https://squirrelly.js.org/"><img src="@pathtofile(site/images/squirrelly.svg)" alt="Squirrelly mascot" height="150px" style="max-width:40%"/></a>
 						<h3><a href="https://squirrelly.js.org/">Squirrelly</a></h3>
 						<p>A modern, configurable, and blazing fast template engine implemented in JavaScript. It works out of the box with ExpressJS and the full version weighs only ~2.2KB gzipped.</p>
-						<ul class="actions">
-							<li><a href="https://github.com/squirrellyjs/squirrelly" class="button style1">Learn More</a></li>
-						</ul>
+						<p><a href="https://github.com/squirrellyjs/squirrelly" class="button style1">Learn More</a></p>
 					</section>
 				</div>
 				<div class="col-4 col-12-medium">
@@ -196,9 +166,7 @@
 						<a href="https://twig.symfony.com/"><img src="@pathtofile(site/images/twig.png)" alt="Twig logo" height="150px" style="max-width:40%"/></a>
 						<h3><a href="https://twig.symfony.com/">Twig</a></h3>
 						<p>A template engine for the PHP programming language. Its syntax originates from Jinja and Django templates. It's an open source product licensed under a BSD License</p>
-						<ul class="actions">
-							<li><a href="https://twig.symfony.com/doc/3.x/" class="button style1">Learn More</a></li>
-						</ul>
+						<p><a href="https://twig.symfony.com/doc/3.x/" class="button style1">Learn More</a></p>
 					</section>
 				</div>
 				<div class="col-4 col-12-medium">
@@ -206,9 +174,7 @@
 						<a href="https://docs.phalcon.io/3.4/en/volt"><img src="@pathtofile(site/images/volt.png)" alt="Volt code sample" height="150px" style="max-width:40%"/></a>
 						<h3><a href="https://docs.phalcon.io/3.4/en/volt">Volt</a></h3>
 						<p>An ultra-fast and designer friendly templating language written in C for PHP. It provides you a set of helpers to write views in an easy way. Inspired by Jinja, therefore many developers will be in familiar territory using the same syntax they have been using with similar template engines.</p>
-						<ul class="actions">
-							<li><a href="https://docs.phalcon.io/3.4/en/volt" class="button style1">Learn More</a></li>
-						</ul>
+						<p><a href="https://docs.phalcon.io/3.4/en/volt" class="button style1">Learn More</a></p>
 					</section>
 				</div>
 				<div class="col-4 col-12-medium">
@@ -216,9 +182,7 @@
 						<a href="https://www.smarty.net/"><img src="@pathtofile(site/images/smarty.png)" alt="Smarty logo" height="150px" style="max-width:40%"/></a>
 						<h3><a href="https://www.smarty.net/">Smarty</a></h3>
 						<p>A web template system written in PHP. Smarty is primarily promoted as a tool for separation of concerns. Smarty is intended to simplify compartmentalization, allowing the front-end of a web page to change separately from its back-end.</p>
-						<ul class="actions">
-							<li><a href="https://www.smarty.net/crash_course" class="button style1">Learn More</a></li>
-						</ul>
+						<p><a href="https://www.smarty.net/crash_course" class="button style1">Learn More</a></p>
 					</section>
 				</div>
 				<div class="col-4 col-12-medium">
@@ -226,18 +190,18 @@
 						<a href="http://dwoo.org/"><img src="@pathtofile(site/images/dwoo.png)" alt="Dwoo logo" height="150px" style="max-width:40%"/></a>
 						<h3><a href="http://dwoo.org/">Dwoo</a></h3>
 						<p>A PHP5 template engine which is (almost) fully compatible with Smarty templates and plugins, but is written from scratch for PHP5, and adds many features</p>
-						<ul class="actions">
-							<li><a href="https://github.com/dwoo-project/dwoo" class="button style1">Learn More</a></li>
-						</ul>
+						<p><a href="https://github.com/dwoo-project/dwoo" class="button style1">Learn More</a></p>
 					</section>
 				</div>
 			</div>
 
-			<center><br><br>
+			<br><br>
+
+			<div align="center">
 				<p>
 					See <a href="https://en.wikipedia.org/wiki/Comparison_of_web_template_engines">here</a> for a bigger list of web template engines with a comparison of features available.
 				</p>
-			</center>
+			</div>
 		</div>
 	</div>
 </section>

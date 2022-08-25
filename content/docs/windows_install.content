@@ -4,10 +4,6 @@
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
-			<header class="style1">
-				<h2>How to install Nift on Windows</h2>
-			</header>
-
 			<div class="content">
 				<h4>
 					Syntax highlighting with Notepad++
@@ -25,7 +21,7 @@
 					You can install <mono>Nift</mono> on Windows using <mono>Chocolatey</mono>. First <a href="https://chocolatey.org/docs/installation">install</a> <mono>Chocolatey</mono>, then follow the instructions <a href="https://chocolatey.org/packages/nift">here</a>, or alternatively enter:
 				</p>
 
-				<div align="center" style="margin-top:-20px; margin-bottom: 20px">
+				<div align="center">
 <pre>
 choco install nift
 </pre>

@@ -4,10 +4,6 @@
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
-			<header class="style1">
-				<h2>How to host a website on Netlify</h2>
-			</header>
-
 			<center>
 				<a href="https://www.netlify.com/"><img src="@pathtofile(site/images/netlify.png)" alt="Netlify icon" width=200 style="max-width: 45%; margin-bottom: 40px"></a>
 			</center>

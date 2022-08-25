@@ -4,10 +4,6 @@
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
-			<header class="style1">
-				<h2>Guide to writing template files</h2>
-			</header>
-
 			<!-- Image -->
 			<center>
 				<img src="@pathtofile(site/images/laptop-rainbow.png)" alt="Nift retro neon rainbow vaporwave artwork" width="600px" style="max-width:90%; border-radius:20px; margin-bottom: 60px">
@@ -23,11 +19,11 @@
 					Basically all of the functions documented <a href="@pathto(docs/fns)">here</a> are available when writing template and content files. However, unlike content files, template files (or one of their dependencies) need to use the page content file as a page dependency.
 				</p>
 
-				<a href="#contents" class="to_top">[contents]</a>
+				<a href="#contents" class="to-top">[contents]</a>
 				<h4 id="contents">
 					Contents
 				</h4>
-				<div style="text-indent:30px; margin-top:10px">
+				<div>
 					<ul>
 						<li><a href="#content">Specifying where to input/inject content</a></li>
 						<li><a href="#head-content">Optionally injecting head content</a></li>
@@ -51,7 +47,7 @@
 				<p>
 					Alternatively to <mono>\@content</mono> you can:
 				</p>
-				<div style="text-indent:30px; margin-top:-20px">
+				<div>
 					<ul>
 						<li>use <mono>\@content{raw}</mono> which will input the content file without parsing it with Nift's template language</li>
 						<li>use <mono>\@system{content}(sys-call)</mono> which is equivalent to <mono>\@system(sys-call \$[contentpath])</mono>, where <mono>\$[contentpath]</mono> injects the content path, except <mono>Nift</mono> also recognises that the content file has been inject. For example if your content files are markdown and you use <mono>\@system{content}("pandoc")</mono> then the content files will be injected after being converted to html using pandoc</li>

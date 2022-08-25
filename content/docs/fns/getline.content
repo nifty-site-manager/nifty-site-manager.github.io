@@ -5,12 +5,12 @@
 		<!-- Features -->
 		<section id="features">
 			<div class="content">
-				<a href="#contents" class="to_top">[contents]</a>
+				<a href="#contents" class="to-top">[contents]</a>
 
 				<h4 id="contents">
 					Contents
 				</h4>
-				<ul style="text-indent:30px">
+				<ul>
 					<li><a href="#syntax">Syntax</a></li>
 					<li><a href="#description">Description</a></li>
 					<li><a href="#options">Options</a></li>
@@ -76,7 +76,7 @@ getline{option}(istream, params)
 				<p>
 					Examples of <mono>getline</mono> being used with <mono>f++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums lang-nift">
 :=(string, s)
 getline(console, s)</pre>
@@ -84,7 +84,7 @@ getline(console, s)</pre>
 				</p>
 
 				<p>
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums lang-nift">
 :=(string, s)
 :=(ifstream, ifs("input.txt"))
@@ -100,7 +100,7 @@ ifs.close()</pre>
 				<p>
 					Examples of <mono>getline</mono> being used with <mono>n++</mono>:					
 
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums lang-nift">
 \@:=(string, s)
 \@getline{!r}(console, s)</pre>
@@ -108,7 +108,7 @@ ifs.close()</pre>
 				</p>
 
 				<p>
-<div align="center" style="margin-top:-30px; margin-bottom:10px">
+<div align="center">
 <pre class="prettyprint inline linenums lang-nift">
 \@:=(string, s)
 \@:=(ifstream, ifs("input.txt"))

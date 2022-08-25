@@ -4,10 +4,6 @@
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
-			<header class="style1">
-				<h2>Config</h2>
-			</header>
-
 			<!-- Image -->
 			<div style="margin-bottom: 15px; border-radius:40px">
 				<center>
@@ -23,7 +19,7 @@
 				<h4 id="contents">
 					Contents
 				</h4>
-				<div style="text-indent:30px; margin-top:10px">
+				<div>
 					<ul>
 						<li><a href="#syntax">Syntax</a></li>
 						<li><a href="#project-config">Project Configuration Files</a></li>
