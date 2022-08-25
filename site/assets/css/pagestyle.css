@@ -357,7 +357,7 @@ a:hover {
   display: block;
   padding-top: 0.3em !important;
   padding-bottom: 0.3em !important;
-  font-size: 1em !important;
+  font-size: 1.1em !important;
 }
 #copyright ul li:first-child {
   border-left: 0;
@@ -365,7 +365,7 @@ a:hover {
   padding-left: 0;
 }
 #copyright a {
-  font-size: 0.9em !important;
+  font-size: 1em !important;
   color: #889c76 !important;
   -moz-transition: color .25s ease-in-out;
   -webkit-transition: color .25s ease-in-out;
@@ -374,7 +374,7 @@ a:hover {
   text-decoration: underline;
 }
 #copyright a:hover {
-  font-size: 0.9em !important;
+  font-size: 1em !important;
   color: #967251 !important;
   -moz-transition: color .25s ease-in-out;
   -webkit-transition: color .25s ease-in-out;
