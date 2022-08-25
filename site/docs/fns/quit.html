@@ -17,40 +17,6 @@
 		<link rel="stylesheet" href="../../assets/css/font-awesome.css">
 		<link rel="stylesheet" href="../../assets/css/pre.css">
 		<link rel="stylesheet" href="../../assets/css/extra-fonts.css"><link rel='icon' type='image/png' href='../../images/lightning.png'>
-		
-		<script async src="../../assets/js/menu.js"></script>
-		<script async src="../../assets/js/copy-pre.js"></script>
-		<script async src="../../assets/js/process-md-blocks.js"></script>
-		<script async src="../../assets/js/showdown.min.js"></script>
-		<script>
-			var converter = new showdown.Converter();
-			converter.setOption('emoji', 'on');
-			converter.setOption('tables', 'on');
-			converter.setOption('strikethrough', 'on');
-			elements = document.getElementsByClassName('markdown');
-			for(var i=0; i<elements.length; i++)
-				elements[i].innerHTML = converter.makeHtml(elements[i].innerHTML.replace(/&lt;/g, "xwxw").replace(/&gt;/g, "pqpq")).replace(/xwxw/g, "&lt;").replace(/pqpq/g, "&gt;");
-		</script>
-		<!-- uses google-code-prettify for syntax highlighting 
-			 see https://github.com/google/code-prettify/ for more info -->
-		<script async src="../../assets/js/prettify.js" onload="PR.prettyPrint()"></script>
-		<script async src="../../assets/js/lang-lua.js"></script>
-		<script async src="../../assets/js/lang-nift.js"></script>
-		
-		<!-- uses MathJax CDN for LaTeX support
-			 see https://docs.mathjax.org/en/latest/web/configuration.html for more info -->
-		<script id="MathJax-script" async
-		        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-		</script>
-		<script>
-			window.MathJax = {
-				tex: {
-					inlineMath: [['$', '$'], ['\\(', '\\)']],
-					displayMath: [['$$', '$$'], ["\\[", "\\]"]],
-					processEscapes: true
-				}
-			};
-		</script>
 	</head>
 
 	<body>
@@ -223,7 +189,39 @@ quit</pre>
 			</div>
 		</section>
 
-		<!-- Inserts current year -->
+		<script async src="../../assets/js/menu.js"></script>
+		<script async src="../../assets/js/copy-pre.js"></script>
+		<script async src="../../assets/js/process-md-blocks.js"></script>
+		<script async src="../../assets/js/showdown.min.js"></script>
+		<script>
+			var converter = new showdown.Converter();
+			converter.setOption('emoji', 'on');
+			converter.setOption('tables', 'on');
+			converter.setOption('strikethrough', 'on');
+			elements = document.getElementsByClassName('markdown');
+			for(var i=0; i<elements.length; i++)
+				elements[i].innerHTML = converter.makeHtml(elements[i].innerHTML.replace(/&lt;/g, "xwxw").replace(/&gt;/g, "pqpq")).replace(/xwxw/g, "&lt;").replace(/pqpq/g, "&gt;");
+		</script>
+		<!-- uses google-code-prettify for syntax highlighting 
+			 see https://github.com/google/code-prettify/ for more info -->
+		<script async src="../../assets/js/prettify.js" onload="PR.prettyPrint()"></script>
+		<script async src="../../assets/js/lang-lua.js"></script>
+		<script async src="../../assets/js/lang-nift.js"></script>
+		
+		<!-- uses MathJax CDN for LaTeX support
+			 see https://docs.mathjax.org/en/latest/web/configuration.html for more info -->
+		<script id="MathJax-script" async
+		        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+		</script>
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['$', '$'], ['\\(', '\\)']],
+					displayMath: [['$$', '$$'], ["\\[", "\\]"]],
+					processEscapes: true
+				}
+			};
+		</script><!-- Inserts current year -->
 		<script async>
 			var x = document.getElementsByName("cyear");
 			for(var i=0; i<x.length; i++)
