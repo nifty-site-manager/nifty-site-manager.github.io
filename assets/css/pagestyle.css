@@ -22,10 +22,8 @@ tfoot, thead, tr, th, td, article, aside,
 canvas, details, embed, figure, figcaption,
 footer, header, hgroup, output, ruby,
 section, summary, time, mark, audio, video {
-  padding: 0 0 0 0;
   margin:  0 0 0 0;
   font-size: 3vw;
-  /*font-weight: 400;*/
   color: white;
   letter-spacing: 0.025em;
   line-height: 1.75em;
@@ -34,7 +32,7 @@ section, summary, time, mark, audio, video {
 
 body {
   font-family: "Source Sans Pro", "Ubuntu Mono", "DejaVu Sans Mono";
-  background: #34495E;
+  background: #1f2021;
 }
 
 h2 {
@@ -255,7 +253,6 @@ a:hover {
 
 .wrapper {
   width: 100%;
-  background-color: #1f2021;
   padding: 3em 0 5em 0;
 }
 .wrapper .title {
@@ -268,6 +265,10 @@ a:hover {
   margin: 0 auto;
   box-shadow: -7px -3px 5px -5px rgba(0, 0, 0, 0.5), 7px -3px 5px -5px rgba(0, 0, 0, 0.5);
   position: relative;
+}
+
+.wrapper.style2 {
+  background-color: #1f2021;
 }
 
 .wrapper.style1 {
@@ -301,7 +302,7 @@ a:hover {
 
 #footer {
   background-color: #282b34;
-  padding-bottom: -13em !important;
+  padding-bottom: 2em !important;
 }
 
 .title {
@@ -400,7 +401,6 @@ a:hover {
   width: 100%;
 }
 .feature-list {
-  /*max-width: 58em;*/
   position: relative;
   top: 1em;
   margin-bottom: 50px;
