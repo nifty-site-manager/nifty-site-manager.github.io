@@ -1,458 +1,27 @@
-<!DOCTYPE HTML>
-
-<!--
-	Official Nift Website
-
-	Nift is a cross-platform open source website generator developed from the ground up in C++.
--->
-
+<!doctype html>
 <html lang="en">
-    <head>
-        <title>Nift - REPL</title>
-        <meta charset="utf-8">
-        <meta name="description" content="Nift is the world's fastest framework for 
-                    managing and generating websites. It's cross-platform, opensource, 
-                    lightning fast, developed from the ground up in C++, and released 
-                    for free under the MIT license - use it for any of your personal 
-                    or commercial projects">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../assets/css/main.css">
-        <link rel="stylesheet" href="../assets/css/pagestyle.css">
-        <link rel="stylesheet" href="../assets/css/pre.css">
-        <link rel="stylesheet" href="../assets/css/toggle.css">
-        <link rel='icon' type='image/png' href='../images/favicon.png'>
-        
-        <!-- uses Font Awesome for vector icons and social logos -->
-        <script src="https://kit.fontawesome.com/b51e6952ec.js"></script>
-    </head>
-    <body class="is-preload">
-		<div id="page-wrapper">
-			<!-- Header -->
-			<section id="header" class="wrapper">
-			
-				<!-- Logo -->
-				<div id="logo">
-					<noselect>
-					<img src="../images/rabbit.png" alt="Nift bunny mascot" width=325 style="max-width:90%">
-			
-					<p style="margin-bottom:0px">
-						<a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; 
-						<a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a> &nbsp; 
-						<a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a> &nbsp; 
-						<a href="https://nift.teemill.com/" title="TeeMill" class="teemill"><i class="fas fa-tshirt fa-2x"></i></a> </p>
-					<p style="margin-top:10px">
-						<a href="https://github.com/nifty-site-manager/nsm/discussions" title="GitHub Discussions" class="gh"><i class="fas fa-comment-dots fa-2x"></i></a> &nbsp;
-						<a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a> &nbsp; 
-						<a href="https://old.reddit.com/r/nift" title="Reddit" class="reddit"><i class="fab fa-reddit-square fa-2x"></i></a> &nbsp; 
-						<a href="https://twitter.com/nifty_site_man" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a>
-					</p>
-			
-					<p style="color:#372C2A">A cross-platform open source website generator</p>
-			
-					<p>
-						<a href="https://chocolatey.org/packages/nift"><img src="../images/chocolatey-icon.png" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
-						<a href="installing.html#osx-brew"><img src="../images/brew-icon.png" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
-						<a href="installing.html#freebsd"><img src="../images/freebsd.png" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
-						<a href="installing.html#linux-flatpak"><img src="../images/flathub-icon.png" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
-						<a href="installing.html#gentoo"><img src="../images/gentoo.svg" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
-						<a href="https://snapcraft.io/nift"><img src="../images/snap-icon.png" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
-					</p>
-					</noselect>
-				</div>
-			
-				<!-- Nav -->
-				<noselect>
-					<nav id="nav">
-						<ul>
-							<li><a href="../index.html">Home</a></li>
-							<li>
-								<a href="">Documentation</a>
-								<ul>
-									<li><a href="installing.html">Installing</a></li>
-									<li><a href="hosting.html">Hosting</a></li>
-									<li><a href="commands.html">Commands</a></li>
-									<li><a href="config.html">Config</a></li>
-									<li><a href="template_files.html">Template Files</a></li>
-									<li><a href="fns.html">Functions</a></li>
-									<li><a href="types.html">Types</a></li>
-									<li><a href="f++.html">f++ (scripting)</a></li>
-									<li><a href="n++.html">n++ (templates)</a></li>
-									<li><a href="lua.html">Lua(JIT)</a></li>
-									<li><a href="exprtk.html">ExprTk</a></li>
-									<li><a href="REPL.html">Interactive REPL</a></li>
-									<li><a href="scripts.html">Scripts</a></li>
-									<li><a href="template_languages.html">Template Languages</a></li>
-									<li><a href="JSON.html">JSON Data</a></li>
-									<li><a href="markdown.html">Markdown</a></li>
-									<li><a href="translators.html">Translators</a></li>
-									<li><a href="mathematics.html">Mathematics</a></li>
-									<li><a href="code_blocks.html">Code Blocks</a></li>
-									<li><a href="presentations.html">Presentations</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="">Resources</a>
-								<ul>
-									<li><a href="../resources/tutorials.html">Tutorials</a></li>
-									<li><a href="../resources/templates.html">Templates</a></li>
-									<li><a href="../resources/blog_templates.html">Blog Templates</a></li>
-									<li><a href="../resources/css_frameworks.html">CSS Frameworks</a></li>
-									<li><a href="../resources/examples.html">Examples</a></li>
-									<li><a href="../resources/js_frameworks.html">JS Frameworks</a></li>
-									<li><a href="../resources/links.html">Links</a></li>
-									<li><a href="../resources/logos.html">Logos</a></li>
-									<li><a href="../resources/promos.html">Promos</a></li>
-									<li><a href="../resources/php_frameworks.html">PHP Frameworks</a></li>
-								</ul>
-							</li>
-							<li><a href="../support.html">Support</a></li>
-						</ul>
-					</nav>
-				</noselect>
-			</section>
-
-		    <!-- Main -->
-		    <section id="main" class="wrapper style2">
-		    	<div class="title">Interactive REPL</div>
-		    	<div class="container">
-		    		<!-- Features -->
-		    		<section id="features">
-		    			<header class="style1">
-		    				<h2>Interactive REPL sessions</h2>
-		    			</header>
-		    
-		    			<!-- Image -->
-		    			<center>
-		    				<img src="../images/laptop-vaporwave.png" alt="Nift vaporwave artwork" width="500px" style="max-width:90%; border-radius:20px; margin-bottom: 60px">
-		    			</center>
-		    
-		    			<div class="content">
-		    				<p>
-		    					There are two modes in which you can run an <mono>interactive REPL session</mono> with <mono>Nift</mono>, interpreter mode <mono>interp</mono> and shell mode <mono>sh</mono>. The only difference between the two modes is that interpreter mode just has the language in the prompt, whereas shell mode has both the language and the present working directory in the prompt.
-		    				</p>
-		    
-		    				<a href="#contents" class="to_top">[contents]</a>
-		    
-		    				<h4 id="contents">
-		    					Contents
-		    				</h4>
-		    				<div style="text-indent:30px; margin-top:10px">
-		    					<ul>
-		    						<li><a href="#interpreter">Interpreter mode</a></li>
-		    						<li><a href="#shell">Shell mode</a></li>
-		    						<li><a href="#rc">RC Scripts</a></li>
-		    						<li><a href="#languages">Languages</a></li>
-		    						<li><a href="#multi-line-input">Multi-line input</a></li>
-		    						<li><a href="#shortcuts">Shortcuts</a></li>
-		    					</ul>
-		    				</div>
-		    
-		    				<h4 id="interpreter">
-		    					Interpreter mode
-		    				</h4>
-		    				<p>
-		    					An <mono>interpreter</mono> REPL session can be started with either of:
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-nsm interp -lang
-nift interp -lang
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    					<b>Note:</b> <mono>f++</mono> is the default language used when no language option is specified.
-		    				</p>
-		    
-		    				<p>
-		    					In the <mono>interpreter</mono> mode the prompt will just tell you which language you are using. If you would like the prompt to also display the present working directory (up to using half the width of the console) you can switch to shell mode using <mono>nsm_mode("sh")</mono>. You can switch back again with <mono>nsm_mode("interp")</mono>.
-		    				</p>
-		    
-		    				<h4 id="shell">
-		    					Shell mode
-		    				</h4>
-		    				<p>
-		    					A <mono>shell</mono> REPL session can be started with either of:
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-nsm sh -lang
-nift sh -lang
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    					<b>Note:</b> <mono>f++</mono> is the default language used when no language option is specified.
-		    				</p>
-		    
-		    				<p>
-		    					The <mono>f++</mono> shell, also called <zapfont style = "font-size:36px;">FLASHELL</zapfont> or <zapfont style = "font-size:36px;">FLASH</zapfont> (<mono>fla-sh</mono>) or even <zapfont style = "font-size:36px;">FSH</zapfont> if people want to be even more succinct (and helps cover for <mono>F++</mono> who also use <mono>FSH</mono>), or make up your own names for the binaries and other parts if you need to hide things better, attempts to work as an extension of the default shell for <mono>c++</mono> system calls, which is likely to remain always being <mono>bash</mono> on posix compliant platforms, it does also work on Windows and I am unsure whether you can change the shell anywhere on Windows that modifies the shell used by <mono>c++</mono> system calls. 
-		    				</p>
-		    
-		    				<p>
-		    					<zapfont style = "font-size:36px;">FLASH</zapfont> for example can often do many things faster than the shell being used for <mono>c++</mono> system calls. For example on my machine (which is quite old) <a href="https://pastebin.com/5FM7Hzef">this</a>  <mnstr style="font-size:16px">FNSTEIN</mnstr> script runs in ~3s whereas <a href="https://pastebin.com/RTXXEHBg">this</a> <mono>bash</mono> script runs in more like ~3m. 
-		    				</p>
-		    
-		    				<p>
-		    					<b>Note:</b> To get the <mnstr style="font-size:16px">FNSTEIN</mnstr> script to work you will need to add a <mono>$</mono> before the <mono>``</mono>'s for the <mono>ExprTk</mono> expression as the syntax has changed. Also be weary that if downloading the <mnstr style="font-size:16px">FNSTEIN</mnstr> script it has a <mono>.cpp</mono> extension for syntax highlighting purposes on <mono>pastebin</mono>. Also you do <u><b>DO NOT</b></u> want to leave the directory open in your file browser (the gui) when running either script.
-		    				</p>
-		    
-		    				<p>
-		    					One major limitation is not being able to define bash variables and have them exist beyond the <mono>c++</mono> system call they are used for. There is however access to the type systems and everything else for all of <zapfont style = "font-size:36px;">FLASH</zapfont>/<mnstr style="font-size:16px">FNSTEIN</mnstr>, <mnstr style="font-size:16px">TMPLTSTEIN</mnstr>, <mono>Lua(JIT)</mono> and <mono>ExprTk</mono>, you can write blocks of code at a time for <mono>sys/system</mono> calls where variable definitions etc. carry over and you can parse the block first with any of the languages in-built or embedded in to <mono>Nift</mono>. You can also run scripts that exist, or are contained in a block of code following the <mono>script</mono> function call.
-		    				</p>
-		    
-		    				<p>
-		    					In the <mono>shell</mono> mode the prompt will tell you which language you are using and the present working directory (up to using half the width of the console). If you would like the prompt to just display the language you can switch to interpreter mode using <mono>nsm_mode("interp")</mono>. You can switch back again with <mono>nsm_mode("sh")</mono>.
-		    				</p>
-		    
-		    				<h4 id="rc">
-		    					RC Scripts
-		    				</h4>
-		    				<p>
-		    					You can have a global script titled similar to <mono>niftrc.f</mono> but for the exec name you use in the same directory as your global config file (try opening up a shell or interpreter from outside any Nift projects to find the location of the global config file).
-		    				</p>
-		    
-		    				<p>
-		    					Alternatively, you can do project specific "run commands" scripts for the language being used following the naming structure <mono>[interp/sh].langChar</mono>, eg. <mono>sh.f</mono> and <mono>interp.l</mono>.
-		    				</p>
-		    
-		    				<p>
-		    					You can also name the global and project "run commands" scripts with the language as the extension rather than just the first letter, for example <mono>niftrc.lua</mono> or <mono>interp.exprtk</mono> or <mono>sh.f++</mono>, etc..
-		    				</p>
-		    
-		    				<h4 id="languages">
-		    					Languages
-		    				</h4>
-		    				<p>
-		    					The following language options are available:
-		    					<ul>
-		    						<li><mono>exprtk</mono></li>
-		    						<li><mono>f++</mono> (default)</li>
-		    						<li><mono>lua</mono></li>
-		    						<li><mono>n++</mono></li>
-		    					</ul>
-		    				</p>
-		    
-		    				<p>
-		    					You can switch to one of the other languages available during an interactive REPL session using <mono>nsm_lang(langStr)</mono> where <mono>langStr</mono> is one of <mono>f++</mono>, <mono>n++</mono>, <mono>lua</mono> or <mono>exprtk</mono>.
-		    				</p>
-		    
-		    				<h4 id="multi-line-input">
-		    					Multi-line input
-		    				</h4>
-		    				<p>
-		    					The are various ways to achieve multi-line input during an interactive REPL session, when reading additional lines of input before parsing the end of the prompt changes to <mono>&gt;</mono> instead of its normal <mono>&dollar;</mono>. The following table lists the shortcuts on different platforms to input another line before parsing (including ending a line with <mono>\</mono>):
-		    
-		    					<center class="table">
-		    						<table id="multi-line_input_shortcuts_table" class="alt">
-		    							<thead>
-		    								<tr>
-		    									<th style="min-width: 145px">FreeBSD</th>
-		    									<th style="min-width: 145px">Linux</th>
-		    									<th style="min-width: 145px">OSX</th>
-		    									<th style="min-width: 140px">Windows</th>
-		    								</tr>
-		    							</thead>
-		    							<tr>
-		    								<td><mono>alt enter</mono> <br><mono>ctrl r</mono> <br><mono>\ enter</mono></td>
-		    								<td><mono>alt enter</mono> <br><mono>ctrl r</mono> <br><mono>\ enter</mono></td>
-		    								<td><mono>ctrl r</mono> <br><mono>\ enter</mono></td>
-		    								<td><mono>ctrl enter</mono> <br><mono>ctrl r</mono> <br><mono>\ enter</mono></td>
-		    							</tr>
-		    							<tfoot>
-		    								<tr>
-		    									<th>FreeBSD</th>
-		    									<th>Linux</th>
-		    									<th>OSX</th>
-		    									<th>Windows</th>
-		    								</tr>
-		    							</tfoot>
-		    						</table>
-		    					</center>
-		    				</p>
-		    
-		    				<p>
-		    					<b>Note:</b> An interactive REPL session will continue to input lines before parsing until the input to be parsed has an equal number of open and close brackets. To override this put an <mono>=</mono> at the end of an input line with no whitespace following. A couple of <mono>f++</mono> examples follow:
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-int x=10
-if(x == 10) {
-	console("code-blocks in interactive REPL sessions")
-}
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<p>
-		    <div align="center" style="margin-top:-10px; margin-bottom:10px">
-		    <pre class="prettyprint inline">
-console("example with ( and { not closed") =
-</pre>
-		    </div>
-		    				</p>
-		    
-		    				<h4 id="shortcuts">
-		    					Shortcuts
-		    				</h4>
-		    				<p>
-		    					The following shortcuts are available during interactive REPL sessions:					
-		    
-		    					<center class="table">
-		    						<table id="interactive_shortcuts_table" class="alt">
-		    							<thead>
-		    								<tr>
-		    									<th style="min-width: 230px">Description</th>
-		    									<th style="min-width: 145px">FreeBSD</th>
-		    									<th style="min-width: 145px">Linux</th>
-		    									<th style="min-width: 145px">OSX</th>
-		    									<th style="min-width: 140px">Windows</th>
-		    								</tr>
-		    							</thead>
-		    							<tr>
-		    								<td>go to start of line</td>
-		    								<td><mono>ctrl a</mono></td>
-		    								<td><mono>ctrl a</mono></td>
-		    								<td><mono>ctrl a</mono></td>
-		    								<td><mono>ctrl a</mono></td>
-		    							</tr>
-		    							<tr>
-		    								<td>go to end of line</td>
-		    								<td><mono>ctrl e</mono></td>
-		    								<td><mono>ctrl e</mono></td>
-		    								<td><mono>ctrl e</mono></td>
-		    								<td><mono>ctrl e</mono></td>
-		    							</tr>
-		    							<tr>
-		    								<td>move cursor forwards one position</td>
-		    								<td><mono>&rarr;</mono> <br><mono>ctrl f</mono></td>
-		    								<td><mono>&rarr;</mono> <br><mono>ctrl f</mono></td>
-		    								<td><mono>&rarr;</mono> <br><mono>ctrl f</mono></td>
-		    								<td><mono>&rarr;</mono> <br><mono>ctrl f</mono></td>
-		    							</tr>
-		    							<tr>
-		    								<td>move cursor backwards one position</td>
-		    								<td><mono>&larr;</mono> <br><mono>ctrl b</mono></td>
-		    								<td><mono>&larr;</mono> <br><mono>ctrl b</mono></td>
-		    								<td><mono>&larr;</mono> <br><mono>ctrl b</mono></td>
-		    								<td><mono>&larr;</mono> <br><mono>ctrl b</mono></td>
-		    							</tr>
-		    							<tr>
-		    								<td>move cursor forwards to next space</td>
-		    								<td><mono>alt f</mono></td>
-		    								<td><mono>alt &rarr;</mono> <br><mono>alt f</mono> <br><mono>ctrl &rarr;</mono></td>
-		    								<td><mono>alt &rarr;</mono></td>
-		    								<td><mono><mono>ctrl &rarr;</mono></td>
-		    							</tr>
-		    							<tr>
-		    								<td>move cursor backwards to previous space</td>
-		    								<td><mono>alt b</mono></td>
-		    								<td><mono>alt &larr;</mono> <br><mono>alt b</mono> <br><mono>ctrl &larr;</mono></td>
-		    								<td><mono>alt &larr;</mono></td>
-		    								<td><mono><mono>ctrl &larr;</mono></td>
-		    							</tr>
-		    							<tr>
-		    								<td>delete from cursor to end of line</td>
-		    								<td><mono>ctrl d</mono></td>
-		    								<td><mono>ctrl d</mono></td>
-		    								<td><mono>ctrl d</mono></td>
-		    								<td><mono>ctrl d</mono></td>
-		    							</tr>
-		    							<tr>
-		    								<td>delete from cursor to start of previous word</td>
-		    								<td><mono>ctrl delete</mono> <br><mono>ctrl shift -</mono> <br><mono>ctrl -</mono></td>
-		    								<td><mono>ctrl delete</mono> <br><mono>ctrl shift -</mono></td>
-		    								<td><mono>ctrl shift -</mono> <br><mono>ctrl -</mono></td>
-		    								<td><mono>ctrl delete</mono> <br><mono>ctrl [</mono></td>
-		    							</tr>
-		    							<tr>
-		    								<td>delete from cursor to start of next word</td>
-		    								<td><mono>ctrl ]</mono></td>
-		    								<td><mono>ctrl ]</mono></td>
-		    								<td><mono>ctrl ]</mono></td>
-		    								<td><mono>ctrl ]</mono></td>
-		    							</tr>
-		    							<tr>
-		    								<td>line break (input another line before parsing)</td>
-		    								<td><mono>alt enter</mono> <br><mono>ctrl r</mono> <br><mono>\ enter</mono></td>
-		    								<td><mono>alt enter</mono> <br><mono>ctrl r</mono> <br><mono>\ enter</mono></td>
-		    								<td><mono>ctrl r</mono> <br><mono>\ enter</mono></td>
-		    								<td><mono>ctrl enter</mono> <br><mono>ctrl r</mono> <br><mono>\ enter</mono></td>
-		    							</tr>
-		    							<tfoot>
-		    								<tr>
-		    									<th>Description</th>
-		    									<th>FreeBSD</th>
-		    									<th>Linux</th>
-		    									<th>OSX</th>
-		    									<th>Windows</th>
-		    								</tr>
-		    							</tfoot>
-		    						</table>
-		    					</center>
-		    				</p>
-		    			</div>
-		    		</section>
-		    	</div>
-		    </section>
-
-			<!-- Footer -->
-			<section id="footer" class="wrapper">
-				<div class="title">
-					<img src="../images/nsm.png" alt="nsm signature on parchment" width="120" style="margin-top:40px; margin-bottom:20px; border-radius: 4px">
-				</div>
-			
-				<div class="container">
-					<div id="copyright">
-						<noselect>
-							<ul style="margin-top:115px">
-								<li><b style="color: white !important">Mirrors:</b></li>
-								<li><a href="https://nift.cc/">Official</a></li>
-								<li><a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a></li>
-								<li><a href="https://nifty-site-manager.github.io/">GitHub</a></li>
-								<li><a href="https://nifty-site-manager.gitlab.io/">GitLab</a></li>
-								<li><a href="https://nift.netlify.app/">Netlify</a></li>
-								<li><a href="https://nift.now.sh/">Vercel</a></li>
-							</ul> <br>
-			
-							<center><img id="footer-mascot" src="../images/badger.png" alt="Nift badger mascot" width="325" style="max-width:90%; margin-bottom:20px"></center>
-			
-							<ul>
-								<li>&copy;&nbsp;2015-<span name="cyear"></span> <a href="https://nift.cc">Nift</a></li>
-								<li><a href="../tos.html">Terms of Service</a></li>
-								<li><a href="../privacy_policy.html">Privacy Policy</a></li>
-							</ul> <br>
-			
-							<ul>
-								<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
-								<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
-								<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
-							</ul> <br>
-						
-							<b id="light_dark_LHS" style="color: white !important">light</b> &nbsp; <label class="light-dark-switch" id="light-dark-switch">
-								<input type="checkbox" id="checkbox_light_dark">
-								<span class="slider round" onclick="toggle_light_dark()" id="slider_light_dark"></span>
-							</label> &nbsp; <b id="light_dark_RHS" style="color: white !important">dark</b> <br><br>
-			
-							<ul>
-								<li>Creator & Developer:</li>
-								<li><a href="https://n-ham.com">Nicholas Ham</a></li>
-							</ul><br>
-						</noselect>
-					</div>
-				</div>
-			</section>
-		</div>
-
-		<!-- Scripts -->
-		<script src="../assets/js/copy-pre.js"></script>
-		<script src="../assets/js/jquery.min.js"></script>
-		<script src="../assets/js/jquery.dropotron.min.js"></script>
-		<script src="../assets/js/browser.min.js"></script>
-		<script src="../assets/js/breakpoints.min.js"></script>
-		<script src="../assets/js/util.js"></script>
-		<script src="../assets/js/main.js"></script>
-		<script src='../assets/js/process_md_blocks.js'></script>
-		<script src="../assets/js/showdown.min.js"></script>
+	<head>
+		<title>Nift - REPL</title>
+		<meta name="description" 
+		      content="Nift is an opinionless web development framework, specialising
+		            in static websites with serverless backends. It's lightning fast, 
+		            cross-platform, opinionless, open source (MIT license) and 
+		            developed from the ground up in C++. Use it for any of your 
+		            personal or commercial projects!">
+		
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" href="../assets/css/pagestyle.css">
+		<link rel="stylesheet" href="../assets/css/menu.css">
+		<link rel="stylesheet" href="../assets/css/font-awesome.css">
+		<link rel="stylesheet" href="../assets/css/pre.css">
+		<link rel="stylesheet" href="../assets/css/extra-fonts.css"><link rel='icon' type='image/png' href='../images/lightning.png'>
+		
+		<script async src="../assets/js/menu.js"></script>
+		<script async src="../assets/js/copy-pre.js"></script>
+		<script async src="../assets/js/process-md-blocks.js"></script>
+		<script async src="../assets/js/showdown.min.js"></script>
 		<script>
 			var converter = new showdown.Converter();
 			converter.setOption('emoji', 'on');
@@ -462,22 +31,14 @@ console("example with ( and { not closed") =
 			for(var i=0; i<elements.length; i++)
 				elements[i].innerHTML = converter.makeHtml(elements[i].innerHTML.replace(/&lt;/g, "xwxw").replace(/&gt;/g, "pqpq")).replace(/xwxw/g, "&lt;").replace(/pqpq/g, "&gt;");
 		</script>
-		<script src="../assets/js/toggle.js"></script>
-
-		<!-- Inserts current year -->
-		<script>
-			var x = document.getElementsByName("cyear");
-
-			for(var i=0; i<x.length; i++)
-				x[i].innerHTML = new Date().getFullYear();
-		</script>
-
 		<!-- uses google-code-prettify for syntax highlighting 
 			 see https://github.com/google/code-prettify/ for more info -->
-		<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
-		<script src="../assets/js/lang-lua.js"></script>
-		<script src="../assets/js/lang-nift.js"></script>
-
+		<script async src="../assets/js/prettify.js" onload="PR.prettyPrint()"></script>
+		<script async src="../assets/js/lang-lua.js"></script>
+		<script async src="../assets/js/lang-nift.js"></script>
+		
+		<!-- uses MathJax CDN for LaTeX support
+			 see https://docs.mathjax.org/en/latest/web/configuration.html for more info -->
 		<script id="MathJax-script" async
 		        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 		</script>
@@ -490,7 +51,383 @@ console("example with ( and { not closed") =
 				}
 			};
 		</script>
+	</head>
+
+	<body>
+		<nav id="nav" class="noselect">
+		  <ul class="menu">
+		    <a href="../index.html"><li class="logo">Nift</li></a>
+		    <li class="nav-space-left"></li>
+		    <li class="item icons">
+		      <a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a>
+		      <a href="https://github.com/nifty-site-manager/nsm/discussions" title="GitHub Discussions" class="gh"><i class="fas fa-comment-dots fa-2x"></i></a>
+		      <a href="https://twitter.com/nift_dev" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a>
+		      <a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a>
+		    </li>
+		    <a href="../index.html" class="item hover-hl"><li>Home</li></a>
+		    <li class="item hover-hl has-submenu" onclick="toggleItem(0)">
+		      <a tabindex="0" class="item-link">Docs</a>
+		      <ul class="submenu">
+		        <li class="subitem"><a href="installing.html">Installing</a></li>
+		        <li class="subitem"><a href="hosting.html">Hosting</a></li>
+		        <li class="subitem"><a href="commands.html">Commands</a></li>
+		        <li class="subitem"><a href="config.html">Config</a></li>
+		        <li class="subitem"><a href="template_files.html">Template Files</a></li>
+		        <li class="subitem"><a href="fns.html">Functions</a></li>
+		        <li class="subitem"><a href="types.html">Types</a></li>
+		        <li class="subitem"><a href="f++.html">f++ (scripting)</a></li>
+		        <li class="subitem"><a href="n++.html">n++ (templates)</a></li>
+		        <li class="subitem"><a href="lua.html">Lua(JIT)</a></li>
+		        <li class="subitem"><a href="exprtk.html">ExprTk</a></li>
+		        <li class="subitem"><a href="REPL.html">Interactive REPL</a></li>
+		        <li class="subitem"><a href="scripts.html">Scripts</a></li>
+		        <li class="subitem"><a href="template_languages.html">Template Languages</a></li>
+		        <li class="subitem"><a href="JSON.html">JSON Data</a></li>
+		        <li class="subitem"><a href="markdown.html">Markdown</a></li>
+		        <li class="subitem"><a href="translators.html">Translators</a></li>
+		        <li class="subitem"><a href="mathematics.html">Mathematics</a></li>
+		        <li class="subitem"><a href="code_blocks.html">Code Blocks</a></li>
+		        <li class="subitem"><a href="presentations.html">Presentations</a></li>
+		      </ul>
+		    </li>
+		    <li class="item hover-hl has-submenu" onclick="toggleItem(1)">
+		      <a tabindex="0" class="item-link">Resources</a>
+		      <ul class="submenu">
+		        <li class="subitem"><a href="../resources/tutorials.html">Tutorials</a></li>
+		        <li class="subitem"><a href="../resources/templates.html">Templates</a></li>
+		        <li class="subitem"><a href="../resources/blog_templates.html">Blog Templates</a></li>
+		        <li class="subitem"><a href="../resources/css_frameworks.html">CSS Frameworks</a></li>
+		        <li class="subitem"><a href="../resources/js_frameworks.html">JS Frameworks</a></li>
+		        <li class="subitem"><a href="../resources/links.html">Links</a></li>
+		        <li class="subitem"><a href="../resources/logos.html">Logos</a></li>
+		        <li class="subitem"><a href="../resources/promos.html">Promos</a></li>
+		        <li class="subitem"><a href="../resources/php_frameworks.html">PHP Frameworks</a></li>
+		      </ul>
+		    </li>
+		    <li class="toggle"><a href="#" onclick="toggleMenu()" id="menu-link"><i class="fas fa-bars fa-2x"></i></a></li>
+		  </ul>
+		</nav>
 		
+		<!-- Header -->
+		<section class="wrapper" id="header">
+		  <div id="logo" class="noselect">
+		    <img src="../images/rabbit-tags-white.png" alt="Nift bunny mascot" style="width: 400px; max-width:90%"><br>
+		
+		    <p style="color:#372C2A">An opinionless web development framework</p>
+		
+		    <p>
+		      <a href="https://chocolatey.org/packages/nift"><img src="../images/chocolatey-icon.png" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
+		      <a href="installing.html#osx-brew"><img src="../images/brew-icon.png" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
+		      <a href="installing.html#freebsd"><img src="../images/freebsd.png" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
+		      <a href="installing.html#linux-flatpak"><img src="../images/flathub-icon.png" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
+		      <a href="installing.html#gentoo"><img src="../images/gentoo.svg" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
+		      <a href="https://snapcraft.io/nift"><img src="../images/snap-icon.png" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
+		    </p>
+		  </div>
+		</section>
+
+		<!-- Main -->
+		<section id="main" class="wrapper style2">
+			<div class="title">Interactive REPL</div>
+			<div class="container">
+				<!-- Features -->
+				<section id="features">
+					<!-- Image -->
+					<center>
+						<img src="../images/laptop-vaporwave.png" alt="Nift vaporwave artwork" style="width: 500px; max-width:90%; border-radius:20px; margin: 1em">
+					</center>
+		
+					<div class="content">
+						<p>
+							There are two modes in which you can run an <mono>interactive REPL session</mono> with <mono>Nift</mono>, interpreter mode <mono>interp</mono> and shell mode <mono>sh</mono>. The only difference between the two modes is that interpreter mode just has the language in the prompt, whereas shell mode has both the language and the present working directory in the prompt.
+						</p>
+		
+						<a href="#contents" class="to-top">[contents]</a>
+		
+						<h4 id="contents">
+							Contents
+						</h4>
+						<div>
+							<ul>
+								<li><a href="#interpreter">Interpreter mode</a></li>
+								<li><a href="#shell">Shell mode</a></li>
+								<li><a href="#rc">RC Scripts</a></li>
+								<li><a href="#languages">Languages</a></li>
+								<li><a href="#multi-line-input">Multi-line input</a></li>
+								<li><a href="#shortcuts">Shortcuts</a></li>
+							</ul>
+						</div>
+		
+						<h4 id="interpreter">
+							Interpreter mode
+						</h4>
+						<p>
+							An <mono>interpreter</mono> REPL session can be started with either of:
+		<div align="center">
+		<pre class="prettyprint inline">
+nsm interp -lang
+nift interp -lang
+</pre>
+		</div>
+						</p>
+		
+						<p>
+							<b>Note:</b> <mono>f++</mono> is the default language used when no language option is specified.
+						</p>
+		
+						<p>
+							In the <mono>interpreter</mono> mode the prompt will just tell you which language you are using. If you would like the prompt to also display the present working directory (up to using half the width of the console) you can switch to shell mode using <mono>nsm_mode("sh")</mono>. You can switch back again with <mono>nsm_mode("interp")</mono>.
+						</p>
+		
+						<h4 id="shell">
+							Shell mode
+						</h4>
+						<p>
+							A <mono>shell</mono> REPL session can be started with either of:
+		<div align="center">
+		<pre class="prettyprint inline">
+nsm sh -lang
+nift sh -lang
+</pre>
+		</div>
+						</p>
+		
+						<p>
+							<b>Note:</b> <mono>f++</mono> is the default language used when no language option is specified.
+						</p>
+		
+						<p>
+							The <mono>f++</mono> shell, nicknamed <zapfont style = "font-size:36px;">FLASHELL</zapfont>, works as an extension of the default shell for <mono>c++</mono> system calls. 
+						</p>
+		
+						<p>
+							In the <mono>shell</mono> mode the prompt will tell you which language you are using and the present working directory (up to using half the width of the console). If you would like the prompt to just display the language you can switch to interpreter mode using <mono>nsm_mode("interp")</mono>. You can switch back again with <mono>nsm_mode("sh")</mono>.
+						</p>
+		
+						<h4 id="rc">
+							RC Scripts
+						</h4>
+						<p>
+							You can have a global script titled similar to <mono>niftrc.f</mono> but for the exec name you use in the same directory as your global config file (try opening up a shell or interpreter from outside any Nift projects to find the location of the global config file).
+						</p>
+		
+						<p>
+							Alternatively, you can do project specific "run commands" scripts for the language being used following the naming structure <mono>[interp/sh].langChar</mono>, eg. <mono>sh.f</mono> and <mono>interp.l</mono>.
+						</p>
+		
+						<p>
+							You can also name the global and project "run commands" scripts with the language as the extension rather than just the first letter, for example <mono>niftrc.lua</mono> or <mono>interp.exprtk</mono> or <mono>sh.f++</mono>, etc..
+						</p>
+		
+						<h4 id="languages">
+							Languages
+						</h4>
+						<p>
+							The following language options are available:
+							<ul>
+								<li><mono>exprtk</mono></li>
+								<li><mono>f++</mono> (default)</li>
+								<li><mono>lua</mono></li>
+								<li><mono>n++</mono></li>
+							</ul>
+						</p>
+		
+						<p>
+							You can switch to one of the other languages available during an interactive REPL session using <mono>nsm_lang(langStr)</mono> where <mono>langStr</mono> is one of <mono>f++</mono>, <mono>n++</mono>, <mono>lua</mono> or <mono>exprtk</mono>.
+						</p>
+		
+						<h4 id="multi-line-input">
+							Multi-line input
+						</h4>
+						<p>
+							The are various ways to achieve multi-line input during an interactive REPL session, when reading additional lines of input before parsing the end of the prompt changes to <mono>&gt;</mono> instead of its normal <mono>&dollar;</mono>. The following table lists the shortcuts on different platforms to input another line before parsing (including ending a line with <mono>\</mono>):
+		
+							<center class="table">
+								<table id="multi-line_input_shortcuts_table" class="alt">
+									<thead>
+										<tr>
+											<th style="min-width: 145px">FreeBSD</th>
+											<th style="min-width: 145px">Linux</th>
+											<th style="min-width: 145px">OSX</th>
+											<th style="min-width: 140px">Windows</th>
+										</tr>
+									</thead>
+									<tr>
+										<td><mono>alt enter</mono> <br><mono>ctrl r</mono> <br><mono>\ enter</mono></td>
+										<td><mono>alt enter</mono> <br><mono>ctrl r</mono> <br><mono>\ enter</mono></td>
+										<td><mono>ctrl r</mono> <br><mono>\ enter</mono></td>
+										<td><mono>ctrl enter</mono> <br><mono>ctrl r</mono> <br><mono>\ enter</mono></td>
+									</tr>
+									<tfoot>
+										<tr>
+											<th>FreeBSD</th>
+											<th>Linux</th>
+											<th>OSX</th>
+											<th>Windows</th>
+										</tr>
+									</tfoot>
+								</table>
+							</center>
+						</p>
+		
+						<p>
+							<b>Note:</b> An interactive REPL session will continue to input lines before parsing until the input to be parsed has an equal number of open and close brackets. To override this put an <mono>=</mono> at the end of an input line with no whitespace following. A couple of <mono>f++</mono> examples follow:
+		<div align="center">
+		<pre class="prettyprint inline">
+int x=10
+if(x == 10) {
+	console("code-blocks in interactive REPL sessions")
+}
+</pre>
+		</div>
+						</p>
+		
+						<p>
+		<div align="center">
+		<pre class="prettyprint inline">
+console("example with ( and { not closed") =
+</pre>
+		</div>
+						</p>
+		
+						<h4 id="shortcuts">
+							Shortcuts
+						</h4>
+						<p>
+							The following shortcuts are available during interactive REPL sessions:					
+		
+							<center class="table">
+								<table id="interactive_shortcuts_table" class="alt">
+									<thead>
+										<tr>
+											<th style="min-width: 230px">Description</th>
+											<th style="min-width: 145px">FreeBSD</th>
+											<th style="min-width: 145px">Linux</th>
+											<th style="min-width: 145px">OSX</th>
+											<th style="min-width: 140px">Windows</th>
+										</tr>
+									</thead>
+									<tr>
+										<td>go to start of line</td>
+										<td><mono>ctrl a</mono></td>
+										<td><mono>ctrl a</mono></td>
+										<td><mono>ctrl a</mono></td>
+										<td><mono>ctrl a</mono></td>
+									</tr>
+									<tr>
+										<td>go to end of line</td>
+										<td><mono>ctrl e</mono></td>
+										<td><mono>ctrl e</mono></td>
+										<td><mono>ctrl e</mono></td>
+										<td><mono>ctrl e</mono></td>
+									</tr>
+									<tr>
+										<td>move cursor forwards one position</td>
+										<td><mono>&rarr;</mono> <br><mono>ctrl f</mono></td>
+										<td><mono>&rarr;</mono> <br><mono>ctrl f</mono></td>
+										<td><mono>&rarr;</mono> <br><mono>ctrl f</mono></td>
+										<td><mono>&rarr;</mono> <br><mono>ctrl f</mono></td>
+									</tr>
+									<tr>
+										<td>move cursor backwards one position</td>
+										<td><mono>&larr;</mono> <br><mono>ctrl b</mono></td>
+										<td><mono>&larr;</mono> <br><mono>ctrl b</mono></td>
+										<td><mono>&larr;</mono> <br><mono>ctrl b</mono></td>
+										<td><mono>&larr;</mono> <br><mono>ctrl b</mono></td>
+									</tr>
+									<tr>
+										<td>move cursor forwards to next space</td>
+										<td><mono>alt f</mono></td>
+										<td><mono>alt &rarr;</mono> <br><mono>alt f</mono> <br><mono>ctrl &rarr;</mono></td>
+										<td><mono>alt &rarr;</mono></td>
+										<td><mono><mono>ctrl &rarr;</mono></td>
+									</tr>
+									<tr>
+										<td>move cursor backwards to previous space</td>
+										<td><mono>alt b</mono></td>
+										<td><mono>alt &larr;</mono> <br><mono>alt b</mono> <br><mono>ctrl &larr;</mono></td>
+										<td><mono>alt &larr;</mono></td>
+										<td><mono><mono>ctrl &larr;</mono></td>
+									</tr>
+									<tr>
+										<td>delete from cursor to end of line</td>
+										<td><mono>ctrl d</mono></td>
+										<td><mono>ctrl d</mono></td>
+										<td><mono>ctrl d</mono></td>
+										<td><mono>ctrl d</mono></td>
+									</tr>
+									<tr>
+										<td>delete from cursor to start of previous word</td>
+										<td><mono>ctrl delete</mono> <br><mono>ctrl shift -</mono> <br><mono>ctrl -</mono></td>
+										<td><mono>ctrl delete</mono> <br><mono>ctrl shift -</mono></td>
+										<td><mono>ctrl shift -</mono> <br><mono>ctrl -</mono></td>
+										<td><mono>ctrl delete</mono> <br><mono>ctrl [</mono></td>
+									</tr>
+									<tr>
+										<td>delete from cursor to start of next word</td>
+										<td><mono>ctrl ]</mono></td>
+										<td><mono>ctrl ]</mono></td>
+										<td><mono>ctrl ]</mono></td>
+										<td><mono>ctrl ]</mono></td>
+									</tr>
+									<tr>
+										<td>line break (input another line before parsing)</td>
+										<td><mono>alt enter</mono> <br><mono>ctrl r</mono> <br><mono>\ enter</mono></td>
+										<td><mono>alt enter</mono> <br><mono>ctrl r</mono> <br><mono>\ enter</mono></td>
+										<td><mono>ctrl r</mono> <br><mono>\ enter</mono></td>
+										<td><mono>ctrl enter</mono> <br><mono>ctrl r</mono> <br><mono>\ enter</mono></td>
+									</tr>
+									<tfoot>
+										<tr>
+											<th>Description</th>
+											<th>FreeBSD</th>
+											<th>Linux</th>
+											<th>OSX</th>
+											<th>Windows</th>
+										</tr>
+									</tfoot>
+								</table>
+							</center>
+						</p>
+					</div>
+				</section>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer" class="wrapper">
+			<div class="title">
+				<img src="../images/rabbit-tags-icon.png" alt="Nift rabbit mascot with code tag boomerangs" loading="lazy" width="200" style="margin-top:20px; border-radius: 4px">
+			</div>
+		
+			<div class="container">
+				<div id="copyright" class="noselect">
+					<ul>
+						<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
+						<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
+						<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
+					</ul> <br>
+		
+					<ul>
+						<li><a href="../tos.html">Terms of Service</a></li>
+						<li><a href="../privacy_policy.html">Privacy Policy</a></li>
+					</ul> <br>
+		
+					<ul>
+						<li><span>&copy;</span> 2015-<span name="cyear"></span></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- Inserts current year -->
+		<script async>
+			var x = document.getElementsByName("cyear");
+			for(var i=0; i<x.length; i++)
+			{
+				x[i].innerHTML = new Date().getFullYear();
+			}
+		</script>
 
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-62165905-2"></script>
@@ -498,8 +435,8 @@ console("example with ( and { not closed") =
 			window.dataLayer = window.dataLayer || [];
 			function gtag(){dataLayer.push(arguments);}
 			gtag('js', new Date());
-
 			gtag('config', 'UA-62165905-2');
 		</script>
-    </body>
+	</body>
 </html>
+

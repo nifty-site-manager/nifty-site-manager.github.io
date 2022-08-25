@@ -139,13 +139,16 @@ pre
 	max-width: 90%;
 	overflow: auto;
 
-	font-family:'Monaco', 'Menlo', courier, monospace;
-	font-size: 0.8em;
+	font-family: Ubuntu Mono, DejaVu Sans Mono, Liberation Mono, Consolas, Ubuntu Mono, Courier New;
+  font-size: 85%;
 
-	padding-left: 10px !important; 
-	padding-right:10px !important;
-	padding-top:10px !important;
-	padding-bottom:10px !important;
+	padding-left: 1em !important; 
+	padding-right:1em !important;
+	padding-top:1em !important;
+	padding-bottom:1em !important;
+
+	margin-top: 1em;
+	margin-bottom: 1em;
 
 	border: 1px solid #a39e8e !important;
 }

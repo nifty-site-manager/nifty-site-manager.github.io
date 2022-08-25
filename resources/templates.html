@@ -1,514 +1,27 @@
-<!DOCTYPE HTML>
-
-<!--
-	Official Nift Website
-
-	Nift is a cross-platform open source website generator developed from the ground up in C++.
--->
-
+<!doctype html>
 <html lang="en">
-    <head>
-        <title>Nift - templates</title>
-        <meta charset="utf-8">
-        <meta name="description" content="Nift is the world's fastest framework for 
-                    managing and generating websites. It's cross-platform, opensource, 
-                    lightning fast, developed from the ground up in C++, and released 
-                    for free under the MIT license - use it for any of your personal 
-                    or commercial projects">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../assets/css/main.css">
-        <link rel="stylesheet" href="../assets/css/pagestyle.css">
-        <link rel="stylesheet" href="../assets/css/pre.css">
-        <link rel="stylesheet" href="../assets/css/toggle.css">
-        <link rel='icon' type='image/png' href='../images/favicon.png'>
-        
-        <!-- uses Font Awesome for vector icons and social logos -->
-        <script src="https://kit.fontawesome.com/b51e6952ec.js"></script>
-    </head>
-    <body class="is-preload">
-		<div id="page-wrapper">
-			<!-- Header -->
-			<section id="header" class="wrapper">
-			
-				<!-- Logo -->
-				<div id="logo">
-					<noselect>
-					<img src="../images/rabbit.png" alt="Nift bunny mascot" width=325 style="max-width:90%">
-			
-					<p style="margin-bottom:0px">
-						<a href="https://bitbucket.org/nifty-site-manager/nsm" title="BitBucket" class="bb"><i class="fab fa-bitbucket fa-2x"></i></a> &nbsp; 
-						<a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a> &nbsp; 
-						<a href="https://gitlab.com/nifty-site-manager/nsm" title="GitLab" class="gl"><i class="fab fa-gitlab fa-2x"></i></a> &nbsp; 
-						<a href="https://nift.teemill.com/" title="TeeMill" class="teemill"><i class="fas fa-tshirt fa-2x"></i></a> </p>
-					<p style="margin-top:10px">
-						<a href="https://github.com/nifty-site-manager/nsm/discussions" title="GitHub Discussions" class="gh"><i class="fas fa-comment-dots fa-2x"></i></a> &nbsp;
-						<a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a> &nbsp; 
-						<a href="https://old.reddit.com/r/nift" title="Reddit" class="reddit"><i class="fab fa-reddit-square fa-2x"></i></a> &nbsp; 
-						<a href="https://twitter.com/nifty_site_man" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a>
-					</p>
-			
-					<p style="color:#372C2A">A cross-platform open source website generator</p>
-			
-					<p>
-						<a href="https://chocolatey.org/packages/nift"><img src="../images/chocolatey-icon.png" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
-						<a href="../docs/installing.html#osx-brew"><img src="../images/brew-icon.png" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
-						<a href="../docs/installing.html#freebsd"><img src="../images/freebsd.png" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
-						<a href="../docs/installing.html#linux-flatpak"><img src="../images/flathub-icon.png" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
-						<a href="../docs/installing.html#gentoo"><img src="../images/gentoo.svg" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
-						<a href="https://snapcraft.io/nift"><img src="../images/snap-icon.png" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
-					</p>
-					</noselect>
-				</div>
-			
-				<!-- Nav -->
-				<noselect>
-					<nav id="nav">
-						<ul>
-							<li><a href="../index.html">Home</a></li>
-							<li>
-								<a href="">Documentation</a>
-								<ul>
-									<li><a href="../docs/installing.html">Installing</a></li>
-									<li><a href="../docs/hosting.html">Hosting</a></li>
-									<li><a href="../docs/commands.html">Commands</a></li>
-									<li><a href="../docs/config.html">Config</a></li>
-									<li><a href="../docs/template_files.html">Template Files</a></li>
-									<li><a href="../docs/fns.html">Functions</a></li>
-									<li><a href="../docs/types.html">Types</a></li>
-									<li><a href="../docs/f++.html">f++ (scripting)</a></li>
-									<li><a href="../docs/n++.html">n++ (templates)</a></li>
-									<li><a href="../docs/lua.html">Lua(JIT)</a></li>
-									<li><a href="../docs/exprtk.html">ExprTk</a></li>
-									<li><a href="../docs/REPL.html">Interactive REPL</a></li>
-									<li><a href="../docs/scripts.html">Scripts</a></li>
-									<li><a href="../docs/template_languages.html">Template Languages</a></li>
-									<li><a href="../docs/JSON.html">JSON Data</a></li>
-									<li><a href="../docs/markdown.html">Markdown</a></li>
-									<li><a href="../docs/translators.html">Translators</a></li>
-									<li><a href="../docs/mathematics.html">Mathematics</a></li>
-									<li><a href="../docs/code_blocks.html">Code Blocks</a></li>
-									<li><a href="../docs/presentations.html">Presentations</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="">Resources</a>
-								<ul>
-									<li><a href="tutorials.html">Tutorials</a></li>
-									<li><a href="templates.html">Templates</a></li>
-									<li><a href="blog_templates.html">Blog Templates</a></li>
-									<li><a href="css_frameworks.html">CSS Frameworks</a></li>
-									<li><a href="examples.html">Examples</a></li>
-									<li><a href="js_frameworks.html">JS Frameworks</a></li>
-									<li><a href="links.html">Links</a></li>
-									<li><a href="logos.html">Logos</a></li>
-									<li><a href="promos.html">Promos</a></li>
-									<li><a href="php_frameworks.html">PHP Frameworks</a></li>
-								</ul>
-							</li>
-							<li><a href="../support.html">Support</a></li>
-						</ul>
-					</nav>
-				</noselect>
-			</section>
-
-		    <!-- Main -->
-		    <section id="main" class="wrapper style2">
-		    	<div class="title">Templates</div>
-		    	<div class="container">
-		    		<!-- Features -->
-		    		<section id="features">
-		    			<header class="style1">
-		    				<h2>Website repository templates for making websites</h2>
-		    			</header>
-		    
-		    			<div class="content">
-		    				<p>
-		    					For website templates check out the following links:
-		    					<ul>
-		    						<li><a href="https://html5up.net">HTML5 UP</a> (free to use with attribution)</li>
-		    						<li><a href="https://pixelarity.com/">Pixelarity</a> (similar to above but paid license to not have to give attribution)</li>
-		    						<li><a href="https://templated.co/">Templated</a></li>
-		    						<li><a href="https://templatemo.com/">TemplateMo</a></li>
-		    						<li><a href="https://www.tooplate.com/">TooPlate</a></li>
-		    						<li><a href="https://www.creative-tim.com/templates/">Creative Tim</a></li>
-		    						<li><a href="https://www.w3schools.com/w3css/w3css_templates.asp">W3.CSS Templates</a></li>
-		    						<li><a href="https://www.free-css.com/free-css-templates">Free CSS Templates</a></li>
-		    						<li><a href="https://www.templatemonster.com/free-website-templates/">Template Monster</a></li>
-		    						<li><a href="https://www.os-templates.com/free-website-templates">OS Templates</a></li>
-		    						<li><a href="https://www.site123.com/website-templates">Site123</a></li>
-		    						<li><a href="https://colorlib.com/wp/templates/">ColorLib</a></li>
-		    						<li><a href="https://freewebsitetemplates.com/">Free Website Templates</a></li>
-		    					</ul>
-		    				</p>
-		    
-		    				<p>
-		    					Also check out <a href="https://anymod.com">AnyMod</a> for all sorts of things that you can add to your websites. 
-		    				</p>
-		    
-		    				<p>
-		    					If you would like any template from the above links turned in to a <mono>Nift</mono> template file an issue at <a href="https://github.com/nifty-site-manager/nsm">GitHub</a> and we will make it for you. It is also a useful skill to be able to take a template and create a <mono>Nift</mono> template from it, take a look at how the same has been done for templates in the tables below for how. 
-		    				</p>
-		    
-		    				<p>
-		    					For template site repositories that you can import (or fork and rename) then clone to start making websites, see the table below:
-		    				</p>
-		    
-		    				<center>
-		    					<div class="xscroll">
-		    						<table id="templates_table" class="alt">
-		    							<thead>
-		    								<tr>
-		    									<th>name</th>
-		    									<th>demo</th>
-		    									<th>repository</th>
-		    								</tr>
-		    							</thead>
-		    							<tr>
-		    								<td>basic-site</td>
-		    								<td><a href="https://nsm-templates.github.io/basic-site/">GitHub</a> - <a href="https://nsm-templates.gitlab.io/basic-site/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/nsm-templates/basic-site">BitBucket</a> - <a href="https://github.com/nsm-templates/basic-site">GitHub</a> - <a href="https://gitlab.com/nsm-templates/basic-site">GitLab</a></td>
-		    							</tr>
-		    							<tr>
-		    								<td>dev-site</td>
-		    								<td><a href="https://nsm-templates.github.io/dev-site/">GitHub</a> - <a href="https://nsm-templates.gitlab.io/dev-site/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/nsm-templates/dev-site">BitBucket</a> - <a href="https://github.com/nsm-templates/dev-site">GitHub</a> - <a href="https://gitlab.com/nsm-templates/dev-site">GitLab</a></td>
-		    							</tr>
-		    							<tr>
-		    								<td><a href="https://undraw.co/evie">evie-undraw</a></td>
-		    								<td><a href="https://nsm-templates.github.io/evie-undraw/">GitHub</a> - <a href="https://nsm-templates.gitlab.io/evie-undraw/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/nsm-templates/evie-undraw">BitBucket</a> - <a href="https://github.com/nsm-templates/evie-undraw">GitHub</a> - <a href="https://gitlab.com/nsm-templates/evie-undraw">GitLab</a></td>
-		    							</tr>
-		    							<tr>
-		    								<td>gradient-site</td>
-		    								<td><a href="https://nsm-templates.github.io/gradient-site/">GitHub</a> - <a href="https://nsm-templates.gitlab.io/gradient-site/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/nsm-templates/gradient-site">BitBucket</a> - <a href="https://github.com/nsm-templates/gradient-site">GitHub</a> - <a href="https://gitlab.com/nsm-templates/gradient-site">GitLab</a></td>
-		    							</tr>
-		    							<tr>
-		    								<td>markdown-site</td>
-		    								<td><a href="https://nsm-templates.github.io/markdown-site/">GitHub</a> - <a href="https://nsm-templates.gitlab.io/markdown-site/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/nsm-templates/markdown-site">BitBucket</a> - <a href="https://github.com/nsm-templates/markdown-site">GitHub</a> - <a href="https://gitlab.com/nsm-templates/markdown-site">GitLab</a></td>
-		    							</tr>
-		    							<tr>
-		    								<td>menus</td>
-		    								<td><a href="https://nsm-templates.github.io/menus/">GitHub</a> - <a href="https://nsm-templates.gitlab.io/menus/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/nsm-templates/menus">BitBucket</a> - <a href="https://github.com/nsm-templates/menus">GitHub</a> - <a href="https://gitlab.com/nsm-templates/menus">GitLab</a></td>
-		    							</tr>
-		    							<tr>
-		    								<td>null-site</td>
-		    								<td><a href="https://nsm-templates.github.io/null-site/">GitHub</a> - <a href="https://nsm-templates.gitlab.io/null-site/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/nsm-templates/null-site">BitBucket</a> - <a href="https://github.com/nsm-templates/null-site">GitHub</a> - <a href="https://gitlab.com/nsm-templates/null-site">GitLab</a></td>
-		    							</tr>
-		    							<tr>
-		    								<td>parchment-site</td>
-		    								<td><a href="https://nsm-templates.github.io/parchment-site/">GitHub</a> - <a href="https://nsm-templates.gitlab.io/parchment-site/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/nsm-templates/parchment-site">BitBucket</a> - <a href="https://github.com/nsm-templates/parchment-site">GitHub</a> - <a href="https://gitlab.com/nsm-templates/parchment-site">GitLab</a></td>
-		    							</tr>
-		    							<tr>
-		    								<td>simple-site</td>
-		    								<td><a href="https://nsm-templates.github.io/simple-site/">GitHub</a> - <a href="https://nsm-templates.gitlab.io/simple-site/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/nsm-templates/simple-site">BitBucket</a> - <a href="https://github.com/nsm-templates/simple-site">GitHub</a> - <a href="https://gitlab.com/nsm-templates/simple-site">GitLab</a></td>
-		    							</tr>
-		    							<tr>
-		    								<td>tiar-site</td>
-		    								<td><a href="https://nsm-templates.github.io/tiar-site/">GitHub</a> - <a href="https://nsm-templates.gitlab.io/tiar-site/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/nsm-templates/tiar-site">BitBucket</a> - <a href="https://github.com/nsm-templates/tiar-site">GitHub</a> - <a href="https://gitlab.com/nsm-templates/tiar-site">GitLab</a></td>
-		    							</tr>
-		    							<tfoot>
-		    								<tr>
-		    									<th>name</th>
-		    									<th>demo</th>
-		    									<th>repository</th>
-		    								</tr>
-		    							</tfoot>
-		    						</table>
-		    					</div>
-		    				</center>
-		    
-		    				<p>
-		    					To make changes to a template that has already been added to the above table, make a pull request from the repository you had us clone originally. 
-		    				</p>
-		    
-		    				<h3 id="html5up">HTML5 UP Templates</h3>
-		    
-		    				<p>
-		    					The following table contains modified <a href="https://html5up.net/">HTML5 UP</a> template site repositories that you can import (or fork and rename) then clone to start making websites. If there is an <a href="https://html5up.net/">HTML5 UP</a> template you would like that is not in the table below file an issue at <a href="https://github.com/nifty-site-manager/nsm">GitHub</a> and we will add it for you.
-		    				</p>
-		    
-		    				<center>
-		    					<div class="xscroll">
-		    						<table id="html5up_templates_table" class="alt">
-		    							<thead>
-		    								<tr>
-		    									<th>name</th>
-		    									<th>demo</th>
-		    									<th>repository</th>
-		    								</tr>
-		    							</thead>
-		    							<tr>
-		    								<td><a href="https://html5up.net/alpha">alpha</a></td>
-		    								<td><a href="https://html5up-nsm-templates.github.io/alpha/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/alpha/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/html5up-nsm-templates/alpha">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/alpha">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/alpha">GitLab</a></td>
-		    							</tr>
-		    							<tr>
-		    								<td><a href="https://html5up.net/arcana">arcana</a></td>
-		    								<td><a href="https://html5up-nsm-templates.github.io/arcana/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/arcana/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/html5up-nsm-templates/arcana">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/arcana">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/arcana">GitLab</a></td>
-		    							</tr>
-		    							<tr>
-		    								<td><a href="https://html5up.net/big-picture">big-picture</a></td>
-		    								<td><a href="https://html5up-nsm-templates.github.io/big-picture/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/big-picture/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/html5up-nsm-templates/big-picture">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/big-picture">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/big-picture">GitLab</a></td>
-		    							</tr>
-		    							<tr>
-		    								<td><a href="https://html5up.net/dimension">dimension</a></td>
-		    								<td><a href="https://html5up-nsm-templates.github.io/dimension/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/dimension/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/html5up-nsm-templates/dimension">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/dimension">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/dimension">GitLab</a></td>
-		    							</tr>
-		    							<tr>
-		    								<td><a href="https://html5up.net/directive">directive</a></td>
-		    								<td><a href="https://html5up-nsm-templates.github.io/directive/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/directive/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/html5up-nsm-templates/directive">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/directive">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/directive">GitLab</a></td>
-		    							</tr>
-		    							<tr>
-		    								<td><a href="https://html5up.net/dopetrope">dopetrope</a></td>
-		    								<td><a href="https://html5up-nsm-templates.github.io/dopetrope/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/dopetrope/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/html5up-nsm-templates/dopetrope">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/dopetrope">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/dopetrope">GitLab</a></td>
-		    							</tr>
-		    							<tr>
-		    								<td><a href="https://html5up.net/editorial">editorial</a></td>
-		    								<td><a href="https://html5up-nsm-templates.github.io/editorial/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/editorial/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/html5up-nsm-templates/editorial">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/editorial">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/editorial">GitLab</a></td>
-		    							</tr>
-		    							<tr>
-		    								<td><a href="https://html5up.net/escape-velocity">escape-velocity</a></td>
-		    								<td><a href="https://html5up-nsm-templates.github.io/escape-velocity/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/escape-velocity/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/html5up-nsm-templates/escape-velocity">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/escape-velocity">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/escape-velocity">GitLab</a></td>
-		    							</tr>
-		    							<tr>
-		    								<td><a href="https://html5up.net/ethereal">ethereal</a></td>
-		    								<td><a href="https://html5up-nsm-templates.github.io/ethereal/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/ethereal/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/html5up-nsm-templates/ethereal">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/ethereal">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/ethereal">GitLab</a></td>
-		    							</tr>
-		    							<tr>
-		    								<td><a href="https://html5up.net/forty">forty</a></td>
-		    								<td><a href="https://html5up-nsm-templates.github.io/forty/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/forty/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/html5up-nsm-templates/forty">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/forty">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/forty">GitLab</a></td>
-		    							</tr>
-		    							<tr>
-		    								<td><a href="https://html5up.net/future-imperfect">future-imperfect</a></td>
-		    								<td><a href="https://html5up-nsm-templates.github.io/future-imperfect/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/future-imperfect/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/html5up-nsm-templates/future-imperfect">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/future-imperfect">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/future-imperfect">GitLab</a></td>
-		    							</tr>
-		    							<tr>
-		    								<td><a href="https://html5up.net/halcyonic">halcyonic</a></td>
-		    								<td><a href="https://html5up-nsm-templates.github.io/halcyonic/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/halcyonic/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/html5up-nsm-templates/halcyonic">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/halcyonic">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/halcyonic">GitLab</a></td>
-		    							</tr>
-		    							<tr>
-		    								<td><a href="https://html5up.net/helios">helios</a></td>
-		    								<td><a href="https://html5up-nsm-templates.github.io/helios/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/helios/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/html5up-nsm-templates/helios">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/helios">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/helios">GitLab</a></td>
-		    							</tr>
-		    							<tr>
-		    								<td><a href="https://html5up.net/hyperspace">hyperspace</a></td>
-		    								<td><a href="https://html5up-nsm-templates.github.io/hyperspace/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/hyperspace/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/html5up-nsm-templates/hyperspace">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/hyperspace">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/hyperspace">GitLab</a></td>
-		    							</tr>
-		    							<tr>
-		    								<td><a href="https://html5up.net/landed">landed</a></td>
-		    								<td><a href="https://html5up-nsm-templates.github.io/landed/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/landed/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/html5up-nsm-templates/landed">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/landed">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/landed">GitLab</a></td>
-		    							</tr>
-		    							<tr>
-		    								<td><a href="https://html5up.net/massively">massively</a></td>
-		    								<td><a href="https://html5up-nsm-templates.github.io/massively/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/massively/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/html5up-nsm-templates/massively">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/massively">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/massively">GitLab</a></td>
-		    							</tr>
-		    							<tr>
-		    								<td><a href="https://html5up.net/minimaxing">minimaxing</a></td>
-		    								<td><a href="https://html5up-nsm-templates.github.io/minimaxing/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/minimaxing/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/html5up-nsm-templates/minimaxing">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/minimaxing">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/minimaxing">GitLab</a></td>
-		    							</tr>
-		    							<tr>
-		    								<td><a href="https://html5up.net/miniport">miniport</a></td>
-		    								<td><a href="https://html5up-nsm-templates.github.io/miniport/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/miniport/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/html5up-nsm-templates/miniport">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/miniport">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/miniport">GitLab</a></td>
-		    							</tr>
-		    							<tr>
-		    								<td><a href="https://html5up.net/multiverse">multiverse</a></td>
-		    								<td><a href="https://html5up-nsm-templates.github.io/multiverse/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/multiverse/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/html5up-nsm-templates/multiverse">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/multiverse">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/multiverse">GitLab</a></td>
-		    							</tr>
-		    							<tr>
-		    								<td><a href="https://html5up.net/parallelism">parallelism</a></td>
-		    								<td><a href="https://html5up-nsm-templates.github.io/parallelism/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/parallelism/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/html5up-nsm-templates/parallelism">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/parallelism">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/parallelism">GitLab</a></td>
-		    							</tr>
-		    							<tr>
-		    								<td><a href="https://html5up.net/phantom">phantom</a></td>
-		    								<td><a href="https://html5up-nsm-templates.github.io/phantom/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/phantom/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/html5up-nsm-templates/phantom">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/phantom">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/phantom">GitLab</a></td>
-		    							</tr>
-		    							<tr>
-		    								<td><a href="https://html5up.net/solid-state">solid-state</a></td>
-		    								<td><a href="https://html5up-nsm-templates.github.io/solid-state/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/solid-state/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/html5up-nsm-templates/solid-state">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/solid-state">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/solid-state">GitLab</a></td>
-		    							</tr>
-		    							<tr>
-		    								<td><a href="https://html5up.net/spectral">spectral</a></td>
-		    								<td><a href="https://html5up-nsm-templates.github.io/spectral/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/spectral/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/html5up-nsm-templates/spectral">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/spectral">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/spectral">GitLab</a></td>
-		    							</tr>
-		    							<tr>
-		    								<td><a href="https://html5up.net/stellar">stellar</a></td>
-		    								<td><a href="https://html5up-nsm-templates.github.io/stellar/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/stellar/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/html5up-nsm-templates/stellar">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/stellar">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/stellar">GitLab</a></td>
-		    							</tr>
-		    							<tr>
-		    								<td><a href="https://html5up.net/strongly-typed">strongly-typed</a></td>
-		    								<td><a href="https://html5up-nsm-templates.github.io/strongly-typed/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/strongly-typed/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/html5up-nsm-templates/strongly-typed">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/strongly-typed">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/strongly-typed">GitLab</a></td>
-		    							</tr>
-		    							<tr>
-		    								<td><a href="https://html5up.net/telephasic">telephasic</a></td>
-		    								<td><a href="https://html5up-nsm-templates.github.io/telephasic/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/telephasic/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/html5up-nsm-templates/telephasic">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/telephasic">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/telephasic">GitLab</a></td>
-		    							</tr>
-		    							<tr>
-		    								<td><a href="https://html5up.net/twenty">twenty</a></td>
-		    								<td><a href="https://html5up-nsm-templates.github.io/twenty/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/twenty/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/html5up-nsm-templates/twenty">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/twenty">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/twenty">GitLab</a></td>
-		    							</tr>
-		    							<tr>
-		    								<td><a href="https://html5up.net/txt">txt</a></td>
-		    								<td><a href="https://html5up-nsm-templates.github.io/txt/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/txt/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/html5up-nsm-templates/txt">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/txt">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/txt">GitLab</a></td>
-		    							</tr>
-		    							<tr>
-		    								<td><a href="https://html5up.net/verti">verti</a></td>
-		    								<td><a href="https://html5up-nsm-templates.github.io/verti/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/verti/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/html5up-nsm-templates/verti">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/verti">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/verti">GitLab</a></td>
-		    							</tr>
-		    							<tr>
-		    								<td><a href="https://html5up.net/zerofour">zerofour</a></td>
-		    								<td><a href="https://html5up-nsm-templates.github.io/zerofour/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/zerofour/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/html5up-nsm-templates/zerofour">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/zerofour">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/zerofour">GitLab</a></td>
-		    							</tr>
-		    							<tfoot>
-		    								<tr>
-		    									<th>name</th>
-		    									<th>demo</th>
-		    									<th>repository</th>
-		    								</tr>
-		    							</tfoot>
-		    						</table>
-		    					</div>
-		    				</center>
-		    
-		    				<h3 id="w3css">W3.CSS Templates</h3>
-		    
-		    				<p>
-		    					The following table contains modified <a href="https://www.w3schools.com/w3css/w3css_templates.asp">W3.CSS</a> template site repositories that you can import (or fork and rename) then clone to start making websites. If there is a <a href="https://www.w3schools.com/w3css/w3css_templates.asp">W3.CSS</a> template you would like that is not in the table below file an issue at <a href="https://github.com/nifty-site-manager/nsm">GitHub</a>.
-		    				</p>
-		    
-		    				<center>
-		    					<div class="xscroll">
-		    						<table id="w3css_templates_table" class="alt">
-		    							<thead>
-		    								<tr>
-		    									<th>name</th>
-		    									<th>demo</th>
-		    									<th>repository</th>
-		    								</tr>
-		    							</thead>
-		    							<tr>
-		    								<td><a href="https://www.w3schools.com/w3css/tryw3css_templates_architect.htm">architect</a></td>
-		    								<td><a href="https://w3css-nsm-templates.github.io/architect/">GitHub</a> - <a href="https://w3css-nsm-templates.gitlab.io/architect/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/w3css-nsm-templates/architect">BitBucket</a> - <a href="https://github.com/w3css-nsm-templates/architect">GitHub</a> - <a href="https://gitlab.com/w3css-nsm-templates/architect">GitLab</a></td>
-		    							</tr>
-		    							<tr>
-		    								<td><a href="https://www.w3schools.com/w3css/tryw3css_templates_band.htm">band</a></td>
-		    								<td><a href="https://w3css-nsm-templates.github.io/band/">GitHub</a> - <a href="https://w3css-nsm-templates.gitlab.io/band/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/w3css-nsm-templates/band">BitBucket</a> - <a href="https://github.com/w3css-nsm-templates/band">GitHub</a> - <a href="https://gitlab.com/w3css-nsm-templates/band">GitLab</a></td>
-		    							</tr>
-		    							<tr>
-		    								<td><a href="https://www.w3schools.com/w3css/tryw3css_templates_gourmet_catering.htm">gourmet-catering</a></td>
-		    								<td><a href="https://w3css-nsm-templates.github.io/gourmet-catering/">GitHub</a> - <a href="https://w3css-nsm-templates.gitlab.io/gourmet-catering/">GitLab</a></td>
-		    								<td><a href="https://bitbucket.org/w3css-nsm-templates/gourmet-catering">BitBucket</a> - <a href="https://github.com/w3css-nsm-templates/gourmet-catering">GitHub</a> - <a href="https://gitlab.com/w3css-nsm-templates/gourmet-catering">GitLab</a></td>
-		    							</tr>
-		    							<tfoot>
-		    								<tr>
-		    									<th>name</th>
-		    									<th>demo</th>
-		    									<th>repository</th>
-		    								</tr>
-		    							</tfoot>
-		    						</table>
-		    					</div>
-		    				</center>
-		    			</div>
-		    		</section>
-		    	</div>
-		    </section>
-
-			<!-- Footer -->
-			<section id="footer" class="wrapper">
-				<div class="title">
-					<img src="../images/nsm.png" alt="nsm signature on parchment" width="120" style="margin-top:40px; margin-bottom:20px; border-radius: 4px">
-				</div>
-			
-				<div class="container">
-					<div id="copyright">
-						<noselect>
-							<ul style="margin-top:115px">
-								<li><b style="color: white !important">Mirrors:</b></li>
-								<li><a href="https://nift.cc/">Official</a></li>
-								<li><a href="https://nifty-site-manager.bitbucket.io/">BitBucket</a></li>
-								<li><a href="https://nifty-site-manager.github.io/">GitHub</a></li>
-								<li><a href="https://nifty-site-manager.gitlab.io/">GitLab</a></li>
-								<li><a href="https://nift.netlify.app/">Netlify</a></li>
-								<li><a href="https://nift.now.sh/">Vercel</a></li>
-							</ul> <br>
-			
-							<center><img id="footer-mascot" src="../images/badger.png" alt="Nift badger mascot" width="325" style="max-width:90%; margin-bottom:20px"></center>
-			
-							<ul>
-								<li>&copy;&nbsp;2015-<span name="cyear"></span> <a href="https://nift.cc">Nift</a></li>
-								<li><a href="../tos.html">Terms of Service</a></li>
-								<li><a href="../privacy_policy.html">Privacy Policy</a></li>
-							</ul> <br>
-			
-							<ul>
-								<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
-								<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
-								<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
-							</ul> <br>
-						
-							<b id="light_dark_LHS" style="color: white !important">light</b> &nbsp; <label class="light-dark-switch" id="light-dark-switch">
-								<input type="checkbox" id="checkbox_light_dark">
-								<span class="slider round" onclick="toggle_light_dark()" id="slider_light_dark"></span>
-							</label> &nbsp; <b id="light_dark_RHS" style="color: white !important">dark</b> <br><br>
-			
-							<ul>
-								<li>Creator & Developer:</li>
-								<li><a href="https://n-ham.com">Nicholas Ham</a></li>
-							</ul><br>
-						</noselect>
-					</div>
-				</div>
-			</section>
-		</div>
-
-		<!-- Scripts -->
-		<script src="../assets/js/copy-pre.js"></script>
-		<script src="../assets/js/jquery.min.js"></script>
-		<script src="../assets/js/jquery.dropotron.min.js"></script>
-		<script src="../assets/js/browser.min.js"></script>
-		<script src="../assets/js/breakpoints.min.js"></script>
-		<script src="../assets/js/util.js"></script>
-		<script src="../assets/js/main.js"></script>
-		<script src='../assets/js/process_md_blocks.js'></script>
-		<script src="../assets/js/showdown.min.js"></script>
+	<head>
+		<title>Nift - templates</title>
+		<meta name="description" 
+		      content="Nift is an opinionless web development framework, specialising
+		            in static websites with serverless backends. It's lightning fast, 
+		            cross-platform, opinionless, open source (MIT license) and 
+		            developed from the ground up in C++. Use it for any of your 
+		            personal or commercial projects!">
+		
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" href="../assets/css/pagestyle.css">
+		<link rel="stylesheet" href="../assets/css/menu.css">
+		<link rel="stylesheet" href="../assets/css/font-awesome.css">
+		<link rel="stylesheet" href="../assets/css/pre.css">
+		<link rel="stylesheet" href="../assets/css/extra-fonts.css"><link rel='icon' type='image/png' href='../images/lightning.png'>
+		
+		<script async src="../assets/js/menu.js"></script>
+		<script async src="../assets/js/copy-pre.js"></script>
+		<script async src="../assets/js/process-md-blocks.js"></script>
+		<script async src="../assets/js/showdown.min.js"></script>
 		<script>
 			var converter = new showdown.Converter();
 			converter.setOption('emoji', 'on');
@@ -518,22 +31,14 @@
 			for(var i=0; i<elements.length; i++)
 				elements[i].innerHTML = converter.makeHtml(elements[i].innerHTML.replace(/&lt;/g, "xwxw").replace(/&gt;/g, "pqpq")).replace(/xwxw/g, "&lt;").replace(/pqpq/g, "&gt;");
 		</script>
-		<script src="../assets/js/toggle.js"></script>
-
-		<!-- Inserts current year -->
-		<script>
-			var x = document.getElementsByName("cyear");
-
-			for(var i=0; i<x.length; i++)
-				x[i].innerHTML = new Date().getFullYear();
-		</script>
-
 		<!-- uses google-code-prettify for syntax highlighting 
 			 see https://github.com/google/code-prettify/ for more info -->
-		<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
-		<script src="../assets/js/lang-lua.js"></script>
-		<script src="../assets/js/lang-nift.js"></script>
-
+		<script async src="../assets/js/prettify.js" onload="PR.prettyPrint()"></script>
+		<script async src="../assets/js/lang-lua.js"></script>
+		<script async src="../assets/js/lang-nift.js"></script>
+		
+		<!-- uses MathJax CDN for LaTeX support
+			 see https://docs.mathjax.org/en/latest/web/configuration.html for more info -->
 		<script id="MathJax-script" async
 		        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 		</script>
@@ -546,7 +51,455 @@
 				}
 			};
 		</script>
+	</head>
+
+	<body>
+		<nav id="nav" class="noselect">
+		  <ul class="menu">
+		    <a href="../index.html"><li class="logo">Nift</li></a>
+		    <li class="nav-space-left"></li>
+		    <li class="item icons">
+		      <a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a>
+		      <a href="https://github.com/nifty-site-manager/nsm/discussions" title="GitHub Discussions" class="gh"><i class="fas fa-comment-dots fa-2x"></i></a>
+		      <a href="https://twitter.com/nift_dev" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a>
+		      <a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a>
+		    </li>
+		    <a href="../index.html" class="item hover-hl"><li>Home</li></a>
+		    <li class="item hover-hl has-submenu" onclick="toggleItem(0)">
+		      <a tabindex="0" class="item-link">Docs</a>
+		      <ul class="submenu">
+		        <li class="subitem"><a href="../docs/installing.html">Installing</a></li>
+		        <li class="subitem"><a href="../docs/hosting.html">Hosting</a></li>
+		        <li class="subitem"><a href="../docs/commands.html">Commands</a></li>
+		        <li class="subitem"><a href="../docs/config.html">Config</a></li>
+		        <li class="subitem"><a href="../docs/template_files.html">Template Files</a></li>
+		        <li class="subitem"><a href="../docs/fns.html">Functions</a></li>
+		        <li class="subitem"><a href="../docs/types.html">Types</a></li>
+		        <li class="subitem"><a href="../docs/f++.html">f++ (scripting)</a></li>
+		        <li class="subitem"><a href="../docs/n++.html">n++ (templates)</a></li>
+		        <li class="subitem"><a href="../docs/lua.html">Lua(JIT)</a></li>
+		        <li class="subitem"><a href="../docs/exprtk.html">ExprTk</a></li>
+		        <li class="subitem"><a href="../docs/REPL.html">Interactive REPL</a></li>
+		        <li class="subitem"><a href="../docs/scripts.html">Scripts</a></li>
+		        <li class="subitem"><a href="../docs/template_languages.html">Template Languages</a></li>
+		        <li class="subitem"><a href="../docs/JSON.html">JSON Data</a></li>
+		        <li class="subitem"><a href="../docs/markdown.html">Markdown</a></li>
+		        <li class="subitem"><a href="../docs/translators.html">Translators</a></li>
+		        <li class="subitem"><a href="../docs/mathematics.html">Mathematics</a></li>
+		        <li class="subitem"><a href="../docs/code_blocks.html">Code Blocks</a></li>
+		        <li class="subitem"><a href="../docs/presentations.html">Presentations</a></li>
+		      </ul>
+		    </li>
+		    <li class="item hover-hl has-submenu" onclick="toggleItem(1)">
+		      <a tabindex="0" class="item-link">Resources</a>
+		      <ul class="submenu">
+		        <li class="subitem"><a href="tutorials.html">Tutorials</a></li>
+		        <li class="subitem"><a href="templates.html">Templates</a></li>
+		        <li class="subitem"><a href="blog_templates.html">Blog Templates</a></li>
+		        <li class="subitem"><a href="css_frameworks.html">CSS Frameworks</a></li>
+		        <li class="subitem"><a href="js_frameworks.html">JS Frameworks</a></li>
+		        <li class="subitem"><a href="links.html">Links</a></li>
+		        <li class="subitem"><a href="logos.html">Logos</a></li>
+		        <li class="subitem"><a href="promos.html">Promos</a></li>
+		        <li class="subitem"><a href="php_frameworks.html">PHP Frameworks</a></li>
+		      </ul>
+		    </li>
+		    <li class="toggle"><a href="#" onclick="toggleMenu()" id="menu-link"><i class="fas fa-bars fa-2x"></i></a></li>
+		  </ul>
+		</nav>
 		
+		<!-- Header -->
+		<section class="wrapper" id="header">
+		  <div id="logo" class="noselect">
+		    <img src="../images/rabbit-tags-white.png" alt="Nift bunny mascot" style="width: 400px; max-width:90%"><br>
+		
+		    <p style="color:#372C2A">An opinionless web development framework</p>
+		
+		    <p>
+		      <a href="https://chocolatey.org/packages/nift"><img src="../images/chocolatey-icon.png" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
+		      <a href="../docs/installing.html#osx-brew"><img src="../images/brew-icon.png" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
+		      <a href="../docs/installing.html#freebsd"><img src="../images/freebsd.png" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
+		      <a href="../docs/installing.html#linux-flatpak"><img src="../images/flathub-icon.png" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
+		      <a href="../docs/installing.html#gentoo"><img src="../images/gentoo.svg" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
+		      <a href="https://snapcraft.io/nift"><img src="../images/snap-icon.png" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
+		    </p>
+		  </div>
+		</section>
+
+		<!-- Main -->
+		<section id="main" class="wrapper style2">
+			<div class="title">Templates</div>
+			<div class="container">
+				<!-- Features -->
+				<section id="features">
+					<header class="style1">
+						<h2>Website repository templates for making websites</h2>
+					</header>
+		
+					<div class="content">
+						<p>
+							For website templates check out the following links:
+							<ul>
+								<li><a href="https://html5up.net">HTML5 UP</a> (free to use with attribution)</li>
+								<li><a href="https://pixelarity.com/">Pixelarity</a> (similar to above but paid license to not have to give attribution)</li>
+								<li><a href="https://templated.co/">Templated</a></li>
+								<li><a href="https://templatemo.com/">TemplateMo</a></li>
+								<li><a href="https://www.tooplate.com/">TooPlate</a></li>
+								<li><a href="https://www.creative-tim.com/templates/">Creative Tim</a></li>
+								<li><a href="https://www.w3schools.com/w3css/w3css_templates.asp">W3.CSS Templates</a></li>
+								<li><a href="https://www.free-css.com/free-css-templates">Free CSS Templates</a></li>
+								<li><a href="https://www.templatemonster.com/free-website-templates/">Template Monster</a></li>
+								<li><a href="https://www.os-templates.com/free-website-templates">OS Templates</a></li>
+								<li><a href="https://www.site123.com/website-templates">Site123</a></li>
+								<li><a href="https://colorlib.com/wp/templates/">ColorLib</a></li>
+								<li><a href="https://freewebsitetemplates.com/">Free Website Templates</a></li>
+							</ul>
+						</p>
+		
+						<p>
+							Also check out <a href="https://anymod.com">AnyMod</a> for all sorts of things that you can add to your websites. 
+						</p>
+		
+						<p>
+							If you would like any template from the above links turned in to a <mono>Nift</mono> template file an issue at <a href="https://github.com/nifty-site-manager/nsm">GitHub</a> and we will make it for you. It is also a useful skill to be able to take a template and create a <mono>Nift</mono> template from it, take a look at how the same has been done for templates in the tables below for how. 
+						</p>
+		
+						<p>
+							For template site repositories that you can import (or fork and rename) then clone to start making websites, see the table below:
+						</p>
+		
+						<center>
+							<div class="xscroll">
+								<table id="templates_table" class="alt">
+									<thead>
+										<tr>
+											<th>name</th>
+											<th>demo</th>
+											<th>repository</th>
+										</tr>
+									</thead>
+									<tr>
+										<td>basic-site</td>
+										<td><a href="https://nsm-templates.github.io/basic-site/">GitHub</a> - <a href="https://nsm-templates.gitlab.io/basic-site/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/nsm-templates/basic-site">BitBucket</a> - <a href="https://github.com/nsm-templates/basic-site">GitHub</a> - <a href="https://gitlab.com/nsm-templates/basic-site">GitLab</a></td>
+									</tr>
+									<tr>
+										<td>dev-site</td>
+										<td><a href="https://nsm-templates.github.io/dev-site/">GitHub</a> - <a href="https://nsm-templates.gitlab.io/dev-site/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/nsm-templates/dev-site">BitBucket</a> - <a href="https://github.com/nsm-templates/dev-site">GitHub</a> - <a href="https://gitlab.com/nsm-templates/dev-site">GitLab</a></td>
+									</tr>
+									<tr>
+										<td><a href="https://undraw.co/evie">evie-undraw</a></td>
+										<td><a href="https://nsm-templates.github.io/evie-undraw/">GitHub</a> - <a href="https://nsm-templates.gitlab.io/evie-undraw/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/nsm-templates/evie-undraw">BitBucket</a> - <a href="https://github.com/nsm-templates/evie-undraw">GitHub</a> - <a href="https://gitlab.com/nsm-templates/evie-undraw">GitLab</a></td>
+									</tr>
+									<tr>
+										<td>gradient-site</td>
+										<td><a href="https://nsm-templates.github.io/gradient-site/">GitHub</a> - <a href="https://nsm-templates.gitlab.io/gradient-site/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/nsm-templates/gradient-site">BitBucket</a> - <a href="https://github.com/nsm-templates/gradient-site">GitHub</a> - <a href="https://gitlab.com/nsm-templates/gradient-site">GitLab</a></td>
+									</tr>
+									<tr>
+										<td>markdown-site</td>
+										<td><a href="https://nsm-templates.github.io/markdown-site/">GitHub</a> - <a href="https://nsm-templates.gitlab.io/markdown-site/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/nsm-templates/markdown-site">BitBucket</a> - <a href="https://github.com/nsm-templates/markdown-site">GitHub</a> - <a href="https://gitlab.com/nsm-templates/markdown-site">GitLab</a></td>
+									</tr>
+									<tr>
+										<td>menus</td>
+										<td><a href="https://nsm-templates.github.io/menus/">GitHub</a> - <a href="https://nsm-templates.gitlab.io/menus/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/nsm-templates/menus">BitBucket</a> - <a href="https://github.com/nsm-templates/menus">GitHub</a> - <a href="https://gitlab.com/nsm-templates/menus">GitLab</a></td>
+									</tr>
+									<tr>
+										<td>null-site</td>
+										<td><a href="https://nsm-templates.github.io/null-site/">GitHub</a> - <a href="https://nsm-templates.gitlab.io/null-site/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/nsm-templates/null-site">BitBucket</a> - <a href="https://github.com/nsm-templates/null-site">GitHub</a> - <a href="https://gitlab.com/nsm-templates/null-site">GitLab</a></td>
+									</tr>
+									<tr>
+										<td>parchment-site</td>
+										<td><a href="https://nsm-templates.github.io/parchment-site/">GitHub</a> - <a href="https://nsm-templates.gitlab.io/parchment-site/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/nsm-templates/parchment-site">BitBucket</a> - <a href="https://github.com/nsm-templates/parchment-site">GitHub</a> - <a href="https://gitlab.com/nsm-templates/parchment-site">GitLab</a></td>
+									</tr>
+									<tr>
+										<td>simple-site</td>
+										<td><a href="https://nsm-templates.github.io/simple-site/">GitHub</a> - <a href="https://nsm-templates.gitlab.io/simple-site/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/nsm-templates/simple-site">BitBucket</a> - <a href="https://github.com/nsm-templates/simple-site">GitHub</a> - <a href="https://gitlab.com/nsm-templates/simple-site">GitLab</a></td>
+									</tr>
+									<tr>
+										<td>tiar-site</td>
+										<td><a href="https://nsm-templates.github.io/tiar-site/">GitHub</a> - <a href="https://nsm-templates.gitlab.io/tiar-site/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/nsm-templates/tiar-site">BitBucket</a> - <a href="https://github.com/nsm-templates/tiar-site">GitHub</a> - <a href="https://gitlab.com/nsm-templates/tiar-site">GitLab</a></td>
+									</tr>
+									<tfoot>
+										<tr>
+											<th>name</th>
+											<th>demo</th>
+											<th>repository</th>
+										</tr>
+									</tfoot>
+								</table>
+							</div>
+						</center>
+		
+						<p>
+							To make changes to a template that has already been added to the above table, make a pull request from the repository you had us clone originally. 
+						</p>
+		
+						<h3 id="html5up">HTML5 UP Templates</h3>
+		
+						<p>
+							The following table contains modified <a href="https://html5up.net/">HTML5 UP</a> template site repositories that you can import (or fork and rename) then clone to start making websites. If there is an <a href="https://html5up.net/">HTML5 UP</a> template you would like that is not in the table below file an issue at <a href="https://github.com/nifty-site-manager/nsm">GitHub</a> and we will add it for you.
+						</p>
+		
+						<center>
+							<div class="xscroll">
+								<table id="html5up_templates_table" class="alt">
+									<thead>
+										<tr>
+											<th>name</th>
+											<th>demo</th>
+											<th>repository</th>
+										</tr>
+									</thead>
+									<tr>
+										<td><a href="https://html5up.net/alpha">alpha</a></td>
+										<td><a href="https://html5up-nsm-templates.github.io/alpha/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/alpha/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/html5up-nsm-templates/alpha">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/alpha">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/alpha">GitLab</a></td>
+									</tr>
+									<tr>
+										<td><a href="https://html5up.net/arcana">arcana</a></td>
+										<td><a href="https://html5up-nsm-templates.github.io/arcana/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/arcana/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/html5up-nsm-templates/arcana">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/arcana">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/arcana">GitLab</a></td>
+									</tr>
+									<tr>
+										<td><a href="https://html5up.net/big-picture">big-picture</a></td>
+										<td><a href="https://html5up-nsm-templates.github.io/big-picture/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/big-picture/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/html5up-nsm-templates/big-picture">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/big-picture">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/big-picture">GitLab</a></td>
+									</tr>
+									<tr>
+										<td><a href="https://html5up.net/dimension">dimension</a></td>
+										<td><a href="https://html5up-nsm-templates.github.io/dimension/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/dimension/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/html5up-nsm-templates/dimension">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/dimension">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/dimension">GitLab</a></td>
+									</tr>
+									<tr>
+										<td><a href="https://html5up.net/directive">directive</a></td>
+										<td><a href="https://html5up-nsm-templates.github.io/directive/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/directive/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/html5up-nsm-templates/directive">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/directive">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/directive">GitLab</a></td>
+									</tr>
+									<tr>
+										<td><a href="https://html5up.net/dopetrope">dopetrope</a></td>
+										<td><a href="https://html5up-nsm-templates.github.io/dopetrope/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/dopetrope/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/html5up-nsm-templates/dopetrope">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/dopetrope">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/dopetrope">GitLab</a></td>
+									</tr>
+									<tr>
+										<td><a href="https://html5up.net/editorial">editorial</a></td>
+										<td><a href="https://html5up-nsm-templates.github.io/editorial/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/editorial/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/html5up-nsm-templates/editorial">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/editorial">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/editorial">GitLab</a></td>
+									</tr>
+									<tr>
+										<td><a href="https://html5up.net/escape-velocity">escape-velocity</a></td>
+										<td><a href="https://html5up-nsm-templates.github.io/escape-velocity/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/escape-velocity/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/html5up-nsm-templates/escape-velocity">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/escape-velocity">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/escape-velocity">GitLab</a></td>
+									</tr>
+									<tr>
+										<td><a href="https://html5up.net/ethereal">ethereal</a></td>
+										<td><a href="https://html5up-nsm-templates.github.io/ethereal/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/ethereal/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/html5up-nsm-templates/ethereal">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/ethereal">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/ethereal">GitLab</a></td>
+									</tr>
+									<tr>
+										<td><a href="https://html5up.net/forty">forty</a></td>
+										<td><a href="https://html5up-nsm-templates.github.io/forty/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/forty/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/html5up-nsm-templates/forty">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/forty">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/forty">GitLab</a></td>
+									</tr>
+									<tr>
+										<td><a href="https://html5up.net/future-imperfect">future-imperfect</a></td>
+										<td><a href="https://html5up-nsm-templates.github.io/future-imperfect/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/future-imperfect/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/html5up-nsm-templates/future-imperfect">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/future-imperfect">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/future-imperfect">GitLab</a></td>
+									</tr>
+									<tr>
+										<td><a href="https://html5up.net/halcyonic">halcyonic</a></td>
+										<td><a href="https://html5up-nsm-templates.github.io/halcyonic/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/halcyonic/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/html5up-nsm-templates/halcyonic">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/halcyonic">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/halcyonic">GitLab</a></td>
+									</tr>
+									<tr>
+										<td><a href="https://html5up.net/helios">helios</a></td>
+										<td><a href="https://html5up-nsm-templates.github.io/helios/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/helios/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/html5up-nsm-templates/helios">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/helios">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/helios">GitLab</a></td>
+									</tr>
+									<tr>
+										<td><a href="https://html5up.net/hyperspace">hyperspace</a></td>
+										<td><a href="https://html5up-nsm-templates.github.io/hyperspace/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/hyperspace/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/html5up-nsm-templates/hyperspace">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/hyperspace">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/hyperspace">GitLab</a></td>
+									</tr>
+									<tr>
+										<td><a href="https://html5up.net/landed">landed</a></td>
+										<td><a href="https://html5up-nsm-templates.github.io/landed/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/landed/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/html5up-nsm-templates/landed">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/landed">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/landed">GitLab</a></td>
+									</tr>
+									<tr>
+										<td><a href="https://html5up.net/massively">massively</a></td>
+										<td><a href="https://html5up-nsm-templates.github.io/massively/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/massively/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/html5up-nsm-templates/massively">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/massively">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/massively">GitLab</a></td>
+									</tr>
+									<tr>
+										<td><a href="https://html5up.net/minimaxing">minimaxing</a></td>
+										<td><a href="https://html5up-nsm-templates.github.io/minimaxing/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/minimaxing/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/html5up-nsm-templates/minimaxing">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/minimaxing">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/minimaxing">GitLab</a></td>
+									</tr>
+									<tr>
+										<td><a href="https://html5up.net/miniport">miniport</a></td>
+										<td><a href="https://html5up-nsm-templates.github.io/miniport/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/miniport/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/html5up-nsm-templates/miniport">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/miniport">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/miniport">GitLab</a></td>
+									</tr>
+									<tr>
+										<td><a href="https://html5up.net/multiverse">multiverse</a></td>
+										<td><a href="https://html5up-nsm-templates.github.io/multiverse/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/multiverse/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/html5up-nsm-templates/multiverse">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/multiverse">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/multiverse">GitLab</a></td>
+									</tr>
+									<tr>
+										<td><a href="https://html5up.net/parallelism">parallelism</a></td>
+										<td><a href="https://html5up-nsm-templates.github.io/parallelism/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/parallelism/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/html5up-nsm-templates/parallelism">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/parallelism">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/parallelism">GitLab</a></td>
+									</tr>
+									<tr>
+										<td><a href="https://html5up.net/phantom">phantom</a></td>
+										<td><a href="https://html5up-nsm-templates.github.io/phantom/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/phantom/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/html5up-nsm-templates/phantom">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/phantom">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/phantom">GitLab</a></td>
+									</tr>
+									<tr>
+										<td><a href="https://html5up.net/solid-state">solid-state</a></td>
+										<td><a href="https://html5up-nsm-templates.github.io/solid-state/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/solid-state/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/html5up-nsm-templates/solid-state">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/solid-state">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/solid-state">GitLab</a></td>
+									</tr>
+									<tr>
+										<td><a href="https://html5up.net/spectral">spectral</a></td>
+										<td><a href="https://html5up-nsm-templates.github.io/spectral/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/spectral/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/html5up-nsm-templates/spectral">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/spectral">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/spectral">GitLab</a></td>
+									</tr>
+									<tr>
+										<td><a href="https://html5up.net/stellar">stellar</a></td>
+										<td><a href="https://html5up-nsm-templates.github.io/stellar/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/stellar/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/html5up-nsm-templates/stellar">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/stellar">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/stellar">GitLab</a></td>
+									</tr>
+									<tr>
+										<td><a href="https://html5up.net/strongly-typed">strongly-typed</a></td>
+										<td><a href="https://html5up-nsm-templates.github.io/strongly-typed/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/strongly-typed/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/html5up-nsm-templates/strongly-typed">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/strongly-typed">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/strongly-typed">GitLab</a></td>
+									</tr>
+									<tr>
+										<td><a href="https://html5up.net/telephasic">telephasic</a></td>
+										<td><a href="https://html5up-nsm-templates.github.io/telephasic/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/telephasic/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/html5up-nsm-templates/telephasic">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/telephasic">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/telephasic">GitLab</a></td>
+									</tr>
+									<tr>
+										<td><a href="https://html5up.net/twenty">twenty</a></td>
+										<td><a href="https://html5up-nsm-templates.github.io/twenty/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/twenty/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/html5up-nsm-templates/twenty">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/twenty">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/twenty">GitLab</a></td>
+									</tr>
+									<tr>
+										<td><a href="https://html5up.net/txt">txt</a></td>
+										<td><a href="https://html5up-nsm-templates.github.io/txt/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/txt/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/html5up-nsm-templates/txt">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/txt">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/txt">GitLab</a></td>
+									</tr>
+									<tr>
+										<td><a href="https://html5up.net/verti">verti</a></td>
+										<td><a href="https://html5up-nsm-templates.github.io/verti/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/verti/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/html5up-nsm-templates/verti">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/verti">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/verti">GitLab</a></td>
+									</tr>
+									<tr>
+										<td><a href="https://html5up.net/zerofour">zerofour</a></td>
+										<td><a href="https://html5up-nsm-templates.github.io/zerofour/">GitHub</a> - <a href="https://html5up-nsm-templates.gitlab.io/zerofour/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/html5up-nsm-templates/zerofour">BitBucket</a> - <a href="https://github.com/html5up-nsm-templates/zerofour">GitHub</a> - <a href="https://gitlab.com/html5up-nsm-templates/zerofour">GitLab</a></td>
+									</tr>
+									<tfoot>
+										<tr>
+											<th>name</th>
+											<th>demo</th>
+											<th>repository</th>
+										</tr>
+									</tfoot>
+								</table>
+							</div>
+						</center>
+		
+						<h3 id="w3css">W3.CSS Templates</h3>
+		
+						<p>
+							The following table contains modified <a href="https://www.w3schools.com/w3css/w3css_templates.asp">W3.CSS</a> template site repositories that you can import (or fork and rename) then clone to start making websites. If there is a <a href="https://www.w3schools.com/w3css/w3css_templates.asp">W3.CSS</a> template you would like that is not in the table below file an issue at <a href="https://github.com/nifty-site-manager/nsm">GitHub</a>.
+						</p>
+		
+						<center>
+							<div class="xscroll">
+								<table id="w3css_templates_table" class="alt">
+									<thead>
+										<tr>
+											<th>name</th>
+											<th>demo</th>
+											<th>repository</th>
+										</tr>
+									</thead>
+									<tr>
+										<td><a href="https://www.w3schools.com/w3css/tryw3css_templates_architect.htm">architect</a></td>
+										<td><a href="https://w3css-nsm-templates.github.io/architect/">GitHub</a> - <a href="https://w3css-nsm-templates.gitlab.io/architect/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/w3css-nsm-templates/architect">BitBucket</a> - <a href="https://github.com/w3css-nsm-templates/architect">GitHub</a> - <a href="https://gitlab.com/w3css-nsm-templates/architect">GitLab</a></td>
+									</tr>
+									<tr>
+										<td><a href="https://www.w3schools.com/w3css/tryw3css_templates_band.htm">band</a></td>
+										<td><a href="https://w3css-nsm-templates.github.io/band/">GitHub</a> - <a href="https://w3css-nsm-templates.gitlab.io/band/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/w3css-nsm-templates/band">BitBucket</a> - <a href="https://github.com/w3css-nsm-templates/band">GitHub</a> - <a href="https://gitlab.com/w3css-nsm-templates/band">GitLab</a></td>
+									</tr>
+									<tr>
+										<td><a href="https://www.w3schools.com/w3css/tryw3css_templates_gourmet_catering.htm">gourmet-catering</a></td>
+										<td><a href="https://w3css-nsm-templates.github.io/gourmet-catering/">GitHub</a> - <a href="https://w3css-nsm-templates.gitlab.io/gourmet-catering/">GitLab</a></td>
+										<td><a href="https://bitbucket.org/w3css-nsm-templates/gourmet-catering">BitBucket</a> - <a href="https://github.com/w3css-nsm-templates/gourmet-catering">GitHub</a> - <a href="https://gitlab.com/w3css-nsm-templates/gourmet-catering">GitLab</a></td>
+									</tr>
+									<tfoot>
+										<tr>
+											<th>name</th>
+											<th>demo</th>
+											<th>repository</th>
+										</tr>
+									</tfoot>
+								</table>
+							</div>
+						</center>
+					</div>
+				</section>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer" class="wrapper">
+			<div class="title">
+				<img src="../images/rabbit-tags-icon.png" alt="Nift rabbit mascot with code tag boomerangs" loading="lazy" width="200" style="margin-top:20px; border-radius: 4px">
+			</div>
+		
+			<div class="container">
+				<div id="copyright" class="noselect">
+					<ul>
+						<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
+						<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
+						<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
+					</ul> <br>
+		
+					<ul>
+						<li><a href="../tos.html">Terms of Service</a></li>
+						<li><a href="../privacy_policy.html">Privacy Policy</a></li>
+					</ul> <br>
+		
+					<ul>
+						<li><span>&copy;</span> 2015-<span name="cyear"></span></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- Inserts current year -->
+		<script async>
+			var x = document.getElementsByName("cyear");
+			for(var i=0; i<x.length; i++)
+			{
+				x[i].innerHTML = new Date().getFullYear();
+			}
+		</script>
 
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-62165905-2"></script>
@@ -554,8 +507,8 @@
 			window.dataLayer = window.dataLayer || [];
 			function gtag(){dataLayer.push(arguments);}
 			gtag('js', new Date());
-
 			gtag('config', 'UA-62165905-2');
 		</script>
-    </body>
+	</body>
 </html>
+
