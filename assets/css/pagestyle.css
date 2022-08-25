@@ -347,14 +347,16 @@ a:hover {
 }
 #copyright ul {
   display: block;
-  border-radius: 0.35em;
+  border-radius: 0.5em !important;
   box-shadow: inset 0px 0px 1px 1px rgba(255, 255, 255, 0.05);
   padding: 0.5em 0.5em;
   margin-bottom: 1em;
+  text-align: center;
 }
 #copyright ul li {
   display: block;
-  padding-bottom: 0.25em;
+  padding-top: 0.3em !important;
+  padding-bottom: 0.3em !important;
   font-size: 1em !important;
 }
 #copyright ul li:first-child {
