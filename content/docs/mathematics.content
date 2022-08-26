@@ -25,38 +25,38 @@
 					The <mono>Nift</mono> documentation covers how to display $\LaTeX$ on your websites using <a href=https://www.mathjax.org/>MathJax</a>. Repeating the information on <a href="https://docs.mathjax.org/en/latest/web/configuration.html">this</a> page, using MathJax on your site is as simple as adding the following code to the head of each page:
 				</p>
 
-			<div align="center">
-			<pre class="prettyprint inline">
-			<!-- uses MathJax CDN for LaTeX support
-				 see https://docs.mathjax.org/en/latest/web/configuration.html for more info -->
-			<script id="MathJax-script" async
-			        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-			</script>
-			<script>
-				window.MathJax = {
-					tex: {
-						inlineMath: [['$', '$'], ['\\(', '\\)']],
-						displayMath: [['$$', '$$'], ["\\[", "\\]"]],
-						processEscapes: true
-					}
-				};
-			</script>
-			</pre>
-			</div>
+<div align="center">
+<pre class="prettyprint inline">
+<!-- uses MathJax CDN for LaTeX support
+	 see https://docs.mathjax.org/en/latest/web/configuration.html for more info -->
+<script id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+<script>
+	window.MathJax = {
+		tex: {
+			inlineMath: [['$', '$'], ['\\(', '\\)']],
+			displayMath: [['$$', '$$'], ["\\[", "\\]"]],
+			processEscapes: true
+		}
+	};
+</script>
+</pre>
+</div>
 
 				<p>
-					You should then be able to paste $\LaTeX$ equations straight into content files. Both <mono>`\\$..\\$`</mono> and <mono>`\\(..\\)`</mono> work for inline equations, and both <mono>`\\$\\$..\\$\\$`</mono> and <mono>`\\[..\\]`</mono> work for displayed equations (note inside markdown/showdown blocks use <mono>`\\(..\\)`</mono> and <mono>`\\[..\\]`</mono>, or the <mono>`\$`</mono> syntax). Eg. When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are:
+					You should then be able to paste $\LaTeX$ equations straight into content files. Both <mono>\\$..\\$</mono> and <mono>\\(..\\)</mono> work for inline equations, and both <mono>\\$\\$..\\$\\$</mono> and <mono>\\[..\\]</mono> work for displayed equations (note inside markdown/showdown blocks use <mono>\\(..\\)</mono> and <mono>\\[..\\]</mono>, or the <mono>\$</mono> syntax). Eg. When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are:
 
 					\[x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}\]
 				</p>
 
 				<p>
-					If you want to insert a dollar sign on a page, as opposed to opening/closing an inline equation, use \\\$ and MathJax will escape the character.
+					If you want to insert a dollar sign on a page, as opposed to opening/closing an inline equation, use <mono>\\\$</mono> and MathJax will escape the character.
 				</p>
 
 
 				<p>
-					<u>Note:</u> if you are opening a page locally and are not connected to the internet then MathJax will not load, you will simply see the unprocessed LaTeX equations. 
+					<b>Note:</b> if you are opening a page locally and are not connected to the internet then MathJax will not load, you will simply see the unprocessed $\LaTeX$ equations. 
 				</p>
 			</div>
 		</section>
