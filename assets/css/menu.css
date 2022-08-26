@@ -12,6 +12,7 @@ a {
 }
 .menu,
 .submenu {
+  padding: 0 0 0 0;
   list-style-type: none;
 }
 .logo{

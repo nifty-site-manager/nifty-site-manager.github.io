@@ -35,6 +35,8 @@ body {
   background: #1f2021;
 }
 
+div{padding: 0 0 0 0;}
+
 h2 {
   text-align: center;
 }
@@ -58,6 +60,10 @@ mono {
   color: #c922c9 !important;
 }
 
+b {
+  color: #ba7e16;
+}
+
 .noselect, br, img {
   -webkit-user-select: none; /* Chrome/Safari */
   -moz-user-select: none; /* Firefox */
@@ -75,9 +81,14 @@ iframe {
 }
 
 #main ol, #main ul {
+  padding: 0 0 0 0;
   list-style-position: inline;
   margin-left: 2em;
   margin-bottom: 1em;
+}
+
+.MathJax {
+  color: #b5916e;
 }
 
 ul li {
@@ -244,7 +255,7 @@ center.table {
   -ms-transition: color .25s ease-in-out;
   transition: color .25s ease-in-out;
   text-decoration: none;
-  color: #ba7e16 !important;
+  color: #39ff14 !important;
 }
 
 a:hover {
