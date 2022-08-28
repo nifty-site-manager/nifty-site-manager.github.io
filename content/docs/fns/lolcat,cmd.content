@@ -47,7 +47,7 @@ lolcat.cmd
 				</p>
 
 				<p>
-					<b>Note:</b> There is a modified version of my <a href="https://github.com/n-ham/lolcat-cc">lolcat-cc</a> in-built in to Nift which is used when possible to run lolcat internally.
+					<b>Note:</b> There is a modified version of <a href="https://github.com/n-ham/lolcat-cc">lolcat-cc</a> in-built in to Nift which is used when possible to run lolcat internally. The in-built version of <mono>lolcat-cc</mono> can be used for external calls, though it is better to install <mono>lolcat-cc</mono>.
 				</p>
 
 				<h4 id="f++-eg">

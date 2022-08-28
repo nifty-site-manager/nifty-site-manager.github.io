@@ -72,14 +72,14 @@ lolcat.on(string)
 				</h4>
 				
 				<p>
-					You can configure lolcat output bein turned on automatically when running scripts, using <zapfont style = "font-size:30px;">FLASHELL</zapfont>, the other shell extensions and the interpreters by adding the following to the global and project config files:
+					You can configure lolcat output being turned on automatically when running scripts along with the shell extensions and interpreters by adding the following to the global or project config file:
 
 					<ul>
 						<li>lolcat 1</li>
 						<li>lolcatCmd "lolcat-cc -f"</li>
 					</ul>
 
-					<b>Note:</b> you can use any <mono>lolcat</mono> program you want provided the command is set properly. The in-built version of lolcat for example does not handle animations like Star Wars very well but is faster than the others. Some may like to watch all the way through with the in-built version of <mono>lolcat-cc</mono> and see what happens, or just use the original version of lolcat to terminal star wars in rainbow mode. 
+					<b>Note:</b> you can use any <mono>lolcat</mono> program you want provided the command is set properly.
 				</p>
 
 				<h4 id="f++-eg">
