@@ -30,7 +30,7 @@ funcName{options}(params)
 </div>
 
 				<p>
-					You can use Nift's scripting and template languages with the function name, options and parameters for a function call. For example:
+					Below is an example of a function call with no options:
 				</p>
 <div align="center">
 <pre class="prettyprint inline">\@input("\$[contentpath]")</pre>
