@@ -19,4 +19,4 @@
 	<link rel="stylesheet" href="@pathtofile(site/assets/css/extra-fonts.css)">
 }
 
-<link rel='icon' type='image/png' href='@pathtofile("site/images/lightning.png")'>
+<link rel='icon' type='image/png' href='@pathtofile("site/images/favicon.png")'>
