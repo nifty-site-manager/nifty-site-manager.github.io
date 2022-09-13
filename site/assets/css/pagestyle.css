@@ -35,7 +35,9 @@ body {
   background: #1f2021;
 }
 
-div{padding: 0 0 0 0;}
+div{
+  padding: 0 0 0 0;
+}
 
 h2 {
   text-align: center;

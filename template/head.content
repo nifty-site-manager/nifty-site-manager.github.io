@@ -11,7 +11,7 @@
 
 <link rel="stylesheet" href="@pathto(site/assets/css/pagestyle.css)">
 <link rel="stylesheet" href="@pathto(site/assets/css/menu.css)">
-<link rel="stylesheet" href="@pathtofile(site/assets/css/font-awesome.css)">
+<link rel="stylesheet" href="@pathto(site/assets/css/font-awesome.css)">
 @string pname = $[name]
 @if(pname != 'index')
 {

@@ -1,13 +1,9 @@
 <!-- Main -->
 <section id="main" class="wrapper style2">
-	<div class="title">Functions</div>
+	<div class="title">Comments</div>
 	<div class="container">
 		<!-- Features -->
 		<section id="features">
-			<header class="style1">
-				<h2>Index for Nift comments</h2>
-			</header>
-
 			<div class="content">
 				<p>
 					If you are building <mono>html</mono> or <mono>php</mono> pages then you can use <mono>html</mono> or <mono>php</mono> coments in your content and template files which will also appear in the source code for the built pages. If you are building output files for another language, you should also have no problems using the comment syntax for that language in your content and template files which will appear in the source code for the built output files. The index below is for comments that will be stripped at build-time with <mono>Nift</mono>.
