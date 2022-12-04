@@ -1,26 +1,12 @@
-@/*<!-- Promo -->
-<section id="promo" class="wrapper style5">
-	<div class="title" id="promo-title">Promo Video</div>
-	<div class="container">
-		<!-- Features -->
-		<section id="promo-features">
-			<!-- promo video made by Hash One Creatives team https://hashonecreatives.com/ -->
-			<center>
-				<iframe width="560" height="315" src="https://www.youtube.com/embed/iCEqkTXuzOY" frameborder="0" title="Nift promo video" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			</center>
-		</section>
-	</div>
-</section>*/
-
 <!-- Intro -->
 <section id="intro" class="wrapper style0">
 	<div class="title">The Introduction</div>
 	<div class="container">
 		<p class="style1">So in case you were wondering what this is all about...</p>
 		<p class="style2">
-			Nift is a web development framework, specialising in static websites with serverless backends.
+			Nift is a high-performance cross-platform unopinionated framework for building the web.
 		</p>
-		<p class="style3">It's <strong>lightning fast</strong> (<a href="https://hugo-vs-nift.gitlab.io/" style="color: white !important">evidence</a>), cross-platform, opinionless, open source (<a href="https://choosealicense.com/licenses/mit/" style="color: white !important">MIT license</a>) and developed from the ground up in <strong>C++</strong>. Use it for any of your personal or commercial projects!</p>
+		<p class="style3">It's <strong>lightning fast</strong> (<a href="https://hugo-vs-nift.gitlab.io/" style="color: white !important">evidence</a>), open source (<a href="https://choosealicense.com/licenses/mit/" style="color: white !important">MIT license</a>) and developed from the ground up in <strong>C++</strong>. Use it for any of your personal or commercial projects!</p>
 	</div>
 </section>
 

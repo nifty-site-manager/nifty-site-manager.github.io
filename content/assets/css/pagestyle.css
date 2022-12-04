@@ -1,14 +1,17 @@
 @font-face {
   font-family: "DejaVu Sans Mono";
   src: url("../webfonts/DejaVuSansMono.ttf") format("truetype");
+  font-display: fallback;
 }
 @font-face {
   font-family:"Ubuntu Mono";
   src: url("../webfonts/UbuntuMono-R.ttf") format("truetype");
+  font-display: fallback;
 }
 @font-face {
   font-family: "Source Sans Pro";
   src: url("../webfonts/SourceSansPro-Regular.otf") format("truetype");
+  font-display: fallback;
 }
 
 html, body, div, applet, object,
@@ -23,7 +26,7 @@ canvas, details, embed, figure, figcaption,
 footer, header, hgroup, output, ruby,
 section, summary, time, mark, audio, video {
   margin:  0 0 0 0;
-  font-size: 3vw;
+  font-size: 12pt;
   color: white;
   letter-spacing: 0.025em;
   line-height: 1.75em;
@@ -58,7 +61,6 @@ strong {
 
 mono {
   font-family: "DejaVu Sans Mono", "Ubuntu Mono";
-  font-size: 85%;
   color: #c922c9 !important;
 }
 
@@ -274,7 +276,7 @@ a:hover {
 }
 
 .wrapper.style0 {
-  background-color: #e97770;
+  background-color: #bd5353;
   text-align: center;
 }
 .wrapper.style0 .container {
@@ -323,7 +325,7 @@ a:hover {
   position: relative;
   padding-top: 8em !important;
   height: 33em;
-  background: url("../../images/banner.png") center center;
+  background: url("../../images/banner.webp") center center;
   background-size: cover;
 }
 
