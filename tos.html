@@ -3,188 +3,201 @@
 	<head>
 		<title>Nift - tos</title>
 		<meta name="description" 
-		      content="Nift is an opinionless web development framework, specialising
-		            in static websites with serverless backends. It's lightning fast, 
-		            cross-platform, opinionless, open source (MIT license) and 
-		            developed from the ground up in C++. Use it for any of your 
-		            personal or commercial projects!">
+		      content="Nift is an opinionless web development framework. It's 
+		            lightning fast, cross-platform, opinionless, open source 
+		            (MIT license) and developed from the ground up in C++. Use 
+		            it for any of your personal or commercial projects!">
 		
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
-		<link rel="stylesheet" href="assets/css/pagestyle.css">
-		<link rel="stylesheet" href="assets/css/menu.css">
-		<link rel="stylesheet" href="assets/css/font-awesome.css">
+		<link rel="stylesheet" href="assets/css/bundled.css">
 		<link rel="stylesheet" href="assets/css/pre.css">
 		<link rel="stylesheet" href="assets/css/extra-fonts.css"><link rel='icon' type='image/png' href='images/favicon.png'>
 	</head>
 
 	<body>
-		<nav id="nav" class="noselect">
-		  <ul class="menu">
-		    <li class="nav-space-left"></li>
-		    <li class="item icons">
-		      <a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a>
-		      <a href="https://github.com/nifty-site-manager/nsm/discussions" title="GitHub Discussions" class="gh"><i class="fas fa-comment-dots fa-2x"></i></a>
-		      <a href="https://twitter.com/nift_dev" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a>
-		      <a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a>
-		    </li>
-		    <a href="index.html" class="item hover-hl"><li>Home</li></a>
-		    <li class="item hover-hl has-submenu" onclick="toggleItem(0)">
-		      <a tabindex="0" class="item-link">Docs</a>
-		      <ul class="submenu">
-		        <li class="subitem"><a href="docs/installing.html">Installing</a></li>
-		        <li class="subitem"><a href="docs/hosting.html">Hosting</a></li>
-		        <li class="subitem"><a href="docs/commands.html">Commands</a></li>
-		        <li class="subitem"><a href="docs/config.html">Config</a></li>
-		        <li class="subitem"><a href="docs/template_files.html">Template Files</a></li>
-		        <li class="subitem"><a href="docs/fns.html">Functions</a></li>
-		        <li class="subitem"><a href="docs/types.html">Types</a></li>
-		        <li class="subitem"><a href="docs/f++.html">f++ (scripting)</a></li>
-		        <li class="subitem"><a href="docs/n++.html">n++ (templates)</a></li>
-		        <li class="subitem"><a href="docs/lua.html">Lua(JIT)</a></li>
-		        <li class="subitem"><a href="docs/exprtk.html">ExprTk</a></li>
-		        <li class="subitem"><a href="docs/REPL.html">Interactive REPL</a></li>
-		        <li class="subitem"><a href="docs/scripts.html">Scripts</a></li>
-		        <li class="subitem"><a href="docs/template_languages.html">Template Languages</a></li>
-		        <li class="subitem"><a href="docs/JSON.html">JSON Data</a></li>
-		        <li class="subitem"><a href="docs/markdown.html">Markdown</a></li>
-		        <li class="subitem"><a href="docs/translators.html">Translators</a></li>
-		        <li class="subitem"><a href="docs/mathematics.html">Mathematics</a></li>
-		        <li class="subitem"><a href="docs/code_blocks.html">Code Blocks</a></li>
-		        <li class="subitem"><a href="docs/presentations.html">Presentations</a></li>
-		      </ul>
-		    </li>
-		    <li class="item hover-hl has-submenu" onclick="toggleItem(1)">
-		      <a tabindex="0" class="item-link">Resources</a>
-		      <ul class="submenu">
-		        <li class="subitem"><a href="resources/tutorials.html">Tutorials</a></li>
-		        <li class="subitem"><a href="resources/templates.html">Templates</a></li>
-		        <li class="subitem"><a href="resources/blog_templates.html">Blog Templates</a></li>
-		        <li class="subitem"><a href="resources/css_frameworks.html">CSS Frameworks</a></li>
-		        <li class="subitem"><a href="resources/js_frameworks.html">JS Frameworks</a></li>
-		        <li class="subitem"><a href="resources/links.html">Links</a></li>
-		        <li class="subitem"><a href="resources/logos.html">Logos</a></li>
-		        <li class="subitem"><a href="resources/promos.html">Promos</a></li>
-		        <li class="subitem"><a href="resources/php_frameworks.html">PHP Frameworks</a></li>
-		      </ul>
-		    </li>
-		    <li class="toggle"><a href="#" onclick="toggleMenu()" id="menu-link"><i class="fas fa-bars fa-2x"></i></a></li>
-		  </ul>
-		</nav>
-		
-		<!-- Header -->
-		<section class="wrapper" id="header">
-		  <div id="logo" class="noselect">
-		    <img src="images/rabbit-tags-white.png" alt="Nift bunny mascot" style="width: 400px; max-width:90%"><br>
-		
-		    <p style="color:#372C2A">An opinionless web development framework</p>
-		
-		    <p>
-		      <a href="https://chocolatey.org/packages/nift"><img src="images/chocolatey-icon.png" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
-		      <a href="docs/installing.html#osx-brew"><img src="images/brew-icon.png" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
-		      <a href="docs/installing.html#freebsd"><img src="images/freebsd.png" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
-		      <a href="docs/installing.html#linux-flatpak"><img src="images/flathub-icon.png" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
-		      <a href="docs/installing.html#gentoo"><img src="images/gentoo.svg" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
-		      <a href="https://snapcraft.io/nift"><img src="images/snap-icon.png" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
-		    </p>
-		  </div>
-		</section>
+		<div align="center"  id="body">
+			<div class="menu-bars">
+			  <i id="open-menu-icon" class="fa fa-bars" onclick="show_menu()"></i>
+			</div>
+			
+			<div id="menu-page">
+			  <div class="menu-cross" >
+			    <i id="close-menu-icon" class="fa fa-xmark" onclick="close_menu()"></i>
+			  </div>
+			
+			  <div class="menu-icons noselect">
+			    <a href="https://github.com/nifty-site-manager/nsm" alt="GitHub"><i class="fa fa-2x fa-github"></i></a>&nbsp;&nbsp;
+			    <a href="https://github.com/nifty-site-manager/nsm/discussions" alt="GitHub Discussions"><i class="fa fa-2x fa-comments"></i></a>&nbsp;&nbsp;
+			    <a href="https://twitter.com/nift_dev" alt="Twitter"><i class="fa fa-2x fa-twitter"></i></a>&nbsp;&nbsp;
+			    <a href="https://discord.gg/St8QXTG" alt="Discord"><i class="fa fa-2x fa-discord"></i></a>
+			  </div>
+			  
+			  <nav id="nav" class="noselect">
+			    <ul>
+			      <li class="item li-menu li-dark">
+			        <a class="item-link" href="index.html">Home</a>
+			      </li>
+			      <li class="item li-menu li-dark has-submenu">
+			        <a tabindex="0" href="#" class="submenu-link" onclick="toggle_submenu(0)">Documentation <i class="submenu-link-icon fa fa-angle-down fa-1x"></i></a>
+			        <ul class="submenu">
+			          <li class="subitem"><a href="docs/installing.html">Installing</a></li>
+			          <li class="subitem"><a href="docs/hosting.html">Hosting</a></li>
+			          <li class="subitem"><a href="docs/commands.html">Commands</a></li>
+			          <li class="subitem"><a href="docs/config.html">Config</a></li>
+			          <li class="subitem"><a href="docs/template_files.html">Template Files</a></li>
+			          <li class="subitem"><a href="docs/fns.html">Functions</a></li>
+			          <li class="subitem"><a href="docs/types.html">Types</a></li>
+			          <li class="subitem"><a href="docs/f++.html">f++ (scripting)</a></li>
+			          <li class="subitem"><a href="docs/n++.html">n++ (templates)</a></li>
+			          <li class="subitem"><a href="docs/lua.html">Lua(JIT)</a></li>
+			          <li class="subitem"><a href="docs/exprtk.html">ExprTk</a></li>
+			          <li class="subitem"><a href="docs/REPL.html">Interactive REPL</a></li>
+			          <li class="subitem"><a href="docs/scripts.html">Scripts</a></li>
+			          <li class="subitem"><a href="docs/template_languages.html">Template Languages</a></li>
+			          <li class="subitem"><a href="docs/JSON.html">JSON Data</a></li>
+			          <li class="subitem"><a href="docs/markdown.html">Markdown</a></li>
+			          <li class="subitem"><a href="docs/translators.html">Translators</a></li>
+			          <li class="subitem"><a href="docs/mathematics.html">Mathematics</a></li>
+			          <li class="subitem"><a href="docs/code_blocks.html">Code Blocks</a></li>
+			          <li class="subitem"><a href="docs/presentations.html">Presentations</a></li>
+			        </ul>
+			      </li>
+			      <li class="item li-menu li-dark has-submenu">
+			        <a tabindex="0" href="#" class="submenu-link" onclick="toggle_submenu(1)">Resources <i class="submenu-link-icon fa fa-angle-down fa-1x"></i></a>
+			        <ul class="submenu">
+			          <li class="subitem"><a href="resources/tutorials.html">Tutorials</a></li>
+			          <li class="subitem"><a href="resources/templates.html">Templates</a></li>
+			          <li class="subitem"><a href="resources/blog_templates.html">Blog Templates</a></li>
+			          <li class="subitem"><a href="resources/css_frameworks.html">CSS Frameworks</a></li>
+			          <li class="subitem"><a href="resources/js_frameworks.html">JS Frameworks</a></li>
+			          <li class="subitem"><a href="resources/links.html">Links</a></li>
+			          <li class="subitem"><a href="resources/logos.html">Logos</a></li>
+			          <li class="subitem"><a href="resources/promos.html">Promos</a></li>
+			          <li class="subitem"><a href="resources/php_frameworks.html">PHP Frameworks</a></li>
+			        </ul>
+			      </li>
+			    </ul>
+			  </nav>
+			</div>
 
-		<!-- Main -->
-		<section id="main" class="wrapper style2">
-			<div class="title">Terms of Service</div>
-			<div class="container">
-				<!-- Features -->
-				<section id="features">
-					<div class="content">
-						<p><span class="website_name">NIFT PTY. LTD.</span> ("Us" or "We") provide the <span class="website_url">https://nift.cc</span> website, program and various related services (collectively, the "Website" and the "Servers") to you, the User, subject to your compliance with all the terms, conditions, and notices contained or referenced herein (the "Terms of Service"), as well as any other written agreement between us and you.</p>
-		
-						<p>In addition, when using particular services or materials on this Website, Users shall be subject to any posted rules applicable to such services or materials that may contain terms and conditions in addition to those in these Terms of Service. All such guidelines or rules are hereby incorporated by reference into these Terms of Service.</p>
-		
-						<p>These Terms of Service are effective as of <span class="date">July 2015</span>. We expressly reserve the right to change these Terms of Service from time to time without notice to you. You acknowledge and agree that it is your responsibility to review this Website and these Terms of Service from time to time and to familiarize yourself with any modifications.</p>
-		
-						<p>Your continued use of this Website after such modifications will constitute acknowledgement of the modified Terms of Service and agreement to abide and be bound by the modified Terms of Service. <!--This Terms of Service was modified from <a href="https://www.termsservicetemplate.com">Terms of Service Template</a> and the <a href="https://www.privacy-policy-template.com">Privacy Policy Template</a>.--></p>
-		
-						<p>We reserve the sole right to either modify or discontinue the Website, including any of the Website’s features, at any time with or without notice to you. We will not be liable to you or any third party should we exercise such right. Any new features that augment or enhance the then-current services on this Website shall also be subject to these Terms of Service.</p>
-		
-						<h3>Conduct on Website</h3>
-		
-						<p>Your use of the Website is subject to all applicable laws and regulations, and you are solely responsible for the substance of your communications through the Website. By posting information in or otherwise using any communications service, chat room, message board, newsgroup, software library, or other interactive service that may be available to you on or through this Website, you agree that you will not upload, share, post, or otherwise distribute or facilitate distribution of any content — including text, communications, software, images, sounds, data, or other information — that:</p>
-		
-						<ul>
-						<li>Is unlawful, threatening, abusive, harassing, defamatory, libelous, deceptive, fraudulent, invasive of another’s privacy, tortious, contains explicit or graphic descriptions or accounts of sexual acts (including but not limited to sexual language of a violent or threatening nature directed at another individual or group of individuals), or otherwise violates our rules or policies</li>
-						<li>Victimizes, harasses, degrades, or intimidates an individual or group of individuals on the basis of religion, gender, sexual orientation, race, ethnicity, age, or disability</li>
-						<li>Infringes on any patent, trademark, trade secret, copyright, right of publicity, or other proprietary right of any party</li>
-						<li>Constitutes unauthorized or unsolicited advertising, junk or bulk email (also known as "spamming"), chain letters, any other form of unauthorized solicitation, or any form of lottery or gambling</li>
-						<li>Contains software viruses or any other malicious computer code, files, or programs that are designed or intended to disrupt, damage, or limit the functioning of any software, hardware, or telecommunications equipment or to damage or obtain unauthorized access to any data or other information of any third party</li>
-						</ul>
-		
-						<p>We neither endorse nor assume any liability for the contents of any material uploaded or submitted by third party users of the Website. We generally do not pre-screen, monitor, or edit the content posted by users of communications services, chat rooms, message boards, newsgroups, software libraries, or other interactive services that may be available on or through this Website. However, we and our agents have the right at their sole discretion to remove any content that, in our judgment, does not comply with these Terms of Service and any other rules of user conduct for our site, or is otherwise harmful, objectionable, or inaccurate. We are not responsible for any failure or delay in removing such content. You hereby consent to such removal and waive any claim against us arising out of such removal of content.</p>
-		
-						<p>You agree that we may at any time, and at our sole discretion, terminate your membership, account, or other affiliation with our sites and servers without prior notice to you for violating any of the above provisions. In addition, you acknowledge that we will cooperate fully with investigations of violations of systems or network security at other sites, including cooperating with law enforcement authorities in investigating suspected criminal violations.</p>
-		
-						<h3>Third Party Websites</h3>
-		
-						<p>This site may link you to other sites on the Internet or otherwise include references to information, documents, software, materials and/or services provided by other parties. These sites may contain information or material that some people may find inappropriate or offensive.</p>
-		
-						<p>These other sites and parties are not under our control, and you acknowledge that we are not responsible for the accuracy, copyright compliance, legality, decency, or any other aspect of the content of such sites, nor are we responsible for errors or omissions in any references to other parties or their products and services. The inclusion of such a link or reference is provided merely as a convenience and does not imply endorsement of, or association with, the Website or party by us, or any warranty of any kind, either express or implied.</p>
-		
-						<h3>Intellectual Property</h3>
-		
-						<p>All custom graphics, icons, logos, and service names used on the Website are registered trademarks, service marks, and/or artwork held under copyright of <span class="website_name">NIFT PTY. LTD.</span> or its Affiliates. All other marks are property of their respective owners. Nothing in these Terms of Service grants you any right to use any trademark, service mark, logo, and/or the name or trade names of <span class="website_name">NIFT PTY. LTD.</span> or its Affiliates.</p>
-		
-						<h3>Disclaimer of Warranties</h3>
-		
-						<p>Content available through this Website often represents the opinions and judgments of an information provider, site user, or other person or entity not connected with us. We do not endorse, nor are we responsible for the accuracy or reliability of, any opinion, advice, or statement made by anyone other than an authorized <span class="website_name">NIFT PTY. LTD.</span> spokesperson speaking in his/her official capacity. Please refer to the specific editorial policies posted on various sections of this Website for further information, which policies are incorporated by reference into these Terms of Service.</p>
-		
-						<p>You understand and agree that temporary interruptions of the services available through this Website may occur as normal events. You further understand and agree that we have no control over third party networks you may access in the course of the use of our Website, and therefore, delays and disruption of other network transmissions are completely beyond our control.</p>
-		
-						<p>You understand and agree that the services available on this Website are provided "AS IS" and that we assume no responsibility for the timeliness, deletion, mis-delivery or failure to store any user communications or personalization settings.</p>
-		
-						<h3>Termination</h3>
-		
-						<p>You agree that we may, in our sole discretion, terminate or suspend your access to all or part of the Website with or without notice and for any reason, including, without limitation, breach of these Terms of Service. Any suspected fraudulent, abusive or illegal activity may be grounds for terminating your relationship and may be referred to appropriate law enforcement authorities.</p>
-		
-						<p>Upon termination or suspension, regardless of the reasons therefore, your right to use the services available on this Website immediately ceases, and you acknowledge and agree that we may immediately deactivate or delete your account and all related information and files in your account and/or bar any further access to such files and this Website. We shall not be liable to you or any third party for any claims or damages arising out of any termination or suspension or any other actions taken by us in connection with such termination or suspension.</p>
-							
-						<h3>Governing Law</h3>
-		
-						<p>These Terms of Service and any dispute or claim arising out of, or related to them, shall be governed by and construed in accordance with the internal laws of Australia without giving effect to any choice or conflict of law provision or rule.</p>
-		
-						<p>Any legal suit, action or proceeding arising out of, or related to, these Terms of Service or the Website shall be instituted exclusively in the federal courts of Australia.</p>
+			<div id="content">
+				<!-- Header -->
+				<section class="wrapper" id="header">
+				  <div id="logo" class="noselect">
+				    <img src="images/rabbit-tags-white.webp" alt="Nift bunny mascot" style="width: 400px; max-width:90%"><br>
+				
+				    <p style="color:#372C2A">An unopinionated web development framework</p>
+				
+				    <p>
+				      <a href="https://chocolatey.org/packages/nift"><img src="images/chocolatey-icon.webp" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
+				      <a href="docs/installing.html#osx-brew"><img src="images/brew-icon.webp" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
+				      <a href="docs/installing.html#freebsd"><img src="images/freebsd.webp" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
+				      <a href="docs/installing.html#linux-flatpak"><img src="images/flathub-icon.webp" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
+				      <a href="docs/installing.html#gentoo"><img src="images/gentoo.webp" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
+				      <a href="https://snapcraft.io/nift"><img src="images/snap-icon.webp" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
+				    </p>
+				  </div>
+				</section>
+
+				<!-- Main -->
+				<section id="main" class="wrapper style2">
+					<div class="title">Terms of Service</div>
+					<div class="container">
+						<!-- Features -->
+						<section id="features">
+							<div class="content">
+								<p><span class="website_name">NIFT PTY. LTD.</span> ("Us" or "We") provide the <span class="website_url">https://nift.cc</span> website, program and various related services (collectively, the "Website" and the "Servers") to you, the User, subject to your compliance with all the terms, conditions, and notices contained or referenced herein (the "Terms of Service"), as well as any other written agreement between us and you.</p>
+				
+								<p>In addition, when using particular services or materials on this Website, Users shall be subject to any posted rules applicable to such services or materials that may contain terms and conditions in addition to those in these Terms of Service. All such guidelines or rules are hereby incorporated by reference into these Terms of Service.</p>
+				
+								<p>These Terms of Service are effective as of <span class="date">July 2015</span>. We expressly reserve the right to change these Terms of Service from time to time without notice to you. You acknowledge and agree that it is your responsibility to review this Website and these Terms of Service from time to time and to familiarize yourself with any modifications.</p>
+				
+								<p>Your continued use of this Website after such modifications will constitute acknowledgement of the modified Terms of Service and agreement to abide and be bound by the modified Terms of Service. <!--This Terms of Service was modified from <a href="https://www.termsservicetemplate.com">Terms of Service Template</a> and the <a href="https://www.privacy-policy-template.com">Privacy Policy Template</a>.--></p>
+				
+								<p>We reserve the sole right to either modify or discontinue the Website, including any of the Website’s features, at any time with or without notice to you. We will not be liable to you or any third party should we exercise such right. Any new features that augment or enhance the then-current services on this Website shall also be subject to these Terms of Service.</p>
+				
+								<h3>Conduct on Website</h3>
+				
+								<p>Your use of the Website is subject to all applicable laws and regulations, and you are solely responsible for the substance of your communications through the Website. By posting information in or otherwise using any communications service, chat room, message board, newsgroup, software library, or other interactive service that may be available to you on or through this Website, you agree that you will not upload, share, post, or otherwise distribute or facilitate distribution of any content — including text, communications, software, images, sounds, data, or other information — that:</p>
+				
+								<ul>
+								<li>Is unlawful, threatening, abusive, harassing, defamatory, libelous, deceptive, fraudulent, invasive of another’s privacy, tortious, contains explicit or graphic descriptions or accounts of sexual acts (including but not limited to sexual language of a violent or threatening nature directed at another individual or group of individuals), or otherwise violates our rules or policies</li>
+								<li>Victimizes, harasses, degrades, or intimidates an individual or group of individuals on the basis of religion, gender, sexual orientation, race, ethnicity, age, or disability</li>
+								<li>Infringes on any patent, trademark, trade secret, copyright, right of publicity, or other proprietary right of any party</li>
+								<li>Constitutes unauthorized or unsolicited advertising, junk or bulk email (also known as "spamming"), chain letters, any other form of unauthorized solicitation, or any form of lottery or gambling</li>
+								<li>Contains software viruses or any other malicious computer code, files, or programs that are designed or intended to disrupt, damage, or limit the functioning of any software, hardware, or telecommunications equipment or to damage or obtain unauthorized access to any data or other information of any third party</li>
+								</ul>
+				
+								<p>We neither endorse nor assume any liability for the contents of any material uploaded or submitted by third party users of the Website. We generally do not pre-screen, monitor, or edit the content posted by users of communications services, chat rooms, message boards, newsgroups, software libraries, or other interactive services that may be available on or through this Website. However, we and our agents have the right at their sole discretion to remove any content that, in our judgment, does not comply with these Terms of Service and any other rules of user conduct for our site, or is otherwise harmful, objectionable, or inaccurate. We are not responsible for any failure or delay in removing such content. You hereby consent to such removal and waive any claim against us arising out of such removal of content.</p>
+				
+								<p>You agree that we may at any time, and at our sole discretion, terminate your membership, account, or other affiliation with our sites and servers without prior notice to you for violating any of the above provisions. In addition, you acknowledge that we will cooperate fully with investigations of violations of systems or network security at other sites, including cooperating with law enforcement authorities in investigating suspected criminal violations.</p>
+				
+								<h3>Third Party Websites</h3>
+				
+								<p>This site may link you to other sites on the Internet or otherwise include references to information, documents, software, materials and/or services provided by other parties. These sites may contain information or material that some people may find inappropriate or offensive.</p>
+				
+								<p>These other sites and parties are not under our control, and you acknowledge that we are not responsible for the accuracy, copyright compliance, legality, decency, or any other aspect of the content of such sites, nor are we responsible for errors or omissions in any references to other parties or their products and services. The inclusion of such a link or reference is provided merely as a convenience and does not imply endorsement of, or association with, the Website or party by us, or any warranty of any kind, either express or implied.</p>
+				
+								<h3>Intellectual Property</h3>
+				
+								<p>All custom graphics, icons, logos, and service names used on the Website are registered trademarks, service marks, and/or artwork held under copyright of <span class="website_name">NIFT PTY. LTD.</span> or its Affiliates. All other marks are property of their respective owners. Nothing in these Terms of Service grants you any right to use any trademark, service mark, logo, and/or the name or trade names of <span class="website_name">NIFT PTY. LTD.</span> or its Affiliates.</p>
+				
+								<h3>Disclaimer of Warranties</h3>
+				
+								<p>Content available through this Website often represents the opinions and judgments of an information provider, site user, or other person or entity not connected with us. We do not endorse, nor are we responsible for the accuracy or reliability of, any opinion, advice, or statement made by anyone other than an authorized <span class="website_name">NIFT PTY. LTD.</span> spokesperson speaking in his/her official capacity. Please refer to the specific editorial policies posted on various sections of this Website for further information, which policies are incorporated by reference into these Terms of Service.</p>
+				
+								<p>You understand and agree that temporary interruptions of the services available through this Website may occur as normal events. You further understand and agree that we have no control over third party networks you may access in the course of the use of our Website, and therefore, delays and disruption of other network transmissions are completely beyond our control.</p>
+				
+								<p>You understand and agree that the services available on this Website are provided "AS IS" and that we assume no responsibility for the timeliness, deletion, mis-delivery or failure to store any user communications or personalization settings.</p>
+				
+								<h3>Termination</h3>
+				
+								<p>You agree that we may, in our sole discretion, terminate or suspend your access to all or part of the Website with or without notice and for any reason, including, without limitation, breach of these Terms of Service. Any suspected fraudulent, abusive or illegal activity may be grounds for terminating your relationship and may be referred to appropriate law enforcement authorities.</p>
+				
+								<p>Upon termination or suspension, regardless of the reasons therefore, your right to use the services available on this Website immediately ceases, and you acknowledge and agree that we may immediately deactivate or delete your account and all related information and files in your account and/or bar any further access to such files and this Website. We shall not be liable to you or any third party for any claims or damages arising out of any termination or suspension or any other actions taken by us in connection with such termination or suspension.</p>
+									
+								<h3>Governing Law</h3>
+				
+								<p>These Terms of Service and any dispute or claim arising out of, or related to them, shall be governed by and construed in accordance with the internal laws of Australia without giving effect to any choice or conflict of law provision or rule.</p>
+				
+								<p>Any legal suit, action or proceeding arising out of, or related to, these Terms of Service or the Website shall be instituted exclusively in the federal courts of Australia.</p>
+							</div>
+						</section>
+					</div>
+				</section>
+
+				<!-- Footer -->
+				<section id="footer" class="wrapper">
+					<div class="title">
+						<img src="images/rabbit-tags-icon.webp" alt="Nift rabbit mascot with code tag boomerangs" loading="lazy" width="200" style="margin-top:20px; border-radius: 4px">
+					</div>
+				
+					<div class="container">
+						<div id="copyright" class="noselect">
+							<ul>
+								<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
+								<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
+								<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
+							</ul> <br>
+				
+							<ul>
+								<li><a href="tos.html">Terms of Service</a></li>
+								<li><a href="privacy_policy.html">Privacy Policy</a></li>
+							</ul> <br>
+				
+							<ul>
+								<li><span>&copy;</span> 2015-<span name="cyear"></span></li>
+							</ul>
+						</div>
 					</div>
 				</section>
 			</div>
-		</section>
+		</div>
 
-		<!-- Footer -->
-		<section id="footer" class="wrapper">
-			<div class="title">
-				<img src="images/rabbit-tags-icon.png" alt="Nift rabbit mascot with code tag boomerangs" loading="lazy" width="200" style="margin-top:20px; border-radius: 4px">
-			</div>
-		
-			<div class="container">
-				<div id="copyright" class="noselect">
-					<ul>
-						<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
-						<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
-						<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
-					</ul> <br>
-		
-					<ul>
-						<li><a href="tos.html">Terms of Service</a></li>
-						<li><a href="privacy_policy.html">Privacy Policy</a></li>
-					</ul> <br>
-		
-					<ul>
-						<li><span>&copy;</span> 2015-<span name="cyear"></span></li>
-					</ul>
-				</div>
-			</div>
-		</section>
+		<script type="text/javascript" src="assets/js/bundled.js"></script>
 
-		<script async src="assets/js/menu.js"></script>
 		<script async src="assets/js/copy-pre.js"></script>
 		<script async src="assets/js/process-md-blocks.js"></script>
 		<script async src="assets/js/showdown.min.js"></script>
@@ -235,3 +248,4 @@
 		</script>
 	</body>
 </html>
+

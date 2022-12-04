@@ -3,272 +3,285 @@
 	<head>
 		<title>Nift - index</title>
 		<meta name="description" 
-		      content="Nift is an opinionless web development framework, specialising
-		            in static websites with serverless backends. It's lightning fast, 
-		            cross-platform, opinionless, open source (MIT license) and 
-		            developed from the ground up in C++. Use it for any of your 
-		            personal or commercial projects!">
+		      content="Nift is an opinionless web development framework. It's 
+		            lightning fast, cross-platform, opinionless, open source 
+		            (MIT license) and developed from the ground up in C++. Use 
+		            it for any of your personal or commercial projects!">
 		
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
-		<link rel="stylesheet" href="assets/css/pagestyle.css">
-		<link rel="stylesheet" href="assets/css/menu.css">
-		<link rel="stylesheet" href="assets/css/font-awesome.css">
+		<link rel="stylesheet" href="assets/css/bundled.css">
 		<link rel='icon' type='image/png' href='images/favicon.png'>
 	</head>
 
 	<body>
-		<nav id="nav" class="noselect">
-		  <ul class="menu">
-		    <li class="nav-space-left"></li>
-		    <li class="item icons">
-		      <a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a>
-		      <a href="https://github.com/nifty-site-manager/nsm/discussions" title="GitHub Discussions" class="gh"><i class="fas fa-comment-dots fa-2x"></i></a>
-		      <a href="https://twitter.com/nift_dev" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a>
-		      <a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a>
-		    </li>
-		    <a href="index.html" class="item hover-hl"><li>Home</li></a>
-		    <li class="item hover-hl has-submenu" onclick="toggleItem(0)">
-		      <a tabindex="0" class="item-link">Docs</a>
-		      <ul class="submenu">
-		        <li class="subitem"><a href="docs/installing.html">Installing</a></li>
-		        <li class="subitem"><a href="docs/hosting.html">Hosting</a></li>
-		        <li class="subitem"><a href="docs/commands.html">Commands</a></li>
-		        <li class="subitem"><a href="docs/config.html">Config</a></li>
-		        <li class="subitem"><a href="docs/template_files.html">Template Files</a></li>
-		        <li class="subitem"><a href="docs/fns.html">Functions</a></li>
-		        <li class="subitem"><a href="docs/types.html">Types</a></li>
-		        <li class="subitem"><a href="docs/f++.html">f++ (scripting)</a></li>
-		        <li class="subitem"><a href="docs/n++.html">n++ (templates)</a></li>
-		        <li class="subitem"><a href="docs/lua.html">Lua(JIT)</a></li>
-		        <li class="subitem"><a href="docs/exprtk.html">ExprTk</a></li>
-		        <li class="subitem"><a href="docs/REPL.html">Interactive REPL</a></li>
-		        <li class="subitem"><a href="docs/scripts.html">Scripts</a></li>
-		        <li class="subitem"><a href="docs/template_languages.html">Template Languages</a></li>
-		        <li class="subitem"><a href="docs/JSON.html">JSON Data</a></li>
-		        <li class="subitem"><a href="docs/markdown.html">Markdown</a></li>
-		        <li class="subitem"><a href="docs/translators.html">Translators</a></li>
-		        <li class="subitem"><a href="docs/mathematics.html">Mathematics</a></li>
-		        <li class="subitem"><a href="docs/code_blocks.html">Code Blocks</a></li>
-		        <li class="subitem"><a href="docs/presentations.html">Presentations</a></li>
-		      </ul>
-		    </li>
-		    <li class="item hover-hl has-submenu" onclick="toggleItem(1)">
-		      <a tabindex="0" class="item-link">Resources</a>
-		      <ul class="submenu">
-		        <li class="subitem"><a href="resources/tutorials.html">Tutorials</a></li>
-		        <li class="subitem"><a href="resources/templates.html">Templates</a></li>
-		        <li class="subitem"><a href="resources/blog_templates.html">Blog Templates</a></li>
-		        <li class="subitem"><a href="resources/css_frameworks.html">CSS Frameworks</a></li>
-		        <li class="subitem"><a href="resources/js_frameworks.html">JS Frameworks</a></li>
-		        <li class="subitem"><a href="resources/links.html">Links</a></li>
-		        <li class="subitem"><a href="resources/logos.html">Logos</a></li>
-		        <li class="subitem"><a href="resources/promos.html">Promos</a></li>
-		        <li class="subitem"><a href="resources/php_frameworks.html">PHP Frameworks</a></li>
-		      </ul>
-		    </li>
-		    <li class="toggle"><a href="#" onclick="toggleMenu()" id="menu-link"><i class="fas fa-bars fa-2x"></i></a></li>
-		  </ul>
-		</nav>
-		
-		<!-- Header -->
-		<section class="wrapper" id="header">
-		  <div id="logo" class="noselect">
-		    <img src="images/rabbit-tags-white.png" alt="Nift bunny mascot" style="width: 400px; max-width:90%"><br>
-		
-		    <p style="color:#372C2A">An opinionless web development framework</p>
-		
-		    <p>
-		      <a href="https://chocolatey.org/packages/nift"><img src="images/chocolatey-icon.png" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
-		      <a href="docs/installing.html#osx-brew"><img src="images/brew-icon.png" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
-		      <a href="docs/installing.html#freebsd"><img src="images/freebsd.png" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
-		      <a href="docs/installing.html#linux-flatpak"><img src="images/flathub-icon.png" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
-		      <a href="docs/installing.html#gentoo"><img src="images/gentoo.svg" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
-		      <a href="https://snapcraft.io/nift"><img src="images/snap-icon.png" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
-		    </p>
-		  </div>
-		</section>
+		<div align="center"  id="body">
+			<div class="menu-bars">
+			  <i id="open-menu-icon" class="fa fa-bars" onclick="show_menu()"></i>
+			</div>
+			
+			<div id="menu-page">
+			  <div class="menu-cross" >
+			    <i id="close-menu-icon" class="fa fa-xmark" onclick="close_menu()"></i>
+			  </div>
+			
+			  <div class="menu-icons noselect">
+			    <a href="https://github.com/nifty-site-manager/nsm" alt="GitHub"><i class="fa fa-2x fa-github"></i></a>&nbsp;&nbsp;
+			    <a href="https://github.com/nifty-site-manager/nsm/discussions" alt="GitHub Discussions"><i class="fa fa-2x fa-comments"></i></a>&nbsp;&nbsp;
+			    <a href="https://twitter.com/nift_dev" alt="Twitter"><i class="fa fa-2x fa-twitter"></i></a>&nbsp;&nbsp;
+			    <a href="https://discord.gg/St8QXTG" alt="Discord"><i class="fa fa-2x fa-discord"></i></a>
+			  </div>
+			  
+			  <nav id="nav" class="noselect">
+			    <ul>
+			      <li class="item li-menu li-dark">
+			        <a class="item-link" href="index.html">Home</a>
+			      </li>
+			      <li class="item li-menu li-dark has-submenu">
+			        <a tabindex="0" href="#" class="submenu-link" onclick="toggle_submenu(0)">Documentation <i class="submenu-link-icon fa fa-angle-down fa-1x"></i></a>
+			        <ul class="submenu">
+			          <li class="subitem"><a href="docs/installing.html">Installing</a></li>
+			          <li class="subitem"><a href="docs/hosting.html">Hosting</a></li>
+			          <li class="subitem"><a href="docs/commands.html">Commands</a></li>
+			          <li class="subitem"><a href="docs/config.html">Config</a></li>
+			          <li class="subitem"><a href="docs/template_files.html">Template Files</a></li>
+			          <li class="subitem"><a href="docs/fns.html">Functions</a></li>
+			          <li class="subitem"><a href="docs/types.html">Types</a></li>
+			          <li class="subitem"><a href="docs/f++.html">f++ (scripting)</a></li>
+			          <li class="subitem"><a href="docs/n++.html">n++ (templates)</a></li>
+			          <li class="subitem"><a href="docs/lua.html">Lua(JIT)</a></li>
+			          <li class="subitem"><a href="docs/exprtk.html">ExprTk</a></li>
+			          <li class="subitem"><a href="docs/REPL.html">Interactive REPL</a></li>
+			          <li class="subitem"><a href="docs/scripts.html">Scripts</a></li>
+			          <li class="subitem"><a href="docs/template_languages.html">Template Languages</a></li>
+			          <li class="subitem"><a href="docs/JSON.html">JSON Data</a></li>
+			          <li class="subitem"><a href="docs/markdown.html">Markdown</a></li>
+			          <li class="subitem"><a href="docs/translators.html">Translators</a></li>
+			          <li class="subitem"><a href="docs/mathematics.html">Mathematics</a></li>
+			          <li class="subitem"><a href="docs/code_blocks.html">Code Blocks</a></li>
+			          <li class="subitem"><a href="docs/presentations.html">Presentations</a></li>
+			        </ul>
+			      </li>
+			      <li class="item li-menu li-dark has-submenu">
+			        <a tabindex="0" href="#" class="submenu-link" onclick="toggle_submenu(1)">Resources <i class="submenu-link-icon fa fa-angle-down fa-1x"></i></a>
+			        <ul class="submenu">
+			          <li class="subitem"><a href="resources/tutorials.html">Tutorials</a></li>
+			          <li class="subitem"><a href="resources/templates.html">Templates</a></li>
+			          <li class="subitem"><a href="resources/blog_templates.html">Blog Templates</a></li>
+			          <li class="subitem"><a href="resources/css_frameworks.html">CSS Frameworks</a></li>
+			          <li class="subitem"><a href="resources/js_frameworks.html">JS Frameworks</a></li>
+			          <li class="subitem"><a href="resources/links.html">Links</a></li>
+			          <li class="subitem"><a href="resources/logos.html">Logos</a></li>
+			          <li class="subitem"><a href="resources/promos.html">Promos</a></li>
+			          <li class="subitem"><a href="resources/php_frameworks.html">PHP Frameworks</a></li>
+			        </ul>
+			      </li>
+			    </ul>
+			  </nav>
+			</div>
 
-		<!-- Intro -->
-		<section id="intro" class="wrapper style0">
-			<div class="title">The Introduction</div>
-			<div class="container">
-				<p class="style1">So in case you were wondering what this is all about...</p>
-				<p class="style2">
-					Nift is a web development framework, specialising in static websites with serverless backends.
-				</p>
-				<p class="style3">It's <strong>lightning fast</strong> (<a href="https://hugo-vs-nift.gitlab.io/" style="color: white !important">evidence</a>), cross-platform, opinionless, open source (<a href="https://choosealicense.com/licenses/mit/" style="color: white !important">MIT license</a>) and developed from the ground up in <strong>C++</strong>. Use it for any of your personal or commercial projects!</p>
-			</div>
-		</section>
-		
-		<!-- Recommended by -->
-		<section id="recommended" class="wrapper style1">
-			<div class="title">Recommended by</div>
-			<div class="container">
-				<center>
-					<a href="https://www.npmjs.com/"><img src="images/npm.svg" alt="npm logo" loading="lazy" width="250px" style="max-width:70%"></a>
-				</center>
-		
-				<!--https://medium.com/npm-inc/npm-weekly-219-the-new-security-insights-api-wombat-day-and-more-cf3bfb9659c6-->
-			</div>
-		</section>
-		
-		<!-- Main -->
-		<section id="main" class="wrapper style2">
-			<div class="title" id="details-title">The Details</div>
-			<div class="container">
-				<!-- Features -->
-				<section id="features" class="content">
-					<div class="feature-list">
-						<div class="row">
-							<div class="col-6 col-12-medium">
-								<section>
-									<h3><i class="icon fas fa-check"></i>Lightning Fast</h3>
-									<p>Nift is possibly the world's fastest website generator (<a href="https://hugo-vs-nift.gitlab.io/">evidence</a>). Focus on development rather than waiting for your website to build.</p>
-								</section>
+			<div id="content">
+				<!-- Header -->
+				<section class="wrapper" id="header">
+				  <div id="logo" class="noselect">
+				    <img src="images/rabbit-tags-white.webp" alt="Nift bunny mascot" style="width: 400px; max-width:90%"><br>
+				
+				    <p style="color:#372C2A">An unopinionated web development framework</p>
+				
+				    <p>
+				      <a href="https://chocolatey.org/packages/nift"><img src="images/chocolatey-icon.webp" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
+				      <a href="docs/installing.html#osx-brew"><img src="images/brew-icon.webp" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
+				      <a href="docs/installing.html#freebsd"><img src="images/freebsd.webp" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
+				      <a href="docs/installing.html#linux-flatpak"><img src="images/flathub-icon.webp" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
+				      <a href="docs/installing.html#gentoo"><img src="images/gentoo.webp" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
+				      <a href="https://snapcraft.io/nift"><img src="images/snap-icon.webp" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
+				    </p>
+				  </div>
+				</section>
+
+				<!-- Intro -->
+				<section id="intro" class="wrapper style0">
+					<div class="title">The Introduction</div>
+					<div class="container">
+						<p class="style1">So in case you were wondering what this is all about...</p>
+						<p class="style2">
+							Nift is a web development framework, specialising in static websites with serverless backends.
+						</p>
+						<p class="style3">It's <strong>lightning fast</strong> (<a href="https://hugo-vs-nift.gitlab.io/" style="color: white !important">evidence</a>), cross-platform, opinionless, open source (<a href="https://choosealicense.com/licenses/mit/" style="color: white !important">MIT license</a>) and developed from the ground up in <strong>C++</strong>. Use it for any of your personal or commercial projects!</p>
+					</div>
+				</section>
+				
+				<!-- Recommended by -->
+				<section id="recommended" class="wrapper style1">
+					<div class="title">Recommended by</div>
+					<div class="container">
+						<center>
+							<a href="https://www.npmjs.com/"><img src="images/npm.svg" alt="npm logo" loading="lazy" width="250px" style="max-width:70%"></a>
+						</center>
+				
+						<!--https://medium.com/npm-inc/npm-weekly-219-the-new-security-insights-api-wombat-day-and-more-cf3bfb9659c6-->
+					</div>
+				</section>
+				
+				<!-- Main -->
+				<section id="main" class="wrapper style2">
+					<div class="title" id="details-title">The Details</div>
+					<div class="container">
+						<!-- Features -->
+						<section id="features" class="content">
+							<div class="feature-list">
+								<div class="row">
+									<div class="col-6 col-12-medium">
+										<section>
+											<h3><i class="icon fas fa-check"></i>Lightning Fast</h3>
+											<p>Nift is possibly the world's fastest website generator (<a href="https://hugo-vs-nift.gitlab.io/">evidence</a>). Focus on development rather than waiting for your website to build.</p>
+										</section>
+									</div>
+									<div class="col-6 col-12-medium">
+										<section>
+											<h3><i class="icon fas fa-check"></i>Scalable</h3>
+											<p>Nift can scale all the way up to handle building websites with millions of pages.</p>
+										</section>
+									</div>
+									<div class="col-6 col-12-medium">
+										<section>
+											<h3><i class="icon fas fa-check"></i>Static and Dynamic Websites</h3>
+											<p>Nift is not just useful for the development of static websites with serverless backends but also dynamic websites that have more traditional backend infrastructure, with a whole range of <a href="docs/hosting.html">hosting options</a>.</p>
+										</section>
+									</div>
+									<div class="col-6 col-12-medium">
+										<section>
+											<h3><i class="icon fas fa-check"></i>Pagination</h3>
+											<p>Nift can handle pagination at build time with multithreading or using javascript at load time. See the <a href="docs/fns.html#p">functions</a> docs for several <mono>paginate</mono> functions.</p>
+										</section>
+									</div>
+									<div class="col-6 col-12-medium">
+										<section>
+											<h3><i class="icon fas fa-check"></i>Lua(JIT) and ExprTk embedded</h3>
+											<p>Nift can be compiled with either <a href="https://luajit.org/">LuaJIT</a> (default) or <a href="http://www.lua.org/">Lua</a> along with <a href="https://github.com/ArashPartow/exprtk">ExprTk</a> which has a very impressive <a href="http://www.partow.net/programming/exprtk/#exprtkusers">userbase</a>. LuaJIT is basically the world's fastest interpreted language and ExprTk is basically the world's fastest mathematical expression parser. Nift specific documentation is available for <a href="docs/lua.html">Lua(JIT)</a> and <a href="docs/exprtk.html">ExprTk</a>.</p>
+										</section>
+									</div>
+									<div class="col-6 col-12-medium">
+										<section>
+											<h3><i class="icon fas fa-check"></i>In-built scripting and template languages</h3>
+											<p>Nift has in-built: a <a href="docs/f++.html">scripting</a> language <mono>f++</mono> and a <a href="docs/n++.html">template</a> language <mono>n++</mono>. Both <mono>f++</mono> and <mono>n++</mono> use mostly the same underlying code, with a few minor differences under the hood and in how the syntax is structured.</p>
+										</section>
+									</div>
+									<div class="col-6 col-12-medium">
+										<section>
+											<h3><i class="icon fas fa-check"></i>In-built interactive REPL and shell extension</h3>
+											<p>Nift has in-built interactive REPLs for each of <mono>f++</mono>, <mono>n++</mono>, <mono>ExprTk</mono> and <mono>Lua(JIT)</mono>, with documentation available <a href="docs/REPL.html">here</a>. You can easily switch between languages, and has a shell extension mode most useful for <mono>f++</mono>.</p>
+										</section>
+									</div>
+									<div class="col-6 col-12-medium">
+										<section>
+											<h3><i class="icon fas fa-check"></i>Script Support</h3>
+											<p>Nift has support for pre/post build/serve scripts, useful for things like integrating with webpack, Babel, npm, Bower, Yeoman, Browserify, Parcel, Brunch, SASS, Grunt, Puppeteer, GraphQL, Python Web Server, Live Server/Reload, etc..</p>
+										</section>
+									</div>
+									<div class="col-6 col-12-medium">
+										<section>
+											<h3><i class="icon fas fa-check"></i>Command-Line Integration</h3>
+											<p>Nift brings you the full power of the command line, with syntax in the template language to run or inject the output of scripts or system calls at any point while building webpages.</p>
+										</section>
+									</div>
+									<div class="col-6 col-12-medium">
+										<section>
+											<h3><i class="icon fas fa-check"></i>Git Integration</h3>
+											<p>Nift integrates seamlessly with Git using either <mono>https</mono> or <mono>ssh</mono> to clone from and push to <a href="https://aws.amazon.com/amplify/console/">AWS Amplify Console</a>, <a href="https://aws.amazon.com/codecommit/">AWS CodeCommit</a>, <a href="https://bitbucket.org/">BitBucket</a>, <a href="https://github.com/">GitHub</a>, <a href="https://gitlab.com/">GitLab</a>, <a href="https://www.netlify.com/">Netlify</a>, <a href="https://surge.sh/">surge.sh</a>, <a href="https://vercel.com/">Vercel</a> etc..</p>
+										</section>
+									</div>
+									<div class="col-6 col-12-medium">
+										<section>
+											<h3><i class="icon fas fa-check"></i>Framework Integration</h3>
+											<p>Nift integrates flawlessly with various <a href="resources/js_frameworks.html">Javascript frameworks</a> eg. Grunt, Gulp, Vue, Node, React, etc. and <a href="resources/php_frameworks.html">PHP frameworks</a> eg. Laravel, CakePHP, Phalcon, etc..</p>
+										</section>
+									</div>
+									<div class="col-6 col-12-medium">
+										<section>
+											<h3><i class="icon fas fa-check"></i>Language Agnostic</h3>
+											<p>You can use any language you want, eg. markdown, LaTeX, html, haml, xml, JSON, css, sass, javascript, TypeScript, php, MySQL etc..</p>
+										</section>
+									</div>
+									<div class="col-6 col-12-medium">
+										<section>
+											<h3><i class="icon fas fa-check"></i>Multilingual Support</h3>
+											<p>You can use any language/alphabet you want in content/template files and page names for urls, and can integrate with CLI translators to translate text.</p>
+										</section>
+									</div>
+									<div class="col-6 col-12-medium">
+										<section>
+											<h3><i class="icon fas fa-check"></i>Build Errors</h3>
+											<p>Nift will throw errors and tell you the exact file and line number where there is a problem.</p>
+										</section>
+									</div>
+									<div class="col-6 col-12-medium">
+										<section>
+											<h3><i class="icon fas fa-check"></i>Incremental Builds</h3>
+											<p>Nift tracks file dependencies to each page and can build only the web pages that have modified content, and can also build all pages or a list of specified pages.</p>
+										</section>
+									</div>
+									<div class="col-6 col-12-medium">
+										<section>
+											<h3><i class="icon fas fa-check"></i>Single Executable</h3>
+											<p>Nift compiles in to one executable file.</p>
+										</section>
+									</div>
+									<div class="col-6 col-12-medium">
+										<section>
+											<h3><i class="icon fas fa-check"></i>Intuitive Templating System</h3>
+											<p>Nift's <a href="docs/template_files.html">templating system</a> is intuitive while being easy to understand and remember.</p>
+										</section>
+									</div>
+									<div class="col-6 col-12-medium">
+										<section>
+											<h3><i class="icon fas fa-check"></i>Multithreading</h3>
+											<p>Nift will take advantage of all the computing power on your machine, whether you're running on a Raspberry Pi or a super computer, Nift has you covered.</p>
+										</section>
+									</div>
+									<div class="col-6 col-12-medium">
+										<section>
+											<h3><i class="icon fas fa-check"></i>Template Selection</h3>
+											<p>Nift has a variety of stylishly designed templates available for making <a href="resources/templates.html">websites</a> and <a href="resources/blog_templates.html">blogs</a>, including templates modified from <a href="resources/templates.html#html5up">HTML5 UP</a>, <a href="resources/templates.html">unDraw</a> and <a href="resources/templates.html#w3css">W3.CSS</a>.</p>
+										</section>
+									</div>
+								</div>
 							</div>
-							<div class="col-6 col-12-medium">
-								<section>
-									<h3><i class="icon fas fa-check"></i>Scalable</h3>
-									<p>Nift can scale all the way up to handle building websites with millions of pages.</p>
-								</section>
-							</div>
-							<div class="col-6 col-12-medium">
-								<section>
-									<h3><i class="icon fas fa-check"></i>Static and Dynamic Websites</h3>
-									<p>Nift is not just useful for the development of static websites with serverless backends but also dynamic websites that have more traditional backend infrastructure, with a whole range of <a href="docs/hosting.html">hosting options</a>.</p>
-								</section>
-							</div>
-							<div class="col-6 col-12-medium">
-								<section>
-									<h3><i class="icon fas fa-check"></i>Pagination</h3>
-									<p>Nift can handle pagination at build time with multithreading or using javascript at load time. See the <a href="docs/fns.html#p">functions</a> docs for several <mono>paginate</mono> functions.</p>
-								</section>
-							</div>
-							<div class="col-6 col-12-medium">
-								<section>
-									<h3><i class="icon fas fa-check"></i>Lua(JIT) and ExprTk embedded</h3>
-									<p>Nift can be compiled with either <a href="https://luajit.org/">LuaJIT</a> (default) or <a href="http://www.lua.org/">Lua</a> along with <a href="https://github.com/ArashPartow/exprtk">ExprTk</a> which has a very impressive <a href="http://www.partow.net/programming/exprtk/#exprtkusers">userbase</a>. LuaJIT is basically the world's fastest interpreted language and ExprTk is basically the world's fastest mathematical expression parser. Nift specific documentation is available for <a href="docs/lua.html">Lua(JIT)</a> and <a href="docs/exprtk.html">ExprTk</a>.</p>
-								</section>
-							</div>
-							<div class="col-6 col-12-medium">
-								<section>
-									<h3><i class="icon fas fa-check"></i>In-built scripting and template languages</h3>
-									<p>Nift has in-built: a <a href="docs/f++.html">scripting</a> language <mono>f++</mono> and a <a href="docs/n++.html">template</a> language <mono>n++</mono>. Both <mono>f++</mono> and <mono>n++</mono> use mostly the same underlying code, with a few minor differences under the hood and in how the syntax is structured.</p>
-								</section>
-							</div>
-							<div class="col-6 col-12-medium">
-								<section>
-									<h3><i class="icon fas fa-check"></i>In-built interactive REPL and shell extension</h3>
-									<p>Nift has in-built interactive REPLs for each of <mono>f++</mono>, <mono>n++</mono>, <mono>ExprTk</mono> and <mono>Lua(JIT)</mono>, with documentation available <a href="docs/REPL.html">here</a>. You can easily switch between languages, and has a shell extension mode most useful for <mono>f++</mono>.</p>
-								</section>
-							</div>
-							<div class="col-6 col-12-medium">
-								<section>
-									<h3><i class="icon fas fa-check"></i>Script Support</h3>
-									<p>Nift has support for pre/post build/serve scripts, useful for things like integrating with webpack, Babel, npm, Bower, Yeoman, Browserify, Parcel, Brunch, SASS, Grunt, Puppeteer, GraphQL, Python Web Server, Live Server/Reload, etc..</p>
-								</section>
-							</div>
-							<div class="col-6 col-12-medium">
-								<section>
-									<h3><i class="icon fas fa-check"></i>Command-Line Integration</h3>
-									<p>Nift brings you the full power of the command line, with syntax in the template language to run or inject the output of scripts or system calls at any point while building webpages.</p>
-								</section>
-							</div>
-							<div class="col-6 col-12-medium">
-								<section>
-									<h3><i class="icon fas fa-check"></i>Git Integration</h3>
-									<p>Nift integrates seamlessly with Git using either <mono>https</mono> or <mono>ssh</mono> to clone from and push to <a href="https://aws.amazon.com/amplify/console/">AWS Amplify Console</a>, <a href="https://aws.amazon.com/codecommit/">AWS CodeCommit</a>, <a href="https://bitbucket.org/">BitBucket</a>, <a href="https://github.com/">GitHub</a>, <a href="https://gitlab.com/">GitLab</a>, <a href="https://www.netlify.com/">Netlify</a>, <a href="https://surge.sh/">surge.sh</a>, <a href="https://vercel.com/">Vercel</a> etc..</p>
-								</section>
-							</div>
-							<div class="col-6 col-12-medium">
-								<section>
-									<h3><i class="icon fas fa-check"></i>Framework Integration</h3>
-									<p>Nift integrates flawlessly with various <a href="resources/js_frameworks.html">Javascript frameworks</a> eg. Grunt, Gulp, Vue, Node, React, etc. and <a href="resources/php_frameworks.html">PHP frameworks</a> eg. Laravel, CakePHP, Phalcon, etc..</p>
-								</section>
-							</div>
-							<div class="col-6 col-12-medium">
-								<section>
-									<h3><i class="icon fas fa-check"></i>Language Agnostic</h3>
-									<p>You can use any language you want, eg. markdown, LaTeX, html, haml, xml, JSON, css, sass, javascript, TypeScript, php, MySQL etc..</p>
-								</section>
-							</div>
-							<div class="col-6 col-12-medium">
-								<section>
-									<h3><i class="icon fas fa-check"></i>Multilingual Support</h3>
-									<p>You can use any language/alphabet you want in content/template files and page names for urls, and can integrate with CLI translators to translate text.</p>
-								</section>
-							</div>
-							<div class="col-6 col-12-medium">
-								<section>
-									<h3><i class="icon fas fa-check"></i>Build Errors</h3>
-									<p>Nift will throw errors and tell you the exact file and line number where there is a problem.</p>
-								</section>
-							</div>
-							<div class="col-6 col-12-medium">
-								<section>
-									<h3><i class="icon fas fa-check"></i>Incremental Builds</h3>
-									<p>Nift tracks file dependencies to each page and can build only the web pages that have modified content, and can also build all pages or a list of specified pages.</p>
-								</section>
-							</div>
-							<div class="col-6 col-12-medium">
-								<section>
-									<h3><i class="icon fas fa-check"></i>Single Executable</h3>
-									<p>Nift compiles in to one executable file.</p>
-								</section>
-							</div>
-							<div class="col-6 col-12-medium">
-								<section>
-									<h3><i class="icon fas fa-check"></i>Intuitive Templating System</h3>
-									<p>Nift's <a href="docs/template_files.html">templating system</a> is intuitive while being easy to understand and remember.</p>
-								</section>
-							</div>
-							<div class="col-6 col-12-medium">
-								<section>
-									<h3><i class="icon fas fa-check"></i>Multithreading</h3>
-									<p>Nift will take advantage of all the computing power on your machine, whether you're running on a Raspberry Pi or a super computer, Nift has you covered.</p>
-								</section>
-							</div>
-							<div class="col-6 col-12-medium">
-								<section>
-									<h3><i class="icon fas fa-check"></i>Template Selection</h3>
-									<p>Nift has a variety of stylishly designed templates available for making <a href="resources/templates.html">websites</a> and <a href="resources/blog_templates.html">blogs</a>, including templates modified from <a href="resources/templates.html#html5up">HTML5 UP</a>, <a href="resources/templates.html">unDraw</a> and <a href="resources/templates.html#w3css">W3.CSS</a>.</p>
-								</section>
-							</div>
+						</section>
+					</div>
+				</section>
+
+				<!-- Footer -->
+				<section id="footer" class="wrapper">
+					<div class="title">
+						<img src="images/rabbit-tags-icon.webp" alt="Nift rabbit mascot with code tag boomerangs" loading="lazy" width="200" style="margin-top:20px; border-radius: 4px">
+					</div>
+				
+					<div class="container">
+						<div id="copyright" class="noselect">
+							<ul>
+								<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
+								<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
+								<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
+							</ul> <br>
+				
+							<ul>
+								<li><a href="tos.html">Terms of Service</a></li>
+								<li><a href="privacy_policy.html">Privacy Policy</a></li>
+							</ul> <br>
+				
+							<ul>
+								<li><span>&copy;</span> 2015-<span name="cyear"></span></li>
+							</ul>
 						</div>
 					</div>
 				</section>
 			</div>
-		</section>
+		</div>
 
-		<!-- Footer -->
-		<section id="footer" class="wrapper">
-			<div class="title">
-				<img src="images/rabbit-tags-icon.png" alt="Nift rabbit mascot with code tag boomerangs" loading="lazy" width="200" style="margin-top:20px; border-radius: 4px">
-			</div>
-		
-			<div class="container">
-				<div id="copyright" class="noselect">
-					<ul>
-						<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
-						<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
-						<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
-					</ul> <br>
-		
-					<ul>
-						<li><a href="tos.html">Terms of Service</a></li>
-						<li><a href="privacy_policy.html">Privacy Policy</a></li>
-					</ul> <br>
-		
-					<ul>
-						<li><span>&copy;</span> 2015-<span name="cyear"></span></li>
-					</ul>
-				</div>
-			</div>
-		</section>
+		<script type="text/javascript" src="assets/js/bundled.js"></script>
 
-		<script async src="assets/js/menu.js"></script>
 		<!-- Inserts current year -->
 		<script async>
 			var x = document.getElementsByName("cyear");
@@ -288,3 +301,4 @@
 		</script>
 	</body>
 </html>
+

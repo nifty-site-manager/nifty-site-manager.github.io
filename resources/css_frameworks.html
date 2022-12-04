@@ -3,199 +3,212 @@
 	<head>
 		<title>Nift - css_frameworks</title>
 		<meta name="description" 
-		      content="Nift is an opinionless web development framework, specialising
-		            in static websites with serverless backends. It's lightning fast, 
-		            cross-platform, opinionless, open source (MIT license) and 
-		            developed from the ground up in C++. Use it for any of your 
-		            personal or commercial projects!">
+		      content="Nift is an opinionless web development framework. It's 
+		            lightning fast, cross-platform, opinionless, open source 
+		            (MIT license) and developed from the ground up in C++. Use 
+		            it for any of your personal or commercial projects!">
 		
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
-		<link rel="stylesheet" href="../assets/css/pagestyle.css">
-		<link rel="stylesheet" href="../assets/css/menu.css">
-		<link rel="stylesheet" href="../assets/css/font-awesome.css">
+		<link rel="stylesheet" href="../assets/css/bundled.css">
 		<link rel="stylesheet" href="../assets/css/pre.css">
 		<link rel="stylesheet" href="../assets/css/extra-fonts.css"><link rel='icon' type='image/png' href='../images/favicon.png'>
 	</head>
 
 	<body>
-		<nav id="nav" class="noselect">
-		  <ul class="menu">
-		    <li class="nav-space-left"></li>
-		    <li class="item icons">
-		      <a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a>
-		      <a href="https://github.com/nifty-site-manager/nsm/discussions" title="GitHub Discussions" class="gh"><i class="fas fa-comment-dots fa-2x"></i></a>
-		      <a href="https://twitter.com/nift_dev" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a>
-		      <a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a>
-		    </li>
-		    <a href="../index.html" class="item hover-hl"><li>Home</li></a>
-		    <li class="item hover-hl has-submenu" onclick="toggleItem(0)">
-		      <a tabindex="0" class="item-link">Docs</a>
-		      <ul class="submenu">
-		        <li class="subitem"><a href="../docs/installing.html">Installing</a></li>
-		        <li class="subitem"><a href="../docs/hosting.html">Hosting</a></li>
-		        <li class="subitem"><a href="../docs/commands.html">Commands</a></li>
-		        <li class="subitem"><a href="../docs/config.html">Config</a></li>
-		        <li class="subitem"><a href="../docs/template_files.html">Template Files</a></li>
-		        <li class="subitem"><a href="../docs/fns.html">Functions</a></li>
-		        <li class="subitem"><a href="../docs/types.html">Types</a></li>
-		        <li class="subitem"><a href="../docs/f++.html">f++ (scripting)</a></li>
-		        <li class="subitem"><a href="../docs/n++.html">n++ (templates)</a></li>
-		        <li class="subitem"><a href="../docs/lua.html">Lua(JIT)</a></li>
-		        <li class="subitem"><a href="../docs/exprtk.html">ExprTk</a></li>
-		        <li class="subitem"><a href="../docs/REPL.html">Interactive REPL</a></li>
-		        <li class="subitem"><a href="../docs/scripts.html">Scripts</a></li>
-		        <li class="subitem"><a href="../docs/template_languages.html">Template Languages</a></li>
-		        <li class="subitem"><a href="../docs/JSON.html">JSON Data</a></li>
-		        <li class="subitem"><a href="../docs/markdown.html">Markdown</a></li>
-		        <li class="subitem"><a href="../docs/translators.html">Translators</a></li>
-		        <li class="subitem"><a href="../docs/mathematics.html">Mathematics</a></li>
-		        <li class="subitem"><a href="../docs/code_blocks.html">Code Blocks</a></li>
-		        <li class="subitem"><a href="../docs/presentations.html">Presentations</a></li>
-		      </ul>
-		    </li>
-		    <li class="item hover-hl has-submenu" onclick="toggleItem(1)">
-		      <a tabindex="0" class="item-link">Resources</a>
-		      <ul class="submenu">
-		        <li class="subitem"><a href="tutorials.html">Tutorials</a></li>
-		        <li class="subitem"><a href="templates.html">Templates</a></li>
-		        <li class="subitem"><a href="blog_templates.html">Blog Templates</a></li>
-		        <li class="subitem"><a href="css_frameworks.html">CSS Frameworks</a></li>
-		        <li class="subitem"><a href="js_frameworks.html">JS Frameworks</a></li>
-		        <li class="subitem"><a href="links.html">Links</a></li>
-		        <li class="subitem"><a href="logos.html">Logos</a></li>
-		        <li class="subitem"><a href="promos.html">Promos</a></li>
-		        <li class="subitem"><a href="php_frameworks.html">PHP Frameworks</a></li>
-		      </ul>
-		    </li>
-		    <li class="toggle"><a href="#" onclick="toggleMenu()" id="menu-link"><i class="fas fa-bars fa-2x"></i></a></li>
-		  </ul>
-		</nav>
-		
-		<!-- Header -->
-		<section class="wrapper" id="header">
-		  <div id="logo" class="noselect">
-		    <img src="../images/rabbit-tags-white.png" alt="Nift bunny mascot" style="width: 400px; max-width:90%"><br>
-		
-		    <p style="color:#372C2A">An opinionless web development framework</p>
-		
-		    <p>
-		      <a href="https://chocolatey.org/packages/nift"><img src="../images/chocolatey-icon.png" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
-		      <a href="../docs/installing.html#osx-brew"><img src="../images/brew-icon.png" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
-		      <a href="../docs/installing.html#freebsd"><img src="../images/freebsd.png" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
-		      <a href="../docs/installing.html#linux-flatpak"><img src="../images/flathub-icon.png" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
-		      <a href="../docs/installing.html#gentoo"><img src="../images/gentoo.svg" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
-		      <a href="https://snapcraft.io/nift"><img src="../images/snap-icon.png" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
-		    </p>
-		  </div>
-		</section>
+		<div align="center"  id="body">
+			<div class="menu-bars">
+			  <i id="open-menu-icon" class="fa fa-bars" onclick="show_menu()"></i>
+			</div>
+			
+			<div id="menu-page">
+			  <div class="menu-cross" >
+			    <i id="close-menu-icon" class="fa fa-xmark" onclick="close_menu()"></i>
+			  </div>
+			
+			  <div class="menu-icons noselect">
+			    <a href="https://github.com/nifty-site-manager/nsm" alt="GitHub"><i class="fa fa-2x fa-github"></i></a>&nbsp;&nbsp;
+			    <a href="https://github.com/nifty-site-manager/nsm/discussions" alt="GitHub Discussions"><i class="fa fa-2x fa-comments"></i></a>&nbsp;&nbsp;
+			    <a href="https://twitter.com/nift_dev" alt="Twitter"><i class="fa fa-2x fa-twitter"></i></a>&nbsp;&nbsp;
+			    <a href="https://discord.gg/St8QXTG" alt="Discord"><i class="fa fa-2x fa-discord"></i></a>
+			  </div>
+			  
+			  <nav id="nav" class="noselect">
+			    <ul>
+			      <li class="item li-menu li-dark">
+			        <a class="item-link" href="../index.html">Home</a>
+			      </li>
+			      <li class="item li-menu li-dark has-submenu">
+			        <a tabindex="0" href="#" class="submenu-link" onclick="toggle_submenu(0)">Documentation <i class="submenu-link-icon fa fa-angle-down fa-1x"></i></a>
+			        <ul class="submenu">
+			          <li class="subitem"><a href="../docs/installing.html">Installing</a></li>
+			          <li class="subitem"><a href="../docs/hosting.html">Hosting</a></li>
+			          <li class="subitem"><a href="../docs/commands.html">Commands</a></li>
+			          <li class="subitem"><a href="../docs/config.html">Config</a></li>
+			          <li class="subitem"><a href="../docs/template_files.html">Template Files</a></li>
+			          <li class="subitem"><a href="../docs/fns.html">Functions</a></li>
+			          <li class="subitem"><a href="../docs/types.html">Types</a></li>
+			          <li class="subitem"><a href="../docs/f++.html">f++ (scripting)</a></li>
+			          <li class="subitem"><a href="../docs/n++.html">n++ (templates)</a></li>
+			          <li class="subitem"><a href="../docs/lua.html">Lua(JIT)</a></li>
+			          <li class="subitem"><a href="../docs/exprtk.html">ExprTk</a></li>
+			          <li class="subitem"><a href="../docs/REPL.html">Interactive REPL</a></li>
+			          <li class="subitem"><a href="../docs/scripts.html">Scripts</a></li>
+			          <li class="subitem"><a href="../docs/template_languages.html">Template Languages</a></li>
+			          <li class="subitem"><a href="../docs/JSON.html">JSON Data</a></li>
+			          <li class="subitem"><a href="../docs/markdown.html">Markdown</a></li>
+			          <li class="subitem"><a href="../docs/translators.html">Translators</a></li>
+			          <li class="subitem"><a href="../docs/mathematics.html">Mathematics</a></li>
+			          <li class="subitem"><a href="../docs/code_blocks.html">Code Blocks</a></li>
+			          <li class="subitem"><a href="../docs/presentations.html">Presentations</a></li>
+			        </ul>
+			      </li>
+			      <li class="item li-menu li-dark has-submenu">
+			        <a tabindex="0" href="#" class="submenu-link" onclick="toggle_submenu(1)">Resources <i class="submenu-link-icon fa fa-angle-down fa-1x"></i></a>
+			        <ul class="submenu">
+			          <li class="subitem"><a href="tutorials.html">Tutorials</a></li>
+			          <li class="subitem"><a href="templates.html">Templates</a></li>
+			          <li class="subitem"><a href="blog_templates.html">Blog Templates</a></li>
+			          <li class="subitem"><a href="css_frameworks.html">CSS Frameworks</a></li>
+			          <li class="subitem"><a href="js_frameworks.html">JS Frameworks</a></li>
+			          <li class="subitem"><a href="links.html">Links</a></li>
+			          <li class="subitem"><a href="logos.html">Logos</a></li>
+			          <li class="subitem"><a href="promos.html">Promos</a></li>
+			          <li class="subitem"><a href="php_frameworks.html">PHP Frameworks</a></li>
+			        </ul>
+			      </li>
+			    </ul>
+			  </nav>
+			</div>
 
-		<!-- Highlights -->
-		<section id="main" class="wrapper style2">
-			<div class="title">CSS Frameworks</div>
-			<div class="container">
-				<div id="highlights" class="content">
-					<div class="row aln-center">
-						<div class="col-4 col-12-medium">
-							<section class="highlight">
-								<a href="https://getbootstrap.com/"><img src="../images/bootstrap.png" alt="Bootstrap logo" height="150px"/></a>
-								<h3><a href="https://getbootstrap.com/">Bootstrap</a></h3>
-								<p>An open source toolkit for developing with HTML, CSS, and JS. Quickly prototype your ideas or build your entire app with our Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful plugins built on jQuery.</p>
-								<p><a href="https://getbootstrap.com/docs/4.3/getting-started/introduction/" class="button style1">Learn More</a></p>
-							</section>
-						</div>
-						<div class="col-4 col-12-medium">
-							<section class="highlight">
-								<a href="https://foundation.zurb.com/"><img src="../images/foundation.svg" alt="Foundation mascot" height="150px"/></a>
-								<h3><a href="https://foundation.zurb.com/">Foundation</a></h3>
-								<p>A Framework for any device, medium, and accessibility. Foundation is a family of responsive front-end frameworks that make it easy to design beautiful responsive websites, apps and emails that look amazing on any device. Foundation is semantic, readable, flexible, and completely customizable.</p>
-								<p><a href="https://getbootstrap.com/docs/4.3/getting-started/introduction/" class="button style1">Learn More</a></p>
-							</section>
-						</div>
-						<div class="col-4 col-12-medium">
-							<section class="highlight">
-								<a href="https://tailwindcss.com/"><img src="../images/tailwind.svg" alt="Tailwind logo" height="150px"/></a>
-								<h3><a href="https://tailwindcss.com/">Tailwind</a></h3>
-								<p>A highly customizable, low-level CSS framework that gives you all of the building blocks you need to build bespoke designs without any annoying opinionated styles you have to fight to override.</p>
-								<p><a href="https://tailwindcss.com/docs/installation/" class="button style1">Learn More</a></p>
-							</section>
-						</div>
-						<div class="col-4 col-12-medium">
-							<section class="highlight">
-								<a href="https://bulma.io/"><img src="../images/bulma.svg" alt="Bulma logo" height="150px"/></a>
-								<h3><a href="https://bulma.io/">Bulma</a></h3>
-								<p>A free, open source CSS framework based on Flexbox and used by more than 200,000 developers.</p>
-								<p><a href="https://bulma.io/documentation/overview/" class="button style1">Learn More</a></p>
-							</section>
-						</div>
-						<div class="col-4 col-12-medium">
-							<section class="highlight">
-								<a href="https://semantic-ui.com/"><img src="../images/semantic-ui.svg" alt="Semantic UI logo" height="150px"/></a>
-								<h3><a href="https://semantic-ui.com/">Semantic UI</a></h3>
-								<p>Semantic UI is a modern front-end development framework, powered by LESS and jQuery. It has a sleek, subtle, and flat design look that provides a lightweight user experience.</p>
-								<p><a href="https://semantic-ui.com/introduction/getting-started.html" class="button style1">Learn More</a></p>
-							</section>
-						</div>
-						<div class="col-4 col-12-medium">
-							<section class="highlight">
-								<a href="https://getuikit.com/"><img src="../images/uikit.svg" alt="UIkit logo" height="150px"/></a>
-								<h3><a href="https://getuikit.com/">UIkit</a></h3>
-								<p>A lightweight and modular front-end framework for developing fast and powerful web interfaces.</p>
-								<p><a href="https://getuikit.com/docs/introduction" class="button style1">Learn More</a></p>
-							</section>
-						</div>
-						<div class="col-4 col-12-medium">
-							<section class="highlight">
-								<a href="https://www.oddbird.net/susy/"><img src="../images/susy.svg" alt="Susy logo" height="150px"/></a>
-								<h3><a href="https://www.oddbird.net/susy/">Susy</a></h3>
-								<p>In the hands of the expert developer, Susy is like a flamethrower that blows everything else away. Lesser mortals, of course, will manage to burn their hands.</p>
-								<p><a href="https://www.oddbird.net/susy/#getting-started" class="button style1">Learn More</a></p>
-							</section>
+			<div id="content">
+				<!-- Header -->
+				<section class="wrapper" id="header">
+				  <div id="logo" class="noselect">
+				    <img src="../images/rabbit-tags-white.webp" alt="Nift bunny mascot" style="width: 400px; max-width:90%"><br>
+				
+				    <p style="color:#372C2A">An unopinionated web development framework</p>
+				
+				    <p>
+				      <a href="https://chocolatey.org/packages/nift"><img src="../images/chocolatey-icon.webp" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
+				      <a href="../docs/installing.html#osx-brew"><img src="../images/brew-icon.webp" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
+				      <a href="../docs/installing.html#freebsd"><img src="../images/freebsd.webp" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
+				      <a href="../docs/installing.html#linux-flatpak"><img src="../images/flathub-icon.webp" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
+				      <a href="../docs/installing.html#gentoo"><img src="../images/gentoo.webp" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
+				      <a href="https://snapcraft.io/nift"><img src="../images/snap-icon.webp" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
+				    </p>
+				  </div>
+				</section>
+
+				<!-- Highlights -->
+				<section id="main" class="wrapper style2">
+					<div class="title">CSS Frameworks</div>
+					<div class="container">
+						<div id="highlights" class="content">
+							<div class="row aln-center">
+								<div class="col-4 col-12-medium">
+									<section class="highlight">
+										<a href="https://getbootstrap.com/"><img src="../images/bootstrap.png" alt="Bootstrap logo" height="150px"/></a>
+										<h3><a href="https://getbootstrap.com/">Bootstrap</a></h3>
+										<p>An open source toolkit for developing with HTML, CSS, and JS. Quickly prototype your ideas or build your entire app with our Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful plugins built on jQuery.</p>
+										<p><a href="https://getbootstrap.com/docs/4.3/getting-started/introduction/" class="button style1">Learn More</a></p>
+									</section>
+								</div>
+								<div class="col-4 col-12-medium">
+									<section class="highlight">
+										<a href="https://foundation.zurb.com/"><img src="../images/foundation.svg" alt="Foundation mascot" height="150px"/></a>
+										<h3><a href="https://foundation.zurb.com/">Foundation</a></h3>
+										<p>A Framework for any device, medium, and accessibility. Foundation is a family of responsive front-end frameworks that make it easy to design beautiful responsive websites, apps and emails that look amazing on any device. Foundation is semantic, readable, flexible, and completely customizable.</p>
+										<p><a href="https://getbootstrap.com/docs/4.3/getting-started/introduction/" class="button style1">Learn More</a></p>
+									</section>
+								</div>
+								<div class="col-4 col-12-medium">
+									<section class="highlight">
+										<a href="https://tailwindcss.com/"><img src="../images/tailwind.svg" alt="Tailwind logo" height="150px"/></a>
+										<h3><a href="https://tailwindcss.com/">Tailwind</a></h3>
+										<p>A highly customizable, low-level CSS framework that gives you all of the building blocks you need to build bespoke designs without any annoying opinionated styles you have to fight to override.</p>
+										<p><a href="https://tailwindcss.com/docs/installation/" class="button style1">Learn More</a></p>
+									</section>
+								</div>
+								<div class="col-4 col-12-medium">
+									<section class="highlight">
+										<a href="https://bulma.io/"><img src="../images/bulma.svg" alt="Bulma logo" height="150px"/></a>
+										<h3><a href="https://bulma.io/">Bulma</a></h3>
+										<p>A free, open source CSS framework based on Flexbox and used by more than 200,000 developers.</p>
+										<p><a href="https://bulma.io/documentation/overview/" class="button style1">Learn More</a></p>
+									</section>
+								</div>
+								<div class="col-4 col-12-medium">
+									<section class="highlight">
+										<a href="https://semantic-ui.com/"><img src="../images/semantic-ui.svg" alt="Semantic UI logo" height="150px"/></a>
+										<h3><a href="https://semantic-ui.com/">Semantic UI</a></h3>
+										<p>Semantic UI is a modern front-end development framework, powered by LESS and jQuery. It has a sleek, subtle, and flat design look that provides a lightweight user experience.</p>
+										<p><a href="https://semantic-ui.com/introduction/getting-started.html" class="button style1">Learn More</a></p>
+									</section>
+								</div>
+								<div class="col-4 col-12-medium">
+									<section class="highlight">
+										<a href="https://getuikit.com/"><img src="../images/uikit.svg" alt="UIkit logo" height="150px"/></a>
+										<h3><a href="https://getuikit.com/">UIkit</a></h3>
+										<p>A lightweight and modular front-end framework for developing fast and powerful web interfaces.</p>
+										<p><a href="https://getuikit.com/docs/introduction" class="button style1">Learn More</a></p>
+									</section>
+								</div>
+								<div class="col-4 col-12-medium">
+									<section class="highlight">
+										<a href="https://www.oddbird.net/susy/"><img src="../images/susy.svg" alt="Susy logo" height="150px"/></a>
+										<h3><a href="https://www.oddbird.net/susy/">Susy</a></h3>
+										<p>In the hands of the expert developer, Susy is like a flamethrower that blows everything else away. Lesser mortals, of course, will manage to burn their hands.</p>
+										<p><a href="https://www.oddbird.net/susy/#getting-started" class="button style1">Learn More</a></p>
+									</section>
+								</div>
+							</div>
+				
+							<br><br>
+				
+							<div align="center">
+								<p>
+									See <a href="https://github.com/troxler/awesome-css-frameworks">here</a> for a bigger list of CSS frameworks.
+								</p>
+							</div>
 						</div>
 					</div>
-		
-					<br><br>
-		
-					<div align="center">
-						<p>
-							See <a href="https://github.com/troxler/awesome-css-frameworks">here</a> for a bigger list of CSS frameworks.
-						</p>
+				</section>
+				
+				
+				
+
+				<!-- Footer -->
+				<section id="footer" class="wrapper">
+					<div class="title">
+						<img src="../images/rabbit-tags-icon.webp" alt="Nift rabbit mascot with code tag boomerangs" loading="lazy" width="200" style="margin-top:20px; border-radius: 4px">
 					</div>
-				</div>
+				
+					<div class="container">
+						<div id="copyright" class="noselect">
+							<ul>
+								<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
+								<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
+								<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
+							</ul> <br>
+				
+							<ul>
+								<li><a href="../tos.html">Terms of Service</a></li>
+								<li><a href="../privacy_policy.html">Privacy Policy</a></li>
+							</ul> <br>
+				
+							<ul>
+								<li><span>&copy;</span> 2015-<span name="cyear"></span></li>
+							</ul>
+						</div>
+					</div>
+				</section>
 			</div>
-		</section>
-		
-		
-		
+		</div>
 
-		<!-- Footer -->
-		<section id="footer" class="wrapper">
-			<div class="title">
-				<img src="../images/rabbit-tags-icon.png" alt="Nift rabbit mascot with code tag boomerangs" loading="lazy" width="200" style="margin-top:20px; border-radius: 4px">
-			</div>
-		
-			<div class="container">
-				<div id="copyright" class="noselect">
-					<ul>
-						<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
-						<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
-						<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
-					</ul> <br>
-		
-					<ul>
-						<li><a href="../tos.html">Terms of Service</a></li>
-						<li><a href="../privacy_policy.html">Privacy Policy</a></li>
-					</ul> <br>
-		
-					<ul>
-						<li><span>&copy;</span> 2015-<span name="cyear"></span></li>
-					</ul>
-				</div>
-			</div>
-		</section>
+		<script type="text/javascript" src="../assets/js/bundled.js"></script>
 
-		<script async src="../assets/js/menu.js"></script>
 		<script async src="../assets/js/copy-pre.js"></script>
 		<script async src="../assets/js/process-md-blocks.js"></script>
 		<script async src="../assets/js/showdown.min.js"></script>
@@ -246,3 +259,4 @@
 		</script>
 	</body>
 </html>
+

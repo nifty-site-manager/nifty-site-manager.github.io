@@ -3,206 +3,216 @@
 	<head>
 		<title>Nift - f++</title>
 		<meta name="description" 
-		      content="Nift is an opinionless web development framework, specialising
-		            in static websites with serverless backends. It's lightning fast, 
-		            cross-platform, opinionless, open source (MIT license) and 
-		            developed from the ground up in C++. Use it for any of your 
-		            personal or commercial projects!">
+		      content="Nift is an opinionless web development framework. It's 
+		            lightning fast, cross-platform, opinionless, open source 
+		            (MIT license) and developed from the ground up in C++. Use 
+		            it for any of your personal or commercial projects!">
 		
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
-		<link rel="stylesheet" href="../assets/css/pagestyle.css">
-		<link rel="stylesheet" href="../assets/css/menu.css">
-		<link rel="stylesheet" href="../assets/css/font-awesome.css">
+		<link rel="stylesheet" href="../assets/css/bundled.css">
 		<link rel="stylesheet" href="../assets/css/pre.css">
 		<link rel="stylesheet" href="../assets/css/extra-fonts.css"><link rel='icon' type='image/png' href='../images/favicon.png'>
 	</head>
 
 	<body>
-		<nav id="nav" class="noselect">
-		  <ul class="menu">
-		    <li class="nav-space-left"></li>
-		    <li class="item icons">
-		      <a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a>
-		      <a href="https://github.com/nifty-site-manager/nsm/discussions" title="GitHub Discussions" class="gh"><i class="fas fa-comment-dots fa-2x"></i></a>
-		      <a href="https://twitter.com/nift_dev" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a>
-		      <a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a>
-		    </li>
-		    <a href="../index.html" class="item hover-hl"><li>Home</li></a>
-		    <li class="item hover-hl has-submenu" onclick="toggleItem(0)">
-		      <a tabindex="0" class="item-link">Docs</a>
-		      <ul class="submenu">
-		        <li class="subitem"><a href="installing.html">Installing</a></li>
-		        <li class="subitem"><a href="hosting.html">Hosting</a></li>
-		        <li class="subitem"><a href="commands.html">Commands</a></li>
-		        <li class="subitem"><a href="config.html">Config</a></li>
-		        <li class="subitem"><a href="template_files.html">Template Files</a></li>
-		        <li class="subitem"><a href="fns.html">Functions</a></li>
-		        <li class="subitem"><a href="types.html">Types</a></li>
-		        <li class="subitem"><a href="f++.html">f++ (scripting)</a></li>
-		        <li class="subitem"><a href="n++.html">n++ (templates)</a></li>
-		        <li class="subitem"><a href="lua.html">Lua(JIT)</a></li>
-		        <li class="subitem"><a href="exprtk.html">ExprTk</a></li>
-		        <li class="subitem"><a href="REPL.html">Interactive REPL</a></li>
-		        <li class="subitem"><a href="scripts.html">Scripts</a></li>
-		        <li class="subitem"><a href="template_languages.html">Template Languages</a></li>
-		        <li class="subitem"><a href="JSON.html">JSON Data</a></li>
-		        <li class="subitem"><a href="markdown.html">Markdown</a></li>
-		        <li class="subitem"><a href="translators.html">Translators</a></li>
-		        <li class="subitem"><a href="mathematics.html">Mathematics</a></li>
-		        <li class="subitem"><a href="code_blocks.html">Code Blocks</a></li>
-		        <li class="subitem"><a href="presentations.html">Presentations</a></li>
-		      </ul>
-		    </li>
-		    <li class="item hover-hl has-submenu" onclick="toggleItem(1)">
-		      <a tabindex="0" class="item-link">Resources</a>
-		      <ul class="submenu">
-		        <li class="subitem"><a href="../resources/tutorials.html">Tutorials</a></li>
-		        <li class="subitem"><a href="../resources/templates.html">Templates</a></li>
-		        <li class="subitem"><a href="../resources/blog_templates.html">Blog Templates</a></li>
-		        <li class="subitem"><a href="../resources/css_frameworks.html">CSS Frameworks</a></li>
-		        <li class="subitem"><a href="../resources/js_frameworks.html">JS Frameworks</a></li>
-		        <li class="subitem"><a href="../resources/links.html">Links</a></li>
-		        <li class="subitem"><a href="../resources/logos.html">Logos</a></li>
-		        <li class="subitem"><a href="../resources/promos.html">Promos</a></li>
-		        <li class="subitem"><a href="../resources/php_frameworks.html">PHP Frameworks</a></li>
-		      </ul>
-		    </li>
-		    <li class="toggle"><a href="#" onclick="toggleMenu()" id="menu-link"><i class="fas fa-bars fa-2x"></i></a></li>
-		  </ul>
-		</nav>
-		
-		<!-- Header -->
-		<section class="wrapper" id="header">
-		  <div id="logo" class="noselect">
-		    <img src="../images/rabbit-tags-white.png" alt="Nift bunny mascot" style="width: 400px; max-width:90%"><br>
-		
-		    <p style="color:#372C2A">An opinionless web development framework</p>
-		
-		    <p>
-		      <a href="https://chocolatey.org/packages/nift"><img src="../images/chocolatey-icon.png" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
-		      <a href="installing.html#osx-brew"><img src="../images/brew-icon.png" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
-		      <a href="installing.html#freebsd"><img src="../images/freebsd.png" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
-		      <a href="installing.html#linux-flatpak"><img src="../images/flathub-icon.png" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
-		      <a href="installing.html#gentoo"><img src="../images/gentoo.svg" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
-		      <a href="https://snapcraft.io/nift"><img src="../images/snap-icon.png" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
-		    </p>
-		  </div>
-		</section>
+		<div align="center"  id="body">
+			<div class="menu-bars">
+			  <i id="open-menu-icon" class="fa fa-bars" onclick="show_menu()"></i>
+			</div>
+			
+			<div id="menu-page">
+			  <div class="menu-cross" >
+			    <i id="close-menu-icon" class="fa fa-xmark" onclick="close_menu()"></i>
+			  </div>
+			
+			  <div class="menu-icons noselect">
+			    <a href="https://github.com/nifty-site-manager/nsm" alt="GitHub"><i class="fa fa-2x fa-github"></i></a>&nbsp;&nbsp;
+			    <a href="https://github.com/nifty-site-manager/nsm/discussions" alt="GitHub Discussions"><i class="fa fa-2x fa-comments"></i></a>&nbsp;&nbsp;
+			    <a href="https://twitter.com/nift_dev" alt="Twitter"><i class="fa fa-2x fa-twitter"></i></a>&nbsp;&nbsp;
+			    <a href="https://discord.gg/St8QXTG" alt="Discord"><i class="fa fa-2x fa-discord"></i></a>
+			  </div>
+			  
+			  <nav id="nav" class="noselect">
+			    <ul>
+			      <li class="item li-menu li-dark">
+			        <a class="item-link" href="../index.html">Home</a>
+			      </li>
+			      <li class="item li-menu li-dark has-submenu">
+			        <a tabindex="0" href="#" class="submenu-link" onclick="toggle_submenu(0)">Documentation <i class="submenu-link-icon fa fa-angle-down fa-1x"></i></a>
+			        <ul class="submenu">
+			          <li class="subitem"><a href="installing.html">Installing</a></li>
+			          <li class="subitem"><a href="hosting.html">Hosting</a></li>
+			          <li class="subitem"><a href="commands.html">Commands</a></li>
+			          <li class="subitem"><a href="config.html">Config</a></li>
+			          <li class="subitem"><a href="template_files.html">Template Files</a></li>
+			          <li class="subitem"><a href="fns.html">Functions</a></li>
+			          <li class="subitem"><a href="types.html">Types</a></li>
+			          <li class="subitem"><a href="f++.html">f++ (scripting)</a></li>
+			          <li class="subitem"><a href="n++.html">n++ (templates)</a></li>
+			          <li class="subitem"><a href="lua.html">Lua(JIT)</a></li>
+			          <li class="subitem"><a href="exprtk.html">ExprTk</a></li>
+			          <li class="subitem"><a href="REPL.html">Interactive REPL</a></li>
+			          <li class="subitem"><a href="scripts.html">Scripts</a></li>
+			          <li class="subitem"><a href="template_languages.html">Template Languages</a></li>
+			          <li class="subitem"><a href="JSON.html">JSON Data</a></li>
+			          <li class="subitem"><a href="markdown.html">Markdown</a></li>
+			          <li class="subitem"><a href="translators.html">Translators</a></li>
+			          <li class="subitem"><a href="mathematics.html">Mathematics</a></li>
+			          <li class="subitem"><a href="code_blocks.html">Code Blocks</a></li>
+			          <li class="subitem"><a href="presentations.html">Presentations</a></li>
+			        </ul>
+			      </li>
+			      <li class="item li-menu li-dark has-submenu">
+			        <a tabindex="0" href="#" class="submenu-link" onclick="toggle_submenu(1)">Resources <i class="submenu-link-icon fa fa-angle-down fa-1x"></i></a>
+			        <ul class="submenu">
+			          <li class="subitem"><a href="../resources/tutorials.html">Tutorials</a></li>
+			          <li class="subitem"><a href="../resources/templates.html">Templates</a></li>
+			          <li class="subitem"><a href="../resources/blog_templates.html">Blog Templates</a></li>
+			          <li class="subitem"><a href="../resources/css_frameworks.html">CSS Frameworks</a></li>
+			          <li class="subitem"><a href="../resources/js_frameworks.html">JS Frameworks</a></li>
+			          <li class="subitem"><a href="../resources/links.html">Links</a></li>
+			          <li class="subitem"><a href="../resources/logos.html">Logos</a></li>
+			          <li class="subitem"><a href="../resources/promos.html">Promos</a></li>
+			          <li class="subitem"><a href="../resources/php_frameworks.html">PHP Frameworks</a></li>
+			        </ul>
+			      </li>
+			    </ul>
+			  </nav>
+			</div>
 
-		<!-- Main -->
-		<section id="main" class="wrapper style2">
-			<div class="title"><mono>f++</mono> (scripting language)</div>
-			<div class="container">
-				<!-- Features -->
-				<section id="features">
-					<!-- Image -->
-					<center>
-						<img src="../images/jack-jumper-icon.png" alt="functionstein jack jumper mascot" style="width: 200px; max-width:70%; margin: 1em 0">
-					</center>
-		
-					<div class="content">
-						<p>
-							Nift has its own in-built scripting language <mono>f++</mono>, also nicknamed <mnstr style="font-size:16px">FUNCTIONSTEIN</mnstr> or <mnstr style="font-size:16px">FNSTEIN</mnstr>. 
-						</p>
-		
-						<a href="#contents" class="to-top">[contents]</a>
-		
-						<h4 id="contents">
-							Contents
-						</h4>
-						<div>
-							<ul>
-								<li><a href="#interpreter">f++ interpreter</a></li>
-								<li><a href="#shell">f++ shell</a></li>
-								<li><a href="#automatic-flashell-startup">automatic shell startup</a></li>
-								<li><a href="#scripts">Running f++ scripts</a></li>
-								<li><a href="#f++-from-n++">f++ from n++</a></li>
-								<li><a href="#nift-fns">functions</a></li>
-								<li><a href="#examples">examples</a></li>
-							</ul>
-						</div>
-		
-						<h4 id="interpreter">
-							<mono>f++</mono> interpreter
-						</h4>
-						<p>
-							<mono>Nift</mono> has an <mono>f++</mono> interpreter that you can start with either <mono>nsm interp</mono> or <mono>nift interp</mono> (it is the default language for the interpeter mode). See the <a href="REPL.html">interactive REPL</a> page for docs.
-						</p>
-		
-						<p>
-							In the interpreter mode the prompt will just tell you which language you are using. If you would like the prompt to also display the present working directory (up to using half the width of the console) you can switch to the shell mode using <mono>nsm_mode("sh")</mono>. You can switch back again with <mono>nsm_mode("interp")</mono>.
-						</p>
-		
-						<p>
-							You can switch to one of the other languages available in Nift's interpreter using <mono>nsm_lang(langStr)</mono> where <mono>langStr</mono> is one of <mono>f++</mono>, <mono>n++</mono>, <mono>lua</mono> or <mono>exprtk</mono>.
-						</p>
-		
-						<h4 id="shell">
-							<mono>f++</mono> shell
-						</h4>
-						<p>
-							<mono>Nift</mono> has an <mono>f++</mono> shell, also nicknamed <zapfont style = "font-size:36px;">FLASHELL</zapfont>, that you can start with either <mono>nsm sh</mono> or <mono>nift sh</mono> (it is the default language for the shell mode). See the <a href="REPL.html">interactive REPL</a> page for docs.
-						</p>
-		
-						<p>
-							In the shell mode the prompt will tell you which language you are using and the present working directory (up to using half the width of the console). If you would like the prompt to just display the language you can switch to the interpreter mode using <mono>nsm_mode("interp")</mono>. You can switch back again with <mono>nsm_mode("sh")</mono>.
-						</p>
-		
-						<p>
-							You can switch to one of the other languages available in Nift using <mono>nsm_lang(langStr)</mono> where <mono>langStr</mono> is one of <mono>f++</mono>, <mono>n++</mono>, <mono>lua</mono> or <mono>exprtk</mono>.
-						</p>
-		
-		
-						<h4 id="scripts">
-							Running f++ scripts
-						</h4>
-						<p>
-							If you have an <mono>f++</mono> script saved in a file <mono>path/script-name.f</mono> you can run it with either of the following:
-						</p>
-		<div align="center">
-		<pre class="prettyprint inline lang-nift">
+			<div id="content">
+				<!-- Header -->
+				<section class="wrapper" id="header">
+				  <div id="logo" class="noselect">
+				    <img src="../images/rabbit-tags-white.webp" alt="Nift bunny mascot" style="width: 400px; max-width:90%"><br>
+				
+				    <p style="color:#372C2A">An unopinionated web development framework</p>
+				
+				    <p>
+				      <a href="https://chocolatey.org/packages/nift"><img src="../images/chocolatey-icon.webp" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
+				      <a href="installing.html#osx-brew"><img src="../images/brew-icon.webp" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
+				      <a href="installing.html#freebsd"><img src="../images/freebsd.webp" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
+				      <a href="installing.html#linux-flatpak"><img src="../images/flathub-icon.webp" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
+				      <a href="installing.html#gentoo"><img src="../images/gentoo.webp" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
+				      <a href="https://snapcraft.io/nift"><img src="../images/snap-icon.webp" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
+				    </p>
+				  </div>
+				</section>
+
+				<!-- Main -->
+				<section id="main" class="wrapper style2">
+					<div class="title"><mono>f++</mono> (scripting language)</div>
+					<div class="container">
+						<!-- Features -->
+						<section id="features">
+							<!-- Image -->
+							<center>
+								<img src="../images/jack-jumper-icon.png" alt="functionstein jack jumper mascot" style="width: 200px; max-width:70%; margin: 1em 0">
+							</center>
+				
+							<div class="content">
+								<p>
+									Nift has its own in-built scripting language <mono>f++</mono>, also nicknamed <mnstr style="font-size:16px">FUNCTIONSTEIN</mnstr> or <mnstr style="font-size:16px">FNSTEIN</mnstr>. 
+								</p>
+				
+								<a href="#contents" class="to-top">[contents]</a>
+				
+								<h4 id="contents">
+									Contents
+								</h4>
+								<div>
+									<ul>
+										<li><a href="#interpreter">f++ interpreter</a></li>
+										<li><a href="#shell">f++ shell</a></li>
+										<li><a href="#automatic-flashell-startup">automatic shell startup</a></li>
+										<li><a href="#scripts">Running f++ scripts</a></li>
+										<li><a href="#f++-from-n++">f++ from n++</a></li>
+										<li><a href="#nift-fns">functions</a></li>
+										<li><a href="#examples">examples</a></li>
+									</ul>
+								</div>
+				
+								<h4 id="interpreter">
+									<mono>f++</mono> interpreter
+								</h4>
+								<p>
+									<mono>Nift</mono> has an <mono>f++</mono> interpreter that you can start with either <mono>nsm interp</mono> or <mono>nift interp</mono> (it is the default language for the interpeter mode). See the <a href="REPL.html">interactive REPL</a> page for docs.
+								</p>
+				
+								<p>
+									In the interpreter mode the prompt will just tell you which language you are using. If you would like the prompt to also display the present working directory (up to using half the width of the console) you can switch to the shell mode using <mono>nsm_mode("sh")</mono>. You can switch back again with <mono>nsm_mode("interp")</mono>.
+								</p>
+				
+								<p>
+									You can switch to one of the other languages available in Nift's interpreter using <mono>nsm_lang(langStr)</mono> where <mono>langStr</mono> is one of <mono>f++</mono>, <mono>n++</mono>, <mono>lua</mono> or <mono>exprtk</mono>.
+								</p>
+				
+								<h4 id="shell">
+									<mono>f++</mono> shell
+								</h4>
+								<p>
+									<mono>Nift</mono> has an <mono>f++</mono> shell, also nicknamed <zapfont style = "font-size:36px;">FLASHELL</zapfont>, that you can start with either <mono>nsm sh</mono> or <mono>nift sh</mono> (it is the default language for the shell mode). See the <a href="REPL.html">interactive REPL</a> page for docs.
+								</p>
+				
+								<p>
+									In the shell mode the prompt will tell you which language you are using and the present working directory (up to using half the width of the console). If you would like the prompt to just display the language you can switch to the interpreter mode using <mono>nsm_mode("interp")</mono>. You can switch back again with <mono>nsm_mode("sh")</mono>.
+								</p>
+				
+								<p>
+									You can switch to one of the other languages available in Nift using <mono>nsm_lang(langStr)</mono> where <mono>langStr</mono> is one of <mono>f++</mono>, <mono>n++</mono>, <mono>lua</mono> or <mono>exprtk</mono>.
+								</p>
+				
+				
+								<h4 id="scripts">
+									Running f++ scripts
+								</h4>
+								<p>
+									If you have an <mono>f++</mono> script saved in a file <mono>path/script-name.f</mono> you can run it with either of the following:
+								</p>
+				<div align="center">
+				<pre class="prettyprint inline lang-nift">
 nsm run path/script-name.f
 nift run path/script-name.f
 </pre>
-		</div>
-		
-						<p>
-							If the script has a different extension, say <mono>.ext</mono>, you can run the script with either of the following:
-						</p>
-		<div align="center">
-		<pre class="prettyprint inline lang-nift">
+				</div>
+				
+								<p>
+									If the script has a different extension, say <mono>.ext</mono>, you can run the script with either of the following:
+								</p>
+				<div align="center">
+				<pre class="prettyprint inline lang-nift">
 nsm run -f++ path/script-name.ext
 nift run -f++ path/script-name.ext
 </pre>
-		</div>
-		
-						<p>
-							If you want to run a normal file, eg. <mono>script.f</mono>, as a script then use something typical like the following as a shebang:
-						</p>
-		<div align="center">
-		<pre class="prettyprint inline">
+				</div>
+				
+								<p>
+									If you want to run a normal file, eg. <mono>script.f</mono>, as a script then use something typical like the following as a shebang:
+								</p>
+				<div align="center">
+				<pre class="prettyprint inline">
 #!/usr/bin/env nift
 </pre>
-		</div>
-		
-						<p>
-							There's information about "run commands" scripts, eg. <mono>niftrc.f</mono> available on the <a href="REPL.html#rc">REPL</a> page.
-						</p>
-		
-						<h4 id="automatic-flashell-startup">
-							Automatic shell startup
-						</h4>
-						<p>
-							On Unix based platforms (eg. probably all posix compliant Linux distributions, OSX, FreeBSD, Gentoo etc.), you can create an application launcher with <mono>x-terminal-emulator -e nift sh</mono> or <mono>gnome-terminal -- nift sh</mono> as the short-cut command, which will open a terminal session running <zapfont style = "font-size:36px;">FLASHELL</zapfont> and close upon exit. 
-						</p>
-		
-						<p>
-							From <mono>gnome-session-flashback</mono> I am able to create an application launcher from the gui by doing <mono>alt</mono> and right click in some free space on the top or bottom panel and selecting <mono>Add to Panel...</mono>. Alternatively create a file titled something like <mono>Terminal.desktop</mono> below and give exec permissions (calling the application <mono>Terminal</mono> gives a more native feel as it is going to be hijacked and renamed otherwise):
-						</p>
-		<div align="center">
-		<pre class="prettyprint inline">
+				</div>
+				
+								<p>
+									There's information about "run commands" scripts, eg. <mono>niftrc.f</mono> available on the <a href="REPL.html#rc">REPL</a> page.
+								</p>
+				
+								<h4 id="automatic-flashell-startup">
+									Automatic shell startup
+								</h4>
+								<p>
+									On Unix based platforms (eg. probably all posix compliant Linux distributions, OSX, FreeBSD, Gentoo etc.), you can create an application launcher with <mono>x-terminal-emulator -e nift sh</mono> or <mono>gnome-terminal -- nift sh</mono> as the short-cut command, which will open a terminal session running <zapfont style = "font-size:36px;">FLASHELL</zapfont> and close upon exit. 
+								</p>
+				
+								<p>
+									From <mono>gnome-session-flashback</mono> I am able to create an application launcher from the gui by doing <mono>alt</mono> and right click in some free space on the top or bottom panel and selecting <mono>Add to Panel...</mono>. Alternatively create a file titled something like <mono>Terminal.desktop</mono> below and give exec permissions (calling the application <mono>Terminal</mono> gives a more native feel as it is going to be hijacked and renamed otherwise):
+								</p>
+				<div align="center">
+				<pre class="prettyprint inline">
 #!/usr/bin/env xdg-open
 
 [Desktop Entry]
@@ -214,85 +224,85 @@ Name=Terminal
 Comment=flashell shortcut
 Icon=&lt;path-to-icon>
 </pre>
-		</div>
-		
-						<p>
-							I often find it easier to just use the properties of the file through the gui to acccess the filesystem for linking to the icon file, typically from the desktop. Below is an icon people might like to use with their short-cut(s): <br>
-		
-							<center>
-								<img src="../images/flash-icon.png" alt="flash icon" width="100px" style="max-width:90%;">
-							</center>
-						</p>
-		
-						<p>
-							If you prefer a more native feel without the icon being hijacked, the default icon used for <mono>gnome-terminal</mono> on <mono>gnome-session-flashback</mono>, at least on <mono>Ubuntu</mono>, is below:
-		
-							<center>
-								<img src="../images/terminal-icon.svg" alt="gnome-terminal icon" width="100px" style="max-width:90%;">
-							</center>
-						</p>
-		
-						<p>
-							and the default icon, or at least one similar to it, used for <mono>cmd.exe</mono> on <mono>Windows 10</mono> is below:
-		
-							<center>
-								<img src="../images/win-cmd-icon.png" alt="Windows cmd.exe icon" width="100px" style="max-width:90%;">
-							</center>
-						</p>
-		
-						<p>
-							You can start a session of eg. bash shell by simply typing <mono>bash</mono> from <zapfont style = "font-size:36px;">FLASHELL</zapfont>, which will also do <mono>lolcat</mono> output through bash if you have <mono>lolcat</mono> activated (which actually quite surprises me), however if you start another <mono>Nift</mono> shell or interpreter with <mono>lolcat</mono> activated the prompt line including user input stays invisible until you hit enter (just type <mono>exit</mono> if you accidentally do this).
-						</p>
-		
-						<p>
-							On Windows one approach is to create a shortcut to <mono>cmd.exe</mono> to the command that is executed when the shortcut is opened and add <mono>/k nift sh</mono> to the end of the target under properties for the shortcut (or the powershell executeable if you would prefer adding <mono>-Command nift sh</mono> to the end of the target under properties for the duplicated powershell shortcut).
-						</p>
-		
-						<h4 id="f++-from-n++">
-							<mono>f++</mono> from <mono>n++</mono>
-						</h4>
-						<p>
-							You can run <mono>f++</mono> code from <mono>n++</mono> using either of the following:
-						</p>					
-		
-		<div align="center">
-		<pre class="prettyprint inline lang-nift">
+				</div>
+				
+								<p>
+									I often find it easier to just use the properties of the file through the gui to acccess the filesystem for linking to the icon file, typically from the desktop. Below is an icon people might like to use with their short-cut(s): <br>
+				
+									<center>
+										<img src="../images/flash-icon.png" alt="flash icon" width="100px" style="max-width:90%;">
+									</center>
+								</p>
+				
+								<p>
+									If you prefer a more native feel without the icon being hijacked, the default icon used for <mono>gnome-terminal</mono> on <mono>gnome-session-flashback</mono>, at least on <mono>Ubuntu</mono>, is below:
+				
+									<center>
+										<img src="../images/terminal-icon.svg" alt="gnome-terminal icon" width="100px" style="max-width:90%;">
+									</center>
+								</p>
+				
+								<p>
+									and the default icon, or at least one similar to it, used for <mono>cmd.exe</mono> on <mono>Windows 10</mono> is below:
+				
+									<center>
+										<img src="../images/win-cmd-icon.png" alt="Windows cmd.exe icon" width="100px" style="max-width:90%;">
+									</center>
+								</p>
+				
+								<p>
+									You can start a session of eg. bash shell by simply typing <mono>bash</mono> from <zapfont style = "font-size:36px;">FLASHELL</zapfont>, which will also do <mono>lolcat</mono> output through bash if you have <mono>lolcat</mono> activated (which actually quite surprises me), however if you start another <mono>Nift</mono> shell or interpreter with <mono>lolcat</mono> activated the prompt line including user input stays invisible until you hit enter (just type <mono>exit</mono> if you accidentally do this).
+								</p>
+				
+								<p>
+									On Windows one approach is to create a shortcut to <mono>cmd.exe</mono> to the command that is executed when the shortcut is opened and add <mono>/k nift sh</mono> to the end of the target under properties for the shortcut (or the powershell executeable if you would prefer adding <mono>-Command nift sh</mono> to the end of the target under properties for the duplicated powershell shortcut).
+								</p>
+				
+								<h4 id="f++-from-n++">
+									<mono>f++</mono> from <mono>n++</mono>
+								</h4>
+								<p>
+									You can run <mono>f++</mono> code from <mono>n++</mono> using either of the following:
+								</p>					
+				
+				<div align="center">
+				<pre class="prettyprint inline lang-nift">
 @f++(/* single line of f++ code */)
 </pre>
-		</div>
-		
-		<div align="center">
-		<pre class="prettyprint inline lang-nift">
+				</div>
+				
+				<div align="center">
+				<pre class="prettyprint inline lang-nift">
 @f++
 {
 	// block of f++ code
 }
 </pre>
-		</div>
-		
-						<h4 id="nift-fns">
-							Nift functions
-						</h4>
-						<p>
-							All of Nift's <a href="fns.html">hard-coded functions</a> (including functions for defining variables, functions and structs) are available in your <mono>f++</mono> code. The syntax for calling a function is as follows:
-		<div align="center">
-		<pre class="prettyprint inline lang-nift">
+				</div>
+				
+								<h4 id="nift-fns">
+									Nift functions
+								</h4>
+								<p>
+									All of Nift's <a href="fns.html">hard-coded functions</a> (including functions for defining variables, functions and structs) are available in your <mono>f++</mono> code. The syntax for calling a function is as follows:
+				<div align="center">
+				<pre class="prettyprint inline lang-nift">
 funcName{options}(params)
 </pre>
-		</div>
-						</p>
-		
-						<h4 id="examples">
-							Examples
-						</h4>
-						<p>
-							There are some basic solutions to Project Euler problems available <a href="https://github.com/nifty-site-manager/project-euler">here</a>.
-						</p>
-		
-						<p>
-							The following script will create and delete 100k files on your machine:
-		<div align="center" style="margin-bottom:10px">
-		<pre class="prettyprint inline lang-nift">
+				</div>
+								</p>
+				
+								<h4 id="examples">
+									Examples
+								</h4>
+								<p>
+									There are some basic solutions to Project Euler problems available <a href="https://github.com/nifty-site-manager/project-euler">here</a>.
+								</p>
+				
+								<p>
+									The following script will create and delete 100k files on your machine:
+				<div align="center" style="margin-bottom:10px">
+				<pre class="prettyprint inline lang-nift">
 #!/usr/bin/env nift
 string params = "file0.txt";
  
@@ -302,13 +312,13 @@ for(int i=1; i&lt;100000; i+=1)
 poke($[params]);
 rmv($[params]);
 </pre>
-		</div>
-						</p>
-		
-						<p>
-							The following script uses more <mono>ExprTk</mono> than above and runs faster:
-		<div align="center" style="margin-bottom:10px">
-		<pre class="prettyprint inline lang-nift">
+				</div>
+								</p>
+				
+								<p>
+									The following script uses more <mono>ExprTk</mono> than above and runs faster:
+				<div align="center" style="margin-bottom:10px">
+				<pre class="prettyprint inline lang-nift">
 #!/usr/bin/env nift
 string params = "file0.txt";
 int i;
@@ -324,13 +334,13 @@ exprtk
 poke($[params]);
 rmv($[params]);
 </pre>
-		</div>
-						</p>
-		
-						<p>
-							<b>Note:</b> do not leave the directory you are running the script from open on your machine, run it from a terminal. The following bash script will do the same but much slower, feel free to provide a similar windows script in powershell or a batch file:
-		<div align="center">
-		<pre class="prettyprint inline">
+				</div>
+								</p>
+				
+								<p>
+									<b>Note:</b> do not leave the directory you are running the script from open on your machine, run it from a terminal. The following bash script will do the same but much slower, feel free to provide a similar windows script in powershell or a batch file:
+				<div align="center">
+				<pre class="prettyprint inline">
 #!/usr/bin/env bash
 COUNTER=0
 while [  $COUNTER -lt 100000 ]; do
@@ -340,43 +350,46 @@ while [  $COUNTER -lt 100000 ]; do
     rm file${COUNTER}.txt
 done
 </pre>
-		</div>
-		
-						<div align="center" class="noselect" style="margin-top: 11vw">
-							<mnstr style = "font-size:20vw">}</mnstr>
+				</div>
+				
+								<div align="center" class="noselect" style="margin-top: 11vw">
+									<mnstr style = "font-size:20vw">}</mnstr>
+								</div>
+							</div>
+						</section>
+					</div>
+				</section>
+
+				<!-- Footer -->
+				<section id="footer" class="wrapper">
+					<div class="title">
+						<img src="../images/rabbit-tags-icon.webp" alt="Nift rabbit mascot with code tag boomerangs" loading="lazy" width="200" style="margin-top:20px; border-radius: 4px">
+					</div>
+				
+					<div class="container">
+						<div id="copyright" class="noselect">
+							<ul>
+								<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
+								<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
+								<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
+							</ul> <br>
+				
+							<ul>
+								<li><a href="../tos.html">Terms of Service</a></li>
+								<li><a href="../privacy_policy.html">Privacy Policy</a></li>
+							</ul> <br>
+				
+							<ul>
+								<li><span>&copy;</span> 2015-<span name="cyear"></span></li>
+							</ul>
 						</div>
 					</div>
 				</section>
 			</div>
-		</section>
+		</div>
 
-		<!-- Footer -->
-		<section id="footer" class="wrapper">
-			<div class="title">
-				<img src="../images/rabbit-tags-icon.png" alt="Nift rabbit mascot with code tag boomerangs" loading="lazy" width="200" style="margin-top:20px; border-radius: 4px">
-			</div>
-		
-			<div class="container">
-				<div id="copyright" class="noselect">
-					<ul>
-						<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
-						<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
-						<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
-					</ul> <br>
-		
-					<ul>
-						<li><a href="../tos.html">Terms of Service</a></li>
-						<li><a href="../privacy_policy.html">Privacy Policy</a></li>
-					</ul> <br>
-		
-					<ul>
-						<li><span>&copy;</span> 2015-<span name="cyear"></span></li>
-					</ul>
-				</div>
-			</div>
-		</section>
+		<script type="text/javascript" src="../assets/js/bundled.js"></script>
 
-		<script async src="../assets/js/menu.js"></script>
 		<script async src="../assets/js/copy-pre.js"></script>
 		<script async src="../assets/js/process-md-blocks.js"></script>
 		<script async src="../assets/js/showdown.min.js"></script>
@@ -427,3 +440,4 @@ done
 		</script>
 	</body>
 </html>
+

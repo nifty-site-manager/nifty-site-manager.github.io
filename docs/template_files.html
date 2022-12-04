@@ -3,195 +3,205 @@
 	<head>
 		<title>Nift - template_files</title>
 		<meta name="description" 
-		      content="Nift is an opinionless web development framework, specialising
-		            in static websites with serverless backends. It's lightning fast, 
-		            cross-platform, opinionless, open source (MIT license) and 
-		            developed from the ground up in C++. Use it for any of your 
-		            personal or commercial projects!">
+		      content="Nift is an opinionless web development framework. It's 
+		            lightning fast, cross-platform, opinionless, open source 
+		            (MIT license) and developed from the ground up in C++. Use 
+		            it for any of your personal or commercial projects!">
 		
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
-		<link rel="stylesheet" href="../assets/css/pagestyle.css">
-		<link rel="stylesheet" href="../assets/css/menu.css">
-		<link rel="stylesheet" href="../assets/css/font-awesome.css">
+		<link rel="stylesheet" href="../assets/css/bundled.css">
 		<link rel="stylesheet" href="../assets/css/pre.css">
 		<link rel="stylesheet" href="../assets/css/extra-fonts.css"><link rel='icon' type='image/png' href='../images/favicon.png'>
 	</head>
 
 	<body>
-		<nav id="nav" class="noselect">
-		  <ul class="menu">
-		    <li class="nav-space-left"></li>
-		    <li class="item icons">
-		      <a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a>
-		      <a href="https://github.com/nifty-site-manager/nsm/discussions" title="GitHub Discussions" class="gh"><i class="fas fa-comment-dots fa-2x"></i></a>
-		      <a href="https://twitter.com/nift_dev" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a>
-		      <a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a>
-		    </li>
-		    <a href="../index.html" class="item hover-hl"><li>Home</li></a>
-		    <li class="item hover-hl has-submenu" onclick="toggleItem(0)">
-		      <a tabindex="0" class="item-link">Docs</a>
-		      <ul class="submenu">
-		        <li class="subitem"><a href="installing.html">Installing</a></li>
-		        <li class="subitem"><a href="hosting.html">Hosting</a></li>
-		        <li class="subitem"><a href="commands.html">Commands</a></li>
-		        <li class="subitem"><a href="config.html">Config</a></li>
-		        <li class="subitem"><a href="template_files.html">Template Files</a></li>
-		        <li class="subitem"><a href="fns.html">Functions</a></li>
-		        <li class="subitem"><a href="types.html">Types</a></li>
-		        <li class="subitem"><a href="f++.html">f++ (scripting)</a></li>
-		        <li class="subitem"><a href="n++.html">n++ (templates)</a></li>
-		        <li class="subitem"><a href="lua.html">Lua(JIT)</a></li>
-		        <li class="subitem"><a href="exprtk.html">ExprTk</a></li>
-		        <li class="subitem"><a href="REPL.html">Interactive REPL</a></li>
-		        <li class="subitem"><a href="scripts.html">Scripts</a></li>
-		        <li class="subitem"><a href="template_languages.html">Template Languages</a></li>
-		        <li class="subitem"><a href="JSON.html">JSON Data</a></li>
-		        <li class="subitem"><a href="markdown.html">Markdown</a></li>
-		        <li class="subitem"><a href="translators.html">Translators</a></li>
-		        <li class="subitem"><a href="mathematics.html">Mathematics</a></li>
-		        <li class="subitem"><a href="code_blocks.html">Code Blocks</a></li>
-		        <li class="subitem"><a href="presentations.html">Presentations</a></li>
-		      </ul>
-		    </li>
-		    <li class="item hover-hl has-submenu" onclick="toggleItem(1)">
-		      <a tabindex="0" class="item-link">Resources</a>
-		      <ul class="submenu">
-		        <li class="subitem"><a href="../resources/tutorials.html">Tutorials</a></li>
-		        <li class="subitem"><a href="../resources/templates.html">Templates</a></li>
-		        <li class="subitem"><a href="../resources/blog_templates.html">Blog Templates</a></li>
-		        <li class="subitem"><a href="../resources/css_frameworks.html">CSS Frameworks</a></li>
-		        <li class="subitem"><a href="../resources/js_frameworks.html">JS Frameworks</a></li>
-		        <li class="subitem"><a href="../resources/links.html">Links</a></li>
-		        <li class="subitem"><a href="../resources/logos.html">Logos</a></li>
-		        <li class="subitem"><a href="../resources/promos.html">Promos</a></li>
-		        <li class="subitem"><a href="../resources/php_frameworks.html">PHP Frameworks</a></li>
-		      </ul>
-		    </li>
-		    <li class="toggle"><a href="#" onclick="toggleMenu()" id="menu-link"><i class="fas fa-bars fa-2x"></i></a></li>
-		  </ul>
-		</nav>
-		
-		<!-- Header -->
-		<section class="wrapper" id="header">
-		  <div id="logo" class="noselect">
-		    <img src="../images/rabbit-tags-white.png" alt="Nift bunny mascot" style="width: 400px; max-width:90%"><br>
-		
-		    <p style="color:#372C2A">An opinionless web development framework</p>
-		
-		    <p>
-		      <a href="https://chocolatey.org/packages/nift"><img src="../images/chocolatey-icon.png" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
-		      <a href="installing.html#osx-brew"><img src="../images/brew-icon.png" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
-		      <a href="installing.html#freebsd"><img src="../images/freebsd.png" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
-		      <a href="installing.html#linux-flatpak"><img src="../images/flathub-icon.png" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
-		      <a href="installing.html#gentoo"><img src="../images/gentoo.svg" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
-		      <a href="https://snapcraft.io/nift"><img src="../images/snap-icon.png" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
-		    </p>
-		  </div>
-		</section>
+		<div align="center"  id="body">
+			<div class="menu-bars">
+			  <i id="open-menu-icon" class="fa fa-bars" onclick="show_menu()"></i>
+			</div>
+			
+			<div id="menu-page">
+			  <div class="menu-cross" >
+			    <i id="close-menu-icon" class="fa fa-xmark" onclick="close_menu()"></i>
+			  </div>
+			
+			  <div class="menu-icons noselect">
+			    <a href="https://github.com/nifty-site-manager/nsm" alt="GitHub"><i class="fa fa-2x fa-github"></i></a>&nbsp;&nbsp;
+			    <a href="https://github.com/nifty-site-manager/nsm/discussions" alt="GitHub Discussions"><i class="fa fa-2x fa-comments"></i></a>&nbsp;&nbsp;
+			    <a href="https://twitter.com/nift_dev" alt="Twitter"><i class="fa fa-2x fa-twitter"></i></a>&nbsp;&nbsp;
+			    <a href="https://discord.gg/St8QXTG" alt="Discord"><i class="fa fa-2x fa-discord"></i></a>
+			  </div>
+			  
+			  <nav id="nav" class="noselect">
+			    <ul>
+			      <li class="item li-menu li-dark">
+			        <a class="item-link" href="../index.html">Home</a>
+			      </li>
+			      <li class="item li-menu li-dark has-submenu">
+			        <a tabindex="0" href="#" class="submenu-link" onclick="toggle_submenu(0)">Documentation <i class="submenu-link-icon fa fa-angle-down fa-1x"></i></a>
+			        <ul class="submenu">
+			          <li class="subitem"><a href="installing.html">Installing</a></li>
+			          <li class="subitem"><a href="hosting.html">Hosting</a></li>
+			          <li class="subitem"><a href="commands.html">Commands</a></li>
+			          <li class="subitem"><a href="config.html">Config</a></li>
+			          <li class="subitem"><a href="template_files.html">Template Files</a></li>
+			          <li class="subitem"><a href="fns.html">Functions</a></li>
+			          <li class="subitem"><a href="types.html">Types</a></li>
+			          <li class="subitem"><a href="f++.html">f++ (scripting)</a></li>
+			          <li class="subitem"><a href="n++.html">n++ (templates)</a></li>
+			          <li class="subitem"><a href="lua.html">Lua(JIT)</a></li>
+			          <li class="subitem"><a href="exprtk.html">ExprTk</a></li>
+			          <li class="subitem"><a href="REPL.html">Interactive REPL</a></li>
+			          <li class="subitem"><a href="scripts.html">Scripts</a></li>
+			          <li class="subitem"><a href="template_languages.html">Template Languages</a></li>
+			          <li class="subitem"><a href="JSON.html">JSON Data</a></li>
+			          <li class="subitem"><a href="markdown.html">Markdown</a></li>
+			          <li class="subitem"><a href="translators.html">Translators</a></li>
+			          <li class="subitem"><a href="mathematics.html">Mathematics</a></li>
+			          <li class="subitem"><a href="code_blocks.html">Code Blocks</a></li>
+			          <li class="subitem"><a href="presentations.html">Presentations</a></li>
+			        </ul>
+			      </li>
+			      <li class="item li-menu li-dark has-submenu">
+			        <a tabindex="0" href="#" class="submenu-link" onclick="toggle_submenu(1)">Resources <i class="submenu-link-icon fa fa-angle-down fa-1x"></i></a>
+			        <ul class="submenu">
+			          <li class="subitem"><a href="../resources/tutorials.html">Tutorials</a></li>
+			          <li class="subitem"><a href="../resources/templates.html">Templates</a></li>
+			          <li class="subitem"><a href="../resources/blog_templates.html">Blog Templates</a></li>
+			          <li class="subitem"><a href="../resources/css_frameworks.html">CSS Frameworks</a></li>
+			          <li class="subitem"><a href="../resources/js_frameworks.html">JS Frameworks</a></li>
+			          <li class="subitem"><a href="../resources/links.html">Links</a></li>
+			          <li class="subitem"><a href="../resources/logos.html">Logos</a></li>
+			          <li class="subitem"><a href="../resources/promos.html">Promos</a></li>
+			          <li class="subitem"><a href="../resources/php_frameworks.html">PHP Frameworks</a></li>
+			        </ul>
+			      </li>
+			    </ul>
+			  </nav>
+			</div>
 
-		<!-- Main -->
-		<section id="main" class="wrapper style2">
-			<div class="title">Template Files</div>
-			<div class="container">
-				<!-- Features -->
-				<section id="features">
-					<!-- Image -->
-					<center>
-						<img src="../images/laptop-rainbow.png" alt="Nift retro neon rainbow vaporwave artwork" width="600px" style="max-width:90%; border-radius:20px; margin-bottom: 60px">
-					</center>
-		
-					<div class="content">
-						<p>
-							For each file tracked by <mono>Nift</mono> there is a specified template path. When building an output file, <mono>Nift</mono> will start parsing the template file the same as it will parse any other file, using Nift's template language <mono>n++</mono> while producing the output. The files specific to building individual pages are referred to as <mono>content files</mono>, it does not matter whether you consider other files injected in to a template file as <mono>content</mono> or <mono>template</mono> files, it is up to you which file extension you use for them.
-		
-						</p>
-		
-						<p>
-							Basically all of the functions documented <a href="fns.html">here</a> are available when writing template and content files. However, unlike content files, template files (or one of their dependencies) need to use the page content file as a page dependency.
-						</p>
-		
-						<a href="#contents" class="to-top">[contents]</a>
-						<h4 id="contents">
-							Contents
-						</h4>
-						<div>
-							<ul>
-								<li><a href="#content">Specifying where to input/inject content</a></li>
-								<li><a href="#head-content">Optionally injecting head content</a></li>
-								<li><a href="#inject-title">Inputting/injecting titles</a></li>
-								<li><a href="#examples">Example template files</a></li>
-							</ul>
-						</div>
-		
-						<h4 id="inject">
-							Specifying where to input/inject content
-						</h4>
-		
-						<p>
-							<mono>Nift</mono> treats any instance of <mono>@content</mono> as being equivalent to <mono>@input($[contentpath])</mono>, where <mono>$[contentpath]</mono> is the content path for the tracked page.
-						</p>
-		
-						<p>
-							<b>Note:</b> if <mono>@content</mono> is in any dependency of the content file (content file inclusive), then an input loop is formed when attempting to build the page so <mono>Nift</mono> throws an error. You may however put <mono>@content</mono> in any other dependencies of the template file. For example were your template to include a file <mono>template/body.content</mono> or <mono>template/body.template</mono>, it is fine for <mono>@content</mono> to reside in <mono>body.content</mono>/<mono>body.template</mono> and not the main template file.
-						</p>
-		
-						<p>
-							Alternatively to <mono>@content</mono> you can:
-						</p>
-						<div>
-							<ul>
-								<li>use <mono>@content{raw}</mono> which will input the content file without parsing it with Nift's template language</li>
-								<li>use <mono>@system{content}(sys-call)</mono> which is equivalent to <mono>@system(sys-call $[contentpath])</mono>, where <mono>$[contentpath]</mono> injects the content path, except <mono>Nift</mono> also recognises that the content file has been inject. For example if your content files are markdown and you use <mono>@system{content}("pandoc")</mono> then the content files will be injected after being converted to html using pandoc</li>
-								<li>use <mono>@script($[contentpath])</mono> (if the content file is a script/program)</li>
-								<li>use <mono>@script{content}(script-path, params)</mono> which is equivalent to <mono>@script(script-path, $[contentpath], params)</mono>, where <mono>$[contentpath]</mono> injects the content path as parameter 1, except <mono>Nift</mono> also recognises that the content file has been injected</li>
-								<li>use <mono>@dep($[contentpath])</mono></li>
-							</ul>
-						</div>
-		
-						<h4 id="head-content">
-							Optionally injecting head content 
-						</h4>
-		
-						<p>
-							To inject a custom head file for each name using a given template you can use for example:
-		<div align="center" style="margin-top:-15px; margin-bottom: 20px">
-		<pre class="prettyprint inline">
+			<div id="content">
+				<!-- Header -->
+				<section class="wrapper" id="header">
+				  <div id="logo" class="noselect">
+				    <img src="../images/rabbit-tags-white.webp" alt="Nift bunny mascot" style="width: 400px; max-width:90%"><br>
+				
+				    <p style="color:#372C2A">An unopinionated web development framework</p>
+				
+				    <p>
+				      <a href="https://chocolatey.org/packages/nift"><img src="../images/chocolatey-icon.webp" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
+				      <a href="installing.html#osx-brew"><img src="../images/brew-icon.webp" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
+				      <a href="installing.html#freebsd"><img src="../images/freebsd.webp" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
+				      <a href="installing.html#linux-flatpak"><img src="../images/flathub-icon.webp" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
+				      <a href="installing.html#gentoo"><img src="../images/gentoo.webp" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
+				      <a href="https://snapcraft.io/nift"><img src="../images/snap-icon.webp" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
+				    </p>
+				  </div>
+				</section>
+
+				<!-- Main -->
+				<section id="main" class="wrapper style2">
+					<div class="title">Template Files</div>
+					<div class="container">
+						<!-- Features -->
+						<section id="features">
+							<!-- Image -->
+							<center>
+								<img src="../images/laptop-rainbow.png" alt="Nift retro neon rainbow vaporwave artwork" width="600px" style="max-width:90%; border-radius:20px; margin-bottom: 60px">
+							</center>
+				
+							<div class="content">
+								<p>
+									For each file tracked by <mono>Nift</mono> there is a specified template path. When building an output file, <mono>Nift</mono> will start parsing the template file the same as it will parse any other file, using Nift's template language <mono>n++</mono> while producing the output. The files specific to building individual pages are referred to as <mono>content files</mono>, it does not matter whether you consider other files injected in to a template file as <mono>content</mono> or <mono>template</mono> files, it is up to you which file extension you use for them.
+				
+								</p>
+				
+								<p>
+									Basically all of the functions documented <a href="fns.html">here</a> are available when writing template and content files. However, unlike content files, template files (or one of their dependencies) need to use the page content file as a page dependency.
+								</p>
+				
+								<a href="#contents" class="to-top">[contents]</a>
+								<h4 id="contents">
+									Contents
+								</h4>
+								<div>
+									<ul>
+										<li><a href="#content">Specifying where to input/inject content</a></li>
+										<li><a href="#head-content">Optionally injecting head content</a></li>
+										<li><a href="#inject-title">Inputting/injecting titles</a></li>
+										<li><a href="#examples">Example template files</a></li>
+									</ul>
+								</div>
+				
+								<h4 id="inject">
+									Specifying where to input/inject content
+								</h4>
+				
+								<p>
+									<mono>Nift</mono> treats any instance of <mono>@content</mono> as being equivalent to <mono>@input($[contentpath])</mono>, where <mono>$[contentpath]</mono> is the content path for the tracked page.
+								</p>
+				
+								<p>
+									<b>Note:</b> if <mono>@content</mono> is in any dependency of the content file (content file inclusive), then an input loop is formed when attempting to build the page so <mono>Nift</mono> throws an error. You may however put <mono>@content</mono> in any other dependencies of the template file. For example were your template to include a file <mono>template/body.content</mono> or <mono>template/body.template</mono>, it is fine for <mono>@content</mono> to reside in <mono>body.content</mono>/<mono>body.template</mono> and not the main template file.
+								</p>
+				
+								<p>
+									Alternatively to <mono>@content</mono> you can:
+								</p>
+								<div>
+									<ul>
+										<li>use <mono>@content{raw}</mono> which will input the content file without parsing it with Nift's template language</li>
+										<li>use <mono>@system{content}(sys-call)</mono> which is equivalent to <mono>@system(sys-call $[contentpath])</mono>, where <mono>$[contentpath]</mono> injects the content path, except <mono>Nift</mono> also recognises that the content file has been inject. For example if your content files are markdown and you use <mono>@system{content}("pandoc")</mono> then the content files will be injected after being converted to html using pandoc</li>
+										<li>use <mono>@script($[contentpath])</mono> (if the content file is a script/program)</li>
+										<li>use <mono>@script{content}(script-path, params)</mono> which is equivalent to <mono>@script(script-path, $[contentpath], params)</mono>, where <mono>$[contentpath]</mono> injects the content path as parameter 1, except <mono>Nift</mono> also recognises that the content file has been injected</li>
+										<li>use <mono>@dep($[contentpath])</mono></li>
+									</ul>
+								</div>
+				
+								<h4 id="head-content">
+									Optionally injecting head content 
+								</h4>
+				
+								<p>
+									To inject a custom head file for each name using a given template you can use for example:
+				<div align="center" style="margin-top:-15px; margin-bottom: 20px">
+				<pre class="prettyprint inline">
 @input($[contentdir]/$[name].head)
 </pre>
-		</div>
-							which will input <mono>content/name.head</mono>. 
-						</p>
-		
-						<p>
-							If you would like to inject a custom head file for only some names using a given template you can use for example:
-		<div align="center" style="margin-top:-15px; margin-bottom: 20px">
-		<pre class="prettyprint inline">
+				</div>
+									which will input <mono>content/name.head</mono>. 
+								</p>
+				
+								<p>
+									If you would like to inject a custom head file for only some names using a given template you can use for example:
+				<div align="center" style="margin-top:-15px; margin-bottom: 20px">
+				<pre class="prettyprint inline">
 @input{if-exists}($[contentdir]/$[name].head)
 </pre>
-		</div>
-						So if you want to optionally add code for a page at that point add a file <mono>name.head</mono> in the same directory as the content file.
-						</p>
-		
-						<h4 id="inject-title">
-							Inputting/injecting titles
-						</h4>
-		
-						<p>
-							When building a page, <mono>Nift</mono> will replace any instance of <mono>$[title]</mono> with the title <mono>Nift</mono> has tracked for the file. Unlike <mono>@content</mono>, <mono>$[title]</mono> may be placed inside content files (template files inclusive). 
-						</p>
-		
-						<h4 id="examples">
-							Example template files
-						</h4>
-		
-						<p>
-							A very simple html template file, that specifies both where content and the title are to be inputted, would be:
-						</p>
-		
-		<div align="center" style="margin-top:-15px; margin-bottom: 20px">
-		<pre class="prettyprint linenums inline">
+				</div>
+								So if you want to optionally add code for a page at that point add a file <mono>name.head</mono> in the same directory as the content file.
+								</p>
+				
+								<h4 id="inject-title">
+									Inputting/injecting titles
+								</h4>
+				
+								<p>
+									When building a page, <mono>Nift</mono> will replace any instance of <mono>$[title]</mono> with the title <mono>Nift</mono> has tracked for the file. Unlike <mono>@content</mono>, <mono>$[title]</mono> may be placed inside content files (template files inclusive). 
+								</p>
+				
+								<h4 id="examples">
+									Example template files
+								</h4>
+				
+								<p>
+									A very simple html template file, that specifies both where content and the title are to be inputted, would be:
+								</p>
+				
+				<div align="center" style="margin-top:-15px; margin-bottom: 20px">
+				<pre class="prettyprint linenums inline">
 &lt;!DOCTYPE html>
 &lt;html>
 	&lt;head>
@@ -203,14 +213,14 @@
 	&lt;/body>
 &lt;/html>
 </pre>
-		</div>
-		
-						<p>
-							It can be convenient to break what would typically be found inside the template file up into various content files (or you can think of them as also being template files, which extension you use is up to you). For example you may have <mono>template/head.content</mono>, <mono>template/menu.content</mono> and <mono>template/footer.content</mono>. A suitable html template file, say the default <mono>template/page.template</mono> would then be:
-						</p>
-		
-		<div align="center" style="margin-top:-15px; margin-bottom: 20px">
-		<pre class="prettyprint linenums inline">
+				</div>
+				
+								<p>
+									It can be convenient to break what would typically be found inside the template file up into various content files (or you can think of them as also being template files, which extension you use is up to you). For example you may have <mono>template/head.content</mono>, <mono>template/menu.content</mono> and <mono>template/footer.content</mono>. A suitable html template file, say the default <mono>template/page.template</mono> would then be:
+								</p>
+				
+				<div align="center" style="margin-top:-15px; margin-bottom: 20px">
+				<pre class="prettyprint linenums inline">
 &lt;!DOCTYPE html>
 &lt;html>
 	&lt;head>
@@ -226,43 +236,46 @@
 	&lt;/body>
 &lt;/html>
 </pre>
-		</div>
-		
-						<p>
-							<b>Note:</b> the <mono>head</mono> tags may be put inside either <mono>template/page.template</mono> or <mono>template/head.content</mono>. However if the <mono>head</mono> tags are left inside <mono>template/page.template</mono> then, rather than specifically having to alter <mono>template/head.content</mono>, the head may be altered from both <mono>template/page.template</mono> and <mono>template/head.content</mono>.
-						</p>
+				</div>
+				
+								<p>
+									<b>Note:</b> the <mono>head</mono> tags may be put inside either <mono>template/page.template</mono> or <mono>template/head.content</mono>. However if the <mono>head</mono> tags are left inside <mono>template/page.template</mono> then, rather than specifically having to alter <mono>template/head.content</mono>, the head may be altered from both <mono>template/page.template</mono> and <mono>template/head.content</mono>.
+								</p>
+							</div>
+						</section>
+					</div>
+				</section>
+
+				<!-- Footer -->
+				<section id="footer" class="wrapper">
+					<div class="title">
+						<img src="../images/rabbit-tags-icon.webp" alt="Nift rabbit mascot with code tag boomerangs" loading="lazy" width="200" style="margin-top:20px; border-radius: 4px">
+					</div>
+				
+					<div class="container">
+						<div id="copyright" class="noselect">
+							<ul>
+								<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
+								<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
+								<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
+							</ul> <br>
+				
+							<ul>
+								<li><a href="../tos.html">Terms of Service</a></li>
+								<li><a href="../privacy_policy.html">Privacy Policy</a></li>
+							</ul> <br>
+				
+							<ul>
+								<li><span>&copy;</span> 2015-<span name="cyear"></span></li>
+							</ul>
+						</div>
 					</div>
 				</section>
 			</div>
-		</section>
+		</div>
 
-		<!-- Footer -->
-		<section id="footer" class="wrapper">
-			<div class="title">
-				<img src="../images/rabbit-tags-icon.png" alt="Nift rabbit mascot with code tag boomerangs" loading="lazy" width="200" style="margin-top:20px; border-radius: 4px">
-			</div>
-		
-			<div class="container">
-				<div id="copyright" class="noselect">
-					<ul>
-						<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
-						<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
-						<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
-					</ul> <br>
-		
-					<ul>
-						<li><a href="../tos.html">Terms of Service</a></li>
-						<li><a href="../privacy_policy.html">Privacy Policy</a></li>
-					</ul> <br>
-		
-					<ul>
-						<li><span>&copy;</span> 2015-<span name="cyear"></span></li>
-					</ul>
-				</div>
-			</div>
-		</section>
+		<script type="text/javascript" src="../assets/js/bundled.js"></script>
 
-		<script async src="../assets/js/menu.js"></script>
 		<script async src="../assets/js/copy-pre.js"></script>
 		<script async src="../assets/js/process-md-blocks.js"></script>
 		<script async src="../assets/js/showdown.min.js"></script>
@@ -313,3 +326,4 @@
 		</script>
 	</body>
 </html>
+

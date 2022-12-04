@@ -3,188 +3,201 @@
 	<head>
 		<title>Nift - get_started</title>
 		<meta name="description" 
-		      content="Nift is an opinionless web development framework, specialising
-		            in static websites with serverless backends. It's lightning fast, 
-		            cross-platform, opinionless, open source (MIT license) and 
-		            developed from the ground up in C++. Use it for any of your 
-		            personal or commercial projects!">
+		      content="Nift is an opinionless web development framework. It's 
+		            lightning fast, cross-platform, opinionless, open source 
+		            (MIT license) and developed from the ground up in C++. Use 
+		            it for any of your personal or commercial projects!">
 		
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
-		<link rel="stylesheet" href="../../assets/css/pagestyle.css">
-		<link rel="stylesheet" href="../../assets/css/menu.css">
-		<link rel="stylesheet" href="../../assets/css/font-awesome.css">
+		<link rel="stylesheet" href="../../assets/css/bundled.css">
 		<link rel="stylesheet" href="../../assets/css/pre.css">
 		<link rel="stylesheet" href="../../assets/css/extra-fonts.css"><link rel='icon' type='image/png' href='../../images/favicon.png'>
 	</head>
 
 	<body>
-		<nav id="nav" class="noselect">
-		  <ul class="menu">
-		    <li class="nav-space-left"></li>
-		    <li class="item icons">
-		      <a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a>
-		      <a href="https://github.com/nifty-site-manager/nsm/discussions" title="GitHub Discussions" class="gh"><i class="fas fa-comment-dots fa-2x"></i></a>
-		      <a href="https://twitter.com/nift_dev" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a>
-		      <a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a>
-		    </li>
-		    <a href="../../index.html" class="item hover-hl"><li>Home</li></a>
-		    <li class="item hover-hl has-submenu" onclick="toggleItem(0)">
-		      <a tabindex="0" class="item-link">Docs</a>
-		      <ul class="submenu">
-		        <li class="subitem"><a href="../../docs/installing.html">Installing</a></li>
-		        <li class="subitem"><a href="../../docs/hosting.html">Hosting</a></li>
-		        <li class="subitem"><a href="../../docs/commands.html">Commands</a></li>
-		        <li class="subitem"><a href="../../docs/config.html">Config</a></li>
-		        <li class="subitem"><a href="../../docs/template_files.html">Template Files</a></li>
-		        <li class="subitem"><a href="../../docs/fns.html">Functions</a></li>
-		        <li class="subitem"><a href="../../docs/types.html">Types</a></li>
-		        <li class="subitem"><a href="../../docs/f++.html">f++ (scripting)</a></li>
-		        <li class="subitem"><a href="../../docs/n++.html">n++ (templates)</a></li>
-		        <li class="subitem"><a href="../../docs/lua.html">Lua(JIT)</a></li>
-		        <li class="subitem"><a href="../../docs/exprtk.html">ExprTk</a></li>
-		        <li class="subitem"><a href="../../docs/REPL.html">Interactive REPL</a></li>
-		        <li class="subitem"><a href="../../docs/scripts.html">Scripts</a></li>
-		        <li class="subitem"><a href="../../docs/template_languages.html">Template Languages</a></li>
-		        <li class="subitem"><a href="../../docs/JSON.html">JSON Data</a></li>
-		        <li class="subitem"><a href="../../docs/markdown.html">Markdown</a></li>
-		        <li class="subitem"><a href="../../docs/translators.html">Translators</a></li>
-		        <li class="subitem"><a href="../../docs/mathematics.html">Mathematics</a></li>
-		        <li class="subitem"><a href="../../docs/code_blocks.html">Code Blocks</a></li>
-		        <li class="subitem"><a href="../../docs/presentations.html">Presentations</a></li>
-		      </ul>
-		    </li>
-		    <li class="item hover-hl has-submenu" onclick="toggleItem(1)">
-		      <a tabindex="0" class="item-link">Resources</a>
-		      <ul class="submenu">
-		        <li class="subitem"><a href="../tutorials.html">Tutorials</a></li>
-		        <li class="subitem"><a href="../templates.html">Templates</a></li>
-		        <li class="subitem"><a href="../blog_templates.html">Blog Templates</a></li>
-		        <li class="subitem"><a href="../css_frameworks.html">CSS Frameworks</a></li>
-		        <li class="subitem"><a href="../js_frameworks.html">JS Frameworks</a></li>
-		        <li class="subitem"><a href="../links.html">Links</a></li>
-		        <li class="subitem"><a href="../logos.html">Logos</a></li>
-		        <li class="subitem"><a href="../promos.html">Promos</a></li>
-		        <li class="subitem"><a href="../php_frameworks.html">PHP Frameworks</a></li>
-		      </ul>
-		    </li>
-		    <li class="toggle"><a href="#" onclick="toggleMenu()" id="menu-link"><i class="fas fa-bars fa-2x"></i></a></li>
-		  </ul>
-		</nav>
-		
-		<!-- Header -->
-		<section class="wrapper" id="header">
-		  <div id="logo" class="noselect">
-		    <img src="../../images/rabbit-tags-white.png" alt="Nift bunny mascot" style="width: 400px; max-width:90%"><br>
-		
-		    <p style="color:#372C2A">An opinionless web development framework</p>
-		
-		    <p>
-		      <a href="https://chocolatey.org/packages/nift"><img src="../../images/chocolatey-icon.png" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
-		      <a href="../../docs/installing.html#osx-brew"><img src="../../images/brew-icon.png" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
-		      <a href="../../docs/installing.html#freebsd"><img src="../../images/freebsd.png" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
-		      <a href="../../docs/installing.html#linux-flatpak"><img src="../../images/flathub-icon.png" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
-		      <a href="../../docs/installing.html#gentoo"><img src="../../images/gentoo.svg" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
-		      <a href="https://snapcraft.io/nift"><img src="../../images/snap-icon.png" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
-		    </p>
-		  </div>
-		</section>
+		<div align="center"  id="body">
+			<div class="menu-bars">
+			  <i id="open-menu-icon" class="fa fa-bars" onclick="show_menu()"></i>
+			</div>
+			
+			<div id="menu-page">
+			  <div class="menu-cross" >
+			    <i id="close-menu-icon" class="fa fa-xmark" onclick="close_menu()"></i>
+			  </div>
+			
+			  <div class="menu-icons noselect">
+			    <a href="https://github.com/nifty-site-manager/nsm" alt="GitHub"><i class="fa fa-2x fa-github"></i></a>&nbsp;&nbsp;
+			    <a href="https://github.com/nifty-site-manager/nsm/discussions" alt="GitHub Discussions"><i class="fa fa-2x fa-comments"></i></a>&nbsp;&nbsp;
+			    <a href="https://twitter.com/nift_dev" alt="Twitter"><i class="fa fa-2x fa-twitter"></i></a>&nbsp;&nbsp;
+			    <a href="https://discord.gg/St8QXTG" alt="Discord"><i class="fa fa-2x fa-discord"></i></a>
+			  </div>
+			  
+			  <nav id="nav" class="noselect">
+			    <ul>
+			      <li class="item li-menu li-dark">
+			        <a class="item-link" href="../../index.html">Home</a>
+			      </li>
+			      <li class="item li-menu li-dark has-submenu">
+			        <a tabindex="0" href="#" class="submenu-link" onclick="toggle_submenu(0)">Documentation <i class="submenu-link-icon fa fa-angle-down fa-1x"></i></a>
+			        <ul class="submenu">
+			          <li class="subitem"><a href="../../docs/installing.html">Installing</a></li>
+			          <li class="subitem"><a href="../../docs/hosting.html">Hosting</a></li>
+			          <li class="subitem"><a href="../../docs/commands.html">Commands</a></li>
+			          <li class="subitem"><a href="../../docs/config.html">Config</a></li>
+			          <li class="subitem"><a href="../../docs/template_files.html">Template Files</a></li>
+			          <li class="subitem"><a href="../../docs/fns.html">Functions</a></li>
+			          <li class="subitem"><a href="../../docs/types.html">Types</a></li>
+			          <li class="subitem"><a href="../../docs/f++.html">f++ (scripting)</a></li>
+			          <li class="subitem"><a href="../../docs/n++.html">n++ (templates)</a></li>
+			          <li class="subitem"><a href="../../docs/lua.html">Lua(JIT)</a></li>
+			          <li class="subitem"><a href="../../docs/exprtk.html">ExprTk</a></li>
+			          <li class="subitem"><a href="../../docs/REPL.html">Interactive REPL</a></li>
+			          <li class="subitem"><a href="../../docs/scripts.html">Scripts</a></li>
+			          <li class="subitem"><a href="../../docs/template_languages.html">Template Languages</a></li>
+			          <li class="subitem"><a href="../../docs/JSON.html">JSON Data</a></li>
+			          <li class="subitem"><a href="../../docs/markdown.html">Markdown</a></li>
+			          <li class="subitem"><a href="../../docs/translators.html">Translators</a></li>
+			          <li class="subitem"><a href="../../docs/mathematics.html">Mathematics</a></li>
+			          <li class="subitem"><a href="../../docs/code_blocks.html">Code Blocks</a></li>
+			          <li class="subitem"><a href="../../docs/presentations.html">Presentations</a></li>
+			        </ul>
+			      </li>
+			      <li class="item li-menu li-dark has-submenu">
+			        <a tabindex="0" href="#" class="submenu-link" onclick="toggle_submenu(1)">Resources <i class="submenu-link-icon fa fa-angle-down fa-1x"></i></a>
+			        <ul class="submenu">
+			          <li class="subitem"><a href="../tutorials.html">Tutorials</a></li>
+			          <li class="subitem"><a href="../templates.html">Templates</a></li>
+			          <li class="subitem"><a href="../blog_templates.html">Blog Templates</a></li>
+			          <li class="subitem"><a href="../css_frameworks.html">CSS Frameworks</a></li>
+			          <li class="subitem"><a href="../js_frameworks.html">JS Frameworks</a></li>
+			          <li class="subitem"><a href="../links.html">Links</a></li>
+			          <li class="subitem"><a href="../logos.html">Logos</a></li>
+			          <li class="subitem"><a href="../promos.html">Promos</a></li>
+			          <li class="subitem"><a href="../php_frameworks.html">PHP Frameworks</a></li>
+			        </ul>
+			      </li>
+			    </ul>
+			  </nav>
+			</div>
 
-		<!-- Main -->
-		<section id="main" class="wrapper style2">
-			<div class="title">Get Started</div>
-			<div class="container">
-				<!-- Features -->
-				<section id="features">
-					<header class="style1">
-						<h2>Guide to getting started using Nift</h2>
-					</header>
-		
-					<!-- Image -->
-					<center>
-						<img src="../../images/teaching.svg" alt="unDraw teaching illustration" width=300 style="margin-bottom:60px">
-					</center>
-		
-					<div class="content">
-						<p>
-							If you are new to <mono>Nift</mono> the following guide will help you get started. To understand how <mono>Nift/nsm</mono> works even better check out the <a href="../tutorials.html">Nift tutorials</a> which will give you a more thorough understanding of how different parts of <mono>Nift</mono> work.
-						</p>
-		
-						<p>
-							The easiest way to learn how <mono>Nift</mono> works is to get your feet wet and hands dirty. If there are any problems with the following guide please file an issue <a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io/issues">here</a> or <a href="https://gitlab.com/nifty-site-manager/nifty-site-manager.gitlab.io/issues">here</a>.
-						</p>
-		
-						<ol>
-							<li>If you haven't already installed <mono>Nift</mono>, you can find install instructions <a href="../../docs/installing.html">here</a>;
-							<li>Open up a terminal or command prompt/power shell window and enter <mono>nsm commands</mono> to get a list of available commands (check out the <a href="../../docs/commands.html">Nift commands</a> page from the documentation for information about <mono>Nift</mono> commands);</li>
-							<li>On Bitbucket, GitHub or GitLab import (or fork and rename) an existing site repository template from <a href="../templates.html">here</a>;</li>
-							<li>If you used GitHub for the last step, go in to the imported/forked repository's settings, scroll down to GitHub Pages and set the <mono>source</mono> to <mono>master branch</mono> (there may be some delay before your website goes live);</li>
-							<li>To view the website remotely, open up a browser of your choice and go to:
-							<div align="center">
-		<pre>
+			<div id="content">
+				<!-- Header -->
+				<section class="wrapper" id="header">
+				  <div id="logo" class="noselect">
+				    <img src="../../images/rabbit-tags-white.webp" alt="Nift bunny mascot" style="width: 400px; max-width:90%"><br>
+				
+				    <p style="color:#372C2A">An unopinionated web development framework</p>
+				
+				    <p>
+				      <a href="https://chocolatey.org/packages/nift"><img src="../../images/chocolatey-icon.webp" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
+				      <a href="../../docs/installing.html#osx-brew"><img src="../../images/brew-icon.webp" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
+				      <a href="../../docs/installing.html#freebsd"><img src="../../images/freebsd.webp" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
+				      <a href="../../docs/installing.html#linux-flatpak"><img src="../../images/flathub-icon.webp" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
+				      <a href="../../docs/installing.html#gentoo"><img src="../../images/gentoo.webp" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
+				      <a href="https://snapcraft.io/nift"><img src="../../images/snap-icon.webp" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
+				    </p>
+				  </div>
+				</section>
+
+				<!-- Main -->
+				<section id="main" class="wrapper style2">
+					<div class="title">Get Started</div>
+					<div class="container">
+						<!-- Features -->
+						<section id="features">
+							<header class="style1">
+								<h2>Guide to getting started using Nift</h2>
+							</header>
+				
+							<!-- Image -->
+							<center>
+								<img src="../../images/teaching.svg" alt="unDraw teaching illustration" width=300 style="margin-bottom:60px">
+							</center>
+				
+							<div class="content">
+								<p>
+									If you are new to <mono>Nift</mono> the following guide will help you get started. To understand how <mono>Nift/nsm</mono> works even better check out the <a href="../tutorials.html">Nift tutorials</a> which will give you a more thorough understanding of how different parts of <mono>Nift</mono> work.
+								</p>
+				
+								<p>
+									The easiest way to learn how <mono>Nift</mono> works is to get your feet wet and hands dirty. If there are any problems with the following guide please file an issue <a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io/issues">here</a> or <a href="https://gitlab.com/nifty-site-manager/nifty-site-manager.gitlab.io/issues">here</a>.
+								</p>
+				
+								<ol>
+									<li>If you haven't already installed <mono>Nift</mono>, you can find install instructions <a href="../../docs/installing.html">here</a>;
+									<li>Open up a terminal or command prompt/power shell window and enter <mono>nsm commands</mono> to get a list of available commands (check out the <a href="../../docs/commands.html">Nift commands</a> page from the documentation for information about <mono>Nift</mono> commands);</li>
+									<li>On Bitbucket, GitHub or GitLab import (or fork and rename) an existing site repository template from <a href="../templates.html">here</a>;</li>
+									<li>If you used GitHub for the last step, go in to the imported/forked repository's settings, scroll down to GitHub Pages and set the <mono>source</mono> to <mono>master branch</mono> (there may be some delay before your website goes live);</li>
+									<li>To view the website remotely, open up a browser of your choice and go to:
+									<div align="center">
+				<pre>
 https://[user/team/organisation/group-name].[bitbucket/github/gitlab].io/repo-name
 </pre>
-							</div>
-								Note if you name the repository:
-							<div align="center">
-		<pre>
+									</div>
+										Note if you name the repository:
+									<div align="center">
+				<pre>
 [user/team/organisation/group-name].[bitbucket/github/gitlab].io
 </pre>
-							</div>
-								then the url will be just:
-							<div align="center">
-		<pre>
+									</div>
+										then the url will be just:
+									<div align="center">
+				<pre>
 https://[user/team/organisation/group-name].[bitbucket/github/gitlab].io
 </pre>
-							</div></li>
-							<li>Clone the site repository locally using <mono>nsm clone <i>clone-url</i></mono>, eg.:
-							<div align="center">
-		<pre>
+									</div></li>
+									<li>Clone the site repository locally using <mono>nsm clone <i>clone-url</i></mono>, eg.:
+									<div align="center">
+				<pre>
 nsm clone https://gitlab.com/nsm-templates/parchment-site.git;
 </pre>
-							</div></li>
-							<li>To view the website locally, open up one of the pages in the <mono>site</mono> directory with a browser of your choice;</li>
-							<li>Try modifying some of the files in the <mono>content</mono> directory and run <mono>nsm build-updated</mono>, then refresh your browser to view the changes (check out the documentation pages for <a href="../../docs/fns.html">functions</a> giving information about functions you can use and <a href="../../docs/n++.html">n++</a> which is the template language being used;</li>
-							<li>Try modifying some of the files in the template directory and run <mono>nsm build-updated</mono>, then refresh your browser to view the changes (check out the <a href="../../docs/template_files.html">template files</a> page from the documentation for information about writing template files);</li>
-							<li>You can push your changes back to Bitbucket/GitHub/GitLab using <mono>nsm bcp "commit message"</mono> (there may be some delay before your changes go live).</li>
-							<li>Check out the <a href="../../docs/hosting.html">hosting</a> page from the documentation for information about hosting websites. Especially useful is <a href="https://www.netlify.com/">Netlify</a> for custom domains with auto renewing Let's encrypt certificates or <a href="https://www.heroku.com/">Heroku</a> for free hosting of dynamic websites;</li>
-							<li>Check out the <a href="../../docs/mathematics.html">mathematics</a> page from the documentation for information about $\LaTeX$ support for your webpages using MathJax;</li>
-							<li>Check out the <a href="../../docs/code_blocks.html">code blocks</a> page from the documentation for information about syntax highlighting support for your webpages using <a href="https://github.com/google/code-prettify">Google Code Prettify</a>;</li>
-							<li>Check <a href="../links.html">here</a> for all sorts of useful links.</li>
-						</ol>
+									</div></li>
+									<li>To view the website locally, open up one of the pages in the <mono>site</mono> directory with a browser of your choice;</li>
+									<li>Try modifying some of the files in the <mono>content</mono> directory and run <mono>nsm build-updated</mono>, then refresh your browser to view the changes (check out the documentation pages for <a href="../../docs/fns.html">functions</a> giving information about functions you can use and <a href="../../docs/n++.html">n++</a> which is the template language being used;</li>
+									<li>Try modifying some of the files in the template directory and run <mono>nsm build-updated</mono>, then refresh your browser to view the changes (check out the <a href="../../docs/template_files.html">template files</a> page from the documentation for information about writing template files);</li>
+									<li>You can push your changes back to Bitbucket/GitHub/GitLab using <mono>nsm bcp "commit message"</mono> (there may be some delay before your changes go live).</li>
+									<li>Check out the <a href="../../docs/hosting.html">hosting</a> page from the documentation for information about hosting websites. Especially useful is <a href="https://www.netlify.com/">Netlify</a> for custom domains with auto renewing Let's encrypt certificates or <a href="https://www.heroku.com/">Heroku</a> for free hosting of dynamic websites;</li>
+									<li>Check out the <a href="../../docs/mathematics.html">mathematics</a> page from the documentation for information about $\LaTeX$ support for your webpages using MathJax;</li>
+									<li>Check out the <a href="../../docs/code_blocks.html">code blocks</a> page from the documentation for information about syntax highlighting support for your webpages using <a href="https://github.com/google/code-prettify">Google Code Prettify</a>;</li>
+									<li>Check <a href="../links.html">here</a> for all sorts of useful links.</li>
+								</ol>
+							</div>
+						</section>
+					</div>
+				</section>
+
+				<!-- Footer -->
+				<section id="footer" class="wrapper">
+					<div class="title">
+						<img src="../../images/rabbit-tags-icon.webp" alt="Nift rabbit mascot with code tag boomerangs" loading="lazy" width="200" style="margin-top:20px; border-radius: 4px">
+					</div>
+				
+					<div class="container">
+						<div id="copyright" class="noselect">
+							<ul>
+								<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
+								<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
+								<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
+							</ul> <br>
+				
+							<ul>
+								<li><a href="../../tos.html">Terms of Service</a></li>
+								<li><a href="../../privacy_policy.html">Privacy Policy</a></li>
+							</ul> <br>
+				
+							<ul>
+								<li><span>&copy;</span> 2015-<span name="cyear"></span></li>
+							</ul>
+						</div>
 					</div>
 				</section>
 			</div>
-		</section>
+		</div>
 
-		<!-- Footer -->
-		<section id="footer" class="wrapper">
-			<div class="title">
-				<img src="../../images/rabbit-tags-icon.png" alt="Nift rabbit mascot with code tag boomerangs" loading="lazy" width="200" style="margin-top:20px; border-radius: 4px">
-			</div>
-		
-			<div class="container">
-				<div id="copyright" class="noselect">
-					<ul>
-						<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
-						<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
-						<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
-					</ul> <br>
-		
-					<ul>
-						<li><a href="../../tos.html">Terms of Service</a></li>
-						<li><a href="../../privacy_policy.html">Privacy Policy</a></li>
-					</ul> <br>
-		
-					<ul>
-						<li><span>&copy;</span> 2015-<span name="cyear"></span></li>
-					</ul>
-				</div>
-			</div>
-		</section>
+		<script type="text/javascript" src="../../assets/js/bundled.js"></script>
 
-		<script async src="../../assets/js/menu.js"></script>
 		<script async src="../../assets/js/copy-pre.js"></script>
 		<script async src="../../assets/js/process-md-blocks.js"></script>
 		<script async src="../../assets/js/showdown.min.js"></script>
@@ -235,3 +248,4 @@ nsm clone https://gitlab.com/nsm-templates/parchment-site.git;
 		</script>
 	</body>
 </html>
+

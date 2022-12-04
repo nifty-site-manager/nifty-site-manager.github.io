@@ -3,314 +3,324 @@
 	<head>
 		<title>Nift - exprtk</title>
 		<meta name="description" 
-		      content="Nift is an opinionless web development framework, specialising
-		            in static websites with serverless backends. It's lightning fast, 
-		            cross-platform, opinionless, open source (MIT license) and 
-		            developed from the ground up in C++. Use it for any of your 
-		            personal or commercial projects!">
+		      content="Nift is an opinionless web development framework. It's 
+		            lightning fast, cross-platform, opinionless, open source 
+		            (MIT license) and developed from the ground up in C++. Use 
+		            it for any of your personal or commercial projects!">
 		
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
-		<link rel="stylesheet" href="../assets/css/pagestyle.css">
-		<link rel="stylesheet" href="../assets/css/menu.css">
-		<link rel="stylesheet" href="../assets/css/font-awesome.css">
+		<link rel="stylesheet" href="../assets/css/bundled.css">
 		<link rel="stylesheet" href="../assets/css/pre.css">
 		<link rel="stylesheet" href="../assets/css/extra-fonts.css"><link rel='icon' type='image/png' href='../images/favicon.png'>
 	</head>
 
 	<body>
-		<nav id="nav" class="noselect">
-		  <ul class="menu">
-		    <li class="nav-space-left"></li>
-		    <li class="item icons">
-		      <a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a>
-		      <a href="https://github.com/nifty-site-manager/nsm/discussions" title="GitHub Discussions" class="gh"><i class="fas fa-comment-dots fa-2x"></i></a>
-		      <a href="https://twitter.com/nift_dev" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a>
-		      <a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a>
-		    </li>
-		    <a href="../index.html" class="item hover-hl"><li>Home</li></a>
-		    <li class="item hover-hl has-submenu" onclick="toggleItem(0)">
-		      <a tabindex="0" class="item-link">Docs</a>
-		      <ul class="submenu">
-		        <li class="subitem"><a href="installing.html">Installing</a></li>
-		        <li class="subitem"><a href="hosting.html">Hosting</a></li>
-		        <li class="subitem"><a href="commands.html">Commands</a></li>
-		        <li class="subitem"><a href="config.html">Config</a></li>
-		        <li class="subitem"><a href="template_files.html">Template Files</a></li>
-		        <li class="subitem"><a href="fns.html">Functions</a></li>
-		        <li class="subitem"><a href="types.html">Types</a></li>
-		        <li class="subitem"><a href="f++.html">f++ (scripting)</a></li>
-		        <li class="subitem"><a href="n++.html">n++ (templates)</a></li>
-		        <li class="subitem"><a href="lua.html">Lua(JIT)</a></li>
-		        <li class="subitem"><a href="exprtk.html">ExprTk</a></li>
-		        <li class="subitem"><a href="REPL.html">Interactive REPL</a></li>
-		        <li class="subitem"><a href="scripts.html">Scripts</a></li>
-		        <li class="subitem"><a href="template_languages.html">Template Languages</a></li>
-		        <li class="subitem"><a href="JSON.html">JSON Data</a></li>
-		        <li class="subitem"><a href="markdown.html">Markdown</a></li>
-		        <li class="subitem"><a href="translators.html">Translators</a></li>
-		        <li class="subitem"><a href="mathematics.html">Mathematics</a></li>
-		        <li class="subitem"><a href="code_blocks.html">Code Blocks</a></li>
-		        <li class="subitem"><a href="presentations.html">Presentations</a></li>
-		      </ul>
-		    </li>
-		    <li class="item hover-hl has-submenu" onclick="toggleItem(1)">
-		      <a tabindex="0" class="item-link">Resources</a>
-		      <ul class="submenu">
-		        <li class="subitem"><a href="../resources/tutorials.html">Tutorials</a></li>
-		        <li class="subitem"><a href="../resources/templates.html">Templates</a></li>
-		        <li class="subitem"><a href="../resources/blog_templates.html">Blog Templates</a></li>
-		        <li class="subitem"><a href="../resources/css_frameworks.html">CSS Frameworks</a></li>
-		        <li class="subitem"><a href="../resources/js_frameworks.html">JS Frameworks</a></li>
-		        <li class="subitem"><a href="../resources/links.html">Links</a></li>
-		        <li class="subitem"><a href="../resources/logos.html">Logos</a></li>
-		        <li class="subitem"><a href="../resources/promos.html">Promos</a></li>
-		        <li class="subitem"><a href="../resources/php_frameworks.html">PHP Frameworks</a></li>
-		      </ul>
-		    </li>
-		    <li class="toggle"><a href="#" onclick="toggleMenu()" id="menu-link"><i class="fas fa-bars fa-2x"></i></a></li>
-		  </ul>
-		</nav>
-		
-		<!-- Header -->
-		<section class="wrapper" id="header">
-		  <div id="logo" class="noselect">
-		    <img src="../images/rabbit-tags-white.png" alt="Nift bunny mascot" style="width: 400px; max-width:90%"><br>
-		
-		    <p style="color:#372C2A">An opinionless web development framework</p>
-		
-		    <p>
-		      <a href="https://chocolatey.org/packages/nift"><img src="../images/chocolatey-icon.png" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
-		      <a href="installing.html#osx-brew"><img src="../images/brew-icon.png" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
-		      <a href="installing.html#freebsd"><img src="../images/freebsd.png" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
-		      <a href="installing.html#linux-flatpak"><img src="../images/flathub-icon.png" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
-		      <a href="installing.html#gentoo"><img src="../images/gentoo.svg" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
-		      <a href="https://snapcraft.io/nift"><img src="../images/snap-icon.png" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
-		    </p>
-		  </div>
-		</section>
+		<div align="center"  id="body">
+			<div class="menu-bars">
+			  <i id="open-menu-icon" class="fa fa-bars" onclick="show_menu()"></i>
+			</div>
+			
+			<div id="menu-page">
+			  <div class="menu-cross" >
+			    <i id="close-menu-icon" class="fa fa-xmark" onclick="close_menu()"></i>
+			  </div>
+			
+			  <div class="menu-icons noselect">
+			    <a href="https://github.com/nifty-site-manager/nsm" alt="GitHub"><i class="fa fa-2x fa-github"></i></a>&nbsp;&nbsp;
+			    <a href="https://github.com/nifty-site-manager/nsm/discussions" alt="GitHub Discussions"><i class="fa fa-2x fa-comments"></i></a>&nbsp;&nbsp;
+			    <a href="https://twitter.com/nift_dev" alt="Twitter"><i class="fa fa-2x fa-twitter"></i></a>&nbsp;&nbsp;
+			    <a href="https://discord.gg/St8QXTG" alt="Discord"><i class="fa fa-2x fa-discord"></i></a>
+			  </div>
+			  
+			  <nav id="nav" class="noselect">
+			    <ul>
+			      <li class="item li-menu li-dark">
+			        <a class="item-link" href="../index.html">Home</a>
+			      </li>
+			      <li class="item li-menu li-dark has-submenu">
+			        <a tabindex="0" href="#" class="submenu-link" onclick="toggle_submenu(0)">Documentation <i class="submenu-link-icon fa fa-angle-down fa-1x"></i></a>
+			        <ul class="submenu">
+			          <li class="subitem"><a href="installing.html">Installing</a></li>
+			          <li class="subitem"><a href="hosting.html">Hosting</a></li>
+			          <li class="subitem"><a href="commands.html">Commands</a></li>
+			          <li class="subitem"><a href="config.html">Config</a></li>
+			          <li class="subitem"><a href="template_files.html">Template Files</a></li>
+			          <li class="subitem"><a href="fns.html">Functions</a></li>
+			          <li class="subitem"><a href="types.html">Types</a></li>
+			          <li class="subitem"><a href="f++.html">f++ (scripting)</a></li>
+			          <li class="subitem"><a href="n++.html">n++ (templates)</a></li>
+			          <li class="subitem"><a href="lua.html">Lua(JIT)</a></li>
+			          <li class="subitem"><a href="exprtk.html">ExprTk</a></li>
+			          <li class="subitem"><a href="REPL.html">Interactive REPL</a></li>
+			          <li class="subitem"><a href="scripts.html">Scripts</a></li>
+			          <li class="subitem"><a href="template_languages.html">Template Languages</a></li>
+			          <li class="subitem"><a href="JSON.html">JSON Data</a></li>
+			          <li class="subitem"><a href="markdown.html">Markdown</a></li>
+			          <li class="subitem"><a href="translators.html">Translators</a></li>
+			          <li class="subitem"><a href="mathematics.html">Mathematics</a></li>
+			          <li class="subitem"><a href="code_blocks.html">Code Blocks</a></li>
+			          <li class="subitem"><a href="presentations.html">Presentations</a></li>
+			        </ul>
+			      </li>
+			      <li class="item li-menu li-dark has-submenu">
+			        <a tabindex="0" href="#" class="submenu-link" onclick="toggle_submenu(1)">Resources <i class="submenu-link-icon fa fa-angle-down fa-1x"></i></a>
+			        <ul class="submenu">
+			          <li class="subitem"><a href="../resources/tutorials.html">Tutorials</a></li>
+			          <li class="subitem"><a href="../resources/templates.html">Templates</a></li>
+			          <li class="subitem"><a href="../resources/blog_templates.html">Blog Templates</a></li>
+			          <li class="subitem"><a href="../resources/css_frameworks.html">CSS Frameworks</a></li>
+			          <li class="subitem"><a href="../resources/js_frameworks.html">JS Frameworks</a></li>
+			          <li class="subitem"><a href="../resources/links.html">Links</a></li>
+			          <li class="subitem"><a href="../resources/logos.html">Logos</a></li>
+			          <li class="subitem"><a href="../resources/promos.html">Promos</a></li>
+			          <li class="subitem"><a href="../resources/php_frameworks.html">PHP Frameworks</a></li>
+			        </ul>
+			      </li>
+			    </ul>
+			  </nav>
+			</div>
 
-		<!-- Main -->
-		<section id="main" class="wrapper style2">
-			<div class="title">ExprTk</div>
-			<div class="container">
-				<!-- Features -->
-				<section id="features">
-					<center>
-						<img src="../images/banner-planet-palms.png" alt="Nift planet palms banner" width="500px" style="max-width:90%; border-radius:20px; margin-bottom: 60px">
-					</center>
-		
-					<div class="content">
-						<p>
-							<mono>Nift</mono> has the C++ Mathematical Expression Toolkit Library (<mono>ExprTk</mono>) embedded (<a href="http://www.partow.net/programming/exprtk/index.html">official website</a>, <a href="https://github.com/ArashPartow/exprtk">GitHub</a>). <mono>ExprTk</mono> is a simple to use, easy to integrate and <a href="#benchmark">extremely efficient</a> run-time mathematical expression parser and evaluation engine. <mono>ExprTk</mono> supports numerous forms of functional, logical and vector processing semantics and is very easily extendible.
-						</p>
-		
-						<a href="#contents" class="to-top">[contents]</a>
-		
-						<h4 id="contents">
-							Contents
-						</h4>
-						<div>
-							<ul>
-								<li><a href="#interpreter">ExprTk interpreter</a></li>
-								<li><a href="#scripts">Running ExprTk scripts</a></li>
-								<li><a href="#exprtk-f++">ExprTk from f++</a></li>
-								<li><a href="#exprtk-n++">ExprTk from n++</a></li>
-								<li><a href="#exprtk-conditions">ExprTk with n++/f++ conditions</a></li>
-								<li><a href="#exprtk-vars">ExprTk access to Nift variables</a></li>
-								<li><a href="#nift-fns">Nift functions</a></li>
-								<li><a href="#benchmark">Benchmark results</a></li>
-							</ul>
-						</div>
-		
-						<h4 id="interpreter">
-							ExprTk interpreter
-						</h4>
-						<p>
-							<mono>Nift</mono> has an <mono>ExprTk</mono> interpreter that you can start with either <mono>nsm interp -exprtk</mono> or <mono>nift interp -exprtk</mono>.
-						</p>
-		
-						<p>
-							In Nift's interpreter mode the prompt will just display the language. If you would like the prompt to also display the present working directory (up to using half the width of the console) you can switch to the shell mode using <mono>nsm_mode('sh')</mono>. You can switch back again with <mono>nsm_mode('interp')</mono>.
-						</p>
-		
-						<p>
-							You can switch to one of the other languages available in Nift's interpreter using <mono>nsm_lang('langStr')</mono> where <mono>langStr</mono> is one of <mnstr style="font-size:16px">f++</mnstr>, <mnstr style="font-size:16px">N++</mnstr>, <mono>lua</mono> or <mono>exprtk</mono>.
-						</p>
-		
-		
-						<h4 id="scripts">
-							Running ExprTk scripts
-						</h4>
-						<p>
-							If you have an <mono>ExprTk</mono> script saved in a file <mono>path/script-name.exprtk</mono> you can run it with either of the following:
-						</p>
-		<div align="center">
-		<pre class="prettyprint inline">
+			<div id="content">
+				<!-- Header -->
+				<section class="wrapper" id="header">
+				  <div id="logo" class="noselect">
+				    <img src="../images/rabbit-tags-white.webp" alt="Nift bunny mascot" style="width: 400px; max-width:90%"><br>
+				
+				    <p style="color:#372C2A">An unopinionated web development framework</p>
+				
+				    <p>
+				      <a href="https://chocolatey.org/packages/nift"><img src="../images/chocolatey-icon.webp" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
+				      <a href="installing.html#osx-brew"><img src="../images/brew-icon.webp" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
+				      <a href="installing.html#freebsd"><img src="../images/freebsd.webp" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
+				      <a href="installing.html#linux-flatpak"><img src="../images/flathub-icon.webp" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
+				      <a href="installing.html#gentoo"><img src="../images/gentoo.webp" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
+				      <a href="https://snapcraft.io/nift"><img src="../images/snap-icon.webp" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
+				    </p>
+				  </div>
+				</section>
+
+				<!-- Main -->
+				<section id="main" class="wrapper style2">
+					<div class="title">ExprTk</div>
+					<div class="container">
+						<!-- Features -->
+						<section id="features">
+							<center>
+								<img src="../images/banner-planet-palms.png" alt="Nift planet palms banner" width="500px" style="max-width:90%; border-radius:20px; margin-bottom: 60px">
+							</center>
+				
+							<div class="content">
+								<p>
+									<mono>Nift</mono> has the C++ Mathematical Expression Toolkit Library (<mono>ExprTk</mono>) embedded (<a href="http://www.partow.net/programming/exprtk/index.html">official website</a>, <a href="https://github.com/ArashPartow/exprtk">GitHub</a>). <mono>ExprTk</mono> is a simple to use, easy to integrate and <a href="#benchmark">extremely efficient</a> run-time mathematical expression parser and evaluation engine. <mono>ExprTk</mono> supports numerous forms of functional, logical and vector processing semantics and is very easily extendible.
+								</p>
+				
+								<a href="#contents" class="to-top">[contents]</a>
+				
+								<h4 id="contents">
+									Contents
+								</h4>
+								<div>
+									<ul>
+										<li><a href="#interpreter">ExprTk interpreter</a></li>
+										<li><a href="#scripts">Running ExprTk scripts</a></li>
+										<li><a href="#exprtk-f++">ExprTk from f++</a></li>
+										<li><a href="#exprtk-n++">ExprTk from n++</a></li>
+										<li><a href="#exprtk-conditions">ExprTk with n++/f++ conditions</a></li>
+										<li><a href="#exprtk-vars">ExprTk access to Nift variables</a></li>
+										<li><a href="#nift-fns">Nift functions</a></li>
+										<li><a href="#benchmark">Benchmark results</a></li>
+									</ul>
+								</div>
+				
+								<h4 id="interpreter">
+									ExprTk interpreter
+								</h4>
+								<p>
+									<mono>Nift</mono> has an <mono>ExprTk</mono> interpreter that you can start with either <mono>nsm interp -exprtk</mono> or <mono>nift interp -exprtk</mono>.
+								</p>
+				
+								<p>
+									In Nift's interpreter mode the prompt will just display the language. If you would like the prompt to also display the present working directory (up to using half the width of the console) you can switch to the shell mode using <mono>nsm_mode('sh')</mono>. You can switch back again with <mono>nsm_mode('interp')</mono>.
+								</p>
+				
+								<p>
+									You can switch to one of the other languages available in Nift's interpreter using <mono>nsm_lang('langStr')</mono> where <mono>langStr</mono> is one of <mnstr style="font-size:16px">f++</mnstr>, <mnstr style="font-size:16px">N++</mnstr>, <mono>lua</mono> or <mono>exprtk</mono>.
+								</p>
+				
+				
+								<h4 id="scripts">
+									Running ExprTk scripts
+								</h4>
+								<p>
+									If you have an <mono>ExprTk</mono> script saved in a file <mono>path/script-name.exprtk</mono> you can run it with either of the following:
+								</p>
+				<div align="center">
+				<pre class="prettyprint inline">
 nsm run path/script-name.exprtk
 nift run path/script-name.exprtk
 </pre>
-		</div>
-		
-						<p>
-							If the script has a different extension, say <mono>.ext</mono>, you can run the script with either of the following:
-						</p>
-		<div align="center">
-		<pre class="prettyprint inline">
+				</div>
+				
+								<p>
+									If the script has a different extension, say <mono>.ext</mono>, you can run the script with either of the following:
+								</p>
+				<div align="center">
+				<pre class="prettyprint inline">
 nsm run -exprtk path/script-name.ext
 nift run -exprtk path/script-name.ext
 </pre>
-		</div>
-		
-						<h4 id="exprtk-f++">
-							ExprTk from <mnstr style="font-size:16px">f++</mnstr>
-						</h4>
-						<p>
-							You can run <mono>ExprTk</mono> code from <mnstr style="font-size:16px">f++</mnstr> using any of the following (without needing the comment syntax):
-						</p>					
-		
-		<div align="center">
-		<pre class="prettyprint inline">
+				</div>
+				
+								<h4 id="exprtk-f++">
+									ExprTk from <mnstr style="font-size:16px">f++</mnstr>
+								</h4>
+								<p>
+									You can run <mono>ExprTk</mono> code from <mnstr style="font-size:16px">f++</mnstr> using any of the following (without needing the comment syntax):
+								</p>					
+				
+				<div align="center">
+				<pre class="prettyprint inline">
 exprtk(expression)
 </pre>
-		</div>
-		
-		<div align="center">
-		<pre class="prettyprint inline">
+				</div>
+				
+				<div align="center">
+				<pre class="prettyprint inline">
 `expression`
 </pre>
-		</div>
-		
-		<div align="center">
-		<pre class="prettyprint inline">
+				</div>
+				
+				<div align="center">
+				<pre class="prettyprint inline">
 exprtk
 {
 	// block of ExprTk code
 }
 </pre>
-		</div>
-		
-						<h4 id="exprtk-n++">
-							ExprTk from n++
-						</h4>
-						<p>
-							You can run <mono>ExprTk</mono> code from <mnstr style="font-size:16px">N++</mnstr> using any of the following (without needing the comment syntax):
-						</p>					
-		
-		<div align="center">
-		<pre class="prettyprint inline">
+				</div>
+				
+								<h4 id="exprtk-n++">
+									ExprTk from n++
+								</h4>
+								<p>
+									You can run <mono>ExprTk</mono> code from <mnstr style="font-size:16px">N++</mnstr> using any of the following (without needing the comment syntax):
+								</p>					
+				
+				<div align="center">
+				<pre class="prettyprint inline">
 @exprtk(expression)
 </pre>
-		</div>
-		
-		<div align="center">
-		<pre class="prettyprint inline">
+				</div>
+				
+				<div align="center">
+				<pre class="prettyprint inline">
 @`expression`
 </pre>
-		</div>
-		
-		<div align="center">
-		<pre class="prettyprint inline">
+				</div>
+				
+				<div align="center">
+				<pre class="prettyprint inline">
 @exprtk
 {
 	// block of ExprTk code
 }</pre>
-		</div>
-		
-						<h4 id="exprtk-conditions">
-							ExprTk with <mnstr style="font-size:16px">f++</mnstr>/<mnstr style="font-size:16px">N++</mnstr> conditions
-						</h4>
-						<p>
-							You can use <mono>ExprTk</mono> with conditions for <mono>if</mono>, <mono>else-if</mono> and <mono>else</mono> statements, along with <mono>do-while</mono>, <mono>for</mono>, <mono>while</mono> loops. You can also use <mono>ExprTk</mono> for the post-loop increment code with <mono>for</mono> loops (ie. the code after the second <mono>;</mono>). For example:
-						</p>
-		<div align="center">
-		<pre class="prettyprint inline">
+				</div>
+				
+								<h4 id="exprtk-conditions">
+									ExprTk with <mnstr style="font-size:16px">f++</mnstr>/<mnstr style="font-size:16px">N++</mnstr> conditions
+								</h4>
+								<p>
+									You can use <mono>ExprTk</mono> with conditions for <mono>if</mono>, <mono>else-if</mono> and <mono>else</mono> statements, along with <mono>do-while</mono>, <mono>for</mono>, <mono>while</mono> loops. You can also use <mono>ExprTk</mono> for the post-loop increment code with <mono>for</mono> loops (ie. the code after the second <mono>;</mono>). For example:
+								</p>
+				<div align="center">
+				<pre class="prettyprint inline">
 for(int i=0; i&lt;10; i+=1)
 	console("i: ", i)</pre>
-		</div>
-		
-						<h4 id="exprtk-vars">
-							ExprTk access to Nift variables
-						</h4>
-						<p>
-							<mono>ExprTk</mono> has access to <mono>Nift</mono> variables of the following types: <mono>bool</mono>, <mono>int</mono>, <mono>double</mono>, <mono>char</mono>, <mono>string</mono> and <mono>std::vector&lt;double&gt;</mono>. You can simply use the variables as if they had been defined inside <mono>ExprTk</mono>, although a <mono>char</mono> is treated as a <mono>string</mono>, and a <mono>bool</mono> or an <mono>int</mono> is treated as a <mono>double</mono>.
-						</p>
-		
-						<h4 id="nift-fns">
-							Nift functions
-						</h4>
-						<p>
-							The following functions specific to <mono>Nift</mono> are available inside <mono>ExprTk</mono> code.
-		
-							<center class="table">
-								<table id="exprtk_nift_fns_table" class="alt">
-									<thead>
-										<tr>
-											<th>syntax</th>
-											<th>example</th>
-											<th>about</th>
-										</tr>
-									</thead>
-									<tr>
-										<td><mono>cd(string)</mono></td>
-										<td><mono>cd('~/')</td>
-										<td>change directory</td>
-									</tr>
-									<tr>
-										<td><mono>sys(string)</mono></td>
-										<td><mono>sys('ls *.txt')</td>
-										<td>execute system call/command</td>
-									</tr>
-									<tr>
-										<td><mono>to_string(double)</mono></td>
-										<td><mono>to_string(10)</td>
-										<td>convert double to string</td>
-									</tr>
-									<tr>
-										<td><mono>nsm_setnumber(string, number)</mono></td>
-										<td><mono>nsm_setnumber('i', 0)</td>
-										<td>set Nift variable from number</td>
-									</tr>
-									<tr>
-										<td><mono>nsm_setstring(string, string)</mono></td>
-										<td><mono>nsm_setstring('str', 'hello!')</td>
-										<td>set Nift variable from string</td>
-									</tr>
-									<tr>
-										<td><mono>nsm_tonumber(string)</mono></td>
-										<td><mono>nsm_tonumber('i')</td>
-										<td>get number from Nift variable</td>
-									</tr>
-									<tr>
-										<td><mono>nsm_tostring(string)</mono></td>
-										<td><mono>nsm_tostring('str')</td>
-										<td>get string from Nift variable</td>
-									</tr>
-									<tr>
-										<td><mono>nsm_write(ostream, params)</mono></td>
-										<td><mono>nsm_write(console, 'x: ', x, endl)</td>
-										<td>write to console, output file (ofile), or a stream</td>
-									</tr>
-									<tfoot>
-										<tr>
-											<th>syntax</th>
-											<th>example</th>
-											<th>about</th>
-										</tr>
-									</tfoot>
-								</table>
-							</center>
-						</p>
-		
-						<h4 id="benchmark">
-							Benchmark results
-						</h4>
-						<p>
-							Results from <a href="https://github.com/ArashPartow/math-parser-benchmark-project">The Great C++ Mathematical Expression Parser Benchmark</a> are below:
-						</p>
-		<div align="center">
-		<pre class="prettyprint inline">
+				</div>
+				
+								<h4 id="exprtk-vars">
+									ExprTk access to Nift variables
+								</h4>
+								<p>
+									<mono>ExprTk</mono> has access to <mono>Nift</mono> variables of the following types: <mono>bool</mono>, <mono>int</mono>, <mono>double</mono>, <mono>char</mono>, <mono>string</mono> and <mono>std::vector&lt;double&gt;</mono>. You can simply use the variables as if they had been defined inside <mono>ExprTk</mono>, although a <mono>char</mono> is treated as a <mono>string</mono>, and a <mono>bool</mono> or an <mono>int</mono> is treated as a <mono>double</mono>.
+								</p>
+				
+								<h4 id="nift-fns">
+									Nift functions
+								</h4>
+								<p>
+									The following functions specific to <mono>Nift</mono> are available inside <mono>ExprTk</mono> code.
+				
+									<center class="table">
+										<table id="exprtk_nift_fns_table" class="alt">
+											<thead>
+												<tr>
+													<th>syntax</th>
+													<th>example</th>
+													<th>about</th>
+												</tr>
+											</thead>
+											<tr>
+												<td><mono>cd(string)</mono></td>
+												<td><mono>cd('~/')</td>
+												<td>change directory</td>
+											</tr>
+											<tr>
+												<td><mono>sys(string)</mono></td>
+												<td><mono>sys('ls *.txt')</td>
+												<td>execute system call/command</td>
+											</tr>
+											<tr>
+												<td><mono>to_string(double)</mono></td>
+												<td><mono>to_string(10)</td>
+												<td>convert double to string</td>
+											</tr>
+											<tr>
+												<td><mono>nsm_setnumber(string, number)</mono></td>
+												<td><mono>nsm_setnumber('i', 0)</td>
+												<td>set Nift variable from number</td>
+											</tr>
+											<tr>
+												<td><mono>nsm_setstring(string, string)</mono></td>
+												<td><mono>nsm_setstring('str', 'hello!')</td>
+												<td>set Nift variable from string</td>
+											</tr>
+											<tr>
+												<td><mono>nsm_tonumber(string)</mono></td>
+												<td><mono>nsm_tonumber('i')</td>
+												<td>get number from Nift variable</td>
+											</tr>
+											<tr>
+												<td><mono>nsm_tostring(string)</mono></td>
+												<td><mono>nsm_tostring('str')</td>
+												<td>get string from Nift variable</td>
+											</tr>
+											<tr>
+												<td><mono>nsm_write(ostream, params)</mono></td>
+												<td><mono>nsm_write(console, 'x: ', x, endl)</td>
+												<td>write to console, output file (ofile), or a stream</td>
+											</tr>
+											<tfoot>
+												<tr>
+													<th>syntax</th>
+													<th>example</th>
+													<th>about</th>
+												</tr>
+											</tfoot>
+										</table>
+									</center>
+								</p>
+				
+								<h4 id="benchmark">
+									Benchmark results
+								</h4>
+								<p>
+									Results from <a href="https://github.com/ArashPartow/math-parser-benchmark-project">The Great C++ Mathematical Expression Parser Benchmark</a> are below:
+								</p>
+				<div align="center">
+				<pre class="prettyprint inline">
 Scores:
   #     Parser                  Type            Points   Score   Failures 
   -----------------------------------------------------------------------
@@ -328,39 +338,42 @@ Scores:
   11    Lepton                  double          134        8     2
   12    muparserx               double           86        5     0
 </pre>
-		</div>
+				</div>
+							</div>
+						</section>
+					</div>
+				</section>
+
+				<!-- Footer -->
+				<section id="footer" class="wrapper">
+					<div class="title">
+						<img src="../images/rabbit-tags-icon.webp" alt="Nift rabbit mascot with code tag boomerangs" loading="lazy" width="200" style="margin-top:20px; border-radius: 4px">
+					</div>
+				
+					<div class="container">
+						<div id="copyright" class="noselect">
+							<ul>
+								<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
+								<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
+								<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
+							</ul> <br>
+				
+							<ul>
+								<li><a href="../tos.html">Terms of Service</a></li>
+								<li><a href="../privacy_policy.html">Privacy Policy</a></li>
+							</ul> <br>
+				
+							<ul>
+								<li><span>&copy;</span> 2015-<span name="cyear"></span></li>
+							</ul>
+						</div>
 					</div>
 				</section>
 			</div>
-		</section>
+		</div>
 
-		<!-- Footer -->
-		<section id="footer" class="wrapper">
-			<div class="title">
-				<img src="../images/rabbit-tags-icon.png" alt="Nift rabbit mascot with code tag boomerangs" loading="lazy" width="200" style="margin-top:20px; border-radius: 4px">
-			</div>
-		
-			<div class="container">
-				<div id="copyright" class="noselect">
-					<ul>
-						<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
-						<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
-						<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
-					</ul> <br>
-		
-					<ul>
-						<li><a href="../tos.html">Terms of Service</a></li>
-						<li><a href="../privacy_policy.html">Privacy Policy</a></li>
-					</ul> <br>
-		
-					<ul>
-						<li><span>&copy;</span> 2015-<span name="cyear"></span></li>
-					</ul>
-				</div>
-			</div>
-		</section>
+		<script type="text/javascript" src="../assets/js/bundled.js"></script>
 
-		<script async src="../assets/js/menu.js"></script>
 		<script async src="../assets/js/copy-pre.js"></script>
 		<script async src="../assets/js/process-md-blocks.js"></script>
 		<script async src="../assets/js/showdown.min.js"></script>
@@ -411,3 +424,4 @@ Scores:
 		</script>
 	</body>
 </html>
+

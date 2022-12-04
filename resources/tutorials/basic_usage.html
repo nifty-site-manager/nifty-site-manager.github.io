@@ -3,155 +3,165 @@
 	<head>
 		<title>Nift - basic_usage</title>
 		<meta name="description" 
-		      content="Nift is an opinionless web development framework, specialising
-		            in static websites with serverless backends. It's lightning fast, 
-		            cross-platform, opinionless, open source (MIT license) and 
-		            developed from the ground up in C++. Use it for any of your 
-		            personal or commercial projects!">
+		      content="Nift is an opinionless web development framework. It's 
+		            lightning fast, cross-platform, opinionless, open source 
+		            (MIT license) and developed from the ground up in C++. Use 
+		            it for any of your personal or commercial projects!">
 		
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
-		<link rel="stylesheet" href="../../assets/css/pagestyle.css">
-		<link rel="stylesheet" href="../../assets/css/menu.css">
-		<link rel="stylesheet" href="../../assets/css/font-awesome.css">
+		<link rel="stylesheet" href="../../assets/css/bundled.css">
 		<link rel="stylesheet" href="../../assets/css/pre.css">
 		<link rel="stylesheet" href="../../assets/css/extra-fonts.css"><link rel='icon' type='image/png' href='../../images/favicon.png'>
 	</head>
 
 	<body>
-		<nav id="nav" class="noselect">
-		  <ul class="menu">
-		    <li class="nav-space-left"></li>
-		    <li class="item icons">
-		      <a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a>
-		      <a href="https://github.com/nifty-site-manager/nsm/discussions" title="GitHub Discussions" class="gh"><i class="fas fa-comment-dots fa-2x"></i></a>
-		      <a href="https://twitter.com/nift_dev" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a>
-		      <a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a>
-		    </li>
-		    <a href="../../index.html" class="item hover-hl"><li>Home</li></a>
-		    <li class="item hover-hl has-submenu" onclick="toggleItem(0)">
-		      <a tabindex="0" class="item-link">Docs</a>
-		      <ul class="submenu">
-		        <li class="subitem"><a href="../../docs/installing.html">Installing</a></li>
-		        <li class="subitem"><a href="../../docs/hosting.html">Hosting</a></li>
-		        <li class="subitem"><a href="../../docs/commands.html">Commands</a></li>
-		        <li class="subitem"><a href="../../docs/config.html">Config</a></li>
-		        <li class="subitem"><a href="../../docs/template_files.html">Template Files</a></li>
-		        <li class="subitem"><a href="../../docs/fns.html">Functions</a></li>
-		        <li class="subitem"><a href="../../docs/types.html">Types</a></li>
-		        <li class="subitem"><a href="../../docs/f++.html">f++ (scripting)</a></li>
-		        <li class="subitem"><a href="../../docs/n++.html">n++ (templates)</a></li>
-		        <li class="subitem"><a href="../../docs/lua.html">Lua(JIT)</a></li>
-		        <li class="subitem"><a href="../../docs/exprtk.html">ExprTk</a></li>
-		        <li class="subitem"><a href="../../docs/REPL.html">Interactive REPL</a></li>
-		        <li class="subitem"><a href="../../docs/scripts.html">Scripts</a></li>
-		        <li class="subitem"><a href="../../docs/template_languages.html">Template Languages</a></li>
-		        <li class="subitem"><a href="../../docs/JSON.html">JSON Data</a></li>
-		        <li class="subitem"><a href="../../docs/markdown.html">Markdown</a></li>
-		        <li class="subitem"><a href="../../docs/translators.html">Translators</a></li>
-		        <li class="subitem"><a href="../../docs/mathematics.html">Mathematics</a></li>
-		        <li class="subitem"><a href="../../docs/code_blocks.html">Code Blocks</a></li>
-		        <li class="subitem"><a href="../../docs/presentations.html">Presentations</a></li>
-		      </ul>
-		    </li>
-		    <li class="item hover-hl has-submenu" onclick="toggleItem(1)">
-		      <a tabindex="0" class="item-link">Resources</a>
-		      <ul class="submenu">
-		        <li class="subitem"><a href="../tutorials.html">Tutorials</a></li>
-		        <li class="subitem"><a href="../templates.html">Templates</a></li>
-		        <li class="subitem"><a href="../blog_templates.html">Blog Templates</a></li>
-		        <li class="subitem"><a href="../css_frameworks.html">CSS Frameworks</a></li>
-		        <li class="subitem"><a href="../js_frameworks.html">JS Frameworks</a></li>
-		        <li class="subitem"><a href="../links.html">Links</a></li>
-		        <li class="subitem"><a href="../logos.html">Logos</a></li>
-		        <li class="subitem"><a href="../promos.html">Promos</a></li>
-		        <li class="subitem"><a href="../php_frameworks.html">PHP Frameworks</a></li>
-		      </ul>
-		    </li>
-		    <li class="toggle"><a href="#" onclick="toggleMenu()" id="menu-link"><i class="fas fa-bars fa-2x"></i></a></li>
-		  </ul>
-		</nav>
-		
-		<!-- Header -->
-		<section class="wrapper" id="header">
-		  <div id="logo" class="noselect">
-		    <img src="../../images/rabbit-tags-white.png" alt="Nift bunny mascot" style="width: 400px; max-width:90%"><br>
-		
-		    <p style="color:#372C2A">An opinionless web development framework</p>
-		
-		    <p>
-		      <a href="https://chocolatey.org/packages/nift"><img src="../../images/chocolatey-icon.png" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
-		      <a href="../../docs/installing.html#osx-brew"><img src="../../images/brew-icon.png" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
-		      <a href="../../docs/installing.html#freebsd"><img src="../../images/freebsd.png" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
-		      <a href="../../docs/installing.html#linux-flatpak"><img src="../../images/flathub-icon.png" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
-		      <a href="../../docs/installing.html#gentoo"><img src="../../images/gentoo.svg" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
-		      <a href="https://snapcraft.io/nift"><img src="../../images/snap-icon.png" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
-		    </p>
-		  </div>
-		</section>
+		<div align="center"  id="body">
+			<div class="menu-bars">
+			  <i id="open-menu-icon" class="fa fa-bars" onclick="show_menu()"></i>
+			</div>
+			
+			<div id="menu-page">
+			  <div class="menu-cross" >
+			    <i id="close-menu-icon" class="fa fa-xmark" onclick="close_menu()"></i>
+			  </div>
+			
+			  <div class="menu-icons noselect">
+			    <a href="https://github.com/nifty-site-manager/nsm" alt="GitHub"><i class="fa fa-2x fa-github"></i></a>&nbsp;&nbsp;
+			    <a href="https://github.com/nifty-site-manager/nsm/discussions" alt="GitHub Discussions"><i class="fa fa-2x fa-comments"></i></a>&nbsp;&nbsp;
+			    <a href="https://twitter.com/nift_dev" alt="Twitter"><i class="fa fa-2x fa-twitter"></i></a>&nbsp;&nbsp;
+			    <a href="https://discord.gg/St8QXTG" alt="Discord"><i class="fa fa-2x fa-discord"></i></a>
+			  </div>
+			  
+			  <nav id="nav" class="noselect">
+			    <ul>
+			      <li class="item li-menu li-dark">
+			        <a class="item-link" href="../../index.html">Home</a>
+			      </li>
+			      <li class="item li-menu li-dark has-submenu">
+			        <a tabindex="0" href="#" class="submenu-link" onclick="toggle_submenu(0)">Documentation <i class="submenu-link-icon fa fa-angle-down fa-1x"></i></a>
+			        <ul class="submenu">
+			          <li class="subitem"><a href="../../docs/installing.html">Installing</a></li>
+			          <li class="subitem"><a href="../../docs/hosting.html">Hosting</a></li>
+			          <li class="subitem"><a href="../../docs/commands.html">Commands</a></li>
+			          <li class="subitem"><a href="../../docs/config.html">Config</a></li>
+			          <li class="subitem"><a href="../../docs/template_files.html">Template Files</a></li>
+			          <li class="subitem"><a href="../../docs/fns.html">Functions</a></li>
+			          <li class="subitem"><a href="../../docs/types.html">Types</a></li>
+			          <li class="subitem"><a href="../../docs/f++.html">f++ (scripting)</a></li>
+			          <li class="subitem"><a href="../../docs/n++.html">n++ (templates)</a></li>
+			          <li class="subitem"><a href="../../docs/lua.html">Lua(JIT)</a></li>
+			          <li class="subitem"><a href="../../docs/exprtk.html">ExprTk</a></li>
+			          <li class="subitem"><a href="../../docs/REPL.html">Interactive REPL</a></li>
+			          <li class="subitem"><a href="../../docs/scripts.html">Scripts</a></li>
+			          <li class="subitem"><a href="../../docs/template_languages.html">Template Languages</a></li>
+			          <li class="subitem"><a href="../../docs/JSON.html">JSON Data</a></li>
+			          <li class="subitem"><a href="../../docs/markdown.html">Markdown</a></li>
+			          <li class="subitem"><a href="../../docs/translators.html">Translators</a></li>
+			          <li class="subitem"><a href="../../docs/mathematics.html">Mathematics</a></li>
+			          <li class="subitem"><a href="../../docs/code_blocks.html">Code Blocks</a></li>
+			          <li class="subitem"><a href="../../docs/presentations.html">Presentations</a></li>
+			        </ul>
+			      </li>
+			      <li class="item li-menu li-dark has-submenu">
+			        <a tabindex="0" href="#" class="submenu-link" onclick="toggle_submenu(1)">Resources <i class="submenu-link-icon fa fa-angle-down fa-1x"></i></a>
+			        <ul class="submenu">
+			          <li class="subitem"><a href="../tutorials.html">Tutorials</a></li>
+			          <li class="subitem"><a href="../templates.html">Templates</a></li>
+			          <li class="subitem"><a href="../blog_templates.html">Blog Templates</a></li>
+			          <li class="subitem"><a href="../css_frameworks.html">CSS Frameworks</a></li>
+			          <li class="subitem"><a href="../js_frameworks.html">JS Frameworks</a></li>
+			          <li class="subitem"><a href="../links.html">Links</a></li>
+			          <li class="subitem"><a href="../logos.html">Logos</a></li>
+			          <li class="subitem"><a href="../promos.html">Promos</a></li>
+			          <li class="subitem"><a href="../php_frameworks.html">PHP Frameworks</a></li>
+			        </ul>
+			      </li>
+			    </ul>
+			  </nav>
+			</div>
 
-		<!-- Main -->
-		<section id="main" class="wrapper style2">
-			<div class="title">Basic Usage</div>
-			<div class="container">
-				<!-- Features -->
-				<section id="features">
-					<header class="style1">
-						<h2>Basic usage tutorial</h2>
-					</header>
-		
-					<div class="content">
-						<p>
-							The following tutorial will help you learn the basic usage of <mono>Nift</mono>, if you are just taking a look at <mono>Nift</mono> you may prefer the <a href="get_started.html">get started tutorial</a> which will get you up and running much quicker, then come back when you want to have a better understanding of how <mono>Nift</mono> works.
-						</p>
-		
-						<p>
-							The easiest way to learn how <mono>Nift</mono> works is to get your feet wet and hands dirty playing with a simple site. If there is any problems with the following tutorial please file an issue <a href="https://github.com/nifty-site-manager/nsm/issues">here</a>.
-						</p>
-		
-						<ol>
-							<li>
-								Download <a href="https://gitlab.com/nsm-templates/simple-site/-/archive/master/simple-site-master.zip">simple-site-master.zip</a> and extract <mono>simple-site-master</mono>. If you have a BitBucket, GitHub and/or GitLab account then you can import/fork and rename a repository from <a href="https://bitbucket.org/nsm-templates">here</a>, <a href="https://github.com/nsm-templates">here</a> or <a href="https://gitlab.com/nsm-templates">here</a> then clone using <mono>nsm clone repository-url</mono> (Note - You can rename a repository when importing it, rather than forking and renaming, plus on BitBucket and GitHub you cannot remove fork relationships);
-							</li>
-		
-							<li>
-								If you imported/forked a repository on GitHub then in the repository's settings on GitHub for GitHub Pages set the source to <mono>master branch</mono> (there may be some delay before your website goes live);
-							</li>
-		
-							<li>
-								Open a terminal window and change to the <mono>simple-site-master</mono> directory, you will also find it useful to have the <mono>simple-site-master</mono> directory open using your operating system's window manager;
-							</li>
-		
-							<li>
-								Open <mono>template/page.template</mono>, <mono>template/footer.content</mono>, <mono>template/menu.content</mono>, <mono>content/index.content</mono> and <mono>content/about.content</mono> in any text editor you like, take a look at what each file contains;
-							</li>
-		
-							<li>
-								If you ever forget a <mono>Nift</mono> command, enter <mono>nsm commands</mono> into your terminal window;
-							</li>
-		
-							<li>
-								Enter <mono>nsm status</mono> into your terminal window;
-							</li>
-		
-							<li>
-								Enter <mono>nsm info-all</mono>, <mono>nsm info-names</mono> and <mono>nsm status</mono>;
-							</li>
-		
-							<li>
-								The command to have <mono>Nift</mono> track a page is <mono>nsm track page-name page-title template-path</mono>, where <mono>page-title</mono> and <mono>template-path</mono> are optional (default <mono>page-title</mono> is the specified <mono>page-name</mono>, and default <mono>template-path</mono> is <mono>template/page.template</mono>). Enter <mono>nsm track first_page myPageTitle</mono>;
-							</li>
-		
-							<li>
-								We will come back to building pages later in the tutorial, but enter <mono>nsm build-updated</mono>.
-							</li>
-		
-							<li>
-								The page list file <mono>.nsm/tracking.list</mono> should now contain the following information for pages <mono>about</mono> and <mono>index</mono>;
-		
-								<div align="center" style="margin-top:30px">
-		<pre class="inline rounded">
+			<div id="content">
+				<!-- Header -->
+				<section class="wrapper" id="header">
+				  <div id="logo" class="noselect">
+				    <img src="../../images/rabbit-tags-white.webp" alt="Nift bunny mascot" style="width: 400px; max-width:90%"><br>
+				
+				    <p style="color:#372C2A">An unopinionated web development framework</p>
+				
+				    <p>
+				      <a href="https://chocolatey.org/packages/nift"><img src="../../images/chocolatey-icon.webp" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
+				      <a href="../../docs/installing.html#osx-brew"><img src="../../images/brew-icon.webp" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
+				      <a href="../../docs/installing.html#freebsd"><img src="../../images/freebsd.webp" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
+				      <a href="../../docs/installing.html#linux-flatpak"><img src="../../images/flathub-icon.webp" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
+				      <a href="../../docs/installing.html#gentoo"><img src="../../images/gentoo.webp" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
+				      <a href="https://snapcraft.io/nift"><img src="../../images/snap-icon.webp" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
+				    </p>
+				  </div>
+				</section>
+
+				<!-- Main -->
+				<section id="main" class="wrapper style2">
+					<div class="title">Basic Usage</div>
+					<div class="container">
+						<!-- Features -->
+						<section id="features">
+							<header class="style1">
+								<h2>Basic usage tutorial</h2>
+							</header>
+				
+							<div class="content">
+								<p>
+									The following tutorial will help you learn the basic usage of <mono>Nift</mono>, if you are just taking a look at <mono>Nift</mono> you may prefer the <a href="get_started.html">get started tutorial</a> which will get you up and running much quicker, then come back when you want to have a better understanding of how <mono>Nift</mono> works.
+								</p>
+				
+								<p>
+									The easiest way to learn how <mono>Nift</mono> works is to get your feet wet and hands dirty playing with a simple site. If there is any problems with the following tutorial please file an issue <a href="https://github.com/nifty-site-manager/nsm/issues">here</a>.
+								</p>
+				
+								<ol>
+									<li>
+										Download <a href="https://gitlab.com/nsm-templates/simple-site/-/archive/master/simple-site-master.zip">simple-site-master.zip</a> and extract <mono>simple-site-master</mono>. If you have a BitBucket, GitHub and/or GitLab account then you can import/fork and rename a repository from <a href="https://bitbucket.org/nsm-templates">here</a>, <a href="https://github.com/nsm-templates">here</a> or <a href="https://gitlab.com/nsm-templates">here</a> then clone using <mono>nsm clone repository-url</mono> (Note - You can rename a repository when importing it, rather than forking and renaming, plus on BitBucket and GitHub you cannot remove fork relationships);
+									</li>
+				
+									<li>
+										If you imported/forked a repository on GitHub then in the repository's settings on GitHub for GitHub Pages set the source to <mono>master branch</mono> (there may be some delay before your website goes live);
+									</li>
+				
+									<li>
+										Open a terminal window and change to the <mono>simple-site-master</mono> directory, you will also find it useful to have the <mono>simple-site-master</mono> directory open using your operating system's window manager;
+									</li>
+				
+									<li>
+										Open <mono>template/page.template</mono>, <mono>template/footer.content</mono>, <mono>template/menu.content</mono>, <mono>content/index.content</mono> and <mono>content/about.content</mono> in any text editor you like, take a look at what each file contains;
+									</li>
+				
+									<li>
+										If you ever forget a <mono>Nift</mono> command, enter <mono>nsm commands</mono> into your terminal window;
+									</li>
+				
+									<li>
+										Enter <mono>nsm status</mono> into your terminal window;
+									</li>
+				
+									<li>
+										Enter <mono>nsm info-all</mono>, <mono>nsm info-names</mono> and <mono>nsm status</mono>;
+									</li>
+				
+									<li>
+										The command to have <mono>Nift</mono> track a page is <mono>nsm track page-name page-title template-path</mono>, where <mono>page-title</mono> and <mono>template-path</mono> are optional (default <mono>page-title</mono> is the specified <mono>page-name</mono>, and default <mono>template-path</mono> is <mono>template/page.template</mono>). Enter <mono>nsm track first_page myPageTitle</mono>;
+									</li>
+				
+									<li>
+										We will come back to building pages later in the tutorial, but enter <mono>nsm build-updated</mono>.
+									</li>
+				
+									<li>
+										The page list file <mono>.nsm/tracking.list</mono> should now contain the following information for pages <mono>about</mono> and <mono>index</mono>;
+				
+										<div align="center" style="margin-top:30px">
+				<pre class="inline rounded">
 'about'
 'about'
 'template/page.template'
@@ -165,98 +175,98 @@
 'template/page.template'
 
 </pre>
-								</div> <br>
-							</li>
-		
-							<li>
-								Enter <mono>nsm info-all</mono>, <mono>nsm info-names</mono>, <mono>nsm info about</mono>, <mono>nsm info about index</mono> and <mono>nsm status</mono>;
-							</li>
-		
-							<li>
-								Enter <mono>nsm rmv first_page</mono> and repeat the last step;
-							</li>
-		
-							<li>
-								Enter <mono>nsm build-updated</mono>;
-								<ul>
-									<li>
-										The directory <mono>output/</mono> should now contain the pages <mono>index.html</mono> and <mono>about.html</mono>. By default users do not have permission to write to page files, this is to prevent users from accidentally modifying a page file when they more than likely intended to modify a content file. Should users want to manually edit a page file they can simply change the file permissions (eg. <mono>chmod +w page-path</mono>); 
+										</div> <br>
 									</li>
-		
+				
 									<li>
-										Another directory <mono>.nsm/output/</mono> should have been created containing the info files <mono>index.info</mono> and <mono>about.info</mono>. By default users do not have permission to write to info files, and users should beware of ever doing so. The modification time of info files is how <mono>Nift</mono> knows when pages were last built (actually I am pretty sure <mono>Nift</mono> gets this information from the first line of the information files), furthermore the content inside info files represents page dependencies from the last time pages were built, <u>not necessarily</u> current page dependencies, hence users should not have any reason to modify them;
+										Enter <mono>nsm info-all</mono>, <mono>nsm info-names</mono>, <mono>nsm info about</mono>, <mono>nsm info about index</mono> and <mono>nsm status</mono>;
 									</li>
-								</ul>
-							</li>
-		
-							<li>
-								Open <mono>output/index.html</mono> in a browser, click through to the about page, and view the source for both pages. Compare what you have locally to a <a href="https://nsm-templates.gitlab.io/simple-site/">pre-built</a> version of <mono>output/index.html</mono> 
-							</li>
-		
-							<li>
-								Enter <mono>nsm status</mono>;
-							</li>
-		
-							<li>
-								Modify <mono>content/index.content</mono>;
-							</li>
-		
-							<li>
-								Enter <mono>cd content/</mono>;
-							</li>
-		
-							<li>
-								Enter <mono>nsm status</mono>, then <mono>nsm build-updated</mono>, then <mono>nsm status</mono> (notice <mono>Nift</mono> can be run from any directory inside the stage directory, stage directory inclusive, obviously as that is where we started! If you are using BitBucket or GitHub then the site directory is set up as a master branch);
-							</li>
-		
-							<li>
-								Enter <mono>cd ../</mono> to change back to the stage directory;
-							</li>
-		
-							<li>
-								Modify <mono>template/footer.content</mono>;
-							</li>
-		
-							<li>
-								Enter <mono>nsm status</mono>, then <mono>nsm build-updated</mono>;
-							</li>
-		
-							<li>
-								Add <mono>@input(content/badfile.content)</mono> to <mono>content/index.content</mono>;
-							</li>
-		
-							<li>
-								Enter <mono>nsm status</mono>, then <mono>nsm build-updated</mono>, then <mono>nsm status</mono>;
-							</li>
-		
-							<li>
-								Replace <mono>@input(content/badfile.content)</mono> with <mono>@input(content/index.content)</mono> in <mono>content/index.content</mono>;
-							</li>
-		
-							<li>
-								Enter <mono>nsm status</mono>, then <mono>nsm build-updated</mono>, then <mono>nsm status</mono>;
-							</li>
-		
-							<li>
-								Remove <mono>@input(content/index.content)</mono> from <mono>content/index.content</mono>;
-							</li>
-		
-							<li>
-								Enter <mono>nsm status</mono>, then <mono>nsm build-updated</mono>;
-							</li>
-		
-							<li>
-								Add <mono>$x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}$</mono> to <mono>content/about.content</mono>;
-							</li>
-		
-							<li>
-								Enter <mono>nsm build-updated</mono> and reload <mono>output/about.html</mono>;
-							</li>
-		
-							<li>
-								Add the following to <mono>content/about.content</mono> without any indenting;
-								<div align="center"  style="margin-top:30px">
-		<pre class="inline prettyprint">
+				
+									<li>
+										Enter <mono>nsm rmv first_page</mono> and repeat the last step;
+									</li>
+				
+									<li>
+										Enter <mono>nsm build-updated</mono>;
+										<ul>
+											<li>
+												The directory <mono>output/</mono> should now contain the pages <mono>index.html</mono> and <mono>about.html</mono>. By default users do not have permission to write to page files, this is to prevent users from accidentally modifying a page file when they more than likely intended to modify a content file. Should users want to manually edit a page file they can simply change the file permissions (eg. <mono>chmod +w page-path</mono>); 
+											</li>
+				
+											<li>
+												Another directory <mono>.nsm/output/</mono> should have been created containing the info files <mono>index.info</mono> and <mono>about.info</mono>. By default users do not have permission to write to info files, and users should beware of ever doing so. The modification time of info files is how <mono>Nift</mono> knows when pages were last built (actually I am pretty sure <mono>Nift</mono> gets this information from the first line of the information files), furthermore the content inside info files represents page dependencies from the last time pages were built, <u>not necessarily</u> current page dependencies, hence users should not have any reason to modify them;
+											</li>
+										</ul>
+									</li>
+				
+									<li>
+										Open <mono>output/index.html</mono> in a browser, click through to the about page, and view the source for both pages. Compare what you have locally to a <a href="https://nsm-templates.gitlab.io/simple-site/">pre-built</a> version of <mono>output/index.html</mono> 
+									</li>
+				
+									<li>
+										Enter <mono>nsm status</mono>;
+									</li>
+				
+									<li>
+										Modify <mono>content/index.content</mono>;
+									</li>
+				
+									<li>
+										Enter <mono>cd content/</mono>;
+									</li>
+				
+									<li>
+										Enter <mono>nsm status</mono>, then <mono>nsm build-updated</mono>, then <mono>nsm status</mono> (notice <mono>Nift</mono> can be run from any directory inside the stage directory, stage directory inclusive, obviously as that is where we started! If you are using BitBucket or GitHub then the site directory is set up as a master branch);
+									</li>
+				
+									<li>
+										Enter <mono>cd ../</mono> to change back to the stage directory;
+									</li>
+				
+									<li>
+										Modify <mono>template/footer.content</mono>;
+									</li>
+				
+									<li>
+										Enter <mono>nsm status</mono>, then <mono>nsm build-updated</mono>;
+									</li>
+				
+									<li>
+										Add <mono>@input(content/badfile.content)</mono> to <mono>content/index.content</mono>;
+									</li>
+				
+									<li>
+										Enter <mono>nsm status</mono>, then <mono>nsm build-updated</mono>, then <mono>nsm status</mono>;
+									</li>
+				
+									<li>
+										Replace <mono>@input(content/badfile.content)</mono> with <mono>@input(content/index.content)</mono> in <mono>content/index.content</mono>;
+									</li>
+				
+									<li>
+										Enter <mono>nsm status</mono>, then <mono>nsm build-updated</mono>, then <mono>nsm status</mono>;
+									</li>
+				
+									<li>
+										Remove <mono>@input(content/index.content)</mono> from <mono>content/index.content</mono>;
+									</li>
+				
+									<li>
+										Enter <mono>nsm status</mono>, then <mono>nsm build-updated</mono>;
+									</li>
+				
+									<li>
+										Add <mono>$x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}$</mono> to <mono>content/about.content</mono>;
+									</li>
+				
+									<li>
+										Enter <mono>nsm build-updated</mono> and reload <mono>output/about.html</mono>;
+									</li>
+				
+									<li>
+										Add the following to <mono>content/about.content</mono> without any indenting;
+										<div align="center"  style="margin-top:30px">
+				<pre class="inline prettyprint">
 &lt;pre>
 ostream& operator&lt;&lt;(ostream &os, const std::vector&lt;std::string> &v)
 {
@@ -268,73 +278,76 @@ ostream& operator&lt;&lt;(ostream &os, const std::vector&lt;std::string> &v)
 }
 &lt;/pre>
 </pre>
-								</div> <br>
-							</li>
-		
-							<li>
-								Enter <mono>nsm build-updated</mono> and reload <mono>output/about.html</mono>. View the source for <mono>output/about.html</mono> and look at the text inside the pre tags. Notice how every &lt; character has been escaped to &bsol;&lt;, <mono>Nift</mono> automatically does this so you can simply paste your code straight into content files, otherwise you would need to manually replace &lt; characters (if you want, add write permissions to <mono>output/about.html</mono> and see what happens when you revert back to using < inside the pre tags);
-							</li>
-		
-							<li>
-								Now try changing the open pre tag in <mono>content/about.content</mono> from <mono>&lt;pre></mono> to <mono>&lt;pre class="inline rounded prettyprint"></mono>.
-							</li>
-		
-							<li>
-								Enter <mono>nsm build-updated</mono> and reload <mono>output/about.html</mono>. See <mono>output/css/pre.css</mono> for how the simple site styles pre blocks.
-							</li>
-		
-							<li>
-								Enter <mono>nsm mve about test</mono>, check that: <mono>.nsm/tracking.list</mono> has been updated; both <mono>output/about.html</mono> and <mono>.nsm/output/about.info</mono> were removed; and <mono>content/about.content</mono> was moved to <mono>content/test.content</mono>;
-							</li>
-		
-							<li>
-								Enter <mono>nsm cpy test about</mono>, check that <mono>.nsm/tracking.list</mono> has been updated and <mono>content/test.content</mono> was copied to <mono>content/about.content</mono>;
-							</li>
-		
-							<li>
-								Enter <mono>nsm rmv test</mono>, check that <mono>content/test.content</mono>, <mono>output/test.html</mono> and <mono>.nsm/output/test.info</mono> were all removed. 
-							</li>
-		
-							<li>
-								Enter <mono>nsm untrack index</mono>, check that both <mono>output/index.html</mono> and <mono>.nsm/output/index.info</mono> were removed.
-							</li>
-		
-							<li>
-								If you forked, renamed and cloned a repository from BitBucket, GitHub or GitLab then you can build, commit and push changes back to BitBucket, GitHub or GitLab all at the same time using <mono>nsm bcp "commit message"</mono> (note for BitBucket you will need to enter your password twice and for GitHub you will need to enter your username and password twice, this is because of using both a stage and master branch for BitBucket/GitHub, something which is not done for GitLab). There may be some delay before your changes go live.
-							</li>
-						</ol>
+										</div> <br>
+									</li>
+				
+									<li>
+										Enter <mono>nsm build-updated</mono> and reload <mono>output/about.html</mono>. View the source for <mono>output/about.html</mono> and look at the text inside the pre tags. Notice how every &lt; character has been escaped to &bsol;&lt;, <mono>Nift</mono> automatically does this so you can simply paste your code straight into content files, otherwise you would need to manually replace &lt; characters (if you want, add write permissions to <mono>output/about.html</mono> and see what happens when you revert back to using < inside the pre tags);
+									</li>
+				
+									<li>
+										Now try changing the open pre tag in <mono>content/about.content</mono> from <mono>&lt;pre></mono> to <mono>&lt;pre class="inline rounded prettyprint"></mono>.
+									</li>
+				
+									<li>
+										Enter <mono>nsm build-updated</mono> and reload <mono>output/about.html</mono>. See <mono>output/css/pre.css</mono> for how the simple site styles pre blocks.
+									</li>
+				
+									<li>
+										Enter <mono>nsm mve about test</mono>, check that: <mono>.nsm/tracking.list</mono> has been updated; both <mono>output/about.html</mono> and <mono>.nsm/output/about.info</mono> were removed; and <mono>content/about.content</mono> was moved to <mono>content/test.content</mono>;
+									</li>
+				
+									<li>
+										Enter <mono>nsm cpy test about</mono>, check that <mono>.nsm/tracking.list</mono> has been updated and <mono>content/test.content</mono> was copied to <mono>content/about.content</mono>;
+									</li>
+				
+									<li>
+										Enter <mono>nsm rmv test</mono>, check that <mono>content/test.content</mono>, <mono>output/test.html</mono> and <mono>.nsm/output/test.info</mono> were all removed. 
+									</li>
+				
+									<li>
+										Enter <mono>nsm untrack index</mono>, check that both <mono>output/index.html</mono> and <mono>.nsm/output/index.info</mono> were removed.
+									</li>
+				
+									<li>
+										If you forked, renamed and cloned a repository from BitBucket, GitHub or GitLab then you can build, commit and push changes back to BitBucket, GitHub or GitLab all at the same time using <mono>nsm bcp "commit message"</mono> (note for BitBucket you will need to enter your password twice and for GitHub you will need to enter your username and password twice, this is because of using both a stage and master branch for BitBucket/GitHub, something which is not done for GitLab). There may be some delay before your changes go live.
+									</li>
+								</ol>
+							</div>
+						</section>
+					</div>
+				</section>
+
+				<!-- Footer -->
+				<section id="footer" class="wrapper">
+					<div class="title">
+						<img src="../../images/rabbit-tags-icon.webp" alt="Nift rabbit mascot with code tag boomerangs" loading="lazy" width="200" style="margin-top:20px; border-radius: 4px">
+					</div>
+				
+					<div class="container">
+						<div id="copyright" class="noselect">
+							<ul>
+								<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
+								<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
+								<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
+							</ul> <br>
+				
+							<ul>
+								<li><a href="../../tos.html">Terms of Service</a></li>
+								<li><a href="../../privacy_policy.html">Privacy Policy</a></li>
+							</ul> <br>
+				
+							<ul>
+								<li><span>&copy;</span> 2015-<span name="cyear"></span></li>
+							</ul>
+						</div>
 					</div>
 				</section>
 			</div>
-		</section>
+		</div>
 
-		<!-- Footer -->
-		<section id="footer" class="wrapper">
-			<div class="title">
-				<img src="../../images/rabbit-tags-icon.png" alt="Nift rabbit mascot with code tag boomerangs" loading="lazy" width="200" style="margin-top:20px; border-radius: 4px">
-			</div>
-		
-			<div class="container">
-				<div id="copyright" class="noselect">
-					<ul>
-						<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
-						<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
-						<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
-					</ul> <br>
-		
-					<ul>
-						<li><a href="../../tos.html">Terms of Service</a></li>
-						<li><a href="../../privacy_policy.html">Privacy Policy</a></li>
-					</ul> <br>
-		
-					<ul>
-						<li><span>&copy;</span> 2015-<span name="cyear"></span></li>
-					</ul>
-				</div>
-			</div>
-		</section>
+		<script type="text/javascript" src="../../assets/js/bundled.js"></script>
 
-		<script async src="../../assets/js/menu.js"></script>
 		<script async src="../../assets/js/copy-pre.js"></script>
 		<script async src="../../assets/js/process-md-blocks.js"></script>
 		<script async src="../../assets/js/showdown.min.js"></script>
@@ -385,3 +398,4 @@ ostream& operator&lt;&lt;(ostream &os, const std::vector&lt;std::string> &v)
 		</script>
 	</body>
 </html>
+
