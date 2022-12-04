@@ -3,214 +3,227 @@
 	<head>
 		<title>Nift - php_frameworks</title>
 		<meta name="description" 
-		      content="Nift is an opinionless web development framework, specialising
-		            in static websites with serverless backends. It's lightning fast, 
-		            cross-platform, opinionless, open source (MIT license) and 
-		            developed from the ground up in C++. Use it for any of your 
-		            personal or commercial projects!">
+		      content="Nift is an opinionless web development framework. It's 
+		            lightning fast, cross-platform, opinionless, open source 
+		            (MIT license) and developed from the ground up in C++. Use 
+		            it for any of your personal or commercial projects!">
 		
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
-		<link rel="stylesheet" href="../assets/css/pagestyle.css">
-		<link rel="stylesheet" href="../assets/css/menu.css">
-		<link rel="stylesheet" href="../assets/css/font-awesome.css">
+		<link rel="stylesheet" href="../assets/css/bundled.css">
 		<link rel="stylesheet" href="../assets/css/pre.css">
 		<link rel="stylesheet" href="../assets/css/extra-fonts.css"><link rel='icon' type='image/png' href='../images/favicon.png'>
 	</head>
 
 	<body>
-		<nav id="nav" class="noselect">
-		  <ul class="menu">
-		    <li class="nav-space-left"></li>
-		    <li class="item icons">
-		      <a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a>
-		      <a href="https://github.com/nifty-site-manager/nsm/discussions" title="GitHub Discussions" class="gh"><i class="fas fa-comment-dots fa-2x"></i></a>
-		      <a href="https://twitter.com/nift_dev" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a>
-		      <a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a>
-		    </li>
-		    <a href="../index.html" class="item hover-hl"><li>Home</li></a>
-		    <li class="item hover-hl has-submenu" onclick="toggleItem(0)">
-		      <a tabindex="0" class="item-link">Docs</a>
-		      <ul class="submenu">
-		        <li class="subitem"><a href="../docs/installing.html">Installing</a></li>
-		        <li class="subitem"><a href="../docs/hosting.html">Hosting</a></li>
-		        <li class="subitem"><a href="../docs/commands.html">Commands</a></li>
-		        <li class="subitem"><a href="../docs/config.html">Config</a></li>
-		        <li class="subitem"><a href="../docs/template_files.html">Template Files</a></li>
-		        <li class="subitem"><a href="../docs/fns.html">Functions</a></li>
-		        <li class="subitem"><a href="../docs/types.html">Types</a></li>
-		        <li class="subitem"><a href="../docs/f++.html">f++ (scripting)</a></li>
-		        <li class="subitem"><a href="../docs/n++.html">n++ (templates)</a></li>
-		        <li class="subitem"><a href="../docs/lua.html">Lua(JIT)</a></li>
-		        <li class="subitem"><a href="../docs/exprtk.html">ExprTk</a></li>
-		        <li class="subitem"><a href="../docs/REPL.html">Interactive REPL</a></li>
-		        <li class="subitem"><a href="../docs/scripts.html">Scripts</a></li>
-		        <li class="subitem"><a href="../docs/template_languages.html">Template Languages</a></li>
-		        <li class="subitem"><a href="../docs/JSON.html">JSON Data</a></li>
-		        <li class="subitem"><a href="../docs/markdown.html">Markdown</a></li>
-		        <li class="subitem"><a href="../docs/translators.html">Translators</a></li>
-		        <li class="subitem"><a href="../docs/mathematics.html">Mathematics</a></li>
-		        <li class="subitem"><a href="../docs/code_blocks.html">Code Blocks</a></li>
-		        <li class="subitem"><a href="../docs/presentations.html">Presentations</a></li>
-		      </ul>
-		    </li>
-		    <li class="item hover-hl has-submenu" onclick="toggleItem(1)">
-		      <a tabindex="0" class="item-link">Resources</a>
-		      <ul class="submenu">
-		        <li class="subitem"><a href="tutorials.html">Tutorials</a></li>
-		        <li class="subitem"><a href="templates.html">Templates</a></li>
-		        <li class="subitem"><a href="blog_templates.html">Blog Templates</a></li>
-		        <li class="subitem"><a href="css_frameworks.html">CSS Frameworks</a></li>
-		        <li class="subitem"><a href="js_frameworks.html">JS Frameworks</a></li>
-		        <li class="subitem"><a href="links.html">Links</a></li>
-		        <li class="subitem"><a href="logos.html">Logos</a></li>
-		        <li class="subitem"><a href="promos.html">Promos</a></li>
-		        <li class="subitem"><a href="php_frameworks.html">PHP Frameworks</a></li>
-		      </ul>
-		    </li>
-		    <li class="toggle"><a href="#" onclick="toggleMenu()" id="menu-link"><i class="fas fa-bars fa-2x"></i></a></li>
-		  </ul>
-		</nav>
-		
-		<!-- Header -->
-		<section class="wrapper" id="header">
-		  <div id="logo" class="noselect">
-		    <img src="../images/rabbit-tags-white.png" alt="Nift bunny mascot" style="width: 400px; max-width:90%"><br>
-		
-		    <p style="color:#372C2A">An opinionless web development framework</p>
-		
-		    <p>
-		      <a href="https://chocolatey.org/packages/nift"><img src="../images/chocolatey-icon.png" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
-		      <a href="../docs/installing.html#osx-brew"><img src="../images/brew-icon.png" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
-		      <a href="../docs/installing.html#freebsd"><img src="../images/freebsd.png" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
-		      <a href="../docs/installing.html#linux-flatpak"><img src="../images/flathub-icon.png" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
-		      <a href="../docs/installing.html#gentoo"><img src="../images/gentoo.svg" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
-		      <a href="https://snapcraft.io/nift"><img src="../images/snap-icon.png" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
-		    </p>
-		  </div>
-		</section>
+		<div align="center"  id="body">
+			<div class="menu-bars">
+			  <i id="open-menu-icon" class="fa fa-bars" onclick="show_menu()"></i>
+			</div>
+			
+			<div id="menu-page">
+			  <div class="menu-cross" >
+			    <i id="close-menu-icon" class="fa fa-xmark" onclick="close_menu()"></i>
+			  </div>
+			
+			  <div class="menu-icons noselect">
+			    <a href="https://github.com/nifty-site-manager/nsm" alt="GitHub"><i class="fa fa-2x fa-github"></i></a>&nbsp;&nbsp;
+			    <a href="https://github.com/nifty-site-manager/nsm/discussions" alt="GitHub Discussions"><i class="fa fa-2x fa-comments"></i></a>&nbsp;&nbsp;
+			    <a href="https://twitter.com/nift_dev" alt="Twitter"><i class="fa fa-2x fa-twitter"></i></a>&nbsp;&nbsp;
+			    <a href="https://discord.gg/St8QXTG" alt="Discord"><i class="fa fa-2x fa-discord"></i></a>
+			  </div>
+			  
+			  <nav id="nav" class="noselect">
+			    <ul>
+			      <li class="item li-menu li-dark">
+			        <a class="item-link" href="../index.html">Home</a>
+			      </li>
+			      <li class="item li-menu li-dark has-submenu">
+			        <a tabindex="0" href="#" class="submenu-link" onclick="toggle_submenu(0)">Documentation <i class="submenu-link-icon fa fa-angle-down fa-1x"></i></a>
+			        <ul class="submenu">
+			          <li class="subitem"><a href="../docs/installing.html">Installing</a></li>
+			          <li class="subitem"><a href="../docs/hosting.html">Hosting</a></li>
+			          <li class="subitem"><a href="../docs/commands.html">Commands</a></li>
+			          <li class="subitem"><a href="../docs/config.html">Config</a></li>
+			          <li class="subitem"><a href="../docs/template_files.html">Template Files</a></li>
+			          <li class="subitem"><a href="../docs/fns.html">Functions</a></li>
+			          <li class="subitem"><a href="../docs/types.html">Types</a></li>
+			          <li class="subitem"><a href="../docs/f++.html">f++ (scripting)</a></li>
+			          <li class="subitem"><a href="../docs/n++.html">n++ (templates)</a></li>
+			          <li class="subitem"><a href="../docs/lua.html">Lua(JIT)</a></li>
+			          <li class="subitem"><a href="../docs/exprtk.html">ExprTk</a></li>
+			          <li class="subitem"><a href="../docs/REPL.html">Interactive REPL</a></li>
+			          <li class="subitem"><a href="../docs/scripts.html">Scripts</a></li>
+			          <li class="subitem"><a href="../docs/template_languages.html">Template Languages</a></li>
+			          <li class="subitem"><a href="../docs/JSON.html">JSON Data</a></li>
+			          <li class="subitem"><a href="../docs/markdown.html">Markdown</a></li>
+			          <li class="subitem"><a href="../docs/translators.html">Translators</a></li>
+			          <li class="subitem"><a href="../docs/mathematics.html">Mathematics</a></li>
+			          <li class="subitem"><a href="../docs/code_blocks.html">Code Blocks</a></li>
+			          <li class="subitem"><a href="../docs/presentations.html">Presentations</a></li>
+			        </ul>
+			      </li>
+			      <li class="item li-menu li-dark has-submenu">
+			        <a tabindex="0" href="#" class="submenu-link" onclick="toggle_submenu(1)">Resources <i class="submenu-link-icon fa fa-angle-down fa-1x"></i></a>
+			        <ul class="submenu">
+			          <li class="subitem"><a href="tutorials.html">Tutorials</a></li>
+			          <li class="subitem"><a href="templates.html">Templates</a></li>
+			          <li class="subitem"><a href="blog_templates.html">Blog Templates</a></li>
+			          <li class="subitem"><a href="css_frameworks.html">CSS Frameworks</a></li>
+			          <li class="subitem"><a href="js_frameworks.html">JS Frameworks</a></li>
+			          <li class="subitem"><a href="links.html">Links</a></li>
+			          <li class="subitem"><a href="logos.html">Logos</a></li>
+			          <li class="subitem"><a href="promos.html">Promos</a></li>
+			          <li class="subitem"><a href="php_frameworks.html">PHP Frameworks</a></li>
+			        </ul>
+			      </li>
+			    </ul>
+			  </nav>
+			</div>
 
-		<!-- Highlights -->
-		<section id="main" class="wrapper style2">
-			<div class="title">PHP Frameworks</div>
-			<div class="container">
-				<div id="highlights" class="content">
-					<div class="row aln-center">
-						<div class="col-4 col-12-medium">
-							<section class="highlight">
-								<a href="https://laravel.com/"><img src="../images/laravel.svg" alt="Laravel logo" height="150px"/></a>
-								<h3><a href="https://laravel.com/">Laravel</a></h3>
-								<p>The PHP Framework for Web Artisans. Laravel is a web application framework with expressive, elegant syntax.</p>
-								<p><a href="https://laravel.com/docs/5.8" class="button style1">Learn More</a></p>
-							</section>
-						</div>
-						<div class="col-4 col-12-medium">
-							<section class="highlight">
-								<a href="https://symfony.com/"><img src="../images/symfony.svg" alt="Symfony logo" height="150px"/></a>
-								<h3><a href="https://symfony.com/">Symfony</a></h3>
-								<p>Symfony is a set of reusable PHP components and a PHP framework to build web applications, APIs, microservices and web services.</p>
-								<p><a href="https://symfony.com/doc/current/index.html#gsc.tab=0" class="button style1">Learn More</a></p>
-							</section>
-						</div>
-						<div class="col-4 col-12-medium">
-							<section class="highlight">
-								<a href="https://www.codeigniter.com/"><img src="../images/codeigniter.svg" alt="CodeIgniter logo" height="150px"/></a>
-								<h3><a href="https://www.codeigniter.com/">CodeIgniter</a></h3>
-								<p>A powerful PHP framework with a very small footprint, built for developers who need a simple and elegant toolkit to create full-featured web applications.</p>
-								<p><a href="https://www.codeigniter.com/docs" class="button style1">Learn More</a></p>
-							</section>
-						</div>
-						<div class="col-4 col-12-medium">
-							<section class="highlight">
-								<a href="https://cakephp.org/"><img src="../images/cakephp.svg" alt="CakePHP logo" height="150px"/></a>
-								<h3><a href="https://cakephp.org/">CakePHP</a></h3>
-								<p>An open-source web, rapid development framework that makes building web applications simpler, faster and require less code.</p>
-								<p><a href="https://book.cakephp.org/3.0/en/tutorials-and-examples.html" class="button style1">Learn More</a></p>
-							</section>
-						</div>
-						<div class="col-4 col-12-medium">
-							<section class="highlight">
-								<a href="https://phalconphp.com/en"><img src="../images/phalcon.svg" alt="Phalcon logo" height="150px"/></a>
-								<h3><a href="https://phalconphp.com/en">Phalcon</a></h3>
-								<p>A full-stack PHP framework delivered as a C-extension.</p>
-								<p><a href="https://phalcon.link/docs/en" class="button style1">Learn More</a></p>
-							</section>
-						</div>
-						<div class="col-4 col-12-medium">
-							<section class="highlight">
-								<a href="https://www.yiiframework.com/"><img src="../images/yii.svg" alt="Yii logo" height="150px"/></a>
-								<h3><a href="https://www.yiiframework.com/">Yii</a></h3>
-								<p>A fast, secure, and efficient PHP framework. Flexible yet pragmatic. Works right out of the box. Has reasonable defaults.</p>
-								<p><a href="https://www.yiiframework.com/doc/guide/2.0/en" class="button style1">Learn More</a></p>
-							</section>
-						</div>
-						<div class="col-4 col-12-medium">
-							<section class="highlight">
-								<a href="https://framework.zend.com/"><img src="../images/zend.svg" alt="Zend logo" height="150px"/></a>
-								<h3><a href="https://framework.zend.com/">Zend</a></h3>
-								<p>An end-to-end solution for rapid delivery of mobile and web applications.</p>
-								<p><a href="https://framework.zend.com/" class="button style1">Learn More</a></p>
-							</section>
-						</div>
-						<div class="col-4 col-12-medium">
-							<section class="highlight">
-								<a href="https://fuelphp.com/"><img src="../images/fuel.png" alt="Fuel logo" height="150px"/></a>
-								<h3><a href="https://fuelphp.com/">FuelPHP</a></h3>
-								<p>A fast, simple and flexible PHP 5.4+ framework, born from the best ideas of other frameworks, with a fresh start!</p>
-								<p><a href="https://fuelphp.com/dev-docs/" class="button style1">Learn More</a></p>
-							</section>
-						</div>
-						<div class="col-4 col-12-medium">
-							<section class="highlight">
-								<a href="https://phpixie.com/"><img src="../images/phpixie.svg" alt="PHPixie logo" height="150px"/></a>
-								<h3><a href="https://phpixie.com/">PHPixie</a></h3>
-								<p>Modern, Fast and Secure PHP Framework. PHPixie is easy to learn and does not rely on automagic. You will always be in charge of what's happening.</p>
-								<p><a href="https://phpixie.com/docs.html" class="button style1">Learn More</a></p>
-							</section>
-						</div>
-						<div class="col-4 col-12-medium">
-							<section class="highlight">
-								<a href="https://www.slimframework.com/"><img src="../images/slim.svg" alt="Slim logo" height="150px"/></a>
-								<h3><a href="https://www.slimframework.com/">Slim</a></h3>
-								<p>A PHP micro framework that helps you quickly write simple yet powerful web applications and APIs.</p>
-								<p><a href="https://www.slimframework.com/docs/v4/" class="button style1">Learn More</a></p>
-							</section>
+			<div id="content">
+				<!-- Header -->
+				<section class="wrapper" id="header">
+				  <div id="logo" class="noselect">
+				    <img src="../images/rabbit-tags-white.webp" alt="Nift bunny mascot" style="width: 400px; max-width:90%"><br>
+				
+				    <p style="color:#372C2A">An unopinionated web development framework</p>
+				
+				    <p>
+				      <a href="https://chocolatey.org/packages/nift"><img src="../images/chocolatey-icon.webp" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
+				      <a href="../docs/installing.html#osx-brew"><img src="../images/brew-icon.webp" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
+				      <a href="../docs/installing.html#freebsd"><img src="../images/freebsd.webp" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
+				      <a href="../docs/installing.html#linux-flatpak"><img src="../images/flathub-icon.webp" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
+				      <a href="../docs/installing.html#gentoo"><img src="../images/gentoo.webp" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
+				      <a href="https://snapcraft.io/nift"><img src="../images/snap-icon.webp" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
+				    </p>
+				  </div>
+				</section>
+
+				<!-- Highlights -->
+				<section id="main" class="wrapper style2">
+					<div class="title">PHP Frameworks</div>
+					<div class="container">
+						<div id="highlights" class="content">
+							<div class="row aln-center">
+								<div class="col-4 col-12-medium">
+									<section class="highlight">
+										<a href="https://laravel.com/"><img src="../images/laravel.svg" alt="Laravel logo" height="150px"/></a>
+										<h3><a href="https://laravel.com/">Laravel</a></h3>
+										<p>The PHP Framework for Web Artisans. Laravel is a web application framework with expressive, elegant syntax.</p>
+										<p><a href="https://laravel.com/docs/5.8" class="button style1">Learn More</a></p>
+									</section>
+								</div>
+								<div class="col-4 col-12-medium">
+									<section class="highlight">
+										<a href="https://symfony.com/"><img src="../images/symfony.svg" alt="Symfony logo" height="150px"/></a>
+										<h3><a href="https://symfony.com/">Symfony</a></h3>
+										<p>Symfony is a set of reusable PHP components and a PHP framework to build web applications, APIs, microservices and web services.</p>
+										<p><a href="https://symfony.com/doc/current/index.html#gsc.tab=0" class="button style1">Learn More</a></p>
+									</section>
+								</div>
+								<div class="col-4 col-12-medium">
+									<section class="highlight">
+										<a href="https://www.codeigniter.com/"><img src="../images/codeigniter.svg" alt="CodeIgniter logo" height="150px"/></a>
+										<h3><a href="https://www.codeigniter.com/">CodeIgniter</a></h3>
+										<p>A powerful PHP framework with a very small footprint, built for developers who need a simple and elegant toolkit to create full-featured web applications.</p>
+										<p><a href="https://www.codeigniter.com/docs" class="button style1">Learn More</a></p>
+									</section>
+								</div>
+								<div class="col-4 col-12-medium">
+									<section class="highlight">
+										<a href="https://cakephp.org/"><img src="../images/cakephp.svg" alt="CakePHP logo" height="150px"/></a>
+										<h3><a href="https://cakephp.org/">CakePHP</a></h3>
+										<p>An open-source web, rapid development framework that makes building web applications simpler, faster and require less code.</p>
+										<p><a href="https://book.cakephp.org/3.0/en/tutorials-and-examples.html" class="button style1">Learn More</a></p>
+									</section>
+								</div>
+								<div class="col-4 col-12-medium">
+									<section class="highlight">
+										<a href="https://phalconphp.com/en"><img src="../images/phalcon.svg" alt="Phalcon logo" height="150px"/></a>
+										<h3><a href="https://phalconphp.com/en">Phalcon</a></h3>
+										<p>A full-stack PHP framework delivered as a C-extension.</p>
+										<p><a href="https://phalcon.link/docs/en" class="button style1">Learn More</a></p>
+									</section>
+								</div>
+								<div class="col-4 col-12-medium">
+									<section class="highlight">
+										<a href="https://www.yiiframework.com/"><img src="../images/yii.svg" alt="Yii logo" height="150px"/></a>
+										<h3><a href="https://www.yiiframework.com/">Yii</a></h3>
+										<p>A fast, secure, and efficient PHP framework. Flexible yet pragmatic. Works right out of the box. Has reasonable defaults.</p>
+										<p><a href="https://www.yiiframework.com/doc/guide/2.0/en" class="button style1">Learn More</a></p>
+									</section>
+								</div>
+								<div class="col-4 col-12-medium">
+									<section class="highlight">
+										<a href="https://framework.zend.com/"><img src="../images/zend.svg" alt="Zend logo" height="150px"/></a>
+										<h3><a href="https://framework.zend.com/">Zend</a></h3>
+										<p>An end-to-end solution for rapid delivery of mobile and web applications.</p>
+										<p><a href="https://framework.zend.com/" class="button style1">Learn More</a></p>
+									</section>
+								</div>
+								<div class="col-4 col-12-medium">
+									<section class="highlight">
+										<a href="https://fuelphp.com/"><img src="../images/fuel.png" alt="Fuel logo" height="150px"/></a>
+										<h3><a href="https://fuelphp.com/">FuelPHP</a></h3>
+										<p>A fast, simple and flexible PHP 5.4+ framework, born from the best ideas of other frameworks, with a fresh start!</p>
+										<p><a href="https://fuelphp.com/dev-docs/" class="button style1">Learn More</a></p>
+									</section>
+								</div>
+								<div class="col-4 col-12-medium">
+									<section class="highlight">
+										<a href="https://phpixie.com/"><img src="../images/phpixie.svg" alt="PHPixie logo" height="150px"/></a>
+										<h3><a href="https://phpixie.com/">PHPixie</a></h3>
+										<p>Modern, Fast and Secure PHP Framework. PHPixie is easy to learn and does not rely on automagic. You will always be in charge of what's happening.</p>
+										<p><a href="https://phpixie.com/docs.html" class="button style1">Learn More</a></p>
+									</section>
+								</div>
+								<div class="col-4 col-12-medium">
+									<section class="highlight">
+										<a href="https://www.slimframework.com/"><img src="../images/slim.svg" alt="Slim logo" height="150px"/></a>
+										<h3><a href="https://www.slimframework.com/">Slim</a></h3>
+										<p>A PHP micro framework that helps you quickly write simple yet powerful web applications and APIs.</p>
+										<p><a href="https://www.slimframework.com/docs/v4/" class="button style1">Learn More</a></p>
+									</section>
+								</div>
+							</div>
 						</div>
 					</div>
-				</div>
-			</div>
-		</section>
-		
-		
+				</section>
+				
+				
 
-		<!-- Footer -->
-		<section id="footer" class="wrapper">
-			<div class="title">
-				<img src="../images/rabbit-tags-icon.png" alt="Nift rabbit mascot with code tag boomerangs" loading="lazy" width="200" style="margin-top:20px; border-radius: 4px">
+				<!-- Footer -->
+				<section id="footer" class="wrapper">
+					<div class="title">
+						<img src="../images/rabbit-tags-icon.webp" alt="Nift rabbit mascot with code tag boomerangs" loading="lazy" width="200" style="margin-top:20px; border-radius: 4px">
+					</div>
+				
+					<div class="container">
+						<div id="copyright" class="noselect">
+							<ul>
+								<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
+								<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
+								<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
+							</ul> <br>
+				
+							<ul>
+								<li><a href="../tos.html">Terms of Service</a></li>
+								<li><a href="../privacy_policy.html">Privacy Policy</a></li>
+							</ul> <br>
+				
+							<ul>
+								<li><span>&copy;</span> 2015-<span name="cyear"></span></li>
+							</ul>
+						</div>
+					</div>
+				</section>
 			</div>
-		
-			<div class="container">
-				<div id="copyright" class="noselect">
-					<ul>
-						<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
-						<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
-						<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
-					</ul> <br>
-		
-					<ul>
-						<li><a href="../tos.html">Terms of Service</a></li>
-						<li><a href="../privacy_policy.html">Privacy Policy</a></li>
-					</ul> <br>
-		
-					<ul>
-						<li><span>&copy;</span> 2015-<span name="cyear"></span></li>
-					</ul>
-				</div>
-			</div>
-		</section>
+		</div>
 
-		<script async src="../assets/js/menu.js"></script>
+		<script type="text/javascript" src="../assets/js/bundled.js"></script>
+
 		<script async src="../assets/js/copy-pre.js"></script>
 		<script async src="../assets/js/process-md-blocks.js"></script>
 		<script async src="../assets/js/showdown.min.js"></script>
@@ -261,3 +274,4 @@
 		</script>
 	</body>
 </html>
+

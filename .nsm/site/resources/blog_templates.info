@@ -1,4 +1,4 @@
-06:20:59 Wednesday September 14 2022
+16:37:30 Sunday December 04 2022
 'resources/blog_templates'
 'blog_templates'
 'template/page.template'
@@ -9,5 +9,6 @@
 'content/resources/tables/html5up_paginate_blogs.table'
 'template/footer.content'
 'template/head.content'
+'template/header.content'
 'template/menu.content'
 'template/page.template'

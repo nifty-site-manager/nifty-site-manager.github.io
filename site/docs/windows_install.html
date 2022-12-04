@@ -3,283 +3,296 @@
 	<head>
 		<title>Nift - windows_install</title>
 		<meta name="description" 
-		      content="Nift is an opinionless web development framework, specialising
-		            in static websites with serverless backends. It's lightning fast, 
-		            cross-platform, opinionless, open source (MIT license) and 
-		            developed from the ground up in C++. Use it for any of your 
-		            personal or commercial projects!">
+		      content="Nift is an opinionless web development framework. It's 
+		            lightning fast, cross-platform, opinionless, open source 
+		            (MIT license) and developed from the ground up in C++. Use 
+		            it for any of your personal or commercial projects!">
 		
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
-		<link rel="stylesheet" href="../assets/css/pagestyle.css">
-		<link rel="stylesheet" href="../assets/css/menu.css">
-		<link rel="stylesheet" href="../assets/css/font-awesome.css">
+		<link rel="stylesheet" href="../assets/css/bundled.css">
 		<link rel="stylesheet" href="../assets/css/pre.css">
 		<link rel="stylesheet" href="../assets/css/extra-fonts.css"><link rel='icon' type='image/png' href='../images/favicon.png'>
 	</head>
 
 	<body>
-		<nav id="nav" class="noselect">
-		  <ul class="menu">
-		    <li class="nav-space-left"></li>
-		    <li class="item icons">
-		      <a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a>
-		      <a href="https://github.com/nifty-site-manager/nsm/discussions" title="GitHub Discussions" class="gh"><i class="fas fa-comment-dots fa-2x"></i></a>
-		      <a href="https://twitter.com/nift_dev" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a>
-		      <a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a>
-		    </li>
-		    <a href="../index.html" class="item hover-hl"><li>Home</li></a>
-		    <li class="item hover-hl has-submenu" onclick="toggleItem(0)">
-		      <a tabindex="0" class="item-link">Docs</a>
-		      <ul class="submenu">
-		        <li class="subitem"><a href="installing.html">Installing</a></li>
-		        <li class="subitem"><a href="hosting.html">Hosting</a></li>
-		        <li class="subitem"><a href="commands.html">Commands</a></li>
-		        <li class="subitem"><a href="config.html">Config</a></li>
-		        <li class="subitem"><a href="template_files.html">Template Files</a></li>
-		        <li class="subitem"><a href="fns.html">Functions</a></li>
-		        <li class="subitem"><a href="types.html">Types</a></li>
-		        <li class="subitem"><a href="f++.html">f++ (scripting)</a></li>
-		        <li class="subitem"><a href="n++.html">n++ (templates)</a></li>
-		        <li class="subitem"><a href="lua.html">Lua(JIT)</a></li>
-		        <li class="subitem"><a href="exprtk.html">ExprTk</a></li>
-		        <li class="subitem"><a href="REPL.html">Interactive REPL</a></li>
-		        <li class="subitem"><a href="scripts.html">Scripts</a></li>
-		        <li class="subitem"><a href="template_languages.html">Template Languages</a></li>
-		        <li class="subitem"><a href="JSON.html">JSON Data</a></li>
-		        <li class="subitem"><a href="markdown.html">Markdown</a></li>
-		        <li class="subitem"><a href="translators.html">Translators</a></li>
-		        <li class="subitem"><a href="mathematics.html">Mathematics</a></li>
-		        <li class="subitem"><a href="code_blocks.html">Code Blocks</a></li>
-		        <li class="subitem"><a href="presentations.html">Presentations</a></li>
-		      </ul>
-		    </li>
-		    <li class="item hover-hl has-submenu" onclick="toggleItem(1)">
-		      <a tabindex="0" class="item-link">Resources</a>
-		      <ul class="submenu">
-		        <li class="subitem"><a href="../resources/tutorials.html">Tutorials</a></li>
-		        <li class="subitem"><a href="../resources/templates.html">Templates</a></li>
-		        <li class="subitem"><a href="../resources/blog_templates.html">Blog Templates</a></li>
-		        <li class="subitem"><a href="../resources/css_frameworks.html">CSS Frameworks</a></li>
-		        <li class="subitem"><a href="../resources/js_frameworks.html">JS Frameworks</a></li>
-		        <li class="subitem"><a href="../resources/links.html">Links</a></li>
-		        <li class="subitem"><a href="../resources/logos.html">Logos</a></li>
-		        <li class="subitem"><a href="../resources/promos.html">Promos</a></li>
-		        <li class="subitem"><a href="../resources/php_frameworks.html">PHP Frameworks</a></li>
-		      </ul>
-		    </li>
-		    <li class="toggle"><a href="#" onclick="toggleMenu()" id="menu-link"><i class="fas fa-bars fa-2x"></i></a></li>
-		  </ul>
-		</nav>
-		
-		<!-- Header -->
-		<section class="wrapper" id="header">
-		  <div id="logo" class="noselect">
-		    <img src="../images/rabbit-tags-white.png" alt="Nift bunny mascot" style="width: 400px; max-width:90%"><br>
-		
-		    <p style="color:#372C2A">An opinionless web development framework</p>
-		
-		    <p>
-		      <a href="https://chocolatey.org/packages/nift"><img src="../images/chocolatey-icon.png" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
-		      <a href="installing.html#osx-brew"><img src="../images/brew-icon.png" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
-		      <a href="installing.html#freebsd"><img src="../images/freebsd.png" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
-		      <a href="installing.html#linux-flatpak"><img src="../images/flathub-icon.png" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
-		      <a href="installing.html#gentoo"><img src="../images/gentoo.svg" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
-		      <a href="https://snapcraft.io/nift"><img src="../images/snap-icon.png" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
-		    </p>
-		  </div>
-		</section>
+		<div align="center"  id="body">
+			<div class="menu-bars">
+			  <i id="open-menu-icon" class="fa fa-bars" onclick="show_menu()"></i>
+			</div>
+			
+			<div id="menu-page">
+			  <div class="menu-cross" >
+			    <i id="close-menu-icon" class="fa fa-xmark" onclick="close_menu()"></i>
+			  </div>
+			
+			  <div class="menu-icons noselect">
+			    <a href="https://github.com/nifty-site-manager/nsm" alt="GitHub"><i class="fa fa-2x fa-github"></i></a>&nbsp;&nbsp;
+			    <a href="https://github.com/nifty-site-manager/nsm/discussions" alt="GitHub Discussions"><i class="fa fa-2x fa-comments"></i></a>&nbsp;&nbsp;
+			    <a href="https://twitter.com/nift_dev" alt="Twitter"><i class="fa fa-2x fa-twitter"></i></a>&nbsp;&nbsp;
+			    <a href="https://discord.gg/St8QXTG" alt="Discord"><i class="fa fa-2x fa-discord"></i></a>
+			  </div>
+			  
+			  <nav id="nav" class="noselect">
+			    <ul>
+			      <li class="item li-menu li-dark">
+			        <a class="item-link" href="../index.html">Home</a>
+			      </li>
+			      <li class="item li-menu li-dark has-submenu">
+			        <a tabindex="0" href="#" class="submenu-link" onclick="toggle_submenu(0)">Documentation <i class="submenu-link-icon fa fa-angle-down fa-1x"></i></a>
+			        <ul class="submenu">
+			          <li class="subitem"><a href="installing.html">Installing</a></li>
+			          <li class="subitem"><a href="hosting.html">Hosting</a></li>
+			          <li class="subitem"><a href="commands.html">Commands</a></li>
+			          <li class="subitem"><a href="config.html">Config</a></li>
+			          <li class="subitem"><a href="template_files.html">Template Files</a></li>
+			          <li class="subitem"><a href="fns.html">Functions</a></li>
+			          <li class="subitem"><a href="types.html">Types</a></li>
+			          <li class="subitem"><a href="f++.html">f++ (scripting)</a></li>
+			          <li class="subitem"><a href="n++.html">n++ (templates)</a></li>
+			          <li class="subitem"><a href="lua.html">Lua(JIT)</a></li>
+			          <li class="subitem"><a href="exprtk.html">ExprTk</a></li>
+			          <li class="subitem"><a href="REPL.html">Interactive REPL</a></li>
+			          <li class="subitem"><a href="scripts.html">Scripts</a></li>
+			          <li class="subitem"><a href="template_languages.html">Template Languages</a></li>
+			          <li class="subitem"><a href="JSON.html">JSON Data</a></li>
+			          <li class="subitem"><a href="markdown.html">Markdown</a></li>
+			          <li class="subitem"><a href="translators.html">Translators</a></li>
+			          <li class="subitem"><a href="mathematics.html">Mathematics</a></li>
+			          <li class="subitem"><a href="code_blocks.html">Code Blocks</a></li>
+			          <li class="subitem"><a href="presentations.html">Presentations</a></li>
+			        </ul>
+			      </li>
+			      <li class="item li-menu li-dark has-submenu">
+			        <a tabindex="0" href="#" class="submenu-link" onclick="toggle_submenu(1)">Resources <i class="submenu-link-icon fa fa-angle-down fa-1x"></i></a>
+			        <ul class="submenu">
+			          <li class="subitem"><a href="../resources/tutorials.html">Tutorials</a></li>
+			          <li class="subitem"><a href="../resources/templates.html">Templates</a></li>
+			          <li class="subitem"><a href="../resources/blog_templates.html">Blog Templates</a></li>
+			          <li class="subitem"><a href="../resources/css_frameworks.html">CSS Frameworks</a></li>
+			          <li class="subitem"><a href="../resources/js_frameworks.html">JS Frameworks</a></li>
+			          <li class="subitem"><a href="../resources/links.html">Links</a></li>
+			          <li class="subitem"><a href="../resources/logos.html">Logos</a></li>
+			          <li class="subitem"><a href="../resources/promos.html">Promos</a></li>
+			          <li class="subitem"><a href="../resources/php_frameworks.html">PHP Frameworks</a></li>
+			        </ul>
+			      </li>
+			    </ul>
+			  </nav>
+			</div>
 
-		<!-- Main -->
-		<section id="main" class="wrapper style2">
-			<div class="title">Windows Install</div>
-			<div class="container">
-				<!-- Features -->
-				<section id="features">
-					<div class="content">
-						<h4>
-							Syntax highlighting with Notepad++
-						</h4>
-						<p>
-							It is fairly straight forward to set <mono>Notepad++</mono> as the default program to open/modify your <mono>*.content</mono> and <mono>*.template</mono> files. Further if you go to <mono>Settings -> Style Configurator...</mono> then select language <mono>HTML</mono> you can add <mono>content template</mono> to the <mono>User Ext:</mono> text box which will then have <mono>Notepad++</mono> automatically use html syntax highlighting for all <mono>*.content</mono> and <mono>*.template</mono> files (pretty nifty!).
-						</p>
-		
-						<h4>
-							Windows installation using <mono>Chocolatey</mono>
-						</h4>
-						<center><img src="../images/chocolatey.svg" alt="Chocolatey logo" width=350px style="max-width:70%; margin-top: 20px; margin-bottom: 20px"></center>
-		
-						<p>
-							You can install <mono>Nift</mono> on Windows using <mono>Chocolatey</mono>. First <a href="https://chocolatey.org/docs/installation">install</a> <mono>Chocolatey</mono>, then follow the instructions <a href="https://chocolatey.org/packages/nift">here</a>, or alternatively enter:
-						</p>
-		
-						<div align="center">
-		<pre>
+			<div id="content">
+				<!-- Header -->
+				<section class="wrapper" id="header">
+				  <div id="logo" class="noselect">
+				    <img src="../images/rabbit-tags-white.webp" alt="Nift bunny mascot" style="width: 400px; max-width:90%"><br>
+				
+				    <p style="color:#372C2A">An unopinionated web development framework</p>
+				
+				    <p>
+				      <a href="https://chocolatey.org/packages/nift"><img src="../images/chocolatey-icon.webp" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
+				      <a href="installing.html#osx-brew"><img src="../images/brew-icon.webp" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
+				      <a href="installing.html#freebsd"><img src="../images/freebsd.webp" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
+				      <a href="installing.html#linux-flatpak"><img src="../images/flathub-icon.webp" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
+				      <a href="installing.html#gentoo"><img src="../images/gentoo.webp" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
+				      <a href="https://snapcraft.io/nift"><img src="../images/snap-icon.webp" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
+				    </p>
+				  </div>
+				</section>
+
+				<!-- Main -->
+				<section id="main" class="wrapper style2">
+					<div class="title">Windows Install</div>
+					<div class="container">
+						<!-- Features -->
+						<section id="features">
+							<div class="content">
+								<h4>
+									Syntax highlighting with Notepad++
+								</h4>
+								<p>
+									It is fairly straight forward to set <mono>Notepad++</mono> as the default program to open/modify your <mono>*.content</mono> and <mono>*.template</mono> files. Further if you go to <mono>Settings -> Style Configurator...</mono> then select language <mono>HTML</mono> you can add <mono>content template</mono> to the <mono>User Ext:</mono> text box which will then have <mono>Notepad++</mono> automatically use html syntax highlighting for all <mono>*.content</mono> and <mono>*.template</mono> files (pretty nifty!).
+								</p>
+				
+								<h4>
+									Windows installation using <mono>Chocolatey</mono>
+								</h4>
+								<center><img src="../images/chocolatey.svg" alt="Chocolatey logo" width=350px style="max-width:70%; margin-top: 20px; margin-bottom: 20px"></center>
+				
+								<p>
+									You can install <mono>Nift</mono> on Windows using <mono>Chocolatey</mono>. First <a href="https://chocolatey.org/docs/installation">install</a> <mono>Chocolatey</mono>, then follow the instructions <a href="https://chocolatey.org/packages/nift">here</a>, or alternatively enter:
+								</p>
+				
+								<div align="center">
+				<pre>
 choco install nift
 </pre>
-						</div>
-		
-						<p>
-							You can find compiler options including building with a normal version of <mono>Lua</mono> on the documentation page for <a href="make.html">make</a>.
-						</p>
-		
-						<p>
-							To uninstall <mono>Nift</mono> enter <mono>choco uninstall nift</mono>.
-						</p>
-		
-						<h4>
-							Windows installation from executable
-						</h4>
-		
-						<p>
-							Download the latest <mono>Windows.zip</mono> from <a href="https://github.com/nifty-site-manager/nsm/releases">releases</a> then place the extracted versions of <mono>lua51.dll</mono>, <mono>nift.exe</mono> and <mono>nsm.exe</mono> anywhere in your user's path, eg. in <mono>C:\Windows\system32</mono>.
-						</p>
-		
-						<h4>
-							Installing <mono>Nift</mono> on Windows from source using Command Prompt
-						</h4>
-						<p>
-							Download <a href="https://gitlab.com/nifty-site-manager/nsm/repository/master/archive.zip">nsm-master-*.zip</a>, then follow these steps to compile and install:
-							<ol>
-								<li>Install <a href="http://gnuwin32.sourceforge.net/packages/make.htm">GnuWin32</a> (Make for Windows) [or <mono>choco install gnuwin</mono>] and <a href="https://sourceforge.net/projects/mingw-w64/">mingw</a> [or <mono>choco install mingw</mono>];</li>
-								<li>Open both a Command Prompt window and a Command Prompt (Admin) window (right click command prompt and select <mono>run as administrator</mono>);</li>
-								<li>Enter <mono>path=%path%;C:\Program Files (x86)\GnuWin32\bin;</mono> in to both command prompts to add <mono>make</mono> to your path;</li>
-								<li>In both command prompts change directory to where the nsm source code is;</li>
-								<li>From the regular command prompt enter <mono>make</mono>;</li>
-								<li>Move <mono>nsm.exe</mono> and <mono>nift.exe</mono> to somewhere in your user's path, eg. <mono>C:\Windows\system32</mono>;</li>
-								<li>Delete both the file <mono>nsm-master-*.zip</mono> and the directory <mono>nsm-master-*</mono> containing the uncompiled/source code.</li>
-							</ol>
-		
-							Note you may need to open a new command prompt window for <mono>nsm</mono> to start working.
-						</p>
-		
-						<p>
-							<b>Note:</b> See <a href="make.html">here</a> for information about the variables you can pass to the Makefile when compiling <mono>Nift</mono>.
-						</p>
-		
-						<h4>
-							Uninstalling <mono>Nift</mono>
-						</h4>
-						<p>
-							Should you ever want to remove <mono>nsm</mono> from your machine, delete <mono>nsm.exe</mono> and <mono>nift.exe</mono> from wherever you installed them.
-						</p>
-		
-						<h4>
-							Installing <mono>Nift</mono> on Windows from source using Git Bash
-						</h4>
-						<h4>
-							Installing a <mono>c++</mono> compiler
-						</h4>
-		
-						<p>
-							If you do not already have a <mono>c++</mono> compiler then you will need to install one.
-						</p>
-		
-						<p>
-							On Windows I typically just use <a href="http://www.codeblocks.org/">code::blocks</a> which you can get to download/install with MinGW as the <mono>c++</mono> compiler.
-						</p>
-		
-						<h4>
-							Installing <mono>Git Bash</mono>, <mono>mingw</mono> and <mono>make</mono>
-						</h4>
-		
-						Install <a href="https://git-scm.com/downloads">Git</a> [or <mono>choco install git</mono>, which should come with Git Bash as well, and install <a href="https://sourceforge.net/projects/mingw-w64/">mingw</a> [or <mono>choco install mingw</mono>]. 
-		
-						Get make from <a href="https://gist.github.com/evanwill/0207876c3243bbb6863e65ec5dc3f058">here</a> [or <mono>choco install make</mono>], ie:
-						<ol>
-							<li>
-								Go to <a href="https://sourceforge.net/projects/ezwinports/files/">here</a>;
-							</li>
-							<li>
-								download <mono>make-<i>version</i>-without-guile-w32-bin.zip</mono> (get the version without guile);
-							</li>
-							<li>
-								Extract the contents of the zip file;
-							</li>
-							<li>
-								Copy contents to <mono>Git/mingw64</mono>.
-							</li>
-						</ol>
-		
-						<h4>
-							Installing <mono>Nift</mono>
-						</h4>
-		
-						Download <a href="https://gitlab.com/nifty-site-manager/nsm/repository/master/archive.zip">nsm-master-*.zip</a>, then follow these steps to compile and install:
-		
-						<ol>
-							<li>
-								Extract <mono>nsm-master-*</mono> from <mono>nsm-master-*.zip</mono>;
-							</li>
-							<li>
-								Open a <mono>Git Bash</mono> window (right click the desktop for example) and change directory to <mono>~/Downloads/nsm-master-*</mono>;
-							</li>
-							<li>
-								Compile <mono>nsm</mono> by running <mono>make</mono>;
-							</li>
-							<li>
-								Install <mono>nsm</mono> by running <mono>make git-bash-install</mono> (note - you may need to open a new terminal window for nsm installation to be recognised);
-							</li>
-							<li>
-								Delete both the file <mono>nsm-master-*.zip</mono> and the directory <mono>nsm-master-*</mono> containing the uncompiled code. 
-							</li>
-						</ol>
-		
-						<p>
-							For example, if you unzipped <mono>nsm-master-*</mono> inside your downloads folder, then steps 1-4 are achieved by entering the following into your terminal window:
-		
-							<div align="center">
-		<pre class="prettyprint inline rounded">
+								</div>
+				
+								<p>
+									You can find compiler options including building with a normal version of <mono>Lua</mono> on the documentation page for <a href="make.html">make</a>.
+								</p>
+				
+								<p>
+									To uninstall <mono>Nift</mono> enter <mono>choco uninstall nift</mono>.
+								</p>
+				
+								<h4>
+									Windows installation from executable
+								</h4>
+				
+								<p>
+									Download the latest <mono>Windows.zip</mono> from <a href="https://github.com/nifty-site-manager/nsm/releases">releases</a> then place the extracted versions of <mono>lua51.dll</mono>, <mono>nift.exe</mono> and <mono>nsm.exe</mono> anywhere in your user's path, eg. in <mono>C:\Windows\system32</mono>.
+								</p>
+				
+								<h4>
+									Installing <mono>Nift</mono> on Windows from source using Command Prompt
+								</h4>
+								<p>
+									Download <a href="https://gitlab.com/nifty-site-manager/nsm/repository/master/archive.zip">nsm-master-*.zip</a>, then follow these steps to compile and install:
+									<ol>
+										<li>Install <a href="http://gnuwin32.sourceforge.net/packages/make.htm">GnuWin32</a> (Make for Windows) [or <mono>choco install gnuwin</mono>] and <a href="https://sourceforge.net/projects/mingw-w64/">mingw</a> [or <mono>choco install mingw</mono>];</li>
+										<li>Open both a Command Prompt window and a Command Prompt (Admin) window (right click command prompt and select <mono>run as administrator</mono>);</li>
+										<li>Enter <mono>path=%path%;C:\Program Files (x86)\GnuWin32\bin;</mono> in to both command prompts to add <mono>make</mono> to your path;</li>
+										<li>In both command prompts change directory to where the nsm source code is;</li>
+										<li>From the regular command prompt enter <mono>make</mono>;</li>
+										<li>Move <mono>nsm.exe</mono> and <mono>nift.exe</mono> to somewhere in your user's path, eg. <mono>C:\Windows\system32</mono>;</li>
+										<li>Delete both the file <mono>nsm-master-*.zip</mono> and the directory <mono>nsm-master-*</mono> containing the uncompiled/source code.</li>
+									</ol>
+				
+									Note you may need to open a new command prompt window for <mono>nsm</mono> to start working.
+								</p>
+				
+								<p>
+									<b>Note:</b> See <a href="make.html">here</a> for information about the variables you can pass to the Makefile when compiling <mono>Nift</mono>.
+								</p>
+				
+								<h4>
+									Uninstalling <mono>Nift</mono>
+								</h4>
+								<p>
+									Should you ever want to remove <mono>nsm</mono> from your machine, delete <mono>nsm.exe</mono> and <mono>nift.exe</mono> from wherever you installed them.
+								</p>
+				
+								<h4>
+									Installing <mono>Nift</mono> on Windows from source using Git Bash
+								</h4>
+								<h4>
+									Installing a <mono>c++</mono> compiler
+								</h4>
+				
+								<p>
+									If you do not already have a <mono>c++</mono> compiler then you will need to install one.
+								</p>
+				
+								<p>
+									On Windows I typically just use <a href="http://www.codeblocks.org/">code::blocks</a> which you can get to download/install with MinGW as the <mono>c++</mono> compiler.
+								</p>
+				
+								<h4>
+									Installing <mono>Git Bash</mono>, <mono>mingw</mono> and <mono>make</mono>
+								</h4>
+				
+								Install <a href="https://git-scm.com/downloads">Git</a> [or <mono>choco install git</mono>, which should come with Git Bash as well, and install <a href="https://sourceforge.net/projects/mingw-w64/">mingw</a> [or <mono>choco install mingw</mono>]. 
+				
+								Get make from <a href="https://gist.github.com/evanwill/0207876c3243bbb6863e65ec5dc3f058">here</a> [or <mono>choco install make</mono>], ie:
+								<ol>
+									<li>
+										Go to <a href="https://sourceforge.net/projects/ezwinports/files/">here</a>;
+									</li>
+									<li>
+										download <mono>make-<i>version</i>-without-guile-w32-bin.zip</mono> (get the version without guile);
+									</li>
+									<li>
+										Extract the contents of the zip file;
+									</li>
+									<li>
+										Copy contents to <mono>Git/mingw64</mono>.
+									</li>
+								</ol>
+				
+								<h4>
+									Installing <mono>Nift</mono>
+								</h4>
+				
+								Download <a href="https://gitlab.com/nifty-site-manager/nsm/repository/master/archive.zip">nsm-master-*.zip</a>, then follow these steps to compile and install:
+				
+								<ol>
+									<li>
+										Extract <mono>nsm-master-*</mono> from <mono>nsm-master-*.zip</mono>;
+									</li>
+									<li>
+										Open a <mono>Git Bash</mono> window (right click the desktop for example) and change directory to <mono>~/Downloads/nsm-master-*</mono>;
+									</li>
+									<li>
+										Compile <mono>nsm</mono> by running <mono>make</mono>;
+									</li>
+									<li>
+										Install <mono>nsm</mono> by running <mono>make git-bash-install</mono> (note - you may need to open a new terminal window for nsm installation to be recognised);
+									</li>
+									<li>
+										Delete both the file <mono>nsm-master-*.zip</mono> and the directory <mono>nsm-master-*</mono> containing the uncompiled code. 
+									</li>
+								</ol>
+				
+								<p>
+									For example, if you unzipped <mono>nsm-master-*</mono> inside your downloads folder, then steps 1-4 are achieved by entering the following into your terminal window:
+				
+									<div align="center">
+				<pre class="prettyprint inline rounded">
 cd ~/Downloads/nsm-master-*
 make
 make git-bash-install
 </pre>
+									</div>
+								</p>
+				
+								<p>
+									You should now have a functioning version of <mono>nsm</mono> installed on your Windows machine. 
+								</p>
+				
+								<h4>
+									Uninstalling <mono>Nift</mono>
+								</h4>
+								<p>
+									Should you ever want to remove <mono>nsm</mono> from your machine, either run <mono>make git-bash-uninstall</mono> from the source code directory or run <mono>sudo rm -f ~/bin/nsm ~/bin/nift</mono> from any Git Bash terminal window.
+								</p>
 							</div>
-						</p>
-		
-						<p>
-							You should now have a functioning version of <mono>nsm</mono> installed on your Windows machine. 
-						</p>
-		
-						<h4>
-							Uninstalling <mono>Nift</mono>
-						</h4>
-						<p>
-							Should you ever want to remove <mono>nsm</mono> from your machine, either run <mono>make git-bash-uninstall</mono> from the source code directory or run <mono>sudo rm -f ~/bin/nsm ~/bin/nift</mono> from any Git Bash terminal window.
-						</p>
+						</section>
+					</div>
+				</section>
+
+				<!-- Footer -->
+				<section id="footer" class="wrapper">
+					<div class="title">
+						<img src="../images/rabbit-tags-icon.webp" alt="Nift rabbit mascot with code tag boomerangs" loading="lazy" width="200" style="margin-top:20px; border-radius: 4px">
+					</div>
+				
+					<div class="container">
+						<div id="copyright" class="noselect">
+							<ul>
+								<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
+								<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
+								<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
+							</ul> <br>
+				
+							<ul>
+								<li><a href="../tos.html">Terms of Service</a></li>
+								<li><a href="../privacy_policy.html">Privacy Policy</a></li>
+							</ul> <br>
+				
+							<ul>
+								<li><span>&copy;</span> 2015-<span name="cyear"></span></li>
+							</ul>
+						</div>
 					</div>
 				</section>
 			</div>
-		</section>
+		</div>
 
-		<!-- Footer -->
-		<section id="footer" class="wrapper">
-			<div class="title">
-				<img src="../images/rabbit-tags-icon.png" alt="Nift rabbit mascot with code tag boomerangs" loading="lazy" width="200" style="margin-top:20px; border-radius: 4px">
-			</div>
-		
-			<div class="container">
-				<div id="copyright" class="noselect">
-					<ul>
-						<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
-						<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
-						<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
-					</ul> <br>
-		
-					<ul>
-						<li><a href="../tos.html">Terms of Service</a></li>
-						<li><a href="../privacy_policy.html">Privacy Policy</a></li>
-					</ul> <br>
-		
-					<ul>
-						<li><span>&copy;</span> 2015-<span name="cyear"></span></li>
-					</ul>
-				</div>
-			</div>
-		</section>
+		<script type="text/javascript" src="../assets/js/bundled.js"></script>
 
-		<script async src="../assets/js/menu.js"></script>
 		<script async src="../assets/js/copy-pre.js"></script>
 		<script async src="../assets/js/process-md-blocks.js"></script>
 		<script async src="../assets/js/showdown.min.js"></script>
@@ -330,3 +343,4 @@ make git-bash-install
 		</script>
 	</body>
 </html>
+

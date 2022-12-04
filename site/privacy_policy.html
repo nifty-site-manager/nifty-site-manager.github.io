@@ -3,182 +3,195 @@
 	<head>
 		<title>Nift - privacy_policy</title>
 		<meta name="description" 
-		      content="Nift is an opinionless web development framework, specialising
-		            in static websites with serverless backends. It's lightning fast, 
-		            cross-platform, opinionless, open source (MIT license) and 
-		            developed from the ground up in C++. Use it for any of your 
-		            personal or commercial projects!">
+		      content="Nift is an opinionless web development framework. It's 
+		            lightning fast, cross-platform, opinionless, open source 
+		            (MIT license) and developed from the ground up in C++. Use 
+		            it for any of your personal or commercial projects!">
 		
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
-		<link rel="stylesheet" href="assets/css/pagestyle.css">
-		<link rel="stylesheet" href="assets/css/menu.css">
-		<link rel="stylesheet" href="assets/css/font-awesome.css">
+		<link rel="stylesheet" href="assets/css/bundled.css">
 		<link rel="stylesheet" href="assets/css/pre.css">
 		<link rel="stylesheet" href="assets/css/extra-fonts.css"><link rel='icon' type='image/png' href='images/favicon.png'>
 	</head>
 
 	<body>
-		<nav id="nav" class="noselect">
-		  <ul class="menu">
-		    <li class="nav-space-left"></li>
-		    <li class="item icons">
-		      <a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a>
-		      <a href="https://github.com/nifty-site-manager/nsm/discussions" title="GitHub Discussions" class="gh"><i class="fas fa-comment-dots fa-2x"></i></a>
-		      <a href="https://twitter.com/nift_dev" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a>
-		      <a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a>
-		    </li>
-		    <a href="index.html" class="item hover-hl"><li>Home</li></a>
-		    <li class="item hover-hl has-submenu" onclick="toggleItem(0)">
-		      <a tabindex="0" class="item-link">Docs</a>
-		      <ul class="submenu">
-		        <li class="subitem"><a href="docs/installing.html">Installing</a></li>
-		        <li class="subitem"><a href="docs/hosting.html">Hosting</a></li>
-		        <li class="subitem"><a href="docs/commands.html">Commands</a></li>
-		        <li class="subitem"><a href="docs/config.html">Config</a></li>
-		        <li class="subitem"><a href="docs/template_files.html">Template Files</a></li>
-		        <li class="subitem"><a href="docs/fns.html">Functions</a></li>
-		        <li class="subitem"><a href="docs/types.html">Types</a></li>
-		        <li class="subitem"><a href="docs/f++.html">f++ (scripting)</a></li>
-		        <li class="subitem"><a href="docs/n++.html">n++ (templates)</a></li>
-		        <li class="subitem"><a href="docs/lua.html">Lua(JIT)</a></li>
-		        <li class="subitem"><a href="docs/exprtk.html">ExprTk</a></li>
-		        <li class="subitem"><a href="docs/REPL.html">Interactive REPL</a></li>
-		        <li class="subitem"><a href="docs/scripts.html">Scripts</a></li>
-		        <li class="subitem"><a href="docs/template_languages.html">Template Languages</a></li>
-		        <li class="subitem"><a href="docs/JSON.html">JSON Data</a></li>
-		        <li class="subitem"><a href="docs/markdown.html">Markdown</a></li>
-		        <li class="subitem"><a href="docs/translators.html">Translators</a></li>
-		        <li class="subitem"><a href="docs/mathematics.html">Mathematics</a></li>
-		        <li class="subitem"><a href="docs/code_blocks.html">Code Blocks</a></li>
-		        <li class="subitem"><a href="docs/presentations.html">Presentations</a></li>
-		      </ul>
-		    </li>
-		    <li class="item hover-hl has-submenu" onclick="toggleItem(1)">
-		      <a tabindex="0" class="item-link">Resources</a>
-		      <ul class="submenu">
-		        <li class="subitem"><a href="resources/tutorials.html">Tutorials</a></li>
-		        <li class="subitem"><a href="resources/templates.html">Templates</a></li>
-		        <li class="subitem"><a href="resources/blog_templates.html">Blog Templates</a></li>
-		        <li class="subitem"><a href="resources/css_frameworks.html">CSS Frameworks</a></li>
-		        <li class="subitem"><a href="resources/js_frameworks.html">JS Frameworks</a></li>
-		        <li class="subitem"><a href="resources/links.html">Links</a></li>
-		        <li class="subitem"><a href="resources/logos.html">Logos</a></li>
-		        <li class="subitem"><a href="resources/promos.html">Promos</a></li>
-		        <li class="subitem"><a href="resources/php_frameworks.html">PHP Frameworks</a></li>
-		      </ul>
-		    </li>
-		    <li class="toggle"><a href="#" onclick="toggleMenu()" id="menu-link"><i class="fas fa-bars fa-2x"></i></a></li>
-		  </ul>
-		</nav>
-		
-		<!-- Header -->
-		<section class="wrapper" id="header">
-		  <div id="logo" class="noselect">
-		    <img src="images/rabbit-tags-white.png" alt="Nift bunny mascot" style="width: 400px; max-width:90%"><br>
-		
-		    <p style="color:#372C2A">An opinionless web development framework</p>
-		
-		    <p>
-		      <a href="https://chocolatey.org/packages/nift"><img src="images/chocolatey-icon.png" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
-		      <a href="docs/installing.html#osx-brew"><img src="images/brew-icon.png" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
-		      <a href="docs/installing.html#freebsd"><img src="images/freebsd.png" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
-		      <a href="docs/installing.html#linux-flatpak"><img src="images/flathub-icon.png" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
-		      <a href="docs/installing.html#gentoo"><img src="images/gentoo.svg" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
-		      <a href="https://snapcraft.io/nift"><img src="images/snap-icon.png" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
-		    </p>
-		  </div>
-		</section>
+		<div align="center"  id="body">
+			<div class="menu-bars">
+			  <i id="open-menu-icon" class="fa fa-bars" onclick="show_menu()"></i>
+			</div>
+			
+			<div id="menu-page">
+			  <div class="menu-cross" >
+			    <i id="close-menu-icon" class="fa fa-xmark" onclick="close_menu()"></i>
+			  </div>
+			
+			  <div class="menu-icons noselect">
+			    <a href="https://github.com/nifty-site-manager/nsm" alt="GitHub"><i class="fa fa-2x fa-github"></i></a>&nbsp;&nbsp;
+			    <a href="https://github.com/nifty-site-manager/nsm/discussions" alt="GitHub Discussions"><i class="fa fa-2x fa-comments"></i></a>&nbsp;&nbsp;
+			    <a href="https://twitter.com/nift_dev" alt="Twitter"><i class="fa fa-2x fa-twitter"></i></a>&nbsp;&nbsp;
+			    <a href="https://discord.gg/St8QXTG" alt="Discord"><i class="fa fa-2x fa-discord"></i></a>
+			  </div>
+			  
+			  <nav id="nav" class="noselect">
+			    <ul>
+			      <li class="item li-menu li-dark">
+			        <a class="item-link" href="index.html">Home</a>
+			      </li>
+			      <li class="item li-menu li-dark has-submenu">
+			        <a tabindex="0" href="#" class="submenu-link" onclick="toggle_submenu(0)">Documentation <i class="submenu-link-icon fa fa-angle-down fa-1x"></i></a>
+			        <ul class="submenu">
+			          <li class="subitem"><a href="docs/installing.html">Installing</a></li>
+			          <li class="subitem"><a href="docs/hosting.html">Hosting</a></li>
+			          <li class="subitem"><a href="docs/commands.html">Commands</a></li>
+			          <li class="subitem"><a href="docs/config.html">Config</a></li>
+			          <li class="subitem"><a href="docs/template_files.html">Template Files</a></li>
+			          <li class="subitem"><a href="docs/fns.html">Functions</a></li>
+			          <li class="subitem"><a href="docs/types.html">Types</a></li>
+			          <li class="subitem"><a href="docs/f++.html">f++ (scripting)</a></li>
+			          <li class="subitem"><a href="docs/n++.html">n++ (templates)</a></li>
+			          <li class="subitem"><a href="docs/lua.html">Lua(JIT)</a></li>
+			          <li class="subitem"><a href="docs/exprtk.html">ExprTk</a></li>
+			          <li class="subitem"><a href="docs/REPL.html">Interactive REPL</a></li>
+			          <li class="subitem"><a href="docs/scripts.html">Scripts</a></li>
+			          <li class="subitem"><a href="docs/template_languages.html">Template Languages</a></li>
+			          <li class="subitem"><a href="docs/JSON.html">JSON Data</a></li>
+			          <li class="subitem"><a href="docs/markdown.html">Markdown</a></li>
+			          <li class="subitem"><a href="docs/translators.html">Translators</a></li>
+			          <li class="subitem"><a href="docs/mathematics.html">Mathematics</a></li>
+			          <li class="subitem"><a href="docs/code_blocks.html">Code Blocks</a></li>
+			          <li class="subitem"><a href="docs/presentations.html">Presentations</a></li>
+			        </ul>
+			      </li>
+			      <li class="item li-menu li-dark has-submenu">
+			        <a tabindex="0" href="#" class="submenu-link" onclick="toggle_submenu(1)">Resources <i class="submenu-link-icon fa fa-angle-down fa-1x"></i></a>
+			        <ul class="submenu">
+			          <li class="subitem"><a href="resources/tutorials.html">Tutorials</a></li>
+			          <li class="subitem"><a href="resources/templates.html">Templates</a></li>
+			          <li class="subitem"><a href="resources/blog_templates.html">Blog Templates</a></li>
+			          <li class="subitem"><a href="resources/css_frameworks.html">CSS Frameworks</a></li>
+			          <li class="subitem"><a href="resources/js_frameworks.html">JS Frameworks</a></li>
+			          <li class="subitem"><a href="resources/links.html">Links</a></li>
+			          <li class="subitem"><a href="resources/logos.html">Logos</a></li>
+			          <li class="subitem"><a href="resources/promos.html">Promos</a></li>
+			          <li class="subitem"><a href="resources/php_frameworks.html">PHP Frameworks</a></li>
+			        </ul>
+			      </li>
+			    </ul>
+			  </nav>
+			</div>
 
-		<!-- Main -->
-		<section id="main" class="wrapper style2">
-			<div class="title">Privacy Policy</div>
-			<div class="container">
-				<!-- Features -->
-				<section id="features">
-					<div class="content">
-						<p>At <span class="website_name">NIFT PTY. LTD.</span> we collect and manage user data according to the following Privacy Policy.</p>
-		
-						<h3>Data Collected</h3>
-		
-						<p>We collect information you provide directly to us. For example, we collect information when you create or update an account, log in to and play games on our servers, interact on Discord, Gitter, IRC or Reddit, request support or otherwise communicate with us. The types of information we may collect include your IP address, email address, organisation, languages used and other contact or identifying information you choose to provide.</p>
-		
-						<p>We collect anonymous data from every visitor of the Website to monitor traffic and fix bugs. For example, we collect information like requests, the data sent in response to such requests, your IP address, the browser type, the browser language, and a timestamp for the request.</p>
-		
-						<p>We also use various technologies to collect information, and this may include sending cookies to your computer. Cookies are small data files stored on your hard drive or in your device memory that helps us to improve our services and your experience, see which areas and features of our services are popular and count visits. We may also collect information using web beacons (also known as "tracking pixels"). Web beacons are electronic images that may be used in our services or emails and to track count visits or understand usage and campaign effectiveness.</p>
-		
-						<h3>Use of the Data</h3>
-		
-						<p>We only use your personal information to provide you the <span class="website_name">NIFT PTY. LTD.</span> services or to communicate with you about the Website or other services. <!--Our Privacy Policy was created with the help of the <a href="https://www.privacy-policy-template.com">Privacy Policy Template</a> and the <a href="https://www.termsandcondiitionssample.com">Terms and Conditions Template</a>.--></p>
-		
-						<p>We employ industry standard techniques to protect against unauthorized access of data about you that we store, including personal information. </p>
-		
-						<p>We do not share personal information you have provided to us without your consent, unless:</p>
-		
-						<ul>
-						<li>Doing so is appropriate to carry out your own request</li>
-						<li>We believe it's needed to enforce our legal agreements or that is legally required</li>
-						<li>We believe it's needed to detect, prevent or address fraud, security or technical issues</li>
-						</ul>
-		
-						<h3>Sharing of Data</h3>
-		
-						<p>We don't share your personal information with third parties. Aggregated, anonymized data is periodically transmitted to external services to help us improve the Website and service.</p>
-		
-						<p>We may allow third parties to provide analytics services. These third parties may use cookies, web beacons and other technologies to collect information about your use of the services and other websites, including your IP address, web browser, pages viewed, time spent on pages, links clicked and conversion information.</p>
-		
-						<p>We also use services provided by sites like BitBucket, Discord, Facebook, GitHub, GitLab, Gitter, Netlify, Reddit, TeeMill, TeeSpring and Twitter. Your use of these third party services is entirely optional. We are not responsible for the privacy policies and/or practices of these third party services, and you are responsible for reading and understanding those third party services' privacy policies.</p>
-		
-						<h3>Opt-Out, Communication Preferences</h3>
-		
-						<p>You may modify your communication preferences and/or opt-out from specific communications at any time. Please specify and adjust your preferences.</p>
-		
-						<h3>Security</h3>
-		
-						<p>We take reasonable steps to protect personally identifiable information from loss, misuse, and unauthorized access, disclosure, alteration, or destruction. But, you should keep in mind that no internet transmission is ever completely secure or error-free. In particular, email sent to or from the sites may not be secure.</p>
-		
-						<h3>About Children</h3>
-		
-						<p>The Website is not intended for children under the age of 13. We do not knowingly collect personally identifiable information via the Website from visitors in this age group. People under the age of 13 wishing to use the Website of NIFT PTY. LTD. are asked to have an adult create an account and supervise for them.</p>
-		
-						<h3>Changes to the Privacy Policy</h3>
-		
-						<p>We may amend this Privacy Policy from time to time. Use of information we collect now is subject to the Privacy Policy in effect at the time such information is used.</p>
-		
-						<p>If we make major changes in the way we collect or use information, we will notify you by posting an announcement on the Website or sending you an email.</p>
+			<div id="content">
+				<!-- Header -->
+				<section class="wrapper" id="header">
+				  <div id="logo" class="noselect">
+				    <img src="images/rabbit-tags-white.webp" alt="Nift bunny mascot" style="width: 400px; max-width:90%"><br>
+				
+				    <p style="color:#372C2A">An unopinionated web development framework</p>
+				
+				    <p>
+				      <a href="https://chocolatey.org/packages/nift"><img src="images/chocolatey-icon.webp" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
+				      <a href="docs/installing.html#osx-brew"><img src="images/brew-icon.webp" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
+				      <a href="docs/installing.html#freebsd"><img src="images/freebsd.webp" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
+				      <a href="docs/installing.html#linux-flatpak"><img src="images/flathub-icon.webp" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
+				      <a href="docs/installing.html#gentoo"><img src="images/gentoo.webp" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
+				      <a href="https://snapcraft.io/nift"><img src="images/snap-icon.webp" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
+				    </p>
+				  </div>
+				</section>
+
+				<!-- Main -->
+				<section id="main" class="wrapper style2">
+					<div class="title">Privacy Policy</div>
+					<div class="container">
+						<!-- Features -->
+						<section id="features">
+							<div class="content">
+								<p>At <span class="website_name">NIFT PTY. LTD.</span> we collect and manage user data according to the following Privacy Policy.</p>
+				
+								<h3>Data Collected</h3>
+				
+								<p>We collect information you provide directly to us. For example, we collect information when you create or update an account, log in to and play games on our servers, interact on Discord, Gitter, IRC or Reddit, request support or otherwise communicate with us. The types of information we may collect include your IP address, email address, organisation, languages used and other contact or identifying information you choose to provide.</p>
+				
+								<p>We collect anonymous data from every visitor of the Website to monitor traffic and fix bugs. For example, we collect information like requests, the data sent in response to such requests, your IP address, the browser type, the browser language, and a timestamp for the request.</p>
+				
+								<p>We also use various technologies to collect information, and this may include sending cookies to your computer. Cookies are small data files stored on your hard drive or in your device memory that helps us to improve our services and your experience, see which areas and features of our services are popular and count visits. We may also collect information using web beacons (also known as "tracking pixels"). Web beacons are electronic images that may be used in our services or emails and to track count visits or understand usage and campaign effectiveness.</p>
+				
+								<h3>Use of the Data</h3>
+				
+								<p>We only use your personal information to provide you the <span class="website_name">NIFT PTY. LTD.</span> services or to communicate with you about the Website or other services. <!--Our Privacy Policy was created with the help of the <a href="https://www.privacy-policy-template.com">Privacy Policy Template</a> and the <a href="https://www.termsandcondiitionssample.com">Terms and Conditions Template</a>.--></p>
+				
+								<p>We employ industry standard techniques to protect against unauthorized access of data about you that we store, including personal information. </p>
+				
+								<p>We do not share personal information you have provided to us without your consent, unless:</p>
+				
+								<ul>
+								<li>Doing so is appropriate to carry out your own request</li>
+								<li>We believe it's needed to enforce our legal agreements or that is legally required</li>
+								<li>We believe it's needed to detect, prevent or address fraud, security or technical issues</li>
+								</ul>
+				
+								<h3>Sharing of Data</h3>
+				
+								<p>We don't share your personal information with third parties. Aggregated, anonymized data is periodically transmitted to external services to help us improve the Website and service.</p>
+				
+								<p>We may allow third parties to provide analytics services. These third parties may use cookies, web beacons and other technologies to collect information about your use of the services and other websites, including your IP address, web browser, pages viewed, time spent on pages, links clicked and conversion information.</p>
+				
+								<p>We also use services provided by sites like BitBucket, Discord, Facebook, GitHub, GitLab, Gitter, Netlify, Reddit, TeeMill, TeeSpring and Twitter. Your use of these third party services is entirely optional. We are not responsible for the privacy policies and/or practices of these third party services, and you are responsible for reading and understanding those third party services' privacy policies.</p>
+				
+								<h3>Opt-Out, Communication Preferences</h3>
+				
+								<p>You may modify your communication preferences and/or opt-out from specific communications at any time. Please specify and adjust your preferences.</p>
+				
+								<h3>Security</h3>
+				
+								<p>We take reasonable steps to protect personally identifiable information from loss, misuse, and unauthorized access, disclosure, alteration, or destruction. But, you should keep in mind that no internet transmission is ever completely secure or error-free. In particular, email sent to or from the sites may not be secure.</p>
+				
+								<h3>About Children</h3>
+				
+								<p>The Website is not intended for children under the age of 13. We do not knowingly collect personally identifiable information via the Website from visitors in this age group. People under the age of 13 wishing to use the Website of NIFT PTY. LTD. are asked to have an adult create an account and supervise for them.</p>
+				
+								<h3>Changes to the Privacy Policy</h3>
+				
+								<p>We may amend this Privacy Policy from time to time. Use of information we collect now is subject to the Privacy Policy in effect at the time such information is used.</p>
+				
+								<p>If we make major changes in the way we collect or use information, we will notify you by posting an announcement on the Website or sending you an email.</p>
+							</div>
+						</section>
+					</div>
+				</section>
+
+				<!-- Footer -->
+				<section id="footer" class="wrapper">
+					<div class="title">
+						<img src="images/rabbit-tags-icon.webp" alt="Nift rabbit mascot with code tag boomerangs" loading="lazy" width="200" style="margin-top:20px; border-radius: 4px">
+					</div>
+				
+					<div class="container">
+						<div id="copyright" class="noselect">
+							<ul>
+								<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
+								<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
+								<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
+							</ul> <br>
+				
+							<ul>
+								<li><a href="tos.html">Terms of Service</a></li>
+								<li><a href="privacy_policy.html">Privacy Policy</a></li>
+							</ul> <br>
+				
+							<ul>
+								<li><span>&copy;</span> 2015-<span name="cyear"></span></li>
+							</ul>
+						</div>
 					</div>
 				</section>
 			</div>
-		</section>
+		</div>
 
-		<!-- Footer -->
-		<section id="footer" class="wrapper">
-			<div class="title">
-				<img src="images/rabbit-tags-icon.png" alt="Nift rabbit mascot with code tag boomerangs" loading="lazy" width="200" style="margin-top:20px; border-radius: 4px">
-			</div>
-		
-			<div class="container">
-				<div id="copyright" class="noselect">
-					<ul>
-						<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
-						<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
-						<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
-					</ul> <br>
-		
-					<ul>
-						<li><a href="tos.html">Terms of Service</a></li>
-						<li><a href="privacy_policy.html">Privacy Policy</a></li>
-					</ul> <br>
-		
-					<ul>
-						<li><span>&copy;</span> 2015-<span name="cyear"></span></li>
-					</ul>
-				</div>
-			</div>
-		</section>
+		<script type="text/javascript" src="assets/js/bundled.js"></script>
 
-		<script async src="assets/js/menu.js"></script>
 		<script async src="assets/js/copy-pre.js"></script>
 		<script async src="assets/js/process-md-blocks.js"></script>
 		<script async src="assets/js/showdown.min.js"></script>
@@ -229,3 +242,4 @@
 		</script>
 	</body>
 </html>
+

@@ -1,4 +1,4 @@
-06:21:37 Wednesday September 14 2022
+16:37:30 Sunday December 04 2022
 'docs/installing'
 'installing'
 'template/page.template'
@@ -6,5 +6,6 @@
 'content/docs/installing.content'
 'template/footer.content'
 'template/head.content'
+'template/header.content'
 'template/menu.content'
 'template/page.template'

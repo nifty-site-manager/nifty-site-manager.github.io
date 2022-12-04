@@ -1,3 +1,11 @@
+'assets/css/bundled'
+"bundled'"
+'template/css.template'
+
+'assets/js/bundled'
+"bundled'"
+'template/js.template'
+
 'docs/JSON'
 'JSON'
 'template/page.template'
@@ -51,7 +59,7 @@
 'template/page.template'
 
 'docs/cmds/edit'
-"edit"
+'edit'
 'template/page.template'
 
 'docs/cmds/incr-mode'
@@ -87,11 +95,11 @@
 'template/page.template'
 
 'docs/cmds/mbcp'
-"mbcp"
+'mbcp'
 'template/page.template'
 
 'docs/cmds/medit'
-"medit"
+'medit'
 'template/page.template'
 
 'docs/cmds/mve'
@@ -451,11 +459,11 @@
 'template/page.template'
 
 'docs/fns/exprtk,load'
-"exprtk,load"
+'exprtk,load'
 'template/page.template'
 
 'docs/fns/exprtk,str'
-"exprtk,str"
+'exprtk,str'
 'template/page.template'
 
 'docs/fns/f++'

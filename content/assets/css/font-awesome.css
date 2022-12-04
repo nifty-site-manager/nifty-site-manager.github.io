@@ -1,0 +1,65 @@
+/**
+ *  icon
+ */
+.fa {
+  cursor: pointer;
+  display: inline-block;
+  width: 2em;
+  vertical-align: middle;
+
+  filter: invert(100%);
+}
+
+.fa:hover {
+  filter: invert(59%) sepia(95%) saturate(473%) hue-rotate(42deg) brightness(101%) contrast(102%);
+}
+
+/**
+ * sizes
+ */
+.fa-1x {
+  width: 1em;
+}
+.fa-1-5x {
+  width: 1.5em;
+}
+.fa-2x {
+  width: 2em;
+}
+
+
+/**
+ * brands
+ */
+
+.fa-discord:before {
+  content: url("@pathtofile(site/assets/icons/discord.svg)");
+}
+.fa-github:before {
+  content: url("@pathtofile(site/assets/icons/github.svg)");
+}
+.fa-twitter:before {
+  content: url("@pathtofile(site/assets/icons/twitter.svg)");
+}
+
+
+
+/**
+ * solid
+ */
+.fa-angle-down:before {
+  content: url("@pathtofile(site/assets/icons/angle-down-solid.svg)"); 
+}
+.fa-angle-up:before {
+  content: url("@pathtofile(site/assets/icons/angle-up-solid.svg)"); 
+}
+.fa-bars:before {
+  content: url("@pathtofile(site/assets/icons/bars-solid.svg)"); 
+}
+.fa-comments:before {
+  content: url("@pathtofile(site/assets/icons/comment-dots-solid.svg)"); 
+}
+.fa-xmark:before {
+  content: url("@pathtofile(site/assets/icons/xmark-solid.svg)"); 
+}
+

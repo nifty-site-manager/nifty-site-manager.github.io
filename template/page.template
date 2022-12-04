@@ -5,13 +5,20 @@
 	</head>
 
 	<body>
-		@input("template/menu.content")
+		<div align="center"  id="body">
+			@input("template/menu.content")
 
-		@content
+			<div id="content">
+				@input("template/header.content")
 
-		@input("template/footer.content")
+				@content
 
-		<script async src="@pathto(site/assets/js/menu.js)"></script>
+				@input("template/footer.content")
+			</div>
+		</div>
+
+		<script type="text/javascript" src="@pathtofile(site/assets/js/bundled.js)"></script>
+
 		@if(pname != 'index')
 		{
 			<script async src="@pathtofile(site/assets/js/copy-pre.js)"></script>
@@ -67,3 +74,4 @@
 		</script>
 	</body>
 </html>
+

@@ -3,463 +3,476 @@
 	<head>
 		<title>Nift - ent</title>
 		<meta name="description" 
-		      content="Nift is an opinionless web development framework, specialising
-		            in static websites with serverless backends. It's lightning fast, 
-		            cross-platform, opinionless, open source (MIT license) and 
-		            developed from the ground up in C++. Use it for any of your 
-		            personal or commercial projects!">
+		      content="Nift is an opinionless web development framework. It's 
+		            lightning fast, cross-platform, opinionless, open source 
+		            (MIT license) and developed from the ground up in C++. Use 
+		            it for any of your personal or commercial projects!">
 		
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
-		<link rel="stylesheet" href="../../assets/css/pagestyle.css">
-		<link rel="stylesheet" href="../../assets/css/menu.css">
-		<link rel="stylesheet" href="../../assets/css/font-awesome.css">
+		<link rel="stylesheet" href="../../assets/css/bundled.css">
 		<link rel="stylesheet" href="../../assets/css/pre.css">
 		<link rel="stylesheet" href="../../assets/css/extra-fonts.css"><link rel='icon' type='image/png' href='../../images/favicon.png'>
 	</head>
 
 	<body>
-		<nav id="nav" class="noselect">
-		  <ul class="menu">
-		    <li class="nav-space-left"></li>
-		    <li class="item icons">
-		      <a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a>
-		      <a href="https://github.com/nifty-site-manager/nsm/discussions" title="GitHub Discussions" class="gh"><i class="fas fa-comment-dots fa-2x"></i></a>
-		      <a href="https://twitter.com/nift_dev" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a>
-		      <a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a>
-		    </li>
-		    <a href="../../index.html" class="item hover-hl"><li>Home</li></a>
-		    <li class="item hover-hl has-submenu" onclick="toggleItem(0)">
-		      <a tabindex="0" class="item-link">Docs</a>
-		      <ul class="submenu">
-		        <li class="subitem"><a href="../installing.html">Installing</a></li>
-		        <li class="subitem"><a href="../hosting.html">Hosting</a></li>
-		        <li class="subitem"><a href="../commands.html">Commands</a></li>
-		        <li class="subitem"><a href="../config.html">Config</a></li>
-		        <li class="subitem"><a href="../template_files.html">Template Files</a></li>
-		        <li class="subitem"><a href="../fns.html">Functions</a></li>
-		        <li class="subitem"><a href="../types.html">Types</a></li>
-		        <li class="subitem"><a href="../f++.html">f++ (scripting)</a></li>
-		        <li class="subitem"><a href="../n++.html">n++ (templates)</a></li>
-		        <li class="subitem"><a href="../lua.html">Lua(JIT)</a></li>
-		        <li class="subitem"><a href="../exprtk.html">ExprTk</a></li>
-		        <li class="subitem"><a href="../REPL.html">Interactive REPL</a></li>
-		        <li class="subitem"><a href="../scripts.html">Scripts</a></li>
-		        <li class="subitem"><a href="../template_languages.html">Template Languages</a></li>
-		        <li class="subitem"><a href="../JSON.html">JSON Data</a></li>
-		        <li class="subitem"><a href="../markdown.html">Markdown</a></li>
-		        <li class="subitem"><a href="../translators.html">Translators</a></li>
-		        <li class="subitem"><a href="../mathematics.html">Mathematics</a></li>
-		        <li class="subitem"><a href="../code_blocks.html">Code Blocks</a></li>
-		        <li class="subitem"><a href="../presentations.html">Presentations</a></li>
-		      </ul>
-		    </li>
-		    <li class="item hover-hl has-submenu" onclick="toggleItem(1)">
-		      <a tabindex="0" class="item-link">Resources</a>
-		      <ul class="submenu">
-		        <li class="subitem"><a href="../../resources/tutorials.html">Tutorials</a></li>
-		        <li class="subitem"><a href="../../resources/templates.html">Templates</a></li>
-		        <li class="subitem"><a href="../../resources/blog_templates.html">Blog Templates</a></li>
-		        <li class="subitem"><a href="../../resources/css_frameworks.html">CSS Frameworks</a></li>
-		        <li class="subitem"><a href="../../resources/js_frameworks.html">JS Frameworks</a></li>
-		        <li class="subitem"><a href="../../resources/links.html">Links</a></li>
-		        <li class="subitem"><a href="../../resources/logos.html">Logos</a></li>
-		        <li class="subitem"><a href="../../resources/promos.html">Promos</a></li>
-		        <li class="subitem"><a href="../../resources/php_frameworks.html">PHP Frameworks</a></li>
-		      </ul>
-		    </li>
-		    <li class="toggle"><a href="#" onclick="toggleMenu()" id="menu-link"><i class="fas fa-bars fa-2x"></i></a></li>
-		  </ul>
-		</nav>
-		
-		<!-- Header -->
-		<section class="wrapper" id="header">
-		  <div id="logo" class="noselect">
-		    <img src="../../images/rabbit-tags-white.png" alt="Nift bunny mascot" style="width: 400px; max-width:90%"><br>
-		
-		    <p style="color:#372C2A">An opinionless web development framework</p>
-		
-		    <p>
-		      <a href="https://chocolatey.org/packages/nift"><img src="../../images/chocolatey-icon.png" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
-		      <a href="../installing.html#osx-brew"><img src="../../images/brew-icon.png" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
-		      <a href="../installing.html#freebsd"><img src="../../images/freebsd.png" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
-		      <a href="../installing.html#linux-flatpak"><img src="../../images/flathub-icon.png" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
-		      <a href="../installing.html#gentoo"><img src="../../images/gentoo.svg" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
-		      <a href="https://snapcraft.io/nift"><img src="../../images/snap-icon.png" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
-		    </p>
-		  </div>
-		</section>
+		<div align="center"  id="body">
+			<div class="menu-bars">
+			  <i id="open-menu-icon" class="fa fa-bars" onclick="show_menu()"></i>
+			</div>
+			
+			<div id="menu-page">
+			  <div class="menu-cross" >
+			    <i id="close-menu-icon" class="fa fa-xmark" onclick="close_menu()"></i>
+			  </div>
+			
+			  <div class="menu-icons noselect">
+			    <a href="https://github.com/nifty-site-manager/nsm" alt="GitHub"><i class="fa fa-2x fa-github"></i></a>&nbsp;&nbsp;
+			    <a href="https://github.com/nifty-site-manager/nsm/discussions" alt="GitHub Discussions"><i class="fa fa-2x fa-comments"></i></a>&nbsp;&nbsp;
+			    <a href="https://twitter.com/nift_dev" alt="Twitter"><i class="fa fa-2x fa-twitter"></i></a>&nbsp;&nbsp;
+			    <a href="https://discord.gg/St8QXTG" alt="Discord"><i class="fa fa-2x fa-discord"></i></a>
+			  </div>
+			  
+			  <nav id="nav" class="noselect">
+			    <ul>
+			      <li class="item li-menu li-dark">
+			        <a class="item-link" href="../../index.html">Home</a>
+			      </li>
+			      <li class="item li-menu li-dark has-submenu">
+			        <a tabindex="0" href="#" class="submenu-link" onclick="toggle_submenu(0)">Documentation <i class="submenu-link-icon fa fa-angle-down fa-1x"></i></a>
+			        <ul class="submenu">
+			          <li class="subitem"><a href="../installing.html">Installing</a></li>
+			          <li class="subitem"><a href="../hosting.html">Hosting</a></li>
+			          <li class="subitem"><a href="../commands.html">Commands</a></li>
+			          <li class="subitem"><a href="../config.html">Config</a></li>
+			          <li class="subitem"><a href="../template_files.html">Template Files</a></li>
+			          <li class="subitem"><a href="../fns.html">Functions</a></li>
+			          <li class="subitem"><a href="../types.html">Types</a></li>
+			          <li class="subitem"><a href="../f++.html">f++ (scripting)</a></li>
+			          <li class="subitem"><a href="../n++.html">n++ (templates)</a></li>
+			          <li class="subitem"><a href="../lua.html">Lua(JIT)</a></li>
+			          <li class="subitem"><a href="../exprtk.html">ExprTk</a></li>
+			          <li class="subitem"><a href="../REPL.html">Interactive REPL</a></li>
+			          <li class="subitem"><a href="../scripts.html">Scripts</a></li>
+			          <li class="subitem"><a href="../template_languages.html">Template Languages</a></li>
+			          <li class="subitem"><a href="../JSON.html">JSON Data</a></li>
+			          <li class="subitem"><a href="../markdown.html">Markdown</a></li>
+			          <li class="subitem"><a href="../translators.html">Translators</a></li>
+			          <li class="subitem"><a href="../mathematics.html">Mathematics</a></li>
+			          <li class="subitem"><a href="../code_blocks.html">Code Blocks</a></li>
+			          <li class="subitem"><a href="../presentations.html">Presentations</a></li>
+			        </ul>
+			      </li>
+			      <li class="item li-menu li-dark has-submenu">
+			        <a tabindex="0" href="#" class="submenu-link" onclick="toggle_submenu(1)">Resources <i class="submenu-link-icon fa fa-angle-down fa-1x"></i></a>
+			        <ul class="submenu">
+			          <li class="subitem"><a href="../../resources/tutorials.html">Tutorials</a></li>
+			          <li class="subitem"><a href="../../resources/templates.html">Templates</a></li>
+			          <li class="subitem"><a href="../../resources/blog_templates.html">Blog Templates</a></li>
+			          <li class="subitem"><a href="../../resources/css_frameworks.html">CSS Frameworks</a></li>
+			          <li class="subitem"><a href="../../resources/js_frameworks.html">JS Frameworks</a></li>
+			          <li class="subitem"><a href="../../resources/links.html">Links</a></li>
+			          <li class="subitem"><a href="../../resources/logos.html">Logos</a></li>
+			          <li class="subitem"><a href="../../resources/promos.html">Promos</a></li>
+			          <li class="subitem"><a href="../../resources/php_frameworks.html">PHP Frameworks</a></li>
+			        </ul>
+			      </li>
+			    </ul>
+			  </nav>
+			</div>
 
-		<!-- Main -->
-		<section id="main" class="wrapper style2">
-			<div class="title">fn: <mono>ent</mono></div>
-			<div class="container">
-				<!-- Features -->
-				<section id="features">
-					<div class="content">
-						<a href="#contents" class="to-top">[contents]</a>
-		
-						<h4 id="contents">
-							Contents
-						</h4>
-						<ul>
-							<li><a href="#syntax">Syntax</a></li>
-							<li><a href="#description">Description</a></li>
-							<li><a href="#f++-eg">f++ example</a></li>
-							<li><a href="#n++-eg">n++ example</a></li>
-						</ul>
-		
-						<h4 id="syntax">
-							Syntax
-						</h4>
-						<p>
-							The syntax for <mono>ent</mono> calls is:
-		<div align="center" style="margin-top:-15px">
-		<mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+			<div id="content">
+				<!-- Header -->
+				<section class="wrapper" id="header">
+				  <div id="logo" class="noselect">
+				    <img src="../../images/rabbit-tags-white.webp" alt="Nift bunny mascot" style="width: 400px; max-width:90%"><br>
+				
+				    <p style="color:#372C2A">An unopinionated web development framework</p>
+				
+				    <p>
+				      <a href="https://chocolatey.org/packages/nift"><img src="../../images/chocolatey-icon.webp" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
+				      <a href="../installing.html#osx-brew"><img src="../../images/brew-icon.webp" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
+				      <a href="../installing.html#freebsd"><img src="../../images/freebsd.webp" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
+				      <a href="../installing.html#linux-flatpak"><img src="../../images/flathub-icon.webp" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
+				      <a href="../installing.html#gentoo"><img src="../../images/gentoo.webp" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
+				      <a href="https://snapcraft.io/nift"><img src="../../images/snap-icon.webp" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
+				    </p>
+				  </div>
+				</section>
+
+				<!-- Main -->
+				<section id="main" class="wrapper style2">
+					<div class="title">fn: <mono>ent</mono></div>
+					<div class="container">
+						<!-- Features -->
+						<section id="features">
+							<div class="content">
+								<a href="#contents" class="to-top">[contents]</a>
+				
+								<h4 id="contents">
+									Contents
+								</h4>
+								<ul>
+									<li><a href="#syntax">Syntax</a></li>
+									<li><a href="#description">Description</a></li>
+									<li><a href="#f++-eg">f++ example</a></li>
+									<li><a href="#n++-eg">n++ example</a></li>
+								</ul>
+				
+								<h4 id="syntax">
+									Syntax
+								</h4>
+								<p>
+									The syntax for <mono>ent</mono> calls is:
+				<div align="center" style="margin-top:-15px">
+				<mono>f++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
 ent(string)
 </pre>
-		</div><br>
-		<div align="center">
-		<mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
+				</div><br>
+				<div align="center">
+				<mono>n++</mono>: &nbsp; <pre class="prettyprint inline" style="margin-bottom:-15px">
 @ent(string)
 </pre>
-		</div>
-						</p>
-		
-						<h4 id="description">
-							Description
-						</h4>
-						<p>
-							The <mono>ent</mono> function is for getting html <u>entities</u> (other types of entities will be supported in the future), it takes a single string parameter to specify which entity to return. 
-						</p>
-		
-						<p>
-							The entities currently available with Nift are in the table below:
-							<center>
-								<table id="entity_table" class="alt" style="text-align: center">
-									<thead>
-										<tr>
-											<th>syntax</th>
-											<th>output</th>
-											<th>rendered</th>
-										</tr>
-									</thead>
-									<tr>
-										<td><mono>ent('\`')</mono></td> 
-										<td><mono>&amp;grave;</mono></td>
-										<td>&grave;</td>
-									</tr>
-									<tr>
-										<td><mono>ent('~')</mono></td> 
-										<td><mono>&amp;tilde;</mono></td>
-										<td>&tilde;</td>
-									</tr>
-									<tr>
-										<td><mono>ent('!')</mono></td> 
-										<td><mono>&amp;excl;</mono></td>
-										<td>&excl;</td>
-									</tr>
-									<tr>
-										<td><mono>ent('\@')</mono> or <mono>ent(@)</mono></td> 
-										<td><mono>&amp;commat;</mono></td>
-										<td>&commat;</td>
-									</tr>
-									<tr>
-										<td><mono>ent('#')</mono></td> 
-										<td><mono>&amp;num;</mono></td>
-										<td>&num;</td>
-									</tr>
-									<tr>
-										<td><mono>ent('$')</mono></td> 
-										<td><mono>&amp;dollar;</mono></td>
-										<td>&dollar;</td>
-									</tr>
-									<tr>
-										<td><mono>ent('%')</mono></td> 
-										<td><mono>&amp;percnt;</mono></td>
-										<td>&percnt;</td>
-									</tr>
-									<tr>
-										<td><mono>ent('^')</mono></td> 
-										<td><mono>&amp;Hat;</mono></td>
-										<td>&Hat;</td>
-									</tr>
-									<tr>
-										<td><mono>ent('&')</mono></td> 
-										<td><mono>&amp;amp;</mono></td>
-										<td>&amp;</td>
-									</tr>
-									<tr>
-										<td><mono>ent('*')</mono></td> 
-										<td><mono>&amp;ast;</mono></td>
-										<td>&ast;</td>
-									</tr>
-									<tr>
-										<td><mono>ent('?')</mono></td> 
-										<td><mono>&amp;quest;</mono></td>
-										<td>&quest;</td>
-									</tr>
-									<tr>
-										<td><mono>ent('<')</mono></td> 
-										<td><mono>&amp;lt;</mono></td>
-										<td>&lt;</td>
-									</tr>
-									<tr>
-										<td><mono>ent('>')</mono></td> 
-										<td><mono>&amp;gt;</mono></td>
-										<td>&gt;</td>
-									</tr>
-									<tr>
-										<td><mono>ent('(')</mono></td> 
-										<td><mono>&amp;lpar;</mono></td>
-										<td>&lpar;</td>
-									</tr>
-									<tr>
-										<td><mono>ent(')')</mono></td> 
-										<td><mono>&amp;rpar;</mono></td>
-										<td>&rpar;</td>
-									</tr>
-									<tr>
-										<td><mono>ent('[')</mono></td> 
-										<td><mono>&amp;lbrack;</mono></td>
-										<td>&lbrack;</td>
-									</tr>
-									<tr>
-										<td><mono>ent(']')</mono></td> 
-										<td><mono>&amp;rbrack;</mono></td>
-										<td>&rbrack;</td>
-									</tr>
-									<tr>
-										<td><mono>ent('{')</mono></td> 
-										<td><mono>&amp;lbrace;</mono></td>
-										<td>&lbrace;</td>
-									</tr>
-									<tr>
-										<td><mono>ent('}')</mono></td> 
-										<td><mono>&amp;rbrace;</mono></td>
-										<td>&rbrace;</td>
-									</tr>
-									<tr>
-										<td><mono>ent('-')</mono></td> 
-										<td><mono>&amp;minus;</mono></td>
-										<td>&minus;</td>
-									</tr>
-									<tr>
-										<td><mono>ent('_')</mono></td> 
-										<td><mono>&amp;lowbar;</mono></td>
-										<td>&lowbar;</td>
-									</tr>
-									<tr>
-										<td><mono>ent('=')</mono></td> 
-										<td><mono>&amp;equals;</mono></td>
-										<td>&equals;</td>
-									</tr>
-									<tr>
-										<td><mono>ent('+')</mono></td> 
-										<td><mono>&amp;plus;</mono></td>
-										<td>&plus;</td>
-									</tr>
-									<tr>
-										<td><mono>ent('|')</mono></td> 
-										<td><mono>&amp;vert;</mono></td>
-										<td>&vert;</td>
-									</tr>
-									<tr>
-										<td><mono>ent('\\')</mono> or <mono>ent(\)</mono></td> 
-										<td><mono>&amp;bsol;</mono></td>
-										<td>&bsol;</td>
-									</tr>
-									<tr>
-										<td><mono>ent('/')</mono></td> 
-										<td><mono>&amp;sol;</mono></td>
-										<td>&sol;</td>
-									</tr>
-									<tr>
-										<td><mono>ent(';')</mono></td> 
-										<td><mono>&amp;semi;</mono></td>
-										<td>&semi;</td>
-									</tr>
-									<tr>
-										<td><mono>ent(':')</mono></td> 
-										<td><mono>&amp;colon;</mono></td>
-										<td>&colon;</td>
-									</tr>
-									<tr>
-										<td><mono>ent('\'')</mono></td> 
-										<td><mono>&amp;apos;</mono></td>
-										<td>&apos;</td>
-									</tr>
-									<tr>
-										<td><mono>ent('"')</mono></td> 
-										<td><mono>&amp;quot;</mono></td>
-										<td>&quot;</td>
-									</tr>
-									<tr>
-										<td><mono>ent(',')</mono></td> 
-										<td><mono>&amp;comma;</mono></td>
-										<td>&comma;</td>
-									</tr>
-									<tr>
-										<td><mono>ent('.')</mono></td> 
-										<td><mono>&amp;period;</mono></td>
-										<td>&period;</td>
-									</tr>
-									<tr>
-										<td><mono>ent('£')</mono></td> 
-										<td><mono>&amp;pound;</mono></td>
-										<td>&pound;</td>
-									</tr>
-									<tr>
-										<td><mono>ent('¥')</mono></td> 
-										<td><mono>&amp;yen;</mono></td>
-										<td>&yen;</td>
-									</tr>
-									<tr>
-										<td><mono>ent('€')</mono></td> 
-										<td><mono>&amp;euro;</mono></td>
-										<td>&euro;</td>
-									</tr>
-									<tr>
-										<td><mono>ent("section")</mono></td> 
-										<td><mono>&amp;sect;</mono></td>
-										<td>&sect;</td>
-									</tr>
-									<tr>
-										<td><mono>ent("+-")</mono></td> 
-										<td><mono>&amp;pm;</mono></td>
-										<td>&pm;</td>
-									</tr>
-									<tr>
-										<td><mono>ent("-+")</mono></td> 
-										<td><mono>&amp;mp;</mono></td>
-										<td>&mp;</td>
-									</tr>
-									<tr>
-										<td><mono>ent("!=")</mono></td> 
-										<td><mono>&amp;ne;</mono></td>
-										<td>&ne;</td>
-									</tr>
-									<tr>
-										<td><mono>ent("<=")</mono></td> 
-										<td><mono>&amp;leq;</mono></td>
-										<td>&leq;</td>
-									</tr>
-									<tr>
-										<td><mono>ent(">=")</mono></td> 
-										<td><mono>&amp;geq;</mono></td>
-										<td>&geq;</td>
-									</tr>
-									<tr>
-										<td><mono>ent("->")</mono></td> 
-										<td><mono>&amp;rarr;</mono></td>
-										<td>&rarr;</td>
-									</tr>
-										<tr>
-										<td><mono>ent("&lt;-")</mono></td> 
-										<td><mono>&amp;larr;</mono></td>
-										<td>&larr;</td>
-									</tr>
-									<tr>
-										<td><mono>ent("&lt;->")</mono></td> 
-										<td><mono>&amp;harr;</mono></td>
-										<td>&harr;</td>
-									</tr>
-									<tr>
-										<td><mono>ent("==>")</mono></td> 
-										<td><mono>&amp;rArr;</mono></td>
-										<td>&rArr;</td>
-									</tr>
-									<tr>
-										<td><mono>ent("&lt;==")</mono></td> 
-										<td><mono>&amp;lArr;</mono></td>
-										<td>&lArr;</td>
-									</tr>
-									<tr>
-										<td><mono>ent("&lt;==>")</mono></td> 
-										<td><mono>&amp;hArr;</mono></td>
-										<td>&hArr;</td>
-									</tr>
-									<tr>
-										<td><mono>ent("<=!=>")</mono></td> 
-										<td><mono>&amp;nhArr;</mono></td>
-										<td>&nhArr;</td>
-									</tr>
-									<tr>
-										<td><mono>ent("...")</mono></td> 
-										<td><mono>&amp;hellip;</mono></td>
-										<td>&hellip;</td>
-									</tr>
-									<tfoot>
-										<tr>
-											<th>syntax</th>
-											<th>output</th>
-											<th>rendered</th>
-										</tr>
-									</tfoot>
-								</table>
-							</center>
-						</p>
-		
-						<h4 id="f++-eg">
-							f++ example
-						</h4>
-						<p>
-							Example of <mono>ent</mono> being used with <mono>f++</mono>:					
-		
-		<div align="center">
-		<pre class="prettyprint inline linenums">
+				</div>
+								</p>
+				
+								<h4 id="description">
+									Description
+								</h4>
+								<p>
+									The <mono>ent</mono> function is for getting html <u>entities</u> (other types of entities will be supported in the future), it takes a single string parameter to specify which entity to return. 
+								</p>
+				
+								<p>
+									The entities currently available with Nift are in the table below:
+									<center>
+										<table id="entity_table" class="alt" style="text-align: center">
+											<thead>
+												<tr>
+													<th>syntax</th>
+													<th>output</th>
+													<th>rendered</th>
+												</tr>
+											</thead>
+											<tr>
+												<td><mono>ent('\`')</mono></td> 
+												<td><mono>&amp;grave;</mono></td>
+												<td>&grave;</td>
+											</tr>
+											<tr>
+												<td><mono>ent('~')</mono></td> 
+												<td><mono>&amp;tilde;</mono></td>
+												<td>&tilde;</td>
+											</tr>
+											<tr>
+												<td><mono>ent('!')</mono></td> 
+												<td><mono>&amp;excl;</mono></td>
+												<td>&excl;</td>
+											</tr>
+											<tr>
+												<td><mono>ent('\@')</mono> or <mono>ent(@)</mono></td> 
+												<td><mono>&amp;commat;</mono></td>
+												<td>&commat;</td>
+											</tr>
+											<tr>
+												<td><mono>ent('#')</mono></td> 
+												<td><mono>&amp;num;</mono></td>
+												<td>&num;</td>
+											</tr>
+											<tr>
+												<td><mono>ent('$')</mono></td> 
+												<td><mono>&amp;dollar;</mono></td>
+												<td>&dollar;</td>
+											</tr>
+											<tr>
+												<td><mono>ent('%')</mono></td> 
+												<td><mono>&amp;percnt;</mono></td>
+												<td>&percnt;</td>
+											</tr>
+											<tr>
+												<td><mono>ent('^')</mono></td> 
+												<td><mono>&amp;Hat;</mono></td>
+												<td>&Hat;</td>
+											</tr>
+											<tr>
+												<td><mono>ent('&')</mono></td> 
+												<td><mono>&amp;amp;</mono></td>
+												<td>&amp;</td>
+											</tr>
+											<tr>
+												<td><mono>ent('*')</mono></td> 
+												<td><mono>&amp;ast;</mono></td>
+												<td>&ast;</td>
+											</tr>
+											<tr>
+												<td><mono>ent('?')</mono></td> 
+												<td><mono>&amp;quest;</mono></td>
+												<td>&quest;</td>
+											</tr>
+											<tr>
+												<td><mono>ent('<')</mono></td> 
+												<td><mono>&amp;lt;</mono></td>
+												<td>&lt;</td>
+											</tr>
+											<tr>
+												<td><mono>ent('>')</mono></td> 
+												<td><mono>&amp;gt;</mono></td>
+												<td>&gt;</td>
+											</tr>
+											<tr>
+												<td><mono>ent('(')</mono></td> 
+												<td><mono>&amp;lpar;</mono></td>
+												<td>&lpar;</td>
+											</tr>
+											<tr>
+												<td><mono>ent(')')</mono></td> 
+												<td><mono>&amp;rpar;</mono></td>
+												<td>&rpar;</td>
+											</tr>
+											<tr>
+												<td><mono>ent('[')</mono></td> 
+												<td><mono>&amp;lbrack;</mono></td>
+												<td>&lbrack;</td>
+											</tr>
+											<tr>
+												<td><mono>ent(']')</mono></td> 
+												<td><mono>&amp;rbrack;</mono></td>
+												<td>&rbrack;</td>
+											</tr>
+											<tr>
+												<td><mono>ent('{')</mono></td> 
+												<td><mono>&amp;lbrace;</mono></td>
+												<td>&lbrace;</td>
+											</tr>
+											<tr>
+												<td><mono>ent('}')</mono></td> 
+												<td><mono>&amp;rbrace;</mono></td>
+												<td>&rbrace;</td>
+											</tr>
+											<tr>
+												<td><mono>ent('-')</mono></td> 
+												<td><mono>&amp;minus;</mono></td>
+												<td>&minus;</td>
+											</tr>
+											<tr>
+												<td><mono>ent('_')</mono></td> 
+												<td><mono>&amp;lowbar;</mono></td>
+												<td>&lowbar;</td>
+											</tr>
+											<tr>
+												<td><mono>ent('=')</mono></td> 
+												<td><mono>&amp;equals;</mono></td>
+												<td>&equals;</td>
+											</tr>
+											<tr>
+												<td><mono>ent('+')</mono></td> 
+												<td><mono>&amp;plus;</mono></td>
+												<td>&plus;</td>
+											</tr>
+											<tr>
+												<td><mono>ent('|')</mono></td> 
+												<td><mono>&amp;vert;</mono></td>
+												<td>&vert;</td>
+											</tr>
+											<tr>
+												<td><mono>ent('\\')</mono> or <mono>ent(\)</mono></td> 
+												<td><mono>&amp;bsol;</mono></td>
+												<td>&bsol;</td>
+											</tr>
+											<tr>
+												<td><mono>ent('/')</mono></td> 
+												<td><mono>&amp;sol;</mono></td>
+												<td>&sol;</td>
+											</tr>
+											<tr>
+												<td><mono>ent(';')</mono></td> 
+												<td><mono>&amp;semi;</mono></td>
+												<td>&semi;</td>
+											</tr>
+											<tr>
+												<td><mono>ent(':')</mono></td> 
+												<td><mono>&amp;colon;</mono></td>
+												<td>&colon;</td>
+											</tr>
+											<tr>
+												<td><mono>ent('\'')</mono></td> 
+												<td><mono>&amp;apos;</mono></td>
+												<td>&apos;</td>
+											</tr>
+											<tr>
+												<td><mono>ent('"')</mono></td> 
+												<td><mono>&amp;quot;</mono></td>
+												<td>&quot;</td>
+											</tr>
+											<tr>
+												<td><mono>ent(',')</mono></td> 
+												<td><mono>&amp;comma;</mono></td>
+												<td>&comma;</td>
+											</tr>
+											<tr>
+												<td><mono>ent('.')</mono></td> 
+												<td><mono>&amp;period;</mono></td>
+												<td>&period;</td>
+											</tr>
+											<tr>
+												<td><mono>ent('£')</mono></td> 
+												<td><mono>&amp;pound;</mono></td>
+												<td>&pound;</td>
+											</tr>
+											<tr>
+												<td><mono>ent('¥')</mono></td> 
+												<td><mono>&amp;yen;</mono></td>
+												<td>&yen;</td>
+											</tr>
+											<tr>
+												<td><mono>ent('€')</mono></td> 
+												<td><mono>&amp;euro;</mono></td>
+												<td>&euro;</td>
+											</tr>
+											<tr>
+												<td><mono>ent("section")</mono></td> 
+												<td><mono>&amp;sect;</mono></td>
+												<td>&sect;</td>
+											</tr>
+											<tr>
+												<td><mono>ent("+-")</mono></td> 
+												<td><mono>&amp;pm;</mono></td>
+												<td>&pm;</td>
+											</tr>
+											<tr>
+												<td><mono>ent("-+")</mono></td> 
+												<td><mono>&amp;mp;</mono></td>
+												<td>&mp;</td>
+											</tr>
+											<tr>
+												<td><mono>ent("!=")</mono></td> 
+												<td><mono>&amp;ne;</mono></td>
+												<td>&ne;</td>
+											</tr>
+											<tr>
+												<td><mono>ent("<=")</mono></td> 
+												<td><mono>&amp;leq;</mono></td>
+												<td>&leq;</td>
+											</tr>
+											<tr>
+												<td><mono>ent(">=")</mono></td> 
+												<td><mono>&amp;geq;</mono></td>
+												<td>&geq;</td>
+											</tr>
+											<tr>
+												<td><mono>ent("->")</mono></td> 
+												<td><mono>&amp;rarr;</mono></td>
+												<td>&rarr;</td>
+											</tr>
+												<tr>
+												<td><mono>ent("&lt;-")</mono></td> 
+												<td><mono>&amp;larr;</mono></td>
+												<td>&larr;</td>
+											</tr>
+											<tr>
+												<td><mono>ent("&lt;->")</mono></td> 
+												<td><mono>&amp;harr;</mono></td>
+												<td>&harr;</td>
+											</tr>
+											<tr>
+												<td><mono>ent("==>")</mono></td> 
+												<td><mono>&amp;rArr;</mono></td>
+												<td>&rArr;</td>
+											</tr>
+											<tr>
+												<td><mono>ent("&lt;==")</mono></td> 
+												<td><mono>&amp;lArr;</mono></td>
+												<td>&lArr;</td>
+											</tr>
+											<tr>
+												<td><mono>ent("&lt;==>")</mono></td> 
+												<td><mono>&amp;hArr;</mono></td>
+												<td>&hArr;</td>
+											</tr>
+											<tr>
+												<td><mono>ent("<=!=>")</mono></td> 
+												<td><mono>&amp;nhArr;</mono></td>
+												<td>&nhArr;</td>
+											</tr>
+											<tr>
+												<td><mono>ent("...")</mono></td> 
+												<td><mono>&amp;hellip;</mono></td>
+												<td>&hellip;</td>
+											</tr>
+											<tfoot>
+												<tr>
+													<th>syntax</th>
+													<th>output</th>
+													<th>rendered</th>
+												</tr>
+											</tfoot>
+										</table>
+									</center>
+								</p>
+				
+								<h4 id="f++-eg">
+									f++ example
+								</h4>
+								<p>
+									Example of <mono>ent</mono> being used with <mono>f++</mono>:					
+				
+				<div align="center">
+				<pre class="prettyprint inline linenums">
 ent('!')
 ent("&lt;=")
 ent("...")</pre>
-		</div>
-						</p>
-		
-						<h4 id="n++-eg">
-							n++ example
-						</h4>
-						<p>
-							Example of <mono>ent</mono> being used with <mono>n++</mono>:					
-		
-		<div align="center">
-		<pre class="prettyprint inline linenums">
+				</div>
+								</p>
+				
+								<h4 id="n++-eg">
+									n++ example
+								</h4>
+								<p>
+									Example of <mono>ent</mono> being used with <mono>n++</mono>:					
+				
+				<div align="center">
+				<pre class="prettyprint inline linenums">
 @ent('!')
 @ent("&lt;=")
 @ent("...")</pre>
-		</div>
-						</p>
+				</div>
+								</p>
+							</div>
+						</section>
+					</div>
+				</section>
+
+				<!-- Footer -->
+				<section id="footer" class="wrapper">
+					<div class="title">
+						<img src="../../images/rabbit-tags-icon.webp" alt="Nift rabbit mascot with code tag boomerangs" loading="lazy" width="200" style="margin-top:20px; border-radius: 4px">
+					</div>
+				
+					<div class="container">
+						<div id="copyright" class="noselect">
+							<ul>
+								<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
+								<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
+								<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
+							</ul> <br>
+				
+							<ul>
+								<li><a href="../../tos.html">Terms of Service</a></li>
+								<li><a href="../../privacy_policy.html">Privacy Policy</a></li>
+							</ul> <br>
+				
+							<ul>
+								<li><span>&copy;</span> 2015-<span name="cyear"></span></li>
+							</ul>
+						</div>
 					</div>
 				</section>
 			</div>
-		</section>
+		</div>
 
-		<!-- Footer -->
-		<section id="footer" class="wrapper">
-			<div class="title">
-				<img src="../../images/rabbit-tags-icon.png" alt="Nift rabbit mascot with code tag boomerangs" loading="lazy" width="200" style="margin-top:20px; border-radius: 4px">
-			</div>
-		
-			<div class="container">
-				<div id="copyright" class="noselect">
-					<ul>
-						<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
-						<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
-						<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
-					</ul> <br>
-		
-					<ul>
-						<li><a href="../../tos.html">Terms of Service</a></li>
-						<li><a href="../../privacy_policy.html">Privacy Policy</a></li>
-					</ul> <br>
-		
-					<ul>
-						<li><span>&copy;</span> 2015-<span name="cyear"></span></li>
-					</ul>
-				</div>
-			</div>
-		</section>
+		<script type="text/javascript" src="../../assets/js/bundled.js"></script>
 
-		<script async src="../../assets/js/menu.js"></script>
 		<script async src="../../assets/js/copy-pre.js"></script>
 		<script async src="../../assets/js/process-md-blocks.js"></script>
 		<script async src="../../assets/js/showdown.min.js"></script>
@@ -510,3 +523,4 @@ ent("...")</pre>
 		</script>
 	</body>
 </html>
+

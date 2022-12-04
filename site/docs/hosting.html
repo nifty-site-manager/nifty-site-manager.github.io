@@ -3,251 +3,264 @@
 	<head>
 		<title>Nift - hosting</title>
 		<meta name="description" 
-		      content="Nift is an opinionless web development framework, specialising
-		            in static websites with serverless backends. It's lightning fast, 
-		            cross-platform, opinionless, open source (MIT license) and 
-		            developed from the ground up in C++. Use it for any of your 
-		            personal or commercial projects!">
+		      content="Nift is an opinionless web development framework. It's 
+		            lightning fast, cross-platform, opinionless, open source 
+		            (MIT license) and developed from the ground up in C++. Use 
+		            it for any of your personal or commercial projects!">
 		
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
-		<link rel="stylesheet" href="../assets/css/pagestyle.css">
-		<link rel="stylesheet" href="../assets/css/menu.css">
-		<link rel="stylesheet" href="../assets/css/font-awesome.css">
+		<link rel="stylesheet" href="../assets/css/bundled.css">
 		<link rel="stylesheet" href="../assets/css/pre.css">
 		<link rel="stylesheet" href="../assets/css/extra-fonts.css"><link rel='icon' type='image/png' href='../images/favicon.png'>
 	</head>
 
 	<body>
-		<nav id="nav" class="noselect">
-		  <ul class="menu">
-		    <li class="nav-space-left"></li>
-		    <li class="item icons">
-		      <a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a>
-		      <a href="https://github.com/nifty-site-manager/nsm/discussions" title="GitHub Discussions" class="gh"><i class="fas fa-comment-dots fa-2x"></i></a>
-		      <a href="https://twitter.com/nift_dev" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a>
-		      <a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a>
-		    </li>
-		    <a href="../index.html" class="item hover-hl"><li>Home</li></a>
-		    <li class="item hover-hl has-submenu" onclick="toggleItem(0)">
-		      <a tabindex="0" class="item-link">Docs</a>
-		      <ul class="submenu">
-		        <li class="subitem"><a href="installing.html">Installing</a></li>
-		        <li class="subitem"><a href="hosting.html">Hosting</a></li>
-		        <li class="subitem"><a href="commands.html">Commands</a></li>
-		        <li class="subitem"><a href="config.html">Config</a></li>
-		        <li class="subitem"><a href="template_files.html">Template Files</a></li>
-		        <li class="subitem"><a href="fns.html">Functions</a></li>
-		        <li class="subitem"><a href="types.html">Types</a></li>
-		        <li class="subitem"><a href="f++.html">f++ (scripting)</a></li>
-		        <li class="subitem"><a href="n++.html">n++ (templates)</a></li>
-		        <li class="subitem"><a href="lua.html">Lua(JIT)</a></li>
-		        <li class="subitem"><a href="exprtk.html">ExprTk</a></li>
-		        <li class="subitem"><a href="REPL.html">Interactive REPL</a></li>
-		        <li class="subitem"><a href="scripts.html">Scripts</a></li>
-		        <li class="subitem"><a href="template_languages.html">Template Languages</a></li>
-		        <li class="subitem"><a href="JSON.html">JSON Data</a></li>
-		        <li class="subitem"><a href="markdown.html">Markdown</a></li>
-		        <li class="subitem"><a href="translators.html">Translators</a></li>
-		        <li class="subitem"><a href="mathematics.html">Mathematics</a></li>
-		        <li class="subitem"><a href="code_blocks.html">Code Blocks</a></li>
-		        <li class="subitem"><a href="presentations.html">Presentations</a></li>
-		      </ul>
-		    </li>
-		    <li class="item hover-hl has-submenu" onclick="toggleItem(1)">
-		      <a tabindex="0" class="item-link">Resources</a>
-		      <ul class="submenu">
-		        <li class="subitem"><a href="../resources/tutorials.html">Tutorials</a></li>
-		        <li class="subitem"><a href="../resources/templates.html">Templates</a></li>
-		        <li class="subitem"><a href="../resources/blog_templates.html">Blog Templates</a></li>
-		        <li class="subitem"><a href="../resources/css_frameworks.html">CSS Frameworks</a></li>
-		        <li class="subitem"><a href="../resources/js_frameworks.html">JS Frameworks</a></li>
-		        <li class="subitem"><a href="../resources/links.html">Links</a></li>
-		        <li class="subitem"><a href="../resources/logos.html">Logos</a></li>
-		        <li class="subitem"><a href="../resources/promos.html">Promos</a></li>
-		        <li class="subitem"><a href="../resources/php_frameworks.html">PHP Frameworks</a></li>
-		      </ul>
-		    </li>
-		    <li class="toggle"><a href="#" onclick="toggleMenu()" id="menu-link"><i class="fas fa-bars fa-2x"></i></a></li>
-		  </ul>
-		</nav>
-		
-		<!-- Header -->
-		<section class="wrapper" id="header">
-		  <div id="logo" class="noselect">
-		    <img src="../images/rabbit-tags-white.png" alt="Nift bunny mascot" style="width: 400px; max-width:90%"><br>
-		
-		    <p style="color:#372C2A">An opinionless web development framework</p>
-		
-		    <p>
-		      <a href="https://chocolatey.org/packages/nift"><img src="../images/chocolatey-icon.png" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
-		      <a href="installing.html#osx-brew"><img src="../images/brew-icon.png" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
-		      <a href="installing.html#freebsd"><img src="../images/freebsd.png" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
-		      <a href="installing.html#linux-flatpak"><img src="../images/flathub-icon.png" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
-		      <a href="installing.html#gentoo"><img src="../images/gentoo.svg" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
-		      <a href="https://snapcraft.io/nift"><img src="../images/snap-icon.png" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
-		    </p>
-		  </div>
-		</section>
+		<div align="center"  id="body">
+			<div class="menu-bars">
+			  <i id="open-menu-icon" class="fa fa-bars" onclick="show_menu()"></i>
+			</div>
+			
+			<div id="menu-page">
+			  <div class="menu-cross" >
+			    <i id="close-menu-icon" class="fa fa-xmark" onclick="close_menu()"></i>
+			  </div>
+			
+			  <div class="menu-icons noselect">
+			    <a href="https://github.com/nifty-site-manager/nsm" alt="GitHub"><i class="fa fa-2x fa-github"></i></a>&nbsp;&nbsp;
+			    <a href="https://github.com/nifty-site-manager/nsm/discussions" alt="GitHub Discussions"><i class="fa fa-2x fa-comments"></i></a>&nbsp;&nbsp;
+			    <a href="https://twitter.com/nift_dev" alt="Twitter"><i class="fa fa-2x fa-twitter"></i></a>&nbsp;&nbsp;
+			    <a href="https://discord.gg/St8QXTG" alt="Discord"><i class="fa fa-2x fa-discord"></i></a>
+			  </div>
+			  
+			  <nav id="nav" class="noselect">
+			    <ul>
+			      <li class="item li-menu li-dark">
+			        <a class="item-link" href="../index.html">Home</a>
+			      </li>
+			      <li class="item li-menu li-dark has-submenu">
+			        <a tabindex="0" href="#" class="submenu-link" onclick="toggle_submenu(0)">Documentation <i class="submenu-link-icon fa fa-angle-down fa-1x"></i></a>
+			        <ul class="submenu">
+			          <li class="subitem"><a href="installing.html">Installing</a></li>
+			          <li class="subitem"><a href="hosting.html">Hosting</a></li>
+			          <li class="subitem"><a href="commands.html">Commands</a></li>
+			          <li class="subitem"><a href="config.html">Config</a></li>
+			          <li class="subitem"><a href="template_files.html">Template Files</a></li>
+			          <li class="subitem"><a href="fns.html">Functions</a></li>
+			          <li class="subitem"><a href="types.html">Types</a></li>
+			          <li class="subitem"><a href="f++.html">f++ (scripting)</a></li>
+			          <li class="subitem"><a href="n++.html">n++ (templates)</a></li>
+			          <li class="subitem"><a href="lua.html">Lua(JIT)</a></li>
+			          <li class="subitem"><a href="exprtk.html">ExprTk</a></li>
+			          <li class="subitem"><a href="REPL.html">Interactive REPL</a></li>
+			          <li class="subitem"><a href="scripts.html">Scripts</a></li>
+			          <li class="subitem"><a href="template_languages.html">Template Languages</a></li>
+			          <li class="subitem"><a href="JSON.html">JSON Data</a></li>
+			          <li class="subitem"><a href="markdown.html">Markdown</a></li>
+			          <li class="subitem"><a href="translators.html">Translators</a></li>
+			          <li class="subitem"><a href="mathematics.html">Mathematics</a></li>
+			          <li class="subitem"><a href="code_blocks.html">Code Blocks</a></li>
+			          <li class="subitem"><a href="presentations.html">Presentations</a></li>
+			        </ul>
+			      </li>
+			      <li class="item li-menu li-dark has-submenu">
+			        <a tabindex="0" href="#" class="submenu-link" onclick="toggle_submenu(1)">Resources <i class="submenu-link-icon fa fa-angle-down fa-1x"></i></a>
+			        <ul class="submenu">
+			          <li class="subitem"><a href="../resources/tutorials.html">Tutorials</a></li>
+			          <li class="subitem"><a href="../resources/templates.html">Templates</a></li>
+			          <li class="subitem"><a href="../resources/blog_templates.html">Blog Templates</a></li>
+			          <li class="subitem"><a href="../resources/css_frameworks.html">CSS Frameworks</a></li>
+			          <li class="subitem"><a href="../resources/js_frameworks.html">JS Frameworks</a></li>
+			          <li class="subitem"><a href="../resources/links.html">Links</a></li>
+			          <li class="subitem"><a href="../resources/logos.html">Logos</a></li>
+			          <li class="subitem"><a href="../resources/promos.html">Promos</a></li>
+			          <li class="subitem"><a href="../resources/php_frameworks.html">PHP Frameworks</a></li>
+			        </ul>
+			      </li>
+			    </ul>
+			  </nav>
+			</div>
 
-		<!-- Main -->
-		<section id="main" class="wrapper style2">
-			<div class="title">Hosting</div>
-			<div class="container">
-				<!-- Features -->
-				<section id="features">
-					<div class="content">
-						<div align="center">
-							<div style="max-width:90%; margin: 2em 0">
-							<a href="https://pages.bitbucket.io/"><img src="../images/bitbucket-icon.svg" alt="BitBucket logo" width=50 style="max-width:14%; vertical-align:middle"></a> &nbsp;
-							<a href="https://pages.github.com/"><img src="../images/github-watercolor.png" id="gh-logo" alt="GitHub logo" width=50 style="max-width:14%; vertical-align:middle;"></a> &nbsp;
-							<a href="https://about.gitlab.com/product/pages/"><img src="../images/gitlab-icon.svg" alt="GitLab logo" width=50 style="max-width:14%; vertical-align:middle;"></a> &nbsp;
-							<a href="https://www.fleek.co/"><img src="../images/fleek.png" alt="Fleek logo" width=40 style="max-width: 14%; vertical-align: middle"></a> &nbsp;
-							<a href="https://www.netlify.com/"><img src="../images/netlify.png" alt="Netlify logo" width=50 style="max-width: 14%; vertical-align: middle"></a> &nbsp;
-							<a href="https://surge.sh/"><img src="../images/surge.svg" alt="surge.sh logo" width=50 style="max-width: 14%; vertical-align:middle;"></a>
-							<a href="https://vercel.com"><img src="../images/vercel-white.svg" id="vercel-logo" alt="Vercel logo" width=50 style="max-width: 14%; vertical-align:middle;"></a>
+			<div id="content">
+				<!-- Header -->
+				<section class="wrapper" id="header">
+				  <div id="logo" class="noselect">
+				    <img src="../images/rabbit-tags-white.webp" alt="Nift bunny mascot" style="width: 400px; max-width:90%"><br>
+				
+				    <p style="color:#372C2A">An unopinionated web development framework</p>
+				
+				    <p>
+				      <a href="https://chocolatey.org/packages/nift"><img src="../images/chocolatey-icon.webp" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
+				      <a href="installing.html#osx-brew"><img src="../images/brew-icon.webp" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
+				      <a href="installing.html#freebsd"><img src="../images/freebsd.webp" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
+				      <a href="installing.html#linux-flatpak"><img src="../images/flathub-icon.webp" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
+				      <a href="installing.html#gentoo"><img src="../images/gentoo.webp" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
+				      <a href="https://snapcraft.io/nift"><img src="../images/snap-icon.webp" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
+				    </p>
+				  </div>
+				</section>
+
+				<!-- Main -->
+				<section id="main" class="wrapper style2">
+					<div class="title">Hosting</div>
+					<div class="container">
+						<!-- Features -->
+						<section id="features">
+							<div class="content">
+								<div align="center">
+									<div style="max-width:90%; margin: 2em 0">
+									<a href="https://pages.bitbucket.io/"><img src="../images/bitbucket-icon.svg" alt="BitBucket logo" width=50 style="max-width:14%; vertical-align:middle"></a> &nbsp;
+									<a href="https://pages.github.com/"><img src="../images/github-watercolor.png" id="gh-logo" alt="GitHub logo" width=50 style="max-width:14%; vertical-align:middle;"></a> &nbsp;
+									<a href="https://about.gitlab.com/product/pages/"><img src="../images/gitlab-icon.svg" alt="GitLab logo" width=50 style="max-width:14%; vertical-align:middle;"></a> &nbsp;
+									<a href="https://www.fleek.co/"><img src="../images/fleek.png" alt="Fleek logo" width=40 style="max-width: 14%; vertical-align: middle"></a> &nbsp;
+									<a href="https://www.netlify.com/"><img src="../images/netlify.png" alt="Netlify logo" width=50 style="max-width: 14%; vertical-align: middle"></a> &nbsp;
+									<a href="https://surge.sh/"><img src="../images/surge.svg" alt="surge.sh logo" width=50 style="max-width: 14%; vertical-align:middle;"></a>
+									<a href="https://vercel.com"><img src="../images/vercel-white.svg" id="vercel-logo" alt="Vercel logo" width=50 style="max-width: 14%; vertical-align:middle;"></a>
+									</div>
+								</div>
+				
+								<p>
+									To host a website made with <mono>Nift</mono> just copy everything from the output directory (not the project directory) to the server on which you would like to host it.
+								</p>
+				
+								<p>
+									There are specific instructions at the following links for:
+								</p>
+								<div>
+									<ul>
+										<li><a href="bitbucket_hosting.html">BitBucket</a></li>
+										<li><a href="github_hosting.html">GitHub</a></li>
+										<li><a href="gitlab_hosting.html">GitLab</a></li>
+										<li><a href="vercel_hosting.html">Vercel</a></li>
+									</ul>
+								</div>
+				
+								<p>
+									For creating static websites on code collaboration sites offering repository management like <a href="https://aws.amazon.com/codecommit/">Amazon CodeCommit</a>, <a href="https://pages.bitbucket.io/">BitBucket</a>, <a href="https://pages.github.com/">GitHub</a> and <a href="https://about.gitlab.com/product/pages/">GitLab</a> you can import/fork, rename and clone a site repository template and work from that (use <mono>nsm clone <i>repository-url</i></mono>). I personally find hosting on GitLab easier than BitBucket or GitHub, because you only need one branch (standard <mono>master</mono>, though you can use one branch on BitBucket and GitHub when hosting with places like <a href="https://vercel.com/">Vercel</a> or <a href="https://netlify.com">Netlify</a> as well) then have it deploy the site when you push using a <mono>.gitlab-ci.yaml</mono> file.
+								</p>
+				
+								<p>
+									There is a variety of site repository templates <a href="../resources/templates.html">here</a>, including <a href="https://undraw.co/evie">Evie</a> from <a href="https://undraw.co/">unDraw</a> and a whole range of <a href="https://html5up.net/">HTML5 UP</a> templates.
+								</p>
+				
+								<p>
+									Note - You can rename a repository when importing it, rather than forking and renaming, plus on BitBucket and GitHub you cannot remove fork relationships. Also on GitHub you will need to go in to the site repository's settings, find the GitHub Pages section and set the <mono>source</mono> to <mono>master branch</mono> (there may be some delay before your website goes live).
+								</p>
+				
+								<p>
+									A lot of static website hosts automatically renew <a href="https://letsencrypt.org/">Let's Encrypt</a> certificates for your websites. 
+								</p>
+				
+								<p>
+									Other good free hosting options for static sites include:
+								</p>
+								<div>
+									<ul>
+										<li><a href="https://developers.cloudflare.com/workers/sites/">CloudFlare</a></li>
+										<li><a href="https://aws.amazon.com/amplify/console/">Amazon Amplify Console</a></li>
+										<li><a href="https://support.atlassian.com/bitbucket-cloud/docs/publishing-a-website-on-bitbucket-cloud/">BitBucket</a></li>
+										<li><a href="https://fleek.co/">Fleek</a></li>
+										<li><a href="https://pages.github.com/">GitHub</a></li>
+										<li><a href="https://docs.gitlab.com/ee/user/project/pages/">GitLab</a></li>
+										<li><a href="https://firebase.google.com/">Google FireBase</a></li>
+										<li><a href="https://netlify.com">Netlify</a></li>
+										<li><a href="https://surge.sh/">surge.sh</a></li>
+										<li><a href="https://vercel.com/">Vercel</a></li>
+										<li><a href="https://linc.sh/pricing">Linc</a></li>
+										<li><a href="https://render.com/">Render</a></li>
+									</ul>
+								</div>
+				
+								<div align="center">
+									<a href="https://developers.cloudflare.com/workers/sites/"><img src="../images/cloudflare.svg" id="cloudflare-logo" alt="Cloudfare logo" width="350px" style="max-width: 70%; margin-bottom: 20px"></a>
+								</div>
+				
+								<div align="center" style="margin-bottom:20px">
+									<a href="https://aws.amazon.com/amplify/console/"><img src="../images/aws.png" alt="Amazon AWS logo" width=175 style="max-width: 60%; vertical-align:middle; margin-top: 0px"></a>
+									<a href="https://firebase.google.com/"><img src="../images/firebase.svg" alt="Google Firebase logo" width=120 style="max-width: 60%; vertical-align:middle; margin-top: 0px; margin-left: 20px"></a>
+								</div>
+				
+								<p>
+									If you would like to set up your own site repositories from scratch for any of BitBucket, GitHub or GitLab then see:
+								</p>
+								<div>
+									<ul>
+										<li><a href="bitbucket_hosting.html">Hosting on BitBucket</a>;</li>
+										<li><a href="github_hosting.html">Hosting on GitHub</a>; or</li>
+										<li><a href="gitlab_hosting.html">Hosting on GitLab</a>.</li>
+									</ul>
+								</div>
+				
+								<p>
+									To host dynamic websites for free check out <a href="https://www.heroku.com/">Heroku</a>. Other options for hosting dynamic websites (or even static sites) include hiring a server with somewhere like:
+								</p>
+								<div>
+									<ul>
+										<li><a href="https://buyvm.net/">BuyVM</a>;</li>
+										<li><a href="https://joesdatacenter.com/">Joe's Datacenter</a>;</li>
+										<li><a href="https://www.linode.com/">Linode</a>; or</li>
+										<li><a href="https://www.vultr.com/">Vultr</a>.</li>
+									</ul>
+								</div>
+				
+								<p>
+									<div align="center">
+										<a href="https://www.linode.com/"><img src="../images/linode.png" id="linode-logo" alt="Linode logo" width=250 style="max-width: 60%; margin: 10px; vertical-align:middle"></a>
+										<a href="https://www.vultr.com/"><img src="../images/vultr.svg" id="vultr-logo" alt="Vultr logo" width=250 style="max-width: 60%; margin: 10px 20px; vertical-align:middle"></a>
+									</div>
+								</p>
+				
+								<p>
+									or any site that offers linux VPS hiring, then using something like the following to set up a web server on the server you have hired:
+								</p>
+								<div>
+									<ul>
+										<li><a href="https://caddyserver.com/">Caddy 2</a> (<a href="https://github.com/caddyserver/caddy">GitHub</a>).</li>
+										<li><a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)">LAMP stack</a>; or</li>
+										<li><a href="https://www.nginx.com/">NGINX</a> (check out NGINX Open Source).</li>
+										<li><a href="https://containo.us/traefik/">Traefik</a> (<a href="https://github.com/containous/traefik/">GitHub</a>).</li>
+									</ul>
+								</div>
+				
+								<center>
+									<a href="https://www.nginx.com/"><img src="../images/nginx.svg" alt="NGINX logo" width=250 style="max-width: 60%; vertical-align:middle"></a>
+								</center>
 							</div>
-						</div>
-		
-						<p>
-							To host a website made with <mono>Nift</mono> just copy everything from the output directory (not the project directory) to the server on which you would like to host it.
-						</p>
-		
-						<p>
-							There are specific instructions at the following links for:
-						</p>
-						<div>
+						</section>
+					</div>
+				</section>
+
+				<!-- Footer -->
+				<section id="footer" class="wrapper">
+					<div class="title">
+						<img src="../images/rabbit-tags-icon.webp" alt="Nift rabbit mascot with code tag boomerangs" loading="lazy" width="200" style="margin-top:20px; border-radius: 4px">
+					</div>
+				
+					<div class="container">
+						<div id="copyright" class="noselect">
 							<ul>
-								<li><a href="bitbucket_hosting.html">BitBucket</a></li>
-								<li><a href="github_hosting.html">GitHub</a></li>
-								<li><a href="gitlab_hosting.html">GitLab</a></li>
-								<li><a href="vercel_hosting.html">Vercel</a></li>
+								<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
+								<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
+								<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
+							</ul> <br>
+				
+							<ul>
+								<li><a href="../tos.html">Terms of Service</a></li>
+								<li><a href="../privacy_policy.html">Privacy Policy</a></li>
+							</ul> <br>
+				
+							<ul>
+								<li><span>&copy;</span> 2015-<span name="cyear"></span></li>
 							</ul>
 						</div>
-		
-						<p>
-							For creating static websites on code collaboration sites offering repository management like <a href="https://aws.amazon.com/codecommit/">Amazon CodeCommit</a>, <a href="https://pages.bitbucket.io/">BitBucket</a>, <a href="https://pages.github.com/">GitHub</a> and <a href="https://about.gitlab.com/product/pages/">GitLab</a> you can import/fork, rename and clone a site repository template and work from that (use <mono>nsm clone <i>repository-url</i></mono>). I personally find hosting on GitLab easier than BitBucket or GitHub, because you only need one branch (standard <mono>master</mono>, though you can use one branch on BitBucket and GitHub when hosting with places like <a href="https://vercel.com/">Vercel</a> or <a href="https://netlify.com">Netlify</a> as well) then have it deploy the site when you push using a <mono>.gitlab-ci.yaml</mono> file.
-						</p>
-		
-						<p>
-							There is a variety of site repository templates <a href="../resources/templates.html">here</a>, including <a href="https://undraw.co/evie">Evie</a> from <a href="https://undraw.co/">unDraw</a> and a whole range of <a href="https://html5up.net/">HTML5 UP</a> templates.
-						</p>
-		
-						<p>
-							Note - You can rename a repository when importing it, rather than forking and renaming, plus on BitBucket and GitHub you cannot remove fork relationships. Also on GitHub you will need to go in to the site repository's settings, find the GitHub Pages section and set the <mono>source</mono> to <mono>master branch</mono> (there may be some delay before your website goes live).
-						</p>
-		
-						<p>
-							A lot of static website hosts automatically renew <a href="https://letsencrypt.org/">Let's Encrypt</a> certificates for your websites. 
-						</p>
-		
-						<p>
-							Other good free hosting options for static sites include:
-						</p>
-						<div>
-							<ul>
-								<li><a href="https://developers.cloudflare.com/workers/sites/">CloudFlare</a></li>
-								<li><a href="https://aws.amazon.com/amplify/console/">Amazon Amplify Console</a></li>
-								<li><a href="https://support.atlassian.com/bitbucket-cloud/docs/publishing-a-website-on-bitbucket-cloud/">BitBucket</a></li>
-								<li><a href="https://fleek.co/">Fleek</a></li>
-								<li><a href="https://pages.github.com/">GitHub</a></li>
-								<li><a href="https://docs.gitlab.com/ee/user/project/pages/">GitLab</a></li>
-								<li><a href="https://firebase.google.com/">Google FireBase</a></li>
-								<li><a href="https://netlify.com">Netlify</a></li>
-								<li><a href="https://surge.sh/">surge.sh</a></li>
-								<li><a href="https://vercel.com/">Vercel</a></li>
-								<li><a href="https://linc.sh/pricing">Linc</a></li>
-								<li><a href="https://render.com/">Render</a></li>
-							</ul>
-						</div>
-		
-						<div align="center">
-							<a href="https://developers.cloudflare.com/workers/sites/"><img src="../images/cloudflare.svg" id="cloudflare-logo" alt="Cloudfare logo" width="350px" style="max-width: 70%; margin-bottom: 20px"></a>
-						</div>
-		
-						<div align="center" style="margin-bottom:20px">
-							<a href="https://aws.amazon.com/amplify/console/"><img src="../images/aws.png" alt="Amazon AWS logo" width=175 style="max-width: 60%; vertical-align:middle; margin-top: 0px"></a>
-							<a href="https://firebase.google.com/"><img src="../images/firebase.svg" alt="Google Firebase logo" width=120 style="max-width: 60%; vertical-align:middle; margin-top: 0px; margin-left: 20px"></a>
-						</div>
-		
-						<p>
-							If you would like to set up your own site repositories from scratch for any of BitBucket, GitHub or GitLab then see:
-						</p>
-						<div>
-							<ul>
-								<li><a href="bitbucket_hosting.html">Hosting on BitBucket</a>;</li>
-								<li><a href="github_hosting.html">Hosting on GitHub</a>; or</li>
-								<li><a href="gitlab_hosting.html">Hosting on GitLab</a>.</li>
-							</ul>
-						</div>
-		
-						<p>
-							To host dynamic websites for free check out <a href="https://www.heroku.com/">Heroku</a>. Other options for hosting dynamic websites (or even static sites) include hiring a server with somewhere like:
-						</p>
-						<div>
-							<ul>
-								<li><a href="https://buyvm.net/">BuyVM</a>;</li>
-								<li><a href="https://joesdatacenter.com/">Joe's Datacenter</a>;</li>
-								<li><a href="https://www.linode.com/">Linode</a>; or</li>
-								<li><a href="https://www.vultr.com/">Vultr</a>.</li>
-							</ul>
-						</div>
-		
-						<p>
-							<div align="center">
-								<a href="https://www.linode.com/"><img src="../images/linode.png" id="linode-logo" alt="Linode logo" width=250 style="max-width: 60%; margin: 10px; vertical-align:middle"></a>
-								<a href="https://www.vultr.com/"><img src="../images/vultr.svg" id="vultr-logo" alt="Vultr logo" width=250 style="max-width: 60%; margin: 10px 20px; vertical-align:middle"></a>
-							</div>
-						</p>
-		
-						<p>
-							or any site that offers linux VPS hiring, then using something like the following to set up a web server on the server you have hired:
-						</p>
-						<div>
-							<ul>
-								<li><a href="https://caddyserver.com/">Caddy 2</a> (<a href="https://github.com/caddyserver/caddy">GitHub</a>).</li>
-								<li><a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)">LAMP stack</a>; or</li>
-								<li><a href="https://www.nginx.com/">NGINX</a> (check out NGINX Open Source).</li>
-								<li><a href="https://containo.us/traefik/">Traefik</a> (<a href="https://github.com/containous/traefik/">GitHub</a>).</li>
-							</ul>
-						</div>
-		
-						<center>
-							<a href="https://www.nginx.com/"><img src="../images/nginx.svg" alt="NGINX logo" width=250 style="max-width: 60%; vertical-align:middle"></a>
-						</center>
 					</div>
 				</section>
 			</div>
-		</section>
+		</div>
 
-		<!-- Footer -->
-		<section id="footer" class="wrapper">
-			<div class="title">
-				<img src="../images/rabbit-tags-icon.png" alt="Nift rabbit mascot with code tag boomerangs" loading="lazy" width="200" style="margin-top:20px; border-radius: 4px">
-			</div>
-		
-			<div class="container">
-				<div id="copyright" class="noselect">
-					<ul>
-						<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
-						<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
-						<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
-					</ul> <br>
-		
-					<ul>
-						<li><a href="../tos.html">Terms of Service</a></li>
-						<li><a href="../privacy_policy.html">Privacy Policy</a></li>
-					</ul> <br>
-		
-					<ul>
-						<li><span>&copy;</span> 2015-<span name="cyear"></span></li>
-					</ul>
-				</div>
-			</div>
-		</section>
+		<script type="text/javascript" src="../assets/js/bundled.js"></script>
 
-		<script async src="../assets/js/menu.js"></script>
 		<script async src="../assets/js/copy-pre.js"></script>
 		<script async src="../assets/js/process-md-blocks.js"></script>
 		<script async src="../assets/js/showdown.min.js"></script>
@@ -298,3 +311,4 @@
 		</script>
 	</body>
 </html>
+

@@ -1,4 +1,4 @@
-06:20:59 Wednesday September 14 2022
+16:38:35 Sunday December 04 2022
 'docs/config'
 'config'
 'template/page.template'
@@ -8,5 +8,6 @@
 'content/docs/eg-global.config'
 'template/footer.content'
 'template/head.content'
+'template/header.content'
 'template/menu.content'
 'template/page.template'

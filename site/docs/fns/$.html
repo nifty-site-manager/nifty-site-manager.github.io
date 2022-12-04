@@ -3,543 +3,556 @@
 	<head>
 		<title>Nift - $</title>
 		<meta name="description" 
-		      content="Nift is an opinionless web development framework, specialising
-		            in static websites with serverless backends. It's lightning fast, 
-		            cross-platform, opinionless, open source (MIT license) and 
-		            developed from the ground up in C++. Use it for any of your 
-		            personal or commercial projects!">
+		      content="Nift is an opinionless web development framework. It's 
+		            lightning fast, cross-platform, opinionless, open source 
+		            (MIT license) and developed from the ground up in C++. Use 
+		            it for any of your personal or commercial projects!">
 		
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
-		<link rel="stylesheet" href="../../assets/css/pagestyle.css">
-		<link rel="stylesheet" href="../../assets/css/menu.css">
-		<link rel="stylesheet" href="../../assets/css/font-awesome.css">
+		<link rel="stylesheet" href="../../assets/css/bundled.css">
 		<link rel="stylesheet" href="../../assets/css/pre.css">
 		<link rel="stylesheet" href="../../assets/css/extra-fonts.css"><link rel='icon' type='image/png' href='../../images/favicon.png'>
 	</head>
 
 	<body>
-		<nav id="nav" class="noselect">
-		  <ul class="menu">
-		    <li class="nav-space-left"></li>
-		    <li class="item icons">
-		      <a href="https://github.com/nifty-site-manager/nsm" title="GitHub" class="gh"><i class="fab fa-github fa-2x"></i></a>
-		      <a href="https://github.com/nifty-site-manager/nsm/discussions" title="GitHub Discussions" class="gh"><i class="fas fa-comment-dots fa-2x"></i></a>
-		      <a href="https://twitter.com/nift_dev" title="Twitter" class="bb"><i class="fab fa-twitter-square fa-2x"></i></a>
-		      <a href="https://discord.gg/St8QXTG" title="Discord" class="discord"><i class="fab fa-discord fa-2x"></i></a>
-		    </li>
-		    <a href="../../index.html" class="item hover-hl"><li>Home</li></a>
-		    <li class="item hover-hl has-submenu" onclick="toggleItem(0)">
-		      <a tabindex="0" class="item-link">Docs</a>
-		      <ul class="submenu">
-		        <li class="subitem"><a href="../installing.html">Installing</a></li>
-		        <li class="subitem"><a href="../hosting.html">Hosting</a></li>
-		        <li class="subitem"><a href="../commands.html">Commands</a></li>
-		        <li class="subitem"><a href="../config.html">Config</a></li>
-		        <li class="subitem"><a href="../template_files.html">Template Files</a></li>
-		        <li class="subitem"><a href="../fns.html">Functions</a></li>
-		        <li class="subitem"><a href="../types.html">Types</a></li>
-		        <li class="subitem"><a href="../f++.html">f++ (scripting)</a></li>
-		        <li class="subitem"><a href="../n++.html">n++ (templates)</a></li>
-		        <li class="subitem"><a href="../lua.html">Lua(JIT)</a></li>
-		        <li class="subitem"><a href="../exprtk.html">ExprTk</a></li>
-		        <li class="subitem"><a href="../REPL.html">Interactive REPL</a></li>
-		        <li class="subitem"><a href="../scripts.html">Scripts</a></li>
-		        <li class="subitem"><a href="../template_languages.html">Template Languages</a></li>
-		        <li class="subitem"><a href="../JSON.html">JSON Data</a></li>
-		        <li class="subitem"><a href="../markdown.html">Markdown</a></li>
-		        <li class="subitem"><a href="../translators.html">Translators</a></li>
-		        <li class="subitem"><a href="../mathematics.html">Mathematics</a></li>
-		        <li class="subitem"><a href="../code_blocks.html">Code Blocks</a></li>
-		        <li class="subitem"><a href="../presentations.html">Presentations</a></li>
-		      </ul>
-		    </li>
-		    <li class="item hover-hl has-submenu" onclick="toggleItem(1)">
-		      <a tabindex="0" class="item-link">Resources</a>
-		      <ul class="submenu">
-		        <li class="subitem"><a href="../../resources/tutorials.html">Tutorials</a></li>
-		        <li class="subitem"><a href="../../resources/templates.html">Templates</a></li>
-		        <li class="subitem"><a href="../../resources/blog_templates.html">Blog Templates</a></li>
-		        <li class="subitem"><a href="../../resources/css_frameworks.html">CSS Frameworks</a></li>
-		        <li class="subitem"><a href="../../resources/js_frameworks.html">JS Frameworks</a></li>
-		        <li class="subitem"><a href="../../resources/links.html">Links</a></li>
-		        <li class="subitem"><a href="../../resources/logos.html">Logos</a></li>
-		        <li class="subitem"><a href="../../resources/promos.html">Promos</a></li>
-		        <li class="subitem"><a href="../../resources/php_frameworks.html">PHP Frameworks</a></li>
-		      </ul>
-		    </li>
-		    <li class="toggle"><a href="#" onclick="toggleMenu()" id="menu-link"><i class="fas fa-bars fa-2x"></i></a></li>
-		  </ul>
-		</nav>
-		
-		<!-- Header -->
-		<section class="wrapper" id="header">
-		  <div id="logo" class="noselect">
-		    <img src="../../images/rabbit-tags-white.png" alt="Nift bunny mascot" style="width: 400px; max-width:90%"><br>
-		
-		    <p style="color:#372C2A">An opinionless web development framework</p>
-		
-		    <p>
-		      <a href="https://chocolatey.org/packages/nift"><img src="../../images/chocolatey-icon.png" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
-		      <a href="../installing.html#osx-brew"><img src="../../images/brew-icon.png" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
-		      <a href="../installing.html#freebsd"><img src="../../images/freebsd.png" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
-		      <a href="../installing.html#linux-flatpak"><img src="../../images/flathub-icon.png" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
-		      <a href="../installing.html#gentoo"><img src="../../images/gentoo.svg" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
-		      <a href="https://snapcraft.io/nift"><img src="../../images/snap-icon.png" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
-		    </p>
-		  </div>
-		</section>
+		<div align="center"  id="body">
+			<div class="menu-bars">
+			  <i id="open-menu-icon" class="fa fa-bars" onclick="show_menu()"></i>
+			</div>
+			
+			<div id="menu-page">
+			  <div class="menu-cross" >
+			    <i id="close-menu-icon" class="fa fa-xmark" onclick="close_menu()"></i>
+			  </div>
+			
+			  <div class="menu-icons noselect">
+			    <a href="https://github.com/nifty-site-manager/nsm" alt="GitHub"><i class="fa fa-2x fa-github"></i></a>&nbsp;&nbsp;
+			    <a href="https://github.com/nifty-site-manager/nsm/discussions" alt="GitHub Discussions"><i class="fa fa-2x fa-comments"></i></a>&nbsp;&nbsp;
+			    <a href="https://twitter.com/nift_dev" alt="Twitter"><i class="fa fa-2x fa-twitter"></i></a>&nbsp;&nbsp;
+			    <a href="https://discord.gg/St8QXTG" alt="Discord"><i class="fa fa-2x fa-discord"></i></a>
+			  </div>
+			  
+			  <nav id="nav" class="noselect">
+			    <ul>
+			      <li class="item li-menu li-dark">
+			        <a class="item-link" href="../../index.html">Home</a>
+			      </li>
+			      <li class="item li-menu li-dark has-submenu">
+			        <a tabindex="0" href="#" class="submenu-link" onclick="toggle_submenu(0)">Documentation <i class="submenu-link-icon fa fa-angle-down fa-1x"></i></a>
+			        <ul class="submenu">
+			          <li class="subitem"><a href="../installing.html">Installing</a></li>
+			          <li class="subitem"><a href="../hosting.html">Hosting</a></li>
+			          <li class="subitem"><a href="../commands.html">Commands</a></li>
+			          <li class="subitem"><a href="../config.html">Config</a></li>
+			          <li class="subitem"><a href="../template_files.html">Template Files</a></li>
+			          <li class="subitem"><a href="../fns.html">Functions</a></li>
+			          <li class="subitem"><a href="../types.html">Types</a></li>
+			          <li class="subitem"><a href="../f++.html">f++ (scripting)</a></li>
+			          <li class="subitem"><a href="../n++.html">n++ (templates)</a></li>
+			          <li class="subitem"><a href="../lua.html">Lua(JIT)</a></li>
+			          <li class="subitem"><a href="../exprtk.html">ExprTk</a></li>
+			          <li class="subitem"><a href="../REPL.html">Interactive REPL</a></li>
+			          <li class="subitem"><a href="../scripts.html">Scripts</a></li>
+			          <li class="subitem"><a href="../template_languages.html">Template Languages</a></li>
+			          <li class="subitem"><a href="../JSON.html">JSON Data</a></li>
+			          <li class="subitem"><a href="../markdown.html">Markdown</a></li>
+			          <li class="subitem"><a href="../translators.html">Translators</a></li>
+			          <li class="subitem"><a href="../mathematics.html">Mathematics</a></li>
+			          <li class="subitem"><a href="../code_blocks.html">Code Blocks</a></li>
+			          <li class="subitem"><a href="../presentations.html">Presentations</a></li>
+			        </ul>
+			      </li>
+			      <li class="item li-menu li-dark has-submenu">
+			        <a tabindex="0" href="#" class="submenu-link" onclick="toggle_submenu(1)">Resources <i class="submenu-link-icon fa fa-angle-down fa-1x"></i></a>
+			        <ul class="submenu">
+			          <li class="subitem"><a href="../../resources/tutorials.html">Tutorials</a></li>
+			          <li class="subitem"><a href="../../resources/templates.html">Templates</a></li>
+			          <li class="subitem"><a href="../../resources/blog_templates.html">Blog Templates</a></li>
+			          <li class="subitem"><a href="../../resources/css_frameworks.html">CSS Frameworks</a></li>
+			          <li class="subitem"><a href="../../resources/js_frameworks.html">JS Frameworks</a></li>
+			          <li class="subitem"><a href="../../resources/links.html">Links</a></li>
+			          <li class="subitem"><a href="../../resources/logos.html">Logos</a></li>
+			          <li class="subitem"><a href="../../resources/promos.html">Promos</a></li>
+			          <li class="subitem"><a href="../../resources/php_frameworks.html">PHP Frameworks</a></li>
+			        </ul>
+			      </li>
+			    </ul>
+			  </nav>
+			</div>
 
-		<!-- Main -->
-		<section id="main" class="wrapper style2">
-			<div class="title">fn: <mono>$</mono></div>
-			<div class="container">
-				<!-- Features -->
-				<section id="features">
-					<div class="content">
-						<a href="#contents" class="to-top">[contents]</a>
-		
-						<h4 id="contents">
-							Contents
-						</h4>
-						<ul>
-							<li><a href="#syntax">Syntax</a></li>
-							<li><a href="#description">Description</a></li>
-							<li><a href="#options">Options</a></li>
-							<li><a href="#f++-eg">f++ example</a></li>
-							<li><a href="#n++-eg">n++ example</a></li>
-							<li><a href="#hard-coded">Hard-coded variables</a></li>
-							<li><a href="#inject-file-info">Injecting file information</a></li>
-							<li><a href="#inject-pagination-info">Injecting pagination information</a></li>
-							<li><a href="#inject-project-info">Injecting project information</a></li>
-							<li><a href="#inject-os-info">Injecting operating system information</a></li>
-							<li><a href="#inject-date-time-tz-info">Injecting date, time & timezone information</a></li>
-						</ul>
-		
-						<h4 id="syntax">
-							Syntax
-						</h4>
-						<p>
-							The syntax for <mono>$</mono> calls is:
-		<div align="center" style="margin-top:-15px">
-		<mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
+			<div id="content">
+				<!-- Header -->
+				<section class="wrapper" id="header">
+				  <div id="logo" class="noselect">
+				    <img src="../../images/rabbit-tags-white.webp" alt="Nift bunny mascot" style="width: 400px; max-width:90%"><br>
+				
+				    <p style="color:#372C2A">An unopinionated web development framework</p>
+				
+				    <p>
+				      <a href="https://chocolatey.org/packages/nift"><img src="../../images/chocolatey-icon.webp" height="40px" alt="Get it from the Chocolatey store" title="Chocolatey (Windows)"></a> 
+				      <a href="../installing.html#osx-brew"><img src="../../images/brew-icon.webp" height="40px" alt="Get it from the Homebrew store" title="Homebrew (OSX)"></a> 
+				      <a href="../installing.html#freebsd"><img src="../../images/freebsd.webp" height="36px" alt="Get it from the FreeBSD [ports]" title="[ports] (FreeBSD)"></a>
+				      <a href="../installing.html#linux-flatpak"><img src="../../images/flathub-icon.webp" height="40px" alt="Get it from the FlatHub store" title="Flatpak (Linux)"></a><br>
+				      <a href="../installing.html#gentoo"><img src="../../images/gentoo.webp" height="36px" alt="Get it as a Gentoo overlay" title="Gentoo"></a> 
+				      <a href="https://snapcraft.io/nift"><img src="../../images/snap-icon.webp" height="40px" alt="Get it from the Snap Store" title="Snapcraft (Linux)"></a>
+				    </p>
+				  </div>
+				</section>
+
+				<!-- Main -->
+				<section id="main" class="wrapper style2">
+					<div class="title">fn: <mono>$</mono></div>
+					<div class="container">
+						<!-- Features -->
+						<section id="features">
+							<div class="content">
+								<a href="#contents" class="to-top">[contents]</a>
+				
+								<h4 id="contents">
+									Contents
+								</h4>
+								<ul>
+									<li><a href="#syntax">Syntax</a></li>
+									<li><a href="#description">Description</a></li>
+									<li><a href="#options">Options</a></li>
+									<li><a href="#f++-eg">f++ example</a></li>
+									<li><a href="#n++-eg">n++ example</a></li>
+									<li><a href="#hard-coded">Hard-coded variables</a></li>
+									<li><a href="#inject-file-info">Injecting file information</a></li>
+									<li><a href="#inject-pagination-info">Injecting pagination information</a></li>
+									<li><a href="#inject-project-info">Injecting project information</a></li>
+									<li><a href="#inject-os-info">Injecting operating system information</a></li>
+									<li><a href="#inject-date-time-tz-info">Injecting date, time & timezone information</a></li>
+								</ul>
+				
+								<h4 id="syntax">
+									Syntax
+								</h4>
+								<p>
+									The syntax for <mono>$</mono> calls is:
+				<div align="center" style="margin-top:-15px">
+				<mono>f++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
 $[string]
 </pre>
-		</div><br>
-		<div align="center">
-		<mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
+				</div><br>
+				<div align="center">
+				<mono>n++</mono>: &nbsp; <pre class="prettyprint inline lang-nift" style="margin-bottom:-15px">
 $[string]
 </pre>
-		</div>
-						</p>
-		
-						<h4 id="description">
-							Description
-						</h4>
-						<p>
-							The <mono>$</mono> function is used for printing variables, it takes a single string as an input parameter, which should be a variable name, and prints the value of the variable.
-						</p>
-		
-						<h4 id="options">
-							Options
-						</h4>
-						<p>
-							The following options are available for <mono>$</mono> calls:
-		
-							<center class="table">
-								<table id="$_options_table" class="alt">
-									<thead>
-										<tr>
-											<th>option</th>
-											<th>description</th>
-										</tr>
-									</thead>
-									<tr>
-										<td><mono>\n</mono></td>
-										<td>add <mono>\n</mono> instead of newlines</td>
-									</tr>
-									<tr>
-										<td><mono>!round<mono></td>
-										<td>do not round floating point values</td>
-									</tr>
-									<tfoot>
-										<tr>
-											<th>option</th>
-											<th>description</th>
-										</tr>
-									</tfoot>
-								</table>
-							</center>
-						</p>
-		
-						<h4 id="f++-eg">
-							f++ example
-						</h4>
-						<p>
-							Example of <mono>$</mono> being used with <mono>f++</mono>:					
-		
-		<div align="center">
-		<pre class="prettyprint inline linenums lang-nift">
+				</div>
+								</p>
+				
+								<h4 id="description">
+									Description
+								</h4>
+								<p>
+									The <mono>$</mono> function is used for printing variables, it takes a single string as an input parameter, which should be a variable name, and prints the value of the variable.
+								</p>
+				
+								<h4 id="options">
+									Options
+								</h4>
+								<p>
+									The following options are available for <mono>$</mono> calls:
+				
+									<center class="table">
+										<table id="$_options_table" class="alt">
+											<thead>
+												<tr>
+													<th>option</th>
+													<th>description</th>
+												</tr>
+											</thead>
+											<tr>
+												<td><mono>\n</mono></td>
+												<td>add <mono>\n</mono> instead of newlines</td>
+											</tr>
+											<tr>
+												<td><mono>!round<mono></td>
+												<td>do not round floating point values</td>
+											</tr>
+											<tfoot>
+												<tr>
+													<th>option</th>
+													<th>description</th>
+												</tr>
+											</tfoot>
+										</table>
+									</center>
+								</p>
+				
+								<h4 id="f++-eg">
+									f++ example
+								</h4>
+								<p>
+									Example of <mono>$</mono> being used with <mono>f++</mono>:					
+				
+				<div align="center">
+				<pre class="prettyprint inline linenums lang-nift">
 int a=0
 
 # following three lines are essentially the same
 console("a: ", a)
 console("a: ", $[a])
 console("a: $[a]")</pre>
-		</div>
-						</p>
-		
-						<h4 id="n++-eg">
-							n++ example
-						</h4>
-						<p>
-							Example of <mono>$</mono> being used with <mono>n++</mono>:					
-		
-		<div align="center">
-		<pre class="prettyprint inline linenums lang-nift">
+				</div>
+								</p>
+				
+								<h4 id="n++-eg">
+									n++ example
+								</h4>
+								<p>
+									Example of <mono>$</mono> being used with <mono>n++</mono>:					
+				
+				<div align="center">
+				<pre class="prettyprint inline linenums lang-nift">
 @int a=0
 
 @# following three lines are essentially the same
 @console("a: ", a)
 @console("a: ", $[a])
 @console("a: $[a]")</pre>
-		</div>
-						</p>
-		
-						<h4 id="hard-coded">
-							Hard-coded variables
-						</h4>
-						<p>
-							A number of hard-coded variables are available with both <mono>f++</mono> and <mono>n++</mono> which are outlined in the following sections.
-						</p>
-		
-						<h4 id="inject-file-info">
-							Injecting file information
-						</h4>
-						<p>
-							The following information about the output file being built can be injected:
-		
-							<center>
-								<table id="file_info_syntax_table" class="alt">
-									<thead>
-										<tr>
-											<th>type</th>
-											<th>syntax</th>
-										</tr>
-									</thead>
-									<tr>
-										<td>name</td>
-										<td><mono>$[name]</mono></td>
-									</tr>
-									<tr>
-										<td>title</td>
-										<td><mono>$[title]</mono></td>
-									</tr>
-									<tr>
-										<td>output file path</td>
-										<td><mono>$[output-path]</mono></td>
-									</tr>
-									<tr>
-										<td>output extension</td>
-										<td><mono>$[output-ext]</mono></td>
-									</tr>
-									<tr>
-										<td>content file path</td>
-										<td><mono>$[content-path]</mono></td>
-									</tr>
-									<tr>
-										<td>content extension</td>
-										<td><mono>$[content-ext]</mono></td>
-									</tr>
-									<tr>
-										<td>script extension</td>
-										<td><mono>$[script-ext]</mono></td>
-									</tr>
-									<tr>
-										<td>template path</td>
-										<td><mono>$[template-path]</mono></td>
-									</tr>
-									<tfoot>
-										<tr>
-											<th>type</th>
-											<th>syntax</th>
-										</tr>
-									</tfoot>
-								</table>
-							</center>
-						</p>
-		
-						<p>
-							For example in a file <mono>template/head.content</mono> you may want something along the lines of:
-		<div align="center">
-		<pre class="prettyprint inline linenums">
+				</div>
+								</p>
+				
+								<h4 id="hard-coded">
+									Hard-coded variables
+								</h4>
+								<p>
+									A number of hard-coded variables are available with both <mono>f++</mono> and <mono>n++</mono> which are outlined in the following sections.
+								</p>
+				
+								<h4 id="inject-file-info">
+									Injecting file information
+								</h4>
+								<p>
+									The following information about the output file being built can be injected:
+				
+									<center>
+										<table id="file_info_syntax_table" class="alt">
+											<thead>
+												<tr>
+													<th>type</th>
+													<th>syntax</th>
+												</tr>
+											</thead>
+											<tr>
+												<td>name</td>
+												<td><mono>$[name]</mono></td>
+											</tr>
+											<tr>
+												<td>title</td>
+												<td><mono>$[title]</mono></td>
+											</tr>
+											<tr>
+												<td>output file path</td>
+												<td><mono>$[output-path]</mono></td>
+											</tr>
+											<tr>
+												<td>output extension</td>
+												<td><mono>$[output-ext]</mono></td>
+											</tr>
+											<tr>
+												<td>content file path</td>
+												<td><mono>$[content-path]</mono></td>
+											</tr>
+											<tr>
+												<td>content extension</td>
+												<td><mono>$[content-ext]</mono></td>
+											</tr>
+											<tr>
+												<td>script extension</td>
+												<td><mono>$[script-ext]</mono></td>
+											</tr>
+											<tr>
+												<td>template path</td>
+												<td><mono>$[template-path]</mono></td>
+											</tr>
+											<tfoot>
+												<tr>
+													<th>type</th>
+													<th>syntax</th>
+												</tr>
+											</tfoot>
+										</table>
+									</center>
+								</p>
+				
+								<p>
+									For example in a file <mono>template/head.content</mono> you may want something along the lines of:
+				<div align="center">
+				<pre class="prettyprint inline linenums">
 &lt;title>sitename - $[title]&lt;/title></pre>
-		</div>
-						</p>
-		
-						<h4 id="inject-pagination-info">
-							Injecting pagination information
-						</h4>
-						<p>
-							The following information about pagination for the output file being built can be injected:
-		
-							<center>
-								<table id="pagination_info_syntax_table" class="alt">
-									<thead>
-										<tr>
-											<th>type</th>
-											<th>syntax</th>
-										</tr>
-									</thead>
-									<tr>
-										<td>number of items to add per page</td>
-										<td><mono>$[paginate.no_items_per_page]</mono></td>
-									</tr>
-									<tr>
-										<td>current number of pages</td>
-										<td><mono>$[paginate.no_pages]</mono></td>
-									</tr>
-									<tr>
-										<td>output file path</td>
-										<td><mono>$[paginate.page]</mono></td>
-									</tr>
-									<tr>
-										<td>current page number</td>
-										<td><mono>$[paginate.page_no]</mono></td>
-									</tr>
-									<tr>
-										<td>code injected between items</td>
-										<td><mono>$[paginate.separator]</mono></td>
-									</tr>
-									</tr>
-									<tfoot>
-										<tr>
-											<th>type</th>
-											<th>syntax</th>
-										</tr>
-									</tfoot>
-								</table>
-							</center>
-						</p>
-		
-						<h4 id="inject-project-info">
-							Injecting project information
-						</h4>
-						<p>
-							The following information about the project <mono>Nift</mono> is managing can be injected:
-		
-							<center>
-								<table id="project_info_syntax_table" class="alt">
-									<thead>
-										<tr>
-											<th>type</th>
-											<th>syntax</th>
-										</tr>
-									</thead>
-									<tr>
-										<td>content directory</td>
-										<td><mono>$[content-dir]</mono></td>
-									</tr>
-									<tr>
-										<td>output directory</td>
-										<td><mono>$[output-dir]</mono></td>
-									</tr>
-									<tr>
-										<td>default content extension</td>
-										<td><mono>$[default-content-ext]</mono></td>
-									</tr>
-									<tr>
-										<td>default output extension</td>
-										<td><mono>$[default-output-ext]</mono></td>
-									</tr>
-									<tr>
-										<td>default script extension</td>
-										<td><mono>$[default-script-ext]</mono></td>
-									</tr>
-									<tr>
-										<td>default template</td>
-										<td><mono>$[default-template]</mono></td>
-									</tr>
-									<tfoot>
-										<tr>
-											<th>type</th>
-											<th>syntax</th>
-										</tr>
-									</tfoot>
-								</table>
-							</center>
-						</p>
-		
-						<h4 id="inject-os-info">
-							Injecting operating system information
-						</h4>
-						<p>
-							The following information about the operating system <mono>Nift</mono> is run from can be injected:
-		
-							<center>
-								<table id="os_info_syntax_table" class="alt">
-									<thead>
-										<tr>
-											<th>type</th>
-											<th>syntax</th>
-										</tr>
-									</thead>
-									<tr>
-										<td>build operating system</td>
-										<td><mono>$[build-OS]</mono></td>
-									</tr>
-									<tr>
-										<td>call operating system</td>
-										<td><mono>$[current-OS]</mono></td>
-									</tr>
-									<tfoot>
-										<tr>
-											<th>type</th>
-											<th>syntax</th>
-										</tr>
-									</tfoot>
-								</table>
-							</center>
-						</p>
-		
-						<h4 id="inject-date-time-tz-info">
-							Injecting date, time and timezone information
-						</h4>
-						<p>
-							The following information about dates and times can be injected:
-		
-							<center>
-								<table id="date_time_info_syntax_table" class="alt">
-									<thead>
-										<tr>
-											<th>type</th>
-											<th>syntax</th>
-										</tr>
-									</thead>
-									<tr>
-										<td>date of build</td>
-										<td><mono>$[build-date]</mono></td>
-									</tr>
-									<tr>
-										<td>time of build</td>
-										<td><mono>$[build-time]</mono></td>
-									</tr>
-									<tr>
-										<td>timezone of build</td>
-										<td><mono>$[build-timezone]</mono></td>
-									</tr>
-									<tr>
-										<td>UTC date of build</td>
-										<td><mono>$[build-UTC-date]</mono></td>
-									</tr>
-									<tr>
-										<td>UTC time of build</td>
-										<td><mono>$[build-UTC-time]</mono></td>
-									</tr>
-									<tr>
-										<td>year of build</td>
-										<td><mono>$[build-YY]</mono></td>
-									</tr>
-									<tr>
-										<td>full year of build</td>
-										<td><mono>$[build-YYYY]</mono></td>
-									</tr>
-										<td>date of call</td>
-										<td><mono>$[current-date]</mono></td>
-									</tr>
-									<tr>
-										<td>time of call</td>
-										<td><mono>$[current-time]</mono></td>
-									</tr>
-									<tr>
-										<td>timezone of call</td>
-										<td><mono>$[current-timezone]</mono> <br><mono>$[timezone]</mono></td>
-									</tr>
-									<tr>
-										<td>UTC date of call</td>
-										<td><mono>$[current-UTC-date]</mono></td>
-									</tr>
-									<tr>
-										<td>UTC time of call</td>
-										<td><mono>$[current-UTC-time]</mono></td>
-									</tr>
-									<tr>
-										<td>year of call</td>
-										<td><mono>$[current-YY]</mono></td>
-									</tr>
-									<tr>
-										<td>full year of call</td>
-										<td><mono>$[current-YYYY]</mono></td>
-									</tr>
-										<td>date of loading</td>
-										<td><mono>$[load-date]</mono></td>
-									</tr>
-									<tr>
-										<td>time of loading</td>
-										<td><mono>$[load-time]</mono></td>
-									</tr>
-									<tr>
-										<td>timezone of loading</td>
-										<td><mono>$[load-timezone]</mono></td>
-									</tr>
-									<tr>
-										<td>UTC date of loading</td>
-										<td><mono>$[load-UTC-date]</mono></td>
-									</tr>
-									<tr>
-										<td>UTC time of loading</td>
-										<td><mono>$[load-UTC-time]</mono></td>
-									</tr>
-									<tr>
-										<td>year of loading</td>
-										<td><mono>$[load-YY]</mono></td>
-									</tr>
-									<tr>
-										<td>full year of loading</td>
-										<td><mono>$[load-YYYY]</mono></td>
-									</tr>
-									<tfoot>
-										<tr>
-											<th>type</th>
-											<th>syntax</th>
-										</tr>
-									</tfoot>
-								</table>
-							</center>
-						</p>
+				</div>
+								</p>
+				
+								<h4 id="inject-pagination-info">
+									Injecting pagination information
+								</h4>
+								<p>
+									The following information about pagination for the output file being built can be injected:
+				
+									<center>
+										<table id="pagination_info_syntax_table" class="alt">
+											<thead>
+												<tr>
+													<th>type</th>
+													<th>syntax</th>
+												</tr>
+											</thead>
+											<tr>
+												<td>number of items to add per page</td>
+												<td><mono>$[paginate.no_items_per_page]</mono></td>
+											</tr>
+											<tr>
+												<td>current number of pages</td>
+												<td><mono>$[paginate.no_pages]</mono></td>
+											</tr>
+											<tr>
+												<td>output file path</td>
+												<td><mono>$[paginate.page]</mono></td>
+											</tr>
+											<tr>
+												<td>current page number</td>
+												<td><mono>$[paginate.page_no]</mono></td>
+											</tr>
+											<tr>
+												<td>code injected between items</td>
+												<td><mono>$[paginate.separator]</mono></td>
+											</tr>
+											</tr>
+											<tfoot>
+												<tr>
+													<th>type</th>
+													<th>syntax</th>
+												</tr>
+											</tfoot>
+										</table>
+									</center>
+								</p>
+				
+								<h4 id="inject-project-info">
+									Injecting project information
+								</h4>
+								<p>
+									The following information about the project <mono>Nift</mono> is managing can be injected:
+				
+									<center>
+										<table id="project_info_syntax_table" class="alt">
+											<thead>
+												<tr>
+													<th>type</th>
+													<th>syntax</th>
+												</tr>
+											</thead>
+											<tr>
+												<td>content directory</td>
+												<td><mono>$[content-dir]</mono></td>
+											</tr>
+											<tr>
+												<td>output directory</td>
+												<td><mono>$[output-dir]</mono></td>
+											</tr>
+											<tr>
+												<td>default content extension</td>
+												<td><mono>$[default-content-ext]</mono></td>
+											</tr>
+											<tr>
+												<td>default output extension</td>
+												<td><mono>$[default-output-ext]</mono></td>
+											</tr>
+											<tr>
+												<td>default script extension</td>
+												<td><mono>$[default-script-ext]</mono></td>
+											</tr>
+											<tr>
+												<td>default template</td>
+												<td><mono>$[default-template]</mono></td>
+											</tr>
+											<tfoot>
+												<tr>
+													<th>type</th>
+													<th>syntax</th>
+												</tr>
+											</tfoot>
+										</table>
+									</center>
+								</p>
+				
+								<h4 id="inject-os-info">
+									Injecting operating system information
+								</h4>
+								<p>
+									The following information about the operating system <mono>Nift</mono> is run from can be injected:
+				
+									<center>
+										<table id="os_info_syntax_table" class="alt">
+											<thead>
+												<tr>
+													<th>type</th>
+													<th>syntax</th>
+												</tr>
+											</thead>
+											<tr>
+												<td>build operating system</td>
+												<td><mono>$[build-OS]</mono></td>
+											</tr>
+											<tr>
+												<td>call operating system</td>
+												<td><mono>$[current-OS]</mono></td>
+											</tr>
+											<tfoot>
+												<tr>
+													<th>type</th>
+													<th>syntax</th>
+												</tr>
+											</tfoot>
+										</table>
+									</center>
+								</p>
+				
+								<h4 id="inject-date-time-tz-info">
+									Injecting date, time and timezone information
+								</h4>
+								<p>
+									The following information about dates and times can be injected:
+				
+									<center>
+										<table id="date_time_info_syntax_table" class="alt">
+											<thead>
+												<tr>
+													<th>type</th>
+													<th>syntax</th>
+												</tr>
+											</thead>
+											<tr>
+												<td>date of build</td>
+												<td><mono>$[build-date]</mono></td>
+											</tr>
+											<tr>
+												<td>time of build</td>
+												<td><mono>$[build-time]</mono></td>
+											</tr>
+											<tr>
+												<td>timezone of build</td>
+												<td><mono>$[build-timezone]</mono></td>
+											</tr>
+											<tr>
+												<td>UTC date of build</td>
+												<td><mono>$[build-UTC-date]</mono></td>
+											</tr>
+											<tr>
+												<td>UTC time of build</td>
+												<td><mono>$[build-UTC-time]</mono></td>
+											</tr>
+											<tr>
+												<td>year of build</td>
+												<td><mono>$[build-YY]</mono></td>
+											</tr>
+											<tr>
+												<td>full year of build</td>
+												<td><mono>$[build-YYYY]</mono></td>
+											</tr>
+												<td>date of call</td>
+												<td><mono>$[current-date]</mono></td>
+											</tr>
+											<tr>
+												<td>time of call</td>
+												<td><mono>$[current-time]</mono></td>
+											</tr>
+											<tr>
+												<td>timezone of call</td>
+												<td><mono>$[current-timezone]</mono> <br><mono>$[timezone]</mono></td>
+											</tr>
+											<tr>
+												<td>UTC date of call</td>
+												<td><mono>$[current-UTC-date]</mono></td>
+											</tr>
+											<tr>
+												<td>UTC time of call</td>
+												<td><mono>$[current-UTC-time]</mono></td>
+											</tr>
+											<tr>
+												<td>year of call</td>
+												<td><mono>$[current-YY]</mono></td>
+											</tr>
+											<tr>
+												<td>full year of call</td>
+												<td><mono>$[current-YYYY]</mono></td>
+											</tr>
+												<td>date of loading</td>
+												<td><mono>$[load-date]</mono></td>
+											</tr>
+											<tr>
+												<td>time of loading</td>
+												<td><mono>$[load-time]</mono></td>
+											</tr>
+											<tr>
+												<td>timezone of loading</td>
+												<td><mono>$[load-timezone]</mono></td>
+											</tr>
+											<tr>
+												<td>UTC date of loading</td>
+												<td><mono>$[load-UTC-date]</mono></td>
+											</tr>
+											<tr>
+												<td>UTC time of loading</td>
+												<td><mono>$[load-UTC-time]</mono></td>
+											</tr>
+											<tr>
+												<td>year of loading</td>
+												<td><mono>$[load-YY]</mono></td>
+											</tr>
+											<tr>
+												<td>full year of loading</td>
+												<td><mono>$[load-YYYY]</mono></td>
+											</tr>
+											<tfoot>
+												<tr>
+													<th>type</th>
+													<th>syntax</th>
+												</tr>
+											</tfoot>
+										</table>
+									</center>
+								</p>
+							</div>
+						</section>
+					</div>
+				</section>
+
+				<!-- Footer -->
+				<section id="footer" class="wrapper">
+					<div class="title">
+						<img src="../../images/rabbit-tags-icon.webp" alt="Nift rabbit mascot with code tag boomerangs" loading="lazy" width="200" style="margin-top:20px; border-radius: 4px">
+					</div>
+				
+					<div class="container">
+						<div id="copyright" class="noselect">
+							<ul>
+								<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
+								<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
+								<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
+							</ul> <br>
+				
+							<ul>
+								<li><a href="../../tos.html">Terms of Service</a></li>
+								<li><a href="../../privacy_policy.html">Privacy Policy</a></li>
+							</ul> <br>
+				
+							<ul>
+								<li><span>&copy;</span> 2015-<span name="cyear"></span></li>
+							</ul>
+						</div>
 					</div>
 				</section>
 			</div>
-		</section>
+		</div>
 
-		<!-- Footer -->
-		<section id="footer" class="wrapper">
-			<div class="title">
-				<img src="../../images/rabbit-tags-icon.png" alt="Nift rabbit mascot with code tag boomerangs" loading="lazy" width="200" style="margin-top:20px; border-radius: 4px">
-			</div>
-		
-			<div class="container">
-				<div id="copyright" class="noselect">
-					<ul>
-						<li><a href="https://github.com/nifty-site-manager/nsm/releases">Releases</a></li>
-						<li><a href="https://github.com/nifty-site-manager/nsm/blob/master/ReleaseNotes.md">Release Notes</a></li>
-						<li><a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io">Website Source</a></li>
-					</ul> <br>
-		
-					<ul>
-						<li><a href="../../tos.html">Terms of Service</a></li>
-						<li><a href="../../privacy_policy.html">Privacy Policy</a></li>
-					</ul> <br>
-		
-					<ul>
-						<li><span>&copy;</span> 2015-<span name="cyear"></span></li>
-					</ul>
-				</div>
-			</div>
-		</section>
+		<script type="text/javascript" src="../../assets/js/bundled.js"></script>
 
-		<script async src="../../assets/js/menu.js"></script>
 		<script async src="../../assets/js/copy-pre.js"></script>
 		<script async src="../../assets/js/process-md-blocks.js"></script>
 		<script async src="../../assets/js/showdown.min.js"></script>
@@ -590,3 +603,4 @@ console("a: $[a]")</pre>
 		</script>
 	</body>
 </html>
+

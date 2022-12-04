@@ -1,17 +1,14 @@
 <title>Nift - $[title]</title>
 <meta name="description" 
-      content="Nift is an opinionless web development framework, specialising
-            in static websites with serverless backends. It's lightning fast, 
-            cross-platform, opinionless, open source (MIT license) and 
-            developed from the ground up in C++. Use it for any of your 
-            personal or commercial projects!">
+      content="Nift is an opinionless web development framework. It's 
+            lightning fast, cross-platform, opinionless, open source 
+            (MIT license) and developed from the ground up in C++. Use 
+            it for any of your personal or commercial projects!">
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="@pathto(site/assets/css/pagestyle.css)">
-<link rel="stylesheet" href="@pathto(site/assets/css/menu.css)">
-<link rel="stylesheet" href="@pathto(site/assets/css/font-awesome.css)">
+<link rel="stylesheet" href="@pathto(site/assets/css/bundled.css)">
 @string pname = $[name]
 @if(pname != 'index')
 {

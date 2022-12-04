@@ -1,7 +1,7 @@
 <!-- Footer -->
 <section id="footer" class="wrapper">
 	<div class="title">
-		<img src="@pathtofile(site/images/rabbit-tags-icon.png)" alt="Nift rabbit mascot with code tag boomerangs" loading="lazy" width="200" style="margin-top:20px; border-radius: 4px">
+		<img src="@pathtofile(site/images/rabbit-tags-icon.webp)" alt="Nift rabbit mascot with code tag boomerangs" loading="lazy" width="200" style="margin-top:20px; border-radius: 4px">
 	</div>
 
 	<div class="container">
