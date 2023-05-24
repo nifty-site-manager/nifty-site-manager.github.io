@@ -1,0 +1,14 @@
+{
+	"last-built": "17:08:08 Sunday December 04 2022",
+	"name": "docs/fns/is_private",
+	"title": "is_private",
+	"template": "template/page.template",
+	"dependencies": [
+		"content/docs/fns/is_private.content",
+		"template/footer.content",
+		"template/head.content",
+		"template/header.content",
+		"template/menu.content",
+		"template/page.template"
+	]
+}

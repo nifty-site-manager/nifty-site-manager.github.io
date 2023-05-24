@@ -1,0 +1,17 @@
+{
+	"last-built": "17:08:08 Sunday December 04 2022",
+	"name": "resources/blog_templates",
+	"title": "blog_templates",
+	"template": "template/page.template",
+	"dependencies": [
+		"content/resources/blog_templates.content",
+		"content/resources/tables/blogs.table",
+		"content/resources/tables/html5up_blogs.table",
+		"content/resources/tables/html5up_paginate_blogs.table",
+		"template/footer.content",
+		"template/head.content",
+		"template/header.content",
+		"template/menu.content",
+		"template/page.template"
+	]
+}

@@ -1,0 +1,14 @@
+{
+	"last-built": "17:08:08 Sunday December 04 2022",
+	"name": "docs/cmds/rmv-dir",
+	"title": "rmv-dir",
+	"template": "template/page.template",
+	"dependencies": [
+		"content/docs/cmds/rmv-dir.content",
+		"template/footer.content",
+		"template/head.content",
+		"template/header.content",
+		"template/menu.content",
+		"template/page.template"
+	]
+}

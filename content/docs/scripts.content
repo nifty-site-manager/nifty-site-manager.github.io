@@ -6,7 +6,7 @@
 		<section id="features">
 			<div class="content">
 				<p>
-					Nift has support to optionally run pre/post build/serve scripts/programs when building a website. Just a few of the things this can be useful for includes integrating with <a href="https://webpack.js.org/">webpack</a>, <a href="https://babeljs.io/">Babel</a>, <a href="https://www.npmjs.com/">npm</a>, <a href="https://bower.io/">Bower</a>, <a href="https://yeoman.io/">Yeoman</a>, <a href="http://browserify.org/">Browserify</a>, <a href="https://parceljs.org/">Parcel</a>, <a href="https://brunch.io/">Brunch</a>, <a href="https://sass-lang.com/">SASS</a>, <a href="https://gruntjs.com/">Grunt</a>, <a href="https://github.com/puppeteer/puppeteer">Puppeteer</a>, Python webserver, <a href="https://www.npmjs.com/package/live-server">Live Server</a>, <a href="http://livereload.com/">Live Reload</a>, etc.. Use any scripting or programming language, eg. batch, bash shell, C/C++, C#, fish, go, Haskell, Java, Javascript, Objective-C, Perl, PHP, Python, Ruby, Swift, Zsh shell.
+					Nift has support to optionally run pre/post build scripts/programs when building a website. Just a few of the things this can be useful for includes integrating with <a href="https://webpack.js.org/">webpack</a>, <a href="https://babeljs.io/">Babel</a>, <a href="https://www.npmjs.com/">npm</a>, <a href="https://bower.io/">Bower</a>, <a href="https://yeoman.io/">Yeoman</a>, <a href="http://browserify.org/">Browserify</a>, <a href="https://parceljs.org/">Parcel</a>, <a href="https://brunch.io/">Brunch</a>, <a href="https://sass-lang.com/">SASS</a>, <a href="https://gruntjs.com/">Grunt</a>, <a href="https://github.com/puppeteer/puppeteer">Puppeteer</a>, Python webserver, <a href="https://www.npmjs.com/package/live-server">Live Server</a>, <a href="http://livereload.com/">Live Reload</a>, etc.. Use any scripting or programming language, eg. batch, bash shell, C/C++, C#, fish, go, Haskell, Java, Javascript, Objective-C, Perl, PHP, Python, Ruby, Swift, Zsh shell.
 				</p>
 
 				<p>
@@ -14,19 +14,15 @@
 				</p>
 
 				<p>
-					The script extension for website-wide scripts/programs is specified with <mono>scriptExt</mono> in the <mono>.nsm/nift.config</mono> configuration file, which may be checked using the <a href="@pathto(docs/commands)">Nift command</a> <mono>config</mono>. To check page-specific script extensions use the <a href="@pathto(docs/commands)">Nift command</a> <mono>info page-name</mono>. Site wide and page-specific script extensions may be set using the <a href="@pathto(docs/commands)">Nift command</a> <mono>new-script-ext (page-name) script-extension</mono>.
+					The script extension for website-wide scripts/programs is specified with <mono>scriptExt</mono> in the <mono>.nift/config.json</mono> configuration file, which may be checked using the <a href="@pathto(docs/commands)">Nift command</a> <mono>config</mono>. To check page-specific script extensions use the <a href="@pathto(docs/commands)">Nift command</a> <mono>info page-name</mono>. Site wide and page-specific script extensions may be set using the <a href="@pathto(docs/commands)">Nift command</a> <mono>new-script-ext (page-name) script-extension</mono>.
 				</p>
 
 				<p>
-					<b>Note:</b> Build/serve scripts/programs are moved to the project root directory to run and by default have a backup copy made. If scripts/programs are so large that copying the file will take time, the site configuration file <mono>.nsm/nift.config</mono> can optionally include <mono>backupScripts bool</mono> to indicate whether build/serve scripts/programs should be backed up when run.
+					<b>Note:</b> Build scripts/programs are moved to the project root directory to run and by default have a backup copy made. If scripts/programs are so large that copying the file will take time, the site configuration file <mono>.nift/config.json</mono> can optionally include <mono>backupScripts bool</mono> to indicate whether build scripts/programs should be backed up when run.
 				</p>
 
 				<p>
 					Alternatively one can write scripts/programs that are run manually (not using Nift) which themselves add the Nift build process, leaving just one program that needs to be run when building.
-				</p>
-
-				<p>
-					<b>Note:</b> Scripts/programs are run from the project root directory, so all paths in scripts/programs should be starting from that location. Also do not change directory in scripts/programs as it will mess up the other threads that are also running scripts/programs and/or building pages. If you really must change directories in scripts/programs then set the number of build threads to <mono>1</mono> and change back to the project root directory before each script/program ends. Furthermore the output of scripts/programs is not displayed when building until after they have finished running, so there is no way to display messages to the user if using user input methods and so are discouraged from being used (plus you would have interference output from other threads), a compromise for much faster build times.
 				</p>
 
 				<p>
@@ -36,8 +32,8 @@
 <pre class="inline">
 pre-build.scriptExt
 post-build.scriptExt
-pre-serve.scriptExt
-post-serve.scriptExt
+pre-build-auto.scriptExt
+post-build-auto.scriptExt
 </pre>
 </div>
 

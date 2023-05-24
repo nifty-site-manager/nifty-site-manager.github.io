@@ -13,7 +13,7 @@
 
 			<div class="content">
 				<p>
-					The configuration file for a Nift project is stored in <mono>.nsm/nift.config</mono>. You can check the location of the global configuration file when starting <zapfont style = "font-size:30px;">FLASHELL</zapfont> with <mono>nift sh</mono>. 
+					The configuration file for a Nift project is stored in <mono>.nift/config.json</mono>. You can check the location of the global configuration file when starting <zapfont style = "font-size:30px;">FLASHELL</zapfont> with <mono>nift sh</mono>. 
 				</p>
 
 				<h4 id="contents">
@@ -40,11 +40,11 @@
 					Project Configuration Files
 				</h4>
 				<p>
-					Each Nift project has its own configuration file located at <mono>.nsm/nift.config</mono>. The project configuration file for this website is:
+					Each Nift project has its own configuration file located at <mono>.nift/config.json</mono>. The project configuration file for this website is:
 
 <div align="center">
 <pre class="inline rounded">
-@input(.nsm/nift.config)
+@input(.nift/config.json)
 </pre>
 </div>
 				</p>
@@ -81,86 +81,86 @@
 								</tr>
 							</thead>
 							<tr>
-								<td><mono>contentDir</mono></td>
+								<td><mono>content-dir</mono></td>
 								<td>path to content directory</td>
 								<td><mono>quoted path</mono></td>
 								<td><mono></mono></td>
 								<td><mono>Y</mono></td>
 							</tr>
 							<tr>
-								<td><mono>contentExt</mono></td>
+								<td><mono>content-ext</mono></td>
 								<td>extension used for content files</td>
 								<td><mono>quoted extension</mono></td>
 								<td><mono></mono></td>
 								<td><mono>Y</mono></td>
 							</tr>
 							<tr>
-								<td><mono>outputDir</mono></td>
+								<td><mono>output-dir</mono></td>
 								<td>path to output directory</td>
 								<td><mono>quoted path</mono></td>
 								<td><mono></mono></td>
 								<td><mono>Y</mono></td>
 							</tr>
 							<tr>
-								<td><mono>outputExt</mono></td>
+								<td><mono>output-ext</mono></td>
 								<td>extension used for build files</td>
 								<td><mono>quoted extension</mono></td>
 								<td><mono></mono></td>
 								<td><mono>Y</mono></td>
 							</tr>
 							<tr>
-								<td><mono>scriptExt</mono></td>
+								<td><mono>script-ext</mono></td>
 								<td>extension used for pre/post build scripts</td>
 								<td><mono>quoted extension</mono></td>
 								<td><mono></mono></td>
 								<td><mono>Y</mono></td>
 							</tr>
 							<tr>
-								<td><mono>defaultTemplate</mono></td>
+								<td><mono>default-template</mono></td>
 								<td>default template file to use when tracking new pages</td>
 								<td><mono>quoted path</mono></td>
-								<td><mono>Y</mono></td>
+								<td><mono></mono></td>
 								<td><mono>Y</mono></td>
 							</tr>
 							<tr>
-								<td><mono>backupScripts</mono></td>
+								<td><mono>backup-scripts</mono></td>
 								<td>backup scripts before running them</td>
-								<td><mono>{0,1}</mono></td>
-								<td><mono>Y</mono></td>
-								<td><mono>Y</mono></td>
-							</tr>
-							<tr>
-								<td><mono>lolcat</mono></td>
-								<td>whether to use lolcat for output</td>
-								<td><mono>{0,1}</mono></td>
-								<td><mono>Y</mono></td>
+								<td><mono>{false,true}</mono></td>
+								<td><mono></mono></td>
 								<td><mono>Y</mono></td>
 							</tr>
 							<tr>
-								<td><mono>lolcatCmd</mono></td>
-								<td>quoted command to use when running lolcat</td>
-								<td><mono>{0,1}</mono></td>
-								<td><mono>Y</mono></td>
-								<td><mono>Y</mono></td>
-							</tr>
-							<tr>
-								<td><mono>buildThreads</mono></td>
+								<td><mono>build-threads</mono></td>
 								<td>max number of threads to use when building ($-x \rightarrow x*no\_cores$)</td>
 								<td><mono>integer</mono></td>
-								<td><mono>Y</mono></td>
+								<td><mono></mono></td>
 								<td><mono>Y</mono></td>
 							</tr>
 							<tr>
-								<td><mono>paginateThreads</mono></td>
+								<td><mono>paginate-threads</mono></td>
 								<td>max number of threads to use with pagination ($-x \rightarrow x*no\_cores$)</td>
 								<td><mono>integer</mono></td>
+								<td><mono></mono></td>
+								<td><mono>Y</mono></td>
+							</tr>
+							<tr>
+								<td><mono>incremental-mode</mono></td>
+								<td>choose between incremental mode using modification times or file hashes</td>
+								<td><mono>{modified, hash, hybrid}</mono></td>
+								<td><mono></mono></td>
+								<td><mono>Y</mono></td>
+							</tr>
+							<tr>
+								<td><mono>lolcat-default</mono></td>
+								<td>whether to use lolcat for output</td>
+								<td><mono>{false,true}</mono></td>
 								<td><mono>Y</mono></td>
 								<td><mono>Y</mono></td>
 							</tr>
 							<tr>
-								<td><mono>incrementalMode</mono></td>
-								<td>choose between incremental mode using modification times or file hashes</td>
-								<td><mono>{mod, hash, hybrid}</mono></td>
+								<td><mono>lolcat-cmd</mono></td>
+								<td>quoted command to use when running lolcat</td>
+								<td>eg. <mono>"nift lolcat-cc -f"</mono></td>
 								<td><mono>Y</mono></td>
 								<td><mono>Y</mono></td>
 							</tr>
@@ -172,14 +172,14 @@
 								<td><mono>Y</mono></td>
 							</tr>
 							<tr>
-								<td><mono>unixTextEditor</mono></td>
+								<td><mono>unix-editor</mono></td>
 								<td>specifies which text editor to use on *nix machines</td>
 								<td>eg. <mono>"subl -n"</mono> or <mono>"vi"</mono></td>
 								<td><mono>Y</mono></td>
 								<td><mono>Y</mono></td>
 							</tr>
 							<tr>
-								<td><mono>winTextEditor</mono></td>
+								<td><mono>windows-editor</mono></td>
 								<td>specifies which text editor to use on Windows machines</td>
 								<td>eg. <mono>"subl -n"</mono> or <mono>"notepad"</mono></td>
 								<td><mono>Y</mono></td>

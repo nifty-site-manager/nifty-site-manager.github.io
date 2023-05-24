@@ -1,0 +1,15 @@
+{
+	"last-built": "17:08:08 Sunday December 04 2022",
+	"name": "docs/fns/console,lock",
+	"title": "console,lock",
+	"template": "template/page.template",
+	"dependencies": [
+		"content/docs/fns/console,lock-post-build.f",
+		"content/docs/fns/console,lock.content",
+		"template/footer.content",
+		"template/head.content",
+		"template/header.content",
+		"template/menu.content",
+		"template/page.template"
+	]
+}

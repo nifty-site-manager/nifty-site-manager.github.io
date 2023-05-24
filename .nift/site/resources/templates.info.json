@@ -1,0 +1,17 @@
+{
+	"last-built": "17:08:08 Sunday December 04 2022",
+	"name": "resources/templates",
+	"title": "templates",
+	"template": "template/page.template",
+	"dependencies": [
+		"content/resources/tables/html5up_templates.table",
+		"content/resources/tables/templates.table",
+		"content/resources/tables/w3css_templates.table",
+		"content/resources/templates.content",
+		"template/footer.content",
+		"template/head.content",
+		"template/header.content",
+		"template/menu.content",
+		"template/page.template"
+	]
+}

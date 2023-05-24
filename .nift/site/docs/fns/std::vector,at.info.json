@@ -1,0 +1,15 @@
+{
+	"last-built": "17:08:08 Sunday December 04 2022",
+	"name": "docs/fns/std::vector,at",
+	"title": "std::vector,at",
+	"template": "template/page.template",
+	"dependencies": [
+		"content/docs/fns/std::vector,at-post-build.f",
+		"content/docs/fns/std::vector,at.content",
+		"template/footer.content",
+		"template/head.content",
+		"template/header.content",
+		"template/menu.content",
+		"template/page.template"
+	]
+}

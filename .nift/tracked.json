@@ -1,0 +1,1286 @@
+{
+	"tracked": [
+		{
+			"name": "assets/css/bundled",
+			"title": "bundled'",
+			"template": "template/css.template",
+			"output-ext": ".css"
+		},
+		{
+			"name": "assets/js/bundled",
+			"title": "bundled'",
+			"template": "template/js.template",
+			"output-ext": ".js"
+		},
+		{
+			"name": "docs/JSON",
+			"title": "JSON",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/REPL",
+			"title": "REPL",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/bitbucket_hosting",
+			"title": "bitbucket_hosting",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/backup-scripts",
+			"title": "backup-scripts",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/bcp",
+			"title": "bcp",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/build-all",
+			"title": "build-all",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/build-auto",
+			"title": "build-auto",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/build-names",
+			"title": "build-names",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/build-updated",
+			"title": "build-updated",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/clone",
+			"title": "clone",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/commands",
+			"title": "commands",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/config",
+			"title": "config",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/cpy",
+			"title": "cpy",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/diff",
+			"title": "diff",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/edit",
+			"title": "edit",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/incr-mode",
+			"title": "incr-mode",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/info-all",
+			"title": "info-all",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/info-config",
+			"title": "info-config",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/info-names",
+			"title": "info-names",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/info-tracking",
+			"title": "info-tracking",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/info-watching",
+			"title": "info-watching",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/init",
+			"title": "init",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/lolcat",
+			"title": "lolcat",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/mbcp",
+			"title": "mbcp",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/medit",
+			"title": "medit",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/mve",
+			"title": "mve",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/mve-cont-dir",
+			"title": "mve-cont-dir",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/mve-output-dir",
+			"title": "mve-output-dir",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/new-cont-ext",
+			"title": "new-cont-ext",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/new-output-ext",
+			"title": "new-output-ext",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/new-script-ext",
+			"title": "new-script-ext",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/new-template",
+			"title": "new-template",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/new-title",
+			"title": "new-title",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/no-build-thrds",
+			"title": "no-build-thrds",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/pull",
+			"title": "pull",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/rmv",
+			"title": "rmv",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/rmv-dir",
+			"title": "rmv-dir",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/rmv-from-file",
+			"title": "rmv-from-file",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/status",
+			"title": "status",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/track",
+			"title": "track",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/track-dir",
+			"title": "track-dir",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/track-from-file",
+			"title": "track-from-file",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/untrack",
+			"title": "untrack",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/untrack-dir",
+			"title": "untrack-dir",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/untrack-from-file",
+			"title": "untrack-from-file",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/unwatch",
+			"title": "unwatch",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/cmds/watch",
+			"title": "watch",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/code_blocks",
+			"title": "code_blocks",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/commands",
+			"title": "commands",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/config",
+			"title": "config",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/exprtk",
+			"title": "exprtk",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/f++",
+			"title": "f++",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns",
+			"title": "fns",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/!",
+			"title": "!",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/!=",
+			"title": "!=",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/!newline",
+			"title": "!newline",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/$",
+			"title": "$",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/&&",
+			"title": "&&",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/*",
+			"title": "*",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/*=",
+			"title": "*=",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/+",
+			"title": "+",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/++",
+			"title": "++",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/+++",
+			"title": "+++",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/+=",
+			"title": "+=",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/-",
+			"title": "-",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/--",
+			"title": "--",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/---",
+			"title": "---",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/-->",
+			"title": "-->",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/--divdiv",
+			"title": "--divdiv",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/-=",
+			"title": "-=",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/:=",
+			"title": ":=",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/<",
+			"title": "<",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/<--",
+			"title": "<--",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/<=",
+			"title": "<=",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/<HASH--",
+			"title": "<HASH--",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/=",
+			"title": "=",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/==",
+			"title": "==",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/>",
+			"title": ">",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/>=",
+			"title": ">=",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/HASH--",
+			"title": "HASH--",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/HASH_",
+			"title": "HASH_",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/MOD",
+			"title": "MOD",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/MOD=",
+			"title": "MOD=",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/add_member_fns",
+			"title": "add_member_fns",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/add_scope",
+			"title": "add_scope",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/break",
+			"title": "break",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/bsol",
+			"title": "bsol",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/cd",
+			"title": "cd",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/comments",
+			"title": "comments",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/console",
+			"title": "console",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/console,lock",
+			"title": "console,lock",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/console,locked",
+			"title": "console,locked",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/console,unlock",
+			"title": "console,unlock",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/const",
+			"title": "const",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/content",
+			"title": "content",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/continue",
+			"title": "continue",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/cpy",
+			"title": "cpy",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/cssinclude",
+			"title": "cssinclude",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/dep",
+			"title": "dep",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/div",
+			"title": "div",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/div*",
+			"title": "div*",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/divdiv",
+			"title": "divdiv",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/divequal",
+			"title": "divequal",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/do-while",
+			"title": "do-while",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/ent",
+			"title": "ent",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/error",
+			"title": "error",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/exit",
+			"title": "exit",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/exprtk",
+			"title": "exprtk",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/exprtk,add_package",
+			"title": "exprtk,add_package",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/exprtk,add_variable",
+			"title": "exprtk,add_variable",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/exprtk,compile",
+			"title": "exprtk,compile",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/exprtk,eval",
+			"title": "exprtk,eval",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/exprtk,file",
+			"title": "exprtk,file",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/exprtk,load",
+			"title": "exprtk,load",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/exprtk,str",
+			"title": "exprtk,str",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/f++",
+			"title": "f++",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/faviconinclude",
+			"title": "faviconinclude",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/for",
+			"title": "for",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/forget",
+			"title": "forget",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/function",
+			"title": "function",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/getenv",
+			"title": "getenv",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/getlin",
+			"title": "getlin",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/getline",
+			"title": "getline",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/hash",
+			"title": "hash",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/if",
+			"title": "if",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/imginclude",
+			"title": "imginclude",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/in",
+			"title": "in",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/include",
+			"title": "include",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/input",
+			"title": "input",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/is_const",
+			"title": "is_const",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/is_private",
+			"title": "is_private",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/item",
+			"title": "item",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/join",
+			"title": "join",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/jsinclude",
+			"title": "jsinclude",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/layer",
+			"title": "layer",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/link",
+			"title": "link",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/lolcat",
+			"title": "lolcat",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/lolcat,cmd",
+			"title": "lolcat,cmd",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/lolcat,off",
+			"title": "lolcat,off",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/lolcat,on",
+			"title": "lolcat,on",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/lolcat,status",
+			"title": "lolcat,status",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/lst",
+			"title": "lst",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/lua",
+			"title": "lua",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/lua_addnsmfns",
+			"title": "lua_addnsmfns",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/lua_getglobal",
+			"title": "lua_getglobal",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/lua_gettop",
+			"title": "lua_gettop",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/lua_pop",
+			"title": "lua_pop",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/lua_pushlightuserdata",
+			"title": "lua_pushlightuserdata",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/lua_pushnumber",
+			"title": "lua_pushnumber",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/lua_pushstring",
+			"title": "lua_pushstring",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/lua_remove",
+			"title": "lua_remove",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/lua_setglobal",
+			"title": "lua_setglobal",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/lua_tonumber",
+			"title": "lua_tonumber",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/lua_tostring",
+			"title": "lua_tostring",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/lua_version",
+			"title": "lua_version",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/mve",
+			"title": "mve",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/n++",
+			"title": "n++",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/nsm_lang",
+			"title": "nsm_lang",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/nsm_mode",
+			"title": "nsm_mode",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/paginate",
+			"title": "paginate",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/paginate,no_items_per_page",
+			"title": "paginate,no_items_per_page",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/paginate,separator",
+			"title": "paginate,separator",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/paginate,template",
+			"title": "paginate,template",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/parse",
+			"title": "parse",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/pathto",
+			"title": "pathto",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/pathtofile",
+			"title": "pathtofile",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/pathtopage",
+			"title": "pathtopage",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/pathtopageno",
+			"title": "pathtopageno",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/poke",
+			"title": "poke",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/precision",
+			"title": "precision",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/private",
+			"title": "private",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/prompt,char",
+			"title": "prompt,char",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/pwd",
+			"title": "pwd",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/quit",
+			"title": "quit",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/quote",
+			"title": "quote",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/read",
+			"title": "read",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/refresh_completions",
+			"title": "refresh_completions",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/replace_all",
+			"title": "replace_all",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/replace_vars",
+			"title": "replace_vars",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/return",
+			"title": "return",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/rmv",
+			"title": "rmv",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/scope",
+			"title": "scope",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/script",
+			"title": "script",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/size",
+			"title": "size",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/std::vector,at",
+			"title": "std::vector,at",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/std::vector,erase",
+			"title": "std::vector,erase",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/std::vector,pop_back",
+			"title": "std::vector,pop_back",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/std::vector,push_back",
+			"title": "std::vector,push_back",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/std::vector,set",
+			"title": "std::vector,set",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/std::vector,size",
+			"title": "std::vector,size",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/stream,close",
+			"title": "stream,close",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/stream,open",
+			"title": "stream,open",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/struct",
+			"title": "struct",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/substr",
+			"title": "substr",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/system",
+			"title": "system",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/tern",
+			"title": "tern",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/typeof",
+			"title": "typeof",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/unquote",
+			"title": "unquote",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/valid_type",
+			"title": "valid_type",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/vjoin",
+			"title": "vjoin",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/warning",
+			"title": "warning",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/while",
+			"title": "while",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/write",
+			"title": "write",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/fns/||",
+			"title": "||",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/github_hosting",
+			"title": "github_hosting",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/gitlab_hosting",
+			"title": "gitlab_hosting",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/hosting",
+			"title": "hosting",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/installing",
+			"title": "installing",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/linux_install",
+			"title": "linux_install",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/lua",
+			"title": "lua",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/make",
+			"title": "make",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/markdown",
+			"title": "markdown",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/mathematics",
+			"title": "mathematics",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/n++",
+			"title": "n++",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/netlify_hosting",
+			"title": "netlify_hosting",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/osx_install",
+			"title": "osx_install",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/presentations",
+			"title": "presentations",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/scripts",
+			"title": "scripts",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/template_files",
+			"title": "template_files",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/template_languages",
+			"title": "template_languages",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/translators",
+			"title": "translators",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/types",
+			"title": "types",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/types/bool",
+			"title": "bool",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/types/char",
+			"title": "char",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/types/double",
+			"title": "double",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/types/fstream",
+			"title": "fstream",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/types/ifstream",
+			"title": "ifstream",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/types/int",
+			"title": "int",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/types/ofstream",
+			"title": "ofstream",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/types/std::bool",
+			"title": "std::bool",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/types/std::char",
+			"title": "std::char",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/types/std::double",
+			"title": "std::double",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/types/std::int",
+			"title": "std::int",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/types/std::string",
+			"title": "std::string",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/types/std::vector<double>",
+			"title": "std::vector<double>",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/types/std::vector<string>",
+			"title": "std::vector<string>",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/types/string",
+			"title": "string",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/vercel_hosting",
+			"title": "vercel_hosting",
+			"template": "template/page.template"
+		},
+		{
+			"name": "docs/windows_install",
+			"title": "windows_install",
+			"template": "template/page.template"
+		},
+		{
+			"name": "index",
+			"title": "index",
+			"template": "template/page.template"
+		},
+		{
+			"name": "privacy_policy",
+			"title": "privacy_policy",
+			"template": "template/page.template"
+		},
+		{
+			"name": "resources/blog_templates",
+			"title": "blog_templates",
+			"template": "template/page.template"
+		},
+		{
+			"name": "resources/css_frameworks",
+			"title": "css_frameworks",
+			"template": "template/page.template"
+		},
+		{
+			"name": "resources/js_frameworks",
+			"title": "js_frameworks",
+			"template": "template/page.template"
+		},
+		{
+			"name": "resources/links",
+			"title": "links",
+			"template": "template/page.template"
+		},
+		{
+			"name": "resources/logos",
+			"title": "logos",
+			"template": "template/page.template"
+		},
+		{
+			"name": "resources/php_frameworks",
+			"title": "php_frameworks",
+			"template": "template/page.template"
+		},
+		{
+			"name": "resources/promos",
+			"title": "promos",
+			"template": "template/page.template"
+		},
+		{
+			"name": "resources/templates",
+			"title": "templates",
+			"template": "template/page.template"
+		},
+		{
+			"name": "resources/tutorials",
+			"title": "tutorials",
+			"template": "template/page.template"
+		},
+		{
+			"name": "resources/tutorials/basic_usage",
+			"title": "basic_usage",
+			"template": "template/page.template"
+		},
+		{
+			"name": "resources/tutorials/get_started",
+			"title": "get_started",
+			"template": "template/page.template"
+		},
+		{
+			"name": "support",
+			"title": "support",
+			"template": "template/page.template"
+		},
+		{
+			"name": "tos",
+			"title": "tos",
+			"template": "template/page.template"
+		}
+	]
+}

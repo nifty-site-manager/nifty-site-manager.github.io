@@ -1,0 +1,14 @@
+{
+	"last-built": "17:08:08 Sunday December 04 2022",
+	"name": "docs/osx_install",
+	"title": "osx_install",
+	"template": "template/page.template",
+	"dependencies": [
+		"content/docs/osx_install.content",
+		"template/footer.content",
+		"template/head.content",
+		"template/header.content",
+		"template/menu.content",
+		"template/page.template"
+	]
+}

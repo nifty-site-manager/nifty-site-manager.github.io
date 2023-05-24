@@ -1,0 +1,14 @@
+{
+	"last-built": "15:10:42 Wednesday May 24 2023",
+	"name": "docs/scripts",
+	"title": "scripts",
+	"template": "template/page.template",
+	"dependencies": [
+		"content/docs/scripts.content",
+		"template/footer.content",
+		"template/head.content",
+		"template/header.content",
+		"template/menu.content",
+		"template/page.template"
+	]
+}

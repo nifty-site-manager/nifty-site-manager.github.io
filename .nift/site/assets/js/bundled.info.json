@@ -1,0 +1,11 @@
+{
+	"last-built": "16:37:30 Sunday December 04 2022",
+	"name": "assets/js/bundled",
+	"title": "bundled'",
+	"template": "template/js.template",
+	"dependencies": [
+		"content/assets/js/bundled.content",
+		"content/assets/js/menu.js",
+		"template/js.template"
+	]
+}

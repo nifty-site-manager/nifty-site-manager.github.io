@@ -56,7 +56,8 @@
 						<li><a href="@pathtopage(docs/cmds/bcp)">bcp</a> (build, commit & push)</li>
 						<li><a href="@pathtopage(docs/cmds/build-updated)">build(-updated)</a> (incremental build)</li>
 						<li><a href="@pathtopage(docs/cmds/build-all)">build-all</a> (full build)</li>
-						<li><a href="@pathtopage(docs/cmds/build-names)">build-names</a></li> <br>
+						<li><a href="@pathtopage(docs/cmds/build-names)">build-names</a></li> 
+						<li><a href="@pathtopage(docs/cmds/build-auto)">build-auto</a></li> <br>
 
 						<li><a href="@pathtopage(docs/cmds/clone)">clone</a></li>
 						<li><a href="@pathtopage(docs/cmds/commands)">cmds</a></li>
@@ -101,7 +102,6 @@
 						<li><a href="@pathtopage(docs/cmds/rmv-dir)">rmv-dir</a></li>
 						<li><a href="@pathtopage(docs/cmds/rmv-from-file)">rmv-from-file</a></li> <br>
 
-						<li><a href="@pathtopage(docs/cmds/serve)">serve</a></li>
 						<li><a href="@pathtopage(docs/cmds/status)">status</a></li> <br>
 
 						<li><a href="@pathtopage(docs/cmds/track)">track</a></li>

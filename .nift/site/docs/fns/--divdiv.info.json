@@ -1,0 +1,14 @@
+{
+	"last-built": "17:08:08 Sunday December 04 2022",
+	"name": "docs/fns/--divdiv",
+	"title": "--divdiv",
+	"template": "template/page.template",
+	"dependencies": [
+		"content/docs/fns/--divdiv.content",
+		"template/footer.content",
+		"template/head.content",
+		"template/header.content",
+		"template/menu.content",
+		"template/page.template"
+	]
+}

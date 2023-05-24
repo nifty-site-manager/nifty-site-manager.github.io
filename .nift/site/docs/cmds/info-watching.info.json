@@ -1,0 +1,14 @@
+{
+	"last-built": "17:08:08 Sunday December 04 2022",
+	"name": "docs/cmds/info-watching",
+	"title": "info-watching",
+	"template": "template/page.template",
+	"dependencies": [
+		"content/docs/cmds/info-watching.content",
+		"template/footer.content",
+		"template/head.content",
+		"template/header.content",
+		"template/menu.content",
+		"template/page.template"
+	]
+}

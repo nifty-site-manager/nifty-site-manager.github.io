@@ -1,0 +1,14 @@
+{
+	"last-built": "17:08:08 Sunday December 04 2022",
+	"name": "docs/cmds/new-template",
+	"title": "new-template",
+	"template": "template/page.template",
+	"dependencies": [
+		"content/docs/cmds/new-template.content",
+		"template/footer.content",
+		"template/head.content",
+		"template/header.content",
+		"template/menu.content",
+		"template/page.template"
+	]
+}

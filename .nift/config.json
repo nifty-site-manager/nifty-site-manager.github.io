@@ -1,0 +1,21 @@
+{
+	"config": {
+		"content-dir": "content/",
+		"content-ext": ".content",
+		"output-dir": "site/",
+		"output-ext": ".html",
+		"script-ext": ".f",
+		"default-template": "template/page.template",
+		"backup-scripts": true,
+		"lolcat-default": false,
+		"lolcat-cmd": "nift lolcat-cc -f",
+		"build-threads": -1,
+		"paginate-threads": -1,
+		"incremental-mode": "modified",
+		"terminal": "normal",
+		"unix-editor": "subl -n",
+		"windows-editor": "notepad",
+		"root-branch": "stage",
+		"output-branch": "master"
+	}
+}

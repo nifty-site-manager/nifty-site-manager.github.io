@@ -1,0 +1,13 @@
+{
+	"last-built": "17:08:08 Sunday December 04 2022",
+	"name": "assets/css/bundled",
+	"title": "bundled'",
+	"template": "template/css.template",
+	"dependencies": [
+		"content/assets/css/bundled.content",
+		"content/assets/css/font-awesome.css",
+		"content/assets/css/menu.css",
+		"content/assets/css/pagestyle.css",
+		"template/css.template"
+	]
+}

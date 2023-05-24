@@ -1,0 +1,15 @@
+{
+	"last-built": "17:08:08 Sunday December 04 2022",
+	"name": "docs/fns/paginate,no_items_per_page",
+	"title": "paginate,no_items_per_page",
+	"template": "template/page.template",
+	"dependencies": [
+		"content/docs/fns/paginate,no_items_per_page-post-build.f",
+		"content/docs/fns/paginate,no_items_per_page.content",
+		"template/footer.content",
+		"template/head.content",
+		"template/header.content",
+		"template/menu.content",
+		"template/page.template"
+	]
+}

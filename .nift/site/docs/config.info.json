@@ -1,0 +1,16 @@
+{
+	"last-built": "15:10:42 Wednesday May 24 2023",
+	"name": "docs/config",
+	"title": "config",
+	"template": "template/page.template",
+	"dependencies": [
+		".nift/config.json",
+		"content/docs/config.content",
+		"content/docs/eg-global.config",
+		"template/footer.content",
+		"template/head.content",
+		"template/header.content",
+		"template/menu.content",
+		"template/page.template"
+	]
+}

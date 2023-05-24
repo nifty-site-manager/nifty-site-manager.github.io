@@ -1,0 +1,15 @@
+{
+	"last-built": "17:08:08 Sunday December 04 2022",
+	"name": "docs/fns/exprtk,add_package",
+	"title": "exprtk,add_package",
+	"template": "template/page.template",
+	"dependencies": [
+		"content/docs/fns/exprtk,add_package-post-build.f",
+		"content/docs/fns/exprtk,add_package.content",
+		"template/footer.content",
+		"template/head.content",
+		"template/header.content",
+		"template/menu.content",
+		"template/page.template"
+	]
+}

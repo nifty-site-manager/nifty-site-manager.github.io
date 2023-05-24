@@ -1,0 +1,14 @@
+{
+	"last-built": "17:08:08 Sunday December 04 2022",
+	"name": "docs/cmds/untrack-from-file",
+	"title": "untrack-from-file",
+	"template": "template/page.template",
+	"dependencies": [
+		"content/docs/cmds/untrack-from-file.content",
+		"template/footer.content",
+		"template/head.content",
+		"template/header.content",
+		"template/menu.content",
+		"template/page.template"
+	]
+}
