@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 	<head>
-		<title>Nift - serve</title>
+		<title>Nift - build-auto</title>
 		<meta name="description" 
 		      content="Nift is an opinionless web development framework. It's 
 		            lightning fast, cross-platform, opinionless, open source 
@@ -37,7 +37,7 @@
 			  <nav id="nav" class="noselect">
 			    <ul>
 			      <li class="item li-menu li-dark">
-			        <a class="item-link" href="../../index.html">Home</a>
+			        <a class="item-link" href="../../">Home</a>
 			      </li>
 			      <li class="item li-menu li-dark has-submenu">
 			        <a tabindex="0" href="#" class="submenu-link" onclick="toggle_submenu(0)">Documentation <i class="submenu-link-icon fa fa-angle-down fa-1x"></i></a>
@@ -103,7 +103,7 @@
 
 				<!-- Main -->
 				<section id="main" class="wrapper style2">
-					<div class="title">cmd: <mono>serve</mono></div>
+					<div class="title">cmd: <mono>build-auto</mono></div>
 					<div class="container">
 						<!-- Features -->
 						<section id="features">
@@ -123,11 +123,11 @@
 									Syntax
 								</h4>
 								<p>
-									The syntax for the <mono>serve</mono> command is:
+									The syntax for the <mono>build-auto</mono> command is:
 				<div align="center">
 				<pre class="prettyprint inline lang-nift">
-nift serve (sleep-sec)
-nsm serve (sleep-sec)
+nift build-auto (sleep-sec)
+nsm build-auto (sleep-sec)
 </pre>
 				</div>
 								</p>
@@ -136,15 +136,15 @@ nsm serve (sleep-sec)
 									Description
 								</h4>
 								<p>
-									The <mono>serve</mono> command is for serving a project locally (automatically building updates to the project without having to manually run a build command), it either takes zero paremters and sleeps for 0.3s between running incremental builds, or takes a single floating point parameter which should be the number of seconds to sleep between running incremental builds.
+									The <mono>build-auto</mono> command is for auto building a project locally (automatically building updates to the project without having to manually run a build command), it either takes zero paremters and sleeps for 0.3s between running incremental builds, or takes a single floating point parameter which should be the number of seconds to sleep between running incremental builds.
 								</p>
 				
 								<p>
-									<b>Note:</b> If your updates are not appearing upon refresh or reload of the output file there's a chance the builds are failing, try checking the <mono>.serve-build-log.txt</mono> file in the project root directory.
+									<b>Note:</b> If your updates are not appearing upon refresh or reload of the output file there's a chance the builds are failing, try checking the <mono>.build-auto-log.txt</mono> file in the project root directory.
 								</p>
 				
 								<p>
-									On linux you can also run <mono>nsm serve -s &</mono> to serve in the background then to stop serving run <mono>killall nsm</mono>. Then you can open the webpages/output files in the <mono>output</mono> directory and Nift will automatically build the project in the background, picking up any changes, just reload your browser window or reload the output file in your editor (often they will pop up a dialogue saying the file has been changed and asking whether you would like to reload). 
+									On linux you can also run <mono>nsm build-auto -s &</mono> to auto build in the background then to stop run <mono>killall nsm</mono>. Then you can open the webpages/output files in the <mono>output</mono> directory and Nift will automatically build the project in the background, picking up any changes, just reload your browser window or reload the output file in your editor (often they will pop up a dialogue saying the file has been changed and asking whether you would like to reload). 
 								</p>
 				
 								<p>
@@ -164,19 +164,19 @@ python -m SimpleHTTPServer
 								</p>
 				
 								<p>
-									If you want live reloading for a website check out <a href="https://github.com/tapio/live-server">Live Server</a> which you can get from <mono>npm</mono>, or <a href="http://livereload.com/">Live Reload</a>. In either case you can add them to <a href="../scripts.html">pre/post serve scripts</a> for your website so that it is all integrated in to the Nift serve command and requires no manual effort on your part.
+									If you want live reloading for a website check out <a href="https://github.com/tapio/live-server">Live Server</a> which you can get from <mono>npm</mono>, or <a href="http://livereload.com/">Live Reload</a>. In either case you can add them to <a href="../scripts.html">pre/post build-auto scripts</a> for your website so that it is all integrated in to the Nift serve command and requires no manual effort on your part.
 								</p>
 				
 								<h4 id="eg">
 									Example
 								</h4>
 								<p>
-									Example of <mono>serve</mono> being used:					
+									Example of <mono>build-auto</mono> being used:					
 				
 				<div align="center">
 				<pre class="prettyprint inline linenums lang-nift">
-nift serve
-nsm serve 1.5</pre>
+nift build-auto
+nsm build-auto 1.5</pre>
 				</div>
 								</p>
 							</div>
