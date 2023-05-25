@@ -1253,6 +1253,11 @@
 			"template": "template/page.template"
 		},
 		{
+			"name": "resources/scaffolding",
+			"title": "scaffolding",
+			"template": "template/page.template"
+		},
+		{
 			"name": "resources/templates",
 			"title": "templates",
 			"template": "template/page.template"

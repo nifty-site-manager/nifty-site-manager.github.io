@@ -14,18 +14,6 @@
 					<li><a href="https://inspirejs.org/">inspire.js</a> (<a href="https://github.com/LeaVerou/inspire.js">GitHub</a>)</li>
 					<li><a href="https://github.com/Seldaek/slippy">Slippy</a></li>
 				</ul>
-
-				<p>
-					For template presentation repositories that you can import (or fork and rename) then clone to start making presentations, see the table below:
-				</p>
-
-				<center>
-					<div class="xscroll">
-						<table id="blogs_table" class="alt">
-						  @input(content/docs/tables/presentations.table)
-						</table>
-					</div>
-				</center>
 			</div>
 		</section>
 	</div>

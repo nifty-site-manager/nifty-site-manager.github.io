@@ -1,0 +1,15 @@
+{
+	"last-built": "08:18:08 Friday May 26 2023",
+	"name": "resources/scaffolding",
+	"title": "scaffolding",
+	"template": "template/page.template",
+	"dependencies": [
+		"content/resources/scaffolding.content",
+		"content/resources/tables/scaffolding.table",
+		"template/footer.content",
+		"template/head.content",
+		"template/header.content",
+		"template/menu.content",
+		"template/page.template"
+	]
+}

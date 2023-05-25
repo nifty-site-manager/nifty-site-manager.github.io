@@ -37,7 +37,7 @@
 			  <nav id="nav" class="noselect">
 			    <ul>
 			      <li class="item li-menu li-dark">
-			        <a class="item-link" href="../../index.html">Home</a>
+			        <a class="item-link" href="../../">Home</a>
 			      </li>
 			      <li class="item li-menu li-dark has-submenu">
 			        <a tabindex="0" href="#" class="submenu-link" onclick="toggle_submenu(0)">Documentation <i class="submenu-link-icon fa fa-angle-down fa-1x"></i></a>
@@ -67,8 +67,10 @@
 			      <li class="item li-menu li-dark has-submenu">
 			        <a tabindex="0" href="#" class="submenu-link" onclick="toggle_submenu(1)">Resources <i class="submenu-link-icon fa fa-angle-down fa-1x"></i></a>
 			        <ul class="submenu">
-			          <li class="subitem"><a href="../../resources/tutorials.html">Tutorials</a></li>
-			          <li class="subitem"><a href="../../resources/templates.html">Templates</a></li>
+			          
+			          <li class="subitem"><a href="../../resources/tutorials/get_started.html">Getting Started</a></li>
+			          <li class="subitem"><a href="../../resources/scaffolding.html">Scaffolding</a></li>
+			          <li class="subitem"><a href="../../resources/templates.html">HTML5 UP Templates</a></li>
 			          <li class="subitem"><a href="../../resources/blog_templates.html">Blog Templates</a></li>
 			          <li class="subitem"><a href="../../resources/css_frameworks.html">CSS Frameworks</a></li>
 			          <li class="subitem"><a href="../../resources/js_frameworks.html">JS Frameworks</a></li>
@@ -154,7 +156,7 @@ bool(definitions)
 								</p>
 				
 								<p>
-									<b>Note:</b> So that <mono>ExprTk</mono> has direct access to booleans (for the sake of convenience), underneath they are actually doubles. If you are defining large volumes of bools where memory usage is of concern then <a href="std::bool.html">std::bool</a> uses proper bools underneath, which you can still access from all of <mono>f++</mono>, <mono>ExprTk</mono>, <mono>Lua</mono> and <mono>n++</mono>, however accessing and setting them with <mono>ExprTk</mono> is not quite as nice syntactically and not as efficient. 
+									<b>Note:</b> So that <mono>ExprTk</mono> has direct access to booleans (for the sake of convenience), underneath they are actually doubles. If you are defining large volumes of bools where memory usage is of concern then <a href="./std::bool.html">std::bool</a> uses proper bools underneath, which you can still access from all of <mono>f++</mono>, <mono>ExprTk</mono>, <mono>Lua</mono> and <mono>n++</mono>, however accessing and setting them with <mono>ExprTk</mono> is not quite as nice syntactically and not as efficient. 
 								</p>
 				
 								<p>

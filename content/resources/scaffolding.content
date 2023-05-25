@@ -1,0 +1,22 @@
+<!-- Main -->
+<section id="main" class="wrapper style2">
+	<div class="title"><h3>Scaffolding</h3></div>
+	<div class="container">
+		<!-- Features -->
+		<section id="features">
+			<div class="content">
+				<p>
+					Below are some Nift projects for scaffolding various sorts of webapps, you can import (or fork and rename) then clone to start developing. 
+				</p>
+
+				<center>
+					<div class="xscroll">
+						<table id="html5up_templates_table" class="alt">
+							@input(content/resources/tables/scaffolding.table)
+						</table>
+					</div>
+				</center>
+			</div>
+		</section>
+	</div>
+</section>

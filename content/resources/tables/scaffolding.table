@@ -1,0 +1,20 @@
+<tr>
+	<td>barebones</td>
+	<td></td>
+	<td><a href="https://github.com/nift-scaffolding/barebones">repository</a></td>
+</tr>
+<tr>
+	<td>firebase</td>
+	<td><a href="https://nift-scaffolding.github.io/firebase/">demo</a></td>
+	<td><a href="https://github.com/nift-scaffolding/firebase">repository</a></td>
+</tr>
+<tr>
+	<td>minimal</td>
+	<td><a href="https://nift-scaffolding.github.io/minimal/">demo</a></td>
+	<td><a href="https://github.com/nift-scaffolding/minimal">repository</a></td>
+</tr>
+<tr>
+	<td>supabase</td>
+	<td><a href="https://nift-scaffolding.github.io/supabase/">demo</a></td>
+	<td><a href="https://github.com/nift-scaffolding/supabase">repository</a></td>
+</tr>

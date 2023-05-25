@@ -47,8 +47,10 @@
       <li class="item li-menu li-dark has-submenu">
         <a tabindex="0" href="#" class="submenu-link" onclick="toggle_submenu(1)">Resources <i class="submenu-link-icon fa fa-angle-down fa-1x"></i></a>
         <ul class="submenu">
-          <li class="subitem"><a href="@pathto(resources/tutorials)">Tutorials</a></li>
-          <li class="subitem"><a href="@pathto(resources/templates)">Templates</a></li>
+          @//<li class="subitem"><a href="@pathto(resources/tutorials)">Tutorials</a></li>
+          <li class="subitem"><a href="@pathto(resources/tutorials/get_started)">Getting Started</a></li>
+          <li class="subitem"><a href="@pathto(resources/scaffolding)">Scaffolding</a></li>
+          <li class="subitem"><a href="@pathto(resources/templates)">HTML5 UP Templates</a></li>
           <li class="subitem"><a href="@pathto(resources/blog_templates)">Blog Templates</a></li>
           <li class="subitem"><a href="@pathto(resources/css_frameworks)">CSS Frameworks</a></li>
           <li class="subitem"><a href="@pathto(resources/js_frameworks)">JS Frameworks</a></li>

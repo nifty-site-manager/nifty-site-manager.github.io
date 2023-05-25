@@ -1,11 +1,10 @@
 {
-	"last-built": "17:08:08 Sunday December 04 2022",
+	"last-built": "08:18:08 Friday May 26 2023",
 	"name": "docs/presentations",
 	"title": "presentations",
 	"template": "template/page.template",
 	"dependencies": [
 		"content/docs/presentations.content",
-		"content/docs/tables/presentations.table",
 		"template/footer.content",
 		"template/head.content",
 		"template/header.content",
