@@ -36,7 +36,7 @@
 			  <nav id="nav" class="noselect">
 			    <ul>
 			      <li class="item li-menu li-dark">
-			        <a class="item-link" href="index.html">Home</a>
+			        <a class="item-link" href="./">Home</a>
 			      </li>
 			      <li class="item li-menu li-dark has-submenu">
 			        <a tabindex="0" href="#" class="submenu-link" onclick="toggle_submenu(0)">Documentation <i class="submenu-link-icon fa fa-angle-down fa-1x"></i></a>
@@ -66,8 +66,10 @@
 			      <li class="item li-menu li-dark has-submenu">
 			        <a tabindex="0" href="#" class="submenu-link" onclick="toggle_submenu(1)">Resources <i class="submenu-link-icon fa fa-angle-down fa-1x"></i></a>
 			        <ul class="submenu">
-			          <li class="subitem"><a href="resources/tutorials.html">Tutorials</a></li>
-			          <li class="subitem"><a href="resources/templates.html">Templates</a></li>
+			          
+			          <li class="subitem"><a href="resources/tutorials/get_started.html">Getting Started</a></li>
+			          <li class="subitem"><a href="resources/scaffolding.html">Scaffolding</a></li>
+			          <li class="subitem"><a href="resources/templates.html">HTML5 UP Templates</a></li>
 			          <li class="subitem"><a href="resources/blog_templates.html">Blog Templates</a></li>
 			          <li class="subitem"><a href="resources/css_frameworks.html">CSS Frameworks</a></li>
 			          <li class="subitem"><a href="resources/js_frameworks.html">JS Frameworks</a></li>
@@ -146,44 +148,8 @@
 									</div>
 									<div class="col-6 col-12-medium">
 										<section>
-											<h3><i class="icon fas fa-check"></i>Static and Dynamic Websites</h3>
-											<p>Nift is not just useful for the development of static websites with serverless backends but also dynamic websites that have more traditional backend infrastructure, with a whole range of <a href="docs/hosting.html">hosting options</a>.</p>
-										</section>
-									</div>
-									<div class="col-6 col-12-medium">
-										<section>
-											<h3><i class="icon fas fa-check"></i>Pagination</h3>
-											<p>Nift can handle pagination at build time with multithreading or using javascript at load time. See the <a href="docs/fns.html#p">functions</a> docs for several <mono>paginate</mono> functions.</p>
-										</section>
-									</div>
-									<div class="col-6 col-12-medium">
-										<section>
 											<h3><i class="icon fas fa-check"></i>Lua(JIT) and ExprTk embedded</h3>
 											<p>Nift can be compiled with either <a href="https://luajit.org/">LuaJIT</a> (default) or <a href="http://www.lua.org/">Lua</a> along with <a href="https://github.com/ArashPartow/exprtk">ExprTk</a> which has a very impressive <a href="http://www.partow.net/programming/exprtk/#exprtkusers">userbase</a>. LuaJIT is basically the world's fastest interpreted language and ExprTk is basically the world's fastest mathematical expression parser. Nift specific documentation is available for <a href="docs/lua.html">Lua(JIT)</a> and <a href="docs/exprtk.html">ExprTk</a>.</p>
-										</section>
-									</div>
-									<div class="col-6 col-12-medium">
-										<section>
-											<h3><i class="icon fas fa-check"></i>In-built scripting and template languages</h3>
-											<p>Nift has in-built: a <a href="docs/f++.html">scripting</a> language <mono>f++</mono> and a <a href="docs/n++.html">template</a> language <mono>n++</mono>. Both <mono>f++</mono> and <mono>n++</mono> use mostly the same underlying code, with a few minor differences under the hood and in how the syntax is structured.</p>
-										</section>
-									</div>
-									<div class="col-6 col-12-medium">
-										<section>
-											<h3><i class="icon fas fa-check"></i>In-built interactive REPL and shell extension</h3>
-											<p>Nift has in-built interactive REPLs for each of <mono>f++</mono>, <mono>n++</mono>, <mono>ExprTk</mono> and <mono>Lua(JIT)</mono>, with documentation available <a href="docs/REPL.html">here</a>. You can easily switch between languages, and has a shell extension mode most useful for <mono>f++</mono>.</p>
-										</section>
-									</div>
-									<div class="col-6 col-12-medium">
-										<section>
-											<h3><i class="icon fas fa-check"></i>Script Support</h3>
-											<p>Nift has support for pre/post build/serve scripts, useful for things like integrating with webpack, Babel, npm, Bower, Yeoman, Browserify, Parcel, Brunch, SASS, Grunt, Puppeteer, GraphQL, Python Web Server, Live Server/Reload, etc..</p>
-										</section>
-									</div>
-									<div class="col-6 col-12-medium">
-										<section>
-											<h3><i class="icon fas fa-check"></i>Command-Line Integration</h3>
-											<p>Nift brings you the full power of the command line, with syntax in the template language to run or inject the output of scripts or system calls at any point while building webpages.</p>
 										</section>
 									</div>
 									<div class="col-6 col-12-medium">
@@ -194,56 +160,26 @@
 									</div>
 									<div class="col-6 col-12-medium">
 										<section>
-											<h3><i class="icon fas fa-check"></i>Framework Integration</h3>
-											<p>Nift integrates flawlessly with various <a href="resources/js_frameworks.html">Javascript frameworks</a> eg. Grunt, Gulp, Vue, Node, React, etc. and <a href="resources/php_frameworks.html">PHP frameworks</a> eg. Laravel, CakePHP, Phalcon, etc..</p>
-										</section>
-									</div>
-									<div class="col-6 col-12-medium">
-										<section>
-											<h3><i class="icon fas fa-check"></i>Language Agnostic</h3>
-											<p>You can use any language you want, eg. markdown, LaTeX, html, haml, xml, JSON, css, sass, javascript, TypeScript, php, MySQL etc..</p>
-										</section>
-									</div>
-									<div class="col-6 col-12-medium">
-										<section>
-											<h3><i class="icon fas fa-check"></i>Multilingual Support</h3>
-											<p>You can use any language/alphabet you want in content/template files and page names for urls, and can integrate with CLI translators to translate text.</p>
-										</section>
-									</div>
-									<div class="col-6 col-12-medium">
-										<section>
-											<h3><i class="icon fas fa-check"></i>Build Errors</h3>
-											<p>Nift will throw errors and tell you the exact file and line number where there is a problem.</p>
-										</section>
-									</div>
-									<div class="col-6 col-12-medium">
-										<section>
 											<h3><i class="icon fas fa-check"></i>Incremental Builds</h3>
-											<p>Nift tracks file dependencies to each page and can build only the web pages that have modified content, and can also build all pages or a list of specified pages.</p>
+											<p>Nift tracks file dependencies to each page and can build only the web pages that have modified content, while also able to build all pages or a list of specified pages.</p>
 										</section>
 									</div>
 									<div class="col-6 col-12-medium">
 										<section>
 											<h3><i class="icon fas fa-check"></i>Single Executable</h3>
-											<p>Nift compiles in to one executable file.</p>
+											<p>Nift compiles into a single executable file.</p>
 										</section>
 									</div>
 									<div class="col-6 col-12-medium">
 										<section>
 											<h3><i class="icon fas fa-check"></i>Intuitive Templating System</h3>
-											<p>Nift's <a href="docs/template_files.html">templating system</a> is intuitive while being easy to understand and remember.</p>
+											<p>Nift's <a href="docs/template_files.html">templating system</a> is intuitive while being easy to groque, see <a href="docs/fns.html">here</a> for documentation on the numerous available functions.</p>
 										</section>
 									</div>
 									<div class="col-6 col-12-medium">
 										<section>
 											<h3><i class="icon fas fa-check"></i>Multithreading</h3>
-											<p>Nift will take advantage of all the computing power on your machine, whether you're running on a Raspberry Pi or a super computer, Nift has you covered.</p>
-										</section>
-									</div>
-									<div class="col-6 col-12-medium">
-										<section>
-											<h3><i class="icon fas fa-check"></i>Template Selection</h3>
-											<p>Nift has a variety of stylishly designed templates available for making <a href="resources/templates.html">websites</a> and <a href="resources/blog_templates.html">blogs</a>, including templates modified from <a href="resources/templates.html#html5up">HTML5 UP</a>, <a href="resources/templates.html">unDraw</a> and <a href="resources/templates.html#w3css">W3.CSS</a>.</p>
+											<p>Nift may be configured to build using as many threads as you want, including multiples of the number of cores on the machine.</p>
 										</section>
 									</div>
 								</div>
@@ -267,8 +203,8 @@
 							</ul> <br>
 				
 							<ul>
-								<li><a href="tos.html">Terms of Service</a></li>
-								<li><a href="privacy_policy.html">Privacy Policy</a></li>
+								<li><a href="./tos.html">Terms of Service</a></li>
+								<li><a href="./privacy_policy.html">Privacy Policy</a></li>
 							</ul> <br>
 				
 							<ul>

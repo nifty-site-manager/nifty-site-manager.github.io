@@ -37,7 +37,7 @@
 			  <nav id="nav" class="noselect">
 			    <ul>
 			      <li class="item li-menu li-dark">
-			        <a class="item-link" href="../../index.html">Home</a>
+			        <a class="item-link" href="../../">Home</a>
 			      </li>
 			      <li class="item li-menu li-dark has-submenu">
 			        <a tabindex="0" href="#" class="submenu-link" onclick="toggle_submenu(0)">Documentation <i class="submenu-link-icon fa fa-angle-down fa-1x"></i></a>
@@ -67,8 +67,10 @@
 			      <li class="item li-menu li-dark has-submenu">
 			        <a tabindex="0" href="#" class="submenu-link" onclick="toggle_submenu(1)">Resources <i class="submenu-link-icon fa fa-angle-down fa-1x"></i></a>
 			        <ul class="submenu">
-			          <li class="subitem"><a href="../tutorials.html">Tutorials</a></li>
-			          <li class="subitem"><a href="../templates.html">Templates</a></li>
+			          
+			          <li class="subitem"><a href="./get_started.html">Getting Started</a></li>
+			          <li class="subitem"><a href="../scaffolding.html">Scaffolding</a></li>
+			          <li class="subitem"><a href="../templates.html">HTML5 UP Templates</a></li>
 			          <li class="subitem"><a href="../blog_templates.html">Blog Templates</a></li>
 			          <li class="subitem"><a href="../css_frameworks.html">CSS Frameworks</a></li>
 			          <li class="subitem"><a href="../js_frameworks.html">JS Frameworks</a></li>
@@ -103,65 +105,52 @@
 
 				<!-- Main -->
 				<section id="main" class="wrapper style2">
-					<div class="title">Get Started</div>
+					<div class="title">Getting Started</div>
 					<div class="container">
 						<!-- Features -->
 						<section id="features">
-							<header class="style1">
-								<h2>Guide to getting started using Nift</h2>
-							</header>
-				
-							<!-- Image -->
-							<center>
-								<img src="../../images/teaching.svg" alt="unDraw teaching illustration" width=300 style="margin-bottom:60px">
-							</center>
-				
 							<div class="content">
 								<p>
-									If you are new to <mono>Nift</mono> the following guide will help you get started. To understand how <mono>Nift/nsm</mono> works even better check out the <a href="../tutorials.html">Nift tutorials</a> which will give you a more thorough understanding of how different parts of <mono>Nift</mono> work.
-								</p>
-				
-								<p>
-									The easiest way to learn how <mono>Nift</mono> works is to get your feet wet and hands dirty. If there are any problems with the following guide please file an issue <a href="https://github.com/nifty-site-manager/nifty-site-manager.github.io/issues">here</a> or <a href="https://gitlab.com/nifty-site-manager/nifty-site-manager.gitlab.io/issues">here</a>.
+									If you are new to <mono>Nift</mono> the following guide will help you get started:
 								</p>
 				
 								<ol>
-									<li>If you haven't already installed <mono>Nift</mono>, you can find install instructions <a href="../../docs/installing.html">here</a>;
-									<li>Open up a terminal or command prompt/power shell window and enter <mono>nsm commands</mono> to get a list of available commands (check out the <a href="../../docs/commands.html">Nift commands</a> page from the documentation for information about <mono>Nift</mono> commands);</li>
-									<li>On Bitbucket, GitHub or GitLab import (or fork and rename) an existing site repository template from <a href="../templates.html">here</a>;</li>
-									<li>If you used GitHub for the last step, go in to the imported/forked repository's settings, scroll down to GitHub Pages and set the <mono>source</mono> to <mono>master branch</mono> (there may be some delay before your website goes live);</li>
+									<li>If you haven't already installed <mono>Nift</mono>, you can find install instructions <a href="../../docs/installing.html">here</a>.</li>
+									<li>Open up a terminal or power shell window and enter <mono>nsm commands</mono> to get a list of available commands (check out the <a href="../../docs/commands.html">Nift commands</a> page from the documentation for information about <mono>Nift</mono> commands).</li>
+									<li>Import (or fork and rename) a scaffolding repository project from <a href="../scaffolding.html">here</a>.</li>
+									<li>Go in to the imported/forked repository's settings, go to the Pages settings and set the <mono>source</mono> to <mono>main branch</mono> (there may be some delay before the website goes live).</li>
 									<li>To view the website remotely, open up a browser of your choice and go to:
 									<div align="center">
 				<pre>
-https://[user/team/organisation/group-name].[bitbucket/github/gitlab].io/repo-name
+https://organization-name.github.io/repo-name
 </pre>
 									</div>
 										Note if you name the repository:
 									<div align="center">
 				<pre>
-[user/team/organisation/group-name].[bitbucket/github/gitlab].io
+organization-name.github.io
 </pre>
 									</div>
 										then the url will be just:
 									<div align="center">
 				<pre>
-https://[user/team/organisation/group-name].[bitbucket/github/gitlab].io
+https://organization-name.github.io
 </pre>
 									</div></li>
-									<li>Clone the site repository locally using <mono>nsm clone <i>clone-url</i></mono>, eg.:
+									<li>Clone the site repository locally using <mono>nift clone &lt;clone-url&gt;</mono>, eg.:
 									<div align="center">
 				<pre>
-nsm clone https://gitlab.com/nsm-templates/parchment-site.git;
+nift clone https://gitlab.com/nsm-templates/parchment-site.git;
 </pre>
 									</div></li>
-									<li>To view the website locally, open up one of the pages in the <mono>site</mono> directory with a browser of your choice;</li>
-									<li>Try modifying some of the files in the <mono>content</mono> directory and run <mono>nsm build-updated</mono>, then refresh your browser to view the changes (check out the documentation pages for <a href="../../docs/fns.html">functions</a> giving information about functions you can use and <a href="../../docs/n++.html">n++</a> which is the template language being used;</li>
-									<li>Try modifying some of the files in the template directory and run <mono>nsm build-updated</mono>, then refresh your browser to view the changes (check out the <a href="../../docs/template_files.html">template files</a> page from the documentation for information about writing template files);</li>
-									<li>You can push your changes back to Bitbucket/GitHub/GitLab using <mono>nsm bcp "commit message"</mono> (there may be some delay before your changes go live).</li>
-									<li>Check out the <a href="../../docs/hosting.html">hosting</a> page from the documentation for information about hosting websites. Especially useful is <a href="https://www.netlify.com/">Netlify</a> for custom domains with auto renewing Let's encrypt certificates or <a href="https://www.heroku.com/">Heroku</a> for free hosting of dynamic websites;</li>
-									<li>Check out the <a href="../../docs/mathematics.html">mathematics</a> page from the documentation for information about $\LaTeX$ support for your webpages using MathJax;</li>
-									<li>Check out the <a href="../../docs/code_blocks.html">code blocks</a> page from the documentation for information about syntax highlighting support for your webpages using <a href="https://github.com/google/code-prettify">Google Code Prettify</a>;</li>
-									<li>Check <a href="../links.html">here</a> for all sorts of useful links.</li>
+									<li>To view the website locally, open up one of the pages in the <mono>output</mono> directory with a browser of your choice.</li>
+									<li>Try modifying some of the files in the <mono>content</mono> directory and run <mono>nsm build-updated</mono>, then refresh your browser to view the changes (check out the documentation pages for <a href="../../docs/fns.html">functions</a> giving information about functions you can use and <a href="../../docs/n++.html">n++</a> which is the template language being used.</li>
+									<li>Try modifying some of the files in the template directory and run <mono>nsm build-updated</mono>, then refresh your browser to view the changes (check out the <a href="../../docs/template_files.html">template files</a> page from the documentation for information about writing template files).</li>
+									<li>You can push your changes back to GitHub using <mono>nift bcp "commit message"</mono> (note: there may be some delay before your changes go live).</li>
+									<li>Check out the <a href="../../docs/hosting.html">hosting</a> page from the documentation for information about hosting websites.</li>
+									<li>Try tracking a new page using <mono>nift track about/</mono> (note: using <mono>about/</mono> will build the page <mono>about/index.html</mono>, use <mono>nift track about</mono> if you would prefer it to be <mono>about.html</mono>).</li>
+									<li>You can remove the page again with <mono>nift rm about/</mono>.</li>
+									<li>Take a look at the files <mono>.nift/config.json</mono> and <mono>.nift/tracked.json</mono>, one can avoid opening these using the available Nift <a href="../../docs/commands.html">commands</a>, however one may also edit the files directly.
 								</ol>
 							</div>
 						</section>
