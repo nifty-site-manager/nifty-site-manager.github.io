@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Nift — Documentation projects</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Nift is a fast, dependency-aware templating and build system for websites and text-based projects.">
+	<meta name="theme-color" content="#071c29">
+	<script>
+	(() => {
+		const mode = localStorage.getItem('nift-theme') || 'system';
+		const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+		document.documentElement.dataset.themeMode = mode;
+		document.documentElement.dataset.theme = mode === 'system' ? (systemDark ? 'dark' : 'light') : mode;
+	})();
+	</script>
+	<link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body class="docs-page">
+	<header class="site-header" data-header>
+		<a class="brand" href="../../" aria-label="Nift home">
+			<img src="../../assets/images/nift-logo.png" alt="Nift">
+		</a>
+		<div class="header-actions">
+			<nav class="desktop-nav" aria-label="Primary navigation">
+				<a href="../../">Home</a>
+				<a href="../../docs.html">Docs</a>
+				<a href="../../templates.html">Templates</a>
+				<a href="../../examples.html">Examples</a>
+				<a href="../../showcase.html">Showcase</a>
+				<a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub ↗</a>
+			</nav>
+			<div class="theme-switcher desktop-theme-switcher" role="group" aria-label="Colour theme">
+				<button type="button" data-theme-choice="system" title="Use system theme">System</button>
+				<button type="button" data-theme-choice="light" title="Use light theme">Light</button>
+				<button type="button" data-theme-choice="dark" title="Use dark theme">Dark</button>
+			</div>
+			<button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-toggle>
+				<span></span><span></span>
+			</button>
+		</div>
+	</header>
+	<div class="mobile-nav" data-mobile-nav>
+		<a href="../../">Home</a>
+		<a href="../../docs.html">Documentation</a>
+		<a href="../../templates.html">Templates</a>
+		<a href="../../examples.html">Examples</a>
+		<a href="../../showcase.html">Showcase</a>
+		<a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub ↗</a>
+		<div class="mobile-theme-row">
+			<span>Theme</span>
+			<div class="theme-switcher" role="group" aria-label="Colour theme">
+				<button type="button" data-theme-choice="system">System</button>
+				<button type="button" data-theme-choice="light">Light</button>
+				<button type="button" data-theme-choice="dark">Dark</button>
+			</div>
+		</div>
+	</div>
+	<button class="docs-menu-toggle" type="button" aria-label="Open documentation navigation" aria-expanded="false" data-docs-menu-toggle>
+		<span></span><span></span>
+	</button>
+	<div class="docs-mobile-nav" data-docs-mobile-nav>
+		<aside class="docs-sidebar" data-docs-sidebar><div class="docs-sidebar-inner"><p class="sidebar-kicker">Documentation</p><nav aria-label="Documentation navigation"><a class="sidebar-top" href="../../docs.html">Overview</a><p>Start here</p><a href="../why-nift.html">Why Nift?</a><a href="../ai-opinion.html">ChatGPT: Nift vs other tools</a><a href="../installing.html">Installing Nift</a><a href="../getting-started.html">Getting started</a><a href="../existing-sites.html">Existing websites</a><a href="../project-structure.html">Project structure</a><p>Project files</p><a href="../configuration.html">config.json</a><a href="../tracked-json.html">tracked.json</a><p>Core reference</p><a href="../templating.html">Template language</a><a href="../metadata.html">$[...] metadata</a><a href="../paths.html">Paths &amp; tracked files</a><a href="../dep.html">@dep</a><a href="../incremental-builds.html">Incremental builds</a><a href="../commands.html">CLI commands</a><p>Workflows &amp; patterns</p><a href="../ai-assistants.html">AI assistants</a><a href="./documentation.html">Documentation projects</a><a href="./web-apps.html">Full web applications</a><a href="./dashboards.html">Dashboards</a><a href="./react-islands.html">UI islands</a><a href="./text-assets.html">Text assets</a><p>Deployment</p><a href="../hosting.html">Hosting &amp; deployment</a><p>Beyond the core</p><a href="../advanced.html">Using the wider ecosystem</a></nav></div></aside>
+	</div>
+	<div class="docs-layout">
+		<aside class="docs-sidebar" data-docs-sidebar><div class="docs-sidebar-inner"><p class="sidebar-kicker">Documentation</p><nav aria-label="Documentation navigation"><a class="sidebar-top" href="../../docs.html">Overview</a><p>Start here</p><a href="../why-nift.html">Why Nift?</a><a href="../ai-opinion.html">ChatGPT: Nift vs other tools</a><a href="../installing.html">Installing Nift</a><a href="../getting-started.html">Getting started</a><a href="../existing-sites.html">Existing websites</a><a href="../project-structure.html">Project structure</a><p>Project files</p><a href="../configuration.html">config.json</a><a href="../tracked-json.html">tracked.json</a><p>Core reference</p><a href="../templating.html">Template language</a><a href="../metadata.html">$[...] metadata</a><a href="../paths.html">Paths &amp; tracked files</a><a href="../dep.html">@dep</a><a href="../incremental-builds.html">Incremental builds</a><a href="../commands.html">CLI commands</a><p>Workflows &amp; patterns</p><a href="../ai-assistants.html">AI assistants</a><a href="./documentation.html">Documentation projects</a><a href="./web-apps.html">Full web applications</a><a href="./dashboards.html">Dashboards</a><a href="./react-islands.html">UI islands</a><a href="./text-assets.html">Text assets</a><p>Deployment</p><a href="../hosting.html">Hosting &amp; deployment</a><p>Beyond the core</p><a href="../advanced.html">Using the wider ecosystem</a></nav></div></aside>
+		<main class="docs-main">
+			<article class="docs-article">
+			  <p class="docs-kicker">Pattern</p><h1>Documentation sites.</h1>
+			  <p class="docs-lead">Documentation is a natural fit for Nift: many pages share the same navigation and layout, while each page's actual content remains simple and readable.</p>
+			
+			  <h2>Structure</h2>
+			  <pre><code class="language-plaintext">content/docs/
+  getting-started.html
+  configuration.html
+  api.html
+templates/
+  docs.html
+  partials/
+    docs-sidebar.html
+    header.html
+    footer.html</code></pre>
+			
+			  <h2>Documentation template</h2>
+			  <pre><code class="language-html">&lt;body&gt;
+  @input('templates/partials/header.html')
+  &lt;div class="docs-layout"&gt;
+    @input('templates/partials/docs-sidebar.html')
+    &lt;main class="docs-content"&gt;@content&lt;/main&gt;
+  &lt;/div&gt;
+  @input('templates/partials/footer.html')
+&lt;/body&gt;</code></pre>
+			
+			  <h2>Links survive nesting</h2>
+			  <pre><code class="language-html">&lt;a href="@pathto('docs/getting-started')"&gt;Getting started&lt;/a&gt;
+&lt;a href="@pathto('docs/api')"&gt;API&lt;/a&gt;</code></pre>
+			  <p>The same partial can be used by pages at different output depths because <code>@pathto</code> resolves from the current output page.</p>
+			
+			  <h2>Shared docs UI becomes a dependency</h2>
+			  <p>When every documentation page inputs the same sidebar, changing that sidebar marks the pages that use it as affected. That makes a large docs site a good demonstration of Nift's dependency-aware incremental builds.</p>
+			
+			  <div class="docs-callout"><strong>Keep authoring simple.</strong><p>You can layer Markdown conversion or another content tool beside Nift if you want it, but Nift does not require a special documentation content format.</p></div>
+			<h2>Versioned documentation</h2><pre><code class="language-plaintext">content/docs/
+  v4/
+    getting-started.html
+    commands.html
+  migration/
+    v3-to-v4.html</code></pre><p>Tracked names keep internal links explicit while shared templates can give current and historical docs the same overall design.</p><h2>Documentation with interactive examples</h2><p>A docs page can still load TypeScript-generated playgrounds, search UI or copy buttons from <code>public/assets/</code>. Static/generated documentation and interactive browser features are not mutually exclusive.</p></article>
+		</main>
+	</div>
+	<footer class="site-footer">
+		<div class="footer-inner">
+			<div>
+				<strong>Nift</strong>
+				<p>Build the web without letting your build tool own it.</p>
+			</div>
+			<div class="footer-links">
+				<a href="../../docs.html">Documentation</a>
+				<a href="../../templates.html">Templates</a>
+				<a href="../../examples.html">Examples</a>
+				<a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub</a>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<span>Open source · MIT licensed</span>
+			<span>© 2015–present</span>
+		</div>
+	</footer>
+	<script src="../../assets/js/script.js"></script>
+</body>
+</html>

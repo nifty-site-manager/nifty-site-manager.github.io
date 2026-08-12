@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Nift — Dashboards</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Nift is a fast, dependency-aware templating and build system for websites and text-based projects.">
+	<meta name="theme-color" content="#071c29">
+	<script>
+	(() => {
+		const mode = localStorage.getItem('nift-theme') || 'system';
+		const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+		document.documentElement.dataset.themeMode = mode;
+		document.documentElement.dataset.theme = mode === 'system' ? (systemDark ? 'dark' : 'light') : mode;
+	})();
+	</script>
+	<link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body class="docs-page">
+	<header class="site-header" data-header>
+		<a class="brand" href="../../" aria-label="Nift home">
+			<img src="../../assets/images/nift-logo.png" alt="Nift">
+		</a>
+		<div class="header-actions">
+			<nav class="desktop-nav" aria-label="Primary navigation">
+				<a href="../../">Home</a>
+				<a href="../../docs.html">Docs</a>
+				<a href="../../templates.html">Templates</a>
+				<a href="../../examples.html">Examples</a>
+				<a href="../../showcase.html">Showcase</a>
+				<a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub ↗</a>
+			</nav>
+			<div class="theme-switcher desktop-theme-switcher" role="group" aria-label="Colour theme">
+				<button type="button" data-theme-choice="system" title="Use system theme">System</button>
+				<button type="button" data-theme-choice="light" title="Use light theme">Light</button>
+				<button type="button" data-theme-choice="dark" title="Use dark theme">Dark</button>
+			</div>
+			<button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-toggle>
+				<span></span><span></span>
+			</button>
+		</div>
+	</header>
+	<div class="mobile-nav" data-mobile-nav>
+		<a href="../../">Home</a>
+		<a href="../../docs.html">Documentation</a>
+		<a href="../../templates.html">Templates</a>
+		<a href="../../examples.html">Examples</a>
+		<a href="../../showcase.html">Showcase</a>
+		<a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub ↗</a>
+		<div class="mobile-theme-row">
+			<span>Theme</span>
+			<div class="theme-switcher" role="group" aria-label="Colour theme">
+				<button type="button" data-theme-choice="system">System</button>
+				<button type="button" data-theme-choice="light">Light</button>
+				<button type="button" data-theme-choice="dark">Dark</button>
+			</div>
+		</div>
+	</div>
+	<button class="docs-menu-toggle" type="button" aria-label="Open documentation navigation" aria-expanded="false" data-docs-menu-toggle>
+		<span></span><span></span>
+	</button>
+	<div class="docs-mobile-nav" data-docs-mobile-nav>
+		<aside class="docs-sidebar" data-docs-sidebar><div class="docs-sidebar-inner"><p class="sidebar-kicker">Documentation</p><nav aria-label="Documentation navigation"><a class="sidebar-top" href="../../docs.html">Overview</a><p>Start here</p><a href="../why-nift.html">Why Nift?</a><a href="../ai-opinion.html">ChatGPT: Nift vs other tools</a><a href="../installing.html">Installing Nift</a><a href="../getting-started.html">Getting started</a><a href="../existing-sites.html">Existing websites</a><a href="../project-structure.html">Project structure</a><p>Project files</p><a href="../configuration.html">config.json</a><a href="../tracked-json.html">tracked.json</a><p>Core reference</p><a href="../templating.html">Template language</a><a href="../metadata.html">$[...] metadata</a><a href="../paths.html">Paths &amp; tracked files</a><a href="../dep.html">@dep</a><a href="../incremental-builds.html">Incremental builds</a><a href="../commands.html">CLI commands</a><p>Workflows &amp; patterns</p><a href="../ai-assistants.html">AI assistants</a><a href="./documentation.html">Documentation projects</a><a href="./web-apps.html">Full web applications</a><a href="./dashboards.html">Dashboards</a><a href="./react-islands.html">UI islands</a><a href="./text-assets.html">Text assets</a><p>Deployment</p><a href="../hosting.html">Hosting &amp; deployment</a><p>Beyond the core</p><a href="../advanced.html">Using the wider ecosystem</a></nav></div></aside>
+	</div>
+	<div class="docs-layout">
+		<aside class="docs-sidebar" data-docs-sidebar><div class="docs-sidebar-inner"><p class="sidebar-kicker">Documentation</p><nav aria-label="Documentation navigation"><a class="sidebar-top" href="../../docs.html">Overview</a><p>Start here</p><a href="../why-nift.html">Why Nift?</a><a href="../ai-opinion.html">ChatGPT: Nift vs other tools</a><a href="../installing.html">Installing Nift</a><a href="../getting-started.html">Getting started</a><a href="../existing-sites.html">Existing websites</a><a href="../project-structure.html">Project structure</a><p>Project files</p><a href="../configuration.html">config.json</a><a href="../tracked-json.html">tracked.json</a><p>Core reference</p><a href="../templating.html">Template language</a><a href="../metadata.html">$[...] metadata</a><a href="../paths.html">Paths &amp; tracked files</a><a href="../dep.html">@dep</a><a href="../incremental-builds.html">Incremental builds</a><a href="../commands.html">CLI commands</a><p>Workflows &amp; patterns</p><a href="../ai-assistants.html">AI assistants</a><a href="./documentation.html">Documentation projects</a><a href="./web-apps.html">Full web applications</a><a href="./dashboards.html">Dashboards</a><a href="./react-islands.html">UI islands</a><a href="./text-assets.html">Text assets</a><p>Deployment</p><a href="../hosting.html">Hosting &amp; deployment</a><p>Beyond the core</p><a href="../advanced.html">Using the wider ecosystem</a></nav></div></aside>
+		<main class="docs-main">
+			<article class="docs-article">
+			  <p class="docs-kicker">Pattern</p><h1>Dashboards.</h1>
+			  <p class="docs-lead">A dashboard often has a large amount of shared document/navigation structure plus a smaller set of genuinely dynamic regions. Nift can generate the stable shell while ordinary browser code owns live state.</p>
+			
+			  <h2>Shared shell</h2>
+			  <pre><code class="language-html">&lt;body&gt;
+  @input('templates/partials/dashboard-nav.html')
+  &lt;main class="dashboard"&gt;
+    @content
+  &lt;/main&gt;
+  &lt;script type="module" src="@pathto('public/assets/dashboard.js')"&gt;&lt;/script&gt;
+&lt;/body&gt;</code></pre>
+			
+			  <h2>Page content can define mount points</h2>
+			  <pre><code class="language-html">&lt;h1&gt;System status&lt;/h1&gt;
+&lt;section id="service-health"&gt;&lt;/section&gt;
+&lt;section id="recent-events"&gt;&lt;/section&gt;</code></pre>
+			
+			  <h2>Vanilla JS, React, Vue or Svelte can own the live UI</h2>
+			  <pre><code class="language-javascript">const response = await fetch('/api/status');
+const data = await response.json();
+
+document.querySelector('#service-health').textContent =
+  data.ok ? 'Operational' : 'Degraded';</code></pre>
+			
+			  <p>If the interaction grows complex, replace that browser module with a bundled framework entry point without changing Nift's role in the surrounding page.</p>
+			<h2>Realtime updates</h2><pre><code class="language-javascript">const socket = new WebSocket('/ws');
+socket.addEventListener('message', ({ data }) =&gt; {
+  const event = JSON.parse(data);
+  renderEvent(event);
+});</code></pre><p>The Nift-generated shell does not care whether runtime data arrives through fetch, Server-Sent Events or WebSockets.</p><h2>Framework-backed dashboard</h2><p>If dashboard state becomes sophisticated, compile a React/Vue/Svelte application into <code>public/assets/dashboard.js</code> and keep the same Nift shell. The architectural boundary can evolve without rewriting the surrounding site.</p><h2>Dashboard navigation as a partial</h2><pre><code class="language-html">&lt;aside class="dashboard-nav"&gt;
+  &lt;a href="\@pathto('dashboard')"&gt;Overview&lt;/a&gt;
+  &lt;a href="\@pathto('dashboard/logs')"&gt;Logs&lt;/a&gt;
+  &lt;a href="\@pathto('dashboard/settings')"&gt;Settings&lt;/a&gt;
+&lt;/aside&gt;</code></pre><p>Shared navigation stays generated and reusable even when the panels themselves are driven by runtime API data.</p><h2>Backend freedom</h2><p>The API can be Go, Express, Bun, FastAPI, C++, serverless functions or something else entirely. Nift does not participate in the runtime request after it has produced the frontend files.</p></article>
+		</main>
+	</div>
+	<footer class="site-footer">
+		<div class="footer-inner">
+			<div>
+				<strong>Nift</strong>
+				<p>Build the web without letting your build tool own it.</p>
+			</div>
+			<div class="footer-links">
+				<a href="../../docs.html">Documentation</a>
+				<a href="../../templates.html">Templates</a>
+				<a href="../../examples.html">Examples</a>
+				<a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub</a>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<span>Open source · MIT licensed</span>
+			<span>© 2015–present</span>
+		</div>
+	</footer>
+	<script src="../../assets/js/script.js"></script>
+</body>
+</html>

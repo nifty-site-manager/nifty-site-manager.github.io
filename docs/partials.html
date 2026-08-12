@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Nift — Partials and input</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Nift is a fast, dependency-aware templating and build system for websites and text-based projects.">
+	<meta name="theme-color" content="#071c29">
+	<script>
+	(() => {
+		const mode = localStorage.getItem('nift-theme') || 'system';
+		const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+		document.documentElement.dataset.themeMode = mode;
+		document.documentElement.dataset.theme = mode === 'system' ? (systemDark ? 'dark' : 'light') : mode;
+	})();
+	</script>
+	<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="docs-page">
+	<header class="site-header" data-header>
+		<a class="brand" href="../" aria-label="Nift home">
+			<img src="../assets/images/nift-logo.png" alt="Nift">
+		</a>
+		<div class="header-actions">
+			<nav class="desktop-nav" aria-label="Primary navigation">
+				<a href="../">Home</a>
+				<a href="../docs.html">Docs</a>
+				<a href="../templates.html">Templates</a>
+				<a href="../examples.html">Examples</a>
+				<a href="../showcase.html">Showcase</a>
+				<a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub ↗</a>
+			</nav>
+			<div class="theme-switcher desktop-theme-switcher" role="group" aria-label="Colour theme">
+				<button type="button" data-theme-choice="system" title="Use system theme">System</button>
+				<button type="button" data-theme-choice="light" title="Use light theme">Light</button>
+				<button type="button" data-theme-choice="dark" title="Use dark theme">Dark</button>
+			</div>
+			<button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-toggle>
+				<span></span><span></span>
+			</button>
+		</div>
+	</header>
+	<div class="mobile-nav" data-mobile-nav>
+		<a href="../">Home</a>
+		<a href="../docs.html">Documentation</a>
+		<a href="../templates.html">Templates</a>
+		<a href="../examples.html">Examples</a>
+		<a href="../showcase.html">Showcase</a>
+		<a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub ↗</a>
+		<div class="mobile-theme-row">
+			<span>Theme</span>
+			<div class="theme-switcher" role="group" aria-label="Colour theme">
+				<button type="button" data-theme-choice="system">System</button>
+				<button type="button" data-theme-choice="light">Light</button>
+				<button type="button" data-theme-choice="dark">Dark</button>
+			</div>
+		</div>
+	</div>
+	<button class="docs-menu-toggle" type="button" aria-label="Open documentation navigation" aria-expanded="false" data-docs-menu-toggle>
+		<span></span><span></span>
+	</button>
+	<div class="docs-mobile-nav" data-docs-mobile-nav>
+		<aside class="docs-sidebar" data-docs-sidebar><div class="docs-sidebar-inner"><p class="sidebar-kicker">Documentation</p><nav aria-label="Documentation navigation"><a class="sidebar-top" href="../docs.html">Overview</a><p>Start here</p><a href="./why-nift.html">Why Nift?</a><a href="./ai-opinion.html">ChatGPT: Nift vs other tools</a><a href="./installing.html">Installing Nift</a><a href="./getting-started.html">Getting started</a><a href="./existing-sites.html">Existing websites</a><a href="./project-structure.html">Project structure</a><p>Project files</p><a href="./configuration.html">config.json</a><a href="./tracked-json.html">tracked.json</a><p>Core reference</p><a href="./templating.html">Template language</a><a href="./metadata.html">$[...] metadata</a><a href="./paths.html">Paths &amp; tracked files</a><a href="./dep.html">@dep</a><a href="./incremental-builds.html">Incremental builds</a><a href="./commands.html">CLI commands</a><p>Workflows &amp; patterns</p><a href="./ai-assistants.html">AI assistants</a><a href="use-cases/documentation.html">Documentation projects</a><a href="use-cases/web-apps.html">Full web applications</a><a href="use-cases/dashboards.html">Dashboards</a><a href="use-cases/react-islands.html">UI islands</a><a href="use-cases/text-assets.html">Text assets</a><p>Deployment</p><a href="./hosting.html">Hosting &amp; deployment</a><p>Beyond the core</p><a href="./advanced.html">Using the wider ecosystem</a></nav></div></aside>
+	</div>
+	<div class="docs-layout">
+		<aside class="docs-sidebar" data-docs-sidebar><div class="docs-sidebar-inner"><p class="sidebar-kicker">Documentation</p><nav aria-label="Documentation navigation"><a class="sidebar-top" href="../docs.html">Overview</a><p>Start here</p><a href="./why-nift.html">Why Nift?</a><a href="./ai-opinion.html">ChatGPT: Nift vs other tools</a><a href="./installing.html">Installing Nift</a><a href="./getting-started.html">Getting started</a><a href="./existing-sites.html">Existing websites</a><a href="./project-structure.html">Project structure</a><p>Project files</p><a href="./configuration.html">config.json</a><a href="./tracked-json.html">tracked.json</a><p>Core reference</p><a href="./templating.html">Template language</a><a href="./metadata.html">$[...] metadata</a><a href="./paths.html">Paths &amp; tracked files</a><a href="./dep.html">@dep</a><a href="./incremental-builds.html">Incremental builds</a><a href="./commands.html">CLI commands</a><p>Workflows &amp; patterns</p><a href="./ai-assistants.html">AI assistants</a><a href="use-cases/documentation.html">Documentation projects</a><a href="use-cases/web-apps.html">Full web applications</a><a href="use-cases/dashboards.html">Dashboards</a><a href="use-cases/react-islands.html">UI islands</a><a href="use-cases/text-assets.html">Text assets</a><p>Deployment</p><a href="./hosting.html">Hosting &amp; deployment</a><p>Beyond the core</p><a href="./advanced.html">Using the wider ecosystem</a></nav></div></aside>
+		<main class="docs-main">
+			<article class="docs-article">
+			<p class="docs-kicker">Core concept · 04</p><h1>Partials &amp; @input.</h1>
+			<p class="docs-lead">Use partials to express reusable structure once. Nift parses each input as Nift source, so partials can compose other partials and automatically become part of the dependency graph.</p>
+			<h2>A typical partials directory</h2>
+			<pre><code class="language-plaintext">templates/
+  template.html
+  partials/
+    head.html
+    header.html
+    navigation.html
+    footer.html
+    analytics.html</code></pre>
+			<h2>Build a page shell from reusable pieces</h2>
+			<pre><code class="language-html">&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+  @input('templates/partials/head.html')
+  &lt;body&gt;
+    @input('templates/partials/header.html')
+    &lt;main&gt;@content&lt;/main&gt;
+    @input('templates/partials/footer.html')
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+			<h2>Partials can compose partials</h2>
+			<pre><code class="language-html">&lt;header class="site-header"&gt;
+  &lt;a href="@pathto('/')"&gt;Nift&lt;/a&gt;
+  @input('templates/partials/navigation.html')
+&lt;/header&gt;</code></pre>
+			<p>The navigation file is now indirectly used by every page that uses the header. If it changes, Nift's dependency information can identify the affected tracked outputs.</p>
+			<h2>Use partials for repeated page furniture</h2>
+			<pre><code class="language-html">&lt;!-- templates/partials/docs-sidebar.html --&gt;
+&lt;aside&gt;
+  &lt;a href="@pathto('docs/getting-started')"&gt;Getting started&lt;/a&gt;
+  &lt;a href="@pathto('docs/templating')"&gt;Template language&lt;/a&gt;
+  &lt;a href="@pathto('docs/commands')"&gt;Commands&lt;/a&gt;
+&lt;/aside&gt;</code></pre>
+			<h2>They are not limited to large fragments</h2>
+			<p>A partial can be a whole header, a tiny repeated SVG/logo fragment, a legal notice, a script tag shared by a subset of pages, or a nested navigation section. Extract a partial when reuse makes the project clearer—not merely to maximise the number of files.</p>
+			<h2>Input lookup</h2>
+			<p><code>@input</code> accepts one path. Nift checks the supplied path and can also resolve relative to the file currently being processed, which makes nested template structures practical.</p>
+			<pre><code class="language-nift">@input('templates/partials/footer.html')</code></pre>
+			<div class="docs-callout"><strong>Keep the abstraction proportional.</strong><p>Nift makes reuse cheap, but ordinary HTML is still fine. A fragment that appears once and reads clearly does not need to become a partial just because it can.</p></div>
+			<div class="docs-next"><span>Next</span><a href="./paths.html">Paths &amp; tracked files →</a></div>
+			</article>
+		</main>
+	</div>
+	<footer class="site-footer">
+		<div class="footer-inner">
+			<div>
+				<strong>Nift</strong>
+				<p>Build the web without letting your build tool own it.</p>
+			</div>
+			<div class="footer-links">
+				<a href="../docs.html">Documentation</a>
+				<a href="../templates.html">Templates</a>
+				<a href="../examples.html">Examples</a>
+				<a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub</a>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<span>Open source · MIT licensed</span>
+			<span>© 2015–present</span>
+		</div>
+	</footer>
+	<script src="../assets/js/script.js"></script>
+</body>
+</html>

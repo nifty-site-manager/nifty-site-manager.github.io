@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Nift — Add Nift to an existing website</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Nift is a fast, dependency-aware templating and build system for websites and text-based projects.">
+	<meta name="theme-color" content="#071c29">
+	<script>
+	(() => {
+		const mode = localStorage.getItem('nift-theme') || 'system';
+		const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+		document.documentElement.dataset.themeMode = mode;
+		document.documentElement.dataset.theme = mode === 'system' ? (systemDark ? 'dark' : 'light') : mode;
+	})();
+	</script>
+	<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="docs-page">
+	<header class="site-header" data-header>
+		<a class="brand" href="../" aria-label="Nift home">
+			<img src="../assets/images/nift-logo.png" alt="Nift">
+		</a>
+		<div class="header-actions">
+			<nav class="desktop-nav" aria-label="Primary navigation">
+				<a href="../">Home</a>
+				<a href="../docs.html">Docs</a>
+				<a href="../templates.html">Templates</a>
+				<a href="../examples.html">Examples</a>
+				<a href="../showcase.html">Showcase</a>
+				<a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub ↗</a>
+			</nav>
+			<div class="theme-switcher desktop-theme-switcher" role="group" aria-label="Colour theme">
+				<button type="button" data-theme-choice="system" title="Use system theme">System</button>
+				<button type="button" data-theme-choice="light" title="Use light theme">Light</button>
+				<button type="button" data-theme-choice="dark" title="Use dark theme">Dark</button>
+			</div>
+			<button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-toggle>
+				<span></span><span></span>
+			</button>
+		</div>
+	</header>
+	<div class="mobile-nav" data-mobile-nav>
+		<a href="../">Home</a>
+		<a href="../docs.html">Documentation</a>
+		<a href="../templates.html">Templates</a>
+		<a href="../examples.html">Examples</a>
+		<a href="../showcase.html">Showcase</a>
+		<a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub ↗</a>
+		<div class="mobile-theme-row">
+			<span>Theme</span>
+			<div class="theme-switcher" role="group" aria-label="Colour theme">
+				<button type="button" data-theme-choice="system">System</button>
+				<button type="button" data-theme-choice="light">Light</button>
+				<button type="button" data-theme-choice="dark">Dark</button>
+			</div>
+		</div>
+	</div>
+	<button class="docs-menu-toggle" type="button" aria-label="Open documentation navigation" aria-expanded="false" data-docs-menu-toggle>
+		<span></span><span></span>
+	</button>
+	<div class="docs-mobile-nav" data-docs-mobile-nav>
+		<aside class="docs-sidebar" data-docs-sidebar><div class="docs-sidebar-inner"><p class="sidebar-kicker">Documentation</p><nav aria-label="Documentation navigation"><a class="sidebar-top" href="../docs.html">Overview</a><p>Start here</p><a href="./why-nift.html">Why Nift?</a><a href="./ai-opinion.html">ChatGPT: Nift vs other tools</a><a href="./installing.html">Installing Nift</a><a href="./getting-started.html">Getting started</a><a href="./existing-sites.html">Existing websites</a><a href="./project-structure.html">Project structure</a><p>Project files</p><a href="./configuration.html">config.json</a><a href="./tracked-json.html">tracked.json</a><p>Core reference</p><a href="./templating.html">Template language</a><a href="./metadata.html">$[...] metadata</a><a href="./paths.html">Paths &amp; tracked files</a><a href="./dep.html">@dep</a><a href="./incremental-builds.html">Incremental builds</a><a href="./commands.html">CLI commands</a><p>Workflows &amp; patterns</p><a href="./ai-assistants.html">AI assistants</a><a href="use-cases/documentation.html">Documentation projects</a><a href="use-cases/web-apps.html">Full web applications</a><a href="use-cases/dashboards.html">Dashboards</a><a href="use-cases/react-islands.html">UI islands</a><a href="use-cases/text-assets.html">Text assets</a><p>Deployment</p><a href="./hosting.html">Hosting &amp; deployment</a><p>Beyond the core</p><a href="./advanced.html">Using the wider ecosystem</a></nav></div></aside>
+	</div>
+	<div class="docs-layout">
+		<aside class="docs-sidebar" data-docs-sidebar><div class="docs-sidebar-inner"><p class="sidebar-kicker">Documentation</p><nav aria-label="Documentation navigation"><a class="sidebar-top" href="../docs.html">Overview</a><p>Start here</p><a href="./why-nift.html">Why Nift?</a><a href="./ai-opinion.html">ChatGPT: Nift vs other tools</a><a href="./installing.html">Installing Nift</a><a href="./getting-started.html">Getting started</a><a href="./existing-sites.html">Existing websites</a><a href="./project-structure.html">Project structure</a><p>Project files</p><a href="./configuration.html">config.json</a><a href="./tracked-json.html">tracked.json</a><p>Core reference</p><a href="./templating.html">Template language</a><a href="./metadata.html">$[...] metadata</a><a href="./paths.html">Paths &amp; tracked files</a><a href="./dep.html">@dep</a><a href="./incremental-builds.html">Incremental builds</a><a href="./commands.html">CLI commands</a><p>Workflows &amp; patterns</p><a href="./ai-assistants.html">AI assistants</a><a href="use-cases/documentation.html">Documentation projects</a><a href="use-cases/web-apps.html">Full web applications</a><a href="use-cases/dashboards.html">Dashboards</a><a href="use-cases/react-islands.html">UI islands</a><a href="use-cases/text-assets.html">Text assets</a><p>Deployment</p><a href="./hosting.html">Hosting &amp; deployment</a><p>Beyond the core</p><a href="./advanced.html">Using the wider ecosystem</a></nav></div></aside>
+		<main class="docs-main">
+			<article class="docs-article">
+			  <p class="docs-kicker">Migration workflow</p>
+			  <h1>Add Nift to the website you already have.</h1>
+			  <p class="docs-lead">One of Nift's easiest adoption paths is not a rewrite at all. Keep the site's HTML, CSS, JavaScript, assets and runtime architecture; use Nift to extract the repetition and add a fast tracked build layer around it.</p>
+			
+			  <div class="docs-callout"><strong>Keep your HTML. Keep your tools. Stop repeating yourself.</strong><p>If an existing site already works, Nift does not need you to translate it into a different component model before it can help.</p></div>
+			
+			  <h2>The kind of site this helps immediately</h2>
+			  <pre><code class="language-plaintext">index.html
+about.html
+services.html
+work.html
+contact.html
+
+Every page repeats:
+  &lt;!doctype html>
+  &lt;head>...&lt;/head>
+  header / navigation
+  footer
+  CSS / JS references</code></pre>
+			  <p>That repetition is already telling you where the first template and partial boundaries are.</p>
+			
+			  <h2>Before</h2>
+			  <pre><code class="language-html">&lt;!-- about.html --&gt;
+&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;About&lt;/title&gt;
+    &lt;link rel="stylesheet" href="assets/css/site.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;header&gt;
+      &lt;a href="index.html"&gt;Home&lt;/a&gt;
+      &lt;a href="about.html"&gt;About&lt;/a&gt;
+      &lt;a href="contact.html"&gt;Contact&lt;/a&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+      &lt;h1&gt;About us&lt;/h1&gt;
+      &lt;p&gt;Page-specific content...&lt;/p&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;...repeated footer...&lt;/footer&gt;
+    &lt;script src="assets/js/app.js"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+			
+			  <h2>After: the page-specific content stays almost untouched</h2>
+			  <pre><code class="language-html">&lt;!-- content/about.html --&gt;
+&lt;h1&gt;About us&lt;/h1&gt;
+&lt;p&gt;Page-specific content...&lt;/p&gt;</code></pre>
+			
+			  <h2>The repeated shell becomes the template</h2>
+			  <pre><code class="language-html">&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;$[title]&lt;/title&gt;
+    &lt;link
+      rel="stylesheet"
+      href="@pathto('public/assets/css/site.css')"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    @input('templates/partials/header.html')
+
+    &lt;main&gt;
+      @content
+    &lt;/main&gt;
+
+    @input('templates/partials/footer.html')
+
+    &lt;script
+      src="@pathto('public/assets/js/app.js')"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+			
+			  <h2>The repeated navigation becomes a partial</h2>
+			  <pre><code class="language-html">&lt;header&gt;
+  &lt;a href="@pathto('/')"&gt;Home&lt;/a&gt;
+  &lt;a href="@pathto('about')"&gt;About&lt;/a&gt;
+  &lt;a href="@pathto('contact')"&gt;Contact&lt;/a&gt;
+&lt;/header&gt;</code></pre>
+			  <p>The result is not a new frontend architecture. It is the same frontend with the duplicated structure factored out.</p>
+			
+			  <h2>A practical migration sequence</h2>
+			  <div class="migration-steps">
+			    <div><span>01</span><h3>Make a comparison copy</h3><p>Keep the current site available so you can compare generated output and appearance during the migration.</p></div>
+			    <div><span>02</span><h3>Initialise Nift</h3><p>Run <code>nift init .html</code> and configure <code>public/</code> as your web-facing output convention.</p></div>
+			    <div><span>03</span><h3>Keep existing assets</h3><p>Copy or preserve the site's CSS, JS, fonts, images and other assets. They do not need to be rewritten.</p></div>
+			    <div><span>04</span><h3>Choose one representative page</h3><p>Pick a page containing the normal header, footer and layout rather than migrating every page at once.</p></div>
+			    <div><span>05</span><h3>Extract the template shell</h3><p>Move shared document structure into the template and replace the unique page region with <code>@content</code>.</p></div>
+			    <div><span>06</span><h3>Extract obvious partials</h3><p>Header, navigation, footer and repeated page furniture can move behind <code>@input</code>.</p></div>
+			    <div><span>07</span><h3>Track the remaining pages</h3><p>Move each page's unique markup into its content file and add the tracked names Nift should manage.</p></div>
+			    <div><span>08</span><h3>Replace fragile local paths</h3><p>Use <code>@pathto</code> where shared partials link to tracked pages or concrete local assets.</p></div>
+			    <div><span>09</span><h3>Build and compare</h3><p>Run <code>nift build-all</code>, compare the generated site to the original and correct any deliberate path/layout differences.</p></div>
+			    <div><span>10</span><h3>Then stop thinking about migration</h3><p>Once the output matches, develop normally. New pages can use the shared template from the start.</p></div>
+			  </div>
+			
+			  <h2>You can migrate gradually</h2>
+			  <p>Nift does not require every file in the repository to become tracked on day one. A practical project can move the repetitive HTML pages first while leaving unrelated assets, application code and tooling untouched.</p>
+			
+			  <h2>Existing TypeScript/Vite project</h2>
+			  <pre><code class="language-plaintext">before:
+  src/
+  assets/
+  vite.config.ts
+  several hand-maintained HTML entry pages
+
+after:
+  content/
+  templates/
+  src/                 ← still TypeScript/Vite
+  vite.config.ts       ← still Vite
+  public/
+  .nift/</code></pre>
+			  <p>Nift can own document composition while Vite continues owning the frontend asset pipeline.</p>
+			
+			  <h2>Existing backend application</h2>
+			  <pre><code class="language-plaintext">application/
+  content/             ← page-specific frontend HTML
+  templates/           ← shared frontend shell
+  public/              ← generated frontend/assets
+  server/              ← Go / Node / Python / etc.
+  .nift/</code></pre>
+			  <p>The backend does not become a Nift backend. It simply serves or deploys the files Nift generates.</p>
+			
+			  <h2>AI-assisted migration</h2>
+			  <p>This is also a strong coding-assistant task because the transformation is mostly structural refactoring rather than framework translation. Give an assistant the current site plus the Nift context and ask it to identify repeated document structure while preserving output.</p>
+			  <pre><code class="language-plaintext">Read ai-context.txt and inspect this existing website.
+
+Convert the repeated document structure into Nift templates and
+partials while preserving the existing HTML/CSS/JS architecture
+and visual output. Keep page-specific markup in content files.
+Use @pathto for project-owned page and asset references.</code></pre>
+			
+			  <div class="docs-callout"><strong>The migration succeeds when the site becomes easier to maintain—not when it looks more like a framework.</strong><p>Nift should remove duplication, improve path/dependency awareness and speed up the edit/build loop while leaving the architecture you deliberately chose intact.</p></div>
+			  <div class="docs-next"><span>Related</span><a href="./paths.html">Project-aware paths →</a></div>
+			</article>
+		</main>
+	</div>
+	<footer class="site-footer">
+		<div class="footer-inner">
+			<div>
+				<strong>Nift</strong>
+				<p>Build the web without letting your build tool own it.</p>
+			</div>
+			<div class="footer-links">
+				<a href="../docs.html">Documentation</a>
+				<a href="../templates.html">Templates</a>
+				<a href="../examples.html">Examples</a>
+				<a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub</a>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<span>Open source · MIT licensed</span>
+			<span>© 2015–present</span>
+		</div>
+	</footer>
+	<script src="../assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Nift — Incremental builds</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Nift is a fast, dependency-aware templating and build system for websites and text-based projects.">
+	<meta name="theme-color" content="#071c29">
+	<script>
+	(() => {
+		const mode = localStorage.getItem('nift-theme') || 'system';
+		const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+		document.documentElement.dataset.themeMode = mode;
+		document.documentElement.dataset.theme = mode === 'system' ? (systemDark ? 'dark' : 'light') : mode;
+	})();
+	</script>
+	<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="docs-page">
+	<header class="site-header" data-header>
+		<a class="brand" href="../" aria-label="Nift home">
+			<img src="../assets/images/nift-logo.png" alt="Nift">
+		</a>
+		<div class="header-actions">
+			<nav class="desktop-nav" aria-label="Primary navigation">
+				<a href="../">Home</a>
+				<a href="../docs.html">Docs</a>
+				<a href="../templates.html">Templates</a>
+				<a href="../examples.html">Examples</a>
+				<a href="../showcase.html">Showcase</a>
+				<a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub ↗</a>
+			</nav>
+			<div class="theme-switcher desktop-theme-switcher" role="group" aria-label="Colour theme">
+				<button type="button" data-theme-choice="system" title="Use system theme">System</button>
+				<button type="button" data-theme-choice="light" title="Use light theme">Light</button>
+				<button type="button" data-theme-choice="dark" title="Use dark theme">Dark</button>
+			</div>
+			<button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-toggle>
+				<span></span><span></span>
+			</button>
+		</div>
+	</header>
+	<div class="mobile-nav" data-mobile-nav>
+		<a href="../">Home</a>
+		<a href="../docs.html">Documentation</a>
+		<a href="../templates.html">Templates</a>
+		<a href="../examples.html">Examples</a>
+		<a href="../showcase.html">Showcase</a>
+		<a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub ↗</a>
+		<div class="mobile-theme-row">
+			<span>Theme</span>
+			<div class="theme-switcher" role="group" aria-label="Colour theme">
+				<button type="button" data-theme-choice="system">System</button>
+				<button type="button" data-theme-choice="light">Light</button>
+				<button type="button" data-theme-choice="dark">Dark</button>
+			</div>
+		</div>
+	</div>
+	<button class="docs-menu-toggle" type="button" aria-label="Open documentation navigation" aria-expanded="false" data-docs-menu-toggle>
+		<span></span><span></span>
+	</button>
+	<div class="docs-mobile-nav" data-docs-mobile-nav>
+		<aside class="docs-sidebar" data-docs-sidebar><div class="docs-sidebar-inner"><p class="sidebar-kicker">Documentation</p><nav aria-label="Documentation navigation"><a class="sidebar-top" href="../docs.html">Overview</a><p>Start here</p><a href="./why-nift.html">Why Nift?</a><a href="./ai-opinion.html">ChatGPT: Nift vs other tools</a><a href="./installing.html">Installing Nift</a><a href="./getting-started.html">Getting started</a><a href="./existing-sites.html">Existing websites</a><a href="./project-structure.html">Project structure</a><p>Project files</p><a href="./configuration.html">config.json</a><a href="./tracked-json.html">tracked.json</a><p>Core reference</p><a href="./templating.html">Template language</a><a href="./metadata.html">$[...] metadata</a><a href="./paths.html">Paths &amp; tracked files</a><a href="./dep.html">@dep</a><a href="./incremental-builds.html">Incremental builds</a><a href="./commands.html">CLI commands</a><p>Workflows &amp; patterns</p><a href="./ai-assistants.html">AI assistants</a><a href="use-cases/documentation.html">Documentation projects</a><a href="use-cases/web-apps.html">Full web applications</a><a href="use-cases/dashboards.html">Dashboards</a><a href="use-cases/react-islands.html">UI islands</a><a href="use-cases/text-assets.html">Text assets</a><p>Deployment</p><a href="./hosting.html">Hosting &amp; deployment</a><p>Beyond the core</p><a href="./advanced.html">Using the wider ecosystem</a></nav></div></aside>
+	</div>
+	<div class="docs-layout">
+		<aside class="docs-sidebar" data-docs-sidebar><div class="docs-sidebar-inner"><p class="sidebar-kicker">Documentation</p><nav aria-label="Documentation navigation"><a class="sidebar-top" href="../docs.html">Overview</a><p>Start here</p><a href="./why-nift.html">Why Nift?</a><a href="./ai-opinion.html">ChatGPT: Nift vs other tools</a><a href="./installing.html">Installing Nift</a><a href="./getting-started.html">Getting started</a><a href="./existing-sites.html">Existing websites</a><a href="./project-structure.html">Project structure</a><p>Project files</p><a href="./configuration.html">config.json</a><a href="./tracked-json.html">tracked.json</a><p>Core reference</p><a href="./templating.html">Template language</a><a href="./metadata.html">$[...] metadata</a><a href="./paths.html">Paths &amp; tracked files</a><a href="./dep.html">@dep</a><a href="./incremental-builds.html">Incremental builds</a><a href="./commands.html">CLI commands</a><p>Workflows &amp; patterns</p><a href="./ai-assistants.html">AI assistants</a><a href="use-cases/documentation.html">Documentation projects</a><a href="use-cases/web-apps.html">Full web applications</a><a href="use-cases/dashboards.html">Dashboards</a><a href="use-cases/react-islands.html">UI islands</a><a href="use-cases/text-assets.html">Text assets</a><p>Deployment</p><a href="./hosting.html">Hosting &amp; deployment</a><p>Beyond the core</p><a href="./advanced.html">Using the wider ecosystem</a></nav></div></aside>
+		<main class="docs-main">
+			<article class="docs-article">
+			  <p class="docs-kicker">Core concept</p>
+			  <h1>Incremental builds.</h1>
+			  <p class="docs-lead">During development, rebuilding everything after every edit is wasteful. Nift keeps track of what each generated file depends on so it can rebuild the outputs affected by your change instead of treating the whole project as dirty.</p>
+			
+			  <h2>The everyday loop</h2>
+			  <pre><code class="language-bash"># edit content/templates/assets...
+nift build
+
+# edit again...
+nift build</code></pre>
+			  <p>With no tracked names supplied, <code>nift build</code> dispatches to the updated-build path. That makes the normal development command intentionally boring: edit something, build what changed, refresh.</p>
+			
+			  <h2>A shared partial can affect many pages</h2>
+			  <pre><code class="language-plaintext">templates/partials/header.html
+            │
+            ├── index
+            ├── about
+            ├── docs/getting-started
+            └── docs/configuration</code></pre>
+			  <p>If those pages all include the header, Nift has enough dependency information to know they are affected when the header changes. A completely unrelated page does not need to be rebuilt just because it exists in the same project.</p>
+			
+			  <h2>A content edit can stay local</h2>
+			  <pre><code class="language-plaintext">content/about.html changed
+        ↓
+public/about.html rebuilt
+
+content/contact.html unchanged
+        ↓
+public/contact.html left alone</code></pre>
+			  <p>That difference becomes increasingly valuable as a site grows from a handful of pages into hundreds, thousands or more.</p>
+			
+			  <h2>Why it feels good during development</h2>
+			  <div class="advanced-doc-grid">
+			    <div><h2>Fast feedback</h2><p>The cost of a tiny edit can stay close to the cost of rebuilding the pages that actually use it.</p></div>
+			    <div><h2>Lower resource use</h2><p>Skipping unnecessary work means less CPU time, less disk churn and less energy spent repeatedly regenerating identical files.</p></div>
+			    <div><h2>Quieter machines</h2><p>On larger projects, avoiding repeated full rebuilds can also mean fewer needless CPU spikes and, yes, less time listening to your laptop/NUC fans announce that you changed one paragraph. XD</p></div>
+			    <div><h2>Scales with the dependency graph</h2><p>A project does not need to rebuild as one indivisible blob. Shared changes can fan out where needed while isolated changes stay isolated.</p></div>
+			  </div>
+			
+			  <h2>Build updated vs build all</h2>
+			  <pre><code class="language-bash"># Normal development
+nift build
+# equivalent updated-build command
+nift build-updated
+
+# Deliberately rebuild every tracked output
+nift build-all</code></pre>
+			  <p><code>build-all</code> remains useful when you explicitly want a clean full pass—for example before measuring full-build performance or when you simply want every output regenerated. But it should not have to be your default response to every edit.</p>
+			
+			  <h2>Continuous updated builds</h2>
+			  <pre><code class="language-bash">nift build-auto
+
+# choose the polling sleep interval in seconds
+nift build-auto 0.5</code></pre>
+			  <p>This lets Nift keep checking for changes and rebuild updated outputs while you work.</p>
+			
+			  <div class="docs-callout"><strong>Incremental builds are part of the workflow, not a benchmark trick.</strong><p>The practical win is that the development loop stays responsive and proportionate to the change you made.</p></div>
+			  <div class="docs-next"><span>Next</span><a href="./commands.html">CLI commands →</a></div>
+			</article>
+		</main>
+	</div>
+	<footer class="site-footer">
+		<div class="footer-inner">
+			<div>
+				<strong>Nift</strong>
+				<p>Build the web without letting your build tool own it.</p>
+			</div>
+			<div class="footer-links">
+				<a href="../docs.html">Documentation</a>
+				<a href="../templates.html">Templates</a>
+				<a href="../examples.html">Examples</a>
+				<a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub</a>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<span>Open source · MIT licensed</span>
+			<span>© 2015–present</span>
+		</div>
+	</footer>
+	<script src="../assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Nift — Project configuration</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Nift is a fast, dependency-aware templating and build system for websites and text-based projects.">
+	<meta name="theme-color" content="#071c29">
+	<script>
+	(() => {
+		const mode = localStorage.getItem('nift-theme') || 'system';
+		const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+		document.documentElement.dataset.themeMode = mode;
+		document.documentElement.dataset.theme = mode === 'system' ? (systemDark ? 'dark' : 'light') : mode;
+	})();
+	</script>
+	<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="docs-page">
+	<header class="site-header" data-header>
+		<a class="brand" href="../" aria-label="Nift home">
+			<img src="../assets/images/nift-logo.png" alt="Nift">
+		</a>
+		<div class="header-actions">
+			<nav class="desktop-nav" aria-label="Primary navigation">
+				<a href="../">Home</a>
+				<a href="../docs.html">Docs</a>
+				<a href="../templates.html">Templates</a>
+				<a href="../examples.html">Examples</a>
+				<a href="../showcase.html">Showcase</a>
+				<a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub ↗</a>
+			</nav>
+			<div class="theme-switcher desktop-theme-switcher" role="group" aria-label="Colour theme">
+				<button type="button" data-theme-choice="system" title="Use system theme">System</button>
+				<button type="button" data-theme-choice="light" title="Use light theme">Light</button>
+				<button type="button" data-theme-choice="dark" title="Use dark theme">Dark</button>
+			</div>
+			<button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-toggle>
+				<span></span><span></span>
+			</button>
+		</div>
+	</header>
+	<div class="mobile-nav" data-mobile-nav>
+		<a href="../">Home</a>
+		<a href="../docs.html">Documentation</a>
+		<a href="../templates.html">Templates</a>
+		<a href="../examples.html">Examples</a>
+		<a href="../showcase.html">Showcase</a>
+		<a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub ↗</a>
+		<div class="mobile-theme-row">
+			<span>Theme</span>
+			<div class="theme-switcher" role="group" aria-label="Colour theme">
+				<button type="button" data-theme-choice="system">System</button>
+				<button type="button" data-theme-choice="light">Light</button>
+				<button type="button" data-theme-choice="dark">Dark</button>
+			</div>
+		</div>
+	</div>
+	<button class="docs-menu-toggle" type="button" aria-label="Open documentation navigation" aria-expanded="false" data-docs-menu-toggle>
+		<span></span><span></span>
+	</button>
+	<div class="docs-mobile-nav" data-docs-mobile-nav>
+		<aside class="docs-sidebar" data-docs-sidebar><div class="docs-sidebar-inner"><p class="sidebar-kicker">Documentation</p><nav aria-label="Documentation navigation"><a class="sidebar-top" href="../docs.html">Overview</a><p>Start here</p><a href="./why-nift.html">Why Nift?</a><a href="./ai-opinion.html">ChatGPT: Nift vs other tools</a><a href="./installing.html">Installing Nift</a><a href="./getting-started.html">Getting started</a><a href="./existing-sites.html">Existing websites</a><a href="./project-structure.html">Project structure</a><p>Project files</p><a href="./configuration.html">config.json</a><a href="./tracked-json.html">tracked.json</a><p>Core reference</p><a href="./templating.html">Template language</a><a href="./metadata.html">$[...] metadata</a><a href="./paths.html">Paths &amp; tracked files</a><a href="./dep.html">@dep</a><a href="./incremental-builds.html">Incremental builds</a><a href="./commands.html">CLI commands</a><p>Workflows &amp; patterns</p><a href="./ai-assistants.html">AI assistants</a><a href="use-cases/documentation.html">Documentation projects</a><a href="use-cases/web-apps.html">Full web applications</a><a href="use-cases/dashboards.html">Dashboards</a><a href="use-cases/react-islands.html">UI islands</a><a href="use-cases/text-assets.html">Text assets</a><p>Deployment</p><a href="./hosting.html">Hosting &amp; deployment</a><p>Beyond the core</p><a href="./advanced.html">Using the wider ecosystem</a></nav></div></aside>
+	</div>
+	<div class="docs-layout">
+		<aside class="docs-sidebar" data-docs-sidebar><div class="docs-sidebar-inner"><p class="sidebar-kicker">Documentation</p><nav aria-label="Documentation navigation"><a class="sidebar-top" href="../docs.html">Overview</a><p>Start here</p><a href="./why-nift.html">Why Nift?</a><a href="./ai-opinion.html">ChatGPT: Nift vs other tools</a><a href="./installing.html">Installing Nift</a><a href="./getting-started.html">Getting started</a><a href="./existing-sites.html">Existing websites</a><a href="./project-structure.html">Project structure</a><p>Project files</p><a href="./configuration.html">config.json</a><a href="./tracked-json.html">tracked.json</a><p>Core reference</p><a href="./templating.html">Template language</a><a href="./metadata.html">$[...] metadata</a><a href="./paths.html">Paths &amp; tracked files</a><a href="./dep.html">@dep</a><a href="./incremental-builds.html">Incremental builds</a><a href="./commands.html">CLI commands</a><p>Workflows &amp; patterns</p><a href="./ai-assistants.html">AI assistants</a><a href="use-cases/documentation.html">Documentation projects</a><a href="use-cases/web-apps.html">Full web applications</a><a href="use-cases/dashboards.html">Dashboards</a><a href="use-cases/react-islands.html">UI islands</a><a href="use-cases/text-assets.html">Text assets</a><p>Deployment</p><a href="./hosting.html">Hosting &amp; deployment</a><p>Beyond the core</p><a href="./advanced.html">Using the wider ecosystem</a></nav></div></aside>
+		<main class="docs-main">
+			<article class="docs-article">
+			  <p class="docs-kicker">Project internals</p>
+			  <h1><code>.nift/config.json</code>.</h1>
+			  <p class="docs-lead">The project config tells Nift where content lives, where generated files go, which extensions and template are the defaults, and how builds should use threads and detect changes.</p>
+			
+			  <h2>A typical web project</h2>
+			  <pre><code class="language-json">{
+  "config": {
+    "content-dir": "content/",
+    "content-ext": ".html",
+    "output-dir": "public/",
+    "output-ext": ".html",
+    "default-template": "templates/template.html",
+    "build-threads": -1,
+    "incremental-mode": "modified"
+  }
+}</code></pre>
+			  <p>For a web project, <code>public/</code> is a useful conventional output directory because many servers, hosts and frameworks already use that name for browser-facing files. Nift does not require the directory to be called <code>public/</code>; it simply uses the value in <code>output-dir</code>.</p>
+			
+			  <h2>Fields</h2>
+			  <div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>Field</th><th>Meaning</th></tr></thead><tbody>
+			    <tr><td><code>content-dir</code></td><td>Base directory used to derive content paths for tracked names. It must be non-empty.</td></tr>
+			    <tr><td><code>content-ext</code></td><td>Default content-file extension. It must begin with <code>.</code>.</td></tr>
+			    <tr><td><code>output-dir</code></td><td>Base directory used to derive generated output paths. For web projects, <code>public/</code> is a convenient convention.</td></tr>
+			    <tr><td><code>output-ext</code></td><td>Default output extension. It must begin with <code>.</code>.</td></tr>
+			    <tr><td><code>default-template</code></td><td>Template used by newly tracked items when a different template is not supplied.</td></tr>
+			    <tr><td><code>build-threads</code></td><td>Number of build threads. The generated config uses <code>-1</code>, meaning the default based on available cores. A missing/invalid zero value is reset to <code>-1</code>.</td></tr>
+			    <tr><td><code>incremental-mode</code></td><td>How Nift determines whether dependencies changed: <code>modified</code>, <code>hash</code>, or <code>hybrid</code>.</td></tr>
+			  </tbody></table></div>
+			
+			  <h2>How tracked names become paths</h2>
+			  <p>With this config:</p>
+			  <pre><code class="language-json">{
+  "config": {
+    "content-dir": "content/",
+    "content-ext": ".html",
+    "output-dir": "public/",
+    "output-ext": ".html",
+    "default-template": "templates/template.html",
+    "build-threads": -1,
+    "incremental-mode": "modified"
+  }
+}</code></pre>
+			  <p>a tracked name such as <code>about</code> resolves naturally to:</p>
+			  <pre><code class="language-plaintext">content/about.html     →     public/about.html</code></pre>
+			  <p>and a nested name:</p>
+			  <pre><code class="language-plaintext">docs/getting-started
+
+content/docs/getting-started.html
+             ↓
+public/docs/getting-started.html</code></pre>
+			  <p>The tracked item stores the name/title/template; the project config supplies the default directory and extension rules that turn the name into concrete content and output paths.</p>
+			
+			  <h2>Incremental modes</h2>
+			  <div class="advanced-doc-grid">
+			    <div><h2><code>modified</code></h2><p>Uses modification information to decide whether inputs have changed. This is the generated default and is fast for everyday development.</p></div>
+			    <div><h2><code>hash</code></h2><p>Uses content hashes when determining changes.</p></div>
+			    <div><h2><code>hybrid</code></h2><p>Uses the hybrid mode implemented by Nift, combining its change-detection strategies.</p></div>
+			  </div>
+			
+			  <h2>Should you edit it?</h2>
+			  <p>Yes, when you want to change project-wide defaults such as moving generated files to <code>public/</code>, changing the default template, or choosing an incremental mode. It is deliberately ordinary JSON so the project setup is inspectable and easy for humans, scripts and AI assistants to understand.</p>
+			
+			  <div class="docs-callout"><strong><code>config.json</code> describes the project-wide rules.</strong><p><code>tracked.json</code> describes the individual things Nift manages within those rules.</p></div>
+			  <div class="docs-next"><span>Next</span><a href="./tracked-json.html"><code>tracked.json</code> →</a></div>
+			</article>
+		</main>
+	</div>
+	<footer class="site-footer">
+		<div class="footer-inner">
+			<div>
+				<strong>Nift</strong>
+				<p>Build the web without letting your build tool own it.</p>
+			</div>
+			<div class="footer-links">
+				<a href="../docs.html">Documentation</a>
+				<a href="../templates.html">Templates</a>
+				<a href="../examples.html">Examples</a>
+				<a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub</a>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<span>Open source · MIT licensed</span>
+			<span>© 2015–present</span>
+		</div>
+	</footer>
+	<script src="../assets/js/script.js"></script>
+</body>
+</html>

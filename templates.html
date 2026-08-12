@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Nift — Templates</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Nift is a fast, dependency-aware templating and build system for websites and text-based projects.">
+	<meta name="theme-color" content="#071c29">
+	<script>
+	(() => {
+		const mode = localStorage.getItem('nift-theme') || 'system';
+		const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+		document.documentElement.dataset.themeMode = mode;
+		document.documentElement.dataset.theme = mode === 'system' ? (systemDark ? 'dark' : 'light') : mode;
+	})();
+	</script>
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+	<header class="site-header" data-header>
+		<a class="brand" href="./" aria-label="Nift home">
+			<img src="assets/images/nift-logo.png" alt="Nift">
+		</a>
+		<div class="header-actions">
+			<nav class="desktop-nav" aria-label="Primary navigation">
+				<a href="./">Home</a>
+				<a href="./docs.html">Docs</a>
+				<a href="./templates.html">Templates</a>
+				<a href="./examples.html">Examples</a>
+				<a href="./showcase.html">Showcase</a>
+				<a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub ↗</a>
+			</nav>
+			<div class="theme-switcher desktop-theme-switcher" role="group" aria-label="Colour theme">
+				<button type="button" data-theme-choice="system" title="Use system theme">System</button>
+				<button type="button" data-theme-choice="light" title="Use light theme">Light</button>
+				<button type="button" data-theme-choice="dark" title="Use dark theme">Dark</button>
+			</div>
+			<button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-toggle>
+				<span></span><span></span>
+			</button>
+		</div>
+	</header>
+	<div class="mobile-nav" data-mobile-nav>
+		<a href="./">Home</a>
+		<a href="./docs.html">Documentation</a>
+		<a href="./templates.html">Templates</a>
+		<a href="./examples.html">Examples</a>
+		<a href="./showcase.html">Showcase</a>
+		<a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub ↗</a>
+		<div class="mobile-theme-row">
+			<span>Theme</span>
+			<div class="theme-switcher" role="group" aria-label="Colour theme">
+				<button type="button" data-theme-choice="system">System</button>
+				<button type="button" data-theme-choice="light">Light</button>
+				<button type="button" data-theme-choice="dark">Dark</button>
+			</div>
+		</div>
+	</div>
+	<main class="simple-page templates-page">
+	<section class="page-hero">
+	  <p class="eyebrow">Templates</p>
+	  <h1>Three polished starting points. Still just small Nift projects.</h1>
+	  <p>Each starter is dark by design and built from the same tiny Nift v4 foundation. They aim to show that a minimal project model does not mean a minimal-looking website.</p>
+	</section>
+	<section class="template-downloads">
+	<article class="template-download"><div class="template-preview aurora-preview"><span>✦ AURORA</span><strong>Turn scattered signals<br>into <em>clear direction.</em></strong><div class="aurora-ui"><i></i><i></i><i></i></div></div><div class="template-copy"><p class="eyebrow">01 · Product / AI</p><h2>Aurora</h2><p>A premium AI/product landing page with atmospheric gradients, a detailed application mock-up, metrics, signal cards and a polished feature story.</p><ul><li>AI / SaaS / product launches</li><li>Responsive dark interface</li><li>Reusable header and footer partials</li><li>Plain HTML + CSS with no install step</li></ul><div class="template-actions"><a class="button button-primary" href="assets/templates/nift-aurora.zip" download>Download Aurora .zip ↓</a></div></div></article>
+	<article class="template-download"><div class="template-preview forge-preview"><span>■ FORGE</span><strong>Ship the system.<br><em>Skip the platform tax.</em></strong><div class="forge-terminal"><b>$ forge deploy</b><i>✓ build completed</i><i>✓ deployment ready</i></div></div><div class="template-copy"><p class="eyebrow">02 · Developer tooling</p><h2>Forge</h2><p>A code-first landing page for developer infrastructure, APIs and technical products, with terminal UI, platform metrics and dense technical feature cards.</p><ul><li>Developer tools / infrastructure / APIs</li><li>Terminal and code presentation</li><li>Responsive technical marketing layout</li><li>Designed to stay readable rather than “theme-like”</li></ul><div class="template-actions"><a class="button button-primary" href="assets/templates/nift-forge.zip" download>Download Forge .zip ↓</a></div></div></article>
+	<article class="template-download"><div class="template-preview meridian-preview"><span>MERIDIAN°</span><strong>We make digital<br>work <em>worth feeling.</em></strong><div><i></i><b>MONUMENT</b></div></div><div class="template-copy"><p class="eyebrow">03 · Studio / Portfolio</p><h2>Meridian</h2><p>A high-impact dark creative studio starter using oversized editorial typography, art-directed project panels and a strong portfolio rhythm without external image dependencies.</p><ul><li>Studios / portfolios / agencies</li><li>Editorial typography and project showcase</li><li>CSS-generated artwork keeps the download tiny</li><li>Easy to replace with real project imagery later</li></ul><div class="template-actions"><a class="button button-primary" href="assets/templates/nift-meridian.zip" download>Download Meridian .zip ↓</a></div></div></article>
+	</section>
+	<section class="template-anatomy"><div><p class="eyebrow">Same small foundation</p><h2>Three very different sites. Almost identical Nift machinery.</h2><p>The visual language changes dramatically, while the project model stays deliberately boring: tracked content, a template, a couple of partials and ordinary web assets.</p></div><pre><code class="language-plaintext">project/
+  .nift/
+    config.json
+    tracked.json
+  content/
+    index.html
+  templates/
+    template.html
+    head.html
+    partials/
+  public/
+    assets/
+      css/
+      js/</code></pre></section>
+	<section class="page-cta templates-closing"><h2>Readable enough to learn from. Small enough to throw away.</h2><p>A starter should give you momentum without becoming an architecture you have to spend the next year escaping.</p><a class="button button-primary" href="docs/getting-started.html">Learn the project model →</a></section>
+	</main>
+	<footer class="site-footer">
+		<div class="footer-inner">
+			<div>
+				<strong>Nift</strong>
+				<p>Build the web without letting your build tool own it.</p>
+			</div>
+			<div class="footer-links">
+				<a href="./docs.html">Documentation</a>
+				<a href="./templates.html">Templates</a>
+				<a href="./examples.html">Examples</a>
+				<a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub</a>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<span>Open source · MIT licensed</span>
+			<span>© 2015–present</span>
+		</div>
+	</footer>
+    <script src="assets/js/demo.js"></script>
+	<script src="assets/js/script.js"></script>
+</body>
+</html>
