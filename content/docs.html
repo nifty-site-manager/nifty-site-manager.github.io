@@ -1,0 +1,63 @@
+<article class="docs-article docs-overview">
+  <p class="docs-kicker">Documentation</p>
+  <h1>Learn the small part first. Reach for the rest when you need it.</h1>
+  <p class="docs-lead">Nift's core model is intentionally compact: install one executable, track the files you want to build, put shared structure in templates and partials, and let Nift keep paths and incremental dependencies straight. Everything else in your web stack can stay itself.</p>
+
+  <div class="docs-callout">
+    <strong>The whole mental model in one paragraph.</strong>
+    <p>A tracked name connects content, a template and an output. <code>\@content</code> places the tracked content, <code>\@input(...)</code> composes reusable files, <code>\@pathto(...)</code> creates checked project-aware paths, and Nift records enough dependency information to rebuild the outputs affected by a change.</p>
+  </div>
+
+  <h2>Start here.</h2>
+  <p>If you are new to Nift, these four pages are the shortest route from installation to a useful project.</p>
+  <div class="docs-journey">
+    <a href="@pathto('docs/installing')"><span>01</span><div><h2>Install Nift</h2><p>Use your platform's package manager, a release binary, or build the single native executable from source.</p></div></a>
+    <a href="@pathto('docs/getting-started')"><span>02</span><div><h2>Build the barebones project</h2><p>Run <code>nift init .html</code>, see the content/template relationship, and build your first tracked output.</p></div></a>
+    <a href="@pathto('docs/templating')"><span>03</span><div><h2>Learn the tiny template surface</h2><p>Most projects go a long way with <code>\@content</code>, <code>\@input</code>, <code>\@pathto</code>, metadata and environment values.</p></div></a>
+    <a href="@pathto('docs/incremental-builds')"><span>04</span><div><h2>Use the fast development loop</h2><p>After the first build, let <code>nift build</code> rebuild only the outputs affected by what you changed.</p></div></a>
+  </div>
+
+  <h2>Choose your starting style.</h2>
+  <div class="docs-step-grid">
+    <a href="@pathto('showcase')"><span>See the result</span><h2>Built with Nift</h2><p>See actual Nift projects and the architecture behind each one.</p></a>
+    <a href="@pathto('templates')"><span>Starter projects</span><h2>Begin with a polished template</h2><p>Download a complete dark-mode Nift project and replace the design/content with your own.</p></a>
+    <a href="@pathto('docs/ai-assistants')"><span>AI-assisted</span><h2>Give an assistant the barebones project</h2><p>Use the downloadable starter + <code>ai-context.txt</code>, then describe the site you actually want.</p></a>
+    <a href="@pathto('docs/existing-sites')"><span>Migration</span><h2>Bring an existing site</h2><p>Keep the frontend you already have. Extract repeated structure instead of rewriting the project into a framework.</p></a>
+    <a href="@pathto('docs/why-nift')"><span>Design philosophy</span><h2>Why Nift?</h2><p>Understand why Nift deliberately occupies a small boundary in a much larger web ecosystem.</p></a>
+    <a href="@pathto('docs/ai-opinion')"><span>Independent perspective</span><h2>ChatGPT: Nift vs other tools</h2><p>A candid subjective comparison with Astro, Hugo and Next.js—including where I would choose each and where Nift is weaker.</p></a>
+  </div>
+
+  <h2>The everyday reference.</h2>
+  <div class="docs-step-grid">
+    <a href="@pathto('docs/paths')"><span>Core</span><h2>Paths &amp; links</h2><p>Use <code>\@pathto</code> to reuse links from any nesting depth and catch missing local targets during builds.</p></a>
+    <a href="@pathto('docs/metadata')"><span>Core</span><h2>Page &amp; build metadata</h2><p>Use tracked titles, names, paths, dates, times and build information with <code>\$[...]</code>.</p></a>
+    <a href="@pathto('docs/commands')"><span>CLI</span><h2>Commands</h2><p>Track, build, inspect, watch, move, copy and remove the files Nift manages.</p></a>
+    <a href="@pathto('docs/project-structure')"><span>Structure</span><h2>Project layout</h2><p>See how <code>content/</code>, <code>templates/</code>, <code>public/</code> and the rest of your repository can fit together.</p></a>
+  </div>
+
+  <h2>Understand what Nift is tracking.</h2>
+  <div class="docs-step-grid">
+    <a href="@pathto('docs/configuration')"><span>.nift</span><h2>config.json</h2><p>Project-wide directories, extensions, template defaults, thread count and incremental mode.</p></a>
+    <a href="@pathto('docs/tracked-json')"><span>.nift</span><h2>tracked.json</h2><p>The names, titles, templates and optional per-item extension overrides for tracked outputs.</p></a>
+    <a href="@pathto('docs/dep')"><span>Advanced escape hatch</span><h2>\@dep</h2><p>Only for the uncommon external dependency that Nift cannot infer from normal composition.</p></a>
+  </div>
+
+  <h2>Ship what you build.</h2>
+  <p>Nift's responsibility can end at the generated files. Deploy <code>public/</code> to a static host, serve it from your own backend, or package it into a larger application.</p>
+  <div class="docs-step-grid">
+    <a href="@pathto('docs/hosting')"><span>Deployment</span><h2>Hosting &amp; deployment</h2><p>GitHub Pages, GitLab Pages, Netlify, Vercel, Cloudflare Pages, Supabase-backed applications, traditional servers, Docker and more.</p></a>
+  </div>
+
+  <h2>Go beyond a simple static site.</h2>
+  <div class="docs-step-grid docs-pattern-grid">
+    <a href="@pathto('docs/advanced')"><span>Ecosystem</span><h2>Use your wider toolchain</h2><p>npm, Bun, TypeScript, Vite, Tailwind, bundlers, image tools and anything else that can compose through files.</p></a>
+    <a href="@pathto('docs/use-cases/web-apps')"><span>Full stack</span><h2>Web applications</h2><p>Pair Nift with Go, Node, Express, Python, APIs, authentication, databases and realtime backends.</p></a>
+    <a href="@pathto('docs/use-cases/react-islands')"><span>Frontend</span><h2>React / Vue / Svelte islands</h2><p>Let a component framework own the interactive region without forcing it to own every document.</p></a>
+    <a href="@pathto('docs/use-cases/documentation')"><span>Content</span><h2>Documentation projects</h2><p>Compose large shared navigation and technical content while incremental builds keep changes focused.</p></a>
+  </div>
+
+  <div class="docs-callout">
+    <strong>You do not need to read all of this before using Nift.</strong>
+    <p>The documentation is intentionally broader than the core language. Start with installation, Getting Started and the template essentials. The rest is here when your project reaches the problem it explains.</p>
+  </div>
+</article>

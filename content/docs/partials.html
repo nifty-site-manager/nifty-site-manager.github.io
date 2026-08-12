@@ -1,0 +1,43 @@
+<article class="docs-article">
+<p class="docs-kicker">Core concept · 04</p><h1>Partials &amp; \@input.</h1>
+<p class="docs-lead">Use partials to express reusable structure once. Nift parses each input as Nift source, so partials can compose other partials and automatically become part of the dependency graph.</p>
+<h2>A typical partials directory</h2>
+<pre><code class="language-plaintext">templates/
+  template.html
+  partials/
+    head.html
+    header.html
+    navigation.html
+    footer.html
+    analytics.html</code></pre>
+<h2>Build a page shell from reusable pieces</h2>
+<pre><code class="language-html">&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+  \@input('templates/partials/head.html')
+  &lt;body&gt;
+    \@input('templates/partials/header.html')
+    &lt;main&gt;\@content&lt;/main&gt;
+    \@input('templates/partials/footer.html')
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<h2>Partials can compose partials</h2>
+<pre><code class="language-html">&lt;header class="site-header"&gt;
+  &lt;a href="\@pathto('/')"&gt;Nift&lt;/a&gt;
+  \@input('templates/partials/navigation.html')
+&lt;/header&gt;</code></pre>
+<p>The navigation file is now indirectly used by every page that uses the header. If it changes, Nift's dependency information can identify the affected tracked outputs.</p>
+<h2>Use partials for repeated page furniture</h2>
+<pre><code class="language-html">&lt;!-- templates/partials/docs-sidebar.html --&gt;
+&lt;aside&gt;
+  &lt;a href="\@pathto('docs/getting-started')"&gt;Getting started&lt;/a&gt;
+  &lt;a href="\@pathto('docs/templating')"&gt;Template language&lt;/a&gt;
+  &lt;a href="\@pathto('docs/commands')"&gt;Commands&lt;/a&gt;
+&lt;/aside&gt;</code></pre>
+<h2>They are not limited to large fragments</h2>
+<p>A partial can be a whole header, a tiny repeated SVG/logo fragment, a legal notice, a script tag shared by a subset of pages, or a nested navigation section. Extract a partial when reuse makes the project clearer—not merely to maximise the number of files.</p>
+<h2>Input lookup</h2>
+<p><code>\@input</code> accepts one path. Nift checks the supplied path and can also resolve relative to the file currently being processed, which makes nested template structures practical.</p>
+<pre><code class="language-nift">\@input('templates/partials/footer.html')</code></pre>
+<div class="docs-callout"><strong>Keep the abstraction proportional.</strong><p>Nift makes reuse cheap, but ordinary HTML is still fine. A fragment that appears once and reads clearly does not need to become a partial just because it can.</p></div>
+<div class="docs-next"><span>Next</span><a href="@pathto('docs/paths')">Paths &amp; tracked files →</a></div>
+</article>

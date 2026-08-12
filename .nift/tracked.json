@@ -1,0 +1,144 @@
+{
+  "tracked": [
+    {
+      "name": "/",
+      "title": "Build the web without the baggage",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "docs",
+      "title": "Documentation",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/advanced",
+      "title": "Advanced Nift",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/getting-started",
+      "title": "Getting started",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/incremental-builds",
+      "title": "Incremental builds",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/partials",
+      "title": "Partials and input",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/paths",
+      "title": "Paths and tracked files",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/project-structure",
+      "title": "Project structure",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/templating",
+      "title": "Templating essentials",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/use-cases/dashboards",
+      "title": "Dashboards",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/use-cases/documentation",
+      "title": "Documentation projects",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/use-cases/react-islands",
+      "title": "React islands",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/use-cases/text-assets",
+      "title": "Text assets",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/use-cases/web-apps",
+      "title": "Full web applications",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "examples",
+      "title": "Examples",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "templates",
+      "title": "Templates",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "docs/metadata",
+      "title": "Page and build metadata",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/commands",
+      "title": "Commands",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/existing-sites",
+      "title": "Add Nift to an existing website",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/ai-assistants",
+      "title": "Nift with AI assistants",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/configuration",
+      "title": "Project configuration",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/tracked-json",
+      "title": "Tracked project files",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/dep",
+      "title": "Explicit dependencies",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/installing",
+      "title": "Installing Nift",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/why-nift",
+      "title": "Why Nift?",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/hosting",
+      "title": "Hosting and deployment",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/ai-opinion",
+      "title": "ChatGPT's opinion on Nift vs other build tools",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "showcase",
+      "title": "Built with Nift",
+      "template": "templates/template.html"
+    }
+  ]
+}

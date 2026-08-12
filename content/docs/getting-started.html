@@ -1,0 +1,135 @@
+<article class="docs-article getting-started-page">
+  <p class="docs-kicker">Start here · 01</p>
+  <h1>Getting started with Nift.</h1>
+  <p class="docs-lead">You do not need to learn a framework before you can use Nift. Install the executable, create a tiny project, understand the relationship between content and templates, then choose how much—or how little—Nift you want around the rest of your stack.</p>
+
+  <div class="docs-callout">
+    <strong>The idea in one sentence.</strong>
+    <p>Nift tracks the files you want to build, combines page-specific content with reusable templates/partials, resolves project-aware paths, and rebuilds the outputs affected by your changes.</p>
+  </div>
+
+  <h2>Before you start</h2>
+  <p>Make sure Nift is installed and visible in your terminal:</p>
+  <pre><code class="language-bash">nift version</code></pre>
+  <p>If that command is not available yet, start with the <a class="text-link" href="@pathto('docs/installing')">installation guide →</a>.</p>
+
+  <h2>Your first project in about a minute</h2>
+  <pre><code class="language-bash">mkdir my-site
+cd my-site
+nift init .html</code></pre>
+  <p><code>nift init .html</code> creates a complete barebones HTML project and builds its initial tracked files. You can open the project immediately; there is no package install step required for the Nift layer itself.</p>
+
+  <h3>What Nift creates</h3>
+  <pre><code class="language-plaintext">content/
+  index.html
+
+templates/
+  head.html
+  template.html
+  template.css
+  template.js
+
+public/
+  index.html
+  assets/
+    css/
+    js/
+
+.nift/
+  config.json
+  tracked.json</code></pre>
+  <p>Nift v4 projects use <code>public/</code> as the default web-facing output directory created by <code>nift init .html</code>. That keeps generated pages and assets in the convention used throughout these docs and by many deployment platforms.</p>
+
+  <h2>The project model</h2>
+  <div class="getting-model">
+    <div><span>1</span><h3>Tracked name</h3><p>Nift knows the page/item by a stable name such as <code>/</code>, <code>about</code> or <code>docs/installing</code>.</p></div>
+    <div><span>2</span><h3>Content</h3><p>The content file contains what is specific to that page.</p></div>
+    <div><span>3</span><h3>Template</h3><p>The template contains the shared document/layout structure.</p></div>
+    <div><span>4</span><h3>Output</h3><p>Nift combines them and writes the generated file into the configured output directory.</p></div>
+  </div>
+
+  <h2>Content stays ordinary</h2>
+  <p>A page-specific content file can simply be HTML:</p>
+  <pre><code class="language-html">&lt;h1&gt;About us&lt;/h1&gt;
+&lt;p&gt;This markup belongs to this page.&lt;/p&gt;</code></pre>
+
+  <h2>The template owns what repeats</h2>
+  <pre><code class="language-html">&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;\$[title]&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    \@input('templates/partials/header.html')
+
+    &lt;main&gt;
+      \@content
+    &lt;/main&gt;
+
+    \@input('templates/partials/footer.html')
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+  <p><code>\@content</code> inserts the current tracked page's content. <code>\@input(...)</code> processes and inserts reusable files. That small relationship is the centre of a Nift project.</p>
+
+  <h2>Track another page</h2>
+  <pre><code class="language-bash">nift track about "About us"</code></pre>
+  <p>Nift creates/tracks the corresponding content relationship using the project defaults. Edit the page-specific content, then build:</p>
+  <pre><code class="language-bash">nift build</code></pre>
+  <p>With no names supplied, <code>nift build</code> dispatches to the updated-build workflow. During normal development this is usually the command you want: Nift checks what changed and builds affected tracked outputs rather than requiring you to deliberately rebuild everything.</p>
+
+  <h2>Link pages and local assets with <code>\@pathto</code></h2>
+  <pre><code class="language-html">&lt;a href="\@pathto('about')"&gt;About&lt;/a&gt;
+
+&lt;link
+  rel="stylesheet"
+  href="\@pathto('public/assets/css/site.css')"&gt;
+
+&lt;img
+  src="\@pathto('public/assets/images/logo.svg')"
+  alt="Site logo"&gt;</code></pre>
+  <p>For tracked names, Nift calculates the correct relative URL from the page being built. For concrete local paths, the target must exist—so a typo can become a build error instead of a broken link or image after deployment.</p>
+
+  <h2>Choose your starting path</h2>
+  <p>Once Nift is installed, there are three especially easy ways to begin a real project.</p>
+  <div class="getting-paths">
+    <a href="@pathto('docs/templating')">
+      <span>Path 01 · Barebones</span>
+      <h3>Build it yourself</h3>
+      <p>Start with <code>nift init .html</code>, keep the starter tiny, and add pages/templates/tooling only as the project needs them.</p>
+      <strong>Learn the template essentials →</strong>
+    </a>
+    <a href="@pathto('templates')">
+      <span>Path 02 · Template</span>
+      <h3>Start from a polished design</h3>
+      <p>Download one of the complete Nift starters, build it immediately and turn it into your own site without adopting another framework.</p>
+      <strong>Browse templates →</strong>
+    </a>
+    <a href="@pathto('docs/ai-assistants')">
+      <span>Path 03 · AI-assisted</span>
+      <h3>Describe the website you want</h3>
+      <p>Download the barebones project, add the provided <code>ai-context.txt</code>, and let Copilot, ChatGPT or another assistant work inside the small Nift model.</p>
+      <strong>AI-assisted workflow →</strong>
+    </a>
+  </div>
+
+  <h2>Already have a website?</h2>
+  <div class="docs-callout">
+    <strong>Do not rewrite it just to adopt Nift.</strong>
+    <p>Keep the HTML/CSS/JS you already have. Extract repeated headers, navigation, footers and document structure into templates/partials, keep page-specific markup as content, and preserve the rest of your stack.</p>
+  </div>
+  <p><a class="text-link" href="@pathto('docs/existing-sites')">See the existing-site migration workflow →</a></p>
+
+  <h2>What to learn next</h2>
+  <div class="docs-step-grid getting-next-grid">
+    <a href="@pathto('docs/templating')"><span>Core</span><h2>Template language</h2><p>The deliberately small set of v4 primitives.</p></a>
+    <a href="@pathto('docs/paths')"><span>Core</span><h2>Project-aware paths</h2><p>Checked internal links and assets without manual <code>../</code> counting.</p></a>
+    <a href="@pathto('docs/incremental-builds')"><span>Workflow</span><h2>Incremental builds</h2><p>Understand why normal edits can stay proportional to the dependency impact.</p></a>
+    <a href="@pathto('docs/commands')"><span>Reference</span><h2>CLI commands</h2><p>The complete command surface accepted by the current v4 dispatcher.</p></a>
+    <a href="@pathto('docs/advanced')"><span>Ecosystem</span><h2>Bring your tooling</h2><p>TypeScript, Vite, React, Vue, Svelte, Tailwind, Go, Node, Python and more.</p></a>
+    <a href="@pathto('docs/hosting')"><span>Ship</span><h2>Deploy it</h2><p>Build files and deploy them wherever your stack normally deploys them.</p></a>
+  </div>
+
+  <div class="docs-callout"><strong>You already know most of what is required.</strong><p>If you understand HTML files, reusable includes and a build command, the Nift-specific part is intentionally small. Learn additional features when you encounter the problem they solve.</p></div>
+  <div class="docs-next"><span>Next</span><a href="@pathto('docs/templating')">Template language essentials →</a></div>
+</article>

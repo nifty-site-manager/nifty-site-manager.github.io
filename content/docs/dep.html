@@ -1,0 +1,45 @@
+<article class="docs-article">
+  <p class="docs-kicker">Advanced escape hatch</p>
+  <h1><code>\@dep(...)</code>.</h1>
+  <p class="docs-lead">Most Nift projects should rarely—or never—need <code>\@dep</code>. It exists for the exceptional case where an external file influences the output being built but Nift cannot discover that relationship through normal composition.</p>
+
+  <div class="docs-callout">
+    <strong>Do not start here.</strong>
+    <p>If you are learning Nift, skip this page until you encounter a real dependency Nift cannot infer. Templates, tracked content and <code>\@input</code> already establish the dependencies used by ordinary projects.</p>
+  </div>
+
+  <h2>Normal dependencies are automatic</h2>
+  <pre><code class="language-nift">\@input('templates/partials/header.html')
+\@content
+\@input('templates/partials/footer.html')</code></pre>
+  <p>The template, tracked content and input files already participate in Nift's dependency bookkeeping. Do not mirror those relationships with <code>\@dep</code>.</p>
+
+  <h2><code>\@pathto</code> is not a reason to add <code>\@dep</code></h2>
+  <pre><code class="language-html">&lt;script src="\@pathto('public/assets/app.js')"&gt;&lt;/script&gt;
+&lt;img src="\@pathto('public/assets/logo.svg')" alt="Logo"&gt;</code></pre>
+  <p>These are project-aware paths. They do not need a ceremonial <code>\@dep</code> beside them.</p>
+
+  <h2>The specialised case it solves</h2>
+  <p>Imagine another tool produces <code>data/search-index.json</code>. Your own build/preprocessing workflow uses that file to influence a page, but the file is never inserted with <code>\@input</code> and Nift otherwise has no relationship it can follow.</p>
+  <pre><code class="language-nift">\@dep('data/search-index.json')</code></pre>
+  <p>That declaration says: “this output depends on this external file even though you cannot infer why from the template graph.”</p>
+
+  <h2>Multiple otherwise-invisible inputs</h2>
+  <pre><code class="language-nift">\@dep(
+  'data/navigation.json',
+  'data/releases.json',
+  'data/contributors.json'
+)</code></pre>
+  <p>The current v4 parser accepts one or more existing paths.</p>
+
+  <h2>A decision test</h2>
+  <pre><code class="language-plaintext">Does \@content establish the relationship?  → do not use \@dep
+Does \@input establish the relationship?    → do not use \@dep
+Is this just a local asset via \@pathto?    → do not use \@dep
+Can Nift otherwise infer the dependency?   → do not use \@dep
+External file genuinely affects output,
+but Nift has no way to know?               → \@dep may be appropriate</code></pre>
+
+  <div class="docs-callout"><strong>Think of <code>\@dep</code> as an escape hatch, not a building block.</strong><p>The fewer explicit dependencies you have to declare, the clearer the project remains. Prefer the ordinary project relationships whenever they describe what is actually happening.</p></div>
+  <div class="docs-next"><span>Related</span><a href="@pathto('docs/incremental-builds')">Incremental builds →</a></div>
+</article>

@@ -1,0 +1,76 @@
+<article class="docs-article">
+  <p class="docs-kicker">Workflow</p>
+  <h1>Nift with AI coding assistants.</h1>
+  <p class="docs-lead">Nift is useful with coding assistants for the same reason it is useful to humans: the Nift-specific layer is small, while most of the project remains ordinary HTML, CSS, JavaScript, TypeScript and whatever other technologies you choose.</p>
+
+  <h2>Start an AI-ready project</h2>
+  <p>You can initialise the same barebones structure yourself, or download the ready-made project and hand it straight to an AI coding assistant.</p>
+  <div class="docs-download-card">
+    <div>
+      <span class="docs-kicker">Barebones starter</span>
+      <h2>Download the Nift v4 barebones project.</h2>
+      <p>Unzip it, add the context below as <code>ai-context.txt</code>, then ask Copilot, ChatGPT or another coding assistant to read the context and turn the project into the website you want.</p>
+    </div>
+    <a class="button button-primary" href="@pathto('public/assets/templates/nift-barebones.zip')" download>Download barebones .zip ↓</a>
+  </div>
+  <p>Or create the same starting point from the CLI:</p>
+  <pre><code class="language-bash">mkdir my-site
+cd my-site
+nift init .html
+touch ai-context.txt</code></pre>
+  <p>Put a short description of Nift's project model in <code>ai-context.txt</code>. Then point Copilot, ChatGPT or another coding assistant at the project and ask it to read that file before making changes.</p>
+
+  <h2>A useful <code>ai-context.txt</code></h2>
+  <pre><code class="language-plaintext">This is a Nift v4 project.
+
+Keep the existing project structure and ordinary HTML/CSS/JS conventions. Nift is the
+templating/build layer; do not replace the project with another framework unless asked.
+
+Core Nift template syntax:
+- \@content inserts the current tracked page's content into its template.
+- \@input('templates/partials/header.html') parses and inserts a reusable file. Use \@input
+  for shared markup such as headers, navigation, footers, cards and other partials.
+- \@pathto(...) produces a path relative to the current output page. Use tracked names for
+  links between tracked pages, for example:
+    &lt;a href="\@pathto('docs')"&gt;Docs&lt;/a&gt;
+- Also use \@pathto(...) for concrete local CSS, JavaScript and image assets, for example:
+    &lt;link rel="stylesheet" href="\@pathto('public/assets/css/style.css')"&gt;
+    &lt;script src="\@pathto('public/assets/js/app.js')"&gt;&lt;/script&gt;
+    &lt;img src="\@pathto('public/assets/images/logo.svg')" alt="Logo"&gt;
+  Using \@pathto for a concrete local path also lets Nift report an error during the build
+  when that path does not exist, instead of silently generating a broken asset reference.
+- \@getenv('NAME') inserts the value of an environment variable. If NAME is not set, it
+  produces an empty string. Use it when build-time environment configuration belongs in
+  generated output; do not put secrets into client-visible HTML or JavaScript.
+- \$[...] accesses Nift page/build metadata. Use only metadata names documented by this
+  project's v4 documentation.
+- \@dep(...) is only for an external file that affects an output but is not already made a
+  dependency through \@content, \@input or another direct Nift relationship.
+
+Prefer \@input and \@pathto over duplicating markup or hard-coding fragile relative paths.
+Keep Nift-specific machinery small. Use the project's existing npm/Bun/Vite/TypeScript/
+React/Vue/Svelte/Tailwind/backend tooling normally rather than trying to recreate it in Nift.
+
+Before editing, inspect the existing templates, content files and project conventions.
+Prefer the smallest change that preserves the existing architecture.</code></pre>
+
+  <h2>Then ask for the website you actually want</h2>
+  <p>Once the context file is present, the interesting prompt can stay focused on the result rather than teaching the assistant Nift every time.</p>
+  <pre><code class="language-plaintext">Read ai-context.txt and inspect this project.
+
+Turn the barebones Nift project into a polished website for an independent architecture
+studio. Create the pages, shared template/partials, CSS and JavaScript you think are
+appropriate. Keep the site responsive and accessible, and use Nift's existing project
+model rather than replacing it.</code></pre>
+  <p>The same pattern works for a portfolio, documentation site, product landing page, blog, dashboard shell or frontend for a larger application.</p>
+
+  <h2>Why the small context works</h2>
+  <div class="advanced-doc-grid">
+    <div><h2>Less framework trivia</h2><p>The assistant can spend more context on your design and application rather than learning a large Nift API.</p></div>
+    <div><h2>Ordinary files</h2><p>Most edits use technologies coding assistants already understand well instead of framework-specific representations of them.</p></div>
+    <div><h2>Easy migrations</h2><p>An assistant can identify repeated HTML, extract templates and partials, and preserve the existing frontend rather than translating the whole site.</p></div>
+    <div><h2>Stack freedom</h2><p>React, Vue, Svelte, TypeScript, Go, Node, Python and other tools remain themselves; Nift only needs enough context to connect the pieces.</p></div>
+  </div>
+
+  <div class="docs-callout"><strong>AI-friendly without an AI subsystem.</strong><p>Nift's advantage is powerful simplicity: there is comparatively little Nift-specific behaviour for an assistant to misunderstand, hallucinate or unnecessarily rewrite.</p></div>
+</article>

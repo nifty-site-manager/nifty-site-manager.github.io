@@ -1,0 +1,35 @@
+<article class="docs-article">
+  <p class="docs-kicker">Pattern</p><h1>UI islands.</h1>
+  <p class="docs-lead">React, Vue and Svelte do not need special status inside Nift. They can simply be tools that produce JavaScript for interactive regions of an otherwise generated page.</p>
+
+  <h2>Nift provides the document and mount point</h2>
+  <pre><code class="language-html">&lt;article&gt;
+  &lt;h1&gt;Product configurator&lt;/h1&gt;
+  &lt;p&gt;Most of this page is ordinary generated HTML.&lt;/p&gt;
+  &lt;div id="configurator"&gt;&lt;/div&gt;
+&lt;/article&gt;
+
+&lt;script type="module" src="\@pathto('public/assets/configurator.js')"&gt;&lt;/script&gt;</code></pre>
+
+  <h2>Your frontend toolchain produces the island</h2>
+  <pre><code class="language-bash"># Examples only — use the toolchain you prefer
+npm run build
+# or
+bun run build
+
+nift build</code></pre>
+
+  <p>Vite, esbuild, Rollup or another bundler can compile a React/Vue/Svelte entry point into <code>public/assets/configurator.js</code>. Nift does not need to understand the component framework to reference its output.</p>
+
+  <h2>Why use this pattern?</h2>
+  <p>You can reserve client-framework complexity for the regions that need rich state and interaction while keeping the rest of the site as direct HTML. It is an architectural option, not a Nift requirement.</p>
+<h2>Several islands on one page</h2><pre><code class="language-html">&lt;div id="search"&gt;&lt;/div&gt;
+&lt;div id="cart"&gt;&lt;/div&gt;
+&lt;script type="module" src="\\@pathto('public/assets/search.js')"&gt;&lt;/script&gt;
+&lt;script type="module" src="\\@pathto('public/assets/cart.js')"&gt;&lt;/script&gt;</code></pre><p>The islands do not even have to use the same framework if there is a genuine reason for them not to; from Nift's perspective they are simply browser assets referenced by the generated page.</p><h2>Progressive enhancement</h2><p>You can put useful HTML inside the mount region first, then let the client component enhance or replace it. Nift does not require interactivity to erase the server/generated document model.</p><h2>Example repository</h2><pre><code class="language-plaintext">content/
+templates/
+frontend/
+  src/configurator.tsx
+  vite.config.ts
+public/
+  assets/configurator.js</code></pre><p>The frontend directory can use the framework's normal conventions. Nift only references the browser artifact it produces.</p><h2>Multiple pages, selective interactivity</h2><p>A marketing page might have no island at all, a pricing page might mount one calculator, and an account page might mount a larger application. They can still share the same Nift template and navigation.</p></article>

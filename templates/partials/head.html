@@ -1,0 +1,14 @@
+<title>Nift — $[title]</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Nift is a fast, dependency-aware templating and build system for websites and text-based projects.">
+<meta name="theme-color" content="#071c29">
+<script>
+(() => {
+	const mode = localStorage.getItem('nift-theme') || 'system';
+	const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+	document.documentElement.dataset.themeMode = mode;
+	document.documentElement.dataset.theme = mode === 'system' ? (systemDark ? 'dark' : 'light') : mode;
+})();
+</script>
+<link rel="stylesheet" href="@pathto('public/assets/css/style.css')">

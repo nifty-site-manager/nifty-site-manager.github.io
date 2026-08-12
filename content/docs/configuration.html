@@ -1,0 +1,66 @@
+<article class="docs-article">
+  <p class="docs-kicker">Project internals</p>
+  <h1><code>.nift/config.json</code>.</h1>
+  <p class="docs-lead">The project config tells Nift where content lives, where generated files go, which extensions and template are the defaults, and how builds should use threads and detect changes.</p>
+
+  <h2>A typical web project</h2>
+  <pre><code class="language-json">{
+  "config": {
+    "content-dir": "content/",
+    "content-ext": ".html",
+    "output-dir": "public/",
+    "output-ext": ".html",
+    "default-template": "templates/template.html",
+    "build-threads": -1,
+    "incremental-mode": "modified"
+  }
+}</code></pre>
+  <p>For a web project, <code>public/</code> is a useful conventional output directory because many servers, hosts and frameworks already use that name for browser-facing files. Nift does not require the directory to be called <code>public/</code>; it simply uses the value in <code>output-dir</code>.</p>
+
+  <h2>Fields</h2>
+  <div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>Field</th><th>Meaning</th></tr></thead><tbody>
+    <tr><td><code>content-dir</code></td><td>Base directory used to derive content paths for tracked names. It must be non-empty.</td></tr>
+    <tr><td><code>content-ext</code></td><td>Default content-file extension. It must begin with <code>.</code>.</td></tr>
+    <tr><td><code>output-dir</code></td><td>Base directory used to derive generated output paths. For web projects, <code>public/</code> is a convenient convention.</td></tr>
+    <tr><td><code>output-ext</code></td><td>Default output extension. It must begin with <code>.</code>.</td></tr>
+    <tr><td><code>default-template</code></td><td>Template used by newly tracked items when a different template is not supplied.</td></tr>
+    <tr><td><code>build-threads</code></td><td>Number of build threads. The generated config uses <code>-1</code>, meaning the default based on available cores. A missing/invalid zero value is reset to <code>-1</code>.</td></tr>
+    <tr><td><code>incremental-mode</code></td><td>How Nift determines whether dependencies changed: <code>modified</code>, <code>hash</code>, or <code>hybrid</code>.</td></tr>
+  </tbody></table></div>
+
+  <h2>How tracked names become paths</h2>
+  <p>With this config:</p>
+  <pre><code class="language-json">{
+  "config": {
+    "content-dir": "content/",
+    "content-ext": ".html",
+    "output-dir": "public/",
+    "output-ext": ".html",
+    "default-template": "templates/template.html",
+    "build-threads": -1,
+    "incremental-mode": "modified"
+  }
+}</code></pre>
+  <p>a tracked name such as <code>about</code> resolves naturally to:</p>
+  <pre><code class="language-plaintext">content/about.html     →     public/about.html</code></pre>
+  <p>and a nested name:</p>
+  <pre><code class="language-plaintext">docs/getting-started
+
+content/docs/getting-started.html
+             ↓
+public/docs/getting-started.html</code></pre>
+  <p>The tracked item stores the name/title/template; the project config supplies the default directory and extension rules that turn the name into concrete content and output paths.</p>
+
+  <h2>Incremental modes</h2>
+  <div class="advanced-doc-grid">
+    <div><h2><code>modified</code></h2><p>Uses modification information to decide whether inputs have changed. This is the generated default and is fast for everyday development.</p></div>
+    <div><h2><code>hash</code></h2><p>Uses content hashes when determining changes.</p></div>
+    <div><h2><code>hybrid</code></h2><p>Uses the hybrid mode implemented by Nift, combining its change-detection strategies.</p></div>
+  </div>
+
+  <h2>Should you edit it?</h2>
+  <p>Yes, when you want to change project-wide defaults such as moving generated files to <code>public/</code>, changing the default template, or choosing an incremental mode. It is deliberately ordinary JSON so the project setup is inspectable and easy for humans, scripts and AI assistants to understand.</p>
+
+  <div class="docs-callout"><strong><code>config.json</code> describes the project-wide rules.</strong><p><code>tracked.json</code> describes the individual things Nift manages within those rules.</p></div>
+  <div class="docs-next"><span>Next</span><a href="@pathto('docs/tracked-json')"><code>tracked.json</code> →</a></div>
+</article>

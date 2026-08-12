@@ -1,0 +1,148 @@
+<article class="docs-article">
+<p class="docs-kicker">Deployment</p>
+<h1>Build the files. Deploy them wherever they belong.</h1>
+<p class="docs-lead">Nift does not need a deployment platform of its own. For a conventional web project it builds deploy-ready files into <code>public/</code>; your hosting provider, web server, container or backend can take over from there.</p>
+
+<div class="docs-callout"><strong>The basic deployment model.</strong><p>Run your frontend/tooling steps, run Nift, then deploy <code>public/</code>. If Nift is part of a larger application, the same directory can instead be copied into the server image or served by the backend.</p></div>
+
+<h2>A simple production build</h2>
+<pre><code class="language-bash"># optional: compile/bundle frontend assets first
+npm run build:frontend
+
+# generate the Nift-managed outputs
+nift build-all
+
+# deploy public/
+</code></pre>
+
+<h2>GitHub Pages</h2>
+<p>A repository workflow can build Nift and publish the resulting <code>public/</code> directory as the Pages artifact. The important boundary is simple:</p>
+<pre><code class="language-plaintext">repository
+  ↓
+install/build Nift
+  ↓
+nift build-all
+  ↓
+public/
+  ↓
+GitHub Pages</code></pre>
+<p>If you publish from a dedicated branch instead, the same idea works: build locally or in CI and copy the contents of <code>public/</code> into the branch/directory GitHub Pages serves.</p>
+
+<h2>GitLab Pages</h2>
+<p>GitLab Pages is a particularly natural match for the convention used throughout these docs because Pages deployments commonly work with a <code>public/</code> artifact.</p>
+<pre><code class="language-yaml">pages:
+  script:
+    - nift build-all
+  artifacts:
+    paths:
+      - public</code></pre>
+<p>Your real CI job may also install Nift, compile TypeScript, optimise images or run tests before the Nift build.</p>
+
+<h2>Netlify</h2>
+<p>Configure the project so the build command runs Nift (and any other frontend steps) and the publish directory is <code>public</code>.</p>
+<pre><code class="language-plaintext">Build command:
+  nift build-all
+
+Publish directory:
+  public</code></pre>
+<p>Only the deploy-ready files in the publish directory need to be shipped.</p>
+
+<h2>Vercel</h2>
+<p>For a Nift-generated static frontend, set your build command and tell Vercel that <code>public</code> is the output directory.</p>
+<pre><code class="language-json">{
+  "buildCommand": "nift build-all",
+  "outputDirectory": "public"
+}</code></pre>
+<p>If Nift is part of a larger Vercel application, let the surrounding application's build pipeline decide where the generated files belong instead of forcing the entire repository into this static pattern.</p>
+
+<h2>Cloudflare Pages</h2>
+<p>Cloudflare Pages accepts a custom build command and build output directory, so the Nift mapping is direct:</p>
+<pre><code class="language-plaintext">Build command:
+  nift build-all
+
+Build output directory:
+  public</code></pre>
+<p>A direct-upload workflow can also upload the already-built directory:</p>
+<pre><code class="language-bash">npx wrangler pages deploy public</code></pre>
+
+<h2>Supabase</h2>
+<p>Supabase is often most useful beside Nift rather than instead of a static host. Let Nift generate the frontend and use Supabase for the application services it is good at: Postgres, Auth, Data APIs, Realtime, Edge Functions and Storage.</p>
+<pre><code class="language-plaintext">Nift
+  ↓
+public/ frontend
+  ↓
+Cloudflare / Netlify / Vercel / nginx / etc.
+  ↕
+Supabase
+  ├─ Postgres
+  ├─ Auth
+  ├─ Realtime
+  ├─ Storage
+  └─ Edge Functions</code></pre>
+<p>Browser code can use the normal Supabase client/API while Nift remains entirely a build-time concern.</p>
+<pre><code class="language-javascript">import { createClient } from '\@supabase/supabase-js';
+
+const supabase = createClient(
+  import.meta.env.VITE_SUPABASE_URL,
+  import.meta.env.VITE_SUPABASE_ANON_KEY
+);
+
+const { data } = await supabase
+  .from('projects')
+  .select('*');</code></pre>
+<p>Supabase Storage public buckets can also serve public assets through its CDN-backed object URLs. For a whole static website, however, a normal web/static host is usually the clearer division of responsibility.</p>
+
+<h2>nginx / Apache / Caddy</h2>
+<p>For a traditional server, copy <code>public/</code> to the directory your web server serves.</p>
+<pre><code class="language-bash">nift build-all
+rsync -av --delete public/ user\@example.com:/var/www/example/</code></pre>
+<p>Nift does not need to run on the production server if you build before deployment.</p>
+
+<h2>Go application</h2>
+<p>A Go backend can serve the generated directory directly or embed/copy it into the application image.</p>
+<pre><code class="language-go">mux := http.NewServeMux()
+mux.Handle("/", http.FileServer(http.Dir("public")))
+
+http.ListenAndServe(":8080", mux)</code></pre>
+
+<h2>Node / Express</h2>
+<pre><code class="language-javascript">import express from 'express';
+
+const app = express();
+app.use(express.static('public'));
+
+app.listen(3000);</code></pre>
+
+<h2>Python</h2>
+<p>Flask, FastAPI, Django or another Python application can serve/copy the generated frontend in whichever way is conventional for that stack. Nift does not require a Python integration layer.</p>
+
+<h2>Docker</h2>
+<p>A multi-stage image can build the site and copy only the final public files into a small web-server image.</p>
+<pre><code class="language-dockerfile"># build stage
+FROM your-nift-build-image AS build
+WORKDIR /site
+COPY . .
+RUN nift build-all
+
+# serving stage
+FROM nginx:alpine
+COPY --from=build /site/public /usr/share/nginx/html</code></pre>
+
+<h2>Static frontend + separate API</h2>
+<p>A very common full-stack deployment is simply:</p>
+<pre><code class="language-plaintext">public/              → CDN/static host
+api.example.com      → Go / Node / Python / serverless backend
+database/auth/etc.   → your chosen services</code></pre>
+<p>Nift does not need to know how those runtime services are deployed. The frontend can call them with ordinary HTTP/WebSockets.</p>
+
+<h2>CI pipelines</h2>
+<p>Whatever platform you use, a production pipeline commonly becomes:</p>
+<pre><code class="language-bash">npm ci                  # if the project uses npm
+npm run build:frontend  # TypeScript/Vite/Tailwind/etc.
+nift build-all
+npm test                # or your own checks
+# deploy public/</code></pre>
+
+<div class="docs-callout"><strong>Deployment is intentionally boring.</strong><p>The useful property is that Nift's output is ordinary files. You can host them with a static platform, put them behind your own server, include them in a container, or make them one piece of a much larger application deployment.</p></div>
+<div class="docs-next"><span>Related</span><a href="@pathto('docs/use-cases/web-apps')">Full web applications →</a></div>
+</article>

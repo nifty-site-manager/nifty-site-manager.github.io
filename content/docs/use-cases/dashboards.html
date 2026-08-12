@@ -1,0 +1,35 @@
+<article class="docs-article">
+  <p class="docs-kicker">Pattern</p><h1>Dashboards.</h1>
+  <p class="docs-lead">A dashboard often has a large amount of shared document/navigation structure plus a smaller set of genuinely dynamic regions. Nift can generate the stable shell while ordinary browser code owns live state.</p>
+
+  <h2>Shared shell</h2>
+  <pre><code class="language-html">&lt;body&gt;
+  \@input('templates/partials/dashboard-nav.html')
+  &lt;main class="dashboard"&gt;
+    \@content
+  &lt;/main&gt;
+  &lt;script type="module" src="\@pathto('public/assets/dashboard.js')"&gt;&lt;/script&gt;
+&lt;/body&gt;</code></pre>
+
+  <h2>Page content can define mount points</h2>
+  <pre><code class="language-html">&lt;h1&gt;System status&lt;/h1&gt;
+&lt;section id="service-health"&gt;&lt;/section&gt;
+&lt;section id="recent-events"&gt;&lt;/section&gt;</code></pre>
+
+  <h2>Vanilla JS, React, Vue or Svelte can own the live UI</h2>
+  <pre><code class="language-javascript">const response = await fetch('/api/status');
+const data = await response.json();
+
+document.querySelector('#service-health').textContent =
+  data.ok ? 'Operational' : 'Degraded';</code></pre>
+
+  <p>If the interaction grows complex, replace that browser module with a bundled framework entry point without changing Nift's role in the surrounding page.</p>
+<h2>Realtime updates</h2><pre><code class="language-javascript">const socket = new WebSocket('/ws');
+socket.addEventListener('message', ({ data }) =&gt; {
+  const event = JSON.parse(data);
+  renderEvent(event);
+});</code></pre><p>The Nift-generated shell does not care whether runtime data arrives through fetch, Server-Sent Events or WebSockets.</p><h2>Framework-backed dashboard</h2><p>If dashboard state becomes sophisticated, compile a React/Vue/Svelte application into <code>public/assets/dashboard.js</code> and keep the same Nift shell. The architectural boundary can evolve without rewriting the surrounding site.</p><h2>Dashboard navigation as a partial</h2><pre><code class="language-html">&lt;aside class="dashboard-nav"&gt;
+  &lt;a href="\\@pathto('dashboard')"&gt;Overview&lt;/a&gt;
+  &lt;a href="\\@pathto('dashboard/logs')"&gt;Logs&lt;/a&gt;
+  &lt;a href="\\@pathto('dashboard/settings')"&gt;Settings&lt;/a&gt;
+&lt;/aside&gt;</code></pre><p>Shared navigation stays generated and reusable even when the panels themselves are driven by runtime API data.</p><h2>Backend freedom</h2><p>The API can be Go, Express, Bun, FastAPI, C++, serverless functions or something else entirely. Nift does not participate in the runtime request after it has produced the frontend files.</p></article>

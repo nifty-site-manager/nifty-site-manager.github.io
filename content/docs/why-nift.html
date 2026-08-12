@@ -1,0 +1,64 @@
+<article class="docs-article">
+<p class="docs-kicker">Design philosophy</p>
+<h1>Why Nift?</h1>
+<p class="docs-lead">Because a web project already has an enormous ecosystem. Nift does not need to replace it. It only needs to make composition, tracking and rebuilding simpler.</p>
+
+<div class="docs-callout"><strong>Nift is small because the web ecosystem is already enormous.</strong><p>Browsers understand HTML, CSS and JavaScript. npm and Bun manage packages. TypeScript compiles types. Vite and bundlers build frontend assets. Go, Node and Python run servers. Databases store data. Hosting platforms deploy files. Nift can be useful without pretending those things need a Nift-specific replacement.</p></div>
+
+<h2>The four jobs at the centre</h2>
+<div class="why-grid">
+  <div><span>01</span><h3>Track</h3><p>Give the outputs you care about stable tracked names and let Nift know which content/template relationship produces them.</p></div>
+  <div><span>02</span><h3>Compose</h3><p>Put shared structure in templates and partials. Put page-specific markup in content. Reuse the pieces without inventing a component runtime.</p></div>
+  <div><span>03</span><h3>Resolve</h3><p>Use project-aware paths and metadata instead of scattering fragile assumptions about directory depth throughout shared markup.</p></div>
+  <div><span>04</span><h3>Rebuild</h3><p>Record the dependency graph and rebuild the outputs affected by a change instead of treating every edit like a clean-room rebuild.</p></div>
+</div>
+
+<h2>Adoption should not require surrender.</h2>
+<p>Some tools are most useful when the project becomes a project *of that framework*. Nift can be useful while remaining only one layer inside a repository.</p>
+<pre><code class="language-plaintext">your project
+  ├─ HTML / CSS
+  ├─ TypeScript / JavaScript
+  ├─ React / Vue / Svelte (if useful)
+  ├─ Vite / bundlers
+  ├─ Go / Node / Python backend
+  ├─ database / auth / APIs
+  ├─ deployment tooling
+  └─ Nift
+       ├─ tracked outputs
+       ├─ templates / partials
+       ├─ project-aware paths
+       └─ dependency-aware builds</code></pre>
+
+<h2>Ordinary web code is a feature.</h2>
+<p>A Nift page can remain HTML. A stylesheet can remain CSS. Browser behaviour can remain JavaScript. Your backend can remain Go. That makes projects easier to inspect with standard tools and reduces how much Nift-specific knowledge has to survive across years of maintenance.</p>
+
+<h2>Powerful simplicity helps humans.</h2>
+<p>A small surface is easier to remember, document, debug and teach. The important abstractions remain visible: this page uses this template; this template inputs this partial; this link points to this tracked output.</p>
+
+<h2>Powerful simplicity helps AI coding assistants too.</h2>
+<p>An assistant can learn Nift's useful core from a short context file and then spend most of its context window reasoning about the actual website. It does not need to translate every CSS/HTML/backend decision into a large framework-specific API before it can contribute.</p>
+
+<h2>Fast should mean more than benchmark numbers.</h2>
+<p>Nift is written in C++ and supports multithreaded builds, but the workflow advantage is especially visible in incremental development. Change one page and rebuild what changed. Change a shared partial and rebuild the pages that depend on it. Avoid repeatedly waking every part of a large toolchain for unrelated edits.</p>
+<div class="advanced-doc-grid">
+  <div><h2>Fast full builds</h2><p>A native compiled build tool keeps overhead low when the project genuinely needs to rebuild everything.</p></div>
+  <div><h2>Fast incremental builds</h2><p>During normal development, the dependency graph lets the amount of work stay closer to the size of the change.</p></div>
+  <div><h2>Small project footprint</h2><p>Nift does not require a runtime dependency tree merely to turn templates/content into deployable HTML.</p></div>
+  <div><h2>One native executable</h2><p>The core tool is easy to reason about operationally: install Nift and point it at a project rather than bootstrapping a whole framework runtime.</p></div>
+</div>
+
+<h2>What Nift deliberately does not try to own</h2>
+<pre><code class="language-plaintext">Need TypeScript?      use TypeScript.
+Need React?           use React.
+Need Tailwind?        use Tailwind.
+Need image tooling?   use image tooling.
+Need a Go server?     use Go.
+Need Postgres/Auth?   use Postgres / Supabase / your choice.
+Need deployment?      deploy public/ where it belongs.</code></pre>
+
+<h2>The result</h2>
+<blockquote class="docs-quote">Nift provides the glue without trying to become the universe.</blockquote>
+<p>That is not an excuse for missing features. It is the boundary: Nift should be excellent at the small set of project-aware build problems it owns, and easy to compose with specialist tools for everything else.</p>
+
+<div class="docs-next"><span>Next</span><a href="@pathto('docs/getting-started')">Build your first project →</a></div>
+</article>

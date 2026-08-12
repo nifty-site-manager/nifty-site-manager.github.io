@@ -1,0 +1,188 @@
+<main class="simple-page examples-page">
+<section class="page-hero">
+  <p class="eyebrow">Examples</p>
+  <h1>One small build layer. A lot of possible stacks.</h1>
+  <p>Nift can be the whole build story for a straightforward site or one focused piece of a much larger application. These examples show the boundary: Nift composes and tracks web-facing files; the rest of your tools keep doing their own jobs.</p>
+</section>
+
+<section class="examples-intro">
+  <div><p class="eyebrow">The recurring pattern</p><h2>Nift is glue, not a prescribed stack.</h2></div>
+  <p>There is no requirement to find a Nift-specific React integration, Nift-specific Go server, Nift-specific package manager or Nift-specific image pipeline. Generate or place files where your project expects them, reference them from Nift where appropriate, and orchestrate the tools with the shell, npm/Bun scripts, Make, CI or whatever you already use.</p>
+</section>
+
+<section class="example-stack-grid">
+<article class="example-stack">
+  <p class="eyebrow">01 · Plain web</p><h2>HTML + CSS + JavaScript</h2>
+  <p>Use Nift for templates, partials and tracked pages while keeping the frontend completely framework-free.</p>
+  <pre><code class="language-html">&lt;link rel="stylesheet" href="\@pathto('public/assets/site.css')"&gt;
+&lt;main&gt;\@content&lt;/main&gt;
+&lt;script src="\@pathto('public/assets/app.js')"&gt;&lt;/script&gt;</code></pre>
+  <pre><code class="language-plaintext">Nift → HTML
+CSS  ─┐
+JS   ─┴→ public/ → CDN / web server</code></pre>
+</article>
+
+<article class="example-stack">
+  <p class="eyebrow">02 · TypeScript</p><h2>Nift + TypeScript + npm/Bun</h2>
+  <p>Let TypeScript compile browser code and let Nift assemble the documents that load it.</p>
+  <pre><code class="language-json">{
+  "scripts": {
+    "build:js": "tsc",
+    "build:site": "nift build",
+    "build": "npm run build:js &amp;&amp; npm run build:site"
+  }
+}</code></pre>
+  <pre><code class="language-html">&lt;script type="module" src="\@pathto('public/assets/app.js')"&gt;&lt;/script&gt;</code></pre>
+</article>
+
+<article class="example-stack">
+  <p class="eyebrow">03 · Vite</p><h2>Nift + Vite</h2>
+  <p>Vite can own the frontend asset graph while Nift owns the page/content graph.</p>
+  <pre><code class="language-plaintext">content/       Nift pages
+templates/     Nift layouts + partials
+frontend/src/  TS/JS/components
+public/assets/ Vite build output</code></pre>
+  <pre><code class="language-bash">npm --prefix frontend run build
+nift build</code></pre>
+</article>
+
+<article class="example-stack">
+  <p class="eyebrow">04 · Styling</p><h2>Nift + Tailwind</h2>
+  <p>Tailwind scans the files you author and writes CSS. Nift simply references the result.</p>
+  <pre><code class="language-bash">npx @tailwindcss/cli \
+  -i ./assets/input.css \
+  -o ./public/assets/site.css
+nift build</code></pre>
+  <pre><code class="language-html">&lt;link rel="stylesheet" href="\@pathto('public/assets/site.css')"&gt;</code></pre>
+</article>
+
+<article class="example-stack">
+  <p class="eyebrow">05 · React</p><h2>Nift shell + React island</h2>
+  <p>Keep most of the page as generated HTML and mount React where state-heavy interaction earns the extra machinery.</p>
+  <pre><code class="language-html">&lt;article&gt;
+  \@content
+  &lt;div id="configurator"&gt;&lt;/div&gt;
+&lt;/article&gt;
+&lt;script type="module"
+  src="\@pathto('public/assets/configurator.js')"&gt;&lt;/script&gt;</code></pre>
+</article>
+
+<article class="example-stack">
+  <p class="eyebrow">06 · Vue / Svelte</p><h2>Same island pattern, different framework</h2>
+  <p>Nift does not need to know which component compiler produced the JavaScript.</p>
+  <pre><code class="language-plaintext">Vue/Svelte source
+       ↓
+ Vite / bundler
+       ↓
+public/assets/widget.js
+       ↑
+  Nift page shell</code></pre>
+</article>
+
+<article class="example-stack">
+  <p class="eyebrow">07 · Go</p><h2>Nift frontend + Go API</h2>
+  <p>Generate the frontend with Nift, serve it from Go or a CDN, and call the API normally.</p>
+  <pre><code class="language-plaintext">Nift → public/
+          ↑
+       browser
+          ↕
+        Go API
+          ↕
+      PostgreSQL</code></pre>
+  <pre><code class="language-javascript">const r = await fetch('/api/status');
+const status = await r.json();</code></pre>
+</article>
+
+<article class="example-stack">
+  <p class="eyebrow">08 · Node</p><h2>Nift + Express</h2>
+  <p>Express can serve Nift's output and provide application routes beside it.</p>
+  <pre><code class="language-javascript">import express from 'express';
+const app = express();
+
+app.use(express.static('public'));
+app.get('/api/health', (_, res) =&gt; res.json({ ok: true }));
+app.listen(3000);</code></pre>
+</article>
+
+<article class="example-stack">
+  <p class="eyebrow">09 · Bun</p><h2>Nift + Bun + TypeScript</h2>
+  <p>Bun can manage packages, bundle browser code or run your server while Nift remains the document build layer.</p>
+  <pre><code class="language-bash">bun run build:frontend
+nift build-all
+bun run server</code></pre>
+</article>
+
+<article class="example-stack">
+  <p class="eyebrow">10 · Python</p><h2>Nift + FastAPI / Flask / Django</h2>
+  <p>Python owns application runtime concerns; Nift can own the static/generated frontend.</p>
+  <pre><code class="language-plaintext">Nift:   pages + templates + frontend shell
+Python: APIs + auth + business logic + database
+HTTP:   the boundary between them</code></pre>
+</article>
+
+<article class="example-stack">
+  <p class="eyebrow">11 · Realtime</p><h2>Nift + WebSockets</h2>
+  <p>A generated shell is perfectly compatible with a live application once browser JavaScript connects to a realtime backend.</p>
+  <pre><code class="language-javascript">const socket = new WebSocket('wss://example.com/ws');
+socket.addEventListener('message', ({ data }) =&gt; {
+  updateDashboard(JSON.parse(data));
+});</code></pre>
+</article>
+
+<article class="example-stack">
+  <p class="eyebrow">12 · Production pipeline</p><h2>Bundlers + minifiers + image tools</h2>
+  <p>Put Nift wherever it belongs in a larger build pipeline rather than teaching Nift to reproduce every specialist tool.</p>
+  <pre><code class="language-bash">npm run build:frontend
+npm run optimize:images
+nift build-all
+npm run minify:html</code></pre>
+</article>
+
+<article class="example-stack">
+  <p class="eyebrow">13 · Existing site</p><h2>Add Nift without rewriting</h2>
+  <p>Take repeated structure out of a site you already have.</p>
+  <pre><code class="language-plaintext">Before                After
+------                -----
+index.html            content/index.html
+about.html      →     content/about.html
+contact.html          content/contact.html
+repeated header       templates/header.html
+repeated footer       templates/footer.html</code></pre>
+</article>
+
+<article class="example-stack">
+  <p class="eyebrow">14 · Documentation</p><h2>Large shared navigation</h2>
+  <p>Templates and nested partials make shared technical navigation reusable while incremental builds avoid rebuilding unrelated pages.</p>
+  <pre><code class="language-html">&lt;div class="docs-layout"&gt;
+  \@input('templates/docs/sidebar.html')
+  &lt;main&gt;\@content&lt;/main&gt;
+&lt;/div&gt;</code></pre>
+</article>
+
+<article class="example-stack">
+  <p class="eyebrow">15 · AI-assisted</p><h2>Barebones Nift + coding assistant</h2>
+  <p>Give the assistant a small <code>ai-context.txt</code>, then spend the prompt describing the site you want rather than explaining a large framework.</p>
+  <pre><code class="language-plaintext">Read ai-context.txt and inspect this Nift project.
+
+Build a polished documentation site. Reuse templates and
+partials, use \@pathto for local project links/assets, and keep
+the existing Nift architecture.</code></pre>
+</article>
+
+<article class="example-stack">
+  <p class="eyebrow">16 · CI</p><h2>Nift in an ordinary deployment pipeline</h2>
+  <p>The final output is just files, so deployment can remain boring.</p>
+  <pre><code class="language-bash">npm ci
+npm run build
+nift build-all
+# deploy public/ using your hosting platform</code></pre>
+</article>
+</section>
+
+<section class="examples-closer">
+  <p class="eyebrow">The point</p>
+  <h2>You do not need to choose “the Nift stack.”</h2>
+  <p>Choose the stack that suits the application. Use Nift when a tiny, fast, dependency-aware templating and build layer makes that stack simpler.</p>
+  <div class="hero-actions"><a class="button button-primary" href="@pathto('docs/advanced')">Using the wider ecosystem →</a><a class="button button-secondary" href="@pathto('docs/use-cases/web-apps')">Full web application patterns →</a></div>
+</section>
+</main>

@@ -1,0 +1,39 @@
+<header class="site-header" data-header>
+	<a class="brand" href="@pathto('/')" aria-label="Nift home">
+		<img src="@pathto('public/assets/images/nift-logo.png')" alt="Nift">
+	</a>
+	<div class="header-actions">
+		<nav class="desktop-nav" aria-label="Primary navigation">
+			<a href="@pathto('/')">Home</a>
+			<a href="@pathto('docs')">Docs</a>
+			<a href="@pathto('templates')">Templates</a>
+			<a href="@pathto('examples')">Examples</a>
+			<a href="@pathto('showcase')">Showcase</a>
+			<a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub ↗</a>
+		</nav>
+		<div class="theme-switcher desktop-theme-switcher" role="group" aria-label="Colour theme">
+			<button type="button" data-theme-choice="system" title="Use system theme">System</button>
+			<button type="button" data-theme-choice="light" title="Use light theme">Light</button>
+			<button type="button" data-theme-choice="dark" title="Use dark theme">Dark</button>
+		</div>
+		<button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-toggle>
+			<span></span><span></span>
+		</button>
+	</div>
+</header>
+<div class="mobile-nav" data-mobile-nav>
+	<a href="@pathto('/')">Home</a>
+	<a href="@pathto('docs')">Documentation</a>
+	<a href="@pathto('templates')">Templates</a>
+	<a href="@pathto('examples')">Examples</a>
+	<a href="@pathto('showcase')">Showcase</a>
+	<a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub ↗</a>
+	<div class="mobile-theme-row">
+		<span>Theme</span>
+		<div class="theme-switcher" role="group" aria-label="Colour theme">
+			<button type="button" data-theme-choice="system">System</button>
+			<button type="button" data-theme-choice="light">Light</button>
+			<button type="button" data-theme-choice="dark">Dark</button>
+		</div>
+	</div>
+</div>

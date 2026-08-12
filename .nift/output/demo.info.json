@@ -1,0 +1,13 @@
+{
+	"last-built": "12:36:25 Tuesday August 11 2026",
+	"name": "demo",
+	"title": "Interactive demo",
+	"template": "templates/template.html",
+	"dependencies": [
+		"content/demo.html",
+		"templates/partials/footer.html",
+		"templates/partials/head.html",
+		"templates/partials/header.html",
+		"templates/template.html"
+	]
+}

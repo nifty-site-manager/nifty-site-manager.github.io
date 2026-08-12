@@ -1,0 +1,42 @@
+<article class="docs-article"><p class="docs-kicker">Core reference</p><h1>Page &amp; build metadata with <code>$[...]</code>.</h1><p class="docs-lead"><code>$[...]</code> exposes the page and build information Nift already has while processing a tracked file. The names below are the complete set recognised by the v4 parser.</p>
+<h2>Page metadata</h2><div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>Syntax</th><th>Value</th></tr></thead><tbody>
+<tr><td><code>\$[title]</code></td><td>The tracked title.</td></tr>
+<tr><td><code>\$[name]</code></td><td>The tracked name.</td></tr>
+<tr><td><code>\$[content-path]</code></td><td>The content file path.</td></tr>
+<tr><td><code>\$[output-path]</code></td><td>The generated output path.</td></tr>
+<tr><td><code>\$[template-path]</code></td><td>The template file path.</td></tr>
+</tbody></table></div>
+<h2>Build metadata</h2><div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>Syntax</th><th>Value</th></tr></thead><tbody>
+<tr><td><code>\$[build-timezone]</code></td><td>The build timezone.</td></tr>
+<tr><td><code>\$[build-time]</code></td><td>The current local build time.</td></tr>
+<tr><td><code>\$[build-UTC-time]</code></td><td>The current UTC build time.</td></tr>
+<tr><td><code>\$[build-date]</code></td><td>The current local build date.</td></tr>
+<tr><td><code>\$[build-UTC-date]</code></td><td>The current UTC build date.</td></tr>
+<tr><td><code>\$[build-YYYY]</code></td><td>The four-digit build year.</td></tr>
+<tr><td><code>\$[build-YY]</code></td><td>The two-digit build year.</td></tr>
+<tr><td><code>\$[build-OS]</code></td><td>The operating system reported for the build.</td></tr>
+</tbody></table></div>
+<p>Metadata names are matched exactly by the parser, including hyphens and capitalisation in names such as <code>build-UTC-time</code>, <code>build-YYYY</code> and <code>build-OS</code>.</p>
+<h2>Examples</h2><pre><code class="language-html">&lt;title&gt;My site — \$[title]&lt;/title&gt;
+&lt;body data-page="\$[name]"&gt;
+  \@content
+&lt;/body&gt;
+
+&lt;small&gt;Built \$[build-date] at \$[build-time]&lt;/small&gt;</code></pre>
+<h2>Useful while building or debugging</h2><pre><code class="language-html">&lt;!-- built from \$[content-path] using \$[template-path] --&gt;
+&lt;!-- output: \$[output-path] --&gt;</code></pre><p>Comments like these can be handy temporarily when converting a large existing site or checking which tracked item produced a generated file.</p><div class="docs-callout"><strong>Metadata, not a data language.</strong><p><code>$[...]</code> is intentionally small: it exposes facts Nift already knows about the current tracked item and build. Use ordinary project files or external tooling for richer application data.</p></div><h2>Practical examples</h2>
+<h3>Use the tracked title in the document head</h3>
+<pre><code class="language-html">&lt;title&gt;\$[title] · Nift&lt;/title&gt;</code></pre>
+<h3>Expose build information in a footer</h3>
+<pre><code class="language-html">&lt;small&gt;Built \$[build-date] on \$[build-OS]&lt;/small&gt;</code></pre>
+<h3>Leave useful diagnostics while designing a template</h3>
+<pre><code class="language-html">&lt;!--
+tracked name: \$[name]
+content:      \$[content-path]
+template:     \$[template-path]
+output:       \$[output-path]
+--&gt;</code></pre>
+<p>Those comments can be useful while developing a complicated template hierarchy and removed when you no longer need them.</p>
+<h2>Local time and UTC</h2>
+<p>Nift exposes both local and UTC build values so generated metadata can use whichever convention your deployment or content format expects. For example, a human-facing footer might use local build time while machine-oriented generated text uses UTC.</p>
+<div class="docs-next"><span>Next</span><a href="@pathto('docs/commands')">CLI commands →</a></div></article>

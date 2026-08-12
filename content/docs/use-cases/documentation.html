@@ -1,0 +1,41 @@
+<article class="docs-article">
+  <p class="docs-kicker">Pattern</p><h1>Documentation sites.</h1>
+  <p class="docs-lead">Documentation is a natural fit for Nift: many pages share the same navigation and layout, while each page's actual content remains simple and readable.</p>
+
+  <h2>Structure</h2>
+  <pre><code class="language-plaintext">content/docs/
+  getting-started.html
+  configuration.html
+  api.html
+templates/
+  docs.html
+  partials/
+    docs-sidebar.html
+    header.html
+    footer.html</code></pre>
+
+  <h2>Documentation template</h2>
+  <pre><code class="language-html">&lt;body&gt;
+  \@input('templates/partials/header.html')
+  &lt;div class="docs-layout"&gt;
+    \@input('templates/partials/docs-sidebar.html')
+    &lt;main class="docs-content"&gt;\@content&lt;/main&gt;
+  &lt;/div&gt;
+  \@input('templates/partials/footer.html')
+&lt;/body&gt;</code></pre>
+
+  <h2>Links survive nesting</h2>
+  <pre><code class="language-html">&lt;a href="\@pathto('docs/getting-started')"&gt;Getting started&lt;/a&gt;
+&lt;a href="\@pathto('docs/api')"&gt;API&lt;/a&gt;</code></pre>
+  <p>The same partial can be used by pages at different output depths because <code>\@pathto</code> resolves from the current output page.</p>
+
+  <h2>Shared docs UI becomes a dependency</h2>
+  <p>When every documentation page inputs the same sidebar, changing that sidebar marks the pages that use it as affected. That makes a large docs site a good demonstration of Nift's dependency-aware incremental builds.</p>
+
+  <div class="docs-callout"><strong>Keep authoring simple.</strong><p>You can layer Markdown conversion or another content tool beside Nift if you want it, but Nift does not require a special documentation content format.</p></div>
+<h2>Versioned documentation</h2><pre><code class="language-plaintext">content/docs/
+  v4/
+    getting-started.html
+    commands.html
+  migration/
+    v3-to-v4.html</code></pre><p>Tracked names keep internal links explicit while shared templates can give current and historical docs the same overall design.</p><h2>Documentation with interactive examples</h2><p>A docs page can still load TypeScript-generated playgrounds, search UI or copy buttons from <code>public/assets/</code>. Static/generated documentation and interactive browser features are not mutually exclusive.</p></article>

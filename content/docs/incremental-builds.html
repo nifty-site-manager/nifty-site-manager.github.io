@@ -1,0 +1,60 @@
+<article class="docs-article">
+  <p class="docs-kicker">Core concept</p>
+  <h1>Incremental builds.</h1>
+  <p class="docs-lead">During development, rebuilding everything after every edit is wasteful. Nift keeps track of what each generated file depends on so it can rebuild the outputs affected by your change instead of treating the whole project as dirty.</p>
+
+  <h2>The everyday loop</h2>
+  <pre><code class="language-bash"># edit content/templates/assets...
+nift build
+
+# edit again...
+nift build</code></pre>
+  <p>With no tracked names supplied, <code>nift build</code> dispatches to the updated-build path. That makes the normal development command intentionally boring: edit something, build what changed, refresh.</p>
+
+  <h2>A shared partial can affect many pages</h2>
+  <pre><code class="language-plaintext">templates/partials/header.html
+            │
+            ├── index
+            ├── about
+            ├── docs/getting-started
+            └── docs/configuration</code></pre>
+  <p>If those pages all include the header, Nift has enough dependency information to know they are affected when the header changes. A completely unrelated page does not need to be rebuilt just because it exists in the same project.</p>
+
+  <h2>A content edit can stay local</h2>
+  <pre><code class="language-plaintext">content/about.html changed
+        ↓
+public/about.html rebuilt
+
+content/contact.html unchanged
+        ↓
+public/contact.html left alone</code></pre>
+  <p>That difference becomes increasingly valuable as a site grows from a handful of pages into hundreds, thousands or more.</p>
+
+  <h2>Why it feels good during development</h2>
+  <div class="advanced-doc-grid">
+    <div><h2>Fast feedback</h2><p>The cost of a tiny edit can stay close to the cost of rebuilding the pages that actually use it.</p></div>
+    <div><h2>Lower resource use</h2><p>Skipping unnecessary work means less CPU time, less disk churn and less energy spent repeatedly regenerating identical files.</p></div>
+    <div><h2>Quieter machines</h2><p>On larger projects, avoiding repeated full rebuilds can also mean fewer needless CPU spikes and, yes, less time listening to your laptop/NUC fans announce that you changed one paragraph. XD</p></div>
+    <div><h2>Scales with the dependency graph</h2><p>A project does not need to rebuild as one indivisible blob. Shared changes can fan out where needed while isolated changes stay isolated.</p></div>
+  </div>
+
+  <h2>Build updated vs build all</h2>
+  <pre><code class="language-bash"># Normal development
+nift build
+# equivalent updated-build command
+nift build-updated
+
+# Deliberately rebuild every tracked output
+nift build-all</code></pre>
+  <p><code>build-all</code> remains useful when you explicitly want a clean full pass—for example before measuring full-build performance or when you simply want every output regenerated. But it should not have to be your default response to every edit.</p>
+
+  <h2>Continuous updated builds</h2>
+  <pre><code class="language-bash">nift build-auto
+
+# choose the polling sleep interval in seconds
+nift build-auto 0.5</code></pre>
+  <p>This lets Nift keep checking for changes and rebuild updated outputs while you work.</p>
+
+  <div class="docs-callout"><strong>Incremental builds are part of the workflow, not a benchmark trick.</strong><p>The practical win is that the development loop stays responsive and proportionate to the change you made.</p></div>
+  <div class="docs-next"><span>Next</span><a href="@pathto('docs/commands')">CLI commands →</a></div>
+</article>

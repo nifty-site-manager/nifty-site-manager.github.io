@@ -1,0 +1,95 @@
+<article class="docs-article">
+<p class="docs-kicker">Start here · Installation</p>
+<h1>Installing Nift.</h1>
+<p class="docs-lead">Nift is a small cross-platform native C++ program. Use one of the established package-manager channels, download a release binary, or compile the executable from source.</p>
+
+<div class="docs-callout"><strong>Always verify what you installed.</strong><p>Package-manager channels can lag behind a newly published Nift release. After installation run <code>nift version</code>. If you specifically need the newest release and your package manager has not caught up yet, use the GitHub release binary or build from source.</p></div>
+
+<h2>Quick verification</h2>
+<pre><code class="language-bash">nift version
+nift help
+nift commands</code></pre>
+<p>The current v4 dispatcher supports all three commands from outside a Nift project directory.</p>
+
+<h2>GitHub release binaries</h2>
+<p>Nift release assets are published through the project's GitHub releases page. For platforms with a supplied binary, extract the release and put the <code>nift</code> / <code>nift.exe</code> executable somewhere on your <code>PATH</code>.</p>
+<p><a class="text-link" href="https://github.com/nifty-site-manager/nsm/releases" target="_blank" rel="noreferrer">Browse Nift releases ↗</a></p>
+
+<h2 id="linux-snap">Linux — Snap</h2>
+<pre><code class="language-bash">sudo snap install nift --classic
+
+nift version</code></pre>
+<p>Uninstall with:</p>
+<pre><code class="language-bash">sudo snap remove nift</code></pre>
+<p><a class="text-link" href="https://snapcraft.io/nift" target="_blank" rel="noreferrer">Nift on Snapcraft ↗</a></p>
+
+<h2 id="linux-flatpak">Linux — Flatpak / Flathub</h2>
+<pre><code class="language-bash">flatpak install --user \
+  https://flathub.org/repo/appstream/cc.nift.nsm.flatpakref</code></pre>
+<p>The established Flatpak application ID is <code>cc.nift.nsm</code>. If you want to invoke it as <code>nift</code> from your shell, add an alias to your shell profile:</p>
+<pre><code class="language-bash">alias nift='flatpak run cc.nift.nsm'</code></pre>
+<p>Then open a new terminal or reload the profile and verify with <code>nift version</code>.</p>
+
+<h2 id="osx-brew">macOS — Homebrew</h2>
+<pre><code class="language-bash">brew install nift
+nift version</code></pre>
+<p>Uninstall with:</p>
+<pre><code class="language-bash">brew uninstall nift</code></pre>
+
+<h2 id="windows-chocolatey">Windows — Chocolatey</h2>
+<p>From an elevated terminal:</p>
+<pre><code class="language-powershell">choco install nift
+nift version</code></pre>
+<p>Uninstall with:</p>
+<pre><code class="language-powershell">choco uninstall nift</code></pre>
+<p><a class="text-link" href="https://chocolatey.org/packages/nift" target="_blank" rel="noreferrer">Nift on Chocolatey ↗</a></p>
+
+<h2>Windows — release executable</h2>
+<p>Download the Windows release archive from GitHub, extract <code>nift.exe</code>, and place it in a directory included in your user/system <code>PATH</code>. Open a new terminal after changing <code>PATH</code>, then run:</p>
+<pre><code class="language-powershell">nift version</code></pre>
+<p>Older release archives may contain additional files that belonged to earlier Nift versions. v4's reduced feature set no longer needs the old embedded scripting/runtime pieces documented by previous versions.</p>
+
+<h2 id="freebsd">FreeBSD</h2>
+<p>Nift has an established FreeBSD ports/packages install path:</p>
+<pre><code class="language-bash">pkg install www/nift</code></pre>
+<p>Or from the ports tree:</p>
+<pre><code class="language-bash">cd /usr/ports/www/nift
+make install clean</code></pre>
+
+<h2 id="gentoo">Gentoo</h2>
+<p>Nift has also been distributed through a Gentoo overlay. Once the overlay containing the Nift ebuild is configured:</p>
+<pre><code class="language-bash">emerge -atuv www-apps/nift</code></pre>
+<p>The historical development ebuild uses <code>www-apps/nift-9999</code>; check the overlay itself for its current status before relying on that development package.</p>
+
+<h2 id="source">Build from source — Linux / macOS / other Unix-like systems</h2>
+<p>The current v4 source has a straightforward Makefile and no project-local package-manager dependency tree. You need a C++ compiler, <code>make</code> and the usual native build tools for your platform.</p>
+<pre><code class="language-bash">git clone https://github.com/nifty-site-manager/nsm.git
+cd nsm
+
+make
+sudo make install
+
+nift version</code></pre>
+<p>The Makefile installs to <code>/usr/local/bin</code> by default on Unix-like systems. It supports the normal <code>PREFIX</code>/<code>DESTDIR</code> variables if you need another installation location.</p>
+<pre><code class="language-bash"># example custom prefix
+make
+sudo make install PREFIX=/opt/nift</code></pre>
+<p>Uninstall the Makefile installation with:</p>
+<pre><code class="language-bash">sudo make uninstall</code></pre>
+
+<h2>Build from source — Windows</h2>
+<p>The v4 Makefile can compile with a suitable C++/GNU make toolchain on Windows. After building, place <code>nift.exe</code> somewhere on your <code>PATH</code>. The Makefile intentionally leaves the final Windows copy/install location to you.</p>
+<pre><code class="language-powershell">make
+# copy nift.exe to a directory on PATH
+nift version</code></pre>
+
+<h2>Now create a project</h2>
+<pre><code class="language-bash">mkdir my-site
+cd my-site
+nift init .html</code></pre>
+<p>That command creates and builds Nift's barebones HTML project. From there you can continue with the <a class="text-link" href="@pathto('docs/getting-started')">Getting Started guide →</a>, start from one of the <a class="text-link" href="@pathto('templates')">downloadable templates →</a>, or use the <a class="text-link" href="@pathto('docs/ai-assistants')">AI-assisted workflow →</a>.</p>
+
+<div class="docs-callout"><strong>Pre-v4 installations remain useful for the core workflow documented here.</strong><p>The v4 surface intentionally keeps the core project tracking, templating and build concepts that existing Nift projects rely on. Some older installations expose additional features that v4 deliberately no longer documents.</p></div>
+
+<div class="docs-next"><span>Next</span><a href="@pathto('docs/getting-started')">Getting started →</a></div>
+</article>

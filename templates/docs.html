@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+	@input("templates/partials/head.html")
+</head>
+<body class="docs-page">
+	@input("templates/partials/header.html")
+	<button class="docs-menu-toggle" type="button" aria-label="Open documentation navigation" aria-expanded="false" data-docs-menu-toggle>
+		<span></span><span></span>
+	</button>
+	<div class="docs-mobile-nav" data-docs-mobile-nav>
+		@input("templates/partials/docs-sidebar.html")
+	</div>
+	<div class="docs-layout">
+		@input("templates/partials/docs-sidebar.html")
+		<main class="docs-main">
+			@content
+		</main>
+	</div>
+	@input("templates/partials/footer.html")
+	<script src="@pathto('public/assets/js/script.js')"></script>
+</body>
+</html>

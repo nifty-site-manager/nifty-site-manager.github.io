@@ -1,0 +1,14 @@
+{
+	"last-built": "23:08:56 Wednesday August 12 2026",
+	"name": "docs/advanced",
+	"title": "Advanced Nift",
+	"template": "templates/docs.html",
+	"dependencies": [
+		"content/docs/advanced.html",
+		"templates/docs.html",
+		"templates/partials/docs-sidebar.html",
+		"templates/partials/footer.html",
+		"templates/partials/head.html",
+		"templates/partials/header.html"
+	]
+}

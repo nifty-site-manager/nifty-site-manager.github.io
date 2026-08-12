@@ -1,0 +1,13 @@
+{
+	"last-built": "23:08:56 Wednesday August 12 2026",
+	"name": "examples",
+	"title": "Examples",
+	"template": "templates/template.html",
+	"dependencies": [
+		"content/examples.html",
+		"templates/partials/footer.html",
+		"templates/partials/head.html",
+		"templates/partials/header.html",
+		"templates/template.html"
+	]
+}

@@ -1,0 +1,71 @@
+<article class="docs-article">
+  <p class="docs-kicker">Project internals</p>
+  <h1><code>.nift/tracked.json</code>.</h1>
+  <p class="docs-lead"><code>tracked.json</code> is the compact list of files/pages Nift is managing. Each tracked entry gives Nift a stable name, a title and a template; project-wide path rules come from <code>config.json</code>.</p>
+
+  <h2>A small example</h2>
+  <pre><code class="language-json">{
+  "tracked": [
+    {
+      "name": "/",
+      "title": "Home",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "about",
+      "title": "About us",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "docs/getting-started",
+      "title": "Getting started",
+      "template": "templates/docs.html"
+    }
+  ]
+}</code></pre>
+
+  <h2>Required fields</h2>
+  <div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>Field</th><th>Meaning</th></tr></thead><tbody>
+    <tr><td><code>name</code></td><td>The tracked name used by Nift commands and <code>\@pathto</code>. Nift derives content/output paths from this name plus the project config.</td></tr>
+    <tr><td><code>title</code></td><td>The tracked item's title, exposed to templates as <code>\$[title]</code>.</td></tr>
+    <tr><td><code>template</code></td><td>The template file used to build that item.</td></tr>
+  </tbody></table></div>
+
+  <h2>Optional per-item extensions</h2>
+  <p>An entry can override the project's default content or output extension:</p>
+  <pre><code class="language-json">{
+  "name": "feed",
+  "title": "Feed",
+  "template": "templates/feed.xml",
+  "content-ext": ".xml",
+  "output-ext": ".xml"
+}</code></pre>
+  <p>The v4 reader recognises <code>content-ext</code> and <code>output-ext</code> on individual tracked entries. If they are absent, the defaults in <code>.nift/config.json</code> are used.</p>
+
+  <h2>Names are the useful abstraction</h2>
+  <p>Suppose your config uses <code>content/</code>, <code>public/</code> and <code>.html</code>. This entry:</p>
+  <pre><code class="language-json">{
+  "name": "blog/hello-world",
+  "title": "Hello world",
+  "template": "templates/post.html"
+}</code></pre>
+  <p>corresponds to:</p>
+  <pre><code class="language-plaintext">tracked name:   blog/hello-world
+content path:   content/blog/hello-world.html
+template path:  templates/post.html
+output path:    public/blog/hello-world.html</code></pre>
+
+  <h2>Usually manage it through Nift</h2>
+  <pre><code class="language-bash">nift track about "About us" templates/template.html
+nift mv about company
+nift cp company team
+nift untrack old-page
+nift rm obsolete-page</code></pre>
+  <p>Those commands update Nift's tracking information for you. Because the file is ordinary JSON, it is still easy to inspect, version-control and understand when debugging a project.</p>
+
+  <h2>Validation Nift performs while loading</h2>
+  <p>The current v4 reader requires a top-level <code>tracked</code> array, requires every item to have string <code>name</code>, <code>title</code> and <code>template</code> values, rejects duplicate tracked names, and rejects an item whose derived content path is the same as its template path.</p>
+
+  <div class="docs-callout"><strong>Together, the two files are Nift's project map.</strong><p><code>config.json</code> defines the global path/build rules; <code>tracked.json</code> lists the concrete outputs managed under those rules.</p></div>
+  <div class="docs-next"><span>Related</span><a href="@pathto('docs/commands')">CLI commands →</a></div>
+</article>

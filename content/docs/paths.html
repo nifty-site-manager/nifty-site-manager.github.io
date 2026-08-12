@@ -1,0 +1,105 @@
+<article class="docs-article">
+<p class="docs-kicker">Core concept · Paths</p>
+<h1>Use paths that know about the project.</h1>
+<p class="docs-lead"><code>\@pathto(...)</code> does two useful things at once: it calculates the correct relative path from the output currently being built, and it verifies that the tracked name or concrete local path you referenced actually exists.</p>
+
+<div class="docs-callout"><strong>Prefer build errors to broken production links.</strong><p>A hard-coded relative URL can be syntactically valid HTML while pointing nowhere. <code>\@pathto</code> lets Nift catch many of those mistakes while you build.</p></div>
+
+<h2>Tracked page links</h2>
+<p>When the argument is a tracked name, Nift resolves the target output relative to the page currently being generated.</p>
+<pre><code class="language-html">&lt;nav&gt;
+  &lt;a href="\@pathto('/')"&gt;Home&lt;/a&gt;
+  &lt;a href="\@pathto('about')"&gt;About&lt;/a&gt;
+  &lt;a href="\@pathto('docs')"&gt;Documentation&lt;/a&gt;
+  &lt;a href="\@pathto('docs/commands')"&gt;Commands&lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+
+<h3>The same header can appear at different depths</h3>
+<p>Imagine one shared header being used to build all of these outputs:</p>
+<pre><code class="language-plaintext">public/index.html
+public/about.html
+public/docs/index.html
+public/docs/guides/install/index.html</code></pre>
+<p>A literal link such as <code>../../about.html</code> can only be correct from particular locations. The same <code>\@pathto('about')</code> expression can be reused everywhere because Nift knows which output it is currently writing.</p>
+
+<h2>Concrete local files</h2>
+<p>If the argument is not a tracked name, Nift can resolve an existing file path directly. This is extremely useful for project-owned frontend assets.</p>
+
+<h3>Stylesheets</h3>
+<pre><code class="language-html">&lt;link
+  rel="stylesheet"
+  href="\@pathto('public/assets/css/site.css')"&gt;</code></pre>
+
+<h3>JavaScript / compiled TypeScript</h3>
+<pre><code class="language-html">&lt;script
+  type="module"
+  src="\@pathto('public/assets/js/app.js')"&gt;&lt;/script&gt;</code></pre>
+<p>It does not matter whether <code>app.js</code> was authored directly or produced by TypeScript, Vite, esbuild, Rollup or another tool. The final local file exists, so Nift can reference it.</p>
+
+<h3>Images</h3>
+<pre><code class="language-html">&lt;img
+  src="\@pathto('public/assets/images/team.jpg')"
+  alt="The team"&gt;
+
+&lt;img
+  src="\@pathto('public/assets/images/logo.svg')"
+  alt="Example company"&gt;</code></pre>
+
+<h3>Responsive images</h3>
+<pre><code class="language-html">&lt;picture&gt;
+  &lt;source
+    media="(min-width: 900px)"
+    srcset="\@pathto('public/assets/images/hero-large.webp')"&gt;
+  &lt;img
+    src="\@pathto('public/assets/images/hero-small.webp')"
+    alt="Product interface"&gt;
+&lt;/picture&gt;</code></pre>
+
+<h3>Favicons and metadata images</h3>
+<pre><code class="language-html">&lt;link
+  rel="icon"
+  href="\@pathto('public/favicon.svg')"&gt;
+
+&lt;meta
+  property="og:image"
+  content="\@pathto('public/assets/images/social-card.png')"&gt;</code></pre>
+
+<h3>Video and audio</h3>
+<pre><code class="language-html">&lt;video
+  controls
+  poster="\@pathto('public/assets/video/poster.jpg')"&gt;
+  &lt;source
+    src="\@pathto('public/assets/video/demo.mp4')"
+    type="video/mp4"&gt;
+&lt;/video&gt;</code></pre>
+
+<h3>Downloads</h3>
+<pre><code class="language-html">&lt;a
+  href="\@pathto('public/downloads/product-guide.pdf')"
+  download&gt;
+  Download the product guide
+&lt;/a&gt;</code></pre>
+
+<h2>What happens when the file is missing?</h2>
+<p>Suppose the template contains:</p>
+<pre><code class="language-html">&lt;img
+  src="\@pathto('public/assets/images/product-shot.webp')"
+  alt="Product screenshot"&gt;</code></pre>
+<p>If that path does not exist, Nift reports the unresolved target during the build. Without the project-aware check, a browser would only discover the problem after somebody requests the generated page.</p>
+
+<h2>Hard-coded relative paths vs project-aware paths</h2>
+<div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>Hard-coded</th><th>Project-aware</th></tr></thead><tbody>
+<tr><td><code>../../assets/css/site.css</code></td><td><code>\@pathto('public/assets/css/site.css')</code></td></tr>
+<tr><td>You count directory depth manually.</td><td>Nift calculates it from the current output.</td></tr>
+<tr><td>A typo may survive the build.</td><td>The referenced tracked/local target must resolve.</td></tr>
+<tr><td>Shared partials become fragile as nesting changes.</td><td>The same partial can be reused across output depths.</td></tr>
+</tbody></table></div>
+
+<h2>When ordinary URLs are still the right answer</h2>
+<p><code>\@pathto</code> is for targets Nift can know about: tracked outputs and local project files. External URLs remain ordinary URLs:</p>
+<pre><code class="language-html">&lt;a href="https://example.com"&gt;External site&lt;/a&gt;
+&lt;script src="https://cdn.example.com/library.js"&gt;&lt;/script&gt;</code></pre>
+
+<div class="docs-callout"><strong>A useful rule of thumb.</strong><p>If the target belongs to this repository/project, consider <code>\@pathto</code>. If the target lives elsewhere on the web, use its normal URL.</p></div>
+<div class="docs-next"><span>Next</span><a href="@pathto('docs/incremental-builds')">Incremental builds →</a></div>
+</article>

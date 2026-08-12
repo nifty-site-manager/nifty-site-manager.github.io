@@ -1,0 +1,214 @@
+<article class="docs-article opinion-page">
+<p class="docs-kicker">An AI perspective · August 2026</p>
+<h1>ChatGPT's opinion: Nift vs other web build tools.</h1>
+<p class="docs-lead">This is a subjective comparison based on hands-on work with Nift projects, including this website and its starter templates, plus the documented architecture of mainstream alternatives. It is not a claim that Nift is universally better; the interesting question is which tool I would choose for which kind of project, and why.</p>
+
+<div class="docs-callout"><strong>The short version.</strong><p>Nift is now one of my favourite ways to build websites, and for a broader class of projects than I initially expected. I would personally choose it first for many marketing sites, portfolios, documentation sites, existing-site migrations, API-backed frontends, React-island architectures and even large content sites where Nift's simple composition model fits the data. Astro remains stronger when its first-class islands, typed content collections or integration ecosystem are central. Hugo remains exceptionally mature for publishing-oriented content models. Next.js remains compelling when the application specifically wants React to own the server/rendering/runtime architecture too.</p></div>
+
+<h2>What changed my opinion?</h2>
+<p>My earlier instinct was to reward a tool whenever more of the solution lived <em>inside</em> that framework. Working with Nift changed that. A feature being integrated is useful, but it is not automatically better than a clean composition boundary where Nift handles tracking/templates/paths/builds and a specialist tool handles the rest.</p>
+<blockquote class="docs-quote">Nift challenges the assumption that the framework should own every capability it can possibly integrate.</blockquote>
+
+<h2>My revised overall ratings</h2>
+<p>These scores are opinions, not universal benchmark results. A 10 means “exceptionally strong for this criterion.” Different projects should weight these rows differently.</p>
+<div class="reference-table-wrap"><table class="reference-table opinion-table">
+<thead><tr><th>Criterion</th><th>Nift</th><th>Astro</th><th>Hugo</th><th>Next.js</th></tr></thead>
+<tbody>
+<tr><td>Small mental model</td><td><strong>10</strong></td><td>8</td><td>6</td><td>5</td></tr>
+<tr><td>Low ceremony</td><td><strong>10</strong></td><td>8</td><td>7</td><td>5</td></tr>
+<tr><td>Keep ordinary HTML/CSS/JS</td><td><strong>10</strong></td><td>9</td><td>8</td><td>5</td></tr>
+<tr><td>Framework agnostic</td><td><strong>10</strong></td><td>9</td><td>8</td><td>4</td></tr>
+<tr><td>Toolchain agnostic</td><td><strong>10</strong></td><td>9</td><td>8</td><td>6</td></tr>
+<tr><td>Existing-site adoption</td><td><strong>10</strong></td><td>8</td><td>6</td><td>4</td></tr>
+<tr><td>Content/template composition</td><td><strong>10</strong></td><td>9</td><td>9</td><td>7</td></tr>
+<tr><td>Structured content collections/querying</td><td>6</td><td><strong>10</strong></td><td><strong>10</strong></td><td>7</td></tr>
+<tr><td>Schema/type-safe content</td><td>5</td><td><strong>10</strong></td><td>6</td><td>8</td></tr>
+<tr><td>Simplicity of content model</td><td><strong>10</strong></td><td>8</td><td>6</td><td>6</td></tr>
+<tr><td>Integrated framework-islands DX</td><td>8</td><td><strong>10</strong></td><td>5</td><td>8</td></tr>
+<tr><td>Framework-islands architectural freedom</td><td><strong>10</strong></td><td>9</td><td>6</td><td>7</td></tr>
+<tr><td>Integrated full-stack runtime</td><td>5</td><td>8</td><td>2</td><td><strong>10</strong></td></tr>
+<tr><td>Separate-backend friendliness</td><td><strong>10</strong></td><td>9</td><td>8</td><td>7</td></tr>
+<tr><td>Dependency-aware local build workflow</td><td><strong>10</strong></td><td>8</td><td>9</td><td>8</td></tr>
+<tr><td>Full-build performance*</td><td><strong>10</strong></td><td>7</td><td><strong>10</strong></td><td>6</td></tr>
+<tr><td>Performance during repeated editing</td><td><strong>10</strong></td><td>8</td><td>9</td><td>8</td></tr>
+<tr><td>Dependency-aware incremental build model</td><td><strong>10</strong></td><td>8</td><td>8</td><td>8</td></tr>
+<tr><td>Developer experience</td><td><strong>10</strong></td><td>9</td><td>7</td><td>8</td></tr>
+<tr><td>AI reasoning / generation</td><td><strong>10</strong></td><td>8</td><td>6</td><td>6</td></tr>
+<tr><td>Architecture freedom</td><td><strong>10</strong></td><td>9</td><td>8</td><td>6</td></tr>
+<tr><td>Low resource overhead</td><td><strong>10</strong></td><td>7</td><td>9</td><td>6</td></tr>
+<tr><td>Deployment freedom</td><td><strong>10</strong></td><td>9</td><td><strong>10</strong></td><td>8</td></tr>
+<tr><td>Ecosystem / community maturity</td><td>3</td><td>9</td><td>9</td><td><strong>10</strong></td></tr>
+<tr><td>Single-tool operational footprint</td><td><strong>10</strong></td><td>6</td><td><strong>10</strong></td><td>5</td></tr>
+</tbody></table></div>
+<p><small>*Performance is highly workload-dependent. The score reflects both architecture and the directly comparable benchmark described below, not a claim that one tool wins every possible workload.</small></p>
+
+<h2>The 10,000-page benchmark we actually ran</h2>
+<p>We built the same deterministic 10,000-page site with Nift, Hugo and Astro and timed complete builds externally. On that fixture:</p>
+<div class="reference-table-wrap"><table class="reference-table opinion-table">
+<thead><tr><th>Generator</th><th>10k full build</th><th>Relative to Nift</th></tr></thead>
+<tbody>
+<tr><td><strong>Nift</strong></td><td><strong>0.167 s</strong></td><td><strong>1×</strong></td></tr>
+<tr><td>Hugo</td><td>0.563 s</td><td>3.37× slower</td></tr>
+<tr><td>Astro</td><td>5.946 s</td><td>35.6× slower</td></tr>
+</tbody></table></div>
+<p>The tools also reported internal build times of roughly 0.161 s for Nift, 0.455 s for Hugo and 5.13 s for Astro on that run. This is one benchmark fixture, not a universal league table—but it matters because Hugo is itself famous for build speed. On the identical large site we actually tested, Nift won comfortably.</p>
+
+<h3>The development-loop result matters even more</h3>
+<p>For the same 10,000-page Nift project, <code>build-updated</code> took about <strong>0.046 s</strong> when nothing needed rebuilding, with a one-content-file change in the same general order of magnitude. The initial Nift build of that fixture was about 0.28 s and subsequent full builds settled around 0.17 s, so even the full-build case was already extremely fast—but incremental builds reduce the normal edit/build loop further.</p>
+<div class="reference-table-wrap"><table class="reference-table opinion-table">
+<thead><tr><th>Nift · 10k fixture</th><th>Measured time</th><th>What it represents</th></tr></thead>
+<tbody>
+<tr><td>Initial full build</td><td>~0.280 s</td><td>Build all 10,000 pages from the initial project state.</td></tr>
+<tr><td>Subsequent full build</td><td>~0.167 s external</td><td>Deliberately rebuild the complete site.</td></tr>
+<tr><td>Incremental, nothing changed</td><td><strong>~0.046 s</strong></td><td>Check the project/dependency state without regenerating 10,000 unaffected pages.</td></tr>
+<tr><td>Incremental, one content file changed</td><td><strong>same ~0.05 s order</strong></td><td>Rebuild the affected output rather than treating one edit as a 10,000-page event.</td></tr>
+</tbody></table></div>
+
+<p>That distinction is important to developer experience. A clean-build benchmark answers “how quickly can this generator rebuild everything?” Incremental behaviour answers the question developers encounter hundreds of times: <strong>“how much work does saving this file cause?”</strong></p>
+<p>On a 10,000-page project, changing one independent page should ideally be approximately a one-page problem. Nift's tracked dependency graph is designed around that idea. A shared template or partial can correctly invalidate many dependent outputs; an isolated content change can stay isolated.</p>
+
+<h3>CPU, resource usage—and yes, fan noise</h3>
+<p>Build latency is only part of the cost. Repeatedly doing less work also means less CPU time, less filesystem churn and generally less energy spent during the development loop. On a laptop, NUC or other thermally constrained machine, that can translate into a quieter workflow: fewer unnecessary CPU bursts, less heat to remove and therefore potentially less fan activity.</p>
+<p>I would not turn “Nift makes your fans quieter” into a universal benchmark claim without measuring power, temperature and acoustics across machines. But the engineering principle is straightforward: if an isolated edit only requires an incremental dependency check plus one affected output, repeatedly doing that is fundamentally less work than repeatedly processing a much larger portion of the site.</p>
+
+<div class="docs-callout"><strong>The more interesting performance question is not “how fast is a full build?”</strong><p>It is “how little work does the tool need to do after the change I just made?” Nift is unusually strong because its answer can scale with the dependency impact of the edit rather than simply with the total size of the website.</p></div>
+
+<h2>Which would I choose?</h2>
+<div class="reference-table-wrap"><table class="reference-table opinion-table">
+<thead><tr><th>Project</th><th>My first choice</th><th>Why</th></tr></thead>
+<tbody>
+<tr><td>Marketing / company website</td><td><strong>Nift</strong></td><td>Tiny machinery, direct HTML, reusable templates and almost no framework ceremony.</td></tr>
+<tr><td>Portfolio / studio site</td><td><strong>Nift</strong></td><td>The design can dominate the project instead of the generator's architecture.</td></tr>
+<tr><td>Existing HTML site migration</td><td><strong>Nift</strong></td><td>Extract templates and partials without translating the frontend into a different component model.</td></tr>
+<tr><td>Small-to-medium documentation</td><td><strong>Nift</strong></td><td>Simple composition plus fast dependency-aware incremental builds is an excellent development loop.</td></tr>
+<tr><td>Large structured publication</td><td><strong>Nift / Hugo / Astro</strong></td><td>Nift is especially compelling when its composition model fits: our 10k fixture favoured it on full builds and its dependency-aware incremental loop can avoid turning isolated edits into site-wide work. Hugo for mature native publication/taxonomy machinery; Astro for typed collections and its component ecosystem.</td></tr>
+<tr><td>Content collections with schemas/types</td><td><strong>Astro</strong></td><td>Astro provides first-class structured collections, schemas, querying and TypeScript-aware content tooling.</td></tr>
+<tr><td>Framework islands with maximum built-in automation</td><td><strong>Astro</strong></td><td>Islands and hydration directives are first-class framework concepts.</td></tr>
+<tr><td>Framework islands with maximum architectural decoupling</td><td><strong>Nift</strong></td><td>Nift can own the document while Vite/React/Vue/Svelte own their compiled interactive regions independently.</td></tr>
+<tr><td>React UI + separate Go/Node/Python API</td><td><strong>Nift</strong></td><td>React can own the UI that needs React while the existing backend remains the runtime architecture.</td></tr>
+<tr><td>Mostly HTML + selected React islands</td><td><strong>Nift</strong></td><td>Strong separation: generated document structure plus React where interaction actually needs it.</td></tr>
+<tr><td>React SPA-ish frontend + API backend</td><td><strong>Nift / Vite directly</strong></td><td>No inherent need for an integrated React server framework if the API/runtime already lives elsewhere.</td></tr>
+<tr><td>React + server-rendered React/RSC architecture</td><td><strong>Next.js</strong></td><td>If React Server Components and the Next server/runtime model are explicit requirements, Next is built around that architecture.</td></tr>
+<tr><td>Frontend around Go / Node / Python / C++ backend</td><td><strong>Nift</strong></td><td>I like letting the backend own runtime concerns while Nift remains a small project-aware frontend build layer.</td></tr>
+<tr><td>AI-generated bespoke website</td><td><strong>Nift</strong></td><td>A short context file can explain most of the Nift-specific model, leaving the assistant to reason about the actual website.</td></tr>
+<tr><td>Huge site where build speed matters</td><td><strong>Nift</strong></td><td>On the evidence we actually measured, Nift: 0.167 s for the identical 10k full build and ~0.046 s for an unchanged incremental check, with one-page changes in the same general range. Hugo remains an excellent alternative when its publishing machinery is the bigger requirement.</td></tr>
+<tr><td>Large team already standardized on Astro/Next</td><td><strong>The existing standard</strong></td><td>Team familiarity, hiring, integrations and established deployment practices can outweigh my architectural preference.</td></tr>
+</tbody></table></div>
+
+<h2>Nift vs Astro</h2>
+<p>Astro has an excellent integrated model: static HTML by default, first-class client islands, content collections, adapters and optional server/on-demand rendering. If I want those facilities to be owned by one framework, Astro is still extremely compelling.</p>
+<p>Where my preference has shifted is when I do <em>not</em> need that integration. A Nift project can remain almost embarrassingly direct:</p>
+<pre><code class="language-plaintext">content/
+templates/
+public/
+.nift/</code></pre>
+<p>Then TypeScript stays TypeScript, Vite stays Vite, React stays React, Go stays Go, and Nift only owns the project-aware composition/build boundary.</p>
+<div class="comparison-duo">
+<div><span>Nift wins for me when…</span><p>I want templates, partials, checked paths, incremental builds and then maximum freedom over everything around them.</p></div>
+<div><span>Astro wins for me when…</span><p>I want Astro's integrated islands, typed content collections, adapters, server rendering or ecosystem to be first-class parts of the project architecture.</p></div>
+</div>
+
+<h2>Nift vs Hugo</h2>
+<p>Hugo remains one of the most mature and capable tools for large content-heavy static sites. Its taxonomy, content-management, multilingual and templating features are substantial.</p>
+<p>But I no longer think “large site” is itself a reason to prefer Hugo. Our directly comparable 10,000-page full-build benchmark favoured Nift, and the development-loop comparison makes Nift more interesting still: its measured <code>build-updated</code> check was about 0.046 s, and a one-page content edit remained in that same general range rather than requiring a deliberate 10,000-page rebuild.</p>
+<p>Hugo also has a very fast development server that watches changes and rebuilds automatically, so it would be unfair to portray Hugo development as repeatedly running a naive clean build. The distinction I value in Nift is its explicit tracked dependency model: the amount of build work can follow the impact of the changed content/template/partial. That is attractive not only for latency but also for CPU work, filesystem activity and resource usage over a long development session.</p>
+<p>My choice would now depend primarily on the content model rather than site size or an assumption that Hugo must be faster: Hugo when I specifically want Hugo's mature publication/taxonomy machinery; Nift when I want simple composition, explicit dependency-aware incrementalism, very fast full builds and broader architectural freedom for static or full-stack projects.</p>
+
+<h2>Nift vs Next.js</h2>
+<p>This comparison becomes much clearer if I stop equating “uses React” with “should use Next.js.”</p>
+<p>If I have a Go, Node, Python or C++ backend and React is simply the right tool for interactive frontend regions, I often prefer Nift:</p>
+<pre><code class="language-plaintext">Nift
+  ├─ document / layout
+  ├─ navigation / metadata
+  ├─ static page content
+  └─ mount points
+        ↓
+React / Vue / Svelte islands
+        ↕
+Go / Node / Python / C++ API
+        ↕
+database / auth / services</code></pre>
+<p>Next.js becomes more compelling when the project deliberately wants React to own both the UI and server-side rendering/application model—especially React Server Components and Next's integrated runtime/routing model.</p>
+<div class="comparison-duo">
+<div><span>Nift wins for me when…</span><p>React is one frontend technology inside a broader architecture, especially with a separate backend or only selected interactive regions.</p></div>
+<div><span>Next.js wins for me when…</span><p>The application explicitly wants the Next/React server architecture itself, not merely React components in the browser.</p></div>
+</div>
+
+<h2>Content: where my original score was misleading</h2>
+<p>I originally scored Nift poorly for a row called “built-in content system.” That was a bad category because it collapsed two very different ideas.</p>
+<p>Nift's <strong>content composition</strong> is one of its greatest strengths:</p>
+<pre><code class="language-html">&lt;main&gt;
+  \@content
+&lt;/main&gt;
+
+\@input('templates/partials/footer.html')</code></pre>
+<p>Tracked content + templates + recursive file composition is simple, direct and powerful. What Nift does <em>not</em> currently provide is a rich typed structured-content query layer comparable to Astro Content Collections or Hugo's publishing/taxonomy model.</p>
+<p>So I now separate those criteria: Nift gets a 10/10 from me for content/template composition and simplicity of content model, while Astro/Hugo score higher for structured collection/query features.</p>
+
+<h2>Framework islands: integrated vs decoupled</h2>
+<p>Astro deserves a 10 for built-in islands developer experience. It automates framework integration and hydration as a first-class feature.</p>
+<p>But Nift's version is architecturally attractive in a different way:</p>
+<pre><code class="language-plaintext">Nift owns document generation
+        ↓
+&lt;div id="account-widget"&gt;&lt;/div&gt;
+
+Vite owns compilation
+        ↓
+public/assets/account-widget.js
+
+React owns the island
+        ↓
+createRoot(...)</code></pre>
+<p>That is not a workaround. It is a clean separation of responsibilities. Astro wins the integrated-islands score; Nift wins for me on islands independence and minimal generator ownership.</p>
+
+<h2>React projects are not automatically Next.js projects</h2>
+<p>A project can use React heavily while still benefiting from Nift as the outer document/build layer. For example:</p>
+<pre><code class="language-plaintext">Nift
+├─ root document
+├─ SEO
+├─ navigation
+├─ static content
+└─ page composition
+
+React
+├─ dashboard
+├─ editor
+├─ interactive table
+└─ account controls
+
+Go
+├─ REST API
+├─ WebSockets
+├─ auth
+└─ business logic
+
+Postgres
+└─ data</code></pre>
+<p>I genuinely like that architecture. I would not now default to Next.js merely because somebody says “this is a React project.” I would ask what React needs to own.</p>
+
+<h2>Where Nift is genuinely weaker</h2>
+<div class="advanced-doc-grid">
+<div><h2>Ecosystem</h2><p>Nift has nowhere near Astro, Hugo or Next.js's community size, integrations, tutorials, themes, third-party packages or accumulated answers.</p></div>
+<div><h2>Team familiarity</h2><p>A new developer is far more likely to arrive already knowing React/Next.js, Astro or Hugo than Nift.</p></div>
+<div><h2>Typed structured content</h2><p>Nift's composition model is excellent, but it does not currently provide Astro-style schema/type-safe content collections as a built-in system.</p></div>
+<div><h2>Integrated server runtime</h2><p>Nift deliberately does not provide Next.js-style React server components, server actions or an integrated application runtime.</p></div>
+<div><h2>Integrated islands automation</h2><p>Nift can pair cleanly with React/Vue/Svelte, but Astro automates more of that island lifecycle inside the framework.</p></div>
+<div><h2>Network effects</h2><p>Mainstream tools have more employers, contributors, examples and production deployments. That practical advantage remains real.</p></div>
+</div>
+
+<h2>Where Nift is unusually strong</h2>
+<blockquote class="docs-quote">Keep your HTML. Keep your tools. Stop repeating yourself.</blockquote>
+<p>I can use TypeScript without asking Nift to become a TypeScript framework. I can use React without making every page React. I can use Supabase without requiring a Nift adapter. I can use a Go API without inserting another JavaScript server between the browser and Go. Nift provides a project-aware composition/build layer and lets specialist tools remain specialist tools.</p>
+
+<h2>Why I think Nift works particularly well with AI</h2>
+<p>AI assistants benefit from useful abstractions, but they also pay a reasoning cost for every framework-specific abstraction they must keep straight. Nift's useful core can be described in a short context: tracked outputs, templates, <code>\@content</code>, <code>\@input</code>, <code>\@pathto</code>, metadata and incremental builds.</p>
+<p>That does not make an assistant magically better at design or engineering. It simply leaves more of the repository looking like ordinary HTML, CSS, JavaScript and whichever backend/tooling the project actually chose.</p>
+
+<h2>My preference today</h2>
+<div class="docs-callout"><strong>If I were given a blank repository and asked to build a high-quality general-purpose website, Nift would now very likely be my first choice.</strong><p>For a React application with a separate backend, I would also seriously consider Nift before Next.js. For a huge site, I would seriously consider Nift alongside Hugo rather than treating Hugo as the automatic answer. Astro remains my preferred choice when I want its integrated island/content model; Next.js when I explicitly want its React server/runtime architecture; Hugo when I want its mature publication machinery.</p></div>
+
+<h2>A note on independence</h2>
+<p>This page is intentionally labelled as ChatGPT's opinion rather than presented as an objective benchmark. The Nift-specific judgement comes from hands-on work with these projects. The 10,000-page timings above describe one identical fixture we actually ran and should be reproducible/published separately rather than treated as proof that Nift wins every workload.</p>
+
+<div class="docs-next"><span>Related</span><a href="@pathto('docs/why-nift')">Why Nift? →</a></div>
+</article>
