@@ -126,7 +126,15 @@
     script.onerror = () => console.warn('highlight.js failed to load; code examples remain readable without it.');
     document.body.appendChild(script);
   };
-  loadHighlighting();
+  const scheduleHighlighting = () => {
+    if (!codeBlocks.length) return;
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(loadHighlighting, { timeout: 1800 });
+    } else {
+      window.addEventListener('load', () => setTimeout(loadHighlighting, 0), { once: true });
+    }
+  };
+  scheduleHighlighting();
 
   const items = document.querySelectorAll('.reveal');
   if (!('IntersectionObserver' in window)) {
