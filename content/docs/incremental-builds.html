@@ -3,7 +3,8 @@
   <h1>Incremental builds.</h1>
   <p class="docs-lead">During development, rebuilding everything after every edit is wasteful. Nift keeps track of what each generated file depends on so it can rebuild the outputs affected by your change instead of treating the whole project as dirty.</p>
 
-  <h2>The everyday loop</h2>
+  <div class="docs-callout"><strong>Preview before you build.</strong><p><code>nift status</code> runs the same dependency analysis without changing outputs. It lists affected pages and reasons such as a changed dependency, missing generated output or missing build metadata. Use <code>status -p</code> when you want every page/reason instead of a compact fan-out summary.</p></div>
+<h2>The everyday loop</h2>
   <pre><code class="language-bash"># edit content/templates/assets...
 nift build
 
@@ -57,4 +58,5 @@ nift build-auto 0.5</code></pre>
 
   <div class="docs-callout"><strong>Incremental builds are part of the workflow, not a benchmark trick.</strong><p>The practical win is that the development loop stays responsive and proportionate to the change you made.</p></div>
   <div class="docs-next"><span>Next</span><a href="@pathto('docs/commands')">CLI commands →</a></div>
+<div class="docs-callout"><strong><code>build-auto</code> stays quiet.</strong><p>It checks every 200 ms, writes the latest meaningful build output to <code>.nift/build-auto.log</code> only when that text changes, and strips terminal colour codes from the log. In an interactive terminal press <code>q</code> to stop.</p></div>
 </article>

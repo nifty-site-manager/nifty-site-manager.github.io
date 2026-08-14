@@ -1,14 +1,13 @@
 {
-	"last-built": "04:53:14 Thursday August 13 2026",
-	"name": "docs/tracked-json",
-	"title": "Tracked project files",
-	"template": "templates/docs.html",
-	"dependencies": [
-		"content/docs/tracked-json.html",
-		"templates/docs.html",
-		"templates/partials/docs-sidebar.html",
-		"templates/partials/footer.html",
-		"templates/partials/head.html",
-		"templates/partials/header.html"
-	]
+  "name": "docs/tracked-json",
+  "title": "Tracked project files",
+  "template": "templates/docs.html",
+  "dependencies": [
+    "content/docs/tracked-json.html",
+    "templates/docs.html",
+    "templates/partials/docs-sidebar.html",
+    "templates/partials/footer.html",
+    "templates/partials/head.html",
+    "templates/partials/header.html"
+  ]
 }

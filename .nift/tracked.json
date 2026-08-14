@@ -36,6 +36,11 @@
       "template": "templates/docs.html"
     },
     {
+      "name": "docs/how-nift-works",
+      "title": "How Nift works",
+      "template": "templates/docs.html"
+    },
+    {
       "name": "docs/project-structure",
       "title": "Project structure",
       "template": "templates/docs.html"
@@ -43,6 +48,11 @@
     {
       "name": "docs/templating",
       "title": "Templating essentials",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/comments",
+      "title": "Comments",
       "template": "templates/docs.html"
     },
     {
@@ -113,6 +123,11 @@
     {
       "name": "docs/dep",
       "title": "Explicit dependencies",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/user-dependencies",
+      "title": "Per-page dependency JSON",
       "template": "templates/docs.html"
     },
     {

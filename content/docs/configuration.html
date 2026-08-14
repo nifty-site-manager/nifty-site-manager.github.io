@@ -24,7 +24,7 @@
     <tr><td><code>output-dir</code></td><td>Base directory used to derive generated output paths. For web projects, <code>public/</code> is a convenient convention.</td></tr>
     <tr><td><code>output-ext</code></td><td>Default output extension. It must begin with <code>.</code>.</td></tr>
     <tr><td><code>default-template</code></td><td>Template used by newly tracked items when a different template is not supplied.</td></tr>
-    <tr><td><code>build-threads</code></td><td>Number of build threads. The generated config uses <code>-1</code>, meaning the default based on available cores. A missing/invalid zero value is reset to <code>-1</code>.</td></tr>
+    <tr><td><code>build-threads</code></td><td>Controls build and incremental-analysis worker count. A positive value uses that many threads; <code>0</code> uses hardware concurrency; a negative value is a hardware-concurrency multiplier, so <code>-1</code> means 1× available hardware threads and <code>-2</code> means 2×.</td></tr>
     <tr><td><code>incremental-mode</code></td><td>How Nift determines whether dependencies changed: <code>modified</code>, <code>hash</code>, or <code>hybrid</code>.</td></tr>
   </tbody></table></div>
 
@@ -54,8 +54,8 @@ public/docs/getting-started.html</code></pre>
   <h2>Incremental modes</h2>
   <div class="advanced-doc-grid">
     <div><h2><code>modified</code></h2><p>Uses modification information to decide whether inputs have changed. This is the generated default and is fast for everyday development.</p></div>
-    <div><h2><code>hash</code></h2><p>Uses content hashes when determining changes.</p></div>
-    <div><h2><code>hybrid</code></h2><p>Uses the hybrid mode implemented by Nift, combining its change-detection strategies.</p></div>
+    <div><h2><code>hash</code></h2><p>Uses stored content hashes when determining changes. Files and directory dependencies are hashed by content; directories include their names and nested contents deterministically.</p></div>
+    <div><h2><code>hybrid</code></h2><p>Checks modification times <em>or</em> content hashes. It catches ordinary timestamp changes quickly while also detecting content changes whose mtime was preserved.</p></div>
   </div>
 
   <h2>Should you edit it?</h2>

@@ -1,13 +1,12 @@
 {
-	"last-built": "04:53:14 Thursday August 13 2026",
-	"name": "showcase",
-	"title": "Built with Nift",
-	"template": "templates/template.html",
-	"dependencies": [
-		"content/showcase.html",
-		"templates/partials/footer.html",
-		"templates/partials/head.html",
-		"templates/partials/header.html",
-		"templates/template.html"
-	]
+  "name": "showcase",
+  "title": "Built with Nift",
+  "template": "templates/template.html",
+  "dependencies": [
+    "content/showcase.html",
+    "templates/partials/footer.html",
+    "templates/partials/head.html",
+    "templates/partials/header.html",
+    "templates/template.html"
+  ]
 }

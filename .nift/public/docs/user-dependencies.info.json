@@ -1,9 +1,9 @@
 {
-  "name": "docs/metadata",
-  "title": "Page and build metadata",
+  "name": "docs/user-dependencies",
+  "title": "Per-page dependency JSON",
   "template": "templates/docs.html",
   "dependencies": [
-    "content/docs/metadata.html",
+    "content/docs/user-dependencies.html",
     "templates/docs.html",
     "templates/partials/docs-sidebar.html",
     "templates/partials/footer.html",

@@ -1,9 +1,9 @@
 {
-  "name": "docs/metadata",
-  "title": "Page and build metadata",
+  "name": "docs/comments",
+  "title": "Comments",
   "template": "templates/docs.html",
   "dependencies": [
-    "content/docs/metadata.html",
+    "content/docs/comments.html",
     "templates/docs.html",
     "templates/partials/docs-sidebar.html",
     "templates/partials/footer.html",

@@ -1,14 +1,13 @@
 {
-	"last-built": "04:53:14 Thursday August 13 2026",
-	"name": "docs/ai-opinion",
-	"title": "ChatGPT's opinion on Nift vs other build tools",
-	"template": "templates/docs.html",
-	"dependencies": [
-		"content/docs/ai-opinion.html",
-		"templates/docs.html",
-		"templates/partials/docs-sidebar.html",
-		"templates/partials/footer.html",
-		"templates/partials/head.html",
-		"templates/partials/header.html"
-	]
+  "name": "docs/ai-opinion",
+  "title": "ChatGPT's opinion on Nift vs other build tools",
+  "template": "templates/docs.html",
+  "dependencies": [
+    "content/docs/ai-opinion.html",
+    "templates/docs.html",
+    "templates/partials/docs-sidebar.html",
+    "templates/partials/footer.html",
+    "templates/partials/head.html",
+    "templates/partials/header.html"
+  ]
 }

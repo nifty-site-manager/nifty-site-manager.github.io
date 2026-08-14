@@ -30,8 +30,10 @@
   <h2>The everyday reference.</h2>
   <div class="docs-step-grid">
     <a href="@pathto('docs/paths')"><span>Core</span><h2>Paths &amp; links</h2><p>Use <code>\@pathto</code> to reuse links from any nesting depth and catch missing local targets during builds.</p></a>
+    <a href="@pathto('docs/comments')"><span>Template language</span><h2>Comments</h2><p>Use Nift comments for source-only notes and ordinary HTML comments when the comment belongs in the generated page.</p></a>
     <a href="@pathto('docs/metadata')"><span>Core</span><h2>Page &amp; build metadata</h2><p>Use tracked titles, names, paths, dates, times and build information with <code>\$[...]</code>.</p></a>
     <a href="@pathto('docs/commands')"><span>CLI</span><h2>Commands</h2><p>Track, build, inspect, watch, move, copy and remove the files Nift manages.</p></a>
+    <a href="@pathto('docs/how-nift-works')"><span>Architecture</span><h2>How Nift works</h2><p>Follow a tracked item through parsing, dependency discovery, build metadata, incremental analysis and parallel rendering.</p></a>
     <a href="@pathto('docs/project-structure')"><span>Structure</span><h2>Project layout</h2><p>See how <code>content/</code>, <code>templates/</code>, <code>public/</code> and the rest of your repository can fit together.</p></a>
   </div>
 
@@ -39,7 +41,8 @@
   <div class="docs-step-grid">
     <a href="@pathto('docs/configuration')"><span>.nift</span><h2>config.json</h2><p>Project-wide directories, extensions, template defaults, thread count and incremental mode.</p></a>
     <a href="@pathto('docs/tracked-json')"><span>.nift</span><h2>tracked.json</h2><p>The names, titles, templates and optional per-item extension overrides for tracked outputs.</p></a>
-    <a href="@pathto('docs/dep')"><span>Advanced escape hatch</span><h2>\@dep</h2><p>Only for the uncommon external dependency that Nift cannot infer from normal composition.</p></a>
+    <a href="@pathto('docs/dep')"><span>Explicit dependencies</span><h2>\@dep</h2><p>Declare a dependency in the source exactly where the relationship matters.</p></a>
+    <a href="@pathto('docs/user-dependencies')"><span>Per-page metadata</span><h2>*.deps.json</h2><p>Declare additional file or directory dependencies beside a tracked content file.</p></a>
   </div>
 
   <h2>Ship what you build.</h2>

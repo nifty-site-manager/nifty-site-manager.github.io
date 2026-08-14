@@ -90,7 +90,11 @@ public/
   alt="Site logo"&gt;</code></pre>
   <p>For tracked names, Nift calculates the correct relative URL from the page being built. For concrete local paths, the target must exist—so a typo can become a build error instead of a broken link or image after deployment.</p>
 
-  <h2>Choose your starting path</h2>
+  <h2>See why Nift wants to rebuild</h2>
+<pre><code class="language-bash">nift status</code></pre>
+<p><code>status</code> performs the incremental analysis without writing output. It is useful before a build, while debugging a dependency, and in automation that needs to understand project state.</p>
+
+<h2>Choose your starting path</h2>
   <p>Once Nift is installed, there are three especially easy ways to begin a real project.</p>
   <div class="getting-paths">
     <a href="@pathto('docs/templating')">

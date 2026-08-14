@@ -1,9 +1,9 @@
 {
-  "name": "docs/metadata",
-  "title": "Page and build metadata",
+  "name": "docs/how-nift-works",
+  "title": "How Nift works",
   "template": "templates/docs.html",
   "dependencies": [
-    "content/docs/metadata.html",
+    "content/docs/how-nift-works.html",
     "templates/docs.html",
     "templates/partials/docs-sidebar.html",
     "templates/partials/footer.html",

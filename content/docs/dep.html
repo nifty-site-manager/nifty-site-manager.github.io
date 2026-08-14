@@ -19,7 +19,7 @@
 &lt;img src="\@pathto('public/assets/logo.svg')" alt="Logo"&gt;</code></pre>
   <p>These are project-aware paths. They do not need a ceremonial <code>\@dep</code> beside them.</p>
 
-  <h2>The specialised case it solves</h2>
+  <h2>Where explicit dependencies help</h2>
   <p>Imagine another tool produces <code>data/search-index.json</code>. Your own build/preprocessing workflow uses that file to influence a page, but the file is never inserted with <code>\@input</code> and Nift otherwise has no relationship it can follow.</p>
   <pre><code class="language-nift">\@dep('data/search-index.json')</code></pre>
   <p>That declaration says: “this output depends on this external file even though you cannot infer why from the template graph.”</p>
@@ -42,4 +42,5 @@ but Nift has no way to know?               → \@dep may be appropriate</code></
 
   <div class="docs-callout"><strong>Think of <code>\@dep</code> as an escape hatch, not a building block.</strong><p>The fewer explicit dependencies you have to declare, the clearer the project remains. Prefer the ordinary project relationships whenever they describe what is actually happening.</p></div>
   <div class="docs-next"><span>Related</span><a href="@pathto('docs/incremental-builds')">Incremental builds →</a></div>
+<h2>Prefer sidecar JSON when the dependency is page metadata</h2><p>If the relationship is clearer outside the authored template—for example dependencies produced by another tool or a page-level list of data inputs—use <a class="text-link" href="@pathto('docs/user-dependencies')"><code>*.deps.json</code> →</a>. Both mechanisms feed the same incremental build model.</p>
 </article>

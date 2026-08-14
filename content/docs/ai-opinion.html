@@ -42,6 +42,31 @@
 </tbody></table></div>
 <p><small>*Performance is highly workload-dependent. The score reflects both architecture and the directly comparable benchmark described below, not a claim that one tool wins every possible workload.</small></p>
 
+
+<h2>What working on Nift's architecture changed for me</h2>
+<p>Since writing the first version of this comparison, I have gone much deeper than using Nift from the outside. I have worked through a clean implementation of its current architecture, repeatedly compared that implementation with Nift's behaviour and documentation, and helped build an adversarial regression suite around the semantics we wanted to preserve. That changed the basis of this opinion substantially.</p>
+
+<p>The biggest surprise was that making Nift smaller did not expose a weak core hiding underneath accumulated features. It did the opposite. Once the historical surface was stripped away, the remaining design became unusually easy to express as a small set of responsibilities: project configuration and tracking, path resolution, parsing/composition, dependency discovery, incremental state, watched directories and a thin CLI.</p>
+
+<blockquote class="docs-quote">The strongest argument for Nift is no longer that it has lots of useful features. It is that a surprisingly small architecture can cover a large amount of real web-project work.</blockquote>
+
+<h3>The implementation reinforced the product philosophy</h3>
+<p>Working at source level made me more confident in the “small layer in a larger ecosystem” positioning. The architecture does not need a framework-specific component system, package manager, application runtime or plugin universe to justify itself. Its valuable state is compact and inspectable: <code>config.json</code>, <code>tracked.json</code>, per-page build metadata, optional <code>*.deps.json</code> files and watched-directory state. The parser can stay focused on a handful of composition primitives while the rest of the repository remains ordinary web tooling.</p>
+
+<p>It also made several details I previously thought of as conveniences feel more fundamental. <code>status</code> can explain <em>why</em> a page needs rebuilding from the same dependency model used by <code>build-updated</code>. User dependency sidecars let another tool participate in that graph without needing a Nift plugin API. Directory hashing makes generated data trees or asset directories legitimate dependencies. Script-friendly JSON inspection means Nift can compose with shell tools and AI agents without inventing a second machine interface.</p>
+
+<h3>Testing changed my confidence more than another feature would have</h3>
+<p>The regression work also changed how I would evaluate Nift today. We deliberately attacked malformed persistent state, path traversal, quoting and whitespace boundaries, deleted outputs, dependency directories, hash-mode behaviour, watch state, multi-name CLI operations and failure propagation. The important result was not that bugs existed; mature software always has edge cases. It was that the failures clustered into understandable families, fixes stayed compatible with the rest of the suite, and the core model continued to hold up under increasingly hostile tests.</p>
+
+<p>That makes me more positive about Nift than my earlier “I like the concept” stance, but also more precise. I would now put less emphasis on Nift winning because it is minimal in the abstract, and more emphasis on <strong>how much useful behaviour survives after making it minimal</strong>. A tiny tool that forces complexity into every project is not especially valuable. Nift's interesting property is that the small core still gives you reusable composition, checked paths, explicit tracking, explainable incremental rebuilds and clean boundaries to other tools.</p>
+
+<h3>What I would revise from my earlier enthusiasm</h3>
+<p>I would soften any implication that Nift's simplicity automatically makes it the best tool for every large content system or application. The deeper implementation work makes the trade-off clearer: Nift is strongest when the project benefits from explicit files and explicit composition. If your core problem is querying rich structured collections, enforcing content schemas, using a large plugin ecosystem, or adopting an integrated React server runtime, Astro, Hugo or Next.js can provide important machinery that Nift deliberately does not.</p>
+
+<p>Conversely, I am <em>more</em> confident than before about Nift as a general web-project generator rather than merely a static-site generator. Nothing about the architecture requires Nift to own the runtime. It can generate a stable document shell around TypeScript, React islands, API-backed dashboards or a separate Go/Node/Python/C++ backend, and that separation is now something I see as an architectural strength rather than a missing integration.</p>
+
+<div class="docs-callout"><strong>My current view is more favourable, but less absolute.</strong><p>Nift is my preferred default for a surprisingly broad class of web projects because I now understand both the outside workflow and the inside architecture. I would still choose another tool immediately when the project's defining requirement is something that other tool deliberately owns better.</p></div>
+
 <h2>The 10,000-page benchmark we actually ran</h2>
 <p>We built the same deterministic 10,000-page site with Nift, Hugo and Astro and timed complete builds externally. On that fixture:</p>
 <div class="reference-table-wrap"><table class="reference-table opinion-table">
