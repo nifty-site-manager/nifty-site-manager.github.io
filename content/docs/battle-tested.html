@@ -336,9 +336,9 @@
 <blockquote class="docs-quote">A Nift feature is not finished when the happy-path example works. It is finished when it survives the existing project model, failure modes and incremental-build semantics around it.</blockquote>
 
 <div class="docs-next"><span>Next</span><a href="getting-started.html">Getting started →</a></div>
-<h2>Sift minifier integration</h2>
-<p>Nift rewrite 1.0.39 embeds the exact <strong>Sift 1.0.3</strong> source subtree. Sift currently carries its own 15,459-program JavaScript semantic matrix, 180-program JSX/TSX gate and 39-document non-JS idempotence gate; the detailed transformation evidence lives on Sift's own site.</p>
-<p>Nift embeds <strong>Sift</strong> through Sift's public C++ API. The detailed JavaScript/JSX/HTML/CSS/JSON/XML/SVG transformation evidence now belongs to Sift's own Battle Tested documentation rather than being duplicated here.</p>
-<p>Nift's responsibility is the integration contract: config-driven minification, per-file overrides, incremental-build behavior, safe failure handling, and the standalone <code>nift minify</code> convenience command. Sift's responsibility is whether a source artifact is transformed correctly.</p>
-<div class="docs-callout"><strong>Why separate the evidence?</strong><p>The architecture is intentionally one-way: Nift consumes Sift; Sift does not depend on Nift. Keeping the test claims with the subsystem that owns them makes both projects easier to evaluate and eventually lets Sift live in its own repository without carrying Nift's documentation history.</p></div>
+<h2>Minify++ minifier integration</h2>
+<p>Nift rewrite 1.0.39 embeds the exact <strong>Minify++ 1.0.3</strong> source subtree. Minify++ currently carries its own 15,459-program JavaScript semantic matrix, 180-program JSX/TSX gate and 39-document non-JS idempotence gate; the detailed transformation evidence lives on Minify++'s own site.</p>
+<p>Nift embeds <strong>Minify++</strong> through Minify++'s public C++ API. The detailed JavaScript/JSX/HTML/CSS/JSON/XML/SVG transformation evidence now belongs to Minify++'s own Battle Tested documentation rather than being duplicated here.</p>
+<p>Nift's responsibility is the integration contract: config-driven minification, per-file overrides, incremental-build behavior, safe failure handling, and the standalone <code>nift minify</code> convenience command. Minify++'s responsibility is whether a source artifact is transformed correctly.</p>
+<div class="docs-callout"><strong>Why separate the evidence?</strong><p>The architecture is intentionally one-way: Nift consumes Minify++; Minify++ does not depend on Nift. Keeping the test claims with the subsystem that owns them makes both projects easier to evaluate and eventually lets Minify++ live in its own repository without carrying Nift's documentation history.</p></div>
 </article>
