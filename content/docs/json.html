@@ -1,0 +1,91 @@
+<article class="docs-article">
+<p class="docs-kicker">Structured data · Core reference</p>
+<h1>JSON data.</h1>
+<p class="docs-lead"><code>\@json(path, name)</code> loads a JSON document into the current page render. Access values through the same <code>\$[...]</code> syntax used for metadata, with object and array access chained as deeply as the data requires. An optional third parameter can validate that data against a standard JSON Schema before rendering.</p>
+
+<div class="docs-callout"><strong>Structured data, not a scripting runtime.</strong><p>Nift can load and select JSON values without turning the template language into a general-purpose programming language. Use ordinary external tools when you need substantial data transformation.</p></div>
+
+<h2>Load a document</h2>
+<pre><code class="language-nift">\@json('data/site.json', site)</code></pre>
+
+<p>The first parameter is a project-relative JSON path. The second is the binding name used for the rest of that page render, including nested <code>\@input</code> files.</p>
+
+<pre><code class="language-json">{
+  "name": "Nift",
+  "navigation": [
+    {"title": "Home", "url": "/"},
+    {"title": "Docs", "url": "/docs/"}
+  ],
+  "features": {
+    "search": true
+  }
+}</code></pre>
+
+<pre><code class="language-html">\@json('data/site.json', site)
+
+&lt;h1&gt;\$[site.name]&lt;/h1&gt;
+&lt;a href="\$[site.navigation[1].url]"&gt;
+    \$[site.navigation[1].title]
+&lt;/a&gt;</code></pre>
+
+
+<h2>Optionally validate the data's shape</h2>
+<pre><code class="language-nift">\@json('data/products.json', products, 'schemas/products.schema.json')</code></pre>
+<p>The optional third parameter is a JSON Schema. Nift validates the document before binding it and records both the data file and schema as dependencies. This catches problems such as missing required fields, wrong types, invalid enum values, unexpected properties and values outside declared bounds at build time.</p>
+<p>If JSON Schema is new to you, the dedicated guide starts from first principles and includes complete examples.</p>
+<div class="docs-callout"><strong>Learn JSON Schema →</strong><p><a href="@pathto('docs/json-schema')">JSON Schema validation</a> explains the standard, Nift's supported subset, reusable <code>$defs</code>/<code>$ref</code>, validation errors and incremental dependency behaviour.</p></div>
+<h2>Access can chain arbitrarily</h2>
+<pre><code class="language-plaintext">$[data.sections[3].groups[0].items[12].author.name]
+$[data.matrix[2][4]]
+$[data.settings.navigation.mobile.enabled]</code></pre>
+
+<p>Objects use <code>.member</code>; arrays use zero-based <code>[index]</code>. You can alternate them as often as the document shape requires.</p>
+
+<h2>Scalar output</h2>
+<div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>JSON value</th><th>Template output</th></tr></thead><tbody>
+<tr><td>string</td><td>The string contents</td></tr>
+<tr><td>number</td><td>The JSON number</td></tr>
+<tr><td>boolean</td><td><code>true</code> or <code>false</code></td></tr>
+<tr><td><code>null</code></td><td><code>null</code></td></tr>
+<tr><td>array/object</td><td>Build error: select an element/member rather than implicitly serialising the whole structure.</td></tr>
+</tbody></table></div>
+
+<h2>The JSON file is automatically a dependency</h2>
+<p>Loading:</p>
+<pre><code class="language-nift">\@json('data/navigation.json', nav)</code></pre>
+<p>also tells Nift that the current page depends on <code>data/navigation.json</code>. A change to that data can therefore trigger <code>build-updated</code> in modified, hash or hybrid mode just like a template/input dependency.</p>
+
+<h2>Parsed documents are shared per build</h2>
+<p>If thousands of pages load the same JSON file, Nift does not need to parse the document thousands of times. Parsed documents are cached as immutable build-wide data, while the binding name remains local to each page parser.</p>
+
+<pre><code class="language-plaintext">data/site.json
+      │
+      └── parsed once for this build
+              │
+              ├── page A: binding "site"
+              ├── page B: binding "site"
+              └── page C: binding "settings"</code></pre>
+
+<p>That is safe to share because the JSON document itself is immutable. Page-specific rendered partials are not cached in the same way.</p>
+
+<h2>Binding names</h2>
+<p>Names use identifier-style letters/digits/underscores and cannot conflict with built-in metadata names. Rebinding the same name is an error rather than silently replacing earlier data.</p>
+
+<h2>Use it with control flow when the data actually needs it</h2>
+<pre><code class="language-html">\@json('data/articles.json', data)
+
+\@for(article : data.articles){
+    \@if(article.published){
+        &lt;article&gt;
+            &lt;h2&gt;\$[article.title]&lt;/h2&gt;
+        &lt;/article&gt;
+    }
+}</code></pre>
+
+<p>If your JSON only contains a few scalar settings, you may never need a loop or condition. Load exactly what the page needs.</p>
+
+<h2>Failures are explicit</h2>
+<p>Nift reports malformed JSON, missing files, invalid binding names, traversal attempts, missing members, bad array indices, wrong value types and attempts to render whole objects/arrays as build errors with source context.</p>
+
+<div class="docs-next"><span>Next</span><a href="json-schema.html">JSON Schema validation →</a></div>
+</article>

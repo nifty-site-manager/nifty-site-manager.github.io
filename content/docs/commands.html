@@ -19,6 +19,19 @@ nift init .html
 nift init .txt</code></pre>
   <p><code>init-html</code> remains as a compatibility spelling.</p>
 
+  <h2>Minify arbitrary files</h2>
+  <h3><code>nift minify [-i|--in-place] file...</code></h3>
+  <p>Minifies one or more supported files without requiring a Nift project. The safe default writes a sibling <code>.min</code> file and leaves the source untouched.</p>
+  <pre><code class="language-bash">nift minify public/index.html
+# public/index.html -> public/index.min.html
+
+nift minify assets/app.js assets/site.css
+# assets/app.min.js + assets/site.min.css
+
+nift minify --in-place generated/app.js
+nift minify -i generated/site.css</code></pre>
+  <p><code>-i</code> / <code>--in-place</code> is the explicit destructive form. Paths may be relative or absolute and do not need to live inside a Nift project. Supported extensions are HTML/HTM, CSS, JS/MJS/CJS, JSX, JSON, XML and SVG. At least one file is required. Unsupported, missing, malformed or unwritable files produce a non-zero status; other valid arguments in the same invocation are still processed. <a class="text-link" href="@pathto('docs/minification')">Minification details →</a></p>
+
   <h2>Build</h2>
   <h3><code>nift build</code> / <code>nift build-updated</code></h3>
   <p>The everyday incremental build. Nift analyses tracked pages in parallel, explains rebuild causes when requested, and only builds pages affected by the current dependency state.</p>
@@ -33,9 +46,15 @@ nift build-updated -p</code></pre>
   <h3><code>nift build-names [-p] name...</code></h3>
   <p>Builds only the explicitly supplied tracked names. At least one name is required.</p>
   <pre><code class="language-bash">nift build-names about docs/getting-started</code></pre>
-  <p>The general build parser also accepts <code>-n</code> and <code>-s</code> for compatibility, but new usage normally needs no option other than <code>-p</code>.</p>
+  <h3>Build and status options</h3>
+  <div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>Option</th><th>Where useful</th><th>Effect</th></tr></thead><tbody>
+  <tr><td><code>-p</code></td><td><code>build-all</code>, <code>build-updated</code>, named builds, <code>status</code></td><td>Requests full per-page detail instead of compact summaries where applicable.</td></tr>
+  <tr><td><code>-n</code></td><td>Legacy compatibility only</td><td>Accepted by the shared option parser but currently has no behavioural effect.</td></tr>
+  <tr><td><code>-s</code></td><td>Legacy compatibility only</td><td>Accepted by the shared option parser but currently has no behavioural effect.</td></tr>
+  </tbody></table></div>
+  <p>There is no hidden build mode behind <code>-n</code> or <code>-s</code> in the current rewrite. They remain accepted so older invocations do not fail solely because those flags are present. New scripts should omit them.</p>
 
-  <h3><code>nift build-auto</code></h3>
+  <h3><code>nift build-auto [options]</code></h3>
   <p>Continuously runs the incremental build check every 200 ms. In an interactive terminal, press <code>q</code> to stop immediately.</p>
   <pre><code class="language-plaintext">Nift build-auto
 watching for changes every 200 ms
@@ -74,6 +93,28 @@ press q to stop</code></pre>
   <p>Adds a watched directory using the supplied rules or the project defaults.</p>
   <h3><code>nift unwatch directory</code></h3>
   <p>Removes a watched directory.</p>
+
+  <h2>Aliases and accepted spellings</h2>
+  <div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>Canonical command</th><th>Accepted aliases / forms</th></tr></thead><tbody>
+  <tr><td><code>version</code></td><td><code>--version</code>, <code>-v</code></td></tr>
+  <tr><td><code>commands</code></td><td><code>cmds</code>, <code>--help</code>, <code>-h</code></td></tr>
+  <tr><td><code>init</code></td><td><code>init-html</code> (fixed <code>.html</code> compatibility form)</td></tr>
+  <tr><td><code>build-updated</code></td><td><code>build</code> with no additional arguments</td></tr>
+  <tr><td><code>build-names</code></td><td><code>build name...</code> when tracked names are supplied</td></tr>
+  <tr><td><code>rm</code></td><td><code>del</code></td></tr>
+  <tr><td><code>cp</code></td><td><code>copy</code></td></tr>
+  <tr><td><code>mv</code></td><td><code>move</code></td></tr>
+  </tbody></table></div>
+
+  <h2>Minify options</h2>
+  <div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>Option</th><th>Effect</th></tr></thead><tbody>
+  <tr><td><code>-i</code>, <code>--in-place</code></td><td>Overwrite each source file instead of writing the default sibling <code>name.min.ext</code> output.</td></tr>
+  </tbody></table></div>
+  <p>There is intentionally no implicit destructive mode: overwrite must be requested on the command line.</p>
+
+  <h2>Argument and option contract</h2>
+  <p>Commands that do not show optional arguments above reject extras rather than silently ignoring them. <code>track</code> accepts at most a name, title and template; <code>watch</code> accepts a directory plus optional content extension, template and output extension; <code>cp</code>/<code>mv</code> require exactly two names; <code>untrack</code>/<code>rm</code> accept one or more names.</p>
+  <p>The <code>info*</code> commands emit coloured human-readable headings on an interactive terminal and plain JSON when redirected or piped. The shared parser also tolerates the legacy <code>-n</code>/<code>-s</code> flags on several inspect commands, but they have no effect and are not part of recommended usage.</p>
 
   <h2>Built-in summary</h2>
   <p>The executable is also the quickest authoritative reminder:</p>

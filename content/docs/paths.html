@@ -80,6 +80,22 @@ public/docs/guides/install/index.html</code></pre>
   Download the product guide
 &lt;/a&gt;</code></pre>
 
+<h2><code>\@pathto</code> remembers that the target is required</h2>
+<p>A checked path has one persistent promise beyond the build that first resolved it: the target should continue to exist. Nift records each resolved <code>\@pathto(...)</code> target internally as a <strong>requirement</strong> in the page's build metadata.</p>
+<pre><code class="language-plaintext">\@pathto('public/assets/site.css')
+        │
+        ├─ emit the correct relative URL
+        ├─ verify the target exists while rendering
+        └─ remember: this path is required to keep existing</code></pre>
+<p>Requirements are intentionally <strong>not dependencies</strong>. If <code>site.css</code> changes from blue to green, the HTML containing its URL has not changed and does not need rebuilding. If <code>site.css</code> is deleted, however, the previously valid page now contains a broken project-local reference, so <code>status</code> marks the page as needing a rebuild.</p>
+<div class="docs-callout"><strong>A missing req is a rebuild reason, not a pre-build error.</strong><p><code>build-updated</code> still runs the page through the normal parser. If you changed the template/content to remove or replace the old <code>\@pathto</code>, the rebuild can succeed and the newly written page metadata drops the obsolete req. If the source still contains the broken reference, the rebuild fails through the ordinary <code>\@pathto</code> missing-target error. This avoids stale metadata blocking a source change that would repair the page.</p></div>
+<div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>Target event</th><th>Effect on page using <code>\@pathto</code></th></tr></thead><tbody>
+<tr><td>Target contents modified</td><td>No rebuild reason; the URL is still valid.</td></tr>
+<tr><td>Target still exists at the same path</td><td>Requirement remains satisfied.</td></tr>
+<tr><td>Target deleted/missing</td><td><strong>Page becomes out of date:</strong> required path is missing.</td></tr>
+</tbody></table></div>
+<p>There is no <code>\@req</code> function and no <code>*.reqs.json</code> file. Requirements are an under-the-hood correctness property of <code>\@pathto</code>, not another public dependency system to manage.</p>
+
 <h2>What happens when the file is missing?</h2>
 <p>Suppose the template contains:</p>
 <pre><code class="language-html">&lt;img
@@ -94,6 +110,9 @@ public/docs/guides/install/index.html</code></pre>
 <tr><td>A typo may survive the build.</td><td>The referenced tracked/local target must resolve.</td></tr>
 <tr><td>Shared partials become fragile as nesting changes.</td><td>The same partial can be reused across output depths.</td></tr>
 </tbody></table></div>
+
+<h2>Project-local means inside the project</h2>
+<p>Concrete <code>\@pathto(...)</code> targets are deliberately confined to the Nift project. A value such as <code>../outside.css</code> is rejected even if that file exists. This keeps project-aware path checking and internal <code>reqs</code> self-contained rather than allowing a template to create persistent assumptions about arbitrary files elsewhere on the machine.</p>
 
 <h2>When ordinary URLs are still the right answer</h2>
 <p><code>\@pathto</code> is for targets Nift can know about: tracked outputs and local project files. External URLs remain ordinary URLs:</p>

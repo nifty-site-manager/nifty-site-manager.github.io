@@ -24,23 +24,26 @@
     <a href="@pathto('docs/ai-assistants')"><span>AI-assisted</span><h2>Give an assistant the barebones project</h2><p>Use the downloadable starter + <code>ai-context.txt</code>, then describe the site you actually want.</p></a>
     <a href="@pathto('docs/existing-sites')"><span>Migration</span><h2>Bring an existing site</h2><p>Keep the frontend you already have. Extract repeated structure instead of rewriting the project into a framework.</p></a>
     <a href="@pathto('docs/why-nift')"><span>Design philosophy</span><h2>Why Nift?</h2><p>Understand why Nift deliberately occupies a small boundary in a much larger web ecosystem.</p></a>
-    <a href="@pathto('docs/ai-opinion')"><span>Independent perspective</span><h2>ChatGPT: Nift vs other tools</h2><p>A candid subjective comparison with Astro, Hugo and Next.js—including where I would choose each and where Nift is weaker.</p></a>
+    <a href="@pathto('docs/three-primitives')"><span>Start simple</span><h2>Three primitives go a long way</h2><p>See how \@content, \@input and \@pathto alone can form the architecture of a serious site.</p></a>
   </div>
 
   <h2>The everyday reference.</h2>
   <div class="docs-step-grid">
     <a href="@pathto('docs/paths')"><span>Core</span><h2>Paths &amp; links</h2><p>Use <code>\@pathto</code> to reuse links from any nesting depth and catch missing local targets during builds.</p></a>
     <a href="@pathto('docs/comments')"><span>Template language</span><h2>Comments</h2><p>Use Nift comments for source-only notes and ordinary HTML comments when the comment belongs in the generated page.</p></a>
+    <a href="@pathto('docs/json')"><span>Structured data</span><h2>JSON data</h2><p>Load immutable project JSON, chain member/index access and make it part of the dependency graph.</p></a>
+    <a href="@pathto('docs/json-schema')"><span>Validation</span><h2>JSON Schema</h2><p>Give structured data an optional standard schema so bad shapes and types fail at build time.</p></a>
+    <a href="@pathto('docs/control-flow')"><span>Structured data</span><h2>Loops &amp; conditions</h2><p>Repeat arrays/objects and conditionally render scalar JSON data without introducing a scripting runtime.</p></a>
     <a href="@pathto('docs/metadata')"><span>Core</span><h2>Page &amp; build metadata</h2><p>Use tracked titles, names, paths, dates, times and build information with <code>\$[...]</code>.</p></a>
-    <a href="@pathto('docs/commands')"><span>CLI</span><h2>Commands</h2><p>Track, build, inspect, watch, move, copy and remove the files Nift manages.</p></a>
-    <a href="@pathto('docs/how-nift-works')"><span>Architecture</span><h2>How Nift works</h2><p>Follow a tracked item through parsing, dependency discovery, build metadata, incremental analysis and parallel rendering.</p></a>
+    <a href="@pathto('docs/minification')"><span>Output</span><h2>Minification</h2><p>Minify final HTML, CSS, JavaScript, JSX, JSON, XML and SVG outputs automatically or use the standalone file command.</p></a>
+    <a href="@pathto('docs/commands')"><span>CLI</span><h2>Commands</h2><p>Track, build, inspect, watch, minify, move, copy and remove files.</p></a>
     <a href="@pathto('docs/project-structure')"><span>Structure</span><h2>Project layout</h2><p>See how <code>content/</code>, <code>templates/</code>, <code>public/</code> and the rest of your repository can fit together.</p></a>
   </div>
 
   <h2>Understand what Nift is tracking.</h2>
   <div class="docs-step-grid">
-    <a href="@pathto('docs/configuration')"><span>.nift</span><h2>config.json</h2><p>Project-wide directories, extensions, template defaults, thread count and incremental mode.</p></a>
-    <a href="@pathto('docs/tracked-json')"><span>.nift</span><h2>tracked.json</h2><p>The names, titles, templates and optional per-item extension overrides for tracked outputs.</p></a>
+    <a href="@pathto('docs/configuration')"><span>.nift</span><h2>config.json</h2><p>Project-wide directories, extensions, template defaults, thread count, incremental mode and optional minified output extensions.</p></a>
+    <a href="@pathto('docs/tracked-json')"><span>.nift</span><h2>tracked.json</h2><p>The names, titles, templates, optional per-item extension overrides and optional minify overrides for tracked outputs.</p></a>
     <a href="@pathto('docs/dep')"><span>Explicit dependencies</span><h2>\@dep</h2><p>Declare a dependency in the source exactly where the relationship matters.</p></a>
     <a href="@pathto('docs/user-dependencies')"><span>Per-page metadata</span><h2>*.deps.json</h2><p>Declare additional file or directory dependencies beside a tracked content file.</p></a>
   </div>
@@ -48,7 +51,24 @@
   <h2>Ship what you build.</h2>
   <p>Nift's responsibility can end at the generated files. Deploy <code>public/</code> to a static host, serve it from your own backend, or package it into a larger application.</p>
   <div class="docs-step-grid">
-    <a href="@pathto('docs/hosting')"><span>Deployment</span><h2>Hosting &amp; deployment</h2><p>GitHub Pages, GitLab Pages, Netlify, Vercel, Cloudflare Pages, Supabase-backed applications, traditional servers, Docker and more.</p></a>
+    <a href="@pathto('docs/hosting')"><span>Deployment</span><h2>Hosting &amp; deployment</h2><p>GitHub Pages, GitLab Pages, Netlify, Vercel, Cloudflare Pages, Supabase-backed applications, traditional servers, Docker and more.</p></a><a href="@pathto('docs/serverless')"><span>Deployment architecture</span><h2>Serverless stacks</h2><p>Use Nift for static frontend generation alongside AWS Lambda, Azure Functions, Google Cloud, Supabase Edge Functions, Vercel, Netlify and GitHub Pages.</p></a>
+  </div>
+
+  <h2>Understand the design when you are ready.</h2>
+  <p>You do not need Nift's philosophy, implementation architecture or testing history to build your first site. These pages are intentionally later in the documentation: they are for evaluating the design, understanding internals, or deciding whether Nift is a good long-term fit.</p>
+  <div class="docs-step-grid">
+    <a href="@pathto('docs/why-nift')"><span>Philosophy</span><h2>Why Nift?</h2><p>Why Nift stays deliberately small, keeps ordinary web technologies ordinary, and aims to provide project-aware glue rather than own your stack.</p></a>
+    <a href="@pathto('docs/architectural-rules')"><span>Design rules</span><h2>Nift architectural rules</h2><p>A concrete decision framework for what belongs in Nift, what stays external, safe defaults, source-compilation boundaries, incremental correctness and extractable subsystems.</p></a>
+    <a href="@pathto('docs/how-nift-works')"><span>Architecture</span><h2>How Nift works</h2><p>Follow tracked state through parsing, dependency discovery, rendering, build metadata, incremental decisions and parallel builds.</p></a>
+    <a href="@pathto('docs/advanced')"><span>Ecosystem boundary</span><h2>Nift and the wider toolchain</h2><p>See where Nift deliberately stops and how npm, TypeScript, bundlers, frontend frameworks, backends and deployment tools fit around it.</p></a>
+  </div>
+
+  <h2>Evaluate Nift after you have met it.</h2>
+  <p>These pages answer questions about reliability and comparative fit. They are useful when you are deciding whether to trust or adopt Nift, but they should not stand between a newcomer and installation or Getting Started.</p>
+  <div class="docs-step-grid">
+    <a href="@pathto('docs/developer-experience')"><span>Developer experience</span><h2>What working with Nift feels like</h2><p>Evaluate Nift's small mental model, fast feedback loops, composable tooling philosophy, deliberate non-features and AI DX.</p></a>
+    <a href="@pathto('docs/battle-tested')"><span>Quality &amp; reliability</span><h2>Battle tested</h2><p>Explore the focused smoke tests, end-to-end regression coverage and adversarial cases used to protect parser, filesystem, JSON, incremental and CLI behaviour.</p></a>
+    <a href="@pathto('docs/ai-opinion')"><span>Subjective comparison</span><h2>ChatGPT: Nift vs other tools</h2><p>A candid comparison with Astro, Hugo and Next.js, including where Nift is attractive and where another tool may be the better choice.</p></a>
   </div>
 
   <h2>Go beyond a simple static site.</h2>

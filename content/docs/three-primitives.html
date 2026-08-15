@@ -1,0 +1,127 @@
+<article class="docs-article">
+<p class="docs-kicker">Start simple · Core philosophy</p>
+<h1>You can build a lot with three primitives.</h1>
+<p class="docs-lead">You do not need to learn all of Nift before building with it. Start with <code>\@content</code>, <code>\@input(...)</code> and <code>\@pathto(...)</code>. Those three ideas are enough to build serious multi-page sites with reusable structure, checked links and dependency-aware incremental rebuilds.</p>
+
+<div class="docs-callout"><strong>This is the recommended starting point.</strong><p>Learn three things, build the site you actually want, and only reach for metadata, JSON, loops, conditions or explicit dependencies when a real problem asks for them.</p></div>
+
+<h2>The entire starting vocabulary</h2>
+<div class="advanced-doc-grid">
+<div><h2><code>\@content</code></h2><p>Put the tracked page's content at this point in its template.</p></div>
+<div><h2><code>\@input(...)</code></h2><p>Parse and insert another file, while automatically recording that dependency.</p></div>
+<div><h2><code>\@pathto(...)</code></h2><p>Create a checked, project-aware path to a tracked output or concrete project file.</p></div>
+</div>
+
+<h2>A complete page template</h2>
+<pre><code class="language-html">&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    \@input('partials/head.html')
+&lt;/head&gt;
+&lt;body&gt;
+    \@input('partials/header.html')
+
+    &lt;main&gt;
+        \@content
+    &lt;/main&gt;
+
+    \@input('partials/footer.html')
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>That is already a reusable site architecture. Every tracked page can use the same shell while keeping its actual page content in a separate file.</p>
+
+<h2>Partials can compose other partials</h2>
+<pre><code class="language-plaintext">templates/
+├── template.html
+└── partials/
+    ├── head.html
+    ├── header.html
+    ├── navigation.html
+    └── footer.html</code></pre>
+
+<pre><code class="language-html">&lt;!-- partials/header.html --&gt;
+&lt;header class="site-header"&gt;
+    &lt;a href="\@pathto('/')"&gt;My site&lt;/a&gt;
+
+    \@input('navigation.html')
+&lt;/header&gt;</code></pre>
+
+<pre><code class="language-html">&lt;!-- partials/navigation.html --&gt;
+&lt;nav&gt;
+    &lt;a href="\@pathto('/')"&gt;Home&lt;/a&gt;
+    &lt;a href="\@pathto('about')"&gt;About&lt;/a&gt;
+    &lt;a href="\@pathto('docs')"&gt;Docs&lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+
+<p>The header depends on the navigation partial. Every page that uses the header therefore depends on the navigation too. Nift discovers that relationship from normal composition; you did not have to maintain a separate dependency graph.</p>
+
+<h2>The dependency graph falls out of the markup</h2>
+<pre><code class="language-plaintext">docs/getting-started
+        │
+        ├── content/docs/getting-started.html
+        │
+        └── templates/docs.html
+                 │
+                 ├── partials/head.html
+                 ├── partials/header.html
+                 │        │
+                 │        └── partials/navigation.html
+                 ├── partials/docs-sidebar.html
+                 └── partials/footer.html</code></pre>
+
+<p>Change only the page content and Nift can rebuild that page. Change the shared navigation and Nift can identify every output that reached it through <code>\@input</code>. Composition and incremental-build information are the same structure.</p>
+
+<h2><code>\@pathto</code> removes directory-depth bookkeeping</h2>
+<p>A shared navigation partial may be rendered into:</p>
+<pre><code class="language-plaintext">public/index.html
+public/about.html
+public/docs/index.html
+public/docs/guides/install/index.html</code></pre>
+
+<p>The partial should not need four different versions of:</p>
+<pre><code class="language-html">../../../assets/site.css</code></pre>
+
+<p>Instead it can say what it means:</p>
+<pre><code class="language-html">&lt;link
+    rel="stylesheet"
+    href="\@pathto('public/assets/site.css')"&gt;
+
+&lt;a href="\@pathto('docs/getting-started')"&gt;
+    Getting started
+&lt;/a&gt;</code></pre>
+
+<p>Nift resolves the correct relative path for the output currently being generated and checks that concrete project paths exist.</p>
+
+<h2>This scales further than it first appears</h2>
+<p>With only these three primitives you can already build:</p>
+<div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>Project need</th><th>Three-primitive solution</th></tr></thead><tbody>
+<tr><td>Shared header/footer</td><td><code>\@input</code> partials from the page template.</td></tr>
+<tr><td>Section-specific layouts</td><td>Track different pages with different templates.</td></tr>
+<tr><td>Nested reusable components</td><td>Let input files contain more <code>\@input</code> calls.</td></tr>
+<tr><td>Navigation between generated pages</td><td>Use tracked names with <code>\@pathto</code>.</td></tr>
+<tr><td>CSS, JS, images and downloads</td><td>Keep ordinary files in <code>public/</code> and reference them with <code>\@pathto</code>.</td></tr>
+<tr><td>Large sites</td><td>Let the automatically discovered dependency graph drive incremental rebuilds.</td></tr>
+<tr><td>Frontend applications</td><td>Generate the HTML shell with Nift; let normal JS/TS/React/Vue/Svelte own browser behaviour.</td></tr>
+</tbody></table></div>
+
+<h2>You do not need a Nift abstraction for everything</h2>
+<p>If a page needs JavaScript, write JavaScript. If it needs TypeScript, compile TypeScript. If it talks to a Go API, let the Go API be a Go API. Nift's three core primitives are useful precisely because they do not force the rest of the project into a Nift-specific universe.</p>
+
+<blockquote class="docs-quote">Start with composition. Add language features only when the content itself becomes data-driven.</blockquote>
+
+<h2>When should you learn more?</h2>
+<p>Usually when you can name the problem first:</p>
+<div class="advanced-doc-grid">
+<div><h2>Need page metadata?</h2><p>Learn <code>\$[...]</code>.</p></div>
+<div><h2>Need structured shared data?</h2><p>Learn <code>\@json(...)</code>.</p></div>
+<div><h2>Need to repeat structured data?</h2><p>Learn <code>\@for(...){...}</code>.</p></div>
+<div><h2>Need conditional structured output?</h2><p>Learn <code>\@if(...){...}</code>.</p></div>
+<div><h2>Need an invisible dependency?</h2><p>Learn <code>\@dep(...)</code> or <code>*.deps.json</code>.</p></div>
+<div><h2>Need anything else?</h2><p>First ask whether an ordinary web/ecosystem tool already owns the problem better.</p></div>
+</div>
+
+<h2>A good first Nift project can stay this small forever</h2>
+<p>There is no graduation requirement. A project that only ever uses <code>\@content</code>, <code>\@input</code> and <code>\@pathto</code> is not using “beginner Nift”. It is using the central architecture directly.</p>
+
+<div class="docs-next"><span>Next</span><a href="battle-tested.html">How battle tested is Nift? →</a></div>
+</article>

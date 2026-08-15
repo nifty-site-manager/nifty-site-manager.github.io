@@ -41,6 +41,8 @@ External file genuinely affects output,
 but Nift has no way to know?               → \@dep may be appropriate</code></pre>
 
   <div class="docs-callout"><strong>Think of <code>\@dep</code> as an escape hatch, not a building block.</strong><p>The fewer explicit dependencies you have to declare, the clearer the project remains. Prefer the ordinary project relationships whenever they describe what is actually happening.</p></div>
-  <div class="docs-next"><span>Related</span><a href="@pathto('docs/incremental-builds')">Incremental builds →</a></div>
+  <h2>Dependencies stay inside the project</h2>
+<p><code>\@dep(...)</code> is project build metadata, so its paths must remain inside the Nift project. Parent traversal or an absolute path escaping the project is rejected rather than allowing incremental state to depend on arbitrary files elsewhere on the machine.</p>
+<div class="docs-next"><span>Related</span><a href="@pathto('docs/incremental-builds')">Incremental builds →</a></div>
 <h2>Prefer sidecar JSON when the dependency is page metadata</h2><p>If the relationship is clearer outside the authored template—for example dependencies produced by another tool or a page-level list of data inputs—use <a class="text-link" href="@pathto('docs/user-dependencies')"><code>*.deps.json</code> →</a>. Both mechanisms feed the same incremental build model.</p>
 </article>

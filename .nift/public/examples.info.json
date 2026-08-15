@@ -2,11 +2,28 @@
   "name": "examples",
   "title": "Examples",
   "template": "templates/template.html",
+  "content": "content/examples.html",
+  "output": "public/examples.html",
+  "minify": false,
+  "minify-version": 0,
   "dependencies": [
     "content/examples.html",
     "templates/partials/footer.html",
     "templates/partials/head.html",
     "templates/partials/header.html",
     "templates/template.html"
+  ],
+  "reqs": [
+    "public/assets/css/style.css",
+    "public/assets/images/nift-logo.webp",
+    "public/assets/js/demo.js",
+    "public/assets/js/script.js",
+    "public/docs.html",
+    "public/docs/advanced.html",
+    "public/docs/use-cases/web-apps.html",
+    "public/examples.html",
+    "public/index.html",
+    "public/showcase.html",
+    "public/templates.html"
   ]
 }

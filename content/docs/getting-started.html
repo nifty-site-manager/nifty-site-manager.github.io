@@ -72,6 +72,11 @@ public/
 &lt;/html&gt;</code></pre>
   <p><code>\@content</code> inserts the current tracked page's content. <code>\@input(...)</code> processes and inserts reusable files. That small relationship is the centre of a Nift project.</p>
 
+  <div class="docs-callout">
+    <strong>You can stop here for quite a while.</strong>
+    <p>Add <code>\@pathto(...)</code> and these three primitives already cover a surprisingly powerful site architecture. <a class="text-link" href="@pathto('docs/three-primitives')">See how far the three-primitives model goes →</a></p>
+  </div>
+
   <h2>Track another page</h2>
   <pre><code class="language-bash">nift track about "About us"</code></pre>
   <p>Nift creates/tracks the corresponding content relationship using the project defaults. Edit the page-specific content, then build:</p>
@@ -97,11 +102,11 @@ public/
 <h2>Choose your starting path</h2>
   <p>Once Nift is installed, there are three especially easy ways to begin a real project.</p>
   <div class="getting-paths">
-    <a href="@pathto('docs/templating')">
+    <a href="@pathto('docs/three-primitives')">
       <span>Path 01 · Barebones</span>
       <h3>Build it yourself</h3>
       <p>Start with <code>nift init .html</code>, keep the starter tiny, and add pages/templates/tooling only as the project needs them.</p>
-      <strong>Learn the template essentials →</strong>
+      <strong>Learn the three-primitives core →</strong>
     </a>
     <a href="@pathto('templates')">
       <span>Path 02 · Template</span>

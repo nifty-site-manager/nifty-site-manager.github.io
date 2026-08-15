@@ -1,13 +1,13 @@
 {
-  "name": "docs/partials",
-  "title": "Partials and input",
+  "name": "docs/three-primitives",
+  "title": "Start with three primitives",
   "template": "templates/docs.html",
-  "content": "content/docs/partials.html",
-  "output": "public/docs/partials.html",
+  "content": "content/docs/three-primitives.html",
+  "output": "public/docs/three-primitives.html",
   "minify": false,
   "minify-version": 0,
   "dependencies": [
-    "content/docs/partials.html",
+    "content/docs/three-primitives.html",
     "templates/docs.html",
     "templates/partials/docs-sidebar.html",
     "templates/partials/footer.html",

@@ -1,13 +1,13 @@
 {
-  "name": "docs/partials",
-  "title": "Partials and input",
+  "name": "docs/control-flow",
+  "title": "Loops & conditions",
   "template": "templates/docs.html",
-  "content": "content/docs/partials.html",
-  "output": "public/docs/partials.html",
+  "content": "content/docs/control-flow.html",
+  "output": "public/docs/control-flow.html",
   "minify": false,
   "minify-version": 0,
   "dependencies": [
-    "content/docs/partials.html",
+    "content/docs/control-flow.html",
     "templates/docs.html",
     "templates/partials/docs-sidebar.html",
     "templates/partials/footer.html",

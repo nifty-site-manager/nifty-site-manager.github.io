@@ -76,7 +76,7 @@ const status = await response.json();</code></pre>
 
 const app = express();
 
-app.use(express.static('output'));
+app.use(express.static('public'));
 
 app.get('/api/health', (req, res) =&gt; {
   res.json({ ok: true });
@@ -98,6 +98,51 @@ nift build-all
 npm run minify:html</code></pre>
   <p>There is no requirement for a “Nift plugin” merely to use a tool. If it can read and write files, it can usually compose with Nift.</p>
 
+  <h2>Why Nift does not need an <code>@asset(...)</code> primitive</h2>
+  <p>A generic asset helper sounds attractive until its responsibility is made precise. It would usually be asked to do some combination of:</p>
+  <div class="advanced-doc-grid">
+    <div><h2>Produce a browser URL</h2><p>Nift already does this with <code>\@pathto(...)</code>, including project-aware relative paths.</p></div>
+    <div><h2>Check that a local asset exists</h2><p><code>\@pathto(...)</code> already fails when its concrete project target is missing.</p></div>
+    <div><h2>Make the page rebuild when another file changes</h2><p>That is a different concern. Use <code>\@dep(...)</code> only when the file genuinely influences generated output and Nift cannot infer the relationship another way.</p></div>
+    <div><h2>Build/bundle the asset</h2><p>That belongs to Vite, esbuild, TypeScript, Sass, an image pipeline or whichever specialist tool actually owns the transformation.</p></div>
+  </div>
+  <p>Combining those jobs into <code>@asset</code> would make a short expression but blur useful architectural boundaries. It could also imply that Nift owns when or how frontend assets are generated. Keeping path generation and dependency declaration separate is more explicit:</p>
+  <pre><code class="language-html">&lt;script type="module" src="\@pathto('public/assets/account.js')"&gt;&lt;/script&gt;</code></pre>
+  <pre><code class="language-nift">\@dep('data/account-build-input.json')</code></pre>
+  <p>The first says “this page links to this concrete browser asset.” The second, when actually needed, says “this page's generated output depends on this otherwise-unseen input.” They are not inherently the same relationship.</p>
+
+  <h2>Why build orchestration belongs in build scripts, not Nift hooks</h2>
+  <p>Nift deliberately does not need configuration such as <code>beforeBuild</code>, <code>afterBuild</code> or arbitrary shell execution. A project-level build script, Makefile, package script, task runner or CI workflow is a better orchestration layer because it can coordinate <em>all</em> of the project's tools rather than making Nift the parent process of everything else.</p>
+
+  <pre><code class="language-json">{
+  "scripts": {
+    "build:frontend": "vite build",
+    "build:nift": "nift build-all",
+    "build": "npm run build:frontend &amp;&amp; npm run build:nift"
+  }
+}</code></pre>
+
+  <p>A Makefile can express the same boundary without involving npm:</p>
+  <pre><code class="language-makefile">site:
+\t$(MAKE) -C frontend build
+\tnift build-all
+
+serve: site
+\t./server</code></pre>
+
+  <p>This is at least as powerful as Nift-specific hooks and usually more powerful. The orchestration layer can:</p>
+  <ul>
+    <li>run tools before or after Nift;</li>
+    <li>run independent jobs in parallel;</li>
+    <li>stop immediately when any step fails;</li>
+    <li>set environment variables and deployment modes;</li>
+    <li>build backend code, frontend bundles, images and Nift pages in one graph;</li>
+    <li>use the same commands locally and in CI;</li>
+    <li>replace one specialist tool without changing Nift configuration.</li>
+  </ul>
+
+  <div class="docs-callout"><strong>Nift should be easy to orchestrate, not become the orchestrator.</strong><p>Shell execution inside the generator would enlarge the security surface, add platform-specific quoting/process behaviour and encourage project logic to hide in Nift configuration. Build scripts already solve orchestration in a more general place.</p></div>
+
   <h2>When <code>\@dep</code> actually belongs</h2>
   <p>Do not add <code>\@dep</code> just because another tool produced a CSS or JavaScript file that you reference with <code>\@pathto</code>. Use <code>\@dep</code> for the narrower case where an external file influences a generated output but Nift otherwise has no relationship from which to know that.</p>
   <pre><code class="language-nift">\@dep('data/generated-navigation.json')</code></pre>
@@ -111,7 +156,7 @@ npm run minify:html</code></pre>
   public/               # assembled web output
   package.json
   Makefile</code></pre>
-  <p>Your top-level build script, Makefile, package scripts or CI workflow can orchestrate those pieces. Nift does not need to absorb them into its own language to work with them.</p>
+  <p>Your top-level build script, Makefile, package scripts or CI workflow can orchestrate those pieces. That orchestration layer can call Nift, a bundler, a backend compiler and deployment tooling in whatever order the project requires. Nift does not need shell hooks or plugin wrappers to participate.</p>
 
   <div class="docs-callout"><strong>Nift provides the glue without trying to become the universe.</strong><p>Use the best tool for each job. Nift's job is to make the web-facing files easy to compose, track and build without forcing the rest of the repository into a Nift-specific architecture.</p></div>
 </article>

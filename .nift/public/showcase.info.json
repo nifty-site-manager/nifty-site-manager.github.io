@@ -2,11 +2,30 @@
   "name": "showcase",
   "title": "Built with Nift",
   "template": "templates/template.html",
+  "content": "content/showcase.html",
+  "output": "public/showcase.html",
+  "minify": false,
+  "minify-version": 0,
   "dependencies": [
     "content/showcase.html",
     "templates/partials/footer.html",
     "templates/partials/head.html",
     "templates/partials/header.html",
     "templates/template.html"
+  ],
+  "reqs": [
+    "public/assets/css/style.css",
+    "public/assets/images/nift-logo.webp",
+    "public/assets/js/demo.js",
+    "public/assets/js/script.js",
+    "public/assets/templates/nift-aurora.zip",
+    "public/assets/templates/nift-forge.zip",
+    "public/assets/templates/nift-meridian.zip",
+    "public/docs.html",
+    "public/docs/why-nift.html",
+    "public/examples.html",
+    "public/index.html",
+    "public/showcase.html",
+    "public/templates.html"
   ]
 }

@@ -33,5 +33,7 @@ content/docs/getting-started.deps.json</code></pre>
   <h2>Incremental behaviour</h2>
   <p>After a successful build, user-defined dependencies are included in the page's build metadata. <code>status</code> and <code>build-updated</code> check them using the configured <code>modified</code>, <code>hash</code> or <code>hybrid</code> mode just like dependencies discovered while rendering.</p>
 
-  <div class="docs-next"><span>Related</span><a href="@pathto('docs/dep')"><code>\@dep(...)</code> →</a></div>
+  <h2>Dependencies stay inside the project</h2>
+<p><code>\@dep(...)</code> is project build metadata, so its paths must remain inside the Nift project. Parent traversal or an absolute path escaping the project is rejected rather than allowing incremental state to depend on arbitrary files elsewhere on the machine.</p>
+<div class="docs-next"><span>Related</span><a href="@pathto('docs/dep')"><code>\@dep(...)</code> →</a></div>
 </article>

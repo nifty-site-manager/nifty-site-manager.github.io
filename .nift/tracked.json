@@ -96,6 +96,26 @@
       "template": "templates/docs.html"
     },
     {
+      "name": "docs/json",
+      "title": "JSON data",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/json-schema",
+      "title": "JSON Schema validation",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/control-flow",
+      "title": "Loops & conditions",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/minification",
+      "title": "Minification",
+      "template": "templates/docs.html"
+    },
+    {
       "name": "docs/commands",
       "title": "Commands",
       "template": "templates/docs.html"
@@ -141,6 +161,21 @@
       "template": "templates/docs.html"
     },
     {
+      "name": "docs/three-primitives",
+      "title": "Start with three primitives",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/developer-experience",
+      "title": "Developer experience",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/battle-tested",
+      "title": "Battle tested",
+      "template": "templates/docs.html"
+    },
+    {
       "name": "docs/hosting",
       "title": "Hosting and deployment",
       "template": "templates/docs.html"
@@ -154,6 +189,16 @@
       "name": "showcase",
       "title": "Built with Nift",
       "template": "templates/template.html"
+    },
+    {
+      "name": "docs/serverless",
+      "title": "Nift in a serverless stack",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/architectural-rules",
+      "title": "Nift architectural rules",
+      "template": "templates/docs.html"
     }
   ]
 }

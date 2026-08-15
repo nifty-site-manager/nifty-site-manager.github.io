@@ -12,7 +12,8 @@
     "output-ext": ".html",
     "default-template": "templates/template.html",
     "build-threads": -1,
-    "incremental-mode": "modified"
+    "incremental-mode": "modified",
+    "minify-exts": []
   }
 }</code></pre>
   <p>For a web project, <code>public/</code> is a useful conventional output directory because many servers, hosts and frameworks already use that name for browser-facing files. Nift does not require the directory to be called <code>public/</code>; it simply uses the value in <code>output-dir</code>.</p>
@@ -26,6 +27,7 @@
     <tr><td><code>default-template</code></td><td>Template used by newly tracked items when a different template is not supplied.</td></tr>
     <tr><td><code>build-threads</code></td><td>Controls build and incremental-analysis worker count. A positive value uses that many threads; <code>0</code> uses hardware concurrency; a negative value is a hardware-concurrency multiplier, so <code>-1</code> means 1× available hardware threads and <code>-2</code> means 2×.</td></tr>
     <tr><td><code>incremental-mode</code></td><td>How Nift determines whether dependencies changed: <code>modified</code>, <code>hash</code>, or <code>hybrid</code>.</td></tr>
+    <tr><td><code>minify-exts</code></td><td>Optional array of final output extensions to minify automatically, for example <code>[".html", ".css", ".js"]</code>. Supported formats are documented on the Minification page.</td></tr>
   </tbody></table></div>
 
   <h2>How tracked names become paths</h2>
@@ -38,7 +40,8 @@
     "output-ext": ".html",
     "default-template": "templates/template.html",
     "build-threads": -1,
-    "incremental-mode": "modified"
+    "incremental-mode": "modified",
+    "minify-exts": []
   }
 }</code></pre>
   <p>a tracked name such as <code>about</code> resolves naturally to:</p>
@@ -50,6 +53,11 @@ content/docs/getting-started.html
              ↓
 public/docs/getting-started.html</code></pre>
   <p>The tracked item stores the name/title/template; the project config supplies the default directory and extension rules that turn the name into concrete content and output paths.</p>
+
+  <h2>Automatic minification</h2>
+  <p><code>minify-exts</code> is an optional array. A tracked output is minified after rendering when its final extension is listed:</p>
+  <pre><code class="language-json">"minify-exts": [".html", ".css", ".js", ".json", ".svg"]</code></pre>
+  <p>Individual tracked entries can override the project decision with <code>"minify": true</code> or <code>false</code>. Changing the effective setting invalidates the previous incremental build metadata. <a class="text-link" href="@pathto('docs/minification')">See the minification guide →</a></p>
 
   <h2>Incremental modes</h2>
   <div class="advanced-doc-grid">

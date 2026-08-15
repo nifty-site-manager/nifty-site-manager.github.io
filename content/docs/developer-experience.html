@@ -1,0 +1,101 @@
+<section class="docs-hero">
+  <p class="eyebrow">Evaluation &amp; quality</p>
+  <h1>Developer Experience</h1>
+  <p class="lead">Nift's approach to DX is not “put every tool behind one framework.” It is to keep the path from source files to a finished website short, explicit and fast—then get out of the way when another tool is better at the job.</p>
+</section>
+
+<section class="docs-section">
+  <div class="docs-callout"><strong>Good DX is not the same thing as maximum integration.</strong><p>A framework can make one workflow wonderfully convenient by owning more of it. Nift takes a different trade-off: learn a small build layer, keep ordinary web technologies ordinary, and compose specialist tools directly rather than waiting for Nift-specific wrappers.</p></div>
+
+  <h2>The DX Nift is trying to optimise</h2>
+  <p>Developer experience is often discussed in terms of autocomplete, plugins, scaffolding and how many tasks a framework can perform without leaving its CLI. Those things can be valuable. But there is another side to DX: how much framework-specific machinery must remain in your head, how quickly a change becomes visible, how easily you can explain why something rebuilt, and how expensive it is to leave the framework's preferred path.</p>
+  <p>Nift deliberately optimises that second set of properties.</p>
+
+  <div class="advanced-doc-grid">
+    <div><h2>A small mental model</h2><p>A newcomer can start with <code>\@content</code>, <code>\@input</code> and <code>\@pathto</code>. JSON, schemas, loops, conditions and explicit dependencies are progressive capabilities rather than prerequisites for a basic page.</p></div>
+    <div><h2>Ordinary files stay ordinary</h2><p>HTML remains HTML. CSS remains CSS. JSON uses JSON and JSON Schema. Browser JavaScript remains browser JavaScript. Nift adds composition and project knowledge without requiring every file type to acquire a Nift-specific equivalent.</p></div>
+    <div><h2>A short feedback loop</h2><p>Fast startup, multithreaded builds and dependency-aware incremental rebuilding are DX features. A tool used hundreds of times during development should make “change → rebuild → inspect” feel nearly immediate.</p></div>
+    <div><h2>Errors before deployment</h2><p>Missing path targets, malformed JSON, schema violations, invalid control flow, bad sort keys and dependency problems can be reported during the build rather than becoming mysterious broken output later.</p></div>
+    <div><h2>Local reasoning</h2><p><code>\@pathto(...)</code> is a good example: the reference itself says Nift should resolve and verify a project-local target. Nift then remembers that target as a requirement, so future status checks can catch deletion without pretending every asset edit changes the HTML.</p></div>
+    <div><h2>Progressive complexity</h2><p>A five-page site does not pay the conceptual cost of a data layer. A large documentation or catalogue frontend can opt into schema-validated JSON, nested loops, conditions and sorting without changing the basic model.</p></div>
+  </div>
+
+  <h2>Escape outward, not inward</h2>
+  <p>One of Nift's most important DX properties appears when Nift is <em>not</em> the right tool for a task. Instead of growing a Nift-specific solution for every adjacent problem, the project can simply use the wider ecosystem.</p>
+  <pre><code class="language-plaintext">Nift                         specialist tools
+────                         ────────────────
+templates / composition  +   TypeScript
+tracking / dependencies  +   Vite / esbuild
+static data rendering    +   React / Vue / Svelte
+path awareness           +   Sass / Tailwind
+incremental builds       +   Sharp / ImageMagick
+                             Go / Node / Python
+                             SQL / databases / APIs</code></pre>
+  <p>This means leaving Nift's built-in feature set is not necessarily an “eject” operation. There may be nothing to eject from. Add the tool, let it produce or consume ordinary files, and carry on.</p>
+
+  <h2>What Nift deliberately does not call better DX</h2>
+  <p>It would be easy to make a feature checklist look more impressive by adding directives such as:</p>
+  <pre><code class="language-plaintext">@reactIsland(...)
+@query(...)
+@transform(...)
+@assetPipeline(...)
+@run(...)</code></pre>
+  <p>Each could make a narrow demo shorter. Collectively they would also give developers more Nift-specific syntax, lifecycle rules, compatibility questions and documentation to learn. Convenience has a permanent maintenance and mental-model cost.</p>
+  <p>Nift therefore asks a different question: <strong>does this feature make the underlying relationship clearer, or does it merely wrap something another tool already expresses well?</strong> JSON Schema validation is a good fit because it adopts an existing standard and strengthens the build-time data boundary. A Nift-specific React hydration API is much harder to justify because React and its build ecosystem already own that problem.</p>
+
+  <h2>Build scripts are part of the DX, not a workaround</h2>
+  <p>Nift intentionally does not need shell-command hooks in the template language or project configuration. External orchestration is often more capable because it can coordinate the whole project rather than forcing the whole project through Nift.</p>
+  <pre><code class="language-bash">npm run build
+nift build-updated
+npm test</code></pre>
+  <p>Or use Make, npm scripts, a task runner, CI, a shell script or whatever the repository already uses. That layer can coordinate frontend compilation, image processing, tests, backend generation and deployment without Nift having to own subprocess execution, shell quoting, platform differences or another lifecycle abstraction.</p>
+  <blockquote class="docs-quote">Nift should be easy to orchestrate, not become the orchestrator.</blockquote>
+
+  <h2>Integrated DX versus composable DX</h2>
+  <p>Nift does not win every DX comparison. Astro provides a more integrated experience for framework islands. TypeScript-first frameworks can provide deeper editor and compile-time type integration. Larger projects have more tutorials, third-party integrations and developers who already know their conventions.</p>
+  <p>Those are genuine advantages. Nift's countervailing advantage is that fewer decisions have to become framework decisions.</p>
+  <pre><code class="language-html">&lt;script
+  type="module"
+  src="\@pathto('public/assets/app.js')"&gt;&lt;/script&gt;</code></pre>
+  <p>Nift can resolve that URL, verify the target and remember that it must continue to exist. It does not need to know whether <code>app.js</code> was handwritten JavaScript, compiled TypeScript, a React bundle, a Svelte application or something produced by a future tool. That ignorance is useful: the boundary remains stable while the surrounding ecosystem evolves.</p>
+
+  <h2>AI DX</h2>
+  <p><strong>AI DX</strong> is a useful name for a related question: <em>how easy is a project for a coding assistant or autonomous coding agent to understand, modify, validate and recover from mistakes in?</em> The term matters because an AI assistant experiences developer tooling differently from a human. It does not get tired of writing ordinary HTML or repetitive JavaScript, but it can lose reliability when a project has many hidden conventions, generated abstractions, framework-specific lifecycle rules or several equally plausible ways to express the same thing.</p>
+  <p>Nift happens to have several characteristics that are unusually friendly to that style of development.</p>
+
+  <div class="advanced-doc-grid">
+    <div><h2>Small grammar, large output vocabulary</h2><p>An AI only needs a modest amount of Nift-specific context. Most of what it writes is still HTML, CSS, JavaScript, JSON and whichever backend language the project chose—technologies coding models already encounter extensively.</p></div>
+    <div><h2>Explicit filesystem model</h2><p>Tracked names, templates, content files, output paths and dependencies form a graph that can be inspected. An agent can often answer “what produces this file?” by following concrete project state rather than reconstructing implicit framework magic.</p></div>
+    <div><h2>Low abstraction translation cost</h2><p>If an AI knows how to make a responsive card grid in HTML/CSS, it can largely use that knowledge directly. It does not first need to translate the solution into a Nift component system, Nift styling API or Nift-specific data-fetching abstraction.</p></div>
+    <div><h2>Fast validation loops</h2><p>Agents work iteratively too. Cheap builds and targeted incremental rebuilds make it practical to edit, build, inspect, test and correct repeatedly rather than batching risky changes because validation is expensive.</p></div>
+    <div><h2>Machine-readable contracts</h2><p>JSON Schema is particularly valuable for AI-assisted work. It turns “I think this is the expected data shape” into a build-enforced contract. Bad generated data can fail with a concrete path and expected type instead of silently producing strange markup.</p></div>
+    <div><h2>Errors constrain the search space</h2><p>Strict path checking, strict comparisons, reserved bindings and controlled parser failures give an agent useful negative feedback. A permissive system that accepts many ambiguous forms can actually be harder for an AI to repair confidently.</p></div>
+  </div>
+
+  <h3>Why ordinary web technology matters even more for AI</h3>
+  <p>Framework abstractions can help AI when they are common and well represented in training data. But every project-specific abstraction consumes context and creates another place where the model can make a plausible-but-wrong assumption. Nift's “glue, not universe” approach means project prompts can spend less space teaching a proprietary world.</p>
+  <pre><code class="language-plaintext">small Nift context
+      +
+ordinary HTML / CSS / JS / JSON
+      +
+normal ecosystem tools
+      =
+more of the agent's context available for
+the actual application and its requirements</code></pre>
+  <p>This does not mean AI will never make Nift-specific mistakes. It can still confuse <code>\@pathto</code> semantics, invent syntax from another template language or misunderstand project structure. The important DX question is how cheaply those mistakes can be detected and corrected. A small language, explicit docs and strong regression behaviour make that recovery loop much easier.</p>
+
+  <h3>AI does not eliminate the value of simplicity</h3>
+  <p>There is a tempting argument that coding agents make complexity cheap because they can generate boilerplate for us. In one sense that is true: an AI can happily write hundreds of lines a human might find tedious. But that makes <em>accidental abstraction</em> less valuable, not more. If ordinary code is cheap to produce, there is less reason to introduce another framework concept merely to save typing.</p>
+  <p>For AI-assisted projects, the scarce resource increasingly becomes <strong>reliable reasoning</strong>: understanding what exists, predicting the consequences of a change, and validating that the result still obeys the project's contracts. Nift's small and explicit model is attractive precisely because it spends complexity on relationships that matter—tracking, dependencies, paths and build-time data—rather than on reducing keystrokes.</p>
+
+  <h3>AI DX is not an excuse to design only for AI</h3>
+  <p>The nice part is that most properties that help an agent also help a human maintainer: clear errors, fast builds, explicit dependencies, ordinary files, small concepts and strong tests. Nift does not need an “AI mode.” The same architecture can make the project easier to reason about for both.</p>
+
+  <h2>Testing is developer experience too</h2>
+  <p>The focused C++/parser smoke tests, broad black-box regression suite and ruthless adversarial tests primarily protect Nift itself, but their user-facing effect is DX: behaviour is less likely to shift unexpectedly as the implementation changes. A small language is only pleasant when its small set of rules is dependable.</p>
+  <p><a class="text-link" href="@pathto('docs/battle-tested')">See exactly what Nift's testing layers cover →</a></p>
+
+  <h2>The trade-off in one sentence</h2>
+  <blockquote class="docs-quote">Nift isn't trying to minimise the number of tools in your project. It's trying to minimise the unnecessary machinery between you and the thing you're building.</blockquote>
+  <p>Sometimes the best DX is an integrated framework that owns the whole workflow. Sometimes it is a small tool that knows exactly where its responsibility ends. Nift is deliberately the latter.</p>
+</section>

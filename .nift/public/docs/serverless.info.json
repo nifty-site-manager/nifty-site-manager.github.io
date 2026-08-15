@@ -1,13 +1,13 @@
 {
-  "name": "docs/partials",
-  "title": "Partials and input",
+  "name": "docs/serverless",
+  "title": "Nift in a serverless stack",
   "template": "templates/docs.html",
-  "content": "content/docs/partials.html",
-  "output": "public/docs/partials.html",
+  "content": "content/docs/serverless.html",
+  "output": "public/docs/serverless.html",
   "minify": false,
   "minify-version": 0,
   "dependencies": [
-    "content/docs/partials.html",
+    "content/docs/serverless.html",
     "templates/docs.html",
     "templates/partials/docs-sidebar.html",
     "templates/partials/footer.html",
