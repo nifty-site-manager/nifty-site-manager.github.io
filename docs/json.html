@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<title>Nift — Why Nift?</title>
+	<title>Nift — JSON data</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Nift is a fast, dependency-aware templating and build system for websites and text-based projects.">
@@ -66,83 +66,95 @@
 		<aside class="docs-sidebar" data-docs-sidebar><div class="docs-sidebar-inner"><p class="sidebar-kicker">Documentation</p><nav aria-label="Documentation navigation"><a class="sidebar-top" href="../docs.html">Overview</a><p>Start here</p><a href="./installing.html">Installing Nift</a><a href="./getting-started.html">Getting started</a><a href="./three-primitives.html">Start with three primitives</a><a href="./existing-sites.html">Existing websites</a><a href="./project-structure.html">Project structure</a><p>Core reference</p><a href="./templating.html">Template language</a><a href="./partials.html">Partials &amp; @input</a><a href="./comments.html">Comments</a><a href="./metadata.html">$[...] metadata</a><a href="./json.html">JSON data</a><a href="./json-schema.html">JSON Schema validation</a><a href="./control-flow.html">Loops &amp; conditions</a><a href="./paths.html">Paths &amp; tracked files</a><a href="./dep.html">@dep</a><a href="./user-dependencies.html">*.deps.json</a><a href="./incremental-builds.html">Incremental builds</a><a href="./minification.html">Minification</a><a href="./commands.html">CLI commands</a><p>Project files</p><a href="./configuration.html">config.json</a><a href="./tracked-json.html">tracked.json</a><p>Workflows &amp; patterns</p><a href="./ai-assistants.html">AI assistants</a><a href="use-cases/documentation.html">Documentation projects</a><a href="use-cases/web-apps.html">Full web applications</a><a href="use-cases/dashboards.html">Dashboards</a><a href="use-cases/react-islands.html">UI islands</a><a href="use-cases/text-assets.html">Text assets</a><p>Deployment</p><a href="./hosting.html">Hosting &amp; deployment</a><a href="./serverless.html">Serverless stacks</a><p>Design &amp; internals</p><a href="./why-nift.html">Philosophy: Why Nift?</a><a href="./architectural-rules.html">Architectural rules</a><a href="./how-nift-works.html">Architecture: How Nift works</a><a href="./advanced.html">Nift &amp; the wider ecosystem</a><p>Evaluation &amp; quality</p><a href="./developer-experience.html">Developer experience</a><a href="./battle-tested.html">Battle tested</a><a href="./ai-opinion.html">ChatGPT: Nift vs other tools</a></nav></div></aside>
 		<main class="docs-main">
 			<article class="docs-article">
-			<p class="docs-kicker">Design philosophy</p>
-			<h1>Why Nift?</h1>
-			<p class="docs-lead">Because a web project already has an enormous ecosystem. Nift does not need to replace it. It only needs to make composition, tracking and rebuilding simpler.</p>
+			<p class="docs-kicker">Structured data · Core reference</p>
+			<h1>JSON data.</h1>
+			<p class="docs-lead"><code>@json(path, name)</code> loads a JSON document into the current page render. Access values through the same <code>$[...]</code> syntax used for metadata, with object and array access chained as deeply as the data requires. An optional third parameter can validate that data against a standard JSON Schema before rendering.</p>
 			
-			<div class="docs-callout"><strong>Nift is small because the web ecosystem is already enormous.</strong><p>Browsers understand HTML, CSS and JavaScript. npm and Bun manage packages. TypeScript compiles types. Vite and bundlers build frontend assets. Go, Node and Python run servers. Databases store data. Hosting platforms deploy files. Nift can be useful without pretending those things need a Nift-specific replacement.</p></div>
+			<div class="docs-callout"><strong>Structured data, not a scripting runtime.</strong><p>Nift can load and select JSON values without turning the template language into a general-purpose programming language. Use ordinary external tools when you need substantial data transformation.</p></div>
 			
-			<h2>The four jobs at the centre</h2>
-			<div class="why-grid">
-			  <div><span>01</span><h3>Track</h3><p>Give the outputs you care about stable tracked names and let Nift know which content/template relationship produces them.</p></div>
-			  <div><span>02</span><h3>Compose</h3><p>Put shared structure in templates and partials. Put page-specific markup in content. Reuse the pieces without inventing a component runtime.</p></div>
-			  <div><span>03</span><h3>Resolve</h3><p>Use project-aware paths and metadata instead of scattering fragile assumptions about directory depth throughout shared markup.</p></div>
-			  <div><span>04</span><h3>Rebuild</h3><p>Record the dependency graph and rebuild the outputs affected by a change instead of treating every edit like a clean-room rebuild.</p></div>
-			</div>
+			<h2>Load a document</h2>
+			<pre><code class="language-nift">@json('data/site.json', site)</code></pre>
 			
-			<h2>Adoption should not require surrender.</h2>
-			<p>Some tools are most useful when the project becomes a project *of that framework*. Nift can be useful while remaining only one layer inside a repository.</p>
-			<pre><code class="language-plaintext">your project
-  ├─ HTML / CSS
-  ├─ TypeScript / JavaScript
-  ├─ React / Vue / Svelte (if useful)
-  ├─ Vite / bundlers
-  ├─ Go / Node / Python backend
-  ├─ database / auth / APIs
-  ├─ deployment tooling
-  └─ Nift
-       ├─ tracked outputs
-       ├─ templates / partials
-       ├─ project-aware paths
-       └─ dependency-aware builds</code></pre>
+			<p>The first parameter is a project-relative JSON path. The second is the binding name used for the rest of that page render, including nested <code>@input</code> files.</p>
 			
-			<h2>Ordinary web code is a feature.</h2>
-			<p>A Nift page can remain HTML. A stylesheet can remain CSS. Browser behaviour can remain JavaScript. Your backend can remain Go. That makes projects easier to inspect with standard tools and reduces how much Nift-specific knowledge has to survive across years of maintenance.</p>
+			<pre><code class="language-json">{
+  "name": "Nift",
+  "navigation": [
+    {"title": "Home", "url": "/"},
+    {"title": "Docs", "url": "/docs/"}
+  ],
+  "features": {
+    "search": true
+  }
+}</code></pre>
 			
-			<h2>Powerful simplicity helps humans.</h2>
-			<p>A small surface is easier to remember, document, debug and teach. The important abstractions remain visible: this page uses this template; this template inputs this partial; this link points to this tracked output.</p>
+			<pre><code class="language-html">@json('data/site.json', site)
+
+&lt;h1&gt;$[site.name]&lt;/h1&gt;
+&lt;a href="$[site.navigation[1].url]"&gt;
+    $[site.navigation[1].title]
+&lt;/a&gt;</code></pre>
 			
-			<h2>Powerful simplicity helps AI coding assistants too.</h2>
-			<p>An assistant can learn Nift's useful core from a short context file and then spend most of its context window reasoning about the actual website. It does not need to translate every CSS/HTML/backend decision into a large framework-specific API before it can contribute.</p>
 			
-			<h2>Fast should mean more than benchmark numbers.</h2>
-			<p>Nift is written in C++ and supports multithreaded builds, but the workflow advantage is especially visible in incremental development. Change one page and rebuild what changed. Change a shared partial and rebuild the pages that depend on it. Avoid repeatedly waking every part of a large toolchain for unrelated edits.</p>
-			<div class="advanced-doc-grid">
-			  <div><h2>Fast full builds</h2><p>A native compiled build tool keeps overhead low when the project genuinely needs to rebuild everything.</p></div>
-			  <div><h2>Fast incremental builds</h2><p>During normal development, the dependency graph lets the amount of work stay closer to the size of the change.</p></div>
-			  <div><h2>Small project footprint</h2><p>Nift does not require a runtime dependency tree merely to turn templates/content into deployable HTML.</p></div>
-			  <div><h2>One native executable</h2><p>The core tool is easy to reason about operationally: install Nift and point it at a project rather than bootstrapping a whole framework runtime.</p></div>
-			</div>
+			<h2>Optionally validate the data's shape</h2>
+			<pre><code class="language-nift">@json('data/products.json', products, 'schemas/products.schema.json')</code></pre>
+			<p>The optional third parameter is a JSON Schema. Nift validates the document before binding it and records both the data file and schema as dependencies. This catches problems such as missing required fields, wrong types, invalid enum values, unexpected properties and values outside declared bounds at build time.</p>
+			<p>If JSON Schema is new to you, the dedicated guide starts from first principles and includes complete examples.</p>
+			<div class="docs-callout"><strong>Learn JSON Schema →</strong><p><a href="./json-schema.html">JSON Schema validation</a> explains the standard, Nift's supported subset, reusable <code>$defs</code>/<code>$ref</code>, validation errors and incremental dependency behaviour.</p></div>
+			<h2>Access can chain arbitrarily</h2>
+			<pre><code class="language-plaintext">$[data.sections[3].groups[0].items[12].author.name]
+$[data.matrix[2][4]]
+$[data.settings.navigation.mobile.enabled]</code></pre>
 			
-			<h2>What Nift deliberately does not try to own</h2>
-			<pre><code class="language-plaintext">Need TypeScript?      use TypeScript.
-Need React?           use React.
-Need Tailwind?        use Tailwind.
-Need image tooling?   use image tooling.
-Need a Go server?     use Go.
-Need Postgres/Auth?   use Postgres / Supabase / your choice.
-Need deployment?      deploy public/ where it belongs.</code></pre>
+			<p>Objects use <code>.member</code>; arrays use zero-based <code>[index]</code>. You can alternate them as often as the document shape requires.</p>
 			
-			<h2>A useful feature must justify its permanent cost</h2>
-			<p>Nift's small surface is not an accident and it is not a promise that the language can never grow. The test for a new feature is whether it solves a recurring build-time problem while preserving a compact mental model. Structured JSON, loops and conditions pass that test because they let data describe static output. That does not imply that mutable variables, arbitrary computation or a general-purpose scripting runtime belong in the core.</p>
-			<div class="advanced-doc-grid">
-			  <div><h2>Prefer build-time knowledge</h2><p>If the value is already known while building, Nift can turn it into ordinary output rather than requiring the browser to reconstruct it later.</p></div>
-			  <div><h2>Prefer immutable data flow</h2><p>Load data, inspect it and render from it. Avoid hidden mutable state that makes templates depend on execution history.</p></div>
-			  <div><h2>Prefer explicit relationships</h2><p>Tracked names, inputs, paths and dependencies should make it possible to explain why an output exists and why it rebuilt.</p></div>
-			  <div><h2>Prefer composition over replacement</h2><p>A specialised external tool is often better than growing a Nift-specific substitute for functionality the wider ecosystem already solves well.</p></div>
-			</div>
+			<h2>Scalar output</h2>
+			<div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>JSON value</th><th>Template output</th></tr></thead><tbody>
+			<tr><td>string</td><td>The string contents</td></tr>
+			<tr><td>number</td><td>The JSON number</td></tr>
+			<tr><td>boolean</td><td><code>true</code> or <code>false</code></td></tr>
+			<tr><td><code>null</code></td><td><code>null</code></td></tr>
+			<tr><td>array/object</td><td>Build error: select an element/member rather than implicitly serialising the whole structure.</td></tr>
+			</tbody></table></div>
 			
-			<h2>Static generation does not mean static experiences</h2>
-			<p>Nift decides what can be known before deployment. The browser can still own what genuinely belongs at runtime. A product grid, navigation tree or documentation index can be generated from JSON with loops and conditions; a modal, live search box, WebSocket feed or interactive dashboard can use ordinary JavaScript or a component framework. Keeping those phases distinct avoids shipping runtime machinery merely to produce markup that was already knowable at build time.</p>
+			<h2>The JSON file is automatically a dependency</h2>
+			<p>Loading:</p>
+			<pre><code class="language-nift">@json('data/navigation.json', nav)</code></pre>
+			<p>also tells Nift that the current page depends on <code>data/navigation.json</code>. A change to that data can therefore trigger <code>build-updated</code> in modified, hash or hybrid mode just like a template/input dependency.</p>
 			
-			<h2>Compatibility should be quiet, not contagious</h2>
-			<p>Where practical, Nift can keep a narrow compatibility path for existing projects without making historical aliases or obsolete concepts part of the recommended language. New documentation should teach the smallest current model. Compatibility exists to reduce migration pain, not to dictate the shape of future projects.</p>
+			<h2>Parsed documents are shared per build</h2>
+			<p>If thousands of pages load the same JSON file, Nift does not need to parse the document thousands of times. Parsed documents are cached as immutable build-wide data, while the binding name remains local to each page parser.</p>
 			
-			<h2>The result</h2>
-			<blockquote class="docs-quote">Nift provides the glue without trying to become the universe.</blockquote>
-			<p>That is not an excuse for missing features. It is the boundary: Nift should be excellent at the small set of project-aware build problems it owns, and easy to compose with specialist tools for everything else.</p>
+			<pre><code class="language-plaintext">data/site.json
+      │
+      └── parsed once for this build
+              │
+              ├── page A: binding "site"
+              ├── page B: binding "site"
+              └── page C: binding "settings"</code></pre>
 			
-			<div class="docs-next"><span>Next</span><a href="./three-primitives.html">Start with three primitives →</a></div>
+			<p>That is safe to share because the JSON document itself is immutable. Page-specific rendered partials are not cached in the same way.</p>
+			
+			<h2>Binding names</h2>
+			<p>Names use identifier-style letters/digits/underscores and cannot conflict with built-in metadata names. Rebinding the same name is an error rather than silently replacing earlier data.</p>
+			
+			<h2>Use it with control flow when the data actually needs it</h2>
+			<pre><code class="language-html">@json('data/articles.json', data)
+
+@for(article : data.articles){
+    @if(article.published){
+        &lt;article&gt;
+            &lt;h2&gt;$[article.title]&lt;/h2&gt;
+        &lt;/article&gt;
+    }
+}</code></pre>
+			
+			<p>If your JSON only contains a few scalar settings, you may never need a loop or condition. Load exactly what the page needs.</p>
+			
+			<h2>Failures are explicit</h2>
+			<p>Nift reports malformed JSON, missing files, invalid binding names, traversal attempts, missing members, bad array indices, wrong value types and attempts to render whole objects/arrays as build errors with source context.</p>
+			
+			<div class="docs-next"><span>Next</span><a href="json-schema.html">JSON Schema validation →</a></div>
 			</article>
 		</main>
 	</div>

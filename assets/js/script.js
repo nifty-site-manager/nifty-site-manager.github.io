@@ -74,6 +74,70 @@
 
   // Syntax highlighting is loaded only on pages that contain block examples.
   const codeBlocks = [...document.querySelectorAll('pre code')];
+
+  // Add one reusable copy control to every block example. The button lives
+  // outside <pre>, so copying the code never includes the UI itself.
+  const copyIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8h10v12H8z"></path><path d="M6 16H4V4h10v2"></path></svg>';
+  const copiedIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"></path></svg>';
+
+  const copyText = async text => {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return;
+    }
+
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.setAttribute('readonly', '');
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.select();
+    const copied = document.execCommand('copy');
+    textarea.remove();
+    if (!copied) throw new Error('copy failed');
+  };
+
+  codeBlocks.forEach(code => {
+    const pre = code.closest('pre');
+    if (!pre || pre.parentElement?.classList.contains('code-block-wrap')) return;
+
+    // The homepage live demo keeps all three tab panels in the DOM. A copy
+    // control belongs to the demo as a whole, not to every hidden <pre>.
+    if (pre.classList.contains('demo-source') && !pre.classList.contains('active')) return;
+
+    const wrap = document.createElement('div');
+    wrap.className = 'code-block-wrap';
+    pre.parentNode.insertBefore(wrap, pre);
+    wrap.appendChild(pre);
+
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'code-copy-button';
+    button.setAttribute('aria-label', 'Copy code');
+    button.title = 'Copy code';
+    button.innerHTML = copyIcon;
+    wrap.appendChild(button);
+
+    button.addEventListener('click', async () => {
+      try {
+        await copyText(code.textContent || '');
+        button.classList.add('copied');
+        button.setAttribute('aria-label', 'Copied');
+        button.title = 'Copied';
+        button.innerHTML = copiedIcon;
+        window.setTimeout(() => {
+          button.classList.remove('copied');
+          button.setAttribute('aria-label', 'Copy code');
+          button.title = 'Copy code';
+          button.innerHTML = copyIcon;
+        }, 1400);
+      } catch (error) {
+        button.setAttribute('aria-label', 'Copy failed');
+        button.title = 'Copy failed';
+      }
+    });
+  });
   const loadHighlighting = () => {
     if (!codeBlocks.length) return;
 
@@ -91,8 +155,8 @@
       hljs.registerLanguage('nift', () => ({
         name: 'Nift',
         contains: [
-          { className: 'meta', begin: /\\?@(?:content\b|input(?=\()|pathto(?=\()|getenv(?=\()|ent(?=\()|dep(?=\())/ },
-          { className: 'meta', begin: /\\?\$\[(?:title|name|content-path|output-path|template-path|build-timezone|build-time|build-UTC-time|build-date|build-UTC-date|build-YYYY|build-YY|build-OS)\]/ },
+          { className: 'meta', begin: /\\?@(?:content\b|input(?=\()|pathto(?=\()|getenv(?=\()|ent(?=\()|dep(?=\()|json(?=\()|for(?=\()|if(?=\())/ },
+          { className: 'meta', begin: /\\?\$\[[^\]\n]+\]/ },
           { className: 'string', begin: /'/, end: /'/ },
           { className: 'string', begin: /"/, end: /"/ },
           { className: 'comment', begin: /#/, end: /$/ }
