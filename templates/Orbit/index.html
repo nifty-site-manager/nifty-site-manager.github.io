@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Orbit — Focus Workspace</title>
+  <meta name="description" content="A dark single-page productivity application starter built with Nift.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  
+  <main>
+    <section class="app-shell">
+      <aside><div class="logo">orbit<span>°</span></div><button class="new" id="newTask">＋ New task</button><nav><a class="active" data-view="Today">Today <b>5</b></a><a data-view="Upcoming">Upcoming <b>12</b></a><a data-view="Notes">Notes</a><a data-view="Archive">Archive</a></nav><div class="project-label">Projects</div><nav class="projects"><a><i></i> Website refresh</a><a><i></i> Product launch</a><a><i></i> Personal</a></nav><div class="user"><span>NH</span><div><b>Nina Hall</b><small>nina@example.com</small></div></div></aside>
+      <div class="workspace"><header><button class="search" id="search">⌕ &nbsp; Search anything <kbd>⌘ K</kbd></button><button class="icon">◐</button><button class="avatar">NH</button></header><main><div class="title-row"><div><p>Thursday, 13 August</p><h1 id="viewTitle">Today</h1></div><div class="progress"><span>3 of 5 done</span><i><b></b></i></div></div><section class="focus"><small>FOCUS</small><h2>Finish what moves the project.</h2><p>Three high-impact tasks are still open today.</p></section><div class="tasks" id="tasks"><article class="task"><button class="check"></button><div><strong>Review landing page handoff</strong><p>Website refresh · Design</p></div><time>09:30</time></article><article class="task"><button class="check done">✓</button><div><strong>Send launch metrics to team</strong><p>Product launch · Analytics</p></div><time>11:00</time></article><article class="task"><button class="check"></button><div><strong>Write onboarding notes</strong><p>Website refresh · Content</p></div><time>14:00</time></article><article class="task"><button class="check done">✓</button><div><strong>Book weekly project sync</strong><p>Personal · Admin</p></div><time>16:30</time></article></div></main></div>
+    </section><dialog id="taskDialog"><form method="dialog"><p>NEW TASK</p><h2>What needs doing?</h2><input id="taskInput" autofocus placeholder="Task title"><div><button value="cancel">Cancel</button><button id="addTask" value="default">Add task</button></div></form></dialog>
+  </main>
+  
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Pulse — Analytics Dashboard</title>
+  <meta name="description" content="A dark analytics dashboard starter built with Nift.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  
+  <main>
+    <section class="dash-shell">
+      <aside class="sidebar">
+        <div class="brand"><span>●</span> pulse</div>
+        <nav><a class="active" href="#">Overview</a><a href="#">Revenue</a><a href="#">Customers</a><a href="#">Campaigns</a><a href="#">Reports</a></nav>
+        <div class="profile"><i>AM</i><div><strong>Alex Morgan</strong><small>Workspace admin</small></div></div>
+      </aside>
+      <div class="dashboard">
+        <div class="topbar"><div><p class="eyebrow">Workspace / Overview</p><h1>Good morning, Alex.</h1></div><button id="period">Last 30 days ▾</button></div>
+        <div class="metrics"><article><span>Net revenue</span><strong>$184,240</strong><small>↗ 12.8% vs previous</small></article><article><span>Active accounts</span><strong>8,492</strong><small>↗ 6.4% vs previous</small></article><article><span>Conversion</span><strong>7.84%</strong><small>↗ 1.2% vs previous</small></article><article><span>Churn</span><strong>1.18%</strong><small class="warn">↘ 0.3% vs previous</small></article></div>
+        <div class="grid"><section class="panel chart-panel"><div class="panel-head"><div><span>Revenue</span><strong>$184.2k</strong></div><div class="legend"><i></i> This period</div></div><div class="chart"><div class="bars"><i style="--h:31%"></i><i style="--h:42%"></i><i style="--h:38%"></i><i style="--h:58%"></i><i style="--h:52%"></i><i style="--h:67%"></i><i style="--h:61%"></i><i style="--h:76%"></i><i style="--h:68%"></i><i style="--h:84%"></i><i style="--h:79%"></i><i style="--h:92%"></i></div></div></section><section class="panel sources"><span>Acquisition</span><h2>Top channels</h2><div><b>Organic search</b><em>42%</em></div><div><b>Direct</b><em>28%</em></div><div><b>Referrals</b><em>18%</em></div><div><b>Social</b><em>12%</em></div></section></div>
+        <section class="panel table"><div class="panel-head"><div><span>Recent activity</span><strong>Latest customers</strong></div><a href="#">View all →</a></div><div class="row head"><span>Customer</span><span>Plan</span><span>Status</span><span>MRR</span></div><div class="row"><span><i>NC</i> North Coast</span><span>Scale</span><span><b class="status">Active</b></span><span>$1,280</span></div><div class="row"><span><i>VX</i> Vertex Labs</span><span>Growth</span><span><b class="status">Active</b></span><span>$840</span></div><div class="row"><span><i>ML</i> Moonline</span><span>Starter</span><span><b class="status trial">Trial</b></span><span>$220</span></div></section>
+      </div>
+    </section>
+  </main>
+  
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

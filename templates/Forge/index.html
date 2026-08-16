@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en"><head><title>Forge — developer platform starter</title>
+                      <meta name="description" content="A dark developer-tool landing page for Nift.">
+                      <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+                      <link rel="stylesheet" href="assets/css/style.css"></head><body>
+<header><a class="brand" href="./"><i></i>FORGE</a><nav><a href="#features">Product</a><a href="#terminal">Docs</a><a href="#">Changelog</a><a href="#">Pricing</a></nav><a class="top-cta" href="#terminal">Console ↗</a></header>
+<main>
+  <section class="hero"><p class="eyebrow">Developer infrastructure · without the ceremony</p><h1>Ship the system.<br><em>Skip the platform tax.</em></h1><p>Forge is a fictional deployment platform starter designed for technical products: sharp typography, code-first storytelling and a dense but calm interface.</p><div class="actions"><a class="primary" href="#terminal">Deploy a project →</a><a class="ghost" href="#features">Read the docs</a></div><div class="terminal" id="terminal"><div class="term-top"><span>●</span><b>~/projects/atlas</b><small>forge deploy</small></div><pre><code>&lt;i>$&lt;/i> forge deploy
+&lt;span>✓&lt;/span> project detected        &lt;b>atlas-web&lt;/b>
+&lt;span>✓&lt;/span> build completed         &lt;b>1.84s&lt;/b>
+&lt;span>✓&lt;/span> edge bundle uploaded    &lt;b>42 regions&lt;/b>
+&lt;span>✓&lt;/span> deployment ready
+
+  &lt;a>https://atlas.forge.run&lt;/a></code></pre></div></section>
+  <section class="stats"><div><b>42</b><span>edge regions</span></div><div><b>18ms</b><span>median cold start</span></div><div><b>99.99%</b><span>network uptime</span></div><div><b>1 cmd</b><span>to production</span></div></section>
+  <section class="features" id="features"><div class="heading"><p class="eyebrow">Designed for engineers</p><h2>Infrastructure that behaves like a good Unix tool.</h2></div><div class="grid"><article><span>01 / BUILD</span><h3>Bring your runtime.</h3><p>Go, Node, Bun, Python, Rust or static assets. Forge does not need to own your application to deploy it.</p><pre><code>runtime = "go1.24"
+regions = ["syd", "sin", "fra"]</code></pre></article><article><span>02 / OBSERVE</span><h3>Useful telemetry.</h3><p>See requests, failures and latency without turning your deployment tool into a second job.</p><div class="spark"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article><article><span>03 / AUTOMATE</span><h3>Everything has an API.</h3><p>Use the CLI locally, call the API from CI, or build your own tooling on top of the same primitives.</p><pre><code>POST /v1/deployments
+→ 201 ready</code></pre></article><article><span>04 / OWN</span><h3>No magic repository.</h3><p>Your project remains a normal repository. Configuration is explicit, portable and readable.</p><div class="files"><b>src/</b><b>public/</b><b>forge.toml</b><b>README.md</b></div></article></div></section>
+  <section class="closing"><p class="eyebrow">From git push to production</p><h2>Fast enough to disappear from your workflow.</h2><a class="primary" href="#">Read the quickstart →</a></section>
+</main>
+<footer><b>FORGE</b><span>Developer platform starter · Nift</span></footer>
+<script src="assets/js/script.js"></script>
+</body></html>

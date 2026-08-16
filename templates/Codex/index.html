@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Codex — Documentation</title>
+  <meta name="description" content="A dark technical documentation website starter built with Nift.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  
+  <main>
+    <div class="docs-shell"><aside><a class="wordmark" href="#">codex<span>/</span></a><div class="search">⌕ Search docs <kbd>/</kbd></div><nav><p>Get started</p><a class="active" href="#intro">Introduction</a><a href="#install">Installation</a><a href="#structure">Project structure</a><p>Core concepts</p><a href="#routing">Routing</a><a href="#data">Data loading</a><a href="#deploy">Deployment</a><p>Reference</p><a href="#config">Configuration</a><a href="#api">API reference</a></nav><div class="version">v2.4 stable</div></aside><main><header><a href="#">Guide</a><a href="#">Examples</a><a href="#">GitHub ↗</a></header><article><p class="kicker">GET STARTED</p><h1 id="intro">Build something<br><em>you can explain.</em></h1><p class="lead">Codex is a documentation starter for technical products that values readable hierarchy, useful examples and a calm reading experience.</p><div class="callout"><span>◆</span><p><strong>Designed for real docs.</strong><br>Navigation, code blocks, notes and responsive typography are included without a frontend framework.</p></div><h2 id="install">Installation</h2><p>Start with the smallest possible project, then add only the structure your documentation actually needs.</p><pre><code>&lt;span>$&lt;/span> nift init docs
+&lt;span>$&lt;/span> cd docs
+&lt;span>$&lt;/span> nift build-all
+&lt;em>✓ built 12 pages in 18ms&lt;/em></code>&lt;button class="copy">Copy&lt;/button></pre><h2 id="structure">Project structure</h2><p>Keep content obvious. Shared layout belongs in templates; authored documentation stays in content.</p><div class="tree"><code>docs/
+    ├── content/
+    │   ├── index.html
+    │   └── guide/
+    ├── templates/
+    │   ├── template.html
+    │   └── partials/
+    └── public/</code></div><h2 id="routing">Simple routing</h2><p>Tracked names become stable project references, so links can remain independent of your eventual output directory.</p><div class="note"><b>Note</b><p>Use the build layer for composition and paths; use normal browser technology for runtime behaviour.</p></div><div class="next"><span>Next</span><a href="#data">Data loading <b>→</b></a></div></article></main><aside class="toc"><p>ON THIS PAGE</p><a href="#intro">Introduction</a><a href="#install">Installation</a><a href="#structure">Project structure</a><a href="#routing">Routing</a></aside></div>
+  </main>
+  
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
