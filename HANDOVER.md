@@ -22,6 +22,15 @@ as the `assets/css/style` Nift output through the content-only
 boundary as pages. Do not restore `public/assets/css/style.css` as an independently
 hand-maintained deployment file.
 
+Downloadable template archives remain under `public/assets/templates/`. Their
+already-built `public/` directories are also published as case-sensitive demo
+directories under `public/templates/<Template>/` (for example
+`public/templates/Aurora/`). The templates page links to those concrete deployment
+paths with `@pathto`. When an archive is replaced, refresh its corresponding demo
+directory and validate the demo's relative CSS/JavaScript requests as well as the
+download itself. Only the ten templates represented by showcase cards are
+published as demos; the older Barebones archive remains download-only.
+
 At the time this handover was introduced, `content/docs/templating.html` and the
 nested `public` checkout already contained local changes from earlier work.
 Preserve and distinguish those changes.

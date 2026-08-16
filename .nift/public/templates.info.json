@@ -37,6 +37,16 @@
     "public/examples.html",
     "public/index.html",
     "public/showcase.html",
-    "public/templates.html"
+    "public/templates.html",
+    "public/templates/Aurora/index.html",
+    "public/templates/Codex/index.html",
+    "public/templates/Forge/index.html",
+    "public/templates/Frame/index.html",
+    "public/templates/Meridian/index.html",
+    "public/templates/Nocturne/index.html",
+    "public/templates/Orbit/index.html",
+    "public/templates/Pulse/index.html",
+    "public/templates/Signal/index.html",
+    "public/templates/Vault/index.html"
   ]
 }
