@@ -1,6 +1,6 @@
 {
   "name": "docs/ai-opinion",
-  "title": "ChatGPT's opinion on Nift vs other build tools",
+  "title": "AI opinion: Nift vs other web build tools",
   "template": "templates/docs.html",
   "content": "content/docs/ai-opinion.html",
   "output": "public/docs/ai-opinion.html",
