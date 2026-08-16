@@ -1,81 +1,11 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<title>Nift — Built with Nift</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Nift is a fast, dependency-aware templating and build system for websites and text-based projects.">
-	<meta name="theme-color" content="#071c29">
-	<script>
+<!doctype html> <html lang="en"> <head> <title>Nift — Built with Nift</title> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta name="description" content="Nift is a fast, dependency-aware templating and build system for websites and text-based projects."> <meta name="theme-color" content="#071c29"> <script>
 	(() => {
 		const mode = localStorage.getItem('nift-theme') || 'system';
 		const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 		document.documentElement.dataset.themeMode = mode;
 		document.documentElement.dataset.theme = mode === 'system' ? (systemDark ? 'dark' : 'light') : mode;
 	})();
-	</script>
-	<link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-	<header class="site-header" data-header>
-		<a class="brand" href="./" aria-label="Nift home">
-			<img src="assets/images/nift-logo.webp" alt="Nift" width="420" height="162">
-		</a>
-		<div class="header-actions">
-			<nav class="desktop-nav" aria-label="Primary navigation">
-				<a href="./">Home</a>
-				<a href="./docs.html">Docs</a>
-				<a href="./templates.html">Templates</a>
-				<a href="./examples.html">Examples</a>
-				<a href="./showcase.html">Showcase</a>
-				<a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub ↗</a>
-			</nav>
-			<div class="theme-switcher desktop-theme-switcher" role="group" aria-label="Colour theme">
-				<button type="button" data-theme-choice="system" title="Use system theme">System</button>
-				<button type="button" data-theme-choice="light" title="Use light theme">Light</button>
-				<button type="button" data-theme-choice="dark" title="Use dark theme">Dark</button>
-			</div>
-			<button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-toggle>
-				<span></span><span></span>
-			</button>
-		</div>
-	</header>
-	<div class="mobile-nav" data-mobile-nav>
-		<a href="./">Home</a>
-		<a href="./docs.html">Documentation</a>
-		<a href="./templates.html">Templates</a>
-		<a href="./examples.html">Examples</a>
-		<a href="./showcase.html">Showcase</a>
-		<a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub ↗</a>
-		<div class="mobile-theme-row">
-			<span>Theme</span>
-			<div class="theme-switcher" role="group" aria-label="Colour theme">
-				<button type="button" data-theme-choice="system">System</button>
-				<button type="button" data-theme-choice="light">Light</button>
-				<button type="button" data-theme-choice="dark">Dark</button>
-			</div>
-		</div>
-	</div>
-	<main class="simple-page showcase-page">
-	<section class="page-hero">
-	  <p class="eyebrow">Showcase</p>
-	  <h1>Different websites. The same small Nift boundary.</h1>
-	  <p>These are real projects built while developing the v4 website—not hypothetical framework diagrams. The point is less that they share a visual style and more that wildly different results can share a remarkably small amount of Nift-specific machinery.</p>
-	</section>
-	
-	<section class="showcase-list">
-	  <article class="showcase-project showcase-nift">
-	    <div class="showcase-visual">
-	      <span>NIFT</span>
-	      <strong>Keep your HTML.<br>Keep your tools.<br><em>Stop repeating yourself.</em></strong>
-	      <div class="showcase-code-lines"><i></i><i></i><i></i><i></i></div>
-	    </div>
-	    <div class="showcase-copy">
-	      <p class="eyebrow">01 · This website</p>
-	      <h2>Nift v4 website</h2>
-	      <p>A full documentation/product site with theme switching, syntax highlighting, downloadable projects, responsive navigation, examples, install guidance and an extensive documentation tree.</p>
-	      <h3>Architecture</h3>
-	      <pre><code class="language-plaintext">Nift
+	</script> <link rel="stylesheet" href="assets/css/style.css"> </head> <body> <header class="site-header" data-header> <a class="brand" href="./" aria-label="Nift home"> <img src="assets/images/nift-logo.webp" alt="Nift" width="420" height="162"> </a> <div class="header-actions"> <nav class="desktop-nav" aria-label="Primary navigation"> <a href="./">Home</a> <a href="./docs.html">Docs</a> <a href="./templates.html">Templates</a> <a href="./examples.html">Examples</a> <a href="./showcase.html">Showcase</a> <a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub ↗</a> </nav> <div class="theme-switcher desktop-theme-switcher" role="group" aria-label="Colour theme"> <button type="button" data-theme-choice="system" title="Use system theme">System</button> <button type="button" data-theme-choice="light" title="Use light theme">Light</button> <button type="button" data-theme-choice="dark" title="Use dark theme">Dark</button> </div> <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-toggle> <span></span><span></span> </button> </div> </header> <div class="mobile-nav" data-mobile-nav> <a href="./">Home</a> <a href="./docs.html">Documentation</a> <a href="./templates.html">Templates</a> <a href="./examples.html">Examples</a> <a href="./showcase.html">Showcase</a> <a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub ↗</a> <div class="mobile-theme-row"> <span>Theme</span> <div class="theme-switcher" role="group" aria-label="Colour theme"> <button type="button" data-theme-choice="system">System</button> <button type="button" data-theme-choice="light">Light</button> <button type="button" data-theme-choice="dark">Dark</button> </div> </div> </div> <main class="simple-page showcase-page"> <section class="page-hero"> <p class="eyebrow">Showcase</p> <h1>Different websites. The same small Nift boundary.</h1> <p>These are real projects built while developing the v4 website—not hypothetical framework diagrams. The point is less that they share a visual style and more that wildly different results can share a remarkably small amount of Nift-specific machinery.</p> </section> <section class="showcase-list"> <article class="showcase-project showcase-nift"> <div class="showcase-visual"> <span>NIFT</span> <strong>Keep your HTML.<br>Keep your tools.<br><em>Stop repeating yourself.</em></strong> <div class="showcase-code-lines"><i></i><i></i><i></i><i></i></div> </div> <div class="showcase-copy"> <p class="eyebrow">01 · This website</p> <h2>Nift v4 website</h2> <p>A full documentation/product site with theme switching, syntax highlighting, downloadable projects, responsive navigation, examples, install guidance and an extensive documentation tree.</p> <h3>Architecture</h3> <pre><code class="language-plaintext">Nift
 ├─ 28 tracked pages
 ├─ reusable root/docs templates
 ├─ shared header/footer/docs navigation
@@ -83,24 +13,7 @@
 ├─ vanilla JavaScript
 ├─ Highlight.js from CDN
 ├─ downloadable template ZIPs
-└─ ordinary generated HTML</code></pre>
-	      <p>Nift owns composition, tracked paths and builds. The theme switcher, tabs and navigation behaviour stay ordinary browser JavaScript; syntax highlighting stays an external specialist library.</p>
-	      <div class="showcase-actions"><a class="button button-primary" href="./">View the homepage →</a><a class="text-link" href="docs/why-nift.html">Why this architecture →</a></div>
-	    </div>
-	  </article>
-	
-	  <article class="showcase-project showcase-aurora">
-	    <div class="showcase-visual">
-	      <span>✦ AURORA</span>
-	      <strong>Turn scattered signals<br>into <em>clear direction.</em></strong>
-	      <div class="showcase-mini-ui"><i></i><i></i><i></i></div>
-	    </div>
-	    <div class="showcase-copy">
-	      <p class="eyebrow">02 · AI / SaaS</p>
-	      <h2>Aurora</h2>
-	      <p>A polished dark product landing page with atmospheric gradients, interface mock-ups, product metrics and feature storytelling.</p>
-	      <h3>Architecture</h3>
-	      <pre><code class="language-plaintext">Nift
+└─ ordinary generated HTML</code></pre> <p>Nift owns composition, tracked paths and builds. The theme switcher, tabs and navigation behaviour stay ordinary browser JavaScript; syntax highlighting stays an external specialist library.</p> <div class="showcase-actions"><a class="button button-primary" href="./">View the homepage →</a><a class="text-link" href="docs/why-nift.html">Why this architecture →</a></div> </div> </article> <article class="showcase-project showcase-aurora"> <div class="showcase-visual"> <span>✦ AURORA</span> <strong>Turn scattered signals<br>into <em>clear direction.</em></strong> <div class="showcase-mini-ui"><i></i><i></i><i></i></div> </div> <div class="showcase-copy"> <p class="eyebrow">02 · AI / SaaS</p> <h2>Aurora</h2> <p>A polished dark product landing page with atmospheric gradients, interface mock-ups, product metrics and feature storytelling.</p> <h3>Architecture</h3> <pre><code class="language-plaintext">Nift
 ├─ content/index.html
 ├─ templates/template.html
 ├─ head/header/footer partials
@@ -110,24 +23,7 @@
 
 No npm install
 No frontend framework
-No external image dependency</code></pre>
-	      <p>The design looks like a modern SaaS product site, but the underlying project is essentially one tracked page plus reusable structure and ordinary frontend assets.</p>
-	      <div class="showcase-actions"><a class="button button-primary" href="assets/templates/nift-aurora.zip" download>Download Aurora ↓</a><a class="text-link" href="./templates.html">Template details →</a></div>
-	    </div>
-	  </article>
-	
-	  <article class="showcase-project showcase-forge">
-	    <div class="showcase-visual">
-	      <span>■ FORGE</span>
-	      <strong>Ship the system.<br><em>Skip the platform tax.</em></strong>
-	      <div class="showcase-terminal"><b>$ forge deploy</b><i>✓ build completed</i><i>✓ deployment ready</i></div>
-	    </div>
-	    <div class="showcase-copy">
-	      <p class="eyebrow">03 · Developer tooling</p>
-	      <h2>Forge</h2>
-	      <p>A developer-infrastructure landing page with terminal output, platform metrics, technical feature cards and a code-first visual language.</p>
-	      <h3>Architecture</h3>
-	      <pre><code class="language-plaintext">Nift
+No external image dependency</code></pre> <p>The design looks like a modern SaaS product site, but the underlying project is essentially one tracked page plus reusable structure and ordinary frontend assets.</p> <div class="showcase-actions"><a class="button button-primary" href="assets/templates/nift-aurora.zip" download>Download Aurora ↓</a><a class="text-link" href="./templates.html">Template details →</a></div> </div> </article> <article class="showcase-project showcase-forge"> <div class="showcase-visual"> <span>■ FORGE</span> <strong>Ship the system.<br><em>Skip the platform tax.</em></strong> <div class="showcase-terminal"><b>$ forge deploy</b><i>✓ build completed</i><i>✓ deployment ready</i></div> </div> <div class="showcase-copy"> <p class="eyebrow">03 · Developer tooling</p> <h2>Forge</h2> <p>A developer-infrastructure landing page with terminal output, platform metrics, technical feature cards and a code-first visual language.</p> <h3>Architecture</h3> <pre><code class="language-plaintext">Nift
 ├─ tracked HTML content
 ├─ shared document template
 ├─ reusable header/footer
@@ -135,24 +31,7 @@ No external image dependency</code></pre>
    └─ CSS
 
 Browser result:
-plain HTML + CSS</code></pre>
-	      <p>There is no special “developer-tool theme engine” here. The complexity lives in the design, not in Nift's project model.</p>
-	      <div class="showcase-actions"><a class="button button-primary" href="assets/templates/nift-forge.zip" download>Download Forge ↓</a><a class="text-link" href="./templates.html">Template details →</a></div>
-	    </div>
-	  </article>
-	
-	  <article class="showcase-project showcase-meridian">
-	    <div class="showcase-visual">
-	      <span>MERIDIAN°</span>
-	      <strong>We make digital<br>work <em>worth feeling.</em></strong>
-	      <div class="showcase-art"><i></i><b>MONUMENT</b></div>
-	    </div>
-	    <div class="showcase-copy">
-	      <p class="eyebrow">04 · Studio / Portfolio</p>
-	      <h2>Meridian</h2>
-	      <p>A dark creative-studio project using oversized editorial typography, art-directed panels and CSS-generated visual work.</p>
-	      <h3>Architecture</h3>
-	      <pre><code class="language-plaintext">Nift
+plain HTML + CSS</code></pre> <p>There is no special “developer-tool theme engine” here. The complexity lives in the design, not in Nift's project model.</p> <div class="showcase-actions"><a class="button button-primary" href="assets/templates/nift-forge.zip" download>Download Forge ↓</a><a class="text-link" href="./templates.html">Template details →</a></div> </div> </article> <article class="showcase-project showcase-meridian"> <div class="showcase-visual"> <span>MERIDIAN°</span> <strong>We make digital<br>work <em>worth feeling.</em></strong> <div class="showcase-art"><i></i><b>MONUMENT</b></div> </div> <div class="showcase-copy"> <p class="eyebrow">04 · Studio / Portfolio</p> <h2>Meridian</h2> <p>A dark creative-studio project using oversized editorial typography, art-directed panels and CSS-generated visual work.</p> <h3>Architecture</h3> <pre><code class="language-plaintext">Nift
 ├─ page-specific HTML content
 ├─ reusable studio shell
 ├─ header/footer partials
@@ -161,39 +40,4 @@ plain HTML + CSS</code></pre>
 
 No component runtime
 No image library
-No build dependency tree</code></pre>
-	      <p>This starter is a useful example of Nift getting out of the way: almost everything interesting about it is just HTML and CSS.</p>
-	      <div class="showcase-actions"><a class="button button-primary" href="assets/templates/nift-meridian.zip" download>Download Meridian ↓</a><a class="text-link" href="./templates.html">Template details →</a></div>
-	    </div>
-	  </article>
-	</section>
-	
-	<section class="showcase-principle">
-	  <p class="eyebrow">What the showcase is demonstrating</p>
-	  <h2>The architecture does not have to grow with the visual ambition.</h2>
-	  <p>Nift can stay a small templating/build boundary whether the result is documentation, a SaaS landing page, a developer product or a high-end portfolio. And when a project genuinely needs TypeScript, React, Vue, Svelte, Go, Node, Python, Supabase or something else, those tools can join the repository without becoming Nift features.</p>
-	  <div class="hero-actions"><a class="button button-primary" href="./templates.html">Download the starters →</a><a class="button button-secondary" href="./examples.html">See stack examples →</a></div>
-	</section>
-	</main>
-	<footer class="site-footer">
-		<div class="footer-inner">
-			<div>
-				<strong>Nift</strong>
-				<p>Build the web without letting your build tool own it.</p>
-			</div>
-			<div class="footer-links">
-				<a href="./docs.html">Documentation</a>
-				<a href="./templates.html">Templates</a>
-				<a href="./examples.html">Examples</a>
-				<a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub</a>
-			</div>
-		</div>
-		<div class="footer-bottom">
-			<span>Open source · MIT licensed</span>
-			<span>© 2015–present</span>
-		</div>
-	</footer>
-    <script defer src="assets/js/demo.js"></script>
-	<script defer src="assets/js/script.js"></script>
-</body>
-</html>
+No build dependency tree</code></pre> <p>This starter is a useful example of Nift getting out of the way: almost everything interesting about it is just HTML and CSS.</p> <div class="showcase-actions"><a class="button button-primary" href="assets/templates/nift-meridian.zip" download>Download Meridian ↓</a><a class="text-link" href="./templates.html">Template details →</a></div> </div> </article> </section> <section class="showcase-principle"> <p class="eyebrow">What the showcase is demonstrating</p> <h2>The architecture does not have to grow with the visual ambition.</h2> <p>Nift can stay a small templating/build boundary whether the result is documentation, a SaaS landing page, a developer product or a high-end portfolio. And when a project genuinely needs TypeScript, React, Vue, Svelte, Go, Node, Python, Supabase or something else, those tools can join the repository without becoming Nift features.</p> <div class="hero-actions"><a class="button button-primary" href="./templates.html">Download the starters →</a><a class="button button-secondary" href="./examples.html">See stack examples →</a></div> </section> </main> <footer class="site-footer"> <div class="footer-inner"> <div> <strong>Nift</strong> <p>Build the web without letting your build tool own it.</p> </div> <div class="footer-links"> <a href="./docs.html">Documentation</a> <a href="./templates.html">Templates</a> <a href="./examples.html">Examples</a> <a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub</a> </div> </div> <div class="footer-bottom"> <span>Open source · MIT licensed</span> <span>© 2015–present</span> </div> </footer> <script defer src="assets/js/demo.js"></script> <script defer src="assets/js/script.js"></script> </body> </html>

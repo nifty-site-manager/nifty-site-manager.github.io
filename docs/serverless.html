@@ -1,79 +1,11 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<title>Nift — Nift in a serverless stack</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Nift is a fast, dependency-aware templating and build system for websites and text-based projects.">
-	<meta name="theme-color" content="#071c29">
-	<script>
+<!doctype html> <html lang="en"> <head> <title>Nift — Nift in a serverless stack</title> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta name="description" content="Nift is a fast, dependency-aware templating and build system for websites and text-based projects."> <meta name="theme-color" content="#071c29"> <script>
 	(() => {
 		const mode = localStorage.getItem('nift-theme') || 'system';
 		const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 		document.documentElement.dataset.themeMode = mode;
 		document.documentElement.dataset.theme = mode === 'system' ? (systemDark ? 'dark' : 'light') : mode;
 	})();
-	</script>
-	<link rel="stylesheet" href="../assets/css/style.css">
-</head>
-<body class="docs-page">
-	<header class="site-header" data-header>
-		<a class="brand" href="../" aria-label="Nift home">
-			<img src="../assets/images/nift-logo.webp" alt="Nift" width="420" height="162">
-		</a>
-		<div class="header-actions">
-			<nav class="desktop-nav" aria-label="Primary navigation">
-				<a href="../">Home</a>
-				<a href="../docs.html">Docs</a>
-				<a href="../templates.html">Templates</a>
-				<a href="../examples.html">Examples</a>
-				<a href="../showcase.html">Showcase</a>
-				<a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub ↗</a>
-			</nav>
-			<div class="theme-switcher desktop-theme-switcher" role="group" aria-label="Colour theme">
-				<button type="button" data-theme-choice="system" title="Use system theme">System</button>
-				<button type="button" data-theme-choice="light" title="Use light theme">Light</button>
-				<button type="button" data-theme-choice="dark" title="Use dark theme">Dark</button>
-			</div>
-			<button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-toggle>
-				<span></span><span></span>
-			</button>
-		</div>
-	</header>
-	<div class="mobile-nav" data-mobile-nav>
-		<a href="../">Home</a>
-		<a href="../docs.html">Documentation</a>
-		<a href="../templates.html">Templates</a>
-		<a href="../examples.html">Examples</a>
-		<a href="../showcase.html">Showcase</a>
-		<a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub ↗</a>
-		<div class="mobile-theme-row">
-			<span>Theme</span>
-			<div class="theme-switcher" role="group" aria-label="Colour theme">
-				<button type="button" data-theme-choice="system">System</button>
-				<button type="button" data-theme-choice="light">Light</button>
-				<button type="button" data-theme-choice="dark">Dark</button>
-			</div>
-		</div>
-	</div>
-	<button class="docs-menu-toggle" type="button" aria-label="Open documentation navigation" aria-expanded="false" data-docs-menu-toggle>
-		<span></span><span></span>
-	</button>
-	<div class="docs-mobile-nav" data-docs-mobile-nav>
-		<aside class="docs-sidebar" data-docs-sidebar><div class="docs-sidebar-inner"><p class="sidebar-kicker">Documentation</p><nav aria-label="Documentation navigation"><a class="sidebar-top" href="../docs.html">Overview</a><p>Start here</p><a href="./installing.html">Installing Nift</a><a href="./getting-started.html">Getting started</a><a href="./three-primitives.html">Start with three primitives</a><a href="./existing-sites.html">Existing websites</a><a href="./project-structure.html">Project structure</a><p>Core reference</p><a href="./templating.html">Template language</a><a href="./partials.html">Partials &amp; @input</a><a href="./comments.html">Comments</a><a href="./metadata.html">$[...] metadata</a><a href="./json.html">JSON data</a><a href="./json-schema.html">JSON Schema validation</a><a href="./control-flow.html">Loops &amp; conditions</a><a href="./paths.html">Paths &amp; tracked files</a><a href="./dep.html">@dep</a><a href="./user-dependencies.html">*.deps.json</a><a href="./incremental-builds.html">Incremental builds</a><a href="./minification.html">Minification</a><a href="./commands.html">CLI commands</a><p>Project files</p><a href="./configuration.html">config.json</a><a href="./tracked-json.html">tracked.json</a><p>Workflows &amp; patterns</p><a href="./ai-assistants.html">AI assistants</a><a href="use-cases/documentation.html">Documentation projects</a><a href="use-cases/web-apps.html">Full web applications</a><a href="use-cases/dashboards.html">Dashboards</a><a href="use-cases/react-islands.html">UI islands</a><a href="use-cases/text-assets.html">Text assets</a><p>Deployment</p><a href="./hosting.html">Hosting &amp; deployment</a><a href="./serverless.html">Serverless stacks</a><p>Design &amp; internals</p><a href="./why-nift.html">Philosophy: Why Nift?</a><a href="./architectural-rules.html">Architectural rules</a><a href="./how-nift-works.html">Architecture: How Nift works</a><a href="./advanced.html">Nift &amp; the wider ecosystem</a><p>Evaluation &amp; quality</p><a href="./developer-experience.html">Developer experience</a><a href="./battle-tested.html">Battle tested</a><a href="./ai-opinion.html">AI opinion: Nift vs other tools</a></nav></div></aside>
-	</div>
-	<div class="docs-layout">
-		<aside class="docs-sidebar" data-docs-sidebar><div class="docs-sidebar-inner"><p class="sidebar-kicker">Documentation</p><nav aria-label="Documentation navigation"><a class="sidebar-top" href="../docs.html">Overview</a><p>Start here</p><a href="./installing.html">Installing Nift</a><a href="./getting-started.html">Getting started</a><a href="./three-primitives.html">Start with three primitives</a><a href="./existing-sites.html">Existing websites</a><a href="./project-structure.html">Project structure</a><p>Core reference</p><a href="./templating.html">Template language</a><a href="./partials.html">Partials &amp; @input</a><a href="./comments.html">Comments</a><a href="./metadata.html">$[...] metadata</a><a href="./json.html">JSON data</a><a href="./json-schema.html">JSON Schema validation</a><a href="./control-flow.html">Loops &amp; conditions</a><a href="./paths.html">Paths &amp; tracked files</a><a href="./dep.html">@dep</a><a href="./user-dependencies.html">*.deps.json</a><a href="./incremental-builds.html">Incremental builds</a><a href="./minification.html">Minification</a><a href="./commands.html">CLI commands</a><p>Project files</p><a href="./configuration.html">config.json</a><a href="./tracked-json.html">tracked.json</a><p>Workflows &amp; patterns</p><a href="./ai-assistants.html">AI assistants</a><a href="use-cases/documentation.html">Documentation projects</a><a href="use-cases/web-apps.html">Full web applications</a><a href="use-cases/dashboards.html">Dashboards</a><a href="use-cases/react-islands.html">UI islands</a><a href="use-cases/text-assets.html">Text assets</a><p>Deployment</p><a href="./hosting.html">Hosting &amp; deployment</a><a href="./serverless.html">Serverless stacks</a><p>Design &amp; internals</p><a href="./why-nift.html">Philosophy: Why Nift?</a><a href="./architectural-rules.html">Architectural rules</a><a href="./how-nift-works.html">Architecture: How Nift works</a><a href="./advanced.html">Nift &amp; the wider ecosystem</a><p>Evaluation &amp; quality</p><a href="./developer-experience.html">Developer experience</a><a href="./battle-tested.html">Battle tested</a><a href="./ai-opinion.html">AI opinion: Nift vs other tools</a></nav></div></aside>
-		<main class="docs-main">
-			<article class="docs-article">
-			<p class="docs-kicker">Deployment architecture</p>
-			<h1>Nift in a serverless stack</h1>
-			<p class="docs-lead">Nift is a build-time frontend layer, not an application server. That makes it unusually easy to combine with serverless backends: generate HTML, CSS and browser JavaScript ahead of time, put those files on static hosting or a CDN, and let small functions handle only the requests that genuinely need runtime compute.</p>
-			
-			<div class="docs-callout"><strong>The boundary is simple.</strong><p>Nift owns static composition and build-time data. Your serverless platform owns authentication callbacks, APIs, webhooks, database mutations, payments, email, background work and other runtime behavior. Browser JavaScript is ordinary web JavaScript, so it can call any HTTP API.</p></div>
-			
-			<h2>The basic architecture</h2>
-			<pre><code class="language-plaintext">                    build time
+	</script> <link rel="stylesheet" href="../assets/css/style.css"> </head> <body class="docs-page"> <header class="site-header" data-header> <a class="brand" href="../" aria-label="Nift home"> <img src="../assets/images/nift-logo.webp" alt="Nift" width="420" height="162"> </a> <div class="header-actions"> <nav class="desktop-nav" aria-label="Primary navigation"> <a href="../">Home</a> <a href="../docs.html">Docs</a> <a href="../templates.html">Templates</a> <a href="../examples.html">Examples</a> <a href="../showcase.html">Showcase</a> <a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub ↗</a> </nav> <div class="theme-switcher desktop-theme-switcher" role="group" aria-label="Colour theme"> <button type="button" data-theme-choice="system" title="Use system theme">System</button> <button type="button" data-theme-choice="light" title="Use light theme">Light</button> <button type="button" data-theme-choice="dark" title="Use dark theme">Dark</button> </div> <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-toggle> <span></span><span></span> </button> </div> </header> <div class="mobile-nav" data-mobile-nav> <a href="../">Home</a> <a href="../docs.html">Documentation</a> <a href="../templates.html">Templates</a> <a href="../examples.html">Examples</a> <a href="../showcase.html">Showcase</a> <a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub ↗</a> <div class="mobile-theme-row"> <span>Theme</span> <div class="theme-switcher" role="group" aria-label="Colour theme"> <button type="button" data-theme-choice="system">System</button> <button type="button" data-theme-choice="light">Light</button> <button type="button" data-theme-choice="dark">Dark</button> </div> </div> </div> <button class="docs-menu-toggle" type="button" aria-label="Open documentation navigation" aria-expanded="false" data-docs-menu-toggle> <span></span><span></span> </button> <div class="docs-mobile-nav" data-docs-mobile-nav> <aside class="docs-sidebar" data-docs-sidebar><div class="docs-sidebar-inner"><p class="sidebar-kicker">Documentation</p><nav aria-label="Documentation navigation"><a class="sidebar-top" href="../docs.html">Overview</a><p>Start here</p><a href="./installing.html">Installing Nift</a><a href="./getting-started.html">Getting started</a><a href="./three-primitives.html">Start with three primitives</a><a href="./existing-sites.html">Existing websites</a><a href="./project-structure.html">Project structure</a><p>Core reference</p><a href="./templating.html">Template language</a><a href="./partials.html">Partials &amp; @input</a><a href="./comments.html">Comments</a><a href="./metadata.html">$[...] metadata</a><a href="./json.html">JSON data</a><a href="./json-schema.html">JSON Schema validation</a><a href="./control-flow.html">Loops &amp; conditions</a><a href="./paths.html">Paths &amp; tracked files</a><a href="./dep.html">@dep</a><a href="./user-dependencies.html">*.deps.json</a><a href="./incremental-builds.html">Incremental builds</a><a href="./minification.html">Minification</a><a href="./commands.html">CLI commands</a><p>Project files</p><a href="./configuration.html">config.json</a><a href="./tracked-json.html">tracked.json</a><p>Workflows &amp; patterns</p><a href="./ai-assistants.html">AI assistants</a><a href="./serverless.html">Serverless stacks</a><a href="use-cases/documentation.html">Documentation projects</a><a href="use-cases/web-apps.html">Full web applications</a><a href="use-cases/dashboards.html">Dashboards</a><a href="use-cases/react-islands.html">UI islands</a><a href="use-cases/text-assets.html">Text assets</a><p>Deployment</p><a href="./hosting.html">Hosting &amp; deployment</a><p>Design &amp; internals</p><a href="./why-nift.html">Philosophy: Why Nift?</a><a href="./architectural-rules.html">Architectural rules</a><a href="./how-nift-works.html">Architecture: How Nift works</a><a href="./advanced.html">Nift &amp; the wider ecosystem</a><p>Evaluation &amp; quality</p><a href="./developer-experience.html">Developer experience</a><a href="./battle-tested.html">Battle tested</a><a href="./production-readiness.html">Production readiness</a><a href="./ai-opinion.html">AI opinion: Nift vs other tools</a><a href="./ai-development.html">AI development</a></nav></div></aside> </div> <div class="docs-layout"> <aside class="docs-sidebar" data-docs-sidebar><div class="docs-sidebar-inner"><p class="sidebar-kicker">Documentation</p><nav aria-label="Documentation navigation"><a class="sidebar-top" href="../docs.html">Overview</a><p>Start here</p><a href="./installing.html">Installing Nift</a><a href="./getting-started.html">Getting started</a><a href="./three-primitives.html">Start with three primitives</a><a href="./existing-sites.html">Existing websites</a><a href="./project-structure.html">Project structure</a><p>Core reference</p><a href="./templating.html">Template language</a><a href="./partials.html">Partials &amp; @input</a><a href="./comments.html">Comments</a><a href="./metadata.html">$[...] metadata</a><a href="./json.html">JSON data</a><a href="./json-schema.html">JSON Schema validation</a><a href="./control-flow.html">Loops &amp; conditions</a><a href="./paths.html">Paths &amp; tracked files</a><a href="./dep.html">@dep</a><a href="./user-dependencies.html">*.deps.json</a><a href="./incremental-builds.html">Incremental builds</a><a href="./minification.html">Minification</a><a href="./commands.html">CLI commands</a><p>Project files</p><a href="./configuration.html">config.json</a><a href="./tracked-json.html">tracked.json</a><p>Workflows &amp; patterns</p><a href="./ai-assistants.html">AI assistants</a><a href="./serverless.html">Serverless stacks</a><a href="use-cases/documentation.html">Documentation projects</a><a href="use-cases/web-apps.html">Full web applications</a><a href="use-cases/dashboards.html">Dashboards</a><a href="use-cases/react-islands.html">UI islands</a><a href="use-cases/text-assets.html">Text assets</a><p>Deployment</p><a href="./hosting.html">Hosting &amp; deployment</a><p>Design &amp; internals</p><a href="./why-nift.html">Philosophy: Why Nift?</a><a href="./architectural-rules.html">Architectural rules</a><a href="./how-nift-works.html">Architecture: How Nift works</a><a href="./advanced.html">Nift &amp; the wider ecosystem</a><p>Evaluation &amp; quality</p><a href="./developer-experience.html">Developer experience</a><a href="./battle-tested.html">Battle tested</a><a href="./production-readiness.html">Production readiness</a><a href="./ai-opinion.html">AI opinion: Nift vs other tools</a><a href="./ai-development.html">AI development</a></nav></div></aside> <main class="docs-main"> <article class="docs-article"> <p class="docs-kicker">Deployment architecture</p> <h1>Nift in a serverless stack</h1> <p class="docs-lead">Nift is a build-time frontend layer, not an application server. That makes it unusually easy to combine with serverless backends: generate HTML, CSS and browser JavaScript ahead of time, put those files on static hosting or a CDN, and let small functions handle only the requests that genuinely need runtime compute.</p> <div class="docs-callout"><strong>The boundary is simple.</strong><p>Nift owns static composition and build-time data. Your serverless platform owns authentication callbacks, APIs, webhooks, database mutations, payments, email, background work and other runtime behavior. Browser JavaScript is ordinary web JavaScript, so it can call any HTTP API.</p></div> <h2>The basic architecture</h2> <pre><code class="language-plaintext">                    build time
 content + JSON + templates ── Nift ──► static HTML/CSS/JS
                                            │
                                            ▼
@@ -85,11 +17,7 @@ content + JSON + templates ── Nift ──► static HTML/CSS/JS
                     ┌──────────────────────┼──────────────────────┐
                     ▼                      ▼                      ▼
              serverless API          auth / database         third-party API
-             or edge function        / storage service       / webhook</code></pre>
-			<p>This split can keep most requests out of application compute entirely. A product page, documentation page, dashboard shell or marketing page can be a static Nift output; only an action such as signing in, loading private account data or submitting an order needs a function.</p>
-			
-			<h2>A small frontend calling a function</h2>
-			<pre><code class="language-html">&lt;form id="contact"&gt;
+             or edge function        / storage service       / webhook</code></pre> <p>This split can keep most requests out of application compute entirely. A product page, documentation page, dashboard shell or marketing page can be a static Nift output; only an action such as signing in, loading private account data or submitting an order needs a function.</p> <h2>A small frontend calling a function</h2> <pre><code class="language-html">&lt;form id="contact"&gt;
   &lt;input name="email" type="email" required&gt;
   &lt;textarea name="message" required&gt;&lt;/textarea&gt;
   &lt;button&gt;Send&lt;/button&gt;
@@ -108,20 +36,13 @@ document.querySelector('#contact').addEventListener('submit', async event =&gt; 
 
   if (!response.ok) throw new Error('Request failed');
 });
-&lt;/script&gt;</code></pre>
-			<p>Nothing about that code needs a Nift-specific server API. The endpoint can be Lambda, Azure Functions, Cloud Run functions, Supabase Edge Functions, Vercel Functions, Netlify Functions, a conventional backend, or something you write five years from now.</p>
-			
-			<h2>AWS: S3/CloudFront + API Gateway + Lambda</h2>
-			<p>A natural AWS arrangement is to deploy Nift's generated site to S3 behind CloudFront, then route dynamic API requests through API Gateway to AWS Lambda. Lambda runs event-driven code without you provisioning servers and automatically handles the underlying compute infrastructure.</p>
-			<pre><code class="language-plaintext">Nift build
+&lt;/script&gt;</code></pre> <p>Nothing about that code needs a Nift-specific server API. The endpoint can be Lambda, Azure Functions, Cloud Run functions, Supabase Edge Functions, Vercel Functions, Netlify Functions, a conventional backend, or something you write five years from now.</p> <h2>AWS: S3/CloudFront + API Gateway + Lambda</h2> <p>A natural AWS arrangement is to deploy Nift's generated site to S3 behind CloudFront, then route dynamic API requests through API Gateway to AWS Lambda. Lambda runs event-driven code without you provisioning servers and automatically handles the underlying compute infrastructure.</p> <pre><code class="language-plaintext">Nift build
    │
    ├──► S3 ──► CloudFront ──► /, /docs, /pricing, assets...
    │
    └────────────────────────► deployment pipeline
 
-browser ──► API Gateway ──► Lambda ──► DynamoDB / S3 / SES / other APIs</code></pre>
-			<p>A Lambda might accept a contact form, create a checkout session, generate a signed S3 upload URL, process an S3 event, or expose private application data:</p>
-			<pre><code class="language-javascript">export const handler = async event =&gt; {
+browser ──► API Gateway ──► Lambda ──► DynamoDB / S3 / SES / other APIs</code></pre> <p>A Lambda might accept a contact form, create a checkout session, generate a signed S3 upload URL, process an S3 event, or expose private application data:</p> <pre><code class="language-javascript">export const handler = async event =&gt; {
   const body = JSON.parse(event.body ?? '{}');
 
   // Validate input, write to a service, send mail, etc.
@@ -130,12 +51,7 @@ browser ──► API Gateway ──► Lambda ──► DynamoDB / S3 / SES / o
     headers: {'content-type': 'application/json'},
     body: JSON.stringify({ok: true, email: body.email})
   };
-};</code></pre>
-			<p>For a content-heavy site, the useful property is that Lambda is not involved in serving every page. Nift already rendered those pages. Lambda is reserved for runtime work.</p>
-			
-			<h2>Azure: Static Web Apps or Storage/CDN + Azure Functions</h2>
-			<p>On Azure, generated Nift output can live in static hosting while Azure Functions provides event-driven compute. Functions can expose HTTP APIs but can also react to schedules, queues, database changes and other events.</p>
-			<pre><code class="language-typescript">import { app, HttpRequest, HttpResponseInit } from '@azure/functions';
+};</code></pre> <p>For a content-heavy site, the useful property is that Lambda is not involved in serving every page. Nift already rendered those pages. Lambda is reserved for runtime work.</p> <h2>Azure: Static Web Apps or Storage/CDN + Azure Functions</h2> <p>On Azure, generated Nift output can live in static hosting while Azure Functions provides event-driven compute. Functions can expose HTTP APIs but can also react to schedules, queues, database changes and other events.</p> <pre><code class="language-typescript">import { app, HttpRequest, HttpResponseInit } from '@azure/functions';
 
 app.http('profile', {
   methods: ['GET'],
@@ -143,81 +59,47 @@ app.http('profile', {
   handler: async (request: HttpRequest): Promise&lt;HttpResponseInit&gt; =&gt; {
     return {jsonBody: {name: 'Ada', plan: 'pro'}};
   }
-});</code></pre>
-			<p>A Nift-generated account shell can request that endpoint after authentication. The public document remains static; private data remains runtime data.</p>
-			
-			<h2>Google Cloud: static hosting/CDN + Cloud Run functions</h2>
-			<p>Google Cloud's Cloud Run functions are single-purpose functions that can respond to HTTP requests or CloudEvents without you managing the runtime environment. A Nift frontend can be deployed independently and call those functions through ordinary HTTP.</p>
-			<pre><code class="language-javascript">const functions = require('@google-cloud/functions-framework');
+});</code></pre> <p>A Nift-generated account shell can request that endpoint after authentication. The public document remains static; private data remains runtime data.</p> <h2>Google Cloud: static hosting/CDN + Cloud Run functions</h2> <p>Google Cloud's Cloud Run functions are single-purpose functions that can respond to HTTP requests or CloudEvents without you managing the runtime environment. A Nift frontend can be deployed independently and call those functions through ordinary HTTP.</p> <pre><code class="language-javascript">const functions = require('@google-cloud/functions-framework');
 
 functions.http('status', (req, res) =&gt; {
   res.json({ok: true, generatedFrontend: 'nift'});
-});</code></pre>
-			<p>The same pattern works for event processing: a generated frontend uploads through a controlled API, while a function reacts to an object/storage event and performs processing asynchronously.</p>
-			
-			<h2>Supabase: Nift + Postgres/Auth/Storage + Edge Functions</h2>
-			<p>Supabase is particularly complementary because Nift does not try to become a database, authentication system or backend framework. Supabase can provide Postgres, Auth and Storage, while Edge Functions handle privileged or custom server-side operations.</p>
-			<pre><code class="language-typescript">Deno.serve(async request =&gt; {
+});</code></pre> <p>The same pattern works for event processing: a generated frontend uploads through a controlled API, while a function reacts to an object/storage event and performs processing asynchronously.</p> <h2>Supabase: Nift + Postgres/Auth/Storage + Edge Functions</h2> <p>Supabase is particularly complementary because Nift does not try to become a database, authentication system or backend framework. Supabase can provide Postgres, Auth and Storage, while Edge Functions handle privileged or custom server-side operations.</p> <pre><code class="language-typescript">Deno.serve(async request =&gt; {
   const {orderId} = await request.json();
 
   // Perform privileged validation/database/payment work here.
   return Response.json({accepted: true, orderId});
-});</code></pre>
-			<p>Supabase Edge Functions are TypeScript-first and globally distributed. Good uses beside a Nift frontend include webhook receivers, transactional email, payment integration, protected database operations and calls to APIs whose secrets must never reach browser JavaScript.</p>
-			<pre><code class="language-plaintext">Nift static UI
+});</code></pre> <p>Supabase Edge Functions are TypeScript-first and globally distributed. Good uses beside a Nift frontend include webhook receivers, transactional email, payment integration, protected database operations and calls to APIs whose secrets must never reach browser JavaScript.</p> <pre><code class="language-plaintext">Nift static UI
    ├──► Supabase Auth
    ├──► permitted Postgres operations via client + RLS
    ├──► Supabase Storage
-   └──► Edge Function ──► privileged DB/API/payment operation</code></pre>
-			
-			<h2>Vercel: static Nift output + Functions</h2>
-			<p>Vercel Functions run server-side code without managing servers and can sit behind API routes while Nift continues to produce the frontend. You do not need to adopt Next.js merely to use a serverless endpoint.</p>
-			<pre><code class="language-typescript">// api/hello.ts
+   └──► Edge Function ──► privileged DB/API/payment operation</code></pre> <h2>Vercel: static Nift output + Functions</h2> <p>Vercel Functions run server-side code without managing servers and can sit behind API routes while Nift continues to produce the frontend. You do not need to adopt Next.js merely to use a serverless endpoint.</p> <pre><code class="language-typescript">// api/hello.ts
 export default {
   fetch(request: Request) {
     return Response.json({message: 'Hello from the server'});
   }
-};</code></pre>
-			<p>A useful repository shape is:</p>
-			<pre><code class="language-plaintext">content/
+};</code></pre> <p>A useful repository shape is:</p> <pre><code class="language-plaintext">content/
 templates/
 assets/
 api/
   contact.ts
   checkout.ts
 .nift/
-package.json</code></pre>
-			<p>Your build command runs Nift; Vercel handles the server-side function directory according to its platform configuration.</p>
-			
-			<h2>Netlify: static deployment + Netlify Functions</h2>
-			<p>Netlify follows the same clean split. Functions can be JavaScript, TypeScript or Go and can act as HTTP endpoints, event handlers, scheduled functions or background work.</p>
-			<pre><code class="language-typescript">// netlify/functions/contact.ts
+package.json</code></pre> <p>Your build command runs Nift; Vercel handles the server-side function directory according to its platform configuration.</p> <h2>Netlify: static deployment + Netlify Functions</h2> <p>Netlify follows the same clean split. Functions can be JavaScript, TypeScript or Go and can act as HTTP endpoints, event handlers, scheduled functions or background work.</p> <pre><code class="language-typescript">// netlify/functions/contact.ts
 export default async (request: Request) =&gt; {
   const message = await request.json();
 
   // Validate and deliver message.
   return Response.json({received: true});
-};</code></pre>
-			<pre><code class="language-plaintext">Nift ──► generated static deployment
+};</code></pre> <pre><code class="language-plaintext">Nift ──► generated static deployment
 browser ──► /.netlify/functions/contact
                          │
-                         └──► email/database/API</code></pre>
-			<p>This is a good example of why Nift does not need a plugin for every hosting provider: the integration boundary is files plus normal HTTP.</p>
-			
-			<h2>GitHub Pages: static frontend, functions somewhere else</h2>
-			<p>GitHub Pages is static hosting, so it does not itself become the serverless backend. That is not a limitation on the Nift architecture. Deploy the generated site to GitHub Pages and call a separately hosted API.</p>
-			<pre><code class="language-plaintext">GitHub repository
+                         └──► email/database/API</code></pre> <p>This is a good example of why Nift does not need a plugin for every hosting provider: the integration boundary is files plus normal HTTP.</p> <h2>GitHub Pages: static frontend, functions somewhere else</h2> <p>GitHub Pages is static hosting, so it does not itself become the serverless backend. That is not a limitation on the Nift architecture. Deploy the generated site to GitHub Pages and call a separately hosted API.</p> <pre><code class="language-plaintext">GitHub repository
    │
    ├── GitHub Actions ──► nift build ──► GitHub Pages
    │
    └── function source ──► AWS / Azure / GCP / Supabase / other host
 
-GitHub Pages frontend ── HTTPS ──► serverless API</code></pre>
-			<p>For public APIs this can be extremely simple. For authenticated APIs, configure the function's CORS policy and authentication model for the Pages origin. Secrets belong in the function/platform configuration, never in generated frontend files.</p>
-			
-			<h2>Build-time data versus request-time data</h2>
-			<p>A useful design question is not “static or dynamic?” but <em>when does this value need to change?</em></p>
-			<pre><code class="language-plaintext">Changes when the site is deployed?
+GitHub Pages frontend ── HTTPS ──► serverless API</code></pre> <p>For public APIs this can be extremely simple. For authenticated APIs, configure the function's CORS policy and authentication model for the Pages origin. Secrets belong in the function/platform configuration, never in generated frontend files.</p> <h2>Build-time data versus request-time data</h2> <p>A useful design question is not “static or dynamic?” but <em>when does this value need to change?</em></p> <pre><code class="language-plaintext">Changes when the site is deployed?
     └── @json + @for + @if + Nift build
 
 Changes for each visitor/request?
@@ -230,49 +112,10 @@ Needs database mutation?
     └── function or carefully secured backend service
 
 Mostly static shell with one interactive area?
-    └── Nift page + ordinary JS or a React/Vue/Svelte island</code></pre>
-			<p>A product catalogue can, for example, be generated from JSON at build time while current stock is fetched from a function. Documentation can be entirely static while search analytics or feedback submission is serverless. A dashboard shell can be generated once while account-specific cards load after sign-in.</p>
-			
-			<h2>Serverless functions are not template functions</h2>
-			<p>Nift's <code>@input</code>, <code>@json</code>, <code>@for</code> and <code>@if</code> execute while building files. Lambda/Functions/Edge Functions execute later in response to requests or events. Keeping those phases separate is valuable: Nift can stay deterministic and fast, while runtime code gets the security, scaling and event model it needs.</p>
-			
-			<h2>Where build scripts fit</h2>
-			<p>Nift deliberately does not execute arbitrary shell commands from templates. Compose the deployment pipeline outside the template language instead:</p>
-			<pre><code class="language-json">{
+    └── Nift page + ordinary JS or a React/Vue/Svelte island</code></pre> <p>A product catalogue can, for example, be generated from JSON at build time while current stock is fetched from a function. Documentation can be entirely static while search analytics or feedback submission is serverless. A dashboard shell can be generated once while account-specific cards load after sign-in.</p> <h2>Serverless functions are not template functions</h2> <p>Nift's <code>@input</code>, <code>@json</code>, <code>@for</code> and <code>@if</code> execute while building files. Lambda/Functions/Edge Functions execute later in response to requests or events. Keeping those phases separate is valuable: Nift can stay deterministic and fast, while runtime code gets the security, scaling and event model it needs.</p> <h2>Where build scripts fit</h2> <p>Nift deliberately does not execute arbitrary shell commands from templates. Compose the deployment pipeline outside the template language instead:</p> <pre><code class="language-json">{
   "scripts": {
     "build:frontend": "nift build",
     "test:functions": "node --test functions/tests/*.test.js",
     "build": "npm run test:functions &amp;&amp; npm run build:frontend"
   }
-}</code></pre>
-			<p>That boundary is more powerful than teaching Nift about every cloud CLI. Terraform, Pulumi, AWS SAM/CDK, Azure tooling, <code>gcloud</code>, Supabase CLI, Vercel CLI, Netlify CLI and GitHub Actions can evolve independently while Nift remains a small build tool.</p>
-			
-			<h2>Security boundary</h2>
-			<p>Anything emitted by Nift is ultimately downloadable by a visitor. Never put database passwords, service-role keys, payment secrets or private API credentials into templates, JSON data that becomes public output, or browser JavaScript. Put secrets in the serverless platform's secret/environment configuration and let the function expose only the operation the browser actually needs.</p>
-			
-			<h2>The larger point</h2>
-			<p>Serverless is a strong example of Nift's “glue, not the universe” philosophy. Nift does not need an AWS plugin, an Azure plugin, a Supabase runtime or a proprietary function API. It generates standards-based frontend files; serverless platforms expose standards-based HTTP endpoints and events. The whole web-development ecosystem remains available on both sides of that boundary.</p>
-			</article>
-		</main>
-	</div>
-	<footer class="site-footer">
-		<div class="footer-inner">
-			<div>
-				<strong>Nift</strong>
-				<p>Build the web without letting your build tool own it.</p>
-			</div>
-			<div class="footer-links">
-				<a href="../docs.html">Documentation</a>
-				<a href="../templates.html">Templates</a>
-				<a href="../examples.html">Examples</a>
-				<a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub</a>
-			</div>
-		</div>
-		<div class="footer-bottom">
-			<span>Open source · MIT licensed</span>
-			<span>© 2015–present</span>
-		</div>
-	</footer>
-	<script defer src="../assets/js/script.js"></script>
-</body>
-</html>
+}</code></pre> <p>That boundary is more powerful than teaching Nift about every cloud CLI. Terraform, Pulumi, AWS SAM/CDK, Azure tooling, <code>gcloud</code>, Supabase CLI, Vercel CLI, Netlify CLI and GitHub Actions can evolve independently while Nift remains a small build tool.</p> <h2>Security boundary</h2> <p>Anything emitted by Nift is ultimately downloadable by a visitor. Never put database passwords, service-role keys, payment secrets or private API credentials into templates, JSON data that becomes public output, or browser JavaScript. Put secrets in the serverless platform's secret/environment configuration and let the function expose only the operation the browser actually needs.</p> <h2>The larger point</h2> <p>Serverless is a strong example of Nift's “glue, not the universe” philosophy. Nift does not need an AWS plugin, an Azure plugin, a Supabase runtime or a proprietary function API. It generates standards-based frontend files; serverless platforms expose standards-based HTTP endpoints and events. The whole web-development ecosystem remains available on both sides of that boundary.</p> </article> </main> </div> <footer class="site-footer"> <div class="footer-inner"> <div> <strong>Nift</strong> <p>Build the web without letting your build tool own it.</p> </div> <div class="footer-links"> <a href="../docs.html">Documentation</a> <a href="../templates.html">Templates</a> <a href="../examples.html">Examples</a> <a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub</a> </div> </div> <div class="footer-bottom"> <span>Open source · MIT licensed</span> <span>© 2015–present</span> </div> </footer> <script defer src="../assets/js/script.js"></script> </body> </html>

@@ -1,138 +1,20 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<title>Nift — Explicit dependencies</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Nift is a fast, dependency-aware templating and build system for websites and text-based projects.">
-	<meta name="theme-color" content="#071c29">
-	<script>
+<!doctype html> <html lang="en"> <head> <title>Nift — Explicit dependencies</title> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta name="description" content="Nift is a fast, dependency-aware templating and build system for websites and text-based projects."> <meta name="theme-color" content="#071c29"> <script>
 	(() => {
 		const mode = localStorage.getItem('nift-theme') || 'system';
 		const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 		document.documentElement.dataset.themeMode = mode;
 		document.documentElement.dataset.theme = mode === 'system' ? (systemDark ? 'dark' : 'light') : mode;
 	})();
-	</script>
-	<link rel="stylesheet" href="../assets/css/style.css">
-</head>
-<body class="docs-page">
-	<header class="site-header" data-header>
-		<a class="brand" href="../" aria-label="Nift home">
-			<img src="../assets/images/nift-logo.webp" alt="Nift" width="420" height="162">
-		</a>
-		<div class="header-actions">
-			<nav class="desktop-nav" aria-label="Primary navigation">
-				<a href="../">Home</a>
-				<a href="../docs.html">Docs</a>
-				<a href="../templates.html">Templates</a>
-				<a href="../examples.html">Examples</a>
-				<a href="../showcase.html">Showcase</a>
-				<a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub ↗</a>
-			</nav>
-			<div class="theme-switcher desktop-theme-switcher" role="group" aria-label="Colour theme">
-				<button type="button" data-theme-choice="system" title="Use system theme">System</button>
-				<button type="button" data-theme-choice="light" title="Use light theme">Light</button>
-				<button type="button" data-theme-choice="dark" title="Use dark theme">Dark</button>
-			</div>
-			<button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-toggle>
-				<span></span><span></span>
-			</button>
-		</div>
-	</header>
-	<div class="mobile-nav" data-mobile-nav>
-		<a href="../">Home</a>
-		<a href="../docs.html">Documentation</a>
-		<a href="../templates.html">Templates</a>
-		<a href="../examples.html">Examples</a>
-		<a href="../showcase.html">Showcase</a>
-		<a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub ↗</a>
-		<div class="mobile-theme-row">
-			<span>Theme</span>
-			<div class="theme-switcher" role="group" aria-label="Colour theme">
-				<button type="button" data-theme-choice="system">System</button>
-				<button type="button" data-theme-choice="light">Light</button>
-				<button type="button" data-theme-choice="dark">Dark</button>
-			</div>
-		</div>
-	</div>
-	<button class="docs-menu-toggle" type="button" aria-label="Open documentation navigation" aria-expanded="false" data-docs-menu-toggle>
-		<span></span><span></span>
-	</button>
-	<div class="docs-mobile-nav" data-docs-mobile-nav>
-		<aside class="docs-sidebar" data-docs-sidebar><div class="docs-sidebar-inner"><p class="sidebar-kicker">Documentation</p><nav aria-label="Documentation navigation"><a class="sidebar-top" href="../docs.html">Overview</a><p>Start here</p><a href="./installing.html">Installing Nift</a><a href="./getting-started.html">Getting started</a><a href="./three-primitives.html">Start with three primitives</a><a href="./existing-sites.html">Existing websites</a><a href="./project-structure.html">Project structure</a><p>Core reference</p><a href="./templating.html">Template language</a><a href="./partials.html">Partials &amp; @input</a><a href="./comments.html">Comments</a><a href="./metadata.html">$[...] metadata</a><a href="./json.html">JSON data</a><a href="./json-schema.html">JSON Schema validation</a><a href="./control-flow.html">Loops &amp; conditions</a><a href="./paths.html">Paths &amp; tracked files</a><a href="./dep.html">@dep</a><a href="./user-dependencies.html">*.deps.json</a><a href="./incremental-builds.html">Incremental builds</a><a href="./minification.html">Minification</a><a href="./commands.html">CLI commands</a><p>Project files</p><a href="./configuration.html">config.json</a><a href="./tracked-json.html">tracked.json</a><p>Workflows &amp; patterns</p><a href="./ai-assistants.html">AI assistants</a><a href="use-cases/documentation.html">Documentation projects</a><a href="use-cases/web-apps.html">Full web applications</a><a href="use-cases/dashboards.html">Dashboards</a><a href="use-cases/react-islands.html">UI islands</a><a href="use-cases/text-assets.html">Text assets</a><p>Deployment</p><a href="./hosting.html">Hosting &amp; deployment</a><a href="./serverless.html">Serverless stacks</a><p>Design &amp; internals</p><a href="./why-nift.html">Philosophy: Why Nift?</a><a href="./architectural-rules.html">Architectural rules</a><a href="./how-nift-works.html">Architecture: How Nift works</a><a href="./advanced.html">Nift &amp; the wider ecosystem</a><p>Evaluation &amp; quality</p><a href="./developer-experience.html">Developer experience</a><a href="./battle-tested.html">Battle tested</a><a href="./ai-opinion.html">AI opinion: Nift vs other tools</a></nav></div></aside>
-	</div>
-	<div class="docs-layout">
-		<aside class="docs-sidebar" data-docs-sidebar><div class="docs-sidebar-inner"><p class="sidebar-kicker">Documentation</p><nav aria-label="Documentation navigation"><a class="sidebar-top" href="../docs.html">Overview</a><p>Start here</p><a href="./installing.html">Installing Nift</a><a href="./getting-started.html">Getting started</a><a href="./three-primitives.html">Start with three primitives</a><a href="./existing-sites.html">Existing websites</a><a href="./project-structure.html">Project structure</a><p>Core reference</p><a href="./templating.html">Template language</a><a href="./partials.html">Partials &amp; @input</a><a href="./comments.html">Comments</a><a href="./metadata.html">$[...] metadata</a><a href="./json.html">JSON data</a><a href="./json-schema.html">JSON Schema validation</a><a href="./control-flow.html">Loops &amp; conditions</a><a href="./paths.html">Paths &amp; tracked files</a><a href="./dep.html">@dep</a><a href="./user-dependencies.html">*.deps.json</a><a href="./incremental-builds.html">Incremental builds</a><a href="./minification.html">Minification</a><a href="./commands.html">CLI commands</a><p>Project files</p><a href="./configuration.html">config.json</a><a href="./tracked-json.html">tracked.json</a><p>Workflows &amp; patterns</p><a href="./ai-assistants.html">AI assistants</a><a href="use-cases/documentation.html">Documentation projects</a><a href="use-cases/web-apps.html">Full web applications</a><a href="use-cases/dashboards.html">Dashboards</a><a href="use-cases/react-islands.html">UI islands</a><a href="use-cases/text-assets.html">Text assets</a><p>Deployment</p><a href="./hosting.html">Hosting &amp; deployment</a><a href="./serverless.html">Serverless stacks</a><p>Design &amp; internals</p><a href="./why-nift.html">Philosophy: Why Nift?</a><a href="./architectural-rules.html">Architectural rules</a><a href="./how-nift-works.html">Architecture: How Nift works</a><a href="./advanced.html">Nift &amp; the wider ecosystem</a><p>Evaluation &amp; quality</p><a href="./developer-experience.html">Developer experience</a><a href="./battle-tested.html">Battle tested</a><a href="./ai-opinion.html">AI opinion: Nift vs other tools</a></nav></div></aside>
-		<main class="docs-main">
-			<article class="docs-article">
-			  <p class="docs-kicker">Advanced escape hatch</p>
-			  <h1><code>@dep(...)</code>.</h1>
-			  <p class="docs-lead">Most Nift projects should rarely—or never—need <code>@dep</code>. It exists for the exceptional case where an external file influences the output being built but Nift cannot discover that relationship through normal composition.</p>
-			
-			  <div class="docs-callout">
-			    <strong>Do not start here.</strong>
-			    <p>If you are learning Nift, skip this page until you encounter a real dependency Nift cannot infer. Templates, tracked content and <code>@input</code> already establish the dependencies used by ordinary projects.</p>
-			  </div>
-			
-			  <h2>Normal dependencies are automatic</h2>
-			  <pre><code class="language-nift">@input('templates/partials/header.html')
+	</script> <link rel="stylesheet" href="../assets/css/style.css"> </head> <body class="docs-page"> <header class="site-header" data-header> <a class="brand" href="../" aria-label="Nift home"> <img src="../assets/images/nift-logo.webp" alt="Nift" width="420" height="162"> </a> <div class="header-actions"> <nav class="desktop-nav" aria-label="Primary navigation"> <a href="../">Home</a> <a href="../docs.html">Docs</a> <a href="../templates.html">Templates</a> <a href="../examples.html">Examples</a> <a href="../showcase.html">Showcase</a> <a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub ↗</a> </nav> <div class="theme-switcher desktop-theme-switcher" role="group" aria-label="Colour theme"> <button type="button" data-theme-choice="system" title="Use system theme">System</button> <button type="button" data-theme-choice="light" title="Use light theme">Light</button> <button type="button" data-theme-choice="dark" title="Use dark theme">Dark</button> </div> <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-toggle> <span></span><span></span> </button> </div> </header> <div class="mobile-nav" data-mobile-nav> <a href="../">Home</a> <a href="../docs.html">Documentation</a> <a href="../templates.html">Templates</a> <a href="../examples.html">Examples</a> <a href="../showcase.html">Showcase</a> <a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub ↗</a> <div class="mobile-theme-row"> <span>Theme</span> <div class="theme-switcher" role="group" aria-label="Colour theme"> <button type="button" data-theme-choice="system">System</button> <button type="button" data-theme-choice="light">Light</button> <button type="button" data-theme-choice="dark">Dark</button> </div> </div> </div> <button class="docs-menu-toggle" type="button" aria-label="Open documentation navigation" aria-expanded="false" data-docs-menu-toggle> <span></span><span></span> </button> <div class="docs-mobile-nav" data-docs-mobile-nav> <aside class="docs-sidebar" data-docs-sidebar><div class="docs-sidebar-inner"><p class="sidebar-kicker">Documentation</p><nav aria-label="Documentation navigation"><a class="sidebar-top" href="../docs.html">Overview</a><p>Start here</p><a href="./installing.html">Installing Nift</a><a href="./getting-started.html">Getting started</a><a href="./three-primitives.html">Start with three primitives</a><a href="./existing-sites.html">Existing websites</a><a href="./project-structure.html">Project structure</a><p>Core reference</p><a href="./templating.html">Template language</a><a href="./partials.html">Partials &amp; @input</a><a href="./comments.html">Comments</a><a href="./metadata.html">$[...] metadata</a><a href="./json.html">JSON data</a><a href="./json-schema.html">JSON Schema validation</a><a href="./control-flow.html">Loops &amp; conditions</a><a href="./paths.html">Paths &amp; tracked files</a><a href="./dep.html">@dep</a><a href="./user-dependencies.html">*.deps.json</a><a href="./incremental-builds.html">Incremental builds</a><a href="./minification.html">Minification</a><a href="./commands.html">CLI commands</a><p>Project files</p><a href="./configuration.html">config.json</a><a href="./tracked-json.html">tracked.json</a><p>Workflows &amp; patterns</p><a href="./ai-assistants.html">AI assistants</a><a href="./serverless.html">Serverless stacks</a><a href="use-cases/documentation.html">Documentation projects</a><a href="use-cases/web-apps.html">Full web applications</a><a href="use-cases/dashboards.html">Dashboards</a><a href="use-cases/react-islands.html">UI islands</a><a href="use-cases/text-assets.html">Text assets</a><p>Deployment</p><a href="./hosting.html">Hosting &amp; deployment</a><p>Design &amp; internals</p><a href="./why-nift.html">Philosophy: Why Nift?</a><a href="./architectural-rules.html">Architectural rules</a><a href="./how-nift-works.html">Architecture: How Nift works</a><a href="./advanced.html">Nift &amp; the wider ecosystem</a><p>Evaluation &amp; quality</p><a href="./developer-experience.html">Developer experience</a><a href="./battle-tested.html">Battle tested</a><a href="./production-readiness.html">Production readiness</a><a href="./ai-opinion.html">AI opinion: Nift vs other tools</a><a href="./ai-development.html">AI development</a></nav></div></aside> </div> <div class="docs-layout"> <aside class="docs-sidebar" data-docs-sidebar><div class="docs-sidebar-inner"><p class="sidebar-kicker">Documentation</p><nav aria-label="Documentation navigation"><a class="sidebar-top" href="../docs.html">Overview</a><p>Start here</p><a href="./installing.html">Installing Nift</a><a href="./getting-started.html">Getting started</a><a href="./three-primitives.html">Start with three primitives</a><a href="./existing-sites.html">Existing websites</a><a href="./project-structure.html">Project structure</a><p>Core reference</p><a href="./templating.html">Template language</a><a href="./partials.html">Partials &amp; @input</a><a href="./comments.html">Comments</a><a href="./metadata.html">$[...] metadata</a><a href="./json.html">JSON data</a><a href="./json-schema.html">JSON Schema validation</a><a href="./control-flow.html">Loops &amp; conditions</a><a href="./paths.html">Paths &amp; tracked files</a><a href="./dep.html">@dep</a><a href="./user-dependencies.html">*.deps.json</a><a href="./incremental-builds.html">Incremental builds</a><a href="./minification.html">Minification</a><a href="./commands.html">CLI commands</a><p>Project files</p><a href="./configuration.html">config.json</a><a href="./tracked-json.html">tracked.json</a><p>Workflows &amp; patterns</p><a href="./ai-assistants.html">AI assistants</a><a href="./serverless.html">Serverless stacks</a><a href="use-cases/documentation.html">Documentation projects</a><a href="use-cases/web-apps.html">Full web applications</a><a href="use-cases/dashboards.html">Dashboards</a><a href="use-cases/react-islands.html">UI islands</a><a href="use-cases/text-assets.html">Text assets</a><p>Deployment</p><a href="./hosting.html">Hosting &amp; deployment</a><p>Design &amp; internals</p><a href="./why-nift.html">Philosophy: Why Nift?</a><a href="./architectural-rules.html">Architectural rules</a><a href="./how-nift-works.html">Architecture: How Nift works</a><a href="./advanced.html">Nift &amp; the wider ecosystem</a><p>Evaluation &amp; quality</p><a href="./developer-experience.html">Developer experience</a><a href="./battle-tested.html">Battle tested</a><a href="./production-readiness.html">Production readiness</a><a href="./ai-opinion.html">AI opinion: Nift vs other tools</a><a href="./ai-development.html">AI development</a></nav></div></aside> <main class="docs-main"> <article class="docs-article"> <p class="docs-kicker">Advanced escape hatch</p> <h1><code>@dep(...)</code>.</h1> <p class="docs-lead">Most Nift projects should rarely—or never—need <code>@dep</code>. It exists for the exceptional case where an external file influences the output being built but Nift cannot discover that relationship through normal composition.</p> <div class="docs-callout"> <strong>Do not start here.</strong> <p>If you are learning Nift, skip this page until you encounter a real dependency Nift cannot infer. Templates, tracked content and <code>@input</code> already establish the dependencies used by ordinary projects.</p> </div> <h2>Normal dependencies are automatic</h2> <pre><code class="language-nift">@input('templates/partials/header.html')
 @content
-@input('templates/partials/footer.html')</code></pre>
-			  <p>The template, tracked content and input files already participate in Nift's dependency bookkeeping. Do not mirror those relationships with <code>@dep</code>.</p>
-			
-			  <h2><code>@pathto</code> is not a reason to add <code>@dep</code></h2>
-			  <pre><code class="language-html">&lt;script src="@pathto('public/assets/app.js')"&gt;&lt;/script&gt;
-&lt;img src="@pathto('public/assets/logo.svg')" alt="Logo"&gt;</code></pre>
-			  <p>These are project-aware paths. They do not need a ceremonial <code>@dep</code> beside them.</p>
-			
-			  <h2>Where explicit dependencies help</h2>
-			  <p>Imagine another tool produces <code>data/search-index.json</code>. Your own build/preprocessing workflow uses that file to influence a page, but the file is never inserted with <code>@input</code> and Nift otherwise has no relationship it can follow.</p>
-			  <pre><code class="language-nift">@dep('data/search-index.json')</code></pre>
-			  <p>That declaration says: “this output depends on this external file even though you cannot infer why from the template graph.”</p>
-			
-			  <h2>Multiple otherwise-invisible inputs</h2>
-			  <pre><code class="language-nift">@dep(
+@input('templates/partials/footer.html')</code></pre> <p>The template, tracked content and input files already participate in Nift's dependency bookkeeping. Do not mirror those relationships with <code>@dep</code>.</p> <h2><code>@pathto</code> is not a reason to add <code>@dep</code></h2> <pre><code class="language-html">&lt;script src="@pathto('public/assets/app.js')"&gt;&lt;/script&gt;
+&lt;img src="@pathto('public/assets/logo.svg')" alt="Logo"&gt;</code></pre> <p>These are project-aware paths. They do not need a ceremonial <code>@dep</code> beside them.</p> <h2>Where explicit dependencies help</h2> <p>Imagine another tool produces <code>data/search-index.json</code>. Your own build/preprocessing workflow uses that file to influence a page, but the file is never inserted with <code>@input</code> and Nift otherwise has no relationship it can follow.</p> <pre><code class="language-nift">@dep('data/search-index.json')</code></pre> <p>That declaration says: “this output depends on this external file even though you cannot infer why from the template graph.”</p> <h2>Multiple otherwise-invisible inputs</h2> <pre><code class="language-nift">@dep(
   'data/navigation.json',
   'data/releases.json',
   'data/contributors.json'
-)</code></pre>
-			  <p>The current v4 parser accepts one or more existing paths.</p>
-			
-			  <h2>A decision test</h2>
-			  <pre><code class="language-plaintext">Does @content establish the relationship?  → do not use @dep
+)</code></pre> <p>The current v4 parser accepts one or more existing paths.</p> <h2>A decision test</h2> <pre><code class="language-plaintext">Does @content establish the relationship?  → do not use @dep
 Does @input establish the relationship?    → do not use @dep
 Is this just a local asset via @pathto?    → do not use @dep
 Can Nift otherwise infer the dependency?   → do not use @dep
 External file genuinely affects output,
-but Nift has no way to know?               → @dep may be appropriate</code></pre>
-			
-			  <div class="docs-callout"><strong>Think of <code>@dep</code> as an escape hatch, not a building block.</strong><p>The fewer explicit dependencies you have to declare, the clearer the project remains. Prefer the ordinary project relationships whenever they describe what is actually happening.</p></div>
-			  <h2>Dependencies stay inside the project</h2>
-			<p><code>@dep(...)</code> is project build metadata, so its paths must remain inside the Nift project. Parent traversal or an absolute path escaping the project is rejected rather than allowing incremental state to depend on arbitrary files elsewhere on the machine.</p>
-			<div class="docs-next"><span>Related</span><a href="./incremental-builds.html">Incremental builds →</a></div>
-			<h2>Prefer sidecar JSON when the dependency is page metadata</h2><p>If the relationship is clearer outside the authored template—for example dependencies produced by another tool or a page-level list of data inputs—use <a class="text-link" href="./user-dependencies.html"><code>*.deps.json</code> →</a>. Both mechanisms feed the same incremental build model.</p>
-			</article>
-		</main>
-	</div>
-	<footer class="site-footer">
-		<div class="footer-inner">
-			<div>
-				<strong>Nift</strong>
-				<p>Build the web without letting your build tool own it.</p>
-			</div>
-			<div class="footer-links">
-				<a href="../docs.html">Documentation</a>
-				<a href="../templates.html">Templates</a>
-				<a href="../examples.html">Examples</a>
-				<a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub</a>
-			</div>
-		</div>
-		<div class="footer-bottom">
-			<span>Open source · MIT licensed</span>
-			<span>© 2015–present</span>
-		</div>
-	</footer>
-	<script defer src="../assets/js/script.js"></script>
-</body>
-</html>
+but Nift has no way to know?               → @dep may be appropriate</code></pre> <div class="docs-callout"><strong>Think of <code>@dep</code> as an escape hatch, not a building block.</strong><p>The fewer explicit dependencies you have to declare, the clearer the project remains. Prefer the ordinary project relationships whenever they describe what is actually happening.</p></div> <h2>Dependencies stay inside the project</h2> <p><code>@dep(...)</code> is project build metadata, so its paths must remain inside the Nift project. Parent traversal or an absolute path escaping the project is rejected rather than allowing incremental state to depend on arbitrary files elsewhere on the machine.</p> <div class="docs-next"><span>Related</span><a href="./incremental-builds.html">Incremental builds →</a></div> <h2>Prefer sidecar JSON when the dependency is page metadata</h2><p>If the relationship is clearer outside the authored template—for example dependencies produced by another tool or a page-level list of data inputs—use <a class="text-link" href="./user-dependencies.html"><code>*.deps.json</code> →</a>. Both mechanisms feed the same incremental build model.</p> </article> </main> </div> <footer class="site-footer"> <div class="footer-inner"> <div> <strong>Nift</strong> <p>Build the web without letting your build tool own it.</p> </div> <div class="footer-links"> <a href="../docs.html">Documentation</a> <a href="../templates.html">Templates</a> <a href="../examples.html">Examples</a> <a href="https://github.com/nifty-site-manager/nsm" target="_blank" rel="noreferrer">GitHub</a> </div> </div> <div class="footer-bottom"> <span>Open source · MIT licensed</span> <span>© 2015–present</span> </div> </footer> <script defer src="../assets/js/script.js"></script> </body> </html>
