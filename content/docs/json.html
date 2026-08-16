@@ -10,6 +10,10 @@
 
 <p>The first parameter is a project-relative JSON path. The second is the binding name used for the rest of that page render, including nested <code>\@input</code> files.</p>
 
+<p>Source and optional schema paths are textual parameters, so an earlier binding can select them with <code>\$[...]</code>. Binding names remain static identifiers:</p>
+<pre><code class="language-nift">\@json('data/selector.json', selector)
+\@json("data/\$[selector.dataset].json", selected,
+      "schemas/\$[selector.schema].json")</code></pre>
 <pre><code class="language-json">{
   "name": "Nift",
   "navigation": [

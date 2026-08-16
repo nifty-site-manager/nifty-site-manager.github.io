@@ -94,6 +94,19 @@
 <p><code>\@json(path, name)</code> loads immutable JSON data into the current page render. Access it through chained <code>\$[...]</code> expressions such as <code>\$[site.navigation[2].title]</code>.</p>
 <p><a class="text-link" href="@pathto('docs/json')">JSON data reference →</a></p>
 
+<h2>Use values inside textual parameters</h2>
+<p>Textual directive parameters can combine literal text with metadata, JSON scalars and lexically scoped loop values. This is useful when another build tool writes a manifest containing a hashed asset name, or when data selects a partial or dependency.</p>
+<pre><code class="language-json">{
+  "entry": "public/assets/app-B7K2pQ.js",
+  "partial": "feature"
+}</code></pre>
+<pre><code class="language-html">\@json('data/manifest.json', manifest)
+&lt;script type="module"
+  src="\@pathto('\$[manifest.entry]')"&gt;&lt;/script&gt;
+\@input("templates/partials/\$[manifest.partial].html")</code></pre>
+<p>Interpolation is single-pass: Nift resolves the values once and passes the resulting text to the outer directive. If a value itself contains <code>\$[...]</code>, <code>\@input(...)</code> or punctuation such as quotes, commas and parentheses, that text remains data—it is not reparsed as template syntax and cannot change the original parameter boundaries.</p>
+<p>The eligible textual positions are <code>\@input</code>, every <code>\@dep</code> path, <code>\@pathto</code>/<code>\@pathtofile</code>, <code>\@getenv</code>, <code>\@ent</code>, and the <code>\@json</code> source and optional schema paths. The <code>\@json</code> binding name and control-flow grammar stay static. Strings, numbers, booleans and <code>null</code> become text; arrays and objects must be narrowed to a scalar member or element.</p>
+<p>Use <code>\$</code> inside a quoted parameter when the dollar must remain literal rather than begin interpolation.</p>
 <h2>Loops and conditions</h2>
 <p>When structured data needs repetition or selection, use <code>\@for(item : array){...}</code>, <code>\@for((key, val) : object){...}</code> and <code>\@if(...){...}</code> with ordinary <code>else if</code>/<code>else</code> branches. Conditions support <code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code> and <code>&gt;=</code>.</p>
 <p><a class="text-link" href="@pathto('docs/control-flow')">Control-flow reference →</a></p>
