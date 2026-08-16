@@ -1,0 +1,15 @@
+# Local frontend tooling
+node_modules/
+.cache/
+.parcel-cache/
+.vite/
+
+# Local diagnostics and editor/OS files
+*.log
+*.tmp
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# `public/` is intentionally not ignored: it is the checked-out deployment repo.
