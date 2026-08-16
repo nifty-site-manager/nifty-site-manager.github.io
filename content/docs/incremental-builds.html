@@ -31,6 +31,44 @@ content/contact.html unchanged
 public/contact.html left alone</code></pre>
   <p>That difference becomes increasingly valuable as a site grows from a handful of pages into hundreds, thousands or more.</p>
 
+  <h2>Choosing <code>modified</code>, <code>hash</code> or <code>hybrid</code></h2>
+  <p>The three incremental modes differ in what they trust. The choice is not simply “old fast mode versus new correct mode”; it should match the filesystem and deployment workflow in which builds actually run.</p>
+  <div class="reference-table-wrap">
+    <table class="reference-table">
+      <thead><tr><th>Mode</th><th>Change signal</th><th>Best fit</th></tr></thead>
+      <tbody>
+        <tr><td><code>modified</code></td><td>A dependency's modification time is newer than the stored page-build metadata.</td><td>Persistent local working trees where mtimes are cheap and meaningful.</td></tr>
+        <tr><td><code>hash</code></td><td>The dependency's current content hash differs from Nift's stored successful-build hash.</td><td>Fresh checkouts, CI/deployment runners, containers, restored workspaces and copied trees.</td></tr>
+        <tr><td><code>hybrid</code></td><td>Rebuild when either the mtime check or content-hash check reports a change.</td><td>Workflows that want both signals and accept the cost of hashing dependencies.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Why <code>modified</code> is excellent locally</h3>
+  <p>In a long-lived development checkout, editing a file normally advances its modification time. Reading that metadata is extremely cheap: Nift can reject unchanged dependencies without reading and hashing their full contents. For the ordinary edit → build → refresh loop, <code>modified</code> is often the fastest and simplest signal.</p>
+
+  <h3>Why fresh checkouts change the trust model</h3>
+  <p>A remote builder does not inherit the meaningful timestamp history of the working tree where a commit was authored. Git, a deployment service, a container build or a restored workspace may materialize files with new mtimes that describe the checkout operation rather than the content's relationship to Nift's previous successful build.</p>
+  <pre><code class="language-plaintext">previous successful build: dependency contents = A
+        ↓
+commit / push / fresh remote checkout
+        ↓
+filesystem timestamps are recreated
+        ↓
+mtime describes materialization, not content identity</code></pre>
+  <p>Hashes survive that boundary conceptually: the same bytes produce the same stored identity, while changed bytes produce a different one. That makes <code>hash</code> particularly appropriate for Git-push deployment workflows, Vercel or Netlify builds, CI runners, containers, cloned repositories and restored caches—provided the corresponding <code>.nift</code> hash state is available from the previous successful build or cache.</p>
+  <pre><code class="language-plaintext">stored hash = X
+checkout hash = X  → content unchanged
+checkout hash = Y  → content changed</code></pre>
+
+  <div class="docs-callout"><strong>A practical default rule.</strong><p>Use <code>modified</code> when builds run against a persistent working tree whose modification times are meaningful. Use <code>hash</code> when builds may run on fresh checkouts or restored/distributed environments where timestamps do not reliably represent content history.</p></div>
+
+  <h3>What <code>hybrid</code> means today</h3>
+  <p>Current hybrid mode rebuilds when either signal reports a change: a dependency is newer than the stored page metadata <em>or</em> its content hash differs from the stored hash. It is intentionally the broadest detector, not a metadata prefilter that always avoids hashing. Choose it when that belt-and-braces behavior is worth the extra file reading; choose <code>hash</code> when content identity is the decisive portable signal.</p>
+
+  <h3>Hash state is build state</h3>
+  <p>Hash mode is strongest when the stored hashes from the last successful build cross the environment boundary too. If they are absent, Nift conservatively treats dependencies as changed and establishes fresh state during a successful build. In ephemeral CI, cache or restore the relevant <code>.nift</code> state when you want unchanged builds to retain their incremental advantage.</p>
+
   <h2>Why it feels good during development</h2>
   <div class="advanced-doc-grid">
     <div><h2>Fast feedback</h2><p>The cost of a tiny edit can stay close to the cost of rebuilding the pages that actually use it.</p></div>

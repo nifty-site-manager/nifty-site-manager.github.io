@@ -4,8 +4,8 @@
   "template": "templates/template.html",
   "content": "content/examples.html",
   "output": "public/examples.html",
-  "minify": false,
-  "minify-version": 0,
+  "minify": true,
+  "minify-version": 1,
   "dependencies": [
     "content/examples.html",
     "templates/partials/footer.html",

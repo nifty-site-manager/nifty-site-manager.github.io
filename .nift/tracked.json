@@ -186,6 +186,16 @@
       "template": "templates/docs.html"
     },
     {
+      "name": "docs/ai-development",
+      "title": "AI-assisted development",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/production-readiness",
+      "title": "Production readiness",
+      "template": "templates/docs.html"
+    },
+    {
       "name": "showcase",
       "title": "Built with Nift",
       "template": "templates/template.html"

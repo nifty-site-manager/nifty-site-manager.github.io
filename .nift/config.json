@@ -6,6 +6,7 @@
     "output-ext": ".html",
     "default-template": "templates/template.html",
     "build-threads": -1,
-    "incremental-mode": "modified"
+    "incremental-mode": "modified",
+    "minify-exts": [".html", ".css", ".js"]
   }
 }

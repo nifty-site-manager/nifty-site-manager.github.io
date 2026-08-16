@@ -4,8 +4,8 @@
   "template": "templates/template.html",
   "content": "content/showcase.html",
   "output": "public/showcase.html",
-  "minify": false,
-  "minify-version": 0,
+  "minify": true,
+  "minify-version": 1,
   "dependencies": [
     "content/showcase.html",
     "templates/partials/footer.html",

@@ -1,13 +1,13 @@
 {
-  "name": "docs/installing",
-  "title": "Installing Nift",
+  "name": "docs/ai-development",
+  "title": "AI-assisted development",
   "template": "templates/docs.html",
-  "content": "content/docs/installing.html",
-  "output": "public/docs/installing.html",
+  "content": "content/docs/ai-development.html",
+  "output": "public/docs/ai-development.html",
   "minify": true,
   "minify-version": 1,
   "dependencies": [
-    "content/docs/installing.html",
+    "content/docs/ai-development.html",
     "templates/docs.html",
     "templates/partials/docs-sidebar.html",
     "templates/partials/footer.html",
