@@ -1,0 +1,783 @@
+# Project history and institutional context
+
+> This is a living historical companion to the repository's operational handover. The live repository remains authoritative. Maintain, correct, reorganize, or supersede this material as project evidence evolves while retaining durable rationale.
+
+# Nift Website
+
+## Project Context, Development, Testing, Checkpoint and Production-Support Handover
+
+### Audience
+
+Codex or any future developer/agent taking responsibility for the Nift website.
+
+### Relationship to other handovers
+
+This document concerns the **Nift website specifically**.
+
+For Nift's implementation architecture, language semantics, release engineering, `$[...]` parameter interpolation, or core development history, consult Nift's canonical handover.
+
+For the independent behavioral contract, consult the Nift regression-suite handover.
+
+---
+
+## 1. Project identity
+
+**Status: SETTLED**
+
+The Nift website is more than marketing material.
+
+It has historically served simultaneously as:
+
+```text
+official Nift website
+documentation
+product explanation
+download/example surface
+real Nift project
+integration fixture
+dogfooding project
+release-candidate validation target
+AI onboarding surface
+```
+
+That distinction matters.
+
+A candidate Nift implementation successfully building the real Nift website is meaningful development evidence.
+
+The website should therefore remain a **real consumer of Nift**, not a synthetic showcase engineered to avoid difficult behavior.
+
+---
+
+# 2. Product terminology
+
+**Status: STRONG CURRENT PREFERENCE**
+
+Do not casually describe Nift only as a:
+
+> static site generator
+
+The preferred general category is:
+
+> **website generator**
+
+Nift absolutely generates static output, but "static site generator" encourages an unnecessarily narrow mental model.
+
+Nift can provide the document/build layer for:
+
+```text
+ordinary websites
+documentation
+blogs
+marketing sites
+SPAs
+dashboards
+API-consuming frontends
+React islands
+Vue/Svelte islands
+vanilla JavaScript applications
+full-stack application frontends
+```
+
+The fact that Nift itself executes at build time does not constrain the resulting website to having no runtime behavior.
+
+This correction became important enough during our discussions that it should survive the handover.
+
+---
+
+# 3. Core website message
+
+The strongest conceptual message we converged on was approximately:
+
+> Nift provides a very small, fast website-generation layer while allowing HTML, CSS, JavaScript and the wider web ecosystem to remain themselves.
+
+The website should communicate that Nift's simplicity is deliberate.
+
+Historically, a surprisingly large amount could be built using essentially:
+
+```text
+@content
+@input(...)
+@pathto(...)
+$[...]
+```
+
+The language has subsequently gained capabilities including:
+
+```text
+@json
+loops/control flow
+```
+
+but those additions did **not** represent a reversal toward a large embedded scripting language.
+
+The website should not sell Nift by pretending that more Nift-specific machinery equals more capability.
+
+---
+
+# 4. The difficult marketing problem
+
+**Status: IMPORTANT PROJECT INSIGHT**
+
+Nift has an unusual communication problem:
+
+```text
+other tools:
+    demonstrate power by exposing more machinery
+
+Nift:
+    often demonstrates power by requiring less machinery
+```
+
+Someone reading a feature list can see:
+
+```text
+@content
+@input
+@pathto
+$[...]
+```
+
+and think:
+
+> "That's all?"
+
+Actual use repeatedly suggested:
+
+> "That's the point."
+
+This is probably one of the most important problems for the website to solve.
+
+---
+
+# 5. CloudFort Dash as conceptual evidence
+
+CloudFort Dash was repeatedly discussed as a useful real-world counterexample to the idea that Nift's small language confines it to simple websites.
+
+The important lesson is not to reproduce CloudFort Dash architecture from memory.
+
+The lesson is:
+
+```text
+complexity that belongs to the application
+        ↓
+HTML / CSS / JS / APIs / backend
+
+complexity that belongs to website generation
+        ↓
+Nift
+```
+
+Nift did not need to absorb application-framework responsibilities to participate in a substantial frontend.
+
+---
+
+# 6. React-islands experiment
+
+Codex subsequently built an experimental Nift website using React islands directly on the user's machine.
+
+That experiment worked without difficulty.
+
+Codex independently chose an architecture approximately like:
+
+```text
+Nift owns:
+    document structure
+    navigation
+    SEO/content
+    product narrative
+    documentation
+    asset paths
+
+React owns:
+    genuinely stateful interactive surfaces
+```
+
+The two example React surfaces were intentionally meaningful rather than decorative:
+
+```text
+live service-health simulator
+interactive alert-policy builder
+```
+
+This was valuable evidence because Codex arrived at the boundary independently.
+
+It demonstrated that Nift and React need not compete for ownership of the whole frontend.
+
+---
+
+# 7. `@pathto` and React asset integration
+
+The experiment also clarified a subtle but important build-graph property.
+
+Given something conceptually like:
+
+```html
+<script type="module"
+        src="@pathto('public/assets/app.js')">
+</script>
+```
+
+the bundle must exist when Nift first validates it.
+
+Thus a clean build is:
+
+```text
+Vite
+    ↓
+public/assets/app.js exists
+    ↓
+Nift
+```
+
+But afterward:
+
+```text
+React-only source edit
+    ↓
+app.js bytes change
+    ↓
+HTML still points to app.js
+    ↓
+Nift does not inherently need to regenerate HTML
+```
+
+This reflects the distinction between:
+
+```text
+content dependency
+```
+
+and:
+
+```text
+existence/path requirement
+```
+
+That is a strength of Nift's model.
+
+If hashed filenames are used, orchestration becomes different because the URL itself can change.
+
+Do not generalize the fixed-filename example into a claim that all Vite configurations have zero integration coordination.
+
+---
+
+# 8. Current language documentation
+
+The website must track actual Nift.
+
+Historically the documentation covered things including:
+
+```text
+@content
+@input(...)
+@pathto(...)
+@dep(...)
+@getenv(...)
+@ent(...)
+$[...]
+escaping
+metadata
+```
+
+Current Nift also includes:
+
+```text
+@json
+loops
+```
+
+and the upcoming work concerns `$[...]` value interpolation inside directive parameters.
+
+After that feature is validated, website documentation should explain it in the same conceptual language used by the implementation:
+
+```text
+literal parameter text
++
+value interpolation
+```
+
+rather than describing it as arbitrary recursive templating.
+
+---
+
+# 9. Values versus operations
+
+A useful conceptual distinction developed during design:
+
+```text
+operations:
+    @input(...)
+    @dep(...)
+    @json(...)
+    @pathto(...)
+
+values:
+    $[...]
+```
+
+This supports:
+
+```text
+operation(value)
+```
+
+without turning the language into:
+
+```text
+operation(operation(operation(...)))
+```
+
+The website should preserve this clarity where possible.
+
+---
+
+# 10. `@dep`
+
+`@dep` should generally be positioned as advanced functionality rather than the first mechanism beginners learn.
+
+It is useful.
+
+It is also an escape hatch compared with the more obvious relationships expressed by other Nift features.
+
+---
+
+# 11. `@pathto`
+
+Historically this was one of the easiest features for documentation—including our own drafts—to explain incorrectly.
+
+Do not reduce it to:
+
+> path concatenation helper
+
+Its behavior is tied to Nift's knowledge of project relationships and requirements.
+
+All examples should be verified against current Nift.
+
+---
+
+# 12. Compatibility syntax
+
+Historically:
+
+```text
+@pathtofile(...)
+```
+
+was retained for compatibility while being deemphasized publicly.
+
+Older:
+
+```text
+@pathtopage(...)
+```
+
+was removed.
+
+**Verify current implementation before documenting either.**
+
+---
+
+# 13. CSS coexistence
+
+A historically important parser improvement was allowing normal CSS constructs such as:
+
+```css
+@media (...)
+```
+
+without requiring Nift-specific escaping.
+
+This reflects an important product principle:
+
+> Normal HTML/CSS/JS should remain normal HTML/CSS/JS wherever practical.
+
+The website itself should demonstrate this rather than accidentally teaching unnecessary workarounds.
+
+---
+
+# 14. Output directory
+
+Historically the default generated directory changed:
+
+```text
+output/
+    ↓
+public/
+```
+
+This was deliberate and aligned Nift more naturally with modern web project conventions.
+
+Search the website/templates/downloads for stale assumptions whenever scaffolding behavior changes.
+
+---
+
+# 15. Full web applications documentation
+
+A dedicated area was introduced to challenge the assumption that Nift is limited to basic generated pages.
+
+Examples/concepts included:
+
+```text
+vanilla JS
+Go backends
+Node/Express
+React islands
+Vue/Svelte
+Supabase
+API-backed frontends
+```
+
+The message is **composition**, not endorsement of a particular stack.
+
+---
+
+# 16. AI-assisted development
+
+Nift's small conceptual surface makes it unusually suitable for AI-assisted development.
+
+The website developed material around:
+
+```text
+AI context
+barebones projects
+correct syntax examples
+project orientation
+```
+
+This later evolved into our broader discussion of:
+
+> AI DX / AI developer experience.
+
+The new repository-local handover infrastructure should reinforce this.
+
+---
+
+# 17. Templates
+
+The Nift website eventually grew a broader template collection.
+
+It intentionally included more than simple marketing sites, with examples such as:
+
+```text
+documentation
+blog
+dashboard
+SPA/application-like project
+```
+
+The purpose was to demonstrate breadth without bloating Nift itself.
+
+Templates should remain:
+
+```text
+real
+downloadable
+buildable
+current
+representative
+```
+
+Do not allow screenshots and downloadable projects to diverge.
+
+---
+
+# 18. Barebones project
+
+The barebones project is disproportionately important.
+
+It serves as:
+
+```text
+beginner example
+AI seed project
+test project
+template starting point
+```
+
+Changes to scaffolding or recommended Nift structure should trigger review of it.
+
+---
+
+# 19. Visual direction
+
+Historical preferences for the current Nift website include:
+
+```text
+dark-mode friendly
+system/light/dark themes
+green-gradient identity
+clean typography
+low clutter
+responsive layout
+restrained JavaScript
+strong mobile behavior
+```
+
+Specific historical design discoveries included:
+
+```text
+green gradient → liked
+sky grid lines → disliked
+straight/angular hills → preferred over curvy ones
+one wide example card per row → preferred
+one strong screenshot per template → preferred
+```
+
+These are design context, not immutable requirements.
+
+---
+
+# 20. Homepage demo
+
+The demo went through repeated refinement involving:
+
+```text
+scrollbars
+height
+syntax highlighting
+mobile layout
+visual integration
+```
+
+At one stage more interactive behavior was reduced because it distracted from the explanation.
+
+General lesson:
+
+> The demo exists to explain Nift, not to become an application of its own.
+
+---
+
+# 21. Historical performance evidence
+
+A 10,000-page benchmark became important during Nift development.
+
+Historical results included roughly:
+
+```text
+Nift:
+    ~0.28 s initial full build
+    later ~0.17 s full builds
+    ~0.046 s no-change build-updated
+
+Hugo:
+    ~455 ms
+
+Astro:
+    ~5.13 s
+```
+
+These are **historical measurements**, not timeless claims.
+
+Do not silently republish them as current benchmark guarantees.
+
+Reproduce or clearly contextualize benchmarks when changing public claims.
+
+---
+
+# 22. Battle Tested page
+
+The regression work eventually justified stronger public discussion of Nift's robustness.
+
+The right framing is:
+
+```text
+many independently exercised failure families
+```
+
+rather than:
+
+```text
+exactly N tests
+```
+
+because counts age quickly.
+
+Testing categories and methodology are stronger evidence.
+
+---
+
+# 23. Development checkpoint procedure
+
+For a meaningful Nift checkpoint, website review should be part of the checkpoint.
+
+Typical sequence:
+
+```text
+candidate Nift
+    ↓
+core tests
+    ↓
+external regression suite
+    ↓
+candidate builds Nift website
+    ↓
+inspect relevant rendered output
+    ↓
+update docs/examples if behavior changed
+    ↓
+rebuild
+    ↓
+inspect generated diff
+    ↓
+checkpoint
+```
+
+This should continue throughout Nift's existence.
+
+---
+
+# 24. Candidate self-hosting invariant
+
+**Status: STRONG PRACTICE**
+
+A significant Nift release candidate should build the Nift website with the **exact candidate binary**.
+
+This provides real-world integration evidence beyond synthetic tests.
+
+---
+
+# 25. Website-specific testing
+
+Depending on the change:
+
+```text
+clean build
+incremental build
+broken-link/reference checks
+download/archive checks
+responsive rendering
+light/dark/system theme
+navigation
+code examples
+syntax highlighting
+Lighthouse
+accessibility
+```
+
+At one historical checkpoint desktop Lighthouse reached:
+
+```text
+100 / 100 / 100 / 100
+```
+
+and mobile performance was subsequently improved.
+
+Do not optimize solely for scores, but large regressions are useful signals.
+
+---
+
+# 26. Branch/deployment workflow
+
+Historically the site used a source/generated arrangement involving:
+
+```text
+stage
+```
+
+and a public/main checkout.
+
+I do **not** want Codex to manufacture exact commands from conversational memory.
+
+Inspect current Git state and document:
+
+```text
+canonical source branch
+generated/deployment branch
+build command
+publication command
+hosting destination
+whether worktrees are used
+what gets committed where
+```
+
+---
+
+# 27. Website role in Nift production status
+
+The website itself does not have an independent "production compiler" milestone.
+
+Instead it contributes to Nift production readiness.
+
+Before calling Nift production-ready, the website should demonstrate that:
+
+```text
+candidate Nift builds the complete site
+docs match actual behavior
+all documented examples work
+templates build
+downloads are correct
+important links/assets resolve
+release/version information is current
+mobile/desktop experience is sound
+no major accessibility regression exists
+```
+
+---
+
+# 28. Current website roadmap
+
+**CURRENT ROADMAP — REVISE AT EVERY SIGNIFICANT CHECKPOINT**
+
+Near-term:
+
+```text
+reconcile site against current Nift
+ensure @json + loops documentation is current
+integrate parameter-interpolation docs after implementation
+audit stale old-language examples
+build everything with candidate Nift
+check templates/downloads
+check Battle Tested claims
+```
+
+Then:
+
+```text
+release-oriented content audit
+performance-claim audit
+AI-development/context audit
+responsive/accessibility pass
+candidate self-build
+deployment rehearsal
+```
+
+After Nift reaches production status:
+
+```text
+continue dogfooding
+keep examples current
+add useful real-world patterns
+remove stale advice
+update benchmark evidence when warranted
+maintain compatibility/migration guidance
+```
+
+The roadmap does **not end at 1.0/production**.
+
+---
+
+# 29. Living-roadmap rule
+
+Add explicitly to website handover:
+
+> The website roadmap must be reviewed at each substantial Nift checkpoint. New product behavior, testing evidence, user experience, real-world projects, compatibility findings, and release decisions may change website priorities. Do not preserve an obsolete roadmap merely because it was previously documented.
+
+---
+
+# 30. Do not accidentally
+
+```text
+call Nift only a static site generator
+restore scripting-era messaging
+teach stale syntax
+teach incorrect @pathto behavior
+publish old benchmark numbers as current
+edit generated deployment output as canonical source
+let examples diverge from current Nift
+forget candidate-Nift dogfooding
+```
+
+---
+
+---
+
