@@ -209,6 +209,13 @@
       "name": "docs/architectural-rules",
       "title": "Nift architectural rules",
       "template": "templates/docs.html"
+    },
+    {
+      "name": "assets/css/style",
+      "title": "Website styles",
+      "template": "templates/asset.txt",
+      "content-ext": ".css",
+      "output-ext": ".css"
     }
   ]
 }

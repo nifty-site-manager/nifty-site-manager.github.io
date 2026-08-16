@@ -1,0 +1,14 @@
+{
+  "name": "assets/css/style",
+  "title": "Website styles",
+  "template": "templates/asset.txt",
+  "content": "content/assets/css/style.css",
+  "output": "public/assets/css/style.css",
+  "minify": true,
+  "minify-version": 1,
+  "dependencies": [
+    "content/assets/css/style.css",
+    "templates/asset.txt"
+  ],
+  "reqs": []
+}

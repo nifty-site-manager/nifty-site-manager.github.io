@@ -16,6 +16,12 @@ Edit source on `stage`; generate `public`; never hand-edit generated HTML as the
 canonical fix. Building locally is normal validation. Committing, pushing,
 publishing, or deploying either branch requires explicit approval.
 
+The canonical website stylesheet is `content/assets/css/style.css`. It is tracked
+as the `assets/css/style` Nift output through the content-only
+`templates/asset.txt` template, so CSS changes follow the same source/build
+boundary as pages. Do not restore `public/assets/css/style.css` as an independently
+hand-maintained deployment file.
+
 At the time this handover was introduced, `content/docs/templating.html` and the
 nested `public` checkout already contained local changes from earlier work.
 Preserve and distinguish those changes.
