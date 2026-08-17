@@ -851,3 +851,9 @@ forget candidate-Nift dogfooding
 - The supporting copy summarizes native builds, dependency-aware incrementality, checked project relationships and ordinary web output without turning them back into separate homepage sections.
 - The homepage now ends with direct links to `Why Nift?`, `Battle Tested`, and `Documentation`.
 - Removed the proof-grid-specific CSS and retained only the compact closing-section styling.
+
+### 2026-08-17 — Battle Tested contract framing
+
+- Reframed the Battle Tested introduction around behavioral contracts rather than examples or raw test counts.
+- Linked the broad Contracts design philosophy separately from the concrete Project Contracts feature so the two meanings remain related but distinct.
+- Clarified that adversarial testing attempts to falsify guarantees that users/projects/integrations may rely on, while retained bug reproducers turn discovered failures into permanent regression evidence.

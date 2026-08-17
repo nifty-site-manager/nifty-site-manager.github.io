@@ -199,6 +199,7 @@ entry point.
 - Surface current differentiators such as checked relationships/project contracts where they add information; do not let older speed/simplicity messaging crowd out newer architectural strengths.
 - The website should practice its own contract philosophy: use `@pathto` for authored internal navigation instead of unchecked relative `.html` links unless a literal path is intentionally being demonstrated.
 - Keep `docs/production-readiness` and other evaluation pages synchronized with the current focused-test inventory and Battle Tested evidence; avoid copying old checkpoint counts forward.
+- Keep the Battle Tested introduction framed around behavioral contracts and executable guarantees, with the broad Contracts philosophy distinguished from the concrete Project Contracts feature; do not reduce the page to raw test-count marketing.
 - `docs/advanced` is now the practical wider-toolchain integration guide. Keep philosophical rationale primarily in `docs/why-nift` / `docs/contracts` rather than duplicating it there.
 
 ## 2026-08-17 homepage visual cleanup
