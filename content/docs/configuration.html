@@ -1,7 +1,7 @@
 <article class="docs-article">
   <p class="docs-kicker">Project internals</p>
   <h1><code>.nift/config.json</code>.</h1>
-  <p class="docs-lead">The project config tells Nift where content lives, where generated files go, which extensions and template are the defaults, and how builds should use threads and detect changes.</p>
+  <p class="docs-lead">The project config tells Nift where content lives, where generated files go, which extensions and template are the defaults, how builds should use threads and detect changes, and which project-wide JSON contracts are available.</p>
 
   <h2>A typical web project</h2>
   <pre><code class="language-json">{
@@ -13,7 +13,10 @@
     "default-template": "templates/template.html",
     "build-threads": -1,
     "incremental-mode": "modified",
-    "minify-exts": []
+    "minify-exts": [],
+    "contracts": {
+      "routes": ".nift/routes.json"
+    }
   }
 }</code></pre>
   <p>For a web project, <code>public/</code> is a useful conventional output directory because many servers, hosts and frameworks already use that name for browser-facing files. Nift does not require the directory to be called <code>public/</code>; it simply uses the value in <code>output-dir</code>.</p>
@@ -28,6 +31,7 @@
     <tr><td><code>build-threads</code></td><td>Controls build and incremental-analysis worker count. A positive value uses that many threads; <code>0</code> uses hardware concurrency; a negative value is a hardware-concurrency multiplier, so <code>-1</code> means 1× available hardware threads and <code>-2</code> means 2×.</td></tr>
     <tr><td><code>incremental-mode</code></td><td>How Nift determines whether dependencies changed: <code>modified</code>, <code>hash</code>, or <code>hybrid</code>.</td></tr>
     <tr><td><code>minify-exts</code></td><td>Optional array of final output extensions to minify automatically, for example <code>[".html", ".css", ".js"]</code>. Supported formats are documented on the Minification page.</td></tr>
+    <tr><td><code>contracts</code></td><td>Optional object mapping project-wide contract namespace names to project-relative JSON source paths. Referenced contracts become checked dependencies and are available through <code>\$[...]</code>.</td></tr>
   </tbody></table></div>
 
   <h2>How tracked names become paths</h2>
@@ -53,6 +57,16 @@ content/docs/getting-started.html
              ↓
 public/docs/getting-started.html</code></pre>
   <p>The tracked item stores the name/title/template; the project config supplies the default directory and extension rules that turn the name into concrete content and output paths.</p>
+
+
+  <h2>Project contracts</h2>
+  <p>The optional <code>contracts</code> object declares project-wide named JSON sources:</p>
+  <pre><code class="language-json">"contracts": {
+  "routes": ".nift/routes.json",
+  "services": "data/services.json"
+}</code></pre>
+  <p>A declared namespace can then be read anywhere through the normal value syntax, for example <code>\$[routes.users.list]</code>. Contract namespaces are reserved project-wide, cannot be shadowed by <code>\@json</code> or loop bindings, and are loaded only when referenced. Nift records both the contract source and <code>.nift/config.json</code> as dependencies of outputs that use them.</p>
+  <p><a class="text-link" href="@pathto('docs/project-contracts')">Read the project contracts reference →</a></p>
 
   <h2>Automatic minification</h2>
   <p><code>minify-exts</code> is an optional array. A tracked output is minified after rendering when its final extension is listed:</p>

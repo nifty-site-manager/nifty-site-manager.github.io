@@ -63,10 +63,10 @@ frameworks, APIs, and external tools in their native form.
 ## Documentation responsibilities
 
 The current tracked site covers getting started, project structure, templating,
-metadata, JSON/Schema/control flow, paths, dependencies, incrementality,
-configuration, commands, minification, full applications/use cases, migration,
-hosting, AI development, architectural rules, battle-testing, comparisons,
-templates, and showcase material.
+metadata, JSON/Schema/control flow, contracts/project contracts/route contracts,
+paths, dependencies, incrementality, configuration, commands, minification, full
+applications/use cases, migration, hosting, AI development, architectural rules,
+battle-testing, comparisons, templates, and showcase material.
 
 When Nift changes:
 
@@ -88,6 +88,23 @@ After `$[...]` parameter interpolation is implemented and validated, document it
 as constrained parameter value resolution: whole `$[...]` values and quoted
 literal/value composition. Explicitly state that nested `@...` directives are not
 evaluated inside parameters. Prefer examples backed by contract fixtures.
+
+
+Project-contract documentation is intentionally split into three layers:
+`docs/contracts` explains the build-time contract philosophy and contract-driven
+feature design; `docs/project-contracts` specifies config-declared project-wide
+JSON contract namespaces; `docs/routes` presents application/API routes as a
+concrete pattern. The routes page and relevant Vercel/serverless material must
+state explicitly that Nift route contracts are build-time application
+relationships whereas Vercel routes/routing rules are deployment/runtime request
+handling.
+
+AI-facing material should describe Nift as human-first: clarity, explicitness,
+fast feedback, determinism, and checked relationships are primarily good human DX
+and consequently also produce unusually strong AI DX. The AI-development page may
+describe the repository practice as human-directed agentic engineering, including
+contracts, checkpoints, handovers, adversarial testing, evidence, project memory,
+and the high-leverage role of human perception/judgement.
 
 ## AI, templates, and downloads
 

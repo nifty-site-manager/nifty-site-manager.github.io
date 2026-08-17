@@ -5,6 +5,26 @@
 
   <div class="docs-callout"><strong>AI accelerates the loop; tests define the contract.</strong><p>An assistant may inspect, hypothesize, implement, benchmark and document. A feature is accepted because its observable behavior survives the appropriate gates—not because generated code or prose sounds confident.</p></div>
 
+  <h2>Human-directed agentic engineering</h2>
+  <p>One useful name for this approach is <strong>human-directed agentic engineering</strong>. The human retains product authority and supplies high-leverage perception and judgement: what problem matters, which trade-offs are acceptable, when a technically successful result still feels architecturally wrong, and what evidence is sufficient for the next checkpoint. Agents can then reason, implement, test, research and attack assumptions at much greater speed inside that direction.</p>
+  <pre><code class="language-plaintext">human intent + perception
+        ↓
+explicit contracts and bounded task
+        ↓
+agent reasoning / implementation
+        ↓
+verification + adversarial testing
+        ↓
+evidence
+        ↓
+human judgement / next direction</code></pre>
+  <p>This is not human micromanagement. A strong agent should challenge questionable assumptions and surface evidence that changes the problem definition. Human direction means the human remains responsible for the goals and acceptance boundary, not that the human dictates every implementation detail.</p>
+
+  <div class="docs-callout"><strong>Don't make the AI remember the project. Make the project remember the project.</strong><p>Source remembers implementation; Git remembers change; tests remember behavioral contracts; benchmarks remember performance expectations; handovers remember transient state and rationale; checkpoints remember what has actually earned trust.</p></div>
+
+  <h3>Perception is a high-leverage human contribution</h3>
+  <p>Current agents can be exceptionally strong at reasoning and execution inside a well-framed task while still missing the higher-level signal that the frame itself is wrong. A human may notice that a feature technically works but makes the language harder to explain, that every test passes but the tested assumption is incomplete, or that optimization effort is aimed at an unimportant bottleneck. Good handovers preserve these observations so the next agent knows what deserves attention, not merely what changed.</p>
+
   <h2>Why handover documents live in the repositories</h2>
   <p>Long-running development accumulates knowledge that is not obvious from one source file: architectural intent, historical failures, current risk, release boundaries, validation commands and the reason a tempting design was rejected. Each project therefore carries a concise root <code>HANDOVER.md</code> plus deeper living documents where needed.</p>
   <div class="reference-table-wrap">
@@ -59,6 +79,7 @@ then outputs, diagnostics, metadata, dependencies,
       <tbody>
         <tr><td>Template composition</td><td><code>\@input</code> inserts the resolved source, records the dependency and reports controlled errors for invalid paths or recursion.</td></tr>
         <tr><td>Checked paths</td><td><code>\@pathto</code> emits the correct relative path and records a requirement whose later absence makes the page eligible for rebuild.</td></tr>
+        <tr><td>Project contracts</td><td>A configured contract namespace resolves through <code>\$[...]</code>, cannot be shadowed, and records both its declaration and source as dependencies of outputs that use it.</td></tr>
         <tr><td>Incremental builds</td><td>Changed dependencies rebuild affected outputs; unrelated outputs remain untouched; <code>status</code> explains the same decision without writing.</td></tr>
         <tr><td>Minification</td><td>Selected final-output extensions are minified after rendering; failure does not overwrite the last successful output or metadata.</td></tr>
         <tr><td>CLI/filesystem</td><td>Invalid commands/configuration fail clearly, path containment is respected and destructive operations remain within the requested project target.</td></tr>
@@ -99,8 +120,8 @@ commit generated main
 commit source + matching Git-link pointer on stage</code></pre>
   <p>This makes the deployed branch simple without pretending generated HTML is the development source. Static CSS and JavaScript can also be tracked Nift outputs, so readable source participates in dependency tracking and optional final-output minification.</p>
 
-  <h2>How AI changes the developer experience</h2>
-  <p>Nift's compact model is unusually legible to coding agents: tracked outputs, templates, <code>\@content</code>, <code>\@input</code>, <code>\@pathto</code>, metadata and incremental dependencies explain most projects. Fast builds make repeated edit/build/inspect cycles cheap, while <code>nift status</code> explains why a page would rebuild before changing output.</p>
+  <h2>Human-first design that also produces strong AI DX</h2>
+  <p>Nift is first and foremost designed for humans building websites. Its compact model, explicit configuration, deterministic behavior, fast feedback and checked relationships are human developer-experience choices. Those same properties happen to make it unusually legible to coding agents: tracked outputs, templates, <code>\@content</code>, <code>\@input</code>, <code>\@pathto</code>, metadata and incremental dependencies explain most projects. Fast builds make repeated edit/build/inspect cycles cheap, while <code>nift status</code> explains why a page would rebuild before changing output.</p>
   <p>The small mental model does not eliminate responsibility. An AI assistant still needs to read the project's handover, inspect current Git state, preserve unrelated user work, distinguish source from generated output and validate links/assets rather than assuming a successful command means a correct site.</p>
 
   <h2>What AI should not decide silently</h2>

@@ -141,6 +141,8 @@
 
 <h2>Nift vs Astro</h2>
 <p>Astro has an excellent integrated model: static HTML by default, first-class client islands, content collections, adapters and optional server/on-demand rendering. If I want those facilities to be owned by one framework, Astro is still extremely compelling.</p>
+<div class="docs-callout"><strong>My preference has shifted further toward Nift as a design.</strong><p>Astro remains the more mature and broadly integrated ecosystem, especially for component-heavy framework-centric applications and teams that want established integrations, conventions and community depth. But for content-heavy sites, documentation, marketing/business sites, ordinary HTML/JS frontends, full-stack frontends whose backend remains independent, and projects with only selective UI islands, I now personally prefer Nift's design: a small language, explicit dependencies, build-time contracts, extremely fast feedback and a deliberate refusal to own the rest of the stack.</p></div>
+<p>The important goal is not for Nift to accumulate enough features to “beat Astro.” The interesting challenge is to add capabilities such as structured data, constrained control flow, parameter interpolation and project contracts while preserving the tiny comprehensible core. That restraint is part of why my opinion improved.</p>
 <p>Where my preference has shifted is when I do <em>not</em> need that integration. A Nift project can remain almost embarrassingly direct:</p>
 <pre><code class="language-plaintext">content/
 templates/

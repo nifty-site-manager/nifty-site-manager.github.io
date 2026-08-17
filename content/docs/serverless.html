@@ -105,6 +105,7 @@ functions.http('status', (req, res) =&gt; {
 
 <h2>Vercel: static Nift output + Functions</h2>
 <p>Vercel Functions run server-side code without managing servers and can sit behind API routes while Nift continues to produce the frontend. You do not need to adopt Next.js merely to use a serverless endpoint.</p>
+<div class="docs-callout"><strong>Nift route contracts and Vercel routes are different concepts.</strong><p>A Nift <a href="@pathto('docs/routes')">route contract</a> is a build-time application relationship such as <code>routes.users.list → /api/users</code>. Vercel routing rules describe what its deployment should do when an incoming request matches. They can complement each other, but Nift does not redefine Vercel's routing model.</p></div>
 <pre><code class="language-typescript">// api/hello.ts
 export default {
   fetch(request: Request) {

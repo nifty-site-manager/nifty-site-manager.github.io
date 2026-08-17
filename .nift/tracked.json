@@ -131,6 +131,21 @@
       "template": "templates/docs.html"
     },
     {
+      "name": "docs/contracts",
+      "title": "Contracts",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/project-contracts",
+      "title": "Project contracts",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/routes",
+      "title": "Route contracts",
+      "template": "templates/docs.html"
+    },
+    {
       "name": "docs/configuration",
       "title": "Project configuration",
       "template": "templates/docs.html"
