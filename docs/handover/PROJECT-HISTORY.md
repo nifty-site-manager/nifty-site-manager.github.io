@@ -861,3 +861,8 @@ forget candidate-Nift dogfooding
 ### 2026-08-18 — broader comparison guide
 
 Added `/docs/comparisons.html` as a dedicated decision guide distinct from AI Opinion. It compares Nift's small project-aware build-layer model with Astro, Next.js, Hugo, Eleventy, Jekyll and Zola, including explicit areas where Nift is weaker: ecosystem size, integrated component/runtime features and built-in publication machinery. The guide preserves Nift's strongest differentiators—checked relationships, explicit dependency-aware incrementalism, native builds and stack independence—without presenting them as universal advantages.
+
+## 2026-08-18 — Comparison framing revision
+
+- Reworked `docs/comparisons` around strengths, weaknesses and ownership boundaries rather than broad “better than” claims.
+- Removed Nift's self-row from the comparison table, added explicit weaknesses for each alternative, and retained per-tool guidance explaining when each architecture is the stronger fit.
