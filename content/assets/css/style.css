@@ -804,3 +804,18 @@ html[data-theme="dark"] .simple-page p a:not(.button):not(.btn),
 html[data-theme="dark"] .simple-page li a:not(.button):not(.btn),
 html[data-theme="dark"] .simple-page td a:not(.button):not(.btn),
 html[data-theme="dark"] .text-link{color:#72d893}
+
+/* Comparison guide: make row/column ownership obvious at a glance. */
+.comparison-guide{max-width:1120px}
+.comparison-table-wrap{margin:26px 0 48px;border:1px solid var(--border);border-radius:12px;overflow-x:auto}
+.comparison-table-nift{width:100%;border-collapse:collapse;table-layout:fixed;font-size:14px;line-height:1.55}
+.comparison-table-nift th,.comparison-table-nift td{padding:18px 20px;text-align:left;vertical-align:top;border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
+.comparison-table-nift th:last-child,.comparison-table-nift td:last-child{border-right:0}
+.comparison-table-nift tbody tr:last-child td{border-bottom:0}
+.comparison-table-nift th{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);background:var(--surface-raised)}
+.comparison-table-nift tbody tr:nth-child(even){background:var(--surface-soft)}
+.comparison-table-nift th:nth-child(1){width:14%}
+.comparison-table-nift th:nth-child(2){width:23%}
+.comparison-table-nift th:nth-child(3){width:29%}
+.comparison-table-nift th:nth-child(4){width:34%}
+@media(max-width:760px){.comparison-table-nift{min-width:820px}}
