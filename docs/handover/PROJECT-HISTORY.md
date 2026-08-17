@@ -836,3 +836,11 @@ forget candidate-Nift dogfooding
 - Moved `Use it your way` from near the bottom of the homepage to immediately follow `Small by design`, ahead of `Fast feedback, explainable builds`.
 - The resulting narrative is now: understand Nift's small build model → see the kinds of sites/projects it supports → inspect its build/performance characteristics.
 - Rebuilt all 46 pages, verified an immediate 46/46 no-op rebuild, and checked 4,329 generated local references with zero missing targets.
+
+### 2026-08-17 — minimal homepage product front door
+
+- Replaced the remaining long-form homepage narrative with a deliberately minimal structure: hero + live demo + four compact proof points + footer.
+- The four proofs are `Small by design`, `Checked relationships`, `Fast, explainable rebuilds`, and `Bring your stack`, each linking to the deeper documentation that owns that topic.
+- Removed homepage sections for use cases, performance detail, AI-assisted development, migration, stack chips and the closing boundary card. Those subjects remain documented in their dedicated pages rather than being summarized repeatedly on the front page.
+- Added direct secondary links from the proof band to the documentation index and Battle Tested evidence.
+- This is an intentional information-architecture decision: the homepage is the product front door, while the documentation carries the depth.

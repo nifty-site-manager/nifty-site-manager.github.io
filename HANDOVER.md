@@ -215,3 +215,10 @@ entry point.
 - Moved `Use it your way` directly after `Small by design` and before the performance section. The homepage now establishes Nift's compact model, immediately shows the range of project shapes it can serve, then explains fast/dependency-aware builds.
 - Keep this ordering unless a future homepage redesign deliberately replaces the multi-section narrative; it avoids delaying the practical “what can I build with this?” answer until after several implementation/engineering sections.
 - Validation for this presentation-only checkpoint: 46-page full build, immediate 46/46 no-op incremental build, and 4,329 generated local references with zero missing targets.
+
+## 2026-08-17 minimal homepage checkpoint
+
+- Replaced the multi-section homepage narrative with an intentionally minimal product front door: hero, live template/content/output demo, four compact proof points, then footer.
+- The proof points link into the deeper docs for Nift's small design, checked relationships/contracts, dependency-aware incremental builds, and wider-toolchain composition; separate links lead to the docs index and testing evidence.
+- Keep detailed use cases, AI/HDAE guidance, migration, ecosystem recipes, production evidence and philosophy on their dedicated pages. Do not let the homepage gradually reaccumulate those sections unless a future redesign deliberately changes this strategy.
+- The hero CTAs remain `Get started`, `Install`, and `View on GitHub`.
