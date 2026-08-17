@@ -1,9 +1,9 @@
 <article class="docs-article">
   <p class="docs-kicker">Beyond the core</p>
-  <h1>Nift as the glue, not the universe.</h1>
-  <p class="docs-lead">Nift does not need its own replacement for every tool in web development. Let Nift handle tracked outputs, templates, partials, paths and incremental builds; let TypeScript, React, Vue, Svelte, Vite, Tailwind, Go, Node, Python and the rest of the ecosystem keep doing what they already do well.</p>
+  <h1>Nift with the wider web toolchain.</h1>
+  <p class="docs-lead">This is the practical integration guide: keep Nift responsible for tracked outputs, composition, paths and dependencies, then connect TypeScript, Vite, Tailwind, component frameworks, backends and other specialist tools through ordinary files and build scripts.</p>
 
-  <div class="docs-callout"><strong>Nift's boundary is deliberately small.</strong><p>Your web project does not have to become a “Nift stack”. Nift can be one useful layer inside the stack you would have chosen anyway.</p></div>
+  <div class="docs-callout"><strong>No Nift-specific integration layer is required for most tools.</strong><p>If another tool can produce or consume files, it can usually sit beside Nift directly. For the design rationale behind that boundary, see <a href="@pathto('docs/why-nift')">Why Nift?</a></p></div>
 
   <h2>Plain HTML + CSS + JavaScript</h2>
   <p>The simplest integration is no integration at all: keep ordinary assets in the public tree and reference them from Nift templates.</p>

@@ -1,6 +1,6 @@
 {
   "name": "docs/advanced",
-  "title": "Advanced Nift",
+  "title": "Nift with the wider web toolchain",
   "template": "templates/docs.html",
   "content": "content/docs/advanced.html",
   "output": "public/docs/advanced.html",

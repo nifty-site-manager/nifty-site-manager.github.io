@@ -11,12 +11,12 @@
 
   <h2>The evidence behind the verdict</h2>
   <div class="advanced-doc-grid">
-    <div><h2>Focused gates</h2><p>Twenty-one source-tree targets isolate JSON, Schema, parser/content, control flow, path safety, incremental state, concurrency and the standalone/integrated minifier.</p></div>
+    <div><h2>Focused gates</h2><p>The source tree exposes focused targets for JSON, Schema, project contracts, parser/content, template-less entries, control flow, path safety, incremental state, concurrency, scaling and the standalone/integrated minifier.</p></div>
     <div><h2>Independent contracts</h2><p>The black-box suite drives the compiled executable through real temporary projects and checks output, diagnostics, metadata, exit status and filesystem effects.</p></div>
     <div><h2>Adversarial state</h2><p>The ruthless extension attacks malformed inputs, traversal and symlink escapes, collisions, missing/stale state, preserved mtimes, failed builds and shared dependencies.</p></div>
     <div><h2>Dogfooding</h2><p>Nift builds its own large documentation site plus the Minify++ and tscc sites, including multi-extension assets and minified deployment output.</p></div>
   </div>
-  <p>The current retained checkpoint reports all 21 focused targets passing and the ruthless extension completing 203/203 checks. Historical main-suite and benchmark counts remain separately contextualized on <a href="@pathto('docs/battle-tested')">Battle tested</a> rather than being combined into one inflated marketing number.</p>
+  <p>The source tree currently exposes 24 focused targets. The most recent project-contract checkpoint also established all 16 modern standalone black-box modules in that validation group, then rebuilt the real Nift documentation site with the candidate. Longer historical and sanitizer gates are kept separately contextualized on <a href="@pathto('docs/battle-tested')">Battle tested</a>; a timeout or historical pass is not silently promoted into fresh evidence.</p>
 
   <h2>Contracts that are ready to rely on</h2>
   <ul>
@@ -25,7 +25,8 @@
     <li>dependencies and existence-only requirements drive explainable incremental decisions;</li>
     <li><code>modified</code>, <code>hash</code> and <code>hybrid</code> modes implement distinct documented change-detection policies;</li>
     <li>failed rendering/minification does not overwrite the last successful output and page metadata;</li>
-    <li>JSON data, the supported JSON Schema subset and bounded control flow fail explicitly outside their contract;</li>
+    <li>JSON data, the supported JSON Schema subset, project contracts and bounded control flow fail explicitly outside their contract;</li>
+    <li>tracked entries can intentionally omit a template and are regression-protected as first-class text-output builds;</li>
     <li>concurrent builds preserve page-level state and avoid duplicate writes to one tracked output;</li>
     <li>supported final HTML/CSS/JS/JSX/JSON/XML/SVG artifacts can be conservatively minified.</li>
   </ul>

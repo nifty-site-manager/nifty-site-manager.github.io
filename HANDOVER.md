@@ -191,3 +191,12 @@ entry point.
 - Reworked the AI-opinion scoring model to remove overlapping categories, reserve 10s for unusually strong evidence, and explicitly separate Nift's internal testing discipline from ecosystem/production maturity.
 - Documented omitted `template` fields in `.nift/tracked.json`: direct top-level parsing of content, no template dependency, empty-string compatibility, dependency cleanup when switching modes, and scaffold usage for CSS/JS.
 - Documentation-only checkpoint: rebuild the canonical site, verify an immediate incremental no-op, and keep generated `main` synchronized with `stage`.
+
+## 2026-08-17 site-wide editorial reconciliation
+
+- Reworked the homepage around distinct jobs rather than repeated positioning: product/demo, core capabilities, incremental/dependency behavior, human-first AI assistance, migration, ecosystem composition, use cases, templates, and one closing boundary statement.
+- Reduced homepage copy substantially; avoid reintroducing separate sections that all restate “small layer / keep your stack / glue not universe.” Put deeper philosophy on `docs/why-nift`, ecosystem recipes on `docs/advanced`, and AI methodology on the dedicated AI pages.
+- Surface current differentiators such as checked relationships/project contracts where they add information; do not let older speed/simplicity messaging crowd out newer architectural strengths.
+- The website should practice its own contract philosophy: use `@pathto` for authored internal navigation instead of unchecked relative `.html` links unless a literal path is intentionally being demonstrated.
+- Keep `docs/production-readiness` and other evaluation pages synchronized with the current focused-test inventory and Battle Tested evidence; avoid copying old checkpoint counts forward.
+- `docs/advanced` is now the practical wider-toolchain integration guide. Keep philosophical rationale primarily in `docs/why-nift` / `docs/contracts` rather than duplicating it there.

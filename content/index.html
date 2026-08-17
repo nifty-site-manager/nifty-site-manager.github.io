@@ -64,35 +64,33 @@
 </div>
 </div></section>
 
-<section class="section light-section"><div class="section-heading reveal"><p class="eyebrow">Small by design</p><h2>Add the useful machinery. Keep everything else yours.</h2><p>Nift does a focused job: track outputs, compose templates and content, resolve project-aware paths, explain dependency changes, and rebuild only what is affected. Your HTML, CSS, JavaScript, TypeScript, frameworks, backend and deployment choices remain yours.</p></div><div class="feature-grid">
+<section class="section light-section"><div class="section-heading reveal"><p class="eyebrow">Small by design</p><h2>Add project awareness without handing over the stack.</h2><p>Nift tracks outputs, composes reusable source, resolves checked paths and rebuilds through explicit dependencies. The rest of the website can stay ordinary web technology.</p></div><div class="feature-grid">
 <article class="feature-card reveal"><div class="feature-icon">□</div><h3>Templates without a takeover</h3><p><code>\@content</code> and <code>\@input</code> are enough to remove duplicated layouts and reusable fragments from an ordinary website.</p></article>
 <article class="feature-card reveal"><div class="feature-icon">↪</div><h3>Easy to adopt</h3><p>Start with an existing HTML site, extract the pieces that repeat, and let Nift build the same frontend. A migration does not need to become a rewrite.</p></article>
 <article class="feature-card reveal"><div class="feature-icon">▱</div><h3>Dependency aware</h3><p>Included files become dependencies automatically, so changing a shared partial can rebuild the pages that actually use it.</p></article>
 <article class="feature-card reveal"><div class="feature-icon">↯</div><h3>Built for speed</h3><p>Written in C++ with fast full and incremental builds, Nift stays comfortable as projects grow.</p></article>
 <article class="feature-card reveal"><div class="feature-icon">♡</div><h3>Use the wider ecosystem</h3><p>npm, TypeScript, React, Vue, Svelte, Tailwind, Go, C++, APIs and image tools remain themselves. Nift does not need a special version of everything.</p></article>
-<article class="feature-card reveal"><div class="feature-icon">◇</div><h3>Easy to reason about</h3><p>A small set of explicit primitives makes the project easier to understand, debug, explain and hand to coding assistants.</p></article>
+<article class="feature-card reveal"><div class="feature-icon">◇</div><h3>Checked relationships</h3><p>Paths, inputs, data and project contracts can turn important assumptions into build-time failures instead of broken output discovered later.</p></article>
 </div></section>
 
 
 <section class="section performance-home-section">
   <div class="section-heading reveal">
-    <p class="eyebrow">Built to stay light</p>
-    <h2>Fast tooling should disappear into the workflow.</h2>
-    <p>Nift's architecture is deliberately lean: a native executable, multithreaded builds, dependency-aware incremental work and deployable output that can stay as simple as ordinary files.</p>
+    <p class="eyebrow">Fast feedback, explainable builds</p>
+    <h2>Do less work when less changed.</h2>
+    <p>Nift is a native, multithreaded build tool with dependency-aware incremental modes. The important part is not just benchmark speed: it is keeping everyday rebuild work proportional to the change.</p>
   </div>
   <div class="performance-grid">
-    <article class="performance-card reveal"><span>01</span><h3>Single native executable</h3><p>The core tool does not require a project-local runtime dependency tree just to parse templates and build pages.</p></article>
-    <article class="performance-card reveal"><span>02</span><h3>Multithreaded builds</h3><p>When a project needs substantial work, Nift can build tracked outputs across multiple threads using the project's configured thread count.</p></article>
-    <article class="performance-card reveal"><span>03</span><h3>Incremental by design</h3><p>During normal development, <code>nift build</code> can focus on outputs affected by what changed instead of treating every edit like a full rebuild.</p></article>
-    <article class="performance-card reveal"><span>04</span><h3>Tiny project footprint</h3><p>A Nift site can remain mostly HTML, CSS, JavaScript and assets. Add other tooling only when the project actually needs it.</p></article>
-    <article class="performance-card reveal"><span>05</span><h3>No browser runtime required</h3><p>If the site does not need a client framework, Nift does not make you ship one. Generated HTML can just be HTML.</p></article>
-    <article class="performance-card reveal"><span>06</span><h3>Scale work with the change</h3><p>Change one page, rebuild one path through the graph. Change a shared partial, rebuild the outputs that depend on it.</p></article>
+    <article class="performance-card reveal"><span>01</span><h3>Native executable</h3><p>No project-local runtime dependency tree is required just to compose pages and inspect build state.</p></article>
+    <article class="performance-card reveal"><span>02</span><h3>Dependency-aware</h3><p>Inputs, explicit dependencies, checked paths and project contracts contribute to an explainable build graph.</p></article>
+    <article class="performance-card reveal"><span>03</span><h3>Incremental by design</h3><p>Change one page and keep the work local. Change shared source and rebuild the outputs that depend on it.</p></article>
+    <article class="performance-card reveal"><span>04</span><h3>Plain deployable output</h3><p>If the site does not need a client framework, Nift does not make you ship one. Generated HTML can simply be HTML.</p></article>
   </div>
-  <div class="center-link reveal"><a class="text-link" href="@pathto('docs/why-nift')">Why Nift is designed this way →</a></div>
+  <div class="center-link reveal"><a class="text-link" href="@pathto('docs/incremental-builds')">See how incremental builds work →</a></div>
 </section>
 
 <section class="section ai-home-section"><div class="ai-home-grid">
-<div class="ai-home-copy reveal"><p class="eyebrow">AI-assisted development</p><h2>Small enough to explain to an AI. Powerful enough to build the real site.</h2><p>Nift does not need an AI subsystem to work well with AI coding assistants. Its advantage is that there is comparatively little Nift-specific machinery for an assistant to learn, hallucinate or fight against.</p><p>Give Copilot, ChatGPT or another coding assistant a short <code>ai-context.txt</code> explaining the handful of Nift primitives, then spend your actual prompt describing the website you want. Most of what the assistant edits remains ordinary HTML, CSS, JavaScript, TypeScript and whichever application stack you chose.</p><div class="hero-actions"><a class="button button-primary" href="@pathto('docs/ai-assistants')">AI-assisted workflow →</a><a class="text-link" href="@pathto('examples')">See stack examples →</a></div></div>
+<div class="ai-home-copy reveal"><p class="eyebrow">Human-first, AI-friendly</p><h2>A small build model is easier for people and agents to reason about.</h2><p>Nift is designed first for humans. The same properties—ordinary files, explicit relationships, fast validation and a compact language—also make it unusually comfortable to use with coding assistants.</p><p>A short project context can teach the Nift-specific layer; most implementation work remains HTML, CSS, JavaScript, TypeScript and the stack you already chose.</p><div class="hero-actions"><a class="button button-primary" href="@pathto('docs/ai-assistants')">AI-assisted workflow →</a><a class="text-link" href="@pathto('docs/ai-development')">How Nift itself is developed →</a></div></div>
 <div class="ai-context-preview reveal"><p class="eyebrow">ai-context.txt</p><pre><code class="language-plaintext">This is a Nift v4 project.
 
 \@content inserts page content.
@@ -102,16 +100,6 @@
 Keep the existing Nift architecture.
 Use the project's normal HTML/CSS/JS/TS
 and other tooling rather than replacing it.</code></pre><p class="ai-caption">Then ask for the portfolio, documentation site, product site, dashboard shell or application frontend you actually want.</p></div>
-</div></section>
-
-<section class="section philosophy-section"><div class="split-heading reveal"><div><p class="eyebrow">The philosophy</p><h2>Nift provides the glue without trying to become the universe.</h2></div><p>Use Nift where composition and build tracking help. Leave everything else alone. A Nift project can be mostly ordinary web code because Nift is a layer in your stack, not a replacement for your stack.</p></div><div class="principle-grid">
-<div class="principle reveal"><span>01</span><h3>Keep</h3><p>Start with the HTML, assets and architecture you already understand.</p></div><div class="principle reveal"><span>02</span><h3>Extract</h3><p>Move repeated layouts and fragments into templates and partials.</p></div><div class="principle reveal"><span>03</span><h3>Track</h3><p>Let Nift understand pages, paths and dependencies.</p></div><div class="principle reveal"><span>04</span><h3>Compose</h3><p>Build the result without introducing machinery you did not ask for.</p></div></div></section>
-
-<section class="section workflow-home-section"><div class="section-heading reveal"><p class="eyebrow">A deliberately short path</p><h2>From a bare directory to reusable pages.</h2><p>You can understand the core workflow without learning an application framework.</p></div><div class="workflow-home-grid">
-<div class="workflow-step reveal"><span>01</span><h3>Initialise</h3><pre><code class="language-bash">nift init .html</code></pre><p>Start from a small HTML project rather than a pile of generated framework machinery.</p></div>
-<div class="workflow-step reveal"><span>02</span><h3>Compose</h3><pre><code class="language-nift">\@input('templates/header.html')
-\@content</code></pre><p>Extract repeated structure while keeping page content direct.</p></div>
-<div class="workflow-step reveal"><span>03</span><h3>Build</h3><pre><code class="language-bash">nift build</code></pre><p>During normal development, rebuild what Nift considers updated rather than reflexively rebuilding the whole site.</p></div>
 </div></section>
 
 <section class="section quickstart-section"><div class="quickstart-card reveal"><div><p class="eyebrow">Existing site?</p><h2>You do not need to start over.</h2><p>Take repeated headers, navigation and footers out of your existing pages, put them in reusable files, keep each page's unique markup as content, and let Nift compose the result.</p><a class="text-link" href="@pathto('docs/existing-sites')">Convert an existing site →</a></div><pre><code class="language-plaintext"># before
@@ -124,7 +112,7 @@ content/
 templates/
 public/</code></pre></div></section>
 
-<section class="section stack-home-section"><div class="split-heading reveal"><div><p class="eyebrow">Bring your stack</p><h2>Nift can sit beside the tools you already chose.</h2></div><p>TypeScript, Vite, React, Vue, Svelte, Tailwind, Go, Node, Bun, Python, minifiers, bundlers and deployment tooling do not have to be absorbed into Nift to work with it.</p></div><div class="stack-chip-grid reveal"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>TypeScript</span><span>npm</span><span>Bun</span><span>Vite</span><span>React</span><span>Vue</span><span>Svelte</span><span>Tailwind</span><span>Go</span><span>Node</span><span>Express</span><span>Python</span><span>WebSockets</span></div><div class="center-link reveal"><a class="text-link" href="@pathto('docs/advanced')">See how Nift fits into the wider ecosystem →</a></div></section>
+<section class="section stack-home-section"><div class="split-heading reveal"><div><p class="eyebrow">Bring your stack</p><h2>Use specialist tools directly.</h2></div><p>Nift composes through ordinary files, so frontend compilers, component frameworks, backends and deployment tooling can remain independent rather than becoming Nift plugins.</p></div><div class="stack-chip-grid reveal"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>TypeScript</span><span>npm</span><span>Bun</span><span>Vite</span><span>React</span><span>Vue</span><span>Svelte</span><span>Tailwind</span><span>Go</span><span>Node</span><span>Express</span><span>Python</span><span>WebSockets</span></div><div class="center-link reveal"><a class="text-link" href="@pathto('docs/advanced')">See how Nift fits into the wider ecosystem →</a></div></section>
 
 <section class="section usecases-section"><div class="section-heading reveal"><p class="eyebrow">Use it your way</p><h2>From plain HTML to full web applications.</h2><p>Nift's build-time role does not constrain what your website becomes at runtime.</p></div><div class="usecase-row reveal"><a href="@pathto('docs/existing-sites')"><strong>Existing sites</strong><small>Refactor without rewriting</small></a><a href="@pathto('docs/use-cases/documentation')"><strong>Documentation</strong><small>Shared technical content</small></a><a href="@pathto('docs/use-cases/web-apps')"><strong>Web apps</strong><small>Nift + your backend</small></a><a href="@pathto('docs/use-cases/react-islands')"><strong>UI islands</strong><small>Frameworks where useful</small></a><a href="@pathto('docs/ai-assistants')"><strong>AI-assisted work</strong><small>Small context, clear structure</small></a><a href="@pathto('docs/use-cases/text-assets')"><strong>Text assets</strong><small>Compose more than HTML</small></a></div></section>
 
@@ -158,7 +146,5 @@ public/</code></pre></div></section>
   <div class="center-link reveal"><a class="text-link" href="@pathto('templates')">Browse and download all templates →</a></div>
 </section>
 
-<section class="section ai-home-closing"><div class="advanced-card reveal"><div><p class="eyebrow">Human-readable. AI-readable.</p><h2>The less framework-specific ceremony there is, the more attention can go to the website itself.</h2><p>A coding assistant can reason about Nift's small build model and then work mostly in familiar web technologies. That makes Nift particularly interesting as AI-assisted development shifts from generating snippets toward maintaining whole repositories.</p></div><a class="button button-secondary" href="@pathto('docs/ai-assistants')">Give an AI a Nift project →</a></div></section>
-
-<section class="section advanced-section"><div class="advanced-card reveal"><div><p class="eyebrow">A deliberately small contract</p><h2>“We don't care how you build your website. Here's a really fast templating/build layer. Carry on.”</h2><p>Nift gives you the pieces that benefit from project awareness—composition, metadata, paths and dependencies—then gets out of the way.</p></div><a class="button button-secondary" href="@pathto('docs')">Explore the docs →</a></div></section>
+<section class="section advanced-section"><div class="advanced-card reveal"><div><p class="eyebrow">The boundary</p><h2>Build-time composition and project knowledge, without a framework takeover.</h2><p>Nift owns the relationships it can check well—tracked outputs, reusable source, paths, dependencies, data and declared project contracts—and composes with specialist tools for the rest.</p></div><div class="hero-actions"><a class="button button-secondary" href="@pathto('docs/why-nift')">Why Nift? →</a><a class="text-link" href="@pathto('docs/contracts')">Contracts →</a></div></div></section>
 </main>

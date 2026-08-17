@@ -809,3 +809,16 @@ forget candidate-Nift dogfooding
 - Rebalanced the AI-opinion comparison after deeper repository/testing experience: overlapping categories were consolidated, Nift's 10/10 ratings were reduced to evidence-heavy areas, and production maturity/network evidence became an explicit weakness rather than being hidden inside ecosystem commentary.
 - Documented template-less `.nift/tracked.json` entries as a first-class v4 behavior, including direct content parsing, dependency semantics, empty-string compatibility and scaffold use for CSS/JavaScript.
 - Validated the exact source with a 46-page full build, a 46/46 no-op incremental pass, and the focused template-optional contract test.
+
+### 2026-08-17 — site-wide editorial and positioning reconciliation
+
+- Audited the canonical website across homepage, onboarding, philosophy, ecosystem, DX, reliability and internal navigation after the v4 contracts/HDAE work.
+- Reduced the homepage from roughly 1,170 to roughly 835 words by removing a duplicated philosophy section, duplicated workflow explanation and second AI pitch; retained the live demo, install surface, migration, ecosystem, use cases and template discovery.
+- Reframed homepage capability messaging around current Nift: explicit dependencies, checked relationships/project contracts, proportional incremental work and a human-first/AI-friendly development model.
+- Updated `Why Nift?` to make checked relationships/contracts part of the current philosophy and to keep AI DX subordinate to human-oriented simplicity.
+- Reframed `Advanced Nift` as the practical wider-web-toolchain integration guide instead of another copy of the design philosophy; updated its tracked title accordingly.
+- Updated Developer Experience to include config-declared project contracts alongside JSON Schema as machine-readable guarantees.
+- Reconciled Production Readiness with the current 24 focused Makefile targets and current project-contract checkpoint evidence, and documented template-less tracked entries among protected production behaviors.
+- Replaced remaining authored relative docs-navigation `.html` links with `@pathto(...)`, leaving literal links only where a migration example intentionally demonstrates ordinary HTML.
+- Updated the site-wide meta description to describe current Nift as a website generator/build system with checked paths, contracts and incremental rebuilding.
+- Validation: exact candidate rebuilt all 46 pages, immediate incremental pass reported 46/46 up to date, focused project-contract/template-less/path-safety tests passed, and 4,343 generated local references resolved with zero missing targets.

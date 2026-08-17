@@ -23,7 +23,6 @@
     <a href="@pathto('templates')"><span>Starter projects</span><h2>Begin with a polished template</h2><p>Download a complete dark-mode Nift project and replace the design/content with your own.</p></a>
     <a href="@pathto('docs/ai-assistants')"><span>AI-assisted</span><h2>Give an assistant the barebones project</h2><p>Use the downloadable starter + <code>ai-context.txt</code>, then describe the site you actually want.</p></a>
     <a href="@pathto('docs/existing-sites')"><span>Migration</span><h2>Bring an existing site</h2><p>Keep the frontend you already have. Extract repeated structure instead of rewriting the project into a framework.</p></a>
-    <a href="@pathto('docs/why-nift')"><span>Design philosophy</span><h2>Why Nift?</h2><p>Understand why Nift deliberately occupies a small boundary in a much larger web ecosystem.</p></a>
     <a href="@pathto('docs/three-primitives')"><span>Start simple</span><h2>Three primitives go a long way</h2><p>See how \@content, \@input and \@pathto alone can form the architecture of a serious site.</p></a>
   </div>
 
@@ -45,7 +44,7 @@
   <h2>Understand what Nift is tracking.</h2>
   <div class="docs-step-grid">
     <a href="@pathto('docs/configuration')"><span>.nift</span><h2>config.json</h2><p>Project-wide directories, extensions, template defaults, thread count, incremental mode, contracts and optional minified output extensions.</p></a>
-    <a href="@pathto('docs/tracked-json')"><span>.nift</span><h2>tracked.json</h2><p>The names, titles, templates, optional per-item extension overrides and optional minify overrides for tracked outputs.</p></a>
+    <a href="@pathto('docs/tracked-json')"><span>.nift</span><h2>tracked.json</h2><p>The names, titles and optional template/extension/minification overrides for tracked outputs, including template-less entries.</p></a>
     <a href="@pathto('docs/dep')"><span>Explicit dependencies</span><h2>\@dep</h2><p>Declare a dependency in the source exactly where the relationship matters.</p></a>
     <a href="@pathto('docs/user-dependencies')"><span>Per-page metadata</span><h2>*.deps.json</h2><p>Declare additional file or directory dependencies beside a tracked content file.</p></a>
   </div>
@@ -76,12 +75,12 @@
     <a href="@pathto('docs/production-readiness')"><span>Current status</span><h2>Production readiness</h2><p>A candid assessment of Nift's supported contract, release evidence, operational limits and maintained production verdict.</p></a>
   </div>
 
-  <h2>Go beyond a simple static site.</h2>
+  <h2>Patterns for larger projects.</h2>
   <div class="docs-step-grid docs-pattern-grid">
-    <a href="@pathto('docs/advanced')"><span>Ecosystem</span><h2>Use your wider toolchain</h2><p>npm, Bun, TypeScript, Vite, Tailwind, bundlers, image tools and anything else that can compose through files.</p></a>
     <a href="@pathto('docs/use-cases/web-apps')"><span>Full stack</span><h2>Web applications</h2><p>Pair Nift with Go, Node, Express, Python, APIs, authentication, databases and realtime backends.</p></a>
     <a href="@pathto('docs/use-cases/react-islands')"><span>Frontend</span><h2>React / Vue / Svelte islands</h2><p>Let a component framework own the interactive region without forcing it to own every document.</p></a>
-    <a href="@pathto('docs/use-cases/documentation')"><span>Content</span><h2>Documentation projects</h2><p>Compose large shared navigation and technical content while incremental builds keep changes focused.</p></a>
+    <a href="@pathto('docs/use-cases/documentation')"><span>Content</span><h2>Documentation projects</h2><p>Compose shared navigation and technical content while incremental builds keep changes focused.</p></a>
+    <a href="@pathto('docs/use-cases/dashboards')"><span>Application UI</span><h2>Dashboards</h2><p>Use Nift for the build-time shell and ordinary browser/runtime tooling for live data and interaction.</p></a>
   </div>
 
   <div class="docs-callout">
