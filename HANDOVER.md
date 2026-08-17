@@ -248,3 +248,10 @@ entry point.
 - SolidJS is included explicitly for its fine-grained reactive/JSX model; comparison prose should stay architectural and current rather than treating all frontend frameworks as interchangeable React clones.
 - `docs/memory-safety` is the dedicated living record for the upcoming Nift leak/lifetime/endurance campaign, including watch-mode and 10k-page stability. Battle Tested links to it rather than freezing detailed memory claims in the broader regression page.
 - Future memory campaigns should record exact commit/date/toolchain/workload/results and distinguish allocator-retained RSS from confirmed leaks.
+
+## Jsonic++ memory-safety Checkpoint 1A / 1B status (2026-08-18)
+
+- The Jsonic++ component campaign completed Checkpoint 1A: 120 long-lived corpus iterations under ASan + LSan + UBSan produced zero findings; a separate 400-iteration RSS soak stabilized at 10,688 KiB from midpoint through completion after a 10,624 KiB warm-up observation.
+- This evidence covers the parser component, not Nift's later end-to-end lifecycle/watch/10k memory checkpoints. Do not generalize it into a project-wide Nift leak verdict.
+- Checkpoint 1B was attempted but is blocked in this environment because Valgrind is not installed. Keep the independent Valgrind gate open and run it on a suitable Linux host before advancing the campaign to Minify++.
+- `docs/memory-safety` now publishes the exact 1A evidence and the open 1B limitation; maintain it alongside this handover whenever memory-safety evidence changes.

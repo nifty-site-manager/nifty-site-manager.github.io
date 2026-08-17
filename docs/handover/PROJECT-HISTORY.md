@@ -876,3 +876,7 @@ Repositioned the comparison guide away from the static-site-generator category. 
 Added a dedicated Memory & resource safety documentation page and linked it from Battle Tested/navigation. The page is deliberately a maintained evidence record: the dedicated leak/soak campaign is still marked planned, and future runs should publish exact reproducible workload/toolchain/result metadata rather than converting one run into a timeless claim.
 
 The comparison guide was also broadened to cover React, Vue, Svelte and SolidJS alongside the integrated website/application frameworks, clarifying that Nift may coexist with those UI tools or avoid making one the site-wide application boundary when ordinary web output and selective interactivity are sufficient.
+
+## 2026-08-18 — Jsonic++ memory-safety Checkpoint 1A and 1B attempt
+
+Reconciled the Nift quality record with the completed embedded-Jsonic++ lifetime campaign: 120 ASan/LSan/UBSan iterations were clean and the separate 400-iteration RSS soak stabilized after warm-up. This remains component evidence, not an end-to-end Nift leak verdict. Checkpoint 1B independent Valgrind confirmation was attempted but cannot run in the current environment because Valgrind is unavailable, so the gate remains explicitly open.
