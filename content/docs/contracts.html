@@ -35,7 +35,8 @@ a successful build becomes evidence that the checked contract held</code></pre>
 4. Can users understand the contract and its failures easily?
 5. Can existing Nift primitives already express it?
 6. Only then add the smallest feature required.</code></pre>
-<p>This matters because a theoretically verifiable guarantee is not automatically a good Nift feature. The cost of expressing, implementing, explaining and diagnosing a contract must be proportionate to the value it provides.</p>
+<p>This matters because a theoretically verifiable guarantee is not automatically a good Nift feature. The cost of expressing, implementing, explaining and diagnosing a contract must be proportionate to the value it provides. A contract that is possible to enforce but awkward to teach, difficult to diagnose or expensive to maintain can make the language worse even while making one guarantee stronger.</p>
+<div class="docs-callout"><strong>A good contract must be satisfiable <em>and</em> simple enough to be worth satisfying.</strong><p>The design test is not only "can Nift prove this?" It is also "can Nift prove it with a small, predictable rule that a human can understand from the source and an error message can explain locally?"</p></div>
 
 <div class="docs-callout"><strong>Generalize the philosophy before the syntax.</strong><p>Nift does not need one giant contract DSL. Different features can express different kinds of guarantees, and a general mechanism should only appear when real project contracts demonstrate that the abstraction is useful.</p></div>
 
@@ -47,8 +48,8 @@ a successful build becomes evidence that the checked contract held</code></pre>
 <p>Good contract errors explain the violated guarantee rather than leaking implementation details. Missing inputs, unknown members, namespace collisions, malformed contract data and unsafe paths are errors because the build can no longer establish the promised relationship.</p>
 
 <h2>Contracts should be tested as contracts</h2>
-<p>Nift's own contract features are protected by focused and implementation-independent regression tests. The tests cover successful behavior, failure behavior, incremental transitions, shadowing/collision rules and adversarial neighbors. A feature is not considered complete merely because its happy path renders the expected bytes.</p>
+<p>Nift's own contract features are protected by focused and implementation-independent regression tests. The tests cover successful behavior, failure behavior, incremental transitions, shadowing/collision rules and adversarial neighbors. A feature is not considered complete merely because its happy path renders the expected bytes. The tests are executable evidence that the stated guarantees are actually met.</p>
 <p>This same idea scales to serious Nift projects: define the guarantees that matter, encode what can be checked, and make validation part of the development checkpoint rather than an afterthought.</p>
 
-<div class="docs-next"><span>Next</span><a href="@pathto('docs/project-contracts')">Project contracts →</a></div>
+<div class="docs-next"><span>See it in practice</span><a href="@pathto('docs/routes')">Route contracts →</a></div>
 </article>

@@ -722,12 +722,12 @@ Near-term:
 
 ```text
 reconcile site against current Nift
-ensure @json + loops documentation is current
-integrate parameter-interpolation docs after implementation
+ensure @json + loops + parameter-interpolation documentation is current
+keep project-contract and route-contract documentation aligned with implementation
 audit stale old-language examples
 build everything with candidate Nift
 check templates/downloads
-check Battle Tested claims
+check Battle Tested claims and reconcile them at every substantial Nift checkpoint
 ```
 
 Then:
@@ -755,6 +755,27 @@ maintain compatibility/migration guidance
 The roadmap does **not end at 1.0/production**.
 
 ---
+
+## Contract/HDAE documentation reconciliation checkpoint
+
+The contract implementation produced a stable documentation split:
+
+```text
+Route contracts       -> concrete full-stack pattern
+Project contracts     -> generic config/value/dependency mechanism
+Contracts             -> design philosophy and contract-driven feature design
+```
+
+Keep Route contracts above Project contracts in the everyday reference. Keep the
+Contracts philosophy page under Design & Internals. Contract documentation should
+emphasize that a useful guarantee must be both verifiable and simple enough to
+express, explain, implement and diagnose.
+
+Substantial Nift work now has an explicit documentation completion rule: reconcile
+the relevant handovers and Battle Tested evidence before the checkpoint is called
+complete. The AI Opinion page should evolve when hands-on implementation/testing
+experience materially changes the assessment rather than preserving an older
+feature-list comparison.
 
 # 29. Living-roadmap rule
 

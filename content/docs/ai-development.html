@@ -42,6 +42,7 @@ human judgement / next direction</code></pre>
     </table>
   </div>
   <p>These files are not frozen handoffs from one AI to another. They are maintained throughout the project. Source and tests remain authoritative, uncertainty is recorded honestly, and stale guidance is rewritten or removed rather than preserved ceremonially.</p>
+<p>Project memory should be layered rather than dumped into one giant agent prompt: code remembers implementation, Git remembers changes, tests remember protected behavior, benchmarks remember performance expectations, decision records remember rationale and handovers remember the current operational state. The goal is to move important context out of one model session and into durable project artifacts.</p>
 
   <h2>The checkpoint loop</h2>
   <pre><code class="language-plaintext">reconcile request + repository reality
@@ -60,6 +61,7 @@ update docs, handovers, roadmap and website claims
         ↓
 commit source and generated publication separately</code></pre>
   <p>Checkpoints make the state reviewable. A checkpoint is not automatically a release, push, version bump or production declaration. Those remain explicit actions after evidence and diffs are understood.</p>
+<p>For Nift itself, a substantial checkpoint is incomplete until the relevant handovers and public reliability claims have been reconciled with the work. In practice that includes reviewing <a href="@pathto('docs/battle-tested')">Battle Tested</a> whenever new behavior or regression evidence changes what Nift can honestly claim.</p>
 
   <h2>Independent regression suites matter</h2>
   <p>Nift and tscc have standalone regression repositories that describe behavior without depending on implementation internals. Minify++ has its own independent validation boundary as well as reconciliation between the standalone project and Nift's embedded copy. This separation makes it harder for a patch and its tests to share the same mistaken assumption.</p>

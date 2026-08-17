@@ -78,23 +78,27 @@ When Nift changes:
 6. Inspect generated diffs, links, assets, downloads, and affected rendered pages.
 7. For visual changes, inspect relevant desktop/tablet/mobile and theme states.
 8. Run Lighthouse/accessibility checks when the change can materially affect them.
+9. Review `Battle Tested` whenever behavior, regression coverage, test families, or checkpoint evidence changed.
+10. Reconcile this handover and the website roadmap before declaring the Nift work complete.
 
 `@pathto` examples require special care: tracked names and concrete paths are
 different semantic categories. `@dep` should generally remain advanced material.
 Backticks are not Nift quotes. Modern output convention is `public/`. Unknown CSS
 at-rules should not need Nift workarounds.
 
-After `$[...]` parameter interpolation is implemented and validated, document it
-as constrained parameter value resolution: whole `$[...]` values and quoted
-literal/value composition. Explicitly state that nested `@...` directives are not
-evaluated inside parameters. Prefer examples backed by contract fixtures.
+Parameter interpolation is implemented and validated. Document it as constrained
+parameter value resolution: whole `$[...]` values and quoted literal/value
+composition. Explicitly state that nested `@...` directives are not evaluated
+inside parameters. Prefer examples backed by contract fixtures.
 
 
 Project-contract documentation is intentionally split into three layers:
 `docs/contracts` explains the build-time contract philosophy and contract-driven
-feature design; `docs/project-contracts` specifies config-declared project-wide
-JSON contract namespaces; `docs/routes` presents application/API routes as a
-concrete pattern. The routes page and relevant Vercel/serverless material must
+feature design and belongs under Design & Internals; `docs/routes` is the
+concrete route-contract pattern and should appear before the generic
+`docs/project-contracts` reference in the everyday docs navigation;
+`docs/project-contracts` specifies config-declared project-wide JSON contract
+namespaces. The routes page and relevant Vercel/serverless material must
 state explicitly that Nift route contracts are build-time application
 relationships whereas Vercel routes/routing rules are deployment/runtime request
 handling.
@@ -157,9 +161,10 @@ benchmark evidence, testing claims, AI guidance, or downloads, reconcile this
 source before considering the product checkpoint complete. Internal refactors
 with no public effect normally require only a compatibility self-build.
 
-Current living priorities are to keep JSON/control-flow docs current, add tested
-parameter-interpolation guidance after implementation, audit stale historical
-syntax/claims, validate templates/downloads, build with candidate Nift, and review
+Current living priorities are to keep JSON/control-flow/parameter-interpolation
+and project-contract docs current, reconcile Battle Tested evidence at each
+substantial Nift checkpoint, audit stale historical syntax/claims, validate
+templates/downloads, build with candidate Nift, and review
 responsive/accessibility/publication readiness. Reorder this list when evidence
 changes.
 
@@ -169,7 +174,10 @@ This is living project infrastructure. Update it when branch topology, build or
 deployment procedure, design principles, product terminology, documentation
 responsibilities, or durable website lessons change. Replace obsolete operations;
 retain useful history without appending a diary. Every substantial website or
-Nift product checkpoint must review handover and roadmap impact.
+Nift product checkpoint must review handover and roadmap impact. For Nift product
+work, completion also requires reviewing Battle Tested whenever the checkpoint
+changes protected behavior or validation evidence; do not leave that reconciliation
+for a later documentation pass.
 
 The detailed website history lives at
 `docs/handover/PROJECT-HISTORY.md`. It contains the full product,

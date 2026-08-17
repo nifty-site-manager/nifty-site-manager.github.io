@@ -54,6 +54,7 @@ Publish directory:
   "outputDirectory": "public"
 }</code></pre>
 <p>If Nift is part of a larger Vercel application, let the surrounding application's build pipeline decide where the generated files belong instead of forcing the entire repository into this static pattern.</p>
+<div class="docs-callout"><strong>Route terminology matters.</strong><p>Nift <a href="@pathto('docs/routes')">route contracts</a> are build-time application relationships. Vercel routing rules are deployment/runtime request handling. They can complement each other, but they are not the same contract and Nift does not redefine Vercel's routing model.</p></div>
 
 <h2>Cloudflare Pages</h2>
 <p>Cloudflare Pages accepts a custom build command and build output directory, so the Nift mapping is direct:</p>
