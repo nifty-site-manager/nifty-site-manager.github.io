@@ -844,3 +844,10 @@ forget candidate-Nift dogfooding
 - Removed homepage sections for use cases, performance detail, AI-assisted development, migration, stack chips and the closing boundary card. Those subjects remain documented in their dedicated pages rather than being summarized repeatedly on the front page.
 - Added direct secondary links from the proof band to the documentation index and Battle Tested evidence.
 - This is an intentional information-architecture decision: the homepage is the product front door, while the documentation carries the depth.
+
+### 2026-08-17 — minimal homepage closing proposition
+
+- Replaced the four equal proof cards with a single closing statement: `Small enough to understand. Serious enough to build with.`
+- The supporting copy summarizes native builds, dependency-aware incrementality, checked project relationships and ordinary web output without turning them back into separate homepage sections.
+- The homepage now ends with direct links to `Why Nift?`, `Battle Tested`, and `Documentation`.
+- Removed the proof-grid-specific CSS and retained only the compact closing-section styling.

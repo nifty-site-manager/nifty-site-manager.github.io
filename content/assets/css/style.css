@@ -771,12 +771,10 @@ html:not([data-theme="dark"]) .stack-chip-grid span:hover{
 @media(min-width:901px){.performance-grid .performance-card:last-child{grid-column:2}}
 @media(max-width:900px){.performance-grid .performance-card:last-child{grid-column:auto}}
 
-/* Minimal homepage proof band: the homepage intentionally stops after the hero/demo and these four proofs. */
-.home-proof-section{padding:230px 24px 84px;background:var(--surface,#fff)}
-.home-proof-grid{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--border,var(--line));border-radius:16px;overflow:hidden;background:var(--surface,#fff)}
-.home-proof{display:flex;flex-direction:column;gap:8px;padding:28px 26px;border-right:1px solid var(--border,var(--line));transition:.2s ease}
-.home-proof:last-child{border-right:0}.home-proof:hover{background:var(--surface-soft,#f4f7f4)}
-.home-proof span{font-size:11px;font-weight:800;color:var(--green,#25864f)}.home-proof strong{font-size:18px;line-height:1.25}.home-proof small{color:var(--muted);font-size:13px;line-height:1.55}
-.home-proof-links{max-width:var(--max);margin:26px auto 0;display:flex;justify-content:center;gap:28px;flex-wrap:wrap}.home-proof-links a{font-size:14px;font-weight:750;color:var(--link,#238a4e)}
-@media(max-width:900px){.home-proof-grid{grid-template-columns:1fr 1fr}.home-proof:nth-child(2){border-right:0}.home-proof:nth-child(-n+2){border-bottom:1px solid var(--border,var(--line))}}
-@media(max-width:600px){.home-proof-section{padding-top:190px}.home-proof-grid{grid-template-columns:1fr}.home-proof{border-right:0;border-bottom:1px solid var(--border,var(--line))}.home-proof:nth-child(2){border-bottom:1px solid var(--border,var(--line))}.home-proof:last-child{border-bottom:0}}
+/* Minimal homepage close: one proposition after the live demo, then deeper links. */
+.home-closing{padding:230px 24px 92px;background:var(--surface,#fff)}
+.home-closing-inner{max-width:880px;margin:0 auto;text-align:center}
+.home-closing h2{max-width:760px;margin:10px auto 18px;font-size:clamp(34px,4.4vw,58px);line-height:1.03;letter-spacing:-.035em}
+.home-closing-inner>p:not(.eyebrow){max-width:760px;margin:0 auto;color:var(--muted);font-size:17px;line-height:1.65}
+.home-closing-links{justify-content:center;margin-top:30px}
+@media(max-width:600px){.home-closing{padding-top:190px}.home-closing-inner>p:not(.eyebrow){font-size:16px}}

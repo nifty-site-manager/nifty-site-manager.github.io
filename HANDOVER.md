@@ -222,3 +222,9 @@ entry point.
 - The proof points link into the deeper docs for Nift's small design, checked relationships/contracts, dependency-aware incremental builds, and wider-toolchain composition; separate links lead to the docs index and testing evidence.
 - Keep detailed use cases, AI/HDAE guidance, migration, ecosystem recipes, production evidence and philosophy on their dedicated pages. Do not let the homepage gradually reaccumulate those sections unless a future redesign deliberately changes this strategy.
 - The hero CTAs remain `Get started`, `Install`, and `View on GitHub`.
+
+## 2026-08-17 minimal homepage closing proposition
+
+- Replaced the four-card homepage proof grid with one compact closing proposition after the live demo.
+- The homepage now has three jobs only: identify Nift in the hero, demonstrate it live, then summarize why it is credible before handing off to deeper documentation.
+- The closing links are `Why Nift?`, `Battle Tested`, and `Documentation`; do not reintroduce a feature-card grid merely to fill homepage space.
