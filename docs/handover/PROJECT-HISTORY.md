@@ -870,3 +870,9 @@ Added `/docs/comparisons.html` as a dedicated decision guide distinct from AI Op
 ## 2026-08-18 — Integrated-web comparison and desktop table fit
 
 Repositioned the comparison guide away from the static-site-generator category. The table and narrative now compare Nift + a chosen stack with Astro, Next.js, Nuxt, SvelteKit, Laravel, Django and Ruby on Rails, emphasizing differing ownership boundaries rather than treating Nift as a full-stack runtime. Astro was retained as a popular component/islands-oriented website framework. Added a desktop table-fit policy and verified all generated tables across the sibling websites at 1024–1920 px without horizontal overflow.
+
+## 2026-08-18 — Memory/resource-safety living documentation
+
+Added a dedicated Memory & resource safety documentation page and linked it from Battle Tested/navigation. The page is deliberately a maintained evidence record: the dedicated leak/soak campaign is still marked planned, and future runs should publish exact reproducible workload/toolchain/result metadata rather than converting one run into a timeless claim.
+
+The comparison guide was also broadened to cover React, Vue, Svelte and SolidJS alongside the integrated website/application frameworks, clarifying that Nift may coexist with those UI tools or avoid making one the site-wide application boundary when ordinary web output and selective interactivity are sufficient.

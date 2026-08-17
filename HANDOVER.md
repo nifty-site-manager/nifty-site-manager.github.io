@@ -241,3 +241,10 @@ entry point.
 - `docs/comparisons` now positions Nift against integrated website/application frameworks rather than grouping it with static-site generators. The current comparison set is Astro, Next.js, Nuxt, SvelteKit, Laravel, Django and Ruby on Rails.
 - Astro remains intentionally included because its component/islands/content/on-demand model is a common modern website architecture even though its ownership boundary differs from the more backend-heavy full-stack frameworks.
 - All generated documentation tables must fit ordinary desktop viewports without horizontal scrolling; narrow-screen scrolling may remain. The current rendered audit passes every table at 1024–1920 px.
+
+## Frontend-framework comparison and memory-safety checkpoint (2026-08-18)
+
+- `docs/comparisons` now covers two distinct ownership choices: integrated website/application frameworks (Astro, Next.js, Nuxt, SvelteKit, Laravel, Django, Rails) and frontend/UI frameworks (React, Vue, Svelte, SolidJS). Preserve the distinction: Nift does not replace a reactive UI runtime, but it can avoid making one the site-wide architecture and can consume framework-built islands/bundles selectively.
+- SolidJS is included explicitly for its fine-grained reactive/JSX model; comparison prose should stay architectural and current rather than treating all frontend frameworks as interchangeable React clones.
+- `docs/memory-safety` is the dedicated living record for the upcoming Nift leak/lifetime/endurance campaign, including watch-mode and 10k-page stability. Battle Tested links to it rather than freezing detailed memory claims in the broader regression page.
+- Future memory campaigns should record exact commit/date/toolchain/workload/results and distinguish allocator-retained RSS from confirmed leaks.

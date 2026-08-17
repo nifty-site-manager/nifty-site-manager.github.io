@@ -196,6 +196,11 @@
       "template": "templates/docs.html"
     },
     {
+      "name": "docs/memory-safety",
+      "title": "Memory & resource safety",
+      "template": "templates/docs.html"
+    },
+    {
       "name": "docs/hosting",
       "title": "Hosting and deployment",
       "template": "templates/docs.html"

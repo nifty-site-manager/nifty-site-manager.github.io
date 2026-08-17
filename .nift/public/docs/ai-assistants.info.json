@@ -42,6 +42,7 @@
     "public/docs/installing.html",
     "public/docs/json-schema.html",
     "public/docs/json.html",
+    "public/docs/memory-safety.html",
     "public/docs/metadata.html",
     "public/docs/minification.html",
     "public/docs/partials.html",
