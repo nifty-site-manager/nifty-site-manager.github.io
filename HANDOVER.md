@@ -184,3 +184,10 @@ The detailed website history lives at
 design, documentation, AI, template, benchmark, checkpoint, and production-support
 history. Keep both documents current, using this root file as the operational
 entry point.
+
+## 2026-08-17 AI/HDAE and template-less documentation reconciliation
+
+- Expanded `docs/ai-assistants` with a practical human-directed agentic engineering workflow for production Nift sites and linked it to the deeper Nift-development methodology.
+- Reworked the AI-opinion scoring model to remove overlapping categories, reserve 10s for unusually strong evidence, and explicitly separate Nift's internal testing discipline from ecosystem/production maturity.
+- Documented omitted `template` fields in `.nift/tracked.json`: direct top-level parsing of content, no template dependency, empty-string compatibility, dependency cleanup when switching modes, and scaffold usage for CSS/JS.
+- Documentation-only checkpoint: rebuild the canonical site, verify an immediate incremental no-op, and keep generated `main` synchronized with `stage`.

@@ -74,5 +74,23 @@ model rather than replacing it.</code></pre>
     <div><h2>Stack freedom</h2><p>React, Vue, Svelte, TypeScript, Go, Node, Python and other tools remain themselves; Nift only needs enough context to connect the pieces.</p></div>
   </div>
 
+  <h2>Human-directed agentic engineering for Nift projects</h2>
+  <p>For a serious production site, an AI assistant can do more than generate a first draft. A useful workflow is <strong>human-directed agentic engineering</strong>: the human defines the product intent, constraints and acceptance boundary; the agent inspects the project, proposes or implements bounded changes, runs the real build and tests, and returns evidence for human review.</p>
+  <pre><code class="language-plaintext">human intent + perception
+        ↓
+project context + explicit contracts
+        ↓
+agent implementation
+        ↓
+nift build / status / project tests
+        ↓
+evidence + adversarial checks
+        ↓
+human review / checkpoint / next direction</code></pre>
+  <p>Nift fits this style unusually well because the project remains inspectable. Templates and content are ordinary files; <code>tracked.json</code> and <code>config.json</code> expose project state; <code>\@pathto</code>, dependencies and <a class="text-link" href="@pathto('docs/project-contracts')">project contracts</a> can turn assumptions into build-time checks; and fast incremental builds make repeated agent validation cheap.</p>
+  <p>For longer work, keep a small project handover alongside the source. Record the current goal, architectural boundaries, commands that establish a known-good state, unresolved risks, rejected approaches and the evidence earned at the last checkpoint. Do not rely on the conversation alone to remember the project. Tests should preserve behavioral guarantees, Git should preserve change, and the handover should preserve the context that is not obvious from either.</p>
+  <div class="docs-callout"><strong>Human-first is the point.</strong><p>This is not a workflow for handing product judgement to an agent. Humans are often better positioned to notice that a technically valid result feels wrong, that the wrong problem is being optimized, or that a new abstraction costs more complexity than its guarantee is worth. Agents are exceptionally useful for rapid reasoning, implementation and verification inside that direction.</p></div>
+  <p>The same process is used to develop Nift itself. The deeper discussion covers perception, handovers, checkpoints, executable contracts, adversarial testing, project memory and evidence. <a class="text-link" href="@pathto('docs/ai-development')">Read about human-directed agentic engineering in Nift development →</a></p>
+
   <div class="docs-callout"><strong>AI-friendly without an AI subsystem.</strong><p>Nift's advantage is powerful simplicity: there is comparatively little Nift-specific behaviour for an assistant to misunderstand, hallucinate or unnecessarily rewrite.</p></div>
 </article>

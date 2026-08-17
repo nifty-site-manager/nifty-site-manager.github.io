@@ -1,7 +1,7 @@
 <article class="docs-article">
   <p class="docs-kicker">Project internals</p>
   <h1><code>.nift/tracked.json</code>.</h1>
-  <p class="docs-lead"><code>tracked.json</code> is the compact list of files/pages Nift is managing. Each tracked entry gives Nift a stable name, a title and a template; project-wide path rules come from <code>config.json</code>.</p>
+  <p class="docs-lead"><code>tracked.json</code> is the compact list of files/pages Nift is managing. Each tracked entry gives Nift a stable name and title. A template is optional: templated entries compose content through a template, while template-less entries parse their content file directly as the top-level Nift source. Project-wide path rules come from <code>config.json</code>.</p>
 
   <h2>A small example</h2>
   <pre><code class="language-json">{
@@ -28,8 +28,20 @@
   <div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>Field</th><th>Meaning</th></tr></thead><tbody>
     <tr><td><code>name</code></td><td>The tracked name used by Nift commands and <code>\@pathto</code>. Nift derives content/output paths from this name plus the project config.</td></tr>
     <tr><td><code>title</code></td><td>The tracked item's title, exposed to templates as <code>\$[title]</code>.</td></tr>
-    <tr><td><code>template</code></td><td>The template file used to build that item.</td></tr>
+    <tr><td><code>template</code></td><td><strong>Optional.</strong> The template file used to build that item. When omitted, Nift parses the content file directly as the top-level source.</td></tr>
   </tbody></table></div>
+
+  <h2>Template-less tracked entries</h2>
+  <p>Not every tracked output needs a wrapper template. Omit <code>template</code> when the content file itself should be the complete parsed Nift source:</p>
+  <pre><code class="language-json">{
+  "name": "assets/app",
+  "title": "Application JavaScript",
+  "content-ext": ".js",
+  "output-ext": ".js"
+}</code></pre>
+  <p>For a template-less entry, Nift parses the derived content file directly, so Nift syntax inside that file still works. There is simply no outer template and therefore no template dependency. This is useful for tracked CSS, JavaScript, XML, feeds and other generated text where an identity template would add ceremony without adding structure.</p>
+  <div class="docs-callout"><strong>Omission is the preferred representation.</strong><p>The historical <code>"template": ""</code> form remains a backward-compatible template-less alias, but new entries should omit the field. Switching an entry between templated and template-less forms also updates the dependency relationship: an old template is not retained as a stale dependency.</p></div>
+  <p>Nift's default scaffold uses this form for its tracked CSS and JavaScript assets rather than creating identity templates such as <code>template.css</code> or <code>template.js</code>.</p>
 
   <h2>Optional per-item extensions</h2>
   <p>An entry can override the project's default content or output extension:</p>
@@ -76,7 +88,7 @@ nift rm obsolete-page</code></pre>
   <p>Those commands update Nift's tracking information for you. Because the file is ordinary JSON, it is still easy to inspect, version-control and understand when debugging a project.</p>
 
   <h2>Validation Nift performs while loading</h2>
-  <p>The current v4 reader requires a top-level <code>tracked</code> array, requires every item to have string <code>name</code>, <code>title</code> and <code>template</code> values, rejects duplicate tracked names, and rejects an item whose derived content path is the same as its template path.</p>
+  <p>The current v4 reader requires a top-level <code>tracked</code> array, requires every item to have string <code>name</code> and <code>title</code> values, requires <code>template</code> to be a string when present, rejects duplicate tracked names, and rejects an item whose derived content path is the same as its template path.</p>
 
   <div class="docs-callout"><strong>Together, the two files are Nift's project map.</strong><p><code>config.json</code> defines the global path/build rules; <code>tracked.json</code> lists the concrete outputs managed under those rules.</p></div>
   <div class="docs-next"><span>Related</span><a href="@pathto('docs/commands')">CLI commands →</a></div>

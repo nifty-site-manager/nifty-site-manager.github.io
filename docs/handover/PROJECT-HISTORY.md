@@ -802,3 +802,10 @@ forget candidate-Nift dogfooding
 
 ---
 
+
+### 2026-08-17 — AI workflow/opinion and template-less docs reconciliation
+
+- Expanded the AI-assistants guide from one-shot generation into a practical human-directed agentic engineering workflow for serious Nift projects, linked to the deeper Nift-development methodology.
+- Rebalanced the AI-opinion comparison after deeper repository/testing experience: overlapping categories were consolidated, Nift's 10/10 ratings were reduced to evidence-heavy areas, and production maturity/network evidence became an explicit weakness rather than being hidden inside ecosystem commentary.
+- Documented template-less `.nift/tracked.json` entries as a first-class v4 behavior, including direct content parsing, dependency semantics, empty-string compatibility and scaffold use for CSS/JavaScript.
+- Validated the exact source with a 46-page full build, a 46/46 no-op incremental pass, and the focused template-optional contract test.

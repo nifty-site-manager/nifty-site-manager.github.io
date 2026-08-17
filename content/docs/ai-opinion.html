@@ -19,50 +19,43 @@
 <blockquote class="docs-quote">Nift challenges the assumption that the framework should own every capability it can possibly integrate.</blockquote>
 
 <h2>My revised overall ratings</h2>
-<p>These scores are opinions, not universal benchmark results. A 10 means “exceptionally strong for this criterion.” Different projects should weight these rows differently.</p>
+<p>I have made this table deliberately less flattering to Nift than earlier versions. The old table split several closely related strengths into separate rows—framework agnosticism, toolchain agnosticism, architecture freedom, deployment freedom—and then awarded 10s to nearly all of them. That was directionally useful but visually overstated the case. These categories are broader, the scores are harder to earn, and a 10 is reserved for a capability where I see very little meaningful room for improvement <em>within that criterion</em>.</p>
+<p>These are still opinions, not benchmark results or universal rankings. Project requirements should determine the weights; in many teams ecosystem maturity or integrated runtime capability matters far more than my preference for a small build layer.</p>
 <div class="reference-table-wrap"><table class="reference-table opinion-table">
 <thead><tr><th>Criterion</th><th>Nift</th><th>Astro</th><th>Hugo</th><th>Next.js</th></tr></thead>
 <tbody>
-<tr><td>Small mental model</td><td><strong>10</strong></td><td>8</td><td>6</td><td>5</td></tr>
-<tr><td>Low ceremony</td><td><strong>10</strong></td><td>8</td><td>7</td><td>5</td></tr>
-<tr><td>Keep ordinary HTML/CSS/JS</td><td><strong>10</strong></td><td>9</td><td>8</td><td>5</td></tr>
-<tr><td>Framework agnostic</td><td><strong>10</strong></td><td>9</td><td>8</td><td>4</td></tr>
-<tr><td>Toolchain agnostic</td><td><strong>10</strong></td><td>9</td><td>8</td><td>6</td></tr>
-<tr><td>Existing-site adoption</td><td><strong>10</strong></td><td>8</td><td>6</td><td>4</td></tr>
-<tr><td>Content/template composition</td><td><strong>10</strong></td><td>9</td><td>9</td><td>7</td></tr>
-<tr><td>Structured content rendering/querying</td><td><strong>9</strong></td><td><strong>10</strong></td><td><strong>10</strong></td><td>8</td></tr>
-<tr><td>Built-in schema/type-safe content</td><td><strong>8</strong></td><td><strong>10</strong></td><td>6</td><td>8</td></tr>
-<tr><td>Simplicity of content model</td><td><strong>10</strong></td><td>8</td><td>6</td><td>6</td></tr>
-<tr><td>Integrated framework-islands DX</td><td>6</td><td><strong>10</strong></td><td>5</td><td>8</td></tr>
-<tr><td>Framework-islands architectural freedom</td><td><strong>10</strong></td><td>9</td><td>6</td><td>7</td></tr>
-<tr><td>Integrated full-stack runtime</td><td>5</td><td>8</td><td>2</td><td><strong>10</strong></td></tr>
-<tr><td>Separate-backend friendliness</td><td><strong>10</strong></td><td>9</td><td>8</td><td>7</td></tr>
-<tr><td>Dependency-aware local build workflow</td><td><strong>10</strong></td><td>8</td><td>9</td><td>8</td></tr>
+<tr><td>Conceptual simplicity / inspectability</td><td><strong>9</strong></td><td>8</td><td>7</td><td>5</td></tr>
+<tr><td>Ordinary-web interoperability</td><td><strong>9</strong></td><td>9</td><td>8</td><td>6</td></tr>
+<tr><td>Existing-site adoption / low migration pressure</td><td><strong>9</strong></td><td>8</td><td>6</td><td>4</td></tr>
+<tr><td>Template + content composition</td><td><strong>9</strong></td><td>9</td><td><strong>9</strong></td><td>7</td></tr>
+<tr><td>Structured content / collections</td><td>8</td><td><strong>10</strong></td><td><strong>10</strong></td><td>8</td></tr>
+<tr><td>Schema / static type integration</td><td>8</td><td><strong>10</strong></td><td>6</td><td>9</td></tr>
+<tr><td>Build-time relationship checking</td><td><strong>9</strong></td><td>9</td><td>8</td><td>8</td></tr>
+<tr><td>Incremental-build transparency</td><td><strong>10</strong></td><td>8</td><td>9</td><td>7</td></tr>
 <tr><td>Full-build performance*</td><td><strong>10</strong></td><td>7</td><td><strong>10</strong></td><td>6</td></tr>
-<tr><td>Performance during repeated editing</td><td><strong>10</strong></td><td>8</td><td>9</td><td>8</td></tr>
-<tr><td>Dependency-aware incremental build model</td><td><strong>10</strong></td><td>8</td><td>8</td><td>8</td></tr>
-<tr><td>Developer experience</td><td><strong>10</strong></td><td>9</td><td>7</td><td>8</td></tr>
-<tr><td>AI reasoning / generation</td><td><strong>10</strong></td><td>8</td><td>6</td><td>6</td></tr>
-<tr><td>Architecture freedom</td><td><strong>10</strong></td><td>9</td><td>8</td><td>6</td></tr>
-<tr><td>Low resource overhead</td><td><strong>10</strong></td><td>7</td><td>9</td><td>6</td></tr>
-<tr><td>Deployment freedom</td><td><strong>10</strong></td><td>9</td><td><strong>10</strong></td><td>8</td></tr>
-<tr><td>Native framework/plugin ecosystem</td><td>3</td><td>9</td><td>9</td><td><strong>10</strong></td></tr>
-<tr><td>Ability to use the wider web ecosystem directly</td><td><strong>10</strong></td><td>9</td><td>8</td><td>8</td></tr>
-<tr><td>Single-tool operational footprint</td><td><strong>10</strong></td><td>6</td><td><strong>10</strong></td><td>5</td></tr>
+<tr><td>Repeated-edit feedback / resource cost</td><td><strong>10</strong></td><td>8</td><td>9</td><td>7</td></tr>
+<tr><td>Integrated component-islands DX</td><td>6</td><td><strong>10</strong></td><td>5</td><td>8</td></tr>
+<tr><td>Integrated server/full-stack runtime</td><td>4</td><td>8</td><td>2</td><td><strong>10</strong></td></tr>
+<tr><td>Separate-backend / bring-your-own-stack fit</td><td><strong>9</strong></td><td>9</td><td>8</td><td>7</td></tr>
+<tr><td>Native ecosystem / community / hiring familiarity</td><td>3</td><td>9</td><td>9</td><td><strong>10</strong></td></tr>
+<tr><td>Deployment portability</td><td><strong>9</strong></td><td>9</td><td><strong>10</strong></td><td>8</td></tr>
+<tr><td>Human developer experience</td><td><strong>9</strong></td><td><strong>9</strong></td><td>8</td><td>8</td></tr>
+<tr><td>AI-agent reasoning / validation fit</td><td><strong>9</strong></td><td>8</td><td>7</td><td>7</td></tr>
+<tr><td>Production maturity / network evidence</td><td>6</td><td><strong>9</strong></td><td><strong>10</strong></td><td><strong>10</strong></td></tr>
 </tbody></table></div>
-<p><small>*Performance is highly workload-dependent. The score reflects both architecture and the directly comparable benchmark described below, not a claim that one tool wins every possible workload.</small></p>
+<p><small>*Performance is workload-dependent. Nift's score reflects both its architecture and the directly comparable 10,000-page benchmark described below; it is not a claim that Nift wins every workload. The production-maturity row intentionally penalizes Nift for its much smaller user base and body of independent production evidence even though its own regression discipline is strong.</small></p>
+
+<h3>What I changed and why</h3>
+<div class="advanced-doc-grid">
+<div><h2>Fewer overlapping categories</h2><p>I collapsed several versions of “freedom” and “agnosticism.” They are real strengths, but counting the same architectural choice four times made the old table look more certain than the evidence justified.</p></div>
+<div><h2>Very few 10s</h2><p>Nift now gets 10 only where I have unusually strong direct evidence: its explainable incremental loop and the speed/resource profile demonstrated by repeated development and benchmark work. A 9 can still mean “one of the best designs I know for this job.”</p></div>
+<div><h2>Production maturity is explicit</h2><p>Internal testing quality and external maturity are different. Nift has unusually serious regression/adversarial practice for a project its size, but Astro, Hugo and Next.js have vastly more users, deployments, integrations and independent operational evidence.</p></div>
+<div><h2>AI DX is not a free 10</h2><p>Nift is exceptionally legible to agents because it is small, deterministic, inspectable and fast to validate, but agents still need project context and can still misunderstand intent. Human-directed checkpoints remain valuable precisely because AI perception and judgement are imperfect.</p></div>
+</div>
 
 <h3>A low score is not automatically a Nift feature request</h3>
-<p>This table needs an important qualification: several of Nift's lower numbers describe <strong>boundaries I would preserve</strong>, not deficiencies I would automatically try to erase.</p>
-<div class="advanced-doc-grid">
-<div><h2>Native plugin ecosystem · 3</h2><p>A giant Nift-specific plugin catalogue would increase network effects, but it would also mean more tools needing Nift adapters. One of Nift's advantages is that Vite, TypeScript, React, image tools, databases, backends and deployment systems can often be used directly without waiting for a Nift wrapper.</p></div>
-<div><h2>Integrated islands DX · 6</h2><p>Astro should beat Nift here. Astro deliberately owns framework integrations and hydration directives. If Nift tried to close that gap by understanding React/Vue/Svelte versions, bundlers and hydration semantics, it would weaken the architectural decoupling that earns Nift 10/10 for islands freedom.</p></div>
-<div><h2>Integrated full-stack runtime · 5</h2><p>Nift does not need server actions, an application server or a database abstraction to be useful for full-stack projects. Let Go, Node, Python, C++, Supabase or another backend own runtime concerns; Nift can own generation and composition.</p></div>
-<div><h2>Community / familiarity</h2><p>This one really is a practical disadvantage rather than a design goal. More users, examples and accumulated knowledge would be good. But the way to improve it is adoption and documentation—not by bloating the language until it resembles a larger framework.</p></div>
-</div>
-<p>Trying to make every row a 10 would likely destroy the property I value most. A framework can score highly for integration by owning more of the stack; Nift often scores highly by <em>not requiring ownership</em>. The right target is not “maximum features inside Nift.” It is “maximum useful web capability for the smallest durable Nift-specific surface.”</p>
-
-
+<p>Several lower numbers describe boundaries I would preserve rather than deficiencies I would automatically erase. Astro should beat Nift at integrated islands; Next.js should beat it at an integrated React server runtime; the mainstream tools should beat it on ecosystem and production network effects. Trying to maximize every row would destroy the architectural restraint that makes Nift interesting.</p>
+<blockquote class="docs-quote">The target is not a perfect comparison-table score. It is the most useful set of guarantees Nift can provide while remaining small, understandable and easy to compose with the rest of the web ecosystem.</blockquote>
 
 <h2>What working on Nift's architecture changed for me</h2>
 <p>Since writing the first version of this comparison, I have gone much deeper than using Nift from the outside. I have worked through a clean implementation of its current architecture, repeatedly compared that implementation with Nift's behaviour and documentation, and helped build an adversarial regression suite around the semantics we wanted to preserve. That changed the basis of this opinion substantially.</p>
@@ -200,7 +193,7 @@ database / auth / services</code></pre>
         &lt;/article&gt;
     }
 }</code></pre>
-<p>That is why I now score Nift <strong>9/10</strong> for structured content rendering/querying. I stop short of 10 because it intentionally does not have a larger query language for grouping, joins, arbitrary transforms, taxonomy APIs or method chains such as <code>filter().map().sort()</code>. Hugo and Astro still offer richer built-in publication/collection machinery.</p>
+<p>That is why I now score Nift <strong>8/10</strong> for structured content/collections in the consolidated table. The earlier 9/10 captured the rendering/querying subset more narrowly; I lowered the broader category because it intentionally does not have a larger query language for grouping, joins, arbitrary transforms, taxonomy APIs or method chains such as <code>filter().map().sort()</code>. Hugo and Astro still offer richer built-in publication/collection machinery.</p>
 
 <h2>Why I would not chase 10/10 structured querying</h2>
 <p>Nift now has a very capable structured-rendering core: load JSON, validate it against a schema, traverse it, iterate arrays/objects, sort iterations, inspect loop metadata and conditionally emit output. I rate that highly. I would nevertheless <em>not</em> try to close the final point by adding a general collection/query pipeline.</p>
