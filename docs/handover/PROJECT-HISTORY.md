@@ -822,3 +822,11 @@ forget candidate-Nift dogfooding
 - Replaced remaining authored relative docs-navigation `.html` links with `@pathto(...)`, leaving literal links only where a migration example intentionally demonstrates ordinary HTML.
 - Updated the site-wide meta description to describe current Nift as a website generator/build system with checked paths, contracts and incremental rebuilding.
 - Validation: exact candidate rebuilt all 46 pages, immediate incremental pass reported 46/46 up to date, focused project-contract/template-less/path-safety tests passed, and 4,343 generated local references resolved with zero missing targets.
+
+### 2026-08-17 — homepage visual cleanup and CTA simplification
+
+- Simplified the hero CTA row to `Get started`, `Install`, and `View on GitHub`, removing the package-manager logo strip from the homepage while keeping detailed installation choices on the installing documentation page.
+- Removed the homepage template showcase after the broader editorial pass established a tighter homepage; templates remain first-class elsewhere in site navigation but no longer consume homepage space.
+- Fixed the recurring mixed button/text-link alignment pattern through `.hero-actions .text-link`, added spacing above the final boundary card, and centered the fourth performance card on wide three-column layouts.
+- Removed the now-unused Homebrew, Chocolatey, Flathub, FreeBSD, Gentoo, and Snap icon files from generated `main`.
+- Rebuilt all 46 pages, verified an immediate 46/46 no-op rebuild, and checked 4,329 generated local references with zero missing targets.

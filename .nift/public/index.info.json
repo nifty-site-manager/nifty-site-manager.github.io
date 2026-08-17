@@ -15,12 +15,6 @@
   ],
   "reqs": [
     "public/assets/css/style.css",
-    "public/assets/images/install/brew-icon.webp",
-    "public/assets/images/install/chocolatey-icon.webp",
-    "public/assets/images/install/flathub-icon.webp",
-    "public/assets/images/install/freebsd.webp",
-    "public/assets/images/install/gentoo.webp",
-    "public/assets/images/install/snap-icon.webp",
     "public/assets/images/nift-logo.webp",
     "public/assets/js/demo.js",
     "public/assets/js/script.js",

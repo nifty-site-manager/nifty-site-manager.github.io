@@ -200,3 +200,12 @@ entry point.
 - The website should practice its own contract philosophy: use `@pathto` for authored internal navigation instead of unchecked relative `.html` links unless a literal path is intentionally being demonstrated.
 - Keep `docs/production-readiness` and other evaluation pages synchronized with the current focused-test inventory and Battle Tested evidence; avoid copying old checkpoint counts forward.
 - `docs/advanced` is now the practical wider-toolchain integration guide. Keep philosophical rationale primarily in `docs/why-nift` / `docs/contracts` rather than duplicating it there.
+
+## 2026-08-17 homepage visual cleanup
+
+- Removed the homepage package-manager icon strip and added a direct `Install` CTA between `Get started` and `View on GitHub`; installation-channel detail remains on the dedicated installing docs page.
+- Removed the homepage templates teaser entirely. Templates remain available through the global navigation and dedicated templates page; do not re-add homepage template promotion unless it earns space against the homepage's tighter product story.
+- Added shared vertical alignment for text links placed beside buttons in `.hero-actions`, addressing the recurring mixed-control alignment issue rather than patching only the boundary card.
+- Added breathing room above the final boundary card and centered the fourth performance card in the three-column desktop layout.
+- Removed the six package-manager icon assets from generated `main`; they are no longer referenced anywhere in authored source.
+- Validation for this presentation-only checkpoint: 46-page full build, immediate 46/46 no-op incremental build, and 4,329 generated local references with zero missing targets.
