@@ -1,13 +1,13 @@
 {
-  "name": "docs/json",
-  "title": "JSON data",
+  "name": "docs/comparisons",
+  "title": "Comparisons",
   "template": "templates/docs.html",
-  "content": "content/docs/json.html",
-  "output": "public/docs/json.html",
+  "content": "content/docs/comparisons.html",
+  "output": "public/docs/comparisons.html",
   "minify": true,
   "minify-version": 1,
   "dependencies": [
-    "content/docs/json.html",
+    "content/docs/comparisons.html",
     "templates/docs.html",
     "templates/partials/docs-sidebar.html",
     "templates/partials/footer.html",

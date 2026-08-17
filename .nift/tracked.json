@@ -176,6 +176,11 @@
       "template": "templates/docs.html"
     },
     {
+      "name": "docs/comparisons",
+      "title": "Comparisons",
+      "template": "templates/docs.html"
+    },
+    {
       "name": "docs/three-primitives",
       "title": "Start with three primitives",
       "template": "templates/docs.html"

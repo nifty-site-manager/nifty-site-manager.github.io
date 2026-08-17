@@ -857,3 +857,7 @@ forget candidate-Nift dogfooding
 - Reframed the Battle Tested introduction around behavioral contracts rather than examples or raw test counts.
 - Linked the broad Contracts design philosophy separately from the concrete Project Contracts feature so the two meanings remain related but distinct.
 - Clarified that adversarial testing attempts to falsify guarantees that users/projects/integrations may rely on, while retained bug reproducers turn discovered failures into permanent regression evidence.
+
+### 2026-08-18 — broader comparison guide
+
+Added `/docs/comparisons.html` as a dedicated decision guide distinct from AI Opinion. It compares Nift's small project-aware build-layer model with Astro, Next.js, Hugo, Eleventy, Jekyll and Zola, including explicit areas where Nift is weaker: ecosystem size, integrated component/runtime features and built-in publication machinery. The guide preserves Nift's strongest differentiators—checked relationships, explicit dependency-aware incrementalism, native builds and stack independence—without presenting them as universal advantages.

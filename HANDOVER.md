@@ -229,3 +229,9 @@ entry point.
 - Replaced the four-card homepage proof grid with one compact closing proposition after the live demo.
 - The homepage now has three jobs only: identify Nift in the hero, demonstrate it live, then summarize why it is credible before handing off to deeper documentation.
 - The closing links are `Why Nift?`, `Battle Tested`, and `Documentation`; do not reintroduce a feature-card grid merely to fill homepage space.
+
+## Comparison guide checkpoint (2026-08-18)
+
+- Added `docs/comparisons` as the canonical neutral comparison guide, separate from the more personal `docs/ai-opinion` assessment.
+- The page compares Nift with Astro, Next.js, Hugo, Eleventy, Jekyll and Zola and should continue to describe ownership models, strengths and weaknesses rather than constructing a table where Nift wins every row.
+- Keep current competitor feature descriptions grounded in official project documentation. Keep benchmark claims on evidence/benchmark pages and avoid inferring performance from architecture alone.
