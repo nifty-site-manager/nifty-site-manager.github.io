@@ -866,3 +866,7 @@ Added `/docs/comparisons.html` as a dedicated decision guide distinct from AI Op
 
 - Reworked `docs/comparisons` around strengths, weaknesses and ownership boundaries rather than broad “better than” claims.
 - Removed Nift's self-row from the comparison table, added explicit weaknesses for each alternative, and retained per-tool guidance explaining when each architecture is the stronger fit.
+
+## 2026-08-18 — Integrated-web comparison and desktop table fit
+
+Repositioned the comparison guide away from the static-site-generator category. The table and narrative now compare Nift + a chosen stack with Astro, Next.js, Nuxt, SvelteKit, Laravel, Django and Ruby on Rails, emphasizing differing ownership boundaries rather than treating Nift as a full-stack runtime. Astro was retained as a popular component/islands-oriented website framework. Added a desktop table-fit policy and verified all generated tables across the sibling websites at 1024–1920 px without horizontal overflow.

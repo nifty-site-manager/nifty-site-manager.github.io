@@ -235,3 +235,9 @@ entry point.
 - Added `docs/comparisons` as the canonical neutral comparison guide, separate from the more personal `docs/ai-opinion` assessment.
 - The page compares Nift with Astro, Next.js, Hugo, Eleventy, Jekyll and Zola and should continue to describe ownership models, strengths and weaknesses rather than constructing a table where Nift wins every row.
 - Keep current competitor feature descriptions grounded in official project documentation. Keep benchmark claims on evidence/benchmark pages and avoid inferring performance from architecture alone.
+
+## Integrated-web comparison and table-fit checkpoint (2026-08-18)
+
+- `docs/comparisons` now positions Nift against integrated website/application frameworks rather than grouping it with static-site generators. The current comparison set is Astro, Next.js, Nuxt, SvelteKit, Laravel, Django and Ruby on Rails.
+- Astro remains intentionally included because its component/islands/content/on-demand model is a common modern website architecture even though its ownership boundary differs from the more backend-heavy full-stack frameworks.
+- All generated documentation tables must fit ordinary desktop viewports without horizontal scrolling; narrow-screen scrolling may remain. The current rendered audit passes every table at 1024–1920 px.

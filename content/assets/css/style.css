@@ -819,3 +819,11 @@ html[data-theme="dark"] .text-link{color:#72d893}
 .comparison-table-nift th:nth-child(3){width:29%}
 .comparison-table-nift th:nth-child(4){width:34%}
 @media(max-width:760px){.comparison-table-nift{min-width:820px}}
+
+/* Desktop table-fit policy: preserve readable wrapping instead of horizontal document tables. */
+@media (min-width:801px){
+  .reference-table-wrap,.comparison-table-wrap,.table-scroll,.docs-table-wrap{overflow-x:visible}
+  .reference-table,.comparison-table-nift,.docs-table-wrap table{width:100%;max-width:100%;table-layout:fixed}
+  .reference-table th,.reference-table td,.comparison-table-nift th,.comparison-table-nift td,.docs-table-wrap th,.docs-table-wrap td{overflow-wrap:anywhere;word-break:normal}
+  .reference-table td code,.reference-table th code,.docs-table-wrap td code,.docs-table-wrap th code{white-space:normal;overflow-wrap:anywhere}
+}
