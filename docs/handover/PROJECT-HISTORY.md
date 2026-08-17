@@ -830,3 +830,9 @@ forget candidate-Nift dogfooding
 - Fixed the recurring mixed button/text-link alignment pattern through `.hero-actions .text-link`, added spacing above the final boundary card, and centered the fourth performance card on wide three-column layouts.
 - Removed the now-unused Homebrew, Chocolatey, Flathub, FreeBSD, Gentoo, and Snap icon files from generated `main`.
 - Rebuilt all 46 pages, verified an immediate 46/46 no-op rebuild, and checked 4,329 generated local references with zero missing targets.
+
+### 2026-08-17 — homepage use-case ordering adjustment
+
+- Moved `Use it your way` from near the bottom of the homepage to immediately follow `Small by design`, ahead of `Fast feedback, explainable builds`.
+- The resulting narrative is now: understand Nift's small build model → see the kinds of sites/projects it supports → inspect its build/performance characteristics.
+- Rebuilt all 46 pages, verified an immediate 46/46 no-op rebuild, and checked 4,329 generated local references with zero missing targets.

@@ -209,3 +209,9 @@ entry point.
 - Added breathing room above the final boundary card and centered the fourth performance card in the three-column desktop layout.
 - Removed the six package-manager icon assets from generated `main`; they are no longer referenced anywhere in authored source.
 - Validation for this presentation-only checkpoint: 46-page full build, immediate 46/46 no-op incremental build, and 4,329 generated local references with zero missing targets.
+
+## 2026-08-17 homepage narrative-order adjustment
+
+- Moved `Use it your way` directly after `Small by design` and before the performance section. The homepage now establishes Nift's compact model, immediately shows the range of project shapes it can serve, then explains fast/dependency-aware builds.
+- Keep this ordering unless a future homepage redesign deliberately replaces the multi-section narrative; it avoids delaying the practical “what can I build with this?” answer until after several implementation/engineering sections.
+- Validation for this presentation-only checkpoint: 46-page full build, immediate 46/46 no-op incremental build, and 4,329 generated local references with zero missing targets.
