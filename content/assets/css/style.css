@@ -778,3 +778,29 @@ html:not([data-theme="dark"]) .stack-chip-grid span:hover{
 .home-closing-inner>p:not(.eyebrow){max-width:760px;margin:0 auto;color:var(--muted);font-size:17px;line-height:1.65}
 .home-closing-links{justify-content:center;margin-top:30px}
 @media(max-width:600px){.home-closing{padding-top:190px}.home-closing-inner>p:not(.eyebrow){font-size:16px}}
+/* Inline-link affordance: prose/table links must not be visually indistinguishable from body copy. */
+.docs-article p a:not(.button):not(.btn),
+.docs-article li a:not(.button):not(.btn),
+.docs-article td a:not(.button):not(.btn),
+.docs-callout a:not(.button):not(.btn),
+.simple-page p a:not(.button):not(.btn),
+.simple-page li a:not(.button):not(.btn),
+.simple-page td a:not(.button):not(.btn),
+.text-link{color:#238a4e;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.docs-article p a:not(.button):not(.btn):hover,
+.docs-article li a:not(.button):not(.btn):hover,
+.docs-article td a:not(.button):not(.btn):hover,
+.docs-callout a:not(.button):not(.btn):hover,
+.simple-page p a:not(.button):not(.btn):hover,
+.simple-page li a:not(.button):not(.btn):hover,
+.simple-page td a:not(.button):not(.btn):hover,
+.text-link:hover{text-decoration-thickness:2px}
+.footer-links a{text-decoration:underline;text-decoration-color:rgba(255,255,255,.48);text-underline-offset:3px}
+html[data-theme="dark"] .docs-article p a:not(.button):not(.btn),
+html[data-theme="dark"] .docs-article li a:not(.button):not(.btn),
+html[data-theme="dark"] .docs-article td a:not(.button):not(.btn),
+html[data-theme="dark"] .docs-callout a:not(.button):not(.btn),
+html[data-theme="dark"] .simple-page p a:not(.button):not(.btn),
+html[data-theme="dark"] .simple-page li a:not(.button):not(.btn),
+html[data-theme="dark"] .simple-page td a:not(.button):not(.btn),
+html[data-theme="dark"] .text-link{color:#72d893}
