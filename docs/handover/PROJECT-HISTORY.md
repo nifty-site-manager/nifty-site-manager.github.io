@@ -902,3 +902,7 @@ The first external Checkpoint 4B attempt timed out during shutdown because the w
 ## 2026-08-18 — Checkpoint 4B pacing correction
 
 A second external Valgrind run confirmed clean shutdown and reported no leak/error findings for the partial run, but fixed-rate watch edits could outrun Valgrind-supervised rebuilds and cause early `build-auto` exit. The endurance harness is now acknowledgement-driven: each mutation waits for the generated page to rebuild before the next mutation. A synthetic slow-supervisor 30-cycle probe passes; the public verdict remains pending a complete Valgrind rerun.
+
+## 2026-08-18 — Checkpoint 4B terminal-safe supervisor correction
+
+The full 30-cycle external Valgrind workload completed, but teardown escalated to SIGKILL before Valgrind could finalize. The watch harness now uses `/dev/null` for stdin so test failure cannot disturb the caller's terminal, while `valgrind_nift.sh` stays resident to forward shutdown signals and wait for Valgrind's final report. A synthetic 30-cycle forwarding-supervisor probe passes; the independent leak verdict remains pending.

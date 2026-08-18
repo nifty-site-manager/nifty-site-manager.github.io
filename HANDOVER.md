@@ -290,3 +290,8 @@ entry point.
 
 - The second external Valgrind attempt produced a clean partial leak report but exited before completing the requested watch corpus because fixed 220 ms edits could outrun Valgrind-supervised rebuilds.
 - The corrected harness waits for the generated page to rebuild after each mutation before issuing the next mutation. The independent Checkpoint 4B gate remains pending a complete rerun; public memory-safety claims remain unchanged.
+
+## Checkpoint 4B terminal/supervisor correction (2026-08-18)
+
+- The third external run completed all 30 watch cycles but was SIGKILLed during teardown before a final Valgrind report. The test now disconnects stdin from the interactive terminal, and the Valgrind wrapper explicitly forwards shutdown signals while remaining alive for report finalization.
+- Public memory-safety claims remain unchanged until the corrected external target yields a complete Valgrind result.
