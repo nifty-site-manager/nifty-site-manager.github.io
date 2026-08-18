@@ -879,4 +879,7 @@ The comparison guide was also broadened to cover React, Vue, Svelte and SolidJS 
 
 ## 2026-08-18 — Jsonic++ memory-safety Checkpoint 1A and 1B attempt
 
-Reconciled the Nift quality record with the completed embedded-Jsonic++ lifetime campaign: 120 ASan/LSan/UBSan iterations were clean and the separate 400-iteration RSS soak stabilized after warm-up. This remains component evidence, not an end-to-end Nift leak verdict. Checkpoint 1B independent Valgrind confirmation was attempted but cannot run in the current environment because Valgrind is unavailable, so the gate remains explicitly open.
+Reconciled the Nift quality record with the completed embedded-Jsonic++ lifetime campaign: 120 ASan/LSan/UBSan iterations were clean and the separate 400-iteration RSS soak stabilized after warm-up. This remains component evidence, not an end-to-end Nift leak verdict. At that checkpoint, independent Valgrind confirmation could not run because Valgrind was unavailable, so the gate was left explicitly open.
+## 2026-08-18 — Embedded Jsonic++ lifetime gate completed
+
+Recorded the independent Valgrind confirmation for the Jsonic++ component: Valgrind 3.26.0 on Linux, commit `b9d0ff3`, 40 lifetime-corpus iterations, 0 errors, 0 bytes in use at exit, all 6,579,515 allocations freed and 215,992 KiB peak Valgrind RSS. This closes the standalone parser lifetime checkpoint while explicitly leaving Nift's later lifecycle/watch/large-project and cross-project integration gates open.

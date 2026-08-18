@@ -253,5 +253,10 @@ entry point.
 
 - The Jsonic++ component campaign completed Checkpoint 1A: 120 long-lived corpus iterations under ASan + LSan + UBSan produced zero findings; a separate 400-iteration RSS soak stabilized at 10,688 KiB from midpoint through completion after a 10,624 KiB warm-up observation.
 - This evidence covers the parser component, not Nift's later end-to-end lifecycle/watch/10k memory checkpoints. Do not generalize it into a project-wide Nift leak verdict.
-- Checkpoint 1B was attempted but is blocked in this environment because Valgrind is not installed. Keep the independent Valgrind gate open and run it on a suitable Linux host before advancing the campaign to Minify++.
+- Checkpoint 1B was initially blocked in the checkpoint environment because Valgrind was unavailable, then completed on a Linux host with Valgrind 3.26.0. The independent Jsonic++ gate is now satisfied; see the later Checkpoint 1B entry below for exact evidence.
 - `docs/memory-safety` now publishes the exact 1A evidence and the open 1B limitation; maintain it alongside this handover whenever memory-safety evidence changes.
+## Jsonic++ memory-safety Checkpoint 1B complete (2026-08-18)
+
+- The embedded Jsonic++ component now has independent Valgrind confirmation in addition to its sanitizer/RSS evidence: Valgrind 3.26.0, Linux x86_64, commit `b9d0ff3`, 40 lifetime-corpus iterations, 0 errors, 0 bytes in use at exit, all 6,579,515 allocations freed, peak Valgrind RSS 215,992 KiB.
+- This completes Jsonic++'s standalone lifetime gate only. Nift's own command lifecycle, incremental-state, watch endurance, 10k pressure and integrated Minify++ checkpoints remain separate.
+- The Minify++ checkpoint should now stay standalone; move Nift-embedded Minify++ ownership stress to the later cross-project integration checkpoint to avoid duplicating integration scope.
