@@ -332,3 +332,11 @@ entry point.
 - At Nift commit `93b7c2c`, all three incremental modes completed 8 deterministic seeds × 30 mutations: 720 full public-output-tree comparisons, all byte-equivalent to a clean rebuild from the same logical state.
 - Covered content/template/JSON/schema/Project Contract/config/shared-input/metadata mutations and tracked-page add/move/remove lifecycle operations.
 - The page explicitly scopes the claim to the generated/mutated corpus. Checkpoint 8 filesystem/transaction integrity is now the current frontier; Checkpoints 9–10 remain planned.
+
+## Checkpoint 8 completed (2026-08-18)
+
+- Battle Tested now promotes filesystem/transaction integrity from CURRENT FRONTIER to scoped evidence and advances parser fuzz/resource boundaries to the current frontier.
+- At Nift commit `e261074`, 13 Linux filesystem/failure cases passed, including forced partial/interrupted writes, permission/readability failures, symlink/type-confusion cases and recovery after state/output write obstruction.
+- The campaign fixed unreadable-input-as-empty behavior, a directory-as-file `std::length_error` abort, and truncate-in-place output/state writes. Generated/state writes now use same-directory temporary replacement with stale-temp cleanup.
+- Public wording deliberately does not claim universal filesystem/crash safety or untested ENOSPC/platform-specific semantics.
+- Checkpoint 9 remains a separate n++ parser fuzz/resource-boundary campaign; Jsonic++ and Minify++ standalone fuzz/parser evidence should not be duplicated without an integration-specific reason.

@@ -929,3 +929,7 @@ Reframed Battle Tested around guarantee-first falsification rather than test-cou
 ## 2026-08-18 — Checkpoint 7 incremental equivalence completed
 
 Promoted Nift's incremental-build semantics from a planned property to scoped executable evidence. The maintained property gate exercised modified/hash/hybrid modes across 24 deterministic 30-step mutation sequences and compared the complete public output tree after every incremental build against a clean rebuild from the same logical project state: 720/720 byte-equivalent comparisons. The discovery run also sharpened the oracle by preserving user-owned untracked files in `public/`. Battle Tested now advances filesystem/transaction integrity to the current frontier.
+
+## 2026-08-18 — Checkpoint 8 filesystem/transaction integrity completed
+
+Completed a 13-case Linux filesystem-chaos/safe-failure corpus at Nift commit `e261074`. The campaign uncovered and fixed unreadable inputs being conflated with empty files, directory-as-file reads that could abort with `std::length_error`, and truncate-in-place writes that could damage a last-good artifact if interrupted. Nift now validates readable regular files at the relevant boundaries and stages generated/state writes to same-directory temporary files before replacement. Forced `SIGKILL` during a 48 MiB output write preserved the prior output and metadata, and a later build cleaned the stale temporary and recovered. Battle Tested now advances parser fuzz/resource boundaries to the current frontier.
