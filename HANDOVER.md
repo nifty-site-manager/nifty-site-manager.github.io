@@ -307,3 +307,8 @@ entry point.
 - Standalone/embedded Jsonic++ and Minify++ synchronization was verified before a combined Nift workload.
 - Native evidence: 90 pages, 60 mutation/recovery rounds, 20 deliberately propagated Jsonic++/Minify++ failures, all repaired successfully. Sanitizer evidence: 30 pages, 12 rounds, four injected failures, no sanitizer finding.
 - Public Memory & Resource Safety and Battle Tested pages record 6A as green and keep 6B independent Valgrind confirmation explicit before the generic memory campaign closes.
+
+## Checkpoint 6B instrumentation correction (2026-08-18)
+
+- The first external 6B failure was a harness wiring error: Valgrind wrapped Python instead of Nift, so it is not used as product evidence.
+- The corrected target instruments each Nift invocation directly and separates Memcheck findings from deliberately expected Nift build failures. Public 6A claims remain unchanged; 6B is still pending a corrected external run.
