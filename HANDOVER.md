@@ -349,3 +349,9 @@ entry point.
 - The 64-level recursive parse guard was verified explicitly; its diagnostic was clarified to describe generic template parse depth rather than only `@input`.
 - Public wording remains scoped: this is evidence for the tested corpus, not a claim that arbitrary parser input can never expose a bug.
 - Checkpoint 10 remains necessary because Linux-local memory/filesystem/parser evidence does not establish behavioural equivalence on macOS or Windows.
+
+## Codex Checkpoint 10 handover prepared (2026-08-18)
+
+- Nift now carries a dedicated Checkpoint 10/Codex execution brief covering the Linux/macOS/Windows GitHub Actions matrix, normalized evidence model, portable vs platform-specific contracts, retained evidence and documentation promotion rules.
+- Public Battle Tested wording is intentionally unchanged: cross-platform behavioural equivalence remains the final frontier until the required matrix and comparison job pass.
+- Checkpoints 7–9 remain regression constraints for any cross-platform product fix.

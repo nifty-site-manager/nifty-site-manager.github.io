@@ -937,3 +937,7 @@ Completed a 13-case Linux filesystem-chaos/safe-failure corpus at Nift commit `e
 ## 2026-08-18 — Checkpoint 9 parser fuzz/resource boundaries completed
 
 Completed a sanitizer-backed n++ parser/resource campaign at Nift commit `45d96ba`: 1,200 grammar-aware generated mutations across three deterministic seeds plus 17 explicit resource/depth cases, for 1,217 total executions. The corpus completed with 234 successful builds, 983 controlled Nift errors, zero timeouts, zero crashes/signals and zero ASan/LSan/UBSan findings. Explicit boundaries covered recursive parse depth, multi-megabyte templates/comments/content, very large parameters/interpolations, deep balanced delimiters and Unicode volume. The parser-depth diagnostic was clarified to describe the generic 64-level parse limit. Battle Tested now advances cross-platform behavioural equivalence to the final deliberate-hardening frontier.
+
+## 2026-08-18 — Checkpoint 10 Codex handover prepared
+
+Prepared the final deliberate-hardening handoff without changing public reliability claims. The Nift repository now contains a dedicated Codex brief for a GitHub Actions Linux/macOS/Windows behavioural-equivalence matrix, normalized result artifacts, a final semantic comparison job, explicit portable-vs-platform-specific filesystem contracts, and a stopping rule after Checkpoint 10. Checkpoints 7–9 are recorded as regression constraints for any platform fixes.
