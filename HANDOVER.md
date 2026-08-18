@@ -325,3 +325,10 @@ entry point.
 - Reliability claims follow the editorial states PROVEN NOW / IN PROGRESS / PLANNED / PHILOSOPHICAL PRINCIPLE. The completed memory/resource campaign is evidence; incremental-vs-clean equivalence is explicitly the next planned/current frontier, with filesystem/transaction integrity, parser fuzz/resource boundaries and cross-platform equivalence still future work.
 - Competitor context is deliberately secondary. Astro, Meson, Hugo, Ninja and esbuild were re-checked against current public sources on 2026-08-18; the comparison is used to explain accumulated field evidence rather than rank projects.
 - After Checkpoint 7, promote incremental equivalence only if the campaign establishes it, and add exact methodology, mutation families, scale, findings and retained regression evidence. Apply the same scoped-evidence discipline after Checkpoints 8–10.
+
+## Checkpoint 7 completed (2026-08-18)
+
+- Battle Tested promoted incremental-vs-clean equivalence from PLANNED/CURRENT FRONTIER to scoped evidence.
+- At Nift commit `93b7c2c`, all three incremental modes completed 8 deterministic seeds × 30 mutations: 720 full public-output-tree comparisons, all byte-equivalent to a clean rebuild from the same logical state.
+- Covered content/template/JSON/schema/Project Contract/config/shared-input/metadata mutations and tracked-page add/move/remove lifecycle operations.
+- The page explicitly scopes the claim to the generated/mutated corpus. Checkpoint 8 filesystem/transaction integrity is now the current frontier; Checkpoints 9–10 remain planned.

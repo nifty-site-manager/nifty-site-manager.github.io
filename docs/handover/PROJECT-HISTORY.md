@@ -925,3 +925,7 @@ Reconciled the corrected external Valgrind evidence at Nift commit `03e18b4`. Th
 ## 2026-08-18 — Battle Tested reliability framework refreshed
 
 Reframed Battle Tested around guarantee-first falsification rather than test-count marketing. The public page now distinguishes deliberate test hardening from accumulated field hardening, acknowledges Nift's shorter production history, records the completed memory/resource campaign as scoped evidence, and introduces incremental-vs-clean equivalence as the next planned invariant without presenting it as proven. Competitor context remains secondary and was re-verified against current Astro, Meson, Hugo, Ninja and esbuild public sources.
+
+## 2026-08-18 — Checkpoint 7 incremental equivalence completed
+
+Promoted Nift's incremental-build semantics from a planned property to scoped executable evidence. The maintained property gate exercised modified/hash/hybrid modes across 24 deterministic 30-step mutation sequences and compared the complete public output tree after every incremental build against a clean rebuild from the same logical project state: 720/720 byte-equivalent comparisons. The discovery run also sharpened the oracle by preserving user-owned untracked files in `public/`. Battle Tested now advances filesystem/transaction integrity to the current frontier.
