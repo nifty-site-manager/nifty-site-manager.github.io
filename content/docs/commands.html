@@ -12,12 +12,17 @@
   <p>Prints the built-in command reference. <code>cmds</code>, <code>--help</code> and <code>-h</code> are aliases.</p>
 
   <h2>Initialise a project</h2>
-  <h3><code>nift init [.ext]</code></h3>
-  <p>Creates a Nift project in the current directory and performs its initial build. The extension defaults to <code>.html</code>. Nift refuses to initialise a directory that is already a Nift project.</p>
+  <h3><code>nift init [--ext=.ext] [--target=platform]</code></h3>
+  <p>Initialise a new Nift project. With no options, Nift creates the standard HTML starter. <code>--ext</code> changes the default content/output extension; <code>--target</code> prepares a static HTML project for a supported hosting platform.</p>
   <pre><code class="language-bash">nift init
-nift init .html
-nift init .txt</code></pre>
-  <p><code>init-html</code> remains as a compatibility spelling.</p>
+nift init --ext=.php
+nift init --ext=.txt
+nift init --target=vercel
+nift init --target=cloudflare
+nift init --target=vercel --ext=.htm</code></pre>
+  <p>Supported targets are <code>vercel</code>, <code>netlify</code>, <code>amplify</code>, <code>azure</code>, <code>firebase</code>, <code>render</code>, <code>cloudflare</code> and <code>github-pages</code>. Target presets currently accept <code>.html</code> and <code>.htm</code>; runtime extensions such as <code>.php</code> are rejected for these static targets.</p>
+  <p>The old positional extension form (for example <code>nift init .html</code>) and <code>init-html</code> command have been removed. Use <code>--ext=.html</code> when you want to spell the default explicitly.</p>
+  <p>See <a href="@pathto('docs/platforms')">Platform targets</a> for the exact files and output layout generated for each provider.</p>
 
   <h2>Minify arbitrary files</h2>
   <h3><code>nift minify [-i|--in-place] file...</code></h3>
@@ -98,7 +103,6 @@ press q to stop</code></pre>
   <div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>Canonical command</th><th>Accepted aliases / forms</th></tr></thead><tbody>
   <tr><td><code>version</code></td><td><code>--version</code>, <code>-v</code></td></tr>
   <tr><td><code>commands</code></td><td><code>cmds</code>, <code>--help</code>, <code>-h</code></td></tr>
-  <tr><td><code>init</code></td><td><code>init-html</code> (fixed <code>.html</code> compatibility form)</td></tr>
   <tr><td><code>build-updated</code></td><td><code>build</code> with no additional arguments</td></tr>
   <tr><td><code>build-names</code></td><td><code>build name...</code> when tracked names are supplied</td></tr>
   <tr><td><code>rm</code></td><td><code>del</code></td></tr>

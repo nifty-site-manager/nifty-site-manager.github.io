@@ -85,7 +85,7 @@ Every page repeats:
   <h2>A practical migration sequence</h2>
   <div class="migration-steps">
     <div><span>01</span><h3>Make a comparison copy</h3><p>Keep the current site available so you can compare generated output and appearance during the migration.</p></div>
-    <div><span>02</span><h3>Initialise Nift</h3><p>Run <code>nift init .html</code> and configure <code>public/</code> as your web-facing output convention.</p></div>
+    <div><span>02</span><h3>Initialise Nift</h3><p>Run <code>nift init</code> and configure <code>public/</code> as your web-facing output convention.</p></div>
     <div><span>03</span><h3>Keep existing assets</h3><p>Copy or preserve the site's CSS, JS, fonts, images and other assets. They do not need to be rewritten.</p></div>
     <div><span>04</span><h3>Choose one representative page</h3><p>Pick a page containing the normal header, footer and layout rather than migrating every page at once.</p></div>
     <div><span>05</span><h3>Extract the template shell</h3><p>Move shared document structure into the template and replace the unique page region with <code>\@content</code>.</p></div>

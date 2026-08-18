@@ -241,6 +241,51 @@
       "template": "templates/asset.txt",
       "content-ext": ".css",
       "output-ext": ".css"
+    },
+    {
+      "name": "docs/platforms",
+      "title": "Platform targets",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/platforms/vercel",
+      "title": "Vercel",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/platforms/netlify",
+      "title": "Netlify",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/platforms/amplify",
+      "title": "AWS Amplify Hosting",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/platforms/azure",
+      "title": "Azure Static Web Apps",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/platforms/firebase",
+      "title": "Firebase Hosting",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/platforms/render",
+      "title": "Render",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/platforms/cloudflare",
+      "title": "Cloudflare Pages",
+      "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/platforms/github-pages",
+      "title": "GitHub Pages",
+      "template": "templates/docs.html"
     }
   ]
 }

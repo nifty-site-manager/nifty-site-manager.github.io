@@ -16,8 +16,8 @@
   <h2>Your first project in about a minute</h2>
   <pre><code class="language-bash">mkdir my-site
 cd my-site
-nift init .html</code></pre>
-  <p><code>nift init .html</code> creates a complete barebones HTML project and builds its initial tracked files. You can open the project immediately; there is no package install step required for the Nift layer itself.</p>
+nift init</code></pre>
+  <p><code>nift init</code> creates a complete barebones HTML project and builds its initial tracked files. Use <code>--ext=.php</code> (or another extension) for a different generic project, or <code>--target=&lt;platform&gt;</code> to initialise a static HTML site prepared for a supported host. You can open the project immediately; there is no package install step required for the Nift layer itself.</p>
 
   <h3>What Nift creates</h3>
   <pre><code class="language-plaintext">content/
@@ -38,7 +38,7 @@ public/
 .nift/
   config.json
   tracked.json</code></pre>
-  <p>Nift v4 projects use <code>public/</code> as the default web-facing output directory created by <code>nift init .html</code>. That keeps generated pages and assets in the convention used throughout these docs and by many deployment platforms.</p>
+  <p>Nift v4 projects use <code>public/</code> as the default web-facing output directory created by <code>nift init</code>. That keeps generated pages and assets in the convention used throughout these docs and by many deployment platforms.</p>
 
   <h2>The project model</h2>
   <div class="getting-model">
@@ -105,7 +105,7 @@ public/
     <a href="@pathto('docs/three-primitives')">
       <span>Path 01 · Barebones</span>
       <h3>Build it yourself</h3>
-      <p>Start with <code>nift init .html</code>, keep the starter tiny, and add pages/templates/tooling only as the project needs them.</p>
+      <p>Start with <code>nift init</code>, keep the starter tiny, and add pages/templates/tooling only as the project needs them.</p>
       <strong>Learn the three-primitives core →</strong>
     </a>
     <a href="@pathto('templates')">

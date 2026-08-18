@@ -67,6 +67,7 @@ browser ──► API Gateway ──► Lambda ──► DynamoDB / S3 / SES / o
 <p>For a content-heavy site, the useful property is that Lambda is not involved in serving every page. Nift already rendered those pages. Lambda is reserved for runtime work.</p>
 
 <h2>Azure: Static Web Apps or Storage/CDN + Azure Functions</h2>
+<p>If the frontend is going to Azure Static Web Apps, start with the <a href="@pathto('docs/platforms/azure')">Azure platform target</a>; this section focuses on the runtime split.</p>
 <p>On Azure, generated Nift output can live in static hosting while Azure Functions provides event-driven compute. Functions can expose HTTP APIs but can also react to schedules, queues, database changes and other events.</p>
 <pre><code class="language-typescript">import { app, HttpRequest, HttpResponseInit } from '@azure/functions';
 
@@ -104,6 +105,7 @@ functions.http('status', (req, res) =&gt; {
    └──► Edge Function ──► privileged DB/API/payment operation</code></pre>
 
 <h2>Vercel: static Nift output + Functions</h2>
+<p>The <a href="@pathto('docs/platforms/vercel')">Vercel platform target</a> emits Vercel's native static Build Output API tree. Functions remain a separate Vercel runtime primitive.</p>
 <p>Vercel Functions run server-side code without managing servers and can sit behind API routes while Nift continues to produce the frontend. You do not need to adopt Next.js merely to use a serverless endpoint.</p>
 <div class="docs-callout"><strong>Nift route contracts and Vercel routes are different concepts.</strong><p>A Nift <a href="@pathto('docs/routes')">route contract</a> is a build-time application relationship such as <code>routes.users.list → /api/users</code>. Vercel routing rules describe what its deployment should do when an incoming request matches. They can complement each other, but Nift does not redefine Vercel's routing model.</p></div>
 <pre><code class="language-typescript">// api/hello.ts
@@ -124,6 +126,7 @@ package.json</code></pre>
 <p>Your build command runs Nift; Vercel handles the server-side function directory according to its platform configuration.</p>
 
 <h2>Netlify: static deployment + Netlify Functions</h2>
+<p>The <a href="@pathto('docs/platforms/netlify')">Netlify platform target</a> prepares the static build/publish configuration; Functions remain beside that output rather than inside Nift templates.</p>
 <p>Netlify follows the same clean split. Functions can be JavaScript, TypeScript or Go and can act as HTTP endpoints, event handlers, scheduled functions or background work.</p>
 <pre><code class="language-typescript">// netlify/functions/contact.ts
 export default async (request: Request) =&gt; {
@@ -139,6 +142,7 @@ browser ──► /.netlify/functions/contact
 <p>This is a good example of why Nift does not need a plugin for every hosting provider: the integration boundary is files plus normal HTTP.</p>
 
 <h2>GitHub Pages: static frontend, functions somewhere else</h2>
+<p>The <a href="@pathto('docs/platforms/github-pages')">GitHub Pages platform target</a> keeps Nift's ordinary static artifact and documents the Actions deployment boundary.</p>
 <p>GitHub Pages is static hosting, so it does not itself become the serverless backend. That is not a limitation on the Nift architecture. Deploy the generated site to GitHub Pages and call a separately hosted API.</p>
 <pre><code class="language-plaintext">GitHub repository
    │

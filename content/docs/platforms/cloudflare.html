@@ -1,0 +1,18 @@
+<article class="docs-article">
+<p class="docs-kicker">Platform target</p><h1>Cloudflare Pages</h1>
+<p class="docs-lead">Cloudflare Pages can deploy Nift's normal <code>public/</code> output. The target adds Wrangler configuration that declares the Pages build-output directory.</p>
+<pre><code class="language-bash">nift init --target=cloudflare</code></pre>
+<h2>What Nift creates</h2>
+<pre><code class="language-toml">name = "nift-site"
+pages_build_output_dir = "./public"</code></pre>
+<p>Change the project name before deployment. A Wrangler file with <code>pages_build_output_dir</code> can serve as Pages project configuration; ordinary Nift builds continue to own only <code>public/</code>.</p>
+<h2>Build and direct upload</h2>
+<p>For Git integration, configure the build environment so <code>nift build</code> runs and produces <code>public/</code>. For direct-upload workflows, build first and deploy the resulting directory with Wrangler.</p>
+<h2>Pages Functions</h2>
+<p>Pages Functions execute server-side code on the Workers runtime. A conventional Functions project can live in a top-level <code>functions/</code> directory beside the Nift site. Routing can be narrowed with Pages' function-routing configuration.</p>
+<h2>Bindings</h2>
+<p>Pages Functions can bind to Cloudflare platform resources including KV, D1, R2 and Durable Objects. Those bindings belong in Cloudflare configuration; Nift remains unaware of their runtime semantics.</p>
+<div class="docs-callout"><strong>Cloudflare is evolving.</strong><p>Cloudflare also documents migration from Pages to Workers static assets. This target intentionally names the current Pages workflow; use the Workers model instead when that is the architecture you actually want.</p></div>
+<p>Official references: <a href="https://developers.cloudflare.com/pages/configuration/build-configuration/">Pages build configuration</a>, <a href="https://developers.cloudflare.com/pages/functions/wrangler-configuration/">Wrangler configuration</a>, <a href="https://developers.cloudflare.com/pages/functions/">Pages Functions</a>, and <a href="https://developers.cloudflare.com/pages/functions/bindings/">bindings</a>.</p>
+<div class="docs-next"><span>Next platform</span><a href="@pathto('docs/platforms/github-pages')">GitHub Pages →</a></div>
+</article>

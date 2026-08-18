@@ -50,7 +50,7 @@ frontend generates fetch('/api/users')
         ↓
 Vercel / Netlify / Express / Go / another runtime
 handles the request according to its own routing model</code></pre>
-<p>The models can complement each other. A future deployment adapter could validate or derive provider-specific configuration from project contracts where that remains simple and reliable, but Nift's application contract should not become Vercel-specific.</p>
+<p>The models can complement each other. Nift now has small platform-target initialisers for deployment plumbing, but route contracts remain provider-neutral application data; the target layer does not turn Nift routes into Vercel routing rules or make the template language provider-specific.</p>
 
 <h2>Routes can describe more than one backend technology</h2>
 <p>The route contract can remain stable while implementation changes. A project might move an endpoint from a conventional Node server to a serverless function without changing the Nift templates if the public route remains the same.</p>

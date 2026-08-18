@@ -1,0 +1,19 @@
+<article class="docs-article">
+<p class="docs-kicker">Platform target</p><h1>Azure Static Web Apps</h1>
+<p class="docs-lead">Azure can deploy Nift's normal <code>public/</code> output. The target adds Azure's application configuration as a tracked raw file so it is reproduced at the root of every Nift build.</p>
+<pre><code class="language-bash">nift init --target=azure</code></pre>
+<h2>What Nift creates</h2>
+<pre><code class="language-plaintext">content/staticwebapp.config.json
+        │ tracked as raw JSON
+        ▼
+public/staticwebapp.config.json</code></pre>
+<p>Edit the file under <code>content/</code>, not the generated copy under <code>public/</code>. Microsoft requires <code>staticwebapp.config.json</code> to reach the root of the build output when a build step is used.</p>
+<h2>Routing and security</h2>
+<p>Azure's configuration file can define route rules, redirects/rewrites, authorization by role, fallback behaviour, response overrides, headers, MIME types and networking settings. Azure Static Web Apps also has built-in authentication concepts and can expose user information to the frontend/API.</p>
+<h2>Adding an API</h2>
+<p>An Azure Functions project commonly lives in an <code>api/</code> directory beside the static frontend. Your deployment workflow can point Azure Static Web Apps at both the Nift output and the Functions source/build output.</p>
+<h2>Build configuration</h2>
+<p>Azure's deployment workflow distinguishes application location, optional API location and output location. Configure the workflow to run Nift (with Nift installed in that build environment) and deploy <code>public/</code>.</p>
+<p>Official references: <a href="https://learn.microsoft.com/azure/static-web-apps/configuration">application configuration</a>, <a href="https://learn.microsoft.com/azure/static-web-apps/build-configuration">build configuration</a>, <a href="https://learn.microsoft.com/azure/static-web-apps/authentication-authorization">authentication/authorization</a>, and <a href="https://learn.microsoft.com/azure/static-web-apps/add-api">Functions API integration</a>.</p>
+<div class="docs-next"><span>Next platform</span><a href="@pathto('docs/platforms/firebase')">Firebase →</a></div>
+</article>

@@ -1,0 +1,21 @@
+<article class="docs-article">
+<p class="docs-kicker">Platform target</p><h1>Render</h1>
+<p class="docs-lead">Render static sites use a build command plus a publish directory. Nift keeps <code>public/</code> and writes the equivalent Blueprint configuration.</p>
+<pre><code class="language-bash">nift init --target=render</code></pre>
+<h2>What Nift creates</h2>
+<pre><code class="language-yaml">services:
+  - type: web
+    name: nift-site
+    runtime: static
+    buildCommand: nift build
+    staticPublishPath: ./public</code></pre>
+<p>Change <code>name</code> to the service name you want. The Blueprint is user-owned after initialization.</p>
+<h2>Build environment</h2>
+<p>The generated build command expects Nift on Render's build path. Choose an installation mechanism appropriate to the project before connecting the Blueprint.</p>
+<h2>Routing and headers</h2>
+<p>Render static sites support redirect/rewrite rules and custom response headers. Those rules can be represented in the Blueprint or managed through the Render UI depending on your preferred source of truth.</p>
+<h2>When the site needs a backend</h2>
+<p>Render's dynamic web services are separate resources rather than code executed inside a static site. Keep Nift as the static frontend and connect it to a Render web service/database when the application requires runtime behaviour.</p>
+<p>Official references: <a href="https://render.com/docs/blueprint-spec">Blueprint specification</a>, <a href="https://render.com/docs/static-sites">static sites</a>, and <a href="https://render.com/docs/redirects-rewrites">redirects/rewrites</a>.</p>
+<div class="docs-next"><span>Next platform</span><a href="@pathto('docs/platforms/cloudflare')">Cloudflare →</a></div>
+</article>
