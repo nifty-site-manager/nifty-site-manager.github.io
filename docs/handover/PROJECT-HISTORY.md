@@ -941,3 +941,7 @@ Completed a sanitizer-backed n++ parser/resource campaign at Nift commit `45d96b
 ## 2026-08-18 — Checkpoint 10 Codex handover prepared
 
 Prepared the final deliberate-hardening handoff without changing public reliability claims. The Nift repository now contains a dedicated Codex brief for a GitHub Actions Linux/macOS/Windows behavioural-equivalence matrix, normalized result artifacts, a final semantic comparison job, explicit portable-vs-platform-specific filesystem contracts, and a stopping rule after Checkpoint 10. Checkpoints 7–9 are recorded as regression constraints for any platform fixes.
+
+## 2026-08-18 — Checkpoint 10 cross-platform equivalence completed
+
+Completed the final deliberate-hardening checkpoint in Nift GitHub Actions run `32118334090` at commit `f1512bf`. The same 18-case portable behavioral corpus passed on `ubuntu-latest`, `macos-latest` and `windows-latest`; each runner uploaded normalized evidence and the final comparer found zero portable mismatches. The campaign distinguished CI runtime setup, UTF-8 harness decoding and Windows read-only deletion behavior from a genuine product defect: tracked move/remove could leave stale read-only generated output and metadata on Windows. Nift now removes owned read-only artifacts portably, and the lifecycle corpus retains the fix. Battle Tested presents this as scoped corpus/runner evidence, not universal platform identity, and the project has reached its planned hardening plateau.

@@ -355,3 +355,10 @@ entry point.
 - Nift now carries a dedicated Checkpoint 10/Codex execution brief covering the Linux/macOS/Windows GitHub Actions matrix, normalized evidence model, portable vs platform-specific contracts, retained evidence and documentation promotion rules.
 - Public Battle Tested wording is intentionally unchanged: cross-platform behavioural equivalence remains the final frontier until the required matrix and comparison job pass.
 - Checkpoints 7–9 remain regression constraints for any cross-platform product fix.
+
+## Checkpoint 10 completed and hardening plateau reached (2026-08-18)
+
+- Nift GitHub Actions run `32118334090` at commit `f1512bf` passed the same 18 portable behavioral cases on `ubuntu-latest`, `macos-latest` and `windows-latest`; the final artifact-consuming comparison reported zero normalized portable mismatches.
+- Battle Tested now describes the exact corpus, evidence model, limited normalization, two separately classified platform contracts and the Windows stale read-only output/metadata defect discovered and fixed by the campaign.
+- Keep the claim scoped to the tested runners/corpus. Do not replace it with “Nift behaves identically everywhere.”
+- The deliberate campaign is complete through Checkpoint 10. Do not invent Checkpoint 11 by default; prioritize distribution, dogfooding, field exposure and findings from real use.
