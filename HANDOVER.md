@@ -161,7 +161,7 @@ benchmark evidence, testing claims, AI guidance, or downloads, reconcile this
 source before considering the product checkpoint complete. Internal refactors
 with no public effect normally require only a compatibility self-build.
 
-Current project status is **hardening plateau reached** after Nift Checkpoints 0–10. Current living priorities are to keep behavior/version-sensitive docs current, validate templates/downloads, reconcile package/distribution instructions as new builds are published, dogfood the site with the intended Nift binary, collect field evidence, and review responsive/accessibility/publication readiness. Continue reviewing Battle Tested when protected behavior or evidence changes, but do not invent new hardening checkpoints merely to keep the sequence going.
+Current project status is **hardening plateau reached** after Nift Checkpoints 0–10. The bounded 4.0.2 initializer/platform-target feature is implemented and its Linux/macOS/Windows Actions contract is green. Current living priorities are release/publication reconciliation, keeping behavior/version-sensitive docs current, reconciling package/distribution instructions as public builds propagate, dogfooding the site and target integrations, collecting field evidence, and reviewing responsive/accessibility/publication readiness. End-to-end provider deployment is useful field evidence, not a prerequisite for publishing the documented target presets. Continue reviewing Battle Tested when protected behavior or evidence changes, but do not invent new hardening checkpoints merely to keep the sequence going.
 
 ## Maintaining this handover
 
