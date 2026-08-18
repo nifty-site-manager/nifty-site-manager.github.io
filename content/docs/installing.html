@@ -3,7 +3,7 @@
 <h1>Installing Nift.</h1>
 <p class="docs-lead">Nift is a small cross-platform native C++ program. Use one of the established package-manager channels, download a release binary, or compile the executable from source.</p>
 
-<div class="docs-callout"><strong>Always verify what you installed.</strong><p>Package-manager channels can lag behind a newly published Nift release. After installation run <code>nift version</code>. If you specifically need the newest release and your package manager has not caught up yet, use the GitHub release binary or build from source.</p></div>
+<div class="docs-callout"><strong>Always verify what you installed.</strong><p>Package-manager channels can lag behind a newly published Nift release. After installation run <code>nift version</code>. If you specifically need the newest release and your package manager has not caught up yet, use the GitHub release binary or build from source. Nift's next distribution-validation phase will test public channel installs in clean CI environments rather than treating recipe publication as proof that users receive the intended binary.</p></div>
 
 <h2>Quick verification</h2>
 <pre><code class="language-bash">nift version
@@ -29,10 +29,12 @@ nift version</code></pre>
 <p>The established Flatpak application ID is <code>cc.nift.nsm</code>. If you want to invoke it as <code>nift</code> from your shell, add an alias to your shell profile:</p>
 <pre><code class="language-bash">alias nift='flatpak run cc.nift.nsm'</code></pre>
 <p>Then open a new terminal or reload the profile and verify with <code>nift version</code>.</p>
+<p><strong>Version note (18 August 2026):</strong> the Flathub migration to Nift 4.0.1 is still under review/build repair. The existing listing may therefore still deliver the legacy release. If you specifically need v4 before that migration is published, use another current channel or a GitHub release binary and verify with <code>nift version</code>.</p>
 
 <h2 id="osx-brew">macOS — Homebrew</h2>
 <pre><code class="language-bash">brew install nift
 nift version</code></pre>
+<p><strong>Current channel status (18 August 2026):</strong> Homebrew's public stable formula is Nift 4.0.1, with bottles available for supported Apple Silicon/Intel macOS and Linux architectures. Install normally with <code>brew install nift</code> and verify the installed version with <code>nift version</code>.</p>
 <p>Uninstall with:</p>
 <pre><code class="language-bash">brew uninstall nift</code></pre>
 
