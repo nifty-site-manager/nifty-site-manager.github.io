@@ -260,3 +260,8 @@ entry point.
 - The embedded Jsonic++ component now has independent Valgrind confirmation in addition to its sanitizer/RSS evidence: Valgrind 3.26.0, Linux x86_64, commit `b9d0ff3`, 40 lifetime-corpus iterations, 0 errors, 0 bytes in use at exit, all 6,579,515 allocations freed, peak Valgrind RSS 215,992 KiB.
 - This completes Jsonic++'s standalone lifetime gate only. Nift's own command lifecycle, incremental-state, watch endurance, 10k pressure and integrated Minify++ checkpoints remain separate.
 - The Minify++ checkpoint should now stay standalone; move Nift-embedded Minify++ ownership stress to the later cross-project integration checkpoint to avoid duplicating integration scope.
+## Minify++ memory-safety Checkpoint 2A (2026-08-18)
+
+- Standalone Minify++ resource testing is now green under its maintained sanitizer/RSS/CLI corpus at commit `db2a6ff`; the Nift vendored test infrastructure is synchronized.
+- Treat this as component evidence only. Nift-owned Minify++ integration/resource behavior remains a later cross-project checkpoint.
+- Independent Minify++ Valgrind confirmation is still open because Valgrind is unavailable in this environment. `docs/memory-safety` records the exact component evidence and limitation.

@@ -883,3 +883,6 @@ Reconciled the Nift quality record with the completed embedded-Jsonic++ lifetime
 ## 2026-08-18 — Embedded Jsonic++ lifetime gate completed
 
 Recorded the independent Valgrind confirmation for the Jsonic++ component: Valgrind 3.26.0 on Linux, commit `b9d0ff3`, 40 lifetime-corpus iterations, 0 errors, 0 bytes in use at exit, all 6,579,515 allocations freed and 215,992 KiB peak Valgrind RSS. This closes the standalone parser lifetime checkpoint while explicitly leaving Nift's later lifecycle/watch/large-project and cross-project integration gates open.
+## 2026-08-18 — Minify++ memory-safety Checkpoint 2A
+
+Reconciled the Nift quality record with the standalone Minify++ lifetime campaign: 80 ASan/LSan/UBSan multi-format iterations were clean, a 300-iteration native soak stabilized after warm-up, and both sanitized and native mixed-file CLI stress passed. This remains standalone component evidence; Nift-owned integration is intentionally deferred to the later cross-project checkpoint. Independent Valgrind confirmation remains open because the current environment has no Valgrind executable.
