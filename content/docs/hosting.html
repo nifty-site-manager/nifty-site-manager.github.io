@@ -24,9 +24,10 @@ nift init --target=azure
 nift init --target=firebase
 nift init --target=render
 nift init --target=cloudflare
-nift init --target=github-pages</code></pre>
+nift init --target=github-pages
+nift init --target=supabase</code></pre>
 <p>The targets do not all work the same internally. Vercel and Amplify use native filesystem deployment bundles; Netlify, Firebase, Render and Cloudflare use provider configuration around Nift's normal static output; Azure needs its application configuration to reach the output root; GitHub Pages needs no provider file at all. The CLI deliberately hides that distinction.</p>
-<p>See <a href="@pathto('docs/platforms')">Platform targets</a> for the exact generated files, build-environment requirements and provider-specific guides.</p>
+<p>These presets are shortcuts, not restrictions. If your host is not listed, Nift can still be used anywhere its ordinary generated files can be served or deployed: start with <code>nift init</code>, build to <code>public/</code>, and configure the host manually. See <a href="@pathto('docs/platforms')">Platform targets</a> for the exact generated files, build-environment requirements and provider-specific guides for the presets Nift knows how to initialise automatically.</p>
 <div class="docs-callout"><strong>Build-environment installation is separate.</strong><p>A target prepares the project, but it does not choose how a remote CI image obtains the <code>nift</code> executable. Pin/install Nift using the distribution policy appropriate to that project, then run the generated build command.</p></div>
 
 <h2>GitLab Pages</h2>

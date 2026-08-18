@@ -15,6 +15,8 @@ nift init --target=supabase</code></pre>
 
 <div class="docs-callout"><strong>Targets prepare; they do not provision.</strong><p>Nift creates output/configuration appropriate to the selected platform where anything extra is actually required. It does not sign in, create provider projects, configure DNS, provision databases or choose how the remote build environment installs Nift.</p></div>
 
+<div class="docs-callout"><strong>No target does not mean no support.</strong><p>The named targets are convenience presets, not a list of the only platforms that can host Nift. Because a normal Nift build produces ordinary files in <code>public/</code>, you can use other static hosts and deployment systems too. Start with <code>nift init</code> (or <code>nift init --ext=.ext</code>), then configure that platform's build command, publish/output directory, workflow or provider files manually.</p></div>
+
 <h2>The extension contract</h2>
 <p>A target defaults to <code>.html</code> and currently accepts <code>.html</code> or <code>.htm</code>. These presets deliberately describe static websites. A misleading combination such as <code>nift init --target=vercel --ext=.php</code> fails instead of emitting PHP that the static target would not execute.</p>
 <p>Without a target, Nift remains format-flexible:</p>
