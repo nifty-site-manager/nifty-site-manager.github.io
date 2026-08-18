@@ -295,3 +295,9 @@ entry point.
 
 - The third external run completed all 30 watch cycles but was SIGKILLed during teardown before a final Valgrind report. The test now disconnects stdin from the interactive terminal, and the Valgrind wrapper explicitly forwards shutdown signals while remaining alive for report finalization.
 - Public memory-safety claims remain unchanged until the corrected external target yields a complete Valgrind result.
+
+## Nift memory-safety Checkpoint 4 complete (2026-08-18)
+
+- External Checkpoint 4B passed at Nift commit `92e6c05`: 30/30 acknowledgement-driven watch cycles completed in 14.044 seconds under the Valgrind wrapper, with intended SIGINT shutdown/status 130.
+- Exact evidence is retained in the Nift source tree. Wrapper RSS was flat at 3,824 KiB across the retained cycle-20 and cycle-29 samples; do not present wrapper RSS as the leak oracle.
+- Public Memory & Resource Safety and Battle Tested pages now describe Checkpoint 4 as complete. The campaign proceeds to tscc.

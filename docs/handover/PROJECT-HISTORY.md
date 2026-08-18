@@ -906,3 +906,7 @@ A second external Valgrind run confirmed clean shutdown and reported no leak/err
 ## 2026-08-18 — Checkpoint 4B terminal-safe supervisor correction
 
 The full 30-cycle external Valgrind workload completed, but teardown escalated to SIGKILL before Valgrind could finalize. The watch harness now uses `/dev/null` for stdin so test failure cannot disturb the caller's terminal, while `valgrind_nift.sh` stays resident to forward shutdown signals and wait for Valgrind's final report. A synthetic 30-cycle forwarding-supervisor probe passes; the independent leak verdict remains pending.
+
+## 2026-08-18 — Nift memory-safety Checkpoint 4 completed
+
+Reconciled the passing external Checkpoint 4B result. At Nift commit `92e6c05`, the corrected Valgrind-supervised, acknowledgement-driven watch workload completed all 30 cycles in 14.044 seconds and shut down through the intended SIGINT/status-130 path. Combined with Checkpoint 4A's native watch settling, sanitizer execution and 10,000-page worker/minification matrix, this closes Nift's watch/endurance checkpoint. The exact JSON evidence is retained in the Nift source tree and the public memory/Battle Tested pages now reflect the completed gate.
