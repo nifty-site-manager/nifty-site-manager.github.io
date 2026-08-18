@@ -922,3 +922,6 @@ Rejected the first external 6B result as invalid product evidence after identify
 ## 2026-08-18 — Checkpoint 6B completed
 
 Reconciled the corrected external Valgrind evidence at Nift commit `03e18b4`. The 40-page / 12-round integration workload directly instrumented 19 Nift invocations, including four deliberately expected Jsonic++/Minify++ failure paths. Every invocation reported zero Valgrind errors and no non-zero definite/indirect/possible leak bytes; all repair phases and the final clean build passed. This closes the cross-component memory campaign. The earlier Python-wrapped attempt remains explicitly rejected as invalid Nift evidence.
+## 2026-08-18 — Battle Tested reliability framework refreshed
+
+Reframed Battle Tested around guarantee-first falsification rather than test-count marketing. The public page now distinguishes deliberate test hardening from accumulated field hardening, acknowledges Nift's shorter production history, records the completed memory/resource campaign as scoped evidence, and introduces incremental-vs-clean equivalence as the next planned invariant without presenting it as proven. Competitor context remains secondary and was re-verified against current Astro, Meson, Hugo, Ninja and esbuild public sources.

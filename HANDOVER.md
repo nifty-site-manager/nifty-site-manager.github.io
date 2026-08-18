@@ -318,3 +318,10 @@ entry point.
 - The corrected external run at Nift commit `03e18b4` directly monitored Nift rather than the Python orchestrator.
 - Nineteen monitored invocations, 12 mixed rounds, 40 pages and four expected component failures completed with zero Valgrind error summaries and no non-zero definite/indirect/possible leak bytes.
 - The earlier incorrectly wired attempt remains historical rejected evidence. The public reliability record now closes Checkpoint 6 and advances to incremental-vs-clean equivalence.
+## Battle Tested reliability framework refresh (2026-08-18)
+
+- Kept the established **Battle Tested** page title/URL/navigation stable and added **What battle hardened means** as the conceptual opening.
+- The page now distinguishes test hardening from field hardening, explicitly acknowledges that Nift cannot manufacture mature-project production exposure, and explains the progression from feature tests → regressions → bug-family/adversarial attacks → guarantee-first/contract-first tests.
+- Reliability claims follow the editorial states PROVEN NOW / IN PROGRESS / PLANNED / PHILOSOPHICAL PRINCIPLE. The completed memory/resource campaign is evidence; incremental-vs-clean equivalence is explicitly the next planned/current frontier, with filesystem/transaction integrity, parser fuzz/resource boundaries and cross-platform equivalence still future work.
+- Competitor context is deliberately secondary. Astro, Meson, Hugo, Ninja and esbuild were re-checked against current public sources on 2026-08-18; the comparison is used to explain accumulated field evidence rather than rank projects.
+- After Checkpoint 7, promote incremental equivalence only if the campaign establishes it, and add exact methodology, mutation families, scale, findings and retained regression evidence. Apply the same scoped-evidence discipline after Checkpoints 8–10.
