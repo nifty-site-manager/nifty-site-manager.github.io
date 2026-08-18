@@ -265,3 +265,9 @@ entry point.
 - Standalone Minify++ resource testing is now green under its maintained sanitizer/RSS/CLI corpus at commit `db2a6ff`; the Nift vendored test infrastructure is synchronized.
 - Treat this as component evidence only. Nift-owned Minify++ integration/resource behavior remains a later cross-project checkpoint.
 - Independent Minify++ Valgrind confirmation is still open because Valgrind is unavailable in this environment. `docs/memory-safety` records the exact component evidence and limitation.
+
+## Minify++ memory-safety Checkpoint 2B complete (2026-08-18)
+
+- The standalone Minify++ component gate now has independent Valgrind confirmation in addition to sanitizer/RSS/CLI evidence: Valgrind 3.26.0 on Linux x86_64, canonical Minify++ commit `2a51a38`, 30 lifetime-corpus iterations, 0 errors, 0 bytes in use at exit, all 2,448 allocations freed, peak Valgrind RSS 184,908 KiB.
+- This closes Minify++'s standalone component checkpoint only. Nift's own core lifecycle, watch/10k endurance and later cross-project integration gates remain open.
+- `docs/memory-safety` and Battle Tested have been reconciled accordingly; keep detailed component metrics on the living memory page rather than spreading them across general reliability copy.

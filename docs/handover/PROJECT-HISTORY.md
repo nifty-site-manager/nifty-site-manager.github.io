@@ -886,3 +886,7 @@ Recorded the independent Valgrind confirmation for the Jsonic++ component: Valgr
 ## 2026-08-18 — Minify++ memory-safety Checkpoint 2A
 
 Reconciled the Nift quality record with the standalone Minify++ lifetime campaign: 80 ASan/LSan/UBSan multi-format iterations were clean, a 300-iteration native soak stabilized after warm-up, and both sanitized and native mixed-file CLI stress passed. This remains standalone component evidence; Nift-owned integration is intentionally deferred to the later cross-project checkpoint. Independent Valgrind confirmation remains open because the current environment has no Valgrind executable.
+
+## 2026-08-18 — Standalone Minify++ lifetime gate completed
+
+Recorded the independent Valgrind confirmation for the Minify++ component: Valgrind 3.26.0 on Linux x86_64, canonical commit `2a51a38`, 30 maintained lifetime-corpus iterations, 0 errors, 0 bytes in use at exit, all 2,448 allocations freed and 184,908 KiB peak process RSS. This completes the standalone component gate while leaving Nift's own core lifecycle, watch/large-project endurance and cross-project ownership integration checkpoints open.
