@@ -280,3 +280,8 @@ entry point.
 - A 100-cycle sanitizer watch run completed without sanitizer failure. Do not use sanitizer-process RSS as leak evidence because allocator quarantine materially changes resident memory.
 - The 10k matrix stayed below 12 MiB peak RSS across 1, 4 and automatic workers, with a minified four-worker case included.
 - Checkpoint 4B remains the targeted independent Valgrind watch confirmation. Run `make valgrind-memory-safety-checkpoint-4` on Linux with Valgrind and retain the generated evidence before marking Checkpoint 4 fully complete.
+
+## Checkpoint 4B harness correction (2026-08-18)
+
+- The first external Valgrind watch attempt exposed a shutdown bug in the memory-test harness, not a Nift leak result.
+- The corrected runner now signals the complete monitored process group and gives Valgrind time to finalize before escalation. Public memory-safety claims remain unchanged until the corrected Checkpoint 4B target produces passing Valgrind evidence.

@@ -894,3 +894,7 @@ Recorded the independent Valgrind confirmation for the Minify++ component: Valgr
 ## 2026-08-18 — Nift memory-safety Checkpoint 3 and Checkpoint 4A
 
 Added maintained Nift core-lifecycle and endurance gates. Checkpoint 3 passed 57 sanitizer-backed lifecycle/test phases without a sanitizer finding. Checkpoint 4A established a stable native `build-auto` RSS band across 180 deterministic successful invalidations and exercised a 10,000-page worker/minification matrix below 12 MiB peak RSS. Testing also clarified that `build-auto` exits after a rebuild failure, so failure/repair cleanup remains a repeated-command contract rather than a persistent-watch contract. The short independent Valgrind watch confirmation remains Checkpoint 4B.
+
+## 2026-08-18 — Checkpoint 4B Valgrind harness correction
+
+The first external Checkpoint 4B attempt timed out during shutdown because the watch endurance runner signalled only the Valgrind supervisor PID. The harness now runs the monitored process tree in its own process group, uses group-wide SIGINT with a 30-second Valgrind finalization window, and escalates only when necessary. No public leak verdict changed; the independent Checkpoint 4B evidence remains pending a corrected rerun.
