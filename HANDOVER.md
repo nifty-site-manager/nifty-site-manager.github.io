@@ -300,4 +300,4 @@ entry point.
 
 - External Checkpoint 4B passed at Nift commit `92e6c05`: 30/30 acknowledgement-driven watch cycles completed in 14.044 seconds under the Valgrind wrapper, with intended SIGINT shutdown/status 130.
 - Exact evidence is retained in the Nift source tree. Wrapper RSS was flat at 3,824 KiB across the retained cycle-20 and cycle-29 samples; do not present wrapper RSS as the leak oracle.
-- Public Memory & Resource Safety and Battle Tested pages now describe Checkpoint 4 as complete. The campaign proceeds to tscc.
+- Public Memory & Resource Safety and Battle Tested pages describe Nift Checkpoint 4 as complete. The sibling tscc Checkpoint 5 baseline is now also complete; the cross-project campaign proceeds to integration Checkpoint 6.
