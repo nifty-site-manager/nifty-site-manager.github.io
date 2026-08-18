@@ -890,3 +890,7 @@ Reconciled the Nift quality record with the standalone Minify++ lifetime campaig
 ## 2026-08-18 — Standalone Minify++ lifetime gate completed
 
 Recorded the independent Valgrind confirmation for the Minify++ component: Valgrind 3.26.0 on Linux x86_64, canonical commit `2a51a38`, 30 maintained lifetime-corpus iterations, 0 errors, 0 bytes in use at exit, all 2,448 allocations freed and 184,908 KiB peak process RSS. This completes the standalone component gate while leaving Nift's own core lifecycle, watch/large-project endurance and cross-project ownership integration checkpoints open.
+
+## 2026-08-18 — Nift memory-safety Checkpoint 3 and Checkpoint 4A
+
+Added maintained Nift core-lifecycle and endurance gates. Checkpoint 3 passed 57 sanitizer-backed lifecycle/test phases without a sanitizer finding. Checkpoint 4A established a stable native `build-auto` RSS band across 180 deterministic successful invalidations and exercised a 10,000-page worker/minification matrix below 12 MiB peak RSS. Testing also clarified that `build-auto` exits after a rebuild failure, so failure/repair cleanup remains a repeated-command contract rather than a persistent-watch contract. The short independent Valgrind watch confirmation remains Checkpoint 4B.

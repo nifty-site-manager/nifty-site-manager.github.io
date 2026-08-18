@@ -271,3 +271,12 @@ entry point.
 - The standalone Minify++ component gate now has independent Valgrind confirmation in addition to sanitizer/RSS/CLI evidence: Valgrind 3.26.0 on Linux x86_64, canonical Minify++ commit `2a51a38`, 30 lifetime-corpus iterations, 0 errors, 0 bytes in use at exit, all 2,448 allocations freed, peak Valgrind RSS 184,908 KiB.
 - This closes Minify++'s standalone component checkpoint only. Nift's own core lifecycle, watch/10k endurance and later cross-project integration gates remain open.
 - `docs/memory-safety` and Battle Tested have been reconciled accordingly; keep detailed component metrics on the living memory page rather than spreading them across general reliability copy.
+
+## Nift memory-safety Checkpoints 3 and 4A (2026-08-18)
+
+- Checkpoint 3 is complete: 57 sanitizer-backed core lifecycle/test phases passed with no ASan/LSan/UBSan finding, covering project mutation commands, success/failure/repair builds, incremental modes, contracts, schema, requirements, template-less tracking, Minify++ integration and cross-feature behavior.
+- `build-auto` exits after a failed watched rebuild. Preserve that actual contract; do not describe watch mode as a self-healing daemon. Failed-build cleanup/recovery is tested through repeated command lifecycles instead.
+- Checkpoint 4A native watch endurance completed 180 deterministic successful invalidations in one process. RSS stayed between 5,976 and 6,356 KiB; warm/mid/final observations were 6,332 / 6,216 / 5,976 KiB.
+- A 100-cycle sanitizer watch run completed without sanitizer failure. Do not use sanitizer-process RSS as leak evidence because allocator quarantine materially changes resident memory.
+- The 10k matrix stayed below 12 MiB peak RSS across 1, 4 and automatic workers, with a minified four-worker case included.
+- Checkpoint 4B remains the targeted independent Valgrind watch confirmation. Run `make valgrind-memory-safety-checkpoint-4` on Linux with Valgrind and retain the generated evidence before marking Checkpoint 4 fully complete.
