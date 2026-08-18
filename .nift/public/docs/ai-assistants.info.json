@@ -55,6 +55,7 @@
     "public/docs/platforms/github-pages.html",
     "public/docs/platforms/netlify.html",
     "public/docs/platforms/render.html",
+    "public/docs/platforms/supabase.html",
     "public/docs/platforms/vercel.html",
     "public/docs/production-readiness.html",
     "public/docs/project-contracts.html",

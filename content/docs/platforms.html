@@ -10,9 +10,10 @@ nift init --target=azure
 nift init --target=firebase
 nift init --target=render
 nift init --target=cloudflare
-nift init --target=github-pages</code></pre>
+nift init --target=github-pages
+nift init --target=supabase</code></pre>
 
-<div class="docs-callout"><strong>Targets prepare; they do not provision.</strong><p>Nift creates output/configuration appropriate to the host. It does not sign in, create provider projects, configure DNS, provision databases or choose how the remote build environment installs Nift.</p></div>
+<div class="docs-callout"><strong>Targets prepare; they do not provision.</strong><p>Nift creates output/configuration appropriate to the selected platform where anything extra is actually required. It does not sign in, create provider projects, configure DNS, provision databases or choose how the remote build environment installs Nift.</p></div>
 
 <h2>The extension contract</h2>
 <p>A target defaults to <code>.html</code> and currently accepts <code>.html</code> or <code>.htm</code>. These presets deliberately describe static websites. A misleading combination such as <code>nift init --target=vercel --ext=.php</code> fails instead of emitting PHP that the static target would not execute.</p>
@@ -31,6 +32,7 @@ nift init --ext=.txt      # format-neutral project</code></pre>
 <tr><td><a href="@pathto('docs/platforms/render')">Render</a></td><td><code>public/</code></td><td><code>render.yaml</code></td><td>Separate Render web services/databases</td></tr>
 <tr><td><a href="@pathto('docs/platforms/cloudflare')">Cloudflare Pages</a></td><td><code>public/</code></td><td><code>wrangler.toml</code></td><td>Pages Functions / Workers + bindings</td></tr>
 <tr><td><a href="@pathto('docs/platforms/github-pages')">GitHub Pages</a></td><td><code>public/</code></td><td>none required</td><td>Static only; use an external API/runtime</td></tr>
+<tr><td><a href="@pathto('docs/platforms/supabase')">Supabase</a></td><td><code>public/</code></td><td>none required</td><td>Postgres, Auth, Storage, Realtime and Edge Functions; host the frontend separately</td></tr>
 </tbody></table></div>
 
 <h2>Build environments are separate</h2>

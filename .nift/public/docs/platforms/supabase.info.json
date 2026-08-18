@@ -1,13 +1,13 @@
 {
-  "name": "docs/platforms/amplify",
-  "title": "AWS Amplify Hosting",
+  "name": "docs/platforms/supabase",
+  "title": "Supabase",
   "template": "templates/docs.html",
-  "content": "content/docs/platforms/amplify.html",
-  "output": "public/docs/platforms/amplify.html",
+  "content": "content/docs/platforms/supabase.html",
+  "output": "public/docs/platforms/supabase.html",
   "minify": true,
   "minify-version": 1,
   "dependencies": [
-    "content/docs/platforms/amplify.html",
+    "content/docs/platforms/supabase.html",
     "templates/docs.html",
     "templates/partials/docs-sidebar.html",
     "templates/partials/footer.html",

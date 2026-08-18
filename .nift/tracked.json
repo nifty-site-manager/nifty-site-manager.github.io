@@ -286,6 +286,11 @@
       "name": "docs/platforms/github-pages",
       "title": "GitHub Pages",
       "template": "templates/docs.html"
+    },
+    {
+      "name": "docs/platforms/supabase",
+      "title": "Supabase",
+      "template": "templates/docs.html"
     }
   ]
 }

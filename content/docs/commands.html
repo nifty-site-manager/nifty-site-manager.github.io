@@ -12,7 +12,7 @@
   <p>Prints the built-in command reference. <code>cmds</code>, <code>--help</code> and <code>-h</code> are aliases.</p>
 
   <h2>Initialise a project</h2>
-  <h3><code>nift init [--ext=.ext] [--target=platform]</code></h3>
+  <h3><code>nift init [--target=platform] [--ext=.ext]</code></h3>
   <p>Initialise a new Nift project. With no options, Nift creates the standard HTML starter. <code>--ext</code> changes the default content/output extension; <code>--target</code> prepares a static HTML project for a supported hosting platform.</p>
   <pre><code class="language-bash">nift init
 nift init --ext=.php
@@ -20,7 +20,7 @@ nift init --ext=.txt
 nift init --target=vercel
 nift init --target=cloudflare
 nift init --target=vercel --ext=.htm</code></pre>
-  <p>Supported targets are <code>vercel</code>, <code>netlify</code>, <code>amplify</code>, <code>azure</code>, <code>firebase</code>, <code>render</code>, <code>cloudflare</code> and <code>github-pages</code>. Target presets currently accept <code>.html</code> and <code>.htm</code>; runtime extensions such as <code>.php</code> are rejected for these static targets.</p>
+  <p>Supported targets are <code>vercel</code>, <code>netlify</code>, <code>amplify</code>, <code>azure</code>, <code>firebase</code>, <code>render</code>, <code>cloudflare</code>, <code>github-pages</code> and <code>supabase</code>. Target presets currently accept <code>.html</code> and <code>.htm</code>; runtime extensions such as <code>.php</code> are rejected. Supabase is the deliberate integration-only exception: it keeps Nift's ordinary <code>public/</code> output because Supabase supplies backend services rather than a special static frontend artifact.</p>
   <p>The old positional extension form (for example <code>nift init .html</code>) and <code>init-html</code> command have been removed. Use <code>--ext=.html</code> when you want to spell the default explicitly.</p>
   <p>See <a href="@pathto('docs/platforms')">Platform targets</a> for the exact files and output layout generated for each provider.</p>
 
