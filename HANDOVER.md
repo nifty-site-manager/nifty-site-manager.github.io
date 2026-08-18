@@ -302,13 +302,19 @@ entry point.
 - Exact evidence is retained in the Nift source tree. Wrapper RSS was flat at 3,824 KiB across the retained cycle-20 and cycle-29 samples; do not present wrapper RSS as the leak oracle.
 - Public Memory & Resource Safety and Battle Tested pages describe Nift Checkpoint 4 as complete. The sibling tscc Checkpoint 5 baseline is now also complete; the cross-project campaign proceeds to integration Checkpoint 6.
 
-## Nift memory-safety Checkpoint 6A (2026-08-18)
+## Nift memory-safety Checkpoint 6 complete (2026-08-18)
 
 - Standalone/embedded Jsonic++ and Minify++ synchronization was verified before a combined Nift workload.
 - Native evidence: 90 pages, 60 mutation/recovery rounds, 20 deliberately propagated Jsonic++/Minify++ failures, all repaired successfully. Sanitizer evidence: 30 pages, 12 rounds, four injected failures, no sanitizer finding.
-- Public Memory & Resource Safety and Battle Tested pages record 6A as green and keep 6B independent Valgrind confirmation explicit before the generic memory campaign closes.
+- Corrected 6B passed externally: 19 Nift invocations were directly monitored under Valgrind across 12 rounds / 40 pages with four expected component failures; every invocation recorded zero errors and no non-zero leak bytes. Public Memory & Resource Safety and Battle Tested now treat the generic memory campaign as complete and point to the explicit post-memory hardening properties.
 
 ## Checkpoint 6B instrumentation correction (2026-08-18)
 
 - The first external 6B failure was a harness wiring error: Valgrind wrapped Python instead of Nift, so it is not used as product evidence.
 - The corrected target instruments each Nift invocation directly and separates Memcheck findings from deliberately expected Nift build failures. Public 6A claims remain unchanged; 6B is still pending a corrected external run.
+
+## Checkpoint 6B completed (2026-08-18)
+
+- The corrected external run at Nift commit `03e18b4` directly monitored Nift rather than the Python orchestrator.
+- Nineteen monitored invocations, 12 mixed rounds, 40 pages and four expected component failures completed with zero Valgrind error summaries and no non-zero definite/indirect/possible leak bytes.
+- The earlier incorrectly wired attempt remains historical rejected evidence. The public reliability record now closes Checkpoint 6 and advances to incremental-vs-clean equivalence.

@@ -911,10 +911,14 @@ The full 30-cycle external Valgrind workload completed, but teardown escalated t
 
 Reconciled the passing external Checkpoint 4B result. At Nift commit `92e6c05`, the corrected Valgrind-supervised, acknowledgement-driven watch workload completed all 30 cycles in 14.044 seconds and shut down through the intended SIGINT/status-130 path. Combined with Checkpoint 4A's native watch settling, sanitizer execution and 10,000-page worker/minification matrix, this closes Nift's watch/endurance checkpoint. The exact JSON evidence is retained in the Nift source tree and the public memory/Battle Tested pages now reflect the completed gate.
 
-## 2026-08-18 — Nift memory-safety Checkpoint 6A
+## 2026-08-18 — Nift memory-safety Checkpoint 6
 
-Closed the cross-component integration gate at Nift commit `9b64e94`. Jsonic++ and Minify++ standalone/embedded mirrors were synchronized first; a 90-page native mixed workload then completed 60 rounds with 20 injected JSON/minification failures and successful repair, while the sanitizer build completed a 30-page/12-round form with no sanitizer finding. Independent Valgrind confirmation remains Checkpoint 6B; once it passes, the memory campaign deliberately stops expanding and the roadmap moves to incremental-vs-clean equivalence, filesystem/transaction integrity, parser fuzz/resource boundaries and cross-platform behavioural equivalence.
+Closed the cross-component integration gate at Nift commit `9b64e94`. Jsonic++ and Minify++ standalone/embedded mirrors were synchronized first; a 90-page native mixed workload then completed 60 rounds with 20 injected JSON/minification failures and successful repair, while the sanitizer build completed a 30-page/12-round form with no sanitizer finding. The corrected Checkpoint 6B run subsequently passed with 19 Nift invocations directly monitored under Valgrind across 12 rounds / 40 pages and four expected component failures, all with zero Valgrind error summaries and no non-zero leak bytes. The memory campaign now deliberately stops expanding and the roadmap moves to incremental-vs-clean equivalence, filesystem/transaction integrity, parser fuzz/resource boundaries and cross-platform behavioural equivalence.
 
 ## 2026-08-18 — Checkpoint 6B instrumentation correction
 
 Rejected the first external 6B result as invalid product evidence after identifying that Valgrind had been placed around the Python integration orchestrator rather than Nift. The integration harness now owns a Valgrind mode that monitors each Nift subprocess directly and treats Memcheck errors/leaks independently from expected compiler/build failures. Checkpoint 6B remains open pending a corrected external run.
+
+## 2026-08-18 — Checkpoint 6B completed
+
+Reconciled the corrected external Valgrind evidence at Nift commit `03e18b4`. The 40-page / 12-round integration workload directly instrumented 19 Nift invocations, including four deliberately expected Jsonic++/Minify++ failure paths. Every invocation reported zero Valgrind errors and no non-zero definite/indirect/possible leak bytes; all repair phases and the final clean build passed. This closes the cross-component memory campaign. The earlier Python-wrapped attempt remains explicitly rejected as invalid Nift evidence.
