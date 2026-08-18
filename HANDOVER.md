@@ -340,3 +340,12 @@ entry point.
 - The campaign fixed unreadable-input-as-empty behavior, a directory-as-file `std::length_error` abort, and truncate-in-place output/state writes. Generated/state writes now use same-directory temporary replacement with stale-temp cleanup.
 - Public wording deliberately does not claim universal filesystem/crash safety or untested ENOSPC/platform-specific semantics.
 - Checkpoint 9 remains a separate n++ parser fuzz/resource-boundary campaign; Jsonic++ and Minify++ standalone fuzz/parser evidence should not be duplicated without an integration-specific reason.
+
+## Checkpoint 9 completed (2026-08-18)
+
+- Battle Tested now promotes parser fuzz/resource boundaries from CURRENT FRONTIER to scoped evidence and advances cross-platform behavioural equivalence to the final deliberate-hardening frontier.
+- At Nift commit `45d96ba`, the sanitizer build completed 1,217 n++ parser/resource cases: 1,200 grammar-aware mutations across three seeds plus 17 explicit depth/size boundaries.
+- Outcomes: 234 successful builds, 983 controlled errors, zero timeouts/crashes/signals and zero sanitizer findings.
+- The 64-level recursive parse guard was verified explicitly; its diagnostic was clarified to describe generic template parse depth rather than only `@input`.
+- Public wording remains scoped: this is evidence for the tested corpus, not a claim that arbitrary parser input can never expose a bug.
+- Checkpoint 10 remains necessary because Linux-local memory/filesystem/parser evidence does not establish behavioural equivalence on macOS or Windows.
