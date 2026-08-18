@@ -910,3 +910,7 @@ The full 30-cycle external Valgrind workload completed, but teardown escalated t
 ## 2026-08-18 — Nift memory-safety Checkpoint 4 completed
 
 Reconciled the passing external Checkpoint 4B result. At Nift commit `92e6c05`, the corrected Valgrind-supervised, acknowledgement-driven watch workload completed all 30 cycles in 14.044 seconds and shut down through the intended SIGINT/status-130 path. Combined with Checkpoint 4A's native watch settling, sanitizer execution and 10,000-page worker/minification matrix, this closes Nift's watch/endurance checkpoint. The exact JSON evidence is retained in the Nift source tree and the public memory/Battle Tested pages now reflect the completed gate.
+
+## 2026-08-18 — Nift memory-safety Checkpoint 6A
+
+Closed the cross-component integration gate at Nift commit `9b64e94`. Jsonic++ and Minify++ standalone/embedded mirrors were synchronized first; a 90-page native mixed workload then completed 60 rounds with 20 injected JSON/minification failures and successful repair, while the sanitizer build completed a 30-page/12-round form with no sanitizer finding. Independent Valgrind confirmation remains Checkpoint 6B; once it passes, the memory campaign deliberately stops expanding and the roadmap moves to incremental-vs-clean equivalence, filesystem/transaction integrity, parser fuzz/resource boundaries and cross-platform behavioural equivalence.
