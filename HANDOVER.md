@@ -285,3 +285,8 @@ entry point.
 
 - The first external Valgrind watch attempt exposed a shutdown bug in the memory-test harness, not a Nift leak result.
 - The corrected runner now signals the complete monitored process group and gives Valgrind time to finalize before escalation. Public memory-safety claims remain unchanged until the corrected Checkpoint 4B target produces passing Valgrind evidence.
+
+## Checkpoint 4B pacing correction (2026-08-18)
+
+- The second external Valgrind attempt produced a clean partial leak report but exited before completing the requested watch corpus because fixed 220 ms edits could outrun Valgrind-supervised rebuilds.
+- The corrected harness waits for the generated page to rebuild after each mutation before issuing the next mutation. The independent Checkpoint 4B gate remains pending a complete rerun; public memory-safety claims remain unchanged.

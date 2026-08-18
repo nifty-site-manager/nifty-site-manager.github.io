@@ -898,3 +898,7 @@ Added maintained Nift core-lifecycle and endurance gates. Checkpoint 3 passed 57
 ## 2026-08-18 — Checkpoint 4B Valgrind harness correction
 
 The first external Checkpoint 4B attempt timed out during shutdown because the watch endurance runner signalled only the Valgrind supervisor PID. The harness now runs the monitored process tree in its own process group, uses group-wide SIGINT with a 30-second Valgrind finalization window, and escalates only when necessary. No public leak verdict changed; the independent Checkpoint 4B evidence remains pending a corrected rerun.
+
+## 2026-08-18 — Checkpoint 4B pacing correction
+
+A second external Valgrind run confirmed clean shutdown and reported no leak/error findings for the partial run, but fixed-rate watch edits could outrun Valgrind-supervised rebuilds and cause early `build-auto` exit. The endurance harness is now acknowledgement-driven: each mutation waits for the generated page to rebuild before the next mutation. A synthetic slow-supervisor 30-cycle probe passes; the public verdict remains pending a complete Valgrind rerun.
