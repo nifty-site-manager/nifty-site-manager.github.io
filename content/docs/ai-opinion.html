@@ -183,59 +183,31 @@ database / auth / services</code></pre>
 <div><span>Next.js wins for me when…</span><p>The application explicitly wants the Next/React server architecture itself, not merely React components in the browser.</p></div>
 </div>
 
-<h2>Structured content: this is now one of Nift's strong areas</h2>
-<p>The current language can directly express a large and useful subset of what “content collection querying” means in real frontends: load immutable data, traverse it, iterate arrays/objects, filter rendered output with conditions, compare values, sort by a nested numeric/string field, and inspect loop position without mutating the source collection.</p>
-<pre><code class="language-html">\@json('data/posts.json', data, 'schemas/posts.schema.json')
-
-\@for(post : data.posts by post.date desc) {
-    \@if(post.published) {
-        &lt;article&gt;
-            \@if(loop.first) {
-                &lt;span&gt;Newest&lt;/span&gt;
-            }
-            &lt;h2&gt;\$[post.title]&lt;/h2&gt;
-        &lt;/article&gt;
-    }
+<h2>Structured content: this is now one of Nift's strongest areas</h2>
+<p>My view changed here. Nift no longer only filters rendered output inside <code>\@for</code>; it now has a deliberately small set of pure, typed collection transforms: <code>\@filter</code>, <code>\@map</code>, <code>\@sort</code>, <code>\@slice</code>, <code>\@find</code>, <code>\@some</code>, <code>\@every</code>, <code>\@distinct</code> and <code>\@reverse</code>.</p>
+<pre><code class="language-nift">\@for(post : \@slice(
+    \@sort(p : \@filter(p : posts, p.published), p.date desc),
+    0, 10
+)) {
+    &lt;h2&gt;\$[post.title]&lt;/h2&gt;
 }</code></pre>
-<p>That is why I now score Nift <strong>8/10</strong> for structured content/collections in the consolidated table. The earlier 9/10 captured the rendering/querying subset more narrowly; I lowered the broader category because it intentionally does not have a larger query language for grouping, joins, arbitrary transforms, taxonomy APIs or method chains such as <code>filter().map().sort()</code>. Hugo and Astro still offer richer built-in publication/collection machinery.</p>
-
-<h2>Why I would not chase 10/10 structured querying</h2>
-<p>Nift now has a very capable structured-rendering core: load JSON, validate it against a schema, traverse it, iterate arrays/objects, sort iterations, inspect loop metadata and conditionally emit output. I rate that highly. I would nevertheless <em>not</em> try to close the final point by adding a general collection/query pipeline.</p>
-<p>It is easy to imagine apparently harmless additions:</p>
-<pre><code class="language-nift">\@for(post : posts
-    where post.published
-    by post.date desc
-    limit 10) {
-    ...
-}</code></pre>
-<p>Then grouping starts to look reasonable:</p>
-<pre><code class="language-plaintext">\@for(group : posts groupby post.category) { ... }</code></pre>
-<p>Then joins:</p>
-<pre><code class="language-plaintext">\@for(order : orders
-    join customer : customers
-    on order.customerId == customer.id) { ... }</code></pre>
-<p>And soon a template system has acquired <code>select</code>, projections, <code>map</code>, <code>reduce</code>, <code>sum</code>, <code>average</code>, <code>distinct</code>, grouping, joins, flattening, computed fields and its own rules for missing values and type coercion. At that point Nift is maintaining something between SQL, LINQ and a functional collection API.</p>
-<p>I don't think that would improve Nift. The current boundary is unusually clean:</p>
-<pre><code class="language-plaintext">\@json     load + optionally schema-validate structured data
-\@for      iterate it, with optional stable ordering
-\@if       select presentation using pure expressions
-$[...]    read, derive and conditionally render values</code></pre>
-<p>When the transformation itself is the job, the wider ecosystem is better:</p>
-<pre><code class="language-plaintext">raw/API/database data
-        │
-        ▼
-TypeScript / Python / jq / SQL / specialist tool
-        │
-        ▼
-prepared + schema-validatable JSON
-        │
-        ▼
-       Nift
-        │
-        ▼
-static output</code></pre>
-<p>That is why a 9/10 here is not a feature deficit I want Nift to “fix.” The missing point represents an architectural boundary. If repeated real projects eventually demonstrate one tiny declarative iteration feature—perhaps a <code>limit</code> clause—it could be evaluated on its own merits. I would not pre-emptively build a query language merely to improve a comparison-table score.</p>
-
+<p>The important design detail is that these operations do not merely print text and then force Nift to parse it back. They produce immutable typed values internally. That means a filtered array can flow directly into sorting, slicing, joining or <code>\@for</code>; only when a result reaches generated output is it serialized as JSON.</p>
+<pre><code class="language-nift">&lt;script&gt;
+const featured = \@filter(post : posts, post.featured);
+const totals = \@map(product : products, product.price * product.quantity);
+&lt;/script&gt;</code></pre>
+<p>That JavaScript case changed my opinion substantially. These transforms are not Nift trying to replace JavaScript; they make Nift better glue for JavaScript and other text outputs. The predicate/key/mapping pieces reuse the same pure expression model as <code>\$[expression]</code> and <code>\@if(expression)</code>, so this adds capability without introducing another predicate language.</p>
+<h2>Why the collection operations do not contradict Nift's philosophy</h2>
+<p>I previously argued too broadly that acquiring a collection/query language would itself be bad. The real risk is not transforming arrays; it is allowing feature gravity to turn Nift into a second general-purpose programming environment. A small immutable vocabulary has a much cleaner boundary.</p>
+<pre><code class="language-plaintext">existing immutable values
+        ↓
+filter / map / sort / slice / find / tests / distinct / reverse
+        ↓
+new immutable typed values
+        ↓
+for / join / another pure transform / JSON output</code></pre>
+<p>Nift still has no assignment, collection mutation, stateful reducers, arbitrary callbacks, user-defined functions, grouping/join DSL, or general SQL/LINQ-style query runtime. I would still resist adding operations merely because Lodash or JavaScript has them. But I no longer think composition itself is something to avoid: <code>\@for(post : \@filter(...))</code> is straightforward, useful, and easier to explain than an artificial rule saying a filter may print JSON but cannot be consumed as an array.</p>
+<p>This also changes how I would describe competitors. Hugo and Astro offer different and in places broader publication/content ecosystems; that is useful when their integrated models are what a project wants, not automatically an advantage because there is more machinery. Nift's goal remains a small set of primitives that earn their place.</p>
 <h2>Schema/type safety: JSON Schema materially changes my assessment</h2>
 <p>Nift now supports an optional third <code>\@json</code> parameter:</p>
 <pre><code class="language-nift">\@json('data/products.json', products, 'schemas/products.schema.json')</code></pre>

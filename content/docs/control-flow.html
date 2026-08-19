@@ -270,7 +270,7 @@ No arbitrary code execution</code></pre>
 <p>If data needs substantial transformation, do that in the tool that owns the data, write JSON, then let Nift render the result.</p>
 
 <h2>Why there is no general query pipeline</h2>
-<p>Nift deliberately stops short of turning <code>\@for</code> into SQL, LINQ or a functional collection language. Sorting belongs naturally to iteration, and <code>\@if</code> already handles presentation-time filtering. Grouping, arbitrary projections, <code>map</code>/<code>reduce</code>, aggregation and transformation pipelines would add a second data-processing language to templates. The small <code>\@join</code> helper is deliberately limited to presentation of an already-prepared scalar array.</p>
+<p><code>\@for</code> remains focused on iteration and optional stable ordering. When you need an immutable transformed array first, Nift also provides composable collection operations such as <code>\@filter</code>, <code>\@map</code>, <code>\@sort</code> and <code>\@slice</code>. They use the same pure expression model and can feed directly into <code>\@for</code>. <a class="text-link" href="@pathto('docs/collections')">See collection operations →</a></p>
 <p>For substantial data transformation, use the tool that owns or prepares the data—TypeScript, Python, <code>jq</code>, a database query, an API/export step or another specialist tool—write the resulting JSON, then let Nift schema-check and render it. This keeps templates focused on <strong>data → output</strong> and keeps Nift's language small.</p>
 
 <h2>You may never need this page</h2>

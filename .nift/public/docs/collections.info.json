@@ -1,9 +1,9 @@
 {
-  "name": "docs/configuration",
-  "title": "Project configuration",
+  "name": "docs/collections",
+  "title": "Collection operations",
   "template": "templates/docs.html",
-  "content": "content/docs/configuration.html",
-  "output": "public/docs/configuration.html",
+  "content": "content/docs/collections.html",
+  "output": "public/docs/collections.html",
   "minify": true,
   "minify-version": 1,
   "pagination": false,
@@ -12,7 +12,7 @@
   "pagination-separator": "",
   "pagination-pages": 0,
   "dependencies": [
-    "content/docs/configuration.html",
+    "content/docs/collections.html",
     "templates/docs.html",
     "templates/partials/docs-sidebar.html",
     "templates/partials/footer.html",

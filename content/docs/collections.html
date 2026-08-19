@@ -1,0 +1,56 @@
+<h1>Collection operations</h1>
+<p class="docs-lead">Nift can transform immutable JSON arrays at build time with a small set of pure, composable collection operations. Operations keep typed values while Nift consumes them and serialize as JSON only when rendered into output.</p>
+<div class="docs-callout"><strong>One model, two destinations.</strong><p><code>\@sort(values)</code> can be rendered directly into JavaScript or JSON, or passed directly to <code>\@for</code>, <code>\@join</code>, or another collection operation. The intermediate result remains an array inside Nift.</p></div>
+<h2>At a glance</h2>
+<table><thead><tr><th>Operation</th><th>Result</th></tr></thead><tbody>
+<tr><td><code>\@filter(item : items, expression)</code></td><td>Array containing items whose expression is truthy.</td></tr>
+<tr><td><code>\@map(item : items, expression)</code></td><td>Array containing each expression result.</td></tr>
+<tr><td><code>\@sort(items)</code></td><td>Stable ascending copy of a scalar number/string array.</td></tr>
+<tr><td><code>\@sort(item : items, expression asc|desc)</code></td><td>Stable copy ordered by a numeric or string key.</td></tr>
+<tr><td><code>\@slice(items, pos, length)</code></td><td>Array slice using zero-based position and non-negative length.</td></tr>
+<tr><td><code>\@find(item : items, expression)</code></td><td>First matching item, or <code>null</code>.</td></tr>
+<tr><td><code>\@some(item : items, expression)</code></td><td><code>true</code> when any item matches.</td></tr>
+<tr><td><code>\@every(item : items, expression)</code></td><td><code>true</code> when every item matches; true for an empty array.</td></tr>
+<tr><td><code>\@distinct(items)</code></td><td>Array with later JSON-equal duplicates removed, preserving first occurrence order.</td></tr>
+<tr><td><code>\@reverse(items)</code></td><td>Reversed copy of the array.</td></tr>
+</tbody></table>
+<h2>Simple sorting</h2>
+<pre><code class="language-nift">\@sort(scores)
+\@sort(tags)</code></pre>
+<p>The one-argument form accepts arrays containing only numbers or only strings and sorts ascending. It does not mutate the original binding.</p>
+<h2>Binding forms use normal expressions</h2>
+<p>The predicate, mapping expression, and sort key use the same pure expression rules documented for <code>\$[expression]</code> and <code>\@if(expression)</code>.</p>
+<pre><code class="language-nift">\@filter(post : posts, post.published && post.score >= 80)
+\@map(product : products, product.price * product.quantity)
+\@sort(post : posts, post.date desc)
+\@find(user : users, user.id == target_id)
+\@some(post : posts, post.featured)
+\@every(product : products, product.price > 0)</code></pre>
+<p>The binding exists only while that operation evaluates its items. Collection operations are pure: source arrays and existing bindings are not mutated.</p>
+<h2>Composition</h2>
+<p>Collection results remain typed while another Nift construct consumes them, so operations can be nested naturally.</p>
+<pre><code class="language-nift">\@for(post : \@sort(p : \@filter(p : posts, p.published), p.date desc)) {
+    &lt;h2&gt;\$[post.title]&lt;/h2&gt;
+}</code></pre>
+<p>Or map a filtered collection and hand the resulting string array to <code>\@join</code>:</p>
+<pre><code class="language-nift">\@join(
+    \@map(post : \@filter(post : posts, post.published), post.title),
+    ', '
+)</code></pre>
+<p><code>\@slice</code> makes limiting a transformed collection explicit without adding separate take/skip operations:</p>
+<pre><code class="language-nift">\@for(post : \@slice(\@sort(p : posts, p.date desc), 0, 10)) {
+    ...
+}</code></pre>
+<h2>Rendering collection values</h2>
+<p>When a collection operation reaches output instead of another Nift consumer, Nift serializes the typed result as valid JSON. This makes the operations useful in generated JavaScript as well as HTML templates.</p>
+<pre><code class="language-nift">&lt;script&gt;
+const published = \@filter(post : posts, post.published);
+const titles = \@map(post : posts, post.title);
+const sortedScores = \@sort(scores);
+&lt;/script&gt;</code></pre>
+<p>The generated values are JSON literals, so arrays, objects, strings, numbers, booleans and <code>null</code> retain their data types.</p>
+<h2>Finding and testing</h2>
+<p><code>\@find</code> returns the original first matching value rather than a copy transformed by the predicate. No match renders <code>null</code>. <code>\@some</code> short-circuits on the first truthy match; <code>\@every</code> short-circuits on the first falsey match.</p>
+<h2>Deliberate boundary</h2>
+<p>This is a small immutable transformation vocabulary, not a general collection-programming runtime. Nift still has no assignment, mutation, callbacks with side effects, accumulators, user-defined functions, or general query language. The useful boundary is pure values flowing through pure transforms; runtime programming remains the job of JavaScript, a backend, or another tool.</p>
+<p><a class="text-link" href="@pathto('docs/expressions')">Expressions reference →</a> &nbsp; <a class="text-link" href="@pathto('docs/control-flow')">Loops &amp; conditions →</a></p>

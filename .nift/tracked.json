@@ -101,6 +101,11 @@
       "template": "templates/docs.html"
     },
     {
+      "name": "docs/collections",
+      "title": "Collection operations",
+      "template": "templates/docs.html"
+    },
+    {
       "name": "docs/json",
       "title": "JSON data",
       "template": "templates/docs.html"
