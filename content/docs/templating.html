@@ -120,7 +120,13 @@
 <p>The eligible textual positions are <code>\@input</code>, every <code>\@dep</code> path, <code>\@pathto</code>/<code>\@pathtofile</code>, <code>\@getenv</code>, <code>\@ent</code>, and the <code>\@json</code> source and optional schema paths. The <code>\@json</code> binding name and control-flow grammar stay static. Strings, numbers, booleans and <code>null</code> become text; arrays and objects must be narrowed to a scalar member or element.</p>
 <p>Use <code>\$</code> inside a quoted parameter when the dollar must remain literal rather than begin interpolation.</p>
 <h2>Loops and conditions</h2>
-<p>When structured data needs repetition or selection, use <code>\@for(item : array){...}</code>, <code>\@for((key, val) : object){...}</code> and <code>\@if(...){...}</code> with ordinary <code>else if</code>/<code>else</code> branches. Conditions support <code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code> and <code>&gt;=</code>.</p>
+<p>Structured data can repeat or select output with a small control-flow surface:</p>
+<ul>
+<li><code>\@for(item : array){...}</code> iterates arrays.</li>
+<li><code>\@for((key, val) : object){...}</code> iterates object members.</li>
+<li><code>\@if(...){...}</code> selects output, with ordinary <code>else if</code>/<code>else</code> branches.</li>
+</ul>
+<p>Conditions support <code>!</code>, <code>&amp;&amp;</code>, <code>||</code>, parentheses and the comparison operators <code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code> and <code>&gt;=</code>.</p>
 <p><a class="text-link" href="@pathto('docs/control-flow')">Control-flow reference →</a></p>
 
 <h2><code>\@getenv(...)</code> — read one environment variable</h2>

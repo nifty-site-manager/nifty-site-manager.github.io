@@ -361,3 +361,11 @@ entry point.
 - Battle Tested now describes the exact corpus, evidence model, limited normalization, two separately classified platform contracts and the Windows stale read-only output/metadata defect discovered and fixed by the campaign.
 - Keep the claim scoped to the tested runners/corpus. Do not replace it with “Nift behaves identically everywhere.”
 - The deliberate campaign is complete through Checkpoint 10. Do not invent Checkpoint 11 by default; prioritize distribution, dogfooding, field exposure and findings from real use.
+
+## Post-Checkpoint-12 site reconciliation (2026-08-19)
+
+- Installation snippets now keep verification commands separate so each copy button copies only the requested install command.
+- The templating overview now presents the two `@for` forms and `@if` as a scannable list and reflects the complete `!` / `&&` / `||` / parentheses condition grammar.
+- The control-flow reference documents the new `$[condition ? true-branch]` shorthand, with the same lazy selected-branch semantics as the full ternary form.
+- Memory & Resource Safety was reconciled beyond the old Checkpoint-4 visual stopping point: it now shows the completed Checkpoint-6 integration gate and the broader completed Checkpoints 7–10 hardening progression.
+- A site-wide stale-content pass refreshed v4.0.3 language, pagination, memory-safety and installation content and rebuilt all affected pages. Local generated href/src validation reported zero missing targets.
