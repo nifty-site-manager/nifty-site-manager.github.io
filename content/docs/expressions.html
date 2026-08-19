@@ -1,0 +1,103 @@
+<article class="docs-article">
+<p class="docs-kicker">Core reference · Pure value evaluation</p>
+<h1>Expressions.</h1>
+<p class="docs-lead">Nift uses one pure expression model in both <code>\$[expression]</code> and <code>\@if(expression)</code>. The operators, precedence, value lookup, type rules and short-circuit behaviour are the same; only the surrounding context decides what happens to the result.</p>
+
+<div class="docs-callout"><strong>One expression language, two common contexts.</strong><p><code>\$[...]</code> evaluates an expression and renders its scalar result. <code>\@if(...)</code> evaluates the same kind of expression and applies Nift truthiness to decide whether its branch renders. You do not need to learn a separate condition grammar.</p></div>
+
+<h2>The same expression in <code>\$[...]</code> and <code>\@if(...)</code></h2>
+<pre><code class="language-nift">\$[price * quantity]
+
+\@if(price * quantity &gt;= 100){
+    &lt;p&gt;Large order&lt;/p&gt;
+}</code></pre>
+<p>The first expression renders a derived numeric value. The second uses the same arithmetic and comparison rules to produce a boolean condition.</p>
+<pre><code class="language-nift">\$[post.published &amp;&amp; !post.draft]
+
+\@if(post.published &amp;&amp; !post.draft){
+    ...
+}</code></pre>
+<p>In <code>\$[...]</code>, that logical expression renders <code>true</code> or <code>false</code>. In <code>\@if(...)</code>, the resulting value controls the branch.</p>
+
+<h2>Values and lookups</h2>
+<p>A plain value lookup is the simplest expression:</p>
+<pre><code class="language-nift">\$[title]
+\$[post.author.name]
+\$[posts[2].title]
+\$[loop.index]
+\$[paginate.current]</code></pre>
+<p>Expression values can come from built-in page/build metadata, JSON bindings, project contracts, loop bindings and pagination metadata. Existing namespace and scope rules still apply; expressions do not introduce assignment, mutable variables or new bindings.</p>
+
+<h2>Arithmetic</h2>
+<p>Numeric expressions support binary <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code> and <code>%</code>, plus unary <code>+</code>/<code>-</code> and parentheses.</p>
+<pre><code class="language-nift">\$[2 + 3 * 4]          // 14
+\$[(2 + 3) * 4]        // 20
+\$[-2 + 5]             // 3
+\$[10 / 4]             // 2.5
+\$[10 % 3]             // 1
+\$[loop.index + 1]
+\$[price * quantity]</code></pre>
+<div class="docs-callout"><strong>Arithmetic is numeric only.</strong><p><code>+</code> does not concatenate strings and Nift does not coerce strings, booleans, <code>null</code>, arrays or objects into numbers. Use ordinary template composition for text, for example <code>Hello \$[name]</code>.</p></div>
+<p>Division or modulo by zero is a build error. Modulo requires integer-valued operands; fractional modulo is rejected. Non-finite arithmetic results are rejected rather than emitted into generated output.</p>
+
+<h2>Comparisons</h2>
+<p>Expressions support <code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code> and <code>&gt;=</code>.</p>
+<pre><code class="language-nift">\$[score &gt;= 50]
+\@if(item.priority &gt;= site.minimum_priority){ ... }
+\@if(item.type == "article"){ ... }</code></pre>
+<p>Numbers order numerically and strings lexicographically. Ordering requires two numbers or two strings; Nift does not coerce between types. Booleans, <code>null</code>, arrays and objects are not orderable.</p>
+
+<h2>Logic and short-circuiting</h2>
+<p>Use <code>!</code>, <code>&amp;&amp;</code> and <code>||</code> to compose conditions. Logical operators short-circuit: an operand that cannot affect the result is not resolved.</p>
+<pre><code class="language-nift">\@if(post.published &amp;&amp; !post.draft){ ... }
+\@if((post.featured || post.pinned) &amp;&amp; post.published){ ... }
+
+\$[post.published &amp;&amp; !post.draft]</code></pre>
+<p>This matters for correctness as well as convenience: a skipped logical operand is not needlessly resolved.</p>
+
+<h2>Precedence and parentheses</h2>
+<p>Nift follows conventional precedence. From tightest to loosest:</p>
+<div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>Level</th><th>Operators</th></tr></thead><tbody>
+<tr><td>Unary</td><td><code>!</code>, unary <code>+</code>, unary <code>-</code></td></tr>
+<tr><td>Multiplicative</td><td><code>*</code>, <code>/</code>, <code>%</code></td></tr>
+<tr><td>Additive</td><td><code>+</code>, <code>-</code></td></tr>
+<tr><td>Comparison</td><td><code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, <code>&gt;=</code></td></tr>
+<tr><td>Logical AND</td><td><code>&amp;&amp;</code></td></tr>
+<tr><td>Logical OR</td><td><code>||</code></td></tr>
+<tr><td>Conditional</td><td><code>?:</code></td></tr>
+</tbody></table></div>
+<pre><code class="language-nift">\$[2 + 3 * 4]       // 14
+\$[(2 + 3) * 4]     // 20
+\@if((a || b) &amp;&amp; c){ ... }</code></pre>
+<p>Use parentheses whenever they make the intended grouping clearer; there is no penalty for being explicit.</p>
+
+<h2>Truthiness in <code>\@if(expression)</code></h2>
+<p><code>\@if</code> does not require the expression to be a comparison. It evaluates the expression and applies Nift's documented truthiness rules, so direct boolean/value conditions remain valid alongside arithmetic and comparisons.</p>
+<pre><code class="language-nift">\@if(post.published){ ... }
+\@if(!site.disabled){ ... }
+\@if(loop.index % 2 == 0){ ... }</code></pre>
+<p>See <a class="text-link" href="@pathto('docs/control-flow')">Loops &amp; conditions →</a> for the complete truthiness table and branch syntax.</p>
+
+<h2>Lazy ternary rendering</h2>
+<p><code>\$[condition ? true-branch : false-branch]</code> uses the same expression evaluator for its condition. The shorthand <code>\$[condition ? true-branch]</code> is equivalent to an empty false branch.</p>
+<pre><code class="language-nift">\$[score &gt;= 50 ? 'pass' : 'fail']
+\$[loop.index % 2 == 0 ? ' even' : ' odd']
+\$[post.featured ? \@input('partials/featured-badge.html')]</code></pre>
+<p>Ternary branches are deliberately lazy and are rendered as ordinary Nift source. Only the selected branch is parsed; the unselected branch does not resolve values, execute directives, register dependencies/requirements or fail because of something that only exists in that branch.</p>
+
+<h2>Pure means no mutation</h2>
+<p>Expressions derive values from data Nift already knows. They do not turn the template language into a scripting runtime.</p>
+<div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>Supported</th><th>Not part of expressions</th></tr></thead><tbody>
+<tr><td>Value lookup, arithmetic, comparisons, logic, parentheses, ternary selection</td><td>Assignment, mutable variables, <code>++</code>/<code>--</code>, user-defined functions, arbitrary system execution</td></tr>
+</tbody></table></div>
+
+<h2>Expressions inside other Nift features</h2>
+<p>Whenever an existing feature consumes a <code>\$[...]</code> scalar, that scalar can be derived by an expression. Pagination also has explicit relative page syntax:</p>
+<pre><code class="language-nift">\@pathtopage(\$[paginate.previous])
+\@pathtopage(+\$[offset])
+\@pathtopage(-\$[offset])
+\@pathtopage(+\$[offset * 2])</code></pre>
+<p><code>\@pathtopage(n)</code> ultimately requires an <strong>integer page number or integer offset</strong>; expression support does not make fractional page numbers valid.</p>
+
+<div class="docs-next"><span>Related</span><a href="@pathto('docs/control-flow')">Loops &amp; conditions →</a></div>
+</article>

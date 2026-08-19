@@ -1,9 +1,9 @@
 {
-  "name": "docs/templating",
-  "title": "Templating essentials",
+  "name": "docs/expressions",
+  "title": "Expressions",
   "template": "templates/docs.html",
-  "content": "content/docs/templating.html",
-  "output": "public/docs/templating.html",
+  "content": "content/docs/expressions.html",
+  "output": "public/docs/expressions.html",
   "minify": true,
   "minify-version": 1,
   "pagination": false,
@@ -12,7 +12,7 @@
   "pagination-separator": "",
   "pagination-pages": 0,
   "dependencies": [
-    "content/docs/templating.html",
+    "content/docs/expressions.html",
     "templates/docs.html",
     "templates/partials/docs-sidebar.html",
     "templates/partials/footer.html",

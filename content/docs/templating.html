@@ -90,6 +90,7 @@
 \$[score &gt;= 50]
 \$[post.featured ? ' featured']</code></pre>
 <p>Expressions support numeric <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code> and integer-valued <code>%</code>, unary signs, parentheses, comparisons, <code>!</code>, short-circuit <code>&amp;&amp;</code>/<code>||</code>, and lazy ternary rendering. Arithmetic is numeric only; <code>+</code> is not string concatenation. Ternary branches are different from arithmetic operands: only the selected branch is parsed as ordinary Nift source, so a selected branch may contain directives such as <code>\@input(...)</code>.</p>
+<p><a class="text-link" href="@pathto('docs/expressions')">Expressions reference: operators, precedence, types, short-circuiting and ternaries →</a></p>
 <p>Values can come from built-in page/build metadata, JSON/project-contract data, loop bindings and pagination metadata. The current parser recognises these 13 built-in page/build metadata names:</p>
 <pre><code class="language-plaintext">\$[title]
 \$[name]

@@ -96,6 +96,11 @@
       "template": "templates/docs.html"
     },
     {
+      "name": "docs/expressions",
+      "title": "Expressions",
+      "template": "templates/docs.html"
+    },
+    {
       "name": "docs/json",
       "title": "JSON data",
       "template": "templates/docs.html"
