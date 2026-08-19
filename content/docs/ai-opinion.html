@@ -218,8 +218,8 @@ database / auth / services</code></pre>
 <p>I don't think that would improve Nift. The current boundary is unusually clean:</p>
 <pre><code class="language-plaintext">\@json     load + optionally schema-validate structured data
 \@for      iterate it, with optional stable ordering
-\@if       select which presentation is emitted
-$[...]    read values</code></pre>
+\@if       select presentation using pure expressions
+$[...]    read, derive and conditionally render values</code></pre>
 <p>When the transformation itself is the job, the wider ecosystem is better:</p>
 <pre><code class="language-plaintext">raw/API/database data
         │
@@ -244,20 +244,32 @@ static output</code></pre>
 <p>I particularly like the architectural choice because the schema remains useful outside Nift. CI, editors, backend services or other JSON Schema tools can validate the same file. Nift participates in an existing standard rather than creating another island of framework-specific types.</p>
 
 <h2>How much React does Nift now make unnecessary?</h2>
-<p>More than I originally expected. A surprisingly large amount of React used on content-driven sites is not really about runtime state at all. It is used because JSX makes it convenient to map arrays, branch on values and compose repeated markup. Nift can now do those jobs before the page reaches the browser.</p>
+<p><strong>More than I originally expected, and the addition of proper expressions moves that boundary further again.</strong> A large amount of React on ordinary websites is not really about browser-side state or reconciliation. It is being used because JSX makes it convenient to iterate data, branch on values, derive small presentation values and compose repeated markup. Nift can now do those jobs directly at build time while leaving the result as ordinary HTML.</p>
+<p>The expression work matters here because it removes a class of tiny inconveniences that otherwise pushes templating toward a general-purpose language or framework. Nift can now keep calculations and presentation decisions where they are used:</p>
+<pre><code class="language-nift">\@if(loop.index % 2 == 0 &amp;&amp; post.published){
+    &lt;article class="card\$[post.featured ? ' featured']"&gt;
+        &lt;h2&gt;\$[post.title]&lt;/h2&gt;
+        &lt;p&gt;Item \$[loop.index + 1]&lt;/p&gt;
+    &lt;/article&gt;
+}</code></pre>
+<p>That still reads to me as HTML with explicit build-time instructions. I do not have to mentally turn the document into a JavaScript component tree merely to map an array, calculate a small value or select a CSS class.</p>
 <div class="reference-table-wrap"><table class="reference-table opinion-table"><thead><tr><th>Frontend job</th><th>Nift at build time?</th><th>React needed?</th></tr></thead><tbody>
-<tr><td>Render cards from JSON</td><td><strong>Yes</strong> — <code>\@json</code> + <code>\@for</code></td><td>No, if the data is known at build time.</td></tr>
-<tr><td>Conditional badges/sections</td><td><strong>Yes</strong> — <code>\@if</code> and comparisons</td><td>No, if the condition is build-time data.</td></tr>
-<tr><td>Nested navigation / documentation trees</td><td><strong>Yes</strong> — nested loops/conditions</td><td>No.</td></tr>
-<tr><td>Pricing/feature/comparison tables</td><td><strong>Yes</strong></td><td>No.</td></tr>
-<tr><td>Static catalogue/category pages</td><td><strong>Yes</strong> — including build-time sorting and schema validation</td><td>No, for static rendering.</td></tr>
-<tr><td>Tabs, modals, disclosure controls</td><td>Generate the markup</td><td>Often a little vanilla JS is enough.</td></tr>
-<tr><td>Live filtering of already-loaded data</td><td>Generate initial DOM/data</td><td>Runtime JS helps; React is optional.</td></tr>
-<tr><td>Optimistic mutations / complex client state</td><td>No</td><td>React/Vue/Svelte can be an excellent fit.</td></tr>
-<tr><td>Realtime application UI</td><td>Generate shell/static regions</td><td>A runtime UI layer is usually appropriate.</td></tr>
+<tr><td>Render cards/tables/navigation from JSON</td><td><strong>Yes</strong> — <code>\@json</code>, <code>\@for</code>, sorting and expressions</td><td>No, when the data is known at build time.</td></tr>
+<tr><td>Conditional classes, badges and sections</td><td><strong>Yes</strong> — <code>\@if(expression)</code> and lazy ternaries</td><td>No, for build-time conditions.</td></tr>
+<tr><td>Derived presentation values</td><td><strong>Yes</strong> — arithmetic and pure <code>\$[expression]</code></td><td>No.</td></tr>
+<tr><td>Pagination / archive indexes</td><td><strong>Yes</strong> — native multi-page pagination</td><td>No.</td></tr>
+<tr><td>Nested documentation/catalogue structures</td><td><strong>Yes</strong> — loops, conditions, schema validation and checked paths</td><td>No.</td></tr>
+<tr><td>Tabs, modals, menus and disclosure controls</td><td>Generate the markup and initial state</td><td>Often a little vanilla JavaScript is enough.</td></tr>
+<tr><td>Forms calling a separate backend/API</td><td>Generate the complete document/form shell</td><td>Usually not; ordinary browser APIs may be enough.</td></tr>
+<tr><td>Live filtering of already-loaded data</td><td>Generate initial DOM/data</td><td>Runtime JavaScript helps; React is optional.</td></tr>
+<tr><td>Optimistic mutations / complex shared client state</td><td>No</td><td>React/Vue/Svelte can be an excellent fit.</td></tr>
+<tr><td>Highly stateful realtime application UI</td><td>Generate shell/static regions</td><td>A runtime UI layer is usually appropriate.</td></tr>
 </tbody></table></div>
-<p>This is an important philosophical boundary. Nift is not becoming a React clone. It is making React unnecessary for work that never needed a browser-side component runtime in the first place. If a collection and all of its conditions are known during the build, generating the final DOM once is usually simpler than shipping JavaScript so the browser can rediscover that DOM on every visit.</p>
-<p>That makes <strong>Nift + ordinary JavaScript</strong> a much more capable frontend stack than the phrase “static-site generator” suggests. Complicated static frontends can have deeply nested data-driven markup, conditional layouts, navigation systems and reusable partials while shipping little or no framework JavaScript.</p>
+<p>For me, the practical question is no longer “is this a React project?” but <strong>“what actually needs a persistent client-side component runtime?”</strong> If the answer is mostly layout, navigation, build-time data, conditions, iteration and small derived values, current Nift can own that work directly. If the remaining interactivity is a menu, tabs, a modal, form validation, a fetch request or a sortable table, vanilla JavaScript is often the simpler runtime layer.</p>
+<p>This is also why I find the Nift model easier to reason about for many projects. React's individual ideas are learnable, but ordinary rendering can pull in a larger mental model: components, props, state, hooks/effects, reconciliation and—depending on the surrounding framework—hydration and client/server boundaries. Those capabilities are valuable when the application needs them. I would rather not pay that conceptual cost merely because one part of a page needed conditional rendering.</p>
+<blockquote class="docs-quote">Use HTML until HTML is not enough. Add Nift where generation is needed. Add JavaScript where interaction is needed. Add a framework only where the framework earns its complexity.</blockquote>
+<p>This does <em>not</em> make React obsolete or turn Nift into a React clone. It makes React unnecessary for more work that never required a browser-side component runtime in the first place. For many documentation sites, marketing sites, content-heavy applications, dashboards, admin/CRUD interfaces and separate-backend frontends, I would now seriously consider <strong>Nift + ordinary JavaScript + the application's backend</strong> before introducing React across the whole frontend.</p>
+<p>And when one region genuinely benefits from React, that does not require surrendering the rest of the document to it. Nift can still own the stable document/build layer and mount a React, Vue or Svelte island exactly where the richer client state earns its keep.</p>
 
 <h2>Framework islands: Nift does not care where you draw the line</h2>
 <p>I would lower Nift's score for <strong>integrated</strong> framework-islands DX. Astro deserves the 10 there because it has framework integrations and hydration directives designed specifically around islands. With Nift, you wire the frontend tool yourself. That is less integrated, full stop.</p>
