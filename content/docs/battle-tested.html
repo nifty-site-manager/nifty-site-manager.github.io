@@ -291,7 +291,9 @@ esbuild repository/release history: https://github.com/evanw/esbuild
 <h2><code>\@if</code> coverage</h2>
 <p>Conditions are tested as a deliberately small data-oriented expression system rather than a general scripting language:</p>
 <ul>
-<li>boolean truthiness and <code>!</code> negation;</li>
+<li>boolean truthiness, <code>!</code> negation, short-circuit <code>&amp;&amp;</code>/<code>||</code> and parentheses;</li>
+<li>pure numeric <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code> and integer-valued <code>%</code>, including precedence, unary signs and controlled arithmetic errors;</li>
+<li>rendered numeric/comparison/logical <code>$[...]</code> results and lazy full/shorthand ternary branches;</li>
 <li>string, number, boolean and null equality/inequality;</li>
 <li>numeric and lexicographic string ordering with <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code> and <code>&gt;=</code>, including strict rejection of mixed/non-orderable types;</li>
 <li>JSON-path-to-JSON-path comparisons;</li>

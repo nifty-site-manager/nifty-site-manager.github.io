@@ -3,7 +3,7 @@
 <h1>Loops &amp; conditions.</h1>
 <p class="docs-lead">Nift has deliberately constrained control flow for rendering structured JSON data: <code>\@for(...){...}</code> for arrays/objects and <code>\@if(...){...}</code> with ordinary <code>else if</code> / <code>else</code> branches.</p>
 
-<div class="docs-callout"><strong>This is data-oriented control flow, not general scripting.</strong><p>There are no assignments, mutable variables, arithmetic language, user functions or arbitrary expressions. The purpose is to select and repeat structured data at build time.</p></div>
+<div class="docs-callout"><strong>This is data-oriented control flow, not general scripting.</strong><p>Nift supports pure value expressions for arithmetic, comparisons, logic and lazy ternaries, but deliberately has no assignment, mutable variables, user-defined functions or arbitrary code execution. The purpose is still to select, derive and repeat structured data at build time rather than become a general scripting runtime.</p></div>
 
 <h2>Loop over an array</h2>
 <pre><code class="language-json">{
@@ -261,9 +261,9 @@ else{
 
 <h2>What conditions intentionally do not include</h2>
 <pre><code class="language-plaintext">No assignment
-No arithmetic expression language
 No mutable variables
 No user-defined functions
+No implicit string/number coercion
 No map/filter/reduce methods
 No arbitrary code execution</code></pre>
 
