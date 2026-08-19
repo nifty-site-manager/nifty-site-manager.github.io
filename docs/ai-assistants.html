@@ -29,8 +29,9 @@ Core Nift template syntax:
 - @getenv('NAME') inserts the value of an environment variable. If NAME is not set, it
   produces an empty string. Use it when build-time environment configuration belongs in
   generated output; do not put secrets into client-visible HTML or JavaScript.
-- $[...] accesses Nift page/build metadata. Use only metadata names documented by this
-  project's v4 documentation.
+- $[...] resolves values and pure expressions. It can read documented page/build metadata,
+  JSON/project-contract values and scoped loop/pagination values, and supports numeric arithmetic,
+  comparisons, boolean composition and lazy ternaries. It does not provide assignment or mutation.
 - @dep(...) is only for an external file that affects an output but is not already made a
   dependency through @content, @input or another direct Nift relationship.
 
