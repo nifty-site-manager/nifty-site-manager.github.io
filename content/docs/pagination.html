@@ -67,7 +67,12 @@
 </tbody></table></div>
 
 <h2><code>\@pathtopage(n)</code></h2>
-<p><code>\@pathtopage</code> is available while rendering pagination and resolves a checked relative path to a generated page in the same pagination set. The page number must be between 1 and <code>\$[paginate.total]</code>.</p>
+<p><code>\@pathtopage</code> is available while rendering pagination and resolves a checked relative path to a generated page in the same pagination set. An unsigned value is an absolute page number; an explicit <code>+</code> or <code>-</code> is an offset from the current page. The resolved page must remain between 1 and <code>\$[paginate.total]</code>.</p>
+<pre><code class="language-nift">\@pathtopage(3)
+\@pathtopage(\$[paginate.previous])
+\@pathtopage(+1)
+\@pathtopage(-1)
+\@pathtopage(+\$[offset])</code></pre>
 
 <h2>Output naming</h2>
 <pre><code class="language-plaintext">tracked name: blog
