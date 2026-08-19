@@ -141,7 +141,7 @@
 <p>Logical operators short-circuit. An operand that is not needed to determine the result is not resolved.</p>
 
 <h3>Pure numeric expressions</h3>
-<p><code>\$[...]</code> can evaluate pure numeric expressions using <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code> and integer-valued <code>%</code>, with unary signs, parentheses and conventional precedence. The same arithmetic is available inside conditions.</p>
+<p><code>\$[...]</code> can evaluate pure numeric expressions using <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code> and integer-valued <code>%</code>, with unary signs, parentheses and conventional precedence. The same expression evaluator also supports comparisons, <code>!</code> and short-circuit <code>&amp;&amp;</code>/<code>||</code>, so expressions can render derived numbers or booleans and are shared with conditions.</p>
 <pre><code class="language-nift">\$[loop.index + 1]
 \$[(price * quantity) / 100]
 
