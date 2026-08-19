@@ -133,6 +133,13 @@
     &lt;a href="\$[item.url]"&gt;\$[item.title]&lt;/a&gt;
 }</code></pre>
 
+<h3>Logical composition</h3>
+<p>Conditions compose with short-circuit <code>&amp;&amp;</code> and <code>||</code>, existing <code>!</code> negation, and parentheses. Ordinary precedence applies: negation, comparisons, <code>&amp;&amp;</code>, then <code>||</code>.</p>
+<pre><code class="language-nift">\@if(post.published &amp;&amp; !post.draft){ ... }
+
+\@if((post.featured || post.pinned) &amp;&amp; post.published){ ... }</code></pre>
+<p>Logical operators short-circuit. An operand that is not needed to determine the result is not resolved.</p>
+
 <h3>Scalar comparisons</h3>
 <p>Conditions support equality with <code>==</code>/<code>!=</code> and ordering with <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code> and <code>&gt;=</code>.</p>
 <pre><code class="language-html">\@if(item.type == "article"){
@@ -169,6 +176,16 @@
 }</code></pre>
 
 <div class="docs-callout"><strong>Ordering is strict and predictable.</strong><p>Numbers compare numerically. Strings compare lexicographically. Both operands of <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code> or <code>&gt;=</code> must be numbers or both must be strings; Nift does not coerce between JSON types. Booleans, <code>null</code>, arrays and objects are not orderable.</p></div>
+
+
+<h2>Lazy ternary rendering</h2>
+<p>Use <code>\$[condition ? true-branch : false-branch]</code> when a small inline choice is clearer than a block <code>\@if</code>. The condition uses exactly the same evaluator as <code>\@if</code>, and only the selected branch is parsed as ordinary Nift source.</p>
+<pre><code class="language-html">&lt;span class="status \$[post.featured ? 'featured' : 'standard']"&gt;
+    \$[post.title]
+&lt;/span&gt;
+
+\$[post.featured ? \@input('partials/featured-badge.html') : '']</code></pre>
+<p>The unselected branch is inert: it does not resolve values, parse directives, register dependencies or requirements, or fail because it references something that would only matter in that branch.</p>
 
 <h2><code>else if</code> and <code>else</code></h2>
 <p>Branches use ordinary text syntax—there is no <code>\@else</code> keyword:</p>
@@ -236,7 +253,6 @@ else{
 <h2>What conditions intentionally do not include</h2>
 <pre><code class="language-plaintext">No assignment
 No arithmetic expression language
-No && / || expression trees
 No mutable variables
 No user-defined functions
 No map/filter/reduce methods
@@ -245,7 +261,7 @@ No arbitrary code execution</code></pre>
 <p>If data needs substantial transformation, do that in the tool that owns the data, write JSON, then let Nift render the result.</p>
 
 <h2>Why there is no general query pipeline</h2>
-<p>Nift deliberately stops short of turning <code>\@for</code> into SQL, LINQ or a functional collection language. Sorting belongs naturally to iteration, and <code>\@if</code> already handles presentation-time filtering. Joins, grouping, arbitrary projections, <code>map</code>/<code>reduce</code>, aggregation and transformation pipelines would add a second data-processing language to templates.</p>
+<p>Nift deliberately stops short of turning <code>\@for</code> into SQL, LINQ or a functional collection language. Sorting belongs naturally to iteration, and <code>\@if</code> already handles presentation-time filtering. Grouping, arbitrary projections, <code>map</code>/<code>reduce</code>, aggregation and transformation pipelines would add a second data-processing language to templates. The small <code>\@join</code> helper is deliberately limited to presentation of an already-prepared scalar array.</p>
 <p>For substantial data transformation, use the tool that owns or prepares the data—TypeScript, Python, <code>jq</code>, a database query, an API/export step or another specialist tool—write the resulting JSON, then let Nift schema-check and render it. This keeps templates focused on <strong>data → output</strong> and keeps Nift's language small.</p>
 
 <h2>You may never need this page</h2>

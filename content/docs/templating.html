@@ -6,7 +6,7 @@
 <div class="docs-callout"><strong>Start with three primitives.</strong><p><code>\@content</code>, <code>\@input</code> and <code>\@pathto</code> are enough for a surprisingly large class of sites. Learn <a class="text-link" href="@pathto('docs/three-primitives')">that core first →</a>, then add metadata, JSON or control flow only when the project actually needs them.</p></div>
 
 <h2><code>\@content</code> — place tracked content</h2>
-<p><code>\@content</code> accepts <strong>zero parameters</strong>. Internally the parser processes the tracked content through the same input mechanism, so the content becomes part of the dependency graph.</p>
+<p><code>\@content</code> accepts <strong>zero parameters</strong>. For a tracked item with a template, exactly one <code>\@content</code> must execute across the rendered template/<code>\@input</code> graph—even when the tracked content is empty. Zero or multiple executed insertions are build errors. If a tracked item does not need a content insertion point, omit its template and let the content file be the top-level Nift source.</p><p>Internally the parser processes tracked content through the same input mechanism, so the content becomes part of the dependency graph. An <code>\@content</code> reached through a nested <code>\@input</code> counts; one hidden in a Nift comment or skipped branch does not execute and therefore does not count.</p>
 <pre><code class="language-html">&lt;main&gt;
   \@content
 &lt;/main&gt;</code></pre>
@@ -30,6 +30,18 @@
   \@input('navigation.html')
 &lt;/header&gt;</code></pre>
 <p>Because Nift can also resolve relative to the file currently being processed, nested partial structures do not have to repeat project-root paths everywhere.</p>
+
+
+<h2>Small presentation helpers</h2>
+<h3><code>\@join(array, separator)</code></h3>
+<p><code>\@join</code> renders a JSON array of scalar values with a textual separator. It is intentionally a presentation helper rather than a map/filter/reduce pipeline.</p>
+<pre><code class="language-nift">\@join(\$[post.tags], ', ')</code></pre>
+<p>Empty arrays render an empty string. Objects/arrays nested as items are rejected rather than implicitly flattened.</p>
+
+<h3><code>\@substr(value, pos, length)</code></h3>
+<p><code>\@substr</code> selects a zero-based, length-based substring while respecting UTF-8 code-point boundaries:</p>
+<pre><code class="language-nift">\@substr(\$[post.description], 0, 120)</code></pre>
+<p>A position beyond the string renders an empty string, a length beyond the remaining text stops at the end, and negative positions/lengths are rejected.</p>
 
 <h2><code>\@pathto(...)</code> — checked paths from the current output</h2>
 <p><code>\@pathto</code> accepts <strong>exactly one value</strong>. If the value matches a tracked name, Nift resolves the target's output. Otherwise it treats the value as a concrete path and requires that path to exist.</p>

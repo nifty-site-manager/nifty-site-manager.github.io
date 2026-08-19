@@ -13,8 +13,12 @@ copied into or maintained beneath the nested generated `public/` repository.
 - The outer repository records `public` as a Git-linked entry.
 
 Edit source on `stage`; generate `public`; never hand-edit generated HTML as the
-canonical fix. Building locally is normal validation. Committing, pushing,
+canonical fix. For publication checkpoints, commit the rebuilt/generated `public/`
+checkout on `main` **before** committing the corresponding authoritative source
+changes on `stage`; verify both trees are clean afterwards. Building locally is normal validation. Committing, pushing,
 publishing, or deploying either branch requires explicit approval.
+
+The repository-root `install` file is the canonical source for the extensionless installer served at `https://nift.dev/install`. Nift cannot directly derive an extensionless tracked output under the current extension contract, so publication copies this source file byte-for-byte to `public/install` after the candidate site build and validates shell syntax plus byte identity. Do not hand-edit the generated `public/install` copy.
 
 The canonical website stylesheet is `content/assets/css/style.css`. It is tracked
 as the `assets/css/style` Nift output through the content-only
@@ -161,7 +165,7 @@ benchmark evidence, testing claims, AI guidance, or downloads, reconcile this
 source before considering the product checkpoint complete. Internal refactors
 with no public effect normally require only a compatibility self-build.
 
-Current project status is **hardening plateau reached** after Nift Checkpoints 0–10. The bounded 4.0.2 initializer/platform-target feature is implemented and its Linux/macOS/Windows Actions contract is green. Current living priorities are release/publication reconciliation, keeping behavior/version-sensitive docs current, reconciling package/distribution instructions as public builds propagate, dogfooding the site and target integrations, collecting field evidence, and reviewing responsive/accessibility/publication readiness. End-to-end provider deployment is useful field evidence, not a prerequisite for publishing the documented target presets. Continue reviewing Battle Tested when protected behavior or evidence changes, but do not invent new hardening checkpoints merely to keep the sequence going.
+Current project status is **hardening plateau reached** after the deliberate Nift Checkpoints 0–10, with the bounded v4.0.3 contract-first language/pagination programme subsequently completed through its dedicated reconciliation checkpoints. The bounded 4.0.2 initializer/platform-target feature is implemented and its Linux/macOS/Windows Actions contract is green. Current living priorities are release/publication reconciliation, keeping behavior/version-sensitive docs current, reconciling package/distribution instructions as public builds propagate, dogfooding the site and target integrations, collecting field evidence, and reviewing responsive/accessibility/publication readiness. End-to-end provider deployment is useful field evidence, not a prerequisite for publishing the documented target presets. Continue reviewing Battle Tested when protected behavior or evidence changes, but do not invent new hardening checkpoints merely to keep the sequence going.
 
 ## Maintaining this handover
 

@@ -1,9 +1,9 @@
 {
-  "name": "docs/how-nift-works",
-  "title": "How Nift works",
+  "name": "docs/pagination",
+  "title": "Pagination",
   "template": "templates/docs.html",
-  "content": "content/docs/how-nift-works.html",
-  "output": "public/docs/how-nift-works.html",
+  "content": "content/docs/pagination.html",
+  "output": "public/docs/pagination.html",
   "minify": true,
   "minify-version": 1,
   "pagination": false,
@@ -12,7 +12,7 @@
   "pagination-separator": "",
   "pagination-pages": 0,
   "dependencies": [
-    "content/docs/how-nift-works.html",
+    "content/docs/pagination.html",
     "templates/docs.html",
     "templates/partials/docs-sidebar.html",
     "templates/partials/footer.html",

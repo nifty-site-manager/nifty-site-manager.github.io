@@ -6,6 +6,11 @@
   "output": "public/examples.html",
   "minify": true,
   "minify-version": 1,
+  "pagination": false,
+  "pagination-items-per-page": 0,
+  "pagination-template": "",
+  "pagination-separator": "",
+  "pagination-pages": 0,
   "dependencies": [
     "content/examples.html",
     "templates/partials/footer.html",

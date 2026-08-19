@@ -6,7 +6,7 @@
   <div class="docs-callout"><strong>Current verdict: production-ready, with the planned hardening plateau reached.</strong><p>Nift's core generation, composition, path, dependency, incremental, structured-data and final-output minification behavior is mature enough for real projects. The deliberate Checkpoints 0–10 campaign is complete; confidence now comes from maintaining those executable guarantees while adding distribution, dogfooding and field evidence from environments and projects the maintainers did not design.</p></div>
 
   <h2>What “production-ready” means here</h2>
-  <p>Nift is ready to be a dependable generation layer when a project's needs fit its stated model: tracked text outputs, reusable templates/partials, checked project-local paths, JSON-backed data and control flow, dependency-aware incremental builds and optional conservative final-artifact minification.</p>
+  <p>Nift is ready to be a dependable generation layer when a project's needs fit its stated model: tracked text outputs, reusable templates/partials, checked project-local paths, JSON-backed data and bounded control flow, multi-output pagination, dependency-aware incremental builds and optional conservative final-artifact minification.</p>
   <p>It does not mean Nift has become a browser framework, package manager, TypeScript compiler, bundler, image pipeline, backend runtime or universal CMS. Those boundaries are part of the readiness argument: specialist work remains with specialist tools rather than being reimplemented incompletely inside Nift.</p>
 
   <h2>The evidence behind the verdict</h2>
@@ -16,17 +16,18 @@
     <div><h2>Adversarial state</h2><p>The ruthless extension attacks malformed inputs, traversal and symlink escapes, collisions, missing/stale state, preserved mtimes, failed builds and shared dependencies.</p></div>
     <div><h2>Dogfooding</h2><p>Nift builds its own large documentation site plus the Minify++ and tscc sites, including multi-extension assets and minified deployment output.</p></div>
   </div>
-  <p>The source tree currently exposes 25 focused targets, including the 4.0.2 init-target gate. The project-contract checkpoint established all 16 modern standalone black-box modules in that validation group, then rebuilt the real Nift documentation site with the candidate. Longer historical and sanitizer gates are kept separately contextualized on <a href="@pathto('docs/battle-tested')">Battle tested</a>; a timeout or historical pass is not silently promoted into fresh evidence.</p>
+  <p>The maintained focused source-tree layer now also covers the bounded v4.0.3 language and pagination contracts, alongside the released 4.0.2 init-target gate. The project-contract checkpoint established all 16 modern standalone black-box modules in that validation group, then rebuilt the real Nift documentation site with the candidate. Longer historical and sanitizer gates are kept separately contextualized on <a href="@pathto('docs/battle-tested')">Battle tested</a>; a timeout or historical pass is not silently promoted into fresh evidence.</p>
 
   <h2>Contracts that are ready to rely on</h2>
   <ul>
-    <li>tracked content and templates compose predictably through <code>\@content</code> and nested <code>\@input</code>;</li>
+    <li>templated tracked items execute exactly one <code>\@content</code> across the rendered template/input graph, while template-less entries use their content as the top-level source;</li>
     <li>resolved local paths are project-contained and relative output paths are generated correctly;</li>
     <li>dependencies and checked requirements drive explainable incremental decisions, with tracked producers owning their own build state;</li>
     <li><code>modified</code>, <code>hash</code> and <code>hybrid</code> modes implement distinct documented change-detection policies;</li>
     <li>failed rendering/minification does not overwrite the last successful output and page metadata;</li>
     <li>JSON data, the supported JSON Schema subset, project contracts and bounded control flow fail explicitly outside their contract;</li>
     <li>tracked entries can intentionally omit a template and are regression-protected as first-class text-output builds;</li>
+    <li>paginated tracked items rebuild their complete owned page set, render pagination pages concurrently and preserve the previous successful set on failed replacement;</li>
     <li>concurrent builds preserve page-level state and avoid duplicate writes to one tracked output;</li>
     <li>supported final HTML/CSS/JS/JSX/JSON/XML/SVG artifacts can be conservatively minified.</li>
   </ul>

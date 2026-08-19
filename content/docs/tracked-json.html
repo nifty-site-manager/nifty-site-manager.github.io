@@ -66,6 +66,22 @@
 }</code></pre>
   <p><code>true</code> forces minification, <code>false</code> disables it, and an omitted field inherits the project's extension-based setting. The field must be a JSON boolean. <a class="text-link" href="@pathto('docs/minification')">Read the minification guide →</a></p>
 
+
+  <h2>Optional pagination</h2>
+  <p>A tracked item can own a generated pagination set:</p>
+  <pre><code class="language-json">{
+  "name": "blog",
+  "title": "Blog",
+  "template": "templates/template.html",
+  "paginate": {
+    "items-per-page": 10,
+    "template": "templates/pagination/posts.html",
+    "separator": "templates/pagination/post-separator.html"
+  }
+}</code></pre>
+  <p><code>items-per-page</code> is required and must be a positive integer. <code>template</code> and <code>separator</code> are optional paths: without an explicit template Nift uses the required conventional <code>&lt;content-stem&gt;.paginate.html</code>; without an explicit separator it uses <code>&lt;content-stem&gt;.separator.html</code> when present, otherwise no separator is inserted.</p>
+  <p>The entire generated page set remains one tracked item for invalidation and failure semantics. <a class="text-link" href="@pathto('docs/pagination')">Read the pagination guide →</a></p>
+
   <h2>Names are the useful abstraction</h2>
   <p>Suppose your config uses <code>content/</code>, <code>public/</code> and <code>.html</code>. This entry:</p>
   <pre><code class="language-json">{
@@ -88,7 +104,7 @@ nift rm obsolete-page</code></pre>
   <p>Those commands update Nift's tracking information for you. Because the file is ordinary JSON, it is still easy to inspect, version-control and understand when debugging a project.</p>
 
   <h2>Validation Nift performs while loading</h2>
-  <p>The current v4 reader requires a top-level <code>tracked</code> array, requires every item to have string <code>name</code> and <code>title</code> values, requires <code>template</code> to be a string when present, rejects duplicate tracked names, and rejects an item whose derived content path is the same as its template path.</p>
+  <p>The current v4 reader requires a top-level <code>tracked</code> array, requires every item to have string <code>name</code> and <code>title</code> values, requires <code>template</code> to be a string when present, validates optional pagination metadata and positive integer <code>items-per-page</code>, rejects duplicate tracked names, and rejects an item whose derived content path is the same as its template path.</p>
 
   <div class="docs-callout"><strong>Together, the two files are Nift's project map.</strong><p><code>config.json</code> defines the global path/build rules; <code>tracked.json</code> lists the concrete outputs managed under those rules.</p></div>
   <div class="docs-next"><span>Related</span><a href="@pathto('docs/commands')">CLI commands →</a></div>

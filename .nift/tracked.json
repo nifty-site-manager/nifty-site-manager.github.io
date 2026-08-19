@@ -111,6 +111,11 @@
       "template": "templates/docs.html"
     },
     {
+      "name": "docs/pagination",
+      "title": "Pagination",
+      "template": "templates/docs.html"
+    },
+    {
       "name": "docs/minification",
       "title": "Minification",
       "template": "templates/docs.html"

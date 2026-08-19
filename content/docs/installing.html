@@ -5,9 +5,16 @@
 
 <div class="docs-callout"><strong>Always verify what you installed.</strong><p>Package-manager channels can lag behind a newly published Nift release. After installation run <code>nift version</code>. If you specifically need the newest release and your package manager has not caught up yet, use the GitHub release binary or build from source. Nift's next distribution-validation phase will test public channel installs in clean CI environments rather than treating recipe publication as proof that users receive the intended binary.</p></div>
 
+
+<h2>Quick install — Linux and macOS</h2>
+<pre><code class="language-bash">curl -fsSL https://nift.dev/install | bash
+nift version</code></pre>
+<p>The installer detects supported Linux/macOS architectures, downloads the official GitHub release archive and <code>SHA256SUMS</code>, verifies the archive before installation, and installs to <code>~/.local/bin/nift</code> by default. It does not silently invoke <code>sudo</code> or edit shell startup files. Set <code>NIFT_INSTALL_DIR</code> or <code>NIFT_VERSION</code> when you deliberately want another destination or release.</p>
+<div class="docs-callout"><strong>Readable before runnable.</strong><p>The exact installer served at <code>https://nift.dev/install</code> is maintained as a small POSIX shell script. You can fetch it without piping to <code>bash</code> first if you prefer to inspect what it does.</p></div>
+
 <h2>Quick verification</h2>
 <pre><code class="language-bash">nift version
-nift help
+nift about
 nift commands</code></pre>
 <p>The current v4 dispatcher supports all three commands from outside a Nift project directory.</p>
 
@@ -22,6 +29,7 @@ nift version</code></pre>
 <p>Uninstall with:</p>
 <pre><code class="language-bash">sudo snap remove nift</code></pre>
 <p><a class="text-link" href="https://snapcraft.io/nift" target="_blank" rel="noreferrer">Nift on Snapcraft ↗</a></p>
+<p><strong>v4.0.3 development note:</strong> strict confinement is being tested on a non-stable Snap channel before any stable packaging change. The current stable installation instructions remain authoritative until an installed Store candidate proves that normal projects can read and write their project-local <code>.nift/</code> state under confinement.</p>
 
 <h2 id="linux-flatpak">Linux — Flatpak / Flathub</h2>
 <pre><code class="language-bash">flatpak install --user \

@@ -6,6 +6,11 @@
   "output": "public/assets/css/style.css",
   "minify": true,
   "minify-version": 1,
+  "pagination": false,
+  "pagination-items-per-page": 0,
+  "pagination-template": "",
+  "pagination-separator": "",
+  "pagination-pages": 0,
   "dependencies": [
     "content/assets/css/style.css",
     "templates/asset.txt"

@@ -1,0 +1,93 @@
+<article class="docs-article">
+<p class="docs-kicker">Core reference · Multi-output generation</p>
+<h1>Pagination.</h1>
+<p class="docs-lead">Pagination turns one tracked item into an ordered set of generated pages while keeping that set one dependency-aware build unit. Render <code>\@item</code> blocks, place exactly one <code>\@paginate</code>, and let Nift split the rendered items across pages.</p>
+
+<div class="docs-callout"><strong>Pagination stays inside Nift's existing model.</strong><p>The tracked item owns the whole page set. Any relevant change rebuilds the complete set; Nift does not maintain a separate incremental graph for each pagination page. The resulting pages can still be rendered concurrently.</p></div>
+
+<h2>Enable pagination in <code>tracked.json</code></h2>
+<pre><code class="language-json">{
+  "name": "blog",
+  "title": "Blog",
+  "template": "templates/template.html",
+  "paginate": {
+    "items-per-page": 10
+  }
+}</code></pre>
+<p><code>items-per-page</code> is required and must be a positive integer. A paginated item also needs a pagination template. If no explicit template path is configured, Nift derives the conventional sibling <code>&lt;content-stem&gt;.paginate.html</code>.</p>
+
+<h3>Reusable template and separator paths</h3>
+<pre><code class="language-json">"paginate": {
+  "items-per-page": 10,
+  "template": "templates/pagination/posts.html",
+  "separator": "templates/pagination/post-separator.html"
+}</code></pre>
+<p>An explicit path wins over the conventional sibling. When <code>separator</code> is omitted, Nift uses <code>&lt;content-stem&gt;.separator.html</code> if that file exists; otherwise items are concatenated without an inserted separator. Pagination templates and separators are ordinary rendered Nift source, so they may use metadata, <code>\@input</code>, checked paths and other supported template features.</p>
+
+<h2>Collect items and place the result</h2>
+<pre><code class="language-nift">\@json('data/posts.json', posts)
+
+\@for(post : posts by post.date desc){
+    \@item{
+        &lt;article&gt;
+            &lt;h2&gt;\$[post.title]&lt;/h2&gt;
+        &lt;/article&gt;
+    }
+}
+
+\@paginate</code></pre>
+<p><code>\@item{...}</code> renders immediately while the current JSON/loop scope is active and captures that rendered fragment as one pagination item. Items may appear before or after <code>\@paginate</code>. A paginated tracked item must execute <strong>exactly one</strong> <code>\@paginate</code>; zero or multiple insertion points are build errors.</p>
+
+<h2>The pagination template</h2>
+<p>For <code>content/blog.html</code>, the conventional template is <code>content/blog.paginate.html</code>. It receives a small read-only pagination namespace:</p>
+<pre><code class="language-html">&lt;section class="posts"&gt;
+    \$[paginate.items]
+&lt;/section&gt;
+
+&lt;nav&gt;
+    \@if(!paginate.first){
+        &lt;a href="\@pathtopage(\$[paginate.previous])"&gt;Previous&lt;/a&gt;
+    }
+
+    &lt;span&gt;Page \$[paginate.current] of \$[paginate.total]&lt;/span&gt;
+
+    \@if(!paginate.last){
+        &lt;a href="\@pathtopage(\$[paginate.next])"&gt;Next&lt;/a&gt;
+    }
+&lt;/nav&gt;</code></pre>
+
+<div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>Value</th><th>Meaning</th></tr></thead><tbody>
+<tr><td><code>\$[paginate.items]</code></td><td>The rendered items selected for this page, joined with the rendered optional separator.</td></tr>
+<tr><td><code>\$[paginate.current]</code></td><td>Current page number, one-based.</td></tr>
+<tr><td><code>\$[paginate.total]</code></td><td>Total number of generated pagination pages.</td></tr>
+<tr><td><code>\$[paginate.first]</code></td><td><code>true</code> on the first page.</td></tr>
+<tr><td><code>\$[paginate.last]</code></td><td><code>true</code> on the last page.</td></tr>
+<tr><td><code>\$[paginate.previous]</code></td><td>Previous page number; page 1 resolves to 1.</td></tr>
+<tr><td><code>\$[paginate.next]</code></td><td>Next page number; the final page resolves to the final page number.</td></tr>
+</tbody></table></div>
+
+<h2><code>\@pathtopage(n)</code></h2>
+<p><code>\@pathtopage</code> is available while rendering pagination and resolves a checked relative path to a generated page in the same pagination set. The page number must be between 1 and <code>\$[paginate.total]</code>.</p>
+
+<h2>Output naming</h2>
+<pre><code class="language-plaintext">tracked name: blog
+public/blog.html
+public/blog-2.html
+public/blog-3.html
+
+tracked name: blog/
+public/blog/index.html
+public/blog/2.html
+public/blog/3.html</code></pre>
+<p>The first pagination page remains the tracked item's normal primary output. Secondary outputs use deterministic names owned by that same tracked item.</p>
+
+<h2>Zero items and lifecycle</h2>
+<p>Zero items is valid. Nift still renders the primary page once; <code>\$[paginate.items]</code> is empty, <code>paginate.current</code>/<code>paginate.total</code> are both 1, and first/last are both true.</p>
+<p>If the number of pages shrinks, Nift removes stale secondary outputs owned by the previous successful pagination build. If pagination is disabled, old secondary pagination outputs are removed. Missing generated pagination outputs make the tracked item stale so the complete set can be regenerated.</p>
+
+<h2>Failure and concurrency semantics</h2>
+<p>Pagination pages may render concurrently, including a single tracked item that expands into thousands of outputs. Thread completion order does not define page order. Nift stages the new page set and preserves the previous successful set if the new pagination render fails rather than committing a mixture of old and new pages.</p>
+<p>Dependencies and requirements discovered from content, items, the pagination template and separator form one conservative union owned by the tracked item. A change to any of them rebuilds the complete pagination set.</p>
+
+<div class="docs-next"><span>Related</span><a href="@pathto('docs/control-flow')">Loops &amp; conditions →</a></div>
+</article>
