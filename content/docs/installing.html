@@ -22,11 +22,11 @@ nift commands</code></pre>
 <p><a class="text-link" href="https://github.com/nift-dev/nift/releases" target="_blank" rel="noreferrer">Browse Nift releases ↗</a></p>
 
 <h2 id="linux-snap">Linux — Snap</h2>
-<pre><code class="language-bash">sudo snap install nift --classic</code></pre>
+<pre><code class="language-bash">sudo snap install nift</code></pre>
 <p>Uninstall with:</p>
 <pre><code class="language-bash">sudo snap remove nift</code></pre>
 <p><a class="text-link" href="https://snapcraft.io/nift" target="_blank" rel="noreferrer">Nift on Snapcraft ↗</a></p>
-<p><strong>v4.0.3 development note:</strong> strict confinement is being tested on a non-stable Snap channel before any stable packaging change. The current stable installation instructions remain authoritative until an installed Store candidate proves that normal projects can read and write their project-local <code>.nift/</code> state under confinement.</p>
+<p>Nift 4.0.3 uses strict Snap confinement. The Store-built strict package has been validated against an ordinary project, including project-local <code>.nift/</code> state, so no <code>--classic</code> install flag is required.</p>
 
 <h2 id="linux-flatpak">Linux — Flatpak / Flathub</h2>
 <pre><code class="language-bash">flatpak install --user \
