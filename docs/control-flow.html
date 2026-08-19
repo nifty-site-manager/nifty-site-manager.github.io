@@ -67,7 +67,7 @@
     &lt;a href="$[item.url]"&gt;$[item.title]&lt;/a&gt;
 }</code></pre> <h3>Logical composition</h3> <p>Conditions compose with short-circuit <code>&amp;&amp;</code> and <code>||</code>, existing <code>!</code> negation, and parentheses. Ordinary precedence applies: negation, comparisons, <code>&amp;&amp;</code>, then <code>||</code>.</p> <pre><code class="language-nift">@if(post.published &amp;&amp; !post.draft){ ... }
 
-@if((post.featured || post.pinned) &amp;&amp; post.published){ ... }</code></pre> <p>Logical operators short-circuit. An operand that is not needed to determine the result is not resolved.</p> <h3>Pure numeric expressions</h3> <p><code>$[...]</code> can evaluate pure numeric expressions using <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code> and integer-valued <code>%</code>, with unary signs, parentheses and conventional precedence. The same arithmetic is available inside conditions.</p> <pre><code class="language-nift">$[loop.index + 1]
+@if((post.featured || post.pinned) &amp;&amp; post.published){ ... }</code></pre> <p>Logical operators short-circuit. An operand that is not needed to determine the result is not resolved.</p> <h3>Pure numeric expressions</h3> <p><code>$[...]</code> can evaluate pure numeric expressions using <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code> and integer-valued <code>%</code>, with unary signs, parentheses and conventional precedence. The same expression evaluator also supports comparisons, <code>!</code> and short-circuit <code>&amp;&amp;</code>/<code>||</code>, so expressions can render derived numbers or booleans and are shared with conditions.</p> <pre><code class="language-nift">$[loop.index + 1]
 $[(price * quantity) / 100]
 
 @if(loop.index % 2 == 0){ ... }
