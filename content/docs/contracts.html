@@ -23,7 +23,7 @@ a successful build becomes evidence that the checked contract held</code></pre>
 <tr><td><code>\@input(...)</code></td><td>The input exists, can be safely resolved, is incorporated into this output and therefore becomes a dependency.</td></tr>
 <tr><td><code>\@dep(...)</code></td><td>This output depends on a project resource even though that resource does not directly render content.</td></tr>
 <tr><td><code>\@json(...)</code></td><td>The data source exists, parses as JSON, optionally satisfies its schema and becomes a dependency.</td></tr>
-<tr><td><code>\@pathto(...)</code></td><td>The referenced tracked/project destination resolves and remains a requirement of the generated output.</td></tr>
+<tr><td><code>\@pathto(...)</code></td><td>The referenced tracked/project destination resolves and remains a checked requirement. Concrete-path disappearance stales the referrer; tracked producers own their own build result without transitive failure.</td></tr>
 <tr><td><a href="@pathto('docs/project-contracts')">Project contracts</a></td><td>A named project-level JSON source exists, referenced members resolve and outputs using it depend on both the declaration and source.</td></tr>
 </tbody></table></div>
 

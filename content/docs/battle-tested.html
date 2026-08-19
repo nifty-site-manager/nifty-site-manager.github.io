@@ -141,7 +141,7 @@ esbuild repository/release history: https://github.com/evanw/esbuild
 <p>This focused harness complements the direct validator test by proving the public <code>\@json(data, binding, schema)</code> contract end to end. It covers data and schema dependency recording, data edits, schema edits, nested instance-path errors, lazy skipped branches, schema use through nested inputs and project-bound traversal rejection.</p>
 
 <h3><code>test-requirements</code> — internal <code>reqs</code> lifecycle</h3>
-<p>This suite isolates the existence-only state recorded under the hood by <code>\@pathto</code>. It checks deduplication, skipped branches, “modified but still exists” behavior, disappearance as a rebuild reason, repair-on-rebuild, malformed metadata and tracked-output requirements.</p>
+<p>This suite isolates the requirement state recorded under the hood by <code>\@pathto</code>. It checks deduplication, skipped branches, “modified but still exists” behavior, concrete-path disappearance as a rebuild reason, repair-on-rebuild, malformed metadata, and tracked-output ownership semantics: an absent/failed tracked producer does not transitively stale or fail referring pages.</p>
 
 <h3><code>test-path-safety</code> — real filesystem containment</h3>
 <p>This suite attacks the difference between a path that <em>looks</em> project-local and one that actually resolves there. It includes parent traversal and symlink escapes for JSON data, JSON Schema files, explicit dependencies and concrete <code>\@pathto</code> targets. This test found a real v1.0.21-development bug: lexical containment alone allowed an in-project symlink to point outside the project. The shared containment helper now resolves symlinked prefixes before accepting the path.</p>

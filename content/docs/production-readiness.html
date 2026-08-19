@@ -22,7 +22,7 @@
   <ul>
     <li>tracked content and templates compose predictably through <code>\@content</code> and nested <code>\@input</code>;</li>
     <li>resolved local paths are project-contained and relative output paths are generated correctly;</li>
-    <li>dependencies and existence-only requirements drive explainable incremental decisions;</li>
+    <li>dependencies and checked requirements drive explainable incremental decisions, with tracked producers owning their own build state;</li>
     <li><code>modified</code>, <code>hash</code> and <code>hybrid</code> modes implement distinct documented change-detection policies;</li>
     <li>failed rendering/minification does not overwrite the last successful output and page metadata;</li>
     <li>JSON data, the supported JSON Schema subset, project contracts and bounded control flow fail explicitly outside their contract;</li>
