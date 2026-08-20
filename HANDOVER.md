@@ -369,3 +369,11 @@ entry point.
 - The control-flow reference documents the new `$[condition ? true-branch]` shorthand, with the same lazy selected-branch semantics as the full ternary form.
 - Memory & Resource Safety was reconciled beyond the old Checkpoint-4 visual stopping point: it now shows the completed Checkpoint-6 integration gate and the broader completed Checkpoints 7–10 hardening progression.
 - A site-wide stale-content pass refreshed v4.0.3 language, pagination, memory-safety and installation content and rebuilt all affected pages. Local generated href/src validation reported zero missing targets.
+
+## Guarantee-durability campaign BH1 closed (2026-08-21)
+
+- Nift BH1 (Guarantee registry + baseline map) is **CLOSED / VERIFIED** after three independent review rounds. DeepSeek signed off exact candidate `8419cec`; the reconciled reviewer red-run is retained in the Nift repository.
+- The registry currently maps 20 guarantees, 27 significant public claims, 7 known discrepancies and 7 CI references. Its structural checker is now independently liveness-verified.
+- No public website reliability prose changed during BH1 closure. This is deliberate: BH1 inventories and pins the existing audited surfaces; BH10 owns semantic/public-claim reconciliation, while earlier checkpoints may fix functional/documentation defects they establish.
+- Do not casually edit the four BH1-pinned reliability surfaces (`battle-tested`, `memory-safety`, `production-readiness`, `platforms`) without reconciling the Nift guarantee registry hashes/claim mapping. A legitimate content change should make the registry check fail until it is consciously re-audited.
+- BH2 now owns deeper CI/enforcement integrity, including cross-platform workflow semantics; BH3 owns semantic guard/red-run binding.
