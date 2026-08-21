@@ -15,5 +15,10 @@
     "content/404.html",
     "templates/404.html"
   ],
-  "reqs": []
+  "reqs": [
+    "public/assets/css/style.css",
+    "public/assets/js/script.js",
+    "public/docs.html",
+    "public/index.html"
+  ]
 }
