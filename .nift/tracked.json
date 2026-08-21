@@ -141,11 +141,6 @@
       "template": "templates/docs.html"
     },
     {
-      "name": "docs/ai-assistants",
-      "title": "Nift with AI assistants",
-      "template": "templates/docs.html"
-    },
-    {
       "name": "docs/contracts",
       "title": "Contracts",
       "template": "templates/docs.html"
@@ -359,6 +354,11 @@
       "template": "templates/asset.txt",
       "content-ext": ".xml",
       "output-ext": ".xml"
+    },
+    {
+      "name": "docs/ai-agents",
+      "title": "Nift with AI assistants",
+      "template": "templates/docs.html"
     }
   ]
 }

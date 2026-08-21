@@ -989,5 +989,5 @@ html[data-theme="dark"] .hero .hero-install .code-copy-button{
 .hero-install [data-install-command] .install-pipe{color:#ffcf70}
 
 /* Homepage accent links share the same teal family across contrasting backgrounds. */
-.hero-install-more{color:#073f4b}.hero-install-more:hover{color:#052f38}
+.hero-install-more{color:#172126}.hero-install-more:hover{color:#172126}
 .home-closing-links a{color:#fff;text-decoration:underline;text-underline-offset:.2em}.home-closing-links a:hover{color:#fff}

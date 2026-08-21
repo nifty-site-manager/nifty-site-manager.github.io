@@ -25,6 +25,6 @@ The three primitives to learn first are `\@content`, `\@input(...)` and `\@patht
 - [Incremental builds](https://nift.dev/docs/incremental-builds.html)
 - [Contracts](https://nift.dev/docs/contracts.html)
 - [Full web applications](https://nift.dev/docs/use-cases/web-apps.html)
-- [AI assistants and project handovers](https://nift.dev/docs/ai-assistants.html)
+- [AI agents and project handovers](https://nift.dev/docs/ai-agents.html)
 
 For a concrete Nift project, read its local `HANDOVER.md`, `.nift/config.json` and `.nift/tracked.json` before making structural changes.
