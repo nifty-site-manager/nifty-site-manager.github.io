@@ -851,18 +851,19 @@ html[data-theme="dark"] .not-found-page{background:#1F2021}
 .footer-bottom a{color:inherit;text-decoration:underline;text-underline-offset:3px}
 @media(max-width:760px){.info-main{margin-top:68px;padding:48px 20px 80px}}
 
-
-/* Keep short informational pages within the viewport so their footer is visible
-   without a pointless scroll when there is ample vertical room. */
-body.short-page-shell{
+/* Short informational pages keep their existing info-page layout while
+   allowing the footer to sit at the viewport bottom when content is short. */
+.info-page{
     min-height:100vh;
     display:flex;
     flex-direction:column;
 }
-body.short-page-shell main{
+.info-page .info-main{
     flex:1 0 auto;
+    min-height:0;
+    width:100%;
 }
-body.short-page-shell .site-footer{
+.info-page .site-footer{
     margin-top:auto;
     width:100%;
 }
