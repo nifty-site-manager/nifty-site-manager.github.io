@@ -8,51 +8,9 @@
 <div class="hero-pills" aria-label="Nift highlights"><span>⚡ Fast incremental builds</span><span>▱ Dependency aware</span><span>◇ Tiny mental model</span></div>
 <div class="hero-actions"><a class="button button-primary" href="@pathto('docs/getting-started')">Get started <span>→</span></a><a class="button button-secondary" href="@pathto('docs/installing')">Install →</a><a class="button button-secondary" href="https://github.com/nift-dev/nift" target="_blank" rel="noreferrer">View on GitHub ↗</a></div>
 
-<div class="code-demo" data-live-demo>
-  <div class="demo-tabs" role="tablist" aria-label="Nift example">
-    <button class="demo-tab active" type="button" role="tab" aria-selected="true" data-demo-tab="template">Template</button>
-    <button class="demo-tab" type="button" role="tab" aria-selected="false" data-demo-tab="content">Content</button>
-    <button class="demo-tab" type="button" role="tab" aria-selected="false" data-demo-tab="output">Output</button>
-  </div>
-  <div class="demo-body">
-    <pre class="demo-source active" data-demo-source="template"><code class="language-html">&lt;!doctype html&gt;
-&lt;html lang="en"&gt;
-  &lt;head&gt;
-    &lt;meta charset="utf-8"&gt;
-    &lt;title&gt;\$[title]&lt;/title&gt;
-    &lt;link rel="stylesheet" href="\@pathto('public/assets/site.css')"&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    \@input('templates/partials/header.html')
-    &lt;main&gt;
-      \@content
-    &lt;/main&gt;
-    &lt;script src="\@pathto('public/assets/app.js')"&gt;&lt;/script&gt;
-  &lt;/body&gt;
-&lt;/html&gt;</code></pre>
-    <pre class="demo-source" data-demo-source="content"><code class="language-html">&lt;section class="hero"&gt;
-  &lt;h1&gt;Build the web your way.&lt;/h1&gt;
-  &lt;p&gt;Keep your HTML, your tools and your stack.&lt;/p&gt;
-&lt;/section&gt;</code></pre>
-    <pre class="demo-source" data-demo-source="output"><code class="language-html">&lt;!doctype html&gt;
-&lt;html lang="en"&gt;
-  &lt;head&gt;
-    &lt;meta charset="utf-8"&gt;
-    &lt;title&gt;Home&lt;/title&gt;
-    &lt;link rel="stylesheet" href="assets/site.css"&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;header&gt;...&lt;/header&gt;
-    &lt;main&gt;
-      &lt;section class="hero"&gt;
-        &lt;h1&gt;Build the web your way.&lt;/h1&gt;
-        &lt;p&gt;Keep your HTML, your tools and your stack.&lt;/p&gt;
-      &lt;/section&gt;
-    &lt;/main&gt;
-    &lt;script src="assets/app.js"&gt;&lt;/script&gt;
-  &lt;/body&gt;
-&lt;/html&gt;</code></pre>
-  </div>
+<div class="hero-install" aria-label="Install Nift">
+  <pre><code>curl -fsSL https://nift.dev/install | sh</code></pre>
+  <a class="hero-install-more" href="@pathto('docs/installing')">Windows and other installation methods available →</a>
 </div>
 </div></section>
 

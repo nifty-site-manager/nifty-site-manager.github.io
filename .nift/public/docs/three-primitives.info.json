@@ -1,7 +1,7 @@
 {
   "name": "docs/three-primitives",
   "title": "Start with three primitives",
-  "template": "templates/docs.html",
+  "template": "templates/docs-demo.html",
   "content": "content/docs/three-primitives.html",
   "output": "public/docs/three-primitives.html",
   "minify": true,
@@ -13,7 +13,7 @@
   "pagination-pages": 0,
   "dependencies": [
     "content/docs/three-primitives.html",
-    "templates/docs.html",
+    "templates/docs-demo.html",
     "templates/partials/docs-sidebar.html",
     "templates/partials/footer.html",
     "templates/partials/head.html",
@@ -23,6 +23,7 @@
     "public/about.html",
     "public/assets/css/style.css",
     "public/assets/images/nift-logo.webp",
+    "public/assets/js/demo.js",
     "public/assets/js/script.js",
     "public/contact.html",
     "public/developers.html",
