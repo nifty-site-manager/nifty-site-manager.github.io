@@ -839,6 +839,7 @@ html[data-theme="dark"] .text-link{color:#72d893}
 .not-found-inner>p:not(.not-found-code){margin:0 auto 28px;color:var(--text-muted,var(--muted));font-size:17px}
 body:has(.not-found-page){min-height:100vh;display:flex;flex-direction:column}
 body:has(.not-found-page) .not-found-page{flex:1;width:100%}
+.not-found-shell .not-found-page{min-height:100vh;padding-top:0}
 body:has(.not-found-page) .site-footer{margin-top:auto;width:100%}
 html[data-theme="dark"] .not-found-page{background:#1F2021}
 @media(max-width:600px){.home-closing{min-height:440px;padding:72px 18px}.not-found-page{min-height:calc(100vh - 180px)}.not-found-inner{width:min(100% - 36px,760px);padding:54px 0 64px}}

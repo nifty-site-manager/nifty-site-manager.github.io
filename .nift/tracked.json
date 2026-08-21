@@ -310,7 +310,7 @@
     {
       "name": "404",
       "title": "Page not found",
-      "template": "templates/template.html"
+      "template": "templates/404.html"
     },
     {
       "name": "llms",

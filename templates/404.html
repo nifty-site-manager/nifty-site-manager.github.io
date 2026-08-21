@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Nift — $[title]</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="The requested page was not found on nift.dev.">
+	<meta name="theme-color" content="#071c29">
+	<meta name="robots" content="noindex,follow">
+	<script>
+	(() => {
+		const mode = localStorage.getItem('nift-theme') || 'system';
+		const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+		document.documentElement.dataset.themeMode = mode;
+		document.documentElement.dataset.theme = mode === 'system' ? (systemDark ? 'dark' : 'light') : mode;
+	})();
+	</script>
+	<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body class="not-found-shell">
+	@content
+</body>
+</html>

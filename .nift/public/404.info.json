@@ -1,7 +1,7 @@
 {
   "name": "404",
   "title": "Page not found",
-  "template": "templates/template.html",
+  "template": "templates/404.html",
   "content": "content/404.html",
   "output": "public/404.html",
   "minify": true,
@@ -13,20 +13,7 @@
   "pagination-pages": 0,
   "dependencies": [
     "content/404.html",
-    "templates/partials/footer.html",
-    "templates/partials/head.html",
-    "templates/partials/header.html",
-    "templates/template.html"
+    "templates/404.html"
   ],
-  "reqs": [
-    "public/assets/css/style.css",
-    "public/assets/images/nift-logo.webp",
-    "public/assets/js/demo.js",
-    "public/assets/js/script.js",
-    "public/docs.html",
-    "public/examples.html",
-    "public/index.html",
-    "public/showcase.html",
-    "public/templates.html"
-  ]
+  "reqs": []
 }
