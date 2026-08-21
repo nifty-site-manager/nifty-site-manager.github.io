@@ -306,6 +306,39 @@
       "name": "docs/platforms/supabase",
       "title": "Supabase",
       "template": "templates/docs.html"
+    },
+    {
+      "name": "404",
+      "title": "Page not found",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "llms",
+      "title": "Nift agent index",
+      "template": "templates/asset.txt",
+      "content-ext": ".txt",
+      "output-ext": ".txt"
+    },
+    {
+      "name": "agents",
+      "title": "Nift agent guide",
+      "template": "templates/asset.txt",
+      "content-ext": ".md",
+      "output-ext": ".md"
+    },
+    {
+      "name": "robots",
+      "title": "Crawler policy",
+      "template": "templates/asset.txt",
+      "content-ext": ".txt",
+      "output-ext": ".txt"
+    },
+    {
+      "name": "sitemap",
+      "title": "Sitemap",
+      "template": "templates/asset.txt",
+      "content-ext": ".xml",
+      "output-ext": ".xml"
     }
   ]
 }

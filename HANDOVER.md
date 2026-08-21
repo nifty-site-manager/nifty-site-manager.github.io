@@ -50,9 +50,11 @@ candidate binary. Synthetic tests and dogfooding are complementary.
 
 ## Product truth and terminology
 
-Describe Nift generally as a **website generator**, not merely a static site
-generator. Generated sites may include runtime applications, React/Vue/Svelte
-islands, API clients, dashboards, or backend frontends.
+Describe Nift publicly as a **dependency-aware website templating and build
+system**, not merely a static site generator. Generated sites may include runtime
+applications, React/Vue/Svelte islands, API clients, dashboards, or backend
+frontends. The underlying engine can template non-HTML text assets too, but the
+website is the primary use-case framing.
 
 The modern story follows deliberate removal of LuaJIT, ExprTk, general scripting,
 and hooks. Emphasize a small dependency-aware generation layer, ordinary web
@@ -63,6 +65,32 @@ and “Nift provides the glue without trying to become the universe.”
 Do not market simplicity as lack of capability or respond by inventing a giant
 feature list. Nift's value often comes from leaving HTML, CSS, JavaScript,
 frameworks, APIs, and external tools in their native form.
+
+
+## Agent-readiness surfaces
+
+The site intentionally publishes machine-readable discovery resources alongside
+the normal human documentation:
+
+- `/llms.txt` is a concise agent-oriented index with explicit when-to-use and
+  when-not-to-use guidance. Keep it short and link-oriented rather than turning it
+  into a duplicate manual.
+- `/agents.md` is a compact Markdown cold-discovery guide.
+- `/sitemap.xml` lists indexable HTML pages and should stay synchronized with
+  tracked public pages.
+- `/robots.txt` keeps the public site crawlable and points at the sitemap.
+- `/404.html` is the GitHub Pages missing-path surface and must remain a genuine
+  missing-page response after publication.
+
+Do not add OpenAPI, OAuth, GraphQL, MCP, JSON error conventions or other agent
+interfaces merely to improve an external readiness score when nift.dev does not
+actually provide those interfaces. Improve raw HTML semantics, discovery and
+recoverability where they are genuinely useful; reject rubric gaming.
+
+The first retained Is Agentic baseline (2026-08-22) was 49/100, with the most
+useful findings being the missing homepage H1/raw-HTML identity and missing-path
+recovery/discovery surfaces. Treat later scores as snapshots, not product
+certifications.
 
 ## Documentation responsibilities
 
