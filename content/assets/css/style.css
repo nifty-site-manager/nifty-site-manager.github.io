@@ -909,3 +909,42 @@ html[data-theme="dark"] .not-found-page{background:#1F2021}
   .hero-install{margin-top:32px}
   .hero-install pre{padding:16px}
 }
+
+/* Homepage install command: the generic copy-button helper wraps code blocks.
+   Override legacy hero-demo wrapper rules so this remains a compact command box. */
+.hero-install .code-block-wrap{
+  position:relative;
+  width:100%;
+  height:auto !important;
+  margin:0 !important;
+  overflow:hidden !important;
+  border:1px solid rgba(255,255,255,.20) !important;
+  border-radius:11px !important;
+  background:rgba(3,18,26,.86) !important;
+  box-shadow:0 20px 50px rgba(5,30,30,.24) !important;
+}
+.hero-install .code-block-wrap > pre{
+  height:auto !important;
+  margin:0 !important;
+  padding:18px 62px 18px 22px !important;
+  overflow-x:auto;
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  color:#f2f7f4;
+  text-align:left;
+}
+.hero-install .code-copy-button{
+  top:50%;
+  right:12px;
+  transform:translateY(-50%);
+  opacity:.9;
+  background:rgba(20,46,52,.92);
+}
+.hero-install .code-copy-button:active{
+  transform:translateY(-50%) scale(.95);
+}
+@media(max-width:760px){
+  .hero-install .code-block-wrap > pre{padding:16px 58px 16px 16px !important}
+}
