@@ -776,7 +776,7 @@ html:not([data-theme="dark"]) .stack-chip-grid span:hover{
 .home-closing-inner{max-width:880px;margin:0 auto;text-align:center}
 .home-closing h2{max-width:760px;margin:10px auto 18px;font-size:clamp(34px,4.4vw,58px);line-height:1.03;letter-spacing:-.035em}
 .home-closing-inner>p:not(.eyebrow){max-width:760px;margin:0 auto;color:var(--muted);font-size:17px;line-height:1.65}
-.home-closing-links{justify-content:center;margin-top:30px}.home-closing-links a{color:#65d7b0;font-weight:650}.home-closing-links a:hover{color:#8aebca}
+.home-closing-links{justify-content:center;margin-top:30px}.home-closing-links a{color:#55d8c0;font-weight:650}.home-closing-links a:hover{color:#7de7d3}
 @media(max-width:600px){.home-closing{padding-top:190px}.home-closing-inner>p:not(.eyebrow){font-size:16px}}
 /* Inline-link affordance: prose/table links must not be visually indistinguishable from body copy. */
 .docs-article p a:not(.button):not(.btn),
@@ -892,11 +892,11 @@ html[data-theme="dark"] .not-found-page{background:#1F2021}
 .hero-install-more{
   display:inline-block;
   margin-top:6px;
-  color:#0b3540;
+  color:#073f4b;
   font-size:13px;
   font-weight:750;
 }
-.hero-install-more:hover{color:#061f28}
+.hero-install-more:hover{color:#052f38}
 .docs-live-demo{
   margin:26px 0 42px;
   max-width:none;
@@ -987,3 +987,7 @@ html[data-theme="dark"] .hero .hero-install .code-copy-button{
 .hero-install [data-install-command] .install-flag{color:#8fd7ff}
 .hero-install [data-install-command] .install-url{color:#f2f7f4}
 .hero-install [data-install-command] .install-pipe{color:#ffcf70}
+
+/* Homepage accent links share the same teal family across contrasting backgrounds. */
+.hero-install-more{color:#073f4b}.hero-install-more:hover{color:#052f38}
+.home-closing-links a{color:#55d8c0}.home-closing-links a:hover{color:#7de7d3}
