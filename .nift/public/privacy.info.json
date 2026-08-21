@@ -1,7 +1,7 @@
 {
   "name": "privacy",
   "title": "Privacy",
-  "template": "templates/info.html",
+  "template": "templates/short-page.html",
   "content": "content/privacy.html",
   "output": "public/privacy.html",
   "minify": true,
@@ -13,10 +13,10 @@
   "pagination-pages": 0,
   "dependencies": [
     "content/privacy.html",
-    "templates/info.html",
     "templates/partials/footer.html",
     "templates/partials/head.html",
-    "templates/partials/header.html"
+    "templates/partials/header.html",
+    "templates/short-page.html"
   ],
   "reqs": [
     "public/about.html",
