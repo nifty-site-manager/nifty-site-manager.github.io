@@ -850,3 +850,19 @@ html[data-theme="dark"] .not-found-page{background:#1F2021}
 .not-found-resources a{color:inherit;text-decoration:underline;text-underline-offset:3px}
 .footer-bottom a{color:inherit;text-decoration:underline;text-underline-offset:3px}
 @media(max-width:760px){.info-main{margin-top:68px;padding:48px 20px 80px}}
+
+
+/* Keep short informational pages within the viewport so their footer is visible
+   without a pointless scroll when there is ample vertical room. */
+body.short-page-shell{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+}
+body.short-page-shell main{
+    flex:1 0 auto;
+}
+body.short-page-shell .site-footer{
+    margin-top:auto;
+    width:100%;
+}

@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en">
+<head>
+	@input("templates/partials/head.html")
+</head>
+<body class="short-page-shell">
+	@input("templates/partials/header.html")
+	@content
+	@input("templates/partials/footer.html")
+	<script defer src="@pathto('public/assets/js/script.js')"></script>
+</body>
+</html>

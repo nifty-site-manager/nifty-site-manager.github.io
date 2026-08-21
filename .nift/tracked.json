@@ -258,17 +258,17 @@
     {
       "name": "about",
       "title": "About Nift",
-      "template": "templates/info.html"
+      "template": "templates/short-page.html"
     },
     {
       "name": "contact",
       "title": "Contact and project support",
-      "template": "templates/info.html"
+      "template": "templates/short-page.html"
     },
     {
       "name": "privacy",
       "title": "Privacy",
-      "template": "templates/info.html"
+      "template": "templates/short-page.html"
     },
     {
       "name": "assets/css/style",
