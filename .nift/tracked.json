@@ -3,7 +3,7 @@
     {
       "name": "/",
       "title": "Build the web without the baggage",
-      "template": "templates/template.html"
+      "template": "templates/home.html"
     },
     {
       "name": "docs",

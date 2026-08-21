@@ -1,0 +1,19 @@
+{
+  "name": "llms",
+  "title": "Nift agent index",
+  "template": "templates/asset.txt",
+  "content": "content/llms.txt",
+  "output": "public/llms.txt",
+  "minify": false,
+  "minify-version": 0,
+  "pagination": false,
+  "pagination-items-per-page": 0,
+  "pagination-template": "",
+  "pagination-separator": "",
+  "pagination-pages": 0,
+  "dependencies": [
+    "content/llms.txt",
+    "templates/asset.txt"
+  ],
+  "reqs": []
+}

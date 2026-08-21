@@ -405,3 +405,12 @@ entry point.
 - No public website reliability prose changed during BH1 closure. This is deliberate: BH1 inventories and pins the existing audited surfaces; BH10 owns semantic/public-claim reconciliation, while earlier checkpoints may fix functional/documentation defects they establish.
 - Do not casually edit the four BH1-pinned reliability surfaces (`battle-tested`, `memory-safety`, `production-readiness`, `platforms`) without reconciling the Nift guarantee registry hashes/claim mapping. A legitimate content change should make the registry check fail until it is consciously re-audited.
 - BH2 now owns deeper CI/enforcement integrity, including cross-platform workflow semantics; BH3 owns semantic guard/red-run binding.
+
+## Agent-readiness and Lighthouse pass (2026-08-22)
+
+- The homepage now uses `templates/home.html` so homepage-only performance hints do not leak into every documentation page. In particular, it preloads the hero logo from `<head>` while the shared template remains unchanged for pages that never render that asset.
+- The homepage carries a real semantic `<h1>` and useful raw HTML; keep the primary product description readable without JavaScript.
+- `llms.txt`, `agents.md`, `robots.txt`, `sitemap.xml`, and `404.html` are intentional agent/discovery surfaces. Do not invent OpenAPI, MCP, OAuth, or other interfaces merely to satisfy an external readiness rubric when nift.dev does not actually provide them.
+- `content/agents.md` is still Nift content: literal Nift directives such as `@content`, `@input(...)`, and `@pathto(...)` must be escaped in source so they render literally.
+- The global frontend script deliberately relies on the `(min-width: 761px)` media-query change event for mobile-menu cleanup; do not reintroduce a resize handler that reads layout state such as `window.innerWidth` after DOM mutations, because Lighthouse identified that path as a forced reflow.
+- Regenerate the site with the released Nift binary appropriate to the live website and keep the normal publication order: generated `public/` commit first, then source/stage including the submodule bump.

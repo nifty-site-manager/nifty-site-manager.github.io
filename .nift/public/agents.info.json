@@ -1,0 +1,19 @@
+{
+  "name": "agents",
+  "title": "Nift agent guide",
+  "template": "templates/asset.txt",
+  "content": "content/agents.md",
+  "output": "public/agents.md",
+  "minify": false,
+  "minify-version": 0,
+  "pagination": false,
+  "pagination-items-per-page": 0,
+  "pagination-template": "",
+  "pagination-separator": "",
+  "pagination-pages": 0,
+  "dependencies": [
+    "content/agents.md",
+    "templates/asset.txt"
+  ],
+  "reqs": []
+}

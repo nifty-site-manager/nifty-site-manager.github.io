@@ -1,9 +1,9 @@
 {
-  "name": "/",
-  "title": "Build the web without the baggage",
-  "template": "templates/home.html",
-  "content": "content/index.html",
-  "output": "public/index.html",
+  "name": "404",
+  "title": "Page not found",
+  "template": "templates/template.html",
+  "content": "content/404.html",
+  "output": "public/404.html",
   "minify": true,
   "minify-version": 1,
   "pagination": false,
@@ -12,11 +12,11 @@
   "pagination-separator": "",
   "pagination-pages": 0,
   "dependencies": [
-    "content/index.html",
-    "templates/home.html",
+    "content/404.html",
     "templates/partials/footer.html",
     "templates/partials/head.html",
-    "templates/partials/header.html"
+    "templates/partials/header.html",
+    "templates/template.html"
   ],
   "reqs": [
     "public/assets/css/style.css",
@@ -24,10 +24,6 @@
     "public/assets/js/demo.js",
     "public/assets/js/script.js",
     "public/docs.html",
-    "public/docs/battle-tested.html",
-    "public/docs/getting-started.html",
-    "public/docs/installing.html",
-    "public/docs/why-nift.html",
     "public/examples.html",
     "public/index.html",
     "public/showcase.html",

@@ -8,7 +8,7 @@ Use Nift for projects that benefit from reusable templates, tracked pages/assets
 
 ## Mental model
 
-The three primitives to learn first are `@content`, `@input(...)` and `@pathto(...)`. Prefer existing project patterns over inventing Nift-specific syntax. Generated output is derived state; edit source/templates/configuration and rebuild with Nift rather than patching generated output manually.
+The three primitives to learn first are `\@content`, `\@input(...)` and `\@pathto(...)`. Prefer existing project patterns over inventing Nift-specific syntax. Generated output is derived state; edit source/templates/configuration and rebuild with Nift rather than patching generated output manually.
 
 ## Important resources
 

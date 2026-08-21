@@ -1,0 +1,19 @@
+{
+  "name": "sitemap",
+  "title": "Sitemap",
+  "template": "templates/asset.txt",
+  "content": "content/sitemap.xml",
+  "output": "public/sitemap.xml",
+  "minify": false,
+  "minify-version": 0,
+  "pagination": false,
+  "pagination-items-per-page": 0,
+  "pagination-template": "",
+  "pagination-separator": "",
+  "pagination-pages": 0,
+  "dependencies": [
+    "content/sitemap.xml",
+    "templates/asset.txt"
+  ],
+  "reqs": []
+}
