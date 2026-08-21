@@ -772,12 +772,12 @@ html:not([data-theme="dark"]) .stack-chip-grid span:hover{
 @media(max-width:900px){.performance-grid .performance-card:last-child{grid-column:auto}}
 
 /* Minimal homepage close: one proposition after the live demo, then deeper links. */
-.home-closing{min-height:max(560px,calc(100svh - 76px));padding:92px 24px;background:var(--surface,#fff);display:flex;align-items:center;justify-content:center}
+.home-closing{padding:230px 24px 92px;background:var(--surface,#fff)}
 .home-closing-inner{max-width:880px;margin:0 auto;text-align:center}
 .home-closing h2{max-width:760px;margin:10px auto 18px;font-size:clamp(34px,4.4vw,58px);line-height:1.03;letter-spacing:-.035em}
 .home-closing-inner>p:not(.eyebrow){max-width:760px;margin:0 auto;color:var(--muted);font-size:17px;line-height:1.65}
 .home-closing-links{justify-content:center;margin-top:30px}
-@media(max-width:600px){.home-closing{min-height:560px;padding:72px 18px}.home-closing-inner>p:not(.eyebrow){font-size:16px}}
+@media(max-width:600px){.home-closing{padding-top:190px}.home-closing-inner>p:not(.eyebrow){font-size:16px}}
 /* Inline-link affordance: prose/table links must not be visually indistinguishable from body copy. */
 .docs-article p a:not(.button):not(.btn),
 .docs-article li a:not(.button):not(.btn),
@@ -975,10 +975,6 @@ html[data-theme="dark"] .hero .hero-install .code-copy-button{
 }
 
 
-.hero-install .shell-command{color:#c8ff7a;font-weight:750}
-.hero-install .shell-flag{color:#8fd7ff}
-.hero-install .shell-url{color:#f2f7f4}
-.hero-install .shell-pipe{color:#ffcf70}
 .hero-install .code-copy-button{
   width:30px;
   height:30px;
