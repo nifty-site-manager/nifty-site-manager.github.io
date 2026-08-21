@@ -9,6 +9,20 @@
 
 <div class="docs-callout"><strong>Battle Tested is an evidence claim, not a claim of perfection.</strong><p>A successful campaign establishes a scoped statement about the project states and failure classes actually exercised. It does not prove that every possible input, filesystem, platform or future change is safe. The evidence is strongest when the guarantee, attack method, scale and remaining boundary are all visible.</p></div>
 
+<h3>Hardening has boundaries — and different kinds of hardening do not substitute for each other</h3>
+<p>“Battle hardening” is an umbrella for several different evidence types. A project can be strong in one dimension and weak in another, so Nift keeps those claims separate instead of rolling them into one vague quality score.</p>
+<div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>Hardening type</th><th>What it attacks</th><th>What it does <em>not</em> establish</th></tr></thead><tbody>
+<tr><td><strong>Semantic / regression hardening</strong></td><td>Wrong rendered output, invalidation mistakes, lifecycle regressions and previously discovered bugs.</td><td>Memory safety, filesystem crash-safety, platform equivalence or performance bounds.</td></tr>
+<tr><td><strong>Adversarial / boundary hardening</strong></td><td>Malformed-but-plausible state, collisions, traversal attempts, parser edge cases, resource limits and hostile state transitions.</td><td>A security audit, penetration test or proof against arbitrary malicious input.</td></tr>
+<tr><td><strong>Memory / resource hardening</strong></td><td>Leaks, sanitizer findings, runaway growth, lifetime cleanup and bounded resource behavior in maintained workloads.</td><td>Semantic correctness or freedom from performance regressions.</td></tr>
+<tr><td><strong>Filesystem / recovery hardening</strong></td><td>Interrupted writes, permissions, stale temporaries, last-good preservation and explicit recovery behavior.</td><td>Every kernel, filesystem, locking, ENOSPC or device-failure condition.</td></tr>
+<tr><td><strong>Performance / complexity hardening</strong></td><td>Known scaling invariants, accidental superlinear work and unnecessary rebuild/write amplification.</td><td>Universal speed superiority or fixed performance on every machine/project shape.</td></tr>
+<tr><td><strong>Concurrency hardening</strong></td><td>Threaded execution, shared-dependency behavior and race-sensitive workloads under the exercised schedulers.</td><td>Proof that every possible interleaving is race-free.</td></tr>
+<tr><td><strong>Platform hardening</strong></td><td>Portable contracts compared across supported operating systems plus explicitly classified platform-specific behavior.</td><td>Identical filesystem semantics everywhere.</td></tr>
+<tr><td><strong>Field hardening</strong></td><td>Unexpected combinations discovered by real users, projects, integrations, package channels and repeated releases over time.</td><td>A substitute for deliberate tests; field exposure is evidence from a different source.</td></tr>
+</tbody></table></div>
+<p>The boundary matters in both directions. Sanitizer-clean fuzzing is valuable evidence, but it is not a security certification. Cross-platform corpus equivalence is valuable evidence, but it is not a claim that POSIX and Windows filesystems are interchangeable. Likewise, years of field use do not make targeted regression, invariant and failure-injection tests unnecessary. Stronger confidence comes from the evidence types reinforcing each other while remaining honestly scoped.</p>
+
 <h3>From examples to guarantees</h3>
 <p>Nift's testing has progressively moved through four levels:</p>
 <div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>Level</th><th>Question</th><th>What is preserved</th></tr></thead><tbody>
