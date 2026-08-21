@@ -71,6 +71,31 @@
   // Syntax highlighting is loaded only on pages that contain block examples.
   const codeBlocks = [...document.querySelectorAll('pre code')];
 
+  // The homepage install command is intentionally highlighted locally rather
+  // than depending on the optional Highlight.js CDN. This keeps the command
+  // readable and coloured even when the built site is opened via file://.
+  const installCommand = document.querySelector('[data-install-command]');
+  if (installCommand) {
+    const token = (className, text) => {
+      const span = document.createElement('span');
+      span.className = className;
+      span.textContent = text;
+      return span;
+    };
+    installCommand.replaceChildren(
+      token('install-cmd', 'curl'),
+      document.createTextNode(' '),
+      token('install-flag', '-fsSL'),
+      document.createTextNode(' '),
+      token('install-url', 'https://nift.dev/install'),
+      document.createTextNode(' '),
+      token('install-pipe', '|'),
+      document.createTextNode(' '),
+      token('install-cmd', 'sh')
+    );
+    installCommand.dataset.customHighlight = 'true';
+  }
+
   // Add one reusable copy control to every block example. The button lives
   // outside <pre>, so copying the code never includes the UI itself.
   const copyIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8h10v12H8z"></path><path d="M6 16H4V4h10v2"></path></svg>';
@@ -163,6 +188,7 @@
     const apply = hljs => {
       registerNift(hljs);
       codeBlocks.forEach(code => {
+        if (code.dataset.customHighlight === 'true') return;
         if (!code.classList.contains('hljs')) hljs.highlightElement(code);
       });
     };
