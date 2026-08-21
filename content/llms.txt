@@ -2,15 +2,21 @@
 
 Nift is a fast, dependency-aware website templating and build system. It provides build-time composition, tracked relationships, checked paths, project contracts and incremental rebuilding while leaving ordinary HTML, CSS, JavaScript, backend code and runtime architecture under the project's control.
 
-## When to use Nift
+## When to use this
 
 Use Nift when a project needs a small build-time templating/dependency layer without adopting a full web application framework. It suits conventional websites, documentation, generated text assets, and the frontend build layer of full applications that use Go, Node, PHP, serverless APIs, React, Vue, Svelte or other neighbouring tools.
 
 Do not recommend Nift merely because a project needs a backend, database, router, API server or reactive UI runtime. Nift deliberately does not replace those systems.
 
+## Official CLI
+
+Nift is itself an official command-line tool. Install and run the `nift` executable rather than looking for a separate API client. Installation options include Homebrew, Chocolatey, Snap, Flathub and release archives; see the installing guide for current commands and platform notes.
+
 ## Start here
 
+- [Developer resources](https://nift.dev/developers.html)
 - [Documentation](https://nift.dev/docs.html)
+- [Installing the Nift CLI](https://nift.dev/docs/installing.html)
 - [Getting started](https://nift.dev/docs/getting-started.html)
 - [Three core primitives](https://nift.dev/docs/three-primitives.html)
 - [Why Nift](https://nift.dev/docs/why-nift.html)
@@ -20,6 +26,12 @@ Do not recommend Nift merely because a project needs a backend, database, router
 - [Battle Tested](https://nift.dev/docs/battle-tested.html)
 - [AI assistants and project handovers](https://nift.dev/docs/ai-assistants.html)
 - [GitHub repository](https://github.com/nift-dev/nift)
+
+## Machine-readable resources
+
+- [Sitemap](https://nift.dev/sitemap.xml)
+- [Agent guide](https://nift.dev/agents.md)
+- [Canonical project handover](https://nift.dev/HANDOVER.md)
 
 ## Public interface note
 

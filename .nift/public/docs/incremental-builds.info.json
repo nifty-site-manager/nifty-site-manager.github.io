@@ -20,9 +20,12 @@
     "templates/partials/header.html"
   ],
   "reqs": [
+    "public/about.html",
     "public/assets/css/style.css",
     "public/assets/images/nift-logo.webp",
     "public/assets/js/script.js",
+    "public/contact.html",
+    "public/developers.html",
     "public/docs.html",
     "public/docs/advanced.html",
     "public/docs/ai-assistants.html",
@@ -81,6 +84,7 @@
     "public/docs/why-nift.html",
     "public/examples.html",
     "public/index.html",
+    "public/privacy.html",
     "public/showcase.html",
     "public/templates.html"
   ]

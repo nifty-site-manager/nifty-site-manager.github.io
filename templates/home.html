@@ -2,6 +2,51 @@
 <html lang="en">
 <head>
 	@input("templates/partials/head.html")
+	<link rel="canonical" href="https://nift.dev/">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Nift">
+	<meta property="og:title" content="Nift — dependency-aware website templating and builds">
+	<meta property="og:description" content="Keep your HTML. Keep your tools. Stop repeating yourself. Nift is a fast, dependency-aware build layer for websites.">
+	<meta property="og:url" content="https://nift.dev/">
+	<meta property="og:image" content="https://nift.dev/assets/images/nift-logo.webp">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Nift — dependency-aware website templating and builds">
+	<meta name="twitter:description" content="Keep your HTML. Keep your tools. Stop repeating yourself.">
+	<meta name="twitter:image" content="https://nift.dev/assets/images/nift-logo.webp">
+	<script type="application/ld+json">
+	{
+	  "@context": "https://schema.org",
+	  "@graph": [
+	    {
+	      "@type": "SoftwareApplication",
+	      "name": "Nift",
+	      "alternateName": "nifty-site-manager",
+	      "applicationCategory": "DeveloperApplication",
+	      "operatingSystem": "Linux, macOS, Windows",
+	      "url": "https://nift.dev/",
+	      "description": "Nift is a fast, dependency-aware website templating and build system that keeps ordinary HTML, CSS, JavaScript and the rest of your stack in your control.",
+	      "codeRepository": "https://github.com/nift-dev/nift",
+	      "downloadUrl": "https://github.com/nift-dev/nift/releases",
+	      "softwareVersion": "4.0.5",
+	      "license": "https://opensource.org/license/mit",
+	      "sameAs": ["https://github.com/nift-dev/nift"]
+	    },
+	    {
+	      "@type": "WebSite",
+	      "name": "Nift",
+	      "url": "https://nift.dev/",
+	      "description": "Official website and documentation for the Nift website templating and build system."
+	    },
+	    {
+	      "@type": "Organization",
+	      "name": "Nift",
+	      "url": "https://nift.dev/",
+	      "logo": "https://nift.dev/assets/images/nift-logo.webp",
+	      "sameAs": ["https://github.com/nift-dev"]
+	    }
+	  ]
+	}
+	</script>
 	<link rel="preload" as="image" href="@pathto('public/assets/images/nift-logo.webp')" type="image/webp" fetchpriority="high">
 </head>
 <body>

@@ -19,15 +19,19 @@
     "templates/template.html"
   ],
   "reqs": [
+    "public/about.html",
     "public/assets/css/style.css",
     "public/assets/images/nift-logo.webp",
     "public/assets/js/demo.js",
     "public/assets/js/script.js",
+    "public/contact.html",
+    "public/developers.html",
     "public/docs.html",
     "public/docs/advanced.html",
     "public/docs/use-cases/web-apps.html",
     "public/examples.html",
     "public/index.html",
+    "public/privacy.html",
     "public/showcase.html",
     "public/templates.html"
   ]

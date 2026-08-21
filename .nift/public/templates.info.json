@@ -19,6 +19,7 @@
     "templates/template.html"
   ],
   "reqs": [
+    "public/about.html",
     "public/assets/css/style.css",
     "public/assets/images/nift-logo.webp",
     "public/assets/images/templates/codex-01.webp",
@@ -37,10 +38,13 @@
     "public/assets/templates/nift-pulse.zip",
     "public/assets/templates/nift-signal.zip",
     "public/assets/templates/nift-vault.zip",
+    "public/contact.html",
+    "public/developers.html",
     "public/docs.html",
     "public/docs/getting-started.html",
     "public/examples.html",
     "public/index.html",
+    "public/privacy.html",
     "public/showcase.html",
     "public/templates.html",
     "public/templates/Aurora/index.html",

@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+<head>
+	@input("templates/partials/head.html")
+</head>
+<body class="docs-page info-page">
+	@input("templates/partials/header.html")
+	<main class="docs-main info-main">
+		@content
+	</main>
+	@input("templates/partials/footer.html")
+	<script defer src="@pathto('public/assets/js/script.js')"></script>
+</body>
+</html>

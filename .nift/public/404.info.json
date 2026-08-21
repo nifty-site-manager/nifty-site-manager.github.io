@@ -19,6 +19,8 @@
     "public/assets/css/style.css",
     "public/assets/js/script.js",
     "public/docs.html",
-    "public/index.html"
+    "public/index.html",
+    "public/llms.txt",
+    "public/sitemap.xml"
   ]
 }

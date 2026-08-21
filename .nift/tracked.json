@@ -251,6 +251,26 @@
       "template": "templates/docs.html"
     },
     {
+      "name": "developers",
+      "title": "Developer resources",
+      "template": "templates/info.html"
+    },
+    {
+      "name": "about",
+      "title": "About Nift",
+      "template": "templates/info.html"
+    },
+    {
+      "name": "contact",
+      "title": "Contact and project support",
+      "template": "templates/info.html"
+    },
+    {
+      "name": "privacy",
+      "title": "Privacy",
+      "template": "templates/info.html"
+    },
+    {
       "name": "assets/css/style",
       "title": "Website styles",
       "template": "templates/asset.txt",
