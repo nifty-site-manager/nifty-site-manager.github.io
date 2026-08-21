@@ -149,7 +149,7 @@ commit generated main
 commit source + matching Git-link pointer on stage</code></pre>
   <p>This makes the deployed branch simple without pretending generated HTML is the development source. Static CSS and JavaScript can also be tracked Nift outputs, so readable source participates in dependency tracking and optional final-output minification.</p>
 
-  <h2>Human-first design that also produces strong AI DX</h2>
+  <h2>Human-first design that also produces strong AI-DX</h2>
   <p>Nift is first and foremost designed for humans building websites. Its compact model, explicit configuration, deterministic behavior, fast feedback and checked relationships are human developer-experience choices. Those same properties happen to make it unusually legible to coding agents: tracked outputs, templates, <code>\@content</code>, <code>\@input</code>, <code>\@pathto</code>, metadata and incremental dependencies explain most projects. Fast builds make repeated edit/build/inspect cycles cheap, while <code>nift status</code> explains why a page would rebuild before changing output.</p>
   <p>The small mental model does not eliminate responsibility. An AI assistant still needs to read the project's handover, inspect current Git state, preserve unrelated user work, distinguish source from generated output and validate links/assets rather than assuming a successful command means a correct site.</p>
 

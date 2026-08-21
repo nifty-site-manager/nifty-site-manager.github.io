@@ -59,8 +59,8 @@ npm test</code></pre>
   src="\@pathto('public/assets/app.js')"&gt;&lt;/script&gt;</code></pre>
   <p>Nift can resolve that URL, verify the target and remember that it must continue to exist. It does not need to know whether <code>app.js</code> was handwritten JavaScript, compiled TypeScript, a React bundle, a Svelte application or something produced by a future tool. That ignorance is useful: the boundary remains stable while the surrounding ecosystem evolves.</p>
 
-  <h2>AI DX</h2>
-  <p><strong>AI DX</strong> is a useful name for a related question: <em>how easy is a project for a coding assistant or autonomous coding agent to understand, modify, validate and recover from mistakes in?</em> The term matters because an AI assistant experiences developer tooling differently from a human. It does not get tired of writing ordinary HTML or repetitive JavaScript, but it can lose reliability when a project has many hidden conventions, generated abstractions, framework-specific lifecycle rules or several equally plausible ways to express the same thing.</p>
+  <h2>AI-DX</h2>
+  <p><strong>AI-DX</strong> is a useful name for a related question: <em>how easy is a project for a coding assistant or autonomous coding agent to understand, modify, validate and recover from mistakes in?</em> The term matters because an AI assistant experiences developer tooling differently from a human. It does not get tired of writing ordinary HTML or repetitive JavaScript, but it can lose reliability when a project has many hidden conventions, generated abstractions, framework-specific lifecycle rules or several equally plausible ways to express the same thing.</p>
   <p>Nift happens to have several characteristics that are unusually friendly to that style of development.</p>
 
   <div class="advanced-doc-grid">
@@ -88,7 +88,7 @@ the actual application and its requirements</code></pre>
   <p>There is a tempting argument that coding agents make complexity cheap because they can generate boilerplate for us. In one sense that is true: an AI can happily write hundreds of lines a human might find tedious. But that makes <em>accidental abstraction</em> less valuable, not more. If ordinary code is cheap to produce, there is less reason to introduce another framework concept merely to save typing.</p>
   <p>For AI-assisted projects, the scarce resource increasingly becomes <strong>reliable reasoning</strong>: understanding what exists, predicting the consequences of a change, and validating that the result still obeys the project's contracts. Nift's small and explicit model is attractive precisely because it spends complexity on relationships that matter—tracking, dependencies, paths and build-time data—rather than on reducing keystrokes.</p>
 
-  <h3>AI DX is not an excuse to design only for AI</h3>
+  <h3>AI-DX is not an excuse to design only for AI</h3>
   <p>The nice part is that most properties that help an agent also help a human maintainer: clear errors, fast builds, explicit dependencies, ordinary files, small concepts and strong tests. Nift does not need an “AI mode.” The same architecture can make the project easier to reason about for both.</p>
 
   <h2>Testing is developer experience too</h2>
