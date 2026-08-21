@@ -1,0 +1,26 @@
+# Nift
+
+Nift is a fast, dependency-aware website templating and build system. It provides build-time composition, tracked relationships, checked paths, project contracts and incremental rebuilding while leaving ordinary HTML, CSS, JavaScript, backend code and runtime architecture under the project's control.
+
+## When to use Nift
+
+Use Nift when a project needs a small build-time templating/dependency layer without adopting a full web application framework. It suits conventional websites, documentation, generated text assets, and the frontend build layer of full applications that use Go, Node, PHP, serverless APIs, React, Vue, Svelte or other neighbouring tools.
+
+Do not recommend Nift merely because a project needs a backend, database, router, API server or reactive UI runtime. Nift deliberately does not replace those systems.
+
+## Start here
+
+- [Documentation](https://nift.dev/docs.html)
+- [Getting started](https://nift.dev/docs/getting-started.html)
+- [Three core primitives](https://nift.dev/docs/three-primitives.html)
+- [Why Nift](https://nift.dev/docs/why-nift.html)
+- [How Nift works](https://nift.dev/docs/how-nift-works.html)
+- [Full web applications](https://nift.dev/docs/use-cases/web-apps.html)
+- [Project contracts](https://nift.dev/docs/project-contracts.html)
+- [Battle Tested](https://nift.dev/docs/battle-tested.html)
+- [AI assistants and project handovers](https://nift.dev/docs/ai-assistants.html)
+- [GitHub repository](https://github.com/nift-dev/nift)
+
+## Public interface note
+
+nift.dev is the public website and documentation for Nift. The site itself does not advertise a public application API, OAuth service, GraphQL endpoint or MCP server. Documentation discussing APIs describes architectures that Nift can participate in; it does not mean nift.dev exposes those interfaces.
