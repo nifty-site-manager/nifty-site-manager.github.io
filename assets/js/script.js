@@ -44,10 +44,6 @@
     }
   };
   desktopBreakpoint.addEventListener?.('change', syncMenuToViewport);
-  window.addEventListener('resize', () => {
-    if (window.innerWidth >= 761) closeMobileMenu();
-    if (window.innerWidth >= 761) closeDocsMenu();
-  }, { passive: true });
 
   // Three-state theme: system is the default, with the explicit choice persisted.
   const resolveTheme = mode => mode === 'system' ? (systemTheme.matches ? 'dark' : 'light') : mode;
