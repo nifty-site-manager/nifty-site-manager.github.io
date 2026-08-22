@@ -1,8 +1,8 @@
 <main class="simple-page showcase-page">
 <section class="page-hero">
   <p class="eyebrow">Showcase</p>
-  <h1>Different websites. The same small Nift boundary.</h1>
-  <p>These are real projects built while developing the v4 website—not hypothetical framework diagrams. The point is less that they share a visual style and more that wildly different results can share a remarkably small amount of Nift-specific machinery.</p>
+  <h1>Different projects. The same small Nift boundary.</h1>
+  <p>These are live project websites built with Nift—not framework mock-ups or template demos. They range from C++ libraries and compilers to a Linux desktop utility and a Go-backed server console. The interesting part is how little the Nift layer has to change between them.</p>
 </section>
 
 <section class="showcase-list">
@@ -13,107 +13,138 @@
       <div class="showcase-code-lines"><i></i><i></i><i></i><i></i></div>
     </div>
     <div class="showcase-copy">
-      <p class="eyebrow">01 · This website</p>
-      <h2>Nift v4 website</h2>
-      <p>A full documentation/product site with theme switching, syntax highlighting, downloadable projects, responsive navigation, examples, install guidance and an extensive documentation tree.</p>
-      <h3>Architecture</h3>
+      <p class="eyebrow">01 · Nift itself</p>
+      <h2>nift.dev</h2>
+      <p>The main Nift product and documentation site: installation, examples, deployment guidance, AI-agent onboarding, evidence pages and a large documentation tree built with the tool it documents.</p>
+      <h3>Nift's role</h3>
       <pre><code class="language-plaintext">Nift
-├─ 28 tracked pages
-├─ reusable root/docs templates
-├─ shared header/footer/docs navigation
-├─ vanilla CSS
-├─ vanilla JavaScript
-├─ Highlight.js from CDN
-├─ downloadable template ZIPs
-└─ ordinary generated HTML</code></pre>
-      <p>Nift owns composition, tracked paths and builds. The theme switcher, tabs and navigation behaviour stay ordinary browser JavaScript; syntax highlighting stays an external specialist library.</p>
-      <div class="showcase-actions"><a class="button button-primary" href="@pathto('/')">View the homepage →</a><a class="text-link" href="@pathto('docs/why-nift')">Why this architecture →</a></div>
+├─ 70 tracked pages
+├─ root + docs templates
+├─ shared navigation and partials
+├─ tracked assets and paths
+└─ generated HTML/CSS/JavaScript</code></pre>
+      <p>The browser behavior stays ordinary HTML, CSS and JavaScript. Nift owns composition, checked project relationships and dependency-aware rebuilding without becoming the frontend runtime.</p>
+      <div class="showcase-actions"><a class="button button-primary" href="@pathto('/')">Visit nift.dev</a><a class="text-link" href="https://github.com/nift-dev/nift">Source</a></div>
     </div>
   </article>
 
-  <article class="showcase-project showcase-aurora">
+  <article class="showcase-project showcase-jsonic">
     <div class="showcase-visual">
-      <span>✦ AURORA</span>
-      <strong>Turn scattered signals<br>into <em>clear direction.</em></strong>
-      <div class="showcase-mini-ui"><i></i><i></i><i></i></div>
+      <span>JSONIC++</span>
+      <strong>Tiny JSON.<br><em>Serious contracts.</em></strong>
+      <div class="showcase-json-card"><b>{ }</b><i></i><i></i><i></i></div>
     </div>
     <div class="showcase-copy">
-      <p class="eyebrow">02 · AI / SaaS</p>
-      <h2>Aurora</h2>
-      <p>A polished dark product landing page with atmospheric gradients, interface mock-ups, product metrics and feature storytelling.</p>
-      <h3>Architecture</h3>
+      <p class="eyebrow">02 · C++ library</p>
+      <h2>Jsonic++</h2>
+      <p>A tiny embeddable JSON parser for C++, extracted from real use inside Nift and Minify++. Its site has API guidance, architecture notes, correctness evidence, memory/resource testing and production-readiness documentation.</p>
+      <h3>Nift's role</h3>
       <pre><code class="language-plaintext">Nift
-├─ content/index.html
-├─ templates/template.html
-├─ head/header/footer partials
-└─ public/
-   ├─ CSS
-   └─ JavaScript
-
-No npm install
-No frontend framework
-No external image dependency</code></pre>
-      <p>The design looks like a modern SaaS product site, but the underlying project is essentially one tracked page plus reusable structure and ordinary frontend assets.</p>
-      <div class="showcase-actions"><a class="button button-primary" href="@pathto('public/assets/templates/nift-aurora.zip')" download>Download Aurora ↓</a><a class="text-link" href="@pathto('templates')">Template details →</a></div>
+├─ 17 tracked pages
+├─ shared documentation shell
+├─ reusable navigation/partials
+├─ ordinary CSS + JavaScript
+└─ generated documentation site</code></pre>
+      <p>The parser is a C++ library; Nift does not participate in its runtime. It simply gives the project a small, dependency-aware layer for publishing and maintaining its documentation.</p>
+      <div class="showcase-actions"><a class="button button-primary" href="https://nift.dev/jsonic-website/">Visit Jsonic++</a><a class="text-link" href="https://github.com/nift-dev/jsonic">Source</a></div>
     </div>
   </article>
 
-  <article class="showcase-project showcase-forge">
+  <article class="showcase-project showcase-minify">
     <div class="showcase-visual">
-      <span>■ FORGE</span>
-      <strong>Ship the system.<br><em>Skip the platform tax.</em></strong>
-      <div class="showcase-terminal"><b>$ forge deploy</b><i>✓ build completed</i><i>✓ deployment ready</i></div>
+      <span>MINIFY++</span>
+      <strong>Cut bytes.<br><em>Keep meaning.</em></strong>
+      <div class="showcase-minify-lines"><i></i><i></i><i></i><b></b></div>
     </div>
     <div class="showcase-copy">
-      <p class="eyebrow">03 · Developer tooling</p>
-      <h2>Forge</h2>
-      <p>A developer-infrastructure landing page with terminal output, platform metrics, technical feature cards and a code-first visual language.</p>
-      <h3>Architecture</h3>
+      <p class="eyebrow">03 · Native minifier</p>
+      <h2>Minify++</h2>
+      <p>A compact C++17 minifier for JavaScript, JSX, HTML, CSS, JSON, XML and SVG. The website documents its CLI and C++ API alongside benchmarks, adversarial testing, memory/resource evidence and production-readiness boundaries.</p>
+      <h3>Nift's role</h3>
       <pre><code class="language-plaintext">Nift
-├─ tracked HTML content
-├─ shared document template
-├─ reusable header/footer
-└─ public/assets/
-   └─ CSS
-
-Browser result:
-plain HTML + CSS</code></pre>
-      <p>There is no special “developer-tool theme engine” here. The complexity lives in the design, not in Nift's project model.</p>
-      <div class="showcase-actions"><a class="button button-primary" href="@pathto('public/assets/templates/nift-forge.zip')" download>Download Forge ↓</a><a class="text-link" href="@pathto('templates')">Template details →</a></div>
+├─ 19 tracked pages
+├─ docs + benchmark pages
+├─ shared templates/navigation
+├─ tracked CSS/JavaScript assets
+└─ Minify++ can minify the output</code></pre>
+      <p>This is a useful bit of ecosystem recursion: Nift builds the Minify++ website, while Minify++ is also the minifier embedded by Nift for projects that opt into minification.</p>
+      <div class="showcase-actions"><a class="button button-primary" href="https://nift.dev/minify-website/">Visit Minify++</a><a class="text-link" href="https://github.com/nift-dev/minify">Source</a></div>
     </div>
   </article>
 
-  <article class="showcase-project showcase-meridian">
+  <article class="showcase-project showcase-tscc">
     <div class="showcase-visual">
-      <span>MERIDIAN°</span>
-      <strong>We make digital<br>work <em>worth feeling.</em></strong>
-      <div class="showcase-art"><i></i><b>MONUMENT</b></div>
+      <span>TSCC</span>
+      <strong>Compile now.<br><em>Understand next.</em></strong>
+      <div class="showcase-tscc-code"><i>// accepted and emitted</i><b>const answer: number = 42;</b><i>// bounded semantic checking</i><b class="error">error TSCC2001</b></div>
     </div>
     <div class="showcase-copy">
-      <p class="eyebrow">04 · Studio / Portfolio</p>
-      <h2>Meridian</h2>
-      <p>A dark creative-studio project using oversized editorial typography, art-directed panels and CSS-generated visual work.</p>
-      <h3>Architecture</h3>
+      <p class="eyebrow">04 · TypeScript compiler</p>
+      <h2>tscc</h2>
+      <p>A native TypeScript-to-JavaScript compiler with substantial transpilation, project, CommonJS and TSX machinery, now growing a deliberately bounded semantic type checker.</p>
+      <h3>Nift's role</h3>
       <pre><code class="language-plaintext">Nift
-├─ page-specific HTML content
-├─ reusable studio shell
-├─ header/footer partials
-└─ public/assets/
-   └─ CSS-generated visuals
+├─ 14 tracked pages
+├─ compiler/support documentation
+├─ evidence + roadmap pages
+├─ shared templates/navigation
+└─ ordinary generated web assets</code></pre>
+      <p>The compiler and the website have completely different responsibilities. Nift provides the publishing structure without asking tscc to adopt a web framework or JavaScript build stack.</p>
+      <div class="showcase-actions"><a class="button button-primary" href="https://nift.dev/tscc-website/">Visit tscc</a><a class="text-link" href="https://github.com/nift-dev/tscc">Source</a></div>
+    </div>
+  </article>
 
-No component runtime
-No image library
-No build dependency tree</code></pre>
-      <p>This starter is a useful example of Nift getting out of the way: almost everything interesting about it is just HTML and CSS.</p>
-      <div class="showcase-actions"><a class="button button-primary" href="@pathto('public/assets/templates/nift-meridian.zip')" download>Download Meridian ↓</a><a class="text-link" href="@pathto('templates')">Template details →</a></div>
+  <article class="showcase-project showcase-scrollshift">
+    <div class="showcase-visual">
+      <span>SCROLLSHIFT</span>
+      <strong>Your mouse wheel,<br><em>at the speed you mean.</em></strong>
+      <div class="showcase-scroll-curve"><i></i><b></b><span>precision</span><span>fast spin</span></div>
+    </div>
+    <div class="showcase-copy">
+      <p class="eyebrow">05 · Linux desktop utility</p>
+      <h2>ScrollShift</h2>
+      <p>A native Linux daemon that keeps deliberate wheel movement precise while allowing rapid spins to travel farther. Its documentation covers setup, device selection, configuration, troubleshooting and the behavior established through real-hardware dogfooding.</p>
+      <h3>Nift's role</h3>
+      <pre><code class="language-plaintext">Nift
+├─ 9 tracked pages
+├─ landing + documentation pages
+├─ shared templates/partials
+├─ ordinary CSS + JavaScript
+└─ no relationship to daemon runtime</code></pre>
+      <p>ScrollShift is a good example of Nift being boring in the best way: a Linux system utility gets a polished web presence without acquiring a frontend toolchain just to publish documentation.</p>
+      <div class="showcase-actions"><a class="button button-primary" href="https://scrollshift-dev.github.io/">Visit ScrollShift</a><a class="text-link" href="https://github.com/scrollshift-dev/ScrollShift">Source</a></div>
+    </div>
+  </article>
+
+  <article class="showcase-project showcase-warden">
+    <div class="showcase-visual">
+      <span>WARDEN</span>
+      <strong>Keep watch.<br><em>Keep control.</em></strong>
+      <div class="showcase-warden-panel"><div><small>CPU</small><b>18%</b></div><div><small>MEMORY</small><b>4.8G</b></div><div><small>STORAGE</small><b>37%</b></div></div>
+    </div>
+    <div class="showcase-copy">
+      <p class="eyebrow">06 · Linux server console</p>
+      <h2>Warden</h2>
+      <p>A dark web console for Linux servers with live monitoring, a filesystem explorer, workspace editor, interactive PTY and structured system administration behind an authenticated Go service.</p>
+      <h3>Nift's role</h3>
+      <pre><code class="language-plaintext">Nift website
+├─ product landing page
+├─ operational/security docs
+└─ generated static assets
+
+Warden application
+├─ Nift-built frontend
+└─ Go backend + live APIs / PTY</code></pre>
+      <p>Warden demonstrates the distinction between build-time and runtime particularly clearly: Nift can build the web layer of a genuinely dynamic application while Go owns authentication, APIs, WebSockets and server authority.</p>
+      <div class="showcase-actions"><a class="button button-primary" href="https://warden-deck.github.io/">Visit Warden</a><a class="text-link" href="https://github.com/warden-deck/warden">Source</a></div>
     </div>
   </article>
 </section>
 
 <section class="showcase-principle">
   <p class="eyebrow">What the showcase is demonstrating</p>
-  <h2>The architecture does not have to grow with the visual ambition.</h2>
-  <p>Nift can stay a small templating/build boundary whether the result is documentation, a SaaS landing page, a developer product or a high-end portfolio. And when a project genuinely needs TypeScript, React, Vue, Svelte, Go, Node, Python, Supabase or something else, those tools can join the repository without becoming Nift features.</p>
-  <div class="hero-actions"><a class="button button-primary" href="@pathto('templates')">Download the starters →</a><a class="button button-secondary" href="@pathto('examples')">See stack examples →</a></div>
+  <h2>The project can grow without Nift growing into the rest of the stack.</h2>
+  <p>These sites document very different software, and Warden goes further into a live Go-backed application. Nift's responsibility remains small: templates, tracked relationships, paths, dependencies and builds. C++, Go, browser JavaScript and operating-system integration stay where they belong.</p>
+  <div class="hero-actions"><a class="button button-primary" href="@pathto('docs/why-nift')">Why Nift?</a><a class="button button-secondary" href="@pathto('docs/three-primitives')">Three primitives</a></div>
 </section>
 </main>
