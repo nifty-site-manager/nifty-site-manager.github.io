@@ -24,6 +24,7 @@ Nift is itself an official command-line tool. Install and run the `nift` executa
 - [Full web applications](https://nift.dev/docs/use-cases/web-apps.html)
 - [Project contracts](https://nift.dev/docs/project-contracts.html)
 - [Battle Tested](https://nift.dev/docs/battle-tested.html)
+- [Reproducible website generator benchmark](https://nift.dev/website-generator-benchmark/)
 - [AI agents and project handovers](https://nift.dev/docs/ai-agents.html)
 - [GitHub repository](https://github.com/nift-dev/nift)
 
