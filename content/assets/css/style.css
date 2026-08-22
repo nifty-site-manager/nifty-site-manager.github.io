@@ -539,12 +539,12 @@ pre code.hljs{background:transparent;padding:0;overflow:visible}
 .showcase-jsonic .jsonic-mark{position:absolute;right:34px;top:34px;font:900 clamp(58px,7vw,96px)/1 ui-monospace,monospace;letter-spacing:-.12em;color:#c8a8ff22;user-select:none}
 .showcase-jsonic .showcase-visual>strong{font-size:clamp(40px,4.4vw,62px);line-height:.94;margin:74px 0 28px;max-width:88%}
 .showcase-jsonic em{font-style:normal;color:#c8a8ff}
-.showcase-json-card{position:absolute;left:42px;right:42px;bottom:38px;min-height:154px;padding:0;border:1px solid #8b6ebc66;border-radius:0;background:#15111d;box-shadow:0 22px 50px #0007;overflow:hidden}
+.showcase-json-card{position:absolute;left:42px;right:42px;bottom:38px;min-height:154px;padding:0;border:1px solid #6f568f88;border-radius:0;background:#15111d;box-shadow:0 22px 50px #0007;overflow:hidden}
 .jsonic-code-head{height:34px;display:flex;align-items:center;gap:6px;padding:0 13px;border-bottom:1px solid #8b6ebc33;background:#1d1728}
 .jsonic-code-head>span{width:7px;height:7px;border-radius:50%;background:#806a9d}
 .jsonic-code-head>span:nth-child(2){opacity:.7}.jsonic-code-head>span:nth-child(3){opacity:.45}
 .jsonic-code-head b{margin-left:7px;font:600 9px/1 ui-monospace,monospace;letter-spacing:.06em;color:#9b91aa}
-.showcase-json-card code{display:block;padding:14px 18px 16px;font:12px/1.55 ui-monospace,monospace;color:#ddd5ec;white-space:normal}
+.showcase-json-card code{display:block;padding:14px 18px 16px;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;font:12px/1.55 ui-monospace,monospace;color:#ddd5ec;white-space:normal}
 .showcase-json-card .jk{color:#bba6df}.showcase-json-card .js{color:#8ee3a2}.showcase-json-card .jb{color:#82cfff}.showcase-json-card .jn{color:#e8c77b}.showcase-json-card .jp{color:#756c82;font-weight:700}
 
 .showcase-minify .showcase-visual{background:radial-gradient(circle at 72% 18%,#5b2a1c,#241713 58%,#111315);color:#f8f2ed}
@@ -1086,3 +1086,5 @@ html[data-theme="dark"] .docs-nav-group summary:hover{color:#b8f0a1}
 .handover-details[open]>summary::after{content:" −"}
 .handover-details>h3{padding:0 20px;margin-top:12px}
 .handover-details>pre{margin:0;border-radius:0}
+
+.showcase-json-card,.showcase-json-card .jsonic-code-head,.showcase-json-card code{border-radius:0!important}
