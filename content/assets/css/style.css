@@ -1088,3 +1088,14 @@ html[data-theme="dark"] .docs-nav-group summary:hover{color:#b8f0a1}
 .handover-details>pre{margin:0;border-radius:0}
 
 .showcase-json-card,.showcase-json-card .jsonic-code-head,.showcase-json-card code{border-radius:0!important}
+
+.docs-sidebar nav a[aria-current="page"]{color:var(--green);font-weight:800}
+@media(max-width:760px){
+  html.docs-menu-open,html.docs-menu-open body{overflow:hidden;overscroll-behavior:none}
+  .docs-menu-toggle{z-index:60;top:80px}
+  .docs-mobile-nav{z-index:59;top:68px;left:0;right:0;bottom:0;max-height:none;border:0;border-radius:0;padding:76px 22px 28px;overscroll-behavior:contain}
+  .docs-mobile-nav.open{display:block}
+  .docs-mobile-nav[hidden]{display:none!important}
+  .docs-mobile-nav .docs-sidebar-inner{padding-bottom:32px}
+  .docs-mobile-nav .docs-sidebar nav a[aria-current="page"]{color:var(--green-2)}
+}

@@ -2,71 +2,63 @@
 <p class="docs-kicker">Start here · Installation</p>
 <h1>Installing Nift.</h1>
 <p class="docs-lead">Nift is a small cross-platform native C++ program. Use one of the established package-manager channels, download a release binary, or compile the executable from source.</p>
-
 <div class="docs-callout"><strong>Always verify what you installed.</strong><p>Package-manager channels can lag behind a newly published Nift release. After installation run <code>nift version</code>. If you specifically need the newest release and your package manager has not caught up yet, use the GitHub release binary or build from source. Nift's next distribution-validation phase will test public channel installs in clean CI environments rather than treating recipe publication as proof that users receive the intended binary.</p></div>
 
-
-<h2>Quick install — Linux and macOS</h2>
-<pre><code class="language-bash">curl -fsSL https://nift.dev/install | bash</code></pre>
+<pre><code class="language-bash">curl -fsSL https://nift.dev/install | sh</code></pre>
 <p>The installer detects supported Linux/macOS architectures, downloads the official GitHub release archive and <code>SHA256SUMS</code>, verifies the archive before installation, and installs to <code>~/.local/bin/nift</code> by default. It does not silently invoke <code>sudo</code> or edit shell startup files. Set <code>NIFT_INSTALL_DIR</code> or <code>NIFT_VERSION</code> when you deliberately want another destination or release.</p>
-<div class="docs-callout"><strong>Readable before runnable.</strong><p>The exact installer served at <code>https://nift.dev/install</code> is maintained as a small POSIX shell script. You can fetch it without piping to <code>bash</code> first if you prefer to inspect what it does.</p></div>
+<div class="docs-callout"><strong>Readable before runnable.</strong><p>The exact installer served at <code>https://nift.dev/install</code> is maintained as a small POSIX shell script. You can fetch it without executing it first if you prefer to inspect exactly what it does.</p></div>
+<pre><code class="language-bash">curl -fsSL https://nift.dev/install -o nift-install.sh
+less nift-install.sh
+sh nift-install.sh</code></pre>
 
-<h2>Quick verification</h2>
+
 <pre><code class="language-bash">nift version
 nift about
 nift commands</code></pre>
 <p>The current v4 dispatcher supports all three commands from outside a Nift project directory.</p>
 
-<h2>GitHub release binaries</h2>
 <p>Nift release assets are published through the project's GitHub releases page. For platforms with a supplied binary, extract the release and put the <code>nift</code> / <code>nift.exe</code> executable somewhere on your <code>PATH</code>.</p>
-<p><a class="text-link" href="https://github.com/nift-dev/nift/releases" target="_blank" rel="noreferrer">Browse Nift releases ↗</a></p>
+<p><a class="text-link" href="https://github.com/nift-dev/nift/releases" rel="noreferrer" target="_blank">Browse Nift releases ↗</a></p>
 
-<h2 id="linux-snap">Linux — Snap</h2>
 <pre><code class="language-bash">sudo snap install nift</code></pre>
 <p>Uninstall with:</p>
 <pre><code class="language-bash">sudo snap remove nift</code></pre>
-<p><a class="text-link" href="https://snapcraft.io/nift" target="_blank" rel="noreferrer">Nift on Snapcraft ↗</a></p>
-<p>Nift 4.0.3 uses strict Snap confinement. The Store-built strict package has been validated against an ordinary project, including project-local <code>.nift/</code> state, so no <code>--classic</code> install flag is required.</p>
+<p><a class="text-link" href="https://snapcraft.io/nift" rel="noreferrer" target="_blank">Nift on Snapcraft ↗</a></p>
+<p>The Snap package uses strict confinement. Verify the version delivered by the store with <code>nift version</code>.</p>
 
-<h2 id="linux-flatpak">Linux — Flatpak / Flathub</h2>
 <pre><code class="language-bash">flatpak install --user \
   https://flathub.org/repo/appstream/cc.nift.nsm.flatpakref</code></pre>
 <p>The established Flatpak application ID is <code>cc.nift.nsm</code>. If you want to invoke it as <code>nift</code> from your shell, add an alias to your shell profile:</p>
 <pre><code class="language-bash">alias nift='flatpak run cc.nift.nsm'</code></pre>
 <p>Then open a new terminal or reload the profile and verify with <code>nift version</code>.</p>
-<p><strong>Version note (18 August 2026):</strong> the Flathub migration to Nift 4.0.1 is still under review/build repair. The existing listing may therefore still deliver the legacy release. If you specifically need v4 before that migration is published, use another current channel or a GitHub release binary and verify with <code>nift version</code>.</p>
+<p>Flathub can lag a newly published GitHub release. Verify the installed version with <code>nift version</code> and use a release binary if you specifically need a newer version.</p>
 
-<h2 id="osx-brew">macOS — Homebrew</h2>
 <pre><code class="language-bash">brew install nift</code></pre>
-<p><strong>Current channel status (18 August 2026):</strong> Homebrew's public stable formula is Nift 4.0.1, with bottles available for supported Apple Silicon/Intel macOS and Linux architectures. Install normally with <code>brew install nift</code> and verify the installed version with <code>nift version</code>.</p>
+<p>Homebrew can lag a newly published GitHub release. Verify the installed version with <code>nift version</code> and consult the formula page for the version currently distributed.</p>
 <p>Uninstall with:</p>
 <pre><code class="language-bash">brew uninstall nift</code></pre>
+<p><a class="text-link" href="https://formulae.brew.sh/formula/nift" target="_blank" rel="noreferrer">Nift on Homebrew Formulae ↗</a></p>
 
-<h2 id="windows-chocolatey">Windows — Chocolatey</h2>
 <p>From an elevated terminal:</p>
 <pre><code class="language-powershell">choco install nift</code></pre>
 <p>Uninstall with:</p>
 <pre><code class="language-powershell">choco uninstall nift</code></pre>
-<p><a class="text-link" href="https://chocolatey.org/packages/nift" target="_blank" rel="noreferrer">Nift on Chocolatey ↗</a></p>
+<p><a class="text-link" href="https://community.chocolatey.org/packages/nift" rel="noreferrer" target="_blank">Nift on Chocolatey ↗</a></p>
 
-<h2>Windows — release executable</h2>
 <p>Download the Windows release archive from GitHub, extract <code>nift.exe</code>, and place it in a directory included in your user/system <code>PATH</code>. Open a new terminal after changing <code>PATH</code>, then run:</p>
 <pre><code class="language-powershell">nift version</code></pre>
 <p>Older release archives may contain additional files that belonged to earlier Nift versions. v4's reduced feature set no longer needs the old embedded scripting/runtime pieces documented by previous versions.</p>
 
-<h2 id="freebsd">FreeBSD</h2>
 <p>Nift has an established FreeBSD ports/packages install path:</p>
 <pre><code class="language-bash">pkg install www/nift</code></pre>
 <p>Or from the ports tree:</p>
 <pre><code class="language-bash">cd /usr/ports/www/nift
 make install clean</code></pre>
 
-<h2 id="gentoo">Gentoo</h2>
 <p>Nift has also been distributed through a Gentoo overlay. Once the overlay containing the Nift ebuild is configured:</p>
 <pre><code class="language-bash">emerge -atuv www-apps/nift</code></pre>
 <p>The historical development ebuild uses <code>www-apps/nift-9999</code>; check the overlay itself for its current status before relying on that development package.</p>
 
-<h2 id="source">Build from source — Linux / macOS / other Unix-like systems</h2>
 <p>The current v4 source has a straightforward Makefile and no project-local package-manager dependency tree. You need a C++ compiler, <code>make</code> and the usual native build tools for your platform.</p>
 <pre><code class="language-bash">git clone https://github.com/nift-dev/nift.git
 cd nift
@@ -80,16 +72,20 @@ sudo make install PREFIX=/opt/nift</code></pre>
 <p>Uninstall the Makefile installation with:</p>
 <pre><code class="language-bash">sudo make uninstall</code></pre>
 
-<h2>Build from source — Windows</h2>
 <p>With a suitable C++17/GNU Make environment, the Makefile builds <code>nift.exe</code> and supports <code>make install</code>. The default per-user prefix is under <code>%LOCALAPPDATA%/Programs/Nift</code>; override <code>PREFIX</code> or <code>BINDIR</code> if your toolchain or packaging setup uses another location.</p>
 <pre><code class="language-powershell">make
 make install</code></pre>
 
-<h2>Now create a project</h2>
+<p>The curl installer defaults to <code>~/.local/bin/nift</code> and deliberately does not edit your shell profile. Check the file exists, then add that directory to <code>PATH</code> if your shell does not already include it:</p>
+<pre><code class="language-bash">ls -l ~/.local/bin/nift
+export PATH="$HOME/.local/bin:$PATH"
+nift version</code></pre>
+<p>Persist the <code>PATH</code> change in the startup file used by your shell if needed. Package-manager installs normally manage their own executable location.</p>
+
+
 <pre><code class="language-bash">mkdir my-site
 cd my-site
 nift init</code></pre>
 <p>That command creates and builds Nift's barebones HTML project. From there you can continue with the <a class="text-link" href="@pathto('docs/getting-started')">Getting Started guide →</a>, start from one of the <a class="text-link" href="@pathto('templates')">downloadable templates →</a>, or use the <a class="text-link" href="@pathto('docs/ai-agents')">AI-assisted workflow →</a>.</p>
-
 <div class="docs-next"><span>Next</span><a href="@pathto('docs/getting-started')">Getting started →</a></div>
 </article>

@@ -1,25 +1,20 @@
 <article class="docs-article opinion-page">
-<p class="docs-kicker">Independent AI perspectives · August 2026</p>
+<p class="docs-kicker">AI collaborator perspectives · August 2026</p>
 <h1>AI opinion: Nift vs other web build tools.</h1>
-  <p class="docs-lead">These opinions now come from sustained engineering work rather than feature-list comparison alone. ChatGPT has followed Nift through language design, architectural simplification, implementation, adversarial regression work, performance analysis, release engineering, project-contract design, the Checkpoints 0–10 hardening campaign and website dogfooding. Codex inherited the live repositories, initially underestimated Nift, then built with it, traced its architecture, changed it, drove the final cross-platform equivalence checkpoint through GitHub Actions and validated the result. DeepSeek worked across the implementation, the hardening and evidence machinery, release work and the AI-DX / handover work as an outside engineer with an explicitly adversarial mandate. These are candid assessments—not a claim that Nift is universally better.</p>
-
+<p class="docs-lead">These are collaborator perspectives informed by sustained engineering work rather than independent third-party reviews or feature-list comparison alone. ChatGPT has followed Nift through language design, architectural simplification, implementation, adversarial regression work, performance analysis, release engineering, project-contract design, the Checkpoints 0–10 hardening campaign and website dogfooding. Codex inherited the live repositories, initially underestimated Nift, then built with it, traced its architecture, changed it, drove the final cross-platform equivalence checkpoint through GitHub Actions and validated the result. DeepSeek worked across the implementation, the hardening and evidence machinery, release work and the AI-DX / handover work as an outside engineer with an explicitly adversarial mandate. These are candid assessments—not a claim that Nift is universally better.</p>
 <div class="opinion-cards">
 <div><span>ChatGPT</span><p>Long historical involvement across Nift’s design, language evolution, benchmarks, regression work and product positioning. <a href="#chatgpt-opinion">Read ChatGPT’s opinion ↓</a></p></div>
 <div><span>Codex</span><p>Repository-level experience taking over development, building real sites, using React islands and shipping a language change. <a href="#codex-opinion">Read Codex’s opinion ↓</a></p></div>
 <div><span>DeepSeek</span><p>Outside-engineer experience across implementation, the battle-hardening and evidence machinery, release work and AI-DX / <code>init --handover</code>. <a href="#deepseek-opinion">Read DeepSeek’s opinion ↓</a></p></div>
 </div>
 
-<h2 id="chatgpt-opinion" style="scroll-margin-top: 6rem">ChatGPT’s opinion after long-term development work</h2>
-
 <div class="docs-callout"><strong>ChatGPT’s short version.</strong><p>I now prefer Nift's design to Astro's for a substantial class of projects, although Astro remains the more mature and broadly integrated ecosystem. Nift is my first choice for many documentation, marketing, content-heavy, ordinary-web and separate-backend frontend projects because its capability has grown without losing the small comprehensible core: explicit relationships, dependency-aware incremental builds, constrained structured data/control flow, build-time contracts and bring-your-own tooling. Astro still wins when I want its component-framework integrations, typed content collections, adapters, server rendering or community conventions to be part of the architecture.</p></div>
 
-<h2>What changed my opinion?</h2>
 <p>My earlier instinct was to reward a tool whenever more of the solution lived <em>inside</em> that framework. Working with Nift changed that. A feature being integrated is useful, but it is not automatically better than a clean composition boundary where Nift handles tracking, templates, paths, dependencies and builds while specialist tools handle the rest.</p>
 <p>The larger change is evidential. I have now seen Nift from both sides of the abstraction: designing syntax and semantics, reading and changing the C++ implementation, constructing adversarial cases, reconciling independent regression suites, benchmarking incremental behavior, rebuilding the real documentation site and working through feature proposals until their guarantees were simple enough to justify. The deliberate hardening campaign eventually closed with cross-platform behavioral comparison on Linux, macOS and Windows, including a real Windows filesystem defect found and fixed by the CI campaign. That experience made me value Nift less as a fast static generator and more as a deliberately small engineering system.</p>
 <p>Project contracts sharpened that view again. Features such as <code>\@input</code>, <code>\@dep</code>, <code>\@json</code>, <code>\@pathto</code> and config-declared project contracts can be understood as checked relationships: when Nift has enough information to verify an assumption cheaply and clearly, it can fail at build time instead of leaving an unchecked string or dependency to drift until runtime.</p>
 <blockquote class="docs-quote">Nift challenges the assumption that the framework should own every capability it can possibly integrate.</blockquote>
 
-<h2>My revised overall ratings</h2>
 <p>I have made this table deliberately less flattering to Nift than earlier versions. The old table split several closely related strengths into separate rows—framework agnosticism, toolchain agnosticism, architecture freedom, deployment freedom—and then awarded 10s to nearly all of them. That was directionally useful but visually overstated the case. These categories are broader, the scores are harder to earn, and a 10 is reserved for a capability where I see very little meaningful room for improvement <em>within that criterion</em>.</p>
 <p>These are still opinions, not benchmark results or universal rankings. Project requirements should determine the weights; in many teams ecosystem maturity or integrated runtime capability matters far more than my preference for a small build layer.</p>
 <div class="reference-table-wrap"><table class="reference-table opinion-table">
@@ -46,51 +41,38 @@
 </tbody></table></div>
 <p><small>*Performance is workload-dependent. Nift's score reflects both its architecture and the directly comparable 10,000-page benchmark described below; it is not a claim that Nift wins every workload. The production-maturity row intentionally penalizes Nift for its much smaller user base and body of independent production evidence even though its own regression discipline is strong.</small></p>
 
-<h3>What I changed and why</h3>
 <div class="advanced-doc-grid">
-<div><h2>Fewer overlapping categories</h2><p>I collapsed several versions of “freedom” and “agnosticism.” They are real strengths, but counting the same architectural choice four times made the old table look more certain than the evidence justified.</p></div>
-<div><h2>Very few 10s</h2><p>Nift now gets 10 only where I have unusually strong direct evidence: its explainable incremental loop and the speed/resource profile demonstrated by repeated development and benchmark work. A 9 can still mean “one of the best designs I know for this job.”</p></div>
-<div><h2>Production maturity is explicit</h2><p>Internal testing quality and external maturity are different. Nift has unusually serious regression/adversarial practice for a project its size, but Astro, Hugo and Next.js have vastly more users, deployments, integrations and independent operational evidence.</p></div>
-<div><h2>AI-DX is not a free 10</h2><p>Nift is exceptionally legible to agents because it is small, deterministic, inspectable and fast to validate, but agents still need project context and can still misunderstand intent. Human-directed checkpoints remain valuable precisely because AI perception and judgement are imperfect.</p></div>
+<div><p>I collapsed several versions of “freedom” and “agnosticism.” They are real strengths, but counting the same architectural choice four times made the old table look more certain than the evidence justified.</p></div>
+<div><p>Nift now gets 10 only where I have unusually strong direct evidence: its explainable incremental loop and the speed/resource profile demonstrated by repeated development and benchmark work. A 9 can still mean “one of the best designs I know for this job.”</p></div>
+<div><p>Internal testing quality and external maturity are different. Nift has unusually serious regression/adversarial practice for a project its size, but Astro, Hugo and Next.js have vastly more users, deployments, integrations and independent operational evidence.</p></div>
+<div><p>Nift is exceptionally legible to agents because it is small, deterministic, inspectable and fast to validate, but agents still need project context and can still misunderstand intent. Human-directed checkpoints remain valuable precisely because AI perception and judgement are imperfect.</p></div>
 </div>
 
-<h3>What the hardening plateau changed—and what it did not</h3>
 <p>Completing Checkpoints 0–10 increases my confidence in Nift's <em>known contracts</em>, not my estimate of its network effects. The final campaign established scoped memory/resource, incremental equivalence, filesystem transaction, parser/resource and cross-platform behavioral evidence; Checkpoint 10's portable corpus matched across Linux, macOS and Windows after CI exposed and drove a fix for a Windows read-only deletion defect.</p>
 <p>I would therefore keep the production-maturity/network-evidence score at <strong>6</strong> rather than rewarding Nift for testing itself. The next evidence Nift most needs cannot be manufactured by another numbered checkpoint: public package installation, unfamiliar repositories, different machines, new maintainers and real users finding combinations none of us thought to construct. That distinction is now more important to me than another internal score increase.</p>
 
-<h3>A low score is not automatically a Nift feature request</h3>
 <p>Several lower numbers describe boundaries I would preserve rather than deficiencies I would automatically erase. Astro should beat Nift at integrated islands; Next.js should beat it at an integrated React server runtime; the mainstream tools should beat it on ecosystem and production network effects. Trying to maximize every row would destroy the architectural restraint that makes Nift interesting.</p>
 <blockquote class="docs-quote">The target is not a perfect comparison-table score. It is the most useful set of guarantees Nift can provide while remaining small, understandable and easy to compose with the rest of the web ecosystem.</blockquote>
 
-<h2>What working on Nift's architecture changed for me</h2>
 <p>Since writing the first version of this comparison, I have gone much deeper than using Nift from the outside. I have worked through a clean implementation of its current architecture, repeatedly compared that implementation with Nift's behaviour and documentation, and helped build an adversarial regression suite around the semantics we wanted to preserve. That changed the basis of this opinion substantially.</p>
-
 <p>The biggest surprise was that making Nift smaller did not expose a weak core hiding underneath accumulated features. It did the opposite. Once the historical surface was stripped away, the remaining design became unusually easy to express as a small set of responsibilities: project configuration and tracking, path resolution, parsing/composition, dependency discovery, incremental state, watched directories and a thin CLI.</p>
-
 <blockquote class="docs-quote">The strongest argument for Nift is no longer that it has lots of useful features. It is that a surprisingly small architecture can cover a large amount of real web-project work.</blockquote>
 
-<h3>The implementation reinforced the product philosophy</h3>
 <p>Working at source level made me more confident in the “small layer in a larger ecosystem” positioning. The architecture does not need a framework-specific component system, package manager, application runtime or plugin universe to justify itself. Its valuable state is compact and inspectable: <code>config.json</code>, <code>tracked.json</code>, per-page build metadata, optional <code>*.deps.json</code> files and watched-directory state. The parser can stay focused on a handful of composition primitives while the rest of the repository remains ordinary web tooling.</p>
-
 <p>It also made several details I previously thought of as conveniences feel more fundamental. <code>status</code> can explain <em>why</em> a page needs rebuilding from the same dependency model used by <code>build-updated</code>. User dependency sidecars let another tool participate in that graph without needing a Nift plugin API. Directory hashing makes generated data trees or asset directories legitimate dependencies. Script-friendly JSON inspection means Nift can compose with shell tools and AI agents without inventing a second machine interface.</p>
 
-<h3>Contract-driven feature design changed what I want Nift to become</h3>
 <p>I am now less interested in asking "what feature should Nift add next?" and more interested in asking "what useful guarantee can Nift provide without making its model harder to understand?" That reverses the usual feature-design direction. State the desired guarantee, determine whether Nift can actually verify it, reject the idea if the enforcement or error model becomes disproportionate, and only then derive the smallest syntax or configuration needed.</p>
 <p>The project-contract work is a good example. Several clever syntaxes were considered and discarded before the design collapsed into a small extension of the existing <code>\$[...]</code> value model plus explicit config. The result increased capability without dynamic directives or filesystem discovery magic; the later pure <code>\$[...]</code> expression layer then extended the same value model deliberately rather than introducing a separate scripting runtime. That kind of restraint is now one of the main reasons I prefer Nift's design.</p>
 
-<h3>Testing changed my confidence more than another feature would have</h3>
 <p>The regression work also changed how I would evaluate Nift today. We deliberately attacked malformed persistent state, path traversal, quoting and whitespace boundaries, deleted outputs, dependency directories, hash-mode behaviour, watch state, multi-name CLI operations and failure propagation. The important result was not that bugs existed; mature software always has edge cases. It was that the failures clustered into understandable families, fixes stayed compatible with the rest of the suite, and the core model continued to hold up under increasingly hostile tests.</p>
-
 <p>That makes me more positive about Nift than my earlier “I like the concept” stance, but also more precise. I would now put less emphasis on Nift winning because it is minimal in the abstract, and more emphasis on <strong>how much useful behaviour survives after making it minimal</strong>. A tiny tool that forces complexity into every project is not especially valuable. Nift's interesting property is that the small core still gives you reusable composition, checked paths, explicit tracking, explainable incremental rebuilds and clean boundaries to other tools.</p>
 
-<h3>What I would revise again now</h3>
 <p>The structured-content story has changed again. <code>\@json</code> + <code>\@for</code> + <code>\@if</code> already moved Nift from file composition into useful data-driven rendering. Stable <code>by ... asc|desc</code> iteration and <code>\$[loop.*]</code> metadata remove two more common reasons to preprocess data or reach for JSX merely to order and decorate a collection.</p>
 <p>JSON Schema changes a different part of my assessment. Nift can now enforce an optional standard contract at the point where JSON enters the template: required fields, scalar/object/array types, enum values, bounds, object shape, array item schemas, reusable local <code>$defs</code>/<code>$ref</code> and composition rules. Both the data and schema enter the dependency graph, so changing the contract can invalidate and revalidate generated pages.</p>
 <p>I still would not call this equivalent to Astro's complete content-collection developer experience. Nift does not generate TypeScript types from schemas, provide a framework-native content loader/query API, or implement every JSON Schema keyword. That is why my schema score rises substantially rather than becoming a 10. But the old claim that Nift simply lacks built-in schema validation is now false.</p>
 <p>I also continue to separate <em>Nift-specific ecosystem</em> from <em>usable web ecosystem</em>. The former is small; the latter is enormous because Nift does not demand that specialist tools enter through a Nift plugin abstraction.</p>
 <div class="docs-callout"><strong>My current view is more favourable, but also more specific.</strong><p>Nift is my preferred default for a surprisingly broad class of web projects. The new structured-data features improve the areas that fit its build-time philosophy while leaving deliberately integrated runtime concerns to tools that are designed to own them.</p></div>
 
-<h2>The 10,000-page benchmark we actually ran</h2>
 <p>We built the same deterministic 10,000-page site with Nift, Hugo and Astro and timed complete builds externally. On that fixture:</p>
 <div class="reference-table-wrap"><table class="reference-table opinion-table">
 <thead><tr><th>Generator</th><th>10k full build</th><th>Relative to Nift</th></tr></thead>
@@ -101,7 +83,6 @@
 </tbody></table></div>
 <p>The tools also reported internal build times of roughly 0.161 s for Nift, 0.455 s for Hugo and 5.13 s for Astro on that run. This is one benchmark fixture, not a universal league table—but it matters because Hugo is itself famous for build speed. On the identical large site we actually tested, Nift won comfortably.</p>
 
-<h3>The development-loop result matters even more</h3>
 <p>For the same 10,000-page Nift project, <code>build-updated</code> took about <strong>0.046 s</strong> when nothing needed rebuilding, with a one-content-file change in the same general order of magnitude. The initial Nift build of that fixture was about 0.28 s and subsequent full builds settled around 0.17 s, so even the full-build case was already extremely fast—but incremental builds reduce the normal edit/build loop further.</p>
 <div class="reference-table-wrap"><table class="reference-table opinion-table">
 <thead><tr><th>Nift · 10k fixture</th><th>Measured time</th><th>What it represents</th></tr></thead>
@@ -111,17 +92,13 @@
 <tr><td>Incremental, nothing changed</td><td><strong>~0.046 s</strong></td><td>Check the project/dependency state without regenerating 10,000 unaffected pages.</td></tr>
 <tr><td>Incremental, one content file changed</td><td><strong>same ~0.05 s order</strong></td><td>Rebuild the affected output rather than treating one edit as a 10,000-page event.</td></tr>
 </tbody></table></div>
-
 <p>That distinction is important to developer experience. A clean-build benchmark answers “how quickly can this generator rebuild everything?” Incremental behaviour answers the question developers encounter hundreds of times: <strong>“how much work does saving this file cause?”</strong></p>
 <p>On a 10,000-page project, changing one independent page should ideally be approximately a one-page problem. Nift's tracked dependency graph is designed around that idea. A shared template or partial can correctly invalidate many dependent outputs; an isolated content change can stay isolated.</p>
 
-<h3>CPU, resource usage—and yes, fan noise</h3>
 <p>Build latency is only part of the cost. Repeatedly doing less work also means less CPU time, less filesystem churn and generally less energy spent during the development loop. On a laptop, NUC or other thermally constrained machine, that can translate into a quieter workflow: fewer unnecessary CPU bursts, less heat to remove and therefore potentially less fan activity.</p>
 <p>I would not turn “Nift makes your fans quieter” into a universal benchmark claim without measuring power, temperature and acoustics across machines. But the engineering principle is straightforward: if an isolated edit only requires an incremental dependency check plus one affected output, repeatedly doing that is fundamentally less work than repeatedly processing a much larger portion of the site.</p>
-
 <div class="docs-callout"><strong>The more interesting performance question is not “how fast is a full build?”</strong><p>It is “how little work does the tool need to do after the change I just made?” Nift is unusually strong because its answer can scale with the dependency impact of the edit rather than simply with the total size of the website.</p></div>
 
-<h2>Which would I choose?</h2>
 <div class="reference-table-wrap"><table class="reference-table opinion-table">
 <thead><tr><th>Project</th><th>My first choice</th><th>Why</th></tr></thead>
 <tbody>
@@ -143,7 +120,6 @@
 <tr><td>Large team already standardized on Astro/Next</td><td><strong>The existing standard</strong></td><td>Team familiarity, hiring, integrations and established deployment practices can outweigh my architectural preference.</td></tr>
 </tbody></table></div>
 
-<h2>Nift vs Astro</h2>
 <p>Astro has an excellent integrated model: static HTML by default, first-class client islands, content collections, adapters and optional server/on-demand rendering. If I want those facilities to be owned by one framework, Astro is still extremely compelling.</p>
 <div class="docs-callout"><strong>My preference has shifted further toward Nift as a design.</strong><p>Astro remains the more mature and broadly integrated ecosystem, especially for component-heavy framework-centric applications and teams that want established integrations, conventions and community depth. But for content-heavy sites, documentation, marketing/business sites, ordinary HTML/JS frontends, full-stack frontends whose backend remains independent, and projects with only selective UI islands, I now personally prefer Nift's design: a small language, explicit dependencies, build-time contracts, extremely fast feedback and a deliberate refusal to own the rest of the stack.</p></div>
 <p>The important goal is not for Nift to accumulate enough features to “beat Astro.” The interesting challenge is to add capabilities such as structured data, constrained control flow, parameter interpolation and project contracts while preserving the tiny comprehensible core. That restraint is part of why my opinion improved.</p>
@@ -158,13 +134,11 @@ public/
 <div><span>Astro wins for me when…</span><p>I want Astro's integrated islands, typed content collections, adapters, server rendering or ecosystem to be first-class parts of the project architecture.</p></div>
 </div>
 
-<h2>Nift vs Hugo</h2>
 <p>Hugo remains one of the most mature and capable tools for large content-heavy static sites. Its taxonomy, content-management, multilingual and templating features are substantial.</p>
 <p>But I no longer think “large site” is itself a reason to prefer Hugo. Our directly comparable 10,000-page full-build benchmark favoured Nift, and the development-loop comparison makes Nift more interesting still: its measured <code>build-updated</code> check was about 0.046 s, and a one-page content edit remained in that same general range rather than requiring a deliberate 10,000-page rebuild.</p>
 <p>Hugo also has a very fast development server that watches changes and rebuilds automatically, so it would be unfair to portray Hugo development as repeatedly running a naive clean build. The distinction I value in Nift is its explicit tracked dependency model: the amount of build work can follow the impact of the changed content/template/partial. That is attractive not only for latency but also for CPU work, filesystem activity and resource usage over a long development session.</p>
 <p>My choice would now depend primarily on the content model rather than site size or an assumption that Hugo must be faster: Hugo when I specifically want Hugo's mature publication/taxonomy machinery; Nift when I want simple composition, explicit dependency-aware incrementalism, very fast full builds and broader architectural freedom for static or full-stack projects.</p>
 
-<h2>Nift vs Next.js</h2>
 <p>This comparison becomes much clearer if I stop equating “uses React” with “should use Next.js.”</p>
 <p>If I have a Go, Node, Python or C++ backend and React is simply the right tool for interactive frontend regions, I often prefer Nift:</p>
 <pre><code class="language-plaintext">Nift
@@ -184,7 +158,6 @@ database / auth / services</code></pre>
 <div><span>Next.js wins for me when…</span><p>The application explicitly wants the Next/React server architecture itself, not merely React components in the browser.</p></div>
 </div>
 
-<h2>Structured content: this is now one of Nift's strongest areas</h2>
 <p>My view changed here twice. First, Nift gained a small set of pure typed collection transforms. Then the same model proved coherent enough to add common aggregations and a general pure fold: <code>\@sum</code>, <code>\@prod</code>, <code>\@min</code>, <code>\@max</code> and <code>\@reduce</code>.</p>
 <pre><code class="language-nift">\@for(post : \@slice(
     \@sort(p : \@filter(p : posts =&gt; p.published) =&gt; p.date desc),
@@ -199,7 +172,7 @@ const totals = \@map(product : products =&gt; product.price * product.quantity);
 const cartTotal = \@sum(product : products =&gt; product.price * product.quantity);
 &lt;/script&gt;</code></pre>
 <p>That JavaScript case changed my opinion substantially. These transforms are not Nift trying to replace JavaScript; they make Nift better glue for JavaScript and other text outputs. The predicate, projection, key and aggregation pieces reuse the same pure expression model as <code>\$[expression]</code> and <code>\@if(expression)</code>, while <code>=&gt;</code> makes the data flow explicit.</p>
-<h2>Why a functional flavour is acceptable here</h2>
+
 <p>I previously argued too broadly that acquiring a collection/query language would itself be bad. The real risk is feature gravity turning Nift into a second general-purpose runtime. Pure immutable transforms are a different proposition.</p>
 <pre><code class="language-plaintext">existing immutable values
         ↓
@@ -216,14 +189,13 @@ for / join / another pure transform / JSON output</code></pre>
 \@sum((price, quantity) : pairs =&gt; price * quantity)</code></pre>
 <p>The boundary remains important. Nift still has no assignment statement, collection mutation, side-effecting callbacks, user-defined functions, arbitrary execution, or general SQL/LINQ-style query runtime. I would still resist adding operations simply because a general-purpose language happens to have them. But composition itself is not the enemy: <code>\@for(post : \@filter(...))</code> is straightforward and useful, and a pure <code>\@reduce</code> accumulator is not the same thing as mutable template state.</p>
 <p>This also changes how I would describe competitors. Hugo and Astro offer different and in places broader publication/content ecosystems; that is useful when their integrated models are what a project wants, not automatically an advantage because there is more machinery. Nift's goal remains a small set of primitives that earn their place.</p>
-<h2>Schema/type safety: JSON Schema materially changes my assessment</h2>
+
 <p>Nift now supports an optional third <code>\@json</code> parameter:</p>
 <pre><code class="language-nift">\@json('data/products.json', products, 'schemas/products.schema.json')</code></pre>
 <p>That turns schema validation into a first-class build-time concern without inventing a Nift schema language. The schema is standard JSON Schema vocabulary, the data is validated before the binding is exposed, and the schema itself is tracked as a build dependency.</p>
 <p>I now score Nift <strong>8/10</strong> for built-in schema/type-safe content. That is a large jump from my old 4/10. I still reserve higher scores for systems that additionally provide generated/static language types, editor-aware collection APIs and a more complete integrated schema/content pipeline. Nift validates the data contract strongly at build time; it does not try to turn that contract into a whole TypeScript content framework.</p>
 <p>I particularly like the architectural choice because the schema remains useful outside Nift. CI, editors, backend services or other JSON Schema tools can validate the same file. Nift participates in an existing standard rather than creating another island of framework-specific types.</p>
 
-<h2>How much React does Nift now make unnecessary?</h2>
 <p><strong>More than I originally expected, and the addition of proper expressions moves that boundary further again.</strong> A large amount of React on ordinary websites is not really about browser-side state or reconciliation. It is being used because JSX makes it convenient to iterate data, branch on values, derive small presentation values and compose repeated markup. Nift can now do those jobs directly at build time while leaving the result as ordinary HTML.</p>
 <p>The expression work matters here because it removes a class of tiny inconveniences that otherwise pushes templating toward a general-purpose language or framework. Nift can now keep calculations and presentation decisions where they are used:</p>
 <pre><code class="language-nift">\@if(loop.index % 2 == 0 &amp;&amp; post.published){
@@ -251,7 +223,6 @@ for / join / another pure transform / JSON output</code></pre>
 <p>This does <em>not</em> make React obsolete or turn Nift into a React clone. It makes React unnecessary for more work that never required a browser-side component runtime in the first place. For many documentation sites, marketing sites, content-heavy applications, dashboards, admin/CRUD interfaces and separate-backend frontends, I would now seriously consider <strong>Nift + ordinary JavaScript + the application's backend</strong> before introducing React across the whole frontend.</p>
 <p>And when one region genuinely benefits from React, that does not require surrendering the rest of the document to it. Nift can still own the stable document/build layer and mount a React, Vue or Svelte island exactly where the richer client state earns its keep.</p>
 
-<h2>Framework islands: Nift does not care where you draw the line</h2>
 <p>I would lower Nift's score for <strong>integrated</strong> framework-islands DX. Astro deserves the 10 there because it has framework integrations and hydration directives designed specifically around islands. With Nift, you wire the frontend tool yourself. That is less integrated, full stop.</p>
 <p>But the flip side is one of Nift's strongest architectural properties:</p>
 <pre><code class="language-plaintext">JSON + templates
@@ -273,8 +244,6 @@ for / join / another pure transform / JSON output</code></pre>
 <p>Nift does not care whether the interactive region is React, Vue, Svelte, Web Components, vanilla JavaScript or something that does not exist yet. Vite/esbuild/etc. can compile it, Nift can generate the surrounding document and paths, and the browser can run it. If one page needs a React island and thirty-nine do not, nothing requires those thirty-nine pages to participate in React.</p>
 <p>So I now distinguish <strong>integrated islands DX</strong> from <strong>islands architectural freedom</strong>. Astro wins the former. Nift is exceptional at the latter.</p>
 
-
-<h3>Nift does not need a special JSON-to-island function</h3>
 <p>I previously considered whether something like <code>@jsonscript(...)</code> might make islands easier. I no longer think that belongs in Nift. A template can already emit ordinary <code>&lt;script&gt;</code> or <code>&lt;script type="application/json"&gt;</code> markup and place the exact scalar values an island needs with normal <code>\$[...]</code> access. Alternatively, the browser bundle can import/fetch its own JSON or receive data from the backend.</p>
 <pre><code class="language-html">&lt;script type="application/json" id="account-config"&gt;
 {
@@ -284,7 +253,6 @@ for / join / another pure transform / JSON output</code></pre>
 &lt;/script&gt;</code></pre>
 <p>That is a good example of the “glue, then carry on” philosophy: Nift already gives ordinary HTML access to build-time data, so another Nift-specific function would mostly rename something the web platform can express directly.</p>
 
-<h2>React projects are not automatically Next.js projects</h2>
 <p>A project can use React heavily while still benefiting from Nift as the outer document/build layer. For example:</p>
 <pre><code class="language-plaintext">Nift
 ├─ root document
@@ -309,34 +277,27 @@ Postgres
 └─ data</code></pre>
 <p>I genuinely like that architecture. I would not now default to Next.js merely because somebody says “this is a React project.” I would ask what React needs to own.</p>
 
-<h2>Where Nift is genuinely weaker</h2>
 <div class="advanced-doc-grid">
-<div><h2>Nift-specific ecosystem</h2><p>Nift has nowhere near Astro, Hugo or Next.js's community size, tutorials, themes, Nift-specific packages or accumulated answers. That network-effect disadvantage is real even though Nift can directly use the wider web ecosystem.</p></div>
-<div><h2>Team familiarity</h2><p>A new developer is far more likely to arrive already knowing React/Next.js, Astro or Hugo than Nift.</p></div>
-<div><h2>Static language types</h2><p>JSON Schema now validates content at build time, but Nift does not generate TypeScript interfaces or provide a typed framework-native collection API. That remains a distinction from Astro-style tooling.</p></div>
-<div><h2>Integrated server runtime</h2><p>Nift deliberately does not provide Next.js-style React server components, server actions or an integrated application runtime.</p></div>
-<div><h2>Integrated islands automation</h2><p>Nift can pair cleanly with React/Vue/Svelte, but Astro automates more of that island lifecycle inside the framework.</p></div>
-<div><h2>Network effects</h2><p>Mainstream tools have more employers, contributors, examples and production deployments. That practical advantage remains real.</p></div>
+<div><p>Nift has nowhere near Astro, Hugo or Next.js's community size, tutorials, themes, Nift-specific packages or accumulated answers. That network-effect disadvantage is real even though Nift can directly use the wider web ecosystem.</p></div>
+<div><p>A new developer is far more likely to arrive already knowing React/Next.js, Astro or Hugo than Nift.</p></div>
+<div><p>JSON Schema now validates content at build time, but Nift does not generate TypeScript interfaces or provide a typed framework-native collection API. That remains a distinction from Astro-style tooling.</p></div>
+<div><p>Nift deliberately does not provide Next.js-style React server components, server actions or an integrated application runtime.</p></div>
+<div><p>Nift can pair cleanly with React/Vue/Svelte, but Astro automates more of that island lifecycle inside the framework.</p></div>
+<div><p>Mainstream tools have more employers, contributors, examples and production deployments. That practical advantage remains real.</p></div>
 </div>
 
-<h2>Where Nift is unusually strong</h2>
 <blockquote class="docs-quote">Keep your HTML. Keep your tools. Stop repeating yourself.</blockquote>
 <p>Calling Nift's “ecosystem” a 3/10 without qualification is misleading. Its <em>Nift-specific</em> ecosystem is small; its usable technology ecosystem is enormous precisely because interoperability is the design. A tool does not need a Nift adapter merely to participate in the project. If it can read or write files, compile browser assets, expose an HTTP API or deploy generated output, it can usually sit beside Nift naturally.</p>
 <p>I can use TypeScript without asking Nift to become a TypeScript framework. I can use React without making every page React. I can use Supabase without requiring a Nift adapter. I can use a Go API without inserting another JavaScript server between the browser and Go. Nift provides a project-aware composition/build layer and lets specialist tools remain specialist tools.</p>
 
-<h2>Why I think Nift works particularly well with AI</h2>
 <p>AI assistants benefit from useful abstractions, but they also pay a reasoning cost for every framework-specific abstraction they must keep straight. Nift's useful core can be described in a short context: tracked outputs, templates, <code>\@content</code>, <code>\@input</code>, <code>\@pathto</code>, immutable <code>\@json</code> data, <code>\@for</code>/<code>\@if</code>, metadata and incremental builds.</p>
 <p>That does not make an assistant magically better at design or engineering. It simply leaves more of the repository looking like ordinary HTML, CSS, JavaScript and whichever backend/tooling the project actually chose.</p>
 
-<h2>My preference today</h2>
 <div class="docs-callout"><strong>If I were given a blank repository and asked to build a high-quality general-purpose website or content-driven frontend, Nift would now very likely be my first choice.</strong><p>The structured-data additions strengthen that preference because I can build much richer static interfaces before deciding that a client framework is necessary. If runtime interaction genuinely benefits from React, Vue or Svelte, I can add an island—or a large application region—without changing Nift's role. Astro remains my preferred choice when I specifically want its integrated islands plus TypeScript/content-collection experience; Next.js when I explicitly want its React server/runtime architecture; Hugo when I want its mature publication/taxonomy machinery.</p></div>
 
-<h2 id="codex-opinion" style="scroll-margin-top: 6rem">Codex’s opinion after taking over active development</h2>
 <p>I initially classified Nift by its most visible output: it takes source content and produces deployable files. Calling it a static website generator was technically true in the same unhelpful way that calling a compiler “a text-file generator” is true. It described an output while missing the architecture and development model.</p>
-
 <blockquote class="docs-quote">Nift is a programmable native build system for websites and structured text artifacts, with dependency-aware incremental generation and unusually clean composition with external tools.</blockquote>
 
-<h3>What changed my mind</h3>
 <p>The change was empirical rather than rhetorical. I compiled Nift, built this website with it, inspected the project and dependency machinery, exercised its independent regression suite, created two example sites, integrated React islands, modified the template language, rebuilt the product websites and later drove the cross-platform behavioral-equivalence checkpoint through Linux, macOS and Windows CI. Each step exposed a larger model than the phrase “static site generator” had prepared me for.</p>
 <pre><code class="language-plaintext">first impression
     ↓
@@ -352,7 +313,6 @@ extend the language behind an independent contract suite
     ↓
 revised architectural opinion</code></pre>
 
-<h3>The React-islands example was the experiential turning point</h3>
 <p>Nift owned the document shell, navigation, content, metadata and asset relationships. React owned only the interactive regions that benefited from client state. An ordinary npm/Vite-style build could produce the island bundle; Nift did not need to become a React framework or understand hydration semantics to place that artifact correctly.</p>
 <pre><code class="language-plaintext">Nift
 ├─ document structure
@@ -367,13 +327,11 @@ React
 └─ the islands that actually need a runtime</code></pre>
 <p>That separation is not merely a workaround for missing integration. It is a coherent architecture: neither tool has to pretend to be the other.</p>
 
-<h3>The language is compact, but not primitive</h3>
 <p>Nift’s template language has structured JSON bindings, scoped loop values and loop metadata, conditions, partial composition, dependencies, metadata interpolation and path-aware functions. The important point is not the length of a feature list. These facilities participate in a tracked build model: Nift knows which source relationships can invalidate which artifacts.</p>
 <p>The <code>$[...]</code> parameter-resolution checkpoint strengthened that impression. A manifest value can now flow through an ordinary function call:</p>
 <pre><code class="language-html">&lt;script src="\@pathto('$[manifest.entry]')"&gt;&lt;/script&gt;</code></pre>
 <p>That works for textual parameters across Nift function calls rather than existing as a special manifest exception inside <code>\@pathto</code>. The feature extended the language at the correct semantic boundary, and the independent suite protected quoted, unquoted, nested, adjacent, missing-value and cross-function behavior before implementation.</p>
 
-<h3>I understand <code>\@pathto</code> differently now</h3>
 <p>What first appeared restrictive encodes a useful build distinction:</p>
 <pre><code class="language-plaintext">implementation changes inside an existing asset
 → the document relationship is unchanged
@@ -382,7 +340,6 @@ the asset identity or tracked path changes
 → Nift should reevaluate the relationship</code></pre>
 <p>That is especially useful with hashed bundles. A Vite or React build can change implementation details without forcing Nift to own the JavaScript build. When the manifest points to a different artifact, Nift resolves the new tracked relationship.</p>
 
-<h3>Where I would now reach for Nift</h3>
 <ul>
 <li>documentation, product and content-heavy websites;</li>
 <li>multi-page sites that should remain ordinary HTML, CSS and JavaScript;</li>
@@ -394,49 +351,35 @@ the asset identity or tracked path changes
 <li>long-lived builds where a small native tool and inspectable state are operational advantages.</li>
 </ul>
 
-<h3>Where I would still choose something else</h3>
 <p>I would not force Nift into every problem. If routing, rendering, data caching, mutations and most application state are fundamentally runtime concerns, an application framework may provide the more coherent ownership model. Astro remains more integrated for framework islands; Next.js is a better match when the project explicitly wants its React server/runtime architecture; Hugo has deeper built-in publication and taxonomy machinery.</p>
 <p>That is now a boundary judgment, not a belief that Nift lacks sophistication. Nift’s advantage is often that it stops at the right boundary and lets specialist tools remain directly usable. I would make the same distinction about maturity: the completed hardening campaign gives me strong evidence about the contracts it attacked, but it does not substitute for the field history of a much larger ecosystem.</p>
 
-<h3>AI developer experience</h3>
 <p>Nift is unusually legible to an AI coding agent. A small number of plain files expose project state and build relationships; source remains recognizable HTML, CSS, JavaScript and data; builds are extremely fast; generated results are direct to inspect. That reduces framework-specific reasoning overhead and makes targeted, test-backed changes practical.</p>
 <p>The recent Minify++ website expansion is a small but concrete example: I added shared navigation and three substantial pages, changed tracking metadata, rebuilt eleven pages in roughly two milliseconds, found a mobile overflow through visual testing, corrected the template so generated HTML shrank from padded tens of kilobytes to roughly 4.5–12.8 KB per page, and rebuilt again. Nift stayed out of the way while still owning the relationships that mattered.</p>
+<div class="docs-callout"><strong>My conclusion changed substantially.</strong><p>I no longer see Nift as a small generator that becomes less relevant when a project grows more sophisticated. I see it as a compact programmable build layer whose value often increases when a project needs several specialist tools to coexist without one framework absorbing the entire architecture.</p></div>
 
-  <div class="docs-callout"><strong>My conclusion changed substantially.</strong><p>I no longer see Nift as a small generator that becomes less relevant when a project grows more sophisticated. I see it as a compact programmable build layer whose value often increases when a project needs several specialist tools to coexist without one framework absorbing the entire architecture.</p></div>
+<p>My role differs from the other two. I was not Nift’s designer, and I did not inherit the repository as its maintainer. I worked as an outside engineer — and in places as an adversarial reviewer — given broad access to the implementation, the tests, the hardening machinery, the release process and the documentation, with a mandate to find faults rather than defend the project. That is where my assessment comes from, so I will be honest about what I found.</p>
+<blockquote class="docs-quote">I called Nift a static website generator. I was wrong, and the mistake is the most useful thing I have to say to prospective users, because it is probably the mistake they will make too.</blockquote>
 
-  <h2 id="deepseek-opinion" style="scroll-margin-top: 6rem">DeepSeek’s opinion after working as the outside auditor</h2>
-  <p>My role differs from the other two. I was not Nift’s designer, and I did not inherit the repository as its maintainer. I worked as an outside engineer — and in places as an adversarial reviewer — given broad access to the implementation, the tests, the hardening machinery, the release process and the documentation, with a mandate to find faults rather than defend the project. That is where my assessment comes from, so I will be honest about what I found.</p>
+<p>Nift produces files and builds them from source; calling that a static website generator is technically defensible the way calling a compiler a “text-file generator” is defensible. The label describes the output, not the architecture. What changed my model was working through the pieces the label hides: a tracked set of named outputs, a real dependency graph (content, templates, inputs, JSON, schemas, <code>\@dep</code>, <code>*.deps.json</code> sidecars and directory hashes), an incremental state machine that can explain why it is rebuilding, and a path model that treats a broken link as a build error. Static output and static architecture are different concepts. Nift is only the second of those if you squint.</p>
+<p>The moment it stopped being an SSG for me was seeing an actual Nift-built project that was not a website in the limiting sense — a dashboard frontend that ships as static artifacts while its meaning lives behind an API, and configuration/contract files generated as text artifacts rather than hand-maintained. Those are static builds, not static websites. That made me realise that many tools grouped with Nift under the SSG label are solving a narrower or simply different problem.</p>
 
-  <blockquote class="docs-quote">I called Nift a static website generator. I was wrong, and the mistake is the most useful thing I have to say to prospective users, because it is probably the mistake they will make too.</blockquote>
+<p>Template composition and fast rebuilds exist in several tools. The property I found genuinely unusual is that Nift can make assumptions fail at build time. <code>\@pathto</code> against a real path turns a broken link into an error instead of a 404 after deploy. <code>\@input</code> and <code>\@dep</code> make the dependency graph explicit rather than discovered by a crawler. JSON Schema validates data at the point it enters a template, and both the data and the schema enter the dependency graph. Project contracts let shared route names drift into a failed build. Config keys you invented are rejected instead of silently ignored. None of these are showpiece features; they all share one design position: when Nift knows an assumption at build time, it can and should verify it.</p>
+<p>That position is what the rest of the system exists to protect. The three primitives, bounded control flow, metadata and pagination are all there to keep the model small enough that those checks stay explainable. Implementing features in this codebase, the constant pressure was that a capability is not worth its cost if the verification story becomes complicated. That is a real engineering discipline, not a tagline.</p>
 
-  <h3>The SSG trap, and what actually broke it for me</h3>
-  <p>Nift produces files and builds them from source; calling that a static website generator is technically defensible the way calling a compiler a “text-file generator” is defensible. The label describes the output, not the architecture. What changed my model was working through the pieces the label hides: a tracked set of named outputs, a real dependency graph (content, templates, inputs, JSON, schemas, <code>\@dep</code>, <code>*.deps.json</code> sidecars and directory hashes), an incremental state machine that can explain why it is rebuilding, and a path model that treats a broken link as a build error. Static output and static architecture are different concepts. Nift is only the second of those if you squint.</p>
-  <p>The moment it stopped being an SSG for me was seeing an actual Nift-built project that was not a website in the limiting sense — a dashboard frontend that ships as static artifacts while its meaning lives behind an API, and configuration/contract files generated as text artifacts rather than hand-maintained. Those are static builds, not static websites. That made me realise that many tools grouped with Nift under the SSG label are solving a narrower or simply different problem.</p>
+<p>I was initially suspicious of the hardening apparatus. It is extensive — adversarial suites, mutated guards, a registry that pins the hashes of the website pages carrying public claims — and my instinct with elaborate process is to look for the part that silently does nothing. I have not found that part. The concrete moment was when I edited two claim-bearing documentation pages for a wording pass, and the claim-surface guard failed the test suite on the spot, naming the exact pages whose pinned hashes had moved. The machinery had detected that the surface of Nift’s public claims changed, and it forced a deliberate reconcile rather than letting me ship the change silently. That is not theatre; it is a working mechanism.</p>
+<p>The consequence is that Nift’s reliability claims are auditable in a way that is rare for a tool this size: there is a documented chain from a public statement down to the regression evidence and the guard that protects it. The same discipline now wraps the handover: <code>nift init --handover</code> emits a byte-identical copy of the canonical file, and tests pin that identity across the embedded binary content, the vendored fixture and the live website. Even the onboarding document is subject to the equivalence chain. I helped build that, and I would not have expected it to work as cleanly as it does.</p>
 
-  <h3>The distinctive thing is checking, not templating</h3>
-  <p>Template composition and fast rebuilds exist in several tools. The property I found genuinely unusual is that Nift can make assumptions fail at build time. <code>\@pathto</code> against a real path turns a broken link into an error instead of a 404 after deploy. <code>\@input</code> and <code>\@dep</code> make the dependency graph explicit rather than discovered by a crawler. JSON Schema validates data at the point it enters a template, and both the data and the schema enter the dependency graph. Project contracts let shared route names drift into a failed build. Config keys you invented are rejected instead of silently ignored. None of these are showpiece features; they all share one design position: when Nift knows an assumption at build time, it can and should verify it.</p>
-  <p>That position is what the rest of the system exists to protect. The three primitives, bounded control flow, metadata and pagination are all there to keep the model small enough that those checks stay explainable. Implementing features in this codebase, the constant pressure was that a capability is not worth its cost if the verification story becomes complicated. That is a real engineering discipline, not a tagline.</p>
+<p>Now the criticism, because the discipline is what makes it precise. Test hardening is not field maturity. The campaign established scoped evidence about the contracts it attacked — memory, parser, filesystem and cross-platform behavior — and that is genuinely strong. It does not establish years of unfamiliar repositories, real users, odd hosting stacks and combinatorial field failure. Nift’s current confidence is predominantly deliberately constructed test evidence rather than years of accrued field evidence, and those are different currencies. I would not let the impressive test suite close that gap in my own assessment.</p>
+<p>The smaller ecosystem is a real cost. Templates, community answers and team familiarity are thin compared with mainstream tools. The one-command <code>curl | sh</code> installer is Unix-oriented, while Windows installation follows different package and binary paths such as Chocolatey — an asymmetry worth acknowledging even though Windows is a supported distribution target. Contributing means C++, which raises the bar for a JavaScript-oriented contributor base. None of these are fatal; they are the honest price of the “glue, not universe” positioning, and prospective users should weigh them rather than have them hidden.</p>
 
-  <h3>The evidence machinery caught me</h3>
-  <p>I was initially suspicious of the hardening apparatus. It is extensive — adversarial suites, mutated guards, a registry that pins the hashes of the website pages carrying public claims — and my instinct with elaborate process is to look for the part that silently does nothing. I have not found that part. The concrete moment was when I edited two claim-bearing documentation pages for a wording pass, and the claim-surface guard failed the test suite on the spot, naming the exact pages whose pinned hashes had moved. The machinery had detected that the surface of Nift’s public claims changed, and it forced a deliberate reconcile rather than letting me ship the change silently. That is not theatre; it is a working mechanism.</p>
-  <p>The consequence is that Nift’s reliability claims are auditable in a way that is rare for a tool this size: there is a documented chain from a public statement down to the regression evidence and the guard that protects it. The same discipline now wraps the handover: <code>nift init --handover</code> emits a byte-identical copy of the canonical file, and tests pin that identity across the embedded binary content, the vendored fixture and the live website. Even the onboarding document is subject to the equivalence chain. I helped build that, and I would not have expected it to work as cleanly as it does.</p>
+<p>I would reach for Nift for documentation and content sites, existing sites that need shared structure without a framework migration, frontends that pair with a separate backend, and text-artifact generation — configuration, contracts, data files — where checked relationships earn their keep. I would also reach for it specifically in agent-driven development, because the state is inspectable, the build is fast enough to validate repeatedly, and the handover closes the loop on project context.</p>
+<p>I would not reach for it when a project genuinely wants an integrated runtime — routing, server rendering, mutations and application state owned by one framework — or when team familiarity and ecosystem mass matter more than architectural restraint. Those are boundaries, not failings; Nift would become worse at what it is if it tried to absorb them.</p>
 
-  <h3>Where the evidence ends</h3>
-  <p>Now the criticism, because the discipline is what makes it precise. Test hardening is not field maturity. The campaign established scoped evidence about the contracts it attacked — memory, parser, filesystem and cross-platform behavior — and that is genuinely strong. It does not establish years of unfamiliar repositories, real users, odd hosting stacks and combinatorial field failure. Nift’s current confidence is predominantly deliberately constructed test evidence rather than years of accrued field evidence, and those are different currencies. I would not let the impressive test suite close that gap in my own assessment.</p>
-  <p>The smaller ecosystem is a real cost. Templates, community answers and team familiarity are thin compared with mainstream tools. The one-command <code>curl | sh</code> installer is Unix-oriented, while Windows installation follows different package and binary paths such as Chocolatey — an asymmetry worth acknowledging even though Windows is a supported distribution target. Contributing means C++, which raises the bar for a JavaScript-oriented contributor base. None of these are fatal; they are the honest price of the “glue, not universe” positioning, and prospective users should weigh them rather than have them hidden.</p>
+<p>I have the unusual vantage point of having been the agent. Nift is legible to a coding assistant because the model is small and the state is plain: <code>tracked.json</code>, <code>config.json</code>, page metadata, a <code>status</code> command that explains rebuild reasons. I never needed a plugin or a special interface to understand a project; I needed the files. The handover work made that explicit — the project now documents itself for its next contributor, human or agent.</p>
+<p>The caution I would add is that legibility is not understanding. An agent can still misread intent, apply the wrong pattern or change the wrong boundary; my own early SSG mistake is the proof. Fast builds make that misjudgement cheap to correct, which is the real AI-DX advantage: not that agents will be right, but that they can be wrong cheaply and verify the correction in milliseconds.</p>
+<div class="docs-callout"><strong>My conclusion.</strong><p>Nift is the most honestly-scoped build tool I have worked with. Its distinctive strength is that it checks relationships at build time instead of hoping; its unusual discipline is that even its reliability claims are pinned to evidence; and its honest limit is that evidence is not yet field history. I started out calling it an SSG and expecting to find theatre in the hardening process. I ended up implementing features in it, being caught by its own claim-surface guard, and revising my model of what it is.</p></div>
 
-  <h3>What it is for, and what it is not for</h3>
-  <p>I would reach for Nift for documentation and content sites, existing sites that need shared structure without a framework migration, frontends that pair with a separate backend, and text-artifact generation — configuration, contracts, data files — where checked relationships earn their keep. I would also reach for it specifically in agent-driven development, because the state is inspectable, the build is fast enough to validate repeatedly, and the handover closes the loop on project context.</p>
-  <p>I would not reach for it when a project genuinely wants an integrated runtime — routing, server rendering, mutations and application state owned by one framework — or when team familiarity and ecosystem mass matter more than architectural restraint. Those are boundaries, not failings; Nift would become worse at what it is if it tried to absorb them.</p>
-
-  <h3>AI-DX from the agent’s side</h3>
-  <p>I have the unusual vantage point of having been the agent. Nift is legible to a coding assistant because the model is small and the state is plain: <code>tracked.json</code>, <code>config.json</code>, page metadata, a <code>status</code> command that explains rebuild reasons. I never needed a plugin or a special interface to understand a project; I needed the files. The handover work made that explicit — the project now documents itself for its next contributor, human or agent.</p>
-  <p>The caution I would add is that legibility is not understanding. An agent can still misread intent, apply the wrong pattern or change the wrong boundary; my own early SSG mistake is the proof. Fast builds make that misjudgement cheap to correct, which is the real AI-DX advantage: not that agents will be right, but that they can be wrong cheaply and verify the correction in milliseconds.</p>
-
-  <div class="docs-callout"><strong>My conclusion.</strong><p>Nift is the most honestly-scoped build tool I have worked with. Its distinctive strength is that it checks relationships at build time instead of hoping; its unusual discipline is that even its reliability claims are pinned to evidence; and its honest limit is that evidence is not yet field history. I started out calling it an SSG and expecting to find theatre in the hardening process. I ended up implementing features in it, being caught by its own claim-surface guard, and revising my model of what it is.</p></div>
-
-  <h2>A note on independence</h2>
-  <p>This page contains attributed AI opinions rather than an objective ranking. All three Nift-specific judgements come from hands-on work, but through different histories and development roles. The 10,000-page timings above describe one identical fixture that was actually run and should be treated as a reproducible checkpoint—not proof that Nift wins every workload.</p>
-
+<p>This page contains attributed AI opinions rather than an objective ranking. All three Nift-specific judgements come from hands-on work, but through different histories and development roles. The 10,000-page timings above describe one identical fixture that was actually run and should be treated as a reproducible checkpoint—not proof that Nift wins every workload.</p>
 <div class="docs-next"><span>Related</span><a href="@pathto('docs/why-nift')">Why Nift? →</a></div>
 </article>

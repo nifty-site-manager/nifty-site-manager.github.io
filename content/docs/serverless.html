@@ -5,7 +5,7 @@
 
 <div class="docs-callout"><strong>The boundary is simple.</strong><p>Nift owns static composition and build-time data. Your serverless platform owns authentication callbacks, APIs, webhooks, database mutations, payments, email, background work and other runtime behavior. Browser JavaScript is ordinary web JavaScript, so it can call any HTTP API.</p></div>
 
-<h2>The basic architecture</h2>
+<h2 id="the-basic-architecture">The basic architecture</h2>
 <pre><code class="language-plaintext">                    build time
 content + JSON + templates ── Nift ──► static HTML/CSS/JS
                                            │
@@ -21,7 +21,7 @@ content + JSON + templates ── Nift ──► static HTML/CSS/JS
              or edge function        / storage service       / webhook</code></pre>
 <p>This split can keep most requests out of application compute entirely. A product page, documentation page, dashboard shell or marketing page can be a static Nift output; only an action such as signing in, loading private account data or submitting an order needs a function.</p>
 
-<h2>A small frontend calling a function</h2>
+<h2 id="a-small-frontend-calling-a-function">A small frontend calling a function</h2>
 <pre><code class="language-html">&lt;form id="contact"&gt;
   &lt;input name="email" type="email" required&gt;
   &lt;textarea name="message" required&gt;&lt;/textarea&gt;
@@ -44,7 +44,7 @@ document.querySelector('#contact').addEventListener('submit', async event =&gt; 
 &lt;/script&gt;</code></pre>
 <p>Nothing about that code needs a Nift-specific server API. The endpoint can be Lambda, Azure Functions, Cloud Run functions, Supabase Edge Functions, Vercel Functions, Netlify Functions, a conventional backend, or something you write five years from now.</p>
 
-<h2>AWS: S3/CloudFront + API Gateway + Lambda</h2>
+<h2 id="aws-s3-cloudfront-api-gateway-lambda">AWS: S3/CloudFront + API Gateway + Lambda</h2>
 <p>A natural AWS arrangement is to deploy Nift's generated site to S3 behind CloudFront, then route dynamic API requests through API Gateway to AWS Lambda. Lambda runs event-driven code without you provisioning servers and automatically handles the underlying compute infrastructure.</p>
 <pre><code class="language-plaintext">Nift build
    │
@@ -66,7 +66,7 @@ browser ──► API Gateway ──► Lambda ──► DynamoDB / S3 / SES / o
 };</code></pre>
 <p>For a content-heavy site, the useful property is that Lambda is not involved in serving every page. Nift already rendered those pages. Lambda is reserved for runtime work.</p>
 
-<h2>Azure: Static Web Apps or Storage/CDN + Azure Functions</h2>
+<h2 id="azure-static-web-apps-or-storage-cdn-azure-functions">Azure: Static Web Apps or Storage/CDN + Azure Functions</h2>
 <p>If the frontend is going to Azure Static Web Apps, start with the <a href="@pathto('docs/platforms/azure')">Azure platform target</a>; this section focuses on the runtime split.</p>
 <p>On Azure, generated Nift output can live in static hosting while Azure Functions provides event-driven compute. Functions can expose HTTP APIs but can also react to schedules, queues, database changes and other events.</p>
 <pre><code class="language-typescript">import { app, HttpRequest, HttpResponseInit } from '@azure/functions';
@@ -80,7 +80,7 @@ app.http('profile', {
 });</code></pre>
 <p>A Nift-generated account shell can request that endpoint after authentication. The public document remains static; private data remains runtime data.</p>
 
-<h2>Google Cloud: static hosting/CDN + Cloud Run functions</h2>
+<h2 id="google-cloud-static-hosting-cdn-cloud-run-functions">Google Cloud: static hosting/CDN + Cloud Run functions</h2>
 <p>Google Cloud's Cloud Run functions are single-purpose functions that can respond to HTTP requests or CloudEvents without you managing the runtime environment. A Nift frontend can be deployed independently and call those functions through ordinary HTTP.</p>
 <pre><code class="language-javascript">const functions = require('@google-cloud/functions-framework');
 
@@ -89,7 +89,7 @@ functions.http('status', (req, res) =&gt; {
 });</code></pre>
 <p>The same pattern works for event processing: a generated frontend uploads through a controlled API, while a function reacts to an object/storage event and performs processing asynchronously.</p>
 
-<h2>Supabase: Nift + Postgres/Auth/Storage + Edge Functions</h2>
+<h2 id="supabase-nift-postgres-auth-storage-edge-functions">Supabase: Nift + Postgres/Auth/Storage + Edge Functions</h2>
 <p>Supabase is particularly complementary because Nift does not try to become a database, authentication system or backend framework. Supabase can provide Postgres, Auth and Storage, while Edge Functions handle privileged or custom server-side operations.</p>
 <pre><code class="language-typescript">Deno.serve(async request =&gt; {
   const {orderId} = await request.json();
@@ -104,7 +104,7 @@ functions.http('status', (req, res) =&gt; {
    ├──► Supabase Storage
    └──► Edge Function ──► privileged DB/API/payment operation</code></pre>
 
-<h2>Vercel: static Nift output + Functions</h2>
+<h2 id="vercel-static-nift-output-functions">Vercel: static Nift output + Functions</h2>
 <p>The <a href="@pathto('docs/platforms/vercel')">Vercel platform target</a> emits Vercel's native static Build Output API tree. Functions remain a separate Vercel runtime primitive.</p>
 <p>Vercel Functions run server-side code without managing servers and can sit behind API routes while Nift continues to produce the frontend. You do not need to adopt Next.js merely to use a serverless endpoint.</p>
 <div class="docs-callout"><strong>Nift route contracts and Vercel routes are different concepts.</strong><p>A Nift <a href="@pathto('docs/routes')">route contract</a> is a build-time application relationship such as <code>routes.users.list → /api/users</code>. Vercel routing rules describe what its deployment should do when an incoming request matches. They can complement each other, but Nift does not redefine Vercel's routing model.</p></div>
@@ -125,7 +125,7 @@ api/
 package.json</code></pre>
 <p>Your build command runs Nift; Vercel handles the server-side function directory according to its platform configuration.</p>
 
-<h2>Netlify: static deployment + Netlify Functions</h2>
+<h2 id="netlify-static-deployment-netlify-functions">Netlify: static deployment + Netlify Functions</h2>
 <p>The <a href="@pathto('docs/platforms/netlify')">Netlify platform target</a> prepares the static build/publish configuration; Functions remain beside that output rather than inside Nift templates.</p>
 <p>Netlify follows the same clean split. Functions can be JavaScript, TypeScript or Go and can act as HTTP endpoints, event handlers, scheduled functions or background work.</p>
 <pre><code class="language-typescript">// netlify/functions/contact.ts
@@ -141,7 +141,7 @@ browser ──► /.netlify/functions/contact
                          └──► email/database/API</code></pre>
 <p>This is a good example of why Nift does not need a plugin for every hosting provider: the integration boundary is files plus normal HTTP.</p>
 
-<h2>GitHub Pages: static frontend, functions somewhere else</h2>
+<h2 id="github-pages-static-frontend-functions-somewhere-else">GitHub Pages: static frontend, functions somewhere else</h2>
 <p>The <a href="@pathto('docs/platforms/github-pages')">GitHub Pages platform target</a> keeps Nift's ordinary static artifact and documents the Actions deployment boundary.</p>
 <p>GitHub Pages is static hosting, so it does not itself become the serverless backend. That is not a limitation on the Nift architecture. Deploy the generated site to GitHub Pages and call a separately hosted API.</p>
 <pre><code class="language-plaintext">GitHub repository
@@ -153,7 +153,7 @@ browser ──► /.netlify/functions/contact
 GitHub Pages frontend ── HTTPS ──► serverless API</code></pre>
 <p>For public APIs this can be extremely simple. For authenticated APIs, configure the function's CORS policy and authentication model for the Pages origin. Secrets belong in the function/platform configuration, never in generated frontend files.</p>
 
-<h2>Build-time data versus request-time data</h2>
+<h2 id="build-time-data-versus-request-time-data">Build-time data versus request-time data</h2>
 <p>A useful design question is not “static or dynamic?” but <em>when does this value need to change?</em></p>
 <pre><code class="language-plaintext">Changes when the site is deployed?
     └── @json + @for + @if + Nift build
@@ -171,10 +171,10 @@ Mostly static shell with one interactive area?
     └── Nift page + ordinary JS or a React/Vue/Svelte island</code></pre>
 <p>A product catalogue can, for example, be generated from JSON at build time while current stock is fetched from a function. Documentation can be entirely static while search analytics or feedback submission is serverless. A dashboard shell can be generated once while account-specific cards load after sign-in.</p>
 
-<h2>Serverless functions are not template functions</h2>
+<h2 id="serverless-functions-are-not-template-functions">Serverless functions are not template functions</h2>
 <p>Nift's <code>@input</code>, <code>@json</code>, <code>@for</code> and <code>@if</code> execute while building files. Lambda/Functions/Edge Functions execute later in response to requests or events. Keeping those phases separate is valuable: Nift can stay deterministic and fast, while runtime code gets the security, scaling and event model it needs.</p>
 
-<h2>Where build scripts fit</h2>
+<h2 id="where-build-scripts-fit">Where build scripts fit</h2>
 <p>Nift deliberately does not execute arbitrary shell commands from templates. Compose the deployment pipeline outside the template language instead:</p>
 <pre><code class="language-json">{
   "scripts": {
@@ -185,9 +185,9 @@ Mostly static shell with one interactive area?
 }</code></pre>
 <p>That boundary is more powerful than teaching Nift about every cloud CLI. Terraform, Pulumi, AWS SAM/CDK, Azure tooling, <code>gcloud</code>, Supabase CLI, Vercel CLI, Netlify CLI and GitHub Actions can evolve independently while Nift remains a small build tool.</p>
 
-<h2>Security boundary</h2>
+<h2 id="security-boundary">Security boundary</h2>
 <p>Anything emitted by Nift is ultimately downloadable by a visitor. Never put database passwords, service-role keys, payment secrets or private API credentials into templates, JSON data that becomes public output, or browser JavaScript. Put secrets in the serverless platform's secret/environment configuration and let the function expose only the operation the browser actually needs.</p>
 
-<h2>The larger point</h2>
+<h2 id="the-larger-point">The larger point</h2>
 <p>Serverless is a strong example of Nift's “glue, not the universe” philosophy. Nift does not need an AWS plugin, an Azure plugin, a Supabase runtime or a proprietary function API. It generates standards-based frontend files; serverless platforms expose standards-based HTTP endpoints and events. The whole web-development ecosystem remains available on both sides of that boundary.</p>
 </article>

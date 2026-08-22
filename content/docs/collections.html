@@ -1,7 +1,7 @@
 <h1>Collection operations</h1>
 <p class="docs-lead">Nift can transform and aggregate immutable JSON arrays at build time with a small set of pure, composable operations. Intermediate results remain typed while Nift consumes them and serialize as JSON only when they reach generated output.</p>
 <div class="docs-callout"><strong>One model, two destinations.</strong><p><code>\@sort(values)</code> can be rendered directly into JavaScript or JSON, passed into <code>\@for</code> or <code>\@join</code>, or consumed by another collection operation. Nift keeps the intermediate value as an array rather than flattening it to text and reparsing it.</p></div>
-<h2>At a glance</h2>
+<h2 id="at-a-glance">At a glance</h2>
 <table><thead><tr><th>Operation</th><th>Result</th></tr></thead><tbody>
 <tr><td><code>\@filter(item : items =&gt; expression)</code></td><td>Array containing items whose expression is truthy.</td></tr>
 <tr><td><code>\@map(item : items =&gt; expression)</code></td><td>Array containing each expression result.</td></tr>
@@ -18,7 +18,7 @@
 <tr><td><code>\@min(items)</code> / <code>\@max(items)</code></td><td>Smallest/largest homogeneous number or string; empty arrays are an error.</td></tr>
 <tr><td><code>\@reduce(item : items &amp; acc = initial =&gt; expression)</code></td><td>Fold the array into one value using a pure accumulator expression.</td></tr>
 </tbody></table>
-<h2>Simple forms</h2>
+<h2 id="simple-forms">Simple forms</h2>
 <pre><code class="language-nift">\@sort(scores)
 \@reverse(posts)
 \@distinct(tags)
@@ -27,7 +27,7 @@
 \@min(scores)
 \@max(scores)</code></pre>
 <p><code>\@sum</code> and <code>\@prod</code> require numeric values. <code>\@min</code> and <code>\@max</code> accept homogeneous numbers or homogeneous strings and use the same ordering rules as sorting.</p>
-<h2>Binding forms use <code>=&gt;</code></h2>
+<h2 id="binding-forms-use">Binding forms use <code>=&gt;</code></h2>
 <p>When an operation needs a per-item predicate, key or projection, <code>=&gt;</code> separates the binding/source from the expression. The expression uses exactly the same pure expression rules as <code>\$[expression]</code> and <code>\@if(expression)</code>.</p>
 <pre><code class="language-nift">\@filter(post : posts =&gt; post.published &amp;&amp; post.score &gt;= 80)
 \@map(product : products =&gt; product.price * product.quantity)
@@ -38,12 +38,12 @@
 \@sum(product : products =&gt; product.price * product.quantity)
 \@max(player : players =&gt; player.score)</code></pre>
 <p>The old comma-shaped advanced form is not part of this contract: use <code>binding : collection =&gt; expression</code>. The binding exists only while that operation evaluates an item. Source arrays and existing bindings are not mutated.</p>
-<h2>Tuple bindings</h2>
+<h2 id="tuple-bindings">Tuple bindings</h2>
 <p>When each array element is itself an array, a tuple binding can unpack the positions explicitly. Names are ordinary local bindings; Nift does not infer object-member names from them.</p>
 <pre><code class="language-nift">\@sum((price, quantity) : pairs =&gt; price * quantity)
 \@prod((a, b, c) : triples =&gt; a + b + c)</code></pre>
 <p>The tuple arity must exactly match each source element. This keeps unpacking predictable rather than silently dropping or inventing values.</p>
-<h2>Composition</h2>
+<h2 id="composition">Composition</h2>
 <p>Collection results remain typed while another Nift construct consumes them, so operations can be nested naturally.</p>
 <pre><code class="language-nift">\@for(post : \@sort(p : \@filter(p : posts =&gt; p.published) =&gt; p.date desc)) {
     &lt;h2&gt;\$[post.title]&lt;/h2&gt;
@@ -57,7 +57,7 @@
 <pre><code class="language-nift">\@for(post : \@slice(\@sort(p : posts =&gt; p.date desc), 0, 10)) {
     ...
 }</code></pre>
-<h2>Aggregation</h2>
+<h2 id="aggregation">Aggregation</h2>
 <p><code>\@sum</code>, <code>\@prod</code>, <code>\@min</code> and <code>\@max</code> are specialised folds for common cases. Their binding forms avoid a separate <code>\@map</code> when the aggregated value is derived from each item.</p>
 <pre><code class="language-nift">Cart total: \@sum(product : products =&gt; product.price * product.quantity)
 Highest score: \@max(player : players =&gt; player.score)</code></pre>
@@ -69,7 +69,7 @@ Highest score: \@max(player : players =&gt; player.score)</code></pre>
     =&gt; total + product.price * product.quantity
 )</code></pre>
 <p>The initial accumulator is evaluated once. For each item, Nift evaluates the pure reducer expression with both the item binding and the current accumulator binding, then carries the resulting immutable value into the next iteration. Reducing an empty array simply returns the initial value.</p>
-<h2>A functional-programming flavour, deliberately bounded</h2>
+<h2 id="a-functional-programming-flavour-deliberately-bounded">A functional-programming flavour, deliberately bounded</h2>
 <p>This part of Nift intentionally has a functional flavour: values are immutable, collection transforms return new values, operations compose, predicates/projections are pure expressions, and <code>\@reduce</code> folds a collection without exposing mutable loop state.</p>
 <pre><code class="language-plaintext">immutable input
     ↓
@@ -79,7 +79,7 @@ new immutable collection
     ↓
 sum / max / reduce / for / join / JSON output</code></pre>
 <p>That does <em>not</em> turn Nift into a general functional programming language. There is still no assignment statement, collection mutation, user-defined function system, side-effecting callbacks, arbitrary runtime execution or general SQL/LINQ-style query engine. The functional flavour is useful precisely because the operations remain pure and small.</p>
-<h2>Rendering typed values</h2>
+<h2 id="rendering-typed-values">Rendering typed values</h2>
 <p>When a collection operation reaches output instead of another Nift consumer, Nift serializes the typed result as valid JSON. This makes the operations useful in generated JavaScript as well as HTML templates.</p>
 <pre><code class="language-nift">&lt;script&gt;
 const published = \@filter(post : posts =&gt; post.published);
@@ -87,6 +87,6 @@ const totals = \@map(product : products =&gt; product.price * product.quantity);
 const grandTotal = \@sum(product : products =&gt; product.price * product.quantity);
 &lt;/script&gt;</code></pre>
 <p>The generated values preserve their JSON types: arrays, objects, strings, numbers, booleans and <code>null</code> do not become ad-hoc strings inside Nift.</p>
-<h2>Finding and testing</h2>
+<h2 id="finding-and-testing">Finding and testing</h2>
 <p><code>\@find</code> returns the original first matching value rather than a transformed copy. No match renders <code>null</code>. <code>\@some</code> short-circuits on the first truthy match; <code>\@every</code> short-circuits on the first falsey match and is true for an empty array.</p>
 <p><a class="text-link" href="@pathto('docs/expressions')">Expressions reference →</a> &nbsp; <a class="text-link" href="@pathto('docs/control-flow')">Loops &amp; conditions →</a></p>

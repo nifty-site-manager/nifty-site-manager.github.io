@@ -3,7 +3,7 @@
 <p class="docs-lead">Nift targets Vercel's Build Output API directly: static site files go into Vercel's native deployment bundle instead of a conventional <code>public/</code> directory.</p>
 <pre><code class="language-bash">nift init --target=vercel
 nift build</code></pre>
-<h2>What Nift creates</h2>
+<h2 id="what-nift-creates">What Nift creates</h2>
 <pre><code class="language-plaintext">.vercel/output/
 ├── config.json
 └── static/
@@ -11,13 +11,13 @@ nift build</code></pre>
     └── assets/...</code></pre>
 <p>The starter <code>config.json</code> declares Build Output API version 3. Vercel requires that metadata file, while static files placed under <code>.vercel/output/static/</code> are served at the matching URL paths.</p>
 <div class="docs-callout"><strong>Generated versus editable.</strong><p><code>.vercel/output/static/</code> is Nift output and is ignored by Git. <code>.vercel/output/config.json</code> is deployment metadata you may extend; ordinary Nift builds do not rewrite it.</p></div>
-<h2>Deploying</h2>
+<h2 id="deploying">Deploying</h2>
 <p>Make Nift available wherever the build runs, run <code>nift build</code>, then deploy the resulting Build Output API bundle using the Vercel workflow you prefer. A local/prebuilt deployment can consume the already-generated <code>.vercel/output</code> tree.</p>
-<h2>Adding functions</h2>
+<h2 id="adding-functions">Adding functions</h2>
 <p>Vercel's Build Output API also defines function primitives under <code>.vercel/output/functions/</code>. Nift does not generate function code or reinterpret its template language as a server runtime. Add Vercel functions according to Vercel's function/build-output contract and keep Nift responsible for the static side of the deployment.</p>
-<h2>Routing, environment and caching</h2>
+<h2 id="routing-environment-and-caching">Routing, environment and caching</h2>
 <p>Vercel project configuration and Build Output API metadata can control request routing and other deployment behaviour; Vercel also supplies environment variables to builds and runtime functions. These are provider concerns and remain separate from Nift <a href="@pathto('docs/routes')">route contracts</a>.</p>
-<h2>Extension limitation</h2>
+<h2 id="extension-limitation">Extension limitation</h2>
 <p>The Nift Vercel target accepts <code>.html</code> and <code>.htm</code>. Use generic <code>nift init --ext=.php</code> for a PHP-capable host; Vercel's static output does not turn a <code>.php</code> asset into a PHP runtime.</p>
 <p>Official references: <a href="https://vercel.com/docs/build-output-api">Build Output API</a>, <a href="https://vercel.com/docs/build-output-api/configuration">output configuration</a>, and <a href="https://vercel.com/docs/build-output-api/primitives">deployment primitives</a>.</p>
 <div class="docs-next"><span>Next platform</span><a href="@pathto('docs/platforms/netlify')">Netlify →</a></div>

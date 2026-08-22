@@ -3,7 +3,7 @@
 <h1>Route contracts.</h1>
 <p class="docs-lead">A route contract gives a Nift project one checked source of truth for named application/API paths. It is a concrete use of <a href="@pathto('docs/project-contracts')">project contracts</a>: Nift verifies that the named relationship exists and tracks its source, while the backend or deployment platform still owns what happens when a request arrives.</p>
 
-<h2>Declare a routes contract</h2>
+<h2 id="declare-a-routes-contract">Declare a routes contract</h2>
 <pre><code class="language-json">// .nift/config.json
 {
   "config": {
@@ -23,19 +23,19 @@
   }
 }</code></pre>
 
-<h2>Reference routes as ordinary values</h2>
+<h2 id="reference-routes-as-ordinary-values">Reference routes as ordinary values</h2>
 <pre><code class="language-javascript">const users = await fetch('\$[routes.users.list]');</code></pre>
 <pre><code class="language-html">&lt;a href="\$[routes.auth.login]"&gt;Sign in&lt;/a&gt;</code></pre>
 <p>If <code>routes.users.list</code> is removed from the declared contract, the build fails instead of silently generating a frontend that points at an undeclared route.</p>
 
 <div class="docs-callout"><strong>The contract is the declared relationship, not the server implementation.</strong><p>Nift verifies that the frontend refers to a route the project declared. Express, Go, Lambda, Vercel Functions, Netlify Functions or another backend can still implement that route independently.</p></div>
 
-<h2>Why named routes help</h2>
+<h2 id="why-named-routes-help">Why named routes help</h2>
 <p>Without a contract, frontend and backend code can carry unrelated strings that merely happen to match:</p>
 <pre><code class="language-javascript">fetch('/api/users')</code></pre>
 <p>A named contract moves the project-level relationship into one explicit source. If the route changes to <code>/v2/users</code>, update the contract and rebuild the outputs that reference it.</p>
 
-<h2>Nift route contracts are not Vercel routing rules</h2>
+<h2 id="nift-route-contracts-are-not-vercel-routing-rules">Nift route contracts are not Vercel routing rules</h2>
 <p>The word <em>route</em> is overloaded in web development. Nift route contracts and Vercel routing rules are different concepts.</p>
 <div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>Nift route contract</th><th>Vercel routing rule</th></tr></thead><tbody>
 <tr><td>Build-time application relationship.</td><td>Deployment/runtime request handling.</td></tr>
@@ -52,10 +52,10 @@ Vercel / Netlify / Express / Go / another runtime
 handles the request according to its own routing model</code></pre>
 <p>The models can complement each other. Nift now has small platform-target initialisers for deployment plumbing, but route contracts remain provider-neutral application data; the target layer does not turn Nift routes into Vercel routing rules or make the template language provider-specific.</p>
 
-<h2>Routes can describe more than one backend technology</h2>
+<h2 id="routes-can-describe-more-than-one-backend-technology">Routes can describe more than one backend technology</h2>
 <p>The route contract can remain stable while implementation changes. A project might move an endpoint from a conventional Node server to a serverless function without changing the Nift templates if the public route remains the same.</p>
 
-<h2>Keep the first contract small</h2>
+<h2 id="keep-the-first-contract-small">Keep the first contract small</h2>
 <p>For many projects, mapping names to path strings is enough. Do not add methods, request schemas, authentication rules or deployment behavior merely because they could theoretically live in the same JSON. Add richer guarantees only when the project has a concrete need and a simple way to validate them.</p>
 
 <div class="docs-next"><span>Related</span><a href="@pathto('docs/contracts')">Contract philosophy →</a></div>

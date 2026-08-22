@@ -5,7 +5,7 @@
 
 <div class="docs-callout"><strong>The whole model in one sentence.</strong><p><strong>Tracked item → content + template → parsed composition → dependencies → output + build metadata.</strong> On the next build, Nift compares those recorded inputs with the filesystem and only repeats the pipeline for affected items.</p></div>
 
-<h2>The architecture at a glance</h2>
+<h2 id="the-architecture-at-a-glance">The architecture at a glance</h2>
 <pre><code class="language-plaintext">                         .nift/config.json
                                 │
                                 ▼
@@ -45,7 +45,7 @@
 
 <p>That diagram is deliberately less impressive than the architecture diagrams of many web frameworks. That is a feature. Most of the web project remains normal HTML, CSS, JavaScript, TypeScript, images, data files, backend code and whatever other tools you choose.</p>
 
-<h2>The important boundaries</h2>
+<h2 id="the-important-boundaries">The important boundaries</h2>
 <p>The architecture stays understandable because Nift keeps several responsibilities separate. Project state says <em>what</em> is tracked. Parsing says <em>how</em> an item becomes output and which dependencies were encountered. Incremental analysis says <em>whether</em> that work needs to happen again. Filesystem mutation commands update project state without turning rendering into a stateful template runtime.</p>
 <div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>Boundary</th><th>Responsibility</th><th>Why it matters</th></tr></thead><tbody>
 <tr><td>Project / tracking</td><td>Resolve tracked identities, configured directories, extensions, templates and watched state.</td><td>The parser does not need to invent project identity from arbitrary filenames.</td></tr>
@@ -54,7 +54,7 @@
 <tr><td>Filesystem / CLI</td><td>Track, copy, move, remove, watch and build while validating collisions and paths.</td><td>Destructive operations and output ownership are handled deliberately rather than as parser side effects.</td></tr>
 </tbody></table></div>
 
-<h2>Build-time control flow is intentionally not a scripting runtime</h2>
+<h2 id="build-time-control-flow-is-intentionally-not-a-scripting-runtime">Build-time control flow is intentionally not a scripting runtime</h2>
 <p><code>\@json</code>, <code>\@for</code> and <code>\@if</code> add enough structure to render data-driven static output, but their architectural role is still parsing. JSON bindings are scoped data, loop variables are lexical bindings, and conditions select output. The model remains <strong>data + template → output</strong>; it does not require mutable program state, user-defined functions or a runtime shipped to the browser.</p>
 <pre><code class="language-plaintext">project JSON
      │
@@ -72,7 +72,7 @@ immutable binding
          │
          └── dependencies recorded for future builds</code></pre>
 
-<h2>1. The project is ordinary files plus a small amount of state</h2>
+<h2 id="1-the-project-is-ordinary-files-plus-a-small-amount-of-state">1. The project is ordinary files plus a small amount of state</h2>
 <p>A typical project might look like:</p>
 <pre><code class="language-plaintext">my-site/
 ├── .nift/
@@ -99,7 +99,7 @@ immutable binding
 
 <p>Only a few of those files are Nift-specific. Your TypeScript compiler can still own <code>src/</code>. npm can still own <code>package.json</code>. A Go backend can live beside the frontend. Nift's job is not to replace those systems; it is to provide the composition and dependency-aware generation layer.</p>
 
-<h3><code>config.json</code>: project defaults</h3>
+<h3 id="config-json-project-defaults"><code>config.json</code>: project defaults</h3>
 <pre><code class="language-json">{
   "content-dir": "content/",
   "content-ext": ".html",
@@ -111,7 +111,7 @@ immutable binding
 }</code></pre>
 <p>These values answer mundane but important questions once: where content lives, where output goes, which template is the default, and how aggressively incremental builds should detect changes.</p>
 
-<h3><code>tracked.json</code>: the outputs Nift owns</h3>
+<h3 id="tracked-json-the-outputs-nift-owns"><code>tracked.json</code>: the outputs Nift owns</h3>
 <pre><code class="language-json">{
   "tracked": [
     {
@@ -134,7 +134,7 @@ immutable binding
 
 <p>The tracked <strong>name</strong> is the stable identity. Nift resolves that identity through the configured content/output directories and extensions. This is why commands can talk about <code>docs/getting-started</code> rather than forcing you to repeat concrete input and output filenames everywhere.</p>
 
-<h2>2. A build starts from a tracked item</h2>
+<h2 id="2-a-build-starts-from-a-tracked-item">2. A build starts from a tracked item</h2>
 <p>Suppose Nift is building:</p>
 <pre><code class="language-plaintext">name:      docs/getting-started
 title:     Getting started
@@ -164,7 +164,7 @@ output:    public/docs/getting-started.html</code></pre>
 
 <p>The parser walks the template, emits literal text directly, expands the small set of Nift expressions, and accumulates dependencies as it goes. <code>\@content</code> processes the current content through the same parser, so Nift expressions inside content work naturally and the content itself participates in the dependency graph.</p>
 
-<h2>3. Composition discovers the dependency graph naturally</h2>
+<h2 id="3-composition-discovers-the-dependency-graph-naturally">3. Composition discovers the dependency graph naturally</h2>
 <p>This is one of the most important parts of Nift's design. Dependencies are not a separate graph you normally have to maintain by hand. They fall out of composition.</p>
 
 <pre><code class="language-plaintext">templates/docs.html
@@ -184,7 +184,7 @@ output:    public/docs/getting-started.html</code></pre>
 
 <p>If <code>nav.html</code> changes, every page whose composition reached that file can be identified as affected. If only <code>content/docs/getting-started.html</code> changes, unrelated pages can remain untouched.</p>
 
-<h3>Inputs are parsed, not pasted blindly</h3>
+<h3 id="inputs-are-parsed-not-pasted-blindly">Inputs are parsed, not pasted blindly</h3>
 <pre><code class="language-html">&lt;!-- templates/partials/header.html --&gt;
 &lt;header&gt;
   \@input('navigation.html')
@@ -192,16 +192,16 @@ output:    public/docs/getting-started.html</code></pre>
 
 <p>Relative inputs can resolve from the file currently being processed, so a partial can own its own nearby sub-partials. Nift also tracks the input stack and rejects recursive input loops rather than recursing forever.</p>
 
-<h2>4. Explicit dependencies cover things that are not inserted</h2>
+<h2 id="4-explicit-dependencies-cover-things-that-are-not-inserted">4. Explicit dependencies cover things that are not inserted</h2>
 <p>Composition finds the common case automatically, but sometimes a page depends on something whose contents should not appear in the output.</p>
 
-<h3>Declare it where it matters with <code>\@dep(...)</code></h3>
+<h3 id="declare-it-where-it-matters-with-dep">Declare it where it matters with <code>\@dep(...)</code></h3>
 <pre><code class="language-html">\@dep('data/products.json')
 
 &lt;script type="module" src="\@pathto('public/assets/catalog.js')"&gt;&lt;/script&gt;</code></pre>
 <p>The dependency becomes part of the page's build state, while <code>\@dep</code> itself emits no content.</p>
 
-<h3>Or declare page-level dependencies with <code>*.deps.json</code></h3>
+<h3 id="or-declare-page-level-dependencies-with-deps-json">Or declare page-level dependencies with <code>*.deps.json</code></h3>
 <pre><code class="language-json">{
   "dependencies": [
     "data/products.json",
@@ -219,8 +219,8 @@ output:    public/docs/getting-started.html</code></pre>
 <tr><td><code>*.deps.json</code></td><td>This page has additional dependency metadata outside the template.</td></tr>
 </tbody></table></div>
 
-<h2>5. Paths are resolved in project context</h2>
-<h3>Path requirements preserve existence without over-invalidating</h3>
+<h2 id="5-paths-are-resolved-in-project-context">5. Paths are resolved in project context</h2>
+<h3 id="path-requirements-preserve-existence-without-over-invalidating">Path requirements preserve existence without over-invalidating</h3>
 <p>When <code>\@pathto(...)</code> resolves a local file or tracked output, the render result also records that resolved target as a <strong>requirement</strong>. Requirements are persisted separately from dependencies as <code>reqs</code>. On later incremental/status checks Nift asks only whether the path still exists; it does not hash/stat-compare it for changes.</p>
 <p>That distinction matters architecturally: a dependency says “changing this input can change the generated bytes,” while a req says “this generated page assumes this project-local target continues to exist.” If a req is missing, incremental analysis schedules the page for rebuilding—it does <em>not</em> fail the page before rendering. The normal render then either repairs the metadata because changed source no longer references the target, or reports the ordinary <code>\@pathto</code> error if the broken reference remains.</p>
 
@@ -244,7 +244,7 @@ Generated relative reference:
 
 <p>This is more than syntactic sugar. It moves a useful class of broken-link and missing-asset errors from the browser/deployment stage into the build.</p>
 
-<h2>6. Rendering returns structured information, not just a string</h2>
+<h2 id="6-rendering-returns-structured-information-not-just-a-string">6. Rendering returns structured information, not just a string</h2>
 <p>Conceptually, a page render produces something like:</p>
 <pre><code class="language-cpp">RenderResult {
     ok,
@@ -257,7 +257,7 @@ Generated relative reference:
 
 <p>That distinction matters. The generated text is only one result of parsing. The dependency set is what makes future builds incremental, and the structured error is what lets Nift produce useful diagnostics instead of a generic “parse failed”.</p>
 
-<h3>Errors retain source context</h3>
+<h3 id="errors-retain-source-context">Errors retain source context</h3>
 <pre><code class="language-plaintext">error: while building docs/getting-started
   templates/partials/sidebar.html:18:31
   input: expected 1 parameter
@@ -266,7 +266,7 @@ Generated relative reference:
 
 <p>The error carries the tracked item being built, source file, line, column, message and source line. This is especially important with nested partials: the page being built and the file containing the mistake are not necessarily the same file.</p>
 
-<h2>7. Successful builds write output and remember what produced it</h2>
+<h2 id="7-successful-builds-write-output-and-remember-what-produced-it">7. Successful builds write output and remember what produced it</h2>
 <p>Once rendering succeeds, Nift writes the generated output and per-page build metadata. Conceptually that metadata answers:</p>
 
 <pre><code class="language-plaintext">What tracked item was this?
@@ -278,7 +278,7 @@ What hashes/state were recorded for dependencies?</code></pre>
 
 <p>This metadata is internal build state rather than content you should edit manually. Its purpose is to make the next invocation cheap and explainable.</p>
 
-<h2>8. Incremental builds ask “why?” before doing work</h2>
+<h2 id="8-incremental-builds-ask-why-before-doing-work">8. Incremental builds ask “why?” before doing work</h2>
 <p><code>nift build-updated</code> does not begin by parsing every page. It first computes build reasons for tracked items. <code>nift status</code> uses the same idea but stops before writing anything.</p>
 
 <pre><code class="language-bash">$ nift status
@@ -297,16 +297,16 @@ docs/commands
 
 <div class="docs-callout"><strong><code>status</code> is essentially an incremental-build dry run.</strong><p>That is useful to humans, CI and AI coding assistants because the build system can explain its decision before changing the project.</p></div>
 
-<h2>9. Modified, hash and hybrid modes answer “changed?” differently</h2>
+<h2 id="9-modified-hash-and-hybrid-modes-answer-changed-differently">9. Modified, hash and hybrid modes answer “changed?” differently</h2>
 
-<h3><code>modified</code></h3>
+<h3 id="modified"><code>modified</code></h3>
 <p>Uses filesystem modification times. It is cheap and works well when normal editing/build tools preserve sensible mtimes.</p>
 
 <pre><code class="language-plaintext">dependency mtime > previous page build metadata mtime
                     │
                     └──► changed</code></pre>
 
-<h3><code>hash</code></h3>
+<h3 id="hash"><code>hash</code></h3>
 <p>Compares stored hashes with current content. This catches a content change even if a tool deliberately restores the old modification time.</p>
 
 <pre><code class="language-plaintext">stored hash:   392812...
@@ -314,14 +314,14 @@ current hash:  901447...
                │
                └──► changed</code></pre>
 
-<h3><code>hybrid</code></h3>
+<h3 id="hybrid"><code>hybrid</code></h3>
 <p>Uses modification time <em>or</em> hash evidence. This is the defensive choice when you want ordinary timestamp changes detected while retaining protection against preserved-mtime content changes.</p>
 
 <pre><code class="language-plaintext">mtime says changed ──────────────┐
                                  ├──► rebuild
 hash says changed ───────────────┘</code></pre>
 
-<h2>10. Directory dependencies are real recursive dependencies</h2>
+<h2 id="10-directory-dependencies-are-real-recursive-dependencies">10. Directory dependencies are real recursive dependencies</h2>
 <p>A dependency does not have to be one file. Suppose a page depends on generated search data:</p>
 
 <pre><code class="language-json">{
@@ -348,7 +348,7 @@ hash says changed ───────────────┘</code></pre>
 
 <p>This makes directory dependencies useful for generated asset trees and data pipelines without requiring the dependency list to enumerate every child.</p>
 
-<h2>11. Nift parallelises at the page level</h2>
+<h2 id="11-nift-parallelises-at-the-page-level">11. Nift parallelises at the page level</h2>
 <p>Tracked pages are naturally independent build jobs once project state has been loaded. Nift uses a worker pool for page builds and also parallelises the incremental build-reason analysis used by <code>build-updated</code> and <code>status</code>.</p>
 
 <pre><code class="language-plaintext">                  tracked pages
@@ -368,26 +368,26 @@ hash says changed ───────────────┘</code></pre>
 
 <p><code>build-threads</code> controls the worker count. Positive values are explicit thread counts, <code>0</code> uses hardware concurrency, and negative values are multipliers of hardware concurrency. The default <code>-1</code> means one worker per reported hardware thread.</p>
 
-<h3>Shared reads can be reused safely</h3>
+<h3 id="shared-reads-can-be-reused-safely">Shared reads can be reused safely</h3>
 <p>Many pages may read the same template or partial. Nift can retain immutable shared source text so workers do not repeatedly load identical shared files from disk. Importantly, this is a <em>source read</em> optimisation—not a rendered-partial cache. A partial is still parsed in the context of each page, because metadata such as <code>\$[title]</code>, <code>\@pathto(...)</code> results and other page context can differ.</p>
 
 <pre><code class="language-html">&lt;!-- Same source file, different result per page --&gt;
 &lt;title&gt;\$[title]&lt;/title&gt;
 &lt;a href="\@pathto('/')"&gt;Home&lt;/a&gt;</code></pre>
 
-<h2>12. Fast builds should not mean noisy builds</h2>
+<h2 id="12-fast-builds-should-not-mean-noisy-builds">12. Fast builds should not mean noisy builds</h2>
 <p>Most Nift builds are short enough that a progress display would be visual noise. The current progress system waits 200 ms before showing interactive progress. That delay is a single implementation constant, so it can be tuned without changing build logic.</p>
 
 <p>Successful build output is also bounded. A handful of rebuilt pages can be explained individually; a huge dependency fan-out is summarised rather than dumping thousands of nearly identical lines. Use <code>-p</code> when full per-page detail is genuinely useful.</p>
 
-<h2>13. <code>build-auto</code> separates watching from terminal spam</h2>
+<h2 id="13-build-auto-separates-watching-from-terminal-spam">13. <code>build-auto</code> separates watching from terminal spam</h2>
 <p><code>nift build-auto</code> repeatedly runs the incremental workflow. In an interactive terminal, <code>q</code> stops it. Instead of continuously printing unchanged status, the latest meaningful build output is kept in:</p>
 
 <pre><code class="language-plaintext">.nift/build-auto.log</code></pre>
 
 <p>The log is rewritten only when its content changes and terminal colour escape sequences are stripped before writing. This keeps both the console and log useful during long development sessions.</p>
 
-<h2>14. Watched directories turn files into tracked items</h2>
+<h2 id="14-watched-directories-turn-files-into-tracked-items">14. Watched directories turn files into tracked items</h2>
 <p>Tracking is explicit, but Nift can also watch directories using extension/template/output rules.</p>
 
 <pre><code class="language-bash">nift watch content/blog .html templates/post.html .html</code></pre>
@@ -401,12 +401,12 @@ hash says changed ───────────────┘</code></pre>
 <tr><td>Metadata is explicit in <code>tracked.json</code>.</td><td>Rules describe how matching files become tracked items.</td></tr>
 </tbody></table></div>
 
-<h2>15. The JSON layer is intentionally part of the core</h2>
+<h2 id="15-the-json-layer-is-intentionally-part-of-the-core">15. The JSON layer is intentionally part of the core</h2>
 <p>Nift's project state is JSON, but the executable does not need a large JSON/runtime dependency to manage it. Its JSON implementation has its own document/value representation for nulls, booleans, numbers, strings, arrays and objects, parsing/serialization, and object access through <code>operator[]</code>.</p>
 
 <p>The practical architectural benefit is not “Nift invented JSON”. It is that configuration and persistent state remain human-readable and portable while the native executable stays self-contained.</p>
 
-<h2>16. The CLI is a thin interface over the same project model</h2>
+<h2 id="16-the-cli-is-a-thin-interface-over-the-same-project-model">16. The CLI is a thin interface over the same project model</h2>
 <p>Commands are not separate mini-applications with independent interpretations of the project.</p>
 
 <pre><code class="language-plaintext">nift status ─────────────┐
@@ -421,7 +421,7 @@ nift watch/unwatch ──────┘       ├── dependencies
 
 <p>That shared model is why <code>status</code> can agree with <code>build-updated</code>, why inspection commands can expose the same resolved paths the builder uses, and why fixes to dependency semantics do not need to be independently recreated in every command.</p>
 
-<h2>17. Inspection is designed for humans <em>and</em> tools</h2>
+<h2 id="17-inspection-is-designed-for-humans-and-tools">17. Inspection is designed for humans <em>and</em> tools</h2>
 <p>Interactive <code>info*</code> output can use headings and syntax colouring. Redirect it or pipe it, and Nift emits plain JSON instead.</p>
 
 <pre><code class="language-bash">nift info docs/getting-started
@@ -432,7 +432,7 @@ nift info-watching > watching.json</code></pre>
 
 <p>This small detail matters for interoperability. Nift does not need a bespoke API server for another tool to inspect project state.</p>
 
-<h2>18. What Nift deliberately does <em>not</em> own</h2>
+<h2 id="18-what-nift-deliberately-does-not-own">18. What Nift deliberately does <em>not</em> own</h2>
 <p>The boundary around the architecture is as important as what sits inside it.</p>
 
 <div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>Nift owns</th><th>Your stack can own</th></tr></thead><tbody>
@@ -447,7 +447,7 @@ nift info-watching > watching.json</code></pre>
 
 <p>This is why the same Nift architecture can make sense for a plain brochure site and for the generated frontend shell of a larger application. Nift's complexity does not need to grow merely because the rest of the project becomes more sophisticated.</p>
 
-<h2>19. A complete example: change one shared partial</h2>
+<h2 id="19-a-complete-example-change-one-shared-partial">19. A complete example: change one shared partial</h2>
 <p>Consider a 10,000-page documentation site. Every documentation page ultimately includes:</p>
 <pre><code class="language-plaintext">templates/partials/docs-sidebar.html</code></pre>
 
@@ -465,7 +465,7 @@ nift info-watching > watching.json</code></pre>
 
 <p>The same architecture discovers a dependency set of essentially one page. The size of the repository does not force Nift to rebuild all 10,000 outputs just because one leaf changed.</p>
 
-<h2>20. Another example: Nift beside TypeScript and a backend</h2>
+<h2 id="20-another-example-nift-beside-typescript-and-a-backend">20. Another example: Nift beside TypeScript and a backend</h2>
 <pre><code class="language-plaintext">project/
 ├── content/
 │   └── dashboard.html
@@ -493,7 +493,7 @@ nift info-watching > watching.json</code></pre>
 
 <p>There is no “Nift way” to write the dashboard component or API. That absence is intentional.</p>
 
-<h2>21. Why this architecture stays understandable</h2>
+<h2 id="21-why-this-architecture-stays-understandable">21. Why this architecture stays understandable</h2>
 <p>There are a few recurring principles behind the implementation:</p>
 
 <ul>
@@ -509,12 +509,12 @@ nift info-watching > watching.json</code></pre>
 
 <blockquote class="docs-quote">Nift is small not because web projects are small, but because most of a web project does not need to be Nift-specific.</blockquote>
 
-<h2>Where to go next</h2>
+<h2 id="where-to-go-next">Where to go next</h2>
 <div class="docs-step-grid">
-<a href="@pathto('docs/project-structure')"><span>Files</span><h2>Project structure</h2><p>See how the architecture maps onto a real repository.</p></a>
-<a href="@pathto('docs/templating')"><span>Parser</span><h2>Template language</h2><p>Learn the small composition language the parser implements.</p></a>
-<a href="@pathto('docs/incremental-builds')"><span>Build engine</span><h2>Incremental builds</h2><p>Go deeper on change detection, modes and rebuild behaviour.</p></a>
-<a href="@pathto('docs/user-dependencies')"><span>Dependency graph</span><h2>*.deps.json</h2><p>Add page-level dependencies that live outside authored templates.</p></a>
+<a href="@pathto('docs/project-structure')"><span>Files</span><h2 id="project-structure">Project structure</h2><p>See how the architecture maps onto a real repository.</p></a>
+<a href="@pathto('docs/templating')"><span>Parser</span><h2 id="template-language">Template language</h2><p>Learn the small composition language the parser implements.</p></a>
+<a href="@pathto('docs/incremental-builds')"><span>Build engine</span><h2 id="incremental-builds">Incremental builds</h2><p>Go deeper on change detection, modes and rebuild behaviour.</p></a>
+<a href="@pathto('docs/user-dependencies')"><span>Dependency graph</span><h2 id="deps-json">*.deps.json</h2><p>Add page-level dependencies that live outside authored templates.</p></a>
 </div>
 
 <div class="docs-next"><span>Next</span><a href="@pathto('docs/project-structure')">Project structure →</a></div>

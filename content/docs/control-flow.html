@@ -5,7 +5,7 @@
 
 <div class="docs-callout"><strong>This is data-oriented control flow, not general scripting.</strong><p>Nift supports pure value expressions for arithmetic, comparisons, logic and lazy ternaries, but deliberately has no assignment, mutable variables, user-defined functions or arbitrary code execution. The purpose is still to select, derive and repeat structured data at build time rather than become a general scripting runtime.</p></div>
 
-<h2>Loop over an array</h2>
+<h2 id="loop-over-an-array">Loop over an array</h2>
 <pre><code class="language-json">{
   "articles": [
     {"title":"First","type":"article"},
@@ -24,7 +24,7 @@
 
 <p>The binding is scoped to the loop. It does not leak into the rest of the page.</p>
 
-<h2>Loop over an object</h2>
+<h2 id="loop-over-an-object">Loop over an object</h2>
 <pre><code class="language-json">{
   "social": {
     "github": {"label":"GitHub","url":"https://github.com/"},
@@ -41,7 +41,7 @@
 
 <p>Object iteration preserves the document's stored member order unless you explicitly request sorting. The parenthesised pair makes key/value destructuring explicit.</p>
 
-<h2>Loop metadata with <code>$[loop.*]</code></h2>
+<h2 id="loop-metadata-with-loop">Loop metadata with <code>$[loop.*]</code></h2>
 <p>Every <code>\@for</code> iteration gets a small read-only <code>loop</code> binding describing its position in the rendered iteration order:</p>
 <div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>Value</th><th>Meaning</th></tr></thead><tbody>
 <tr><td><code>$[loop.index]</code></td><td>One-based position: 1, 2, 3, …</td></tr>
@@ -72,7 +72,7 @@
 
 <div class="docs-callout"><strong><code>loop</code> is reserved deliberately.</strong><p>You cannot create a JSON alias or loop variable named <code>loop</code>, just as loop bindings cannot replace built-in metadata such as <code>title</code>. That means <code>\$[loop.index]</code> can never become ambiguous because a template happened to bind unrelated user data under the same name.</p></div>
 
-<h2>Sort while iterating with <code>by ... asc|desc</code></h2>
+<h2 id="sort-while-iterating-with-by-asc-desc">Sort while iterating with <code>by ... asc|desc</code></h2>
 <p>When the source order is not the display order you want, add a sort key to the loop header:</p>
 <pre><code class="language-html">\@for(post : data.posts by post.date desc) {
     &lt;article&gt;
@@ -86,22 +86,22 @@
 \@for(item : collection by item.field desc) { ... }</code></pre>
 <p><code>asc</code> or <code>desc</code> is required when <code>by</code> is present. Without a <code>by</code> clause, Nift preserves the collection's stored order.</p>
 
-<h3>Numeric sorting</h3>
+<h3 id="numeric-sorting">Numeric sorting</h3>
 <pre><code class="language-html">\@for(product : data.products by product.price asc) {
     &lt;p&gt;\$[product.name] — \$[product.price]&lt;/p&gt;
 }</code></pre>
 
-<h3>String sorting</h3>
+<h3 id="string-sorting">String sorting</h3>
 <pre><code class="language-html">\@for(person : data.people by person.name asc) {
     &lt;li&gt;\$[person.name]&lt;/li&gt;
 }</code></pre>
 
-<h3>Sort scalar arrays too</h3>
+<h3 id="sort-scalar-arrays-too">Sort scalar arrays too</h3>
 <pre><code class="language-html">\@for(score : data.scores by score desc) {
     &lt;li&gt;\$[score]&lt;/li&gt;
 }</code></pre>
 
-<h3>Object iteration can sort by key or value data</h3>
+<h3 id="object-iteration-can-sort-by-key-or-value-data">Object iteration can sort by key or value data</h3>
 <pre><code class="language-html">\@for((key, project) : data.projects by project.priority desc) {
     &lt;h2 data-key="\$[key]"&gt;\$[project.title]&lt;/h2&gt;
 }</code></pre>
@@ -113,7 +113,7 @@
 
 <div class="docs-callout"><strong>Sorting is strict, stable and non-mutating.</strong><p>Every sort key must be a number or every sort key must be a string. Mixed types, objects, arrays, booleans and <code>null</code> are rejected rather than coerced. Equal keys keep their original relative order. Nift computes an iteration order; it does not rearrange or mutate the loaded JSON document.</p></div>
 
-<h3>Loop metadata follows the sorted order</h3>
+<h3 id="loop-metadata-follows-the-sorted-order">Loop metadata follows the sorted order</h3>
 <p>After sorting, <code>loop.first</code>, <code>loop.last</code> and the index values describe the order that is actually rendered:</p>
 <pre><code class="language-html">\@for(post : data.posts by post.date desc) {
     \@if(loop.first) {
@@ -123,24 +123,24 @@
 }</code></pre>
 
 
-<h2>Conditions</h2>
+<h2 id="conditions">Conditions</h2>
 <pre><code class="language-html">\@if(item.published){
     &lt;p&gt;Published&lt;/p&gt;
 }</code></pre>
 
-<h3>Negation</h3>
+<h3 id="negation">Negation</h3>
 <pre><code class="language-html">\@if(!item.draft){
     &lt;a href="\$[item.url]"&gt;\$[item.title]&lt;/a&gt;
 }</code></pre>
 
-<h3>Logical composition</h3>
+<h3 id="logical-composition">Logical composition</h3>
 <p>Conditions compose with short-circuit <code>&amp;&amp;</code> and <code>||</code>, existing <code>!</code> negation, and parentheses. Ordinary precedence applies: negation, comparisons, <code>&amp;&amp;</code>, then <code>||</code>.</p>
 <pre><code class="language-nift">\@if(post.published &amp;&amp; !post.draft){ ... }
 
 \@if((post.featured || post.pinned) &amp;&amp; post.published){ ... }</code></pre>
 <p>Logical operators short-circuit. An operand that is not needed to determine the result is not resolved.</p>
 
-<h3>Pure numeric expressions</h3>
+<h3 id="pure-numeric-expressions">Pure numeric expressions</h3>
 <p><code>\$[...]</code> can evaluate pure numeric expressions using <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code> and integer-valued <code>%</code>, with unary signs, parentheses and conventional precedence. The same expression evaluator also supports comparisons, <code>!</code> and short-circuit <code>&amp;&amp;</code>/<code>||</code>, so expressions can render derived numbers or booleans and are shared with conditions.</p>
 <pre><code class="language-nift">\$[loop.index + 1]
 \$[(price * quantity) / 100]
@@ -149,7 +149,7 @@
 \@if(price * quantity &gt;= 100 &amp;&amp; post.published){ ... }</code></pre>
 <p>Arithmetic is numeric only: Nift does not use <code>+</code> for string concatenation or coerce strings, booleans, arrays or objects into numbers. Division/modulo by zero and modulo with fractional operands are build errors.</p>
 
-<h3>Scalar comparisons</h3>
+<h3 id="scalar-comparisons">Scalar comparisons</h3>
 <p>Conditions support equality with <code>==</code>/<code>!=</code> and ordering with <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code> and <code>&gt;=</code>.</p>
 <pre><code class="language-html">\@if(item.type == "article"){
     &lt;article&gt;...&lt;/article&gt;
@@ -187,7 +187,7 @@
 <div class="docs-callout"><strong>Ordering is strict and predictable.</strong><p>Numbers compare numerically. Strings compare lexicographically. Both operands of <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code> or <code>&gt;=</code> must be numbers or both must be strings; Nift does not coerce between JSON types. Booleans, <code>null</code>, arrays and objects are not orderable.</p></div>
 
 
-<h2>Lazy ternary rendering</h2>
+<h2 id="lazy-ternary-rendering">Lazy ternary rendering</h2>
 <p>Use <code>\$[condition ? true-branch : false-branch]</code> when a small inline choice is clearer than a block <code>\@if</code>. When the false branch should be empty, the shorthand <code>\$[condition ? true-branch]</code> is equivalent to <code>\$[condition ? true-branch : '']</code>. The condition uses exactly the same evaluator as <code>\@if</code>. If the selected branch is a quoted string literal, Nift renders the decoded string value without its quote delimiters; otherwise the selected branch is parsed as ordinary Nift source, so directives such as <code>\@input(...)</code> remain lazy and composable.</p>
 <pre><code class="language-html">&lt;span class="status \$[post.featured ? 'featured' : 'standard']"&gt;
     \$[post.title]
@@ -196,7 +196,7 @@
 \$[post.featured ? \@input('partials/featured-badge.html')]</code></pre>
 <p>The unselected branch is inert: it does not resolve values, parse directives, register dependencies or requirements, or fail because it references something that would only matter in that branch.</p>
 
-<h2><code>else if</code> and <code>else</code></h2>
+<h2 id="else-if-and-else"><code>else if</code> and <code>else</code></h2>
 <p>Branches use ordinary text syntax—there is no <code>\@else</code> keyword:</p>
 
 <pre><code class="language-html">\@if(item.type == "article"){
@@ -214,7 +214,7 @@ else{
 
 <p>You can have as many <code>else if</code> branches as the template needs. A plain <code>else</code> is optional; when present, it is the unconditional fallback and ends the chain.</p>
 
-<h2>Truthiness</h2>
+<h2 id="truthiness">Truthiness</h2>
 <div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>Value</th><th>Condition</th></tr></thead><tbody>
 <tr><td><code>true</code></td><td>true</td></tr>
 <tr><td><code>false</code>, <code>null</code></td><td>false</td></tr>
@@ -223,7 +223,7 @@ else{
 <tr><td>array/object</td><td>false when empty, true otherwise</td></tr>
 </tbody></table></div>
 
-<h2>Nesting</h2>
+<h2 id="nesting">Nesting</h2>
 <pre><code class="language-html">\@for(section : data.sections){
     &lt;section&gt;
         &lt;h2&gt;\$[section.title]&lt;/h2&gt;
@@ -240,7 +240,7 @@ else{
 
 <p>Loop variables may be shadowed by a nested loop; Nift restores the outer binding when the inner loop finishes.</p>
 
-<h2>Skipped branches really are skipped</h2>
+<h2 id="skipped-branches-really-are-skipped">Skipped branches really are skipped</h2>
 <p>Nift only parses the selected branch. This is important for both behaviour and dependencies:</p>
 
 <pre><code class="language-nift">\@if(site.use_legacy_navigation){
@@ -252,14 +252,14 @@ else{
 
 <p>Only the selected input participates in that page render and dependency set. Code in an unselected branch is not executed.</p>
 
-<h2>Why <code>:</code> instead of <code>in</code>?</h2>
+<h2 id="why-instead-of-in">Why <code>:</code> instead of <code>in</code>?</h2>
 <p>The loop syntax intentionally uses punctuation:</p>
 <pre><code class="language-nift">\@for(item : items){ ... }
 \@for((key, val) : object){ ... }</code></pre>
 
 <p>It stays visually compact, avoids pretending Nift has a larger keyword-based programming language, and behaves more predictably in generic syntax highlighters.</p>
 
-<h2>What conditions intentionally do not include</h2>
+<h2 id="what-conditions-intentionally-do-not-include">What conditions intentionally do not include</h2>
 <pre><code class="language-plaintext">No assignment
 No mutable variables
 No user-defined functions
@@ -269,11 +269,11 @@ No arbitrary code execution</code></pre>
 
 <p>If data needs substantial transformation, do that in the tool that owns the data, write JSON, then let Nift render the result.</p>
 
-<h2>Why there is no general query pipeline</h2>
+<h2 id="why-there-is-no-general-query-pipeline">Why there is no general query pipeline</h2>
 <p><code>\@for</code> remains focused on iteration and optional stable ordering. When you need an immutable transformed array first, Nift also provides composable collection operations such as <code>\@filter</code>, <code>\@map</code>, <code>\@sort</code> and <code>\@slice</code>. They use the same pure expression model and can feed directly into <code>\@for</code>. <a class="text-link" href="@pathto('docs/collections')">See collection operations →</a></p>
 <p>For substantial data transformation, use the tool that owns or prepares the data—TypeScript, Python, <code>jq</code>, a database query, an API/export step or another specialist tool—write the resulting JSON, then let Nift schema-check and render it. This keeps templates focused on <strong>data → output</strong> and keeps Nift's language small.</p>
 
-<h2>You may never need this page</h2>
+<h2 id="you-may-never-need-this-page">You may never need this page</h2>
 <p>Many excellent Nift projects can stay entirely on <code>\@content</code>, <code>\@input</code> and <code>\@pathto</code>. Control flow exists for the point where structured data genuinely makes repetition or selection clearer than authored markup.</p>
 
 <div class="docs-next"><span>Related</span><a href="@pathto('docs/three-primitives')">Start with three primitives →</a></div>

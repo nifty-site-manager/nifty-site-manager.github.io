@@ -5,7 +5,7 @@
 
   <div class="docs-callout"><strong>Think in responsibilities, not branded stacks.</strong><p>Nift can own templates, partials, tracked pages and browser-facing paths. Everything else can stay with the tool that already does it well.</p></div>
 
-  <h2>A general shape</h2>
+  <h2 id="a-general-shape">A general shape</h2>
   <pre><code class="language-plaintext">app/
   content/              # page-specific HTML/content
   templates/            # shared document templates + partials
@@ -17,7 +17,7 @@
   Makefile              # optional orchestration</code></pre>
   <p>The exact directories are yours. Nift only needs its configured content/output locations and tracking metadata.</p>
 
-  <h2>Nift + vanilla JavaScript + Go</h2>
+  <h2 id="nift-vanilla-javascript-go">Nift + vanilla JavaScript + Go</h2>
   <p>This is one of the cleanest full-stack combinations: Nift generates the pages, ordinary browser JavaScript consumes a Go API, and the Go service handles runtime state.</p>
   <pre><code class="language-plaintext">app/
   content/
@@ -47,7 +47,7 @@ http.HandleFunc("/api/status", func(w http.ResponseWriter, r *http.Request) {
 })</code></pre>
   <p>Nothing requires a Nift-specific Go package. The generated frontend and HTTP API simply meet at the browser.</p>
 
-  <h2>Nift + TypeScript + Vite + Go</h2>
+  <h2 id="nift-typescript-vite-go">Nift + TypeScript + Vite + Go</h2>
   <p>As browser code grows, TypeScript/Vite can own bundling while Nift continues to own the HTML shell and page composition.</p>
   <pre><code class="language-plaintext">frontend/
   src/app.ts
@@ -68,7 +68,7 @@ export default defineConfig({
 nift build
 # then run/build the Go server</code></pre>
 
-  <h2>Nift + React island + Go API</h2>
+  <h2 id="nift-react-island-go-api">Nift + React island + Go API</h2>
   <p>React can own a state-heavy part of a page while Nift emits the rest as direct HTML.</p>
   <pre><code class="language-html">&lt;section class="account-intro"&gt;
   &lt;h1&gt;Account&lt;/h1&gt;
@@ -80,13 +80,13 @@ nift build
 createRoot(document.getElementById('account-app')).render(&lt;AccountApp /&gt;);</code></pre>
   <p>This avoids requiring React to own every page just because one region benefits from it.</p>
 
-  <h2>Nift + Vue or Svelte</h2>
+  <h2 id="nift-vue-or-svelte">Nift + Vue or Svelte</h2>
   <p>The pattern is identical. Vite produces a browser entry point, and a Nift-generated page provides the mount point.</p>
   <pre><code class="language-html">&lt;div id="pricing-calculator"&gt;&lt;/div&gt;
 &lt;script type="module" src="\@pathto('public/assets/pricing-calculator.js')"&gt;&lt;/script&gt;</code></pre>
   <p>Whether that bundle was produced by Vue, Svelte, React or vanilla TypeScript is deliberately outside Nift's concern.</p>
 
-  <h2>Nift + Node + Express</h2>
+  <h2 id="nift-node-express">Nift + Node + Express</h2>
   <p>Express can serve the generated public directory and expose APIs beside it.</p>
   <pre><code class="language-javascript">import express from 'express';
 
@@ -108,14 +108,14 @@ app.listen(3000);</code></pre>
   }
 }</code></pre>
 
-  <h2>Nift + Bun + TypeScript server</h2>
+  <h2 id="nift-bun-typescript-server">Nift + Bun + TypeScript server</h2>
   <p>Bun can be both the package/tooling runtime and the backend runtime while Nift remains the HTML build layer.</p>
   <pre><code class="language-bash">bun run build:client
 nift build
 bun run server.ts</code></pre>
   <p>No special adaptation is necessary: use Bun normally and point it (or a reverse proxy) at <code>public/</code>.</p>
 
-  <h2>Nift + Python + FastAPI</h2>
+  <h2 id="nift-python-fastapi">Nift + Python + FastAPI</h2>
   <pre><code class="language-python">from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 
@@ -128,7 +128,7 @@ def health():
 app.mount('/', StaticFiles(directory='public', html=True), name='public')</code></pre>
   <p>Flask or another Python framework can use the same arrangement. Django projects can also keep Nift-built static/frontend output separate from Django's runtime concerns if that fits the application.</p>
 
-  <h2>Nift + Python API + React/Vue/Svelte frontend island</h2>
+  <h2 id="nift-python-api-react-vue-svelte-frontend-island">Nift + Python API + React/Vue/Svelte frontend island</h2>
   <pre><code class="language-plaintext">Nift               Vite/framework       FastAPI/Flask
 ----               --------------       -------------
 page shell     +    interactive JS   +  API routes
@@ -137,7 +137,7 @@ content pages       client widgets      database access
 paths/assets        bundling             background jobs</code></pre>
   <p>This is often a useful separation for internal tools and dashboards: Nift handles the stable information architecture while the framework handles the stateful parts.</p>
 
-  <h2>Nift + server-rendered backend routes</h2>
+  <h2 id="nift-server-rendered-backend-routes">Nift + server-rendered backend routes</h2>
   <p>Nift does not have to generate every response your server returns. You can use it for static/documentation/marketing/help/account-shell pages while the backend renders or returns genuinely dynamic routes itself.</p>
   <pre><code class="language-plaintext">/                    Nift-built page
 /docs/*              Nift-built pages
@@ -146,7 +146,7 @@ paths/assets        bundling             background jobs</code></pre>
 /api/*                backend JSON API
 /auth/*               backend authentication flow</code></pre>
 
-  <h2>Nift + WebSockets / realtime applications</h2>
+  <h2 id="nift-websockets-realtime-applications">Nift + WebSockets / realtime applications</h2>
   <p>Realtime behaviour is also just browser/runtime behaviour. Nift can generate the shell and JavaScript reference; your backend owns the socket connection.</p>
   <pre><code class="language-javascript">const socket = new WebSocket('wss://example.com/ws');
 socket.addEventListener('message', event =&gt; {
@@ -155,13 +155,13 @@ socket.addEventListener('message', event =&gt; {
 });</code></pre>
   <p>This can back terminals, telemetry displays, live dashboards, collaborative tools or other realtime interfaces without changing Nift's role.</p>
 
-  <h2>Nift + Tailwind</h2>
+  <h2 id="nift-tailwind">Nift + Tailwind</h2>
   <p>Tailwind can scan the HTML/templates and generate CSS into <code>public/assets/</code>. Nift simply references that file.</p>
   <pre><code class="language-bash">npx @tailwindcss/cli -i ./frontend/styles.css -o ./public/assets/site.css
 nift build</code></pre>
   <pre><code class="language-html">&lt;link rel="stylesheet" href="\@pathto('public/assets/site.css')"&gt;</code></pre>
 
-  <h2>Nift + an external build orchestrator</h2>
+  <h2 id="nift-an-external-build-orchestrator">Nift + an external build orchestrator</h2>
   <p>For a larger repository, let a Makefile, task runner, package script or CI system define the order of operations.</p>
   <pre><code class="language-makefile">build:
 \tnpm run build:frontend
@@ -169,24 +169,24 @@ nift build</code></pre>
 \tgo build -o bin/server ./server</code></pre>
   <p>Nift does not need a plugin system merely to participate in a build graph.</p>
 
-  <h2>Development workflow</h2>
+  <h2 id="development-workflow">Development workflow</h2>
   <pre><code class="language-plaintext">terminal 1:  nift build-auto 0.5
 terminal 2:  npm run dev        # if using Vite/etc.
 terminal 3:  go run ./server    # or node/python/bun/etc.</code></pre>
   <p>You can keep each tool's normal development workflow. If you prefer one command, wrap them in your existing task runner.</p>
 
-  <h2>Production workflow</h2>
+  <h2 id="production-workflow">Production workflow</h2>
   <pre><code class="language-bash">npm run build:frontend   # optional
 nift build-all
 go build ./server        # or node/python/bun build/deploy steps</code></pre>
   <p>Then deploy <code>public/</code> with the backend, upload it to a CDN/object store, or serve it independently—whatever fits the architecture.</p>
 
-  <h2>What Nift is not trying to own</h2>
+  <h2 id="what-nift-is-not-trying-to-own">What Nift is not trying to own</h2>
   <div class="advanced-doc-grid">
-    <div><h2>Runtime state</h2><p>Sessions, databases, authentication, queues and business logic belong in your backend/runtime stack.</p></div>
-    <div><h2>Component runtime</h2><p>If React/Vue/Svelte is useful, use it normally. Nift does not need its own imitation of those frameworks.</p></div>
-    <div><h2>Package ecosystem</h2><p>npm, Bun and other package managers remain available without being wrapped in Nift-specific packages.</p></div>
-    <div><h2>Specialist asset tooling</h2><p>Vite, esbuild, Rollup, minifiers, Tailwind, Sass and image tools can write directly into the project/public pipeline.</p></div>
+    <div><h2 id="runtime-state">Runtime state</h2><p>Sessions, databases, authentication, queues and business logic belong in your backend/runtime stack.</p></div>
+    <div><h2 id="component-runtime">Component runtime</h2><p>If React/Vue/Svelte is useful, use it normally. Nift does not need its own imitation of those frameworks.</p></div>
+    <div><h2 id="package-ecosystem">Package ecosystem</h2><p>npm, Bun and other package managers remain available without being wrapped in Nift-specific packages.</p></div>
+    <div><h2 id="specialist-asset-tooling">Specialist asset tooling</h2><p>Vite, esbuild, Rollup, minifiers, Tailwind, Sass and image tools can write directly into the project/public pipeline.</p></div>
   </div>
 
   <div class="docs-callout"><strong>Nift provides the glue without trying to become the universe.</strong><p>A full application can be sophisticated without Nift itself becoming complicated. The point is to let Nift's small build/template model compose cleanly with whatever architecture the application actually needs.</p></div>

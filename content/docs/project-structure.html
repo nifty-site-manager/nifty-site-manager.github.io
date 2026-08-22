@@ -1,7 +1,7 @@
 <article class="docs-article">
 <p class="docs-kicker">Core concept · 03</p><h1>Project structure.</h1>
 <p class="docs-lead">Nift is deliberately unopinionated about the rest of your repository. A useful web-project convention is to separate authored content, reusable templates, generated/public assets and Nift's small amount of project state.</p>
-<h2>A straightforward website</h2>
+<h2 id="a-straightforward-website">A straightforward website</h2>
 <pre><code class="language-plaintext">content/
   index.html
   about.html
@@ -24,7 +24,7 @@ public/
   config.json
   tracked.json</code></pre>
 <p><code>content/</code> contains page-specific material. <code>templates/</code> contains shared structure. <code>public/</code> is the web-facing build/output tree in these examples. <code>.nift/</code> records how Nift manages the project.</p>
-<h2>A TypeScript/Vite frontend beside Nift</h2>
+<h2 id="a-typescript-vite-frontend-beside-nift">A TypeScript/Vite frontend beside Nift</h2>
 <pre><code class="language-plaintext">my-site/
   content/
   templates/
@@ -37,7 +37,7 @@ public/
   .nift/
   package.json</code></pre>
 <p>Vite can write bundled assets under <code>public/assets/</code>; Nift-generated pages can reference those concrete files with <code>\@pathto</code>.</p>
-<h2>A Go-backed application</h2>
+<h2 id="a-go-backed-application">A Go-backed application</h2>
 <pre><code class="language-plaintext">my-app/
   content/
   templates/
@@ -48,7 +48,7 @@ public/
     internal/
   .nift/
   Makefile</code></pre>
-<h2>A Node/Express application</h2>
+<h2 id="a-node-express-application">A Node/Express application</h2>
 <pre><code class="language-plaintext">my-app/
   content/
   templates/
@@ -60,13 +60,13 @@ public/
   package.json
   tsconfig.json</code></pre>
 <p>Nift does not require the backend, package manager or frontend tooling to live under a Nift-specific directory.</p>
-<h2>Optional page-level dependency metadata</h2>
+<h2 id="optional-page-level-dependency-metadata">Optional page-level dependency metadata</h2>
 <pre><code class="language-plaintext">content/
   report.html
   report.deps.json</code></pre>
 <p>A <code>*.deps.json</code> sidecar is optional. Use it when a tracked page depends on project files or directories that are not naturally discovered through template composition. <a class="text-link" href="@pathto('docs/user-dependencies')">See per-page dependencies →</a></p>
 
-<h2>What is actually special to Nift?</h2>
+<h2 id="what-is-actually-special-to-nift">What is actually special to Nift?</h2>
 <p>Mostly <code>.nift/</code>, your tracked content/template relationship, and the small amount of Nift syntax you choose to use. Everything else can follow the conventions of the tools that own it.</p>
 <div class="docs-callout"><strong>A Nift project can still look like your project.</strong><p>The directory examples here are conventions, not a demand that every repository adopt the same architecture.</p></div>
 <div class="docs-next"><span>Next</span><a href="@pathto('docs/partials')">Partials &amp; \@input →</a></div>

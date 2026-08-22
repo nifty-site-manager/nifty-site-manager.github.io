@@ -5,13 +5,13 @@
 
   <div class="docs-callout"><strong>No Nift-specific integration layer is required for most tools.</strong><p>If another tool can produce or consume files, it can usually sit beside Nift directly. For the design rationale behind that boundary, see <a href="@pathto('docs/why-nift')">Why Nift?</a></p></div>
 
-  <h2>Plain HTML + CSS + JavaScript</h2>
+  <h2 id="plain-html-css-javascript">Plain HTML + CSS + JavaScript</h2>
   <p>The simplest integration is no integration at all: keep ordinary assets in the public tree and reference them from Nift templates.</p>
   <pre><code class="language-html">&lt;link rel="stylesheet" href="\@pathto('public/assets/css/style.css')"&gt;
 &lt;script src="\@pathto('public/assets/app.js')"&gt;&lt;/script&gt;</code></pre>
   <p>Using <code>\@pathto</code> for those concrete local paths gives generated pages the correct relative URL and lets Nift fail the build when the referenced file does not exist.</p>
 
-  <h2>npm or Bun + TypeScript</h2>
+  <h2 id="npm-or-bun-typescript">npm or Bun + TypeScript</h2>
   <p>Package management and TypeScript compilation can remain completely conventional. Compile TypeScript into Nift's public assets, then reference the result.</p>
   <pre><code class="language-json">{
   "scripts": {
@@ -23,7 +23,7 @@
   <pre><code class="language-html">&lt;script type="module" src="\@pathto('public/assets/js/app.js')"&gt;&lt;/script&gt;</code></pre>
   <p>With Bun the same idea can use <code>bun run</code> or <code>bun build</code>. Nift does not care which package manager produced the asset.</p>
 
-  <h2>Vite as the frontend asset pipeline</h2>
+  <h2 id="vite-as-the-frontend-asset-pipeline">Vite as the frontend asset pipeline</h2>
   <p>Vite can own JavaScript/TypeScript bundling and development-oriented frontend tooling while Nift owns page composition.</p>
   <pre><code class="language-plaintext">project/
   content/
@@ -39,13 +39,13 @@
 nift build</code></pre>
   <p>Configure Vite's output where it makes sense for your project—commonly somewhere under <code>public/assets/</code>—and Nift templates can reference those built files normally.</p>
 
-  <h2>Tailwind CSS</h2>
+  <h2 id="tailwind-css">Tailwind CSS</h2>
   <p>Tailwind can scan the HTML/templates you actually author and emit CSS into the output tree. Nift only needs to link to the generated stylesheet.</p>
   <pre><code class="language-bash">npx @tailwindcss/cli -i ./assets/input.css -o ./public/assets/css/site.css
 nift build</code></pre>
   <pre><code class="language-html">&lt;link rel="stylesheet" href="\@pathto('public/assets/css/site.css')"&gt;</code></pre>
 
-  <h2>React, Vue or Svelte where you want richer UI</h2>
+  <h2 id="react-vue-or-svelte-where-you-want-richer-ui">React, Vue or Svelte where you want richer UI</h2>
   <p>Nift does not require the whole page to become a client framework application. A bundler can produce a React/Vue/Svelte entry point for a particular interactive region while Nift continues generating the surrounding document.</p>
   <pre><code class="language-html">&lt;main&gt;
   \@content
@@ -55,7 +55,7 @@ nift build</code></pre>
 &lt;script type="module" src="\@pathto('public/assets/dashboard.js')"&gt;&lt;/script&gt;</code></pre>
   <p>The component framework owns the interactive region. Nift owns the document structure around it. If your application genuinely wants React/Vue/Svelte to own nearly everything, Nift can instead be used for the portions where its templating/build model remains useful.</p>
 
-  <h2>Go backend</h2>
+  <h2 id="go-backend">Go backend</h2>
   <pre><code class="language-plaintext">my-app/
   content/
   templates/
@@ -70,7 +70,7 @@ nift build</code></pre>
 const status = await response.json();</code></pre>
   <p>No Nift-specific Go integration is required.</p>
 
-  <h2>Node + Express</h2>
+  <h2 id="node-express">Node + Express</h2>
   <p>An Express application can serve Nift's public directory and provide APIs beside it.</p>
   <pre><code class="language-javascript">import express from 'express';
 
@@ -84,13 +84,13 @@ app.get('/api/health', (req, res) =&gt; {
 
 app.listen(3000);</code></pre>
 
-  <h2>Python backends</h2>
+  <h2 id="python-backends">Python backends</h2>
   <p>The same boundary works with Flask, FastAPI, Django or another Python stack: generate frontend assets/pages with Nift, serve them from the Python application or a web server/CDN, and expose APIs normally.</p>
   <pre><code class="language-plaintext">Nift: templates + pages + static frontend output
 Python: application runtime + APIs + database + authentication
 Browser: ordinary HTTP between them</code></pre>
 
-  <h2>Minifiers, image tools and bundlers</h2>
+  <h2 id="minifiers-image-tools-and-bundlers">Minifiers, image tools and bundlers</h2>
   <p>Tools such as esbuild, Rollup, SWC, terser, lightningcss, PostCSS, Sass, image optimisers and custom scripts can run before or after Nift depending on what they transform.</p>
   <pre><code class="language-bash"># One possible production pipeline
 npm run build:frontend
@@ -98,20 +98,20 @@ nift build-all
 npm run minify:html</code></pre>
   <p>There is no requirement for a “Nift plugin” merely to use a tool. If it can read and write files, it can usually compose with Nift.</p>
 
-  <h2>Why Nift does not need an <code>@asset(...)</code> primitive</h2>
+  <h2 id="why-nift-does-not-need-an-asset-primitive">Why Nift does not need an <code>@asset(...)</code> primitive</h2>
   <p>A generic asset helper sounds attractive until its responsibility is made precise. It would usually be asked to do some combination of:</p>
   <div class="advanced-doc-grid">
-    <div><h2>Produce a browser URL</h2><p>Nift already does this with <code>\@pathto(...)</code>, including project-aware relative paths.</p></div>
-    <div><h2>Check that a local asset exists</h2><p><code>\@pathto(...)</code> already fails when its concrete project target is missing.</p></div>
-    <div><h2>Make the page rebuild when another file changes</h2><p>That is a different concern. Use <code>\@dep(...)</code> only when the file genuinely influences generated output and Nift cannot infer the relationship another way.</p></div>
-    <div><h2>Build/bundle the asset</h2><p>That belongs to Vite, esbuild, TypeScript, Sass, an image pipeline or whichever specialist tool actually owns the transformation.</p></div>
+    <div><h2 id="produce-a-browser-url">Produce a browser URL</h2><p>Nift already does this with <code>\@pathto(...)</code>, including project-aware relative paths.</p></div>
+    <div><h2 id="check-that-a-local-asset-exists">Check that a local asset exists</h2><p><code>\@pathto(...)</code> already fails when its concrete project target is missing.</p></div>
+    <div><h2 id="make-the-page-rebuild-when-another-file-changes">Make the page rebuild when another file changes</h2><p>That is a different concern. Use <code>\@dep(...)</code> only when the file genuinely influences generated output and Nift cannot infer the relationship another way.</p></div>
+    <div><h2 id="build-bundle-the-asset">Build/bundle the asset</h2><p>That belongs to Vite, esbuild, TypeScript, Sass, an image pipeline or whichever specialist tool actually owns the transformation.</p></div>
   </div>
   <p>Combining those jobs into <code>@asset</code> would make a short expression but blur useful architectural boundaries. It could also imply that Nift owns when or how frontend assets are generated. Keeping path generation and dependency declaration separate is more explicit:</p>
   <pre><code class="language-html">&lt;script type="module" src="\@pathto('public/assets/account.js')"&gt;&lt;/script&gt;</code></pre>
   <pre><code class="language-nift">\@dep('data/account-build-input.json')</code></pre>
   <p>The first says “this page links to this concrete browser asset.” The second, when actually needed, says “this page's generated output depends on this otherwise-unseen input.” They are not inherently the same relationship.</p>
 
-  <h2>Why build orchestration belongs in build scripts, not Nift hooks</h2>
+  <h2 id="why-build-orchestration-belongs-in-build-scripts-not-nift-hooks">Why build orchestration belongs in build scripts, not Nift hooks</h2>
   <p>Nift deliberately does not need configuration such as <code>beforeBuild</code>, <code>afterBuild</code> or arbitrary shell execution. A project-level build script, Makefile, package script, task runner or CI workflow is a better orchestration layer because it can coordinate <em>all</em> of the project's tools rather than making Nift the parent process of everything else.</p>
 
   <pre><code class="language-json">{
@@ -143,11 +143,11 @@ serve: site
 
   <div class="docs-callout"><strong>Nift should be easy to orchestrate, not become the orchestrator.</strong><p>Shell execution inside the generator would enlarge the security surface, add platform-specific quoting/process behaviour and encourage project logic to hide in Nift configuration. Build scripts already solve orchestration in a more general place.</p></div>
 
-  <h2>When <code>\@dep</code> actually belongs</h2>
+  <h2 id="when-dep-actually-belongs">When <code>\@dep</code> actually belongs</h2>
   <p>Do not add <code>\@dep</code> just because another tool produced a CSS or JavaScript file that you reference with <code>\@pathto</code>. Use <code>\@dep</code> for the narrower case where an external file influences a generated output but Nift otherwise has no relationship from which to know that.</p>
   <pre><code class="language-nift">\@dep('data/generated-navigation.json')</code></pre>
 
-  <h2>A repository can contain several worlds</h2>
+  <h2 id="a-repository-can-contain-several-worlds">A repository can contain several worlds</h2>
   <pre><code class="language-plaintext">product/
   site/                 # Nift content/templates
   frontend/             # TypeScript + Vite + React

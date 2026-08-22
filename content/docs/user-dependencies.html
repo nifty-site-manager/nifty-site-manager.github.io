@@ -3,12 +3,12 @@
   <h1>Per-page <code>*.deps.json</code>.</h1>
   <p class="docs-lead">A tracked page can declare additional build dependencies in a JSON sidecar beside its content file. This is useful when a dependency belongs to the page but is not naturally referenced from the template with <code>\@input</code> or declared inline with <code>\@dep(...)</code>.</p>
 
-  <h2>File naming</h2>
+  <h2 id="file-naming">File naming</h2>
   <p>Nift takes the tracked content path and replaces its extension with <code>.deps.json</code>.</p>
   <pre><code class="language-plaintext">content/docs/getting-started.html
 content/docs/getting-started.deps.json</code></pre>
 
-  <h2>Format</h2>
+  <h2 id="format">Format</h2>
   <pre><code class="language-json">{
   "dependencies": [
     "data/navigation.json",
@@ -18,10 +18,10 @@ content/docs/getting-started.deps.json</code></pre>
 }</code></pre>
   <p>The document root must be an object, <code>dependencies</code> must be an array, and every member must be a string naming an existing project-relative file or directory. Invalid dependency metadata is reported as a build problem rather than being silently ignored.</p>
 
-  <h2>Files and directories</h2>
+  <h2 id="files-and-directories">Files and directories</h2>
   <p>Dependencies can point at files or directories. Directory dependencies participate in incremental change detection recursively, including additions and changes below nested subdirectories in hash-aware modes.</p>
 
-  <h2>When to use it</h2>
+  <h2 id="when-to-use-it">When to use it</h2>
   <div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>Mechanism</th><th>Best fit</th></tr></thead><tbody>
     <tr><td><code>\@input(...)</code></td><td>The file is actually rendered into the current document. Nift records the dependency automatically.</td></tr>
     <tr><td><code>\@dep(...)</code></td><td>The dependency matters exactly where the template/content is being authored, but its contents are not inserted.</td></tr>
@@ -30,10 +30,10 @@ content/docs/getting-started.deps.json</code></pre>
 
   <div class="docs-callout"><strong>You do not need to choose one dependency style globally.</strong><p>Use automatic dependencies for normal composition, <code>\@dep</code> when the relationship belongs in the source, and <code>*.deps.json</code> when it belongs beside the tracked page as build metadata.</p></div>
 
-  <h2>Incremental behaviour</h2>
+  <h2 id="incremental-behaviour">Incremental behaviour</h2>
   <p>After a successful build, user-defined dependencies are included in the page's build metadata. <code>status</code> and <code>build-updated</code> check them using the configured <code>modified</code>, <code>hash</code> or <code>hybrid</code> mode just like dependencies discovered while rendering.</p>
 
-  <h2>Dependencies stay inside the project</h2>
+  <h2 id="dependencies-stay-inside-the-project">Dependencies stay inside the project</h2>
 <p><code>\@dep(...)</code> is project build metadata, so its paths must remain inside the Nift project. Parent traversal or an absolute path escaping the project is rejected rather than allowing incremental state to depend on arbitrary files elsewhere on the machine.</p>
 <div class="docs-next"><span>Related</span><a href="@pathto('docs/dep')"><code>\@dep(...)</code> →</a></div>
 </article>

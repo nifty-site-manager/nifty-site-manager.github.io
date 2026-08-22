@@ -5,7 +5,7 @@
 
 <div class="docs-callout"><strong>The basic deployment model.</strong><p>For a generic project, run your frontend/tooling steps, run Nift, then deploy <code>public/</code>. If Nift is part of a larger application, the same directory can instead be copied into the server image or served by the backend. Vercel and Amplify targets intentionally use their native bundle directories instead.</p></div>
 
-<h2>A simple production build</h2>
+<h2 id="a-simple-production-build">A simple production build</h2>
 <pre><code class="language-bash"># optional: compile/bundle frontend assets first
 npm run build:frontend
 
@@ -15,7 +15,7 @@ nift build-all
 # deploy public/
 </code></pre>
 
-<h2>Supported platform targets</h2>
+<h2 id="supported-platform-targets">Supported platform targets</h2>
 <p>For common static hosts, start with the same CLI shape and let Nift prepare the provider-specific plumbing:</p>
 <pre><code class="language-bash">nift init --target=vercel
 nift init --target=netlify
@@ -30,7 +30,7 @@ nift init --target=supabase</code></pre>
 <p>These presets are shortcuts, not restrictions. If your host is not listed, Nift can still be used anywhere its ordinary generated files can be served or deployed: start with <code>nift init</code>, build to <code>public/</code>, and configure the host manually. See <a href="@pathto('docs/platforms')">Platform targets</a> for the exact generated files, build-environment requirements and provider-specific guides for the presets Nift knows how to initialise automatically.</p>
 <div class="docs-callout"><strong>Build-environment installation is separate.</strong><p>A target prepares the project, but it does not choose how a remote CI image obtains the <code>nift</code> executable. Pin/install Nift using the distribution policy appropriate to that project, then run the generated build command.</p></div>
 
-<h2>GitLab Pages</h2>
+<h2 id="gitlab-pages">GitLab Pages</h2>
 <p>GitLab Pages remains a straightforward generic deployment even though it does not currently have a named Nift target. Build Nift and publish the resulting <code>public/</code> artifact.</p>
 <pre><code class="language-yaml">pages:
   script:
@@ -40,7 +40,7 @@ nift init --target=supabase</code></pre>
       - public</code></pre>
 <p>Your real CI job may also install Nift, compile TypeScript, optimise images or run tests before the Nift build.</p>
 
-<h2>Supabase</h2>
+<h2 id="supabase">Supabase</h2>
 <p>Supabase is often most useful beside Nift rather than instead of a static host. Let Nift generate the frontend and use Supabase for the application services it is good at: Postgres, Auth, Data APIs, Realtime, Edge Functions and Storage.</p>
 <pre><code class="language-plaintext">Nift
   ↓
@@ -67,20 +67,20 @@ const { data } = await supabase
   .select('*');</code></pre>
 <p>Supabase Storage public buckets can also serve public assets through its CDN-backed object URLs. For a whole static website, however, a normal web/static host is usually the clearer division of responsibility.</p>
 
-<h2>nginx / Apache / Caddy</h2>
+<h2 id="nginx-apache-caddy">nginx / Apache / Caddy</h2>
 <p>For a traditional server, copy <code>public/</code> to the directory your web server serves.</p>
 <pre><code class="language-bash">nift build-all
 rsync -av --delete public/ user\@example.com:/var/www/example/</code></pre>
 <p>Nift does not need to run on the production server if you build before deployment.</p>
 
-<h2>Go application</h2>
+<h2 id="go-application">Go application</h2>
 <p>A Go backend can serve the generated directory directly or embed/copy it into the application image.</p>
 <pre><code class="language-go">mux := http.NewServeMux()
 mux.Handle("/", http.FileServer(http.Dir("public")))
 
 http.ListenAndServe(":8080", mux)</code></pre>
 
-<h2>Node / Express</h2>
+<h2 id="node-express">Node / Express</h2>
 <pre><code class="language-javascript">import express from 'express';
 
 const app = express();
@@ -88,10 +88,10 @@ app.use(express.static('public'));
 
 app.listen(3000);</code></pre>
 
-<h2>Python</h2>
+<h2 id="python">Python</h2>
 <p>Flask, FastAPI, Django or another Python application can serve/copy the generated frontend in whichever way is conventional for that stack. Nift does not require a Python integration layer.</p>
 
-<h2>Docker</h2>
+<h2 id="docker">Docker</h2>
 <p>A multi-stage image can build the site and copy only the final public files into a small web-server image.</p>
 <pre><code class="language-dockerfile"># build stage
 FROM your-nift-build-image AS build
@@ -103,14 +103,14 @@ RUN nift build-all
 FROM nginx:alpine
 COPY --from=build /site/public /usr/share/nginx/html</code></pre>
 
-<h2>Static frontend + separate API</h2>
+<h2 id="static-frontend-separate-api">Static frontend + separate API</h2>
 <p>A very common full-stack deployment is simply:</p>
 <pre><code class="language-plaintext">public/              → CDN/static host
 api.example.com      → Go / Node / Python / serverless backend
 database/auth/etc.   → your chosen services</code></pre>
 <p>Nift does not need to know how those runtime services are deployed. The frontend can call them with ordinary HTTP/WebSockets.</p>
 
-<h2>CI pipelines</h2>
+<h2 id="ci-pipelines">CI pipelines</h2>
 <p>Whatever platform you use, a production pipeline commonly becomes:</p>
 <pre><code class="language-bash">npm ci                  # if the project uses npm
 npm run build:frontend  # TypeScript/Vite/Tailwind/etc.

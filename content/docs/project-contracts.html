@@ -5,7 +5,7 @@
 
 <div class="docs-callout"><strong>Local JSON and project contracts solve different scopes.</strong><p>Use <code>\@json(...)</code> when a template explicitly loads page/render data. Use a project contract when the same named relationship should mean the same thing everywhere in the project.</p></div>
 
-<h2>Declare contracts in config.json</h2>
+<h2 id="declare-contracts-in-config-json">Declare contracts in config.json</h2>
 <pre><code class="language-json">{
   "config": {
     "content-dir": "content/",
@@ -18,7 +18,7 @@
 }</code></pre>
 <p>Each key is a contract namespace. Each value is a non-empty project-relative path to a JSON file. Contract names use identifier-style letters, digits and underscores and cannot collide with Nift's built-in/reserved namespaces.</p>
 
-<h2>Read contract values with $[...]</h2>
+<h2 id="read-contract-values-with">Read contract values with $[...]</h2>
 <p>Given:</p>
 <pre><code class="language-json">// .nift/routes.json
 {
@@ -31,23 +31,23 @@
 <pre><code class="language-javascript">const response = await fetch('\$[routes.users.list]');</code></pre>
 <p>Object members and array indices use the same access rules as <code>\@json</code> bindings. Scalar strings, numbers, booleans and <code>null</code> render as values; whole objects and arrays must be narrowed to a member/element before rendering.</p>
 
-<h2>Resolution is explicit, not guessed</h2>
+<h2 id="resolution-is-explicit-not-guessed">Resolution is explicit, not guessed</h2>
 <p><code>\$[routes.users.list]</code> has contract meaning only when <code>routes</code> is declared in config. Nift does not search the filesystem for arbitrary unknown namespaces and does not assume a typo is a missing contract.</p>
 <p>If no contract named <code>routes</code> exists, a local <code>\@json(..., routes)</code> binding can still use that name normally. If neither exists, the expression follows ordinary unknown-value behavior.</p>
 
-<h2>Contract namespaces cannot be shadowed</h2>
+<h2 id="contract-namespaces-cannot-be-shadowed">Contract namespaces cannot be shadowed</h2>
 <p>Once a contract name is declared, that name has one meaning project-wide. Nift rejects attempts to reuse it as a local JSON binding or loop binding:</p>
 <pre><code class="language-nift">\@json('data/other.json', routes)      // error if routes is a contract
 \@for(routes : data.items){ ... }      // error if routes is a contract</code></pre>
 <p>Nift also rejects contract names that collide with built-in metadata or reserved bindings. There are no precedence rules to memorize.</p>
 
-<h2>Contract sources are loaded lazily</h2>
+<h2 id="contract-sources-are-loaded-lazily">Contract sources are loaded lazily</h2>
 <p>Declaring ten contracts does not make every page depend on all ten files. Nift loads a contract when that namespace is actually resolved during a render and caches the parsed immutable JSON for the build.</p>
 <pre><code class="language-plaintext">page A uses $[routes.*]   → depends on config.json + routes source
 page B uses $[services.*] → depends on config.json + services source
 page C uses neither       → no contract-source dependency</code></pre>
 
-<h2>Incremental builds follow contract changes</h2>
+<h2 id="incremental-builds-follow-contract-changes">Incremental builds follow contract changes</h2>
 <p>When a page references a contract, Nift records the contract file and <code>.nift/config.json</code> in the page's dependency metadata. Therefore both of these can invalidate the output:</p>
 <ul>
 <li>editing the referenced contract JSON;</li>
@@ -55,15 +55,15 @@ page C uses neither       → no contract-source dependency</code></pre>
 </ul>
 <p>After a successful rebuild, the persisted dependency set is refreshed to the new source.</p>
 
-<h2>Failures are contract-specific</h2>
+<h2 id="failures-are-contract-specific">Failures are contract-specific</h2>
 <p>Declared contract namespaces produce controlled errors for missing sources, malformed JSON, missing referenced members, unsafe paths and non-renderable object/array values. Config itself rejects malformed contract declarations before rendering starts.</p>
 <pre><code class="language-plaintext">contract 'routes': file does not exist: .nift/routes.json
 contract 'routes' has no entry 'users.details'</code></pre>
 
-<h2>Use JSON Schema when the contract needs a richer shape guarantee</h2>
+<h2 id="use-json-schema-when-the-contract-needs-a-richer-shape-guarantee">Use JSON Schema when the contract needs a richer shape guarantee</h2>
 <p>Project contracts currently provide named existence/member/dependency guarantees over JSON. If a project needs richer domain validation, keep the contract data declarative and validate it with appropriate tooling or an explicit <a href="@pathto('docs/json-schema')">JSON Schema</a> workflow. Nift should not pretend to understand domain semantics it cannot actually verify.</p>
 
-<h2>Route contracts are one concrete pattern</h2>
+<h2 id="route-contracts-are-one-concrete-pattern">Route contracts are one concrete pattern</h2>
 <p>A shared frontend/backend route catalogue is a natural project contract because route drift is otherwise easy to express as duplicated unchecked strings. The dedicated <a href="@pathto('docs/routes')">Routes</a> page shows the pattern and explains how Nift route contracts differ from deployment-platform routing rules such as Vercel routes.</p>
 
 <div class="docs-next"><span>Design rationale</span><a href="@pathto('docs/contracts')">Contracts →</a></div>

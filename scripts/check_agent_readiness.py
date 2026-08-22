@@ -35,7 +35,7 @@ tracked=json.loads(text(ROOT/'.nift/tracked.json'))['tracked']
 expected=set()
 for item in tracked:
     name=item['name']; ext=item.get('output-ext','.html')
-    if ext!='.html' or name=='404': continue
+    if ext!='.html' or name=='404' or str(item.get('template','')).startswith('templates/legacy-'): continue
     expected.add('https://nift.dev/' if name=='/' else f'https://nift.dev/{name}.html')
 ns={'s':'http://www.sitemaps.org/schemas/sitemap/0.9'}
 locs={x.text for x in ET.parse(ROOT/'content/sitemap.xml').findall('s:url/s:loc',ns)}

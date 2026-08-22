@@ -2,16 +2,16 @@
 <p class="docs-kicker">Platform target</p><h1>Netlify</h1>
 <p class="docs-lead">Netlify can deploy Nift's normal <code>public/</code> tree, so the target keeps Nift's standard output layout and adds the project-level build configuration Netlify understands.</p>
 <pre><code class="language-bash">nift init --target=netlify</code></pre>
-<h2>What Nift creates</h2>
+<h2 id="what-nift-creates">What Nift creates</h2>
 <pre><code class="language-toml">[build]
   command = "nift build"
   publish = "public"</code></pre>
 <p><code>netlify.toml</code> is user-owned after initialization. Netlify's file-based configuration overrides conflicting UI build settings, so keep it as the source of truth if you adopt it.</p>
-<h2>Build environment</h2>
+<h2 id="build-environment">Build environment</h2>
 <p>The generated command assumes <code>nift</code> is available on the Netlify build image. Choose and document the installation method for your project rather than having Nift silently inject one.</p>
-<h2>Functions and edge logic</h2>
+<h2 id="functions-and-edge-logic">Functions and edge logic</h2>
 <p>Netlify Functions live outside the publish directory (the default functions directory is <code>netlify/functions</code>), while Edge Functions default to <code>netlify/edge-functions</code>. They can sit beside a Nift site without changing the template/build model.</p>
-<h2>Routing and headers</h2>
+<h2 id="routing-and-headers">Routing and headers</h2>
 <p>Netlify supports redirects, rewrites/proxies and custom headers through its static routing/configuration mechanisms. These can route requests to static files or serverless functions while Nift continues generating ordinary files.</p>
 <p>Official references: <a href="https://docs.netlify.com/build/configure-builds/file-based-configuration/">file-based configuration</a>, <a href="https://docs.netlify.com/build/configure-builds/overview/">build configuration</a>, <a href="https://docs.netlify.com/manage/routing/overview/">routing</a>, and <a href="https://docs.netlify.com/build/edge-functions/get-started/">Edge Functions</a>.</p>
 <div class="docs-next"><span>Next platform</span><a href="@pathto('docs/platforms/amplify')">AWS Amplify →</a></div>

@@ -359,6 +359,28 @@
       "name": "docs/ai-agents",
       "title": "Nift with AI agents",
       "template": "templates/docs.html"
+    },
+    {
+      "name": "ai-context",
+      "title": "Legacy AI context compatibility",
+      "template": "templates/asset.txt",
+      "content-ext": ".txt",
+      "output-ext": ".txt"
+    },
+    {
+      "name": "docs/ai-assistants",
+      "title": "Moved: AI agents",
+      "template": "templates/legacy-ai-assistants.html"
+    },
+    {
+      "name": "docs/template_files",
+      "title": "Moved: Template language",
+      "template": "templates/legacy-template_files.html"
+    },
+    {
+      "name": "docs/markdown",
+      "title": "Moved: Documentation projects",
+      "template": "templates/legacy-markdown.html"
     }
   ]
 }

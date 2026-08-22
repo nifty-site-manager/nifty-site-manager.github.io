@@ -5,15 +5,15 @@
 
 <div class="docs-callout"><strong>Nift is small because the web ecosystem is already enormous.</strong><p>Browsers understand HTML, CSS and JavaScript. npm and Bun manage packages. TypeScript compiles types. Vite and bundlers build frontend assets. Go, Node and Python run servers. Databases store data. Hosting platforms deploy files. Nift can be useful without pretending those things need a Nift-specific replacement.</p></div>
 
-<h2>The four jobs at the centre</h2>
+<h2 id="the-four-jobs-at-the-centre">The four jobs at the centre</h2>
 <div class="why-grid">
-  <div><span>01</span><h3>Track</h3><p>Give the outputs you care about stable tracked names and let Nift know which content/template relationship produces them.</p></div>
-  <div><span>02</span><h3>Compose</h3><p>Put shared structure in templates and partials. Put page-specific markup in content. Reuse the pieces without inventing a component runtime.</p></div>
-  <div><span>03</span><h3>Resolve</h3><p>Use project-aware paths and metadata instead of scattering fragile assumptions about directory depth throughout shared markup.</p></div>
-  <div><span>04</span><h3>Rebuild</h3><p>Record the dependency graph and rebuild the outputs affected by a change instead of treating every edit like a clean-room rebuild.</p></div>
+  <div><span>01</span><h3 id="track">Track</h3><p>Give the outputs you care about stable tracked names and let Nift know which content/template relationship produces them.</p></div>
+  <div><span>02</span><h3 id="compose">Compose</h3><p>Put shared structure in templates and partials. Put page-specific markup in content. Reuse the pieces without inventing a component runtime.</p></div>
+  <div><span>03</span><h3 id="resolve">Resolve</h3><p>Use project-aware paths and metadata instead of scattering fragile assumptions about directory depth throughout shared markup.</p></div>
+  <div><span>04</span><h3 id="rebuild">Rebuild</h3><p>Record the dependency graph and rebuild the outputs affected by a change instead of treating every edit like a clean-room rebuild.</p></div>
 </div>
 
-<h2>Adoption should not require surrender.</h2>
+<h2 id="adoption-should-not-require-surrender">Adoption should not require surrender.</h2>
 <p>Some tools are most useful when the project becomes a project *of that framework*. Nift can be useful while remaining only one layer inside a repository.</p>
 <pre><code class="language-plaintext">your project
   ├─ HTML / CSS
@@ -29,36 +29,36 @@
        ├─ project-aware paths
        └─ dependency-aware builds</code></pre>
 
-<h2>Ordinary web code is a feature.</h2>
+<h2 id="ordinary-web-code-is-a-feature">Ordinary web code is a feature.</h2>
 <p>A Nift page can remain HTML. A stylesheet can remain CSS. Browser behaviour can remain JavaScript. Your backend can remain Go. That makes projects easier to inspect with standard tools and reduces how much Nift-specific knowledge has to survive across years of maintenance.</p>
 
-<h2>Powerful simplicity helps humans.</h2>
+<h2 id="powerful-simplicity-helps-humans">Powerful simplicity helps humans.</h2>
 <p>A small surface is easier to remember, document, debug and teach. The important abstractions remain visible: this page uses this template; this template inputs this partial; this link points to this tracked output.</p>
 
-<h2>Human-first simplicity also produces strong AI-DX.</h2>
+<h2 id="human-first-simplicity-also-produces-strong-ai-dx">Human-first simplicity also produces strong AI-DX.</h2>
 <p>Nift is designed first for people: ordinary source files, explicit relationships, fast feedback and a small language. Those same properties happen to make projects easier for coding assistants to understand and validate without replacing the human-oriented model. <a class="text-link" href="@pathto('docs/ai-agents')">See the AI-assisted workflow →</a></p>
 
 
-<h2>Prefer checked relationships over unchecked strings.</h2>
+<h2 id="prefer-checked-relationships-over-unchecked-strings">Prefer checked relationships over unchecked strings.</h2>
 <p>Nift is increasingly useful not because it knows more about every technology in your stack, but because it can make the relationships it <em>does</em> know about explicit. <code>\@input</code> establishes an input/dependency relationship, <code>\@pathto</code> checks project-local references, JSON and schemas validate structured data, and project contracts can make shared application values such as route names fail at build time when they drift.</p>
 <p>This is the broader contract philosophy: if an important assumption is known at build time and Nift can check it simply and clearly, prefer the checked relationship to an unchecked string. The feature still has to justify its complexity; a theoretically verifiable guarantee is not automatically worth adding.</p>
   <p><a class="text-link" href="@pathto('docs/contracts')">Read the contracts philosophy →</a></p>
 
-<h2>Built to be dependable.</h2>
+<h2 id="built-to-be-dependable">Built to be dependable.</h2>
 <p>Dependability is one of Nift's engineering values, and it is not the claim that software never fails. For Nift it means something narrower and more inspectable: the behaviour users are expected to rely on has explicit scope, known boundaries, and evidence behind it.</p>
 <p>Nift applies that principle both to the projects it builds and to its own development. Dependencies are tracked rather than guessed. Important behaviour is expressed as contracts rather than left to inference. Regressions become permanent tests. Public reliability claims are tied to evidence, and the boundaries of that evidence are recorded rather than hidden. The same discipline shows up in <code>nift init --handover</code>, which generates a project handover so the assumptions a project depends on are written down and available to every future contributor — human or AI.</p>
 <p>The goal is not to say <em>trust us</em>. It is to make as much of that trust as possible inspectable. Knowing where a guarantee stops is part of the guarantee: a system that says what is established, what the boundary is, and what the evidence looks like is more dependable than one making a broader claim with weaker justification.</p>
 
-<h2>Fast should mean more than benchmark numbers.</h2>
+<h2 id="fast-should-mean-more-than-benchmark-numbers">Fast should mean more than benchmark numbers.</h2>
 <p>Nift is written in C++ and supports multithreaded builds, but the workflow advantage is especially visible in incremental development. Change one page and rebuild what changed. Change a shared partial and rebuild the pages that depend on it. Avoid repeatedly waking every part of a large toolchain for unrelated edits.</p>
 <div class="advanced-doc-grid">
-  <div><h2>Fast full builds</h2><p>A native compiled build tool keeps overhead low when the project genuinely needs to rebuild everything.</p></div>
-  <div><h2>Fast incremental builds</h2><p>During normal development, the dependency graph lets the amount of work stay closer to the size of the change.</p></div>
-  <div><h2>Small project footprint</h2><p>Nift does not require a runtime dependency tree merely to turn templates/content into deployable HTML.</p></div>
-  <div><h2>One native executable</h2><p>The core tool is easy to reason about operationally: install Nift and point it at a project rather than bootstrapping a whole framework runtime.</p></div>
+  <div><h2 id="fast-full-builds">Fast full builds</h2><p>A native compiled build tool keeps overhead low when the project genuinely needs to rebuild everything.</p></div>
+  <div><h2 id="fast-incremental-builds">Fast incremental builds</h2><p>During normal development, the dependency graph lets the amount of work stay closer to the size of the change.</p></div>
+  <div><h2 id="small-project-footprint">Small project footprint</h2><p>Nift does not require a runtime dependency tree merely to turn templates/content into deployable HTML.</p></div>
+  <div><h2 id="one-native-executable">One native executable</h2><p>The core tool is easy to reason about operationally: install Nift and point it at a project rather than bootstrapping a whole framework runtime.</p></div>
 </div>
 
-<h2>What Nift deliberately does not try to own</h2>
+<h2 id="what-nift-deliberately-does-not-try-to-own">What Nift deliberately does not try to own</h2>
 <pre><code class="language-plaintext">Need TypeScript?      use TypeScript.
 Need React?           use React.
 Need Tailwind?        use Tailwind.
@@ -67,22 +67,22 @@ Need a Go server?     use Go.
 Need Postgres/Auth?   use Postgres / Supabase / your choice.
 Need deployment?      deploy public/ where it belongs.</code></pre>
 
-<h2>A useful feature must justify its permanent cost</h2>
+<h2 id="a-useful-feature-must-justify-its-permanent-cost">A useful feature must justify its permanent cost</h2>
 <p>Nift's small surface is not an accident and it is not a promise that the language can never grow. The test for a new feature is whether it solves a recurring build-time problem while preserving a compact mental model. Structured JSON, loops and conditions pass that test because they let data describe static output. That does not imply that mutable variables, arbitrary computation or a general-purpose scripting runtime belong in the core.</p>
 <div class="advanced-doc-grid">
-  <div><h2>Prefer build-time knowledge</h2><p>If the value is already known while building, Nift can turn it into ordinary output rather than requiring the browser to reconstruct it later.</p></div>
-  <div><h2>Prefer immutable data flow</h2><p>Load data, inspect it and render from it. Avoid hidden mutable state that makes templates depend on execution history.</p></div>
-  <div><h2>Prefer explicit relationships</h2><p>Tracked names, inputs, paths and dependencies should make it possible to explain why an output exists and why it rebuilt.</p></div>
-  <div><h2>Prefer composition over replacement</h2><p>A specialised external tool is often better than growing a Nift-specific substitute for functionality the wider ecosystem already solves well.</p></div>
+  <div><h2 id="prefer-build-time-knowledge">Prefer build-time knowledge</h2><p>If the value is already known while building, Nift can turn it into ordinary output rather than requiring the browser to reconstruct it later.</p></div>
+  <div><h2 id="prefer-immutable-data-flow">Prefer immutable data flow</h2><p>Load data, inspect it and render from it. Avoid hidden mutable state that makes templates depend on execution history.</p></div>
+  <div><h2 id="prefer-explicit-relationships">Prefer explicit relationships</h2><p>Tracked names, inputs, paths and dependencies should make it possible to explain why an output exists and why it rebuilt.</p></div>
+  <div><h2 id="prefer-composition-over-replacement">Prefer composition over replacement</h2><p>A specialised external tool is often better than growing a Nift-specific substitute for functionality the wider ecosystem already solves well.</p></div>
 </div>
 
-<h2>Static generation does not mean static experiences</h2>
+<h2 id="static-generation-does-not-mean-static-experiences">Static generation does not mean static experiences</h2>
 <p>Nift decides what can be known before deployment. The browser can still own what genuinely belongs at runtime. A product grid, navigation tree or documentation index can be generated from JSON with loops and conditions; a modal, live search box, WebSocket feed or interactive dashboard can use ordinary JavaScript or a component framework. Keeping those phases distinct avoids shipping runtime machinery merely to produce markup that was already knowable at build time.</p>
 
-<h2>Compatibility should be quiet, not contagious</h2>
+<h2 id="compatibility-should-be-quiet-not-contagious">Compatibility should be quiet, not contagious</h2>
 <p>Where practical, Nift can keep a narrow compatibility path for existing projects without making historical aliases or obsolete concepts part of the recommended language. New documentation should teach the smallest current model. Compatibility exists to reduce migration pain, not to dictate the shape of future projects.</p>
 
-<h2>The result</h2>
+<h2 id="the-result">The result</h2>
 <blockquote class="docs-quote">Nift provides the glue without trying to become the universe.</blockquote>
 <p>That is not an excuse for missing features. It is the boundary: Nift should be excellent at the small set of project-aware build problems it owns, and easy to compose with specialist tools for everything else.</p>
 

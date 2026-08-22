@@ -5,7 +5,7 @@
 
 <div class="docs-callout"><strong>Comments never run Nift code.</strong><p>A Nift comment can safely contain <code>\@input(...)</code>, <code>\@dep(...)</code>, <code>\$[...]</code> or any other Nift-looking text. It is ignored completely.</p></div>
 
-<h2>Multiline Nift comments</h2>
+<h2 id="multiline-nift-comments">Multiline Nift comments</h2>
 <p>Use <code>&lt;#--</code> and <code>--#&gt;</code> for a multiline source comment:</p>
 
 <pre><code class="language-plaintext">&lt;#--
@@ -25,10 +25,10 @@
 <tr><td><code>&lt;#-- \$[title] --#&gt;</code></td><td><em>nothing</em></td></tr>
 </tbody></table></div>
 
-<h3>When multiline comments are useful</h3>
+<h3 id="when-multiline-comments-are-useful">When multiline comments are useful</h3>
 <p>They are useful for source-only notes, temporarily disabling a section of Nift source, or commenting out syntax that may not currently be valid. Because the body is skipped entirely, it is safe for the comment to contain incomplete or otherwise meaningful Nift expressions.</p>
 
-<h2>Single-line Nift comments</h2>
+<h2 id="single-line-nift-comments">Single-line Nift comments</h2>
 <p>For a comment that runs to the end of the line, Nift accepts either <code>\@#</code> or <code>\@//</code>:</p>
 
 <pre><code class="language-plaintext">\@# this is a Nift comment
@@ -38,7 +38,7 @@
 
 <p>Both forms are removed from the generated output and their contents are not parsed.</p>
 
-<h2>HTML comments are different</h2>
+<h2 id="html-comments-are-different">HTML comments are different</h2>
 <p>A normal HTML comment is part of the document you are generating:</p>
 
 <pre><code class="language-html">&lt;!-- This comment remains in the generated HTML. --&gt;</code></pre>
@@ -53,7 +53,7 @@
 
 <div class="docs-callout"><strong>Choose based on where the comment belongs.</strong><p>Use <code>&lt;#-- ... --#&gt;</code>, <code>\@#</code> or <code>\@//</code> for comments that exist only in Nift source. Use <code>&lt;!-- ... --&gt;</code> when the comment should be present in the generated HTML.</p></div>
 
-<h2>Comments work everywhere Nift parses source</h2>
+<h2 id="comments-work-everywhere-nift-parses-source">Comments work everywhere Nift parses source</h2>
 <p>The same comment forms work in tracked content, templates and files included with <code>\@input(...)</code>.</p>
 
 <pre><code class="language-html">&lt;header&gt;
@@ -69,14 +69,14 @@
 
 <p>This follows from Nift's composition model: both <code>\@content</code> and <code>\@input</code> parse their source as Nift rather than inserting raw text.</p>
 
-<h2>Unclosed multiline comments are build errors</h2>
+<h2 id="unclosed-multiline-comments-are-build-errors">Unclosed multiline comments are build errors</h2>
 <p>A multiline comment must have its closing <code>--#&gt;</code>. If it does not, Nift reports the source location instead of silently discarding the rest of the file:</p>
 
 <pre><code class="language-plaintext">error: while building docs/example
   content/docs/example.html:12
   open comment '&lt;#--' has no close '--#&gt;'</code></pre>
 
-<h2>Quick reference</h2>
+<h2 id="quick-reference">Quick reference</h2>
 <div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>Syntax</th><th>Meaning</th><th>Emitted?</th><th>Body parsed?</th></tr></thead><tbody>
 <tr><td><code>&lt;#-- ... --#&gt;</code></td><td>Multiline Nift comment</td><td>No</td><td>No</td></tr>
 <tr><td><code>\@# ...</code></td><td>Single-line Nift comment</td><td>No</td><td>No</td></tr>

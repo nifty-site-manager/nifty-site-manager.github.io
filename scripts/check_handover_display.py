@@ -27,7 +27,7 @@ def main() -> int:
         return 1
     source = PAGE.read_text(encoding="utf-8")
     marker = re.compile(
-        r'<h3>The canonical HANDOVER\.md</h3>\s*<pre><code class="language-plaintext">(.*?)</code></pre>',
+        r'<h3(?:\s+[^>]*)?>The canonical HANDOVER\.md</h3>\s*<pre><code class="language-plaintext">(.*?)</code></pre>',
         flags=re.S,
     )
     match = marker.search(source)

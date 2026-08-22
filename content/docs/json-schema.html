@@ -5,7 +5,7 @@
 
 <div class="docs-callout"><strong>JSON Schema is not a Nift-specific schema language.</strong><p>It is a widely used standard for describing and validating JSON documents. Nift understands a deliberately useful Draft 2020-12-compatible subset, so a schema can remain ordinary JSON and can also be understood by editors, CI tools and other software outside Nift.</p></div>
 
-<h2>The problem it solves</h2>
+<h2 id="the-problem-it-solves">The problem it solves</h2>
 <p>Without a schema, this is perfectly valid JSON:</p>
 <pre><code class="language-json">{
   "name": "Coffee mug",
@@ -32,13 +32,13 @@
 
 <p>Nift parses the JSON, parses the schema, validates the document, and only creates the <code>product</code> binding if validation succeeds.</p>
 
-<h2>What a failure looks like</h2>
+<h2 id="what-a-failure-looks-like">What a failure looks like</h2>
 <p>If <code>price</code> is the string <code>"free"</code> instead of a number, the build fails rather than allowing a bad assumption to reach deeper into the template:</p>
 <pre><code class="language-plaintext">json: data/product.json does not satisfy schema schemas/product.schema.json
 (at $.price: expected number, received string)</code></pre>
 <p>The <code>$</code> means “the root of the JSON document.” Therefore <code>$.price</code> means the <code>price</code> property on the root object, while a path such as <code>$.products[3].price</code> points to an exact nested value.</p>
 
-<h2>A realistic collection example</h2>
+<h2 id="a-realistic-collection-example">A realistic collection example</h2>
 <p>Suppose <code>data/products.json</code> contains:</p>
 <pre><code class="language-json">{
   "products": [
@@ -111,7 +111,7 @@
     }
 &lt;/div&gt;</code></pre>
 
-<h2><code>required</code>: make fields mandatory</h2>
+<h2 id="required-make-fields-mandatory"><code>required</code>: make fields mandatory</h2>
 <pre><code class="language-json">{
   "type": "object",
   "required": ["title", "date"],
@@ -122,7 +122,7 @@
 }</code></pre>
 <p>This does not mean every property listed under <code>properties</code> is automatically required. <code>properties</code> describes fields when present; <code>required</code> names the fields that must be present.</p>
 
-<h2><code>type</code>: prevent accidental shape changes</h2>
+<h2 id="type-prevent-accidental-shape-changes"><code>type</code>: prevent accidental shape changes</h2>
 <div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>Schema type</th><th>Accepts</th></tr></thead><tbody>
 <tr><td><code>object</code></td><td>JSON objects such as <code>{"name":"Nift"}</code></td></tr>
 <tr><td><code>array</code></td><td>JSON arrays such as <code>[1,2,3]</code></td></tr>
@@ -138,7 +138,7 @@
   "type": ["string", "null"]
 }</code></pre>
 
-<h2><code>additionalProperties</code>: catch typos</h2>
+<h2 id="additionalproperties-catch-typos"><code>additionalProperties</code>: catch typos</h2>
 <p>This is one of the most useful schema rules for project content:</p>
 <pre><code class="language-json">{
   "type": "object",
@@ -157,7 +157,7 @@
   }
 }</code></pre>
 
-<h2>Arrays: <code>items</code>, sizes, uniqueness and <code>contains</code></h2>
+<h2 id="arrays-items-sizes-uniqueness-and-contains">Arrays: <code>items</code>, sizes, uniqueness and <code>contains</code></h2>
 <pre><code class="language-json">{
   "type": "array",
   "minItems": 1,
@@ -170,7 +170,7 @@
 }</code></pre>
 <p><code>items</code> applies one schema to every array item. <code>contains</code> can require that at least one item matches another schema; <code>minContains</code>/<code>maxContains</code> constrain how many matches are acceptable.</p>
 
-<h2>Numbers: bounds and multiples</h2>
+<h2 id="numbers-bounds-and-multiples">Numbers: bounds and multiples</h2>
 <pre><code class="language-json">{
   "type": "number",
   "minimum": 0,
@@ -179,7 +179,7 @@
 }</code></pre>
 <p>Nift supports <code>minimum</code>, <code>maximum</code>, <code>exclusiveMinimum</code>, <code>exclusiveMaximum</code> and <code>multipleOf</code>.</p>
 
-<h2>Strings: length and patterns</h2>
+<h2 id="strings-length-and-patterns">Strings: length and patterns</h2>
 <pre><code class="language-json">{
   "type": "string",
   "minLength": 3,
@@ -188,7 +188,7 @@
 }</code></pre>
 <p><code>pattern</code> uses C++'s ECMAScript-style regular-expression grammar. Length constraints count UTF-8 code points rather than raw bytes.</p>
 
-<h2><code>enum</code> and <code>const</code></h2>
+<h2 id="enum-and-const"><code>enum</code> and <code>const</code></h2>
 <p>Use <code>enum</code> when a value must come from a small known set:</p>
 <pre><code class="language-json">{
   "enum": ["draft", "published", "archived"]
@@ -198,7 +198,7 @@
   "const": "product"
 }</code></pre>
 
-<h2>Reuse schemas with <code>$defs</code> and local <code>$ref</code></h2>
+<h2 id="reuse-schemas-with-defs-and-local-ref">Reuse schemas with <code>$defs</code> and local <code>$ref</code></h2>
 <p>Large schemas do not need to repeat the same object shape everywhere. Put reusable schemas under <code>$defs</code> and reference them with a local JSON Pointer:</p>
 <pre><code class="language-json">{
   "$defs": {
@@ -221,7 +221,7 @@
 }</code></pre>
 <p>Nift intentionally supports <strong>local</strong> <code>$ref</code> values only. It does not download remote schemas during a build. Keeping validation project-local makes builds deterministic, fast and usable offline.</p>
 
-<h2>Combine rules with <code>allOf</code>, <code>anyOf</code>, <code>oneOf</code> and <code>not</code></h2>
+<h2 id="combine-rules-with-allof-anyof-oneof-and-not">Combine rules with <code>allOf</code>, <code>anyOf</code>, <code>oneOf</code> and <code>not</code></h2>
 <pre><code class="language-json">{
   "allOf": [
     { "type": "number" },
@@ -230,7 +230,7 @@
 }</code></pre>
 <p><code>allOf</code> requires every child schema to match; <code>anyOf</code> requires at least one; <code>oneOf</code> requires exactly one; <code>not</code> requires its child schema not to match.</p>
 
-<h2>The schema is part of the dependency graph</h2>
+<h2 id="the-schema-is-part-of-the-dependency-graph">The schema is part of the dependency graph</h2>
 <pre><code class="language-nift">\@json('data/products.json', products, 'schemas/products.schema.json')</code></pre>
 <p>records <strong>both</strong> files as dependencies. If the data changes, Nift can rebuild and revalidate the page. If the schema changes, Nift can also rebuild and revalidate the page. A stricter contract therefore cannot quietly leave old generated output behind.</p>
 
@@ -240,14 +240,14 @@ schemas/products.schema.json ┘
           │
           └── both participate in incremental rebuild state</code></pre>
 
-<h2>Schema validation is optional</h2>
+<h2 id="schema-validation-is-optional">Schema validation is optional</h2>
 <p>The two-parameter form remains valid:</p>
 <pre><code class="language-nift">\@json('data/site.json', site)</code></pre>
 <p>Use the three-parameter form when the data has a contract worth enforcing:</p>
 <pre><code class="language-nift">\@json('data/site.json', site, 'schemas/site.schema.json')</code></pre>
 <p>This makes schemas opt-in rather than imposing ceremony on tiny files where it would add little value.</p>
 
-<h2>What Nift currently supports</h2>
+<h2 id="what-nift-currently-supports">What Nift currently supports</h2>
 <div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>Area</th><th>Supported keywords</th></tr></thead><tbody>
 <tr><td>Annotations / identifiers</td><td><code>$schema</code>, <code>$id</code>, <code>$anchor</code>, <code>$comment</code>, <code>title</code>, <code>description</code>, <code>default</code>, <code>examples</code></td></tr>
 <tr><td>Types / values</td><td><code>type</code>, <code>enum</code>, <code>const</code></td></tr>
@@ -262,7 +262,7 @@ schemas/products.schema.json ┘
 
 <div class="docs-callout"><strong>Unsupported validation keywords fail explicitly.</strong><p>Nift does not silently ignore a validation keyword it does not implement, because that could give a false impression that a contract is being enforced. For example, <code>format</code> currently produces an unsupported-keyword build error rather than pretending to validate an email address. Annotation keywords listed above are accepted but do not change validation.</p></div>
 
-<h2>Why Nift uses an existing standard instead of inventing one</h2>
+<h2 id="why-nift-uses-an-existing-standard-instead-of-inventing-one">Why Nift uses an existing standard instead of inventing one</h2>
 <p>The schema should not trap your content inside Nift. The same document can be validated in an editor, a pre-commit hook, CI, a backend, a TypeScript workflow or another JSON Schema-aware tool. Nift only needs to enforce the contract at the point where it consumes the data.</p>
 <p>That keeps the architecture consistent with the rest of Nift: use a small project-aware build layer, and reuse standards and specialist tools from the wider ecosystem instead of creating Nift-specific substitutes for them.</p>
 

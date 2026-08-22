@@ -1,0 +1,19 @@
+{
+  "name": "docs/template_files",
+  "title": "Moved: Template language",
+  "template": "templates/legacy-template_files.html",
+  "content": "content/docs/template_files.html",
+  "output": "public/docs/template_files.html",
+  "minify": true,
+  "minify-version": 1,
+  "pagination": false,
+  "pagination-items-per-page": 0,
+  "pagination-template": "",
+  "pagination-separator": "",
+  "pagination-pages": 0,
+  "dependencies": [
+    "content/docs/template_files.html",
+    "templates/legacy-template_files.html"
+  ],
+  "reqs": []
+}

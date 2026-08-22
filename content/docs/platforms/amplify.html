@@ -3,7 +3,7 @@
 <p class="docs-lead">Amplify has a filesystem deployment specification for framework authors. Nift emits the static form of that native bundle.</p>
 <pre><code class="language-bash">nift init --target=amplify
 nift build</code></pre>
-<h2>What Nift creates</h2>
+<h2 id="what-nift-creates">What Nift creates</h2>
 <pre><code class="language-plaintext">.amplify-hosting/
 ├── deploy-manifest.json
 └── static/
@@ -11,9 +11,9 @@ nift build</code></pre>
     └── assets/...</code></pre>
 <p>The manifest uses deployment-spec version 1, identifies Nift as the framework, and contains the required catch-all route targeting Amplify's <code>Static</code> primitive.</p>
 <div class="docs-callout"><strong>Pure static starter.</strong><p>No <code>compute/</code> directory is created. Amplify's deployment specification only requires compute when the application actually uses that primitive.</p></div>
-<h2>Adding compute</h2>
+<h2 id="adding-compute">Adding compute</h2>
 <p>Amplify's compute primitive runs a self-contained Node.js HTTP server from <code>.amplify-hosting/compute/default</code>; the manifest then needs matching compute metadata/routes. Treat that as Amplify runtime code beside the Nift-generated static tree, not as Nift template execution.</p>
-<h2>Routing, headers and environment</h2>
+<h2 id="routing-headers-and-environment">Routing, headers and environment</h2>
 <p>The deployment manifest supports routing targets; Amplify Hosting also supports build environment variables and custom response headers (including a repository-level <code>customHttp.yml</code> option). Extend those provider files when required rather than embedding AWS concepts in Nift templates.</p>
 <p>Official references: <a href="https://docs.aws.amazon.com/amplify/latest/userguide/ssr-deployment-specification.html">deployment specification</a>, <a href="https://docs.aws.amazon.com/amplify/latest/userguide/build-settings.html">build settings</a>, and <a href="https://docs.aws.amazon.com/amplify/latest/userguide/custom-headers.html">custom headers</a>.</p>
 <div class="docs-next"><span>Next platform</span><a href="@pathto('docs/platforms/azure')">Azure →</a></div>

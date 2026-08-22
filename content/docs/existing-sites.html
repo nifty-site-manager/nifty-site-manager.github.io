@@ -5,7 +5,7 @@
 
   <div class="docs-callout"><strong>Keep your HTML. Keep your tools. Stop repeating yourself.</strong><p>If an existing site already works, Nift does not need you to translate it into a different component model before it can help.</p></div>
 
-  <h2>The kind of site this helps immediately</h2>
+  <h2 id="the-kind-of-site-this-helps-immediately">The kind of site this helps immediately</h2>
   <pre><code class="language-plaintext">index.html
 about.html
 services.html
@@ -20,7 +20,7 @@ Every page repeats:
   CSS / JS references</code></pre>
   <p>That repetition is already telling you where the first template and partial boundaries are.</p>
 
-  <h2>Before</h2>
+  <h2 id="before">Before</h2>
   <pre><code class="language-html">&lt;!-- about.html --&gt;
 &lt;!doctype html&gt;
 &lt;html&gt;
@@ -45,12 +45,12 @@ Every page repeats:
   &lt;/body&gt;
 &lt;/html&gt;</code></pre>
 
-  <h2>After: the page-specific content stays almost untouched</h2>
+  <h2 id="after-the-page-specific-content-stays-almost-untouched">After: the page-specific content stays almost untouched</h2>
   <pre><code class="language-html">&lt;!-- content/about.html --&gt;
 &lt;h1&gt;About us&lt;/h1&gt;
 &lt;p&gt;Page-specific content...&lt;/p&gt;</code></pre>
 
-  <h2>The repeated shell becomes the template</h2>
+  <h2 id="the-repeated-shell-becomes-the-template">The repeated shell becomes the template</h2>
   <pre><code class="language-html">&lt;!doctype html&gt;
 &lt;html lang="en"&gt;
   &lt;head&gt;
@@ -74,7 +74,7 @@ Every page repeats:
   &lt;/body&gt;
 &lt;/html&gt;</code></pre>
 
-  <h2>The repeated navigation becomes a partial</h2>
+  <h2 id="the-repeated-navigation-becomes-a-partial">The repeated navigation becomes a partial</h2>
   <pre><code class="language-html">&lt;header&gt;
   &lt;a href="\@pathto('/')"&gt;Home&lt;/a&gt;
   &lt;a href="\@pathto('about')"&gt;About&lt;/a&gt;
@@ -82,24 +82,24 @@ Every page repeats:
 &lt;/header&gt;</code></pre>
   <p>The result is not a new frontend architecture. It is the same frontend with the duplicated structure factored out.</p>
 
-  <h2>A practical migration sequence</h2>
+  <h2 id="a-practical-migration-sequence">A practical migration sequence</h2>
   <div class="migration-steps">
-    <div><span>01</span><h3>Make a comparison copy</h3><p>Keep the current site available so you can compare generated output and appearance during the migration.</p></div>
-    <div><span>02</span><h3>Initialise Nift</h3><p>Run <code>nift init</code> and configure <code>public/</code> as your web-facing output convention.</p></div>
-    <div><span>03</span><h3>Keep existing assets</h3><p>Copy or preserve the site's CSS, JS, fonts, images and other assets. They do not need to be rewritten.</p></div>
-    <div><span>04</span><h3>Choose one representative page</h3><p>Pick a page containing the normal header, footer and layout rather than migrating every page at once.</p></div>
-    <div><span>05</span><h3>Extract the template shell</h3><p>Move shared document structure into the template and replace the unique page region with <code>\@content</code>.</p></div>
-    <div><span>06</span><h3>Extract obvious partials</h3><p>Header, navigation, footer and repeated page furniture can move behind <code>\@input</code>.</p></div>
-    <div><span>07</span><h3>Track the remaining pages</h3><p>Move each page's unique markup into its content file and add the tracked names Nift should manage.</p></div>
-    <div><span>08</span><h3>Replace fragile local paths</h3><p>Use <code>\@pathto</code> where shared partials link to tracked pages or concrete local assets.</p></div>
-    <div><span>09</span><h3>Build and compare</h3><p>Run <code>nift build-all</code>, compare the generated site to the original and correct any deliberate path/layout differences.</p></div>
-    <div><span>10</span><h3>Then stop thinking about migration</h3><p>Once the output matches, develop normally. New pages can use the shared template from the start.</p></div>
+    <div><span>01</span><h3 id="make-a-comparison-copy">Make a comparison copy</h3><p>Keep the current site available so you can compare generated output and appearance during the migration.</p></div>
+    <div><span>02</span><h3 id="initialise-nift">Initialise Nift</h3><p>Run <code>nift init</code> and configure <code>public/</code> as your web-facing output convention.</p></div>
+    <div><span>03</span><h3 id="keep-existing-assets">Keep existing assets</h3><p>Copy or preserve the site's CSS, JS, fonts, images and other assets. They do not need to be rewritten.</p></div>
+    <div><span>04</span><h3 id="choose-one-representative-page">Choose one representative page</h3><p>Pick a page containing the normal header, footer and layout rather than migrating every page at once.</p></div>
+    <div><span>05</span><h3 id="extract-the-template-shell">Extract the template shell</h3><p>Move shared document structure into the template and replace the unique page region with <code>\@content</code>.</p></div>
+    <div><span>06</span><h3 id="extract-obvious-partials">Extract obvious partials</h3><p>Header, navigation, footer and repeated page furniture can move behind <code>\@input</code>.</p></div>
+    <div><span>07</span><h3 id="track-the-remaining-pages">Track the remaining pages</h3><p>Move each page's unique markup into its content file and add the tracked names Nift should manage.</p></div>
+    <div><span>08</span><h3 id="replace-fragile-local-paths">Replace fragile local paths</h3><p>Use <code>\@pathto</code> where shared partials link to tracked pages or concrete local assets.</p></div>
+    <div><span>09</span><h3 id="build-and-compare">Build and compare</h3><p>Run <code>nift build-all</code>, compare the generated site to the original and correct any deliberate path/layout differences.</p></div>
+    <div><span>10</span><h3 id="then-stop-thinking-about-migration">Then stop thinking about migration</h3><p>Once the output matches, develop normally. New pages can use the shared template from the start.</p></div>
   </div>
 
-  <h2>You can migrate gradually</h2>
+  <h2 id="you-can-migrate-gradually">You can migrate gradually</h2>
   <p>Nift does not require every file in the repository to become tracked on day one. A practical project can move the repetitive HTML pages first while leaving unrelated assets, application code and tooling untouched.</p>
 
-  <h2>Existing TypeScript/Vite project</h2>
+  <h2 id="existing-typescript-vite-project">Existing TypeScript/Vite project</h2>
   <pre><code class="language-plaintext">before:
   src/
   assets/
@@ -115,7 +115,7 @@ after:
   .nift/</code></pre>
   <p>Nift can own document composition while Vite continues owning the frontend asset pipeline.</p>
 
-  <h2>Existing backend application</h2>
+  <h2 id="existing-backend-application">Existing backend application</h2>
   <pre><code class="language-plaintext">application/
   content/             ← page-specific frontend HTML
   templates/           ← shared frontend shell
@@ -124,7 +124,7 @@ after:
   .nift/</code></pre>
   <p>The backend does not become a Nift backend. It simply serves or deploys the files Nift generates.</p>
 
-  <h2>AI-assisted migration</h2>
+  <h2 id="ai-assisted-migration">AI-assisted migration</h2>
   <p>This is also a strong coding-assistant task because the transformation is mostly structural refactoring rather than framework translation. Give an assistant the current site plus the Nift context and ask it to identify repeated document structure while preserving output.</p>
   <pre><code class="language-plaintext">Read ai-context.txt and inspect this existing website.
 

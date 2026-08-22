@@ -3,7 +3,7 @@
   <h1><code>.nift/config.json</code>.</h1>
   <p class="docs-lead">The project config tells Nift where content lives, where generated files go, which extensions and template are the defaults, how builds should use threads and detect changes, and which project-wide JSON contracts are available.</p>
 
-  <h2>A typical web project</h2>
+  <h2 id="a-typical-web-project">A typical web project</h2>
   <pre><code class="language-json">{
   "config": {
     "content-dir": "content/",
@@ -21,7 +21,7 @@
 }</code></pre>
   <p>For a web project, <code>public/</code> is a useful conventional output directory because many servers, hosts and frameworks already use that name for browser-facing files. Nift does not require the directory to be called <code>public/</code>; it simply uses the value in <code>output-dir</code>.</p>
 
-  <h2>Fields</h2>
+  <h2 id="fields">Fields</h2>
   <div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>Field</th><th>Meaning</th></tr></thead><tbody>
     <tr><td><code>content-dir</code></td><td>Base directory used to derive content paths for tracked names. It must be non-empty.</td></tr>
     <tr><td><code>content-ext</code></td><td>Default content-file extension. It must begin with <code>.</code>.</td></tr>
@@ -34,7 +34,7 @@
     <tr><td><code>contracts</code></td><td>Optional object mapping project-wide contract namespace names to project-relative JSON source paths. Referenced contracts become checked dependencies and are available through <code>\$[...]</code>.</td></tr>
   </tbody></table></div>
 
-  <h2>How tracked names become paths</h2>
+  <h2 id="how-tracked-names-become-paths">How tracked names become paths</h2>
   <p>With this config:</p>
   <pre><code class="language-json">{
   "config": {
@@ -59,7 +59,7 @@ public/docs/getting-started.html</code></pre>
   <p>The tracked item stores the name/title/template; the project config supplies the default directory and extension rules that turn the name into concrete content and output paths.</p>
 
 
-  <h2>Project contracts</h2>
+  <h2 id="project-contracts">Project contracts</h2>
   <p>The optional <code>contracts</code> object declares project-wide named JSON sources:</p>
   <pre><code class="language-json">"contracts": {
   "routes": ".nift/routes.json",
@@ -68,19 +68,19 @@ public/docs/getting-started.html</code></pre>
   <p>A declared namespace can then be read anywhere through the normal value syntax, for example <code>\$[routes.users.list]</code>. Contract namespaces are reserved project-wide, cannot be shadowed by <code>\@json</code> or loop bindings, and are loaded only when referenced. Nift records both the contract source and <code>.nift/config.json</code> as dependencies of outputs that use them.</p>
   <p><a class="text-link" href="@pathto('docs/project-contracts')">Read the project contracts reference →</a></p>
 
-  <h2>Automatic minification</h2>
+  <h2 id="automatic-minification">Automatic minification</h2>
   <p><code>minify-exts</code> is an optional array. A tracked output is minified after rendering when its final extension is listed:</p>
   <pre><code class="language-json">"minify-exts": [".html", ".css", ".js", ".json", ".svg"]</code></pre>
   <p>Individual tracked entries can override the project decision with <code>"minify": true</code> or <code>false</code>. Changing the effective setting invalidates the previous incremental build metadata. <a class="text-link" href="@pathto('docs/minification')">See the minification guide →</a></p>
 
-  <h2>Incremental modes</h2>
+  <h2 id="incremental-modes">Incremental modes</h2>
   <div class="advanced-doc-grid">
-    <div><h2><code>modified</code></h2><p>Uses modification information to decide whether inputs have changed. This is the generated default and is fast for everyday development.</p></div>
-    <div><h2><code>hash</code></h2><p>Uses stored content hashes when determining changes. Files and directory dependencies are hashed by content; directories include their names and nested contents deterministically.</p></div>
-    <div><h2><code>hybrid</code></h2><p>Checks modification times <em>or</em> content hashes. It catches ordinary timestamp changes quickly while also detecting content changes whose mtime was preserved.</p></div>
+    <div><h2 id="modified"><code>modified</code></h2><p>Uses modification information to decide whether inputs have changed. This is the generated default and is fast for everyday development.</p></div>
+    <div><h2 id="hash"><code>hash</code></h2><p>Uses stored content hashes when determining changes. Files and directory dependencies are hashed by content; directories include their names and nested contents deterministically.</p></div>
+    <div><h2 id="hybrid"><code>hybrid</code></h2><p>Checks modification times <em>or</em> content hashes. It catches ordinary timestamp changes quickly while also detecting content changes whose mtime was preserved.</p></div>
   </div>
 
-  <h2>Should you edit it?</h2>
+  <h2 id="should-you-edit-it">Should you edit it?</h2>
   <p>Yes, when you want to change project-wide defaults such as moving generated files to <code>public/</code>, changing the default template, or choosing an incremental mode. It is deliberately ordinary JSON so the project setup is inspectable and easy for humans, scripts and AI assistants to understand.</p>
 
   <div class="docs-callout"><strong><code>config.json</code> describes the project-wide rules.</strong><p><code>tracked.json</code> describes the individual things Nift manages within those rules.</p></div>

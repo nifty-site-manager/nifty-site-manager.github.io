@@ -1,0 +1,19 @@
+{
+  "name": "ai-context",
+  "title": "Legacy AI context compatibility",
+  "template": "templates/asset.txt",
+  "content": "content/ai-context.txt",
+  "output": "public/ai-context.txt",
+  "minify": false,
+  "minify-version": 0,
+  "pagination": false,
+  "pagination-items-per-page": 0,
+  "pagination-template": "",
+  "pagination-separator": "",
+  "pagination-pages": 0,
+  "dependencies": [
+    "content/ai-context.txt",
+    "templates/asset.txt"
+  ],
+  "reqs": []
+}

@@ -1,0 +1,19 @@
+{
+  "name": "docs/markdown",
+  "title": "Moved: Documentation projects",
+  "template": "templates/legacy-markdown.html",
+  "content": "content/docs/markdown.html",
+  "output": "public/docs/markdown.html",
+  "minify": true,
+  "minify-version": 1,
+  "pagination": false,
+  "pagination-items-per-page": 0,
+  "pagination-template": "",
+  "pagination-separator": "",
+  "pagination-pages": 0,
+  "dependencies": [
+    "content/docs/markdown.html",
+    "templates/legacy-markdown.html"
+  ],
+  "reqs": []
+}

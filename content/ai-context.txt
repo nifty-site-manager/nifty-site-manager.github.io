@@ -1,0 +1,12 @@
+This compatibility file is retained for older links.
+
+For current Nift projects, use:
+
+    nift init --handover
+
+That writes the canonical HANDOVER.md into the project root. For an existing project, fetch the same canonical file from:
+
+    https://nift.dev/HANDOVER.md
+
+Current AI-agent documentation:
+    https://nift.dev/docs/ai-agents.html

@@ -3,14 +3,14 @@
 <h1>Battle tested, not just happy-path tested.</h1>
 <p class="docs-lead">Nift treats reliability as a set of behavioral guarantees to attack, not a test count to advertise. Its suites exercise the relationships that users, projects and integrations are meant to rely on—dependency invalidation, checked paths, project state, parser behavior, failure recovery, filesystem safety, <a href="@pathto('docs/contracts')">contracts</a> and <a href="@pathto('docs/project-contracts')">Project Contracts</a>—then deliberately try to falsify them.</p>
 
-<h2>What battle hardened means</h2>
+<h2 id="what-battle-hardened-means">What battle hardened means</h2>
 <p><strong>Test hardening and field hardening are different kinds of evidence.</strong> Test hardening comes from deliberately constructed regression, negative, adversarial, invariant, resource, sanitizer and contract tests. Field hardening comes from years of real projects, users, environments, integrations and releases discovering combinations the maintainers did not think to manufacture.</p>
   <p>Mature build tools and site generators benefit from both. Nift cannot manufacture the production history of older, more widely deployed projects, and this page does not pretend otherwise. What Nift <em>can</em> control is how explicitly it states its guarantees, how aggressively it attacks them before users encounter the failures, and how permanently it preserves discovered bug classes as regressions.</p>
   <p>That is what <strong>dependable</strong> means here. Dependability is not a promise that Nift cannot fail. It is the discipline of making the behaviour users rely on explicit, checked, bounded, and backed by retained evidence — so that when a guarantee exists, the project can depend on it, and when a boundary exists, the boundary is visible rather than hidden. <a class="text-link" href="@pathto('docs/why-nift')">Why Nift</a> describes this as a design value; this page records the evidence that backs it.</p>
 
 <div class="docs-callout"><strong>Battle Tested is an evidence claim, not a claim of perfection.</strong><p>A successful campaign establishes a scoped statement about the project states and failure classes actually exercised. It does not prove that every possible input, filesystem, platform or future change is safe. The evidence is strongest when the guarantee, attack method, scale and remaining boundary are all visible.</p></div>
 
-<h3>Hardening has boundaries — and different kinds of hardening do not substitute for each other</h3>
+<h3 id="hardening-has-boundaries-and-different-kinds-of-hardening-do-not-substitute-for-each-other">Hardening has boundaries — and different kinds of hardening do not substitute for each other</h3>
 <p>“Battle hardening” is an umbrella for several different evidence types. A project can be strong in one dimension and weak in another, so Nift keeps those claims separate instead of rolling them into one vague quality score.</p>
 <div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>Hardening type</th><th>What it attacks</th><th>What it does <em>not</em> establish</th></tr></thead><tbody>
 <tr><td><strong>Semantic / regression hardening</strong></td><td>Wrong rendered output, invalidation mistakes, lifecycle regressions and previously discovered bugs.</td><td>Memory safety, filesystem crash-safety, platform equivalence or performance bounds.</td></tr>
@@ -24,7 +24,7 @@
 </tbody></table></div>
 <p>The boundary matters in both directions. Sanitizer-clean fuzzing is valuable evidence, but it is not a security certification. Cross-platform corpus equivalence is valuable evidence, but it is not a claim that POSIX and Windows filesystems are interchangeable. Likewise, years of field use do not make targeted regression, invariant and failure-injection tests unnecessary. Stronger confidence comes from the evidence types reinforcing each other while remaining honestly scoped.</p>
 
-<h3>Not every boundary is a Nift limitation</h3>
+<h3 id="not-every-boundary-is-a-nift-limitation">Not every boundary is a Nift limitation</h3>
 <p>There is another distinction that matters when reading hardening evidence: <strong>a boundary of Nift itself is not the same thing as a boundary of the machinery used to test Nift.</strong> Internal audit and evidence tools are deliberately scoped. Their limitations should constrain the claims they support, but they should not automatically be presented as limitations of the product.</p>
 <div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>Boundary class</th><th>What it means</th><th>Where it belongs</th></tr></thead><tbody>
 <tr><td><strong>Product contract boundary</strong></td><td>Affects behavior a Nift user can actually encounter or rely on—for example platform-specific symlink, locking, atomic-replace, case-sensitivity or path semantics, and conservative transactional recovery around PID reuse.</td><td>User-facing documentation when relevant: Battle Tested, Production Readiness, platform documentation and the behavioral contract itself.</td></tr>
@@ -34,7 +34,7 @@
 <div class="docs-callout"><strong>The reconciliation rule is deliberately asymmetric.</strong><p><strong>Product boundaries</strong> can become user-facing Nift limitations. <strong>Evidence boundaries</strong> constrain what Nift is allowed to claim. <strong>Tooling boundaries</strong> stay internal unless they create a meaningful evidence gap behind a public claim. Discovering a limitation in a hardening tool is therefore not, by itself, evidence of a limitation in Nift.</p></div>
 <p>This distinction became especially important during the final hardening campaign. Some boundaries discovered while attacking the evidence system described the Bash/YAML/static-analysis guards themselves, not Nift's runtime behavior. The user-relevant question is not whether an internal checker is a general-purpose interpreter; it is whether that checker is strong enough for the guarantee it protects, whether its blind spots are covered elsewhere, and whether any remaining gap requires the public claim to be narrowed.</p>
 
-<h3>From examples to guarantees</h3>
+<h3 id="from-examples-to-guarantees">From examples to guarantees</h3>
 <p>Nift's testing has progressively moved through four levels:</p>
 <div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>Level</th><th>Question</th><th>What is preserved</th></tr></thead><tbody>
 <tr><td><strong>Feature correctness</strong></td><td>Does the intended example work?</td><td>Expected successful behavior.</td></tr>
@@ -44,18 +44,18 @@
 </tbody></table></div>
 <p>This is why the <a href="@pathto('docs/contracts')">contract philosophy</a> and the testing philosophy increasingly look alike: prefer checked relationships over unchecked assumptions, define the guarantee before accumulating syntax or implementation, and treat a successful build/test as evidence that the declared relationship held for the exercised state.</p>
 
-<h3>Test hardening in context</h3>
+<h3 id="test-hardening-in-context">Test hardening in context</h3>
 <p>Nift's deliberate hardening should be read alongside—not above—the accumulated evidence of mature projects. Astro's current repository documents unit, integration, type and browser-level E2E testing plus examples and performance benchmarks. Meson requires automatic tests for new features and bug fixes and separates unit tests from full project tests; its test tooling also exposes sanitizer-oriented defaults and wrappers such as Valgrind. Hugo's current release history shows an active cross-platform test matrix and regressions continuing to emerge from real users and releases. Ninja deliberately keeps a small build-system surface and ships across Linux, macOS and Windows. esbuild combines a focused implementation with a long release history and a large public repository. Those projects illustrate the field-hardening side of the equation as much as the test-suite side.</p>
 <p>Nift's advantage is not that a smaller or newer project can out-count that history. Its opportunity is that a deliberately small language and build model make a larger fraction of its meaningful behavioral surface tractable to reason about and attack systematically. Small does not imply correct; it makes explicit guarantees and comprehensive adversarial reasoning more achievable.</p>
 
 <div class="docs-callout"><strong>Evidence status is part of the contract.</strong><p>Completed campaigns are described here as evidence. The deliberate campaign through Checkpoint 10 is complete, including memory/resource safety, incremental-vs-clean equivalence, filesystem/transaction integrity, parser fuzz/resource boundaries and scoped cross-platform behavioral equivalence. Nift has reached its planned hardening plateau; distribution, dogfooding and field exposure now provide the next source of findings.</p></div>
 
 
-<h3>New v4.0.3 language and pagination contracts are hardened as new surface</h3>
+<h3 id="new-v4-0-3-language-and-pagination-contracts-are-hardened-as-new-surface">New v4.0.3 language and pagination contracts are hardened as new surface</h3>
 <p>The v4.0.3 development programme added exactly-one rendered <code>\@content</code>, logical condition composition, lazy ternary rendering, <code>\@join</code>, UTF-8-safe <code>\@substr</code>, and modern multi-output pagination. These changes were developed contract-first with focused source-tree and independent black-box coverage rather than being treated as small syntax patches.</p>
 <p>Pagination additionally carries 18 focused incremental-vs-clean comparisons: six state transitions under each of <code>modified</code>, <code>hash</code> and <code>hybrid</code>. The compact pagination workload passed ASan/UBSan and ThreadSanitizer in the Linux development environment, including multithreaded page rendering and lifecycle transitions. The matching focused external modules are green individually; the all-in-one historical external runner exceeded the available execution window, so that timeout is not represented as a fresh full-suite pass.</p>
 
-<h3>Incremental execution should not change semantics — proven for the Checkpoint 7 corpus</h3>
+<h3 id="incremental-execution-should-not-change-semantics-proven-for-the-checkpoint-7-corpus">Incremental execution should not change semantics — proven for the Checkpoint 7 corpus</h3>
 <p>Checkpoint 7 tested a stronger property than “incremental builds have many tests”: <strong>incremental execution is an optimization of a clean build, not a different semantic mode.</strong> Across <code>modified</code>, <code>hash</code> and <code>hybrid</code> modes, eight deterministic mutation sequences per mode performed 30 mutations each. After every mutation, Nift hashed the complete public output tree from <code>build-updated</code>, removed generated tracked outputs and page-build metadata, performed <code>build-all</code> from the same logical project state, and compared every output path and byte hash.</p>
 <pre><code class="language-plaintext">mutate project
     ↓
@@ -68,23 +68,23 @@ build-all     → hash complete public tree
 compare → 720 / 720 equivalent</code></pre>
 <p>The mutation corpus covered content, shared templates, JSON data, JSON Schema, Project Contract sources, build-thread configuration, shared inputs, tracked-entry metadata, and tracked-page add/move/remove lifecycle operations. All <strong>720 complete output-tree comparisons</strong> were byte-equivalent. This is scoped evidence for the generated/mutated states tested, not a claim that every possible Nift project has been enumerated.</p>
 
-<h3>Filesystem failure should be explicit and non-deceptive — proven for the Checkpoint 8 corpus</h3>
+<h3 id="filesystem-failure-should-be-explicit-and-non-deceptive-proven-for-the-checkpoint-8-corpus">Filesystem failure should be explicit and non-deceptive — proven for the Checkpoint 8 corpus</h3>
 <p>Checkpoint 8 attacked failure rather than successful semantics. The maintained Linux corpus now has sixteen cases covering unreadable content/templates/JSON, dangling symlinks, symlink loops, file/directory substitution, read-only output and project-state directories, metadata-write obstruction and repair, long Unicode paths, deterministic partial-write pressure, a forced <code>SIGKILL</code> while Nift was writing a 48 MiB output, stale-temporary recovery that must preserve files owned by a live concurrent process, long-running <code>build-auto</code> recovery of a dead-owner temp on the next relevant output pass, and identical-output rebuilds that must still refresh modified-mode current-state metadata.</p>
 <p>The campaign found real bugs. Unreadable sources could previously collapse to the same empty-string representation as genuinely empty files; a directory reaching a file-read path could abort with <code>std::length_error</code>; and generated/state files were written by truncating the destination in place, which meant interruption could damage the last-good artifact. Later dogfooding also exposed a performance bug in that hardening: stale-temp recovery scanned the whole output directory before every generated-file write, making flat full builds approximately O(n²). Nift now validates readable regular files at relevant input boundaries, stages generated/state writes to same-directory temporary files before replacement, and performs stale-temp recovery at most once per touched parent directory per build-pass recovery epoch while preserving temporaries owned by live processes; later relevant passes get a fresh recovery opportunity without background cleanup during idle polls.</p>
 <div class="docs-callout"><strong>Scoped safe-failure evidence, not filesystem invincibility.</strong><p>For the tested failure classes, failures return non-success instead of silently claiming invalid work is current. Failed output writes do not refresh build metadata; failed metadata writes leave the page stale; and the forced-kill test preserved the previous output and metadata byte-for-byte before a later build cleaned the orphan temporary and recovered. The maintained full-build scaling guard separately protects that recovery work from becoming superlinear again, while a direct scan-count guard asserts one sweep per distinct touched parent per recovery epoch and an independent long-running black-box case proves the next relevant <code>build-auto</code> pass recovers a mid-session dead-owner temp. This does not claim recovery from every kernel, device, ENOSPC, locking or platform-specific filesystem condition.</p></div>
 
-<h3>Parser failure should stay controlled under mutation and scale — proven for the Checkpoint 9 corpus</h3>
+<h3 id="parser-failure-should-stay-controlled-under-mutation-and-scale-proven-for-the-checkpoint-9-corpus">Parser failure should stay controlled under mutation and scale — proven for the Checkpoint 9 corpus</h3>
 <p>Checkpoint 9 ran the sanitizer build through <strong>1,217 n++ parser/resource cases</strong>: 1,200 deterministic grammar-aware mutations across three seeds plus 17 explicit depth/size boundaries. The generated cases mutated real Nift syntax around control flow, loops, inputs, metadata/value interpolation, comments, quotes, escapes, path/value directives and delimiter structure. A case could either build or fail; what was not allowed was a hang, crash, signal termination, sanitizer finding or uncontrolled resource failure.</p>
 <p>The final corpus produced <strong>234 successful builds and 983 controlled errors</strong>, with zero timeouts, zero crashes and zero ASan/LSan/UBSan findings. Boundary cases included recursive control flow around the 64-level parse guard, literal templates up to 8 MiB, multi-megabyte comments and content, 1 MiB parameters/interpolations, 100,000 balanced parentheses and high-volume Unicode. Depths through 64 succeeded for the nested-control fixture while 65/80/128 failed cleanly.</p>
 <div class="docs-callout"><strong>Scoped fuzz evidence, not “the parser is bug free.”</strong><p>This campaign establishes sanitizer-backed behavior for the mutation families and resource boundaries actually exercised. Generic JSON fuzzing belongs to Jsonic++; Minify++ parser fuzzing belongs to Minify++ unless a Nift integration boundary is involved.</p></div>
 
-<h3>Portable behavior should agree across supported platforms — proven for the Checkpoint 10 corpus</h3>
+<h3 id="portable-behavior-should-agree-across-supported-platforms-proven-for-the-checkpoint-10-corpus">Portable behavior should agree across supported platforms — proven for the Checkpoint 10 corpus</h3>
 <p>Checkpoint 10 ran the same <strong>18-case portable behavioral corpus</strong> on GitHub's <code>ubuntu-latest</code>, <code>macos-latest</code> and <code>windows-latest</code> runners. Every runner built Nift and emitted normalized machine-readable evidence containing complete output-tree hashes, selected tracked/build metadata, status classes, lifecycle observations, diagnostic classes and failure/recovery state. A final job downloaded all three artifacts and compared portable observations directly; it passed with zero mismatches.</p>
 <p>The corpus covered clean and no-op incremental builds; content, template, shared-input, JSON, JSON Schema and Project Contract invalidation; <code>@pathto</code> requirements; tracked add/move/remove; template-less minified output; Unicode and nested paths; last-good preservation; controlled malformed input; and successful recovery. Normalization was limited to path separators and non-contractual CRLF/LF spelling. Runner, kernel, architecture, Python, compiler and Nift commit metadata remained attached to each platform artifact rather than entering the semantic equality comparison.</p>
 <p>The campaign found a real Windows defect: tracked <code>mv</code>/<code>rm</code> could leave stale read-only generated output and metadata even after tracking state changed. Nift now restores write permission before removing its owned read-only artifacts, and the cross-platform lifecycle cases preserve that regression. Windows executable suffix and read-only deletion semantics are separately classified platform-specific contracts.</p>
 <div class="docs-callout"><strong>Scoped platform evidence, not “identical everywhere.”</strong><p>For this portable corpus, normalized Linux, macOS and Windows semantics were equivalent, and the two documented platform-specific contracts passed. This does not generalize Windows symlink privileges, filesystem case sensitivity, POSIX permissions, file locking, path-length limits or exact timestamp behavior across every operating system and filesystem.</p></div>
 
-<h3>What is proven now</h3>
+<h3 id="what-is-proven-now">What is proven now</h3>
 <p>The evidence already established includes focused component and executable-level contracts; the independent black-box regression/adversarial layers; contract-specific collision, invalidation and failure behavior; large tracking/scaling workloads; the completed memory/resource campaign; Checkpoint 7 whole-output incremental equivalence; Checkpoint 8 scoped filesystem/transaction integrity; Checkpoint 9 sanitizer-backed parser/resource behavior; and Checkpoint 10 normalized Linux, macOS and Windows evidence for its portable corpus plus two classified platform-specific contracts. Checkpoint 6 closed the memory campaign with a mixed Nift + embedded Jsonic++ + Minify++ workload under native, sanitizer and corrected direct-Nift Valgrind execution. The external Valgrind run monitored 19 Nift invocations across 12 rounds and 40 pages, including four deliberately expected component failures; every monitored invocation reported zero Valgrind errors and no non-zero definite, indirect or possible leak bytes, and every repaired phase plus the final clean build succeeded.</p>
 <p>Exact memory methodology and measurements remain on <a href="@pathto('docs/memory-safety')">Memory &amp; resource safety</a>; this page focuses on what those campaigns mean in the broader reliability model.</p>
 
@@ -95,7 +95,7 @@ Hugo releases/current CI evidence: https://github.com/gohugoio/hugo/releases
 Ninja repository/manual: https://github.com/ninja-build/ninja and https://ninja-build.org/manual.html
 esbuild repository/release history: https://github.com/evanw/esbuild
 -->
-<h2>Three complementary testing layers</h2>
+<h2 id="three-complementary-testing-layers">Three complementary testing layers</h2>
 <p>Nift does not rely on one giant end-to-end script to tell it everything is healthy. The current source tree is tested at three different levels, each aimed at a different kind of failure:</p>
 
 <div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>Layer</th><th>Purpose</th><th>What a failure usually tells us</th></tr></thead><tbody>
@@ -107,11 +107,11 @@ esbuild repository/release history: https://github.com/evanw/esbuild
 <p>The focused tests deliberately are <em>not</em> rolled into the black-box assertion count. They are a different layer with a different job: quicker diagnosis and direct coverage of implementation-sensitive behaviour. The broader suites then prove that those pieces still compose correctly through the real executable.</p>
 <div class="docs-callout"><strong>Reliability documentation is part of the checkpoint.</strong><p>When substantial Nift work changes protected behavior or testing evidence, the relevant handovers and this page are reviewed before the checkpoint is considered complete. The goal is not to accumulate a flattering count; it is to keep the public explanation synchronized with the guarantees actually exercised.</p></div>
 
-<h2>Focused source-tree smoke tests</h2>
+<h2 id="focused-source-tree-smoke-tests">Focused source-tree smoke tests</h2>
 <p>The current development tree exposes 30 focused Makefile targets: <code>test-json</code>, <code>test-json-schema</code>, <code>test-minify</code>, <code>test-json-schema-integration</code>, <code>test-content</code>, <code>test-comments</code>, <code>test-json-binding</code>, <code>test-control-flow</code>, <code>test-requirements</code>, <code>test-path-security</code>, <code>test-path-safety</code>, <code>test-metadata-safety</code>, <code>test-template-optional</code>, <code>test-contracts</code>, <code>test-cross-feature</code>, <code>test-incremental-new-features</code>, <code>test-state-concurrency</code>, <code>test-minify-integration</code>, <code>test-minify-node</code>, <code>test-minify-generated</code>, <code>test-minify-jsx-generated</code>, <code>test-minify-formats</code>, <code>test-minify-cli</code>, <code>test-tracking-scaling</code>, <code>test-full-build-scaling</code>, <code>test-recovery-epoch</code>, <code>test-init-targets</code>, <code>test-pagination</code>, <code>test-pagination-equivalence</code> and <code>test-installer</code>. Direct C++ targets isolate reusable components; shell targets create tiny projects and drive contract boundaries through the real executable.</p>
 <p>The 4.0.2 <code>test-init-targets</code> contract is additionally exercised by a native Linux/macOS/Windows GitHub Actions matrix and mirrored in the independent black-box regression suite. That evidence covers scaffold/output/config semantics across those runners; it is not an assertion that every named provider has already accepted a production deployment.</p>
 
-<h3><code>test-json</code> — direct C++ JSON implementation test</h3>
+<h3 id="test-json-direct-c-json-implementation-test"><code>test-json</code> — direct C++ JSON implementation test</h3>
 <p><code>tests/json_smoke.cpp</code> includes <code>Json.h</code> directly, so failures here can be isolated before the project loader or template parser is involved. It verifies:</p>
 <ul>
 <li>parsing a representative nested document containing strings, numbers, booleans, null, arrays and objects;</li>
@@ -128,7 +128,7 @@ esbuild repository/release history: https://github.com/evanw/esbuild
 </ul>
 <p>This is the closest thing in the current tree to a traditional C++ unit test: it attacks the JSON implementation without requiring a Nift project at all.</p>
 
-<h3><code>test-json-schema</code> — direct C++ schema-validation test</h3>
+<h3 id="test-json-schema-direct-c-schema-validation-test"><code>test-json-schema</code> — direct C++ schema-validation test</h3>
 <p><code>tests/json_schema_smoke.cpp</code> exercises the schema validator without needing a Nift project. It checks both successful validation and deliberately invalid instances/schemas across the supported Draft 2020-12-style subset:</p>
 <ul>
 <li>primitive and union <code>type</code> checks, including <code>integer</code>;</li>
@@ -144,12 +144,12 @@ esbuild repository/release history: https://github.com/evanw/esbuild
 <p>This keeps the contract honest: Nift implements a documented, useful JSON Schema subset and tests that subset directly rather than accepting schema vocabulary it does not actually enforce.</p>
 
 
-<h3><code>test-contracts</code> — config-declared project-contract guarantees</h3>
+<h3 id="test-contracts-config-declared-project-contract-guarantees"><code>test-contracts</code> — config-declared project-contract guarantees</h3>
 <p><code>tests/contracts_smoke.sh</code> protects project contracts as observable behavior rather than as an implementation detail. It verifies lazy project-level JSON resolution through <code>\$[...]</code>, config and contract-source dependency tracking, remapping/invalidation, missing and malformed sources, missing members, path containment, and integration with parameter interpolation and control flow.</p>
 <p>It also attacks the namespace guarantee directly: configured contract names are project-wide and cannot be shadowed or overloaded by <code>\@json</code>, loop variables, built-ins or another binding. Those negative cases matter because a contract name must retain one meaning everywhere if it is going to be useful to humans, tools and coding agents.</p>
 <p>The same contract family is mirrored by the standalone regression repository so a future implementation can be checked against the external behavior without sharing Nift's internal assumptions. This is the intended pattern for substantial Nift features: state the guarantee, protect it locally, protect it independently where practical, and keep the failure cases as permanent evidence.</p>
 
-<h3><code>test-minify</code> — direct standalone minifier safety test</h3>
+<h3 id="test-minify-direct-standalone-minifier-safety-test"><code>test-minify</code> — direct standalone minifier safety test</h3>
 <p><code>tests/minify_smoke.cpp</code> attacks the transformation engine independently of project configuration. The supported final-artifact families are HTML/HTM, CSS, JS/MJS/CJS, JSX, JSON, XML and SVG. Coverage concentrates on semantic boundaries rather than merely checking that output gets shorter.</p>
 <p>A separate <code>test-minify-node</code> target performs semantic differential testing when Node is available: representative JavaScript programs are executed before and after minification and stdout/stderr/exit status must match. The corpus covers regex/division boundaries, ASI, empty-loop statements, Unicode identifiers, numeric member access, nested/tagged templates, class/private fields, optional calls/chaining, BigInt, regexes after control parentheses and blocks, <code>for await</code>, function declarations and try/catch, plus direct object-literal division as the counter-case.</p>
 <p><code>test-minify-generated</code> adds a generated semantic matrix rather than only named hand-written cases. It combines statement/control/function/class/block endings with multiple regex literal shapes—including character classes containing <code>/</code>, <code>*</code> and <code>}</code>—and then runs explicit division counter-cases. Every original/minified pair must produce identical Node stdout/stderr.</p><p>The maintained generated matrix covers <strong>15,459 executable programs</strong>. Successive expansions added labelled blocks, <code>else</code>/<code>finally</code>/loop boundaries, <code>do/while</code>, <code>try/finally</code>, async/generator functions, default/derived classes, nested classes and harder regex forms. Those passes found real context-sensitive slash bugs around labelled blocks, function expressions and binding-less <code>catch</code> blocks; each fix retained the opposite division cases so the scanner could not become green by classifying every ambiguous slash the same way.</p>
@@ -167,25 +167,25 @@ esbuild repository/release history: https://github.com/evanw/esbuild
 <p>The next generated pass found one more brace-context hole: a regex statement after <code>class C {}</code> was still interpreted like division because the scanner had lost the earlier <code>class</code> context by the time it reached the opening brace. The fix carries lightweight pending-class state into brace classification, while the same generated matrix keeps object-literal division as the opposite invariant.</p><p>A subsequent mirror-case pass found that class <em>expressions</em> need the opposite post-brace state: <code>class C {} /regex/</code> can start a regex statement, while <code>const X = class {} / 2</code> is division on the resulting class value. The scanner now records whether a class body belongs to a declaration or expression, with anonymous and named class-expression division covered alongside the declaration-regex cases.</p>
 <p>Behavioral differential testing executes representative JavaScript before and after minification and compares exit status/stdout/stderr. This supplements lexical assertions with a direct semantic check and makes “looks minified” insufficient evidence of correctness.</p>
 
-<h3><code>test-json-schema-integration</code> — schema behavior through real builds</h3>
+<h3 id="test-json-schema-integration-schema-behavior-through-real-builds"><code>test-json-schema-integration</code> — schema behavior through real builds</h3>
 <p>This focused harness complements the direct validator test by proving the public <code>\@json(data, binding, schema)</code> contract end to end. It covers data and schema dependency recording, data edits, schema edits, nested instance-path errors, lazy skipped branches, schema use through nested inputs and project-bound traversal rejection.</p>
 
-<h3><code>test-requirements</code> — internal <code>reqs</code> lifecycle</h3>
+<h3 id="test-requirements-internal-reqs-lifecycle"><code>test-requirements</code> — internal <code>reqs</code> lifecycle</h3>
 <p>This suite isolates the requirement state recorded under the hood by <code>\@pathto</code>. It checks deduplication, skipped branches, “modified but still exists” behavior, concrete-path disappearance as a rebuild reason, repair-on-rebuild, malformed metadata, and tracked-output ownership semantics: an absent/failed tracked producer does not transitively stale or fail referring pages.</p>
 
-<h3><code>test-path-safety</code> — real filesystem containment</h3>
+<h3 id="test-path-safety-real-filesystem-containment"><code>test-path-safety</code> — real filesystem containment</h3>
 <p>This suite attacks the difference between a path that <em>looks</em> project-local and one that actually resolves there. It includes parent traversal and symlink escapes for JSON data, JSON Schema files, explicit dependencies and concrete <code>\@pathto</code> targets. This test found a real v1.0.21-development bug: lexical containment alone allowed an in-project symlink to point outside the project. The shared containment helper now resolves symlinked prefixes before accepting the path.</p>
 
-<h3><code>test-incremental-new-features</code> — schema/req behavior across incremental modes</h3>
+<h3 id="test-incremental-new-features-schema-req-behavior-across-incremental-modes"><code>test-incremental-new-features</code> — schema/req behavior across incremental modes</h3>
 <p>This harness repeats the newer JSON Schema and internal <code>reqs</code> contract under <code>modified</code>, <code>hash</code> and <code>hybrid</code> incremental modes. It verifies that changing a required target does not invalidate the page, JSON and schema changes do, an invalidating schema edit fails through normal rendering, dropping a schema from the source repairs deleted-schema state, and a temporarily missing req becomes clean again if the target is restored before rebuilding.</p>
 
-<h3><code>test-state-concurrency</code> — persistence, concurrency and failed-build state</h3>
+<h3 id="test-state-concurrency-persistence-concurrency-and-failed-build-state"><code>test-state-concurrency</code> — persistence, concurrency and failed-build state</h3>
 <p>This harness checks that failed rendering preserves the last successful output and page metadata, that a mixed parallel build can commit independent successes while retaining the failed page's previous good state, and that the failed page can subsequently repair without manual metadata cleanup. It also builds 120 pages sharing JSON, JSON Schema and nested input sources with 12 workers across repeated forced builds, then invalidates and repairs a shared schema to exercise cache and page-state isolation under concurrency.</p>
 
-<h3><code>test-minify-integration</code> — minification as a real Nift build feature</h3>
+<h3 id="test-minify-integration-minification-as-a-real-nift-build-feature"><code>test-minify-integration</code> — minification as a real Nift build feature</h3>
 <p>This layer verifies project-wide <code>minify-exts</code>, per-tracked-file <code>minify: true/false</code>, config/tracking validation, incremental invalidation when the effective setting changes, persisted minifier-format versions, transactional failure before output/page-info commit, concurrent minification of many tracked pages, and project-independent <code>nift minify</code> behavior including absolute paths, mixed supported/unsupported arguments and non-destructive malformed-input failure.</p>
 
-<h3><code>test-content</code> — tracked content and <code>\@input</code> parser composition</h3>
+<h3 id="test-content-tracked-content-and-input-parser-composition"><code>test-content</code> — tracked content and <code>\@input</code> parser composition</h3>
 <p><code>tests/parser_content_smoke.sh</code> creates a temporary project and checks that tracked content is parsed through the same language machinery as templates and partials. It covers:</p>
 <ul>
 <li><code>\@pathto</code>, <code>\@input</code>, <code>\@getenv</code>, <code>\@ent</code>, <code>\@dep</code> and <code>\$[...]</code> while they appear in tracked content rather than only in the outer template;</li>
@@ -196,7 +196,7 @@ esbuild repository/release history: https://github.com/evanw/esbuild
 <li>template insertion indentation <em>not</em> leaking into the literal contents of <code>&lt;pre*&gt;</code> blocks originating from either <code>\@content</code> or <code>\@input</code>.</li>
 </ul>
 
-<h3><code>test-comments</code> — comment parsing and dependency suppression</h3>
+<h3 id="test-comments-comment-parsing-and-dependency-suppression"><code>test-comments</code> — comment parsing and dependency suppression</h3>
 <p><code>tests/comments_smoke.sh</code> isolates the comment grammar. It verifies that:</p>
 <ul>
 <li>block Nift comments using <code>&lt;#-- ... --#&gt;</code> are removed;</li>
@@ -207,7 +207,7 @@ esbuild repository/release history: https://github.com/evanw/esbuild
 </ul>
 <p>That last check is important for incremental correctness: ignored source must not secretly affect the dependency graph.</p>
 
-<h3><code>test-json-binding</code> — <code>\@json</code> bindings and JSON-path rendering</h3>
+<h3 id="test-json-binding-json-bindings-and-json-path-rendering"><code>test-json-binding</code> — <code>\@json</code> bindings and JSON-path rendering</h3>
 <p><code>tests/json_binding_smoke.sh</code> exercises the JSON feature through a real build rather than calling the JSON parser directly. Its happy path and failure probes cover:</p>
 <ul>
 <li>binding a JSON document with <code>\@json(path, name)</code> and optionally validating it with <code>\@json(path, name, schema)</code>;</li>
@@ -226,7 +226,7 @@ esbuild repository/release history: https://github.com/evanw/esbuild
 </ul>
 <p>This test complements <code>test-json</code>: the C++ test asks whether JSON itself is parsed correctly; this one asks whether JSON behaves correctly once exposed through Nift's template-language bindings, dependency tracking and project-safety rules.</p>
 
-<h3><code>test-control-flow</code> — loops, conditions, scoping and indentation</h3>
+<h3 id="test-control-flow-loops-conditions-scoping-and-indentation"><code>test-control-flow</code> — loops, conditions, scoping and indentation</h3>
 <p><code>tests/control_flow_smoke.sh</code> is the most extensive focused parser smoke suite because control flow combines block parsing, expression evaluation, JSON bindings and lexical scope. It verifies:</p>
 <ul>
 <li>truthy conditions and <code>!</code> negation;</li>
@@ -258,13 +258,13 @@ esbuild repository/release history: https://github.com/evanw/esbuild
 
 <div class="docs-callout"><strong>Why keep these focused tests when the larger suites already exist?</strong><p>Because failure locality matters. If <code>test-json</code> breaks, the JSON implementation is immediately suspect. If <code>test-control-flow</code> breaks while the JSON test remains green, investigation can start in block parsing, expression evaluation or scope handling instead of searching hundreds of unrelated filesystem and CLI cases. The black-box suites then remain the final proof that those focused pieces work correctly together in real projects.</p></div>
 
-<h2>Project-contract contract evidence</h2>
+<h2 id="project-contract-contract-evidence">Project-contract contract evidence</h2>
 <div class="docs-callout"><strong>The project-contract checkpoint added a new independent black-box contract family.</strong><p>At that checkpoint, all <strong>16 focused/modern standalone contract modules</strong> passed against the candidate, including the 73-check parameter-interpolation module and the new project-contract module. The real Nift documentation site also rebuilt successfully as a 46-page integration fixture with that same candidate. These numbers are retained as checkpoint-specific evidence rather than presented as the current total test inventory.</p></div>
 <p>The project-contract module exercises the behavior that makes the feature a contract rather than a global JSON convenience: explicit config declaration, lazy loading, missing/malformed sources, missing members, project-wide namespace reservation, shadowing/collision rejection, config remapping, dependency invalidation, path containment, control-flow use and parameter interpolation.</p>
 <p>The canonical combined runner also contains the historical+ruthless corpus. In the execution environment used for this checkpoint, the all-in-one run and the legacy corpus exceeded the available execution window before returning a final report, and a sanitizer build likewise exceeded the window during compilation. Those runs did not report a behavioral failure, but this page deliberately does <em>not</em> turn a timeout into green evidence. Earlier historical/adversarial and sanitizer results remain useful history; the claims above are the evidence established for this checkpoint.</p>
 <p>This distinction is part of the testing philosophy. A checkpoint can carry strong focused evidence while still recording what was not freshly re-established. Future release preparation can rerun the longer gates on an environment suited to them without weakening the smaller permanent regressions that make failures attributable.</p>
 
-<h2>Why black-box regression testing matters</h2>
+<h2 id="why-black-box-regression-testing-matters">Why black-box regression testing matters</h2>
 <p>A build tool sits at the intersection of parsing, filesystem state, persistent metadata, concurrency and user input. Many serious bugs do not appear in isolated helper functions. They appear when several perfectly reasonable states combine:</p>
 
 <pre><code class="language-plaintext">valid project
@@ -277,7 +277,7 @@ esbuild repository/release history: https://github.com/evanw/esbuild
 
 <p>The suite therefore invokes <code>nift</code> as an external program, creates real files and directories, and checks generated output, metadata, exit status and filesystem state.</p>
 
-<h2>Template parser coverage</h2>
+<h2 id="template-parser-coverage">Template parser coverage</h2>
 <p>The suite attacks the parser around boundaries that are easy to get subtly wrong:</p>
 <ul>
 <li><code>\@content</code> reached through templates/nested inputs, with exactly-one execution enforced and zero/duplicate insertion errors retained;</li>
@@ -296,7 +296,7 @@ esbuild repository/release history: https://github.com/evanw/esbuild
 <li>missing content/templates/inputs and informative source-position errors.</li>
 </ul>
 
-<h2>Structured JSON coverage</h2>
+<h2 id="structured-json-coverage">Structured JSON coverage</h2>
 <p><code>\@json(path, name)</code> and <code>\$[name.path[0]]</code> are tested as both a data feature and a dependency feature:</p>
 <ul>
 <li>strings, numbers, booleans, null and empty strings;</li>
@@ -313,7 +313,7 @@ esbuild repository/release history: https://github.com/evanw/esbuild
 <li>modified/hash/hybrid rebuild detection, including content changes with preserved mtimes.</li>
 </ul>
 
-<h2><code>\@if</code> coverage</h2>
+<h2 id="if-coverage"><code>\@if</code> coverage</h2>
 <p>Conditions are tested as a deliberately small data-oriented expression system rather than a general scripting language:</p>
 <ul>
 <li>boolean truthiness, <code>!</code> negation, short-circuit <code>&amp;&amp;</code>/<code>||</code> and parentheses;</li>
@@ -331,7 +331,7 @@ esbuild repository/release history: https://github.com/evanw/esbuild
 <li>malformed conditions, missing braces and invalid branch chains producing controlled errors.</li>
 </ul>
 
-<h2><code>\@for</code> coverage</h2>
+<h2 id="for-coverage"><code>\@for</code> coverage</h2>
 <ul>
 <li>array iteration with <code>\@for(item : array){...}</code>;</li>
 <li>object iteration with <code>\@for((key, val) : object){...}</code>;</li>
@@ -345,7 +345,7 @@ esbuild repository/release history: https://github.com/evanw/esbuild
 <li>invalid collection types and malformed loop headers.</li>
 </ul>
 
-<h2>Path and filesystem safety</h2>
+<h2 id="path-and-filesystem-safety">Path and filesystem safety</h2>
 <ul>
 <li>tracked names attempting <code>../</code> traversal or absolute-path escape;</li>
 <li>different tracked names such as <code>/</code> and <code>index</code> being rejected when they resolve to the same content/output paths;</li>
@@ -359,7 +359,7 @@ esbuild repository/release history: https://github.com/evanw/esbuild
 <li>generated-output permissions on supported Unix environments.</li>
 </ul>
 
-<h2>Persistent JSON/state robustness</h2>
+<h2 id="persistent-json-state-robustness">Persistent JSON/state robustness</h2>
 <p>The suite deliberately feeds Nift valid JSON with the wrong structure as well as malformed JSON. Coverage includes:</p>
 <ul>
 <li><code>config.json</code>, <code>tracked.json</code>, watched-directory metadata and page build metadata;</li>
@@ -373,7 +373,7 @@ esbuild repository/release history: https://github.com/evanw/esbuild
 <li>dependency sidecars themselves invalidating pages when their dependency lists change, and following copy/move/remove lifecycle operations without leaving stale state.</li>
 </ul>
 
-<h2>Incremental-build semantics</h2>
+<h2 id="incremental-build-semantics">Incremental-build semantics</h2>
 <p>This is one of the deepest parts of the suite because “fast” is not useful if the tool skips something that changed or rebuilds forever.</p>
 
 <div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>Mode</th><th>What the tests verify</th></tr></thead><tbody>
@@ -384,7 +384,7 @@ esbuild repository/release history: https://github.com/evanw/esbuild
 
 <p>That coverage is repeated across tracked content, templates, shared partials, explicit <code>\@dep</code> dependencies, <code>*.deps.json</code> dependencies and <code>\@json</code> data files. Tracking metadata is also part of incremental correctness: title, template, content/output mapping and dependency-set changes are tested as rebuild causes rather than being allowed to hide behind unchanged file mtimes.</p>
 
-<h2>Recursive directory dependency hashing</h2>
+<h2 id="recursive-directory-dependency-hashing">Recursive directory dependency hashing</h2>
 <p>Directory dependencies get particularly hostile tests:</p>
 <ul>
 <li>unchanged directories must not be perpetually dirty;</li>
@@ -396,7 +396,7 @@ esbuild repository/release history: https://github.com/evanw/esbuild
 <li>hash and hybrid modes must both behave according to their documented semantics.</li>
 </ul>
 
-<h2>CLI and failure propagation</h2>
+<h2 id="cli-and-failure-propagation">CLI and failure propagation</h2>
 <ul>
 <li><code>build-all</code>, <code>build-updated</code>, <code>build-names</code> and aliases;</li>
 <li>multiple-name operations such as remove/untrack;</li>
@@ -410,7 +410,7 @@ esbuild repository/release history: https://github.com/evanw/esbuild
 <li><code>build-threads=0</code> remaining a valid concurrency configuration.</li>
 </ul>
 
-<h2>Watch and long-running build behaviour</h2>
+<h2 id="watch-and-long-running-build-behaviour">Watch and long-running build behaviour</h2>
 <ul>
 <li>watch/unwatch lifecycle;</li>
 <li>custom watched extensions and templates surviving save/reopen;</li>
@@ -422,10 +422,10 @@ esbuild repository/release history: https://github.com/evanw/esbuild
 <li>hash-mode <code>build-auto</code> surviving multiple edits in one process without continuously rebuilding from stale hash state.</li>
 </ul>
 
-<h2>Concurrency is part of what gets exercised</h2>
+<h2 id="concurrency-is-part-of-what-gets-exercised">Concurrency is part of what gets exercised</h2>
 <p>The executable under test uses multithreaded page builds and multithreaded incremental reason analysis. The suite repeatedly runs those code paths across shared dependencies and large affected sets, so concurrency is not a separate unused implementation detail.</p>
 
-<h2>What this coverage does—and does not mean</h2>
+<h2 id="what-this-coverage-does-and-does-not-mean">What this coverage does—and does not mean</h2>
 <p>The suite is intentionally broader than a collection of happy-path examples. Many cases validate several related outcomes independently: an expected failure must actually fail, report the right kind of diagnostic and avoid producing invalid output; an incremental-build case may verify both that affected pages rebuild and that unrelated pages stay untouched.</p>
 
 <p>The regression suite has grown organically alongside real bugs, source-review findings and adversarial testing. When a bug is found, the reproducing case is retained so the same behaviour cannot silently regress later. New parser and build features are expected to preserve that accumulated baseline.</p>
@@ -435,7 +435,7 @@ esbuild repository/release history: https://github.com/evanw/esbuild
 <blockquote class="docs-quote">A Nift feature is not finished when the happy-path example works. It is finished when it survives the existing project model, failure modes and incremental-build semantics around it.</blockquote>
 
 <div class="docs-next"><span>Next</span><a href="@pathto('docs/getting-started')">Getting started →</a></div>
-<h2>Minify++ minifier integration</h2>
+<h2 id="minify-minifier-integration">Minify++ minifier integration</h2>
 <p>Nift rewrite 1.0.39 embeds the exact <strong>Minify++ 1.0.3</strong> source subtree. Minify++ currently carries its own 15,459-program JavaScript semantic matrix, 180-program JSX/TSX gate and 39-document non-JS idempotence gate; the detailed transformation evidence lives on Minify++'s own site.</p>
 <p>Nift embeds <strong>Minify++</strong> through Minify++'s public C++ API. The detailed JavaScript/JSX/HTML/CSS/JSON/XML/SVG transformation evidence now belongs to Minify++'s own Battle Tested documentation rather than being duplicated here.</p>
 <p>Nift's responsibility is the integration contract: config-driven minification, per-file overrides, incremental-build behavior, safe failure handling, and the standalone <code>nift minify</code> convenience command. Minify++'s responsibility is whether a source artifact is transformed correctly.</p>

@@ -3,9 +3,9 @@
 <p class="docs-lead">GitHub Pages needs no special Nift output format, so this target deliberately keeps the ordinary <code>public/</code> artifact. The value is consistent initialization and a dedicated deployment guide, not invented provider metadata.</p>
 <pre><code class="language-bash">nift init --target=github-pages
 nift build</code></pre>
-<h2>What Nift creates</h2>
+<h2 id="what-nift-creates">What Nift creates</h2>
 <p>The project layout is the normal Nift HTML starter with <code>public/</code> as its output directory. No provider file is created because Pages can deploy an arbitrary static artifact from a custom GitHub Actions workflow.</p>
-<h2>Actions deployment</h2>
+<h2 id="actions-deployment">Actions deployment</h2>
 <p>A Pages workflow normally checks out the repository, makes Nift available, runs the build, uploads <code>public/</code> with <code>actions/upload-pages-artifact</code>, then deploys it with <code>actions/deploy-pages</code>.</p>
 <pre><code class="language-yaml">permissions:
   contents: read
@@ -18,9 +18,9 @@ nift build</code></pre>
 #   with: { path: public }
 # uses: actions/deploy-pages@v4</code></pre>
 <p>Nift does not generate the complete workflow because the correct Nift installation step depends on the distribution/version policy you choose for that repository.</p>
-<h2>Dynamic behaviour</h2>
+<h2 id="dynamic-behaviour">Dynamic behaviour</h2>
 <p>GitHub Pages is static hosting. If the frontend needs runtime APIs, host them elsewhere—serverless functions, a conventional backend, Supabase, or another service—and call them over HTTPS.</p>
-<h2>Project-site paths</h2>
+<h2 id="project-site-paths">Project-site paths</h2>
 <p>Repository project sites are normally served under <code>/repository-name/</code>, unlike account/organization Pages sites at the domain root. Keep that base-path difference in mind for absolute URLs and application routing.</p>
 <p>Official references: <a href="https://docs.github.com/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages">custom workflows</a>, <a href="https://docs.github.com/pages/getting-started-with-github-pages/what-is-github-pages">Pages overview</a>, and <a href="https://docs.github.com/pages/getting-started-with-github-pages/github-pages-limits">limits</a>.</p>
 <div class="docs-next"><span>Back to</span><a href="@pathto('docs/platforms')">Platform targets →</a></div>

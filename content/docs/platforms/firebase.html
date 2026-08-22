@@ -2,7 +2,7 @@
 <p class="docs-kicker">Platform target</p><h1>Firebase Hosting</h1>
 <p class="docs-lead">Firebase Hosting naturally consumes Nift's normal <code>public/</code> directory. The target adds a minimal <code>firebase.json</code> that declares that deployment root.</p>
 <pre><code class="language-bash">nift init --target=firebase</code></pre>
-<h2>What Nift creates</h2>
+<h2 id="what-nift-creates">What Nift creates</h2>
 <pre><code class="language-json">{
   "hosting": {
     "public": "public",
@@ -10,9 +10,9 @@
   }
 }</code></pre>
 <p>The <code>public</code> property is Firebase Hosting's required deployment-directory setting. The file is user-owned after initialization.</p>
-<h2>Routing, headers and caching</h2>
+<h2 id="routing-headers-and-caching">Routing, headers and caching</h2>
 <p>Firebase Hosting configuration can define redirects, rewrites and custom headers, including cache-control policy. A custom <code>404.html</code> in the deployed directory is also supported.</p>
-<h2>Dynamic endpoints</h2>
+<h2 id="dynamic-endpoints">Dynamic endpoints</h2>
 <p>Hosting rewrites can send matching requests to Cloud Functions or Cloud Run. That gives a Nift site dynamic endpoints without turning the whole frontend into a runtime-rendered application.</p>
 <div class="docs-callout"><strong>Hosting, not App Hosting.</strong><p>This Nift target uses Firebase Hosting's static deployment model. Firebase App Hosting is a separate Cloud Run-oriented product with a different framework/runtime bundle.</p></div>
 <p>Official references: <a href="https://firebase.google.com/docs/hosting/full-config">Hosting configuration</a>, <a href="https://firebase.google.com/docs/hosting/functions">dynamic rewrites</a>, and <a href="https://firebase.google.com/docs/hosting/manage-cache">cache behaviour</a>.</p>

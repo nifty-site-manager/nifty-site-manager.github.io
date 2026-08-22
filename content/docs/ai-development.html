@@ -5,7 +5,7 @@
 
   <div class="docs-callout"><strong>AI accelerates the loop; tests define the contract.</strong><p>An assistant may inspect, hypothesize, implement, benchmark and document. A feature is accepted because its observable behavior survives the appropriate gates—not because generated code or prose sounds confident.</p></div>
 
-  <h2>Human-directed agentic engineering</h2>
+  <h2 id="human-directed-agentic-engineering">Human-directed agentic engineering</h2>
   <p>One useful name for this approach is <strong>human-directed agentic engineering</strong>. The human retains product authority and supplies high-leverage perception and judgement: what problem matters, which trade-offs are acceptable, when a technically successful result still feels architecturally wrong, and what evidence is sufficient for the next checkpoint. Agents can then reason, implement, test, research and attack assumptions at much greater speed inside that direction.</p>
   <pre><code class="language-plaintext">human intent + perception
         ↓
@@ -22,10 +22,10 @@ human judgement / next direction</code></pre>
 
   <div class="docs-callout"><strong>Don't make the AI remember the project. Make the project remember the project.</strong><p>Source remembers implementation; Git remembers change; tests remember behavioral contracts; benchmarks remember performance expectations; handovers remember transient state and rationale; checkpoints remember what has actually earned trust.</p></div>
 
-  <h3>Perception is a high-leverage human contribution</h3>
+  <h3 id="perception-is-a-high-leverage-human-contribution">Perception is a high-leverage human contribution</h3>
   <p>Current agents can be exceptionally strong at reasoning and execution inside a well-framed task while still missing the higher-level signal that the frame itself is wrong. A human may notice that a feature technically works but makes the language harder to explain, that every test passes but the tested assumption is incomplete, or that optimization effort is aimed at an unimportant bottleneck. Good handovers preserve these observations so the next agent knows what deserves attention, not merely what changed.</p>
 
-  <h2>What the collaboration actually looks like</h2>
+  <h2 id="what-the-collaboration-actually-looks-like">What the collaboration actually looks like</h2>
   <p>Calling Nift “AI-assisted” can undersell what has happened. The development process increasingly resembles a small <strong>agentic engineering team</strong>: the human maintainer owns product direction and architectural taste, while multiple coding agents and models can take bounded engineering roles against the same repositories, tests, handovers and Git history. ChatGPT has been used heavily for long-running architecture, language-design, review and implementation work; Codex has taken repository-level checkpoints and driven implementation and cross-platform validation; Qwen has been evaluated locally through OpenCode against the real Nift workspace rather than only toy prompts.</p>
   <p>The important part is not the number of models. It is that the work is <em>shared through engineering artifacts</em>. A new agent is expected to inspect the repository, read the handover, understand current tests and Git state, and earn changes against the same contracts. That is much closer to handing work between engineers than asking a chatbot to “build this from scratch.”</p>
   <pre><code class="language-plaintext">maintainer / product authority
@@ -40,19 +40,19 @@ review the result, architecture and public claims
         ↓
 commit + update durable project memory</code></pre>
 
-  <h3>Architecture is discussed, not merely prompted</h3>
+  <h3 id="architecture-is-discussed-not-merely-prompted">Architecture is discussed, not merely prompted</h3>
   <p>Some of Nift's most consequential changes began as conversations rather than specifications handed to an implementation agent. A proposed feature is often pushed until its semantics become simple enough to explain. Recent expression and collection work is a good example: arithmetic began as a question about conditions; that exposed a cleaner shared pure-expression model for <code>\$[expression]</code> and <code>\@if(expression)</code>; pagination then motivated relative <code>\@pathtopage</code> forms; discussion about whether <code>filter</code>/<code>map</code> would create too much “query language” surfaced an unnecessary assumption that collection operations had to flatten immediately to text. The resulting design instead keeps immutable typed values internally, permits composition, and serializes only at a rendering boundary.</p>
   <p>The same discussion produced a deliberately functional flavour—pure transforms, predicates, projections, aggregation and a fold through <code>\@reduce</code>—without adding general assignment, mutation or a scripting runtime. The point is not that an AI proposed every final answer. The useful process is that human intuition, agent objections, counterexamples and implementation constraints can argue with one another until the contract gets smaller and more coherent.</p>
 
-  <h3>Agents can disagree—and that is useful</h3>
+  <h3 id="agents-can-disagree-and-that-is-useful">Agents can disagree—and that is useful</h3>
   <p>Different agents do not need to produce identical opinions. Codex initially underestimated Nift before repository-level work changed its assessment. Local Qwen/OpenCode experiments provide another independent perspective and a way to see how a model with no privileged conversational history interprets the actual workspace. ChatGPT's own positions have changed repeatedly when a design objection failed under scrutiny. A disagreement is useful when it becomes a concrete question that source, tests, benchmarks or a prototype can answer.</p>
   <div class="docs-callout"><strong>“Why shouldn't that work?” can be an architecture tool.</strong><p>A surprising amount of useful design work comes from refusing to accept complexity by assertion. If an agent says composition would be confusing, the next question is what concrete ambiguity exists. Sometimes there is a real invariant to protect. Sometimes the objection is only an implementation assumption—and removing it produces a simpler language.</p></div>
 
-  <h3>Agents are given responsibility, not blind authority</h3>
+  <h3 id="agents-are-given-responsibility-not-blind-authority">Agents are given responsibility, not blind authority</h3>
   <p>Once a checkpoint is agreed, an agent is often allowed to proceed through tests, implementation, validation, documentation and commits without asking for approval after every edit. That autonomy is valuable because it lets the agent maintain a coherent local reasoning loop. It is bounded by explicit rules: write the contract first where appropriate, preserve repository and publication invariants, stop when evidence is ambiguous, and return to the maintainer when a product decision cannot be resolved from the agreed contract.</p>
   <p>This is why the workflow can feel like a team despite having one human maintainer. The human does not have to type every line, and the agents do not get to silently redefine the product. Each side contributes what it is good at.</p>
 
-  <h2>Why handover documents live in the repositories</h2>
+  <h2 id="why-handover-documents-live-in-the-repositories">Why handover documents live in the repositories</h2>
   <p>Long-running development accumulates knowledge that is not obvious from one source file: architectural intent, historical failures, current risk, release boundaries, validation commands and the reason a tempting design was rejected. Each project therefore carries a concise root <code>HANDOVER.md</code> plus deeper living documents where needed.</p>
   <div class="reference-table-wrap">
     <table class="reference-table">
@@ -71,7 +71,7 @@ commit + update durable project memory</code></pre>
   <p>These files are not frozen handoffs from one AI to another. They are maintained throughout the project. Source and tests remain authoritative, uncertainty is recorded honestly, and stale guidance is rewritten or removed rather than preserved ceremonially.</p>
 <p>Project memory should be layered rather than dumped into one giant agent prompt: code remembers implementation, Git remembers changes, tests remember protected behavior, benchmarks remember performance expectations, decision records remember rationale and handovers remember the current operational state. The goal is to move important context out of one model session and into durable project artifacts.</p>
 
-  <h2>The checkpoint loop</h2>
+  <h2 id="the-checkpoint-loop">The checkpoint loop</h2>
   <pre><code class="language-plaintext">reconcile request + repository reality
         ↓
 define one bounded observable contract
@@ -90,18 +90,18 @@ commit source and generated publication separately</code></pre>
   <p>Checkpoints make the state reviewable. A checkpoint is not automatically a release, push, version bump or production declaration. Those remain explicit actions after evidence and diffs are understood.</p>
 <p>For Nift itself, a substantial checkpoint is incomplete until the relevant handovers and public reliability claims have been reconciled with the work. In practice that includes reviewing <a href="@pathto('docs/battle-tested')">Battle Tested</a> whenever new behavior or regression evidence changes what Nift can honestly claim.</p>
 
-  <h2>Independent regression suites matter</h2>
+  <h2 id="independent-regression-suites-matter">Independent regression suites matter</h2>
   <p>Nift and tscc have standalone regression repositories that describe behavior without depending on implementation internals. Minify++ has its own independent validation boundary as well as reconciliation between the standalone project and Nift's embedded copy. This separation makes it harder for a patch and its tests to share the same mistaken assumption.</p>
   <p>Focused source-tree tests are still essential because they localize failures. The two layers answer different questions: “which component broke?” and “does the product still honor its external contract?”</p>
 
-  <h2>Contract-based testing</h2>
+  <h2 id="contract-based-testing">Contract-based testing</h2>
   <p>A contract is a statement about behavior that a user, integration or compatible implementation may rely on. Contract tests are written at that boundary instead of mirroring Nift's current classes, helper names or call graph. This lets internal architecture improve without weakening the promise and lets an independent suite test more than one implementation.</p>
   <pre><code class="language-plaintext">given project state + tracked inputs + configuration
 when a documented Nift command runs
 then outputs, diagnostics, metadata, dependencies,
      exit status and filesystem effects match the contract</code></pre>
 
-  <h3>Examples of Nift contracts</h3>
+  <h3 id="examples-of-nift-contracts">Examples of Nift contracts</h3>
   <div class="reference-table-wrap">
     <table class="reference-table">
       <thead><tr><th>Surface</th><th>Observable contract</th></tr></thead>
@@ -116,27 +116,27 @@ then outputs, diagnostics, metadata, dependencies,
     </table>
   </div>
 
-  <h3>Contract tests differ from implementation tests</h3>
+  <h3 id="contract-tests-differ-from-implementation-tests">Contract tests differ from implementation tests</h3>
   <p>A unit test may assert how a parser function classifies one token sequence because that helps localize a defect. The independent contract should instead assert the rendered bytes, recorded dependency, build reason, diagnostic or exit status visible at the product boundary. Both are valuable; only the latter should survive a complete internal rewrite unchanged.</p>
 
-  <h3>Test the negative and stateful parts of the promise</h3>
+  <h3 id="test-the-negative-and-stateful-parts-of-the-promise">Test the negative and stateful parts of the promise</h3>
   <p>Good contracts include failure behavior and transitions, not only successful output. Nift cases therefore ask whether a failed build preserves the previous artifact, whether metadata is refreshed only after success, whether missing requirements schedule an authoritative rebuild, whether changing minification policy is itself a rebuild reason and whether repeated incremental checks settle to “up to date”.</p>
 
-  <h3>Contracts are executable scope control</h3>
+  <h3 id="contracts-are-executable-scope-control">Contracts are executable scope control</h3>
   <p>AI can easily infer a broader promise from one successful example. A contract suite makes the supported boundary explicit: accepted forms, rejected forms, option combinations, filesystem effects and known exclusions. New behavior begins as a proposed contract, receives adversarial neighbors, and becomes part of the permanent suite only when the project is prepared to maintain it.</p>
 
-  <h3>Changing a contract is not “fixing the test”</h3>
+  <h3 id="changing-a-contract-is-not-fixing-the-test">Changing a contract is not “fixing the test”</h3>
   <p>When implementation and contract disagree, first determine whether the code regressed, the oracle/environment drifted, or the intended public behavior truly changed. An intentional change must reconcile the independent suite, focused tests, docs, handovers, migration guidance and any versioned metadata. This prevents a convenient expected-output edit from silently redefining the product.</p>
 
-  <h2>Nift's testing ladder</h2>
+  <h2 id="nift-s-testing-ladder">Nift's testing ladder</h2>
   <div class="advanced-doc-grid">
-    <div><h2>Parser and templating</h2><p>Escaping, metadata, parameters, paths, JSON, control flow, nested input and malformed forms receive focused cases.</p></div>
-    <div><h2>Filesystem and incremental</h2><p>Build metadata, dependency fan-out, missing requirements, modified/hash/hybrid behavior and cache refresh are exercised end to end.</p></div>
-    <div><h2>Integrated minification</h2><p>Generated HTML/CSS/JS and other supported artifacts are minified only after successful rendering and committed non-destructively.</p></div>
-    <div><h2>Real websites</h2><p>The Nift, Minify++ and tscc sites dogfood templates, checked paths, multi-extension outputs, minification and the two-branch publication workflow.</p></div>
+    <div><h2 id="parser-and-templating">Parser and templating</h2><p>Escaping, metadata, parameters, paths, JSON, control flow, nested input and malformed forms receive focused cases.</p></div>
+    <div><h2 id="filesystem-and-incremental">Filesystem and incremental</h2><p>Build metadata, dependency fan-out, missing requirements, modified/hash/hybrid behavior and cache refresh are exercised end to end.</p></div>
+    <div><h2 id="integrated-minification">Integrated minification</h2><p>Generated HTML/CSS/JS and other supported artifacts are minified only after successful rendering and committed non-destructively.</p></div>
+    <div><h2 id="real-websites">Real websites</h2><p>The Nift, Minify++ and tscc sites dogfood templates, checked paths, multi-extension outputs, minification and the two-branch publication workflow.</p></div>
   </div>
 
-  <h2>Source and generated branches stay distinct</h2>
+  <h2 id="source-and-generated-branches-stay-distinct">Source and generated branches stay distinct</h2>
   <p>These websites use a deliberate publishing model: <code>stage</code> owns canonical content, templates, configuration and handovers; <code>main</code> owns the built site. On <code>stage</code>, <code>public/</code> is an embedded checkout of <code>main</code>.</p>
   <pre><code class="language-plaintext">edit canonical source on stage
         ↓
@@ -149,11 +149,11 @@ commit generated main
 commit source + matching Git-link pointer on stage</code></pre>
   <p>This makes the deployed branch simple without pretending generated HTML is the development source. Static CSS and JavaScript can also be tracked Nift outputs, so readable source participates in dependency tracking and optional final-output minification.</p>
 
-  <h2>Human-first design that also produces strong AI-DX</h2>
+  <h2 id="human-first-design-that-also-produces-strong-ai-dx">Human-first design that also produces strong AI-DX</h2>
   <p>Nift is first and foremost designed for humans building websites. Its compact model, explicit configuration, deterministic behavior, fast feedback and checked relationships are human developer-experience choices. Those same properties happen to make it unusually legible to coding agents: tracked outputs, templates, <code>\@content</code>, <code>\@input</code>, <code>\@pathto</code>, metadata and incremental dependencies explain most projects. Fast builds make repeated edit/build/inspect cycles cheap, while <code>nift status</code> explains why a page would rebuild before changing output.</p>
   <p>The small mental model does not eliminate responsibility. An AI assistant still needs to read the project's handover, inspect current Git state, preserve unrelated user work, distinguish source from generated output and validate links/assets rather than assuming a successful command means a correct site.</p>
 
-  <h2>What AI should not decide silently</h2>
+  <h2 id="what-ai-should-not-decide-silently">What AI should not decide silently</h2>
   <ul>
     <li>whether a compatibility boundary should expand;</li>
     <li>whether a benchmark justifies a universal performance claim;</li>

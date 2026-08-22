@@ -8,7 +8,7 @@ nift build</code></pre>
 
 <div class="docs-callout"><strong>Supabase is different from the hosting targets.</strong><p>Supabase is primarily backend infrastructure rather than a general static-frontend host. The Nift target therefore keeps the ordinary <code>public/</code> output and creates no fake provider file just to make the preset look busier.</p></div>
 
-<h2>What Nift creates</h2>
+<h2 id="what-nift-creates">What Nift creates</h2>
 <p><code>--target=supabase</code> intentionally starts from the same static HTML project shape as ordinary <code>nift init</code>:</p>
 <pre><code class="language-plaintext">content/
 templates/
@@ -17,13 +17,13 @@ public/          # Nift build output
 </code></pre>
 <p>The target gives the CLI a consistent platform vocabulary and gives the documentation a clear integration entry point. It does not pretend Supabase consumes a special Nift deployment artifact.</p>
 
-<h2>Add Supabase when you need it</h2>
+<h2 id="add-supabase-when-you-need-it">Add Supabase when you need it</h2>
 <p>Supabase's own CLI uses <code>supabase init</code> to create a <code>supabase/</code> directory containing <code>config.toml</code>. Run that separately when the project actually needs local Supabase development rather than making every Nift starter carry unused backend configuration.</p>
 
 <pre><code class="language-bash">supabase init
 supabase start</code></pre>
 
-<h2>Dynamic functionality</h2>
+<h2 id="dynamic-functionality">Dynamic functionality</h2>
 <p>A Nift frontend can use Supabase's browser-facing APIs for database-backed features, authentication, storage and realtime data. For server-side work, Supabase Edge Functions use the Supabase Edge Runtime and are deployed separately with the Supabase CLI.</p>
 
 <pre><code class="language-plaintext">Nift static frontend ─────► static host
@@ -36,10 +36,10 @@ supabase start</code></pre>
                               └─ Edge Functions
 </code></pre>
 
-<h2>Hosting boundary</h2>
+<h2 id="hosting-boundary">Hosting boundary</h2>
 <p>Deploy Nift's generated <code>public/</code> frontend with a static host and connect it to Supabase as the backend. Supabase Edge Functions can expose HTTP endpoints, but they are not the ordinary static-site hosting model represented by Nift's deployment-oriented targets.</p>
 
-<h2>Official Supabase documentation</h2>
+<h2 id="official-supabase-documentation">Official Supabase documentation</h2>
 <ul>
 <li><a href="https://supabase.com/docs/guides/deployment" target="_blank" rel="noreferrer">Deployment &amp; branching ↗</a></li>
 <li><a href="https://supabase.com/docs/guides/functions/quickstart" target="_blank" rel="noreferrer">Edge Functions quickstart ↗</a></li>

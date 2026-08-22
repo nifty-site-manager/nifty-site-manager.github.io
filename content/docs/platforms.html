@@ -17,7 +17,7 @@ nift init --target=supabase</code></pre>
 
 <div class="docs-callout"><strong>No target does not mean no support.</strong><p>The named targets are convenience presets, not a list of the only platforms that can host Nift. Because a normal Nift build produces ordinary files in <code>public/</code>, you can use other static hosts and deployment systems too. Start with <code>nift init</code> (or <code>nift init --ext=.ext</code>), then configure that platform's build command, publish/output directory, workflow or provider files manually.</p></div>
 
-<h2>The extension contract</h2>
+<h2 id="the-extension-contract">The extension contract</h2>
 <p>A target defaults to <code>.html</code> and currently accepts <code>.html</code> or <code>.htm</code>. These presets deliberately describe static websites. A misleading combination such as <code>nift init --target=vercel --ext=.php</code> fails instead of emitting PHP that the static target would not execute.</p>
 <p>Without a target, Nift remains format-flexible:</p>
 <pre><code class="language-bash">nift init                 # HTML starter
@@ -26,7 +26,7 @@ nift init --ext=.txt      # format-neutral project</code></pre>
 
 <div class="docs-callout"><strong>The initializer contract is cross-platform tested.</strong><p>The 4.0.2 target/scaffold contract is green in native Linux, macOS and Windows GitHub Actions and in Nift's independent black-box regression suite. Those tests verify the generated project shapes, builds and diagnostics. They do not claim every provider has been deployed end-to-end; real deployments are ongoing dogfooding rather than a release gate.</p></div>
 
-<h2>What each target changes</h2>
+<h2 id="what-each-target-changes">What each target changes</h2>
 <div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>Target</th><th>Nift output</th><th>Initial provider files</th><th>Natural dynamic/runtime path</th></tr></thead><tbody>
 <tr><td><a href="@pathto('docs/platforms/vercel')">Vercel</a></td><td><code>.vercel/output/static/</code></td><td><code>.vercel/output/config.json</code></td><td>Vercel Functions and platform routing/config</td></tr>
 <tr><td><a href="@pathto('docs/platforms/amplify')">AWS Amplify</a></td><td><code>.amplify-hosting/static/</code></td><td><code>deploy-manifest.json</code></td><td>Amplify compute and routing primitives</td></tr>
@@ -39,10 +39,10 @@ nift init --ext=.txt      # format-neutral project</code></pre>
 <tr><td><a href="@pathto('docs/platforms/supabase')">Supabase</a></td><td><code>public/</code></td><td>none required</td><td>Postgres, Auth, Storage, Realtime and Edge Functions; host the frontend separately</td></tr>
 </tbody></table></div>
 
-<h2>Build environments are separate</h2>
+<h2 id="build-environments-are-separate">Build environments are separate</h2>
 <p>Some providers can consume output you build locally; others commonly run <code>nift build</code> in their own CI environment. A generated target does not secretly download Nift from one package manager or release URL. Make the Nift executable available in the provider's build environment using the installation route you want to trust, then run the generated build configuration.</p>
 
-<h2>Static site, dynamic pieces</h2>
+<h2 id="static-site-dynamic-pieces">Static site, dynamic pieces</h2>
 <p>Using a target does not turn Nift into a server framework. That is intentional. Keep the build-time site in Nift and use the platform's own runtime primitives where dynamic behaviour is genuinely needed:</p>
 <pre><code class="language-plaintext">Nift templates/content ── build time ──► static deployment
                                       │

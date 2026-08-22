@@ -5,7 +5,7 @@
 
 <div class="docs-callout"><strong>Prefer checked relationships over unchecked strings.</strong><p>If Nift has enough information to verify a relationship at build time, expressing that relationship explicitly can turn a later runtime surprise into an immediate, local build error.</p></div>
 
-<h2>What Nift means by a contract</h2>
+<h2 id="what-nift-means-by-a-contract">What Nift means by a contract</h2>
 <p>A contract is a guarantee that becomes part of the observable build behavior. Contracts can assert existence, structure, dependency relationships, path validity or other conditions that Nift can actually prove from project state.</p>
 <pre><code class="language-plaintext">declare a relationship
         ↓
@@ -18,7 +18,7 @@ fail clearly if the declared guarantee is not satisfied
 a successful build becomes evidence that the checked contract held</code></pre>
 <p>A successful Nift build is not proof that an entire website or application is correct. It is evidence that the contracts expressed to Nift were satisfied at that checkpoint.</p>
 
-<h2>Contracts already appear throughout Nift</h2>
+<h2 id="contracts-already-appear-throughout-nift">Contracts already appear throughout Nift</h2>
 <div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>Feature</th><th>Contractual meaning</th></tr></thead><tbody>
 <tr><td><code>\@input(...)</code></td><td>The input exists, can be safely resolved, is incorporated into this output and therefore becomes a dependency.</td></tr>
 <tr><td><code>\@dep(...)</code></td><td>This output depends on a project resource even though that resource does not directly render content.</td></tr>
@@ -27,7 +27,7 @@ a successful build becomes evidence that the checked contract held</code></pre>
 <tr><td><a href="@pathto('docs/project-contracts')">Project contracts</a></td><td>A named project-level JSON source exists, referenced members resolve and outputs using it depend on both the declaration and source.</td></tr>
 </tbody></table></div>
 
-<h2>Design guarantees before designing features</h2>
+<h2 id="design-guarantees-before-designing-features">Design guarantees before designing features</h2>
 <p>Nift's contract approach is also a feature-design discipline. Start with the guarantee rather than with new syntax:</p>
 <pre><code class="language-plaintext">1. What useful guarantee do we want?
 2. Does Nift have enough information to verify it?
@@ -40,14 +40,14 @@ a successful build becomes evidence that the checked contract held</code></pre>
 
 <div class="docs-callout"><strong>Generalize the philosophy before the syntax.</strong><p>Nift does not need one giant contract DSL. Different features can express different kinds of guarantees, and a general mechanism should only appear when real project contracts demonstrate that the abstraction is useful.</p></div>
 
-<h2>Contracts and dependency tracking belong together</h2>
+<h2 id="contracts-and-dependency-tracking-belong-together">Contracts and dependency tracking belong together</h2>
 <p>A contract is most useful when the build graph remembers it. If an output depends on a contract source, changing that source should make the output eligible for rebuild. If the declaration itself changes, dependent outputs should also be reconsidered.</p>
 <p>That is why <a href="@pathto('docs/project-contracts')">project contracts</a> record both their configured source and <code>.nift/config.json</code> as dependencies when referenced.</p>
 
-<h2>Contracts should fail clearly</h2>
+<h2 id="contracts-should-fail-clearly">Contracts should fail clearly</h2>
 <p>Good contract errors explain the violated guarantee rather than leaking implementation details. Missing inputs, unknown members, namespace collisions, malformed contract data and unsafe paths are errors because the build can no longer establish the promised relationship.</p>
 
-<h2>Contracts should be tested as contracts</h2>
+<h2 id="contracts-should-be-tested-as-contracts">Contracts should be tested as contracts</h2>
 <p>Nift's own contract features are protected by focused and implementation-independent regression tests. The tests cover successful behavior, failure behavior, incremental transitions, shadowing/collision rules and adversarial neighbors. A feature is not considered complete merely because its happy path renders the expected bytes. The tests are executable evidence that the stated guarantees are actually met.</p>
 <p>This same idea scales to serious Nift projects: define the guarantees that matter, encode what can be checked, and make validation part of the development checkpoint rather than an afterthought.</p>
 
