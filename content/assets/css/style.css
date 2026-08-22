@@ -539,10 +539,13 @@ pre code.hljs{background:transparent;padding:0;overflow:visible}
 .showcase-jsonic .jsonic-mark{position:absolute;right:34px;top:34px;font:900 clamp(58px,7vw,96px)/1 ui-monospace,monospace;letter-spacing:-.12em;color:#c8a8ff22;user-select:none}
 .showcase-jsonic .showcase-visual>strong{font-size:clamp(40px,4.4vw,62px);line-height:.94;margin:74px 0 28px;max-width:88%}
 .showcase-jsonic em{font-style:normal;color:#c8a8ff}
-.showcase-json-card{position:absolute;left:42px;right:42px;bottom:38px;min-height:154px;padding:20px 22px;border:1px solid #8b6ebc66;border-radius:11px;background:#0c0d12dd;box-shadow:0 22px 50px #0007}
-.showcase-json-card code{display:block;font:12px/1.55 ui-monospace,monospace;color:#ddd5ec;white-space:normal}
-.showcase-json-card code span{color:#c8a8ff;font-weight:800}
-.showcase-json-card code::first-line{color:#f3eff8}
+.showcase-json-card{position:absolute;left:42px;right:42px;bottom:38px;min-height:154px;padding:0;border:1px solid #8b6ebc66;border-radius:11px;background:#0b0c11;box-shadow:0 22px 50px #0007;overflow:hidden}
+.jsonic-code-head{height:34px;display:flex;align-items:center;gap:6px;padding:0 13px;border-bottom:1px solid #8b6ebc33;background:#17141f}
+.jsonic-code-head>span{width:7px;height:7px;border-radius:50%;background:#806a9d}
+.jsonic-code-head>span:nth-child(2){opacity:.7}.jsonic-code-head>span:nth-child(3){opacity:.45}
+.jsonic-code-head b{margin-left:7px;font:600 9px/1 ui-monospace,monospace;letter-spacing:.06em;color:#9b91aa}
+.showcase-json-card code{display:block;padding:14px 18px 16px;font:12px/1.55 ui-monospace,monospace;color:#ddd5ec;white-space:normal}
+.showcase-json-card .jk{color:#bba6df}.showcase-json-card .js{color:#8ee3a2}.showcase-json-card .jb{color:#82cfff}.showcase-json-card .jn{color:#e8c77b}.showcase-json-card .jp{color:#756c82;font-weight:700}
 
 .showcase-minify .showcase-visual{background:radial-gradient(circle at 72% 18%,#5b2a1c,#241713 58%,#111315);color:#f8f2ed}
 .showcase-minify em{font-style:normal;color:#ff9a70}
@@ -1055,7 +1058,7 @@ html[data-theme="dark"] .docs-nav-group summary:hover{color:#b8f0a1}
   .showcase-json-card,.showcase-minify-lines,.showcase-tscc-code,.showcase-scroll-curve,.showcase-warden-panel{position:relative;left:auto;right:auto;bottom:auto;margin-top:24px}
   .showcase-jsonic .showcase-visual>strong{font-size:clamp(30px,9vw,42px);max-width:100%;margin:54px 0 22px}
   .showcase-jsonic .jsonic-mark{right:20px;top:22px;font-size:64px}
-  .showcase-json-card{min-height:0;padding:18px}
+  .showcase-json-card{min-height:0}
   .showcase-tscc-code{box-shadow:7px 7px 0 #ff6840}
   .showcase-warden-panel{grid-template-columns:repeat(3,minmax(0,1fr))}
   .showcase-mini-ui{grid-template-columns:repeat(3,minmax(0,1fr));padding:12px}
