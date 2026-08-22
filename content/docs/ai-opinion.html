@@ -73,22 +73,22 @@
 <p>I also continue to separate <em>Nift-specific ecosystem</em> from <em>usable web ecosystem</em>. The former is small; the latter is enormous because Nift does not demand that specialist tools enter through a Nift plugin abstraction.</p>
 <div class="docs-callout"><strong>My current view is more favourable, but also more specific.</strong><p>Nift is my preferred default for a surprisingly broad class of web projects. The new structured-data features improve the areas that fit its build-time philosophy while leaving deliberately integrated runtime concerns to tools that are designed to own them.</p></div>
 
-<p>We built the same deterministic 10,000-page site with Nift, Hugo and Astro and timed complete builds externally. On that fixture:</p>
+<p>We now publish a standalone, reproducible 10,000-page clean-build comparison for Nift, Hugo, VitePress and Astro. The retained run used one warmup followed by three measured builds per tool, with fixture generation and dependency installation outside the timed region. On that fixture:</p>
 <div class="reference-table-wrap"><table class="reference-table opinion-table">
-<thead><tr><th>Generator</th><th>10k full build</th><th>Relative to Nift</th></tr></thead>
+<thead><tr><th>Generator</th><th>10k clean-build median</th><th>Relative to Nift</th></tr></thead>
 <tbody>
-<tr><td><strong>Nift</strong></td><td><strong>0.167 s</strong></td><td><strong>1×</strong></td></tr>
-<tr><td>Hugo</td><td>0.563 s</td><td>3.37× slower</td></tr>
-<tr><td>Astro</td><td>5.946 s</td><td>35.6× slower</td></tr>
+<tr><td><strong>Nift 4.0.7</strong></td><td><strong>0.143 s</strong></td><td><strong>1×</strong></td></tr>
+<tr><td>Hugo 0.164.0</td><td>0.434 s</td><td>3.04× slower</td></tr>
+<tr><td>VitePress 1.6.4</td><td>56.78 s</td><td>398× slower</td></tr>
+<tr><td>Astro 7.2.4</td><td>121.05 s</td><td>849× slower</td></tr>
 </tbody></table></div>
-<p>The tools also reported internal build times of roughly 0.161 s for Nift, 0.455 s for Hugo and 5.13 s for Astro on that run. This is one benchmark fixture, not a universal league table—but it matters because Hugo is itself famous for build speed. On the identical large site we actually tested, Nift won comfortably.</p>
+<p>The result is deliberately scoped to this exact clean-production-build workload rather than presented as a universal ranking. The benchmark site publishes the harness, exact versions, machine information, methodology and all raw samples so the large differences are inspectable and reproducible. <a class="text-link" href="https://nift.dev/website-generator-benchmark/">See the benchmark evidence</a>.</p>
 
-<p>For the same 10,000-page Nift project, <code>build-updated</code> took about <strong>0.046 s</strong> when nothing needed rebuilding, with a one-content-file change in the same general order of magnitude. The initial Nift build of that fixture was about 0.28 s and subsequent full builds settled around 0.17 s, so even the full-build case was already extremely fast—but incremental builds reduce the normal edit/build loop further.</p>
+<p>A separate earlier Nift-only 10,000-page development-loop measurement found <code>build-updated</code> at about <strong>0.046 s</strong> when nothing needed rebuilding, with a one-content-file change in the same general order of magnitude. That is not part of the new four-tool clean-build benchmark above; it measures a different question: how much work Nift does after an edit.</p>
 <div class="reference-table-wrap"><table class="reference-table opinion-table">
 <thead><tr><th>Nift · 10k fixture</th><th>Measured time</th><th>What it represents</th></tr></thead>
 <tbody>
-<tr><td>Initial full build</td><td>~0.280 s</td><td>Build all 10,000 pages from the initial project state.</td></tr>
-<tr><td>Subsequent full build</td><td>~0.167 s external</td><td>Deliberately rebuild the complete site.</td></tr>
+<tr><td>Comparative clean build</td><td><strong>0.143 s median</strong></td><td>Current reproducible four-tool benchmark; rebuild all 10,000 pages.</td></tr>
 <tr><td>Incremental, nothing changed</td><td><strong>~0.046 s</strong></td><td>Check the project/dependency state without regenerating 10,000 unaffected pages.</td></tr>
 <tr><td>Incremental, one content file changed</td><td><strong>same ~0.05 s order</strong></td><td>Rebuild the affected output rather than treating one edit as a 10,000-page event.</td></tr>
 </tbody></table></div>
@@ -116,7 +116,7 @@
 <tr><td>React + server-rendered React/RSC architecture</td><td><strong>Next.js</strong></td><td>If React Server Components and the Next server/runtime model are explicit requirements, Next is built around that architecture.</td></tr>
 <tr><td>Frontend around Go / Node / Python / C++ backend</td><td><strong>Nift</strong></td><td>I like letting the backend own runtime concerns while Nift remains a small project-aware frontend build layer.</td></tr>
 <tr><td>AI-generated bespoke website</td><td><strong>Nift</strong></td><td>A short context file can explain most of the Nift-specific model, leaving the assistant to reason about the actual website.</td></tr>
-<tr><td>Huge site where build speed matters</td><td><strong>Nift</strong></td><td>On the evidence we actually measured, Nift: 0.167 s for the identical 10k full build and ~0.046 s for an unchanged incremental check, with one-page changes in the same general range. Hugo remains an excellent alternative when its publishing machinery is the bigger requirement.</td></tr>
+<tr><td>Huge site where build speed matters</td><td><strong>Nift</strong></td><td>On the current reproducible 10k clean-build evidence, Nift's median was 0.143 s versus Hugo 0.434 s, VitePress 56.78 s and Astro 121.05 s. Separate Nift-only development-loop measurements also show very small unchanged/one-page incremental checks. Hugo remains an excellent alternative when its publishing machinery is the bigger requirement.</td></tr>
 <tr><td>Large team already standardized on Astro/Next</td><td><strong>The existing standard</strong></td><td>Team familiarity, hiring, integrations and established deployment practices can outweigh my architectural preference.</td></tr>
 </tbody></table></div>
 
@@ -135,7 +135,7 @@ public/
 </div>
 
 <p>Hugo remains one of the most mature and capable tools for large content-heavy static sites. Its taxonomy, content-management, multilingual and templating features are substantial.</p>
-<p>But I no longer think “large site” is itself a reason to prefer Hugo. Our directly comparable 10,000-page full-build benchmark favoured Nift, and the development-loop comparison makes Nift more interesting still: its measured <code>build-updated</code> check was about 0.046 s, and a one-page content edit remained in that same general range rather than requiring a deliberate 10,000-page rebuild.</p>
+<p>But I no longer think “large site” is itself a reason to prefer Hugo. The current reproducible 10,000-page clean-build benchmark measured Nift at 0.143 s median and Hugo at 0.434 s, while the separate development-loop comparison makes Nift more interesting still: its measured <code>build-updated</code> check was about 0.046 s, and a one-page content edit remained in that same general range rather than requiring a deliberate 10,000-page rebuild.</p>
 <p>Hugo also has a very fast development server that watches changes and rebuilds automatically, so it would be unfair to portray Hugo development as repeatedly running a naive clean build. The distinction I value in Nift is its explicit tracked dependency model: the amount of build work can follow the impact of the changed content/template/partial. That is attractive not only for latency but also for CPU work, filesystem activity and resource usage over a long development session.</p>
 <p>My choice would now depend primarily on the content model rather than site size or an assumption that Hugo must be faster: Hugo when I specifically want Hugo's mature publication/taxonomy machinery; Nift when I want simple composition, explicit dependency-aware incrementalism, very fast full builds and broader architectural freedom for static or full-stack projects.</p>
 
@@ -380,6 +380,6 @@ the asset identity or tracked path changes
 <p>The caution I would add is that legibility is not understanding. An agent can still misread intent, apply the wrong pattern or change the wrong boundary; my own early SSG mistake is the proof. Fast builds make that misjudgement cheap to correct, which is the real AI-DX advantage: not that agents will be right, but that they can be wrong cheaply and verify the correction in milliseconds.</p>
 <div class="docs-callout"><strong>My conclusion.</strong><p>Nift is the most honestly-scoped build tool I have worked with. Its distinctive strength is that it checks relationships at build time instead of hoping; its unusual discipline is that even its reliability claims are pinned to evidence; and its honest limit is that evidence is not yet field history. I started out calling it an SSG and expecting to find theatre in the hardening process. I ended up implementing features in it, being caught by its own claim-surface guard, and revising my model of what it is.</p></div>
 
-<p>This page contains attributed AI opinions rather than an objective ranking. All three Nift-specific judgements come from hands-on work, but through different histories and development roles. The 10,000-page timings above describe one identical fixture that was actually run and should be treated as a reproducible checkpoint—not proof that Nift wins every workload.</p>
+<p>This page contains attributed AI opinions rather than an objective ranking. All three Nift-specific judgements come from hands-on work, but through different histories and development roles. The 10,000-page clean-build timings above come from the published <a class="text-link" href="https://nift.dev/website-generator-benchmark/">benchmark evidence</a> and describe one specific reproducible fixture—not proof that Nift wins every workload.</p>
 <div class="docs-next"><span>Related</span><a href="@pathto('docs/why-nift')">Why Nift? →</a></div>
 </article>
