@@ -539,8 +539,8 @@ pre code.hljs{background:transparent;padding:0;overflow:visible}
 .showcase-jsonic .jsonic-mark{position:absolute;right:34px;top:34px;font:900 clamp(58px,7vw,96px)/1 ui-monospace,monospace;letter-spacing:-.12em;color:#c8a8ff22;user-select:none}
 .showcase-jsonic .showcase-visual>strong{font-size:clamp(40px,4.4vw,62px);line-height:.94;margin:74px 0 28px;max-width:88%}
 .showcase-jsonic em{font-style:normal;color:#c8a8ff}
-.showcase-json-card{position:absolute;left:42px;right:42px;bottom:38px;min-height:154px;padding:0;border:1px solid #8b6ebc66;border-radius:11px;background:#0b0c11;box-shadow:0 22px 50px #0007;overflow:hidden}
-.jsonic-code-head{height:34px;display:flex;align-items:center;gap:6px;padding:0 13px;border-bottom:1px solid #8b6ebc33;background:#17141f}
+.showcase-json-card{position:absolute;left:42px;right:42px;bottom:38px;min-height:154px;padding:0;border:1px solid #8b6ebc66;border-radius:0;background:#15111d;box-shadow:0 22px 50px #0007;overflow:hidden}
+.jsonic-code-head{height:34px;display:flex;align-items:center;gap:6px;padding:0 13px;border-bottom:1px solid #8b6ebc33;background:#1d1728}
 .jsonic-code-head>span{width:7px;height:7px;border-radius:50%;background:#806a9d}
 .jsonic-code-head>span:nth-child(2){opacity:.7}.jsonic-code-head>span:nth-child(3){opacity:.45}
 .jsonic-code-head b{margin-left:7px;font:600 9px/1 ui-monospace,monospace;letter-spacing:.06em;color:#9b91aa}
