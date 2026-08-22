@@ -23,7 +23,7 @@ nift init --handover</code></pre>
   <h2>Start with a generated handover</h2>
   <p><code>nift init --handover</code> writes a project-root <code>HANDOVER.md</code> — never under the output directory. It is the canonical Nift handover: a living document that tells an agent (or a human) how to work in a Nift project. For an existing project, or to refresh an older copy, fetch the same file directly:</p>
   <pre><code class="language-bash">curl -fsSL https://nift.dev/HANDOVER.md -o HANDOVER.md</code></pre>
-  <p><strong>Both paths — <code>nift init --handover</code> and the download above — produce the same canonical HANDOVER.md, byte for byte.</strong> The handover is a living document: add the project's own conventions to it, and preserve those additions when refreshing from the canonical version.</p>
+  <p><strong>Both paths — <code>nift init --handover</code> and the download above — produce the same canonical HANDOVER.md, byte for byte.</strong> The handover is a living document: add the project's own conventions to it. If your <code>HANDOVER.md</code> contains project-specific additions, download the canonical copy separately and merge or reapply those additions rather than overwriting them blindly with <code>curl ... -o HANDOVER.md</code>.</p>
   <div class="docs-download-card">
     <div>
       <span class="docs-kicker">Canonical handover</span>
@@ -314,61 +314,26 @@ Then read feature documentation only when the task requires it, for example:
 
 Prefer documented Nift behaviour and the existing project structure over guessing based on another website generator or framework.</code></pre>
 
-  <h2>A useful <code>ai-context.txt</code></h2>
-  <p>You can initialise the same barebones structure yourself, or download the ready-made project and hand it straight to an AI coding assistant.</p>
-  <div class="docs-download-card">
-    <div>
-      <span class="docs-kicker">Barebones starter</span>
-      <h2>Download the Nift v4 barebones project.</h2>
-      <p>Unzip it, add the context below as <code>ai-context.txt</code>, then ask Copilot, ChatGPT or another coding assistant to read the context and turn the project into the website you want.</p>
-    </div>
-    <a class="button button-primary" href="@pathto('public/assets/templates/nift-barebones.zip')" download>Download barebones .zip ↓</a>
-  </div>
-  <p>Or create the same starting point from the CLI:</p>
-  <pre><code class="language-bash">mkdir my-site
-cd my-site
-nift init
-touch ai-context.txt</code></pre>
-  <p>The generated <code>HANDOVER.md</code> is the canonical baseline. For project-specific guidance — what the site is about, its design language, its conventions — add a short <code>ai-context.txt</code> describing the project. Then point Copilot, ChatGPT or another coding assistant at the project and ask it to read the context before making changes. A useful <code>ai-context.txt</code> looks like this:</p>
+  <h2>Explain this particular project with <code>ai-context.txt</code></h2>
+  <p><code>HANDOVER.md</code> explains Nift. <code>ai-context.txt</code> optionally explains <em>this particular project</em>: what it is, its design direction, and the constraints an assistant must not cross. It stays short because it does not re-teach Nift — the handover already owns that. A useful <code>ai-context.txt</code> looks like this:</p>
+  <pre><code class="language-plaintext">This site is for an independent architecture studio.
 
-  <h3>A useful <code>ai-context.txt</code></h3>
-  <pre><code class="language-plaintext">This is a Nift v4 project.
+Visual direction:
+- restrained editorial layout
+- warm neutrals
+- no gradients
+- mobile-first
 
-Keep the existing project structure and ordinary HTML/CSS/JS conventions. Nift is the
-templating/build layer; do not replace the project with another framework unless asked.
-
-Core Nift template syntax:
-- \@content inserts the current tracked page's content into its template.
-- \@input('templates/partials/header.html') parses and inserts a reusable file. Use \@input
-  for shared markup such as headers, navigation, footers, cards and other partials.
-- \@pathto(...) produces a path relative to the current output page. Use tracked names for
-  links between tracked pages, for example:
-    &lt;a href="\@pathto('docs')"&gt;Docs&lt;/a&gt;
-- Also use \@pathto(...) for concrete local CSS, JavaScript and image assets, for example:
-    &lt;link rel="stylesheet" href="\@pathto('public/assets/css/style.css')"&gt;
-    &lt;script src="\@pathto('public/assets/js/app.js')"&gt;&lt;/script&gt;
-    &lt;img src="\@pathto('public/assets/images/logo.svg')" alt="Logo"&gt;
-  Using \@pathto for a concrete local path also lets Nift report an error during the build
-  when that path does not exist, instead of silently generating a broken asset reference.
-- \@getenv('NAME') inserts the value of an environment variable. If NAME is not set, it
-  produces an empty string. Use it when build-time environment configuration belongs in
-  generated output; do not put secrets into client-visible HTML or JavaScript.
-- \$[...] resolves values and pure expressions. It can read documented page/build metadata,
-  JSON/project-contract values and scoped loop/pagination values, and supports numeric arithmetic,
-  comparisons, boolean composition and lazy ternaries. It does not provide assignment or mutation.
-- \@dep(...) is only for an external file that affects an output but is not already made a
-  dependency through \@content, \@input or another direct Nift relationship.
-
-Prefer \@input and \@pathto over duplicating markup or hard-coding fragile relative paths.
-Keep Nift-specific machinery small. Use the project's existing npm/Bun/Vite/TypeScript/
-React/Vue/Svelte/Tailwind/backend tooling normally rather than trying to recreate it in Nift.
-
-Before editing, inspect the existing templates, content files and project conventions.
-Prefer the smallest change that preserves the existing architecture.</code></pre>
+Project constraints:
+- preserve the existing Go backend
+- keep assets under content/assets/
+- do not replace the vanilla JavaScript
+- use \@pathto for any new internal links</code></pre>
+  <p>Then point Copilot, ChatGPT or another coding assistant at the project and ask it to read the context before making changes.</p>
 
   <h2>Then ask for the website you actually want</h2>
-  <p>Once the context file is present, the interesting prompt can stay focused on the result rather than teaching the assistant Nift every time.</p>
-  <pre><code class="language-plaintext">Read ai-context.txt and inspect this project.
+  <p>Once the handover and any project context are present, the interesting prompt can stay focused on the result rather than teaching the assistant Nift every time.</p>
+  <pre><code class="language-plaintext">Read HANDOVER.md (and ai-context.txt if present) and inspect this project.
 
 Turn the barebones Nift project into a polished website for an independent architecture
 studio. Create the pages, shared template/partials, CSS and JavaScript you think are
