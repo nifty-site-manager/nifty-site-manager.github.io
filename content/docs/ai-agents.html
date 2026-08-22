@@ -1,39 +1,91 @@
 <article class="docs-article">
-  <p class="docs-kicker">Workflow</p>
-  <h1>Nift with AI coding assistants.</h1>
-  <p class="docs-lead">Nift is useful with coding assistants for the same reason it is useful to humans: the Nift-specific layer is small, while most of the project remains ordinary HTML, CSS, JavaScript, TypeScript and whatever other technologies you choose.</p>
-<div class="docs-callout"><strong>Use Nift's inspectable state instead of guessing.</strong><p>An assistant can run <code>nift status</code> to see rebuild causes and use the <code>info*</code> commands as JSON when output is piped. That makes the project unusually easy to inspect programmatically without a separate plugin or API.</p></div>
+  <p class="docs-kicker">Workflow · AI agents</p>
+  <h1>Start AI agents with the project context they need.</h1>
+  <p class="docs-lead">Nift keeps its project model small and inspectable. <code>nift init --handover</code> makes that model explicit from the first command by placing the canonical <code>HANDOVER.md</code> in the project root for an agent — or a human — to read before changing the site.</p>
 
+  <div class="docs-callout"><strong>The preferred starting point is <code>nift init --handover</code>.</strong><p>It creates the normal Nift project and writes <code>HANDOVER.md</code> at the project root, never in generated output. The handover is created as part of the scaffold before the initial build, so it is still present if that first build fails.</p></div>
 
-  <h2>Start an AI-ready project</h2>
-  <p>Create a barebones project from the CLI, or download the ready-made project and hand it straight to an AI coding assistant.</p>
-  <div class="docs-download-card">
-    <div>
-      <span class="docs-kicker">Barebones starter</span>
-      <h2>Download the Nift v4 barebones project.</h2>
-      <p>Unzip it, then ask Copilot, ChatGPT or another coding assistant to read the project's <code>HANDOVER.md</code> (or your own <code>ai-context.txt</code>) and turn the project into the website you want.</p>
-    </div>
-    <a class="button button-primary" href="@pathto('public/assets/templates/nift-barebones.zip')" download>Download barebones .zip ↓</a>
-  </div>
-  <p>From the CLI, <code>nift init --handover</code> creates the same structure and also writes a <code>HANDOVER.md</code> in the project root:</p>
+  <h2>Initialize a project for an AI agent</h2>
   <pre><code class="language-bash">mkdir my-site
 cd my-site
 nift init --handover</code></pre>
+  <p>The flag composes with Nift's other named <code>init</code> options, and compatible named options are order-independent:</p>
+  <pre><code class="language-bash">nift init --target=vercel --handover
+nift init --handover --ext=.php</code></pre>
+  <p>Plain <code>nift init</code> remains the normal scaffold without a handover. Use <code>--handover</code> when you want the project to carry Nift-aware working context from the beginning.</p>
 
-  <h2>Start with a generated handover</h2>
-  <p><code>nift init --handover</code> writes a project-root <code>HANDOVER.md</code> — never under the output directory. It is the canonical Nift handover: a living document that tells an agent (or a human) how to work in a Nift project. For an existing project, or to refresh an older copy, fetch the same file directly:</p>
+  <h2>For an existing project</h2>
+  <p>You can fetch the same canonical file directly:</p>
   <pre><code class="language-bash">curl -fsSL https://nift.dev/HANDOVER.md -o HANDOVER.md</code></pre>
-  <p><strong>Both paths — <code>nift init --handover</code> and the download above — produce the same canonical HANDOVER.md, byte for byte.</strong> The handover is a living document: add the project's own conventions to it. If your <code>HANDOVER.md</code> contains project-specific additions, download the canonical copy separately and merge or reapply those additions rather than overwriting them blindly with <code>curl ... -o HANDOVER.md</code>.</p>
+  <p><strong><code>nift init --handover</code> and the download produce the same canonical <code>HANDOVER.md</code>, byte for byte.</strong> If the project already has a <code>HANDOVER.md</code> containing project-specific additions, download the canonical copy separately and merge or reapply those additions instead of blindly overwriting the existing file.</p>
   <div class="docs-download-card">
     <div>
       <span class="docs-kicker">Canonical handover</span>
-      <h2>Download HANDOVER.md</h2>
-      <p>Or read it in full below. Point an assistant at this file at the start of a task — it explains how to inspect the project and how to use Nift's template model and <code>\@pathto</code> links correctly.</p>
+      <h2>HANDOVER.md</h2>
+      <p>Download the current canonical handover directly, or read the exact same file below.</p>
     </div>
     <a class="button button-primary" href="https://nift.dev/HANDOVER.md" download>Download HANDOVER.md ↓</a>
   </div>
-  <h3>The canonical HANDOVER.md</h3>
-  <pre><code class="language-plaintext">\# HANDOVER.md
+
+  <h2>What the handover gives an agent</h2>
+  <div class="advanced-doc-grid">
+    <div><h2>A starting inspection path</h2><p>Read <code>.nift/config.json</code>, <code>.nift/tracked.json</code>, the project structure and existing project documentation before making substantial changes.</p></div>
+    <div><h2>The small Nift model</h2><p>Understand <code>\@content</code>, <code>\@input(...)</code> and <code>\@pathto(...)</code> first, then reach for advanced features only when the project actually needs them.</p></div>
+    <div><h2>Boundaries</h2><p>Keep ordinary HTML, CSS, JavaScript, frameworks and backend technologies doing their own jobs rather than inventing Nift-specific replacements.</p></div>
+    <div><h2>A verification loop</h2><p>Run <code>nift build</code> frequently and use <code>nift status</code> to inspect what Nift considers stale and why.</p></div>
+  </div>
+
+  <div class="docs-callout"><strong>Dependable context, not magic context.</strong><p>The handover does not make an agent infallible. It gives the agent explicit, checked and bounded project guidance, then points it back to the real build, tracked state and documentation for verification.</p></div>
+
+  <h2>Use Nift's inspectable state instead of guessing</h2>
+  <p>An agent can run <code>nift status</code> to see rebuild causes and use Nift's <code>info*</code> commands as JSON when output is piped. That lets an agent inspect the project through Nift itself without requiring a separate plugin, hosted API or agent-specific runtime.</p>
+  <pre><code class="language-plaintext">read HANDOVER.md
+        ↓
+inspect config + tracked state
+        ↓
+make a bounded change
+        ↓
+nift build
+        ↓
+nift status + project tests
+        ↓
+review generated output / evidence</code></pre>
+
+  <h2>Add project-specific context only when it helps</h2>
+  <p><code>HANDOVER.md</code> explains Nift. A small project-specific file such as <code>ai-context.txt</code> can optionally explain <em>this project</em>: its purpose, design direction and constraints that are not obvious from the repository itself. It should not re-teach Nift.</p>
+  <pre><code class="language-plaintext">This site is for an independent architecture studio.
+
+Visual direction:
+- restrained editorial layout
+- warm neutrals
+- no gradients
+- mobile-first
+
+Project constraints:
+- preserve the existing Go backend
+- keep assets under content/assets/
+- do not replace the vanilla JavaScript
+- use @pathto for new internal links</code></pre>
+
+  <h2>Then describe the result you actually want</h2>
+  <pre><code class="language-plaintext">Read HANDOVER.md and inspect this project before making changes.
+
+Turn the existing Nift project into a polished website for an independent architecture
+studio. Create the pages, shared templates/partials, CSS and JavaScript you think are
+appropriate. Keep the site responsive and accessible, preserve the existing project
+architecture, and verify the result with the project's real build and tests.</code></pre>
+  <p>The same workflow works for documentation, product sites, portfolios, application frontends and larger repositories where Nift is only one build-time layer among several tools.</p>
+
+  <h2>Human-directed agentic engineering</h2>
+  <p>For substantial work, treat the agent as an implementation and verification partner rather than the product authority. Humans define intent and boundaries; agents inspect, implement, build, test and return evidence; humans review the result and decide the next direction.</p>
+  <p>Nift suits that workflow because its project state is inspectable and its feedback loop is fast. Checked paths, dependencies, contracts and build failures can turn assumptions into evidence instead of leaving them as prompt instructions alone. <a class="text-link" href="@pathto('docs/ai-development')">Read how Nift itself is developed with this approach →</a></p>
+
+  <h2>The canonical HANDOVER.md</h2>
+  <p>The full file is available here for reference and is mechanically checked against the downloadable <code>/HANDOVER.md</code>; the two copies are required to remain byte-identical.</p>
+  <details class="handover-details">
+    <summary>Read the full HANDOVER.md</summary>
+    <h3>The canonical HANDOVER.md</h3>
+    <pre><code class="language-plaintext">\# HANDOVER.md
 v0.0.5
 
 This is a living handover for working effectively in a Nift project.
@@ -313,59 +365,7 @@ Then read feature documentation only when the task requires it, for example:
 - integration with other application stacks.
 
 Prefer documented Nift behaviour and the existing project structure over guessing based on another website generator or framework.</code></pre>
+  </details>
 
-  <h2>Explain this particular project with <code>ai-context.txt</code></h2>
-  <p><code>HANDOVER.md</code> explains Nift. <code>ai-context.txt</code> optionally explains <em>this particular project</em>: what it is, its design direction, and the constraints an assistant must not cross. It stays short because it does not re-teach Nift — the handover already owns that. A useful <code>ai-context.txt</code> looks like this:</p>
-  <pre><code class="language-plaintext">This site is for an independent architecture studio.
-
-Visual direction:
-- restrained editorial layout
-- warm neutrals
-- no gradients
-- mobile-first
-
-Project constraints:
-- preserve the existing Go backend
-- keep assets under content/assets/
-- do not replace the vanilla JavaScript
-- use \@pathto for any new internal links</code></pre>
-  <p>Then point Copilot, ChatGPT or another coding assistant at the project and ask it to read the context before making changes.</p>
-
-  <h2>Then ask for the website you actually want</h2>
-  <p>Once the handover and any project context are present, the interesting prompt can stay focused on the result rather than teaching the assistant Nift every time.</p>
-  <pre><code class="language-plaintext">Read HANDOVER.md (and ai-context.txt if present) and inspect this project.
-
-Turn the barebones Nift project into a polished website for an independent architecture
-studio. Create the pages, shared template/partials, CSS and JavaScript you think are
-appropriate. Keep the site responsive and accessible, and use Nift's existing project
-model rather than replacing it.</code></pre>
-  <p>The same pattern works for a portfolio, documentation site, product landing page, blog, dashboard shell or frontend for a larger application.</p>
-
-  <h2>Why the small context works</h2>
-  <div class="advanced-doc-grid">
-    <div><h2>Less framework trivia</h2><p>The assistant can spend more context on your design and application rather than learning a large Nift API.</p></div>
-    <div><h2>Ordinary files</h2><p>Most edits use technologies coding assistants already understand well instead of framework-specific representations of them.</p></div>
-    <div><h2>Easy migrations</h2><p>An assistant can identify repeated HTML, extract templates and partials, and preserve the existing frontend rather than translating the whole site.</p></div>
-    <div><h2>Stack freedom</h2><p>React, Vue, Svelte, TypeScript, Go, Node, Python and other tools remain themselves; Nift only needs enough context to connect the pieces.</p></div>
-  </div>
-
-  <h2>Human-directed agentic engineering for Nift projects</h2>
-  <p>For a serious production site, an AI assistant can do more than generate a first draft. A useful workflow is <strong>human-directed agentic engineering</strong>: the human defines the product intent, constraints and acceptance boundary; the agent inspects the project, proposes or implements bounded changes, runs the real build and tests, and returns evidence for human review.</p>
-  <pre><code class="language-plaintext">human intent + perception
-        ↓
-project context + explicit contracts
-        ↓
-agent implementation
-        ↓
-nift build / status / project tests
-        ↓
-evidence + adversarial checks
-        ↓
-human review / checkpoint / next direction</code></pre>
-  <p>Nift fits this style unusually well because the project remains inspectable. Templates and content are ordinary files; <code>tracked.json</code> and <code>config.json</code> expose project state; <code>\@pathto</code>, dependencies and <a class="text-link" href="@pathto('docs/project-contracts')">project contracts</a> can turn assumptions into build-time checks; and fast incremental builds make repeated agent validation cheap.</p>
-  <p>For longer work, keep a small project handover alongside the source. Record the current goal, architectural boundaries, commands that establish a known-good state, unresolved risks, rejected approaches and the evidence earned at the last checkpoint. Do not rely on the conversation alone to remember the project. Tests should preserve behavioral guarantees, Git should preserve change, and the handover should preserve the context that is not obvious from either.</p>
-  <div class="docs-callout"><strong>Human-first is the point.</strong><p>This is not a workflow for handing product judgement to an agent. Humans are often better positioned to notice that a technically valid result feels wrong, that the wrong problem is being optimized, or that a new abstraction costs more complexity than its guarantee is worth. Agents are exceptionally useful for rapid reasoning, implementation and verification inside that direction.</p></div>
-  <p>The same process is used to develop Nift itself. The deeper discussion covers perception, handovers, checkpoints, executable contracts, adversarial testing, project memory and evidence. <a class="text-link" href="@pathto('docs/ai-development')">Read about human-directed agentic engineering in Nift development →</a></p>
-
-  <div class="docs-callout"><strong>AI-friendly without an AI subsystem.</strong><p>Nift's advantage is powerful simplicity: there is comparatively little Nift-specific behaviour for an assistant to misunderstand, hallucinate or unnecessarily rewrite.</p></div>
+  <div class="docs-callout"><strong>AI-friendly without an AI subsystem.</strong><p>Nift does not need an MCP server or agent-specific project format to be useful with agents. The useful properties are the same ones humans benefit from: a small mental model, ordinary files, inspectable state, fast feedback and dependable checked relationships.</p></div>
 </article>

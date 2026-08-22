@@ -995,3 +995,56 @@ html[data-theme="dark"] .hero .hero-install .code-copy-button{
 /* Homepage accent links share the same teal family across contrasting backgrounds. */
 .hero-install-more{color:#073f4b}.hero-install-more:hover{color:#052f38}
 .home-closing-links a{color:#fff;text-decoration:underline;text-underline-offset:.2em}.home-closing-links a:hover{color:#fff}
+
+
+/* Collapsible documentation navigation. */
+.docs-nav-group{margin:8px 0;border:0}
+.docs-nav-group summary{position:relative;cursor:pointer;list-style:none;padding:8px 22px 8px 0;color:#8a949c;text-transform:uppercase;letter-spacing:.12em;font-size:10px;font-weight:800;user-select:none}
+.docs-nav-group summary::-webkit-details-marker{display:none}
+.docs-nav-group summary::after{content:"+";position:absolute;right:3px;top:50%;transform:translateY(-50%);font-size:15px;font-weight:500;color:#78858d}
+.docs-nav-group[open] summary::after{content:"−"}
+.docs-nav-links{display:grid;gap:7px;padding:1px 0 8px}
+.docs-nav-group summary:hover{color:#238a4e}
+html[data-theme="dark"] .docs-nav-group summary{color:#9aa39f}
+html[data-theme="dark"] .docs-nav-group summary:hover{color:#b8f0a1}
+
+/* Showcase: contain every card at narrow widths instead of clipping page overflow. */
+.showcase-project,.showcase-visual,.showcase-copy{min-width:0}
+.showcase-copy pre,.showcase-copy .code-block-wrap{max-width:100%;min-width:0}
+.showcase-copy pre{white-space:pre;overflow-x:auto}
+.showcase-actions>*{max-width:100%}
+@media(max-width:760px){
+  .showcase-list{padding-left:14px;padding-right:14px;gap:16px}
+  .showcase-project{width:100%;min-width:0}
+  .showcase-visual{min-height:330px;padding:24px;max-width:100%}
+  .showcase-visual>strong{font-size:clamp(31px,9.5vw,46px);line-height:.96;letter-spacing:-.05em;margin:56px 0 28px;overflow-wrap:anywhere}
+  .showcase-copy{padding:26px 22px;min-width:0}
+  .showcase-copy h2{font-size:clamp(32px,10vw,42px)}
+  .showcase-copy pre{font-size:12px;padding:16px;max-width:100%}
+  .showcase-actions{align-items:flex-start;gap:12px}
+  .showcase-actions .button,.showcase-actions .text-link{max-width:100%;white-space:normal;text-align:left}
+  .showcase-code-lines{left:24px;right:24px;bottom:24px}
+  .showcase-mini-ui{grid-template-columns:repeat(3,minmax(0,1fr));padding:12px}
+  .showcase-mini-ui i{min-width:0;height:52px}
+  .showcase-terminal{max-width:100%;overflow-x:auto;white-space:nowrap}
+  .showcase-art{max-width:100%;height:125px}
+  .showcase-art i{left:32%;transform:rotate(28deg) scale(.82);transform-origin:center}
+  .showcase-art b{font-size:clamp(22px,8vw,30px)}
+  .showcase-principle{min-width:0;margin-left:14px;margin-right:14px;padding:36px 20px}
+  .showcase-principle h2{font-size:clamp(32px,9.5vw,48px);overflow-wrap:anywhere}
+}
+@media(max-width:400px){
+  .showcase-visual{min-height:300px;padding:20px}
+  .showcase-visual>strong{font-size:clamp(28px,9.5vw,38px);margin-top:48px}
+  .showcase-copy{padding:24px 18px}
+  .showcase-list{padding-left:10px;padding-right:10px}
+  .showcase-principle{margin-left:10px;margin-right:10px;padding:32px 18px}
+}
+
+.handover-details{margin:24px 0 36px;border:1px solid var(--line);border-radius:12px;background:var(--surface-raised);overflow:hidden}
+.handover-details>summary{cursor:pointer;list-style:none;padding:16px 20px;font-weight:750;color:#238a4e}
+.handover-details>summary::-webkit-details-marker{display:none}
+.handover-details>summary::after{content:" +"}
+.handover-details[open]>summary::after{content:" −"}
+.handover-details>h3{padding:0 20px;margin-top:12px}
+.handover-details>pre{margin:0;border-radius:0}

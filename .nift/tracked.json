@@ -357,7 +357,7 @@
     },
     {
       "name": "docs/ai-agents",
-      "title": "Nift with AI assistants",
+      "title": "Nift with AI agents",
       "template": "templates/docs.html"
     }
   ]

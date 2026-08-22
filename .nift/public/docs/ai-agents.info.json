@@ -1,6 +1,6 @@
 {
   "name": "docs/ai-agents",
-  "title": "Nift with AI assistants",
+  "title": "Nift with AI agents",
   "template": "templates/docs.html",
   "content": "content/docs/ai-agents.html",
   "output": "public/docs/ai-agents.html",
@@ -24,7 +24,6 @@
     "public/assets/css/style.css",
     "public/assets/images/nift-logo.webp",
     "public/assets/js/script.js",
-    "public/assets/templates/nift-barebones.zip",
     "public/contact.html",
     "public/developers.html",
     "public/docs.html",
