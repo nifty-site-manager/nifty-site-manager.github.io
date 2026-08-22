@@ -2,7 +2,8 @@
 set -eu
 
 repo="${NIFT_GITHUB_REPOSITORY:-nift-dev/nift}"
-install_dir="${NIFT_INSTALL_DIR:-$HOME/.local/bin}"
+custom_install_dir="${NIFT_INSTALL_DIR:-}"
+install_dir="${custom_install_dir:-$HOME/.local/bin}"
 version="${NIFT_VERSION:-}"
 
 need() {
@@ -61,5 +62,25 @@ chmod 0755 "$install_dir/nift"
 printf 'Installed Nift %s to %s/nift\n' "$version" "$install_dir"
 case ":${PATH:-}:" in
     *":$install_dir:"*) ;;
-    *) printf 'Add %s to PATH to run nift from any directory.\n' "$install_dir" ;;
+    *)
+        if [ "$os" = Darwin ] && [ -z "$custom_install_dir" ] && [ "$install_dir" = "$HOME/.local/bin" ]; then
+            case "${SHELL:-}" in
+                */bash) profile="$HOME/.bash_profile" ;;
+                *) profile="$HOME/.zprofile" ;;
+            esac
+            path_line='export PATH="$HOME/.local/bin:$PATH"'
+            if [ ! -f "$profile" ] || ! grep -Fqx "$path_line" "$profile"; then
+                {
+                    printf '\n# Added by the Nift installer\n'
+                    printf '%s\n' "$path_line"
+                } >> "$profile"
+                printf 'Added %s to your shell PATH in %s.\n' "$install_dir" "$profile"
+            else
+                printf '%s is already configured in %s.\n' "$install_dir" "$profile"
+            fi
+            printf 'Open a new terminal, or run: export PATH="$HOME/.local/bin:$PATH"\n'
+        else
+            printf 'Add %s to PATH to run nift from any directory.\n' "$install_dir"
+        fi
+        ;;
 esac
