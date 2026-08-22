@@ -498,7 +498,11 @@ pre code.hljs{background:transparent;padding:0;overflow:visible}
 .comparison-duo>div{border:1px solid var(--border);border-radius:12px;padding:24px;background:var(--surface-raised)}
 .comparison-duo span{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#2e9255;font-weight:800}
 .comparison-duo p{margin:10px 0 0;color:var(--text-muted)}
-@media(max-width:760px){.comparison-duo{grid-template-columns:1fr}.opinion-table{min-width:760px}}
+.opinion-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:25px 0 45px}
+.opinion-cards>div{border:1px solid var(--border);border-radius:12px;padding:24px;background:var(--surface-raised)}
+.opinion-cards span{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#2e9255;font-weight:800}
+.opinion-cards p{margin:10px 0 0;color:var(--text-muted)}
+@media(max-width:760px){.comparison-duo{grid-template-columns:1fr}.opinion-cards{grid-template-columns:1fr}.opinion-table{min-width:760px}}
 
 /* Pre-launch Getting Started */
 .getting-model{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:24px 0 46px}
