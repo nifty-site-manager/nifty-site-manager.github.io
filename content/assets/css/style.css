@@ -535,11 +535,14 @@ pre code.hljs{background:transparent;padding:0;overflow:visible}
 .showcase-code-lines{position:absolute;left:42px;right:42px;bottom:38px;border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:17px;background:rgba(0,0,0,.2)}
 .showcase-code-lines i{display:block;height:6px;border-radius:5px;background:rgba(255,255,255,.28);margin:8px 0}.showcase-code-lines i:nth-child(1){width:60%}.showcase-code-lines i:nth-child(2){width:88%}.showcase-code-lines i:nth-child(3){width:72%}.showcase-code-lines i:nth-child(4){width:48%}
 
-.showcase-jsonic .showcase-visual{background:radial-gradient(circle at 70% 25%,#164f45,#092b2b 60%,#071d22);color:#effff7}
-.showcase-jsonic em{font-style:normal;color:#8ee5a5}
-.showcase-json-card{position:absolute;left:42px;right:42px;bottom:38px;min-height:128px;padding:20px 22px 18px 98px;border:1px solid #5f9e8d55;border-radius:11px;background:#071917aa}
-.showcase-json-card b{position:absolute;left:22px;top:20px;font:900 45px/1 ui-monospace,monospace;color:#8ee5a5}
-.showcase-json-card i{display:block;height:7px;margin:9px 0;border-radius:99px;background:#dff8ea44}.showcase-json-card i:nth-of-type(1){width:72%}.showcase-json-card i:nth-of-type(2){width:88%}.showcase-json-card i:nth-of-type(3){width:55%}
+.showcase-jsonic .showcase-visual{background:radial-gradient(circle at 78% 18%,#3a2552,#1b1726 54%,#111217);color:#f4f0fa}
+.showcase-jsonic .jsonic-mark{position:absolute;right:34px;top:34px;font:900 clamp(58px,7vw,96px)/1 ui-monospace,monospace;letter-spacing:-.12em;color:#c8a8ff22;user-select:none}
+.showcase-jsonic .showcase-visual>strong{font-size:clamp(40px,4.4vw,62px);line-height:.94;margin:74px 0 28px;max-width:88%}
+.showcase-jsonic em{font-style:normal;color:#c8a8ff}
+.showcase-json-card{position:absolute;left:42px;right:42px;bottom:38px;min-height:154px;padding:20px 22px;border:1px solid #8b6ebc66;border-radius:11px;background:#0c0d12dd;box-shadow:0 22px 50px #0007}
+.showcase-json-card code{display:block;font:12px/1.55 ui-monospace,monospace;color:#ddd5ec;white-space:normal}
+.showcase-json-card code span{color:#c8a8ff;font-weight:800}
+.showcase-json-card code::first-line{color:#f3eff8}
 
 .showcase-minify .showcase-visual{background:radial-gradient(circle at 72% 18%,#5b2a1c,#241713 58%,#111315);color:#f8f2ed}
 .showcase-minify em{font-style:normal;color:#ff9a70}
@@ -1050,7 +1053,9 @@ html[data-theme="dark"] .docs-nav-group summary:hover{color:#b8f0a1}
   .showcase-actions .button,.showcase-actions .text-link{max-width:100%;white-space:normal;text-align:left}
   .showcase-code-lines{position:static;left:auto;right:auto;bottom:auto;margin-top:24px}
   .showcase-json-card,.showcase-minify-lines,.showcase-tscc-code,.showcase-scroll-curve,.showcase-warden-panel{position:relative;left:auto;right:auto;bottom:auto;margin-top:24px}
-  .showcase-json-card{padding-left:82px}
+  .showcase-jsonic .showcase-visual>strong{font-size:clamp(30px,9vw,42px);max-width:100%;margin:54px 0 22px}
+  .showcase-jsonic .jsonic-mark{right:20px;top:22px;font-size:64px}
+  .showcase-json-card{min-height:0;padding:18px}
   .showcase-tscc-code{box-shadow:7px 7px 0 #ff6840}
   .showcase-warden-panel{grid-template-columns:repeat(3,minmax(0,1fr))}
   .showcase-mini-ui{grid-template-columns:repeat(3,minmax(0,1fr));padding:12px}
