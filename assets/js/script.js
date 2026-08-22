@@ -22,17 +22,46 @@
 
   mobile?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileMenu));
 
-  const closeDocsMenu = () => {
-    docsMobile?.classList.remove('open');
+  let docsMenuReturnFocus = false;
+  const closeDocsMenu = ({ returnFocus = false } = {}) => {
+    if (!docsMobile?.classList.contains('open')) return;
+    docsMobile.classList.remove('open');
+    docsMobile.setAttribute('hidden', '');
+    docsMobile.setAttribute('inert', '');
     docsToggle?.setAttribute('aria-expanded', 'false');
+    docsToggle?.setAttribute('aria-label', 'Open documentation navigation');
+    document.documentElement.classList.remove('docs-menu-open');
+    if (returnFocus) docsToggle?.focus();
   };
 
+  if (docsMobile) {
+    docsMobile.setAttribute('hidden', '');
+    docsMobile.setAttribute('inert', '');
+  }
+
   docsToggle?.addEventListener('click', () => {
-    const open = docsMobile?.classList.toggle('open');
-    docsToggle.setAttribute('aria-expanded', String(Boolean(open)));
+    const opening = !docsMobile?.classList.contains('open');
+    if (opening) {
+      docsMobile?.removeAttribute('hidden');
+      docsMobile?.removeAttribute('inert');
+      docsMobile?.classList.add('open');
+      docsToggle.setAttribute('aria-expanded', 'true');
+      docsToggle.setAttribute('aria-label', 'Close documentation navigation');
+      document.documentElement.classList.add('docs-menu-open');
+      docsMobile?.querySelector('a, summary, button')?.focus();
+    } else {
+      closeDocsMenu({ returnFocus: true });
+    }
   });
 
-  docsMobile?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDocsMenu));
+  docsMobile?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => closeDocsMenu()));
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && docsMobile?.classList.contains('open')) {
+      event.preventDefault();
+      closeDocsMenu({ returnFocus: true });
+    }
+  });
 
   // Keep the docs menu compact by default, but always expose the section that
   // contains the page currently being read. The Start here group remains open
@@ -44,6 +73,14 @@
       return path === currentPath;
     });
     if (containsCurrentPage) group.open = true;
+  });
+  document.querySelectorAll('[data-docs-sidebar] a').forEach(link => {
+    const currentPath = new URL(window.location.href).pathname.replace(/\/index\.html$/, '/');
+    const path = new URL(link.href, window.location.href).pathname.replace(/\/index\.html$/, '/');
+    if (path === currentPath) {
+      link.setAttribute('aria-current', 'page');
+      link.classList.add('current');
+    }
   });
 
   // If a narrow viewport has its menu open and becomes desktop-sized again,
