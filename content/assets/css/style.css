@@ -1099,3 +1099,25 @@ html[data-theme="dark"] .docs-nav-group summary:hover{color:#b8f0a1}
   .docs-mobile-nav .docs-sidebar-inner{padding-bottom:32px}
   .docs-mobile-nav .docs-sidebar nav a[aria-current="page"]{color:var(--green-2)}
 }
+
+
+/* Compact evidence graphs used in Why Nift. */
+.nift-benchmark-visual{margin:34px 0 40px;padding:26px;border:1px solid var(--border);background:var(--surface-raised);border-radius:14px}
+.nift-benchmark-head{display:flex;justify-content:space-between;gap:24px;align-items:flex-end;margin-bottom:22px}
+.nift-benchmark-head>div span{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--text-muted)}
+.nift-benchmark-head>div strong{display:block;margin-top:5px;font-size:24px;letter-spacing:-.03em}
+.nift-benchmark-head>a{font-size:13px}
+.nift-benchmark-charts{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.nift-mini-chart{padding:18px;border:1px solid var(--border);background:var(--surface)}
+.nift-mini-title{display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin-bottom:13px}
+.nift-mini-title strong{font-size:14px}.nift-mini-title span{font-size:10px;color:var(--text-muted)}
+.nift-mini-row{display:grid;grid-template-columns:72px minmax(0,1fr) 76px;gap:10px;align-items:center;margin:9px 0}
+.nift-mini-row>span{font-size:11px;font-weight:700}.nift-mini-row>em{font-style:normal;font:10px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;text-align:right;color:var(--text-muted)}
+.nift-mini-row>i{display:block;height:12px;background:color-mix(in srgb,var(--border) 60%,transparent);overflow:hidden}
+.nift-mini-row>i>b{display:block;width:var(--w);height:100%;background:#738077;min-width:3px}
+.nift-mini-row>i>b.nift-win{background:var(--green)}
+.nift-iteration-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:14px}
+.nift-iteration-strip>span{padding:15px;border:1px solid var(--border);background:var(--surface)}
+.nift-iteration-strip strong,.nift-iteration-strip small{display:block}.nift-iteration-strip strong{font-size:19px;color:var(--text)}.nift-iteration-strip small{margin-top:3px;color:var(--text-muted)}
+.nift-iteration-strip>p{grid-column:1/-1;margin:2px 0 0;font-size:13px;color:var(--text-muted)}
+@media(max-width:760px){.nift-benchmark-head{display:block}.nift-benchmark-head>a{display:inline-block;margin-top:10px}.nift-benchmark-charts{grid-template-columns:1fr}.nift-iteration-strip{grid-template-columns:1fr}.nift-mini-row{grid-template-columns:62px minmax(0,1fr) 72px}}

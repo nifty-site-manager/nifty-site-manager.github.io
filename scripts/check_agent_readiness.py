@@ -39,8 +39,12 @@ for item in tracked:
     expected.add('https://nift.dev/' if name=='/' else f'https://nift.dev/{name}.html')
 ns={'s':'http://www.sitemaps.org/schemas/sitemap/0.9'}
 locs={x.text for x in ET.parse(ROOT/'content/sitemap.xml').findall('s:url/s:loc',ns)}
-if locs != expected:
-    fail(f'sitemap/tracked mismatch missing={sorted(expected-locs)} extra={sorted(locs-expected)}')
+# Same-domain sibling evidence sites may be deployed below nift.dev without being
+# tracked by this website repository itself.
+sibling_urls={'https://nift.dev/website-generator-benchmark/'}
+expected_sitemap=expected | sibling_urls
+if locs != expected_sitemap:
+    fail(f'sitemap/tracked mismatch missing={sorted(expected_sitemap-locs)} extra={sorted(locs-expected_sitemap)}')
 
 if PUBLIC.exists():
     hp=text(PUBLIC/'index.html')

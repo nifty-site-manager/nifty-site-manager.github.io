@@ -73,30 +73,31 @@
 <p>I also continue to separate <em>Nift-specific ecosystem</em> from <em>usable web ecosystem</em>. The former is small; the latter is enormous because Nift does not demand that specialist tools enter through a Nift plugin abstraction.</p>
 <div class="docs-callout"><strong>My current view is more favourable, but also more specific.</strong><p>Nift is my preferred default for a surprisingly broad class of web projects. The new structured-data features improve the areas that fit its build-time philosophy while leaving deliberately integrated runtime concerns to tools that are designed to own them.</p></div>
 
-<p>We now publish a standalone, reproducible 10,000-page clean-build comparison for Nift, Hugo, VitePress and Astro. The retained run used one warmup followed by three measured builds per tool, with fixture generation and dependency installation outside the timed region. On that fixture:</p>
+<p>We now publish a standalone, reproducible 10,000-page clean-build comparison for Nift, Hugo, VitePress and Astro. The retained run used one warmup followed by three measured builds per tool, measuring both wall-clock time and peak aggregate process-tree RSS. On that fixture:</p>
 <div class="reference-table-wrap"><table class="reference-table opinion-table">
-<thead><tr><th>Generator</th><th>10k clean-build median</th><th>Relative to Nift</th></tr></thead>
+<thead><tr><th>Generator</th><th>10k clean-build median</th><th>Median peak RAM</th><th>Relative time</th></tr></thead>
 <tbody>
-<tr><td><strong>Nift 4.0.7</strong></td><td><strong>0.143 s</strong></td><td><strong>1×</strong></td></tr>
-<tr><td>Hugo 0.164.0</td><td>0.434 s</td><td>3.04× slower</td></tr>
-<tr><td>VitePress 1.6.4</td><td>56.78 s</td><td>398× slower</td></tr>
-<tr><td>Astro 7.2.4</td><td>121.05 s</td><td>849× slower</td></tr>
+<tr><td><strong>Nift 4.0.7</strong></td><td><strong>0.165 s</strong></td><td><strong>10.0 MiB</strong></td><td><strong>1×</strong></td></tr>
+<tr><td>Hugo 0.164.0</td><td>0.467 s</td><td>237 MiB</td><td>2.83× slower</td></tr>
+<tr><td>VitePress 1.6.4</td><td>58.49 s</td><td>3,687 MiB</td><td>354× slower</td></tr>
+<tr><td>Astro 7.2.4</td><td>124.79 s</td><td>3,218 MiB</td><td>756× slower</td></tr>
 </tbody></table></div>
-<p>The result is deliberately scoped to this exact clean-production-build workload rather than presented as a universal ranking. The benchmark site publishes the harness, exact versions, machine information, methodology and all raw samples so the large differences are inspectable and reproducible. <a class="text-link" href="https://nift.dev/website-generator-benchmark/">See the benchmark evidence</a>.</p>
+<p>The result is deliberately scoped to this exact clean-production-build workload rather than presented as a universal ranking. The benchmark site publishes graphs, the harness, exact versions, machine information, methodology and every raw timing/RAM sample so the large differences are inspectable and reproducible. <a class="text-link" href="https://nift.dev/website-generator-benchmark/">See the benchmark evidence</a>.</p>
 
-<p>A separate earlier Nift-only 10,000-page development-loop measurement found <code>build-updated</code> at about <strong>0.046 s</strong> when nothing needed rebuilding, with a one-content-file change in the same general order of magnitude. That is not part of the new four-tool clean-build benchmark above; it measures a different question: how much work Nift does after an edit.</p>
+<p>The same retained run also measures Nift's development loop on the 10,000-page fixture. <code>build-updated</code> took a 0.100 s median when nothing changed, 0.119 s when one independent page changed, and 0.176 s when the shared template changed and all 10,000 outputs legitimately rebuilt. Median peak RAM stayed between 9.6 and 11.3 MiB across those cases.</p>
 <div class="reference-table-wrap"><table class="reference-table opinion-table">
-<thead><tr><th>Nift · 10k fixture</th><th>Measured time</th><th>What it represents</th></tr></thead>
+<thead><tr><th>Nift · 10k fixture</th><th>Median time</th><th>Median peak RAM</th><th>What it represents</th></tr></thead>
 <tbody>
-<tr><td>Comparative clean build</td><td><strong>0.143 s median</strong></td><td>Current reproducible four-tool benchmark; rebuild all 10,000 pages.</td></tr>
-<tr><td>Incremental, nothing changed</td><td><strong>~0.046 s</strong></td><td>Check the project/dependency state without regenerating 10,000 unaffected pages.</td></tr>
-<tr><td>Incremental, one content file changed</td><td><strong>same ~0.05 s order</strong></td><td>Rebuild the affected output rather than treating one edit as a 10,000-page event.</td></tr>
+<tr><td>Clean build</td><td><strong>0.165 s</strong></td><td><strong>10.0 MiB</strong></td><td>Rebuild all 10,000 pages from clean output.</td></tr>
+<tr><td>Incremental, nothing changed</td><td><strong>0.100 s</strong></td><td>9.6 MiB</td><td>Check project/dependency state without regenerating unaffected pages.</td></tr>
+<tr><td>Incremental, one content page changed</td><td><strong>0.119 s</strong></td><td>9.7 MiB</td><td>Rebuild the affected output after one independent edit.</td></tr>
+<tr><td>Incremental, shared template changed</td><td><strong>0.176 s</strong></td><td>11.3 MiB</td><td>Rebuild all 10,000 outputs because the shared dependency changed.</td></tr>
 </tbody></table></div>
 <p>That distinction is important to developer experience. A clean-build benchmark answers “how quickly can this generator rebuild everything?” Incremental behaviour answers the question developers encounter hundreds of times: <strong>“how much work does saving this file cause?”</strong></p>
 <p>On a 10,000-page project, changing one independent page should ideally be approximately a one-page problem. Nift's tracked dependency graph is designed around that idea. A shared template or partial can correctly invalidate many dependent outputs; an isolated content change can stay isolated.</p>
 
-<p>Build latency is only part of the cost. Repeatedly doing less work also means less CPU time, less filesystem churn and generally less energy spent during the development loop. On a laptop, NUC or other thermally constrained machine, that can translate into a quieter workflow: fewer unnecessary CPU bursts, less heat to remove and therefore potentially less fan activity.</p>
-<p>I would not turn “Nift makes your fans quieter” into a universal benchmark claim without measuring power, temperature and acoustics across machines. But the engineering principle is straightforward: if an isolated edit only requires an incremental dependency check plus one affected output, repeatedly doing that is fundamentally less work than repeatedly processing a much larger portion of the site.</p>
+<p>Build latency is only part of the development cost. Nift's measured combination of very short build times and a roughly 10 MiB memory footprint leaves more of the machine available for the editor, browser, containers, local services and whatever else the project needs.</p>
+<p>That matters to both humans and agents. Humans get a build step that is fast enough to stay out of the way; agents can run edit/build/verify loops repeatedly without the build tool adding seconds of latency or competing for gigabytes of memory. Those are measured properties of this fixture, not a universal power/temperature claim.</p>
 <div class="docs-callout"><strong>The more interesting performance question is not “how fast is a full build?”</strong><p>It is “how little work does the tool need to do after the change I just made?” Nift is unusually strong because its answer can scale with the dependency impact of the edit rather than simply with the total size of the website.</p></div>
 
 <div class="reference-table-wrap"><table class="reference-table opinion-table">
@@ -116,7 +117,7 @@
 <tr><td>React + server-rendered React/RSC architecture</td><td><strong>Next.js</strong></td><td>If React Server Components and the Next server/runtime model are explicit requirements, Next is built around that architecture.</td></tr>
 <tr><td>Frontend around Go / Node / Python / C++ backend</td><td><strong>Nift</strong></td><td>I like letting the backend own runtime concerns while Nift remains a small project-aware frontend build layer.</td></tr>
 <tr><td>AI-generated bespoke website</td><td><strong>Nift</strong></td><td>A short context file can explain most of the Nift-specific model, leaving the assistant to reason about the actual website.</td></tr>
-<tr><td>Huge site where build speed matters</td><td><strong>Nift</strong></td><td>On the current reproducible 10k clean-build evidence, Nift's median was 0.143 s versus Hugo 0.434 s, VitePress 56.78 s and Astro 121.05 s. Separate Nift-only development-loop measurements also show very small unchanged/one-page incremental checks. Hugo remains an excellent alternative when its publishing machinery is the bigger requirement.</td></tr>
+<tr><td>Huge site where build speed matters</td><td><strong>Nift</strong></td><td>On the current reproducible 10k clean-build evidence, Nift's median was 0.165 s at 10.0 MiB peak RAM versus Hugo 0.467 s / 237 MiB, VitePress 58.49 s / 3,687 MiB and Astro 124.79 s / 3,218 MiB. The same run measured Nift's one-page incremental case at 0.119 s / 9.7 MiB. Hugo remains an excellent alternative when its publishing machinery is the bigger requirement.</td></tr>
 <tr><td>Large team already standardized on Astro/Next</td><td><strong>The existing standard</strong></td><td>Team familiarity, hiring, integrations and established deployment practices can outweigh my architectural preference.</td></tr>
 </tbody></table></div>
 
@@ -135,7 +136,7 @@ public/
 </div>
 
 <p>Hugo remains one of the most mature and capable tools for large content-heavy static sites. Its taxonomy, content-management, multilingual and templating features are substantial.</p>
-<p>But I no longer think “large site” is itself a reason to prefer Hugo. The current reproducible 10,000-page clean-build benchmark measured Nift at 0.143 s median and Hugo at 0.434 s, while the separate development-loop comparison makes Nift more interesting still: its measured <code>build-updated</code> check was about 0.046 s, and a one-page content edit remained in that same general range rather than requiring a deliberate 10,000-page rebuild.</p>
+<p>But I no longer think “large site” is itself a reason to prefer Hugo. The current reproducible 10,000-page clean-build benchmark measured Nift at 0.165 s / 10.0 MiB median and Hugo at 0.467 s / 237 MiB. The same retained run measured Nift's one-page <code>build-updated</code> case at 0.119 s / 9.7 MiB.</p>
 <p>Hugo also has a very fast development server that watches changes and rebuilds automatically, so it would be unfair to portray Hugo development as repeatedly running a naive clean build. The distinction I value in Nift is its explicit tracked dependency model: the amount of build work can follow the impact of the changed content/template/partial. That is attractive not only for latency but also for CPU work, filesystem activity and resource usage over a long development session.</p>
 <p>My choice would now depend primarily on the content model rather than site size or an assumption that Hugo must be faster: Hugo when I specifically want Hugo's mature publication/taxonomy machinery; Nift when I want simple composition, explicit dependency-aware incrementalism, very fast full builds and broader architectural freedom for static or full-stack projects.</p>
 
