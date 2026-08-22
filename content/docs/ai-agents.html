@@ -8,18 +8,14 @@
   <h2 id="try-the-agent-first-workflow">Try the agent-first workflow</h2>
   <p>You can test the whole idea without learning Nift's template language first:</p>
   <div class="agent-workflow">
-    <div><span>01</span><h3>Create the project with context</h3><pre><code class="language-bash">mkdir my-site
-cd my-site
-nift init --handover</code></pre></div>
+    <div><span>01</span><h3>Create the project with context</h3><pre><code class="language-bash">nift init --handover</code></pre></div>
     <div><span>02</span><h3>Open the project in your coding agent</h3><p>Ask it to read <code>HANDOVER.md</code> before making changes. The file explains the Nift-specific part of the project and the workflow the agent should preserve.</p></div>
     <div><span>03</span><h3>Describe the site</h3><p>You do not need elaborate prompt engineering. For example:</p><blockquote>Build me a small personal website with a homepage, about page and projects page. Use Nift properly and follow HANDOVER.md. Build the project and fix any Nift errors before you finish.</blockquote></div>
   </div>
   <p>This is deliberately an onboarding experiment, not a requirement to use AI with Nift. You can inspect what the agent produced, see the content/template relationship in a real project, and continue manually at any point.</p>
 
   <h2 id="initialize-a-project-for-an-ai-agent">Initialize a project for an AI agent</h2>
-  <pre><code class="language-bash">mkdir my-site
-cd my-site
-nift init --handover</code></pre>
+  <pre><code class="language-bash">nift init --handover</code></pre>
   <p>The flag composes with Nift's other named <code>init</code> options, and compatible named options are order-independent:</p>
   <pre><code class="language-bash">nift init --target=vercel --handover
 nift init --handover --ext=.php</code></pre>
