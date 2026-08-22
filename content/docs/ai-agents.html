@@ -21,9 +21,9 @@ cd my-site
 nift init --handover</code></pre>
 
   <h2>Start with a generated handover</h2>
-  <p><code>nift init --handover</code> writes a project-root <code>HANDOVER.md</code> — never under the output directory. It is the canonical Nift handover: a living document that tells an agent (or a human) how to work in a Nift project. You can download it, or fetch or refresh it at any time:</p>
+  <p><code>nift init --handover</code> writes a project-root <code>HANDOVER.md</code> — never under the output directory. It is the canonical Nift handover: a living document that tells an agent (or a human) how to work in a Nift project. For an existing project, or to refresh an older copy, fetch the same file directly:</p>
   <pre><code class="language-bash">curl -fsSL https://nift.dev/HANDOVER.md -o HANDOVER.md</code></pre>
-  <p>Keep the handover alongside the source. If the project has its own conventions, add them to it; preserve those additions when refreshing from the canonical version.</p>
+  <p><strong>Both paths — <code>nift init --handover</code> and the download above — produce the same canonical HANDOVER.md, byte for byte.</strong> The handover is a living document: add the project's own conventions to it, and preserve those additions when refreshing from the canonical version.</p>
   <div class="docs-download-card">
     <div>
       <span class="docs-kicker">Canonical handover</span>
