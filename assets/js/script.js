@@ -34,6 +34,18 @@
 
   docsMobile?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDocsMenu));
 
+  // Keep the docs menu compact by default, but always expose the section that
+  // contains the page currently being read. The Start here group remains open
+  // from the markup for first-time visitors.
+  document.querySelectorAll('[data-docs-sidebar] .docs-nav-group').forEach(group => {
+    const currentPath = new URL(window.location.href).pathname.replace(/\/index\.html$/, '/');
+    const containsCurrentPage = [...group.querySelectorAll('a')].some(link => {
+      const path = new URL(link.href, window.location.href).pathname.replace(/\/index\.html$/, '/');
+      return path === currentPath;
+    });
+    if (containsCurrentPage) group.open = true;
+  });
+
   // If a narrow viewport has its menu open and becomes desktop-sized again,
   // clean up the mobile state rather than leaving it waiting to reappear later.
   const desktopBreakpoint = window.matchMedia('(min-width: 761px)');
